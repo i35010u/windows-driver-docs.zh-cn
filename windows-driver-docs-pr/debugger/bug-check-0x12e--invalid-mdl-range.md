@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x12E INVALID_MDL_RANGE
-description: INVALID_MDL_RANGE bug 检查具有 0x0000012E 值。
-ms.assetid: 911192DC-17B8-4D75-A96E-2E310B30348F
+description: INVALID_MDL_RANGE bug 检查的值为0x0000012E。
 keywords:
 - Bug 检查 0x12E INVALID_MDL_RANGE
 - INVALID_MDL_RANGE
@@ -13,19 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 72626bade771f97fb3112aca5aa79648beff5aac
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 0e146ae88aa5138ac91e70cc7322bda33c3ad41e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67520506"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839958"
 ---
-# <a name="bug-check-0x12e-invalidmdlrange"></a>Bug 检查 0x12E：无效\_MDL\_范围
+# <a name="bug-check-0x12e-invalid_mdl_range"></a>Bug 检查0x12E：无效的 \_ MDL \_ 范围
 
 
-无效\_MDL\_范围错误检查的值为 0x0000012E。 这表示一个驱动程序具有名为 IoBuildPartialMdl() 函数并将其传递 MDL 映射属于源 MDL，但指定的虚拟地址范围不在源 MDL 的范围。 这通常是驱动程序 bug。
+无效的 \_ MDL \_ 范围 bug 检查的值为0x0000012E。 这表明驱动程序调用了 IoBuildPartialMdl ( # A1 函数并向其传递了一个 MDL 来映射源 MDL 的部分，但指定的虚拟地址范围超出了源 MDL 的范围。 这通常是驱动程序错误。
 
-源和目标 MDLs 中，使用以及在要映射的地址范围长度的参数是 IoBuildPartialMdl() 函数，即;）。
+源和目标 MDLs 以及要映射的地址范围长度是 IoBuildPartialMdl ( # A1 函数的参数，即 ) 。
 
 ```cpp
 IoBuildPartialMdl(
@@ -36,10 +35,10 @@ IoBuildPartialMdl(
 ```
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="invalidmdlrange-parameters"></a>无效\_MDL\_范围参数
+## <a name="invalid_mdl_range-parameters"></a>无效的 \_ MDL \_ 范围参数
 
 
 | 参数 | 描述    |

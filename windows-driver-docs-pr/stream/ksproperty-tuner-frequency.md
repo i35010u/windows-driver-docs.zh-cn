@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 调谐器 \_ 频率
 description: KSPROPERTY \_ 调谐器 \_ frequency 属性设置或获取调谐器的当前频率或通道。 必须实现此属性。
-ms.assetid: ba6caf67-63c1-4a31-b93f-3b06b61244bf
 keywords:
 - KSPROPERTY_TUNER_FREQUENCY 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d8dd5d4bb3dc559326c41dbea2fa556a571881fe
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 7a7a9aab413bdfd44d7a9adef6bcc8d61554c5aa
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106796"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840529"
 ---
 # <a name="ksproperty_tuner_frequency"></a>KSPROPERTY \_ 调谐器 \_ 频率
 
@@ -84,7 +83,7 @@ KSPROPERTY **Frequency** \_ 调谐器 Frequency 结构的 Frequency 成员 \_ \_
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

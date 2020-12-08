@@ -1,19 +1,18 @@
 ---
 title: 按像素将 Z 缓冲区升级到 32 位
 description: 按像素将 Z 缓冲区升级到 32 位
-ms.assetid: 6b7dddab-e154-44e8-a4e3-45bd706ed638
 keywords:
 - z 缓冲 WDK DirectX 9。0
 - 颜色缓冲区 WDK DirectX 9。0
 - D3DFORMAT_OP_ZSTENCIL_WITH_ARBITRARY_COLOR_DEPTH
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 92fa6f3caa721b4cf166f4393a4fdc1ed94ac69e
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: a2897c57b47057abadd929400238bda0eb6ce512
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064652"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840993"
 ---
 # <a name="promoting-z-buffers-to-32-bits-per-pixel"></a>按像素将 Z 缓冲区升级到 32 位
 
@@ -25,7 +24,7 @@ ms.locfileid: "89064652"
 
 显示设备不支持对具有不同像素深度的 z 和颜色缓冲区进行呈现的显示驱动程序必须以透明方式将16位/像素提升 (bpp) z 缓冲区到 32 bpp，以便同时呈现 z 缓冲区和 32 bpp 颜色缓冲区。 但请注意，z 缓冲区还不能有模具位。 因此，应用程序不需要更正缓冲区像素深度中的此不匹配。
 
-如果驱动程序的显示设备可以呈现为 z 和颜色缓冲区的不同像素深度，则驱动程序会 \_ \_ \_ \_ \_ \_ 在 z 缓冲区格式的[**DDPIXELFORMAT**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ddpixelformat)结构的**dwOperations**成员中，将 D3DFORMAT OP ZSTENCIL 设置为任意颜色深度标志。 然后，Direct3D 运行时让应用程序呈现为 z 和颜色像素深度的任意不匹配。
+如果驱动程序的显示设备可以呈现为 z 和颜色缓冲区的不同像素深度，则驱动程序会 \_ \_ \_ \_ \_ \_ 在 z 缓冲区格式的 [**DDPIXELFORMAT**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ddpixelformat)结构的 **dwOperations** 成员中，将 D3DFORMAT OP ZSTENCIL 设置为任意颜色深度标志。 然后，Direct3D 运行时让应用程序呈现为 z 和颜色像素深度的任意不匹配。
 
 如果驱动程序未将 D3DFORMAT \_ OP \_ ZSTENCIL 设置 \_ \_ \_ \_ 为适用于 z 缓冲区格式的任意颜色深度，则运行时只允许应用程序呈现 32 bpp 颜色缓冲区与 16 bpp z 缓冲区的不匹配，其中不包含简介段中所述的模具位。 在这种情况下，驱动程序会分配 32 bpp z 缓冲区来替代请求的 16 bpp z 缓冲区。
 

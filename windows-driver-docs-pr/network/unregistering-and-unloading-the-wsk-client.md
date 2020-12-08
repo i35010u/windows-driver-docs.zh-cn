@@ -1,18 +1,17 @@
 ---
 title: 取消注册和卸载 WSK 客户端
 description: 取消注册和卸载 WSK 客户端
-ms.assetid: dd9030b1-271f-46e4-9139-b49903ca8313
 keywords:
 - 网络模块注册器 WDK Winsock 内核
 - NMR WDK Winsock 内核
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 01e568202f252f02df59aa41ab20592f269f44b1
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 6af7ed21c1d06a7b397ee94d6bb892ec354e9bb4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215779"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839417"
 ---
 # <a name="unregistering-and-unloading-the-wsk-client"></a>取消注册和卸载 WSK 客户端
 
@@ -23,7 +22,7 @@ ms.locfileid: "89215779"
 
 NMR 只调用一次 WSK 应用程序的 *ClientDetachProvider* 回调函数。 如果 WSK 应用程序和 WSK 子系统都取消注册 NMR，则 NMR 仅在第一次注销开始后才调用 WSK 应用程序的 *ClientDetachProvider* 回调函数。
 
-如果 \_ NMR 调用 WSK 应用程序的 ClientDetachProvider 回调函数时，未对 WSK 提供程序调度中的任何 WSK 函数进行调用 \_ ，则 WSK *ClientDetachProvider*应用程序应 \_ 从其*ClientDetachProvider*回调函数返回状态 SUCCESS。 否则，WSK 应用程序必须 \_ 从其 *ClientDetachProvider* 回调函数返回 "挂起" 状态，并且在对 WSK 提供程序调度中的 WSK 函数进行的所有调用都返回后，必须调用 [**NmrClientDetachProviderComplete**](/windows-hardware/drivers/ddi/netioddk/nf-netioddk-nmrclientdetachprovidercomplete) 函数 \_ \_ 。 WSK 应用程序调用 **NmrClientDetachProviderComplete** 函数来通知 NMR 应用程序已与 WSK 子系统分离。 但是，在 WSK 应用程序关闭所有打开的套接字之前，WSK 子系统将不允许完全完成分离过程。 有关详细信息，请参阅 [关闭套接字](closing-a-socket.md)。
+如果 \_ NMR 调用 WSK 应用程序的 ClientDetachProvider 回调函数时，未对 WSK 提供程序调度中的任何 WSK 函数进行调用 \_ ，则 WSK *ClientDetachProvider* 应用程序应 \_ 从其 *ClientDetachProvider* 回调函数返回状态 SUCCESS。 否则，WSK 应用程序必须 \_ 从其 *ClientDetachProvider* 回调函数返回 "挂起" 状态，并且在对 WSK 提供程序调度中的 WSK 函数进行的所有调用都返回后，必须调用 [**NmrClientDetachProviderComplete**](/windows-hardware/drivers/ddi/netioddk/nf-netioddk-nmrclientdetachprovidercomplete) 函数 \_ \_ 。 WSK 应用程序调用 **NmrClientDetachProviderComplete** 函数来通知 NMR 应用程序已与 WSK 子系统分离。 但是，在 WSK 应用程序关闭所有打开的套接字之前，WSK 子系统将不允许完全完成分离过程。 有关详细信息，请参阅 [关闭套接字](closing-a-socket.md)。
 
 当 WSK 应用程序通过 \_ 从其 *ClientDetachProvider* 回调函数返回状态 "成功" 或通过调用 **NmrClientDetachProviderComplete** 函数向 NMR 通知分离完成后，应用程序不能对 WSK \_ 提供程序调度中的任何 WSK 函数进行进一步调用 \_ 。
 
@@ -127,7 +126,7 @@ VOID
 }
 ```
 
-不需要 WSK 应用程序从其*Unload*函数中调用**NmrDeregisterClient** 。 例如，如果 WSK 应用程序是复杂驱动程序的子组件，则在禁用 WSK 应用程序子组件时，可能会注销 WSK 应用程序。 但是，在这种情况下，驱动程序必须确保 WSK 应用程序在从其 *Unload* 函数返回之前已从 NMR 完全注销。
+不需要 WSK 应用程序从其 *Unload* 函数中调用 **NmrDeregisterClient** 。 例如，如果 WSK 应用程序是复杂驱动程序的子组件，则在禁用 WSK 应用程序子组件时，可能会注销 WSK 应用程序。 但是，在这种情况下，驱动程序必须确保 WSK 应用程序在从其 *Unload* 函数返回之前已从 NMR 完全注销。
 
  
 

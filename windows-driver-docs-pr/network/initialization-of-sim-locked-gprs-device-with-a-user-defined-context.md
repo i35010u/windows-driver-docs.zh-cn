@@ -1,17 +1,16 @@
 ---
 title: " (用户定义的上下文初始化 SIM 锁定的 GPRS 设备) "
-description: 使用用户定义的上下文初始化 SIM 锁定的 GPRS 设备
-ms.assetid: 655b7789-ffea-459c-9489-5c2f565b77ee
+description: 使用 User-Defined 上下文初始化 SIM-Locked GPRS 设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eda30384b1bbc123b5353134c1b3d88cf4ff78a0
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 92cdea5d73f8d16ff5e03ee00dcd4b529f912e31
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210733"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841189"
 ---
-# <a name="initialization-of-sim-locked-gprs-device-with-a-user-defined-context"></a>使用用户定义的上下文初始化 SIM 锁定的 GPRS 设备
+# <a name="initialization-of-sim-locked-gprs-device-with-a-user-defined-context"></a>使用 User-Defined 上下文初始化 SIM-Locked GPRS 设备
 
 
 下图演示了用户输入 SIM PIN 并手动配置访问点名称字符串的情况。 粗体标签是 OID 标识符或事务流控制，而常规文本中的标签是 OID 结构中的重要标志。

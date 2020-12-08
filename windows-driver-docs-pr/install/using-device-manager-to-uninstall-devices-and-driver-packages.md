@@ -1,16 +1,15 @@
 ---
 title: 使用设备管理器卸载设备和驱动程序包
 description: 使用设备管理器卸载设备和驱动程序包
-ms.assetid: 6e798b87-a35d-414a-8116-ee1523c782ae
 ms.date: 10/07/2020
 ms.localizationpriority: medium
 ms.custom: contperfq2
-ms.openlocfilehash: fa94777db23ebb711e5841c7eda2338e9fb62662
-ms.sourcegitcommit: 62c81d88b03bd311d1cdfef5b138d579faceb304
+ms.openlocfilehash: 51cbcd3e45782facda6407b85e9b7e02c1d432a7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92113534"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839497"
 ---
 # <a name="using-device-manager-to-uninstall-devices-and-driver-packages"></a>使用设备管理器卸载设备和驱动程序包
 

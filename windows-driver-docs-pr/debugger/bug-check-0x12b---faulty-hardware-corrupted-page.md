@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x12B FAULTY_HARDWARE_CORRUPTED_PAGE
 description: FAULTY_HARDWARE_CORRUPTED_PAGE bug 检查的值为0x0000012B。 此 bug 检查表明 Windows 内存管理器检测到损坏，损坏可能仅由使用物理寻址访问内存的组件引起。
-ms.assetid: caa57d76-946f-4394-bfcf-1dbf3813a55b
 keywords:
 - Bug 检查 0x12B FAULTY_HARDWARE_CORRUPTED_PAGE
 - FAULTY_HARDWARE_CORRUPTED_PAGE
@@ -13,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ce0a4a44d193872f3a80d2b293efbd9e80455f5
-ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
+ms.openlocfilehash: b400cbef43eb0836ac8b90396144958f73985d98
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91755014"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839963"
 ---
 # <a name="bug-check-0x12b-faulty_hardware_corrupted_page"></a>Bug 检查0x12B：出错的 \_ 硬件 \_ 损坏 \_ 页
 
@@ -49,7 +48,7 @@ ms.locfileid: "91755014"
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -85,7 +84,7 @@ ms.locfileid: "91755014"
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -132,7 +131,7 @@ ms.locfileid: "91755014"
 ## <a name="see-also"></a>另请参阅
 ----------
 
-[Bug 检查代码引用](bug-check-code-reference2.md)
+[Bug 检查代码参考](bug-check-code-reference2.md)
 
 [Windows 内核模式内存管理器](../kernel/windows-kernel-mode-memory-manager.md)
 

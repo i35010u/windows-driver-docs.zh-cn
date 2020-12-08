@@ -1,19 +1,18 @@
 ---
 title: 注册 SAP
 description: 注册 SAP
-ms.assetid: 2b318bf0-4f0e-4db7-850b-510a9f2c7cf0
 keywords:
 - 服务访问点 WDK CoNDIS
 - Sap WDK CoNDIS
 - 正在注册 Sap
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f4c8b2567d0ccf3b422b517f2bfb82e283705b2e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 6707bc078d1e7f498cda3ff3e4ebd8729179ffbe
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212059"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839445"
 ---
 # <a name="registering-a-sap"></a>注册 SAP
 
@@ -31,9 +30,9 @@ ms.locfileid: "89212059"
 
 ![向 mcm 驱动程序注册 sap](images/fig1-02.png)
 
-调用 **NdisClRegisterSap**时，客户端请求对特定 SAP 的传入呼叫发出通知。 NDIS 将客户端提供的 SAP 信息转发到用于验证的调用管理器或 MCM 驱动程序的 [**ProtocolCmRegisterSap**](/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_cm_reg_sap) 函数。 如果给定的 SAP 已在使用中，或者如果调用管理器或 MCM 驱动程序无法识别客户端提供的 SAP 规范，则调用管理器或 MCM 驱动程序将无法执行此请求。
+调用 **NdisClRegisterSap** 时，客户端请求对特定 SAP 的传入呼叫发出通知。 NDIS 将客户端提供的 SAP 信息转发到用于验证的调用管理器或 MCM 驱动程序的 [**ProtocolCmRegisterSap**](/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_cm_reg_sap) 函数。 如果给定的 SAP 已在使用中，或者如果调用管理器或 MCM 驱动程序无法识别客户端提供的 SAP 规范，则调用管理器或 MCM 驱动程序将无法执行此请求。
 
-在 *ProtocolCmRegisterSap*中，呼叫管理器或 MCM 驱动程序可能与网络控制设备或其他特定于媒体的代理进行通信，以便在面向连接的客户端的网络上注册 SAP。 *ProtocolCmRegisterSap* 还存储一个表示 SAP 的 NDIS 提供的 *NdisSapHandle* 。
+在 *ProtocolCmRegisterSap* 中，呼叫管理器或 MCM 驱动程序可能与网络控制设备或其他特定于媒体的代理进行通信，以便在面向连接的客户端的网络上注册 SAP。 *ProtocolCmRegisterSap* 还存储一个表示 SAP 的 NDIS 提供的 *NdisSapHandle* 。
 
 *ProtocolCmRegisterSap* 可以同步或异步完成。 若要异步完成，调用管理器的 *ProtocolCmRegisterSap* 函数将调用 [**NdisCmRegisterSapComplete**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscmregistersapcomplete)。 MCM 驱动程序的 *ProtocolCmRegisterSap* 函数将调用 [**NdisMCmRegisterSapComplete**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmregistersapcomplete)。 调用 **ndis (M) CmRegisterSapComplete** 导致 ndis 调用客户端的 [*ProtocolClRegisterSapComplete*](/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_cl_register_sap_complete) 函数。
 

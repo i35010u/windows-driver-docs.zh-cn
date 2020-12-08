@@ -1,18 +1,17 @@
 ---
 title: 释放上下文
 description: 释放上下文
-ms.assetid: 29d855cd-cca6-486b-86d9-f74810ae12c1
 keywords:
 - 上下文 WDK 文件系统微筛选器，发布
 - 释放上下文
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9bb01ee6ef7ec60405c0bc86e0fabe0fab76bf3f
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: edc896f3fe871d5ee63446d883ee80b3c374fd1a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063242"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840719"
 ---
 # <a name="releasing-contexts"></a>释放上下文
 
@@ -20,7 +19,7 @@ ms.locfileid: "89063242"
 ## <span id="ddk_registering_the_minifilter_if"></span><span id="DDK_REGISTERING_THE_MINIFILTER_IF"></span>
 
 
-微筛选器驱动程序通过调用 [**FltReleaseContext**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltreleasecontext)来释放上下文。 对以下例程之一的每个成功调用最终必须通过调用 **FltReleaseContext**进行匹配：
+微筛选器驱动程序通过调用 [**FltReleaseContext**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltreleasecontext)来释放上下文。 对以下例程之一的每个成功调用最终必须通过调用 **FltReleaseContext** 进行匹配：
 
 [**FltAllocateContext**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltallocatecontext)
 
@@ -38,7 +37,7 @@ ms.locfileid: "89063242"
 
 [**FltReferenceContext**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltreferencecontext)
 
-请注意， **FltSet***Xxx***上下文**返回的*OldContext*指针和[**FltDeleteContext**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltdeletecontext)返回的*上下文*指针也必须在不再需要时释放。
+请注意， **FltSet**_Xxx_*_上下文_* 返回的 *OldContext* 指针和 [**FltDeleteContext**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltdeletecontext)返回的 *上下文* 指针也必须在不再需要时释放。
 
 在以下代码示例中，从 CTX 示例微筛选器驱动程序开始， **CtxInstanceSetup** 例程创建并设置实例上下文，然后调用 [**FltReleaseContext**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltreleasecontext)：
 
@@ -62,7 +61,7 @@ if (instanceContext != NULL) {
 return status;
 ```
 
-请注意，无论调用[**FltSetInstanceContext**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltsetinstancecontext)是否成功，都将调用[**FltReleaseContext**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltreleasecontext) 。 在这两种情况下，调用方必须调用 **FltReleaseContext** 来释放由 [**FltAllocateContext**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltallocatecontext) (不 **FltSetInstanceContext**) 集的引用集。
+请注意，无论调用 [**FltSetInstanceContext**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltsetinstancecontext)是否成功，都将调用 [**FltReleaseContext**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltreleasecontext) 。 在这两种情况下，调用方必须调用 **FltReleaseContext** 来释放由 [**FltAllocateContext**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltallocatecontext) (不 **FltSetInstanceContext**) 集的引用集。
 
 如果已成功为实例设置上下文，则 [**FltSetInstanceContext**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltsetinstancecontext) 会将其自己的引用添加到实例上下文中。 因此，不再需要由 [**FltAllocateContext**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltallocatecontext) 设置的引用，并且对 [**FltReleaseContext**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltreleasecontext) 的调用会将其删除。
 

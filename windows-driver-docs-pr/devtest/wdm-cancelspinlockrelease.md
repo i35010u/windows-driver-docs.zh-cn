@@ -1,7 +1,6 @@
 ---
 title: 'CancelSpinlockRelease 规则 (wdm) '
 description: CancelSpinlockRelease 规则指定在严格替换中使用对 IoAcquireCancelSpinLock 和 IoReleaseCancelSpinLock 的调用。 也就是说，每次调用 IoAcquireCancelSpinLock 时，都必须具有对 IoReleaseCancelSpinLock 的相应调用。
-ms.assetid: dba280c7-18ac-4d87-8d45-d30c214ef90e
 ms.date: 05/21/2018
 keywords:
 - 'CancelSpinlockRelease 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d7a7c672bda597256d283a76cafe5ffb272f919
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: ef2a68a0d15b8d2a5d21598927cca13348a083ec
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104936"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839659"
 ---
 # <a name="cancelspinlockrelease-rule-wdm"></a>CancelSpinlockRelease 规则 (wdm) 
 
 
-**CancelSpinlockRelease**规则指定在严格替换中使用对[**IoAcquireCancelSpinLock**](/previous-versions/windows/hardware/drivers/ff548196(v=vs.85))和[**IoReleaseCancelSpinLock**](/previous-versions/windows/hardware/drivers/ff549550(v=vs.85))的调用。 也就是说，每次调用 **IoAcquireCancelSpinLock** 时，都必须具有对 **IoReleaseCancelSpinLock**的相应调用。
+**CancelSpinlockRelease** 规则指定在严格替换中使用对 [**IoAcquireCancelSpinLock**](/previous-versions/windows/hardware/drivers/ff548196(v=vs.85))和 [**IoReleaseCancelSpinLock**](/previous-versions/windows/hardware/drivers/ff549550(v=vs.85))的调用。 也就是说，每次调用 **IoAcquireCancelSpinLock** 时，都必须具有对 **IoReleaseCancelSpinLock** 的相应调用。
 
 **驱动程序模型： WDM**
 

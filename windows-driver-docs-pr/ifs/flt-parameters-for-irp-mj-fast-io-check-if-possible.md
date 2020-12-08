@@ -1,7 +1,6 @@
 ---
 title: IRP_MJ_FAST_IO_CHECK_IF_POSSIBLE 联合的 FLT_PARAMETERS
 description: 当操作的 FLT \_ IO \_ 参数块结构的 MajorFunction 字段 \_ 为 IRP \_ MJ \_ FAST \_ IO \_ 检查（ \_ 如果 \_ 可能）时，将使用以下联合组件。
-ms.assetid: 1de62b03-4073-40d6-9094-609431e19e5b
 keywords:
 - IRP_MJ_FAST_IO_CHECK_IF_POSSIBLE 联合可安装文件系统驱动程序的 FLT_PARAMETERS
 - FLT_PARAMETERS 联合可安装文件系统驱动程序
@@ -16,31 +15,31 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 98b0ebf57b986241adfa65f8ac4b16991d54288c
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 0794d04c4d0bdbb4ba43ebd8c5c3a9a0f26293cc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065244"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839277"
 ---
 # <a name="flt_parameters-for-irp_mj_fast_io_check_if_possible-union"></a>\_IRP \_ MJ FAST IO 的 FLT 参数 \_ \_ \_ \_ 如果 \_ 可能，请检查
 
 
-当操作的[**FLT \_ IO \_ 参数 \_ 块**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构的**MajorFunction**字段为 IRP \_ MJ \_ FAST \_ IO \_ 检查（ \_ 如果 \_ 可能）时，将使用以下联合组件。
+当操作的 [**FLT \_ IO \_ 参数 \_ 块**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构的 **MajorFunction** 字段为 IRP \_ MJ \_ FAST \_ IO \_ 检查（ \_ 如果 \_ 可能）时，将使用以下联合组件。
 
 <a name="syntax"></a>语法
 ------
 
 ```ManagedCPlusPlus
 typedef union _FLT_PARAMETERS {
-  ...    ;
+  ...    ;
   struct {
-    LARGE_INTEGER             FileOffset;
-    ULONG                     Length;
-    ULONG POINTER_ALIGNMENT   LockKey;
+    LARGE_INTEGER             FileOffset;
+    ULONG                     Length;
+    ULONG POINTER_ALIGNMENT   LockKey;
     BOOLEAN POINTER_ALIGNMENT CheckForReadOperation;
-  } FastIoCheckIfPossible;
-  ...    ;
+  } FastIoCheckIfPossible;
+  ...    ;
 } FLT_PARAMETERS, *PFLT_PARAMETERS;
 ```
 
@@ -85,7 +84,7 @@ IRP \_ MJ \_ fast \_ IO \_ 检查（ \_ 如果 \_ 可能）是快速 i/o 操作�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**FLT \_ 回调 \_ 数据**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)

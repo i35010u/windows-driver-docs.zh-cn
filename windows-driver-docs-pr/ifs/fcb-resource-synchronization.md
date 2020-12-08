@@ -1,7 +1,6 @@
 ---
 title: FCB 资源同步
 description: FCB 资源同步
-ms.assetid: 8355907e-e313-4e54-a63f-a82d9ce0d31b
 keywords:
 - RDBSS WDK 文件系统，FCB 资源同步
 - 重定向驱动器缓冲子系统 WDK 文件系统，FCB 资源同步
@@ -11,12 +10,12 @@ keywords:
 - 文件控制块结构 WDK RDBSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a454130918537ca1261dc1ef0d3154705f4f3fe1
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 0c95d2f8e05e49bdf3a1ecd26c0d025de2ac3c8c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105028"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840739"
 ---
 # <a name="fcb-resource-synchronization"></a>FCB 资源同步
 
@@ -34,7 +33,7 @@ ms.locfileid: "90105028"
 <thead>
 <tr class="header">
 <th align="left">例程所返回的值</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

@@ -1,16 +1,15 @@
 ---
 title: OID_GEN_XMIT_OK
 description: 作为查询，OID_GEN_XMIT_OK OID 指定了在不出错的情况下传输的帧数。
-ms.assetid: ac7120a3-58bb-4047-b4b7-ad9fbaf14e4f
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_XMIT_OK 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 42088b6f86516939082d51be73e3fb93a56b9966
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 16eb6933d94f94091a73038b882474691426bdb3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209685"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839465"
 ---
 # <a name="oid_gen_xmit_ok"></a>OID \_ 生成 \_ XMIT \_ 正常
 
@@ -57,7 +56,7 @@ OID \_ GEN \_ XMIT \_ OK 指定传输的不含错误的帧数。 但是， [OID 
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [OID \_ 生成 \_ 统计信息](oid-gen-statistics.md)

@@ -1,37 +1,36 @@
 ---
 title: HSPluginInitPlugin 函数
 description: HSPluginInitPlugin 函数由插件 DLL 导出，并调用来初始化插件。
-ms.assetid: db51267c-4f38-47bd-bde2-7b27a93dd2a7
 keywords:
 - 从 Windows Vista 开始的 HSPluginInitPlugin 函数网络驱动程序
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 961edd8792da93b46deb9e1ce7816fdf02e8495f
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: ae6735e778275e2d057e22799dd63df32b986519
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89402960"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839483"
 ---
 # <a name="hsplugininitplugin-function"></a>HSPluginInitPlugin 函数
 
 [!include[Wi-Fi Hotspot Offloading deprecation](../includes/wi-fi-hotspot-offloading-deprecation.md)]
 
 
-**HSPluginInitPlugin**函数由插件 DLL 导出，并调用来初始化插件。
+**HSPluginInitPlugin** 函数由插件 DLL 导出，并调用来初始化插件。
 
 <a name="syntax"></a>语法
 ------
 
 ```ManagedCPlusPlus
 DWORD HSPluginInitPlugin(
-  _In_  HANDLE                hPluginContext,
-  _In_  DWORD                 dwVerNumUsed,
-  _In_  DWORD                 dwHostCapabilities,
-  _In_  HS_DEVICE_IDENTITY    *pDeviceIdentity,
-  _In_  HOTSPOT_HOST_HANDLERS *pHotspotHostHandlers,
-  _Out_ HOTSPOT_PLUGIN_APIS   *pHotspotPluginAPIs,
-  _Out_ HS_PLUGIN_PROFILE     *pPluginProfile
+  _In_  HANDLE                hPluginContext,
+  _In_  DWORD                 dwVerNumUsed,
+  _In_  DWORD                 dwHostCapabilities,
+  _In_  HS_DEVICE_IDENTITY    *pDeviceIdentity,
+  _In_  HOTSPOT_HOST_HANDLERS *pHotspotHostHandlers,
+  _Out_ HOTSPOT_PLUGIN_APIS   *pHotspotPluginAPIs,
+  _Out_ HS_PLUGIN_PROFILE     *pPluginProfile
 );
 ```
 
@@ -45,22 +44,22 @@ DWORD HSPluginInitPlugin(
 宿主的当前版本号。
 
 *dwHostCapabilities* \[中\]  
-值，指定主机可提供给插件的功能列表。 此值是适用功能标志的按位 "或" 组合。 有关功能标志的详细信息，请参阅[**wi-fi 热点卸载常量**](wi-fi-hotspot-offloading-constants.md)中的**HS \_ 标志 \_ 功能 \_ \\ *** 常量。
+值，指定主机可提供给插件的功能列表。 此值是适用功能标志的按位 "或" 组合。 有关功能标志的详细信息，请参阅中的 **HS \_ 标志 \_ 功能 \_ \\** _ [常量 *-wi-fi 热点卸载常数* *](wi-fi-hotspot-offloading-constants.md)。
 
-**注意**   如果主机未提供插件所需的所有功能，则不会初始化插件。
+**注意**  如果主机未提供插件所需的所有功能，则不会初始化插件。
 
  
 
-* \* pDeviceIdentity* \[\]  
+*\* pDeviceIdentity* \[\]  
 一个指针，指向包含有关设备制造商和型号的信息的 [**HS \_ 设备 \_ 标识**](hs-device-identity.md) 结构。
 
-* \* pHotspotHostHandlers* \[\]  
+*\* pHotspotHostHandlers* \[\]  
 指向 [**热点 \_ 主机 \_ 处理程序**](hotspot-host-handlers.md) 结构的指针，该结构包含热点主机处理程序函数表。 此表包含指向插件调用的函数的指针，这些函数用于与热点主机通信。
 
-* \* pHotspotPluginAPIs* \[\]  
+*\* pHotspotPluginAPIs* \[\]  
 指向 [**热点 \_ 插件 \_ api**](hotspot-plugin-apis.md) 结构的指针，该结构包含热点插件 api 函数表。 此表由插件返回，并包含指向函数调用的函数的指针，这些函数用于与插件通信。
 
-* \* pPluginProfile* \[\]  
+*\* pPluginProfile* \[\]  
 指向由插件返回的 [**HS \_ 插件 \_ 配置文件**](hs-plugin-profile.md) 结构的指针，该结构提供有关插件的信息。
 
 <a name="remarks"></a>备注
@@ -89,13 +88,13 @@ DWORD HSPluginInitPlugin(
 <td><p>Windows 10 移动版</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Hotspotoffloadplugin (包含 Hotspotoffloadplugin) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**Wi-Fi 热点卸载常量**](wi-fi-hotspot-offloading-constants.md)

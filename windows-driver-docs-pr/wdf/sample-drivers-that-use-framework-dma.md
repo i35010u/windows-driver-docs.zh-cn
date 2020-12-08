@@ -1,19 +1,18 @@
 ---
 title: 使用框架 DMA 的示例驱动程序
 description: 使用框架 DMA 的示例驱动程序
-ms.assetid: 4d04a517-97b5-441e-b5f5-ca839c3acf1a
 keywords:
 - DMA 操作 WDK KMDF，示例驱动程序
-- 主总线 DMA WDK KMDF 驱动程序示例
+- 总线主控 DMA WDK KMDF，示例驱动程序
 - 示例驱动程序 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d9c2647952dcf77b4417559f4fd1bac6b35de0c5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 906f569508f3f12e7839a9dc0be10483562fa305
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325163"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839335"
 ---
 # <a name="sample-drivers-that-use-framework-dma"></a>使用框架 DMA 的示例驱动程序
 
@@ -23,7 +22,7 @@ ms.locfileid: "63325163"
 
 
 
-[AMCC5933](sample-kmdf-drivers.md)， [PLX9x5x](sample-kmdf-drivers.md)，并[PCIDRV](sample-kmdf-drivers.md)示例驱动程序使用框架的 DMA 功能。
+[AMCC5933](sample-kmdf-drivers.md)、 [PLX9x5x](sample-kmdf-drivers.md)和[PCIDRV](sample-kmdf-drivers.md)示例驱动程序使用框架的 DMA 功能。
 
  
 

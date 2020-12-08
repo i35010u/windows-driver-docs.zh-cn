@@ -1,21 +1,20 @@
 ---
 title: OID_GEN_ALIAS
 description: 作为查询，使用 OID_GEN_ALIAS OID 从 RFC 2863) 获取接口 (的别名字符串。 Windows Vista 和 laterSupported 的版本信息。 已请求 NDIS 6.0 和更高的微型端口 driversNot。 仅适用于 NDIS 接口提供程序。
-ms.assetid: ff5e6494-aa4e-4a0a-b773-64b612236c8c
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_ALIAS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 931948ead78a359452a533a28767cfc9f364d595
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: d5b4d1f12b346a9c7cdf0fe01876ef684733659d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206363"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840631"
 ---
 # <a name="oid_gen_alias"></a>OID \_ 生成 \_ 别名
 
 
-作为查询，使用 OID 生成 \_ \_ 别名 OID 从[RFC 2863](https://go.microsoft.com/fwlink/p/?linkid=84054)) 中获取接口 (*ifAlias*的别名字符串。
+作为查询，使用 OID 生成 \_ \_ 别名 OID 从 [RFC 2863](https://go.microsoft.com/fwlink/p/?linkid=84054)) 中获取接口 (*ifAlias* 的别名字符串。
 
 **版本信息**
 
@@ -50,7 +49,7 @@ ms.locfileid: "89206363"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [NDIS 网络接口 Oid](./ndis-network-interface-oids.md)

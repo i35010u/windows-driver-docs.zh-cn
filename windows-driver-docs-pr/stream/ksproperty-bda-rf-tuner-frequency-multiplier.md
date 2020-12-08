@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ BDA \_ RF \_ 调谐器 \_ 频率 \_ 乘数
 description: 客户端使用 KSPROPERTY \_ bda \_ 射频 \_ 调谐器 \_ 频率 \_ 乘数，并使用 KSPROPERTY \_ bda rf 射频 \_ \_ \_ 来控制调谐器节点的频率设置。
-ms.assetid: bca395b5-3993-42c0-880d-eb38d3b933bb
 keywords:
 - KSPROPERTY_BDA_RF_TUNER_FREQUENCY_MULTIPLIER 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a0147875ea1c7913028ed0eebbccc69bdd2ad838
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 8741046715a93be2e73712203e8a3b53ab6d8dfb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185725"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839861"
 ---
 # <a name="ksproperty_bda_rf_tuner_frequency_multiplier"></a>KSPROPERTY \_ BDA \_ RF \_ 调谐器 \_ 频率 \_ 乘数
 
@@ -86,7 +85,7 @@ KSP **NodeId** \_ 节点的节点标识号指定调谐器节点的标识符。
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSP \_ 节点**](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_node)

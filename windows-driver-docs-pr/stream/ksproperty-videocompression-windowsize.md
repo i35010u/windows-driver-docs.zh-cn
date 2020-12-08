@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ VIDEOCOMPRESSION \_ WINDOWSIZE
 description: KSPROPERTY \_ VIDEOCOMPRESSION \_ WINDOWSIZE 属性控制描述平均帧大小的数据速率。 必须实现此属性。
-ms.assetid: 44cf4bb6-7ddb-4a72-8a77-7dc390aa8c12
 keywords:
 - KSPROPERTY_VIDEOCOMPRESSION_WINDOWSIZE 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d57ed8ee9716dc5bf036666d53dc22f6adbd8a12
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: fb3ae946b89fff713c19be17784bd2587a2a7f98
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102384"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840861"
 ---
 # <a name="ksproperty_videocompression_windowsize"></a>KSPROPERTY \_ VIDEOCOMPRESSION \_ WINDOWSIZE
 
@@ -63,12 +62,12 @@ KSPROPERTY \_ VIDEOCOMPRESSION \_ WINDOWSIZE 属性控制描述平均帧大小�
 
  (操作数据) 的属性值是一个 LONG，用于指定表示平均帧大小的数据速率。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 KSPROPERTY **Value** \_ VIDEOCOMPRESSION S 结构的 Value 成员 \_ 指定窗口大小。
 
-支持此属性的微型驱动程序应在用于检索 VIDEOCOMPRESSION 视频压缩功能的[**KSPROPERTY \_ GETINFO \_ 微型驱动程序 \_ S**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videocompression_getinfo_s)结构的 "**功能**" 成员中设置**KS \_ CompressionCaps \_ CanWindow**标志。 如果微型驱动程序设置了 **KS \_ CompressionCaps \_ CanWindow** 标志，则它应同时提供对属性的 get 和 set 支持。
+支持此属性的微型驱动程序应在用于检索 VIDEOCOMPRESSION 视频压缩功能的 [**KSPROPERTY \_ GETINFO \_ 微型驱动程序 \_ S**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videocompression_getinfo_s)结构的 "**功能**" 成员中设置 **KS \_ CompressionCaps \_ CanWindow** 标志。 如果微型驱动程序设置了 **KS \_ CompressionCaps \_ CanWindow** 标志，则它应同时提供对属性的 get 和 set 支持。
 
 对于大小为 n 的窗口 *，* 任何连续 *n* 帧的平均帧大小不得超过流的指定数据速率，尽管 *各个* 帧可能更大或更小。 例如，如果已将数据速率设置为每秒 150 kb (KBps) 每秒15帧 (fps) 电影，则每个帧的 *平均* 大小必须小于或等于 10 kb。 只需在影片) 的每秒15帧之间计算 (每秒15帧就会小于或等于 10 kb，单独帧越大或更小。
 

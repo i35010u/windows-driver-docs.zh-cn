@@ -1,19 +1,18 @@
 ---
 title: 动态顶点和索引缓冲区
 description: 动态顶点和索引缓冲区
-ms.assetid: 81ee22c6-3f98-4767-a4cd-a7907ed8f8a2
 keywords:
 - 动态顶点 WDK DirectX 9。0
 - 索引缓冲区 WDK DirectX 9。0
 - 动态缓冲 WDK DirectX 9。0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a42b5450c0fb59ec49ef2a32c5e41b6383d5a27c
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 644589927d19690e0799fd55057cf43e0d366435
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065880"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840395"
 ---
 # <a name="dynamic-vertex-and-index-buffers"></a>动态顶点和索引缓冲区
 

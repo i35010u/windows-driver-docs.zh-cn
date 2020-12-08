@@ -1,15 +1,14 @@
 ---
 title: 队列对的对称和非对称分配
 description: 队列对的对称和非对称分配
-ms.assetid: B4BA1567-D536-4E7D-924C-7476FB82DAEB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a4f0309e90d3711a6e4f90252152dffd6c8a1ce
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ed659031e34e3b327cc23ac6167bc5333cbede4e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207399"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840889"
 ---
 # <a name="symmetric-and-asymmetric-assignment-of-queue-pairs"></a>队列对的对称和非对称分配
 
@@ -18,11 +17,11 @@ ms.locfileid: "89207399"
 
 每个非默认 VPort 可以配置为具有不同的队列对数。 这称为队列对的 *非对称分配* 。 如果微型端口驱动程序不支持非对称分配，则每个非默认 VPort 将配置为具有相同数量的队列对。 这称为队列对的 *对称分配* 。
 
-小型小型驱动程序使用[**NDIS \_ NIC \_ 交换机 \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)结构在[*MiniportInitializeEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)期间公布其 VPort 和队列对功能。 该驱动程序通过 \_ \_ \_ \_ \_ \_ \_ 为 \_ \_ \_ 此结构的 **NicSwitchCapabilities** 成员中的非默认 VPORT 支持标志设置 NDIS NIC 交换机头非对称队列对，来公布其对队列对非对称分配的支持。
+小型小型驱动程序使用 [**NDIS \_ NIC \_ 交换机 \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)结构在 [*MiniportInitializeEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)期间公布其 VPort 和队列对功能。 该驱动程序通过 \_ \_ \_ \_ \_ \_ \_ 为 \_ \_ \_ 此结构的 **NicSwitchCapabilities** 成员中的非默认 VPORT 支持标志设置 NDIS NIC 交换机头非对称队列对，来公布其对队列对非对称分配的支持。
 
 如果微型端口驱动程序支持非对称队列对分配，则虚拟化堆栈会将每个非默认 VPort 配置为具有不同的队列对数。 如果微型端口驱动程序支持对称队列对分配，则虚拟化堆栈会将每个 VPort 配置为具有相同数量的队列对。
 
-**注意**   支持非默认 VPorts 上的对称或非对称队列对分配的微型端口驱动程序必须支持在默认 VPort 上分配不同的队列对数。 默认 VPort 始终连接到网络适配器的 PF。
+**注意**  支持非默认 VPorts 上的对称或非对称队列对分配的微型端口驱动程序必须支持在默认 VPort 上分配不同的队列对数。 默认 VPort 始终连接到网络适配器的 PF。
 
  
 
@@ -41,7 +40,7 @@ ms.locfileid: "89207399"
 -   63非默认的 VF VPorts 每个队列对，其中每个都包含一个队列对，默认 PF 为 VPort。
 -   31个非默认的 VF VPorts 每个队列对，其中每个都有一个队列对，默认 PF 为 VPort。
 
-**注意**   从 Windows Server 2012 开始，仅支持一个默认 VPort，并始终连接到网络适配器的 PF。
+**注意**  从 Windows Server 2012 开始，仅支持一个默认 VPort，并始终连接到网络适配器的 PF。
 
  
 

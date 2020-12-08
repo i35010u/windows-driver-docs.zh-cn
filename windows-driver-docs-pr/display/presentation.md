@@ -1,7 +1,6 @@
 ---
 title: 呈现
 description: 呈现
-ms.assetid: 23a01b5b-0654-4c43-ac96-a75810fa20df
 keywords:
 - DirectX 8.0 发行说明 WDK Windows 2000 显示，演示
 - 演示文稿 WDK DirectX 8。0
@@ -11,12 +10,12 @@ keywords:
 - DDBLT_LAST_PRESENTATION
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2bff4b19ca157fb9a75958a4c35e755f313d0d73
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 378938048b907b365f71fd56931f5ce9f0f0a499
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716014"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840757"
 ---
 # <a name="presentation"></a>呈现
 
@@ -30,7 +29,7 @@ DirectX 8.0 添加了两个新的 DirectDraw blt 标志，这些标志将作为�
 
 该驱动程序只允许排队最多三个帧。 如果驱动程序发现 blt 调用带有 DDBLT \_ 演示集，并且它已经有三个 DDBLT， \_ 最后一个 \_ 表示 blts 排队，则必须通过 DDERR WASSTILLDRAWING 使调用失败 \_ 。 运行时将重试，直到队列充分耗尽。
 
-如果驱动程序无法有效地确定 \_ 队列中 DDBLT 最后一次 blt 的时间 \_ 已停用，则驱动程序必须根本不会对帧进行排队。 DDBLT \_ 最后一次 \_ 演示应该导致此类驱动程序返回 DDERR \_ WASSTILLDRAWING，直到快捷键完全完成，就像在调用**Blt**之前，应用程序已在源图面上调用**锁**。
+如果驱动程序无法有效地确定 \_ 队列中 DDBLT 最后一次 blt 的时间 \_ 已停用，则驱动程序必须根本不会对帧进行排队。 DDBLT \_ 最后一次 \_ 演示应该导致此类驱动程序返回 DDERR \_ WASSTILLDRAWING，直到快捷键完全完成，就像在调用 **Blt** 之前，应用程序已在源图面上调用 **锁**。
 
 最后，对于同时运行的多个开窗应用程序，驱动程序应基于每个 blt 的源（而不是主应用程序）对 blts 进行计数，也就是说，允许驱动程序将每个窗口/呈现器目标的三个帧排队。 这将提高性能。
 

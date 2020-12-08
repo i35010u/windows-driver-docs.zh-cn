@@ -1,7 +1,6 @@
 ---
 title: 电源管理支持
 description: 电源管理支持
-ms.assetid: 77e8be50-9623-4085-8d38-44db676a9a1f
 keywords:
 - 电源管理 WDK 内核，支持要求
 - 电源管理 WDK 内核，关于电源管理
@@ -9,12 +8,12 @@ keywords:
 - 即插即用 WDK 电源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d6a24738256634022dc88b648eb097d1dfdffabf
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 2d3d0e995255225826cb3e1459708f309afaa86d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89402814"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840325"
 ---
 # <a name="support-for-power-management"></a>电源管理支持
 

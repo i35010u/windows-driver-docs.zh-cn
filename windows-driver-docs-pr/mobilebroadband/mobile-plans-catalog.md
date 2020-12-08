@@ -1,19 +1,18 @@
 ---
 title: 移动套餐目录
 description: 移动套餐目录
-ms.assetid: ddc77035-fa0a-4866-b850-aa7926a398ac
 keywords:
 - Windows Mobile 计划移动运营商
 ms.date: 07/31/2019
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 6796f38cec7f900c1547d839116e4f79deb5bdf8
-ms.sourcegitcommit: e6247811ff9a07070547af3d89705dae33a2f465
+ms.openlocfilehash: 8576e552dd9d0212577e174fb4169624a18401a9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91026424"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840315"
 ---
 # <a name="mobile-plans-operator-catalog"></a>Mobile plan 操作员目录
 

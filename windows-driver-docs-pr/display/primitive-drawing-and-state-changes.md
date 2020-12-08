@@ -1,7 +1,6 @@
 ---
 title: 基元绘制和状态更改
 description: 基元绘制和状态更改
-ms.assetid: 01eba14d-234e-48f5-9116-47760dfdae0e
 keywords:
 - Direct3D WDK Windows 2000 显示，基元绘图
 - Direct3D WDK Windows 2000 显示，状态更改
@@ -10,12 +9,12 @@ keywords:
 - D3dDrawPrimitives2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 163d677f23685ad9f81df8a765c3a840c6be7f65
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 7c456805bcf3d37701d86ec15d32c10c08ce5361
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066452"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840999"
 ---
 # <a name="primitive-drawing-and-state-changes"></a>基元绘制和状态更改
 

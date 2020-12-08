@@ -1,19 +1,18 @@
 ---
 title: 用户模式库
 description: 用户模式库
-ms.assetid: a471ae15-bbdd-47c8-ad77-9b82281dd430
 keywords:
 - 筛选器管理器 WDK 文件系统微筛选器，用户模式库
 - 用户模式库 WDK 文件系统微筛选器
 - Fltlib.dll
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 53d13d925b2d69520c68f65de0060bff109308cc
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: d094d9a1da8587bac043c56936aa1d61b4385301
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714956"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841125"
 ---
 # <a name="user-mode-library"></a>用户模式库
 
@@ -24,7 +23,7 @@ ms.locfileid: "90714956"
 
 对于 minifilters，用户模式通信 Api 不需要管理员权限。 相反，微筛选器使用端口上定义的 [**ACL**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_acl) 来定义所需的权限。
 
-### <a name="span-idfilter_manager_user-mode_library_routinesspanspan-idfilter_manager_user-mode_library_routinesspanspan-idfilter_manager_user-mode_library_routinesspanfilter-manager-user-mode-library-routines"></a><span id="Filter_Manager_User-Mode_Library_Routines"></span><span id="filter_manager_user-mode_library_routines"></span><span id="FILTER_MANAGER_USER-MODE_LIBRARY_ROUTINES"></span>筛选器管理器用户模式库例程
+### <a name="span-idfilter_manager_user-mode_library_routinesspanspan-idfilter_manager_user-mode_library_routinesspanspan-idfilter_manager_user-mode_library_routinesspanfilter-manager-user-mode-library-routines"></a><span id="Filter_Manager_User-Mode_Library_Routines"></span><span id="filter_manager_user-mode_library_routines"></span><span id="FILTER_MANAGER_USER-MODE_LIBRARY_ROUTINES"></span>筛选器管理器 User-Mode 库例程
 
 筛选器管理器为用户模式应用程序提供了以下用于加载和卸载微筛选器驱动程序的支持例程：
 

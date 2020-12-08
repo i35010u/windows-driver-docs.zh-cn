@@ -1,17 +1,16 @@
 ---
 title: 在 Visual Studio 中创建服务元数据提交包
 description: 在 Visual Studio 中创建服务元数据提交包
-ms.assetid: 93C2F66B-EAD3-4C7B-A761-E0AF861101D0
 keywords:
 - 在 Visual Studio 中创建服务元数据提交包
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3aac26051b9e50853234e2f31c15fdf5ddd95241
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 54a7be51db93b44c7d1fa48cad0ce5657f687a61
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383225"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841143"
 ---
 # <a name="creating-a-service-metadata-submission-package-in-visual-studio"></a>在 Visual Studio 中创建服务元数据提交包
 
@@ -24,20 +23,20 @@ ms.locfileid: "89383225"
 2.  单击 " **添加元数据包**"，查找并选择元数据包，并单击 " **打开**"。
 3.  确认 **包名称** 和 **型号名称**，然后选择 " **预览** " （如果要预览包）。
 
-    **注意**   "**模型名称**" 字段是服务**提供商**名称，它是作为服务元数据包的一部分指定的。
+    **注意**  " **模型名称** " 字段是服务 **提供商** 名称，它是作为服务元数据包的一部分指定的。
 
      
 
-4.  单击“下一步” 。
-5.  查看 **模型名称**、 **硬件 ID**和 **体验 ID**。
+4.  单击 **“下一步”** 。
+5.  查看 **模型名称**、 **硬件 ID** 和 **体验 ID**。
 6.  在 " **体验名称**" 旁边，键入体验的名称。
-    **注意**   所有包提交都需要执行此步骤。
+    **注意**  所有包提交都需要执行此步骤。
 
      
 
 7.  在 " **限定**" 旁边，选择 " **此设备具有关联的徽标或** 从列表中未分类的提交"。
 8.  如果之前已提交了包，请选择 " **更新体验**"。
-9.  单击“下一步” 。
+9.  单击 **“下一步”** 。
 10. 通过重新输入硬件 ID 信息 (例如，IMSI 或 ICCID) 来确认移动宽带提供商的信息。 Windows 开发人员中心中的 "硬件" 面板使用纯文本硬件 ID 信息来验证元数据包中指定的哈希硬件 Id。
 11. 如果尚未对包进行签名，请按照以下步骤对其进行签名：
 
@@ -46,7 +45,7 @@ ms.locfileid: "89383225"
     3.  单击 " **启动签名向导**"。
     4.  单击 " **选择存储**"。
     5.  从对话框中选择证书。
-        **注意**   签名向导中的文件名是完成提交元数据向导后收到的内容。 因此，除非有特定原因，否则请不要更改文件名或路径。
+        **注意**  签名向导中的文件名是完成提交元数据向导后收到的内容。 因此，除非有特定原因，否则请不要更改文件名或路径。
 
          
 

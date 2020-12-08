@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ CAMERACONTROL \_ 曝光 \_ 相对
 description: KSPROPERTY \_ CAMERACONTROL \_ 曝露 \_ 相对属性指定电子快门速度。
-ms.assetid: a4003fcd-9dc8-4889-9ce0-e4f09273d152
 keywords:
 - KSPROPERTY_CAMERACONTROL_EXPOSURE_RELATIVE 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d7bd0bd92bb25c8151a2b632541d3c32388a671c
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 1a9c3c36b73da78682a539ca82a2e40ab717a6e4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104676"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840569"
 ---
 # <a name="ksproperty_cameracontrol_exposure_relative"></a>KSPROPERTY \_ CAMERACONTROL \_ 曝光 \_ 相对
 
@@ -71,7 +70,7 @@ KSPROPERTY \_ CAMERACONTROL \_ 曝露 \_ 相对属性指定电子快门速度。
 <thead>
 <tr class="header">
 <th>“值”</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -121,7 +120,7 @@ KSPROPERTY \_ CAMERACONTROL \_ 曝露 \_ 相对属性指定电子快门速度。
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY \_ CAMERACONTROL \_ 节点 \_ S**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s)

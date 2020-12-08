@@ -1,17 +1,16 @@
 ---
 title: Windows Vista 以前的网络驱动程序
 description: Windows Vista 以前的网络驱动程序
-ms.assetid: 92BD380D-D69A-4ECE-846D-946E9ED6195F
 keywords:
 - Windows Vista WDK、NDIS 5.1 网络驱动程序、Windows 2000 网络驱动程序、Windows XP 网络驱动程序之前的网络驱动程序
 ms.date: 12/07/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 20b469a670b3673704b230a9047756a573230b22
-ms.sourcegitcommit: 366a15d68eb58d01a8ca6de7b982f62ac8b7deaf
+ms.openlocfilehash: ef057bcd3e7bf6b054c2d9e27a587e0d3906fb86
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/19/2020
-ms.locfileid: "90811972"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840893"
 ---
 # <a name="network-drivers-prior-to-windows-vista"></a>Windows Vista 以前的网络驱动程序
 

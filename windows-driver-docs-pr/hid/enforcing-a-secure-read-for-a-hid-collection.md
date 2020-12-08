@@ -1,7 +1,6 @@
 ---
 title: 强制实施适用于 HID 集合的安全读取
 description: 强制实施适用于 HID 集合的安全读取
-ms.assetid: be3c7d1b-195c-4b7f-a404-070b3b265333
 keywords:
 - 集合 WDK HID，安全读取
 - HID 集合 WDK，安全读取
@@ -9,12 +8,12 @@ keywords:
 - 受信任的安全读取 WDK HID
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 74ea926d1d4bace56c7deca383f8312af036eff7
-ms.sourcegitcommit: 9145bffd4cc3b990a9ebff43b588db6ef2001f5d
+ms.openlocfilehash: 60e0707fb646c9858f8b1481fd1e4432b2850fea
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89592457"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838925"
 ---
 # <a name="enforcing-a-secure-read-for-a-hid-collection"></a>强制实施适用于 HID 集合的安全读取
 
@@ -22,7 +21,7 @@ ms.locfileid: "89592457"
 
 
 
-本部分介绍用户模式的应用程序或内核模式驱动程序如何强制对顶级[HID 集合](hid-collections.md)进行*安全读取*。
+本部分介绍用户模式的应用程序或内核模式驱动程序如何强制对顶级 [HID 集合](hid-collections.md)进行 *安全读取*。
 
 如果为集合启用了安全读取，则只有 "受信任的" 客户端 (具有 SeTcbPrivilege 特权的客户端) 可以从集合的打开文件获取输入。 默认情况下，内核模式驱动程序具有 SeTcbPrivilege 权限，但用户模式应用程序不具有。 有关如何在用户模式下获取系统特权的信息，请参阅 Microsoft Windows SDK 文档中有关授权的信息。
 

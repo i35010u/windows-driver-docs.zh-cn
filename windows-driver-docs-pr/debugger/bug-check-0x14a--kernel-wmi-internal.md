@@ -1,9 +1,8 @@
 ---
-title: Bug Check 0x14A KERNEL_WMI_INTERNAL
-description: KERNEL_WMI_INTERNAL bug 检查具有 0x0000014A 值。 这表示内部内核 WMI 子系统遇到致命错误。
-ms.assetid: 2E739F6B-4618-44A5-B060-F2BCB77B82A3
+title: Bug 检查 0x14A KERNEL_WMI_INTERNAL
+description: KERNEL_WMI_INTERNAL bug 检查的值为0x0000014A。 这表明内部内核 WMI 子系统遇到错误。
 keywords:
-- Bug Check 0x14A KERNEL_WMI_INTERNAL
+- Bug 检查 0x14A KERNEL_WMI_INTERNAL
 - KERNEL_WMI_INTERNAL
 ms.date: 05/23/2017
 topic_type:
@@ -13,23 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8eb230d02b9b46269c851883ca6c8e4f64434936
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: f23a3f864f1c0c7d05c6c98ed08775f3c61b7ec1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67520097"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840219"
 ---
-# <a name="bug-check-0x14a-kernelwmiinternal"></a>Bug 检查 0x14A：KERNEL\_WMI\_INTERNAL
+# <a name="bug-check-0x14a-kernel_wmi_internal"></a>Bug 检查0x14A：内核 \_ WMI \_ 内部
 
 
-内核\_WMI\_内部 bug 检查的值为 0x0000014A。 这表示内部内核 WMI 子系统遇到致命错误。
+内核 \_ WMI \_ 内部错误检查的值为0x0000014A。 这表明内部内核 WMI 子系统遇到错误。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="kernelwmiinternal-parameters"></a>内核\_WMI\_内部参数
+## <a name="kernel_wmi_internal-parameters"></a>内核 \_ WMI \_ 内部参数
 
 
 <table>
@@ -46,22 +45,22 @@ ms.locfileid: "67520097"
 <tbody>
 <tr class="odd">
 <td align="left">1</td>
-<td align="left"><p>0 :从 0 增加了内核 WMI 条目引用计数。</p>
-参数 2:内核 WMI 条目的指针。
-<p>1 :内核 WMI 数据源已过早删除。</p>
-参数 2:到内核 WMI 数据源的指针。</td>
+<td align="left"><p>0：内核 WMI 条目引用计数已从0递增。</p>
+参数2：指向内核 WMI 项的指针。
+<p>1：已过早删除内核 WMI 数据源。</p>
+参数2：指向内核 WMI 数据源的指针。</td>
 </tr>
 <tr class="even">
 <td align="left">2</td>
-<td align="left">请参阅参数 1</td>
+<td align="left">请参阅参数1</td>
 </tr>
 <tr class="odd">
 <td align="left">3</td>
-<td align="left">保留</td>
+<td align="left">预留</td>
 </tr>
 <tr class="even">
 <td align="left">4</td>
-<td align="left">保留</td>
+<td align="left">预留</td>
 </tr>
 </tbody>
 </table>

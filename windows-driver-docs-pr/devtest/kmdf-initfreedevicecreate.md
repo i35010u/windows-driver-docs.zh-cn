@@ -1,7 +1,6 @@
 ---
 title: 'InitFreeDeviceCreate 规则 (kmdf) '
 description: InitFreeDeviceCreate 规则指定如果某个设备对象初始化方法中出现错误，并且驱动程序从对 WdfControlDeviceInitAllocate 的调用接收到 WDFDEVICE INIT 结构，则驱动程序必须调用 WdfDeviceInitFree 而不是 WdfDeviceCreate \_ 。
-ms.assetid: 9d33bd42-8781-442e-9c7d-00b6f04b1634
 ms.date: 05/21/2018
 keywords:
 - 'InitFreeDeviceCreate 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c0973c39237e44ef043a8485531b93ab8aa9bd92
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: b9d3581b2df735ce62729cac843878dc0c5fad0c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106662"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841307"
 ---
 # <a name="initfreedevicecreate-rule-kmdf"></a>InitFreeDeviceCreate 规则 (kmdf) 
 
 
-**InitFreeDeviceCreate**规则指定如果某个设备对象初始化方法中出现错误，并且驱动程序从对[**WdfControlDeviceInitAllocate**](/windows-hardware/drivers/ddi/wdfcontrol/nf-wdfcontrol-wdfcontroldeviceinitallocate)的调用接收到[**WDFDEVICE \_ INIT**](../wdf/wdfdevice_init.md)结构，则驱动程序必须调用[**WdfDeviceInitFree**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitfree)而不是[**WdfDeviceCreate**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate) 。
+**InitFreeDeviceCreate** 规则指定如果某个设备对象初始化方法中出现错误，并且驱动程序从对 [**WdfControlDeviceInitAllocate**](/windows-hardware/drivers/ddi/wdfcontrol/nf-wdfcontrol-wdfcontroldeviceinitallocate)的调用接收到 [**WDFDEVICE \_ INIT**](../wdf/wdfdevice_init.md)结构，则驱动程序必须调用 [**WdfDeviceInitFree**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitfree)而不是 [**WdfDeviceCreate**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate) 。
 
 **驱动程序模型： KMDF**
 

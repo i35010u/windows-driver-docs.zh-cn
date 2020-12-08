@@ -1,15 +1,14 @@
 ---
 title: GPIO 中断
 description: 某些常规用途 I/O (GPIO) 控制器设备可以配置其 GPIO 引脚，使之充当中断请求输入。
-ms.assetid: 0F56AD4C-E0BF-49F1-AB67-0107D08DEF9F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 14c8cda3b3d4d6f5e862ca095410a9d3892507a5
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: f174251496e88d1582476cf4bb3035e1b260e64a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106856"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840743"
 ---
 # <a name="gpio-interrupts"></a>GPIO 中断
 
@@ -29,7 +28,7 @@ ms.locfileid: "90106856"
 <thead>
 <tr class="header">
 <th>主题</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

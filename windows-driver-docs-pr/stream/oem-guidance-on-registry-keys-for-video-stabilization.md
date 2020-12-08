@@ -1,20 +1,19 @@
 ---
 title: 视频防抖动注册表设置
 description: VideoStabilization 注册表项中的 OEM set MaxPixelsPerSecond 值使 Oem 能够在设备上配置视频抖动设置，并在捕获时将视频抖动应用到视频。
-ms.assetid: F0F7A705-0F39-4A62-A110-A2E47DFB7B42
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ffb243e4ab8cd9794973b05844ae88c555e4a5c0
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 3a375c3aa94838f580787e1bfd471f0c3b7e5ddd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190392"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840523"
 ---
 # <a name="video-stabilization-registry-settings"></a>视频防抖动注册表设置
 
 
-**VideoStabilization**注册表项中的 Oem set **MaxPixelsPerSecond**值使 oem 能够在设备上配置视频抖动设置，并在捕获时将视频抖动应用到视频。 该配置会考虑设备的录制分辨率，并考虑其硬件和软件功能。
+**VideoStabilization** 注册表项中的 Oem set **MaxPixelsPerSecond** 值使 oem 能够在设备上配置视频抖动设置，并在捕获时将视频抖动应用到视频。 该配置会考虑设备的录制分辨率，并考虑其硬件和软件功能。
 
 ## <a name="overview"></a>概述
 
@@ -105,4 +104,4 @@ Oem 必须验证以下各项：
 **注意** 零售系统不应具有用于禁用本部分中所述视频稳定化内部逻辑的注册表项。 但是，零售系统应具有 **VideoStabilization** 注册表项，该注册表项具有通过此测试过程确定的 **MaxPixelsPerSecond** 值。
 
 
-**注意**仅当对此效果设置了 attribute [MF \_ 低 \_ 延迟](/windows/desktop/medfound/mf-low-latency)时， **VideoStabilization**注册表项**MaxPixelsPerSecond**值功能才起作用。 将提供的视频抖动效果添加到 MediaCapture 管道后，会自动设置属性。 但是，如果将视频抖动效果插入到未设置 **MF \_ 低 \_ 延迟** 属性的自定义管道或管道，则注册表项不起作用。
+**注意** 仅当对此效果设置了 attribute [MF \_ 低 \_ 延迟](/windows/desktop/medfound/mf-low-latency)时， **VideoStabilization** 注册表项 **MaxPixelsPerSecond** 值功能才起作用。 将提供的视频抖动效果添加到 MediaCapture 管道后，会自动设置属性。 但是，如果将视频抖动效果插入到未设置 **MF \_ 低 \_ 延迟** 属性的自定义管道或管道，则注册表项不起作用。

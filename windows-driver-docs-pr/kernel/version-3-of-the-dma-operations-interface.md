@@ -1,15 +1,14 @@
 ---
 title: DMA 操作接口版本 3
 description: 从 Windows 8 开始，将提供 DMA 操作接口的第3版。
-ms.assetid: EFB59930-7D58-4E6E-8242-66A326E239E5
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 1ea21937f421b4e9ae86ba55e9dd30e895467bd0
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: f5540b25aa2b114768b7db00fd0f1e78e80d7fff
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185379"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840673"
 ---
 # <a name="version-3-of-the-dma-operations-interface"></a>DMA 操作接口版本 3
 
@@ -43,7 +42,8 @@ ms.locfileid: "89185379"
 
 这些例程同时用于使用专用 DMA 控制器的总线主控设备以及共享系统 DMA 控制器的从属设备。 有关驱动程序在典型 DMA 传输过程中所做调用的分步说明，请参阅 [版本 3 Dma 例程的基本调用模式](basic-calling-pattern-for-version-3-dma-routines.md)。
 
-**注意**   在 DMA 操作接口的第3版中，在 DMA 传输之前或之后不需要对[**KeFlushIoBuffers**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keflushiobuffers)例程的调用。 原因在于，以下例程涵盖了在不在硬件中强制进行缓存一致性的平台上刷新数据缓存的需求：
+**注意**  
+在 DMA 操作接口的第3版中，在 DMA 传输之前或之后不需要对 [**KeFlushIoBuffers**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keflushiobuffers) 例程的调用。 原因在于，以下例程涵盖了在不在硬件中强制进行缓存一致性的平台上刷新数据缓存的需求：
 
 -   **MapTransferEx** 确保在写入 (内存到设备) 传输之前刷新处理器数据缓存。
 -   **FlushAdapterBuffersEx** 可确保在读取 (设备到内存) 传输后，缓存失效。

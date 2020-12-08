@@ -1,7 +1,6 @@
 ---
 title: 流类注册表值
 description: 流类注册表值
-ms.assetid: a6800f53-4d55-4a28-839b-47f0cecc17bf
 keywords:
 - Stream.sys 类驱动程序 WDK Windows 2000 内核，注册表
 - 流式处理微型驱动程序 WDK Windows 2000 内核，注册表
@@ -9,16 +8,16 @@ keywords:
 - 注册表 WDK 流式处理微型驱动程序
 ms.date: 08/25/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: cfe4be6b90440230ce7dbfadb89d2e5172558a61
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 69a177931da774dea2e73d7e5ce15d6e2112a61a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186271"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839851"
 ---
 # <a name="stream-class-registry-values"></a>流类注册表值
 
-若要在 *Stream.sys*下安装微型驱动程序，供应商必须提供符合 inf 文件语法的设备特定 inf 文件，如 [inf 文件部分](../install/inf-classinstall32-section.md) 和 [inf 文件指令](../install/inf-addcomponent-directive.md)中所述。 在此文件中，在 stream 类下运行的微型驱动程序可以在设备特定的 [**AddReg**](../install/inf-addreg-directive.md) 节中设置特殊的注册表值。 这些注册表项作为二进制指示器：将其设置为十六进制值01以启用该功能。
+若要在 *Stream.sys* 下安装微型驱动程序，供应商必须提供符合 inf 文件语法的设备特定 inf 文件，如 [inf 文件部分](../install/inf-classinstall32-section.md) 和 [inf 文件指令](../install/inf-addcomponent-directive.md)中所述。 在此文件中，在 stream 类下运行的微型驱动程序可以在设备特定的 [**AddReg**](../install/inf-addreg-directive.md) 节中设置特殊的注册表值。 这些注册表项作为二进制指示器：将其设置为十六进制值01以启用该功能。
 
 Stream 类微型驱动程序可以使用以下注册表值：
 
@@ -38,7 +37,7 @@ Stream 类微型驱动程序可以使用以下注册表值：
 
 **DontSuspendIfStreamsAreRunning**
   
-此注册表变量在 Windows 2000 和更高版本的基于 NT 的操作系统中已过时。  (在此版本中，DirectShow 会侦听 power query，并使所有流在收到低功耗查询时暂停。 ) 应用程序仍可以通过调用 **SetThreadExecutionState**来通知系统正在使用它。 此例程在 Microsoft Windows SDK 文档中进行了介绍。 或者，驱动程序可以使用 [**PoSetSystemState**](/windows-hardware/drivers/ddi/wdm/nf-wdm-posetsystemstate)。
+此注册表变量在 Windows 2000 和更高版本的基于 NT 的操作系统中已过时。  (在此版本中，DirectShow 会侦听 power query，并使所有流在收到低功耗查询时暂停。 ) 应用程序仍可以通过调用 **SetThreadExecutionState** 来通知系统正在使用它。 此例程在 Microsoft Windows SDK 文档中进行了介绍。 或者，驱动程序可以使用 [**PoSetSystemState**](/windows-hardware/drivers/ddi/wdm/nf-wdm-posetsystemstate)。
 
 **OkToHibernate**
   

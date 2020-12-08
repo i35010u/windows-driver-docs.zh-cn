@@ -1,7 +1,6 @@
 ---
 title: KSCATEGORY_QUALITY
 description: KSCATEGORY_QUALITY
-ms.assetid: fc23e069-b514-41a3-b3c2-c65b35b2e431
 keywords:
 - KSCATEGORY_QUALITY 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 4f784e0a606f10bd2c92f3cc6ccf5cf62f8150e6
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: e49ca8f472a5bfb20daa2059cbdb65020966d015
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095061"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840047"
 ---
 # <a name="kscategory_quality"></a>KSCATEGORY_QUALITY
 

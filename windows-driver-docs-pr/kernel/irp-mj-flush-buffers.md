@@ -2,16 +2,15 @@
 title: IRP_MJ_FLUSH_BUFFERS
 description: 对于包含数据的内部缓存的设备的驱动程序，维护数据的内部缓冲区的驱动程序必须在 DispatchFlushBuffers 例程中处理此请求。
 ms.date: 08/12/2017
-ms.assetid: c1023999-0c80-4c09-a9ea-a9422184bba7
 keywords:
-- IRP_MJ_FLUSH_BUFFERS 内核模式驱动程序体系结构
+- IRP_MJ_FLUSH_BUFFERS Kernel-Mode 驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: cdae24b6ae2efe5cb125c27e25886ddf9641180b
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 6aebd1934d6d3d9fa35c07928c6b50b571d1a9cd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191361"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839057"
 ---
 # <a name="irp_mj_flush_buffers"></a>IRP \_ MJ \_ 刷新 \_ 缓冲区
 
@@ -54,7 +53,7 @@ ms.locfileid: "89191361"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [*DispatchFlushBuffers*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)

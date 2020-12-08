@@ -1,9 +1,8 @@
 ---
-title: KSEVENT\_连接\_ENDOFSTREAM
-description: KSEVENT\_连接\_ENDOFSTREAM 事件允许客户端接收端流事件的通知。
-ms.assetid: f6fb9408-9926-48e6-b2a4-2ba7e0251544
+title: KSEVENT \_ 连接 \_ ENDOFSTREAM
+description: KSEVENT \_ CONNECTION \_ ENDOFSTREAM 事件允许客户端接收流事件结束的通知。
 keywords:
-- KSEVENT_CONNECTION_ENDOFSTREAM 流式处理媒体设备
+- KSEVENT_CONNECTION_ENDOFSTREAM 流媒体设备
 topic_type:
 - apiref
 api_name:
@@ -12,17 +11,17 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f01351eae6e51216eeed3ac2840e024cb85e869e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 18c9352ba616292826636570cb912b3363d98141
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323525"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840585"
 ---
-# <a name="kseventconnectionendofstream"></a>KSEVENT\_连接\_ENDOFSTREAM
+# <a name="ksevent_connection_endofstream"></a>KSEVENT \_ 连接 \_ ENDOFSTREAM
 
 
-**KSEVENT\_连接\_ENDOFSTREAM**事件允许客户端接收端流事件的通知。 此事件发生时标准流式处理时其标头的 KSTREAM 的缓冲区使用标头\_标头\_OPTIONSF\_ENDOFSTREAM 变量完成处理。 *呈现*点必须支持此事件，因此可以由客户端检测到流事件的结束。
+**KSEVENT \_ CONNECTION \_ ENDOFSTREAM** 事件允许客户端接收流事件结束的通知。 当使用标准流式处理标头时，如果其标头具有 KSTREAM 标头 OPTIONSF ENDOFSTREAM 变量，则会发生此事件 \_ \_ \_ 完成处理。 *呈现* 点必须支持此事件，以便客户端可以检测到流事件结束。
 
  
 

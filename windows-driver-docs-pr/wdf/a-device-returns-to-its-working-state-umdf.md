@@ -1,18 +1,17 @@
 ---
 title: '设备返回到其工作状态 (UMDF 1) '
 description: 设备回到工作状态
-ms.assetid: 2b192eea-f731-4d61-be19-95724bf7b04a
 keywords:
 - 电源管理方案 WDK UMDF，设备返回到其工作状态
 - 设备返回到工作状态方案 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ae70236cb05127b0efa15bcf648d170afa0785e
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 81eedd61a1ed07b3b827af8f8da58c2ce27e0eb0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190115"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840473"
 ---
 # <a name="a-device-returns-to-its-working-state-umdf-1"></a>设备返回到其工作状态 (UMDF 1) 
 

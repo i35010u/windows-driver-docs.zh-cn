@@ -1,15 +1,14 @@
 ---
 title: 调试资源
 description: 使用 Windows 调试工具调试 Windows 系统上的驱动程序、应用程序和服务。
-ms.assetid: F2111416-EC6C-4967-B123-9A6101040561
 ms.date: 12/09/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 87545d48c8ca0be688ca39dfaab44d365396e171
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: e99e51c41a8fd1f0ce041027b196af24bd8c566c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732959"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839167"
 ---
 # <a name="debugging-resources"></a>调试资源
 
@@ -23,12 +22,12 @@ ms.locfileid: "91732959"
 
 - [下载并安装适用于 Windows 的调试工具](../download-the-wdk.md)
 
-## <a name="span-iddebugger_how-tosspanspan-iddebugger_how-tosspanspan-iddebugger_how-tosspandebugger-how-tos"></a><span id="Debugger_How-Tos"></span><span id="debugger_how-tos"></span><span id="DEBUGGER_HOW-TOS"></span>调试器操作说明
+## <a name="span-iddebugger_how-tosspanspan-iddebugger_how-tosspanspan-iddebugger_how-tosspandebugger-how-tos"></a><span id="Debugger_How-Tos"></span><span id="debugger_how-tos"></span><span id="DEBUGGER_HOW-TOS"></span>调试器 How-Tos
 
 - [高级驱动程序调试：第1部分 \[ 媒体文件\]](https://download.microsoft.com/download/B/1/6/B161948D-EDE1-4AEF-8776-AD485CDDCD9E/TDDR05003.wvx)
 - [高级驱动程序调试：第2部分 \[ 媒体文件\]](https://download.microsoft.com/download/B/1/6/B161948D-EDE1-4AEF-8776-AD485CDDCD9E/TDDR05004.wvx)
 - [避免调试器搜索不需要的符号](./avoiding-debugger-searches-for-unneeded-symbols.md)
-- [调试内核模式驱动程序框架驱动程序](../wdf/debugging-kernel-mode-driver-framework-drivers.md)
+- [调试 Kernel-Mode Driver Framework 驱动程序](../wdf/debugging-kernel-mode-driver-framework-drivers.md)
 - [调试 WDF 驱动程序](./debug-universal-drivers---step-by-step-lab--echo-kernel-mode-.md)
 - [BCDEdit /dbgsettings](../devtest/bcdedit--dbgsettings.md)
 -  [用于调试驱动程序的工具](../devtest/tools-for-debugging-drivers.md) (WDK 文档) 

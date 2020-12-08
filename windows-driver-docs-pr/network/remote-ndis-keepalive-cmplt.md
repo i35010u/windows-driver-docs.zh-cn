@@ -1,20 +1,19 @@
 ---
 title: REMOTE_NDIS_KEEPALIVE_CMPLT
 description: 远程 NDIS 设备将通过发送回 REMOTE_NDIS_KEEPALIVE_CMPLT 响应消息来响应来自主机的 REMOTE_NDIS_KEEPALIVE_MSG 消息。
-ms.assetid: c090b781-73f1-4a7a-a0a2-60af366daa77
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b0c2b82418abf205c84103d74dc4abb2a18a8c4
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: f56e558f9e9d1fb411383a1c4d6a36606c6a4ae4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88969404"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840611"
 ---
 # <a name="remote_ndis_keepalive_cmplt"></a>远程 \_ NDIS \_ KEEPALIVE \_ CMPLT
 
 
-远程 ndis 设备将通过回发远程 ndis keepalive CMPLT 响应消息，来响应来自主机的 [**远程 \_ ndis \_ keepalive \_ **](remote-ndis-keepalive-msg.md) 消息消息 \_ \_ \_ 。 如果返回的状态不是 "RNDIS" \_ \_ ，则主机将发送 [**远程 \_ NDIS \_ reset \_ MSG**](remote-ndis-reset-msg.md) 以重置设备。
+远程 ndis 设备将通过回发远程 ndis keepalive CMPLT 响应消息，来响应来自主机的 [**远程 \_ ndis \_ keepalive \_**](remote-ndis-keepalive-msg.md) 消息消息 \_ \_ \_ 。 如果返回的状态不是 "RNDIS" \_ \_ ，则主机将发送 [**远程 \_ NDIS \_ reset \_ MSG**](remote-ndis-reset-msg.md) 以重置设备。
 
 <table>
 <colgroup>
@@ -28,7 +27,7 @@ ms.locfileid: "88969404"
 <th>Offset</th>
 <th>大小</th>
 <th>字段</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -61,7 +60,7 @@ ms.locfileid: "88969404"
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 如果设备实现了发送 [**远程 \_ ndis \_ keepalive \_ 消息**](remote-ndis-keepalive-msg.md)的选项，则主机将 \_ \_ \_ 通过控制通道使用远程 ndis keepalive CMPLT 进行响应。
@@ -76,7 +75,7 @@ ms.locfileid: "88969404"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
+<td><p>版本</p></td>
 <td><p>在 Microsoft Windows XP 和更高版本的 Windows 操作系统中可用。 在 Windows 2000 中也可以作为可再发行二进制文件。</p></td>
 </tr>
 <tr class="even">

@@ -1,18 +1,17 @@
 ---
 title: NetAdapterCx 版本概述
 description: 本主题列出了网络适配器 WDF 类扩展 (NetAdapterCx) 的版本。
-ms.assetid: 14847DED-FC24-4020-8526-D5F3A85882EB
 keywords:
 - 版本概述网络适配器类扩展，版本概述 NetAdapterCx，版本概述 NetCx
 ms.date: 11/04/2019
 ms.localizationpriority: medium
 ms.custom: Vib
-ms.openlocfilehash: 4935c6e307d3d6aa45d178ece3872a419521c527
-ms.sourcegitcommit: ea3215e9d5afe073ed6d01fb6dddf31d95ef3b63
+ms.openlocfilehash: 71053b12df390c0eecb9a8db720696090e40120d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94673759"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839049"
 ---
 # <a name="netadaptercx-version-overview"></a>NetAdapterCx 版本概述
 

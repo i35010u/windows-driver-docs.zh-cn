@@ -1,7 +1,6 @@
 ---
 title: 在 KMDF 驱动程序中使用 WPP 软件跟踪
 description: 在 KMDF 驱动程序中使用 WPP 软件跟踪
-ms.assetid: dad7aa8d-4ced-47b3-80d2-ec9cfb355783
 keywords:
 - 软件跟踪 WDK，基于框架的驱动程序
 - 调试驱动程序 WDK KMDF、软件跟踪
@@ -9,12 +8,12 @@ keywords:
 - WPP 软件跟踪 WDK，基于框架的驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 061b0036e81f4d424f7052cd934c8626ea7db2dc
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 0a991f7da64e68dbaab0d632eb4d08b26013dd73
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189709"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839827"
 ---
 # <a name="using-wpp-software-tracing-in-kmdf-drivers"></a>在 KMDF 驱动程序中使用 WPP 软件跟踪
 
@@ -27,7 +26,7 @@ ms.locfileid: "89189709"
 
 若要将跟踪消息添加到基于框架的驱动程序，必须执行以下操作：
 
-- 向每个包含任何 WPP 宏的驱动程序源文件添加** \# 包含**指令。 此指令必须标识 [跟踪消息标头 (TMH) 文件](../devtest/trace-message-header-file.md)。 文件名必须具有 tmh 格式的 &lt; *驱动程序* &gt; **.tmh**名称。
+- 向每个包含任何 WPP 宏的驱动程序源文件添加 **\# 包含** 指令。 此指令必须标识 [跟踪消息标头 (TMH) 文件](../devtest/trace-message-header-file.md)。 文件名必须具有 tmh 格式的 &lt; *驱动程序* &gt; **.tmh** 名称。
 
   例如，如果驱动程序包含两个源文件（称为 *mydriver1.inf* 和 *mydriver2.inf 会被*），则 *mydriver1.inf* 必须包含：
 
@@ -41,9 +40,9 @@ ms.locfileid: "89189709"
 
 - 在标头文件中定义 [WPP \_ 控件 \_ guid](/previous-versions/windows/hardware/previsioning-framework/ff556186(v=vs.85)) 宏。 此宏为驱动程序的跟踪消息定义 GUID 和 [跟踪标志](../devtest/trace-flags.md) 。
 
-- 在驱动程序的[**DriverEntry 例程**](./driverentry-for-kmdf-drivers.md)中包括[WPP \_ INIT \_ 跟踪](/previous-versions/windows/hardware/previsioning-framework/ff556191(v=vs.85))宏。 此宏激活驱动程序中的软件跟踪。
+- 在驱动程序的 [**DriverEntry 例程**](./driverentry-for-kmdf-drivers.md)中包括 [WPP \_ INIT \_ 跟踪](/previous-versions/windows/hardware/previsioning-framework/ff556191(v=vs.85))宏。 此宏激活驱动程序中的软件跟踪。
 
-- 在驱动程序的[*EvtDriverUnload*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_unload)回调函数中包括[WPP \_ 清理](/previous-versions/windows/hardware/previsioning-framework/ff556179(v=vs.85))宏。 此宏停用驱动程序中的软件跟踪。
+- 在驱动程序的 [*EvtDriverUnload*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_unload)回调函数中包括 [WPP \_ 清理](/previous-versions/windows/hardware/previsioning-framework/ff556179(v=vs.85))宏。 此宏停用驱动程序中的软件跟踪。
 
 - 使用驱动程序中的 [**DoTraceMessage**](/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85)) 宏或宏的 [自定义版本](../devtest/can-i-customize-dotracemessage-.md) 来创建跟踪消息。
 

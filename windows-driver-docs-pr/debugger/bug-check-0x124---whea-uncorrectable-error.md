@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x124 WHEA_UNCORRECTABLE_ERROR
 description: WHEA_UNCORRECTABLE_ERROR bug 检查的值为0x00000124。 此 bug 检查表明发生了致命的硬件错误。
-ms.assetid: b3b7c6dd-3891-4ccb-96d1-49e8a2de34c8
 keywords:
 - Bug 检查 0x124 WHEA_UNCORRECTABLE_ERROR
 - WHEA_UNCORRECTABLE_ERROR
@@ -13,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d0c2abba17df515fcf46cf202167752628a1f25
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 00489f3e89714156ebc6e75c1d3d6621594ab546
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211832"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838835"
 ---
 # <a name="bug-check-0x124-whea_uncorrectable_error"></a>Bug 检查0x124： WHEA 无法 \_ 纠正的 \_ 错误
 
@@ -156,7 +155,7 @@ WHEA 无法 \_ 纠正的 \_ 错误错误检查的值为0x00000124。 此 bug 检
 
 发生硬件错误时，WHEA 会创建一个错误记录，用于存储与硬件错误条件相关的错误信息。 每个错误记录均由 WHEA \_ 错误 \_ 记录结构描述。 Windows 内核包含错误记录，其中包含针对 Windows (ETW 事件跟踪引发的 Windows ETW) 硬件错误事件，该事件将在系统事件日志中保存错误记录。 WHEA 使用的错误记录格式基于常见平台错误记录，如 (UEFI) 规范的版本统一可扩展固件接口2.2 中的附录 N 所述。 有关详细信息，请参阅 [WHEA \_ 错误 \_ 记录](/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_whea_error_record) 和 [Windows 硬件错误体系结构 (WHEA) ](../whea/index.md)。
 
-使用[**!errrec**](-errrec.md) &lt; &gt; \_ \_ 参数2中提供的地址，可以使用！ errrec addr 显示 WHEA 错误记录结构。 [**！ Whea**](-whea.md)和[**！ errpkt**](-errpkt.md)扩展可用于显示其他 whea 信息。
+使用 [**!errrec**](-errrec.md) &lt; &gt; \_ \_ 参数2中提供的地址，可以使用！ errrec addr 显示 WHEA 错误记录结构。 [**！ Whea**](-whea.md)和 [**！ errpkt**](-errpkt.md)扩展可用于显示其他 whea 信息。
 
 有关详细信息，请参阅以下主题：
 

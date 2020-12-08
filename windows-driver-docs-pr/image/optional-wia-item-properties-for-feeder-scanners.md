@@ -1,15 +1,14 @@
 ---
 title: 送纸器扫描仪的可选 WIA 项属性
 description: 送纸器扫描仪的可选 WIA 项属性
-ms.assetid: 2af138ea-c06d-4009-90e2-8a5c7d6242bb
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c28f711d2998a10e0c1bf7b06f0fdaf4fcf9020
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 9581747c0f0309f9e764eca1a268ec0eda5248be
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192619"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841107"
 ---
 # <a name="optional-wia-item-properties-for-feeder-scanners"></a>送纸器扫描仪的可选 WIA 项属性
 

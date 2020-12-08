@@ -1,22 +1,21 @@
 ---
 title: 内核流式处理代理插件设计指南
 description: 内核流式处理代理插件设计指南
-ms.assetid: 9a2b83ab-f54c-421b-bc9b-7dad63cd8cb5
 keywords:
 - 内核流式处理代理 WDK AVStream，插件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e0610f696bf9325e23bf14d50578a1f2ee985460
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: a7e312b49fd30db6b6a980b3bdbc3ef6613a42de
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186781"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839201"
 ---
 # <a name="kernel-streaming-proxy-plug-ins-design-guide"></a>内核流式处理代理插件设计指南
 
 
-内核流式处理 (KS) proxy module (*Ksproxy.ax*) 是一个 DirectShow 筛选器，它在内核模式和用户模式应用程序中的 KS 对象之间进行通信。 用户模式组件可以使用 KS 代理与基于 *Ks.sys*的任何微型驱动程序进行通信。
+内核流式处理 (KS) proxy module (*Ksproxy.ax*) 是一个 DirectShow 筛选器，它在内核模式和用户模式应用程序中的 KS 对象之间进行通信。 用户模式组件可以使用 KS 代理与基于 *Ks.sys* 的任何微型驱动程序进行通信。
 
 具体而言，应用程序可以使用 KS 代理模块来控制和检索 KS 微型驱动程序实现的 KS 对象的信息。 KS 对象包括： KS 筛选器、KS 插针和 KS 时钟。
 

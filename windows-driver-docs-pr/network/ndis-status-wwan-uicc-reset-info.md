@@ -1,17 +1,16 @@
 ---
 title: NDIS_STATUS_WWAN_UICC_RESET_INFO
 description: NDIS_STATUS_WWAN_UICC_RESET_INFO
-ms.assetid: ADA3ADC9-82AD-423A-ABA4-902EAF5F5C74
 keywords:
 - NDIS_STATUS_WWAN_UICC_RESET_INFO，UICC 重置状态通知，移动宽带 UICC 重置状态通知，MB UICC 重置状态通知
 ms.date: 08/18/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ec741909e4ade2b13b909a72dc331489e1736d3
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 26110beb3515bab821c6b7e2f6f08fa10ead8926
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212351"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840305"
 ---
 # <a name="ndis_status_wwan_uicc_reset_info"></a>NDIS_STATUS_WWAN_UICC_RESET_INFO
 
@@ -26,7 +25,7 @@ NDIS_STATUS_WWAN_UICC_RESET_INFO 状态通知通过调制解调器微型适配�
 
 **版本**： Windows 10，版本 1709 **头**： Ndis。h
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [OID_WWAN_UICC_RESET](oid-wwan-uicc-reset.md)
 

@@ -1,9 +1,8 @@
 ---
-title: WIA\_IPS\_预览\_类型
-description: WIA\_IPS\_预览版\_类型属性指示如果 WIA\_IPA\_数据类型和 WIA\_IPA\_深度被更改，而无需请求新的预览扫描。 WIA 微型驱动程序创建并维护此属性。
-ms.assetid: 2d4f1052-da7a-404e-b462-9a7c2e2caf80
+title: WIA \_ IP \_ 预览 \_ 类型
+description: WIA \_ ip \_ 预览 \_ 类型属性指示是否更改 wia \_ IPA \_ 数据类型和 wia \_ IPA \_ 深度，而无需请求新的预览扫描。 WIA 微型驱动程序创建并维护此属性。
 keywords:
-- WIA_IPS_PREVIEW_TYPE 成像设备
+- WIA_IPS_PREVIEW_TYPE 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,28 +13,28 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 437810cba29f462a053a8e648ae5dbedb3afa999
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 04d5772c33d7cdf4a9f66c8c8e89113f486dca81
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366788"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839091"
 ---
-# <a name="wiaipspreviewtype"></a>WIA\_IPS\_预览\_类型
+# <a name="wia_ips_preview_type"></a>WIA \_ IP \_ 预览 \_ 类型
 
 
-WIA\_IPS\_预览版\_类型属性指示如果[ **WIA\_IPA\_数据类型**](wia-ipa-datatype.md)和[ **WIA\_IPA\_深度**](wia-ipa-depth.md)被更改，而无需请求新的预览扫描。 WIA 微型驱动程序创建并维护此属性。
+WIA \_ ip \_ 预览 \_ 类型属性指示是否更改 [**wia \_ IPA \_ 数据类型**](wia-ipa-datatype.md) 和 [**wia \_ IPA \_ 深度**](wia-ipa-depth.md) ，而无需请求新的预览扫描。 WIA 微型驱动程序创建并维护此属性。
 
-属性类型：VT\_I4
+属性类型： VT \_ I4
 
-有效值：WIA\_PROP\_NONE
+有效值： WIA " \_ \_ 无"
 
 访问权限：只读
 
 <a name="remarks"></a>备注
 -------
 
-下表描述了有效使用 WIA 的常量\_IPS\_预览\_类型属性。
+下表介绍了在 "WIA \_ ip \_ 预览类型" 属性中有效的常量 \_ 。
 
 <table>
 <colgroup>
@@ -51,18 +50,18 @@ WIA\_IPS\_预览版\_类型属性指示如果[ **WIA\_IPA\_数据类型**](wia-i
 <tbody>
 <tr class="odd">
 <td><p>WIA_ADVANCED_PREVIEW</p></td>
-<td><p>实时的预览支持更新。</p></td>
+<td><p>支持实时预览更新。</p></td>
 </tr>
 <tr class="even">
 <td><p>WIA_BASIC_PREVIEW</p></td>
-<td><p>可以仅使用新的预览扫描更新预览图像。</p></td>
+<td><p>预览图像只能使用新的预览扫描进行更新。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**请注意**   WIA\_IPS\_预览\_类型应只描述[ **WIA\_IPA\_数据类型**](wia-ipa-datatype.md)并[ **WIA\_IPA\_深度**](wia-ipa-depth.md)属性。
+**注意**   WIA \_ ip \_ 预览 \_ 类型仅应描述 [**Wia \_ IPA \_ DATATYPE**](wia-ipa-datatype.md) 和 [**wia \_ IPA \_ DEPTH**](wia-ipa-depth.md) 属性。
 
  
 
@@ -76,8 +75,8 @@ WIA\_IPS\_预览版\_类型属性指示如果[ **WIA\_IPA\_数据类型**](wia-i
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>
@@ -85,9 +84,9 @@ WIA\_IPS\_预览版\_类型属性指示如果[ **WIA\_IPA\_数据类型**](wia-i
 ## <a name="see-also"></a>请参阅
 
 
-[**WIA\_IPA\_DATATYPE**](wia-ipa-datatype.md)
+[**WIA \_ IPA \_ 数据类型**](wia-ipa-datatype.md)
 
-[**WIA\_IPA\_DEPTH**](wia-ipa-depth.md)
+[**WIA \_ IPA \_ 深度**](wia-ipa-depth.md)
 
  
 

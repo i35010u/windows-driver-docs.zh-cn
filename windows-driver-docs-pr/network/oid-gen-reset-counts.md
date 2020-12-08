@@ -1,26 +1,25 @@
 ---
 title: OID_GEN_RESET_COUNTS
-description: 为查询，OID_GEN_RESET_COUNTS OID 返回的微型端口适配器已重置的次数。
-ms.assetid: 3f27d801-f044-4f50-98eb-c16d8e4291f2
+description: 作为查询，OID_GEN_RESET_COUNTS OID 返回微型端口适配器的重置次数。
 ms.date: 08/08/2017
-keywords: -OID_GEN_RESET_COUNTS 网络与 Windows Vista 一起启动的驱动程序
+keywords: -从 Windows Vista 开始 OID_GEN_RESET_COUNTS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 88dc6f394ec7879506c449540f392dbd7e65e312
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c8fed5bb7c0659d7bf2d0c10035073c46d71cf8b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364183"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840001"
 ---
-# <a name="oidgenresetcounts"></a>OID\_GEN\_重置\_计数
+# <a name="oid_gen_reset_counts"></a>OID \_ 代 \_ 重置 \_ 计数
 
 
-为查询，OID\_GEN\_重置\_计数 OID 返回的微型端口适配器已重置的次数。
+作为查询，OID \_ 代 \_ 重置 \_ 计数 oid 返回微型端口适配器的重置次数。
 
 <a name="remarks"></a>备注
 -------
 
-OID\_GEN\_重置\_计数 OID 返回的微型端口适配器已重置的次数。
+OID 生成 \_ \_ 重置 \_ 计数 oid 返回微型端口适配器的重置次数。
 
 <a name="requirements"></a>要求
 ------------
@@ -32,12 +31,12 @@ OID\_GEN\_重置\_计数 OID 返回的微型端口适配器已重置的次数。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>支持 NDIS 5.1 及更高版本的驱动程序在 Windows Vista 和更高版本的 Windows 和 Windows 的更高版本。 支持 NDIS 5.1 在 Windows XP 中的驱动程序。</p></td>
+<td><p>版本</p></td>
+<td><p>Windows Vista 及更高版本的 windows 和更高版本的 windows 中的 NDIS 5.1 和更高版本驱动程序支持。 Windows XP 中的 NDIS 5.1 驱动程序支持。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Ntddndis.h （包括 Ndis.h）</td>
+<td><p>标头</p></td>
+<td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
 </table>

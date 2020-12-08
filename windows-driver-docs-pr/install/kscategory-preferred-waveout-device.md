@@ -1,7 +1,6 @@
 ---
 title: KSCATEGORY_PREFERRED_WAVEOUT_DEVICE
 description: KSCATEGORY_PREFERRED_WAVEOUT_DEVICE
-ms.assetid: bba79780-e89c-4b19-98e0-84bfdb5bbf25
 keywords:
 - KSCATEGORY_PREFERRED_WAVEOUT_DEVICE 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 258621799f184abe08f7b7b78838ba1039648174
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: e4a6898917789849458a4cd7ec472e4cc704769e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097395"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840049"
 ---
 # <a name="kscategory_preferred_waveout_device"></a>KSCATEGORY_PREFERRED_WAVEOUT_DEVICE
 

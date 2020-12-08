@@ -1,30 +1,29 @@
 ---
 title: 确定接收筛选功能
 description: 确定接收筛选功能
-ms.assetid: 11EE5987-A2DE-4388-86D0-77285453E80A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9811d1f9738bba889fc09f4bfe6bb01f4d1358da
-ms.sourcegitcommit: 366a15d68eb58d01a8ca6de7b982f62ac8b7deaf
+ms.openlocfilehash: aa891cdf21f8bd591512e5fd2d073f71398f8500
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/19/2020
-ms.locfileid: "90812012"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840027"
 ---
 # <a name="determining-receive-filtering-capabilities"></a>确定接收筛选功能
 
 
 本主题介绍 NDIS 和过量驱动程序如何确定支持单个根 i/o 虚拟化 (SR-IOV) 的网络适配器接收筛选功能。 本主题包含以下信息：
 
-[报告在*MiniportInitializeEx*期间接收筛选功能](#reporting-receive-filtering-capabilities-during-miniportinitializeex)
+[报告在 *MiniportInitializeEx* 期间接收筛选功能](#reporting-receive-filtering-capabilities-during-miniportinitializeex)
 
 [查询过量驱动程序的接收筛选功能](#querying-receive-filtering-capabilities-by-overlying-drivers)
 
-**注意**   仅适用于 SR-IOV 网络适配器的 PCI Express (PCIe) 物理功能 (PF) 的微型端口驱动程序可以报告接收筛选功能。 PCIe 虚拟功能 (VFs) 的微型端口驱动程序不能报告 SR-IOV 适配器的接收筛选功能。
+**注意**  仅适用于 SR-IOV 网络适配器的 PCI Express (PCIe) 物理功能 (PF) 的微型端口驱动程序可以报告接收筛选功能。 PCIe 虚拟功能 (VFs) 的微型端口驱动程序不能报告 SR-IOV 适配器的接收筛选功能。
 
  
 
-## <a name="reporting-receive-filtering-capabilities-during-miniportinitializeex"></a>报告在*MiniportInitializeEx*期间接收筛选功能
+## <a name="reporting-receive-filtering-capabilities-during-miniportinitializeex"></a>报告在 *MiniportInitializeEx* 期间接收筛选功能
 
 
 当 NDIS 调用 PF 微型端口驱动程序的 [*MiniportInitializeEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize) 函数时，驱动程序提供以下接收筛选功能：
@@ -35,9 +34,9 @@ ms.locfileid: "90812012"
 
 微型端口驱动程序通过使用以下方法初始化的 [**NDIS \_ 接收 \_ 筛选器 \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities) 结构来报告基础网络适配器的完整硬件接收筛选功能：
 
-1.  微型端口驱动程序初始化 **标头** 成员。 驱动程序将**标头**的**类型**成员设置为 NDIS \_ 对象 \_ 类型 \_ 默认值。
+1.  微型端口驱动程序初始化 **标头** 成员。 驱动程序将 **标头** 的 **类型** 成员设置为 NDIS \_ 对象 \_ 类型 \_ 默认值。
 
-    从 NDIS 6.30 开始，微型端口驱动程序将**标头**的**修订**成员设置为 ndis \_ 接收 \_ 筛选器 \_ 功能 \_ 修订版 \_ 2，并将**Size**成员设置为 ndis \_ SIZEOF \_ 接收 \_ 筛选器 \_ 功能 \_ 修订版 \_ 2。
+    从 NDIS 6.30 开始，微型端口驱动程序将 **标头** 的 **修订** 成员设置为 ndis \_ 接收 \_ 筛选器 \_ 功能 \_ 修订版 \_ 2，并将 **Size** 成员设置为 ndis \_ SIZEOF \_ 接收 \_ 筛选器 \_ 功能 \_ 修订版 \_ 2。
 
 2.  微型端口驱动程序将 [**NDIS \_ 接收 \_ 筛选器 \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities) 结构的其他成员设置为 sr-iov 网络适配器接收筛选功能的值范围。 例如，微型端口驱动程序在 **SupportedFilterTests** 中设置相应的标志，以指定微型端口驱动程序支持的筛选器测试操作。
 
@@ -51,9 +50,9 @@ ms.locfileid: "90812012"
 
 微型端口驱动程序通过使用以下方法初始化的 [**NDIS \_ 接收 \_ 筛选器 \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities) 结构来报告当前启用的基础网络适配器接收筛选功能：
 
-1.  微型端口驱动程序初始化 **标头** 成员。 驱动程序将**标头**的**类型**成员设置为 NDIS \_ 对象 \_ 类型 \_ 默认值。
+1.  微型端口驱动程序初始化 **标头** 成员。 驱动程序将 **标头** 的 **类型** 成员设置为 NDIS \_ 对象 \_ 类型 \_ 默认值。
 
-    从 NDIS 6.30 开始，微型端口驱动程序将**标头**的**修订**成员设置为 ndis \_ 接收 \_ 筛选器 \_ 功能 \_ 修订版 \_ 2，并将**Size**成员设置为 ndis \_ SIZEOF \_ 接收 \_ 筛选器 \_ 功能 \_ 修订版 \_ 2。
+    从 NDIS 6.30 开始，微型端口驱动程序将 **标头** 的 **修订** 成员设置为 ndis \_ 接收 \_ 筛选器 \_ 功能 \_ 修订版 \_ 2，并将 **Size** 成员设置为 ndis \_ SIZEOF \_ 接收 \_ 筛选器 \_ 功能 \_ 修订版 \_ 2。
 
 2.  微型端口驱动程序将 [**NDIS \_ 接收 \_ 筛选器 \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities) 结构的其他成员设置为当前启用的接口的接收筛选功能的值范围。 例如，如果启用了 NDIS 数据包合并，则驱动程序必须仅设置特定于此技术的成员。
 

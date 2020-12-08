@@ -1,46 +1,45 @@
 ---
 title: Microsoft 基本显示驱动程序
-description: 在 Windows 8 中，Microsoft 基本显示驱动程序 (MSBDD) 是替换 XDDM VGA 保存和 VGA 即插即用驱动程序的框中显示驱动程序。
-ms.assetid: CE89E02E-6527-4285-998B-618EE235CB8F
+description: 在 Windows 8 中，Microsoft 基本显示器驱动程序 (MSBDD) 是替换 XDDM VGA 保存和 VGA PnP 驱动程序的内置显示器驱动程序。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 44770f53929f205f3a27915af8df440cefd5cd59
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 56ad38fa9de65800b3793cc6f2f396250b7abea5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344625"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840767"
 ---
 # <a name="microsoft-basic-display-driver"></a>Microsoft 基本显示驱动程序
 
 
-在 Windows 8 中，Microsoft 基本显示驱动程序 (MSBDD) 是替换 XDDM VGA 保存和 VGA 即插即用驱动程序的框中显示驱动程序。
+在 Windows 8 中，Microsoft 基本显示器驱动程序 (MSBDD) 是替换 XDDM VGA 保存和 VGA PnP 驱动程序的内置显示器驱动程序。
 
-使用 MSBDD 的主要优点是，如下所示：
+使用 MSBDD 的主要优点如下：
 
--   MSBDD 可帮助实现一致的最终用户和开发人员体验，因为它与 DirectX Api 和技术，例如桌面组合都兼容。
--   服务器方案可以受益于更高版本功能 （具体而言，等无重启的更新 （动态启动和停止） 和等等的功能） 提供的 WDDM 驱动程序模型。
--   MSBDD 支持统一可扩展固件接口 (UEFI) 的图形输出协议 (GOP)。
--   MSBDD 可以 XDDM 和 WDDM 的硬件上运行。
+-   MSBDD 可帮助实现一致的最终用户和开发人员体验，因为它与 DirectX Api 和技术（如桌面组合）兼容。
+-   服务器方案可以从更高的功能中受益 (具体而言，是由 WDDM 驱动程序模型提供的功能，例如无需重新启动的更新、动态启动和) 停止等功能。
+-   MSBDD 支持统一可扩展固件接口 (UEFI) 图形输出协议 (GOP) 。
+-   MSBDD 可在 XDDM 和 WDDM 硬件上工作。
 
-MSBDD 是默认值框中显示驱动程序安装过程中，在安全模式下，IHV 图形驱动程序，如果没有加载，或者在收件箱安装图形 IHV 驱动程序不起作用，或已禁用。 此驱动程序的主要用途是启用 Windows 写入显示控制器的线性帧缓冲区。
+MSBDD 是在安装过程中、在安全模式下、缺少 IHV 图形驱动程序时或在已禁用收件箱的图形 IHV 驱动程序的情况下加载的默认内置显示驱动程序。 此驱动程序的主要目的是使 Windows 能够写入显示控制器的线性帧缓冲区。
 
-MSBDD 可以使用视频 BIOS 管理模式和一台监视器上的解决方法。 在 UEFI 平台上 MSBDD 继承在启动; 过程中设置的线性帧缓冲区在这种情况下，不不可能进行任何模式或分辨率更改。 如中所示*支持的 Microsoft 基本显示驱动程序的图 1 方案*，MSBDD 用于以下方案：
+MSBDD 可以使用视频 BIOS 来管理单个监视器的模式和分辨率。 在 UEFI 平台上，MSBDD 继承在启动过程中设置的线性帧缓冲区;在这种情况下，不能更改模式或分辨率。 如 *Microsoft 基本显示器驱动程序所支持的方案* 所示，在以下情况下将使用 MSBDD：
 
--   服务器：缺少支持 WDDM 的图形硬件的服务器配置可以使用 MSBDD。
--   Windows 安装程序：在 Windows 安装程序，就在最终启动之前的早期阶段被加载仅 MSBDD。
+-   服务器：缺少 WDDM 功能的图形硬件的服务器配置可以使用 MSBDD。
+-   Windows 安装程序：在 Windows 安装程序的早期阶段，就在最终启动之前，只会加载 MSBDD。
 
-    例如，用户有一个较旧的平台，尽管它具有针对 Windows 8 支持没有现成图形驱动程序目前处于工作状态。 用户升级到 Windows 8 和 MSBDD 用于安装程序安装，并检索 IHV 驱动程序，如果一个可用。
+    例如，用户的旧平台目前处于工作状态，但它没有适用于 Windows 8 的内置图形驱动程序支持。 用户升级到 Windows 8 并使用 MSBDD 进行设置、安装，并检索 IHV 驱动程序（如果有）。
 
 -   驱动程序安装，在以下情况下：
-    -   当用户正在安装新的 WDDM IHV 驱动程序时，MSBDD 使用 （从旧 WDDM IHV 驱动程序卸载到点之前安装了新的 IHV 驱动程序时的点） 转换的过程。
-    -   当用户遇到安装最新的 WDDM IHV 驱动程序问题时，则可以禁用用户或系统的当前图形驱动程序和回退到使用 MSBDD。
--   驱动程序升级：通过使用 MSBDD，没有无需经历的系统重启时升级到 IHV 建议驱动程序。
--   安全模式：在此模式下，加载仅受信任的驱动程序;这包括 MSBDD。
+    -   当用户安装新的 WDDM IHV 驱动程序时，将在从旧的 WDDM IHV 驱动程序卸载到) 安装新的 IHV 驱动程序之前的点时，从 (开始，使用 MSBDD。
+    -   如果用户在安装最新的 WDDM IHV 驱动程序时遇到问题，则用户或系统可以禁用当前图形驱动程序并回退到使用 MSBDD。
+-   驱动程序升级：通过使用 MSBDD，升级到 IHV 推荐的驱动程序时无需进行系统重新启动。
+-   安全模式：在此模式下，只会加载受信任的驱动程序;其中包括 MSBDD。
 
-![microsoft 基本显示驱动程序支持的方案](images/scenariossupportedmicrosoftbasicdisplaydriver.jpg)
+![microsoft 基本显示器驱动程序支持的方案](images/scenariossupportedmicrosoftbasicdisplaydriver.jpg)
 
-**图 1 所支持的 Microsoft 基本显示驱动程序的方案**
+**图 1 Microsoft 基本显示器驱动程序支持的方案**
 
  
 

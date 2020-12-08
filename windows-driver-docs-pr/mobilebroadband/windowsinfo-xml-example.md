@@ -1,15 +1,14 @@
 ---
 title: WindowsInfo XML 示例
 description: WindowsInfo XML 示例
-ms.assetid: 5933512e-d2bf-437f-abd8-dc3486e07be0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b034efd0f3828e214e4366eb6609b487fcd3b5b7
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 77150376eb6d88de70629b46fe0af98d09279c01
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89402740"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838853"
 ---
 # <a name="windowsinfo-xml-example"></a>WindowsInfo XML 示例
 

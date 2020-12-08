@@ -1,9 +1,8 @@
 ---
 title: ClearTime 元素
-description: 所需的 ClearTime 元素指定一个条件已被清除的时间。
-ms.assetid: 9b5fe054-f3fa-402a-8337-8fd181679080
+description: 必需的 ClearTime 元素指定清除条件的时间。
 keywords:
-- ClearTime 元素成像设备
+- ClearTime 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e746ab7ee87f023eeb3ad4c3b42308c776cb8680
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 013fc47d2c3134a769a9cd7b60cc741bfe2d533e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373227"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838905"
 ---
 # <a name="cleartime-element"></a>ClearTime 元素
 
 
-所需**ClearTime**元素指定一个条件已被清除的时间。
+必需的 **ClearTime** 元素指定清除条件的时间。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -41,12 +40,12 @@ ms.locfileid: "63373227"
 <a name="text-value"></a>文本值
 ----------
 
-必需。 DateTime 类型的任何有效的值。 有关日期时间的详细信息，请参阅 XML 架构第 2 部分：数据类型第二版。**dateTimedateTime**
+必需。 DateTime 类型的任何有效值。 有关日期时间的详细信息，请参阅 XML 架构第2部分：数据类型第二版。**dateTimedateTime**
 
 ## <a name="child-elements"></a>子元素
 
 
-没有子元素。
+没有任何子元素。
 
 ## <a name="parent-elements"></a>父元素
 
@@ -70,7 +69,7 @@ ms.locfileid: "63373227"
 <a name="remarks"></a>备注
 -------
 
-在指定的时间取决于扫描程序的内部时钟。
+指定的时间取决于扫描仪的内部时钟。
 
 ## <a name="see-also"></a>请参阅
 

@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_DevNodeStatus
 description: DEVPKEY_Device_DevNodeStatus
-ms.assetid: 538a78f0-c704-444e-8314-38b2e0421c39
 keywords:
 - DEVPKEY_Device_DevNodeStatus 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 692743c7f065329330dba049f689bf63a69aa201
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 5c801d02051b83755c1350694f15d89f342a9005
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717084"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840073"
 ---
 # <a name="devpkey_device_devnodestatus"></a>DEVPKEY_Device_DevNodeStatus
 
@@ -62,7 +61,7 @@ DEVPKEY_Device_DevNodeStatus 设备属性表示设备节点 (*devnode*) 的状�
 <a name="remarks"></a>备注
 -------
 
-DEVPKEY_Device_DevNodeStatus 的值是在 Cfg 中定义的 DN_*Xxx* 位标志的按位 "或"。
+DEVPKEY_Device_DevNodeStatus 的值是在 Cfg 中定义的 DN_ *Xxx* 位标志的按位 "或"。
 
 可以调用 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 来检索 DEVPKEY_Device_DevNodeStatus 的值。
 

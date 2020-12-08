@@ -1,18 +1,17 @@
 ---
 title: 创建新的停靠窗口
 description: 创建新的停靠窗口
-ms.assetid: 99cba4f9-4025-4684-920b-43c7147b5385
 keywords:
-- 创建一个新的停靠窗口停靠
-- 停靠、 创建新的停靠窗口
+- 停靠窗口，创建新的停靠
+- 窗口停靠，创建新的停靠
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d2a56a9a42fa1b9f0dec63ff1799fd2f26facb8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 12e1252c7794bfd1faaec0a8a6ab41e347c67d78
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375471"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841153"
 ---
 # <a name="creating-a-new-dock"></a>创建新的停靠窗口
 
@@ -20,15 +19,15 @@ ms.locfileid: "63375471"
 ## <span id="ddk_creating_new_docks_dbg"></span><span id="DDK_CREATING_NEW_DOCKS_DBG"></span>
 
 
-当启动 WinDbg 时，WinDbg 窗口是唯一可能的停靠位置。
+当 WinDbg 开始时，WinDbg 窗口是唯一可能的停靠位置。
 
-若要创建新的停靠，在**窗口**菜单上，单击**打开停靠**。 此停靠是独立的窗口，可以最大化、 最小化，或在桌面上拖动与任何其他窗口一样。
+若要创建新的停靠，请在 " **窗口** " 菜单上单击 " **打开停靠**"。 这是一个独立的窗口，你可以将其最大化、最小化或拖动到桌面上的任何其他窗口。
 
-也可以通过使用创建新的停靠**移到新停靠**任何已打开的窗口的快捷菜单上的选项。 选择此选项将关闭窗口，并在新的停靠中打开它。
+还可以通过在任何已打开的窗口的快捷菜单上使用 " **移到新停靠** " 选项来创建新的停靠。 此选择将关闭窗口并在新的停靠中打开它。
 
-您可以创建任意多个所需的停靠。
+您可以根据需要创建任意数量的坞。
 
-若要关闭停靠并且当前那里停靠任何调试信息窗口，请单击**关闭**停靠面板右上角的按钮。
+若要关闭停靠和当前停靠在该处的所有调试信息窗口，请单击停靠的右上角的 " **关闭** " 按钮。
 
  
 

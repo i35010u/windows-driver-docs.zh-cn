@@ -1,7 +1,6 @@
 ---
 title: 对驱动程序包进行测试签名
 description: 对驱动程序包进行测试签名
-ms.assetid: 84727762-5ba0-48ea-8d5a-7ac54aadbb7e
 keywords:
 - 驱动程序签名 WDK，驱动程序包
 - 对驱动程序进行签名 WDK，驱动程序包
@@ -14,17 +13,17 @@ keywords:
 - 测试签名驱动程序包 WDK，关于测试签名驱动程序包
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d961b8c8b3d1e6e94070289a8fe3c938a867cb1d
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: 07f5f29fd5d3302832a159b781ad1a2c495e69c9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361355"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841059"
 ---
 # <a name="test-signing-driver-packages"></a>对驱动程序包进行测试签名
 
 
-在本部分中，在 Windows Vista 和更高版本的 Windows 上测试用于发布的驱动程序的计算机称为 *签名计算机* 。 签名计算机必须运行 Windows XP SP2 或更高版本的 Windows。 例如，可在运行 Windows Vista 的计算机上登录用于 Windows 7 上的发布的驱动程序。
+在本部分中，在 Windows Vista 和更高版本的 Windows 上测试用于发布的驱动程序的计算机称为 *签名计算机*。 签名计算机必须运行 Windows XP SP2 或更高版本的 Windows。 例如，可在运行 Windows Vista 的计算机上登录用于 Windows 7 上的发布的驱动程序。
 
 为了使用 [驱动程序签名工具](../devtest/tools-for-signing-drivers.md)，签名计算机必须安装了 Windows Vista 和更高版本的 WDK。
 

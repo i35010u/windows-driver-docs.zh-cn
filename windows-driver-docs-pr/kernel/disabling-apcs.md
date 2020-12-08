@@ -1,7 +1,6 @@
 ---
 title: 禁用 APC
 description: 禁用 APC
-ms.assetid: 0578df31-1467-4bad-ba62-081d61278deb
 keywords:
 - 异步过程调用 WDK 内核
 - Apc WDK 内核
@@ -11,12 +10,12 @@ keywords:
 - 引发当前 IRQLs
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 178e1bc4a514ffca339314e1feceb92ddced6c87
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: d7691f7c8bf62d233d114f9c63ca28a6802c8bc1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403136"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841229"
 ---
 # <a name="disabling-apcs"></a>禁用 APC
 

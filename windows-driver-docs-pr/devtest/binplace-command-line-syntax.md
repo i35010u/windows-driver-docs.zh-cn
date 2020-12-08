@@ -1,9 +1,8 @@
 ---
 title: BinPlace 命令行语法
 description: BinPlace 在命令行中使用以下语法
-ms.assetid: 8489b7ae-3e3b-41d5-b9a6-0b69aa92087e
 keywords:
-- BinPlace 命令行语法驱动程序开发工具
+- BinPlace Command-Line 语法驱动程序开发工具
 topic_type:
 - apiref
 api_name:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bbceafc768dcdba0aacfeebcc1d6ab3f76346755
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: af333f13476534211cd1ef5136014ef6cd5eb417
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384395"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839779"
 ---
 # <a name="binplace-command-line-syntax"></a>BinPlace 命令行语法
 
@@ -42,7 +41,7 @@ binplace -qkg LCFile -vs SymbolRoot File
 以下开关可用：
 
 <span id="-a"></span><span id="-A"></span>**-a**  
-导致 BinPlace 在放置符号文件时将其去除。 这会创建去除符号文件，其中包含公共符号，而不包含私有符号。 使用 **-a** 开关时，还必须使用 **-s** 和 **-x** 。 使用 **-a** 时，去除的符号文件将放在由 **-s *** * SymbolRoot 指定的路径中。 如果还存在 **-n ** * * FullSymbolRoot，则会将完整的符号文件放在 *FullSymbolRoot*中。 否则，它们将不会放在任何位置。
+导致 BinPlace 在放置符号文件时将其去除。 这会创建去除符号文件，其中包含公共符号，而不包含私有符号。 使用 **-a** 开关时，还必须使用 **-s** 和 **-x** 。 使用 **-a** 时，去除的符号文件将放在由 **-s**_SymbolRoot_ 指定的路径中。 如果同时存在 **-n**_FullSymbolRoot_ ，则会将完整的符号文件放在 *FullSymbolRoot* 中。 否则，它们将不会放在任何位置。
 
 <span id="-b_ExtraSubdirectory"></span><span id="-b_extrasubdirectory"></span><span id="-B_EXTRASUBDIRECTORY"></span>**-b** *ExtraSubdirectory*  
 使 BinPlace 将文件放在与平常不同的位置。 在串联根目标目录、类子目录以及正常的文件类型子目录后，BinPlace 会将 *ExtraSubdirectory* 附加到此路径，以创建最终的目标目录。 *ExtraSubdirectory* 不应以反斜杠开头或结尾。 有关更多详细信息，请参阅 [BinPlace 目标目录](binplace-destination-directories.md) 。
@@ -66,13 +65,13 @@ binplace -qkg LCFile -vs SymbolRoot File
 导致 BinPlace 保留文件属性。 默认情况下，BinPlace 将关闭存档属性。
 
 <span id="-n_FullSymbolRoot"></span><span id="-n_fullsymbolroot"></span><span id="-N_FULLSYMBOLROOT"></span>**-n** *FullSymbolRoot*  
-指定包含) 的公共和私有符号 (符号文件的完整符号文件的根目录。 这还需要 **-a**、 **-x**和 **-s** 开关。 有关更多详细信息，请参阅 [BinPlace 目标目录](binplace-destination-directories.md) 。
+指定包含) 的公共和私有符号 (符号文件的完整符号文件的根目录。 这还需要 **-a**、 **-x** 和 **-s** 开关。 有关更多详细信息，请参阅 [BinPlace 目标目录](binplace-destination-directories.md) 。
 
 <span id="-o_RootSubdirectory"></span><span id="-o_rootsubdirectory"></span><span id="-O_ROOTSUBDIRECTORY"></span>**-o** *RootSubdirectory*  
 指定要使用的根目标目录的子目录。 创建目标目录时，将在根目标目录之后和类子目录之前插入 *RootSubdirectory* 。 有关更多详细信息，请参阅 [BinPlace 目标目录](binplace-destination-directories.md) 。
 
 <span id="-p_PlaceFile"></span><span id="-p_placefile"></span><span id="-P_PLACEFILE"></span>**-p** *PlaceFile*  
-指定位置文件的路径和文件名。 如果未使用 **-p**开关，BinPlace 将使用名为* \\ tools \\placefil.txt*的位置。 有关位置文件内容的说明，请参阅 [**放置文件语法**](place-file-syntax.md) 。
+指定位置文件的路径和文件名。 如果未使用 **-p** 开关，BinPlace 将使用名为 *\\ tools \\placefil.txt* 的位置。 有关位置文件内容的说明，请参阅 [**放置文件语法**](place-file-syntax.md) 。
 
 **注意** **-P** 开关和位置文件现在已过时，不应使用。
 
@@ -85,7 +84,7 @@ binplace -qkg LCFile -vs SymbolRoot File
 指定根目标目录。 如果省略此值，则默认值由基于 \_ Itanium 的基于 \_ Itanium 的 \_ 计算机或基于 x64 的计算机上的 NT386TREE、NTIA64TREE 或 NTAMD64TREE 环境变量决定。 有关详细信息，请参阅 [BinPlace 目标目录](binplace-destination-directories.md) 。
 
 <span id="-s_SymbolRoot"></span><span id="-s_symbolroot"></span><span id="-S_SYMBOLROOT"></span>**-s** *SymbolRoot*  
-指定符号文件的根目录。 如果同时使用了 **-a** 和 **-x** 开关，则将从符号文件中去除私有符号，并将去除的符号文件放在由 *SymbolRoot*指定的目录中。 如果要同时放置去除和完整符号文件，应使用-a-x-s SymbolRoot-n FullSymbolRoot。 有关更多详细信息，请参阅 [BinPlace 目标目录](binplace-destination-directories.md) 。
+指定符号文件的根目录。 如果同时使用了 **-a** 和 **-x** 开关，则将从符号文件中去除私有符号，并将去除的符号文件放在由 *SymbolRoot* 指定的目录中。 如果要同时放置去除和完整符号文件，应使用-a-x-s SymbolRoot-n FullSymbolRoot。 有关更多详细信息，请参阅 [BinPlace 目标目录](binplace-destination-directories.md) 。
 
 <span id="-t"></span><span id="-T"></span>**-t**  
 *测试模式*。 使用此开关时，不会复制任何文件，但 BinPlace 将显示警告和错误消息，就像它放入文件一样。 你可能还希望使用 **-v** 开关来增加消息的数量。
@@ -100,18 +99,18 @@ binplace -qkg LCFile -vs SymbolRoot File
 导致 BinPlace 将 () 的 Windows 95 符号文件添加到符号树中。
 
 <span id="-x"></span><span id="-X"></span>**-x**  
-如果 BinPlace 遇到使用 *旧符号系统*的文件，此开关会使其删除可执行文件中的所有符号，并将此信息移到不同的符号文件中。 有关详细信息，请参阅 [符号文件系统](symbol-file-systems.md) 。 使用 **-x** 开关时，还必须使用 **-s** 和 **-a** 。
+如果 BinPlace 遇到使用 *旧符号系统* 的文件，此开关会使其删除可执行文件中的所有符号，并将此信息移到不同的符号文件中。 有关详细信息，请参阅 [符号文件系统](symbol-file-systems.md) 。 使用 **-x** 开关时，还必须使用 **-s** 和 **-a** 。
 
 <span id="-y"></span><span id="-Y"></span>**-y**  
 阻止 BinPlace 使用任何类子目录。 将仅从根目标目录和文件类型子目录创建目标目录。 有关详细信息，请参阅 [BinPlace 目标目录](binplace-destination-directories.md) 。
 
 <span id="-z"></span><span id="-Z"></span>**-z**  
-取消 **-x** 开关。 如果对多个目标使用 BinPlace，可以使用 **BinPlace** *argumentsTarget1argumentsTarget2*形式的命令，因为命令行是从左到右进行分析的，所以， *Target1* 和 *Target2* 会受到不同参数的影响。  (参见下面) 的 "分析顺序" 部分。 如果遇到 **a-z 开关，** 则会取消任何上一个 **x** 开关的效果。
+取消 **-x** 开关。 如果对多个目标使用 BinPlace，可以使用 **BinPlace** *argumentsTarget1argumentsTarget2* 形式的命令，因为命令行是从左到右进行分析的，所以， *Target1* 和 *Target2* 会受到不同参数的影响。  (参见下面) 的 "分析顺序" 部分。 如果遇到 **a-z 开关，** 则会取消任何上一个 **x** 开关的效果。
 
 <span id="-ci_ReturnCode_Application_Argument_Argument__..._"></span><span id="-ci_returncode_application_argument_argument__..._"></span><span id="-CI_RETURNCODE_APPLICATION_ARGUMENT_ARGUMENT__..._"></span>**-ci** <em>ReturnCode</em>**，**<em>应用程序</em>**，**<em>参数</em>**，**<em>参数</em>**...**   
 导致 BinPlace 使用自定义应用程序来验证所有可执行文件。 如果希望 BinPlace 使用其他应用程序进行验证，可以使用 **-ci** 开关。
 
-如果此应用程序在可执行文件中发现错误，则*ReturnCode*应为此应用程序返回的值。 其他参数用于启动此应用程序。 它们必须用逗号分隔。 *应用程序* 指定程序的名称。 这可以后跟任意数量的命令行参数。 该程序将使用命令行启动，其中包括 *应用程序* ，后面跟有空格（而不是) 逗号）分隔的所有参数 (，最后以要检查的可执行文件的名称结束。
+如果此应用程序在可执行文件中发现错误，则 *ReturnCode* 应为此应用程序返回的值。 其他参数用于启动此应用程序。 它们必须用逗号分隔。 *应用程序* 指定程序的名称。 这可以后跟任意数量的命令行参数。 该程序将使用命令行启动，其中包括 *应用程序* ，后面跟有空格（而不是) 逗号）分隔的所有参数 (，最后以要检查的可执行文件的名称结束。
 
 <span id="-_ARC"></span><span id="-_arc"></span>**-：圆弧**  
 导致 BinPlace 仅放置设置了存档属性的文件。

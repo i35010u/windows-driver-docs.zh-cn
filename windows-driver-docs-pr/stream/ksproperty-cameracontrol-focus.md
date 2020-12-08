@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ CAMERACONTROL \_
 description: 用户模式客户端使用 KSPROPERTY \_ CAMERACONTROL \_ 焦点属性来获取或设置相机的焦点设置。 此属性是可选的。
-ms.assetid: 89a77055-1ad1-4394-8435-d057685b9eee
 keywords:
 - KSPROPERTY_CAMERACONTROL_FOCUS 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ab72ab4a1c997734780556a74d6c9d0579097243
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 4065b3c1dd742689adf58da916c96b541c75df3d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102948"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840555"
 ---
 # <a name="ksproperty_cameracontrol_focus"></a>KSPROPERTY \_ CAMERACONTROL \_
 
@@ -63,11 +62,11 @@ ms.locfileid: "90102948"
 
  (操作数据) 的属性值是指定焦点设置的 LONG 值。 此值用毫米表示。
 
-**警告**   在编写或测试应用程序时，应注意，在实践中，某些驱动程序定义了一系列自定义的焦点值和自定义步骤值，这些值可能不基于典型单位。 驱动程序可能会以物理方式或数字方式实现焦点控件。
+**警告**  在编写或测试应用程序时，应注意，在实践中，某些驱动程序定义了一系列自定义的焦点值和自定义步骤值，这些值可能不基于典型单位。 驱动程序可能会以物理方式或数字方式实现焦点控件。
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 KSPROPERTY **Value** \_ CAMERACONTROL S 结构的 Value 成员 \_ 指定焦点设置。

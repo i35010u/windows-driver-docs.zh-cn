@@ -1,7 +1,6 @@
 ---
 title: 'StorPortVirtualDevice2 规则 (storport) '
 description: 此规则验证在 HwStorFindAdapter 例程退出后，端口 \_ 配置信息 (Storport) 结构中的 "VirtualDevice" 字段 \_ 是否已设置为 "TRUE"。 此规则仅适用于虚拟 StorPort 微型端口。
-ms.assetid: CBD1FAD0-9D85-4989-9CCA-00F5698F5383
 ms.date: 05/21/2018
 keywords:
 - 'StorPortVirtualDevice2 规则 (storport) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c586acc43e351e80437d806b1b7ce5a03674b591
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 572aa9d016e6489e1f1b9448710c44beac924709
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104254"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841283"
 ---
 # <a name="storportvirtualdevice2-rule-storport"></a>StorPortVirtualDevice2 规则 (storport) 
 
 
-此规则验证在[**HwStorFindAdapter**](/windows-hardware/drivers/ddi/storport/nc-storport-hw_find_adapter)例程退出后，[**端口 \_ 配置 \_ 信息 (Storport) **](/previous-versions/windows/hardware/drivers/ff563901(v=vs.85))结构中的 " **VirtualDevice** " 字段是否已设置为 " **TRUE**"。 此规则仅适用于虚拟 StorPort 微型端口。
+此规则验证在 [**HwStorFindAdapter**](/windows-hardware/drivers/ddi/storport/nc-storport-hw_find_adapter)例程退出后，[**端口 \_ 配置 \_ 信息 (Storport)**](/previous-versions/windows/hardware/drivers/ff563901(v=vs.85))结构中的 " **VirtualDevice** " 字段是否已设置为 " **TRUE**"。 此规则仅适用于虚拟 StorPort 微型端口。
 
 **驱动程序模型： Storport**
 

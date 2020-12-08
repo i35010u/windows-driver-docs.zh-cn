@@ -1,7 +1,6 @@
 ---
 title: 图像颜色管理
 description: 图像颜色管理
-ms.assetid: c5b575c1-3ee7-4ad4-85e8-e1a6dbe34a5b
 keywords:
 - GDI WDK Windows 2000 显示，图像颜色管理
 - 图形驱动程序 WDK Windows 2000 显示，图像颜色管理
@@ -11,12 +10,12 @@ keywords:
 - 颜色管理 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f107d6eb1fcb285cccfdd515a3a7bcade32b14ed
-ms.sourcegitcommit: 1690ad77580a2cfc47debb9751fd109a5991dd52
+ms.openlocfilehash: e8283458c8f3c133a38fb85d6efe3968257f6f91
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92345932"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839595"
 ---
 # <a name="image-color-management"></a>图像颜色管理
 

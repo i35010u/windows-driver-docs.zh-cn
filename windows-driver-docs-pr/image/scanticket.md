@@ -1,9 +1,8 @@
 ---
 title: ScanTicket 元素
-description: 所需的 ScanTicket 元素定义的所有当前标识的扫描作业的说明和处理的参数。
-ms.assetid: d507bd46-8fc4-49d3-9575-2d83fd7ae625
+description: 必需的 ScanTicket 元素定义当前标识的扫描作业的所有说明和处理参数。
 keywords:
-- ScanTicket 元素成像设备
+- ScanTicket 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5089696e6c40b81074dcb9e38d92a786e707610f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cdb2c00ff862660c41513a3bd6b2ad65fb222d7e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356216"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839103"
 ---
 # <a name="scanticket-element"></a>ScanTicket 元素
 
 
-所需**ScanTicket**元素定义的所有当前标识的扫描作业的说明和处理的参数。
+必需的 **ScanTicket** 元素定义当前标识的扫描作业的所有说明和处理参数。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -77,7 +76,7 @@ ms.locfileid: "63356216"
 <td><p><a href="createscanjobrequest.md" data-raw-source="[&lt;strong&gt;CreateScanJobRequest&lt;/strong&gt;](createscanjobrequest.md)"><strong>CreateScanJobRequest</strong></a></p></td>
 </tr>
 <tr class="even">
-<td><p><a href="job.md" data-raw-source="[&lt;strong&gt;Job&lt;/strong&gt;](job.md)"><strong>Job</strong></a></p></td>
+<td><p><a href="job.md" data-raw-source="[&lt;strong&gt;Job&lt;/strong&gt;](job.md)"><strong>作业</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="validatescanticketrequest.md" data-raw-source="[&lt;strong&gt;ValidateScanTicketRequest&lt;/strong&gt;](validatescanticketrequest.md)"><strong>ValidateScanTicketRequest</strong></a></p></td>
@@ -88,11 +87,11 @@ ms.locfileid: "63356216"
 <a name="remarks"></a>备注
 -------
 
-**ScanTicket**元素包含客户端选择的当前作业的扫描程序设置的值。 客户端构造**ScanTicket**通过只在扫描仪支持这些值。 客户端通过调用获取此类值[ **GetScannerElementsRequest** ](getscannerelementsrequest.md)操作和扫描程序的要求提供[ **DefaultScanTicket** ](defaultscanticket.md)元素。
+**ScanTicket** 元素包含客户端选择的当前作业的扫描程序设置的值。 客户端仅使用 scanner 支持的那些值构造 **ScanTicket** 。 客户端通过调用 [**GetScannerElementsRequest**](getscannerelementsrequest.md) 操作获取此类值，并请求扫描仪的 [**DefaultScanTicket**](defaultscanticket.md) 元素。
 
-成员元素**ScanTicket**映射到的实例直接[**作业**](job.md)元素，并且它们是完全客户端需要发送到扫描程序[ **CreateScanJobRequest** ](createscanjobrequest.md)操作。
+**ScanTicket** 的成员元素直接映射到 [**作业**](job.md)元素的实例，并且它们正是客户端在 [**CreateScanJobRequest**](createscanjobrequest.md)操作过程中需要发送到扫描程序的内容。
 
-客户端可以请求**ScanTicket**元素通过调用特定作业。
+客户端可以通过调用来请求特定作业的 **ScanTicket** 元素。
 
 ## <a name="see-also"></a>请参阅
 
@@ -107,7 +106,7 @@ ms.locfileid: "63356216"
 
 [**GetScannerElementsRequest**](getscannerelementsrequest.md)
 
-[**Job**](job.md)
+[**作业**](job.md)
 
 [**JobDescription**](jobdescription.md)
 

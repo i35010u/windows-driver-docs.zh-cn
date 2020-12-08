@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_DeviceInterface_Restricted
 description: DEVPKEY_DeviceInterface_Restricted
-ms.assetid: 54C71B62-3F3D-462B-BF72-DDF1F97D3C75
 keywords:
 - DEVPKEY_DeviceInterface_Restricted 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: fb5b975f839d5bec6fe21fb62f4583569d9c7cb6
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 6c434f402d489c0a7cbce9e7e788265867f20210
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716362"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840069"
 ---
 # <a name="devpkey_deviceinterface_restricted"></a>DEVPKEY_DeviceInterface_Restricted
 

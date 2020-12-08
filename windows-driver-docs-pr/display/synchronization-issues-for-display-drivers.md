@@ -1,37 +1,36 @@
 ---
 title: 显示驱动程序的同步问题
 description: 显示驱动程序的同步问题
-ms.assetid: 7d87e963-02c3-4da2-9dbd-ca14bde2867b
 keywords:
-- 显示驱动程序 WDK Windows 2000 中，同步
+- 显示驱动程序 WDK Windows 2000，同步
 - 同步 WDK Windows 2000 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 67f6585c9318b199a947e240d8d8b585b1d0ff78
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0c8691295f22e2b34885c1da7d3c11e06f9065f7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382659"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838949"
 ---
 # <a name="synchronization-issues-for-display-drivers"></a>显示驱动程序的同步问题
 
 
-Microsoft 建议显示器驱动程序在持有锁不调用任何 GDI 函数。 这一点尤其重要，显示器驱动程序不会调用任意以下函数时持有互斥锁。 执行此操作可能会导致死锁。
+Microsoft 建议显示驱动程序在持有锁时不调用任何 GDI 函数。 尤其重要的是，显示驱动程序在保存互斥体时不调用任何以下函数。 这样做可能会导致死锁。
 
--   BRUSHOBJ\_hGetColorTransform
+-   BRUSHOBJ \_ hGetColorTransform
 
--   BRUSHOBJ\_pvAllocRbrush
+-   BRUSHOBJ \_ pvAllocRbrush
 
--   BRUSHOBJ\_pvGetRbrush
+-   BRUSHOBJ \_ pvGetRbrush
 
--   BRUSHOBJ\_ulGetBrushColor
+-   BRUSHOBJ \_ ulGetBrushColor
 
--   CLIPOBJ\_bEnum
+-   CLIPOBJ \_ bEnum
 
--   CLIPOBJ\_cEnumStart
+-   CLIPOBJ \_ cEnumStart
 
--   CLIPOBJ\_ppoGetPath
+-   CLIPOBJ \_ ppoGetPath
 
 -   EngAcquireSemaphore
 
@@ -189,59 +188,59 @@ Microsoft 建议显示器驱动程序在持有锁不调用任何 GDI 函数。 �
 
 -   EngWaitForSingleObject
 
--   FONTOBJ\_cGetAllGlyphHandles
+-   FONTOBJ \_ cGetAllGlyphHandles
 
--   FONTOBJ\_cGetGlyphs
+-   FONTOBJ \_ cGetGlyphs
 
--   FONTOBJ\_pifi
+-   FONTOBJ \_ pifi
 
--   FONTOBJ\_pjOpenTypeTablePointer
+-   FONTOBJ \_ pjOpenTypeTablePointer
 
--   FONTOBJ\_pQueryGlyphAttrs
+-   FONTOBJ \_ pQueryGlyphAttrs
 
--   FONTOBJ\_pvTrueTypeFontFile
+-   FONTOBJ \_ pvTrueTypeFontFile
 
--   FONTOBJ\_pxoGetXform
+-   FONTOBJ \_ pxoGetXform
 
--   FONTOBJ\_vGetInfo
+-   FONTOBJ \_ vGetInfo
 
 -   HeapVidMemAllocAligned
 
--   PALOBJ\_cGetColors
+-   PALOBJ \_ cGetColors
 
--   PATHOBJ\_bEnumClipLines
+-   PATHOBJ \_ bEnumClipLines
 
--   PATHOBJ\_bMoveTo
+-   PATHOBJ \_ bMoveTo
 
--   PATHOBJ\_bPolyBezierTo
+-   PATHOBJ \_ bPolyBezierTo
 
--   PATHOBJ\_vEnumStartClipLines
+-   PATHOBJ \_ vEnumStartClipLines
 
--   PATHOBJ\_vGetBounds
+-   PATHOBJ \_ vGetBounds
 
--   STROBJ\_bEnum
+-   STROBJ \_ bEnum
 
 -   VidMemFree
 
--   WNDOBJ\_bEnum
+-   WNDOBJ \_ bEnum
 
--   WNDOBJ\_cEnumStart
+-   WNDOBJ \_ cEnumStart
 
--   WNDOBJ\_vSetConsumer
+-   WNDOBJ \_ vSetConsumer
 
--   XFORMOBJ\_bApplyXform
+-   XFORMOBJ \_ bApplyXform
 
--   XFORMOBJ\_iGetFloatObjXform
+-   XFORMOBJ \_ iGetFloatObjXform
 
--   XFORMOBJ\_iGetXform
+-   XFORMOBJ \_ iGetXform
 
--   XLATEOBJ\_cGetPalette
+-   XLATEOBJ \_ cGetPalette
 
--   XLATEOBJ\_hGetColorTransform
+-   XLATEOBJ \_ hGetColorTransform
 
--   XLATEOBJ\_iXlate
+-   XLATEOBJ \_ iXlate
 
--   XLATEOBJ\_piVector
+-   XLATEOBJ \_ piVector
 
  
 

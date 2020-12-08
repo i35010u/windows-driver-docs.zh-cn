@@ -1,15 +1,14 @@
 ---
 title: 流式处理类 SRB 参考
 description: 流式处理类 SRB 参考
-ms.assetid: fdd2de58-8825-429a-937a-0bd27a180f2a
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f1d21754c9d0dc0daf02c3571a4ac06ebe0f4344
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 0230797c07401333b7a20276a3ed137b66ec3244
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186267"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839847"
 ---
 # <a name="stream-class-srb-reference"></a>流式处理类 SRB 参考
 

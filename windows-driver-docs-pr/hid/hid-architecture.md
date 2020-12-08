@@ -1,19 +1,18 @@
 ---
 title: HID 体系结构
 description: Windows 中的 HID 驱动程序堆栈的体系结构基于名为 hidclass.sys 的类驱动程序。
-ms.assetid: FCDDCD6A-8808-44D5-B300-3869DD9FD46C
 keywords:
 - HID 类驱动程序
 - hidclass.sys
 - Windoows 的 HID 类驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f6f9a3141399fffa90d47245d1c466b7ea483645
-ms.sourcegitcommit: 9796f75f8e83f4c9cc1f055056910a3ae6292f18
+ms.openlocfilehash: f1014f960eb672d856e16d5558baca303d8ea831
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93066355"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838919"
 ---
 # <a name="hid-architecture"></a>HID 体系结构
 
@@ -52,10 +51,10 @@ HID 客户端是与 *HIDClass.sys* 通信的驱动程序、服务或应用程序
 
 下表简化了上面列出的信息。
 
-|      模型   | 驱动程序                      | 应用程序 |
+|      “模式”   | 驱动程序                      | 应用程序 |
 |-------------|------------------------------|--------------|
 | 用户模式   | HidD \_ Xxx                    | HidP \_ Xxx    |
-| 内核模式 | HidD \_ XXX 或 IOCTL \_ HID \_ Xxx | 不可用          |
+| 内核模式 | HidD \_ XXX 或 IOCTL \_ HID \_ Xxx | 空值          |
 
 有关详细信息，请参阅 [打开 HID 集合](opening-hid-collections.md)。
 
@@ -63,7 +62,7 @@ HID 客户端是与 *HIDClass.sys* 通信的驱动程序、服务或应用程序
 
 Windows 支持以下顶级集合：
 
-| **使用情况页** | **使用情况** | **Windows 7** | **Windows 8** | **Windows 10** | **说明** | **访问模式** |
+| **使用情况页** | **使用情况** | **Windows 7** | **Windows 8** | **Windows 10** | 备注 | **访问模式** |
 | --- | --- | --- | --- | --- | --- | --- |
 | 0x0001 | 0x0001-0x0002 | 是 | 是 | 是 | 鼠标类驱动程序和映射器驱动程序 | 排他 |
 | 0x0001 | 0x0004 - 0x0005 | 是 | 是 | 是 | 游戏控制器 | 共享 |
@@ -95,7 +94,7 @@ HID 类驱动程序设计为使用 HID 微型驱动程序来访问硬件输入�
 
 Windows 支持以下传输方式。
 
-| Transport    | Windows 7 | Windows 8 | 备注                                                                                                 |
+| Transport    | Windows 7 | Windows 8 | 说明                                                                                                 |
 |--------------|-----------|-----------|-------------------------------------------------------------------------------------------------------|
 | USB          | 是       | 是       | Windows 操作系统2000可追溯上提供了对 USB HID 1.11 + 的支持。       |
 | Bluetooth    | 是       | 是       | Windows 操作系统可追溯上提供对蓝牙 HID 1.1 + 的支持。 |

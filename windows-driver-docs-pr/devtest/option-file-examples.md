@@ -1,17 +1,16 @@
 ---
 title: 选项文件示例
 description: 选项文件示例
-ms.assetid: 632c37a8-a1cc-419a-917f-94e9308c4993
 keywords:
 - 选项文件 WDK 静态驱动程序验证程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ec42a17f74d3be89ba4b8aa3f4e0d9d030ded2a
-ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
+ms.openlocfilehash: e9f7816cee14379fd0b55b064b12d1a88ba3e690
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88802509"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840791"
 ---
 # <a name="option-file-examples"></a>选项文件示例
 

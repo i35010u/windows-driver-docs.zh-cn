@@ -1,41 +1,40 @@
 ---
 title: 读取移出页面的标头中的符号
 description: 读取移出页面的标头中的符号
-ms.assetid: 74ec20d8-e2b5-449d-8b93-7553c57fac07
 keywords:
-- 符号，调出标头的问题
+- 符号，分页的标头问题
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 959cafc3fd876175da5268c0a77c6e3ff484ff5a
-ms.sourcegitcommit: d4ade685d5401960be55f9b44861547fbd222d35
+ms.openlocfilehash: 238783f267ffdd5f5d611f44ba81336bcd4906fa
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68246944"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839155"
 ---
 # <a name="reading-symbols-from-paged-out-headers"></a>读取移出页面的标头中的符号
 
-内核调试程序必须读取每个已加载的模块的映像的标的头，这样才能知道哪些符号对应于该模块。
+内核调试器必须读取每个已加载模块的映像的标头，才能知道哪个符号对应于该模块。
 
-如果模块的标头分页输出到磁盘，调试器将不会加载此模块的符号。 如果使用模块所需的关键到调试过程发生这种情况，它可以是严重问题。
+如果模块的标头已分页到磁盘，调试器将不会加载此模块的符号。 如果对调试过程至关重要的模块发生这种情况，则可能是一个关键问题。
 
-可以使用以下过程来解决此问题。
+以下过程可用于解决此问题。
 
-## <a name="to-acquire-symbols-for-paged-out-headers"></a>若要获取用于调出标头的符号
+## <a name="to-acquire-symbols-for-paged-out-headers"></a>获取用于分页的标头的符号
 
-1. 第二个复制一份内核本身。 它是可能最简单的方法将此代码放在网络共享上。
+1. 创建内核本身的第二个副本。 最简单的方法是将其放在网络共享上。
 
-2. 将此共享的根目录到符号路径。 请参阅[符号路径](symbol-path.md)更改符号路径的方法。
+2. 将此共享的根目录追加到符号路径。 请参阅 [符号路径](symbol-path.md) 了解更改符号路径的方法。
 
-3. 使用[ **.reload （重新加载模块）** ](-reload--reload-module-.md)命令。
+3. 使用 [**. reload.sql (Reload.sql Module)**](-reload--reload-module-.md) 命令。
 
-4. 使用[ **！ 符号干扰**](-sym.md)扩展命令以查看更详细的输出。 如果使用，你将能够查看哪些符号加载从目标计算机上的模块映像和从内核模块的副本中加载的。
+4. 使用 [**！符号干扰**](-sym.md) 扩展命令查看更详细的输出。 如果使用此模式，你将能够查看从目标计算机上的模块映像加载的符号，以及从内核模块的副本加载哪些符号。
 
-此方法必须使用时要小心，因为调试器具有无法验证是否实际文件副本与匹配的原始文件。 因此，重要的网络共享上使用的 Windows 版本与目标计算机上使用的版本相匹配。
+必须谨慎使用此方法，因为调试器无法验证文件的复制是否与原始文件完全匹配。 因此，网络共享上使用的 Windows 版本与目标计算机上使用的版本匹配，这一点非常重要。
 
-此方法仅用于内核模式调试。 操作系统是分页的能够在用户模式下调试 （除非磁盘保存分页文件为已卸载，或者无法访问） 过程中所需的任何标头中。
+此方法仅用于内核模式调试。 操作系统能够在用户模式调试过程中所需的任何标头中分页 (除非已卸除包含页面文件的磁盘，否则) 无法访问该磁盘。
 
-下面是使用此技术的示例：
+下面是使用此技术的一个示例：
 
 ```dbgcmd
 kd> .reload
@@ -59,14 +58,14 @@ Unable to retrieve the PEB address. This is usually caused
 by being in the wrong process context or by paging
 ```
 
-请注意，许多映像不可访问的标头。 检查从这些文件之一的符号 (在此示例中，fs\_rec.sys):
+请注意，许多映像具有不可访问的标头。 在此示例中，通过 fsrec.sys) 检查这些文件中的符号 (\_ ：
 
 ```dbgcmd
 kd> x fs_rec!*
 *** ERROR: Module load completed but symbols could not be loaded for fs_rec.sys
 ```
 
-这些标头显然调出。因此，您需要将适当的图像添加到符号路径：
+这些标头显然已分页。因此，需要将正确的映像添加到符号路径：
 
 ```dbgcmd
 kd> .sympath+ \\myserver\myshare\symbols\x86fre\symbols
@@ -93,7 +92,7 @@ Unable to retrieve the PEB address. This is usually caused
 by being in the wrong process context or by paging
 ```
 
-出现的警告，但符号本身现在均可访问：
+出现相同的警告，但现在可以访问符号本身：
 
 ```dbgcmd
 kd> x fs_Rec!*

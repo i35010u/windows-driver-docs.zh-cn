@@ -1,17 +1,16 @@
 ---
 title: Unload 例程的功能
 description: Unload 例程的功能
-ms.assetid: a36b4687-df1d-498f-b9f3-d13ae2a9a3cd
 keywords:
 - 卸载例程，WDK 内核，功能
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d7d46760cf0c6e7055cb521dee49eda041c1453f
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 5f2d58cabc152ab12b9cedae9b4cc3df59909048
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185781"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840683"
 ---
 # <a name="unload-routine-functionality"></a>Unload 例程的功能
 

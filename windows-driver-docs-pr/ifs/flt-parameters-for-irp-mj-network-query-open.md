@@ -1,7 +1,6 @@
 ---
 title: IRP_MJ_NETWORK_QUERY_OPEN 联合的 FLT_PARAMETERS
 description: 当操作的 FLT \_ IO \_ 参数块结构的 MajorFunction 字段 \_ 为 IRP \_ MJ \_ 网络 \_ 查询 \_ 打开时，将使用以下联合组件。
-ms.assetid: bafe015c-a747-4d18-95d5-adad2ad1570b
 keywords:
 - IRP_MJ_NETWORK_QUERY_OPEN 联合可安装文件系统驱动程序的 FLT_PARAMETERS
 - FLT_PARAMETERS 联合可安装文件系统驱动程序
@@ -16,29 +15,29 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 609eacce5113724180ce3215210b6c712b0ded46
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: cc77bc0ef23d0c8e246be70da68e0a80f022765f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066192"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839265"
 ---
 # <a name="flt_parameters-for-irp_mj_network_query_open-union"></a>\_IRP \_ MJ \_ 网络 \_ 查询 \_ 开放式联合的 FLT 参数
 
 
-当操作的[**FLT \_ IO \_ 参数 \_ 块**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构的**MajorFunction**字段为 IRP \_ MJ \_ 网络 \_ 查询 \_ 打开时，将使用以下联合组件。
+当操作的 [**FLT \_ IO \_ 参数 \_ 块**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构的 **MajorFunction** 字段为 IRP \_ MJ \_ 网络 \_ 查询 \_ 打开时，将使用以下联合组件。
 
 <a name="syntax"></a>语法
 ------
 
 ```ManagedCPlusPlus
 typedef union _FLT_PARAMETERS {
-  ...    ;
+  ...    ;
   struct {
-    PIRP                           Irp;
+    PIRP                           Irp;
     PFILE_NETWORK_OPEN_INFORMATION NetworkInformation;
-  } NetworkQueryOpen;
-  ...    ;
+  } NetworkQueryOpen;
+  ...    ;
 } FLT_PARAMETERS, *PFLT_PARAMETERS;
 ```
 
@@ -57,7 +56,7 @@ typedef union _FLT_PARAMETERS {
 <a name="remarks"></a>备注
 -------
 
-IRP MJ 网络查询打开操作的 [**FLT \_ 参数**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters) 结构 \_ \_ \_ \_ 包含回调数据所表示的 NetworkQueryOpen 操作的参数 ([**FLT \_ 回调 \_ 数据**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)) 结构。 **FLT \_ 参数**结构包含在[**FLT \_ IO \_ 参数 \_ 块**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构中。
+IRP MJ 网络查询打开操作的 [**FLT \_ 参数**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters) 结构 \_ \_ \_ \_ 包含回调数据所表示的 NetworkQueryOpen 操作的参数 ([**FLT \_ 回调 \_ 数据**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)) 结构。 **FLT \_ 参数** 结构包含在 [**FLT \_ IO \_ 参数 \_ 块**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构中。
 
 > [!NOTE]
 > 与 IRP \_ MJ 网络查询打开关联的文件对象 \_ \_ \_ 是一种基于堆栈的对象。
@@ -83,7 +82,7 @@ IRP \_ MJ \_ 网络 \_ 查询 \_ 打开是一种快速的 i/o 操作。 它等�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**文件 \_ 网络 \_ 打开 \_ 信息**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_file_network_open_information)

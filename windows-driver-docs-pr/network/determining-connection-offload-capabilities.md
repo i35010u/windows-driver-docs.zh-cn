@@ -1,17 +1,16 @@
 ---
 title: 确定连接卸载功能
 description: 确定连接卸载功能
-ms.assetid: 9a7c40dd-7151-462f-b30b-0444a4177ff9
 keywords:
 - 连接卸载 WDK TCP/IP 传输，功能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 29e186484e6f38357ac73b66799d2a2a835fde95
-ms.sourcegitcommit: e2de6b9ffb5c7356deb864f9da879533f49b25bf
+ms.openlocfilehash: e039e62e3ef5f1208e3061234602b8d687ce18d0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2020
-ms.locfileid: "91702650"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839033"
 ---
 # <a name="determining-connection-offload-capabilities"></a>确定连接卸载功能
 

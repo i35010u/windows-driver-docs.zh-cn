@@ -1,19 +1,18 @@
 ---
 title: 通过数据报套接字发送数据
 description: 通过数据报套接字发送数据
-ms.assetid: 5748ac2a-177f-4fe9-a55b-85eec45d5afa
 keywords:
 - 发送数据报
 - 数据报套接字 WDK Winsock 内核
 - WskSendTo
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c590541742288c576a165864358967309e1f3d0
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3a563d15ba5752316a9e921e72b7c556b7d145af
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208561"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840273"
 ---
 # <a name="sending-data-over-a-datagram-socket"></a>通过数据报套接字发送数据
 
@@ -129,7 +128,7 @@ NTSTATUS
 }
 ```
 
-如果 WSK 应用程序已为数据报套接字设置固定远程传输地址或固定目标传输地址，则传递到[**WskSendTo**](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_send_to)函数的*RemoteAddress*参数是可选的，并且可以为**NULL**。 如果 **为 NULL**，则将数据报发送到固定远程传输地址或固定目标传输地址。 如果非**NULL**，则将数据报发送到指定的远程传输地址。
+如果 WSK 应用程序已为数据报套接字设置固定远程传输地址或固定目标传输地址，则传递到 [**WskSendTo**](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_send_to)函数的 *RemoteAddress* 参数是可选的，并且可以为 **NULL**。 如果 **为 NULL**，则将数据报发送到固定远程传输地址或固定目标传输地址。 如果非 **NULL**，则将数据报发送到指定的远程传输地址。
 
 有关为数据报套接字设置固定远程传输地址的详细信息，请参阅 [**SIO \_ WSK \_ SET \_ remote \_ address**](./sio-wsk-set-remote-address.md)。
 

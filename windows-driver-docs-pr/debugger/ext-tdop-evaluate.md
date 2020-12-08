@@ -1,7 +1,6 @@
 ---
 title: EXT \_ TDOP \_ 评估
 description: EXT \_ TDOP \_ 评估调试请求的子操作 " \_ \_ ext \_ 类型化 \_ 数据 \_ ANSI 请求" 操作返回表示表达式的值的类型化数据说明。
-ms.assetid: 2df6cf92-6889-4407-93c0-4c777a68cbc8
 keywords:
 - EXT_TDOP_EVALUATE Windows 调试
 topic_type:
@@ -12,19 +11,19 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 80527c29d629df478992e553413484d2f3725f2a
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: d4c616d8db1c09f72746a55393089f44d3bc7d1f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213019"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839955"
 ---
 # <a name="ext_tdop_evaluate"></a>EXT \_ TDOP \_ 评估
 
 
-EXT \_ TDOP \_ 评估调试请求的子操作 " [** \_ \_ ext \_ 类型化 \_ 数据 \_ ANSI**](debug-request-ext-typed-data-ansi.md)[**请求**](request.md) " 操作返回表示表达式的值的类型化数据说明。
+EXT \_ TDOP \_ 评估调试请求的子操作 " [**\_ \_ ext \_ 类型化 \_ 数据 \_ ANSI**](debug-request-ext-typed-data-ansi.md)[**请求**](request.md) " 操作返回表示表达式的值的类型化数据说明。
 
-**参数**
+**Parameters**
 
 <span id="Operation"></span><span id="operation"></span><span id="OPERATION"></span>**运作**  
 \_对于此子操作，设置为 EXT TDOP \_ 评估。
@@ -33,7 +32,7 @@ EXT \_ TDOP \_ 评估调试请求的子操作 " [** \_ \_ ext \_ 类型化 \_ �
 指定用于描述表达式的值所在的目标内存的位标志。 有关这些标志的详细信息，请参阅 [**EXT \_ 类型化 \_ 数据**](/windows-hardware/drivers/ddi/wdbgexts/ns-wdbgexts-_ext_typed_data) 。
 
 <span id="InData"></span><span id="indata"></span><span id="INDATA"></span>**InData**  
-指定可在 **InStrIndex**指定的表达式中使用其值的可选类型化数据。 表达式将此值用作伪寄存器 **$extin**。
+指定可在 **InStrIndex** 指定的表达式中使用其值的可选类型化数据。 表达式将此值用作伪寄存器 **$extin**。
 
 <span id="OutData"></span><span id="outdata"></span><span id="OUTDATA"></span>**OutData**  
 接收表示表达式的值的 [**调试 \_ 类型化 \_ 数据**](/windows-hardware/drivers/ddi/wdbgexts/ns-wdbgexts-_debug_typed_data) 结构。

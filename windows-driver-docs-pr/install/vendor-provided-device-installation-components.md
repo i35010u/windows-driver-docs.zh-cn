@@ -1,15 +1,14 @@
 ---
 title: 供应商提供的设备安装组件
 description: 供应商提供的设备安装组件
-ms.assetid: d86bdf75-9726-4b44-8753-7e9c19e88a61
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b77dbf51d25a4538d0311ac95ba26adb60925da9
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 5b395f8fb376f2f9f1c31dcf8d4bc090efcf4187
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097227"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840951"
 ---
 # <a name="vendor-provided-device-installation-components"></a>供应商提供的设备安装组件
 

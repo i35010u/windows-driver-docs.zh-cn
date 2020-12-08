@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_DeviceInterfaceClass_DefaultInterface
 description: DEVPKEY_DeviceInterfaceClass_DefaultInterface
-ms.assetid: dab341d1-6cab-420b-9ee0-acf6747e2dac
 keywords:
 - DEVPKEY_DeviceInterfaceClass_DefaultInterface 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: bb048de1ec04d7acb3d59350939c3bf57c65741c
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 1138e9e6805113df64743d01dc37d9198d9c68a2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716376"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841247"
 ---
 # <a name="devpkey_deviceinterfaceclass_defaultinterface"></a>DEVPKEY_DeviceInterfaceClass_DefaultInterface
 

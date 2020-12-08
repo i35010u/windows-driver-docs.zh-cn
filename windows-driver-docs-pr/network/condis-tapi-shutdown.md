@@ -1,7 +1,6 @@
 ---
 title: CoNDIS TAPI 关闭
 description: CoNDIS TAPI 关闭
-ms.assetid: 97baf489-9a9b-48c8-b0f8-79beea33bc38
 keywords:
 - CoNDIS WAN 驱动程序 WDK 网络，TAPI 服务
 - telephonic services WDK WAN，shutdown
@@ -11,12 +10,12 @@ keywords:
 - 关闭 CoNDIS TAPI 操作会调用 WDK CoNDIS WAN
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f4f96cffeaaf4b8f9e22cc3109e3496f4685fffd
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: cdb9f7204e245e09caa25a1c0c814363e4dae689
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209793"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840665"
 ---
 # <a name="condis-tapi-shutdown"></a>CoNDIS TAPI 关闭
 
@@ -44,7 +43,7 @@ ms.locfileid: "89209793"
 
 ### <a name="closing-a-session"></a>关闭会话
 
-会话终止可以由上层或 CoNDIS WAN 微型端口驱动程序启动。 在上一个客户端进程与较高级别的电话模块分离后，将通知 NDPROXY 驱动程序必须终止与每个已注册适配器的会话。 为此，NDPROXY 驱动程序将调用 [**NdisClCloseAddressFamily**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclcloseaddressfamily) 函数并将句柄传递到 TAPI 地址系列。 NDIS 又调用微型端口驱动程序的 [**ProtocolCmCloseAf**](/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_cm_close_af) 函数。 微型端口驱动程序应终止在指定适配器上正在进行的任何相关活动，并释放任何相关的资源。 调用 **NdisClCloseAddressFamily**之后，客户端应考虑 TAPI 地址系列的句柄无效。
+会话终止可以由上层或 CoNDIS WAN 微型端口驱动程序启动。 在上一个客户端进程与较高级别的电话模块分离后，将通知 NDPROXY 驱动程序必须终止与每个已注册适配器的会话。 为此，NDPROXY 驱动程序将调用 [**NdisClCloseAddressFamily**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclcloseaddressfamily) 函数并将句柄传递到 TAPI 地址系列。 NDIS 又调用微型端口驱动程序的 [**ProtocolCmCloseAf**](/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_cm_close_af) 函数。 微型端口驱动程序应终止在指定适配器上正在进行的任何相关活动，并释放任何相关的资源。 调用 **NdisClCloseAddressFamily** 之后，客户端应考虑 TAPI 地址系列的句柄无效。
 
 如果在 *MiniportHaltEx* 函数中卸载微型端口驱动程序，则可能会发生驱动程序启动的会话终止。 通常，微型端口驱动程序会完成所有未完成的 NDPROXY 请求，并通知 NDISWAN 所有调用都正在关闭。 如果以后再次加载微型端口驱动程序，则会经历前面所述的相同初始化过程。
 

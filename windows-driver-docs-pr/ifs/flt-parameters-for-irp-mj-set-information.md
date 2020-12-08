@@ -1,7 +1,6 @@
 ---
 title: IRP_MJ_SET_INFORMATION 联合的 FLT_PARAMETERS
 description: 操作的 FLT \_ IO \_ 参数块结构的 MajorFunction 字段 \_ 为 IRP \_ MJ \_ 集 \_ 信息时使用的联合组件。
-ms.assetid: 860973bf-a98d-4495-9d6c-093ee985f360
 keywords:
 - IRP_MJ_SET_INFORMATION 联合可安装文件系统驱动程序的 FLT_PARAMETERS
 - FLT_PARAMETERS 联合可安装文件系统驱动程序
@@ -16,39 +15,39 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c4ee6b1762cd6678155de93789b5b37dde08d548
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 237e21b4321c8e2b996740bf8555e7578a9a21ac
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106760"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839549"
 ---
 # <a name="flt_parameters-for-irp_mj_set_information-union"></a>\_IRP \_ MJ \_ 集 \_ 信息联合的 FLT 参数
 
 
-操作的[**FLT \_ IO \_ 参数 \_ 块**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构的**MajorFunction**字段为[**IRP \_ MJ \_ 集 \_ 信息**](irp-mj-set-information.md)时使用的联合组件。
+操作的 [**FLT \_ IO \_ 参数 \_ 块**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构的 **MajorFunction** 字段为 [**IRP \_ MJ \_ 集 \_ 信息**](irp-mj-set-information.md)时使用的联合组件。
 
 <a name="syntax"></a>语法
 ------
 
 ```ManagedCPlusPlus
 typedef union _FLT_PARAMETERS {
-  ...    ;
+  ...    ;
   struct {
-    ULONG                                    Length;
+    ULONG                                    Length;
     FILE_INFORMATION_CLASS POINTER_ALIGNMENT FileInformationClass;
-    PFILE_OBJECT                             ParentOfTarget;
+    PFILE_OBJECT                             ParentOfTarget;
     union {
       struct {
         BOOLEAN ReplaceIfExists;
         BOOLEAN AdvanceOnly;
       };
-      ULONG  ClusterCount;
+      ULONG  ClusterCount;
       HANDLE DeleteHandle;
     };
-    PVOID                                    InfoBuffer;
-  } SetFileInformation;
-  ...    ;
+    PVOID                                    InfoBuffer;
+  } SetFileInformation;
+  ...    ;
 } FLT_PARAMETERS, *PFLT_PARAMETERS;
 ```
 
@@ -59,7 +58,7 @@ typedef union _FLT_PARAMETERS {
 包含以下成员的结构。
 
 **长度**  
-**InfoBuffer**缓冲区的长度（以字节为单位）。
+**InfoBuffer** 缓冲区的长度（以字节为单位）。
 
 **FileInformationClass**  
 要为文件设置的信息类型。 下列类型作之一：
@@ -114,7 +113,7 @@ typedef union _FLT_PARAMETERS {
  
 
 **ParentOfTarget**  
-用于重命名或链接操作。 如果 **InfoBuffer 包含 &gt; ** 完全限定的文件名，或者 **InfoBuffer- &gt; RootDirectory** 为非**NULL**，则此成员是作为操作目标的文件的父目录的文件对象指针。 否则为 **NULL**。
+用于重命名或链接操作。 如果 **InfoBuffer 包含 &gt;** 完全限定的文件名，或者 **InfoBuffer- &gt; RootDirectory** 为非 **NULL**，则此成员是作为操作目标的文件的父目录的文件对象指针。 否则为 **NULL**。
 
  ( *未命名结构* )   
 包含以下成员的结构。
@@ -123,7 +122,7 @@ typedef union _FLT_PARAMETERS {
 用于重命名或链接操作。 如果设置为 **TRUE** ，则指定已存在的同名文件将替换为给定的文件。 如果重命名或链接操作如果已存在具有给定名称的文件，则设置为 **FALSE** 。
 
 **AdvanceOnly**  
-文件结尾操作的标志。 这会确定在**FileInformationClass**FileEndOfFileInformation 时，使用**EndOfFile**成员[**文件的 \_ \_ \_ 文件 \_ 结尾**](/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_end_of_file_information)  ==  **FileEndOfFileInformation**。 如果 **为 TRUE**，则仅当文件增加当前有效数据长度时，才从 **EndOfFile** 设置新的有效数据长度。 如果 **为 FALSE**，则从 **EndOfFile**设置新的文件大小。
+文件结尾操作的标志。 这会确定在 **FileInformationClass** FileEndOfFileInformation 时，使用 **EndOfFile** 成员 [**文件的 \_ \_ \_ 文件 \_ 结尾**](/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_end_of_file_information)  ==  **FileEndOfFileInformation**。 如果 **为 TRUE**，则仅当文件增加当前有效数据长度时，才从 **EndOfFile** 设置新的有效数据长度。 如果 **为 FALSE**，则从 **EndOfFile** 设置新的文件大小。
 
 **ClusterCount**  
 预留给系统使用。 请勿使用。
@@ -141,7 +140,7 @@ IRP MJ 集信息操作的 [**FLT \_ 参数**](/windows-hardware/drivers/ddi/fltk
 
 IRP \_ MJ \_ 集 \_ 信息是基于 IRP 的操作。
 
-缓存管理器将 **AdvanceOnly** 成员设置为 **TRUE** ，以通知文件系统将磁盘上的当前有效数据长度提升到 **EndOfFile**中的新有效数据长度。 如果 **AdvanceOnly** 为 **FALSE**，则会设置 **EndOfFile** 成员中的新文件大小，该大小可大于或小于当前文件大小。
+缓存管理器将 **AdvanceOnly** 成员设置为 **TRUE** ，以通知文件系统将磁盘上的当前有效数据长度提升到 **EndOfFile** 中的新有效数据长度。 如果 **AdvanceOnly** 为 **FALSE**，则会设置 **EndOfFile** 成员中的新文件大小，该大小可大于或小于当前文件大小。
 
 <a name="requirements"></a>要求
 ------------
@@ -159,7 +158,7 @@ IRP \_ MJ \_ 集 \_ 信息是基于 IRP 的操作。
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**文件 \_ 分配 \_ 信息**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_allocation_information)

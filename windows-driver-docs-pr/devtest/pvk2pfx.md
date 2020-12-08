@@ -1,7 +1,6 @@
 ---
 title: Pvk2Pfx
 description: 'Pvk2Pfx ( # A0) 是一个命令行工具，它将 .spc、.cer 和 pvk 文件中包含的公钥和私钥信息复制到个人信息交换 ( .pfx) 文件中。'
-ms.assetid: f3fb3703-0e33-4d7f-b2ad-52bc035e01de
 keywords:
 - Pvk2Pfx 驱动程序开发工具
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ce5667f2b676259a096cff44a2437a69c0e43b6c
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: d276c8694aebc24991c0cd34e3a71f83b1b9c395
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382979"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840783"
 ---
 # <a name="pvk2pfx"></a>Pvk2Pfx
 

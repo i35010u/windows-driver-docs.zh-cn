@@ -1,15 +1,14 @@
 ---
 title: PnP 测试（设备基础功能）
 description: 设备基础知识 PnP 测试强制驱动程序处理几乎所有 PnP Irp;但是，有三个方面会特别删除、重新均衡和意外删除。
-ms.assetid: 4224F92B-5430-4F55-900D-0B08ADBE54F6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 03e512b41256b18a674f774eb876f8897c2e32d6
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 165562f458e6fc73a0accce7ee8f8d9f69167be1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102462"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841045"
 ---
 # <a name="pnp-tests-device-fundamentals"></a>PnP 测试（设备基础功能）
 

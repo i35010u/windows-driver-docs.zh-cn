@@ -1,7 +1,6 @@
 ---
 title: 系统定义的 IOCTL_VIDEO_XXX 请求
 description: 系统定义的 IOCTL_VIDEO_XXX 请求
-ms.assetid: 30309de1-c991-402d-a701-7e88c3367d24
 keywords:
 - 视频微型端口驱动程序 WDK Windows 2000，处理请求
 - 请求处理 WDK 视频微型端口
@@ -10,14 +9,14 @@ keywords:
 - IOCTL_VIDEO_XXX 请求 WDK 视频微型端口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: abce6988b654dd718214160ffa3dabd88a4f7e9c
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: c6282939ade29e46dc2382f281cb818d93afb418
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063960"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838947"
 ---
-# <a name="system-defined-ioctl_video_xxx-requests"></a>系统定义的 IOCTL \_ 视频 \_ XXX 请求
+# <a name="system-defined-ioctl_video_xxx-requests"></a>System-Defined IOCTL \_ 视频 \_ XXX 请求
 
 
 ## <span id="ddk_system_defined_ioctl_video_xxx_requests_gg"></span><span id="DDK_SYSTEM_DEFINED_IOCTL_VIDEO_XXX_REQUESTS_GG"></span>

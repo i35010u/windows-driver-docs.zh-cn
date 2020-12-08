@@ -1,15 +1,14 @@
 ---
 title: 写入信息日志条目
 description: 写入信息日志条目
-ms.assetid: 624d2a3e-2a11-47fd-941e-1ab59e299821
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d4b409e86f9f434f9e7e142f02e05fd87570dbba
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 26ce205a688cd22cd4828ff03031f314c14ca515
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717484"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840925"
 ---
 # <a name="writing-an-information-log-entry"></a>写入信息日志条目
 
@@ -28,7 +27,7 @@ ms.locfileid: "90717484"
 
 -   *MessageStr* 设置为文本 ( "感兴趣的变量： =% d" ) 。
 
--   逗号分隔的参数列表提供了变量 *SomeVariable*，它对应于 *MessageStr*中的 "% d" 字段。
+-   逗号分隔的参数列表提供了变量 *SomeVariable*，它对应于 *MessageStr* 中的 "% d" 字段。
 
 ```cpp
 //The LogToken value was previously returned by call to

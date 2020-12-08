@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ VIDEOCOMPRESSION \_ 关键帧 \_ 速率
 description: KSPROPERTY \_ VIDEOCOMPRESSION \_ 关键帧 \_ 速率属性控制关键帧速率。 必须实现此属性。
-ms.assetid: 2b39dbe4-5010-4454-92ca-699b3b2c21ac
 keywords:
 - KSPROPERTY_VIDEOCOMPRESSION_KEYFRAME_RATE 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eb78094da7fb04d261bbd34d3fa191075f59598b
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 88768d816629e97208ff28b4e3d524bf2725df0a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104414"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840869"
 ---
 # <a name="ksproperty_videocompression_keyframe_rate"></a>KSPROPERTY \_ VIDEOCOMPRESSION \_ 关键帧 \_ 速率
 
@@ -84,7 +83,7 @@ KSPROPERTY **Value** \_ VIDEOCOMPRESSION S 结构的 Value 成员 \_ 指定属�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

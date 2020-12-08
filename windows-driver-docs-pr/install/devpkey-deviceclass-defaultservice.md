@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_DeviceClass_DefaultService
 description: DEVPKEY_DeviceClass_DefaultService
-ms.assetid: 19d1a9ea-3bde-4230-af1a-b67b5a29e6f4
 keywords:
 - DEVPKEY_DeviceClass_DefaultService 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 49e7101b89fc8072401cf45acfd43f212e5dc915
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: db70b1d0f36befc395a964e64dfc3e7c3b4a38de
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715776"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841253"
 ---
 # <a name="devpkey_deviceclass_defaultservice"></a>DEVPKEY_DeviceClass_DefaultService
 

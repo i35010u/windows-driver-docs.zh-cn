@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ PIN \_ PHYSICALCONNECTION
 description: 音频适配器驱动程序使用 KSPROPERTY \_ 引脚 \_ PHYSICALCONNECTION 属性来表示微型端口之间的物理连接。
-ms.assetid: a679ce41-93d2-4b46-a26d-ce05408ec6aa
 keywords:
 - KSPROPERTY_PIN_PHYSICALCONNECTION 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2fd873f52d0e354f2643e5d115b20afb27fcecf5
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: ad7007c830a71ac8c16df3875e71644d260102de
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104416"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839345"
 ---
 # <a name="ksproperty_pin_physicalconnection"></a>KSPROPERTY \_ PIN \_ PHYSICALCONNECTION
 
@@ -90,7 +89,7 @@ KSPROPERTY \_ PIN \_ PHYSICALCONNECTION 返回 [**KSPIN \_ PHYSICALCONNECTION**]
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSP \_ PIN**](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin)

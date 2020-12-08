@@ -1,7 +1,6 @@
 ---
 title: 打开和关闭流
 description: 打开和关闭流
-ms.assetid: a4895e99-ab2e-482e-b89f-04b01177ec03
 keywords:
 - 视频捕获 WDK AVStream，打开流
 - 捕获视频 WDK AVStream，打开流
@@ -11,12 +10,12 @@ keywords:
 - 关闭流 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bfc0ad2c54bc7a571f36aa9584a6fcfd77a17d91
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 6f2e31b9636076f01893939f22fc43ea624377c2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190387"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840519"
 ---
 # <a name="opening-and-closing-a-stream"></a>打开和关闭流
 
@@ -35,7 +34,7 @@ PKS_VIDEOINFOHEADER pVideoInfoHdrRequested =
 
 微型驱动程序应验证它们是否可支持请求的流格式。 特别是，应验证 [**KS \_ BITMAPINFOHEADER**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_bitmapinfoheader) 结构的内容，以及 **rcSource** 和 **rcTarget** 成员指定的裁剪和缩放信息。
 
-如果设备硬件无法支持 KS VIDEOINFOHEADER 的**AvgTimePerFrame**成员中请求的捕获帧速率 \_ ，则应始终选择下一个可用的*lower*帧速率。 例如，如果照相机可以支持每秒7帧的捕获帧速率 (fps) 15 fps，而客户端应用程序尝试以 10 fps 的捕获帧速率打开流，则照相机应创建 7 fps 物理流。
+如果设备硬件无法支持 KS VIDEOINFOHEADER 的 **AvgTimePerFrame** 成员中请求的捕获帧速率 \_ ，则应始终选择下一个可用的 *lower* 帧速率。 例如，如果照相机可以支持每秒7帧的捕获帧速率 (fps) 15 fps，而客户端应用程序尝试以 10 fps 的捕获帧速率打开流，则照相机应创建 7 fps 物理流。
 
 对于10秒的捕获，其中捕获了所有70个可用的物理帧，微型驱动程序应报告100帧，其中30帧已被 [**KSPROPERTY \_ DROPPEDFRAMES \_ CURRENT**](./ksproperty-droppedframes-current.md) 属性丢弃。
 

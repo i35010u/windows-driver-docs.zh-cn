@@ -1,7 +1,6 @@
 ---
 title: EFI 中的启动选项概述
 description: EFI 中的启动选项概述
-ms.assetid: 2237d321-75e6-4723-9f08-484bd9097360
 keywords:
 - NVRAM 启动选项 WDK，关于 EFI NVRAM boot 选项
 - EFI NVRAM 启动选项 WDK，关于 EFI NVRAM boot 选项
@@ -14,12 +13,12 @@ keywords:
 - Bootcfg 工具
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ff573ede52c9fedf72085f2faaa90f4f1800305
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 2f2bfc1975d52e809a7f372f86038090a6dce0eb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105914"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840787"
 ---
 # <a name="overview-of-boot-options-in-efi"></a>EFI 中的启动选项概述
 
@@ -27,7 +26,7 @@ ms.locfileid: "90105914"
 
 -   *全局定义的变量* ，适用于计算机上所有可启动的设备和可启动的程序。
 
--   仅适用于可启动设备或程序的特定负载配置的*启动选项变量*，如操作系统。 系统特定的变量包括计算机上可启动设备或可启动程序的每个配置的启动项。
+-   仅适用于可启动设备或程序的特定负载配置的 *启动选项变量*，如操作系统。 系统特定的变量包括计算机上可启动设备或可启动程序的每个配置的启动项。
 
 在[efi 中编辑启动选项](editing-boot-options-in-efi.md)中讨论的[Bootcfg](/windows-server/administration/windows-commands/bootcfg)工具允许你查看和编辑 efi NVRAM 中的启动选项。
 
@@ -64,7 +63,7 @@ OS Friendly Name: EFI Shell [Built-in]
 <thead>
 <tr class="header">
 <th align="left">字段</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 <th align="left">示例</th>
 </tr>
 </thead>
@@ -80,7 +79,7 @@ OS Friendly Name: EFI Shell [Built-in]
 <td align="left"><pre space="preserve"><code>Timeout:   30</code></pre></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>Default</strong></p></td>
+<td align="left"><p><strong>默认</strong></p></td>
 <td align="left"><p>指定默认操作系统的位置。</p></td>
 <td align="left"><pre space="preserve"><code>\Device\HarddiskVolume3\WINDOWS</code></pre></td>
 </tr>
@@ -133,7 +132,7 @@ Enterprise</code></pre></td>
 </tbody>
 </table>
 
-此外，还存在一个用于 Bootcfg 不显示的 EFI 启动项的重要元素，即 *efi 启动项 ID*。 EFI 启动条目是 EFI 启动条目的唯一标识符。 此标识符是在创建启动项时分配的，并且不会更改。 它表示多个列表中的启动项（包括 *BootOrder* 数组），它是磁盘上的目录的名称，系统在该目录中存储与启动项相关的数据，包括启动项的备份副本。 EFI 启动项 ID 的格式为 Boot*xxxx*，其中 *xxxx* 是一个十六进制数，用于反映创建启动条目的顺序。
+此外，还存在一个用于 Bootcfg 不显示的 EFI 启动项的重要元素，即 *efi 启动项 ID*。 EFI 启动条目是 EFI 启动条目的唯一标识符。 此标识符是在创建启动项时分配的，并且不会更改。 它表示多个列表中的启动项（包括 *BootOrder* 数组），它是磁盘上的目录的名称，系统在该目录中存储与启动项相关的数据，包括启动项的备份副本。 EFI 启动项 ID 的格式为 Boot *xxxx*，其中 *xxxx* 是一个十六进制数，用于反映创建启动条目的顺序。
 
 > [!NOTE] 
 > Bootcfg 中的 **启动项 ID** 字段和 Nvrboot 中的启动条目号不显示 EFI 启动项 id。 Bootcfg 和 Nvrboot Id 是表示启动 **条目** 部分中启动项顺序的行号，并在重新排序项时进行更改。

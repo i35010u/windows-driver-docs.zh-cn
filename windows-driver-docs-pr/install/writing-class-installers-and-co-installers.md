@@ -1,7 +1,6 @@
 ---
 title: 编写类安装程序和辅助安装程序
 description: 编写类安装程序和辅助安装程序
-ms.assetid: DA52A2C4-81D7-4e95-97CD-D5A1C625CE02
 keywords:
 - 类安装程序 WDK 设备安装，编写
 - 编写类安装程序 WDK 设备安装
@@ -9,12 +8,12 @@ keywords:
 - 编写共同安装程序 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 36b91c682a44f88e59f8313262b47c50d086fb6b
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: 3e11a55eb1daa71c1a038121232f0513a46a8367
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361468"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840923"
 ---
 # <a name="writing-class-installers-and-co-installers"></a>编写类安装程序和辅助安装程序
 
@@ -66,7 +65,7 @@ ms.locfileid: "94361468"
 
 为了安全地通过类安装程序或共同安装程序加载可执行文件或 DLL，强烈建议将可执行文件或 DLL 包含在数字签名的 [驱动程序包](driver-packages.md)中。 有关如何对驱动程序包进行签名的详细信息，请参阅 [驱动程序签名](driver-signing.md)。
 
-**注意**  类安装程序和共同安装程序不得通过显式函数调用（如 **LoadLibrary** ）或通过创建链接依赖项来加载 DLL 模块。
+**注意**  类安装程序和共同安装程序不得通过显式函数调用（如 **LoadLibrary**）或通过创建链接依赖项来加载 DLL 模块。
 
  
 

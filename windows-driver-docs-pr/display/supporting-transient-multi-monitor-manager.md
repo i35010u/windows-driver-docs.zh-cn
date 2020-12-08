@@ -1,7 +1,6 @@
 ---
 title: 支持暂用多监视器管理器
 description: 支持暂用多监视器管理器
-ms.assetid: 5091fe00-76d9-4585-9ef0-4b5b7ab8bc06
 keywords:
 - 暂时性的多监视器管理器 WDK 显示
 - TMM WDK 显示
@@ -10,12 +9,12 @@ keywords:
 - 监视配置 WDK 显示，TMM 支持
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c4b0f7c884676065b466a4cf359f8f2c5ae9847
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 98004b48d9b8c4c97c5f19af9b751f0219645fba
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067198"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838969"
 ---
 # <a name="supporting-transient-multi-monitor-manager"></a>支持暂用多监视器管理器
 

@@ -1,9 +1,8 @@
 ---
 title: 计时器
-description: 计时器扩展显示的所有系统的详细的列表计时器使用。
-ms.assetid: 795bdfe1-1ee4-4bf2-9fcd-80415fe84754
+description: 计时器扩展显示所有系统计时器使用情况的详细列表。
 keywords:
-- Windows 调试计时器
+- 计时器 Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1174b5ca33f16f2137e6529c78b9d4b78096c856
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c2fcddabbe2aea537a6fb64d10095babaaa72740
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334209"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838839"
 ---
 # <a name="timer"></a>!timer
 
 
-**！ 计时器**扩展插件都会显示所有的系统的详细的列表计时器使用。
+**！计时器** 扩展显示所有系统计时器使用情况的详细列表。
 
 ```dbgcmd
 !timer 
@@ -31,7 +30,7 @@ ms.locfileid: "63334209"
 ## <span id="ddk__timer_dbg"></span><span id="DDK__TIMER_DBG"></span>
 
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -52,16 +51,16 @@ ms.locfileid: "63334209"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-计时器对象的信息，请参阅 Windows Driver Kit (WDK) 文档。
+有关 timer 对象的信息，请参阅 Windows 驱动程序工具包 (WDK) 文档。
 
 <a name="remarks"></a>备注
 -------
 
-**！ 计时器**扩展显示计时器树中，将所有计时器对象都存储在系统中。
+**！计时器** 扩展显示计时器树，该树将所有计时器对象存储在系统中。
 
-下面是一个示例：
+以下是示例：
 
 ```dbgcmd
 kd> !timer

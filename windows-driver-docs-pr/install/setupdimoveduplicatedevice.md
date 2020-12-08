@@ -1,7 +1,6 @@
 ---
 title: SetupDiMoveDuplicateDevice
-description: 此函数已过时，在任何 Microsoft Windows 操作系统的版本不再受支持。
-ms.assetid: 903bea61-47fd-4383-aa45-0bbcc82e111a
+description: 此功能已过时，在任何 Microsoft Windows 操作系统版本中不再支持此功能。
 keywords:
 - SetupDiMoveDuplicateDevice 设备和驱动程序安装
 topic_type:
@@ -12,17 +11,17 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: ca59938af9fade9d86e4d8fdf03c1f58542f73de
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5fc002dd0f811bfa91cbdc0b4adcd20756fd447c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348623"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838887"
 ---
 # <a name="setupdimoveduplicatedevice"></a>SetupDiMoveDuplicateDevice
 
 
-此函数已过时，在任何 Microsoft Windows 操作系统的版本不再受支持。
+此功能已过时，在任何 Microsoft Windows 操作系统版本中不再支持此功能。
 
  
 

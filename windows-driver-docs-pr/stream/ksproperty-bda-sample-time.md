@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ BDA \_ 采样 \_ 时间
 description: 客户端使用 KSPROPERTY \_ BDA \_ 采样 \_ 时间来确定平均信号级别和质量的采样时间。
-ms.assetid: 53252e11-2a18-42d5-aed8-99052a2b0f21
 keywords:
 - KSPROPERTY_BDA_SAMPLE_TIME 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 352f0b278f86a71ef5078ce02b3c166e742660e7
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 8f89431ffe8bd8b2d179388425e7889ed2cb9c6e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190153"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840249"
 ---
 # <a name="ksproperty_bda_sample_time"></a>KSPROPERTY \_ BDA \_ 采样 \_ 时间
 
@@ -88,7 +87,7 @@ KSP **NodeId** \_ 节点的节点1指定了控制节点的标识符，或设置�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSP \_ 节点**](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_node)

@@ -1,20 +1,19 @@
 ---
 title: 符号扩展
 description: 符号扩展
-ms.assetid: 58e84d09-ab70-4cb2-b12f-4addb34f69d6
 keywords:
-- 符号扩展的数字
-- 符号扩展的寄存器
-- 符号扩展的 MASM 表达式
-- 寄存器，符号扩展
+- 数字的符号扩展
+- 寄存器的签名扩展
+- MASM 表达式，签名扩展
+- 寄存器、符号扩展
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2bda170b255d20262e20db0cfc2be783f5ce4449
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a2a25f9589a963304e880b7eb4365521ee6b4673
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368240"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839933"
 ---
 # <a name="sign-extension"></a>符号扩展
 
@@ -22,50 +21,50 @@ ms.locfileid: "63368240"
 ## <span id="ddk_sign_extension_dbg"></span><span id="DDK_SIGN_EXTENSION_DBG"></span>
 
 
-负 32 位有符号的整数时，其最高的位是等于 1。 当此 32 位有符号的整数转换为 64 位数字时，可以将高的位设置为零 （保留的无符号的整数和数字的十六进制值） 或可以将高的位设置为一个 （保留数的有符号的值）。 后一种情况称为*签名扩展*。
+如果32位有符号整数为负数，则其最大位等于1。 将此32位有符号整数强制转换为64位数字时，可以将高位设置为零 (保留数字的无符号整数和十六进制值) 或者可以将高位设置为保留数字) 的带符号值的一个 (。 后一种情况称为 " *符号扩展*"。
 
-调试器在时所遵循的 MASM 表达式中的符号扩展不同规则C++表达式，并显示数字时。
+对于 MASM 表达式中的符号扩展、c + + 表达式和显示数字，调试器遵循不同的规则。
 
-### <a name="span-idsignextensioninmasmexpressionsspanspan-idsignextensioninmasmexpressionsspansign-extension-in-masm-expressions"></a><span id="sign_extension_in_masm_expressions"></span><span id="SIGN_EXTENSION_IN_MASM_EXPRESSIONS"></span>MASM 表达式中的符号扩展
+### <a name="span-idsign_extension_in_masm_expressionsspanspan-idsign_extension_in_masm_expressionsspansign-extension-in-masm-expressions"></a><span id="sign_extension_in_masm_expressions"></span><span id="SIGN_EXTENSION_IN_MASM_EXPRESSIONS"></span>MASM 表达式中的签名扩展
 
-某些情况下，数字是自动*符号扩展*MASM 表达式计算器。 符号扩展可能会影响仅通过 0xFFFFFFFF 0x80000000 中的数字。 也就是说，扩展会影响可以编写与高 32 位的数字的符号位等于 1。
+在某些情况下，由 MASM 表达式计算器自动对数字进行 *签名* 。 Sign extension 只能影响从0x80000000 到0xFFFFFFFF 的数字。 也就是说，符号扩展只会影响可以用32位编写，高位等于1的数字。
 
-数字 0x12345678 一直保持为 0x00000000\`12345678 时调试器将其视为一个 64 位数字。 但是，当 0x890ABCDE 视为一个 64 位值，它可能会保持 0x00000000\`890ABCDE 或 MASM 表达式计算器可能登录将其扩展到 0xFFFFFFFF\`890ABCDE。
+\`当调试器将其视为64位数字时，0x12345678 的数量始终保持为 0x00000000 12345678。 另一方面，当0x890ABCDE 被视为64位值时，它可能会保留 0x00000000 \` 890ABCDE，或者 MASM 表达式计算器可能会将其标记为 0xffffffff \` 890ABCDE。
 
-通过 0xFFFFFFFF 0x80000000 中的数字的符号扩展基于以下条件：
+从0x80000000 到0xFFFFFFFF 的数字根据以下条件进行了扩展：
 
--   数值常量永远不会是登录在用户模式下扩展。 在内核模式下，数值常量是扩展除非它包含的重读符号 ( **\`** ) 之前的低字节。 例如，在内核模式下，十六进制数字**EEAA1122**并**00000000EEAA1122**是符号扩展，但**00000000\`EEAA1122**和**0\`EEAA1122**不是。
+-   在用户模式下，不会将数字常量标记为扩展。 在内核模式下，数字常量为 "已扩展"，除非它包含一个在 **\`** 低字节之前 ) 的抑音符 (。 例如，在内核模式下，十六进制数字 **EEAA1122** 和 **00000000EEAA1122** 为 sign extended，但 **00000000 \` EEAA1122** 和 **0 \` EEAA1122** 不是。
 
--   32 位寄存器是在这两种模式中扩展的信号。
+-   在这两种模式中，32位寄存器的签名已扩展。
 
--   伪寄存器始终存储为 64 位值。 它们不是符号扩展时将计算它们。 伪寄存器，何时*分配*根据标准计算一个值，使用的表达式C++条件。
+-   伪寄存器始终存储为64位值。 它们不会在评估时进行扩展。 为伪寄存器 *分配* 值时，将根据标准 c + + 条件来计算使用的表达式。
 
--   单个数字和寄存器在表达式中的可以是登录扩展，但没有其他计算表达式计算期间登录扩展。 因此，可以屏蔽高位的数字或通过使用以下语法注册。
+-   表达式中的各个数字和寄存器都可以进行扩展，但在表达式计算期间，不会进行其他计算。 因此，你可以使用以下语法屏蔽数字或寄存器的高位。
     ```console
     ( 0x0`FFFFFFFF & expression )
     ```
 
-### <a name="span-idsignextensionincexpressionsspanspan-idsignextensionincexpressionsspansign-extension-in-c-expressions"></a><span id="sign_extension_in_c___expressions"></span><span id="SIGN_EXTENSION_IN_C___EXPRESSIONS"></span>登录扩展C++表达式
+### <a name="span-idsign_extension_in_c___expressionsspanspan-idsign_extension_in_c___expressionsspansign-extension-in-c-expressions"></a><span id="sign_extension_in_c___expressions"></span><span id="SIGN_EXTENSION_IN_C___EXPRESSIONS"></span>C + + 表达式中的签名扩展
 
-当调试器将计算C++表达式，则适用以下规则：
+调试器计算 c + + 表达式时，下列规则适用：
 
--   寄存器和伪寄存器永远不会是扩展的登录。
+-   寄存器和伪寄存器决不会对扩展进行签名。
 
--   所有其他值被视为完全相同C++会将其类型的值。
+-   所有其他值都与 c + + 处理其类型的值完全相同。
 
-### <a name="span-iddisplayingsignextendedand64bitnumbersspanspan-iddisplayingsignextendedand64bitnumbersspandisplaying-sign-extended-and-64-bit-numbers"></a><span id="displaying_sign_extended_and_64_bit_numbers"></span><span id="DISPLAYING_SIGN_EXTENDED_AND_64_BIT_NUMBERS"></span>显示符号扩展和 64 位数字
+### <a name="span-iddisplaying_sign_extended_and_64_bit_numbersspanspan-iddisplaying_sign_extended_and_64_bit_numbersspandisplaying-sign-extended-and-64-bit-numbers"></a><span id="displaying_sign_extended_and_64_bit_numbers"></span><span id="DISPLAYING_SIGN_EXTENDED_AND_64_BIT_NUMBERS"></span>显示 Sign-Extended 和64位数字
 
-32 位和 16 位寄存器，以外所有数字都存储在内部该调试器内为 64 位值。 但是，当许多满足某些条件，调试器将其显示为命令输出中的 32 位数字。
+除32位和16位寄存器以外，所有数字都以64位值的形式存储在调试器内。 但是，当数字满足某些条件时，调试器会在命令输出中将其显示为32位数字。
 
 调试器使用以下条件来确定如何显示数字：
 
--   许多高 32 位是否均为零 (即，如果数字是从 0x00000000\`00000000 通过 0x00000000\`FFFFFFFF)，调试器将数字显示为一个 32 位数字。
+-   如果数字的高32位全部为零 (也就是说，如果数字从 0x00000000 \` 00000000 到 0x00000000 \` FFFFFFFF) ，则调试器会将该数字显示为32位数字。
 
--   如果一个数字的高 32 位均为所有的选项和低 32 位的最高位也是一个 (即，如果数字是从 0xFFFFFFFF\`80000000 通过 0xFFFFFFFF\`FFFFFFFF)，调试器假定数是符号扩展 32 位数字，并将其显示为一个 32 位数字。
+-   如果数字的高32位是全部，并且低32位的最高位也是一 (也就是说，如果该数字是从 0xFFFFFFFF \` 80000000 到 0xffffffff \` FFFFFFFF) ，则调试器假定该数字是一个带符号扩展的32位数字，并将其显示为一个32位数字。
 
--   如果前面的两个条件不适用 (即，如果数字是从 0x00000001\`00000000 通过 0xFFFFFFFF\`7FFFFFFF) 调试器将数字显示为一个 64 位数字。
+-   如果前面的两个条件不应用 (也就是说，如果数字从 0x00000001 \` 00000000 到 0xffffffff 7FFFFFFF，则 \`) 调试器将该数字显示为64位数字。
 
-由于这些显示规则，当一个数字显示为通过 0xFFFFFFFF 0x80000000 中的 32 位数字，不能确认高 32 位是所有的选项或全为零。 若要区分这两种情况，必须在数字 （如一个或多个高的位掩码，并显示结果） 上执行其他计算。
+由于这些显示规则，当数字显示为从0x80000000 到0xFFFFFFFF 的32位数字时，无法确认高32位是所有值还是全部为零。 若要区分这两种情况，您必须对数字执行附加计算 (例如屏蔽一个或多个高位并显示结果) 。
 
  
 

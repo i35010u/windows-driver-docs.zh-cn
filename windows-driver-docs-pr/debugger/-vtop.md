@@ -1,7 +1,6 @@
 ---
 title: vtop
-description: Vtop 扩展将虚拟地址转换为相应的物理地址，并显示其他页表和页目录信息。
-ms.assetid: 41f4accc-3eb9-4406-a6cc-a05022166e14
+description: Vtop 扩展将虚拟地址转换为相应的物理地址，并显示其他页面表和页面目录信息。
 keywords:
 - vtop Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 343265d0d42a14ed1c0780ca66831e8112d60234
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6b2bc7d19a10432205560cdb4e3d7965f19ae926
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341779"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839175"
 ---
 # <a name="vtop"></a>!vtop
 
 
-**！ Vtop**扩展将虚拟地址转换为相应的物理地址，并显示其他页表和页目录信息。
+**！ Vtop** extension 将虚拟地址转换为相应的物理地址，并显示其他页面表和页面目录信息。
 
 语法
 
@@ -31,35 +30,35 @@ ms.locfileid: "63341779"
 !vtop 0 VirtualAddress 
 ```
 
-## <a name="span-idddkvtopdbgspanspan-idddkvtopdbgspanparameters"></a><span id="ddk__vtop_dbg"></span><span id="DDK__VTOP_DBG"></span>参数
+## <a name="span-idddk__vtop_dbgspanspan-idddk__vtop_dbgspanparameters"></a><span id="ddk__vtop_dbg"></span><span id="DDK__VTOP_DBG"></span>参数
 
 
-<span id="_______DirBase______"></span><span id="_______dirbase______"></span><span id="_______DIRBASE______"></span> *DirBase*   
-指定的目录基础的过程。 每个进程具有自己的虚拟地址空间。 使用[ **！ 过程**](-process.md)扩展来确定进程的目录基础。
+<span id="_______DirBase______"></span><span id="_______dirbase______"></span><span id="_______DIRBASE______"></span>*DirBase*   
+指定进程的目录库。 每个进程都有其自己的虚拟地址空间。 使用 [**！进程**](-process.md) 扩展来确定进程的目录库。
 
-<span id="_______PFN______"></span><span id="_______pfn______"></span> *PFN*   
-指定的进程的目录基础页帧数 (PFN)。
+<span id="_______PFN______"></span><span id="_______pfn______"></span>*PFN*   
+指定进程 (的目录基) 的页面帧号。
 
-<span id="_______0______"></span> **0**   
-将导致 **！ vtop**以使用当前[进程上下文](changing-contexts.md#process-context)地址转换。
+<span id="_______0______"></span>**0**   
+导致 **！ vtop** 使用当前 [进程上下文](changing-contexts.md#process-context) 进行地址转换。
 
-<span id="_______VirtualAddress______"></span><span id="_______virtualaddress______"></span><span id="_______VIRTUALADDRESS______"></span> *VirtualAddress*   
-指定所需的页的虚拟地址。
+<span id="_______VirtualAddress______"></span><span id="_______virtualaddress______"></span><span id="_______VIRTUALADDRESS______"></span>*VirtualAddress*   
+指定需要其页面的虚拟地址。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 Kdexts.dll
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关实现这些结果的其他方法，请参阅[转换到物理地址的虚拟地址](converting-virtual-addresses-to-physical-addresses.md)。 另请参阅[ **！ ptov**](-ptov.md)。 有关页表和页目录中的信息，请参阅*Microsoft Windows Internals*、 Mark Russinovich 和 David solomon 合著的。
+有关实现这些结果的其他方法，请参阅 [将虚拟地址转换为物理地址](converting-virtual-addresses-to-physical-addresses.md)。 另请参阅 [**！ ptov**](-ptov.md)。 有关页表和页目录的信息，请参阅 Russinovich 和 David 所罗门群岛的 *Microsoft Windows 内部机制*。
 
 <a name="remarks"></a>备注
 -------
 
-若要使用此命令，首先使用[ **！ 过程**](-process.md)扩展来确定进程的目录基。 可以通过删除 （即，通过右移位数 12 位） 的三个尾随十六进制零找到此目录基础的页帧数 (PFN)。
+若要使用此命令，请先使用 [**！进程**](-process.md) 扩展来确定进程的目录库。 可以通过删除三个尾随十六进制零来查找此目录基础 (PFN) 的页面帧号， (用鼠标右键将这三个尾随十六进制零右移) 。
 
-下面是一个示例：
+以下是示例：
 
 ```dbgcmd
 kd> !process 0 0
@@ -70,7 +69,7 @@ PROCESS ff779190  SessionId: 0  Cid: 04fc    Peb: 7ffdf000  ParentCid: 0394
     Image: MyApp.exe
 ```
 
-由于目录基本 0x098FD000，其 PFN 是 0x098FD。
+由于目录基为0x098FD000，因此其 PFN 为0x098FD。
 
 ```dbgcmd
 kd> !vtop 98fd 12f980
@@ -78,11 +77,11 @@ Pdi 0 Pti 12f
 0012f980 09de9000 pfn(09de9)
 ```
 
-请注意三个的尾随零都是可选的。 **！ Vtop**扩展显示页目录索引 (PDI)、 页表索引 (PTI)，最初必须输入的虚拟地址、 物理页的页帧数 (PFN) 开头的物理地址页表项 (PTE)。
+请注意，尾随三个零是可选的。 **！ Vtop** extension 显示了页目录索引 (PDI) 、页表索引 (PTI) 、最初所输入的虚拟地址、物理页开头的物理地址，以及页表项 (PTE) 的页帧号 (PFN) 。
 
-如果你想要将虚拟地址 0x0012F980 转换为物理地址，只需具有执行最后三个十六进制数字 (0x980) 并将其添加到网页 (0x09DE9000) 的开头的物理地址。 这样，0x09DE9980 的物理地址。
+如果要将虚拟地址0x0012F980 转换为物理地址，只需使用最后三个十六进制数字 (0x980) ，并将其添加到 (0x09DE9000) 页面开头的物理地址。 这会提供0x09DE9980 的物理地址。
 
-如果你忘记了删除的三个零，并将完整目录传递到基 **！ vtop**而不是 PFN，结果通常是正确的。 这是因为当 **！ vtop**接收数字太大，无法 PFN，它右移位它 12 位，并改为数字的使用：
+如果忘记删除三个零，并将完整目录基数传递到 **！ vtop** 而不是 PFN，则结果通常是正确的。 这是因为当 **！ vtop** 接收到的数字太大而无法成为 PFN 时，它会将它右移十二位，并改为使用该数字：
 
 ```dbgcmd
 kd> !vtop 98fd 12f980
@@ -94,7 +93,7 @@ Pdi 0 Pti 12f
 0012f980 09de9000 pfn(09de9)
 ```
 
-但是，它是更好的做法始终使用 PFN，因为某些目录基础值不会以这种方式进行转换。
+但是，最好始终使用 PFN，因为某些目录基值不会以这种方式进行转换。
 
  
 

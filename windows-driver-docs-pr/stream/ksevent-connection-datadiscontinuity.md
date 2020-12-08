@@ -1,9 +1,8 @@
 ---
-title: KSEVENT\_连接\_DATADISCONTINUITY
-description: KSEVENT\_连接\_DATADISCONTINUITY 事件允许客户端接收通知的数据中断的原因。 通过对 pin 的流接口发送数据的不连续性标志时发生此事件。 没有为此事件参数。
-ms.assetid: fce494ca-80ac-424d-b33b-a5fcd84ddc5e
+title: KSEVENT \_ 连接 \_ DATADISCONTINUITY
+description: KSEVENT \_ CONNECTION \_ DATADISCONTINUITY 事件允许客户端接收数据中断通知。 当通过 pin 上的流接口发送数据不连续性标志时，将发生此事件。 此事件没有参数。
 keywords:
-- KSEVENT_CONNECTION_DATADISCONTINUITY 流式处理媒体设备
+- KSEVENT_CONNECTION_DATADISCONTINUITY 流媒体设备
 topic_type:
 - apiref
 api_name:
@@ -12,17 +11,17 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4cb8b89abbe3627568481c64426a434d238aaf06
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7489d093e68fe754009ed9af7ff9bde163f04f55
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330288"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840587"
 ---
-# <a name="kseventconnectiondatadiscontinuity"></a>KSEVENT\_连接\_DATADISCONTINUITY
+# <a name="ksevent_connection_datadiscontinuity"></a>KSEVENT \_ 连接 \_ DATADISCONTINUITY
 
 
-**KSEVENT\_连接\_DATADISCONTINUITY**事件允许客户端接收通知的数据中断的原因。 通过对 pin 的流接口发送数据的不连续性标志时发生此事件。 没有为此事件参数。
+**KSEVENT \_ CONNECTION \_ DATADISCONTINUITY** 事件允许客户端接收数据中断通知。 当通过 pin 上的流接口发送数据不连续性标志时，将发生此事件。 此事件没有参数。
 
  
 

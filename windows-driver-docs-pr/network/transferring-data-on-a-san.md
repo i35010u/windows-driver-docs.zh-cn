@@ -1,20 +1,19 @@
 ---
 title: 在 SAN 上传输数据
 description: 在 SAN 上传输数据
-ms.assetid: 0706515b-30ec-4257-9f2b-6048615c3a23
 keywords:
-- Windows 套接字直接 WDK，数据传输
+- Windows 套接字直通 WDK，数据传输
 - 数据传输 WDK San
-- 将数据 WDK San 传输
+- 传输数据 WDK San
 - SAN 数据传输 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a7eedbf00154c82889c78db41a08d588a119b126
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 97da45264243450ef7e241bcbd44e513dd63ecd5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391962"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839427"
 ---
 # <a name="transferring-data-on-a-san"></a>在 SAN 上传输数据
 
@@ -22,13 +21,13 @@ ms.locfileid: "63391962"
 
 
 
-许多系统区域网络 (San) 缺少流控制;因此，Windows 套接字交换机使用的轻量的会话协议 SAN 上传输数据。 以下主题介绍了支持的 SAN 服务提供商的数据传输操作的交换机的会话协议功能：
+许多系统区域网络 (SANs) 缺乏流控制;因此，Windows 套接字交换机使用轻型会话协议来传输 SAN 上的数据。 以下主题介绍交换机的会话协议的功能，这些功能可为 SAN 服务提供程序启用数据传输操作：
 
 [使用会话协议](using-session-protocol.md)
 
-[在 SAN 上发送紧急的数据](sending-urgent-data-on-a-san.md)
+[在 SAN 上发送紧急数据](sending-urgent-data-on-a-san.md)
 
-[正在完成数据传输请求](completing-data-transfer-requests.md)
+[完成数据传输请求](completing-data-transfer-requests.md)
 
  
 

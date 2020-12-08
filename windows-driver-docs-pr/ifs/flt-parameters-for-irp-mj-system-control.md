@@ -1,7 +1,6 @@
 ---
 title: IRP_MJ_SYSTEM_CONTROL 联合的 FLT_PARAMETERS
 description: 操作的 FLT \_ IO \_ 参数块结构的 MajorFunction 字段 \_ 为 IRP \_ MJ \_ 系统 \_ 控制时使用的联合组件。
-ms.assetid: 6f1c34b2-1c79-4372-8b94-afe4b50294d5
 keywords:
 - IRP_MJ_SYSTEM_CONTROL 联合可安装文件系统驱动程序的 FLT_PARAMETERS
 - FLT_PARAMETERS 联合可安装文件系统驱动程序
@@ -16,31 +15,31 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 49ca47d82f182738a663f53c25d3f40f0f0801f8
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: cf8c7128525e18a707b5c18bb02866a4018e4f20
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063418"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839925"
 ---
 # <a name="flt_parameters-for-irp_mj_system_control-union"></a>\_IRP \_ MJ \_ 系统 \_ 控制联合的 FLT 参数
 
 
-操作的[**FLT \_ IO \_ 参数 \_ 块**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构的**MajorFunction**字段为 IRP \_ MJ \_ 系统控制时使用的联合组件 \_ 。
+操作的 [**FLT \_ IO \_ 参数 \_ 块**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构的 **MajorFunction** 字段为 IRP \_ MJ \_ 系统控制时使用的联合组件 \_ 。
 
 <a name="syntax"></a>语法
 ------
 
 ```ManagedCPlusPlus
 typedef union _FLT_PARAMETERS {
-  ...    ;
+  ...    ;
   struct {
     ULONG_PTR ProviderId;
-    PVOID     DataPath;
-    ULONG     BufferSize;
-    PVOID     Buffer;
-  } WMI;
-  ...    ;
+    PVOID     DataPath;
+    ULONG     BufferSize;
+    PVOID     Buffer;
+  } WMI;
+  ...    ;
 } FLT_PARAMETERS, *PFLT_PARAMETERS;
 ```
 
@@ -67,7 +66,7 @@ typedef union _FLT_PARAMETERS {
 
 IRP MJ 系统控制操作的 [**FLT \_ 参数**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters) 结构 \_ \_ \_ 包含由回调数据所表示的系统控件操作的参数， ([**FLT \_ 回调 \_ 数据**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)) 结构。 它包含在 FLT \_ IO \_ 参数 \_ 块结构中。
 
-IRP \_ MJ \_ 系统控制参数的意义 \_ 取决于次要函数代码。  (查看[**FLT \_ IO \_ 参数 \_ 块**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构的**MinorFunction**成员。 ) 有关详细信息，请参阅以下次要函数代码的参考条目：
+IRP \_ MJ \_ 系统控制参数的意义 \_ 取决于次要函数代码。  (查看 [**FLT \_ IO \_ 参数 \_ 块**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构的 **MinorFunction** 成员。 ) 有关详细信息，请参阅以下次要函数代码的参考条目：
 
 [**IRP \_ MN \_ 更改 \_ 单一 \_ 实例**](../kernel/irp-mn-change-single-instance.md)
 
@@ -109,7 +108,7 @@ IRP \_ MJ \_ 系统 \_ 控件是基于 IRP 的操作。
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**FLT \_ 回调 \_ 数据**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)

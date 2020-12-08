@@ -1,7 +1,6 @@
 ---
 title: 池跟踪
 description: 池跟踪监视驱动程序所进行的内存分配。
-ms.assetid: 5b8aa775-d908-4a7a-b54f-6c63ac1ebd13
 keywords:
 - 内存池跟踪功能 WDK 驱动程序验证程序
 - 池跟踪功能 WDK 驱动程序验证程序
@@ -10,12 +9,12 @@ keywords:
 - unfreed 内存分配 WDK 驱动程序验证程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d11dde2d586d8ce0dced6e88514907d4edab18bb
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: ac83d549b258ccb58f7805a66d07c49852669bc6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382723"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841031"
 ---
 # <a name="pool-tracking"></a>池跟踪
 
@@ -67,7 +66,7 @@ Unfreed 内存分配 (也称为 *内存泄漏*) 导致操作系统性能降低�
 
 -   **在命令行中**
 
-    在命令行中，池跟踪选项由 **第3个 (0x8) **表示。 若要激活池跟踪，请使用值为0x8 的标志值或将0x8 添加到标志值。 例如：
+    在命令行中，池跟踪选项由 **第3个 (0x8)** 表示。 若要激活池跟踪，请使用值为0x8 的标志值或将0x8 添加到标志值。 例如：
 
     ```
     verifier /flags 0x8 /driver MyDriver.sys
@@ -92,7 +91,7 @@ Unfreed 内存分配 (也称为 *内存泄漏*) 导致操作系统性能降低�
 -   **使用驱动程序验证器管理器**
 
     1.  启动驱动程序验证器管理器。 在命令提示符窗口中键入 **Verifier** 。
-    2.  选择 " **为代码开发人员 (创建自定义设置") ** ，然后单击 " **下一步**"。
+    2.  选择 " **为代码开发人员 (创建自定义设置")** ，然后单击 " **下一步**"。
     3.  选择 " **从完整列表中选择单个设置**"。
     4.  选择 (检查) **池跟踪**。
 

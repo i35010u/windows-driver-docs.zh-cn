@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x9C MACHINE_CHECK_EXCEPTION
 description: MACHINE_CHECK_EXCEPTION bug 检查的值为0x0000009C。 此 bug 检查表明出现了严重计算机检查异常。
-ms.assetid: b8945dba-c515-4a30-a36c-ef4feaadabbe
 keywords:
 - Bug 检查 0x9C MACHINE_CHECK_EXCEPTION
 - MACHINE_CHECK_EXCEPTION
@@ -13,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a93ed762b46b68c4a82b7302299169d98a7b6c66
-ms.sourcegitcommit: bb3b62a57ba3aea4a0adeefd2d81993367b7b334
+ms.openlocfilehash: 9bdff006fb1633ceaeef4ec50fb53e431e32de8b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88148502"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839327"
 ---
 # <a name="bug-check-0x9c-machine_check_exception"></a>Bug 检查0x9C：计算机 \_ 检查 \_ 异常
 
@@ -26,7 +25,7 @@ ms.locfileid: "88148502"
 计算机 \_ 检查 \_ 异常 bug 检查的值为0x0000009C。 此 bug 检查表明出现了严重计算机检查异常。
 
 > [!IMPORTANT]
-> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
 ## <a name="machine_check_exception-parameters"></a>计算机 \_ 检查 \_ 异常参数
@@ -44,7 +43,7 @@ ms.locfileid: "88148502"
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -79,7 +78,7 @@ ms.locfileid: "88148502"
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -111,7 +110,7 @@ ms.locfileid: "88148502"
 -   WHEA 未完全初始化。
 -   集合中的所有处理器在其寄存器中没有错误。
 
-对于其他情况，此 bug 检查已替换为 bug 检查0x124： Windows Vista 和更高版本操作系统中的[**WHEA 无法 \_ 纠正的 \_ 错误**](bug-check-0x124---whea-uncorrectable-error.md)。
+对于其他情况，此 bug 检查已替换为 bug 检查0x124： Windows Vista 和更高版本操作系统中的 [**WHEA 无法 \_ 纠正的 \_ 错误**](bug-check-0x124---whea-uncorrectable-error.md) 。
 
 有关计算机检查体系结构 (MCA) 的详细信息，请参阅 Intel 或 AMD 网站。
 

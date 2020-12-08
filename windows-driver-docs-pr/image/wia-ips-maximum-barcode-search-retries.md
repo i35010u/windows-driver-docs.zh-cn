@@ -1,9 +1,8 @@
 ---
-title: WIA\_IPS\_最大\_条形码\_搜索\_重试
-description: WIA\_IPS\_最大\_条形码\_搜索\_重试次数属性描述了如果可以启用条形码检测时找到没有条形码读取器会尝试的重试的最大数目。
-ms.assetid: AA9255D2-6B3B-4539-8C9C-7B0B84E2417D
+title: WIA \_ IPS \_ 最大 \_ 条形码 \_ 搜索 \_ 重试次数
+description: WIA \_ IPS \_ 最大 \_ 条形码 \_ 搜索 \_ 重试属性描述当启用条形码检测时找不到条形码时，读取器尝试的最大重试次数。
 keywords:
-- WIA_IPS_MAXIMUM_BARCODE_SEARCH_RETRIES 成像设备
+- WIA_IPS_MAXIMUM_BARCODE_SEARCH_RETRIES 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,30 +13,30 @@ api_type:
 - HeaderDef
 ms.date: 05/22/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 08cf90984ff258a20fc061c04d6cf78d65d415ec
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f023d2e342785c54c2c5e9093f005c0988f4e525
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563086"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840089"
 ---
-# <a name="wiaipsmaximumbarcodesearchretries"></a>WIA\_IPS\_最大\_条形码\_搜索\_重试
+# <a name="wia_ips_maximum_barcode_search_retries"></a>WIA \_ IPS \_ 最大 \_ 条形码 \_ 搜索 \_ 重试次数
 
 
-**WIA\_IPS\_最大\_条形码\_搜索\_重试**属性描述的最大重试，如果没有条形码可以找到时，会尝试读取器数条形码检测已启用。
+**WIA \_ IPS \_ 最大 \_ 条形码 \_ 搜索 \_ 重试** 属性描述当启用条形码检测时找不到条形码时，读取器尝试的最大重试次数。
 
 
 
-属性类型：VT\_UI4
+属性类型： VT \_ UI4
 
-有效值：WIA\_PROP\_RANGE
+有效值： WIA 内容 \_ \_ 范围
 
 访问权限：读/写
 
 <a name="remarks"></a>备注
 -------
 
-此属性是必需的所有条码读取器项。 若要支持的范围为包含单个值，包括 0 （不重试），可以实现属性。
+所有条形码读取器项都需要此属性。 可以实现属性以支持包含一个单个值的范围，包括 0 (不) 重试。
 
 <a name="requirements"></a>要求
 ------------
@@ -49,8 +48,8 @@ ms.locfileid: "56563086"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>

@@ -1,18 +1,17 @@
 ---
 title: 特定于筛选器的分配器
 description: 特定于筛选器的分配器
-ms.assetid: 581f3000-4e66-4ba0-979d-b187115a30b2
 keywords:
 - 筛选特定的分配器 WDK 内核流式处理
 - 筛选分配器 WDK 内核流式处理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1400c00d5d99d1b631ded2950c8ed1d50c4b004a
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 8791f16b13d38ec54e08b18eaf8c3eb9b0649912
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188193"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839975"
 ---
 # <a name="filter-specific-allocators"></a>特定于筛选器的分配器
 

@@ -1,15 +1,14 @@
 ---
 title: 输入缓冲区顺序示例 2
 description: 输入缓冲区顺序示例 2
-ms.assetid: e480bd93-4ae2-4a6c-b669-69c44c0154d0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 277c12e5e2534344aafe3919b9f1143e58dced17
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 88f8deb602f8b4c3868998c92808d51e201b0570
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066044"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839293"
 ---
 # <a name="input-buffer-order-example-2"></a>输入缓冲区顺序示例 2
 
@@ -19,7 +18,7 @@ ms.locfileid: "89066044"
 
 **本部分仅适用于 Windows Server 2003 SP1 及更高版本以及 Windows XP SP2 及更高版本。**
 
-VMR 启动对驱动程序的 [**DeinterlaceBltEx**](./dxva-deinterlacebobdeviceclass-deinterlacebltex.md) 函数的调用，以在 [输入缓冲区顺序示例 1](input-buffer-order-example-1.md) 中使用设备，将2个视频 substreams 与交错的视频流组合在一起。 **LpBufferInfo**数组中的图面序列如下：
+VMR 启动对驱动程序的 [**DeinterlaceBltEx**](./dxva-deinterlacebobdeviceclass-deinterlacebltex.md) 函数的调用，以在 [输入缓冲区顺序示例 1](input-buffer-order-example-1.md) 中使用设备，将2个视频 substreams 与交错的视频流组合在一起。 **LpBufferInfo** 数组中的图面序列如下：
 
 <table>
 <colgroup>

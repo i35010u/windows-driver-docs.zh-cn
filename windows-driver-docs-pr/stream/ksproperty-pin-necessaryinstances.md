@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ PIN \_ NECESSARYINSTANCES
 description: 此属性返回 pin 工厂在筛选器可执行 i/o 操作之前必须实例化的最小 pin 数。
-ms.assetid: d30d7546-3d16-42df-b640-a8ec37bca35c
 keywords:
 - KSPROPERTY_PIN_NECESSARYINSTANCES 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8586bccaeb16d483bfbb98a6f0a8b4a02992291b
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 92b7da87c852176f0abd4fd4858f900ff5f71b1c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103630"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839347"
 ---
 # <a name="ksproperty_pin_necessaryinstances"></a>KSPROPERTY \_ PIN \_ NECESSARYINSTANCES
 
@@ -86,7 +85,7 @@ KSPROPERTY \_ pin \_ NECESSARYINSTANCES 返回类型为 ULONG 的值，指定 pi
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSP \_ PIN**](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin)

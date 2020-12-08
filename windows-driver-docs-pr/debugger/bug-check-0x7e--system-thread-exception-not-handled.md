@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x7E SYSTEM_THREAD_EXCEPTION_NOT_HANDLED
 description: SYSTEM_THREAD_EXCEPTION_NOT_HANDLED bug 检查的值为0x0000007E。 此 bug 检查指示系统线程生成了错误处理程序未捕获的异常。
-ms.assetid: 2ecea74f-21d6-4436-beed-d8cf8ef6b169
 keywords:
 - Bug 检查 0x7E SYSTEM_THREAD_EXCEPTION_NOT_HANDLED
 - SYSTEM_THREAD_EXCEPTION_NOT_HANDLED
@@ -13,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d8e30a51be398cbe7dfa5373f012545700954cf
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 5dfe58d300a9ce45b34ca55bd205d728e4aedea0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206829"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841057"
 ---
 # <a name="bug-check-0x7e-system_thread_exception_not_handled"></a>Bug 检查0x7E：系统 \_ 线程 \_ 异常 \_ 未 \_ 处理
 
@@ -39,7 +38,7 @@ ms.locfileid: "89206829"
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -75,7 +74,7 @@ ms.locfileid: "89206829"
 
 - 0xC0000005：状态 \_ 访问 \_ 冲突指示发生了内存访问冲突。
 
-有关异常代码的完整列表，请参阅 [NTSTATUS 值](/openspecs/windows_protocols/ms-erref/596a1078-e883-4972-9bbc-49e60bebca55)。 异常代码在 *ntstatus*中定义，该文件是 [Windows 驱动程序工具包](../index.yml)提供的标头文件。  (有关详细信息，请参阅 [Windows 驱动程序工具包中的头文件](../gettingstarted/header-files-in-the-windows-driver-kit.md)) 。 
+有关异常代码的完整列表，请参阅 [NTSTATUS 值](/openspecs/windows_protocols/ms-erref/596a1078-e883-4972-9bbc-49e60bebca55)。 异常代码在 *ntstatus* 中定义，该文件是 [Windows 驱动程序工具包](../index.yml)提供的标头文件。  (有关详细信息，请参阅 [Windows 驱动程序工具包中的头文件](../gettingstarted/header-files-in-the-windows-driver-kit.md)) 。 
 
 
 <a name="resolution"></a>解决方法
@@ -87,13 +86,13 @@ ms.locfileid: "89206829"
 
 [**！分析**](-analyze.md)调试器扩展显示有关 bug 检查的信息，可帮助确定根本原因。 
 
-可以通过使用[**！线程**](-thread.md)扩展以及[ **dds**、 **dps**和**dqs** (将单词和符号显示) ](dds--dps--dqs--display-words-and-symbols-.md)命令来执行其他分析。 当 WinDbg 报表 "可能由以下原因导致" 时，这可能是一个合理的方法： ntkrnlmp.exe。 " 
+可以通过使用 [**！线程**](-thread.md)扩展以及 [ **dds**、 **dps** 和 **dqs** (将单词和符号显示)](dds--dps--dqs--display-words-and-symbols-.md)命令来执行其他分析。 当 WinDbg 报表 "可能由以下原因导致" 时，这可能是一个合理的方法： ntkrnlmp.exe。 " 
 
 如果发生异常代码0x80000003，则会命中硬编码断点或断言，但系统是使用 **/NODEBUG** 开关启动的。 此问题不会频繁出现。 如果它反复发生，请确保已连接内核调试器，并使用 **/debug** 开关启动系统。
 
 如果发生异常代码数0x80000002，陷阱帧会提供其他信息。
 
-有关 WinDbg 和 **！分析**的详细信息，请参阅以下主题：
+有关 WinDbg 和 **！分析** 的详细信息，请参阅以下主题：
 
  - [使用 WinDbg 分析故障转储文件](crash-dump-files.md)
 

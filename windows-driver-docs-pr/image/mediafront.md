@@ -1,9 +1,8 @@
 ---
 title: MediaFront 元素
-description: 所需的 MediaFront 元素不包含特定于扫描的物理介质的前端的所有参数。
-ms.assetid: 1bde587b-4057-4368-b075-c22561ee45cc
+description: 必需的 MediaFront 元素包含特定于对物理介质的前一层扫描的所有参数。
 keywords:
-- MediaFront 元素成像设备
+- MediaFront 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 22cf7082d4a2693be3830c7962fcb8a3b09b337f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b0a7edc4736b95cad44f8619e8800027cd790b08
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380350"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840975"
 ---
 # <a name="mediafront-element"></a>MediaFront 元素
 
 
-所需**MediaFront**元素不包含特定于扫描的物理介质的前端的所有参数。
+必需的 **MediaFront** 元素包含特定于对物理介质的前一层扫描的所有参数。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -85,7 +84,7 @@ ms.locfileid: "63380350"
 <a name="remarks"></a>备注
 -------
 
-如果**MediaFront**元素不包含[ **ScanRegion** ](scanregion.md)元素，WSD 扫描服务应使用 0，作为偏移量的宽度和高度[**InputMediaSize**](inputmediasize.md)，如果给定。 如果**ScanRegion**缺少和**InputMediaSize**未指定或不能由扫描设备，你可以确定实现。
+如果 **MediaFront** 元素不包含 [**ScanRegion**](scanregion.md) 元素，则 WSD 扫描服务应使用0作为偏移量，并使用 [**InputMediaSize**](inputmediasize.md)的宽度和高度（如果给定）。 如果缺少 **ScanRegion** ，但未指定 **InputMediaSize** 或扫描设备无法确定，可以确定实现。
 
 ## <a name="see-also"></a>请参阅
 

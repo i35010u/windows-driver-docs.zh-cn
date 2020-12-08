@@ -1,19 +1,18 @@
 ---
 title: 纹理阶段操作
 description: 纹理阶段操作
-ms.assetid: da2213bb-41f1-440b-8f69-19f69e739954
 keywords:
-- 多个纹理 WDK Direct3D，纹理阶段
+- 多纹理 WDK Direct3D，纹理阶段
 - 纹理阶段 WDK Direct3D
 - 纹理管理 WDK Direct3D，阶段
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7020feff0a5f9706d4d7e2229f6f77ac95693321
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 074660cd54bcfa98da226a4446241fdb352e9d73
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362708"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838937"
 ---
 # <a name="texture-stage-operations"></a>纹理阶段操作
 
@@ -21,23 +20,23 @@ ms.locfileid: "63362708"
 ## <span id="ddk_texture_stage_operations_gg"></span><span id="DDK_TEXTURE_STAGE_OPERATIONS_GG"></span>
 
 
-应用程序通过调用执行混合操作纹理阶段**IDirect3DDevice7::SetTextureStageState**方法。 由一组的纹理值混合处理单元阶段执行的多个纹理混合操作。 其中每项功能可以分别通过编程来执行各种操作，由一个参数选择值混合处理的纹理。 有关的说明**IDirect3DDevice7::SetTextureStageState**，请参阅 Direct3D SDK 文档。
+应用程序通过调用 **IDirect3DDevice7：： SetTextureStageState** 方法为纹理阶段执行混合操作。 多个纹理混合操作由一组纹理混合单元阶段执行。 每个可单独进行编程以执行各种纹理混合操作，这些操作由参数选择。 有关 **IDirect3DDevice7：： SetTextureStageState** 的说明，请参阅 Direct3D SDK 文档。
 
-Direct3D 不提供一种机制，用于指定在每个混合阶段引入了多个纹理。 饱和度定义在管道中，纹理阶段之间发生，但它应尽可能晚发生在每个阶段。
+Direct3D 不提供一种机制来指定每个混合阶段引入的纹理。 饱和度定义为在管道中的纹理阶段之间发生，但在每个阶段中应尽可能晚地发生。
 
-中 D3DTEXTUREOP 枚举的以下操作所需 PC98 兼容性法规遵从性：
+在 D3DTEXTUREOP 中枚举的下列操作是 PC98 兼容性符合性所必需的：
 
--   D3DTOP\_禁用
+-   \_禁用 D3DTOP
 
--   D3DTOP\_SELECTARG1、 D3DTOP\_SELECTARG2
+-   D3DTOP \_ SELECTARG1，D3DTOP \_ SELECTARG2
 
--   D3DTOP\_MODULATE
+-   D3DTOP \_ 伯
 
--   D3DTOP\_添加
+-   D3DTOP \_ 添加
 
--   D3DTOP\_BLENDTEXTUREALPHA
+-   D3DTOP \_ BLENDTEXTUREALPHA
 
-默认值为 D3DTOP\_MODULATE 第一，阶段和 D3DTOP\_禁用对于所有其他阶段。 D3DTOP\_MODULATE 用于向后兼容，第一阶段，但默认情况下，应禁用所有纹理。
+\_对于阶段 one，默认值为 D3DTOP 伯，D3DTOP \_ 禁用所有其他阶段。 D3DTOP \_ 伯用于向后兼容阶段，但默认情况下，应禁用所有纹理。
 
  
 

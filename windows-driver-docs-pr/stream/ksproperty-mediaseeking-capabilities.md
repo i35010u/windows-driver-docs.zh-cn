@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ MEDIASEEKING \_ 功能
 description: KSPROPERTY \_ MEDIASEEKING \_ 功能属性检索筛选器的媒体搜寻功能。
-ms.assetid: f0ee8fed-cdb5-44f9-96c3-d6edf235ea35
 keywords:
 - KSPROPERTY_MEDIASEEKING_CAPABILITIES 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 06830abbfb115fbe3b54bffafbcd93fd7c38c23d
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 7c262710196717dfdb1f49e6c270ad6639ec749f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103550"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840247"
 ---
 # <a name="ksproperty_mediaseeking_capabilities"></a>KSPROPERTY \_ MEDIASEEKING \_ 功能
 
@@ -84,7 +83,7 @@ KSPROPERTY \_ MEDIASEEKING \_ 功能属性检索筛选器的媒体搜寻功能�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [KSPROPSETID \_ MediaSeeking](kspropsetid-mediaseeking.md)

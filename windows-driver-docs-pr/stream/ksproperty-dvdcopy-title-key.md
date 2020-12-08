@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ DVDCOPY \_ 标题 \_ 键
 description: KSPROPERTY \_ DVDCOPY \_ title \_ KEY 属性从 DVD 版权保护身份验证过程的当前内容检索标题键信息。
-ms.assetid: 7c07bf75-cbc4-4319-a1a6-4f05d228d91a
 keywords:
 - KSPROPERTY_DVDCOPY_TITLE_KEY 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e19118458cc256c59770113a7680d1657ed4aca6
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: fbda56853d2d3fb633b849c2d0b7cffb26570792
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107258"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840539"
 ---
 # <a name="ksproperty_dvdcopy_title_key"></a>KSPROPERTY \_ DVDCOPY \_ 标题 \_ 键
 
@@ -63,7 +62,7 @@ KSPROPERTY \_ DVDCOPY \_ title \_ KEY 属性从 DVD 版权保护身份验证过�
 
 ) 操作数据 (的属性值是 \_ \_ 描述当前标题键的 KS DVDCOPY TITLEKEY 结构。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 有关标题键的详细信息，请参阅 [DVD 版权保护](./dvd-copyright-protection.md)。

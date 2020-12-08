@@ -1,19 +1,18 @@
 ---
 title: 注册 FsFilter 回调例程
 description: 注册 FsFilter 回调例程
-ms.assetid: d040e61c-514e-446b-9e72-934fd4322d3b
 keywords:
 - 注册回调例程
 - 回调例程 WDK 文件系统
 - FsFilter 通知回调例程 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e901af7a95413044a5e5ad83268f38f6a8f04a64
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: d71dcb67a2aca1cae11b973e13965a96bc15474f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065522"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840727"
 ---
 # <a name="registering-fsfilter-callback-routines"></a>注册 FsFilter 回调例程
 

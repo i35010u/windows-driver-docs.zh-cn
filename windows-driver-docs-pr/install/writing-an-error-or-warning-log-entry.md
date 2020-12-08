@@ -1,15 +1,14 @@
 ---
 title: 写入错误或警告日志条目
 description: 写入错误或警告日志条目
-ms.assetid: 80393368-7430-46ca-a53e-c94b7e8acfa0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f40234591c0d1ef60ad81add88c8f43132e3c5b
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 0da80b8085cce557021a7537219129724e86527d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715902"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840927"
 ---
 # <a name="writing-an-error-or-warning-log-entry"></a>写入错误或警告日志条目
 
@@ -50,11 +49,11 @@ SetupWriteTextLog(LogToken, Category, Flags, TEXT("Application Error (%d)"),Erro
 !!!  2005/02/13 22:06:28.109:    :  Application error (1111) 
 ```
 
-*Entry_prefix*字段 "!!! "指示日志条目是一条错误消息。
+*Entry_prefix* 字段 "!!! "指示日志条目是一条错误消息。
 
 ### <a name="logging-a-warning-message"></a><a href="" id="logging-a-warning-message"></a> 记录警告消息
 
-记录警告消息与记录错误消息几乎完全相同。 不同之处在于事件级别的设置。 将 *标志* 设置为 TXTLOG_WARNING 而不是 TXTLOG_ERROR。 如果按[记录错误消息](#logging-an-error-message)中所述方式调用**SetupWriteTextLog** ，则除了*Flags*设置为 TXTLOG_WARNING 和 TXTLOG_TIMESTAMP 的按位 "或"， [**SetupWriteTextLog**](/windows/win32/api/setupapi/nf-setupapi-setupwritetextlog)将写入以下日志条目：
+记录警告消息与记录错误消息几乎完全相同。 不同之处在于事件级别的设置。 将 *标志* 设置为 TXTLOG_WARNING 而不是 TXTLOG_ERROR。 如果按 [记录错误消息](#logging-an-error-message)中所述方式调用 **SetupWriteTextLog** ，则除了 *Flags* 设置为 TXTLOG_WARNING 和 TXTLOG_TIMESTAMP 的按位 "或"， [**SetupWriteTextLog**](/windows/win32/api/setupapi/nf-setupapi-setupwritetextlog)将写入以下日志条目：
 
 ```cpp
 !  2005/02/13 22:06:28.109:    :  Application error (1111) 

@@ -1,32 +1,31 @@
 ---
 title: WdfObjectReferenceWithTag 宏
 description: WdfObjectReferenceWithTag 宏会递增指定框架对象的引用计数，并将驱动程序的当前文件名和行号分配给引用。 宏还向引用分配标记值。
-ms.assetid: f0206238-c745-48b3-84d0-9f6d6ec9c2e0
 keywords:
 - WdfObjectReferenceWithTag 宏
 ms.date: 08/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 01c72a361c465437036da8e07c640a54d4192ba8
-ms.sourcegitcommit: a5f76805387760730faed5674d87201ec85b7dd3
+ms.openlocfilehash: 5da67547fcfc324f1de3276b0e83a48264fa7d75
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90112112"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840225"
 ---
 # <a name="wdfobjectreferencewithtag-macro"></a>WdfObjectReferenceWithTag 宏
 
 
 \[适用于 KMDF 和 UMDF\]
 
-**WdfObjectReferenceWithTag**宏会递增指定框架对象的引用计数，并将驱动程序的当前文件名和行号分配给引用。 宏还向引用分配标记值。
+**WdfObjectReferenceWithTag** 宏会递增指定框架对象的引用计数，并将驱动程序的当前文件名和行号分配给引用。 宏还向引用分配标记值。
 
 <a name="syntax"></a>语法
 ------
 
 ```ManagedCPlusPlus
 VOID WdfObjectReferenceWithTag(
-  [in] WDFOBJECT Handle,
-  [in] PVOID     Tag
+  [in] WDFOBJECT Handle,
+  [in] PVOID     Tag
 );
 ```
 
@@ -105,7 +104,7 @@ WdfObjectReferenceWithTag(
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**WdfObjectReference**](wdfobjectreference.md)

@@ -1,17 +1,16 @@
 ---
 title: NDIS_STATUS_WDI_INDICATION_P2P_SEND_REQUEST_ACTION_FRAME_COMPLETE
 description: 微型端口驱动程序使用 NDIS_STATUS_WDI_INDICATION_P2P_SEND_REQUEST_ACTION_FRAME_COMPLETE 来指示有关 OID_WDI_TASK_P2P_SEND_REQUEST_ACTION_FRAME 发送的请求操作框的信息。
-ms.assetid: 4c67b512-456f-48ed-bd1c-71a32bcf85f0
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_P2P_SEND_REQUEST_ACTION_FRAME_COMPLETE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: c6607c5119ed0722c0805c10ce9eca168f998d03
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3661798a78391d1cac5fdc02cdd00632292e3190
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207205"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840635"
 ---
 # <a name="ndis_status_wdi_indication_p2p_send_request_action_frame_complete"></a>NDIS \_ 状态 \_ WDI \_ 指示 \_ P2P \_ 发送 \_ 请求 \_ 操作 \_ 帧 \_ 完成
 
@@ -48,7 +47,7 @@ ms.locfileid: "89207205"
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

@@ -1,7 +1,6 @@
 ---
-title: 专用显示-微型端口驱动程序 IOCTL_VIDEO_XXX 请求
+title: 私有 Display-Miniport 驱动程序 IOCTL_VIDEO_XXX 请求
 description: 小型端口驱动程序可以为其相应的显示驱动程序定义一个或多个专用 i/o 控制代码。
-ms.assetid: 45d8c9bc-993c-4fd3-949d-dfb30bb685d7
 keywords:
 - 视频微型端口驱动程序 WDK Windows 2000，处理请求
 - 请求处理 WDK 视频微型端口
@@ -11,14 +10,14 @@ keywords:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: 29dc9db228cbe1abeefb383acbe301804f24c84f
-ms.sourcegitcommit: 9b4760aae390b36dbdf9e0dd729a4a643c3f7831
+ms.openlocfilehash: 219818616da652114e2971603234a5f859ae6d03
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90565251"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840755"
 ---
-# <a name="privately-defined-display-miniport-driver-ioctl_video_xxx-requests"></a>私下定义的显示-微型端口驱动程序 IOCTL \_ 视频 \_ XXX 请求
+# <a name="privately-defined-display-miniport-driver-ioctl_video_xxx-requests"></a>私下定义 Display-Miniport 驱动程序 IOCTL \_ 视频 \_ XXX 请求
 
 小型端口驱动程序可以为其相应的显示驱动程序定义一个或多个专用 i/o 控制代码。
 

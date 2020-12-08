@@ -1,15 +1,14 @@
 ---
 title: 为总线安装新的设备安装程序类
 description: 为总线安装新的设备安装程序类
-ms.assetid: a94899b6-02e0-4181-bb14-5552806a8c9e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e4cb7d054acc129618f36a698281a62e054b23df
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: ef3bbaa982f7b1cc275d420399e6980488c98ed9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097287"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840341"
 ---
 # <a name="installing-a-new-device-setup-class-for-a-bus"></a>为总线安装新的设备安装程序类
 

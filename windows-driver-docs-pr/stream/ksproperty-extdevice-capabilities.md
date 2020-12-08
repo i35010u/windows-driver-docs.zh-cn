@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ EXTDEVICE \_ 功能
 description: KSPROPERTY \_ EXTDEVICE \_ 功能属性检索外部设备的功能。
-ms.assetid: c408b4cf-2fd9-41b2-b182-47baa551fd93
 keywords:
 - KSPROPERTY_EXTDEVICE_CAPABILITIES 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b99d34101a69ab4f49462c1d57a501495a5722a2
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 3d96afb5640b388926244bf7223f63d1459112c6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104558"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839351"
 ---
 # <a name="ksproperty_extdevice_capabilities"></a>KSPROPERTY \_ EXTDEVICE \_ 功能
 
@@ -63,7 +62,7 @@ KSPROPERTY \_ EXTDEVICE \_ 功能属性检索外部设备的功能。
 
  (操作数据) 的属性值是描述外部设备功能的 DEVCAPS 结构。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 KSPROPERTY **Capabilities** \_ EXTDEVICE S 结构的功能成员 \_ 指定了外部设备的功能。
@@ -84,7 +83,7 @@ KSPROPERTY **Capabilities** \_ EXTDEVICE S 结构的功能成员 \_ 指定了外
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

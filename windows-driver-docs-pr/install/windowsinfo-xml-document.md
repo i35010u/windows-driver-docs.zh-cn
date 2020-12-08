@@ -1,15 +1,14 @@
 ---
 title: WindowsInfo XML 文档
 description: WindowsInfo XML 文档
-ms.assetid: 8004d165-46c5-4bf4-849d-ba83205b9f54
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c3ae032a7ea8d83f491bb7c5cdfd277f43cde18
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 7c256d87bfff511077f8cef24fc134719d7e043a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097075"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840935"
 ---
 # <a name="windowsinfo-xml-document"></a>WindowsInfo XML 文档
 

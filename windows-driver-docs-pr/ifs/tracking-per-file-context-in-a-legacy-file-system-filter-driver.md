@@ -1,15 +1,14 @@
 ---
 title: 跟踪旧文件系统筛选器驱动程序中的按文件上下文
 description: 跟踪旧文件系统筛选器驱动程序中的按文件上下文
-ms.assetid: 6be3ff10-47e4-47f5-8f15-88a80a16f451
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 85d814da49cb609f9bf57af9d4b0495b10bd8072
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 110f993781ea505153bdcbed96dae867100c10ed
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067354"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841135"
 ---
 # <a name="tracking-per-file-context-in-a-legacy-file-system-filter-driver"></a>跟踪旧文件系统筛选器驱动程序中的按文件上下文
 
@@ -32,4 +31,4 @@ ms.locfileid: "89067354"
 > [!NOTE]
 > 仅当文件仍处于打开状态时，才使用 [**FsRtlRemovePerFileContext**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-fsrtlremoveperfilecontext) 例程删除上下文对象。 不要将其与 [**FsRtlTeardownPerFileContexts**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-fsrtlteardownperfilecontexts)混淆。
 
-文件系统调用 [**FsRtlTeardownPerFileContexts**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-fsrtlteardownperfilecontexts) ，以释放任何仍与每个文件控制块结构关联的筛选器上下文 (FCB) 它们会撕裂。 **FsRtlTeardownPerFileContexts**例程调用每个筛选器上下文的 FSRTL_PER_FILE_CONTEXT 对象中指定的[**FreeCallback**](./pfree-function.md)例程。
+文件系统调用 [**FsRtlTeardownPerFileContexts**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-fsrtlteardownperfilecontexts) ，以释放任何仍与每个文件控制块结构关联的筛选器上下文 (FCB) 它们会撕裂。 **FsRtlTeardownPerFileContexts** 例程调用每个筛选器上下文的 FSRTL_PER_FILE_CONTEXT 对象中指定的 [**FreeCallback**](./pfree-function.md)例程。

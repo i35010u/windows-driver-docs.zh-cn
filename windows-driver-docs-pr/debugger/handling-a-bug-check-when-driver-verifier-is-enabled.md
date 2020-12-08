@@ -1,18 +1,17 @@
 ---
 title: 在启用驱动程序验证程序的情况下处理 Bug 检查
 description: 驱动程序验证程序在运行时检测驱动程序错误。 可以结合使用驱动程序验证程序和 "分析调试器" 命令来检测和显示有关驱动程序中的错误的信息。
-ms.assetid: 4226B62B-0AA5-4D04-A32D-7DD22FD694E3
 keywords:
 - 驱动程序验证程序
 - 符
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0dadddb5132021b92d53d2dcab210d884c92479c
-ms.sourcegitcommit: cfd4d8ee889c6a3feed79ae112662f6c095b6a36
+ms.openlocfilehash: 7d68a56e279d76c21f43056bebe7b57ee5fd3c76
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94417461"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839947"
 ---
 # <a name="handling-a-bug-check-when-driver-verifier-is-enabled"></a>在启用驱动程序验证程序的情况下处理 Bug 检查
 
@@ -98,7 +97,7 @@ PROCESS_NAME:  TiWorker.exe
 CURRENT_IRQL:  9
 ```
 
-在上面的输出中，你可以看到违反规则的名称和 **描述，你** 可以选择指向描述该规则的参考页的链接： [https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-irqlexapclte1](/windows-hardware/drivers/devtest/wdm-irqlexapclte1) 。 你还可以选择一个调试器命令链接， **！ ruleinfo 0x20005** ，以获取有关该规则的信息。 在这种情况下，该规则指出，如果中断请求级别 (IRQL) 大于 APC 级别，则不能调用 [ExAcquireFastMutex](/previous-versions/windows/hardware/drivers/ff544337(v=vs.85)) \_ 。 输出显示当前 IRQL 为9，在 wdm .h 中，你可以看到 APC 级别的值为 \_ 1。 有关 IRQLs 的详细信息，请参阅 [管理硬件优先级](../kernel/managing-hardware-priorities.md)。
+在上面的输出中，你可以看到违反规则的名称和 **描述，你** 可以选择指向描述该规则的参考页的链接： [https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-irqlexapclte1](/windows-hardware/drivers/devtest/wdm-irqlexapclte1) 。 你还可以选择一个调试器命令链接， **！ ruleinfo 0x20005**，以获取有关该规则的信息。 在这种情况下，该规则指出，如果中断请求级别 (IRQL) 大于 APC 级别，则不能调用 [ExAcquireFastMutex](/previous-versions/windows/hardware/drivers/ff544337(v=vs.85)) \_ 。 输出显示当前 IRQL 为9，在 wdm .h 中，你可以看到 APC 级别的值为 \_ 1。 有关 IRQLs 的详细信息，请参阅 [管理硬件优先级](../kernel/managing-hardware-priorities.md)。
 
 [**！分析-v**](-analyze.md)的输出将继续执行堆栈跟踪以及导致错误的代码的相关信息。 在下面的输出中，可以看到中的 **OnInterrupt** 例程 MyDriver.sys 称为 [ExAcquireFastMutex](/previous-versions/windows/hardware/drivers/ff544337(v=vs.85))。 **OnInterrupt** 是以比 APC 级别更高的 IRQL 运行的中断服务例程 \_ ，因此，此例程在调用 [ExAcquireFastMutex](/previous-versions/windows/hardware/drivers/ff544337(v=vs.85))时会发生冲突。
 

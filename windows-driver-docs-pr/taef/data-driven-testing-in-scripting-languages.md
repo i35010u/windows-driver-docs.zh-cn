@@ -1,34 +1,33 @@
 ---
 title: 使用脚本语言创作数据驱动的测试
 description: 使用脚本语言创作数据驱动的测试
-ms.assetid: CF60C594-8877-4f09-AF82-9F4CA27123C7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 782808f9c7d86008e84b524312ddbfcd1024658a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b4de9e894211de425115b2fdd0855de326a1b45a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385065"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840477"
 ---
-# <a name="span-idtaefdata-driventestinginscriptinglanguagesspandata-driven-testing-in-scripting-languages"></a><span id="taef.data-driven_testing_in_scripting_languages"></span>数据驱动的测试中的脚本语言
+# <a name="span-idtaefdata-driven_testing_in_scripting_languagesspandata-driven-testing-in-scripting-languages"></a><span id="taef.data-driven_testing_in_scripting_languages"></span>使用脚本语言创作数据驱动的测试
 
 
-若要了解本部分中，您应熟悉如何[创作的脚本语言中的测试](authoring-tests-in-scripting-languages.md)。 本部分不会讨论的详细信息[各种 TAEF 数据驱动测试方法](data-driven-testing.md)。 有关快速概述，查看不同 TAEF 数据驱动测试的构造：
+为了理解此部分，您应该熟悉如何 [在脚本语言中创作测试](authoring-tests-in-scripting-languages.md)。 本部分不讨论 [各种 TAEF 数据驱动的测试方法](data-driven-testing.md)的详细信息。 若要快速了解，请查看不同 TAEF 数据驱动的测试构造：
 
--   [基于表的数据驱动的测试](table-data-source.md)
--   [基于 WMI 数据驱动的测试](wmi-data-source.md)
--   [PICT 基于数据驱动的测试](pict-data-source.md)
--   [轻量数据驱动的测试](light-weight-data-driven-testing.md)
+-   [基于表的数据驱动测试](table-data-source.md)
+-   [基于 WMI 的数据驱动测试](wmi-data-source.md)
+-   [基于 PICT 的数据驱动测试](pict-data-source.md)
+-   [轻型数据驱动的测试](light-weight-data-driven-testing.md)
 
-您甚至可以选择具有通过上述任一的一个或多个数据源的数据源的组合。 请参阅[指定多个数据源](multiple-datasources.md)有关详细信息。
+甚至可以通过使用上述任一数据源的一个或多个数据源来选择组合数据源。 有关详细信息，请参阅 [指定多个数据源](multiple-datasources.md) 。
 
-## <a name="span-idspecifyingthedatasourceinscriptinglanguagespanspan-idspecifyingthedatasourceinscriptinglanguagespanspan-idspecifyingthedatasourceinscriptinglanguagespanspecifying-the-data-source-in-scripting-language"></a><span id="Specifying_the_data_source_in_scripting_language"></span><span id="specifying_the_data_source_in_scripting_language"></span><span id="SPECIFYING_THE_DATA_SOURCE_IN_SCRIPTING_LANGUAGE"></span>指定脚本语言中的数据源
+## <a name="span-idspecifying_the_data_source_in_scripting_languagespanspan-idspecifying_the_data_source_in_scripting_languagespanspan-idspecifying_the_data_source_in_scripting_languagespanspecifying-the-data-source-in-scripting-language"></a><span id="Specifying_the_data_source_in_scripting_language"></span><span id="specifying_the_data_source_in_scripting_language"></span><span id="SPECIFYING_THE_DATA_SOURCE_IN_SCRIPTING_LANGUAGE"></span>用脚本语言指定数据源
 
 
-数据驱动测试 TAEF 中可以指定**数据源**类或测试级别。 在数据驱动的类中，数据是可用于类和测试类中方法安装程序、 清理和所有测试方法。 **数据源**参数是告知将从中检索的数据的信息。 在基于表的数据驱动测试的情况下此值在数据所在的位置的 XML 文件中包括 XML 文件和 TableId 的相对路径。 请参阅上述的更多详细信息的链接。
+通过 TAEF 中的数据驱动的测试，可以在类或测试级别指定 **数据源** 。 在数据驱动类中，数据可用于类和测试方法的安装、清理以及类中的所有测试方法。 **DataSource** 参数是用于指示从何处检索数据的信息。 对于基于表的数据驱动的测试，此值包括 XML 文件的相对路径和数据所在的 XML 文件中的 TableId。 有关更多详细信息，请参阅上面列出的链接。
 
-下面的示例演示如何指定**数据源**属性。
+下面的示例演示如何指定 **DataSource** 属性。
 
 ```cpp
 1   <?xml version="1.0" ?>
@@ -207,25 +206,25 @@ ms.locfileid: "63385065"
 174 </package>
 ```
 
-在上面的示例中，第 6 和 60 行声明和实例化**TestData**对象，它允许对数据的数据驱动测试的访问。
+在上面的示例中，第6行和第60行声明并实例化一个 **TestData** 对象，该对象允许对数据驱动测试的数据进行访问。
 
-**&lt;TestMethodProperty&gt;** 并 **&lt;TestClassProperty&gt;** 标记是定义的行**DataSource**对于测试或类。 在 VBSampleTests **TestOne**已[WMI 查询](wmi-data-source.md)作为其**数据源**。 参数**标签**并**标题**可供**TestOne 的**安装程序、 清理和测试方法。 在同一类中， **TestTwo**已[多个数据源](multiple-datasources.md)定义。 第一个是[基于表的数据源](table-data-source.md)，第二个是基于同一个 WMI**数据源**作为**TestOne**。
+**&lt; TestMethodProperty &gt;** 和 **&lt; TestClassProperty &gt;** 标记是为测试或类定义 **数据源** 的行。 在 VBSampleTests 中， **TestOne** 具有作为其 **数据源** 的 [WMI 查询](wmi-data-source.md)。 参数 **标签** 和 **标题** 可用于 **TestOne 的** 设置、清除和测试方法。 在同一个类中， **TestTwo** 定义了 [多个数据源](multiple-datasources.md) 。 第一种是 [基于表的数据源](table-data-source.md)，第二种是基于 WMI 的 **数据源** ，它是 **TestOne**。
 
-TAEF 生成的每个参数集的组合扩展**数据源**属性。 一个参数集是可用于每个测试方法调用。 如果 WMI 查询返回四个组的结果 (Win32\_卷) 和基于表中有三个行**数据源**， **TestOne**将执行四次-一次与每个 Win32\_WMI 查询返回的卷。 但是， **TestTwo**执行 12 (4 X 3) 的每个组合 Win32 时间\_卷数据和表指定的行。 也有关联的设置和清理方法可用的数据。
+TAEF 为每个 **数据源** 属性生成参数集的组合扩展。 一个参数集可用于每个测试方法调用。 如果 WMI 查询返回四组结果 (Win32 \_ 卷) 并且基于表的 **数据源** 中有三行， **TestOne** 将对 WMI 查询返回的每个 Win32 卷执行四次 \_ 。 另一方面， **TestTwo** 针对 Win32 \_ 卷数据和表指定的行的每个组合执行 12 (4 X 3) 次。 相关的安装和清理方法还提供了数据。
 
-在 JScriptSampleTests，可以看到数据驱动的类的一个示例。 因为该示例指定**数据源**在类级别中，数据可供所有测试方法中的测试和类级别设置和清理方法。 因为**TestTwo**是在数据驱动类中，将数据从一个数据驱动测试**数据源**级别是在类级别，以及从测试，可用于**TestTwo**.
+在 JScriptSampleTests 中，可以看到数据驱动类的示例。 由于该示例在类级别指定 **DataSource** ，因此数据可用于所有测试方法，还可用于测试和类级别的设置和清理方法。 由于 **TestTwo** 是数据驱动类中的数据驱动的测试，因此，来自类级别的数据 **源** 中的数据以及来自测试级别的数据都可用于 **TestTwo**。
 
-## <a name="span-iddatatypesavailableforscripttestsspanspan-iddatatypesavailableforscripttestsspanspan-iddatatypesavailableforscripttestsspandata-types-available-for-script-tests"></a><span id="Data_types_available_for_script_tests"></span><span id="data_types_available_for_script_tests"></span><span id="DATA_TYPES_AVAILABLE_FOR_SCRIPT_TESTS"></span>可供脚本测试使用的数据类型
-
-
-以下参数类型都可用于脚本编写语言。 这些是可以在数据驱动的测试基于的表中指定的类型。 默认参数类型是*字符串*或*BSTR* (表示*VT\_BSTR*)。
-
-部分[表中的参数类型基于数据源](parameter-types-in-table-data-sources.md)演示了如何创作脚本语言中的测试时查看可用的参数类型 （在本机和托管代码）。
-
-## <a name="span-idexecutingdata-drivenscriptsspanspan-idexecutingdata-drivenscriptsspanspan-idexecutingdata-drivenscriptsspanexecuting-data-driven-scripts"></a><span id="Executing_data-driven_scripts"></span><span id="executing_data-driven_scripts"></span><span id="EXECUTING_DATA-DRIVEN_SCRIPTS"></span>执行数据驱动的脚本
+## <a name="span-iddata_types_available_for_script_testsspanspan-iddata_types_available_for_script_testsspanspan-iddata_types_available_for_script_testsspandata-types-available-for-script-tests"></a><span id="Data_types_available_for_script_tests"></span><span id="data_types_available_for_script_tests"></span><span id="DATA_TYPES_AVAILABLE_FOR_SCRIPT_TESTS"></span>可用于脚本测试的数据类型
 
 
-**/Listproperties**选项列出不仅元数据，但也可用于测试的每个调用的数据。 (运行 **/listproperties**整个 dll 上的选项留给大家练练手读取器。)下面的示例选择的调用**TestOne** VBSampleTests 使用[选择查询](selection.md)语言：
+以下参数类型适用于脚本语言。 这些是可以在基于表的数据驱动测试中指定的类型。 默认参数类型为 *String* 或 *BSTR* (表示 *VT \_ BSTR*) 。
+
+[基于表的数据源中的节参数类型](parameter-types-in-table-data-sources.md)演示了如何在使用脚本语言创作测试) 的情况下，在本机和托管代码中查看可用参数类型 (。
+
+## <a name="span-idexecuting_data-driven_scriptsspanspan-idexecuting_data-driven_scriptsspanspan-idexecuting_data-driven_scriptsspanexecuting-data-driven-scripts"></a><span id="Executing_data-driven_scripts"></span><span id="executing_data-driven_scripts"></span><span id="EXECUTING_DATA-DRIVEN_SCRIPTS"></span>执行数据驱动的脚本
+
+
+**/Listproperties** 选项不仅列出了元数据，还列出了可用于测试的每个调用的数据。 在整个 dll 上运行 **/listproperties** 选项 (将被留给读者执行。 ) 以下示例使用 [选择查询](selection.md)语言从 VBSampleTests 中选择调用 **TestOne** ：
 
 ``` syntax
 f:\spartadev.binaries.x86chk\WexTest\CuE\TestExecution>te Examples\DataDrivenTest.wsc /listproperties /name:VBSampleTests::TestOne*
@@ -277,21 +276,21 @@ Test Authoring and Execution Framework v.R10 Build 6.1.6939.0 For x86
                         Data[Label] =
 ```
 
-**/Listproperties** TAEF 调用测试方法显示选项**VBSampleTests::TestOne** 7 次-一次每个 Win32\_卷。 对于每个调用 TAEF 追加一个隐式*索引*到测试方法以区分每个调用。 此外可以查看数据和元数据可用于测试方法的每个调用。
+**/Listproperties** 选项显示 TAEF 为每个 Win32 卷调用了测试方法 **VBSampleTests：： TestOne** 7 次 \_ 。 对于每个调用，TAEF 向测试方法追加一个隐式 *索引* 以区分每个调用。 还可以查看每次调用测试方法时可用的数据和元数据。
 
-使用中的信息 **/listproperties**选项，可用于基于数据值的选择查询或要获得更细致的索引值控制这些测试执行的调用。 下面的示例演示如何运行仅调用标题所在**e:\\** :
+使用 **/listproperties** 选项中的信息，可以应用基于数据值或索引值的选择查询，以更好地控制要执行的测试调用。 下面的示例演示如何仅运行标题为 **E： \\** 的调用：
 
 ``` syntax
 te Examples\DataDrivenTest.wsc /select:"@Name='VBSampleTests::TestOne*' and @Data:Caption='E:\'"
 ```
 
-以下命令使用索引来选择相同的测试：
+以下命令使用索引来选择同一测试：
 
 ``` syntax
 te Examples\DataDrivenTest.wsc /select:"@Name='VBSampleTests::TestOne*' and @Data:Index=3"
 ```
 
-读取器练习使用的 PICT 基于和浅色保留权重脚本测试中的数据驱动测试。
+如果在脚本测试中使用基于 PICT 和轻型数据驱动的测试，则会将其作为练习留给读者。
 
  
 

@@ -1,15 +1,14 @@
 ---
 title: 使用 DML 自定义调试器输出
 description: " (DML) 的调试器标记语言提供了一种机制，用于增强调试器和扩展的输出。"
-ms.assetid: 04984510-B95F-405F-81DF-E9D0673210B4
 ms.date: 11/13/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 368be9e42ff0521f8d650568fac8410f4b237f49
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 833353fe67b69c1e96c3692ee50340130629114e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210881"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839809"
 ---
 # <a name="customizing-debugger-output-using-dml"></a>使用 DML 自定义调试器输出
 
@@ -87,7 +86,7 @@ My DML Experiment
 ## <a name="span-idright-click_behavior_in_dmlspanspan-idright-click_behavior_in_dmlspanspan-idright-click_behavior_in_dmlspanright-click-behavior-in-dml"></a><span id="Right-Click_Behavior_in_DML"></span><span id="right-click_behavior_in_dml"></span><span id="RIGHT-CLICK_BEHAVIOR_IN_DML"></span>在 DML 中右键单击行为
 
 
-在 DML 中可使用右键单击行为。 此示例演示如何使用 altlink 来定义右击行为， &lt; 以使用将 &gt; [**断点 (发送) **](bp--bu--bm--set-breakpoint-.md) 命令，并通过定期单击发送 [**u (Unassemble) **](u--unassemble-.md) 。
+在 DML 中可使用右键单击行为。 此示例演示如何使用 altlink 来定义右击行为， &lt; 以使用将 &gt; [**断点 (发送)**](bp--bu--bm--set-breakpoint-.md) 命令，并通过定期单击发送 [**u (Unassemble)**](u--unassemble-.md) 。
 
 ```text
 <link cmd="u MyProgram!memcpy">
@@ -136,7 +135,7 @@ Name 和 section 参数允许在命名链接之间导航，类似于 HTML 的 &l
 
 **示例**
 
-此示例演示如何使用 altlink 来定义右击行为，以使用将断点 &lt; &gt; [** (发送) **](bp--bu--bm--set-breakpoint-.md) 命令，并通过定期单击发送 [**u (Unassemble) **](u--unassemble-.md) 。
+此示例演示如何使用 altlink 来定义右击行为，以使用将断点 &lt; &gt; [**(发送)**](bp--bu--bm--set-breakpoint-.md) 命令，并通过定期单击发送 [**u (Unassemble)**](u--unassemble-.md) 。
 
 ```text
 <link cmd="u MyProgram!memcpy">
@@ -234,7 +233,7 @@ Exec 标记类似于 link 标记，其中描述性文本应显示为可单击的
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><strong>设置</strong></td>
+<td align="left">设置</td>
 <td align="left"><strong>说明/示例</strong></td>
 </tr>
 <tr class="even">
@@ -362,7 +361,7 @@ Exec 标记类似于 link 标记，其中描述性文本应显示为可单击的
 ```XML
 <col fg="srckw" bg="wbg"> <b>
 *******************************************************
-*** Example debug commands for crash dump analysis ****
+**_ Example debug commands for crash dump analysis _***
 *******************************************************
 </b></col>
 <col fg="srcchar" bg="wbg"><i>
@@ -370,7 +369,7 @@ Exec 标记类似于 link 标记，其中描述性文本应显示为可单击的
         **** Right-click for command help ****
 </i></col>
 
-<col fg="srccmnt" bg="wbg"><b>*** Common First Steps for Crash Dump Analysis ***</b> </col>
+<col fg="srccmnt" bg="wbg"><b>**_ Common First Steps for Crash Dump Analysis _*_</b> </col>
 <link cmd=".symfix" alt="Set standard symbol path using .symfix">.symfix<altlink name="Help about .symfix" cmd=".hh .symfix" /> </link> - Set standard symbol path
 <link cmd=".sympath+ C:\Symbols" alt="This link adds addtional symbol directories">.sympath+ C:\Symbols<altlink name="Help for .sympath" cmd=".hh .sympath" /> </link> - Add any additional symbol directories, for example C:\Symbols
 <link cmd=".reload /f" alt="This link reloads symbols">.reload /f<altlink name="Help for .reload" cmd=".hh .reload" /> </link> - Reloads symbols to make sure they are in good shape
@@ -383,29 +382,29 @@ Exec 标记类似于 link 标记，其中描述性文本应显示为可单击的
 <link cmd=".help /D" alt="Display help for commands">.help /D <altlink name="Help for .dot commands" cmd=".hh commands" /></link> - Display help for commands in WinDbg
 <link cmd=".hh" alt="Start help">.hh<altlink name="Debugger Reference Help".hh Contents" cmd=".hh Debugger Reference" /></link> - Start help
 
-<col fg="srccmnt" bg="wbg"><b>*** Registers and Context ***</b></col>
+<col fg="srccmnt" bg="wbg"><b>_*_ Registers and Context _*_</b></col>
 <link cmd="r" alt="This link displays registers">r<altlink name="Help about r command" cmd=".hh r" /></link>  - Display registers
 <link cmd="dt nt!_CONTEXT" alt="This link displays information about nt_CONTEXT">dt nt!_CONTEXT<altlink name="Help about the dt command" cmd=".hh dt" /></link> - Display information about nt_CONTEXT
 <link cmd="dt nt!_PEB" alt="This link calls the dt command to display nt!_PEB">dt nt!_PEB<altlink name="Help about dt command" cmd=".hh dt" /></link> - Display information about the nt!_PEB
 <link cmd="ub" alt="This link unassembles backwards">ub<altlink name="Help about ub command" cmd=".hh u, ub, uu (Unassemble)" /></link> - Unassemble Backwards
 
 <col fg="srcchar" bg="wbg"><i>
-**** Note: Not all of the following commands will work with all crash dump data ****
+_*** Note: Not all of the following commands will work with all crash dump data ****
 </i></col>
-<col fg="srccmnt" bg="wbg"><b>*** Device Drivers ***</b></col>
+<col fg="srccmnt" bg="wbg"><b>**_ Device Drivers _*_</b></col>
 <link cmd="!devnode 0 1" alt="This link displays the devnodes">!devnode 0 1<altlink name="Help about !devnode command" cmd=".hh !devnode" /></link> - Display devnodes
 <link cmd=".load wdfkd.dll;!wdfkd.help" alt="Load wdfkd extensions and display help">.load wdfkd.dll;!wdfkd.help<altlink name="Help about the wdfkd extensions" cmd=".hh !wdfkd" /></link> - Load wdfkd extensions and display help
 <link cmd="!wdfkd.wdfldr" alt="This link displays !wdfkd.wdfldr">!wdfkd.wdfldr<altlink name="Help about !wdfkd.wdfldr" cmd=".hh !wdfkd.wdfldr" /></link>  - Display WDF framework driver loader information
 <link cmd="!wdfkd.wdfumtriage" alt="This link displays !wdfkd.umtriage">!wdfkd.umtriage<altlink name="Help about !wdfkd.umtriage" cmd=".hh !wdfkd_wdfumtriage" /></link> - Display WDF umtriage driver information
 
-<col fg="srccmnt" bg="wbg"><b>*** IRPs and IRQL ***</b></col>
+<col fg="srccmnt" bg="wbg"><b>_*_ IRPs and IRQL _*_</b></col>
 <link cmd="!processirps" alt="This link displays process IRPs">!processirps<altlink name="Help about !processirps command" cmd=".hh !processirps" /></link> - Display process IRPs
 <link cmd="!irql" alt="This link displays !irql">!irql<altlink name="Help about !irql command" cmd=".hh !irql" /></link> - Run !irql
 
-<col fg="srccmnt" bg="wbg"><b>*** Variables and Symbols ***</b></col>
+<col fg="srccmnt" bg="wbg"><b>_*_ Variables and Symbols _*_</b></col>
 <link cmd="dv" alt="This link calls the dv command">dv<altlink name="Help about dv command" cmd=".hh dv" /></link> - Display the names and values of all local variables in the current scope
 
-<col fg="srccmnt" bg="wbg"><b>*** Threads, Processes, and Stacks ***</b></col>
+<col fg="srccmnt" bg="wbg"><b>_*_ Threads, Processes, and Stacks _*_</b></col>
 <link cmd="!threads" alt="This link displays threads">!threads<altlink name="Help about the !threads command" cmd=".hh !threads" /></link> - Display threads
 <link cmd="!ready 0xF" alt="This link runs !ready 0xF">!ready 0xF<altlink name="Help about the !ready command" cmd=".hh !ready" /></link> - Display threads in the ready state
 <link cmd="!process 0 F" alt="This link runs !process 0 F ">!process 0 F<altlink name="Help about the !process command" cmd=".hh !process" /></link> - Run !process 0 F
@@ -418,7 +417,7 @@ Exec 标记类似于 link 标记，其中描述性文本应显示为可单击的
 此代码示例演示如何使用颜色和格式标记。
 
 ```XML
-*** Text Tag Examples ****
+_*_ Text Tag Examples _***
 
 <b>This is bold text</b>
 <u>This is underlined text</u>

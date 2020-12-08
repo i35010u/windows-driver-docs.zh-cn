@@ -1,7 +1,6 @@
 ---
 title: D3DKMT \_ OUTDUPL \_ 指针 \_ 形状 \_ 信息结构
 description: 了解 D3DKMT \_ OUTDUPL \_ 指针 \_ 形状 \_ 信息结构，该结构已保留供系统使用。 请勿在您的驱动程序中使用。
-ms.assetid: fc72fe82-8807-44ac-b9da-8f84d38c45bf
 keywords:
 - D3DKMT_OUTDUPL_POINTER_SHAPE_INFO 结构显示设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f748b000e9e7a61fffcfa2b08e9d77655f62c84
-ms.sourcegitcommit: fc94eb0d5a41ef81c1b3ab91ad725386db0be0c2
+ms.openlocfilehash: 58cdcf32ec74c197b3bd8cac9507e0d77bb9d024
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91603596"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839619"
 ---
 # <a name="d3dkmt_outdupl_pointer_shape_info-structure"></a>D3DKMT \_ OUTDUPL \_ 指针 \_ 形状 \_ 信息结构
 
@@ -32,10 +31,10 @@ ms.locfileid: "91603596"
 ```ManagedCPlusPlus
 typedef struct _D3DKMT_OUTDUPL_POINTER_SHAPE_INFO {
   D3DKMT_OUTDUPL_POINTER_SHAPE_TYPE Type;
-  UINT                              Width;
-  UINT                              Height;
-  UINT                              Pitch;
-  POINT                             HotSpot;
+  UINT                              Width;
+  UINT                              Height;
+  UINT                              Pitch;
+  POINT                             HotSpot;
 } D3DKMT_OUTDUPL_POINTER_SHAPE_INFO;
 ```
 

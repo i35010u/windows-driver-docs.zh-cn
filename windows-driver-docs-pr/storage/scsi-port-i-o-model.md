@@ -1,15 +1,14 @@
 ---
 title: SCSI 端口 I/O 模型
 description: SCSI 端口 I/O 模型
-ms.assetid: c79fdc99-30ae-4c4a-a130-2b8743bbff7f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 63ebf402768020c990d0b2225ae41a7ab9fdcdcd
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 54410ebda864d882406e577868290e0b8817ff90
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186687"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839407"
 ---
 # <a name="scsi-port-io-model"></a>SCSI 端口 I/O 模型
 
@@ -17,11 +16,11 @@ ms.locfileid: "89186687"
 ## <span id="ddk_scsi_port_i_o_model_kg"></span><span id="DDK_SCSI_PORT_I_O_MODEL_KG"></span>
 
 
-SCSI 端口驱动程序通过其调度表和驱动程序对象中的一系列指向微型端口驱动程序回调例程的指针，与其微型端口驱动程序通信。 微型端口驱动程序从其[**DriverEntry**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)例程调用[**ScsiPortInitialize**](/windows-hardware/drivers/ddi/srb/nf-srb-scsiportinitialize) ，以便用这些回调指针初始化 SCSI 端口的调度表和驱动程序对象。 一个此类回调指针是用于处理 i/o 请求的微型端口驱动程序的启动 i/o 例程的入口点。 端口驱动程序将此指针分配给驱动程序对象的 **DriverStartIo** 成员。
+SCSI 端口驱动程序通过其调度表和驱动程序对象中的一系列指向微型端口驱动程序回调例程的指针，与其微型端口驱动程序通信。 微型端口驱动程序从其 [**DriverEntry**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)例程调用 [**ScsiPortInitialize**](/windows-hardware/drivers/ddi/srb/nf-srb-scsiportinitialize) ，以便用这些回调指针初始化 SCSI 端口的调度表和驱动程序对象。 一个此类回调指针是用于处理 i/o 请求的微型端口驱动程序的启动 i/o 例程的入口点。 端口驱动程序将此指针分配给驱动程序对象的 **DriverStartIo** 成员。
 
 当 SCSI 端口接收到来自较高级别的驱动程序的 i/o 请求时，它会将请求排队到内部队列中。 有关 SCSI 端口的内部队列的详细信息，请参阅 [Scsi 端口驱动程序的队列管理](scsi-port-driver-s-queue-management.md)。
 
-一旦目标设备准备好接收下一个 i/o 请求，SCSI 端口就会调用 [**IoStartPacket**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iostartpacket)，后者又会调用 **DriverObject- &gt; DriverStartIo**中存储的微型端口驱动程序启动 i/o 回调例程。 有关微型端口驱动程序启动 i/o 例程的操作和所需特征的信息，请参阅 [SCSI 微型端口驱动程序的 HwScsiStartIo 例程](scsi-miniport-driver-s-hwscsistartio-routine.md)。
+一旦目标设备准备好接收下一个 i/o 请求，SCSI 端口就会调用 [**IoStartPacket**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iostartpacket)，后者又会调用 **DriverObject- &gt; DriverStartIo** 中存储的微型端口驱动程序启动 i/o 回调例程。 有关微型端口驱动程序启动 i/o 例程的操作和所需特征的信息，请参阅 [SCSI 微型端口驱动程序的 HwScsiStartIo 例程](scsi-miniport-driver-s-hwscsistartio-routine.md)。
 
 在调用微型端口驱动程序的启动 i/o 例程之前，SCSI 端口会引发处理器的 IRQL，以便屏蔽中断，并确保启动 i/o 例程已同步访问关键操作系统和驱动程序结构。
 

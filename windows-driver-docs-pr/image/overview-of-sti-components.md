@@ -1,15 +1,14 @@
 ---
 title: STI 组件概述
 description: STI 组件概述
-ms.assetid: 30aaa622-fb86-42dc-a417-df61e0093db3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d7599fb8607e69ef674d9c2d40cd8fae2bc0c411
-ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
+ms.openlocfilehash: 27fc0246e2a331538d31160805c30d63f44bcdab
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93349641"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841097"
 ---
 # <a name="overview-of-sti-components"></a>STI 组件概述
 
@@ -65,7 +64,7 @@ Microsoft STI 定义一组 COM 接口，这些接口提供各种 Microsoft STI �
 
 ### <a name="user-mode-still-image-minidrivers"></a><a href="" id="ddk-user-mode-still-image-minidrivers-si"></a>用户模式静止图像微型驱动程序
 
-用户模式静止图像微型驱动程序是供应商提供的组件，可向相应的内核模式驱动程序提供设备特定的用户模式接口。 其中每个用户模式驱动程序必须实现 [ISTIUSD COM 接口](istiusd-com-interface.md)。 它们通过调用 [**CreateFile**](/windows/win32/api/fileapi/nf-fileapi-createfilea)、 **ReadFile** 、 **WriteFile** 和 [**DeviceIoControl**](/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol) Win32 函数与内核模式驱动程序通信， () 的 Microsoft Windows SDK 文档中所述。 有关详细信息，请参阅 [创建 User-Mode 静止图像微型驱动程序](creating-a-user-mode-still-image-minidriver.md)。
+用户模式静止图像微型驱动程序是供应商提供的组件，可向相应的内核模式驱动程序提供设备特定的用户模式接口。 其中每个用户模式驱动程序必须实现 [ISTIUSD COM 接口](istiusd-com-interface.md)。 它们通过调用 [**CreateFile**](/windows/win32/api/fileapi/nf-fileapi-createfilea)、 **ReadFile**、 **WriteFile** 和 [**DeviceIoControl**](/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol) Win32 函数与内核模式驱动程序通信， () 的 Microsoft Windows SDK 文档中所述。 有关详细信息，请参阅 [创建 User-Mode 静止图像微型驱动程序](creating-a-user-mode-still-image-minidriver.md)。
 
 ### <a name="kernel-mode-still-image-drivers"></a><a href="" id="ddk-kernel-mode-still-image-drivers-si"></a>内核模式静止映像驱动程序
 

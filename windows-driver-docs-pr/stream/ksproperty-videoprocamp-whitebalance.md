@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ VIDEOPROCAMP \_ WHITEBALANCE
 description: KSPROPERTY \_ VIDEOPROCAMP \_ WHITEBALANCE 属性设置或获取照相机的白平衡设置。 此属性是可选的。
-ms.assetid: 8973db14-e971-4601-8a96-bc264e7ddd3a
 keywords:
 - KSPROPERTY_VIDEOPROCAMP_WHITEBALANCE 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 06be19f32e2afe1f3ea7286c1435e1ba5612286f
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: ca6198601b420b9910e509e0777b90f25cb9f5e8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105708"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840237"
 ---
 # <a name="ksproperty_videoprocamp_whitebalance"></a>KSPROPERTY \_ VIDEOPROCAMP \_ WHITEBALANCE
 
@@ -86,7 +85,7 @@ KSPROPERTY **Value** \_ VIDEOPROCAMP S 结构的 Value 成员 \_ 指定了白平
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

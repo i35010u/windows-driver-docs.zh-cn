@@ -1,17 +1,16 @@
 ---
 title: 面向连接的微型端口驱动程序的常规统计信息 OID
 description: 本主题介绍面向连接的对象的常规统计信息 Oid。
-ms.assetid: 1967ebb9-0cc9-46ca-b9db-fc505f41c38e
 keywords:
 - 常规统计信息 Oid 面向连接的小型端口驱动程序
 ms.date: 11/02/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 48f760e9fef408e9c05e0dacb077dcfd35962e6e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: fa5e2450e01228492d1fc0cf0b4029043dc4f73b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212445"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840911"
 ---
 # <a name="general-statistics-oids-for-connection-oriented-miniport-drivers"></a>面向连接的微型端口驱动程序的常规统计信息 OID
 
@@ -22,7 +21,7 @@ ms.locfileid: "89212445"
 
 在此表中，M 指示 OID 是必需的，而 O 指示它是可选的。
 
-| Length | 查询 | 设置 | 名称 |
+| 长度 | 查询 | 设置 | “属性” |
 | --- | --- | --- | --- |
 | 4或8 | O |   | [OID_GEN_CO_BYTES_RCV](oid-gen-co-bytes-rcv.md) |
 | 4或8 | O |   | [OID_GEN_CO_BYTES_XMIT](oid-gen-co-bytes-xmit.md) |

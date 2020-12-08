@@ -1,18 +1,17 @@
 ---
 title: 执行特定于设备的空闲检测
 description: 执行特定于设备的空闲检测
-ms.assetid: 1a4e3b66-f1dc-4dc8-af8b-ed8138270c3c
 keywords:
 - 空闲检测 WDK 电源管理
 - 设备特定的空闲检测 WDK 电源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 18bc07b0b3f6cecfd7a227b7ba5e6697c5cac11a
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 90ff886be683ebacd9d7da53a5168fba0f4faf68
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187056"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839233"
 ---
 # <a name="performing-device-specific-idle-detection"></a>执行特定于设备的空闲检测
 

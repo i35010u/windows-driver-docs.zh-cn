@@ -1,17 +1,16 @@
 ---
 title: CoNDIS WAN 更简单
 description: CoNDIS WAN 更简单
-ms.assetid: 750f321a-72c9-4d90-b02e-cbe5177dc2af
 keywords:
-- WAN 的 CoNDIS 驱动程序 WDK 网络权益
+- CoNDIS WAN 驱动程序 WDK 网络，优点
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 15d060329cdcc7d3166b6196f7c62cada81f8ea8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bc4e483389fcfe46dae734e171f58a30c8a55df3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390732"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840663"
 ---
 # <a name="condis-wan-is-less-complex"></a>CoNDIS WAN 更简单
 
@@ -19,17 +18,17 @@ ms.locfileid: "63390732"
 
 
 
-CoNDIS 到每个连接中涉及的逻辑实体定义相对应的对象。 这些实体包括地址系列 (AFs)、 虚拟连接 (VCs)、 服务访问点 (SAPs) 和参与方。
+CoNDIS 定义与连接中所涉及的每个逻辑实体对应的对象。 这些实体包括 (AFs) 的地址系列、 (VCs) 的虚拟连接、服务访问点 (Sap) 和参与方。
 
-在的 CoNDIS 环境中，系统将处理的许多复杂的 TAPI 要求。 因此，CoNDIS WAN 微型端口驱动程序或 MCM 无需处理任意数量的 TAPI Oid 为 NDIS WAN 的微型端口驱动程序。 此外，CoNDIS WAN 微型端口驱动程序或 MCM 不需要处理以下状态指示：
+在 CoNDIS 环境中，系统会处理许多复杂的 TAPI 需求。 因此，CoNDIS WAN 微型端口驱动程序或 MCM 无需处理任意数量的 TAPI Oid 作为 NDIS WAN 微型端口驱动程序。 此外，CoNDIS WAN 微型端口驱动程序或 MCM 不需要处理以下状态指示：
 
--   NDIS\_状态\_TAPI\_指示
+-   NDIS \_ 状态 \_ TAPI \_ 指示
 
--   NDIS\_状态\_WAN\_行\_向上
+-   NDIS \_ 状态 \_ WAN \_ \_ 向上排列
 
--   NDIS\_状态\_WAN\_行\_下
+-   NDIS \_ 状态 \_ 广域网 \_ 行 \_
 
-呼叫管理器和微型端口驱动程序函数的分离，可实现两个简单的驱动程序。 简化驱动程序应易于维护和调试比一个大型和复杂的驱动程序。
+通过分离调用管理器和微型端口驱动程序功能，您可以实现两个简单的驱动程序。 简化的驱动程序应比一个大型和复杂的驱动程序更容易维护和调试。
 
  
 

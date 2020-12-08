@@ -1,9 +1,8 @@
 ---
 title: PlatenColor 元素
-description: 所需的 PlatenColor 元素包含描述处理辊功能的颜色的 ColorEntry 元素的列表。
-ms.assetid: 97fd9926-e49d-4b4f-95aa-eb4142c353a3
+description: 必需的 PlatenColor 元素包含一个 ColorEntry 元素列表，这些元素描述了影印的颜色处理功能。
 keywords:
-- PlatenColor 元素成像设备
+- PlatenColor 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e53812c0462a87a249d087387f762bbb90dcc1a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ec53acb4472fcb17a81859a9930af540f4b0577a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360667"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841081"
 ---
 # <a name="platencolor-element"></a>PlatenColor 元素
 
 
-所需**PlatenColor**元素包含一系列[ **ColorEntry** ](colorentry.md)描述处理辊功能的颜色的元素。
+必需的 **PlatenColor** 元素包含一个 [**ColorEntry**](colorentry.md) 元素列表，这些元素描述了影印的颜色处理功能。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -71,7 +70,7 @@ ms.locfileid: "63360667"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="platen.md" data-raw-source="[&lt;strong&gt;Platen&lt;/strong&gt;](platen.md)"><strong>辊</strong></a></p></td>
+<td><p><a href="platen.md" data-raw-source="[&lt;strong&gt;Platen&lt;/strong&gt;](platen.md)"><strong>Platen</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -79,16 +78,16 @@ ms.locfileid: "63360667"
 <a name="remarks"></a>备注
 -------
 
-**PlatenColor**元素包含确定色处理和获取平板辊支持的类型所需的信息。 描述每个像素所需的信息的量取决于特定于[ **ColorEntry** ](colorentry.md)关键字。 黑色和白色映像需要仅有一位每像素 (bpp)，而灰度和彩色图像需要更多的信息。 通过颜色空间并扫描设备的技术功能确定确切的信息量。
+**PlatenColor** 元素包含确定平板影印支持的颜色处理和购置类型所需的信息。 描述每个像素所需的信息量取决于特定的 [**ColorEntry**](colorentry.md) 关键字。 黑白图像需要每个像素 (bpp) ，而灰度和彩色图像需要更多的信息。 确切的信息量由扫描设备的颜色空间和技术功能决定。
 
-返回的扫描数据的另一个重要方面是测光获得的数据的解释。 需要为黑白色，其中 0 表示黑色和白色表示按 1 扫描设备返回的所有图像数据都。
+返回的扫描数据的另一个重要方面是获取的数据的 photometric 解释。 扫描设备返回的所有图像数据都需要在白色显示黑色，其中黑色表示为0，白色表示为1。
 
 ## <a name="see-also"></a>请参阅
 
 
 [**ColorEntry**](colorentry.md)
 
-[**辊**](platen.md)
+[**Platen**](platen.md)
 
  
 

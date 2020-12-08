@@ -1,19 +1,18 @@
 ---
 title: 注册预操作和后操作回调例程
 description: 注册预操作和后操作回调例程
-ms.assetid: 9f89ca46-8a8f-422f-9dbe-2620b944a3ae
 keywords:
 - preoperation 回调例程 WDK 文件系统微筛选器，注册
 - postoperation 回调例程 WDK 文件系统微筛选器，注册
 - 注册回调例程
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ca91091257c1049a690cadaebfc40f2982240d5c
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 04c13cead82631be2ea9d36d4d9b0cc9a47aff58
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066104"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840723"
 ---
 # <a name="registering-preoperation-and-postoperation-callback-routines"></a>注册预操作和后操作回调例程
 
@@ -21,7 +20,7 @@ ms.locfileid: "89066104"
 ## <span id="ddk_registering_preoperation_and_postoperation_callback_routines_if"></span><span id="DDK_REGISTERING_PREOPERATION_AND_POSTOPERATION_CALLBACK_ROUTINES_IF"></span>
 
 
-若要注册[**preoperation 回调例程**](/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_pre_operation_callback)和[**postoperation 回调例程**](/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_post_operation_callback)，微筛选器驱动程序会在其**DriverEntry**例程中调用[**FltRegisterFilter**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltregisterfilter) 。 对于**FltRegisterFilter**中的*注册*参数，微筛选器驱动程序将指针传递到[**FLT \_ 注册**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_registration)结构。 此结构的 **OperationRegistration** 成员包含一个指向 [**FLT \_ 操作 \_ 注册**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_operation_registration) 结构数组的指针，该指针用于微筛选器驱动程序必须筛选的每种类型的 i/o 操作。
+若要注册 [**preoperation 回调例程**](/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_pre_operation_callback)和 [**postoperation 回调例程**](/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_post_operation_callback)，微筛选器驱动程序会在其 **DriverEntry** 例程中调用 [**FltRegisterFilter**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltregisterfilter) 。 对于 **FltRegisterFilter** 中的 *注册* 参数，微筛选器驱动程序将指针传递到 [**FLT \_ 注册**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_registration)结构。 此结构的 **OperationRegistration** 成员包含一个指向 [**FLT \_ 操作 \_ 注册**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_operation_registration) 结构数组的指针，该指针用于微筛选器驱动程序必须筛选的每种类型的 i/o 操作。
 
 数组中的每个 FLT \_ 操作 \_ 注册结构（最后一个）都包含以下信息：
 

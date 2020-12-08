@@ -1,7 +1,6 @@
 ---
 title: D3DKMT \_ OUTPUTDUPL \_ 获取 \_ 指针 \_ 形状 \_ 数据结构
 description: 了解 D3DKMT \_ OUTPUTDUPL \_ 获取 \_ 指针 \_ 形状 \_ 数据结构，该结构已保留供系统使用。 请勿在您的驱动程序中使用。
-ms.assetid: 31502888-88b0-49c2-8f03-63bb31886931
 keywords:
 - D3DKMT_OUTPUTDUPL_GET_POINTER_SHAPE_DATA 结构显示设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: bcff5a2cb38a50f19149f119900d9db9f2276bce
-ms.sourcegitcommit: fc94eb0d5a41ef81c1b3ab91ad725386db0be0c2
+ms.openlocfilehash: 3b0a62355ae9acc67f73838c710078494b9434ef
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91603593"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839611"
 ---
 # <a name="d3dkmt_outputdupl_get_pointer_shape_data-structure"></a>D3DKMT \_ OUTPUTDUPL \_ 获取 \_ 指针 \_ 形状 \_ 数据结构
 
@@ -31,11 +30,11 @@ ms.locfileid: "91603593"
 
 ```ManagedCPlusPlus
 typedef struct _D3DKMT_OUTPUTDUPL_GET_POINTER_SHAPE_DATA {
-  D3DKMT_HANDLE                     hAdapter;
-  D3DDDI_VIDEO_PRESENT_SOURCE_ID    VidPnSourceId;
-  UINT                              BufferSizeSupplied;
-  PVOID                             pShapeBuffer;
-  UINT                              BufferSizeRequired;
+  D3DKMT_HANDLE                     hAdapter;
+  D3DDDI_VIDEO_PRESENT_SOURCE_ID    VidPnSourceId;
+  UINT                              BufferSizeSupplied;
+  PVOID                             pShapeBuffer;
+  UINT                              BufferSizeRequired;
   D3DKMT_OUTDUPL_POINTER_SHAPE_INFO ShapeInfo;
 } D3DKMT_OUTPUTDUPL_GET_POINTER_SHAPE_DATA;
 ```

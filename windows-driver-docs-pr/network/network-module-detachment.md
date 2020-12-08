@@ -1,7 +1,6 @@
 ---
 title: 网络模块分离
 description: 网络模块分离
-ms.assetid: f41ac030-0bfc-47e2-9840-2c3550bc7d33
 keywords:
 - 网络模块 WDK 网络模块注册器，分离
 - 提供程序模块 WDK 网络模块注册器，分离
@@ -12,17 +11,17 @@ keywords:
 - NMR WDK，分离网络模块
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8926385e8b740a5756788120d677c8fa6b06804b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3f01718f3a62289f4b8a0d4c40980c6da0621459
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210677"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840309"
 ---
 # <a name="network-module-detachment"></a>网络模块分离
 
 
-当客户端模块或提供程序模块与网络模块注册器 (NMR) 时，附加的网络模块将相互分离。 通过调用[**NMR**](/windows-hardware/drivers/ddi/netioddk/nf-netioddk-nmrderegisterprovider)函数，使用 NmrDeregisterProvider 调用[**NmrDeregisterClient**](/windows-hardware/drivers/ddi/netioddk/nf-netioddk-nmrderegisterclient)函数和提供程序模块注销，注销与 NMR 的客户端模块。 下图说明了启动注销的网络模块。
+当客户端模块或提供程序模块与网络模块注册器 (NMR) 时，附加的网络模块将相互分离。 通过调用 [**NMR**](/windows-hardware/drivers/ddi/netioddk/nf-netioddk-nmrderegisterprovider)函数，使用 NmrDeregisterProvider 调用 [**NmrDeregisterClient**](/windows-hardware/drivers/ddi/netioddk/nf-netioddk-nmrderegisterclient)函数和提供程序模块注销，注销与 NMR 的客户端模块。 下图说明了启动注销的网络模块。
 
 ![说明启动取消注册的网络模块的示意图](images/nmrdetach1.png)
 

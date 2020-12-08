@@ -1,15 +1,14 @@
 ---
 title: 特定于设备的上下文
 description: 特定于设备的上下文
-ms.assetid: 29e0d451-57fb-4943-9508-022adffa4650
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 00727bc8cfc6a4e9fc3a484c548fd18738e7a425
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 99bec1f10205e12ccc58412b935a2890bf616f35
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189603"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839259"
 ---
 # <a name="device-specific-contexts"></a>特定于设备的上下文
 

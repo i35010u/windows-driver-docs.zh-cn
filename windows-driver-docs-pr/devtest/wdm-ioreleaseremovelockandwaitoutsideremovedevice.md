@@ -1,7 +1,6 @@
 ---
 title: 'IoReleaseRemoveLockAndWaitOutsideRemoveDevice 规则 (wdm) '
 description: IoReleaseRemoveLockAndWaitOutsideRemoveDevice 规则指定不应对 \_ \_ \_ \_ PNP 驱动程序使用 irp MN REMOVE \_ 设备在 Irp MJ PNP 之外调用 IoReleaseRemoveLockAndWait。
-ms.assetid: 5787B14D-1793-4B39-A569-9A1308257A26
 ms.date: 05/21/2018
 keywords:
 - 'IoReleaseRemoveLockAndWaitOutsideRemoveDevice 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b50d0b68ef424b72d56828c66d6d76ef46aee20e
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: d0da26fbe412f3843c2fb8706dc9da5e5bad1288
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107510"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841005"
 ---
 # <a name="ioreleaseremovelockandwaitoutsideremovedevice-rule-wdm"></a>IoReleaseRemoveLockAndWaitOutsideRemoveDevice 规则 (wdm) 
 
 
-**IoReleaseRemoveLockAndWaitOutsideRemoveDevice**规则指定不应对[**IoReleaseRemoveLockAndWait**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreleaseremovelockandwait) \_ \_ \_ \_ pnp 驱动程序使用 irp MN REMOVE \_ 设备在 irp MJ PNP 之外调用 IoReleaseRemoveLockAndWait。
+**IoReleaseRemoveLockAndWaitOutsideRemoveDevice** 规则指定不应对 [**IoReleaseRemoveLockAndWait**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreleaseremovelockandwait) \_ \_ \_ \_ pnp 驱动程序使用 irp MN REMOVE \_ 设备在 irp MJ PNP 之外调用 IoReleaseRemoveLockAndWait。
 
 **驱动程序模型： WDM**
 

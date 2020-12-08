@@ -1,18 +1,17 @@
 ---
 title: 数据包注入函数
 description: 数据包注入函数
-ms.assetid: ebbcafb6-7fbf-40e6-8806-0131aa1d4df5
 keywords:
 - 数据包注入函数 WDK Windows 筛选平台
 - 注入函数 WDK Windows 筛选平台
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d539d4d63cf06ceb0d7b0e0ac47ccc5562c6cfa
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: f74ea9133fbe9c0c4684bd463f5e77a509c51618
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106456"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840625"
 ---
 # <a name="packet-injection-functions"></a>数据包注入函数
 
@@ -91,7 +90,7 @@ NDIS_TCP_IP_CHECKSUM_PACKET_INFO ChecksumInfo;
 
 在 Windows Vista Service Pack 1 (SP1) 和 Windows Server 2008 中，如果 inMetaValues- &gt; headerIncludeHeaderLength 大于0，则传出数据包是包含 IP 标头的原始发送 reinjection。 若要执行包含 Windows Vista SP1 和 Windows Server 2008 的 IP 标头的原始发送 reinjections，必须通过 inMetaValues-headerIncludeHeaderLength 中的数量撤回克隆的数据包， &gt; 并将 inMetaValues-headerIncludeHeader 复制到 &gt; 新的扩展空间。 然后，将 FwpsInjectTransportSendAsync0 用于数据包的网络缓冲区列表，并将 FWPS \_ TRANSPORT \_ SEND \_ PARAMS0 参数设置为 **NULL**。 有关网络缓冲区列表的撤回操作的详细信息，请参阅 [撤回和高级操作](retreat-and-advance-operations.md)。
 
-**注意**   对于原始发送操作，net buffer 列表必须只包含一个网络缓冲区。 如果网络缓冲区列表包含多个网络缓冲区，则必须将网络缓冲区列表转换为一系列网络缓冲区列表，而且序列中的每个都必须包含一个网络缓冲区。 有关网络缓冲区列表管理的详细信息，请参阅 [net \_ Buffer 体系结构](net-buffer-architecture.md)。
+**注意**  对于原始发送操作，net buffer 列表必须只包含一个网络缓冲区。 如果网络缓冲区列表包含多个网络缓冲区，则必须将网络缓冲区列表转换为一系列网络缓冲区列表，而且序列中的每个都必须包含一个网络缓冲区。 有关网络缓冲区列表管理的详细信息，请参阅 [net \_ Buffer 体系结构](net-buffer-architecture.md)。
 
  
 

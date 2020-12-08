@@ -1,7 +1,6 @@
 ---
 title: DIF_REMOVE
 description: DIF_REMOVE
-ms.assetid: 14429756-c059-46d7-bd1c-0ae57d1ec8b5
 keywords:
 - DIF_REMOVE 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e508faa5371e7bf7eed62516eeb985c7f9ec568e
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: f1864622e999aac1ccc9131bff84add40251b19e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717298"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840965"
 ---
 # <a name="dif_remove"></a>DIF_REMOVE
 
@@ -64,16 +63,16 @@ DIF_REMOVE 请求通知安装程序 Windows 即将删除设备，并为该安装
 在设备信息集中提供设备的 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构的指针。
 
 <a href="" id="device-installation-parameters-"></a>设备安装参数   
-与*DeviceInfoData*关联的设备安装参数 ([**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)) 。
+与 *DeviceInfoData* 关联的设备安装参数 ([**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)) 。
 
 <a href="" id="class-installation-parameters"></a>类安装参数  
-[**SP_REMOVEDEVICE_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_removedevice_params)结构可能与*DeviceInfoData*关联。
+[**SP_REMOVEDEVICE_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_removedevice_params)结构可能与 *DeviceInfoData* 关联。
 
 如果 [**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)中 DI_CLASSINSTALLPARAMS 标志清晰，则不存在请求的类安装参数。 在这种情况下，未指定硬件配置文件，并且设备将作为一个整体从系统中删除。
 
 ### <a name="installer-output"></a>安装程序输出
 
-<a href="" id="none"></a>无  
+<a href="" id="none"></a>内容  
 
 ### <a name="installer-return-value"></a>安装程序返回值
 
@@ -83,7 +82,7 @@ DIF_REMOVE 请求通知安装程序 Windows 即将删除设备，并为该安装
 
 如果类安装程序成功处理此请求（包括直接调用默认处理程序），则类安装程序应返回 NO_ERROR 并且 **SetupDiCallClassInstaller** 将不会再次调用默认处理程序。
 
-**注意**   类安装程序可以直接调用默认处理程序，但类安装程序永远不会尝试取代默认处理程序的操作。
+**注意**   类安装程序可以直接调用默认处理程序，但类安装程序永远不会尝试取代默认处理程序的操作。
 
  
 
@@ -101,7 +100,7 @@ DIF_REMOVE 请求通知安装程序 Windows 即将删除设备，并为该安装
 
 如果安装程序确定不应删除该设备，则安装程序将通过返回 Win32 错误代码来使该方法失败。 如果 DI_QUIETINSTALL 标志清晰，则安装程序应向用户显示一条消息，说明未删除设备的原因。
 
-共同安装程序不得尝试通过调用 **SetupDiRemoveDevice**来删除设备本身。 在成功删除设备后，共同安装程序通常会在后处理时处理此请求。
+共同安装程序不得尝试通过调用 **SetupDiRemoveDevice** 来删除设备本身。 在成功删除设备后，共同安装程序通常会在后处理时处理此请求。
 
 例如，如果共同安装程序必须删除注册表中的信息，则共同安装程序应在执行后处理时执行此操作，并且仅当前面的安装程序成功删除请求时才这样做。 在预处理过程中，共同安装程序应将注册表信息存储在其上下文参数中，并返回 ERROR_DI_POSTPROCESSING_REQUIRED 以请求后处理。 当 Windows 调用共同安装程序来后处理此 DIF 请求时，共同安装程序应检查是否 NO_ERROR 了 DIF 状态，然后再删除注册表信息。 如果共同安装程序在其预处理过程中删除注册表信息，并且类安装程序 (或其他共同安装程序) 未能通过 DIF_REMOVE，则共同安装程序可能会使设备处于不可预知的状态。
 

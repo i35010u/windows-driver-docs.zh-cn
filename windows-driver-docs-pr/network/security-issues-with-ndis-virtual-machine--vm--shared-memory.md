@@ -1,15 +1,14 @@
 ---
 title: NDIS 虚拟机 (VM) 共享内存的安全问题
 description: NDIS 虚拟机 (VM) 共享内存的安全问题
-ms.assetid: 42b903b0-6729-4314-9305-9345fff9b2ba
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e2924e89a9a8e055500dd7b39a4c4371b91eba4
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 89773a3dc8cf786cd217e5e49b4dd4ea893d240b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210081"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840283"
 ---
 # <a name="security-issues-with-ndis-virtual-machine-vm-shared-memory"></a>NDIS 虚拟机 (VM) 共享内存的安全问题
 
@@ -25,7 +24,7 @@ ms.locfileid: "89210081"
 
 -   [Windows Server 2012 和更高版本如何解决安全问题](#ndis630)
 
-**注意**   在 Hyper-v 中，子分区也称为 VM。
+**注意**  在 Hyper-v 中，子分区也称为 VM。
 
  
 
@@ -41,7 +40,7 @@ Vm 不是受信任的软件实体。 也就是说，恶意 VM 不得干扰其他
 
 但是，当 VMQ 配置为使用共享内存时，网络适配器将使用 DMA 将传入帧直接传输到 VM 地址空间。 此传输引入了一个安全问题，在这种情况下，VM 可以检查接收到的帧的内容，而无需等待可扩展交换机应用所需的 VLAN 筛选。
 
-### <a name="how-windows-server2008r2-addresses-the-security-issue"></a><a href="" id="ndis620"></a>Windows Server 2008 R2 如何解决安全问题
+### <a name="how-windows-server-2008-r2-addresses-the-security-issue"></a><a href="" id="ndis620"></a>Windows Server 2008 R2 如何解决安全问题
 
 在 Windows Server 2008 R2 中，在 VSP 将 VM 队列配置为使用从 VM 地址空间分配的共享内存之前，它对队列使用以下筛选测试。
 
@@ -77,17 +76,17 @@ VMQ 共享内存的摘要要求如下所示：
 
 如果网络适配器无法通过任何方法满足对 VMQ 共享内存的这些要求，则该 VSP 将从主机地址空间为 VMQ 接收缓冲区分配内存，并将接收的数据包从网络适配器接收缓冲区复制到 VM 地址空间。
 
-### <a name="how-windows-server2012-and-later-versions-address-the-security-issue"></a><a href="" id="ndis630"></a>Windows Server 2012 和更高版本如何解决安全问题
+### <a name="how-windows-server-2012-and-later-versions-address-the-security-issue"></a><a href="" id="ndis630"></a>Windows Server 2012 和更高版本如何解决安全问题
 
 从 Windows Server 2012 开始，VSP 不会为 VMQ 接收缓冲区从 VM 分配共享内存。 相反，VSP 从主机地址空间为 VMQ 接收缓冲区分配内存，然后将接收的数据包从网络适配器接收缓冲区复制到 VM 地址空间。
 
 以下几点适用于在 Windows Server 2012 和更高版本的 Windows 上运行的 VMQ 微型端口驱动程序：
 
--   对于 NDIS 6.20 VMQ 微型端口驱动程序，无需更改。 但是，当 VSP 通过发出 OID (对象标识符) 方法请求来分配一个 VM 队列时，该请求会将[**NDIS 接收 \_ \_ 队列 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)结构的**LookaheadSize**成员设置为零。 [ \_ \_ \_ \_ ](./oid-receive-filter-allocate-queue.md) 这会强制微型端口驱动程序不会将数据包拆分为预先预测前和预测后缓冲区。
+-   对于 NDIS 6.20 VMQ 微型端口驱动程序，无需更改。 但是，当 VSP 通过发出 OID (对象标识符) 方法请求来分配一个 VM 队列时，该请求会将 [**NDIS 接收 \_ \_ 队列 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)结构的 **LookaheadSize** 成员设置为零。 [ \_ \_ \_ \_](./oid-receive-filter-allocate-queue.md) 这会强制微型端口驱动程序不会将数据包拆分为预先预测前和预测后缓冲区。
 
 -   从 NDIS 6.30 开始，VMQ 微型端口驱动程序不得公布对将数据包数据拆分为预先预测和后先行缓冲区的支持。 当微型端口驱动程序注册其 VMQ 功能时，它必须在初始化 [**NDIS \_ 接收 \_ 筛选器 \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities) 结构时遵循以下规则：
 
-    -   微型端口驱动程序不得在**Flags**成员中设置**NDIS \_ 接收 \_ 筛选器 \_ 预测先行 \_ 拆分 \_ 支持**标志。
+    -   微型端口驱动程序不得在 **Flags** 成员中设置 **NDIS \_ 接收 \_ 筛选器 \_ 预测先行 \_ 拆分 \_ 支持** 标志。
 
     -   微型端口驱动程序必须将 **MinLookaheadSplitSize** 和 **MaxLookaheadSplitSize** 成员设置为零。
 

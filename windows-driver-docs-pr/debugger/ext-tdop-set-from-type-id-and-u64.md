@@ -1,7 +1,6 @@
 ---
 title: '\_ \_ \_ \_ 类型 \_ ID \_ 和 \_ U64 中的 EXT TDOP 集'
 description: '\_ \_ \_ \_ \_ \_ 调试请求的类型 ID 和 U64 子操作的 ext TDOP 集 \_ \_ \_ ext \_ 类型化的 \_ 数据 \_ ANSI 请求操作将从数据类型和内存位置创建类型化的数据说明。'
-ms.assetid: 5b1ee241-6f35-4bbf-b4e0-3cefa5a39dde
 keywords:
 - EXT_TDOP_SET_FROM_TYPE_ID_AND_U64 Windows 调试
 topic_type:
@@ -12,19 +11,19 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 25098dc2631306a192805da1afed529f9a63f5bc
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 4f3eb60d7a35b1f1a1f32759a19a47f803c1a8e6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206814"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840213"
 ---
 # <a name="ext_tdop_set_from_type_id_and_u64"></a>\_ \_ \_ \_ 类型 \_ ID \_ 和 \_ U64 中的 EXT TDOP 集
 
 
-\_ \_ \_ \_ \_ \_ 调试请求的类型 ID 和 U64 子操作的 ext TDOP 集 \_ [** \_ \_ ext \_ 类型化的 \_ 数据 \_ ANSI**](debug-request-ext-typed-data-ansi.md)[**请求**](request.md)操作将从数据类型和内存位置创建类型化的数据说明。
+\_ \_ \_ \_ \_ \_ 调试请求的类型 ID 和 U64 子操作的 ext TDOP 集 \_ [**\_ \_ ext \_ 类型化的 \_ 数据 \_ ANSI**](debug-request-ext-typed-data-ansi.md)[**请求**](request.md)操作将从数据类型和内存位置创建类型化的数据说明。
 
-**参数**
+**Parameters**
 
 <span id="Operation"></span><span id="operation"></span><span id="OPERATION"></span>**运作**  
 \_对于此子操作，请将设置为 TDOP \_ \_ \_ 类型 \_ ID \_ 和 \_ U64 中的扩展。
@@ -53,7 +52,7 @@ ms.locfileid: "89206814"
 <a name="remarks"></a>备注
 -------
 
-\_ \_ 类型 ID 和 U64 中的 ext TDOP 集 \_ \_ \_ \_ \_ 是[**ext \_ TDOP**](/windows-hardware/drivers/ddi/wdbgexts/ne-wdbgexts-_ext_tdop)枚举中的一个值。
+\_ \_ 类型 ID 和 U64 中的 ext TDOP 集 \_ \_ \_ \_ \_ 是 [**ext \_ TDOP**](/windows-hardware/drivers/ddi/wdbgexts/ne-wdbgexts-_ext_tdop)枚举中的一个值。
 
 此子操作的参数是 [**EXT \_ 类型化 \_ 数据**](/windows-hardware/drivers/ddi/wdbgexts/ns-wdbgexts-_ext_typed_data) 结构的成员。 \_ \_ 此子操作不使用上面的参数部分中未列出的 EXT 类型化数据的成员，并且应将其设置为零。 前面参数部分中的成员的说明指定了成员的用途。 有关更多详细信息，请参阅 **EXT \_ 类型化 \_ 数据** 。
 

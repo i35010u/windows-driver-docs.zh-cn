@@ -1,31 +1,30 @@
 ---
-title: 示例 4 序列号
-description: 示例 4 序列号
-ms.assetid: 5b498267-c495-4a25-abb9-aa83a51559e1
+title: 示例4序列号
+description: 示例4序列号
 keywords:
-- Tracefmt WDK、 序列号
+- Tracefmt WDK，序列号
 - 序列号 WDK Tracefmt
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d0c141cffa79d9188d7fff476f776d4aecd26052
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 06f4da063231e856cd5ffb9fc4ddb8a2297517d3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344673"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839139"
 ---
 # <a name="example-4-sequence-numbers"></a>示例 4：序列号
 
 
-以下命令在输出文件中包含消息的本地或全局序列的号。 如果没有生成序列号，序列字段将包含零。
+以下命令在输出文件中包括消息的本地序列号或全局序列号。 如果未生成序列号，则序列字段包含零。
 
 ```
 tracefmt mytrace.etl -p c:\tracing -o mytrace.txt -seq
 ```
 
-此命令通过使用 c： 驱动器中的 TMF 文件格式 mytrace.etl 日志文件中的消息\\跟踪目录。 它将格式化的消息写入 mytrace.txt 文件中。 该命令使用 **-seq**参数指示 Tracefmt 输出文件中包含序列号。
+此命令通过使用 c：跟踪目录中的 TMF 文件来格式化 mytrace 日志文件中的消息 \\ 。 它将格式化消息写入 mytrace.txt 文件中。 该命令使用 **-seq** 参数来指示 Tracefmt 在输出文件中包含序列号。
 
-输出文件的一段摘录显示，如下所示：
+输出文件的摘选如下所示：
 
 ```text
 [0]0AF4.0C64::07/25/2003-13:55:39.998 00004ea4 [tracedrv]IOCTL = 1

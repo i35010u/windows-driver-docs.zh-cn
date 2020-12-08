@@ -1,15 +1,14 @@
 ---
 title: 底片扫描仪体系结构
 description: 底片扫描仪体系结构
-ms.assetid: fe3a2c23-a520-4701-8178-02f50ac08767
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f475358de358cdac39d7c8d854eebe67e6e48613
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d9fb94fd7964f3010ac77ec7174d744dfc6bbcba
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323452"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839254"
 ---
 # <a name="film-scanner-architecture"></a>底片扫描仪体系结构
 
@@ -17,13 +16,13 @@ ms.locfileid: "63323452"
 
 
 
-支持幻灯片或透明度扫描单位的扫描程序设备应在其 WIA 项树实现电影胶片扫描程序项。 此 WIA 项表示的可编程数据源。 生成的映像或从此项请求从位于正在扫描时数据传输的表面的扫描程序的电影胶片图像。 电影扫描程序项应位于直接关闭 WIA 根项，并应包含一个或多个子项 （称为帧）。 *帧*是电影胶片项表示单独选择区域和电影正在扫描的表面上的所选内容区域的位置。 WIA 驱动程序确定是否这些选择可以添加、 删除、 调整大小，或甚至重新定位通过设置的有效值的范围内设置。
+支持幻灯片或透明度扫描单元的扫描仪设备应在其 WIA 项树中实现胶片扫描器项。 此 WIA 项表示可编程数据源。 当从此项请求数据传输时，它将从电影中生成一个图像或图像，并将其放置在扫描仪的电影扫描图面上。 胶片扫描器项应直接位于 WIA 根项的位置，并且应包含一个或多个子项 (称为 "帧") 。 *帧* 是表示各个选择区域以及影片扫描表面上选择区域位置的电影项。 WIA 驱动程序通过设置范围设置的有效值来确定是否可以添加、删除、调整大小或甚至重定位这些选择。
 
-以下主题介绍两种类型的电影胶片扫描程序：
+以下主题描述了两种类型的胶片扫描器：
 
-[支持电影扫描平板扫描仪](flatbed-scanners-that-support-film-scanning.md)
+[支持胶片扫描的平板扫描仪](flatbed-scanners-that-support-film-scanning.md)
 
-[专用的电影扫描仪](dedicated-film-scanners.md)
+[专用底片扫描仪](dedicated-film-scanners.md)
 
  
 

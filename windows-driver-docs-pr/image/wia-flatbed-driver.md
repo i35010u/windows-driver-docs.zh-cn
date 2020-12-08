@@ -1,15 +1,14 @@
 ---
 title: WIA 平板驱动程序
 description: WIA 平板驱动程序
-ms.assetid: 83c35b1f-10e0-47e1-97cc-5a7a79fb8088
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b24a4d2b76bf75891d9cb6a8d45d5538b74c47d2
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 4642cf9464364e61bc9b98fb6cb8494a58b3dda1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191499"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840359"
 ---
 # <a name="wia-flatbed-driver"></a>WIA 平板驱动程序
 
@@ -56,7 +55,7 @@ Microdriver 可以排除设备不支持的数据类型。
 Resolutions="75, 100, 300, 600, 1200"
 ```
 
-**注意**   请记得在每个逗号后面加一个空格。
+**注意**   请记得在每个逗号后面加一个空格。
 在选择 "自定义" 解决方法时，可以使用 Microsoft Windows SDK 文档) 中介绍的 **IWiaItem：:D evicedlg** 方法 (来获取用户输入。
 
  

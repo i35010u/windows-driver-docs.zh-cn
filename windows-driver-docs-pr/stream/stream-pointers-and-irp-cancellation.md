@@ -1,7 +1,6 @@
 ---
 title: 流指针和 IRP 取消
 description: 流指针和 IRP 取消
-ms.assetid: ce392496-ca07-497d-af8a-709239a7bd5e
 keywords:
 - 流指针 WDK AVStream，IRP 取消
 - IRP 取消 WDK AVStream
@@ -9,12 +8,12 @@ keywords:
 - 锁定的流指针 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e50ed2713a73d868ee5313e94201b7362a46f5f
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 9a2a379cbaa01147448e28412f07f59a03b8a47d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104662"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839853"
 ---
 # <a name="stream-pointers-and-irp-cancellation"></a>流指针和 IRP 取消
 

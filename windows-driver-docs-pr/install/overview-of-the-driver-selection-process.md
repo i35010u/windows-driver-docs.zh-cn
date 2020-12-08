@@ -1,15 +1,14 @@
 ---
 title: 驱动程序选择过程概述
 description: 驱动程序选择过程概述
-ms.assetid: 120ab9f9-6ac5-4b76-bee1-2e975d0c38f2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 216ab565c6ebf0e65062aa7cc5ba5df3e720949e
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 18d04af0c7be10ad0bb613b9889314f8cb52bade
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095891"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839499"
 ---
 # <a name="overview-of-the-driver-selection-process"></a>驱动程序选择过程概述
 
@@ -22,7 +21,7 @@ Windows 将驱动程序表示为 *驱动程序节点*，其中包括设备的所
 
 Windows 在特定位置中搜索与设备匹配的驱动程序。 如果满足以下条件，则驱动程序将匹配设备：
 
--   设备的总线驱动程序报告的即插即用 (PnP) [设备标识字符串](device-identification-strings.md)之一与该驱动程序[inf 文件](overview-of-inf-files.md)的 " [**inf*模型*" 部分**](inf-models-section.md)条目中的设备标识字符串匹配。
+-   设备的总线驱动程序报告的即插即用 (PnP) [设备标识字符串](device-identification-strings.md)之一与该驱动程序 [inf 文件](overview-of-inf-files.md)的 " [**inf *模型*" 部分**](inf-models-section.md)条目中的设备标识字符串匹配。
 
 -   如果 " [**INF *模型* " 部分**](inf-models-section.md) 条目中的匹配设备标识字符串指定了 *TargetOSVersion* 装饰，则该修饰将与要安装设备的操作系统版本匹配。
 
@@ -38,11 +37,11 @@ Windows 将创建一个列表，其中列出了所有匹配驱动程序，并为
 
 从 Windows Vista 开始，Windows 还根据驱动程序是否已进行数字签名来对驱动程序进行排名。 Windows 基于数字签名对驱动程序进行排名，如下所示：
 
--   如果[ **AllSignersEqual**组策略](./allsigningequal-group-policy.md)处于禁用状态，则 Windows 将使用 Microsoft 签名进行签名的驱动程序高于使用[Authenticode](authenticode.md)签名进行签名的驱动程序。 即使使用 Authenticode 签名签名的驱动程序在所有其他方面都是更好地匹配设备，也会出现此排名。
+-   如果 [ **AllSignersEqual** 组策略](./allsigningequal-group-policy.md)处于禁用状态，则 Windows 将使用 Microsoft 签名进行签名的驱动程序高于使用 [Authenticode](authenticode.md)签名进行签名的驱动程序。 即使使用 Authenticode 签名签名的驱动程序在所有其他方面都是更好地匹配设备，也会出现此排名。
 
--   如果启用了[ **AllSignersEqual**组策略](./allsigningequal-group-policy.md)，则 Windows 将对所有数字签名的驱动程序进行平均排名。
+-   如果启用了 [ **AllSignersEqual** 组策略](./allsigningequal-group-policy.md)，则 Windows 将对所有数字签名的驱动程序进行平均排名。
 
-**注意**   从 Windows 7 开始，默认情况下启用[AllSignersEqual 组策略](./allsigningequal-group-policy.md)。 在 Windows Vista 和 Windows Server 2008 中，默认情况下， **AllSignersEqual** 组策略处于禁用状态。 IT 部门可以通过启用或禁用 **AllSignersEqual** 组策略来覆盖默认排名行为。
+**注意**  从 Windows 7 开始，默认情况下启用 [AllSignersEqual 组策略](./allsigningequal-group-policy.md) 。 在 Windows Vista 和 Windows Server 2008 中，默认情况下， **AllSignersEqual** 组策略处于禁用状态。 IT 部门可以通过启用或禁用 **AllSignersEqual** 组策略来覆盖默认排名行为。
 
  
 
@@ -60,7 +59,7 @@ Windows 签名颁发机构的签名包括：
 
 Windows 将选择具有最低排名值的驱动程序作为设备的最佳匹配项。
 
-但是，如果有多个平均排名的驱动程序是设备的最佳匹配项，Windows 将使用该驱动程序的日期和版本来选择驱动程序。 驱动程序的日期和版本由驱动程序的[inf 文件](overview-of-inf-files.md)中包含的[**inf DriverVer 指令**](inf-driverver-directive.md)指定。
+但是，如果有多个平均排名的驱动程序是设备的最佳匹配项，Windows 将使用该驱动程序的日期和版本来选择驱动程序。 驱动程序的日期和版本由驱动程序的 [inf 文件](overview-of-inf-files.md)中包含的 [**inf DriverVer 指令**](inf-driverver-directive.md)指定。
 
 Windows 使用以下条件来选择设备驱动程序：
 

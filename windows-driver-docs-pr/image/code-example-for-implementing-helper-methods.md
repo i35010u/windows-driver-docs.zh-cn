@@ -1,22 +1,21 @@
 ---
 title: 演示如何实现帮助程序方法的代码示例
 description: 演示如何实现帮助程序方法的代码示例
-ms.assetid: 4f9710c2-3741-4048-9b6c-b21241b72c91
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 64a71728098415e97494ee2a0e228033d59912d8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d34fc671fe82e37c7d999c4f5e0609f076d88813
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373229"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839261"
 ---
 # <a name="code-example-for-implementing-helper-methods"></a>演示如何实现帮助程序方法的代码示例
 
 > [!IMPORTANT]  
-> WSD 占领功能已弃用，将在 2018年中删除所有与 WSD 占领相关文档。
+> 已弃用 WSD 争取冠军宝座功能，并且2018中将删除所有与 WSD 争取冠军宝座相关的文档。
 
-下面的代码示例显示了用于初始化 WSD 质询接口和注册的设备质询的帮助器方法的实现。
+下面的代码示例演示了用于初始化 WSD 质询接口并注册设备质询的帮助器方法的实现。
 
 ```cpp
 /**************************************************************************\

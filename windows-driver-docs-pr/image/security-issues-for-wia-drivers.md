@@ -1,15 +1,14 @@
 ---
 title: WIA 驱动程序的安全问题
 description: WIA 驱动程序的安全问题
-ms.assetid: 5d8fc015-cbf5-43a3-8f65-3ebb17754417
 ms.date: 08/25/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b0375a55a7cd4f559db3d30340447f4baf4827e0
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 3e087725a28128cadcf3019c95afce27768dca9d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192945"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839097"
 ---
 # <a name="security-issues-for-wia-drivers"></a>WIA 驱动程序的安全问题
 
@@ -17,7 +16,7 @@ ms.locfileid: "89192945"
 
 在遵守此安全计划后，WIA 服务将在 Microsoft Windows Server 2003 及更高版本的操作系统版本中的 **LocalService** 帐户下运行。
 
-在 Windows Server 2003 之前，将在 WIA 服务和 WIA 驱动程序的假设下开发它们，它们将在 **LocalSystem**下运行。 此更改随 Windows Server 2003 而变化，并具有驱动程序开发人员需要了解的几个后果。 本部分包含 WIA 驱动程序开发人员可能遇到的常见问题列表，其中包括解决这些问题的可能方法。
+在 Windows Server 2003 之前，将在 WIA 服务和 WIA 驱动程序的假设下开发它们，它们将在 **LocalSystem** 下运行。 此更改随 Windows Server 2003 而变化，并具有驱动程序开发人员需要了解的几个后果。 本部分包含 WIA 驱动程序开发人员可能遇到的常见问题列表，其中包括解决这些问题的可能方法。
 
 按照本文档中所述的做法，可以确保开发的 WIA 驱动程序在 Windows XP、Windows Server 2003 或更高版本的操作系统版本上运行时可以正常工作。
 

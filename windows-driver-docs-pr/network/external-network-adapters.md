@@ -1,15 +1,14 @@
 ---
 title: 外部网络适配器
 description: 外部网络适配器
-ms.assetid: 4029437C-97EA-4F21-A3F0-3B29DC650233
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e1e372ffe711bf35b0bcf68281489e62b15c5fd7
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 05fd0608560916e92b9463eea7f20815ecde54e3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217068"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838847"
 ---
 # <a name="external-network-adapters"></a>外部网络适配器
 

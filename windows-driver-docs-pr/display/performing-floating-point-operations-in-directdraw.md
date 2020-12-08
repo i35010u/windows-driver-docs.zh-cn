@@ -1,19 +1,18 @@
 ---
 title: 在 DirectDraw 中执行浮点运算
 description: 在 DirectDraw 中执行浮点运算
-ms.assetid: 2ce638e8-2d32-4692-8093-adb413bfbe52
 keywords:
 - 浮点运算 WDK DirectDraw
 - 绘制 WDK DirectDraw，浮点运算
 - DirectDraw WDK Windows 2000 显示，浮点操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 93fbca77e93822d7446b0176f1a8c1e9b65c54e3
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: c5dd323761c9d3d689f48a6a22d4baf825b15988
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717188"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840759"
 ---
 # <a name="performing-floating-point-operations-in-directdraw"></a>在 DirectDraw 中执行浮点运算
 

@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x109 CRITICAL_STRUCTURE_CORRUPTION
 description: CRITICAL_STRUCTURE_CORRUPTION bug 检查的值为0x00000109。 这表示内核检测到关键内核代码或数据损坏。
-ms.assetid: 38d4d722-a915-4f17-899b-2a0b4aa69d95
 keywords:
 - Bug 检查 0x109 CRITICAL_STRUCTURE_CORRUPTION
 - CRITICAL_STRUCTURE_CORRUPTION
@@ -13,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c8e0a2e2fba22f9393890cfb15b848de31201a39
-ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
+ms.openlocfilehash: 93283aab5d7da823d8c3b814e5ebe4fd130885e9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88252855"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839173"
 ---
 # <a name="bug-check-0x109-critical_structure_corruption"></a>Bug 检查0x109：严重 \_ 结构 \_ 损坏
 
@@ -26,7 +25,7 @@ ms.locfileid: "88252855"
 "关键 \_ 结构 \_ 损坏 bug 检查" 的值为 "0x00000109"。 这表示内核检测到关键内核代码或数据损坏。
 
 > [!IMPORTANT]
-> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅 [排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
 ## <a name="critical_structure_corruption-parameters"></a>关键 \_ 结构 \_ 损坏参数
@@ -50,11 +49,11 @@ ms.locfileid: "88252855"
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
-<td align="left"><p>保留</p></td>
+<td align="left"><p>预留</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>3</p></td>
-<td align="left"><p>保留</p></td>
+<td align="left"><p>预留</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>4</p></td>
@@ -276,7 +275,7 @@ ms.locfileid: "88252855"
 
 [**！分析**](-analyze.md)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。
 
-若要开始，请使用 [**k、kb、glm-kc-qnw、kd、kp、kp、kv (显示 Stack Backtrace) **](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md) 命令来查看堆栈跟踪。 可以指定处理器编号来检查所有处理器上的堆栈。
+若要开始，请使用 [**k、kb、glm-kc-qnw、kd、kp、kp、kv (显示 Stack Backtrace)**](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md) 命令来查看堆栈跟踪。 可以指定处理器编号来检查所有处理器上的堆栈。
 
 你还可以在代码中设置一个断点，使其导致此 stop 代码，并尝试单步执行出错的代码。
 
@@ -290,7 +289,7 @@ ms.locfileid: "88252855"
 
 -   如果驱动程序标识在错误检查消息中，禁用该驱动程序或咨询驱动程序更新的制造商。
 
--   运行 Windows 内存诊断工具来测试内存。 在 "控制面板" 搜索框中键入 "内存"，然后选择 " **诊断计算机的内存问题**"。运行测试后，使用事件查看器查看系统日志下的结果。 查找 " *MemoryDiagnostics* " 项，查看结果。
+-   运行 Windows 内存诊断工具来测试内存。 在 "控制面板" 搜索框中键入 "内存"，然后选择 " **诊断计算机的内存问题**"。运行测试后，使用事件查看器查看系统日志下的结果。 查找“内存诊断结果”条目以查看结果  。
 
 -   你可以尝试运行系统制造商提供的硬件诊断。
 

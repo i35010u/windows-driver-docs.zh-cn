@@ -1,22 +1,21 @@
 ---
 title: WDF_PTR_ADD_OFFSET_TYPE 宏
-description: WDF_PTR_ADD_OFFSET_TYPE 宏将偏移量的值添加到一个地址，并返回生成的地址强制转换为指定的类型。
-ms.assetid: b46d0bbe-8401-4c97-8327-fecd3af50eca
+description: WDF_PTR_ADD_OFFSET_TYPE 宏将偏移值添加到地址，并将生成的地址强制转换为指定的类型。
 keywords:
 - WDF_PTR_ADD_OFFSET_TYPE 宏
 ms.date: 08/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 72632a005c9d2a2324d5c45977f6fef7a62f526c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8088e7b0af73592d2624fe8e7390a9c868efb824
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366472"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839183"
 ---
-# <a name="wdfptraddoffsettype-macro"></a>WDF_PTR_ADD_OFFSET_TYPE 宏
+# <a name="wdf_ptr_add_offset_type-macro"></a>WDF_PTR_ADD_OFFSET_TYPE 宏
 
 
-**WDF_PTR_ADD_OFFSET_TYPE**宏将偏移量的值添加到一个地址，并返回生成的地址强制转换为指定的类型。
+**WDF_PTR_ADD_OFFSET_TYPE** 宏将偏移值添加到地址，并将生成的地址强制转换为指定的类型。
 
 <a name="syntax"></a>语法
 ------
@@ -29,14 +28,14 @@ _type WDF_PTR_ADD_OFFSET_TYPE(
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
 *_ptr*   
-指定的地址。
+指定地址。
 
 *_offset*   
-以字节为单位指定偏移量的值。
+指定偏移量值（以字节为单位）。
 
 *_type*   
 指定要返回的数据类型。
@@ -44,12 +43,12 @@ _type WDF_PTR_ADD_OFFSET_TYPE(
 <a name="return-value"></a>返回值
 ------------
 
-返回一个指向生成的地址。 选择中的返回值的数据类型*类型 （_t)* 宏的参数。
+返回一个指向生成的地址的指针。 在宏的 *_type* 参数中选择返回值的数据类型。
 
 <a name="remarks"></a>备注
 -------
 
-定义宏，如下所示：
+宏的定义如下：
 
 ```ManagedCPlusPlus
 #define WDF_PTR_ADD_OFFSET_TYPE(_ptr, _offset, _type) \
@@ -67,19 +66,19 @@ _type WDF_PTR_ADD_OFFSET_TYPE(
 <tbody>
 <tr class="odd">
 <td><p>目标平台</p></td>
-<td><a href="https://go.microsoft.com/fwlink/p/?linkid=531356" data-raw-source="[Universal](https://go.microsoft.com/fwlink/p/?linkid=531356)">世界</a></td>
+<td><a href="https://go.microsoft.com/fwlink/p/?linkid=531356" data-raw-source="[Universal](https://go.microsoft.com/fwlink/p/?linkid=531356)">通用</a></td>
 </tr>
 <tr class="even">
 <td><p>最低 KMDF 版本</p></td>
 <td><p>1.5</p></td>
 </tr>
 <tr class="odd">
-<td><p>最低 UMDF 版本</p></td>
+<td><p>最小 UMDF 版本</p></td>
 <td><p>2.0</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Wdfcore.h （包括 Wdf.h）</td>
+<td><p>标头</p></td>
+<td>Wdfcore (包含 Wdf .h) </td>
 </tr>
 </tbody>
 </table>

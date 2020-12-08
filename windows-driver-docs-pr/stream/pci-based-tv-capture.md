@@ -1,7 +1,6 @@
 ---
 title: 基于 PCI 的电视捕获
 description: 基于 PCI 的电视捕获
-ms.assetid: ae97d5f7-82de-4d6e-9835-ff4c7427f333
 keywords:
 - 筛选器关系图配置 WDK 视频捕获、基于 PCI 的电视捕获
 - 基于 PCI 的电视捕获 WDK 视频捕获
@@ -9,12 +8,12 @@ keywords:
 - 电视捕获 WDK 视频捕获
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e7e2a62e0b922d9d0b8fd3aad04c00288e2a4c3c
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 6cf41f32bce17a4c1eabdc5f68b86851eb8f9eca
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189727"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840515"
 ---
 # <a name="pci-based-tv-capture"></a>基于 PCI 的电视捕获
 

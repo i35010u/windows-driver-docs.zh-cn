@@ -1,19 +1,18 @@
 ---
 title: 输入和输出
 description: 输入和输出
-ms.assetid: 78e181c1-c577-49ca-910b-d2e8db2495b5
 keywords:
 - 调试器引擎、输入和输出
 - 输入和输出
-- output
+- 输出
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 725960871f45f5c962ce4e4166ed32cfcbf8dba4
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: cb3a6b3cbd0b6bd267be83ac6324833f2eebc395
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216657"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838817"
 ---
 # <a name="input-and-output"></a>输入和输出
 

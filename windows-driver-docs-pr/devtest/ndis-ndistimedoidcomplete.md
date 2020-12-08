@@ -1,7 +1,6 @@
 ---
 title: 'NdisTimedOidComplete 规则 (ndis) '
 description: NdisTimedOidComplete 规则指定 NDIS 微型端口驱动程序在12秒内完成 OID 请求。
-ms.assetid: 8C395BCA-4B9E-4302-BF6D-FD79809EB187
 ms.date: 05/21/2018
 keywords:
 - 'NdisTimedOidComplete 规则 (ndis) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e8c585afe1f5128a1e3ce82293e0e84e585d946
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e3514dcbbe90ff468a42e532b7518f4a9d20a63e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104062"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839749"
 ---
 # <a name="ndistimedoidcomplete-rule-ndis"></a>NdisTimedOidComplete 规则 (ndis) 
 
 
-**NdisTimedOidComplete**规则指定 NDIS 微型端口驱动程序在12秒内完成 OID 请求。
+**NdisTimedOidComplete** 规则指定 NDIS 微型端口驱动程序在12秒内完成 OID 请求。
 
 **驱动程序模型： NDIS**
 

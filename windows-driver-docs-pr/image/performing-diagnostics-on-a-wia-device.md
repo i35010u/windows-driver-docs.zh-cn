@@ -1,15 +1,14 @@
 ---
 title: 在 WIA 设备上进行诊断
 description: 在 WIA 设备上进行诊断
-ms.assetid: 15962c49-f03c-409b-b138-033893a50ec2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e1d6f947f301bfb8688ccd282fa0aa827826f3e
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ff088b699e14dbc7af1dd17268e449fcf3786ba2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192597"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841089"
 ---
 # <a name="performing-diagnostics-on-a-wia-device"></a>在 WIA 设备上进行诊断
 

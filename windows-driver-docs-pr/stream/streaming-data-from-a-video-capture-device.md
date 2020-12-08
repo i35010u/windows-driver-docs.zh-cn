@@ -1,18 +1,17 @@
 ---
 title: 来自视频捕获设备的流式处理数据
 description: 来自视频捕获设备的流式处理数据
-ms.assetid: c83aae8e-70a7-4d65-a888-00a7c21eebdd
 keywords:
 - 视频捕获 WDK AVStream，流式传输数据
 - 捕获视频 WDK AVStream，从流式传输数据
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f7227a9863360683a709cc3bf664e40b197ffcbb
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 489a6eec455e2c51bb5b4329796d6be342f18555
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185531"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839837"
 ---
 # <a name="streaming-data-from-a-video-capture-device"></a>来自视频捕获设备的流式处理数据
 

@@ -1,7 +1,6 @@
 ---
 title: 安装网络组件
 description: 安装网络组件
-ms.assetid: b4e5d73a-4943-498d-bf59-a08e3732baa8
 keywords:
 - 通知对象 WDK 网络，安装网络组件
 - 网络通知对象 WDK，安装网络组件
@@ -10,12 +9,12 @@ keywords:
 - 通知 WDK 网络，安装网络组件
 ms.date: 01/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 94efd0a8601bad85b7bb1d59b1033144c417664e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 2c09e696dd423aa9191ab7d1e65814e621ddc37e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215865"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840901"
 ---
 # <a name="installing-network-components"></a>安装网络组件
 
@@ -35,7 +34,7 @@ ms.locfileid: "89215865"
 
 2.  若要执行安装组件所需的操作，网络配置子系统将调用 notify 对象的 [**INetCfgComponentSetup：： install**](/previous-versions/windows/hardware/network/ff547762(v=vs.85)) 方法。
 
-    如果组件的安装处于无人参与，则网络配置子系统将调用 notify 对象的 [**INetCfgComponentSetup：： ReadAnswerFile**](/previous-versions/windows/hardware/network/ff547765(v=vs.85)) 方法。 此方法将打开一个文件中的组件参数，并从该文件中检索称为 *应答文件*的无人参与安装程序的参数。
+    如果组件的安装处于无人参与，则网络配置子系统将调用 notify 对象的 [**INetCfgComponentSetup：： ReadAnswerFile**](/previous-versions/windows/hardware/network/ff547765(v=vs.85)) 方法。 此方法将打开一个文件中的组件参数，并从该文件中检索称为 *应答文件* 的无人参与安装程序的参数。
 
 3.  网络配置子系统创建实例并初始化 notify 对象之后，子系统将调用 notify 对象的 [**INetCfgComponentNotifyGlobal：： GetSupportedNotifications**](/previous-versions/windows/hardware/network/ff547734(v=vs.85)) 方法来检索该对象所需的通知类型。 子系统使用该信息将所需的通知发送到对象。 对象可以使用这些通知控制可能影响拥有对象的组件的网络设置和配置的各个方面。 例如，如果子系统调用 [**INetCfgComponentNotifyGlobal：： SysNotifyComponent**](/previous-versions/windows/hardware/network/ff547736(v=vs.85)) 方法来通知对象子系统安装或删除了另一个网络组件，则该对象有机会执行与更改相关的操作。
 

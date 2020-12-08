@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ CAMERACONTROL \_ IMAGE \_ 引脚 \_ 功能 \_ 属性
 description: 用户模式客户端使用此属性来确定照相机的图像 pin 和记录 pin 是否互相排斥。 如果它们互相排斥，则当记录插针处于活动状态时，图像插针不能处于活动状态，反之亦然。
-ms.assetid: 4D000551-3AFB-4E14-9C67-EEDAB676AE03
 keywords:
 - KSPROPERTY_CAMERACONTROL_IMAGE_PIN_CAPABILITY_PROPERTY 流媒体设备
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6396fee91856ba5857a3aa1fd242ade8a6c73156
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 0d32d4c5b7c417d88f826fc12ee926deaa0caa51
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106548"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840553"
 ---
 # <a name="ksproperty_cameracontrol_image_pin_capability_property"></a>KSPROPERTY \_ CAMERACONTROL \_ IMAGE \_ 引脚 \_ 功能 \_ 属性
 
@@ -64,7 +63,7 @@ ms.locfileid: "90106548"
 
 如果驱动程序实现此属性并且标识图像 pin 专用于记录 pin，则在记录发生时，媒体流式处理管道会阻止 "拍摄照片" 命令进入驱动程序。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

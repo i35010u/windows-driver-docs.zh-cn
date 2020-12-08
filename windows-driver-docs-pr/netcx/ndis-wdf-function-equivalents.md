@@ -1,17 +1,16 @@
 ---
 title: NDIS-WDF 函数等效项
 description: NDIS-WDF 函数等效项
-ms.assetid: 28C8DFA3-5602-422D-89AA-6EA05F501E15
 keywords:
 - NetAdapterCx NDIS-WDF 函数等效项，NetCx NDIS-WDF 函数等效项
 ms.date: 06/05/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b23a507c1d1d684cdd2b31cfc6b26cd2ba7c1d92
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b0be1f39014e231bc586b4609b9b91b4efb3032c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214242"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838851"
 ---
 # <a name="ndis-wdf-function-equivalents"></a>NDIS-WDF 函数等效项
 

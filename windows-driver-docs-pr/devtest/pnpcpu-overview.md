@@ -1,32 +1,31 @@
 ---
 title: PNPCPU 概述
 description: PNPCPU 概述
-ms.assetid: c6bc9567-3c6a-45ea-a39e-e77b52a2279a
 keywords:
-- PNPCPU WDK，有关 PNPCPU
+- PNPCPU WDK，关于 PNPCPU
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 15b016bf013b35a80f012089a7c3017aadb40cd6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 67b7a58ea9c471e55aa6bb23505222331799db41
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365494"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841035"
 ---
 # <a name="pnpcpu-overview"></a>PNPCPU 概述
 
 
-PNPCPU 是一个命令行工具，执行以下功能：
+PNPCPU 是一个命令行工具，用于执行以下功能：
 
 -   安装
-    -   若要安装工具，请运行与 Pnpcpu.exe **-安装**选项。
-    -   Pnpcpu 安装相关的所有驱动程序。
-    -   Pnpcpu 使用适当的参数更新引导配置数据存储区。
+    -   若要安装该工具，请运行带有 **-install** 选项 Pnpcpu.exe。
+    -   Pnpcpu 安装所有相关驱动程序。
+    -   Pnpcpu 用适当的参数更新引导配置数据存储。
 -   添加
-    -   PNPCPU 尝试为热添加在系统中，最多支持已安装版本的许可证的所有逻辑处理器。
+    -   PNPCPU 尝试热添加系统中的所有逻辑处理器，最大为已安装版本的许可证所支持的最大值。
 -   删除
-    -   若要删除该工具，请运行与 Pnpcpu.exe **-卸载**选项。 这会导致执行的所有步骤完成撤消 **-安装**。
-    -   此选项将使后续的重新安装和使用磁盘上的二进制文件。
+    -   若要删除该工具，请用 **-uninstall** 选项运行 Pnpcpu.exe。 这将导致完全撤销 **安装** 所执行的所有步骤。
+    -   此选项会保留磁盘上的二进制文件，以便以后重新安装和使用。
 
  
 

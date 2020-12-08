@@ -1,15 +1,14 @@
 ---
 title: 处理数据包合并接收筛选器
 description: 处理数据包合并接收筛选器
-ms.assetid: 83FF780F-6B8F-4222-90F0-42037FFF7653
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 60cc9874bea077ab71a08d3e4b9d3fcc48c95002
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 8612427752a08a0c5239fca77b848f520b934f61
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211091"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839485"
 ---
 # <a name="handling-packet-coalescing-receive-filters"></a>处理数据包合并接收筛选器
 
@@ -26,13 +25,13 @@ ms.locfileid: "89211091"
 
 -   网络适配器仅根据指定的标头字段测试参数检查数据包数据。 适配器必须忽略未指定标头字段测试的数据包中的所有标头字段。
 
--   如果接收的数据包匹配任何接收筛选器的所有标头字段测试，则网络适配器必须在硬件合并缓冲区中合并数据包。 合并第一个数据包后，网络适配器必须启动硬件计时器，并将过期时间设置为匹配接收筛选器的[**NDIS \_ 接收 \_ 筛选器 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_parameters)结构的**MaxCoalescingDelay**成员的值。
+-   如果接收的数据包匹配任何接收筛选器的所有标头字段测试，则网络适配器必须在硬件合并缓冲区中合并数据包。 合并第一个数据包后，网络适配器必须启动硬件计时器，并将过期时间设置为匹配接收筛选器的 [**NDIS \_ 接收 \_ 筛选器 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_parameters)结构的 **MaxCoalescingDelay** 成员的值。
 
 -   随着接收到与数据包合并接收筛选器匹配的数据包，网络适配器将其放入合并缓冲区。
 
-    如果硬件计时器已在运行，则适配器不得停止或重新启动匹配接收筛选器的计时器。 但是，适配器可以配置具有匹配接收筛选器的最小过期值的硬件计时器。 例如，当驱动程序收到与接收筛选器 *X*匹配的数据包时，适配器将使用该接收筛选器的指定过期值启动计时器。 如果适配器接收到与接收筛选器 *Y*匹配的数据包，则适配器可以使用该接收筛选器的指定过期值重新配置硬件计时器。
+    如果硬件计时器已在运行，则适配器不得停止或重新启动匹配接收筛选器的计时器。 但是，适配器可以配置具有匹配接收筛选器的最小过期值的硬件计时器。 例如，当驱动程序收到与接收筛选器 *X* 匹配的数据包时，适配器将使用该接收筛选器的指定过期值启动计时器。 如果适配器接收到与接收筛选器 *Y* 匹配的数据包，则适配器可以使用该接收筛选器的指定过期值重新配置硬件计时器。
 
-    **注意**   如果计时器上的剩余时间小于接收筛选器的过期时间，则网络适配器不得重新配置硬件计时器。
+    **注意**  如果计时器上的剩余时间小于接收筛选器的过期时间，则网络适配器不得重新配置硬件计时器。
 
      
 

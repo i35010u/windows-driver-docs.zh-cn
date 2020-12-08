@@ -1,9 +1,8 @@
 ---
-title: WIA\_IPS\_修补\_代码\_搜索\_超时
-description: WIA\_IPS\_修补\_代码\_搜索\_超时属性描述要搜索的文档页上的修补程序代码的最长时间。
-ms.assetid: D7DD05B2-43CA-484F-8207-4ED9C307D3AA
+title: WIA \_ IPS \_ 修补程序 \_ 代码 \_ 搜索 \_ 超时
+description: "\"WIA \\_ IPS \\_ 修补程序 \\_ 代码 \\_ 搜索 \\_ 超时值\" 属性描述在文档页面上搜索修补程序代码的最长时间。"
 keywords:
-- WIA_IPS_PATCH_CODE_SEARCH_TIMEOUT 成像设备
+- WIA_IPS_PATCH_CODE_SEARCH_TIMEOUT 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,33 +13,33 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: baf882dd97c4cad00df3e3f6debb08b9d8cb2980
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 877b7e94031be128593c9e72e0e72ab0c9921e3c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383684"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839907"
 ---
-# <a name="wiaipspatchcodesearchtimeout"></a>WIA\_IPS\_修补\_代码\_搜索\_超时
+# <a name="wia_ips_patch_code_search_timeout"></a>WIA \_ IPS \_ 修补程序 \_ 代码 \_ 搜索 \_ 超时
 
 
-**WIA\_IPS\_修补\_代码\_搜索\_超时**属性描述要搜索的文档页上的修补程序代码的最长时间。
+" **WIA \_ IPS \_ 修补程序 \_ 代码 \_ 搜索 \_ 超时值** " 属性描述在文档页面上搜索修补程序代码的最长时间。
 
 
 
 
-属性类型：VT\_I4
+属性类型： VT \_ I4
 
-有效值：WIA\_PROP\_RANGE
+有效值： WIA 内容 \_ \_ 范围
 
 访问权限：读/写
 
 <a name="remarks"></a>备注
 -------
 
-未指定时间单位 （它可以是毫秒或秒的十分之几秒例如），但应用程序可以选择值中最小值-最大范围内报告的 WIA 微型驱动程序。
+未指定时间单位 (例如) ，则它可以为毫秒或十分之一秒，但应用程序可以选择 WIA 微型驱动程序报告的最小–最大范围内的值。
 
-此属性是必需的修补程序代码读取器的所有项。 此属性可以实现支持范围包含一个单一值 （这意味着应用程序不能更改此超时）
+所有修补程序代码读取器项都需要此属性。 可以实现属性，以支持包含单个值的范围 (意味着应用程序无法更改此超时值) 
 
 <a name="requirements"></a>要求
 ------------
@@ -52,8 +51,8 @@ ms.locfileid: "63383684"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>

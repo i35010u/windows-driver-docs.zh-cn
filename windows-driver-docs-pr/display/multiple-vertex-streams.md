@@ -1,19 +1,18 @@
 ---
 title: 多个顶点流
 description: 多个顶点流
-ms.assetid: aaaea27b-79e0-4c48-9102-898b42a1487f
 keywords:
 - DirectX 8.0 发行说明 WDK Windows 2000 显示，多个顶点流
-- 多个顶点流式传输 WDK DirectX 8.0
-- 顶点多个流 WDK DirectX 8.0
+- 多个顶点流 WDK DirectX 8。0
+- 顶点多流 WDK DirectX 8。0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bd942a1d9b9f154807319484fdd6f5bd16fdc3e3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 688da9b597c5f90c29bdf84260b28de1d1b38e97
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345560"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840383"
 ---
 # <a name="multiple-vertex-streams"></a>多个顶点流
 
@@ -21,7 +20,7 @@ ms.locfileid: "63345560"
 ## <span id="ddk_multiple_vertex_streams_gg"></span><span id="DDK_MULTIPLE_VERTEX_STREAMS_GG"></span>
 
 
-DirectX 8.0 添加了对多个顶点流支持。 即使驱动程序和硬件组合不支持多个流的顶点数据，该驱动程序仍必须处理绑定 DP2 令牌流 (D3DDP2OP\_SETSTREAMSOURCE 和 D3DDP2OP\_SETSTREAMSOURCEUM) 和新的基于 DP2 绘制令牌顶点流 (请参阅[新 DP2 Stream 绘制令牌](new-dp2-stream-drawing-tokens.md))。 这些是用于将顶点数据传递到绘制的 DirectX 8.0 级别驱动程序中的驱动程序的机制。
+DirectX 8.0 添加了对多个顶点流的支持。 即使驱动程序和硬件组合不支持多个顶点数据流，驱动程序仍必须处理流绑定 DP2 标记 (D3DDP2OP \_ SETSTREAMSOURCE 和 D3DDP2OP \_ SETSTREAMSOURCEUM) ，以及基于新的顶点流 DP2 绘图标记 (请参阅) 的 [新 DP2 流绘图标记](new-dp2-stream-drawing-tokens.md) 。 这些是将顶点数据传递到用于 DirectX 8.0 级别驱动程序的绘图中的驱动程序的机制。
 
  
 

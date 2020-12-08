@@ -1,7 +1,6 @@
 ---
 title: 'NdisMDeregisterInterruptEx 规则 (ndis) '
 description: NdisMDeregisterInterruptEx 返回 control 后，微型端口驱动程序无法调用 NdisMSynchronizeWithInterruptEx 函数。
-ms.assetid: 49AC090C-157C-4CD2-9C7A-BDD5F3C6D58F
 ms.date: 05/21/2018
 keywords:
 - 'NdisMDeregisterInterruptEx 规则 (ndis) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 897e513f6d2f02f93005b535357f72f368b8042f
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: aa09d2ca98e5aa5095ea4c5a78c906a2c38ab6cb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106368"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840801"
 ---
 # <a name="ndismderegisterinterruptex-rule-ndis"></a>NdisMDeregisterInterruptEx 规则 (ndis) 
 
 
-[**NdisMDeregisterInterruptEx**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismderegisterinterruptex)返回 control 后，微型端口驱动程序无法调用[**NdisMSynchronizeWithInterruptEx**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsynchronizewithinterruptex)函数。
+[**NdisMDeregisterInterruptEx**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismderegisterinterruptex)返回 control 后，微型端口驱动程序无法调用 [**NdisMSynchronizeWithInterruptEx**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsynchronizewithinterruptex)函数。
 
 **驱动程序模型： NDIS**
 

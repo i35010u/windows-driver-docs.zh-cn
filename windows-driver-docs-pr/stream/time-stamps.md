@@ -1,7 +1,6 @@
 ---
 title: 时间戳
 description: 时间戳
-ms.assetid: a97a57df-294a-4cbb-85d3-56d33ece65c9
 keywords:
 - 视频捕获 WDK AVStream，时间戳
 - 捕获视频 WDK AVStream，时间戳
@@ -9,12 +8,12 @@ keywords:
 - 时钟 WDK 视频捕获
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 34b825004033204c86704bc4edc5d2c8e8fde762
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 07c7eb0d3074b6f6fc64e47f473b754d4f9e77d0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187345"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840481"
 ---
 # <a name="time-stamps"></a>时间戳
 

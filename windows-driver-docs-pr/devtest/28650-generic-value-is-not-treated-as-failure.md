@@ -1,28 +1,27 @@
 ---
 title: C28650
-description: 为其使用 0 的类型不会将它视为失败的情况。
-ms.assetid: faa24e4b-327c-42c7-92ee-33cd7b6ce5cb
+description: 为其使用0的类型不会将其视为故障事例。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28650
-ms.openlocfilehash: b8d17b0650bd63b7b7741b285c8e400290232077
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f2ee3c4494a3d3d90ed288b1246b7d99521d8665
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345889"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839783"
 ---
 # <a name="c28650"></a>C28650
 
 
-警告 C28650:要为其类型 ！ 0 是正在使用不会将它视为失败的情况。
+警告 C28650：使用！0的类型不会将其视为故障情况。
 
-如返回状态值 ！TRUE 是为返回表示失败的状态值不相同。
+返回状态值，如！TRUE 与返回指示失败的状态值的值不同。
 
-某些数据类型，如**NTSTATUS**并**HRESULT**具有关联的这些类型的值归入成功或失败的宏。 这些宏检查返回的值或值，以确定这一点的最高有效位。 因此，0 和 1 都归类为成功的值。
+某些数据类型（如 **NTSTATUS** 和 **HRESULT** ）有关联的宏，这些宏将这些类型的值分类为成功或失败。 这些宏检查返回值的最高有效位以确定此值。 因此，0和1均分类为成功值。
 
-若要解决此警告的正确方法是返回正确的错误代码而不是一个泛型值，例如-1。
+解决此警告的正确方法是返回正确的错误代码而不是一般值，例如-1。
 
  
 

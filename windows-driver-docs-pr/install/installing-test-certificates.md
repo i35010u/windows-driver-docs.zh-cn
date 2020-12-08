@@ -1,15 +1,14 @@
 ---
 title: 安装测试证书
 description: 安装测试证书
-ms.assetid: 4c306390-32cc-4c7a-9f61-48e8af385a6d
 ms.date: 07/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 60207367cdc5ea5ee04353791f5e519e81ee8ee2
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 629a0a691b215a1d33c90f773f7ef864f2973ac2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097375"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839517"
 ---
 # <a name="installing-test-certificates"></a>安装测试证书
 
@@ -30,11 +29,11 @@ certmgr /add ContosoTest.cer /s /r localMachine root
 
 -   /Add 选项指定 *ContosoTest* 文件中的证书将添加到指定的证书存储中。
 
--   **/S**选项指定将证书添加到系统存储中。
+-   **/S** 选项指定将证书添加到系统存储中。
 
 -   /R 选项指定系统存储位置，该位置为 *currentUser* 或 *localMachine*。
 
--   *Root*指定本地计算机的目标存储的名称，该名称是指定受信任的根证书颁发机构证书存储或***Trustedpublisher***以指定受信任的发布者证书存储区的***根***。
+-   *Root* 指定本地计算机的目标存储的名称，该名称可以是 ***Root** _ 来指定受信任的根证书颁发机构证书存储，也可以指定 _*_trustedpublisher_*_ 来指定受信任的发布者证书存储。
 
 成功的运行将生成以下输出：
 
@@ -43,7 +42,7 @@ certmgr /add ContosoTest.cer /s /r localMachine root
 CertMgr Succeeded
 ```
 
-将证书复制到本地计算机的根存储 ("受信任的根证书颁发 *机构" 证书* 存储区后) ，可以通过 Microsoft 管理控制台 (MMC) 证书 "管理单元查看该证书，如 [查看测试证书](viewing-test-certificates.md)中所述。
+将证书复制到本地计算机的根存储 ("受信任的根证书颁发机构" 证书存储区后) _not，可以通过 Microsoft 管理控制台 (MMC) 证书 "管理单元查看该证书，如 [查看测试证书](viewing-test-certificates.md)中所述。
 
 以下屏幕截图显示了 "受信任的根证书颁发机构" 证书存储中的 Contoso.com (测试) 证书。
 

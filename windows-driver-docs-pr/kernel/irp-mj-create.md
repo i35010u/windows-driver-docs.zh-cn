@@ -2,21 +2,20 @@
 title: IRP_MJ_CREATE
 description: 每个内核模式驱动程序必须在 DispatchCreate 或 DispatchCreateClose 例程中处理 IRP_MJ_CREATE 请求。
 ms.date: 08/12/2017
-ms.assetid: 2947f8dc-2e7d-401e-8014-6140cac6905f
 keywords:
-- IRP_MJ_CREATE 内核模式驱动程序体系结构
+- IRP_MJ_CREATE Kernel-Mode 驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a81355c994a5a11e37246d716a4efd48db620e4
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 4698ba365160e0f2086156307249d42e32acd392
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188281"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839063"
 ---
 # <a name="irp_mj_create"></a>IRP\_MJ\_CREATE
 
 
-每个内核模式驱动程序必须在[*DRIVER_DISPATCH*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)回调函数中处理**IRP \_ MJ \_ CREATE**请求。
+每个内核模式驱动程序必须在 [*DRIVER_DISPATCH*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)回调函数中处理 **IRP \_ MJ \_ CREATE** 请求。
 
 <a name="when-sent"></a>发送时间
 ---------
@@ -26,13 +25,13 @@ ms.locfileid: "89188281"
 ## <a name="input-parameters"></a>输入参数
 
 
-**SecurityContext**成员指向某个[**IO \_ 安全 \_ 上下文**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_security_context)结构，该结构描述请求的安全上下文。 **SecurityContext- &gt; DesiredAccess**成员是一个访问掩码，它指定调用方请求的访问权限。
+**SecurityContext** 成员指向某个 [**IO \_ 安全 \_ 上下文**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_security_context)结构，该结构描述请求的安全上下文。 **SecurityContext- &gt; DesiredAccess** 成员是一个访问掩码，它指定调用方请求的访问权限。
 
-**参数. Create. Options**成员是一个 ULONG 值，用于描述在打开句柄时使用的选项。 高8位对应于**ZwCreateFile**的*CreateDisposition*参数的值，低24位对应于**ZwCreateFile**的*CreateOptions*参数的值。
+**参数. Create. Options** 成员是一个 ULONG 值，用于描述在打开句柄时使用的选项。 高8位对应于 **ZwCreateFile** 的 *CreateDisposition* 参数的值，低24位对应于 **ZwCreateFile** 的 *CreateOptions* 参数的值。
 
-**ShareAccess**成员是一个描述共享访问类型的 USHORT 值。 此值对应于**ZwCreateFile**的*ShareAccess*参数的值。
+**ShareAccess** 成员是一个描述共享访问类型的 USHORT 值。 此值对应于 **ZwCreateFile** 的 *ShareAccess* 参数的值。
 
-**FileAttributes**和**EaLength**成员保留供文件系统和文件系统筛选器驱动程序使用。 有关详细信息，请参阅可安装的文件系统 (IFS) 文档中的 [**IRP \_ MJ \_ 创建**](../ifs/irp-mj-create.md) 主题。
+**FileAttributes** 和 **EaLength** 成员保留供文件系统和文件系统筛选器驱动程序使用。 有关详细信息，请参阅可安装的文件系统 (IFS) 文档中的 [**IRP \_ MJ \_ 创建**](../ifs/irp-mj-create.md) 主题。
 
 ## <a name="output-parameters"></a>输出参数
 
@@ -60,7 +59,7 @@ ms.locfileid: "89188281"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [*DRIVER_DISPATCH*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)

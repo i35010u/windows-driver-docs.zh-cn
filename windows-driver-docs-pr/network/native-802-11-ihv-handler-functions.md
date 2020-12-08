@@ -5,15 +5,14 @@ keywords:
 - Native 802.11 IVH 处理程序函数
 - 本机 802.11 IHV 扩展 DLL 处理程序函数
 - WDK Native 802.11 IVH 处理程序函数
-ms.assetid: BF0DC1C7-48E1-487E-8F64-146BBA322F40
 ms.date: 04/27/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b3eba95102398fb4991fa2e26e25b9479b01e360
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 33d631e49cc374a093d968ac73d69ba7cd267c2d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217040"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839481"
 ---
 # <a name="native-80211-ihv-handler-functions"></a>本机 802.11 IHV 处理程序函数
 

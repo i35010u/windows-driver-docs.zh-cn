@@ -1,15 +1,14 @@
 ---
 title: PnPUtil 示例
 description: PnPUtil 示例
-ms.assetid: 4805edb9-e4f8-441d-a7f4-0c962ddeae4e
 ms.date: 01/31/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 45111ef2ad2bc4c39e9f41285a603dda5fcb3523
-ms.sourcegitcommit: 4058fcb136cfb8255ca7bec68e8597c89f7b68cd
+ms.openlocfilehash: 91cb3d48b68c2e2005087fdb359b587167b88e61
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80080154"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841027"
 ---
 # <a name="pnputil-examples"></a>PnPUtil 示例
 

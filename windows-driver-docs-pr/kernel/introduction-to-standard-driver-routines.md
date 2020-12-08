@@ -1,7 +1,6 @@
 ---
 title: 标准驱动程序例程简介
 description: 标准驱动程序例程简介
-ms.assetid: 91aaca02-a571-4058-b5af-98277fcbcf9d
 keywords:
 - 标准驱动程序例程 WDK 内核，关于标准驱动程序例程
 - 驱动程序例程 WDK 内核，关于标准驱动程序例程
@@ -11,12 +10,12 @@ keywords:
 - 可选标准例程 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 43baf86d2aa056e09bb540a7ef33d03c52c7a9b0
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 5e6fb1f9d2872d7efa5d30b0d4e0c40e13962b69
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102860"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838877"
 ---
 # <a name="introduction-to-standard-driver-routines"></a>标准驱动程序例程简介
 
@@ -28,7 +27,7 @@ ms.locfileid: "90102860"
 
 无论驱动程序在附加驱动程序链中的级别如何，所有驱动程序都必须具有一组基本的标准例程才能处理 Irp。 驱动程序是否必须实现额外的标准例程取决于驱动程序是控制物理设备还是控制物理设备驱动程序，以及基础物理设备的性质。 控制物理设备的最低级别驱动程序所需的例程比高级驱动程序要多，后者通常将 Irp 传递到较低的驱动程序以进行处理。
 
-标准驱动程序例程可以分为两组：每个内核模式驱动程序必须具有的组和可选的组，具体取决于 *设备堆栈*中的驱动程序类型和位置。
+标准驱动程序例程可以分为两组：每个内核模式驱动程序必须具有的组和可选的组，具体取决于 *设备堆栈* 中的驱动程序类型和位置。
 
 本部分介绍所需的标准例程。 其他部分描述了可选例程。
 
@@ -139,5 +138,5 @@ ms.locfileid: "90102860"
 
 当前 IRP 和目标设备对象是许多标准例程的输入参数。 每个驱动程序都通过其一组标准例程处理每个 IRP。
 
-按照约定，系统提供的驱动程序会在除 **DriverEntry**之外的每个标准例程的名称前面预置标识、驱动程序特定的或特定于设备的前缀。 例如，本文档使用 "DD"，如 [驱动程序对象简介](introduction-to-driver-objects.md)中所示。 遵循此约定可以更轻松地调试和维护驱动程序。
+按照约定，系统提供的驱动程序会在除 **DriverEntry** 之外的每个标准例程的名称前面预置标识、驱动程序特定的或特定于设备的前缀。 例如，本文档使用 "DD"，如 [驱动程序对象简介](introduction-to-driver-objects.md)中所示。 遵循此约定可以更轻松地调试和维护驱动程序。
 

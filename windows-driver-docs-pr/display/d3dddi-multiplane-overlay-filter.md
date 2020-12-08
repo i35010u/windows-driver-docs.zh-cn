@@ -1,7 +1,6 @@
 ---
 title: D3DDDI \_ MULTIPLANE \_ 覆盖 \_ 筛选器结构
 description: 了解 \_ \_ \_ 保留供系统使用的 D3DDDI MULTIPLANE 覆盖筛选器结构。 不要在您的驱动程序中使用它。
-ms.assetid: 56276b78-5550-4d93-8a73-b1183deb54da
 keywords:
 - D3DDDI_MULTIPLANE_OVERLAY_FILTER 结构显示设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b027d5242393460dd4b37b357c2da00a9437b72
-ms.sourcegitcommit: fc94eb0d5a41ef81c1b3ab91ad725386db0be0c2
+ms.openlocfilehash: 5b33c6349a614629bdb3ffb00551e26aa6a9ce59
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91603564"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839645"
 ---
 # <a name="d3dddi_multiplane_overlay_filter-structure"></a>D3DDDI \_ MULTIPLANE \_ 覆盖 \_ 筛选器结构
 
@@ -27,7 +26,7 @@ ms.locfileid: "91603564"
 预留给系统使用。 不要在您的驱动程序中使用它。
 
 > [!NOTE]
-> 此结构仅在随 windows 8) 版本8随附的 Windows 驱动程序工具包 (的 D3dumddi 标头中提供。 它已从标头的更高版本中删除。
+> 此结构仅在随 windows 8) 版本8随附的 Windows 驱动程序工具包 (的 D3dumddi 标头中提供。 它已从标头的更高版本中删除。
 
  
 
@@ -37,8 +36,8 @@ ms.locfileid: "91603564"
 ```ManagedCPlusPlus
 typedef struct _D3DDDI_MULITPLANE_OVERLAY_FILTER {
   D3DDDI_MULTIPLANE_OVERLAY_FILTER_TYPE FilterType;
-  BOOL                                  Enabled;
-  INT                                   Value;
+  BOOL                                  Enabled;
+  INT                                   Value;
 } D3DDDI_MULTIPLANE_OVERLAY_FILTER;
 ```
 
@@ -49,7 +48,7 @@ typedef struct _D3DDDI_MULITPLANE_OVERLAY_FILTER {
 
 **已启用**
 
-**值**
+值
 
 <a name="requirements"></a>要求
 ------------

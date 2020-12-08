@@ -1,15 +1,14 @@
 ---
 title: 远程 NDIS OID
 description: 远程 NDIS OID
-ms.assetid: c97592e8-f395-475e-8e6c-6366d1605075
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2cd4b9d252b537c96160a390220b8245d8ba92bc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9e6c0ccebee1360dfdf8594c5b2c488002adc071
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350842"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840605"
 ---
 # <a name="remote-ndis-oids"></a>远程 NDIS OID
 
@@ -17,16 +16,16 @@ ms.locfileid: "63350842"
 
 
 
-本部分列出了适用于远程 NDIS 以太网设备必需和可选 NDIS Oid。 列表会考虑的唯一属性的远程 NDIS 设备和远程 NDIS 微型端口驱动程序，因此该列表不是正常的 NDIS 无连接的微型端口驱动程序将支持的列表相同。 某些 Oid 都*设置*并*查询*Oid; 如果必需 OID 定义为这两者，则它必须由远程 NDIS 设备支持，同时[远程\_NDIS\_设置\_MSG](remote-ndis-set-msg.md)并[远程\_NDIS\_查询\_MSG](remote-ndis-query-msg.md)。 有关 Oid 的详细说明，请参阅 Microsoft Windows 驱动程序开发工具包 (DDK)。
+本部分列出了远程 NDIS 以太网设备必需的和可选的 NDIS Oid。 此列表将考虑远程 NDIS 设备和远程 NDIS 微型端口驱动程序的唯一属性，因此该列表与正常的 NDIS 无连接微型端口驱动程序所支持的列表并不完全相同。 某些 Oid 为 *set* 和 *query* oid;如果将必需 OID 定义为两者，则远程 ndis [ \_ \_ 设置 \_ 消息](remote-ndis-set-msg.md) 和 [远程 \_ ndis \_ 查询 \_ 消息](remote-ndis-query-msg.md)的远程 ndis 设备必须支持它。 有关 Oid 的详细说明，请参阅 Microsoft Windows 驱动程序开发工具包 (DDK) 。
 
-远程 NDIS Oid 的以下列表分为两组，常规 OID 和 802.3 特定 OID。 此外，每个组包含的子部分的统计信息 OID 查询。 常规 Oid 所需的任何网络设备。
+以下远程 NDIS Oid 列表分为两组：常规 OID 和802.3 特定 OID。 此外，每个组都包含一个 "统计信息 OID" 查询子节。 所有网络设备都需要常规 Oid。
 
--   [常规 Oid](general-oids2.md)
--   [常规统计信息 Oid](general-statistic-oids.md)
--   [802.3 Oid](802-3-oids.md)
--   [802.3 统计信息 Oid](802-3-statistic-oids.md)
--   [可选的电源管理 Oid](optional-power-management-oids.md)
--   [Oid 的可选网络唤醒](optional-network-wake-up-oids.md)
+-   [常规 OID](general-oids2.md)
+-   [常规统计信息 OID](general-statistic-oids.md)
+-   [802.3 OID](802-3-oids.md)
+-   [802.3 统计信息 OID](802-3-statistic-oids.md)
+-   [可选电源管理 OID](optional-power-management-oids.md)
+-   [可选网络唤醒 OID](optional-network-wake-up-oids.md)
 
  
 

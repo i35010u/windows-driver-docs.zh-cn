@@ -1,7 +1,6 @@
 ---
 title: 网络数据结构
 description: 网络数据结构
-ms.assetid: c29aaae6-6f68-404a-90dc-bae005ac9b6e
 keywords:
 - NET_BUFFER
 - NET_BUFFER_LIST
@@ -11,12 +10,12 @@ keywords:
 - 包 WDK 网络，数据结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cad25362a43fa036385bbf8b93cbad786d00996
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: fbc11a6b6772b9055bf596e58ff284e7dc562f84
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210669"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840897"
 ---
 # <a name="network-data-structures"></a>网络数据结构
 

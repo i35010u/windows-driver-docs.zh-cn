@@ -1,9 +1,8 @@
 ---
-title: usb3kd xhci_eventring
-description: Xhci_eventring usb3kd 扩展显示与 USB 3.0 主机控制器关联的事件环数据结构的相关信息。
-ms.assetid: D3A40372-5473-48B0-94C7-5D3B80801F16
+title: usb3kd.xhci_eventring
+description: Usb3kd.xhci_eventring 扩展显示与 USB 3.0 主机控制器关联的事件环数据结构的相关信息。
 keywords:
-- usb3kd xhci_eventring Windows 调试
+- usb3kd.xhci_eventring Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 05e1070a78785bcc198e1247923ef40aba9714b9
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 92676078c836e75be77e85d3752212762d8311a5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216292"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839031"
 ---
 # <a name="usb3kdxhci_eventring"></a>！ usb3kd. xhci \_ eventring
 

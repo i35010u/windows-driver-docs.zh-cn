@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x7C BUGCODE_NDIS_DRIVER
 description: BUGCODE_NDIS_DRIVER bug 检查的值为0x0000007C。 此错误检查表明操作系统检测到网络驱动程序中的错误。
-ms.assetid: 0f2c2e9c-2889-4d99-b653-0ee1d4c2be0e
 keywords:
 - Bug 检查 0x7C BUGCODE_NDIS_DRIVER
 - BUGCODE_NDIS_DRIVER
@@ -13,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b42cca20d1b1d55025df96a1829763265e47e560
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 7cde5e7411d8f1016b0d7b3870c8864d4fa5e9ac
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107224"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840847"
 ---
 # <a name="bug-check-0x7c-bugcode_ndis_driver"></a>Bug 检查0x7C： BUGCODE \_ NDIS \_ 驱动程序
 
@@ -206,7 +205,7 @@ BUGCODE \_ NDIS \_ 驱动程序 bug 检查的值为0x0000007C。 此错误检查
 <tr class="odd">
 <td align="left"><p>0x13</p></td>
 <td align="left"><p>NDIS_BUGCHECK_TFILTER_RECVD_PACKET_BAD_REF_COUNT</p>
-<p>令牌环微型端口驱动程序指示它使用当前正在由协议堆栈使用的数据包描述符接收到了数据包。</p>
+<p>Token-Ring 微型端口驱动程序指示它使用当前正在由协议堆栈使用的数据包描述符接收到数据包。</p>
 <p>通过检查数据包引用计数来捕获。</p></td>
 <td align="left"><p>特定微型端口适配器块的地址。 有关详细信息，请运行带此地址的<strong><a href="-ndiskd-netadapter.md" data-raw-source="[!ndiskd.netadapter](-ndiskd-netadapter.md)">！ ndiskd。</a></strong></p></td>
 <td align="left"><p>驱动程序使用的数据包描述符的地址。 有关详细信息，请运行带此地址的<strong><a href="-ndiskd-pkt.md" data-raw-source="[!ndiskd.pkt](-ndiskd-pkt.md)">！ ndiskd。</a></strong></p></td>

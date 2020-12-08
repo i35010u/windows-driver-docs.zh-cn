@@ -1,15 +1,14 @@
 ---
 title: 用于实现多种无线访问技术的 IHV 指南
 description: 本主题提供有关在 Windows 中 (RAT) 和多个操作员实现多个无线电访问技术支持的信息。
-ms.assetid: 17BB2478-F98D-4AE6-A62D-F65E2E1DCDFF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b2582e74848aecb83e4143fcb6215ace7778518
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: d7602335d565010bf87ca2c211326e57c8f7acba
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212905"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839891"
 ---
 # <a name="ihv-guidance-for-implementing-multimode-and-multicarrier-capable-mb-devices"></a>有关实施多模多载波 MB 设备的 IHV 指导
 
@@ -167,7 +166,7 @@ Visible 提供程序 CID 包含一个操作字段，该操作字段指定宿主�
 
 此命令返回有关 MB 设备的多运营商功能的信息。 需要重新启动固件并相应地进行设备删除/到达的设备应使用适当的标志为主机提供提示，以使主机能够提供适当的用户体验。
 
-查询 = ** \_ 未使用 MBIM 命令消息上的 InformationBuffer \_ 。\_ \_ InformationBuffer MBIM 命令中返回的 MBIM 多功能已 \_ \_ 完成**
+查询 = **\_ 未使用 MBIM 命令消息上的 InformationBuffer \_ 。\_ \_ InformationBuffer MBIM 命令中返回的 MBIM 多功能已 \_ \_ 完成**
 
 Set = **不受支持**
 
@@ -214,7 +213,7 @@ Set = **不受支持**
 <th align="left">Offset</th>
 <th align="left">大小</th>
 <th align="left">字段</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -234,7 +233,7 @@ Set = **不受支持**
 
 命令用于设置/查询主机的当前位置信息。 如果设备需要筛选静态 (的列表，而不) 可见提供程序与当前用户位置相关的提供程序，则此方法非常有用。
 
-查询 = ** \_ 未使用 MBIM 命令消息上的 InformationBuffer \_ 。已 \_ \_ \_ \_ 完成 InformationBuffer MBIM 命令中返回的 MBIM 位置信息**
+查询 = **\_ 未使用 MBIM 命令消息上的 InformationBuffer \_ 。已 \_ \_ \_ \_ 完成 InformationBuffer MBIM 命令中返回的 MBIM 位置信息**
 
 Set = **InformationBuffer ON MBIM \_ 命令 \_ MSG 包含 MBIM \_ LOCATION \_ INFO**
 
@@ -254,7 +253,7 @@ Set = **InformationBuffer ON MBIM \_ 命令 \_ MSG 包含 MBIM \_ LOCATION \_ IN
 <th align="left">Offset</th>
 <th align="left">大小</th>
 <th align="left">字段</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -294,7 +293,7 @@ Set = **不受支持**
 <th align="left">大小</th>
 <th align="left">字段</th>
 <th align="left">类型</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

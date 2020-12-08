@@ -1,15 +1,14 @@
 ---
 title: 管理自定义交换机功能状态信息
 description: 管理自定义交换机功能状态信息
-ms.assetid: A1D561CC-22D8-47B6-9D95-6294B2998F3E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 10468472489f40d4d3ee25a2e7d85ada5f71eb6c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 31a635659c37363256f80319bdbf835fbd2930be
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218042"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840307"
 ---
 # <a name="managing-custom-switch-feature-status-information"></a>管理自定义交换机功能状态信息
 
@@ -19,11 +18,11 @@ Hyper-v 可扩展交换机接口使用以下对象标识符 (OID) 来查询可�
 <a href="" id="oid-switch-feature-status-query"></a>[OID \_ 交换机 \_ 功能 \_ 状态 \_ 查询](./oid-switch-feature-status-query.md)  
 此 OID 方法请求由可扩展交换机的协议边缘发出，以获取指定开关属性的自定义功能状态信息。
 
-成功从此 OID 方法请求返回后， [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向缓冲区的指针。 此缓冲区包含以下数据：
+成功从此 OID 方法请求返回后， [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向缓冲区的指针。 此缓冲区包含以下数据：
 
 -   [**NDIS \_ 交换机 \_ 功能 \_ 状态 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_feature_status_parameters)结构，指定要返回的自定义功能状态信息。
 
-    **注意**   对于自定义功能状态， **FeatureStatusType**成员设置为**NdisSwitchPropertyTypeCustom**。
+    **注意**  对于自定义功能状态， **FeatureStatusType** 成员设置为 **NdisSwitchPropertyTypeCustom**。
 
      
 
@@ -33,7 +32,7 @@ Hyper-v 可扩展交换机接口使用以下对象标识符 (OID) 来查询可�
 
 可扩展交换机扩展在收到 [oid \_ 开关 \_ 功能 \_ 状态 \_ 查询](./oid-switch-feature-status-query.md)的 oid 方法请求时必须遵循以下准则：
 
--   如果扩展插件管理的自定义可扩展交换机功能状态与[**NDIS \_ 交换机 \_ 功能 \_ 状态 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_feature_status_parameters)结构的**FEATURESTATUSID**成员匹配，则必须处理 OID 请求。
+-   如果扩展插件管理的自定义可扩展交换机功能状态与 [**NDIS \_ 交换机 \_ 功能 \_ 状态 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_feature_status_parameters)结构的 **FEATURESTATUSID** 成员匹配，则必须处理 OID 请求。
 
 -   如果扩展处理 OID 方法请求，则它必须返回与 [**NDIS \_ 开关 \_ 功能 \_ 状态 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_feature_status_parameters) 结构指定的参数匹配的功能状态信息。
 

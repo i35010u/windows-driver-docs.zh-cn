@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x12D VOLSNAP_OVERLAPPED_TABLE_ACCESS
-description: VOLSNAP_OVERLAPPED_TABLE_ACCESS bug 检查具有值，该值指示该 volsnap 曾尝试从两个不同的线程访问常见表 0x0000012D。
-ms.assetid: F1D378E9-CD5D-4DA3-A200-DAED66284534
+description: VOLSNAP_OVERLAPPED_TABLE_ACCESS bug 检查的值为0x0000012D，指示 VOLSNAP 尝试从两个不同的线程访问公用表。
 keywords:
 - Bug 检查 0x12D VOLSNAP_OVERLAPPED_TABLE_ACCESS
 - VOLSNAP_OVERLAPPED_TABLE_ACCESS
@@ -13,23 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e82703ef72b3bbad2d029efcab3eb01d3371d28a
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 8a1f3cba1a567a04b030827a7b6336cbcd18818e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67520524"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839957"
 ---
-# <a name="bug-check-0x12d-volsnapoverlappedtableaccess"></a>Bug 检查 0x12D：VOLSNAP\_OVERLAPPED\_表\_访问
+# <a name="bug-check-0x12d-volsnap_overlapped_table_access"></a>Bug 检查0x12D： VOLSNAP \_ 重叠 \_ 表 \_ 访问
 
 
-VOLSNAP\_OVERLAPPED\_表\_访问错误检查的值为 0x0000012D。 这表示该 volsnap 尝试访问常见表从两个不同的线程，这可能会导致表损坏并最终损坏的表。
+VOLSNAP \_ 重叠 \_ 表 \_ 访问 bug 检查的值为0x0000012D。 这表示 volsnap 尝试从两个不同的线程访问公用表，这可能会导致表损坏并最终损坏该表。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="volsnapoverlappedtableaccess-parameters"></a>VOLSNAP\_OVERLAPPED\_表\_访问参数
+## <a name="volsnap_overlapped_table_access-parameters"></a>VOLSNAP \_ 重叠 \_ 表 \_ 访问参数
 
 
 无

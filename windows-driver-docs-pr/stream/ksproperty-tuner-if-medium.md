@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 调谐器 \_ IF \_ 中型
 description: '\_ \_ 如果 \_ 介质为支持数字电视调谐的设备描述了中间频率引脚介质，则 KSPROPERTY 调谐器。 此属性是可选的。'
-ms.assetid: 1144777c-e81c-4b8f-a634-411591c71356
 keywords:
 - KSPROPERTY_TUNER_IF_MEDIUM 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 36c2a80355ed7fa55e6392351b9f651fd9488fcb
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: ffbd54c0d215e84b5bbf6fa6e04ad4abe58c4061
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104556"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840241"
 ---
 # <a name="ksproperty_tuner_if_medium"></a>KSPROPERTY \_ 调谐器 \_ IF \_ 中型
 
@@ -63,7 +62,7 @@ ms.locfileid: "90104556"
 
  (操作数据) 的属性值是一个 KSPIN \_ 中型结构，该结构为能够支持优化到中间频率的 pin 指定中型 GUID。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 **IFMedium** \_ \_ 如果 \_ MEDIUM \_ S 结构指定中间频率 pin 的中等 GUID，则为 KSPROPERTY 调谐器的 IFMedium 成员。
@@ -86,7 +85,7 @@ ms.locfileid: "90104556"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

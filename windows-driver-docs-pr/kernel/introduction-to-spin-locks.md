@@ -1,7 +1,6 @@
 ---
 title: 自旋锁简介
 description: 自旋锁简介
-ms.assetid: a37c0db4-ff9c-4958-a9f4-62b671458d03
 keywords:
 - KSPIN_LOCK
 - executive 旋转锁定 WDK 内核
@@ -10,12 +9,12 @@ keywords:
 - 旋转锁定 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 62459c9cf31add2ac11ac8100541400eae9511b0
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 3a90c668cfb34319155d44e6b4555cc8d1a981a4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190443"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838881"
 ---
 # <a name="introduction-to-spin-locks"></a>自旋锁简介
 
@@ -27,7 +26,7 @@ ms.locfileid: "89190443"
 
 许多组件使用自旋锁（包括驱动程序）。 任何类型的驱动程序都可以使用一个或多个 *执行自旋锁*。 例如，大多数文件系统在文件系统驱动程序的 (FSD 的) 设备扩展中使用联锁工作队列来存储由文件系统的工作线程回调例程和 FSD 处理的 Irp。 联锁工作队列受 executive 旋转锁保护，该锁可解决 FSD 中尝试将 Irp 插入队列的争用，以及同时尝试删除 Irp 的所有线程。 作为另一个示例，系统软盘控制器驱动程序使用两个执行自旋锁。 一个 executive 旋转锁可保护与此驱动程序的设备专用线程共享的联锁工作队列;另一种方法是保护由三个驱动程序例程共享的计时器对象。
 
-适用于 Microsoft Windows XP 和更高版本 Windows 的驱动程序可以使用 [**KeAcquireInStackQueuedSpinLock**](/previous-versions/windows/hardware/drivers/ff551899(v=vs.85)) 和 [**KeReleaseInStackQueuedSpinLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleaseinstackqueuedspinlock) 获取并释放作为 *排队旋转锁*的旋转锁。 对于多处理器计算机上的高争用锁，排队自旋锁比普通旋转锁提供更好的性能。 有关详细信息，请参阅 [排队自旋锁](queued-spin-locks.md)。 适用于 Windows 2000 的驱动程序可以使用 [**KeAcquireSpinLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlock) 和 [**KeReleaseSpinLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasespinlock) 获取并释放旋转锁定作为普通旋转锁。
+适用于 Microsoft Windows XP 和更高版本 Windows 的驱动程序可以使用 [**KeAcquireInStackQueuedSpinLock**](/previous-versions/windows/hardware/drivers/ff551899(v=vs.85)) 和 [**KeReleaseInStackQueuedSpinLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleaseinstackqueuedspinlock) 获取并释放作为 *排队旋转锁* 的旋转锁。 对于多处理器计算机上的高争用锁，排队自旋锁比普通旋转锁提供更好的性能。 有关详细信息，请参阅 [排队自旋锁](queued-spin-locks.md)。 适用于 Windows 2000 的驱动程序可以使用 [**KeAcquireSpinLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlock) 和 [**KeReleaseSpinLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasespinlock) 获取并释放旋转锁定作为普通旋转锁。
 
 为了同步访问简单的数据结构，驱动程序可以使用任何 **ExInterlocked * Xxx*** 例程来确保对数据结构的原子访问。 使用这些例程的驱动程序无需显式获取或释放旋转锁。
 

@@ -1,17 +1,16 @@
 ---
 title: NDIS_STATUS_WWAN_DEVICE_CAPS_EX
 description: 微型端口驱动程序使用 NDIS_STATUS_WWAN_DEVICE_CAPS_EX 通知来通知 MB 服务完成了上一个 OID_WWAN_DEVICE_CAPS_EX 查询请求。
-ms.assetid: 7E596CB0-2A08-45E4-9932-5E951B880D62
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WWAN_DEVICE_CAPS_EX 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 98327b0ee6dbe3a012cf3de9dc14eeec1fbe6422
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 65f321801c6e366b76a22c76f8c06fb6dd152d25
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210170"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841171"
 ---
 # <a name="ndis_status_wwan_device_caps_ex"></a>NDIS \_ 状态 \_ WWAN \_ 设备 \_ CAP \_ EX
 
@@ -33,7 +32,7 @@ ms.locfileid: "89210170"
 <tbody>
 <tr class="odd">
 <td><p>版本</p></td>
-<td><p>Windows 10 版本1703</p></td>
+<td><p>Windows 10 版本 1703</p></td>
 </tr>
 <tr class="even">
 <td><p>标头</p></td>
@@ -42,7 +41,7 @@ ms.locfileid: "89210170"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [OID \_ WWAN \_ 设备 \_ CAP \_ EX](./oid-wwan-device-caps-ex.md)

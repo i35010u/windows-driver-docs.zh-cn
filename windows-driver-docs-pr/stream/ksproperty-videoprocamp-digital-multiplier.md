@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ VIDEOPROCAMP \_ 数字 \_ 乘数
 description: KSPROPERTY \_ VIDEOPROCAMP \_ 数字 \_ 乘数属性指定要应用于图像的数字缩放量。
-ms.assetid: e566dd2b-d99a-4e7f-888e-f0f431618c2d
 keywords:
 - KSPROPERTY_VIDEOPROCAMP_DIGITAL_MULTIPLIER 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 31a71c7fb4bff1cd31f85c5bd47a34721a109364
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 9df1472f4d4ff8a697332dad0d0a9641ae3da3f5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103996"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840239"
 ---
 # <a name="ksproperty_videoprocamp_digital_multiplier"></a>KSPROPERTY \_ VIDEOPROCAMP \_ 数字 \_ 乘数
 
@@ -63,12 +62,12 @@ KSPROPERTY \_ VIDEOPROCAMP \_ 数字 \_ 乘数属性指定要应用于图像的�
 
 ) 操作数据 (的属性值是指定相机的数字乘数设置的 LONG。 值指定相机应用于图像的数字乘数值。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 发出集请求时，客户端应提供 KSPROPERTY VIDEOPROCAMP 节点的 **值** 成员的数字乘数值 \_ \_ \_ 。
 
-若要确定设备支持的数字乘数的范围，应用程序可以发出 KSPROPERTY \_ 类型 \_ BASICSUPPORT 请求。 可以 \_ \_ 在[**KSPROPERTY \_ 项**](/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_item)结构的**Flags**成员中指定 KSPROPERTY 类型 BASICSUPPORT。
+若要确定设备支持的数字乘数的范围，应用程序可以发出 KSPROPERTY \_ 类型 \_ BASICSUPPORT 请求。 可以 \_ \_ 在 [**KSPROPERTY \_ 项**](/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_item)结构的 **Flags** 成员中指定 KSPROPERTY 类型 BASICSUPPORT。
 
 发出 get 请求时，客户端将在 KSPROPERTY VIDEOPROCAMP 节点的结构的 **值** 成员中接收 LONG 类型的值 \_ \_ \_ 。
 

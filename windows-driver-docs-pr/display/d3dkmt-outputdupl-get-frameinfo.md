@@ -1,7 +1,6 @@
 ---
 title: D3DKMT \_ OUTPUTDUPL \_ GET \_ FRAMEINFO 结构
 description: 了解 D3DKMT \_ OUTPUTDUPL \_ GET \_ FRAMEINFO 结构，它是保留供系统使用的。 请勿在您的驱动程序中使用。
-ms.assetid: e358f8b6-623b-4dd0-82d7-5b46f31b26c7
 keywords:
 - D3DKMT_OUTPUTDUPL_GET_FRAMEINFO 结构显示设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f67534181c79661e2d4d07069a3f8d4322194fb
-ms.sourcegitcommit: fc94eb0d5a41ef81c1b3ab91ad725386db0be0c2
+ms.openlocfilehash: aa6ebb4d0d1af43ed80afdf59dad13e297a7f4f8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91603600"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839613"
 ---
 # <a name="d3dkmt_outputdupl_get_frameinfo-structure"></a>D3DKMT \_ OUTPUTDUPL \_ GET \_ FRAMEINFO 结构
 
@@ -31,9 +30,9 @@ ms.locfileid: "91603600"
 
 ```ManagedCPlusPlus
 typedef struct _D3DKMT_OUTPUTDUPL_GET_FRAMEINFO {
-  D3DKMT_HANDLE                  hAdapter;
+  D3DKMT_HANDLE                  hAdapter;
   D3DDDI_VIDEO_PRESENT_SOURCE_ID VidPnSourceId;
-  D3DKMT_OUTPUTDUPL_FRAMEINFO    FrameInfo;
+  D3DKMT_OUTPUTDUPL_FRAMEINFO    FrameInfo;
 } D3DKMT_OUTPUTDUPL_GET_FRAMEINFO;
 ```
 

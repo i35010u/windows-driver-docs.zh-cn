@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_DrvPkg_BrandingIcon
 description: DEVPKEY_DrvPkg_BrandingIcon
-ms.assetid: 4a830401-5677-4fda-a087-407b1246699f
 keywords:
 - DEVPKEY_DrvPkg_BrandingIcon 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 2745364472860b70b92f70ab65721b8bd4df10ed
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: e4bb79e3e5956dd43af17e8b823c0a27e705e8c8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717488"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840067"
 ---
 # <a name="devpkey_drvpkg_brandingicon"></a>DEVPKEY_DrvPkg_BrandingIcon
 

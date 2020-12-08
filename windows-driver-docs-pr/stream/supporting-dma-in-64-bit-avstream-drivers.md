@@ -1,7 +1,6 @@
 ---
 title: 在 64 位 AVStream 驱动程序中支持 DMA
 description: 在 64 位 AVStream 驱动程序中支持 DMA
-ms.assetid: 1173a83f-8d9e-4678-bfb5-f2fb91e827be
 keywords:
 - AVStream WDK，硬件
 - 硬件 WDK AVStream
@@ -11,12 +10,12 @@ keywords:
 - 32位可寻址设备 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 09069aff0c4edc2eb4bb10aac2f5e7409c3bd4c7
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 0c9cb7fce66e08bbb35bfdd1ac3f3e669ae104cd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188339"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839833"
 ---
 # <a name="supporting-dma-in-64-bit-avstream-drivers"></a>在 64 位 AVStream 驱动程序中支持 DMA
 

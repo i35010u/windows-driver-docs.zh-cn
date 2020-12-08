@@ -1,7 +1,6 @@
 ---
 title: 'ZwRegistryCreate 规则 (storport) '
 description: 此规则验证使用 ZwCreateKey 创建的注册表项的句柄以后是否可以由其他 ZwXxx 例程正确使用。
-ms.assetid: 38CCE6AA-BA42-4305-B193-CB1B1C0F105B
 ms.date: 05/21/2018
 keywords:
 - 'ZwRegistryCreate 规则 (storport) '
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c8f8ed7020dc4622b99759c60214974914ed07da
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 3ad354d1c122315fc7393260bf6f5fcfce989870
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107534"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841277"
 ---
 # <a name="zwregistrycreate-rule-storport"></a>ZwRegistryCreate 规则 (storport) 
 

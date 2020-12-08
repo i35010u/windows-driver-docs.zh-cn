@@ -1,7 +1,6 @@
 ---
 title: 扩展 DirectInput 游戏控制器控制面板
 description: 扩展 DirectInput 游戏控制器控制面板
-ms.assetid: 45df8aee-10e0-43b3-8878-3ad83d822028
 keywords:
 - 属性表 WDK DirectInput
 - 游戏控制器 WDK DirectInput
@@ -11,12 +10,12 @@ keywords:
 - 游戏板支持 WDK DirectInput
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e356f3ad6b09f3a04a10e87307ecb0c358f6fde
-ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
+ms.openlocfilehash: ecab647a42f2d4ce23ae3ab9479e446f830b25ac
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93349597"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838923"
 ---
 # <a name="extending-the-directinput-game-controller-control-panel"></a>扩展 DirectInput 游戏控制器控制面板
 
@@ -145,12 +144,12 @@ DirectInput 控制面板的基本体系结构包括 DirectInput 游戏控制器�
 
 调试 "控制面板" 应用程序可能比较棘手。 使用以下步骤在 Microsoft Developer Studio 5.0 和更高版本的 (中调试自定义属性页，其他编译器) 具有类似的行为。
 
-1. 从 " **项目** " 菜单中选择 " **设置** "。
+1. 从 " **项目** " 菜单中选择 " **设置**"。
 
 2. 选择 " **调试** " 选项卡。
 
 3. 对于调试会话的可执行文件，请输入 C： \\ windows \\RUNDLL32.EXE (假定 c： \\ windows 是 windows 95/98/me 目录) 如果你运行的是 windows 95/98/me，则为 c： \\ winnt \\ SYSTEM32 \\RUNDLL32.EXE (假定 C： \\ winnt 是操作系统目录) 如果你运行的是 windows NT 4.0 或更高版本。
 
-4. 对于程序参数，请输入 **shell32.dll、Control \_ RunDLL c： \\ windows \\ system \\joy.cpl** 。 同样，这假定 C： \\ windows 是您的 windows 目录。 它区分大小写，必须严格按所示输入。
+4. 对于程序参数，请输入 **shell32.dll、Control \_ RunDLL c： \\ windows \\ system \\joy.cpl**。 同样，这假定 C： \\ windows 是您的 windows 目录。 它区分大小写，必须严格按所示输入。
 
-完成后，设置断点，然后从 "生成" 菜单中选择 " **启动调试** " **，然后选择** "执行"。 你现在已准备好调试自定义属性表页。
+完成后，设置断点，然后从 "生成" 菜单中选择 " **启动调试**" **，然后选择**"执行"。 你现在已准备好调试自定义属性表页。

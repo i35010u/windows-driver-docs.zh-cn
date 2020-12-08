@@ -1,22 +1,21 @@
 ---
 title: 解除
 description: 解除
-ms.assetid: b4c21592-cbdf-4dd6-9457-71d53b9f7b32
 keywords:
-- 消除 WDK DirectDraw
-- 绘制翻转页面 WDK DirectDraw、 撕裂现象
-- DirectDraw 翻转 WDK Windows 2000 显示、 撕裂现象
-- 页翻转 WDK DirectDraw、 撕裂现象
-- 翻转 WDK DirectDraw、 撕裂现象
-- 显示 WDK DirectDraw 翻转
+- 泪水 WDK DirectDraw
+- 绘图页翻转 WDK DirectDraw，撕裂
+- DirectDraw 翻转 WDK Windows 2000 显示，撕裂
+- 页面翻转 WDK DirectDraw，撕裂
+- 翻转 WDK DirectDraw，撕裂
+- surface DirectDraw，翻转
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3108ef2a8f3125ed4faf83f41fbefc56c7cf114f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: df327400f92a75e4041460506eeef451c827f7ce
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362719"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839575"
 ---
 # <a name="tearing"></a>解除
 
@@ -24,13 +23,13 @@ ms.locfileid: "63362719"
 ## <span id="ddk_tearing_gg"></span><span id="DDK_TEARING_GG"></span>
 
 
-如中所述[Flipping](flipping.md)部分中，翻转实质上是更改的内存指针，以使其指向到新的显示内存区域 （请参阅 Permedia2 示例代码）。 必须是正在离开翻转的面完成应用程序可以锁定 blt，或更改该内存，或 （如在下图中所示），可能会导致拆解之前显示。
+如 " [翻转](flipping.md) " 一节中所述，翻转实质上是更改内存指针，使其指向显示内存的新区域 (参阅 Permedia2 示例代码) 。 要翻转的表面必须已完成显示，然后应用程序才能锁定、blt 或更改该内存，或者可能产生 (，如下图所示) 。
 
-![关系图阐释撕裂现象和不撕裂现象](images/ddfig8.png)
+![说明撕裂和无撕裂的示意图](images/ddfig8.png)
 
-在翻转到图面出现在翻转期间写入的数据，也可能出现拆解。 撕裂现象是通用，可能会发生任何时候，只要映像是会绘制并显示在同一时间。 更快的帧速率不解决此问题。 主图面、 覆盖和纹理是所有 DirectDraw 图面，因为它们可以翻转的相同方式以防止脱节。
+如果要翻转到的图面在反向时向其中写入数据，则也可能会出现一种情况。 撕裂是通用的，可能会在同一时间同时绘制和显示图像。 帧速度越快，就不能解决此问题。 由于主表面、叠加和纹理均为 DirectDraw 表面，因此可以通过相同的方式翻转它们来防止撕裂。
 
-拆解翻页或发生 blt 发生在错误的时间。 例如，如果页面翻转而监视器扫描行是中间显示图面上，由在上图中的虚线表示，会发生拆解。 计时反向地 （较低如示例所示的图） 中显示的整个图面后，才会发生，可以避免拆解。 在的过程中显示的平面闪到图面，也可能发生拆解。
+当页翻转或 blt 在错误的时间发生时，会发生一种撕。 例如，如果页面翻转，而监视器扫描线条处于显示图面（如上图中的虚线所示），则会出现一条撕。 只有在显示了整个表面后，才可以使用此方法进行切换， (如图) 的示例中所示。 当 blitting 正在显示的图面上时，也会发生一种情况。
 
  
 

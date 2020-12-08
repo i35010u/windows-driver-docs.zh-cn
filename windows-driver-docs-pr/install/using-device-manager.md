@@ -1,18 +1,17 @@
 ---
 title: 适合设备和驱动程序制造商的设备管理器
 description: 设备管理器提供了解决驱动程序和设备的安装问题的方法。
-ms.assetid: 3c229347-b36f-43e7-9e9c-3ba6ec1e6108
 keywords:
 - 设备管理器 WDK
 - 设备管理器 WDK，关于设备管理器
 ms.date: 10/01/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: dd2047aa3406b90b4012b1e575b2bac25d953209
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: edf7ae69ed6ff61172cfc1cb3b833776e5cd3bae
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096413"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839495"
 ---
 # <a name="using-device-manager"></a>使用设备管理器
 

@@ -1,19 +1,18 @@
 ---
 title: 外部传输属性
 description: 外部传输属性
-ms.assetid: e57e6c13-dfa3-4bec-9136-0e2bb2ffdd56
 keywords:
 - 外部传输属性 WDK 视频捕获
 - 传输属性 WDK 视频捕获
 - PROPSETID_EXT_TRANSPORT
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ac031076000604f5bfe347f3f2b8a3331c1d0f89
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: a7f6019a2a0a755e9ea49983cf0c0a37001e738b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107322"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839203"
 ---
 # <a name="external-transport-properties"></a>外部传输属性
 

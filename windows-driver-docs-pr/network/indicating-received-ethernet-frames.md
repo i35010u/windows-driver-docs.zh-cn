@@ -1,19 +1,18 @@
 ---
 title: 指示已接收以太网帧
 description: 指示已接收以太网帧
-ms.assetid: 39f35a54-1d80-4a14-b48c-2dbbfde9c86f
 keywords:
 - 以太网 WDK 网络
 - 帧 WDK 网络
 - 以太网帧的 TCP/IP 传输-WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 54f65a811db9b3b72585cd575330a2ff07a784cb
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: fd372ccf8ac0ea0f2fd5857b8064ba250d755318
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212413"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841197"
 ---
 # <a name="indicating-received-ethernet-frames"></a>指示已接收以太网帧
 
@@ -23,15 +22,15 @@ ms.locfileid: "89212413"
 
 Windows TCP/IP 协议驱动程序对接收以太网帧有一组要求。 任何产生以太网帧接收指示的驱动程序或修改底层驱动程序的接收指示都必须支持 TCP/IP 施加的一般要求。 这些驱动程序包括以太网微型端口驱动程序、MUX 中间驱动程序和筛选器驱动程序。
 
-**注意**   如果驱动程序未遵循这些要求，则过量驱动程序 (如 TCP/IP 传输、MUX 中间驱动程序和筛选器驱动程序) 可能会表现出不可预测的行为。
+**注意**  如果驱动程序未遵循这些要求，则过量驱动程序 (如 TCP/IP 传输、MUX 中间驱动程序和筛选器驱动程序) 可能会表现出不可预测的行为。
 
  
 
 发出以太网接收指示的驱动程序必须支持下列要求：
 
--   驱动程序必须为收到的以太网帧分配 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构。 每个**网络 \_ 缓冲区 \_ 列表**结构都必须包含带外 (OOB) 在特定用途需要的**网络 \_ 缓冲区 \_ 列表**的**NetBufferListInfo**成员中定义的数据。
+-   驱动程序必须为收到的以太网帧分配 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构。 每个 **网络 \_ 缓冲区 \_ 列表** 结构都必须包含带外 (OOB) 在特定用途需要的 **网络 \_ 缓冲区 \_ 列表** 的 **NetBufferListInfo** 成员中定义的数据。
 
--   驱动程序必须为帧分配 [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer) 结构，并将其链接到 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构。 指示收到的数据时，以太网小型端口必须为**网络 \_ 缓冲区 \_ 列表**结构分配准确的一个**网络 \_ 缓冲区**。 此限制仅适用于以太网接收路径。 它不适用于其他媒体类型，如本机802.11 无线 LAN 接口。 一般为或 NDIS。
+-   驱动程序必须为帧分配 [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer) 结构，并将其链接到 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构。 指示收到的数据时，以太网小型端口必须为 **网络 \_ 缓冲区 \_ 列表** 结构分配准确的一个 **网络 \_ 缓冲区**。 此限制仅适用于以太网接收路径。 它不适用于其他媒体类型，如本机802.11 无线 LAN 接口。 一般为或 NDIS。
 
 -   从 NDIS 6.1 开始，在某些情况下，可以将 [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer) 与接收的以太网帧 (MDLs) 的多个内存描述符列表相关联。 即使 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构必须包含单个 **网络 \_ 缓冲区** 结构，使用多个 MDLs，驱动程序也可以将接收的数据包数据拆分为单独的缓冲区。
 
@@ -39,7 +38,7 @@ Windows TCP/IP 协议驱动程序对接收以太网帧有一组要求。 任何�
 
     出于简易性和性能方面的考虑，我们强烈建议不支持标头数据拆分的驱动程序对于每个 [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer) 结构仅使用一条 MDL。
 
-    **注意**   在适用于 Windows Vista 的 NDIS 6.0 中，每个[**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)结构都必须只包含一个 MDL。
+    **注意**  在适用于 Windows Vista 的 NDIS 6.0 中，每个 [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer) 结构都必须只包含一个 MDL。
 
      
 

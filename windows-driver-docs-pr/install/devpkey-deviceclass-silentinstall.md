@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_DeviceClass_SilentInstall
 description: DEVPKEY_DeviceClass_SilentInstall
-ms.assetid: db9ff5d2-020f-47bc-a1e3-2b305b5270e9
 keywords:
 - DEVPKEY_DeviceClass_SilentInstall 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 751d065803719f97bf4ee57f81b7c72e1a089969
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 0de9fe2cce46cd1f4fe02f14d2402802870abbe7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716394"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841249"
 ---
 # <a name="devpkey_deviceclass_silentinstall"></a>DEVPKEY_DeviceClass_SilentInstall
 
@@ -68,7 +67,7 @@ DEVPKEY_DeviceClass_SilentInstall 设备属性表示一个布尔型标志，该�
 
 如果 DEVPKEY_DeviceClass_SilentInstall 的值设置为 DEVPROP_TRUE，则 Windows 将安装设备驱动程序，而不显示任何用户界面项（如果驱动程序已在驱动程序存储区中预安装）。 否则，Windows 不会禁止显示用户界面项。
 
-设备安装程序类的**SilentInstall**注册表值可由安装类的 inf 文件的 inf [**ClassInstall32 部分**](./inf-classinstall32-section.md)中包含的[**inf AddReg 指令**](./inf-addreg-directive.md)设置。
+设备安装程序类的 **SilentInstall** 注册表值可由安装类的 inf 文件的 inf [**ClassInstall32 部分**](./inf-classinstall32-section.md)中包含的 [**inf AddReg 指令**](./inf-addreg-directive.md)设置。
 
 可以调用 [**SetupDiGetClassProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclasspropertyw) 或 [**SetupDiGetClassPropertyEx**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclasspropertyexw) 来检索 DEVPKEY_DeviceClass_SilentInstall 的值。
 

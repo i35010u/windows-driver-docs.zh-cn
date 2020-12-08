@@ -1,7 +1,6 @@
 ---
 title: '提示和要求-Windows 显示驱动程序模型 (WDDM) '
 description: Windows 显示驱动程序模型 (WDDM) 的实现提示和要求
-ms.assetid: 32674048-ef91-437e-977e-f64e1b28e42a
 keywords:
 - 显示驱动程序模型 WDK Windows Vista，提示
 - Windows Vista 显示器驱动程序模型 WDK，提示
@@ -10,12 +9,12 @@ keywords:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: 39c6baf8f2347a9d56c00e0b4231d4cb31867903
-ms.sourcegitcommit: 1600bbad585647840839a6f66078c961c337c268
+ms.openlocfilehash: 8977183fd389ef9e1c2f7cfe40e524f95d8c0af9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88203663"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839309"
 ---
 # <a name="tips-and-requirements-for-the-windows-display-driver-model-wddm"></a>有关 Windows 显示驱动程序模型 (WDDM) 的提示和要求
 

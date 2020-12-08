@@ -1,7 +1,6 @@
 ---
 title: GetScannerElementsResponse 元素
 description: 必需的 GetScannerElementsResponse 元素包含 WSD 扫描服务对有关扫描程序的信息的客户端请求的响应。
-ms.assetid: da3cded6-6aa9-4fe6-ad02-9a02d2219075
 keywords:
 - GetScannerElementsResponse 元素图像设备
 topic_type:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b7c811aabdd510a18f90bffc3252fae5e4fa9536
-ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
+ms.openlocfilehash: 902655136a09f900442e21d23277a506a4679c8b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75652967"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840095"
 ---
 # <a name="getscannerelementsresponse-element"></a>GetScannerElementsResponse 元素
 
 
-必需的**GetScannerElementsResponse**元素包含 WSD 扫描服务对有关扫描程序的信息的客户端请求的响应。
+必需的 **GetScannerElementsResponse** 元素包含 WSD 扫描服务对有关扫描程序的信息的客户端请求的响应。
 
-<a name="usage"></a>Usage
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -33,7 +32,7 @@ ms.locfileid: "75652967"
 </wscn:GetScannerElementsResponse>
 ```
 
-<a name="attributes"></a>属性
+<a name="attributes"></a>特性
 ----------
 
 没有特性。
@@ -65,9 +64,9 @@ ms.locfileid: "75652967"
 <a name="remarks"></a>备注
 -------
 
-WSD 扫描服务必须支持**GetScannerElementsResponse**操作元素。
+WSD 扫描服务必须支持 **GetScannerElementsResponse** 操作元素。
 
-当客户端通过[**GetScannerElementsRequest**](getscannerelementsrequest.md)操作成功查询扫描程序信息时，扫描服务必须通过包含请求信息的**GetScannerElementsResponse**操作元素进行响应。
+当客户端通过 [**GetScannerElementsRequest**](getscannerelementsrequest.md) 操作成功查询扫描程序信息时，扫描服务必须通过包含请求信息的 **GetScannerElementsResponse** 操作元素进行响应。
 
 <a name="examples"></a>示例
 --------
@@ -380,7 +379,7 @@ WSD 扫描服务必须支持**GetScannerElementsResponse**操作元素。
 </soap:Envelope>
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**GetScannerElementsRequest**](getscannerelementsrequest.md)

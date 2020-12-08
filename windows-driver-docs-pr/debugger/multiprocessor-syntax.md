@@ -1,16 +1,15 @@
 ---
 title: 多处理器语法
 description: 本主题介绍多处理器语法
-ms.assetid: 71adc522-f078-457c-8bc9-9e971e914a41
 keywords: 多处理器计算机，多处理器，命令语法，双处理器计算机，命令语法规则，处理器标识符
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c76c200699c287359f4d50167f4a8d58175b2da
-ms.sourcegitcommit: 89b8a43480246dd726e3632aab2db9cf2eb7505d
+ms.openlocfilehash: b7772cf408c983d0fa3917abc742f13d519415dd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92254060"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840435"
 ---
 # <a name="multiprocessor-syntax"></a>多处理器语法
 
@@ -26,15 +25,15 @@ KD 和内核模式 WinDbg 支持多处理器调试。 可以在任何多处理�
 
 ### <a name="span-idselecting_a_processorspanspan-idselecting_a_processorspanselecting-a-processor"></a><span id="selecting_a_processor"></span><span id="SELECTING_A_PROCESSOR"></span>选择处理器
 
-可以使用 [**. echocpunum (SHOW CPU Number) **](-echocpunum--show-cpu-number-.md) 命令显示当前处理器的处理器号。 使用此命令的输出，你可以立即了解内核调试提示中的文本处理多处理器系统的时间。
+可以使用 [**. echocpunum (SHOW CPU Number)**](-echocpunum--show-cpu-number-.md) 命令显示当前处理器的处理器号。 使用此命令的输出，你可以立即了解内核调试提示中的文本处理多处理器系统的时间。
 
-在下面的示例中， **0：** 在**kd &gt; **提示符之前，指示正在调试计算机中的第一个处理器。
+在下面的示例中， **0：** 在 **kd &gt;** 提示符之前，指示正在调试计算机中的第一个处理器。
 
 ```dbgcmd
 0: kd>
 ```
 
-使用 [**~ s (Change Current Processor) **](-s--change-current-processor-.md) 命令在处理器之间切换，如以下示例所示。
+使用 [**~ s (Change Current Processor)**](-s--change-current-processor-.md) 命令在处理器之间切换，如以下示例所示。
 
 ```dbgcmd
 0: kd> ~1s
@@ -49,7 +48,7 @@ KD 和内核模式 WinDbg 支持多处理器调试。 可以在任何多处理�
 
 你可以在多个命令前添加一个处理器编号。 此数字前面不会有一个颚化符 (**~**) ，但在 **~ S** 命令中除外。
 
-**注意**   在用户模式调试中，使用波形符来指定线程。 有关此语法的详细信息，请参阅 [线程语法](thread-syntax.md)。
+**注意**   在用户模式调试中，使用波形符来指定线程。 有关此语法的详细信息，请参阅 [线程语法](thread-syntax.md)。
 
  
 
@@ -69,13 +68,13 @@ KD 和内核模式 WinDbg 支持多处理器调试。 可以在任何多处理�
 
 ### <a name="span-idexamplesspanspan-idexamplesspanexamples"></a><span id="examples"></span><span id="EXAMPLES"></span>示例
 
-下面的示例使用 [**k (显示 Stack Backtrace) **](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md) 命令显示 processor 2 的堆栈跟踪。
+下面的示例使用 [**k (显示 Stack Backtrace)**](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md) 命令显示 processor 2 的堆栈跟踪。
 
 ```dbgcmd
 1: kd> 2k 
 ```
 
-下面的示例使用 [**r (register) **](r--registers-.md) 命令显示 processor 3 的 **eax** 寄存器。
+下面的示例使用 [**r (register)**](r--registers-.md) 命令显示 processor 3 的 **eax** 寄存器。
 
 ```dbgcmd
 1: kd> 3r eax 
@@ -89,9 +88,9 @@ KD 和内核模式 WinDbg 支持多处理器调试。 可以在任何多处理�
 
 ### <a name="span-idbreakpointsspanspan-idbreakpointsspanbreakpoints"></a><span id="breakpoints"></span><span id="BREAKPOINTS"></span>处
 
-在内核调试过程中，将应用到多处理器计算机的所有处理器时， [**最佳实践、bu、bm.exe (设置断点) **](bp--bu--bm--set-breakpoint-.md) 和 [**Ba () 中断 **](ba--break-on-access-.md) 。
+在内核调试过程中，将应用到多处理器计算机的所有处理器时， [**最佳实践、bu、bm.exe (设置断点)**](bp--bu--bm--set-breakpoint-.md) 和 [**Ba () 中断**](ba--break-on-access-.md) 。
 
-例如，如果当前处理器为三个，则可以输入以下命令，在 **SomeAddress**处放置一个断点。
+例如，如果当前处理器为三个，则可以输入以下命令，在 **SomeAddress** 处放置一个断点。
 
 ```dbgcmd
 1: kd> bp SomeAddress 

@@ -1,7 +1,6 @@
 ---
 title: 使用消息信号中断的 RSS
 description: 使用消息信号中断的 RSS
-ms.assetid: 3c1776cf-f870-4910-88b2-9b5a9544cdf8
 keywords:
 - 接收方缩放 WDK 网络，消息信号中断
 - RSS WDK 网络，消息信号中断
@@ -10,12 +9,12 @@ keywords:
 - MSI-X WDK 网络，RSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bde613814cca26328375bab7b70cb2d5867103d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 92280ae592742a3eac2ce5edb30b06c61f22bdf3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209267"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840293"
 ---
 # <a name="rss-with-message-signaled-interrupts"></a>使用消息信号中断的 RSS
 

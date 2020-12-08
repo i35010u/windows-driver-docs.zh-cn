@@ -1,17 +1,16 @@
 ---
 title: OID_802_3_XMIT_HEARTBEAT_FAILURE
-description: 本主题介绍 OID_802_3_XMIT_HEARTBEAT_FAILURE 对象标识符（OID）。
-ms.assetid: 11E129B6-08B4-4CDC-99AC-015093AE5E11
+description: 本主题介绍) OID_802_3_XMIT_HEARTBEAT_FAILURE 对象标识符 (OID。
 keywords:
 - OID_802_3_XMIT_HEARTBEAT_FAILURE
 ms.date: 11/01/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 272043fbad2f3d653dbdbc1a3876f064680b9520
-ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
+ms.openlocfilehash: 2f21376f7aa05a3266ec29ff9b2b62e19bb4ce33
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85916406"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840299"
 ---
 # <a name="oid_802_3_xmit_heartbeat_failure"></a>OID_802_3_XMIT_HEARTBEAT_FAILURE
 
@@ -19,5 +18,5 @@ ms.locfileid: "85916406"
 
 ## <a name="requirements"></a>要求
 
-**版本**： Windows Vista 和更高版本的**标头**： Ntddndis （包括 Ndis .h）
+**版本**： Windows Vista 和更高版本的 **标头**： Ntddndis (包括 Ndis .h) 
 

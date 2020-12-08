@@ -1,23 +1,22 @@
 ---
 title: 纹理寻址和筛选操作
 description: 纹理寻址和筛选操作
-ms.assetid: d468c83e-2e9c-4e4b-885e-0427714dd8a3
 keywords:
-- 多个纹理 WDK Direct3D 寻址
-- 多个纹理 WDK Direct3D 筛选
-- 多个纹理 WDK Direct3D 值混合处理
+- 多纹理 WDK Direct3D，寻址
+- 多纹理 WDK Direct3D，筛选
+- 多纹理 WDK Direct3D，混合
 - 混合 WDK Direct3D
-- 纹理管理 WDK Direct3D 寻址
-- 管理 WDK Direct3D 纹理筛选
-- 纹理管理 WDK Direct3D 值混合处理
+- 纹理管理 WDK Direct3D，寻址
+- 纹理管理 WDK Direct3D，筛选
+- 纹理管理 WDK Direct3D，混合
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 209bd66b2de11c79d532f36ca089ad995c572f17
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: eadf7873a284605b4bf884b12896ef045021c396
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362615"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838941"
 ---
 # <a name="texture-addressing-and-filtering-operations"></a>纹理寻址和筛选操作
 
@@ -25,9 +24,9 @@ ms.locfileid: "63362615"
 ## <span id="ddk_texture_addressing_and_filtering_operations_gg"></span><span id="DDK_TEXTURE_ADDRESSING_AND_FILTERING_OPERATIONS_GG"></span>
 
 
-在 Direct3D 中，纹理寻址、 筛选和混合操作执行的名为一个单独的逻辑单元[纹理阶段](texture-stages.md)。 寻址和筛选操作此处所述因为其形成逻辑分组独立于混合操作。 有关纹理操作的详细信息，请参阅 DirectX SDK 文档中的 D3DTEXTUREOP 枚举类型。
+在 Direct3D 中，纹理寻址、筛选和混合操作由称为 [纹理贴图](texture-stages.md)的单独逻辑单元执行。 此处描述了寻址和筛选操作，因为它们构成了独立于混合操作的逻辑分组。 有关纹理操作的详细信息，请参阅 DirectX SDK 文档中的 D3DTEXTUREOP 枚举类型。
 
-尽管寻址和采样操作可以定义与混合 DirectX 6.0 及更高版本中的操作结合使用，更高版本的 DirectX 中它们可能是独立于混合操作。 下表中所列的纹理阶段状态用于设置纹理寻址和筛选纹理管道中每个阶段的操作。
+尽管寻址和采样操作是在 DirectX 6.0 及更高版本中与混合操作一起定义的，但在更高版本的 DirectX 中，它们可能与混合操作无关。 下表中列出的纹理阶段状态用于为纹理管道中的每个阶段设置纹理寻址和筛选操作。
 
 <table>
 <colgroup>
@@ -37,49 +36,49 @@ ms.locfileid: "63362615"
 <thead>
 <tr class="header">
 <th align="left">操作</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>D3DTSS_ANISOTROPY</p></td>
-<td align="left"><p>指定各向异性筛选比率限制。 它指定最大各向异性筛选此纹理采样期间要应用的纵横比。</p></td>
+<td align="left"><p>指定各向异性筛选比率限制。 它指定在此纹理采样期间要应用的各向异性筛选的最大纵横比。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DTSS_MAGFILTER</p></td>
-<td align="left"><p>定义用于示例纹理筛选器的类型时它们要放大的 （即，当一个纹素获取拉伸到多个呈现图面上像素为单位）。 D3DTEXTUREMAGFILTER 中列举了可用于纹理放大的筛选器。</p></td>
+<td align="left"><p>定义用于在放大纹理时 (的筛选器的类型，即当某个纹素延伸到多个呈现图面像素) 时。 可用于纹理放大的筛选器在 D3DTEXTUREMAGFILTER 中进行枚举。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DTSS_MAXMIPLEVEL</p></td>
-<td align="left"><p>指定要使用的最大 MIP 映射级别。 它指示该纹理应永远不会采样 MIP 贴图级别大于另一个用。 因此，最大维度为 2<sup>MAXMIPLEVEL</sup>。 零表示没有任何限制。</p></td>
+<td align="left"><p>指定要使用的最大 MIP 地图级别。 它表示，此纹理绝不应为指定的更大的 MIP map 级别采样。 因此，最大维度为 2<sup>MAXMIPLEVEL</sup>。 零表示没有限制。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DTSS_MINFILTER</p></td>
-<td align="left"><p>定义它们时使用的筛选类型示例纹理<em>缩小</em>，也就是说，一个纹理映射到小于一个屏幕像素。 D3DTEXTUREMINFILTER 中列举了可用于缩小纹理的筛选器。</p></td>
+<td align="left"><p>定义用于在 <em>缩小</em>时采样纹理的筛选类型，即，将一个纹素映射到小于一个屏幕像素。 在 D3DTEXTUREMINFILTER 中枚举可用于缩小纹理的筛选器。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DTSS_MIPFILTER</p></td>
-<td align="left"><p>定义类型的筛选，它用于层之间的 MIP 映射的示例。 D3DTEXTUREMIPFILTER 中列举了可用于此筛选器。</p></td>
+<td align="left"><p>定义用于在 MIP map 的各层之间采样的筛选类型。 可用于此的筛选器在 D3DTEXTUREMIPFILTER 中进行枚举。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DTSS_MIPLEVEL</p></td>
-<td align="left"><p>允许应用程序时的硬件不能设置 MIP 级别。 这是重写时的 MIP 级别由硬件。</p></td>
+<td align="left"><p>允许应用程序在硬件不能时设置 MIP 级别。 当 MIP 级别由硬件确定时，此方法将被重写。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DTSS_MIPMAPLODBIAS</p></td>
-<td align="left"><p>是指定 MIP 映射级别 (lod) 偏差的 D3DVALUE。 此偏置影响 MIP 映射级别计算，允许的纹理 （和更多的别名），根据需要增加或减少模糊。 单位为在 MIP 级别。</p>
-<p>当前 WHQL/DCT 测试需要 MIP 映射 LOD 偏置的范围为 3.0-3.0 中运行。</p></td>
+<td align="left"><p>是一个 D3DVALUE，它指定 (LOD) 偏差的详细信息映射级别。 此偏向会影响 MIP map level 计算，允许纹理 (和更多的) 的模糊量更多或更少。 单位在 MIP 级别。</p>
+<p>当前的 WHQL/DCT 测试要求 MIP map LOD 偏量在-3.0 到3.0 的范围内操作。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DTSS_TEXCOORDINDEX</p></td>
-<td align="left"><p>指定纹理坐标集的索引。 该整数指示寻址单元应从中采样的纹理坐标集的索引。 这些坐标列出在传入灵活顶点格式 (<a href="fvf--flexible-vertex-format-.md" data-raw-source="[FVF](fvf--flexible-vertex-format-.md)">FVF</a>) 按数字顺序，其中零是 DirectX 组标准的纹理坐标，一种是使用第二个纹理的顶点数据协调组，依次类推。 这样，若要共享集所需的纹理坐标的纹理。</p></td>
+<td align="left"><p>指定纹理坐标集的索引。 此整数指示用于寻址单元的纹理坐标集的索引。 这些坐标以传入的灵活顶点格式列出 (<a href="fvf--flexible-vertex-format-.md" data-raw-source="[FVF](fvf--flexible-vertex-format-.md)">FVF</a>) 顶点数据按数值顺序显示，其中0是标准的一组纹理坐标，一个是另一个纹理坐标集，依此类推。 这允许纹理根据需要共享纹理坐标集。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**请注意**  要 Direct3D 符合规范，驱动程序所需以正确解析最多八个纹理坐标集，即使该设备只能循环访问和使用的定义中的坐标数**dwFVFCaps**。 该驱动程序必须使用 D3DTSS\_TEXCOORDINDEX 获取要用于纹理的右坐标。
+**注意**   若要符合 Direct3D 的要求，驱动程序必须正确分析多达八个纹理坐标集，即使设备只能循环访问并使用在 **dwFVFCaps** 中定义的坐标数。 驱动程序必须使用 D3DTSS \_ TEXCOORDINDEX 来抓住要用于纹理的右坐标。
 
  
 

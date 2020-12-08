@@ -1,7 +1,6 @@
 ---
 title: ScanAvailableEvent 元素
 description: 必需的 ScanAvailableEvent 元素通知客户端，客户端所订阅的扫描设备已准备好扫描作业。
-ms.assetid: 82ebfa36-60df-44dd-a928-e751deeea5b0
 keywords:
 - ScanAvailableEvent 元素图像设备
 topic_type:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b01802172f27f6d614954004f5e26b37a9079f05
-ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
+ms.openlocfilehash: 6c245b63d58aae7a04eb45cf784a07865e3347d0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75652947"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840713"
 ---
 # <a name="scanavailableevent-element"></a>ScanAvailableEvent 元素
 
 
-必需的**ScanAvailableEvent**元素通知客户端，客户端所订阅的扫描设备已准备好扫描作业。
+必需的 **ScanAvailableEvent** 元素通知客户端，客户端所订阅的扫描设备已准备好扫描作业。
 
-<a name="usage"></a>Usage
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -33,7 +32,7 @@ ms.locfileid: "75652947"
 </wscn:ScanAvailableEvent>
 ```
 
-<a name="attributes"></a>属性
+<a name="attributes"></a>特性
 ----------
 
 没有特性。
@@ -68,15 +67,15 @@ ms.locfileid: "75652947"
 <a name="remarks"></a>备注
 -------
 
-当用户选择了扫描目标并在扫描设备上启动扫描时，WSD 扫描服务会将**ScanAvailableEvent**元素发送到已注册的客户端。
+当用户选择了扫描目标并在扫描设备上启动扫描时，WSD 扫描服务会将 **ScanAvailableEvent** 元素发送到已注册的客户端。
 
-客户端必须使用 WSD 扫描服务创建订阅才能接收**ScanAvailableEvent**事件。 客户端通过 **&lt;wse：订阅&gt;** 请求操作元素向扫描服务发送请求消息，从而创建一个订阅。
+客户端必须使用 WSD 扫描服务创建订阅才能接收 **ScanAvailableEvent** 事件。 客户端通过 **&lt; Wse：订阅 &gt;** 请求操作元素向扫描服务发送请求消息，从而创建一个订阅。
 
-订阅请求在[**ScanDestinations**](scandestinations.md) extension 元素中包含一个或多个目标。 每次发送**ScanAvailableEvent**通知时，扫描服务都将使用这些目标向下筛选到单个客户端。 此筛选器可防止扫描服务在用户按下 "扫描" 按钮时通知每个客户端。 扩展元素是在 WSD 扫描服务命名空间中定义的，然后添加到 **&lt;wse：订阅&gt;** 请求正文中。
+订阅请求在 [**ScanDestinations**](scandestinations.md) extension 元素中包含一个或多个目标。 每次发送 **ScanAvailableEvent** 通知时，扫描服务都将使用这些目标向下筛选到单个客户端。 此筛选器可防止扫描服务在用户按下 "扫描" 按钮时通知每个客户端。 在 WSD 扫描服务命名空间中定义扩展元素，然后将其添加到 **&lt; Wse：订阅 &gt;** 请求正文中。
 
-如果 WSD 扫描服务接受客户端的请求来创建订阅，服务必须使用响应 **&lt;wse:SubscribeResponse&gt;** 响应操作元素。 订阅响应包含中的一个或多个目标响应 [**DestinationResponses**](destinationresponses.md) 扩展元素，可帮助连接到接受它扫描设备的订阅。
+如果 WSD 扫描服务接受客户端创建订阅的请求，则该服务必须使用 **&lt; Wse： SubscribeResponse &gt;** 响应操作元素进行响应。 订阅响应在 [**DestinationResponses**](destinationresponses.md) extension 元素中包含一个或多个目标响应，这有助于将订阅连接到接受它的扫描设备。
 
-**&lt;Wse： 订阅&gt;** 并 **&lt;wse:SubscribeResponse&gt;** 在规范中描述的元素。
+在规范中介绍了 **&lt; Wse：订阅 &gt;** 和 **&lt; wse： SubscribeResponse &gt;** 元素。
 
 <a name="examples"></a>示例
 --------
@@ -185,7 +184,7 @@ ms.locfileid: "75652947"
 </soap:Envelope>
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**ClientContext**](clientcontext.md)

@@ -1,15 +1,14 @@
 ---
 title: 停止 PF 微型端口驱动程序
 description: 停止 PF 微型端口驱动程序
-ms.assetid: E3F6B78E-6938-459B-883E-5DA0BB1D73C7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dd269d05e670dbafbe1de23461b40fe658cb2e11
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 19954d7c931dbf27fd65d9a7dc6bb319122b0fcf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212909"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840021"
 ---
 # <a name="halting-a-pf-miniport-driver"></a>停止 PF 微型端口驱动程序
 
@@ -43,7 +42,7 @@ ms.locfileid: "89212909"
 
     有关详细信息，请参阅 [释放虚拟函数资源](freeing-resources-for-a-virtual-function.md)。
 
-    **注意**   当释放 VF 的资源时，NDIS 会调用 VF 微型端口驱动程序的[*MiniportHaltEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt)函数。 有关详细信息，请参阅 [停止 VF 微型端口驱动程序](halting-a-vf-miniport-driver.md)。
+    **注意**  当释放 VF 的资源时，NDIS 会调用 VF 微型端口驱动程序的 [*MiniportHaltEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt) 函数。 有关详细信息，请参阅 [停止 VF 微型端口驱动程序](halting-a-vf-miniport-driver.md)。
 
      
 
@@ -51,7 +50,7 @@ ms.locfileid: "89212909"
 
 -   NDIS 通过颁发 oid [ \_ nic \_ 交换机 \_ 删除 \_ 交换机](./oid-nic-switch-delete-switch.md) 到 PF 微型端口驱动程序的 OID 集请求，删除所有 NIC 交换机。 有关如何删除 NIC 交换机的详细信息，请参阅 [删除 Nic 交换机](deleting-a-nic-switch.md)。
 
-    **注意**   从 Windows Server 2012 开始，SR-IOV 接口仅支持网络适配器上的默认 NIC 交换机。
+    **注意**  从 Windows Server 2012 开始，SR-IOV 接口仅支持网络适配器上的默认 NIC 交换机。
 
      
 
@@ -60,13 +59,13 @@ ms.locfileid: "89212909"
 ## <a name="actions-performed-by-the-pf-miniport-driver-when-miniporthaltex-is-called"></a>调用 *MiniportHaltEx* 时，PF 微型端口驱动程序执行的操作
 
 
-当 NDIS 调用 *MiniportHaltEx*时，PF 微型端口驱动程序必须执行以下步骤：
+当 NDIS 调用 *MiniportHaltEx* 时，PF 微型端口驱动程序必须执行以下步骤：
 
 1.  如果 PF 微型端口驱动程序支持静态创建 NIC 交换机，并且已删除所有 NIC 交换机，则驱动程序必须通过调用 [**NdisMEnableVirtualization**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismenablevirtualization) ，并将 *EnableVirtualization* 参数设置为 FALSE，并将 *NumVFs* 参数设置为零，来禁用适配器上的虚拟化。
 
     [**NdisMEnableVirtualization**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismenablevirtualization) 清除 **NumVFs** 成员，并且 VF 在网络适配器的 PF 的 PCIe 配置空间中的 sr-iov 扩展功能结构中 **启用** 位。
 
-    **注意**   如果 PF 微型端口驱动程序支持动态创建和配置 NIC 交换机，则当驱动程序处理[oid \_ NIC \_ 交换机 \_ 删除 \_ 开关](./oid-nic-switch-delete-switch.md)的 oid 集请求时，它必须调用[**NdisMEnableVirtualization**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismenablevirtualization) 。 此 OID 请求在调用 *MiniportHaltEx* 之前发出。
+    **注意** 如果 PF 微型端口驱动程序支持动态创建和配置 NIC 交换机，则当驱动程序处理 [oid \_ NIC \_ 交换机 \_ 删除 \_ 开关](./oid-nic-switch-delete-switch.md)的 oid 集请求时，它必须调用 [**NdisMEnableVirtualization**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismenablevirtualization) 。 此 OID 请求在调用 *MiniportHaltEx* 之前发出。
 
      
 

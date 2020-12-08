@@ -1,7 +1,6 @@
 ---
 title: 'PcAddAdapterDevice 规则 (音频) '
 description: PcAddAdapterDevice 规则指定 PortCls 微型端口驱动程序正确使用 PcAddAdapterDevice 函数，具体而言，DeviceExtensionSize 应为零 (0) 或小于端口 \_ 类的 \_ 设备 \_ 扩展 \_ 大小。
-ms.assetid: AD020D31-9994-4AD1-A937-E29A594FC9D4
 ms.date: 05/21/2018
 keywords:
 - 'PcAddAdapterDevice 规则 (音频) '
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ff421d66ccd9f71f80112af042a2d55bc95f73e5
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 274a70aa2fafe9633f2a949d69eb298e75993129
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106668"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840817"
 ---
 # <a name="pcaddadapterdevice-rule-audio"></a>PcAddAdapterDevice 规则 (音频) 
 

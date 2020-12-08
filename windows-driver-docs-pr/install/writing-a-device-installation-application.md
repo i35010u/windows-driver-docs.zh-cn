@@ -1,7 +1,6 @@
 ---
 title: 编写设备安装应用程序
 description: 编写设备安装应用程序
-ms.assetid: 9927e2e0-6c8e-437f-98ce-595bd304ec72
 keywords:
 - 安装应用程序 WDK，有关编写安装应用程序的信息
 - 设备安装应用程序 WDK，有关编写安装应用程序的信息
@@ -14,12 +13,12 @@ keywords:
 - 设备安装 WDK，应用程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 27cebb587ffa735d56a09350e187e17ba3240da1
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: 53209dbc16dee58c63df717a3bf0945b3b8bfaee
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361473"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840929"
 ---
 # <a name="writing-a-device-installation-application"></a>编写设备安装应用程序
 

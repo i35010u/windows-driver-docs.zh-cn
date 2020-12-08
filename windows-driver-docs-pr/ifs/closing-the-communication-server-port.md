@@ -1,19 +1,18 @@
 ---
 title: 关闭通信服务器端口
 description: 关闭通信服务器端口
-ms.assetid: 43dfa162-0098-4a9b-9272-9da429cb0108
 keywords:
 - 通信服务器端口 WDK 文件系统微筛选器
 - 端口 WDK，文件系统微筛选器
 - 关闭通信服务器端口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ae8e780b962983ec9115a96eb3c242172214713a
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: d2fdbb0d8b7bf561dbe3423a9531ae0925f18f51
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065338"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838795"
 ---
 # <a name="closing-the-communication-server-port"></a>关闭通信服务器端口
 

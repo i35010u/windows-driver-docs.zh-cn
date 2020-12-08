@@ -1,19 +1,18 @@
 ---
 title: 虚拟连接上下文
 description: 虚拟连接上下文
-ms.assetid: 9b318f9d-70f4-41b5-acab-5a193f7d2ab4
 keywords:
 - 虚拟连接 WDK 网络，上下文
 - VCs WDK 网络，上下文
 - 上下文 WDK 虚拟连接
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eb0e90529e6b9e92c37b0213c57f0b7b38437aa4
-ms.sourcegitcommit: 93c924b8f409fc7f704cc67cc026d70b8ad25d30
+ms.openlocfilehash: 916c7254cb950ae3689b5687a2df9b246e2f43a8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91739481"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840261"
 ---
 # <a name="virtual-connection-context"></a>虚拟连接上下文
 

@@ -1,25 +1,24 @@
 ---
 title: C28124
-description: 警告 C28124 对的调用会导致 IRQ 级别要低于最小值设置为所分析函数可接受。
-ms.assetid: d0540a52-2252-49d5-ba03-3d026e07670a
+description: 警告 C28124 对的调用会导致 IRQ 级别设置为低于正在分析的函数可接受的最小值。
 keywords:
-- 警告列出 WDK PREfast for Drivers
-- 错误列出 WDK PREfast for Drivers
+- 列出用于驱动程序的 WDK PREfast 的警告
+- 为驱动程序列出的 WDK PREfast 的错误
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28124
-ms.openlocfilehash: 7a6ffe1c8147d9d0bcee51cbf40c46e4166e71e0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 540d26b5b6770657367c6958a9d1859d334b0c69
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361577"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840419"
 ---
 # <a name="c28124"></a>C28124
 
 
-警告 C28124:对的调用会导致 IRQ 级别要低于最小值设置为所分析函数可接受。
+警告 C28124：对的调用会导致 IRQ 级别设置为低于正在分析的函数可接受的最小值。
 
 <table>
 <colgroup>
@@ -28,17 +27,17 @@ ms.locfileid: "63361577"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>其他信息</strong></p></td>
-<td align="left"><p>上次设置最小的法律 IRQL &lt; <em>IRQL</em> &gt;行&lt;<em>行号</em>&gt;。 级别限制来自当前函数的批注。</p></td>
+<td align="left"><p>其他信息</p></td>
+<td align="left"><p>最小合法的 &lt; <em>IRQL</em> &gt; 每个值在行 &lt; <em>号</em>处设置为 irql &gt; 。 级别限制来自当前函数的注释。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-该驱动程序调用更改为小于最小的 IRQL 对当前函数类型级别的 IRQL 的函数。 代码分析工具来推断此信息从函数类型或批注。
+驱动程序调用的函数将 IRQL 更改为小于当前函数类型的最小 IRQL 级别。 代码分析工具从函数类型或批注推断出此信息。
 
-在已批注与函数内会出现此警告 **\_ \_drv\_minIRQL**批注和指示该函数中的编码错误或误解在批注中的函数的协定。
+此警告出现在已使用 **\_ \_ winspool.drv \_ minIRQL** 批注批注的函数中，并且指示函数中的编码错误或批注中函数协定的误解。
 
  
 

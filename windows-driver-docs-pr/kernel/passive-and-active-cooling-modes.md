@@ -1,15 +1,14 @@
 ---
 title: 被动和主动散热模式
 description: 从 Windows 8 开始，具有热量管理功能的设备可通过 GUID_THERMAL_COOLING_INTERFACE 驱动程序界面将这些功能公开给操作系统。
-ms.assetid: 4AB70ED3-E71A-45EE-818D-7DCDE0FFBCB3
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 00daf7e86ee077282f1b8a2422d4b814681cb203
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ce0bd169e641f8d3aa1e442e619e50bb6297dcb1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188845"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839237"
 ---
 # <a name="passive-and-active-cooling-modes"></a>被动和主动散热模式
 

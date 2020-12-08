@@ -1,7 +1,6 @@
 ---
 title: 使用 CustomTimerDpc 例程
 description: 使用 CustomTimerDpc 例程
-ms.assetid: e95d01a2-4d13-40d2-aeb0-44c45e4a49f5
 keywords:
 - timer 对象 WDK 内核，CustomTimerDpc 例程
 - CustomTimerDpc
@@ -14,12 +13,12 @@ keywords:
 - 过期计时器内核内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f31b0858b425c0675a47b28a5a9fce198f3c81c7
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: cd5c55a65b1cc2b34ac5a6c82542e02a33e632e1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188953"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840679"
 ---
 # <a name="using-a-customtimerdpc-routine"></a>使用 CustomTimerDpc 例程
 
@@ -29,13 +28,13 @@ ms.locfileid: "89188953"
 
 若要禁用先前设置的 timer 对象，驱动程序将调用 [**KeCancelTimer**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kecanceltimer)。 此例程将从系统的计时器队列中移除计时器对象。 通常情况下，timer 对象不会设置为 "已终止" 状态，并且 *CustomTimerDpc* 例程不会排队等待执行。 但是，如果在调用 **KeCancelTimer** 时计时器即将过期，则可能会在 **KeCancelTimer** 有机会访问时间队列之前发生过期，在这种情况下，将会发生信号和 DPC 队列。
 
-在以前指定的时间间隔到期之前，通过之前指定的*计时器*和*Dpc*指针撤回[**KeSetTimer**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kesettimer)或[**KeSetTimerEx**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kesettimerex)具有以下效果：
+在以前指定的时间间隔到期之前，通过之前指定的 *计时器* 和 *Dpc* 指针撤回 [**KeSetTimer**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kesettimer)或 [**KeSetTimerEx**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kesettimerex)具有以下效果：
 
 -   内核从计时器队列中删除计时器对象，而不会将对象设置为 "已终止" 状态或对 *CustomTimerDpc* 例程进行排队。
 
 -   内核使用新的 *DueTime* 值重新插入计时器队列中的计时器对象。
 
-为不同目的使用相同的计时器对象可能导致争用条件或严重驱动程序错误。 例如，假定驱动程序指定了一个计时器对象，以设置对 *CustomTimerDpc* 例程的调用，并在驱动程序专用线程中设置等待。 每当驱动程序专用线程为常见计时器对象调用**KeSetTimer**、 **KeSetTimerEx**或**KeCancelTimer**时，如果计时器对象已排队等待*CustomTimerDpc*调用，则线程将取消对*CustomTimerDpc*例程的调用。
+为不同目的使用相同的计时器对象可能导致争用条件或严重驱动程序错误。 例如，假定驱动程序指定了一个计时器对象，以设置对 *CustomTimerDpc* 例程的调用，并在驱动程序专用线程中设置等待。 每当驱动程序专用线程为常见计时器对象调用 **KeSetTimer**、 **KeSetTimerEx** 或 **KeCancelTimer** 时，如果计时器对象已排队等待 *CustomTimerDpc* 调用，则线程将取消对 *CustomTimerDpc* 例程的调用。
 
 如果驱动程序具有 *CustomTimerDpc* 例程，并且还会在 nonarbitrary 线程上下文中等待计时器对象，则应执行以下操作：
 
@@ -43,13 +42,13 @@ ms.locfileid: "89188953"
 
 -   为每个 *CustomTimerDpc* 例程分配单独的计时器对象。 在 nonarbitrary 线程上下文中调用的每组驱动程序线程或驱动程序例程应有自己的 "可等待" 计时器对象集。
 
-如果使用 *CustomTimerDpc* 例程，请仔细选择驱动程序在调用 **KeSetTimer** 或 **KeSetTimerEx**时传递的间隔。 此外，请考虑使用来自任何进行此调用的驱动程序例程（特别是在 SMP 平台上）调用 **KeCancelTimer** 的所有可能效果。
+如果使用 *CustomTimerDpc* 例程，请仔细选择驱动程序在调用 **KeSetTimer** 或 **KeSetTimerEx** 时传递的间隔。 此外，请考虑使用来自任何进行此调用的驱动程序例程（特别是在 SMP 平台上）调用 **KeCancelTimer** 的所有可能效果。
 
 请记住以下有关 *CustomTimerDpc* 例程的事实：
 
 在任意给定时刻，只能对表示特定 DPC 例程的 DPC 对象的一个实例化进行排队以便执行。
 
-如果第二个驱动程序例程调用 **KeSetTimer** 或 **KeSetTimerEx** 来运行相同的 *CustomTimerDpc* 例程，然后第一个调用方指定的间隔过期，则仅在第二个调用方指定的间隔过期后才运行 *CustomTimerDpc* 例程。 在这些情况下， *CustomTimerDpc* 不会执行第一个例程为 **KeSetTimer** 或 **KeSetTimerEx**的任何工作。
+如果第二个驱动程序例程调用 **KeSetTimer** 或 **KeSetTimerEx** 来运行相同的 *CustomTimerDpc* 例程，然后第一个调用方指定的间隔过期，则仅在第二个调用方指定的间隔过期后才运行 *CustomTimerDpc* 例程。 在这些情况下， *CustomTimerDpc* 不会执行第一个例程为 **KeSetTimer** 或 **KeSetTimerEx** 的任何工作。
 
 对于具有 *CustomTimerDpc* 例程并使用定期计时器的驱动程序：
 
@@ -59,7 +58,7 @@ ms.locfileid: "89188953"
 
 若要防止出现争用情况，请不要将同一 *Dpc* 指针传递到 **KeSetTimer** 或 **KeSetTimerEx** 和 [**KeInsertQueueDpc**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keinsertqueuedpc)。
 
-换句话说，假设驱动程序的*StartIo*例程调用**KeSetTimer**或**KeSetTimerEx**来对*CustomTimerDpc*例程进行排队，驱动程序的 ISR 同时从另一个具有相同*Dpc*指针的处理器调用**KeInsertQueueDpc** 。 当处理器上的 IRQL 低于调度 \_ 级别或计时器间隔过期（以先达到的时间为准）时，将运行该 DPC 例程。 第一种方法是， *StartIo* 或 ISR 的一些必要工作只是由 DPC 例程丢弃。
+换句话说，假设驱动程序的 *StartIo* 例程调用 **KeSetTimer** 或 **KeSetTimerEx** 来对 *CustomTimerDpc* 例程进行排队，驱动程序的 ISR 同时从另一个具有相同 *Dpc* 指针的处理器调用 **KeInsertQueueDpc** 。 当处理器上的 IRQL 低于调度 \_ 级别或计时器间隔过期（以先达到的时间为准）时，将运行该 DPC 例程。 第一种方法是， *StartIo* 或 ISR 的一些必要工作只是由 DPC 例程丢弃。
 
 此外，具有不同功能的两个标准驱动程序例程使用的 DPC 比单独的 *CustomTimerDpc* 和 *CustomDpc* 例程具有更差的性能特征。 DPC 必须确定要执行的操作，具体取决于导致 *StartIo* 例程或 ISR 将操作排队的情况。 在 DPC 中测试这些条件会使用更多的 CPU 周期。
 

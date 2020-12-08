@@ -1,38 +1,37 @@
 ---
 title: 使用 __sdv_save_adapter_context 跟踪适配器上下文字段
 description: 使用 __sdv_save_adapter_context 跟踪适配器上下文字段
-ms.assetid: b43d7ef5-0464-4e07-a5ec-9d7d8a55479e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 05980287e270604da7d57d9eab5e8cdbbf8a1a7a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7ad2a1dd319e5a869a1457e25537a1ce672f7c8a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341653"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840771"
 ---
-# <a name="using-__sdv_save_adapter_context-to-track-adapter-context-fields"></a>使用\_ \_sdv\_保存\_适配器\_跟踪适配器上下文字段的上下文
+# <a name="using-__sdv_save_adapter_context-to-track-adapter-context-fields"></a>使用 \_ \_ sdv \_ 保存 \_ 适配器 \_ 上下文跟踪适配器上下文字段
 
 
-当 NDIS 调用微型端口驱动程序*MiniportInitializeEx*回调函数来初始化的微型端口适配器，该驱动程序将创建其自己的内部数据结构来表示微型端口适配器。 驱动程序将使用此结构称为*微型端口适配器上下文*、 维护驱动程序需要以管理微型端口适配器的特定于设备的状态信息。 该驱动程序将一个句柄传递给到 NDIS 此结构。
+当 NDIS 调用微型端口驱动程序的 *MiniportInitializeEx* 回调函数以初始化微型端口适配器时，驱动程序会创建自己的内部数据结构来表示微型端口适配器。 驱动程序使用此结构（称为 *微型端口适配器上下文*）来维护设备特定的状态信息，驱动程序需要此信息来管理微型端口适配器。 驱动程序将此结构的句柄传递到 NDIS。
 
-当 NDIS 调用微型端口驱动程序之一*MiniportXxx* NDIS 的微型端口适配器上下文传递标识正确的微型端口适配器添加到驱动程序微型端口适配器与相关的函数。 拥有和维护的微型端口驱动程序微型端口适配器上下文表示到 NDIS 和协议驱动程序不透明。
+当 NDIS 调用与微型端口适配器相关的微型端口驱动程序的 *MiniportXxx* 函数之一时，ndis 会将微型端口适配器上下文传递给驱动程序，以确定正确的微型端口适配器。 微型端口适配器上下文由微型端口驱动程序拥有和维护，并且对于 NDIS 和协议驱动程序是不透明的。
 
-微型端口适配器上下文维护 NDIS 调用之间的微型端口驱动程序的状态，因为 Static Driver Verifier (SDV) 必须能够确定指向此结构的指针。 若要启用 SDV 来跟踪状态的微型端口驱动程序，您必须使用将保存句柄到微型端口适配器上下文 **\_ \_sdv\_保存\_适配器\_上下文**函数。
+由于微型端口适配器上下文在 NDIS 调用之间维护微型端口驱动程序的状态，因此 (SDV) 的静态驱动程序验证程序必须能够识别指向此结构的指针。 若要使 SDV 能够跟踪微型端口驱动程序的状态，必须使用 **\_ \_ SDV \_ 保存 \_ 适配器 \_ 上下文** 函数将该句柄保存到微型端口适配器上下文。
 
-**\_\_Sdv\_保存\_适配器\_上下文** 函数具有以下语法：
+**\_ \_ Sdv \_ 保存 \_ 适配器 \_ 上下文** 函数具有以下语法：
 
 ```
 __sdv_save_adapter_context( &adapter_context ) 
 ```
 
-其中适配器\_上下文是由微型端口驱动程序定义的微型端口适配器上下文的句柄。 此函数应调用一次只能微型端口驱动程序的上下文中。
+其中，适配器 \_ 上下文是微型端口驱动程序定义的微型端口适配器上下文的句柄。 只应在微型端口驱动程序的上下文中调用此函数一次。
 
-**\_\_Sdv\_保存\_适配器\_上下文** 函数只能使用由静态分析工具。 编译器将忽略此函数。
+**\_ \_ Sdv \_ 保存 \_ 适配器 \_ 上下文** 函数仅由静态分析工具使用。 编译器将忽略此函数。
 
-下面的代码示例显示了何时调用\_ \_sdv\_保存\_适配器\_上下文和 SDV 如何将跟踪中的信息*微型端口适配器上下文*。
+下面的代码示例演示何时调用 \_ \_ sdv \_ 保存 \_ 适配器 \_ 上下文，以及 sdv 如何在 *微型端口适配器上下文* 中跟踪信息。
 
-下面的代码示例显示了一个简化的版的微型端口适配器上下文示例结构 MP\_适配器。
+下面的代码示例显示了小型端口适配器上下文示例结构 MP 适配器的简化版本 \_ 。
 
 ```
 typedef struct _MP_ADAPTER
@@ -47,9 +46,9 @@ typedef struct _MP_ADAPTER
 } MP_ADAPTER, *PMP_ADAPTER;
 ```
 
-在执行期间*MiniportInitializeEx*，将管理包的内存\_全名结构分配。 内存分配，紧跟 **\_ \_sdv\_保存\_适配器\_上下文**调用。
+在执行 *MiniportInitializeEx* 的过程中，将为 MP \_ 全名结构分配内存。 紧跟在内存分配之后，将调用 **\_ \_ sdv \_ 保存 \_ 适配器 \_ 上下文**。
 
-必须调用 **\_ \_sdv\_保存\_适配器\_上下文**函数只要有指向微型端口适配器上下文结构的有效指针。
+如果有指向微型端口适配器上下文结构的有效指针，则必须立即调用 **\_ \_ sdv \_ 保存 \_ 适配器 \_ 上下文** 函数。
 
 ```
 NDIS_STATUS 
@@ -91,7 +90,7 @@ MPInitialize(
    /* ..................... */
 ```
 
-下面的代码示例演示如何 SDV 跟踪微型端口适配器上下文中的值。 在此示例中，该驱动程序中断注册通过调用提供微型端口的函数， *MpRegisterInterrupt*。 如果调用成功，驱动程序会将结果保存到微型端口适配器上下文 (*pAdapter*) 字段中，InterruptRegistered。
+下面的代码示例演示了 SDV 如何跟踪微型端口适配器上下文中的值。 在此示例中，驱动程序通过调用微型端口提供的函数 *MpRegisterInterrupt* 来注册中断。 如果调用成功，驱动程序会将结果保存到小型端口适配器上下文中 (*pAdapter*) 字段 "InterruptRegistered"。
 
 ```
 //
@@ -107,7 +106,7 @@ MPInitialize(
         pAdapter->InterruptRegistered = TRUE;
 ```
 
-NDIS 微型端口驱动程序必须暂停，当调用的驱动程序*MiniportHaltEx*函数通过将该句柄传递给微型端口适配器上下文。 因为 SDV 也具有此句柄，从之前调用 **\_ \_sdv\_保存\_适配器\_上下文**，SDV 可以跟踪 InterruptRegistered 字段的值。
+当需要暂停微型端口驱动程序时，NDIS 会通过将句柄传递给微型端口适配器上下文来调用驱动程序的 *MiniportHaltEx* 函数。 由于 SDV 还具有此句柄，因此从前面调用 **\_ \_ SDV \_ 保存 \_ 适配器 \_ 上下文** 时，SDV 可以跟踪 InterruptRegistered 字段的值。
 
 ```
 VOID MPHalt(

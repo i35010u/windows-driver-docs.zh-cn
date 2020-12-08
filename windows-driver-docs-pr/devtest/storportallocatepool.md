@@ -1,7 +1,6 @@
 ---
 title: 'StorPortAllocatePool 规则 (storport) '
 description: 此规则验证微型端口是否不能尝试对已释放的缓冲区调用 StorPortFreePool。
-ms.assetid: DEE1768C-5BFF-4A8A-8AE9-9690FDA653C3
 ms.date: 05/21/2018
 keywords:
 - 'StorPortAllocatePool 规则 (storport) '
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8bb76a7b7165efa63f7ff0323ba3f236f9ba6906
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 763b4a9255ddac08366166daaa06e6c6a37db08e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104960"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841275"
 ---
 # <a name="storportallocatepool-rule-storport"></a>StorPortAllocatePool 规则 (storport) 
 

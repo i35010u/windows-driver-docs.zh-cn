@@ -1,15 +1,14 @@
 ---
 title: 通过可扩展交换机数据路径传输的数据包流
 description: 通过可扩展交换机数据路径传输的数据包流
-ms.assetid: 9236CE95-F959-445F-849F-14377EE91D19
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1686d8a53d4af4533d633ad3cb6fa606f305be12
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 2c53d9e4ae0ba6ee064340725ce04c9de63913ad
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207841"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840629"
 ---
 # <a name="packet-flow-through-the-extensible-switch-data-path"></a>通过可扩展交换机数据路径传输的数据包流
 
@@ -53,7 +52,7 @@ ms.locfileid: "89207841"
 
 2.  在 NDIS 6.40 (Windows Server 2012 R2) 及更高版本中，如果数据包是来自外部网络适配器的 NVGRE 数据包，则可扩展交换机会在数据包的带外 (OOB) 信息中设置 **NativeForwardingRequired** 标志。 有关详细信息，请参阅 [混合转发](hybrid-forwarding.md)。
 
-3.  如果数据包到达流量有虚拟子网的端口，则可扩展交换机为该数据包设置[**NDIS \_ 网络 \_ 缓冲区 \_ 列表 \_ 虚拟 \_ 子网 \_ 信息**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_net_buffer_list_virtual_subnet_info)结构的**VirtualSubnetId**成员。
+3.  如果数据包到达流量有虚拟子网的端口，则可扩展交换机为该数据包设置 [**NDIS \_ 网络 \_ 缓冲区 \_ 列表 \_ 虚拟 \_ 子网 \_ 信息**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_net_buffer_list_virtual_subnet_info)结构的 **VirtualSubnetId** 成员。
 
     **注意**  虚拟子网可以是 HNV 子网，也可以是第三方虚拟子网。
 

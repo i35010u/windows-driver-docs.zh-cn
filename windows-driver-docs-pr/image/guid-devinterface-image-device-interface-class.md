@@ -1,15 +1,14 @@
 ---
 title: GUID \_ DEVINTERFACE \_ 映像设备接口类
 description: GUID \_ DEVINTERFACE \_ 映像设备接口类
-ms.assetid: 2bf0bb35-c047-481e-a0f3-b8a8c06e259b
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ce2d151a3475d639b7fc72cd43fa0302780b1649
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 3eafa748280d4082654eea5f2a35c35d2ffa7067
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186479"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840093"
 ---
 # <a name="guid_devinterface_image-device-interface-class"></a>GUID \_ DEVINTERFACE \_ 映像设备接口类
 
@@ -43,7 +42,7 @@ ms.locfileid: "89186479"
 
 ### <a name="span-idheadersspanspan-idheadersspanheaders"></a><span id="headers"></span><span id="HEADERS"></span>只要
 
-在 *Wiaintfc*中定义。 包括 *Wiaintfc。*
+在 *Wiaintfc* 中定义。 包括 *Wiaintfc。*
 
 ### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>提出
 

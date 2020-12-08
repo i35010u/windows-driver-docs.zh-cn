@@ -1,7 +1,6 @@
 ---
 title: D3DKMT \_ WDDM \_ 2 \_ 0 \_ cap 结构
 description: 了解 D3DKMT \_ WDDM \_ 2 \_ 0 \_ cap 结构，它保留供系统使用。 请勿在您的驱动程序中使用。
-ms.assetid: 90D2398F-C474-4D58-9EA2-5823E366E1C7
 keywords:
 - D3DKMT_WDDM_2_0_CAPS 结构显示设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: aaa79ade58e87d033e02407c896cab3dfa800ff0
-ms.sourcegitcommit: fc94eb0d5a41ef81c1b3ab91ad725386db0be0c2
+ms.openlocfilehash: 92468dcd7d2e13e188ffd12d84c1f2ae4cc2376d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91603543"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841003"
 ---
 # <a name="d3dkmt_wddm_2_0_caps-structure"></a>D3DKMT \_ WDDM \_ 2 \_ 0 \_ cap 结构
 
@@ -38,7 +37,7 @@ typedef struct _D3DKMT_WDDM_2_0_CAPS {
       UINT IoMmuSupported  :1;
       UINT Reserved  :29;
     };
-    UINT   Value;
+    UINT   Value;
   };
 } D3DKMT_WDDM_2_0_CAPS;
 ```
@@ -52,9 +51,9 @@ typedef struct _D3DKMT_WDDM_2_0_CAPS {
 
 **IoMmuSupported**
 
-**保护**
+Reserved 
 
-**值**
+值
 
 <a name="requirements"></a>要求
 ------------
@@ -71,7 +70,7 @@ typedef struct _D3DKMT_WDDM_2_0_CAPS {
 </tr>
 <tr class="even">
 <td align="left"><p>最低受支持的服务器</p></td>
-<td align="left"><p>Windows Server 2016</p></td>
+<td align="left"><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>标头</p></td>

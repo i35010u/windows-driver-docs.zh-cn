@@ -1,19 +1,18 @@
 ---
 title: 序列化的 NDIS 微型端口驱动程序
 description: 序列化的 NDIS 微型端口驱动程序
-ms.assetid: 6b9b94ad-5d5d-465a-90bc-47095f6e2b9c
 keywords:
 - 微型端口驱动程序 WDK 网络，类型
 - NDIS 微型端口驱动程序 WDK，类型
 - 序列化 NDIS 微型端口驱动程序 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c9b33ed6df22ca4c66393d682498a03fb907feff
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 42fec7d221c61eaca08a8e7e09e214fa58f0e1c6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214446"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839431"
 ---
 # <a name="serialized-ndis-miniport-drivers"></a>序列化的 NDIS 微型端口驱动程序
 

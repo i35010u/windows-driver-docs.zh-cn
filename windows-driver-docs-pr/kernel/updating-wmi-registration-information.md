@@ -1,7 +1,6 @@
 ---
 title: 更新 WMI 注册信息
 description: 更新 WMI 注册信息
-ms.assetid: d24688e5-bb50-4bce-a4d4-4a3bf886f86d
 keywords:
 - WMI WDK 内核，用 WMI 注册
 - 注册 WMI 数据提供程序
@@ -13,12 +12,12 @@ keywords:
 - 正在更新 WMI 注册信息
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ffd2a9dbbb95f4f7ce557e1ad64ed54e4f27060
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 50a89db5da148dbbdec8c3a3252fd2515665a190
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187146"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840681"
 ---
 # <a name="updating-wmi-registration-information"></a>更新 WMI 注册信息
 

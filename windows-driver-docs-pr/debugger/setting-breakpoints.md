@@ -1,17 +1,16 @@
 ---
 title: 设置断点
 description: 设置断点
-ms.assetid: 9715c35a-0c8c-4e89-be28-2899f21ec964
 keywords:
 - 调试器引擎 API，设置断点
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2200a7c0ede72dca5f022f4fd1b8008f3e6c5a06
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e836d0efaf93ce4cc79caf6c32f7a36a7d3700bf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216020"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840201"
 ---
 # <a name="setting-breakpoints"></a>设置断点
 
@@ -23,7 +22,7 @@ ms.locfileid: "89216020"
 
 通过 [**了 removebreakpoint 时**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-removebreakpoint) 方法删除断点。 此操作还会删除 **IDebugBreakpoint** 对象;此对象不能再次使用。
 
-**注意**   尽管**IDebugBreakpoint**实现**iunknown**接口，但不使用方法**IUnknown：： AddRef**和**IUnknown：： Release**来控制断点的生存期。 这些方法不会影响断点的生存期。 相反，在调用方法[**了 removebreakpoint 时**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-removebreakpoint)后， **IDebugBreakpoint**对象将被删除。
+**注意**   尽管 **IDebugBreakpoint** 实现 **iunknown** 接口，但不使用方法 **IUnknown：： AddRef** 和 **IUnknown：： Release** 来控制断点的生存期。 这些方法不会影响断点的生存期。 相反，在调用方法 [**了 removebreakpoint 时**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-removebreakpoint)后， **IDebugBreakpoint** 对象将被删除。
 
  
 

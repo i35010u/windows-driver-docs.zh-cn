@@ -1,15 +1,14 @@
 ---
 title: 所有 WIA 微型驱动程序的属性
 description: 所有 WIA 微型驱动程序的属性
-ms.assetid: ba85dbbd-2333-4f4f-b12a-84985773eef6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b3320888b76b54c00778268d484958254599dbbf
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 8c90202eff9bfc8b78c7b1af26ba9d377c57a329
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192605"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841069"
 ---
 # <a name="properties-for-all-wia-minidrivers"></a>所有 WIA 微型驱动程序的属性
 

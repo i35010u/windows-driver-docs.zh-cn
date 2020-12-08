@@ -1,7 +1,6 @@
 ---
 title: 'StorPortSpinLock 规则 (storport) '
 description: 此规则验证通过 StorPortReleaseSpinLock 获取的锁定是否立即通过发布。
-ms.assetid: B7B918A0-3042-4961-8D33-EFDC15819D1F
 ms.date: 05/21/2018
 keywords:
 - 'StorPortSpinLock 规则 (storport) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 934389d479497b7848ed403340ed7d858ea19f22
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 6a1735292098b66d2206c11cfabee5729e51a2c0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105226"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840781"
 ---
 # <a name="storportspinlock-rule-storport"></a>StorPortSpinLock 规则 (storport) 
 
 
-此规则验证通过 StorPortReleaseSpinLock 获取的**锁定是否立即通过** **StorPortReleaseSpinLock**发布。 如果小型小型驱动程序尝试获取已获取的锁定，或者尝试释放尚未获取的锁定，则该规则将无法使用该规则。 此外，在调度或取消例程结束时，驱动程序不应持有任何自旋锁。
+此规则验证通过 StorPortReleaseSpinLock 获取的 **锁定是否立即通过** **StorPortReleaseSpinLock** 发布。 如果小型小型驱动程序尝试获取已获取的锁定，或者尝试释放尚未获取的锁定，则该规则将无法使用该规则。 此外，在调度或取消例程结束时，驱动程序不应持有任何自旋锁。
 
 **驱动程序模型： Storport**
 

@@ -1,7 +1,6 @@
 ---
 title: 处理保护级别
 description: 处理保护级别
-ms.assetid: d8237a48-9e1c-4b9e-8f55-70820ff08460
 keywords:
 - 复制保护 WDK COPP，保护级别
 - 视频副本保护 WDK COPP，保护级别
@@ -9,12 +8,12 @@ keywords:
 - 受保护的视频 WDK COPP，保护级别
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aa4142822239c5f28274d6f55090e617f92cdb62
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: ae783c0205dde6a8823073a82ae68551029e0611
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715324"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839109"
 ---
 # <a name="handling-protection-levels"></a>处理保护级别
 
@@ -34,7 +33,7 @@ ms.locfileid: "90715324"
 
 当全局引用计数器大于0时，视频微型端口驱动程序应将内容保护应用到输出连接器。 一旦全局引用计数器达到0，视频微型端口驱动程序就会删除输出连接器的内容保护。 只要显示驱动程序收到对其 [*DdMoCompDestroy*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_mocompcb_destroy) 回调 (函数的调用，则视频微型端口驱动程序将收到对其 [*COPPCloseVideoSession*](./coppclosevideosession.md) 函数的调用) ，视频微型端口驱动程序应将全局引用计数器降低 COPP 设备的本地引用计数器的当前级别。 如果连接器的全局引用计数器达到0，则视频微型端口驱动程序应仅从认证的输出连接器中删除内容保护。
 
-**注意**   当 COPP 设备的本地引用计数器仍设置为大于 0 (例如，如果用户模式进程异常终止) ，则可能会调用*DdMoCompDestroy*函数。
+**注意**   当 COPP 设备的本地引用计数器仍设置为大于 0 (例如，如果用户模式进程异常终止) ，则可能会调用 *DdMoCompDestroy* 函数。
 
  
 

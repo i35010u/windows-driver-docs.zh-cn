@@ -1,7 +1,6 @@
 ---
 title: 安全标识符
 description: 安全标识符
-ms.assetid: e4c39d83-6f32-406c-b8d5-d41305a8976f
 keywords:
 - 安全描述符 WDK 文件系统、安全标识符
 - 描述符文件系统、安全标识符
@@ -10,12 +9,12 @@ keywords:
 - 众所周知的标识符 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 22a789c09ddaf8028fdf584cf650c90dea841669
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: ed84e12678e9adf9551671ee1f4399b56c379e50
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065930"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839921"
 ---
 # <a name="security-identifier"></a>安全标识符
 
@@ -35,9 +34,9 @@ Windows 将安全标识符用作权威性值，以区分不同的安全实体。
 
 -   [**SecMakeSPN**](/previous-versions/ff556584(v=vs.85))-创建可在与特定安全服务提供程序通信时使用的服务提供程序名称字符串。
 
--   [**SecMakeSPNEx**](/previous-versions/ff556585(v=vs.85))— **SecMakeSPN**的扩充版本。 此功能在 Microsoft Windows XP 和更高版本的 Windows 上可用。
+-   [**SecMakeSPNEx**](/previous-versions/ff556585(v=vs.85))— **SecMakeSPN** 的扩充版本。 此功能在 Microsoft Windows XP 和更高版本的 Windows 上可用。
 
--   [**SecMakeSPNEx2**](/previous-versions/ff556592(v=vs.85))— **SecMakeSPNEx**的扩充版本。 此功能在 Windows Vista、Windows Server 2008 和更高版本的 Windows 上可用。
+-   [**SecMakeSPNEx2**](/previous-versions/ff556592(v=vs.85))— **SecMakeSPNEx** 的扩充版本。 此功能在 Windows Vista、Windows Server 2008 和更高版本的 Windows 上可用。
 
 -   [**SecLookupAccountSid**](/previous-versions/ff556579(v=vs.85))—给定 SID 后，此例程将返回帐户名称。 此功能在 Windows XP 和更高版本上可用。
 

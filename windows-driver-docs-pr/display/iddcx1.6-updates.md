@@ -1,7 +1,6 @@
 ---
 title: IddCx 版本1.6 及更高版本的更新
 description: 适用于控制台和远程间接显示驱动程序的 IddCx 版本1.6 更新
-ms.assetid: 41e9f99f-2466-47df-893a-3cd7c1b5ed10
 ms.date: 10/20/2020
 keywords:
 - 控制台和远程间接显示驱动程序，IddCx 版本1.6 及更高版本
@@ -11,12 +10,12 @@ keywords:
 - 远程间接显示驱动程序
 - 远程 IDD
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ad422212e694ef41876fa4f11ac328172e98803
-ms.sourcegitcommit: ccc02001d4fb018e1da01616c98e9fa1dd0878e3
+ms.openlocfilehash: cd494663277f55a12af225f0db6abdd3c7a09615
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93425241"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839601"
 ---
 # <a name="updates-for-iddcx-versions-16-and-later"></a>IddCx 版本1.6 及更高版本的更新
 
@@ -42,7 +41,7 @@ Windows 10 上的 [**IddCxGetVersion**](/windows-hardware/drivers/ddi/iddcx/nf-i
 
   在分配新的存在时，驱动程序必须决定 IddCxSwapChainReleaseAndAcquireBuffer IddCxSwapChainReleaseAndAcquireSystemBuffer 的哪一种 **IddCxSwapChainReleaseAndAcquireBuffer** / **IddCxSwapChainReleaseAndAcquireSystemBuffer** ，并在该存在的其余部分继续使用该变体。 若要确定，驱动程序应考虑其特定要求和调用 [**IddCxSwapChainInSystemMemory**](/windows-hardware/drivers/ddi/iddcx/nf-iddcx-iddcxswapchaininsystemmemory)的结果。 如果驱动程序发生以下情况，则驱动程序将导致操作系统错误检测 UMDF 进程：
 
-  * 调用 **IddCxSwapChainReleaseAndAcquireSystemBuffer** IddCxSwapChainReleaseAndAcquireBuffer 的其他变体 / **IddCxSwapChainReleaseAndAcquireBuffer** 。
+  * 调用 **IddCxSwapChainReleaseAndAcquireSystemBuffer** IddCxSwapChainReleaseAndAcquireBuffer 的其他变体 / **IddCxSwapChainReleaseAndAcquireBuffer**。
   * 当 **IddCxSwapChainInSystemMemory** 返回 false 时调用 **IddCxSwapChainReleaseAndAcquireSystemBuffer** 。
 
 建议但不要求驱动程序使用这些回调函数。 IddCx 1.6 之前的行为仍然受支持。

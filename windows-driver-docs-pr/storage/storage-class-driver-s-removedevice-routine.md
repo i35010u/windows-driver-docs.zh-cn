@@ -1,18 +1,17 @@
 ---
 title: 存储类驱动程序的 RemoveDevice 例程
 description: 存储类驱动程序的 RemoveDevice 例程
-ms.assetid: fbcbfbab-676a-43d3-aa63-0ea5e5f265d2
 keywords:
 - RemoveDevice
 - 查询-删除请求 WDK 存储
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 20d122765dfbfbd15b69b655acb1c90e1b913d7d
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 66ae67533544e54a44854fd788124a955cf344e0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732755"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839981"
 ---
 # <a name="storage-class-drivers-removedevice-routine"></a>存储类驱动程序的 RemoveDevice 例程
 

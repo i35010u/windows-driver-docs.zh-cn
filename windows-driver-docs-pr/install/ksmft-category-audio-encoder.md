@@ -1,7 +1,6 @@
 ---
 title: KSMFT_CATEGORY_AUDIO_ENCODER
 description: KSMFT_CATEGORY_AUDIO_ENCODER
-ms.assetid: b8be392e-6211-46ba-8b99-edcccb7ef8fb
 keywords:
 - KSMFT_CATEGORY_AUDIO_ENCODER 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 39079a722c794d5d0f7a9c3fbe0167a0996f4a41
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 021efdcb3d28b6d7c13459ea0305ca0f8bf4278c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097335"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839507"
 ---
 # <a name="ksmft_category_audio_encoder"></a>KSMFT_CATEGORY_AUDIO_ENCODER
 

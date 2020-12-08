@@ -1,7 +1,6 @@
 ---
 title: 支持电话服务的 CoNDIS WAN 操作
 description: 支持电话服务的 CoNDIS WAN 操作
-ms.assetid: 698d7667-8620-4f98-aa57-e48195f612e3
 keywords:
 - CoNDIS WAN 驱动程序 WDK 网络，telephonic 服务
 - telephonic services WDK WAN
@@ -12,12 +11,12 @@ keywords:
 - TAPI WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ef193d7ca509baa4508768507cae3288fc76a4c
-ms.sourcegitcommit: 366a15d68eb58d01a8ca6de7b982f62ac8b7deaf
+ms.openlocfilehash: 808fe1400dbff8443716252c0c954c34117c1f1b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/19/2020
-ms.locfileid: "90812022"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840659"
 ---
 # <a name="condis-wan-operations-that-support-telephonic-services"></a>支持电话服务的 CoNDIS WAN 操作
 

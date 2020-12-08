@@ -1,7 +1,6 @@
 ---
 title: rdmsr（读取 MSR）
-description: Rdmsr 命令从指定的地址读取 (MSR) 值的模型特定寄存器。
-ms.assetid: 693f1be5-f215-4719-ae6f-30e367cefd77
+description: Rdmsr 命令读取 Model-Specific 从指定的地址 (MSR) 值注册。
 keywords:
 - rdmsr (读取 MSR) Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5130d612f93702490915bd942c3b5f874fee4693
-ms.sourcegitcommit: bb3b62a57ba3aea4a0adeefd2d81993367b7b334
+ms.openlocfilehash: 18e6c51678bf36fd84fe6c3c52abeb186b612269
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88148405"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839793"
 ---
 # <a name="rdmsr-read-msr"></a>rdmsr（读取 MSR）
 
 
-**Rdmsr**命令从指定的地址读取[ (MSR) 值的模型特定寄存器](other-data-spaces.md)。
+**Rdmsr** 命令从指定的地址读取 [ (MSR) 值的模型特定寄存器](other-data-spaces.md)。
 
 ```dbgcmd
 rdmsr Address 
@@ -52,7 +51,7 @@ rdmsr Address
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>
-<td align="left"><p>All</p></td>
+<td align="left"><p>全部</p></td>
 </tr>
 </tbody>
 </table>
@@ -62,7 +61,7 @@ rdmsr Address
 <a name="remarks"></a>备注
 -------
 
-**Rdmsr**命令可在基于 x86 和基于 x64 的平台上显示 MSR。 MSR 定义是特定于平台的。
+**Rdmsr** 命令可在基于 x86 和基于 x64 的平台上显示 MSR。 MSR 定义是特定于平台的。
 
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 

@@ -1,17 +1,16 @@
 ---
 title: OID_CO_AF_CLOSE
 description: 本主题介绍) OID_CO_AF_CLOSE 对象标识符 (OID。
-ms.assetid: 451ab9d5-e118-41c9-8d16-02d75a25a1d4
 keywords:
 - OID_CO_AF_CLOSE
 ms.date: 11/03/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: be3e4fdbe1c2658f01b3e952163e178789060c09
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b8b001a334d26e0a15355ab087004a9bf9ff44e7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214650"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840003"
 ---
 # <a name="oid_co_af_close"></a>OID_CO_AF_CLOSE
 

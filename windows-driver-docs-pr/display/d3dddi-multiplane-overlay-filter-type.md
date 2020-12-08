@@ -1,7 +1,6 @@
 ---
 title: D3DDDI \_ MULTIPLANE \_ 覆盖 \_ 筛选器 \_ 类型枚举
 description: 了解 D3DDDI \_ MULTIPLANE \_ 覆盖 \_ 筛选器 \_ 类型枚举，它是为系统使用而保留的。 不要在您的驱动程序中使用它。
-ms.assetid: ceca0ed8-7d46-45e1-86cb-3d0506d26328
 keywords:
 - D3DDDI_MULTIPLANE_OVERLAY_FILTER_TYPE 枚举显示设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 764d1c920e1a3e2d58d073dc89e4fae17b943180
-ms.sourcegitcommit: fc94eb0d5a41ef81c1b3ab91ad725386db0be0c2
+ms.openlocfilehash: e4fecdb64020b3984635757384d5552d8f9a9441
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91603665"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839647"
 ---
 # <a name="d3dddi_multiplane_overlay_filter_type-enumeration"></a>D3DDDI \_ MULTIPLANE \_ 覆盖 \_ 筛选器 \_ 类型枚举
 
@@ -27,7 +26,7 @@ ms.locfileid: "91603665"
 预留给系统使用。 不要在您的驱动程序中使用它。
 
 > [!NOTE]
-> 此结构仅在随 windows 8) 版本8随附的 Windows 驱动程序工具包 (的 D3dumddi 标头中提供。 它已从标头的更高版本中删除。
+> 此结构仅在随 windows 8) 版本8随附的 Windows 驱动程序工具包 (的 D3dumddi 标头中提供。 它已从标头的更高版本中删除。
 
  
 
@@ -36,11 +35,11 @@ ms.locfileid: "91603665"
 
 ```ManagedCPlusPlus
 typedef enum _D3DDDI_MULTIPLANE_OVERLAY_FILTER_TYPE {
-  D3DDDI_MULTIPLANE_OVERLAY_FILTER_CAPS_BRIGHTNESS       = 0x1,
-  D3DDDI_MULTIPLANE_OVERLAY_FILTER_CAPS_CONTRAST         = 0x2,
-  D3DDDI_MULTIPLANE_OVERLAY_FILTER_CAPS_HUE              = 0x4,
-  D3DDDI_MULTIPLANE_OVERLAY_FILTER_CAPS_SATURATION       = 0x8,
-  D3DDDI_MULTIPLANE_OVERLAY_FILTER_CAPS_STRETCH_QUALITY  = 0x10
+  D3DDDI_MULTIPLANE_OVERLAY_FILTER_CAPS_BRIGHTNESS       = 0x1,
+  D3DDDI_MULTIPLANE_OVERLAY_FILTER_CAPS_CONTRAST         = 0x2,
+  D3DDDI_MULTIPLANE_OVERLAY_FILTER_CAPS_HUE              = 0x4,
+  D3DDDI_MULTIPLANE_OVERLAY_FILTER_CAPS_SATURATION       = 0x8,
+  D3DDDI_MULTIPLANE_OVERLAY_FILTER_CAPS_STRETCH_QUALITY  = 0x10
 } D3DDDI_MULTIPLANE_OVERLAY_FILTER_TYPE;
 ```
 

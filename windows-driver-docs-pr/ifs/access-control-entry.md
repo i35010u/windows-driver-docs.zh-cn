@@ -1,7 +1,6 @@
 ---
 title: 访问控制项
 description: 访问控制项
-ms.assetid: 4dc72f43-e5a7-441d-8586-f8893b9c1084
 keywords:
 - 安全描述符 WDK 文件系统，访问控制项
 - 描述符文件系统、访问控制项
@@ -11,12 +10,12 @@ keywords:
 - Sid WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eebdd3c308b1b5189ac9eeba239c859ca341c774
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 0b73311e7efbefd74568f980db5d42c9b7750b98
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066266"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839559"
 ---
 # <a name="access-control-entry"></a>访问控制项
 

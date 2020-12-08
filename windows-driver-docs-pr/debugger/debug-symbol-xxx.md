@@ -1,7 +1,6 @@
 ---
 title: 调试 \_ 符号 \_ XXX
 description: DEBUG \_ 符号 \_ XXX 常量用于符号标志位集。 符号标志描述符号组中符号) 部分 (。
-ms.assetid: de1988f8-6a4d-43a3-856a-0543ecaaf06f
 ms.date: 12/07/2017
 topic_type:
 - apiref
@@ -17,19 +16,19 @@ api_location:
 api_type:
 - HeaderDef
 ms.localizationpriority: medium
-ms.openlocfilehash: bbbc9b656d822d87678ddfeb4f7d90e73ae9d1d0
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 429ad5a94acaf12635a232bef13a0b5265caf05f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213037"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838827"
 ---
 # <a name="debug_symbol_xxx"></a>调试 \_ 符号 \_ XXX
 
 
-DEBUG \_ 符号 \_ *XXX*常量用于符号标志位集。 符号标志描述符号组中符号) 部分 (。
+DEBUG \_ 符号 \_ *XXX* 常量用于符号标志位集。 符号标志描述符号组中符号) 部分 (。
 
-符号标志的最小有效位-在 "调试符号展开级别掩码" 中找到的位数 \_ \_ \_ \_ ，表示符号组内符号的展开深度。 子符号的深度始终比其父符号的深度多一个。 例如，若要查找其标志包含在变量 *标志*中的符号深度，请使用以下语句：
+符号标志的最小有效位-在 "调试符号展开级别掩码" 中找到的位数 \_ \_ \_ \_ ，表示符号组内符号的展开深度。 子符号的深度始终比其父符号的深度多一个。 例如，若要查找其标志包含在变量 *标志* 中的符号深度，请使用以下语句：
 
 ```dbgcmd
 depth = flags & DEBUG_SYMBOL_EXPANSION_LEVEL_MASK;
@@ -45,7 +44,7 @@ depth = flags & DEBUG_SYMBOL_EXPANSION_LEVEL_MASK;
 <thead>
 <tr class="header">
 <th align="left">返回的常量</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x12C EXFAT_FILE_SYSTEM
-description: EXFAT_FILE_SYSTEM bug 检查具有 0x0000012C 值。 此 bug 检查指示扩展文件分配表 (exFAT) 文件系统中出现问题。
-ms.assetid: f55bbe88-d96f-494f-b84b-eda7c4e6bdfc
+description: EXFAT_FILE_SYSTEM bug 检查的值为0x0000012C。 此 bug 检查指示扩展文件分配表中出现问题 (exFAT) 文件系统。
 keywords:
 - Bug 检查 0x12C EXFAT_FILE_SYSTEM
 - EXFAT_FILE_SYSTEM
@@ -13,23 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9125cfe867d2898903fde5928764f158148d1ad6
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 01e755e6386a3ca3214f86c13b836e47b05a84e5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67520645"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839961"
 ---
-# <a name="bug-check-0x12c-exfatfilesystem"></a>Bug 检查 0x12C：EXFAT\_FILE\_SYSTEM
+# <a name="bug-check-0x12c-exfat_file_system"></a>Bug 检查0x12C： EXFAT \_ 文件 \_ 系统
 
 
-EXFAT\_文件\_检查系统错误的值为 0x0000012C。 此 bug 检查指示扩展文件分配表 (exFAT) 文件系统中出现问题。
+EXFAT \_ 文件 \_ 系统 bug 检查的值为0x0000012C。 此 bug 检查指示扩展文件分配表中出现问题 (exFAT) 文件系统。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="exfatfilesystem-parameters"></a>EXFAT\_文件\_系统参数
+## <a name="exfat_file_system-parameters"></a>EXFAT \_ 文件 \_ 系统参数
 
 
 <table>
@@ -46,15 +45,15 @@ EXFAT\_文件\_检查系统错误的值为 0x0000012C。 此 bug 检查指示扩
 <tbody>
 <tr class="odd">
 <td align="left"><p>1</p></td>
-<td align="left"><p>指定源代码文件和行号信息。 高 16 位 （"0x"后的前四个十六进制数） 确定按标识符号的源文件。 低 16 位确定发生错误检查的文件中的源行。</p></td>
+<td align="left"><p>指定源文件和行号信息。 高16位 ("0x" 后的前四个十六进制数字 ) 按其标识符号确定源文件。 低16位确定文件中发生错误检查的源行。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
-<td align="left"><p>如果<strong>FppExceptionFilter</strong>是在堆栈上，此参数指定的地址的异常记录。</p></td>
+<td align="left"><p>如果 <strong>FppExceptionFilter</strong> 位于堆栈上，则此参数指定异常记录的地址。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>3</p></td>
-<td align="left"><p>如果<strong>FppExceptionFilter</strong>是在堆栈上，此参数指定的上下文记录的地址。</p></td>
+<td align="left"><p>如果 <strong>FppExceptionFilter</strong> 位于堆栈上，则此参数指定上下文记录的地址。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>4</p></td>
@@ -68,12 +67,12 @@ EXFAT\_文件\_检查系统错误的值为 0x0000012C。 此 bug 检查指示扩
 <a name="cause"></a>原因
 -----
 
-此 bug 检查是由文件系统在最后迫不得已时引起其内部记帐处于不支持状态，若要继续会带来较大的数据丢失风险。 上的磁盘结构损坏、 磁盘扇区陷入困境，或内存分配失败时，文件系统永远不会导致此 bug 检查。 扇区损坏导致的 bug 检查，例如，内核代码中会发生页面故障或数据和内存管理器无法读取页时。 但是，对于此 bug 检查，文件系统不是原因。
+此 bug 检查是由文件系统在其内部记帐处于似乎状态时作为最后一种手段引起的，并且继续会导致数据丢失的风险大。 当磁盘结构损坏、磁盘扇区损坏或内存分配失败时，文件系统永远不会导致此错误检查。 坏扇区可能导致错误检查，例如，当内核代码或数据中出现页面错误时，内存管理器无法读取页面。 但对于此错误检查，文件系统不是原因。
 
-<a name="resolution"></a>分辨率
+<a name="resolution"></a>解决方法
 ----------
 
-**若要调试此问题：** 使用[ **.cxr （显示上下文记录）** ](-cxr--display-context-record-.md)命令以及参数 3，并使用[ **kb （显示堆栈回溯）** ](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)。
+**若要调试此问题：** 使用 [**.cxr (显示上下文记录)**](-cxr--display-context-record-.md) 命令以及参数3，然后使用 [**Kb (显示 Stack Backtrace)**](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)。
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: 从提供程序模块分离客户端模块
 description: 从提供程序模块分离客户端模块
-ms.assetid: 148c1a90-0fef-4b22-bf7e-f35285f1bc55
 keywords:
 - 客户端模块 WDK 网络模块注册器，分离
 - NmrDeregisterClient
@@ -11,12 +10,12 @@ keywords:
 - NMR WDK，分离网络模块
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f1eba56ad8842a5da20043e8fa1212a7655a44c9
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 2683bbb597cde3a33297fa6bfa7e203c3327bcab
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218428"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839037"
 ---
 # <a name="detaching-a-client-module-from-a-provider-module"></a>从提供程序模块分离客户端模块
 
@@ -25,7 +24,7 @@ ms.locfileid: "89218428"
 
 此外，每当通过调用 [**NmrDeregisterProvider**](/windows-hardware/drivers/ddi/netioddk/nf-netioddk-nmrderegisterprovider) 函数将客户端模块附加到的提供程序模块与 NMR 注销时，NMR 还会调用客户端模块的 [*ClientDetachProvider*](/windows-hardware/drivers/ddi/netioddk/nc-netioddk-npi_client_detach_provider_fn) 回调函数，以便客户端模块可以在提供程序模块的注销过程中将其自身与提供程序模块分离。
 
-调用 [*ClientDetachProvider*](/windows-hardware/drivers/ddi/netioddk/nc-netioddk-npi_client_detach_provider_fn) 回调函数之后，客户端模块不能对任何提供程序模块的网络编程接口进行进一步调用， [ (NPI) ](network-programming-interface.md) 函数。 如果在调用客户端模块的 *ClientDetachProvider* 回调函数时，未对任何提供程序模块的 NPI 函数进行正在进行的调用，则 *ClientDetachProvider* 回调函数应返回状态 " \_ 成功"。
+调用 [*ClientDetachProvider*](/windows-hardware/drivers/ddi/netioddk/nc-netioddk-npi_client_detach_provider_fn) 回调函数之后，客户端模块不能对任何提供程序模块的网络编程接口进行进一步调用， [ (NPI)](network-programming-interface.md) 函数。 如果在调用客户端模块的 *ClientDetachProvider* 回调函数时，未对任何提供程序模块的 NPI 函数进行正在进行的调用，则 *ClientDetachProvider* 回调函数应返回状态 " \_ 成功"。
 
 如果在调用客户端模块的 [*ClientDetachProvider*](/windows-hardware/drivers/ddi/netioddk/nc-netioddk-npi_client_detach_provider_fn) 回调函数时，正在对一个或多个提供程序模块的 NPI 函数进行正在进行的调用，则 *ClientDetachProvider* 回调函数应返回状态 " \_ 挂起"。 在这种情况下，当对提供程序模块的 NPI 函数的所有正在进行的调用都完成之后，客户端模块必须调用 [**NmrClientDetachProviderComplete**](/windows-hardware/drivers/ddi/netioddk/nf-netioddk-nmrclientdetachprovidercomplete) 函数。 对 **NmrClientDetachProviderComplete** 的调用通知 NMR 提供程序模块的客户端模块的分离已完成。
 

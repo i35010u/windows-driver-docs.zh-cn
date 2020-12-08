@@ -1,7 +1,6 @@
 ---
 title: 'SpinlockDpc 规则 (kmdf) '
 description: SpinlockDpc 规则指定在严格替换中使用对 KeAcquireSpinLock、KeAcquireSpinLockRaiseToDpc 和 KeReleaseSpinlock 的调用。
-ms.assetid: 77DA365C-7717-45B6-B8AD-9686B880AB50
 ms.date: 05/21/2018
 keywords:
 - 'SpinlockDpc 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d0c4d8aed57215ce2d1e1cbc680a6e5ff0f6de56
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e7d85902ae6d89c4cd50368331219fbfff36a345
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105746"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840811"
 ---
 # <a name="spinlockdpc-rule-kmdf"></a>SpinlockDpc 规则 (kmdf) 
 
 
-**SpinlockDpc**规则指定在严格替换中使用对[**KeAcquireSpinLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlock) 、 [**KeAcquireSpinLockRaiseToDpc**](/previous-versions/windows/hardware/drivers/ff551928(v=vs.85))和[**KeReleaseSpinlock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasespinlock)的调用。
+**SpinlockDpc** 规则指定在严格替换中使用对 [**KeAcquireSpinLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlock) 、 [**KeAcquireSpinLockRaiseToDpc**](/previous-versions/windows/hardware/drivers/ff551928(v=vs.85))和 [**KeReleaseSpinlock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasespinlock)的调用。
 
 **驱动程序模型： KMDF**
 

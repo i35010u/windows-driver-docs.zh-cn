@@ -1,7 +1,6 @@
 ---
 title: 驱动程序中的访问控制
 description: 驱动程序通过访问控制保护自身免受不正当的访问。
-ms.assetid: 7f87276f-4014-4b37-b051-4bf02acbf575
 keywords:
 - 安全 WDK 文件系统，最大限度地减少威胁
 - access control WDK 文件系统
@@ -10,12 +9,12 @@ keywords:
 - 检查安全性
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 83479adf592748087011db9cb15f5fb12f6e0d9e
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: e6ff988fb642df330f5a58a3794ac29993a61004
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066256"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839550"
 ---
 # <a name="access-control-in-a-driver"></a>驱动程序中的访问控制
 

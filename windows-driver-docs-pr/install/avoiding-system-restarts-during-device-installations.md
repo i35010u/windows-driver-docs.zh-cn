@@ -1,22 +1,21 @@
 ---
 title: 避免在设备安装和驱动程序更新过程中重新启动
 description: 在设备安装和驱动程序更新过程中避免系统重启
-ms.assetid: b30c9e5f-85af-4e7f-81aa-67fe2df8a178
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7489e0ebec6042bd371af11c8f66c845e6337ae6
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: ab851cea1cd508a30a0d9887bd6065ec5b7a7d47
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717554"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839905"
 ---
 # <a name="avoiding-system-restarts-during-device-installations-and-driver-updates"></a>在设备安装和驱动程序更新过程中避免系统重启
 
 
 若要在设备安装过程中避免系统重启，请使用以下规则：
 
--   请勿在[**INF DDInstall 部分**](inf-ddinstall-section.md)中使用 "**重新启动**" 或 "**重新启动**" 条目。 这些指令最初是为与 Windows 9x/Me 兼容而提供的，不应用于 Windows 2000 和更高版本的 Windows。
+-   请勿在 [**INF DDInstall 部分**](inf-ddinstall-section.md)中使用 "**重新启动**" 或 "**重新启动**" 条目。 这些指令最初是为与 Windows 9x/Me 兼容而提供的，不应用于 Windows 2000 和更高版本的 Windows。
 
 -   除非绝对必要，否则不要使用 COPYFLG_FORCE_FILE_IN_USE 或使用 [**INF CopyFiles 指令**](inf-copyfiles-directive.md)COPYFLG_REPLACE_BOOT_FILE 标志。
 
@@ -59,8 +58,8 @@ ms.locfileid: "90717554"
 3.  如果 INF 不适用于 PnP 驱动程序，并且使用 [**InstallHInfSection**](/windows/win32/api/setupapi/nf-setupapi-installhinfsectiona) 等方法来处理 inf，则手动停止并重新启动该驱动程序：
     -   关闭驱动程序的所有打开的句柄，然后使用以下内容之一停止驱动程序：
 
-        -   **sc.exe 停止** * &lt; mydriver &gt; *
-        -   **Control 服务 (SERVICE_CONTROL_STOP) **
+        -   **sc.exe 停止** *&lt; mydriver &gt;*
+        -   **Control 服务 (SERVICE_CONTROL_STOP)**
 
         有关详细信息，请参阅 [**control 服务函数**](/windows/win32/api/winsvc/nf-winsvc-controlservice)。
 

@@ -1,15 +1,14 @@
 ---
 title: 停止运行保护
 description: 从 Windows XP 开始，内核模式驱动程序提供了运行时保护。 驱动程序可以使用运行时保护来安全地访问共享系统内存中的对象，这些对象由另一个内核模式驱动程序创建和删除。
-ms.assetid: AF451636-DBA0-4905-9723-73EE7AA9483E
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 494ba743a6bc5f95af99575bd0961ce6a8d55343
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: bf33179df535c37247539d8a4595bd67de2be31c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184977"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838861"
 ---
 # <a name="run-down-protection"></a>停止运行保护
 
@@ -61,11 +60,11 @@ ms.locfileid: "89184977"
 
 除了前面提到的，还有其他几个运行时保护例程。 某些驱动程序可能会使用这些其他例程。
 
-[**ExReInitializeRundownProtection**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exreinitializerundownprotection)例程使以前使用的[**EX \_ 断开 \_ REF**](./eprocess.md)结构与新的对象相关联，并在此对象上初始化运行时保护。
+[**ExReInitializeRundownProtection**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exreinitializerundownprotection)例程使以前使用的 [**EX \_ 断开 \_ REF**](./eprocess.md)结构与新的对象相关联，并在此对象上初始化运行时保护。
 
-[**ExRundownCompleted**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exrundowncompleted)例程将更新**EX \_ 断开 \_ 引用**结构，以指示关联对象的运行已完成。
+[**ExRundownCompleted**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exrundowncompleted)例程将更新 **EX \_ 断开 \_ 引用** 结构，以指示关联对象的运行已完成。
 
-[**ExAcquireRundownProtectionEx**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exacquirerundownprotectionex)和[**ExReleaseRundownProtectionEx**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exreleaserundownprotectionex)例程类似于[**ExAcquireRundownProtection**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exacquirerundownprotection)和[**ExReleaseRundownProtection**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exreleaserundownprotection)。 这四个例程递增或递减在共享对象上生效的运行时保护实例的计数。 而 **ExAcquireRundownProtection** 和 **ExReleaseRundownProtection** 会递增此计数，并按1、 **ExAcquireRundownProtectionEx** 和 **ExReleaseRundownProtectionEx** 递增，并按任意量递减计数。
+[**ExAcquireRundownProtectionEx**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exacquirerundownprotectionex)和 [**ExReleaseRundownProtectionEx**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exreleaserundownprotectionex)例程类似于 [**ExAcquireRundownProtection**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exacquirerundownprotection)和 [**ExReleaseRundownProtection**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exreleaserundownprotection)。 这四个例程递增或递减在共享对象上生效的运行时保护实例的计数。 而 **ExAcquireRundownProtection** 和 **ExReleaseRundownProtection** 会递增此计数，并按1、 **ExAcquireRundownProtectionEx** 和 **ExReleaseRundownProtectionEx** 递增，并按任意量递减计数。
 
  
 

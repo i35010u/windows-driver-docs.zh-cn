@@ -1,26 +1,25 @@
 ---
 title: 修改数据包的可扩展交换机源端口数据
 description: 修改数据包的可扩展交换机源端口数据
-ms.assetid: 44338441-160C-4CD1-8C0B-27CFBE136910
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 690198db774bfbd402e40826e5d2afbf037a1319
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 83c330fe442880a8e3fe907af2b65c0d82fa861c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207457"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839225"
 ---
 # <a name="modifying-a-packets-extensible-switch-source-port-data"></a>修改数据包的可扩展交换机源端口数据
 
 
-Hyper-v 可扩展交换机源端口由[**NDIS \_ 交换机 \_ 转发 \_ 详细信息 \_ 网络 \_ 缓冲区 \_ 列表 \_ 信息**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_detail_net_buffer_list_info)结构中的**SourcePortId**成员指定。 此结构包含在数据包的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构的带外 (OOB) 转发上下文中。 有关此上下文的详细信息，请参阅 [Hyper-v 可扩展交换机转发上下文](hyper-v-extensible-switch-forwarding-context.md)。
+Hyper-v 可扩展交换机源端口由 [**NDIS \_ 交换机 \_ 转发 \_ 详细信息 \_ 网络 \_ 缓冲区 \_ 列表 \_ 信息**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_detail_net_buffer_list_info)结构中的 **SourcePortId** 成员指定。 此结构包含在数据包的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构的带外 (OOB) 转发上下文中。 有关此上下文的详细信息，请参阅 [Hyper-v 可扩展交换机转发上下文](hyper-v-extensible-switch-forwarding-context.md)。
 
 可扩展交换机扩展必须遵循以下准则来修改数据包的源端口标识符：
 
--   可扩展交换机扩展必须调用 [*SetNetBufferListSource*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_set_net_buffer_list_source) 来修改数据包的源端口。 扩展不能直接修改[**NDIS \_ 交换机 \_ 转发 \_ 详细信息 \_ 网络 \_ 缓冲区 \_ 列表 \_ 信息**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_detail_net_buffer_list_info)结构的**SourcePortId**成员。
+-   可扩展交换机扩展必须调用 [*SetNetBufferListSource*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_set_net_buffer_list_source) 来修改数据包的源端口。 扩展不能直接修改 [**NDIS \_ 交换机 \_ 转发 \_ 详细信息 \_ 网络 \_ 缓冲区 \_ 列表 \_ 信息**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_detail_net_buffer_list_info)结构的 **SourcePortId** 成员。
 
--   如果扩展正在创建或克隆数据包，则它必须在调用[**NdisAllocateNetBufferList**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatenetbufferlist)后调用[*AllocateNetBufferListForwardingContext*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_allocate_net_buffer_list_forwarding_context)函数。 此函数为用于转发数据包信息的 OOB 数据分配可扩展的交换机上下文区域。
+-   如果扩展正在创建或克隆数据包，则它必须在调用 [**NdisAllocateNetBufferList**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatenetbufferlist)后调用 [*AllocateNetBufferListForwardingContext*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_allocate_net_buffer_list_forwarding_context)函数。 此函数为用于转发数据包信息的 OOB 数据分配可扩展的交换机上下文区域。
 
     当扩展调用 [*AllocateNetBufferListForwardingContext*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_allocate_net_buffer_list_forwarding_context)时， **SourcePortId** 成员将设置为 **NDIS \_ 交换机 \_ 默认 \_ 端口 \_ ID**。 这会指定数据包源自扩展，而不是到达可扩展的交换机端口。
 

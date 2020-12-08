@@ -1,17 +1,16 @@
 ---
 title: 移动计划回拨通知
 description: 了解移动计划应用支持的回调通知。 请参阅代码示例并查看附加的可用信息。
-ms.assetid: A3CE0B7D-80C5-4A98-8615-250A3C760B85
 keywords:
 - Windows Mobile 计划回拨通知，移动计划实现移动运营商
 ms.date: 05/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 2801743c85b99e7c64c468e229ce0faf38154ebb
-ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
+ms.openlocfilehash: 6878837e691d49ef6613943c37c18dee3d924141
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91646115"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840317"
 ---
 # <a name="mobile-plans-callback-notifications"></a>移动计划回拨通知
 
@@ -43,12 +42,12 @@ Web 门户支持的事务包括但不限于以下各项：
 
 ### <a name="mobileplansinlineoperationsnotifyprofiledownloadpurchasemetadata-activationcode"></a>MobilePlansInlineOperations. notifyProfileDownload (purchaseMetaData，activationCode) 
 
-| 参数名称 | 类型 | 说明 |
+| 参数名称 | 类型 | 描述 |
 | --- | --- | -- |
-| purchaseMetadata | Object | 此对象包含有关用户购买的元数据。 这包括有关用户帐户、购买方法或仪器的详细信息、用户是否添加新行的详细信息，以及用户所购买的计划的名称。 它们用于业务报告。 |
+| purchaseMetadata | 对象 | 此对象包含有关用户购买的元数据。 这包括有关用户帐户、购买方法或仪器的详细信息、用户是否添加新行的详细信息，以及用户所购买的计划的名称。 它们用于业务报告。 |
 | activationCode | String | 用于下载 eSIM 配置文件的激活代码
 
-| 返回值类型 | 说明 |
+| 返回值类型 | 描述 |
 | --- | --- |
 | MobilePlansOperationContext | 一个对象，其中包含与此唯一下载操作匹配的标识符。
 
@@ -78,14 +77,14 @@ var purchaseMetaData = MobilePlans.createPurchaseMetaData();
 
 #### <a name="profileregistrationcompleteargs"></a>ProfileRegistrationCompleteArgs
 
-| 属性名称 | 类型 | 说明 |
+| 属性名称 | 类型 | 描述 |
 | --- | --- | -- |
 | networkRegistrationState | String | 一个表示当前网络注册状态的字符串。 此属性的值可在中查看 `MobilePlansNetworkRegistrationState` 。 |
 | iccid | String | 网络注册状态已更改的 ICCID。 |
 
 #### <a name="mobileplansnetworkregistrationstate"></a>MobilePlansNetworkRegistrationState
 
-| 属性名称 | 类型 | 说明 |
+| 属性名称 | 类型 | 描述 |
 | --- | --- | -- |
 | 无 | String | 无连接。 |
 | 撤消 | String | 设备未注册并且未搜索网络提供程序。 |
@@ -99,13 +98,13 @@ var purchaseMetaData = MobilePlans.createPurchaseMetaData();
 
 ```Javascript
 function onRegistrationChanged(registrationArgs) {
-    var registrationObj = JSON.parse(registrationArgs);
-    if(registrationObj.networkRegistrationState == MobilePlansNetworkRegistrationState.home ||
-       registrationObj.networkRegistrationState == MobilePlansNetworkRegistrationState.roaming ||
-       registrationObj.networkRegistrationState == MobilePlansNetworkRegistrationState.partner)
-    {
-        Log('Registration Successful!');
-    }
+    var registrationObj = JSON.parse(registrationArgs);
+    if(registrationObj.networkRegistrationState == MobilePlansNetworkRegistrationState.home ||
+       registrationObj.networkRegistrationState == MobilePlansNetworkRegistrationState.roaming ||
+       registrationObj.networkRegistrationState == MobilePlansNetworkRegistrationState.partner)
+    {
+        Log('Registration Successful!');
+    }
 }
 ```
 
@@ -117,14 +116,14 @@ function onRegistrationChanged(registrationArgs) {
 
 #### <a name="profileactivationcompleteargs"></a>ProfileActivationCompleteArgs
 
-| 属性名称 | 类型 | 说明 |
+| 属性名称 | 类型 | 描述 |
 | --- | --- | -- |
 | activationResult | String | 激活的结果。 此属性的值可在中查看 `MobilePlansActivationError` 。 |
 | iccid | String | 已激活的配置文件的 ICCID。 |
 
 #### <a name="mobileplansactivationerror"></a>MobilePlansActivationError
 
-| 属性名称 | 类型 | 说明 |
+| 属性名称 | 类型 | 描述 |
 | --- | --- | -- |
 | success | String | 指示操作成功。 |
 | notAuthorized | String | 指示操作未获得授权。 |
@@ -162,9 +161,9 @@ function onRegistrationChanged(registrationArgs) {
 
 ```Javascript
 function onActivationComplete(activationArgs) {
-    var activationObj = JSON.parse(activationArgs);
-    if(activationObj.activationResult == MobilePlansActivationError.success)
-        Log('Activation Success');
+    var activationObj = JSON.parse(activationArgs);
+    if(activationObj.activationResult == MobilePlansActivationError.success)
+        Log('Activation Success');
 }
 ```
 
@@ -176,13 +175,13 @@ function onActivationComplete(activationArgs) {
 
 ### <a name="mobileplansinlineoperationsnotifyprofiledownloadpurchasemetadata-activationcode-downloaddelay"></a>MobilePlansInlineOperations. notifyProfileDownload (purchaseMetaData，activationCode，downloadDelay) 
 
-| 参数名称 | 类型 | 说明 |
+| 参数名称 | 类型 | 描述 |
 | --- | --- | -- |
-| purchaseMetadata | Object | 此对象包含有关用户购买的元数据。 这包括有关用户帐户、购买方法或仪器的详细信息、用户是否添加新行的详细信息，以及用户所购买的计划的名称。 所有这些都用于报告。 |
+| purchaseMetadata | 对象 | 此对象包含有关用户购买的元数据。 这包括有关用户帐户、购买方法或仪器的详细信息、用户是否添加新行的详细信息，以及用户所购买的计划的名称。 所有这些都用于报告。 |
 | activationCode | String | 配置文件所在的激活代码或 SM + 地址
 | downloadDelay | uint | 尝试下载 eSIM 配置文件之前要等待的分钟数
 
-| 返回值类型 | 说明 |
+| 返回值类型 | 描述 |
 | --- | --- |
 | MobilePlansOperationContext | 一个对象，其中包含与此唯一下载操作匹配的标识符。
 
@@ -218,9 +217,9 @@ var purchaseMetaData = MobilePlans.createPurchaseMetaData();
 
 ### <a name="mobileplansinlineoperationsnotifyoperationcancelmobileplansoperationcontext"></a>MobilePlansInlineOperations. notifyOperationCancel (MobilePlansOperationContext) 
 
-| 参数名称 | 类型 | 说明 |
+| 参数名称 | 类型 | 描述 |
 | --- | --- | -- |
-| operationContext | Object | 此对象包含唯一标识上一个操作的信息 |
+| operationContext | 对象 | 此对象包含唯一标识上一个操作的信息 |
 
 此操作可在用户看到 toast 通知之前取消，通知他们下载已准备好开始。
 
@@ -249,9 +248,9 @@ var purchaseMetaData = MobilePlans.createPurchaseMetaData();
 
 ### <a name="mobileplansnotifypurchasewithprofiledownload"></a>MobilePlans.notifyPurchaseWithProfileDownload
 
-| 参数名称 | 类型 | 说明 |
+| 参数名称 | 类型 | 描述 |
 | --- | --- | -- |
-| purchaseMetadata | Object | 此对象包含有关用户购买的元数据。 这包括有关用户帐户、购买方法或仪器的详细信息、用户是否添加新行的详细信息，以及用户所购买的计划的名称。 所有这些都用于报告。 |
+| purchaseMetadata | 对象 | 此对象包含有关用户购买的元数据。 这包括有关用户帐户、购买方法或仪器的详细信息、用户是否添加新行的详细信息，以及用户所购买的计划的名称。 所有这些都用于报告。 |
 | activationCode | String | 用于下载 eSIM 配置文件的激活代码。 配置文件的 ICCID 是从配置文件元数据推断而来的。 |
 | networkRegistrationInterval | 无符号的整数 | 移动运营商设置与用户的连接所需的时间。 移动计划应用尝试在指定的时间间隔内注册到网络，以分钟为单位。 **注意** 此时间将舍入为最接近的15分钟时间间隔。 例如，如果将此项设置为5分钟，应用程序将在大约15分钟后尝试重新注册到网络，但这可能需要更长的)  (。 如果设置为 "0"，则设备将立即尝试注册。 |
 
@@ -281,11 +280,11 @@ function finishPurchaseWithDownload() {
 
 ### <a name="mobileplansinlineoperationsnotifybalanceadditionpurchasemetadata"></a>MobilePlansInlineOperations. notifyBalanceAddition (purchaseMetaData) 
 
-| 参数名称 | 类型 | 说明 |
+| 参数名称 | 类型 | 描述 |
 | --- | --- | -- |
-| purchaseMetadata | Object | 此对象包含有关用户购买的元数据。 这包括有关用户帐户、购买方法或仪器的详细信息、用户是否添加新行的详细信息，以及用户所购买的计划的名称。 所有这些都用于报告。 |
+| purchaseMetadata | 对象 | 此对象包含有关用户购买的元数据。 这包括有关用户帐户、购买方法或仪器的详细信息、用户是否添加新行的详细信息，以及用户所购买的计划的名称。 所有这些都用于报告。 |
 
-| 返回值类型 | 说明 |
+| 返回值类型 | 描述 |
 | --- | --- |
 | MobilePlansOperationContext | 一个对象，其中包含与此唯一下载操作匹配的标识符。
 
@@ -317,12 +316,12 @@ function NotifyMobilePlans() {
 
 ### <a name="mobileplansinlineoperationsnotifybalanceadditionpurchasemetadata-iccid"></a>MobilePlansInlineOperations. notifyBalanceAddition (purchaseMetaData，iccid) 
 
-| 参数名称 | 类型 | 说明 |
+| 参数名称 | 类型 | 描述 |
 | --- | --- | -- |
-| purchaseMetadata | Object | 此对象包含有关用户购买的元数据。 这包括有关用户帐户、购买方法或仪器的详细信息、用户是否添加新行的详细信息，以及用户所购买的计划的名称。 所有这些都用于报告。 |
+| purchaseMetadata | 对象 | 此对象包含有关用户购买的元数据。 这包括有关用户帐户、购买方法或仪器的详细信息、用户是否添加新行的详细信息，以及用户所购买的计划的名称。 所有这些都用于报告。 |
 | iccid | String | 应在余额增加后变为活动状态的 ICCID
 
-| 返回值类型 | 说明 |
+| 返回值类型 | 描述 |
 | --- | --- |
 | MobilePlansOperationContext | 一个对象，其中包含与此唯一下载操作匹配的标识符。
 
@@ -350,9 +349,9 @@ function NotifyMobilePlans() {
 
 ### <a name="mobileplansnotifycancelledpurchase"></a>MobilePlans.notifyCancelledPurchase
 
-| 参数名称 | 类型 | 说明 |
+| 参数名称 | 类型 | 描述 |
 | --- | --- | -- |
-| purchaseMetadata | Object | 此对象包含有关用户购买的元数据。 这包括有关用户帐户、购买方法或仪器的详细信息、用户是否添加新行的详细信息，以及用户所购买的计划的名称。 所有这些都用于报告。 |
+| purchaseMetadata | 对象 | 此对象包含有关用户购买的元数据。 这包括有关用户帐户、购买方法或仪器的详细信息、用户是否添加新行的详细信息，以及用户所购买的计划的名称。 所有这些都用于报告。 |
 
 以下 Javascript 函数显示一个 API 示例，用于通知应用程序用户已取消购买。
 
@@ -374,7 +373,7 @@ function finishPurchaseWithCancellation() {
 
 下表描述了在购买元数据中使用的详细信息。
 
-| 属性名称 | 类型 | 说明 | 示例 |
+| 属性名称 | 类型 | 描述 | 示例 |
 | --- | --- | --- | --- |
 | 用户帐户 | String | 可能的值： <ul><li>新：指示用户创建了一个新的用户帐户。</li><li>现有：表示用户使用现有的用户帐户登录。</li><li>帮：指示用户在此步骤结束了购买流程。</li><li>无：表示用户未到达此步骤。</li></ul> | "用户帐户"： "New" |
 | purchaseInstrument | String | 可能的值： <ul><li>新：指示用户创建了一个新的用户帐户。</li><li>现有：表示用户使用现有的用户帐户登录。</li><li>帮：指示用户在此步骤结束了购买流程。</li><li>无：表示用户未到达此步骤。</li></ul> | "purchaseInstrument"： "New" |

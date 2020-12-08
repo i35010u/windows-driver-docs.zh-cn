@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ BDA \_ RF \_ 调谐器 \_ TRANSPONDER
 description: 客户端使用 KSPROPERTY \_ BDA \_ RF \_ 调谐器 TRANSPONDER 将 \_ 相应 TRANSPONDER 号码的调谐器节点通知给调谐器节点。
-ms.assetid: 00445260-a317-4341-baab-d1391f6748e4
 keywords:
 - KSPROPERTY_BDA_RF_TUNER_TRANSPONDER 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ab26a4f1760fa3b64eadfb1a1f4f6225cc746d8
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: b8f45107bfee5bf86816bffaa742129075ccf002
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190175"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840251"
 ---
 # <a name="ksproperty_bda_rf_tuner_transponder"></a>KSPROPERTY \_ BDA \_ RF \_ 调谐器 \_ TRANSPONDER
 
@@ -86,7 +85,7 @@ KSP **NodeId** \_ 节点的节点标识号指定调谐器节点的标识符。
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSP \_ 节点**](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_node)

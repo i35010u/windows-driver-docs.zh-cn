@@ -1,7 +1,6 @@
 ---
 title: 示例3典型启动命令
 description: 示例3典型启动命令
-ms.assetid: a0e8580d-b841-4077-82f5-6aaef57b0ff7
 keywords:
 - 跟踪会话 WDK，开始
 - 开始命令
@@ -9,12 +8,12 @@ keywords:
 - 启动跟踪会话
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cae92bb7ace72f3e6bb850f3edcfa80d16e21a89
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 528ede17a25fdacde36b16354fb9ec3d3c2d64f3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383449"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839141"
 ---
 # <a name="example-3-typical-start-command"></a>示例 3：典型启动命令
 

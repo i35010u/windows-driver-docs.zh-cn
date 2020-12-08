@@ -1,16 +1,15 @@
 ---
 title: OID_NIC_SWITCH_CREATE_VPORT
 description: 过量驱动程序发出对象标识符 (OID) 方法请求 OID_NIC_SWITCH_CREATE_VPORT，以便在网络适配器的 NIC 交换机上创建非默认的虚拟端口 (VPort) 。
-ms.assetid: 31109117-2242-40E0-B215-0FAE014B2035
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_NIC_SWITCH_CREATE_VPORT 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: afb40fff15053d4954f86f2b072a6a26e02e3afa
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 67a4bde726a2e06368fc009186336af7effe3294
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106056"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839875"
 ---
 # <a name="oid_nic_switch_create_vport"></a>OID \_ NIC \_ 交换机 \_ CREATE \_ VPORT
 
@@ -19,9 +18,9 @@ ms.locfileid: "90106056"
 
 过量驱动程序将此 OID 方法请求颁发给网络适配器的 PF 的微型端口驱动程序。 对于支持单个根 i/o 虚拟化 (SR-IOV) 接口的 PF 小型端口驱动程序，需要此 OID 方法请求。
 
-[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**NDIS \_ NIC \_ 交换机 \_ VPORT \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)结构的指针。
+[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ NIC \_ 交换机 \_ VPORT \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)结构的指针。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 过量驱动程序将 [**NDIS \_ NIC \_ 交换机 \_ VPORT \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters) 结构初始化为有关要创建的非默认 VPORT 的配置信息。 配置信息包括非默认 VPort 附加到的 PCIe 函数以及非默认 VPort 的队列对数。
@@ -34,11 +33,11 @@ ms.locfileid: "90106056"
 
 -   在发送操作期间，NDIS 指定 **VPortId** 值以标识从中发送数据包的 VPort。 此值在带外 (OOB) [**NDIS \_ 网络 \_ 缓冲区 \_ 列表 \_ 筛选 \_ 信息**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_net_buffer_list_filtering_info) 数据的 [网络 \_ 缓冲区 \_ 列表](./net-buffer-list-structure.md) 结构内指定。
 
--   在接收操作期间，PF 微型端口驱动程序指定将数据包转发到的 **VPortId** 值。 此值还在[网络 \_ 缓冲区 \_ 列表](./net-buffer-list-structure.md)结构的 OOB [**NDIS \_ 网络 \_ 缓冲区 \_ 列表 \_ 筛选 \_ 信息**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_net_buffer_list_filtering_info)数据中指定。
+-   在接收操作期间，PF 微型端口驱动程序指定将数据包转发到的 **VPortId** 值。 此值还在 [网络 \_ 缓冲区 \_ 列表](./net-buffer-list-structure.md)结构的 OOB [**NDIS \_ 网络 \_ 缓冲区 \_ 列表 \_ 筛选 \_ 信息**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_net_buffer_list_filtering_info)数据中指定。
 
 有关详细信息，请参阅 [创建虚拟端口](./creating-a-virtual-port.md)。
 
-**注意**   默认 VPort 始终存在，不会通过 OID \_ NIC \_ 交换机 \_ CREATE VPort 的 oid 请求创建 \_ 。 默认 VPort 具有 NDIS \_ default VPort ID 的标识符 \_ \_ 。 当 PF 微型端口驱动程序创建 NIC 交换机时，驱动程序会自动将默认 VPort 附加到网络适配器的 PF。
+**注意**  默认 VPort 始终存在，不会通过 OID \_ NIC \_ 交换机 \_ CREATE VPort 的 oid 请求创建 \_ 。 默认 VPort 具有 NDIS \_ default VPort ID 的标识符 \_ \_ 。 当 PF 微型端口驱动程序创建 NIC 交换机时，驱动程序会自动将默认 VPort 附加到网络适配器的 PF。
 
  
 

@@ -1,15 +1,14 @@
 ---
 title: 底片扫描仪的可选 WIA 项属性
 description: 底片扫描仪的可选 WIA 项属性
-ms.assetid: 6c17deed-7840-4ec0-bc19-d695b3e80c38
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9497354c5cd851f532e78708bdfa6ebca9cdbce4
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: f010375e962f6fb0d6dfdc2b8ebc94de87a41643
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192615"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841103"
 ---
 # <a name="optional-wia-item-properties-for-film-scanners"></a>底片扫描仪的可选 WIA 项属性
 
@@ -51,7 +50,7 @@ WIA 胶片扫描器项可以选择支持以下 WIA 属性：
 
 [**WIA \_ IP \_ YSCALING**](./wia-ips-yscaling.md)
 
-**注意**   如果支持 WiaImgFmt raw 格式，则需要 " [**WIA \_ IPA \_ raw \_ BITS \_ PER \_ 通道**](./wia-ipa-raw-bits-per-channel.md)" 属性 \_ 。 [**WIA \_ IPA \_ format**](./wia-ipa-format.md)属性必须支持 WiaImgFmt \_ BMP 格式。 如果[**wia \_ IPA \_ DEPTH**](./wia-ipa-depth.md)属性设置为 1 BPP，或[**wia \_ IPA \_ DATATYPE**](./wia-ipa-datatype.md)属性设置为 wia 数据阈值，则需要[**wia \_ IPS \_ 阈值**](./wia-ips-threshold.md)属性 \_ \_ 。
+**注意**   如果支持 WiaImgFmt raw 格式，则需要 " [**WIA \_ IPA \_ raw \_ BITS \_ PER \_ 通道**](./wia-ipa-raw-bits-per-channel.md) " 属性 \_ 。 [**WIA \_ IPA \_ format**](./wia-ipa-format.md)属性必须支持 WiaImgFmt \_ BMP 格式。 如果 [**wia \_ IPA \_ DEPTH**](./wia-ipa-depth.md)属性设置为 1 BPP，或 [**wia \_ IPA \_ DATATYPE**](./wia-ipa-datatype.md)属性设置为 wia 数据阈值，则需要 [**wia \_ IPS \_ 阈值**](./wia-ips-threshold.md)属性 \_ \_ 。
 
  
 

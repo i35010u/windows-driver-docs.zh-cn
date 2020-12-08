@@ -1,7 +1,6 @@
 ---
 title: '\_ \_ \_ \_ 来自 \_ 类型 \_ ID \_ 和 \_ U64 的 EXT TDOP SET PTR'
 description: "\" \\_ \\_ \\_ \\_ \\_ \\_ 调试请求的类型 ID\" 和 \"U64\" 子操作的 ext TDOP SET PTR 将 \\_ \\_ \\_ \\_ \\_ \\_ \\_ 创建一个类型化的数据说明，该说明表示指向具有指定类型的指定内存位置的指针。"
-ms.assetid: 1ca61962-718e-4cbd-8e16-f87e0c9ec9af
 keywords:
 - EXT_TDOP_SET_PTR_FROM_TYPE_ID_AND_U64 Windows 调试
 topic_type:
@@ -12,19 +11,19 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 56358f24a820edcd7316048ca23256719ae1a149
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: cda061d0e0e172ce2c0722f0aeed342d4ccce3ae
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206809"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840211"
 ---
 # <a name="ext_tdop_set_ptr_from_type_id_and_u64"></a>\_ \_ \_ \_ 来自 \_ 类型 \_ ID \_ 和 \_ U64 的 EXT TDOP SET PTR
 
 
-" \_ \_ \_ \_ \_ \_ 调试请求的类型 ID" 和 "U64" 子操作的 ext TDOP SET PTR 将 \_ \_ 创建一个类型化的数据说明，该说明表示指向具有指定类型的指定内存位置的指针。 [** \_ \_ \_ \_ \_ **](debug-request-ext-typed-data-ansi.md)[**Request**](request.md)
+" \_ \_ \_ \_ \_ \_ 调试请求的类型 ID" 和 "U64" 子操作的 ext TDOP SET PTR 将 \_ \_ 创建一个类型化的数据说明，该说明表示指向具有指定类型的指定内存位置的指针。 [**\_ \_ \_ \_ \_**](debug-request-ext-typed-data-ansi.md)[**Request**](request.md)
 
-**参数**
+**Parameters**
 
 <span id="Operation"></span><span id="operation"></span><span id="OPERATION"></span>**运作**  
 将 \_ \_ \_ \_ \_ \_ \_ \_ 此子操作的类型 ID 和 U64 设置为 EXT TDOP set PTR。

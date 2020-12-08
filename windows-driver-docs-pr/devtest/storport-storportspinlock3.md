@@ -1,7 +1,6 @@
 ---
 title: 'StorPortSpinLock3 规则 (storport) '
 description: StorPortSpinLock3 规则验证 StorPortAcquireSpinLock 例程的文档中描述的锁获取层次结构。
-ms.assetid: EC637CBD-A45D-44C6-8FAA-7035A36144B6
 ms.date: 05/21/2018
 keywords:
 - 'StorPortSpinLock3 规则 (storport) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d02b4ca841d223e410b72263d2d0af3108c34d9
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: aecddac5304e6005403d605097c55bae5eb0d50f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105224"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840777"
 ---
 # <a name="storportspinlock3-rule-storport"></a>StorPortSpinLock3 规则 (storport) 
 
 
-**StorPortSpinLock3**规则验证[**StorPortAcquireSpinLock**](/windows-hardware/drivers/ddi/storport/nf-storport-storportacquirespinlock)例程的文档中描述的锁获取层次结构。
+**StorPortSpinLock3** 规则验证 [**StorPortAcquireSpinLock**](/windows-hardware/drivers/ddi/storport/nf-storport-storportacquirespinlock)例程的文档中描述的锁获取层次结构。
 
 Storport 微型端口驱动程序必须确保它们不会尝试获取已持有的锁或按错误的顺序获取锁。 其中的任何错误都将导致系统死锁。
 

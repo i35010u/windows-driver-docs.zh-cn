@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ CAMERACONTROL \_ IRIS \_ 相对
 description: KSPROPERTY \_ CAMERACONTROL \_ IRIS \_ 相对属性指定相机的口径设置。
-ms.assetid: 919fcf7a-ee96-4e1e-b0ce-e5a7ce5086c7
 keywords:
 - KSPROPERTY_CAMERACONTROL_IRIS_RELATIVE 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1978ebf019a6694cfc03265aa8807e51f4ed5923
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 1631b67550078a475c8ecf906bcb949c8391f2df
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102946"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840551"
 ---
 # <a name="ksproperty_cameracontrol_iris_relative"></a>KSPROPERTY \_ CAMERACONTROL \_ IRIS \_ 相对
 
@@ -70,8 +69,8 @@ KSPROPERTY \_ CAMERACONTROL \_ IRIS \_ 相对属性指定相机的口径设置�
 </colgroup>
 <thead>
 <tr class="header">
-<th>值</th>
-<th>说明</th>
+<th>“值”</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -92,7 +91,7 @@ KSPROPERTY \_ CAMERACONTROL \_ IRIS \_ 相对属性指定相机的口径设置�
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 发出集请求时，应提供 KSPROPERTY CAMERACONTROL 节点的 **值** 成员的上一个表中的值之一 \_ \_ \_ 。
@@ -119,7 +118,7 @@ KSPROPERTY \_ CAMERACONTROL \_ IRIS \_ 相对属性指定相机的口径设置�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY \_ CAMERACONTROL \_ 节点 \_ S**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s)

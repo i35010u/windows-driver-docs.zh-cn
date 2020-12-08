@@ -1,19 +1,18 @@
 ---
 title: 管理设备队列
 description: 管理设备队列
-ms.assetid: 8b7d39f8-0449-4e9b-a54c-fe60ee60842c
 keywords:
 - 设备队列 WDK Irp，管理
 - 补充 IRP 队列 WDK 内核
 - StartIo 例程，补充设备队列
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 463a5ef9070415f3c4cdd820f3f009ad8c934103
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: cd05603eebfd61f096f2f07fbb38188be75de0e0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187939"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839239"
 ---
 # <a name="managing-device-queues"></a>管理设备队列
 
@@ -53,7 +52,7 @@ ms.locfileid: "89187939"
 
     没有办法同步访问单个设备对象 (及其设备扩展) 两个驱动程序之间以多处理器安全的方式进行。 两个驱动程序都不能对另一个驱动程序当前正在进行的 i/o 处理作出任何假设。
 
-即使对于紧密耦合的类/端口驱动程序，每个类驱动程序都应使用指向端口驱动程序的设备对象的指针， (s) 只是通过 **IoCallDriver**传递 irp。 基础端口驱动程序必须维护其自己的状态（可能位于端口驱动程序的设备扩展中），关于它为任何紧密耦合的类驱动 (程序处理的请求（) "设备 () ）。
+即使对于紧密耦合的类/端口驱动程序，每个类驱动程序都应使用指向端口驱动程序的设备对象的指针， (s) 只是通过 **IoCallDriver** 传递 irp。 基础端口驱动程序必须维护其自己的状态（可能位于端口驱动程序的设备扩展中），关于它为任何紧密耦合的类驱动 (程序处理的请求（) "设备 () ）。
 
 ### <a name="managing-supplemental-device-queues-across-driver-routines"></a>跨驱动程序例程管理补充设备队列
 
@@ -61,17 +60,17 @@ ms.locfileid: "89187939"
 
 1.  其调度例程为该设备插入了驱动程序创建的设备队列中特定设备的 Irp。
 
-2.  其他设备的 Irp 继续进入，并使用**IoStartPacket**将其排入驱动程序的*StartIo*例程，并通过共享设备控制器进行处理。
+2.  其他设备的 Irp 继续进入，并使用 **IoStartPacket** 将其排入驱动程序的 *StartIo* 例程，并通过共享设备控制器进行处理。
 
 3.  设备控制器不会进入空闲状态，但包含在驱动程序创建的设备队列中的每个 IRP 还必须尽快排入驱动程序的 *StartIo* 例程。
 
 因此，每当端口驱动程序完成 IRP 时，端口驱动程序的 *DpcForIsr* 例程必须尝试将 irp 从特定设备的驱动程序的内部设备队列传输到共享适配器/控制器的设备队列中，如下所示：
 
-1.  *DpcForIsr*例程调用**IoStartNextPacket** ，使*StartIo*例程开始处理排队到共享设备控制器的下一个 IRP。
+1.  *DpcForIsr* 例程调用 **IoStartNextPacket** ，使 *StartIo* 例程开始处理排队到共享设备控制器的下一个 IRP。
 
-2.  *DpcForIsr*例程会调用[**KeRemoveDeviceQueue**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keremovedevicequeue)来取消下一个 IRP (，前提是它在该设备的内部设备队列中持有的任何) 都将完成 IRP。
+2.  *DpcForIsr* 例程会调用 [**KeRemoveDeviceQueue**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keremovedevicequeue)来取消下一个 IRP (，前提是它在该设备的内部设备队列中持有的任何) 都将完成 IRP。
 
-3.  如果 **KeRemoveDeviceQueue** 返回非 NULL 指针，则 *DpcForIsr* 例程将使用刚刚取消排队的 IRP 调用 **IoStartPacket** ，使其排队等候共享设备控制器/适配器。 否则，对 **KeRemoveDeviceQueue** 的调用只是将设备队列对象的状态重置为不忙， *DpcForIsr* 例程将忽略对 **IoStartPacket**的调用。
+3.  如果 **KeRemoveDeviceQueue** 返回非 NULL 指针，则 *DpcForIsr* 例程将使用刚刚取消排队的 IRP 调用 **IoStartPacket** ，使其排队等候共享设备控制器/适配器。 否则，对 **KeRemoveDeviceQueue** 的调用只是将设备队列对象的状态重置为不忙， *DpcForIsr* 例程将忽略对 **IoStartPacket** 的调用。
 
 4.  然后， *DpcForIsr* 例程使用输入 IRP 调用 [**IoCompleteRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest) ，其中，端口驱动程序已完成 i/o 处理，方法是将 i/o 状态块设置为错误或满足 i/o 请求。
 

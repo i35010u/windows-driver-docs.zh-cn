@@ -1,25 +1,24 @@
 ---
 title: 802.11 WLAN 适配器抵达
 description: 802.11 WLAN 适配器抵达
-ms.assetid: 4d533f32-0f98-4a65-ac1b-7a470e54ad29
 keywords:
 - 适配器 WDK 802.11 WLAN，抵达
 - WLAN 适配器 WDK，抵达
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f6b6e36b2079e365795f67e659df62df305d35e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 2e31dead6c51312b27e282797c43222d623534a9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215275"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841205"
 ---
 # <a name="80211-wlan-adapter-arrival"></a>802.11 WLAN 适配器抵达
 
 
 
 
- 
+ 
 
 当操作系统检测到安装了 IHV 扩展 DLL (WLAN) 适配器的无线 LAN 时，操作系统将调用 [*Dot11ExtIhvInitAdapter*](/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_init_adapter) IHV 处理程序函数。 只要 WLAN 适配器可用且已启用以供使用，操作系统就会调用此函数，例如插入 PCMCIA 适配器的时间。
 
@@ -33,11 +32,11 @@ ms.locfileid: "89215275"
 
 调用 [*Dot11ExtIhvInitAdapter*](/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_init_adapter) 时，必须遵循以下准则。
 
--   *HDot11SvcHandle*参数包含由操作系统为 WLAN 适配器分配的唯一句柄值。 IHV 扩展 DLL 必须保存此句柄值，并将其传递给与特定于适配器的处理（如[**Dot11ExtSetKeyMappingKey**](/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_set_key_mapping_key)）相关的 IHV 扩展性函数的*hDot11SvcHandle*参数。
+-   *HDot11SvcHandle* 参数包含由操作系统为 WLAN 适配器分配的唯一句柄值。 IHV 扩展 DLL 必须保存此句柄值，并将其传递给与特定于适配器的处理（如 [**Dot11ExtSetKeyMappingKey**](/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_set_key_mapping_key)）相关的 IHV 扩展性函数的 *hDot11SvcHandle* 参数。
 
     通常，DLL 会在其 WLAN 适配器上下文数组的成员内保存此句柄值。
 
--   IHV 扩展 DLL 必须通过 *phIhvExtAdapter* 参数为 WLAN 适配器返回唯一的句柄值。 操作系统将句柄值传递到与特定于适配器的处理相关的 IHV 处理程序函数（如[*Dot11ExtIhvReceiveIndication*](/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_receive_indication)）的*hIhvExtAdapter*参数。
+-   IHV 扩展 DLL 必须通过 *phIhvExtAdapter* 参数为 WLAN 适配器返回唯一的句柄值。 操作系统将句柄值传递到与特定于适配器的处理相关的 IHV 处理程序函数（如 [*Dot11ExtIhvReceiveIndication*](/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_receive_indication)）的 *hIhvExtAdapter* 参数。
 
     通常，DLL 返回作为句柄值的 WLAN 适配器上下文数组的地址。
 
@@ -51,6 +50,6 @@ ms.locfileid: "89215275"
 
     有关 DLL 和 WLAN 适配器进行通信的接口的详细信息，请参阅 [802.11 WLAN 适配器通信通道](802-11-wlan-adapter-communication-channel.md)。
 
- 
+ 
 
- 
+ 

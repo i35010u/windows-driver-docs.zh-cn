@@ -1,18 +1,17 @@
 ---
 title: 分配器属性
 description: 分配器属性
-ms.assetid: 851bc3d8-46f6-46d0-87a8-81de2536492a
 keywords:
 - 分配器属性 WDK 视频捕获
 - PROPSETID_ALLOCATOR_CONTROL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 01d1010195c0b685586eef0efc8d64258c1deb84
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e2501d958d4c43ee56fd7df2d05a6ec2f031cbb1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104482"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840591"
 ---
 # <a name="allocator-properties"></a>分配器属性
 

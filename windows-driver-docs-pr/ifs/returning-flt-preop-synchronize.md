@@ -1,18 +1,17 @@
 ---
 title: 返回 FLT_PREOP_SYNCHRONIZE
 description: 返回 FLT_PREOP_SYNCHRONIZE
-ms.assetid: b1331f8d-e230-45b2-be1b-f85d85557350
 keywords:
 - FLT_PREOP_SYNCHRONIZE
 - 同步 WDK 文件系统微筛选器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ce5f7edb6f57fff7f9fc8c8562406c5009ee7d9
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 0ba5bab54f98e1d349231eb57c76daccf6d5e1e9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064972"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838909"
 ---
 # <a name="returning-flt_preop_synchronize"></a>返回 FLT \_ PREOP \_ SYNCHRONIZE
 
@@ -24,7 +23,7 @@ ms.locfileid: "89064972"
 
 筛选器管理器将在与 preoperation 回调相同的线程上下文中调用微筛选器驱动程序的 postoperation 回调例程，以 IRQL &lt; = APC \_ 级别。  (请注意，此线程上下文不一定是起始线程的上下文。 ) 
 
-**注意**   如果微筛选器驱动程序的 preoperation 回调例程返回 FLT \_ PREOP \_ SYNCHRONIZE，但微筛选器驱动程序未为操作注册 postoperation 回调例程，则系统会在已检查的内部版本中断言。
+**注意**   如果微筛选器驱动程序的 preoperation 回调例程返回 FLT \_ PREOP \_ SYNCHRONIZE，但微筛选器驱动程序未为操作注册 postoperation 回调例程，则系统会在已检查的内部版本中断言。
 
  
 

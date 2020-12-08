@@ -1,7 +1,6 @@
 ---
 title: 图面类型
 description: 图面类型
-ms.assetid: 7374b783-ef09-4238-a17a-fafcd9d87b3f
 keywords:
 - DIB WDK GDI
 - 设备管理的表面 WDK GDI
@@ -13,12 +12,12 @@ keywords:
 - 与设备无关的位图 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cd3291d2f175b610cb885f84a67b78bce8b6b903
-ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
+ms.openlocfilehash: 00b4d305de8084b7ae76adcfcb2118f131d832ee
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91423638"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838955"
 ---
 # <a name="surface-types"></a>图面类型
 

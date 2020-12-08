@@ -1,15 +1,14 @@
 ---
 title: 可选平板项属性
 description: 可选平板项属性
-ms.assetid: 6a4a42f6-7a6e-49da-845b-a857c12c4cfd
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f1d3d3caef5cf4cbabbb652a17f81c247fd0d28
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: e7728448ff5e016ef805232f9202595b414a97e4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187063"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841113"
 ---
 # <a name="optional-flatbed-item-properties"></a>可选平板项属性
 

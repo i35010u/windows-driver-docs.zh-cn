@@ -1,31 +1,30 @@
 ---
 title: WdfObjectDereference 宏
 description: WdfObjectDereference 宏递减指定框架对象的引用计数。
-ms.assetid: e945202c-7e6b-47b7-9216-d7a3a694489e
 keywords:
 - WdfObjectDereference 宏
 ms.date: 08/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b0630541ab4ef06b6933da336701c5080eeee544
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e5de8e6c9d26a09f270dc6c6dfdae180d017f7be
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105254"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840227"
 ---
 # <a name="wdfobjectdereference-macro"></a>WdfObjectDereference 宏
 
 
 \[适用于 KMDF 和 UMDF\]
 
-**WdfObjectDereference**宏递减指定框架对象的引用计数。
+**WdfObjectDereference** 宏递减指定框架对象的引用计数。
 
 <a name="syntax"></a>语法
 ------
 
 ```ManagedCPlusPlus
 VOID WdfObjectDereference(
-  [in] WDFOBJECT Handle
+  [in] WDFOBJECT Handle
 );
 ```
 
@@ -47,9 +46,9 @@ VOID WdfObjectDereference(
 
 如果对象的引用计数变为零，则在 **WdfObjectDereference** 返回之前可能会删除该对象。
 
-仅当驱动程序之前已调用[**WdfObjectReference**](wdfobjectreference.md)时，才可以调用**WdfObjectDereference** 。
+仅当驱动程序之前已调用 [**WdfObjectReference**](wdfobjectreference.md)时，才可以调用 **WdfObjectDereference** 。
 
-驱动程序可以调用[**WdfObjectDereferenceWithTag**](wdfobjectdereferencewithtag.md)或[**WdfObjectDereferenceActual**](/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectdereferenceactual)，而不是调用**WdfObjectDereference**。
+驱动程序可以调用 [**WdfObjectDereferenceWithTag**](wdfobjectdereferencewithtag.md)或 [**WdfObjectDereferenceActual**](/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectdereferenceactual)，而不是调用 **WdfObjectDereference**。
 
 有关对象引用计数的详细信息，请参阅 [框架对象生命周期](./framework-object-life-cycle.md)。
 
@@ -102,7 +101,7 @@ WdfObjectDereference(Object);
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**WdfObjectDereferenceActual**](/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectdereferenceactual)

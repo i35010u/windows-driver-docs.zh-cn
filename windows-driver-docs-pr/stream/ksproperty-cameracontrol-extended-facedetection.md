@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ FACEDETECTION
 description: KSPROPERTY \_ CAMERACONTROL \_ EXTENDED \_ FACEDETECTION 是用于打开和关闭人脸检测的属性 ID。
-ms.assetid: F503939D-D6EF-47BD-855B-4404E1AAA15C
 keywords:
 - KSPROPERTY_CAMERACONTROL_EXTENDED_FACEDETECTION 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 65b5a2bd1ab630f702df68aa9c25cb2da40e55d2
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 3835071385355b69120b2f4e9159413af33c867f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187097"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839195"
 ---
 # <a name="ksproperty_cameracontrol_extended_facedetection"></a>KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ FACEDETECTION
 
@@ -44,7 +43,7 @@ KSPROPERTY \_ CAMERACONTROL \_ EXTENDED \_ FACEDETECTION 是用于打开和关�
 <tr class="odd">
 <td><p>版本 1</p></td>
 <td><p>筛选器</p></td>
-<td><p>同步</p></td>
+<td><p>Synchronous</p></td>
 </tr>
 </tbody>
 </table>
@@ -185,7 +184,7 @@ KSPROPERTY \_ CAMERACONTROL \_ EXTENDED \_ FACEDETECTION 是用于打开和关�
 </tbody>
 </table>
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 启用 "面部检测" 时，该驱动程序可以直接使用感兴趣的人脸区域 (ROIs) ，以帮助根据需要进行3A 处理。 如果通过 KSPROPERTY CAMERACONTROL 扩展 ROI ISPCONTROL 配置了任何用户指定的 ROIs \_ \_ ，则 \_ \_ 指定 ROIs 的用户将优先于检测到的人脸 ROIs。 如果清除了用户指定的 ROIs，则检测到的人脸 ROIs 会生效。
 
@@ -198,7 +197,7 @@ KSPROPERTY \_ CAMERACONTROL \_ EXTENDED \_ FACEDETECTION 是用于打开和关�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Ksmedia.h</td>
 </tr>
 </tbody>

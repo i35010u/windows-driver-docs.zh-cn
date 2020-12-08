@@ -1,7 +1,6 @@
 ---
 title: D3DDDI \_ OPENALLOCATIONINFO2 结构
 description: 了解 \_ 保留供系统使用的 D3DDDI OPENALLOCATIONINFO2 结构。 请勿在您的驱动程序中使用。
-ms.assetid: 5C439C23-75B1-422C-850D-6980CC89539B
 keywords:
 - D3DDDI_OPENALLOCATIONINFO2 结构显示设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e75ff9da9605875f8cddfac0090098c009f9949
-ms.sourcegitcommit: f1d6c2d0cdbecdc69ba65ed3b530755fc73c8e5e
+ms.openlocfilehash: bb0f35eb031c0a6e4ee1f372311b0fffe9bddb12
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91590373"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839643"
 ---
 # <a name="d3dddi_openallocationinfo2-structure"></a>D3DDDI \_ OPENALLOCATIONINFO2 结构
 
@@ -31,11 +30,11 @@ ms.locfileid: "91590373"
 
 ```ManagedCPlusPlus
 typedef struct _D3DDDI_OPENALLOCATIONINFO2 {
-  D3DKMT_HANDLE          hAllocation;
-  const VOID             *pPrivateDriverData;
-  UINT                   PrivateDriverDataSize;
+  D3DKMT_HANDLE          hAllocation;
+  const VOID             *pPrivateDriverData;
+  UINT                   PrivateDriverDataSize;
   D3DGPU_VIRTUAL_ADDRESS GpuVirtualAddress;
-  ULONG_PTR              Reserved[6];
+  ULONG_PTR              Reserved[6];
 } D3DDDI_OPENALLOCATIONINFO2;
 ```
 
@@ -50,7 +49,7 @@ typedef struct _D3DDDI_OPENALLOCATIONINFO2 {
 
 **GpuVirtualAddress**
 
-**保护**
+Reserved 
 
 <a name="requirements"></a>要求
 ------------

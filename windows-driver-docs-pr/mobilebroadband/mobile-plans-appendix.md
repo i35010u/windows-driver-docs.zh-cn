@@ -1,17 +1,16 @@
 ---
 title: 移动计划常规附录
 description: 本主题介绍了移动计划计划的附录信息。
-ms.assetid: B3B478DB-78F4-4031-B041-DCBAACC15D6F
 keywords:
 - Windows Mobile 计划附录，移动计划附录移动运营商
 ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a1af5c5101a1493efedce5339a32495e632aa50
-ms.sourcegitcommit: 89b8a43480246dd726e3632aab2db9cf2eb7505d
+ms.openlocfilehash: 0e321b6e3882f7b7e315b9000bf32b83f9e6f965
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92254064"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840323"
 ---
 # <a name="mobile-plans-general-appendix"></a>移动计划常规附录
 

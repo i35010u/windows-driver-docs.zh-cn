@@ -1,7 +1,6 @@
 ---
 title: D3DKMT \_ 销毁 \_ OUTPUTDUPL 结构
 description: 了解 D3DKMT \_ 销毁 \_ OUTPUTDUPL 结构，该结构保留供系统使用。 请勿在您的驱动程序中使用。
-ms.assetid: ced3face-7f07-459f-8644-0062cd5db805
 keywords:
 - D3DKMT_DESTROY_OUTPUTDUPL 结构显示设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 23b8d78c69ea9a1f27d407fe9ba883af5cdd170f
-ms.sourcegitcommit: f1d6c2d0cdbecdc69ba65ed3b530755fc73c8e5e
+ms.openlocfilehash: 531f57e0660a2dc025b45dc9c5212be52a3eaabf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91590395"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839635"
 ---
 # <a name="d3dkmt_destroy_outputdupl-structure"></a>D3DKMT \_ 销毁 \_ OUTPUTDUPL 结构
 
@@ -31,9 +30,9 @@ ms.locfileid: "91590395"
 
 ```ManagedCPlusPlus
 typedef struct _D3DKMT_DESTROY_OUTPUTDUPL {
-  D3DKMT_HANDLE                  hAdapter;
+  D3DKMT_HANDLE                  hAdapter;
   D3DDDI_VIDEO_PRESENT_SOURCE_ID VidPnSourceId;
-  BOOL                           bDestroyAllContexts;
+  BOOL                           bDestroyAllContexts;
 } D3DKMT_DESTROY_OUTPUTDUPL;
 ```
 

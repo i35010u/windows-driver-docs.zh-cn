@@ -1,7 +1,6 @@
 ---
 title: 'StorPortSpinLock4 规则 (storport) '
 description: 此规则是 StorPortSpinLock 的对应发布。 它类似于 SpinLockRelease 规则。
-ms.assetid: D6003108-7B97-48A5-9A8B-007DEFB5DF6C
 ms.date: 05/21/2018
 keywords:
 - 'StorPortSpinLock4 规则 (storport) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c61f3771c86b45ccc856e544310ee207b78876ba
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 5b2faea00b9c31bce2045eaa912e38aa6dd49f85
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105838"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840779"
 ---
 # <a name="storportspinlock4-rule-storport"></a>StorPortSpinLock4 规则 (storport) 
 
 
-此规则是**StorPortSpinLock**的对应*发布*。 它类似于 **SpinLockRelease** 规则。
+此规则是 **StorPortSpinLock** 的对应 *发布*。 它类似于 **SpinLockRelease** 规则。
 
 **驱动程序模型： Storport**
 

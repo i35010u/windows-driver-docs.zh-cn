@@ -2,16 +2,15 @@
 title: IRP_MJ_FILE_SYSTEM_CONTROL
 description: 只有文件系统驱动程序会处理 IRP_MJ_FILE_SYSTEM_CONTROL 请求。
 ms.date: 08/12/2017
-ms.assetid: 695ed61b-7082-44be-ae82-ddc3e4a0b8d0
 keywords:
-- IRP_MJ_FILE_SYSTEM_CONTROL 内核模式驱动程序体系结构
+- IRP_MJ_FILE_SYSTEM_CONTROL Kernel-Mode 驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d60cd7a3b98f0fa4f6a0c443bcc3f6e66ee7c57
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 45963dbcc101e48003b3467687827bc0bd23d17a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733411"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839059"
 ---
 # <a name="irp_mj_file_system_control"></a>IRP \_ MJ \_ 文件 \_ 系统 \_ 控制
 

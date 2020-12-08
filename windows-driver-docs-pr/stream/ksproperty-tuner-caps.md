@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 调谐器 \_ CAP
 description: KSPROPERTY \_ 调谐器 \_ cap 属性介绍了调谐器的基本功能。 必须实现此属性。
-ms.assetid: 70255053-d241-44ca-ba24-cfc442629ab3
 keywords:
 - KSPROPERTY_TUNER_CAPS 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 396b48cf1ecbf32963fadacb8c47f2042aa8f70a
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: b9ce13584ba7e9e51c290c9beecff262b8db19c2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103714"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840531"
 ---
 # <a name="ksproperty_tuner_caps"></a>KSPROPERTY \_ 调谐器 \_ CAP
 
@@ -86,7 +85,7 @@ KSPROPERTY **ModesSupported** \_ 调谐器 Cap 结构的 ModesSupported 成员 \
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

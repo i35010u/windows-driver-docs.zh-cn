@@ -1,7 +1,6 @@
 ---
 title: 'StorPortTimer 规则 (storport) '
 description: '\_如果调用 StorPortNotification (RequestTimerCall) ，则必须定义 HW 计时器例程。'
-ms.assetid: 863AA6C2-A3EC-41F9-88D9-6852A42D2636
 ms.date: 05/21/2018
 keywords:
 - 'StorPortTimer 规则 (storport) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: faf3d68944da8c8a3fdee6ac1722dd0b3ed69347
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: d4f000742c13cf0ec2dcbe51281dad5ac4335483
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105828"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841285"
 ---
 # <a name="storporttimer-rule-storport"></a>StorPortTimer 规则 (storport) 
 
 
-如果调用**StorPortNotification (RequestTimerCall) ** ，则必须定义**HW \_ 计时器**例程。
+如果调用 **StorPortNotification (RequestTimerCall)** ，则必须定义 **HW \_ 计时器** 例程。
 
 **驱动程序模型： Storport**
 

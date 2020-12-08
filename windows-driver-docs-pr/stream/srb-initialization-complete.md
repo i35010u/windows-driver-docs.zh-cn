@@ -1,7 +1,6 @@
 ---
 title: SRB \_ 初始化 \_ 完成
 description: SRB \_ 初始化 \_ 完成
-ms.assetid: 72412ab0-226d-4bf6-af6b-98d62653e061
 keywords:
 - SRB_INITIALIZATION_COMPLETE 流媒体设备
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 45bc3aac470eb2216560bffed2758eeee6fd82e3
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d90ef7589054531b16b0e7a92bc3961e73c64ded
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190357"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840497"
 ---
 # <a name="srb_initialization_complete"></a>SRB \_ 初始化 \_ 完成
 
@@ -27,7 +26,7 @@ ms.locfileid: "89190357"
 
 类驱动程序发送此请求，通知微型驱动程序已完成初始化。
 
-### <a name="comments"></a>说明
+### <a name="comments"></a>注释
 
 微型驱动程序完成此请求后，类驱动程序可以开始发送 [**SRB 打开的 \_ \_ 流**](srb-open-stream.md) 请求。
 

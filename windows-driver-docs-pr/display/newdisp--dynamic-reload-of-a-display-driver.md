@@ -1,7 +1,6 @@
 ---
 title: 显示驱动程序的 NewDisp 动态重新加载
 description: 显示驱动程序的 NewDisp 动态重新加载
-ms.assetid: 0f8ac27c-8a42-4032-9974-89a7463dccbb
 keywords:
 - newdisp.exe
 - 动态驱动程序重新加载 WDK Windows 2000 显示器
@@ -9,12 +8,12 @@ keywords:
 - 动态重载 WDK Windows 2000 显示器的重启防护
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a9e3a8f0841d3b3e8878042612bb4cbf5c094e2c
-ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
+ms.openlocfilehash: 3f6e3a48b647989a6b9816893aceb835c4ccd068
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91423734"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840371"
 ---
 # <a name="newdisp-dynamic-reload-of-a-display-driver"></a>NewDisp：显示驱动程序的动态重新加载
 
@@ -24,7 +23,7 @@ ms.locfileid: "91423734"
 
 驱动程序开发工具包 (DDK) 提供一种可在不重新启动的情况下动态重新加载显示驱动程序的工具。 此工具称为 *newdisp.exe*，它通过在更新显示器驱动程序代码时不必要地重新启动，加速了在开发期间显示驱动程序测试。
 
-**注意**   此工具不适用于 windows Vista 和更高版本的 Windows 驱动程序工具包 (WDK) 。
+**注意**  此工具不适用于 windows Vista 和更高版本的 Windows 驱动程序工具包 (WDK) 。
 
  
 
@@ -32,7 +31,7 @@ ms.locfileid: "91423734"
 
 1.  关闭所有 Direct3D 和 OpenGL 应用程序。
 
-2.  将已更新的显示驱动程序的 DLL 复制到* \\ system32*目录中。
+2.  将已更新的显示驱动程序的 DLL 复制到 *\\ system32* 目录中。
 
 3.  运行不带任何参数) 的 *newdisp* (。
 
@@ -40,7 +39,7 @@ ms.locfileid: "91423734"
 
 -   通过640x480x16 颜色调用 **ChangeDisplaySettings** ，这会导致系统加载并运行16色 VGA 显示驱动程序 dll，同时会导致旧的显示驱动程序 dll 从内存中卸载。
 
--   立即对原始模式执行另一个**ChangeDisplaySettings**回调，这会导致从* \\ system32*目录加载新的显示驱动程序 dll，并卸载16色 VGA 显示驱动程序 dll。
+-   立即对原始模式执行另一个 **ChangeDisplaySettings** 回调，这会导致从 *\\ system32* 目录加载新的显示驱动程序 dll，并卸载16色 VGA 显示驱动程序 dll。
 
 如果驱动程序具有活动的 Direct3D、 [**WNDOBJ**](/windows/win32/api/winddi/ns-winddi-wndobj)或 [**DRIVEROBJ**](/windows/win32/api/winddi/ns-winddi-driverobj) 对象，则存在对驱动程序实例的引用。 当 *newdisp* 在对驱动程序实例的引用存在时运行时，将永远不会卸载旧的显示驱动程序 dll，并且将永远不会加载新的显示驱动程序 dll。
 

@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ VIDEOSTABILIZATION
 description: 此扩展属性控件用于控制驱动程序 MFT0 中的数字视频稳定 \\ 。
-ms.assetid: 60F7D1B2-02F1-459A-8F6A-FC61D65705E1
 keywords:
 - KSPROPERTY_CAMERACONTROL_EXTENDED_VIDEOSTABILIZATION 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 09/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b6f72f83180832a6a3730994bbb7da4b1ad1348a
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: e96e1f733b2c66e09984dda930d93b66d4bab7cb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188747"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840563"
 ---
 # <a name="ksproperty_cameracontrol_extended_videostabilization"></a>KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ VIDEOSTABILIZATION
 
@@ -44,7 +43,7 @@ ms.locfileid: "89188747"
 <tr class="odd">
 <td><p>版本 1</p></td>
 <td><p>Pin</p></td>
-<td><p>同步</p></td>
+<td><p>Synchronous</p></td>
 </tr>
 </tbody>
 </table>
@@ -160,7 +159,7 @@ ms.locfileid: "89188747"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Ksmedia.h</td>
 </tr>
 </tbody>

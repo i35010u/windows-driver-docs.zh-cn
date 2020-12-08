@@ -1,17 +1,16 @@
 ---
 title: GUID_NDIS_GEN_PORT_AUTHENTICATION_PARAMETERS
 description: 本主题描述了 NDIS WMI 接口的 GUID_NDIS_GEN_PORT_AUTHENTICATION_PARAMETERS GUID。
-ms.assetid: a61e972b-0969-4ee8-ad57-cf88beda962d
 keywords:
 - GUID_NDIS_GEN_PORT_AUTHENTICATION_PARAMETERS，WDK GUID_NDIS_GEN_PORT_AUTHENTICATION_PARAMETERS 网络驱动程序
 ms.date: 11/22/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b49f79ab9e28345ba7121f7db9d4bd4062eea7c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 6258a2f93f5428745297f2dbf0c63d4a69a64b3c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210743"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840903"
 ---
 # <a name="guid_ndis_gen_port_authentication_parameters"></a>GUID_NDIS_GEN_PORT_AUTHENTICATION_PARAMETERS
 

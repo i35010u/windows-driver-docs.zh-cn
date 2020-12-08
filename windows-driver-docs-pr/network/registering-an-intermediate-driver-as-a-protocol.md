@@ -1,19 +1,18 @@
 ---
 title: 将中间驱动程序注册为协议
 description: 将中间驱动程序注册为协议
-ms.assetid: 79707f6b-0e31-46a8-a763-fa2669ce9635
 keywords:
 - 注册中间驱动程序
 - 中间驱动程序 WDK 网络，注册
 - NDIS 中间驱动程序 WDK，注册
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a773cc4cfe77960c734aad34c5c6ebec52580c03
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 40ad44e00ecdfde65675605111d8dec431758bd7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212029"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840615"
 ---
 # <a name="registering-an-intermediate-driver-as-a-protocol"></a>将中间驱动程序注册为协议
 
@@ -21,7 +20,7 @@ ms.locfileid: "89212029"
 
 
 
-中间驱动程序通过调用[**NdisRegisterProtocolDriver**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisregisterprotocoldriver)在其[**DriverEntry**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)函数的上下文中向 NDIS 注册其*ProtocolXxx*函数。
+中间驱动程序通过调用 [**NdisRegisterProtocolDriver**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisregisterprotocoldriver)在其 [**DriverEntry**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)函数的上下文中向 NDIS 注册其 *ProtocolXxx* 函数。
 
 将中间驱动程序注册为协议与注册为协议驱动程序几乎完全相同。 有关详细信息，请参阅 [初始化协议驱动程序](initializing-a-protocol-driver.md)。
 

@@ -1,33 +1,32 @@
 ---
 title: 用于调试即插即用驱动程序的扩展
 description: 用于调试即插即用驱动程序的扩展
-ms.assetid: 0b60c4ce-5c2d-4cce-a1e6-8275186aa147
 keywords:
-- 即插即用 (PnP)、扩展
-- 扩展, 即插即用
+- 即插即用 (PnP) 、扩展
+- 扩展，即插即用
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 279b98a0f45310e9ff00fd9b83841f2882aee783
-ms.sourcegitcommit: 238308264c1ee2c74ec0c8c303258dc00c79b902
+ms.openlocfilehash: b78c90c7016ca4432d79f2075d163ff069262c64
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70063909"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840207"
 ---
 # <a name="extensions-for-debugging-plug-and-play-drivers"></a>用于调试即插即用驱动程序的扩展
 
 
-调试即插即用驱动程序时, 可能会发现以下调试器扩展很有用。
+调试即插即用驱动程序时，可能会发现以下调试器扩展很有用。
 
-[ **! 仲裁器**](-arbiter.md)  
-显示当前系统资源的仲裁器。 仲裁器是由总线驱动程序公开的一段代码, 用于仲裁资源的请求, 并尝试解决在该总线上连接的设备之间的资源冲突。
+[**!arbiter**](-arbiter.md)  
+显示当前系统资源的仲裁器。 仲裁器是由总线驱动程序公开的一段代码，用于仲裁资源的请求，并尝试解决在该总线上连接的设备之间的资源冲突。
 
-[ **!cmreslist**](-cmreslist.md)  
-显示指定设备\_对象\_的 CM 资源列表。
+[**!cmreslist**](-cmreslist.md)  
+显示 \_ \_ 指定设备对象的 CM 资源列表。
 
 您必须知道 CM 资源列表的地址。
 
-下面是一个示例：
+以下是示例：
 
 ```dbgcmd
 kd> !cmreslist 0xe12576e8
@@ -43,18 +42,18 @@ CmResourceList at 0xe12576e8  Version 0.0  Interface 0x1  Bus #0
 
 这表明具有此 CM 资源列表的设备使用 i/o 范围 3F8-3FF 和 IRQ 4。
 
-[ **! dc**](-dcs.md)  
-此扩展已过时--它的功能已被归入[ **! pci**](-pci.md)。 请参阅本部分后面的! pci 100 示例。
+[**!dcs**](-dcs.md)  
+此扩展已过时--它的功能已被归入 [**！ pci**](-pci.md)。 请参阅本部分后面的！ pci 100 示例。
 
-[ **!devext**](-devext.md)  
+[**!devext**](-devext.md)  
 显示各种设备的特定于总线的设备扩展信息。
 
-[ **!devnode**](-devnode.md)  
+[**!devnode**](-devnode.md)  
 显示有关设备树中的节点的信息。
 
 设备节点 0 (零) 是设备树的根。
 
-下面是一个示例：
+以下是示例：
 
 ```dbgcmd
 0: kd> !devnode 0xfffffa8003634af0
@@ -79,10 +78,10 @@ DevNode 0xfffffa8003634af0 for PDO 0xfffffa8003658590
   DisableableDepends = 1 (including self)
 ```
 
-[ **!devobj**](-devobj.md)  
-显示有关设备\_对象的详细信息。
+[**!devobj**](-devobj.md)  
+显示有关设备对象的详细信息 \_ 。
 
-下面是一个示例：
+以下是示例：
 
 ```dbgcmd
 kd> !devobj 0xff0d4af0
@@ -95,15 +94,15 @@ DevExt ff0d4ba8 DevNode ff0d4a08
 Device queue is not busy.
 ```
 
-[ **! 个驱动程序**](-drivers.md)  
-不再支持[ **!! 驱动程序**](-drivers.md)命令。 改为使用[**lm t n**](lm--list-loaded-modules-.md)命令。
+[**！个驱动程序**](-drivers.md)  
+不再支持 [**！！驱动程序**](-drivers.md) 命令。 改为使用 [**lm t n**](lm--list-loaded-modules-.md) 命令。
 
-[ **!drvobj**](-drvobj.md)  
-显示有关驱动程序\_对象的详细信息。
+[**!drvobj**](-drvobj.md)  
+显示有关驱动程序对象的详细信息 \_ 。
 
 列出由指定的驱动程序创建的所有设备对象。
 
-下面是一个示例：
+以下是示例：
 
 ```dbgcmd
 kd> !drvobj serial
@@ -116,27 +115,27 @@ Device Object list:
 ffba3040  ff0b4040  ff0b59e0  ff0b5040
 ```
 
-[ **! ecb,! ecd,! ecw**](-ecb---ecd---ecw.md)  
-(仅适用于 x86 目标计算机)将值序列写入 PCI 配置空间。
+[**!ecb、!ecd、!ecw**](-ecb---ecd---ecw.md)  
+ (x86 目标计算机仅) 将一系列值写入 PCI 配置空间。
 
-[**ib, iw, id**](-ib---id---iw.md)  
+[**ib，iw，id**](-ib---id---iw.md)  
 从 i/o 端口读取数据。
 
 这三个命令可用于确定某个 i/o 范围是否由正在调试的驱动程序以外的其他设备所声称。 端口上的值为0xFF 表示端口未被使用。
 
-[ **!ioreslist**](-ioreslist.md)  
-显示指定的 IO\_资源\_需求\_列表。
+[**!ioreslist**](-ioreslist.md)  
+显示指定的 IO \_ 资源 \_ 需求 \_ 列表。
 
-[ **! irp**](-irp.md)  
+[**!irp**](-irp.md)  
 显示 IRP 的相关信息。
 
-[ **!irpfind**](-irpfind.md)  
-显示有关目标系统中当前分配的所有 Irp 的信息, 或有关其字段与指定搜索条件匹配的那些 Irp 的信息。
+[**!irpfind**](-irpfind.md)  
+显示有关目标系统中当前分配的所有 Irp 的信息，或有关其字段与指定搜索条件匹配的那些 Irp 的信息。
 
-[ **! pci**](-pci.md)  
-(仅适用于 x86 目标计算机)显示 PCI 总线和连接到它们的任何设备的当前状态。 它还可以显示 PCI 配置空间。
+[**!pci**](-pci.md)  
+ (x86 目标计算机仅) 显示 PCI 总线和附加到它们的任何设备的当前状态。 它还可以显示 PCI 配置空间。
 
-以下示例显示了主总线上的设备:
+以下示例显示了主总线上的设备：
 
 ```dbgcmd
 kd> !pci
@@ -169,7 +168,7 @@ PCI Bus 1
       MEM[0]:f9ffec00
 ```
 
-以下示例显示 SCSI 控制器 (总线 1, 设备 9, 函数 0) 的 PCI 配置空间:
+以下示例显示了 SCSI 控制器 (总线1、设备9、函数 0) 的 PCI 配置空间：
 
 ```dbgcmd
 kd> !pci 100 1 9 0 
@@ -210,14 +209,14 @@ c0: 00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000
 e0: 00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000
 ```
 
-[ **!pcitree**](-pcitree.md)  
-显示有关 PCI 设备对象的信息, 包括子 PCI 总线和 CardBus 总线, 以及连接到它们的设备。
+[**!pcitree**](-pcitree.md)  
+显示有关 PCI 设备对象的信息，包括子 PCI 总线和 CardBus 总线，以及连接到它们的设备。
 
-[ **!pnpevent**](-pnpevent.md)  
+[**!pnpevent**](-pnpevent.md)  
 显示 PnP 设备事件队列。
 
-[ **!rellist**](-rellist.md)  
-显示 PnP 关系列表以及任何相关的 CM\_资源\_列表和 IO\_资源\_列表结构。
+[**!rellist**](-rellist.md)  
+显示 PnP 关系列表以及任何相关的 CM \_ 资源 \_ 列表和 IO \_ 资源 \_ 列表结构。
 
  
 

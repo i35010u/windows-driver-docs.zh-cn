@@ -1,30 +1,29 @@
 ---
 title: 使用 DSS 进行 MB 调制解调器日志记录
 description: 使用 DSS 进行 MB 调制解调器日志记录
-ms.assetid: A40EAF7C-A808-4C2D-848C-EAD2D639EB55
 keywords:
 - MB 的调制解调器日志记录，具有 dss 的移动宽带调制解调器日志记录
 ms.date: 03/21/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 065aaf77f225ecbbbe199083f1006910168ee917
-ms.sourcegitcommit: a0e6830b125a86ac0a0da308d5bf0091e968b787
+ms.openlocfilehash: 3e398c9b3f40a3067baa8fbf642d31f8cbadacfc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86557718"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841181"
 ---
 # <a name="mb-modem-logging-with-dss"></a>使用 DSS 进行 MB 调制解调器日志记录
 
 ## <a name="overview"></a>概述
 
-本主题介绍了一种新的标准 Windows mobile 宽带（MBB）日志记录接口，该接口通过 Microsoft 对 USB MBIM 1.0 规范的扩展，在 Windows 10、版本1903及更高版本中可用。 
+本主题介绍了一种新的标准 Windows mobile 宽带 (MBB) 日志记录接口，该接口通过 Microsoft extension to the USB MBIM 1.0 规格，适用于 Windows 10，版本1903及更高版本。 
 
-使用这一新的日志记录接口，操作系统可以通过 MBIM CID 命令通知 MBB 设备启动、停止和刷新 OS 文件系统。 考虑到调制解调器日志记录负载的非 IP 性质，MBB 服务用来将日志记录负载传输到 OS 的数据通道使用 MBB 数据服务流（DSS）。 DSS 是在[移动宽带接口模型（MBIM） 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)规范中定义的。 
+使用这一新的日志记录接口，操作系统可以通过 MBIM CID 命令通知 MBB 设备启动、停止和刷新 OS 文件系统。 由于调制解调器的日志记录负载的非 IP 性质，MBB 服务用来将日志记录负载传输到 OS 的数据通道使用 MBB 数据服务流 (DSS) 。 在 [移动宽带接口模型中定义了 DSS (MBIM) 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip) 规范。 
 
 操作系统使用一组特定于 Windows 的 MBB 日志记录配置，在整个 MBB 生态系统中对调制解调器的诊断功能和配置进行抽象化。 通过这些 MBB 日志记录配置，调制解调器的供应商可将 OS MBB 日志记录需求映射到适当的内部日志记录配置。 操作系统抽象并定义的日志记录配置包括 MBB 日志记录详细级别和最大刷新时间。 
 
-在达到最大缓冲区大小并且 MBIM 框架将段传输到 OS 之前，或在达到最大刷新时间（即使没有填充段）时，调制解调器将一直填充其日志记录缓冲区，直到达到最大缓冲区大小。 操作系统定义一组标准的 Windows MBB 日志记录配置级别，本主题稍后将对此进行介绍。 每个配置级别指定 MBB 日志记录详细信息和详细级别的操作系统抽象。
+在 (达到最大缓冲区大小并且 MBIM 框架将段传输到 OS 之前，或在达到最大刷新时间时刷新其缓冲区的内容时，即使未) 填充段，调制解调器仍会完全填充其日志记录缓冲区。 操作系统定义一组标准的 Windows MBB 日志记录配置级别，本主题稍后将对此进行介绍。 每个配置级别指定 MBB 日志记录详细信息和详细级别的操作系统抽象。
 
 MBB 配置级别的操作系统抽象通过调制解调器映射到适当的内部调制解调器配置。 操作系统不会将任何其他配置负载（如日志筛选器或掩码）提供给除 OS MBB 配置级别以外的调制解调器。 
 
@@ -39,11 +38,11 @@ MBB 配置级别的操作系统抽象通过调制解调器映射到适当的内�
 
 ## <a name="modem-logging-data-path"></a>调制解调器日志记录数据路径
 
-Moddem 日志记录使用 MBIM 数据服务流（DSS）来传输用于日志记录负载的数据。 有关 DSS 的详细信息，请参阅[MBIM 1.0 规范](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)的10.5.38 部分。 
+Moddem 日志记录使用 MBIM 数据服务流 (DSS) 传输数据以记录负载。 有关 DSS 的详细信息，请参阅 [MBIM 1.0 规范](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)的10.5.38 部分。 
 
 从 DSS 连接或断开连接时，会将以下 GUID 用于调制解调器日志记录：
 
-| GUID | 值 |
+| GUID | “值” |
 | --- | --- |
 | ModemFileTransfer GUID | 0EBB1CEB-AF2D-484D-8DF3-53BC51FD162C |
 
@@ -63,7 +62,7 @@ Moddem 日志记录使用 MBIM 数据服务流（DSS）来传输用于日志记�
 | --- | --- | --- |
 | Microsoft 基本 IP 连接扩展插件 | UUID_BASIC_CONNECT_EXTENSIONS | 3d01dcc5-fef5-4d05-9d3a-bef7058e9aaf |
 
-下表为每个 CID 指定了 UUID 和命令代码，以及 CID 是否支持设置、查询或事件（通知）请求。 有关其参数、数据结构和通知的详细信息，请参阅本主题中的每个 CID 的各个部分。 
+下表指定了每个 CID 的 UUID 和命令代码，以及该 CID 是否支持 Set、Query 或 Event (通知) 请求。 有关其参数、数据结构和通知的详细信息，请参阅本主题中的每个 CID 的各个部分。 
 
 | CID | UUID | 命令代码 | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- | --- | --- |
@@ -75,7 +74,7 @@ Moddem 日志记录使用 MBIM 数据服务流（DSS）来传输用于日志记�
 
 ### <a name="parameters"></a>参数
 
-| Operation | 设置 | 查询 | 通知 |
+| 操作 | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
 | 命令 | MBIM_MODEM_LOGGING_CONFIG | 不适用 | 不适用 |
 | 响应 | MBIM_MODEM_LOGGING_CONFIG | MBIM_MODEM_LOGGING_CONFIG | MBIM_MODEM_LOGGING_CONFIG |
@@ -86,19 +85,19 @@ Moddem 日志记录使用 MBIM 数据服务流（DSS）来传输用于日志记�
 
 #### <a name="mbim_modem_logging_config"></a>MBIM_MODEM_LOGGING_CONFIG
 
-| Offset | 大小 | 字段 | 类型 | 说明 |
+| Offset | 大小 | 字段 | 类型 | 描述 |
 | --- | --- | --- | --- | --- |
-| 0 | 4 | 版本 | UINT32 | 此结构的版本号。 对于此结构的版本1，此字段必须设置为**1** 。 |
+| 0 | 4 | 版本 | UINT32 | 此结构的版本号。 对于此结构的版本1，此字段必须设置为 **1** 。 |
 | 4 | 4 | MaxSegmentSize | UINT32 | 指定调制解调器发送的每个段的段大小（kb）。 如果设备服务的调制解调器支持的最大片段大小超过了设置的值，则此值将设置为支持的最大段大小。 |
-| 8 | 4 | MaxFlushTime | UINT32 | 时间（以毫秒为单位），它指示在发送日志片段之前调制解调器等待的最长时间。 如果从上次发送日志片段起，收集的日志在**MaxFlushTime**持续时间内不会达到**MaxSegmentSize** ，则会发送日志片段，而不考虑其大小。 如果没有日志记录数据，则不发送任何通知。 如果设备无法处理更短的刷新时间，则设备将返回它可以在响应中处理的时间。 对查询或集的响应包含当前配置的**MaxFlushTime**。 |
-| 12 | 4 | LevelConfig | MBIM_LOGGING_LEVEL_CONFIG | 配置为其收集日志的级别。 对查询或集的响应包含当前配置的**LevelConfig**。 |
+| 8 | 4 | MaxFlushTime | UINT32 | 时间（以毫秒为单位），它指示在发送日志片段之前调制解调器等待的最长时间。 如果从上次发送日志片段起，收集的日志在 **MaxFlushTime** 持续时间内不会达到 **MaxSegmentSize** ，则会发送日志片段，而不考虑其大小。 如果没有日志记录数据，则不发送任何通知。 如果设备无法处理更短的刷新时间，则设备将返回它可以在响应中处理的时间。 对查询或集的响应包含当前配置的 **MaxFlushTime**。 |
+| 12 | 4 | LevelConfig | MBIM_LOGGING_LEVEL_CONFIG | 配置为其收集日志的级别。 对查询或集的响应包含当前配置的 **LevelConfig**。 |
 
 > [!NOTE]
-> 如果调制解调器无法在请求的**MaxSegmentSize**和**MAXFLUSHTIMER**上向操作系统提供日志数据，则可以为这些参数选择其自己的值，并将 OS 更新为设置响应或未经请求的事件。 当**MaxSegmentSize**或**MaxFlushTimer**更改时，操作系统行为不会更改，因为它会接收数据包，而不考虑将它们转储到文件的情况。
+> 如果调制解调器无法在请求的 **MaxSegmentSize** 和 **MAXFLUSHTIMER** 上向操作系统提供日志数据，则可以为这些参数选择其自己的值，并将 OS 更新为设置响应或未经请求的事件。 当 **MaxSegmentSize** 或 **MaxFlushTimer** 更改时，操作系统行为不会更改，因为它会接收数据包，而不考虑将它们转储到文件的情况。
 
 以下 MBIM_LOGGING_LEVEL_CONFIG 枚举用于前面的 MBIM_MODEM_LOGGING_CONFIG 结构。
 
-| 类型 | 值 | 说明 |
+| 类型 | 值 | 描述 |
 | --- | --- | --- |
 | MBIMLoggingLevelProd | 0 | 用于从零售或生产填充收集遥测数据。 生成的日志应该是胶囊大小的，并且仅包含关键调制解调器或 MBB 状态或故障信息。 |
 | MBIMLoggingLevelLabVerbose | 1 | 用于开发低成熟度的 MBB 产品。 对调制解调器进行详细的完整堆栈捕获。 生成的调制解调器捕获应允许 IHV 重播并在日志中完全恢复捕获。 |
@@ -120,7 +119,7 @@ MBIM_COMMAND_DONE 中的 InformationBuffer 包含 MBIM_MODEM_LOGGING_CONFIG 的�
 
 ### <a name="status-codes"></a>状态代码
 
-此 CID 仅使用[MBIM 规范修订版本 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)的9.4.5 部分中定义的通用状态代码。
+此 CID 仅使用 [MBIM 规范修订版本 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)的9.4.5 部分中定义的通用状态代码。
 
 ## <a name="dss-session-behavior-during-inactivity"></a>不活动期间的 DSS 会话行为
 

@@ -1,15 +1,14 @@
 ---
 title: 发布签名简介
 description: 发布签名简介
-ms.assetid: 87583d0a-f7c9-49f0-953a-f51891260d75
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1351eb6b73f1028d431bb2532793033404cab9db
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: aaebb14d0a9741eb78297ae364fef73cbafe3e4a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361529"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841065"
 ---
 # <a name="introduction-to-release-signing"></a>发布签名简介
 
@@ -40,11 +39,11 @@ ms.locfileid: "94361529"
 
 如果 [硬件认证工具包 (HCK) ](/previous-versions/windows/hardware/hck/jj124227(v=vs.85)) 没有适用于你的设备类型的 [测试类别](/windows-hardware/test/hlk/) ，则必须使用以下类型的数字签名在 windows Vista 和更高版本的 windows 上对驱动程序包进行 [发布签名](release-signing-driver-packages.md) ：
 
--   若要符合 Windows Vista 和更高版本的 windows 的 [内核模式代码签名64策略](kernel-mode-code-signing-policy--windows-vista-and-later-.md) ，必须使用 [软件发行者证书 (SPC) ](software-publisher-certificate.md) 对内核模式驱动程序包进行签名。 对于非 *启动启动驱动程序* ，只需对驱动程序包的 [目录文件](catalog-files.md)进行签名。 对于启动启动驱动程序，必须在内核模式驱动程序文件中嵌入 SPC 签名，还可以选择对驱动程序包的目录文件进行签名。
+-   若要符合 Windows Vista 和更高版本的 windows 的 [内核模式代码签名64策略](kernel-mode-code-signing-policy--windows-vista-and-later-.md) ，必须使用 [软件发行者证书 (SPC) ](software-publisher-certificate.md) 对内核模式驱动程序包进行签名。 对于非 *启动启动驱动程序*，只需对驱动程序包的 [目录文件](catalog-files.md)进行签名。 对于启动启动驱动程序，必须在内核模式驱动程序文件中嵌入 SPC 签名，还可以选择对驱动程序包的目录文件进行签名。
 
 -   若要符合 Windows Vista 和更高版本的 windows Vista 和更高版本的 [PnP 设备安装签名32要求](pnp-device-installation-signing-requirements--windows-vista-and-later-.md) ，你可以使用 SPC 或 [商业发行版证书](commercial-release-certificate.md) 对内核模式驱动程序包的目录文件进行签名。 后两种签名类型验证驱动程序的真实性和完整性，但不同于 WHQL 版本签名，请不要验证驱动程序的可靠性。
 
-SPC 和商业发布证书统称为 [发布证书](release-certificates.md) ，使用发布证书生成的签名称为 *发布签名* 。
+SPC 和商业发布证书统称为 [发布证书](release-certificates.md) ，使用发布证书生成的签名称为 *发布签名*。
 
 有关发布签名要求和过程的详细信息，请参阅 [发布签名驱动程序包](release-signing-driver-packages.md)。
 

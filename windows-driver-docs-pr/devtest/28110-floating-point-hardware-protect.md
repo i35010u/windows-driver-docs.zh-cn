@@ -1,7 +1,6 @@
 ---
 title: C28110
 description: 警告 C28110 驱动程序必须保护浮点硬件状态。 请参阅使用 float。
-ms.assetid: 2f6045e3-92b2-4773-a8de-3d0ec09c5d31
 keywords:
 - 列出用于驱动程序的 WDK PREfast 的警告
 - 为驱动程序列出的 WDK PREfast 的错误
@@ -9,12 +8,12 @@ ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28110
-ms.openlocfilehash: 389d59e7399952cb31797b7959fefe8ce1356a85
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 356c75e212bdab80e8fe2183f2c68e2c6853ebae
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717266"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838805"
 ---
 # <a name="c28110"></a>C28110
 
@@ -46,9 +45,9 @@ ms.locfileid: "90717266"
 
 当程序在调用函数时保存和还原浮点状态，并且被调用函数执行浮点运算时，可能会错误地触发此警告。
 
-如果函数有意使用浮点运算，并且期望在浮点是安全的上下文中调用，则应** \_ \_ \_ \_ 使用内核 float**批注该函数。 此批注将禁止显示函数体中的警告，并导致调用上下文检查调用是否安全地受到浮点运算的保护。 如果在参数或返回值中出现浮点运算，则效果与使用** \_ 内核 \_ \_ \_ float**时相同。
+如果函数有意使用浮点运算，并且期望在浮点是安全的上下文中调用，则应 **\_ \_ \_ \_ 使用内核 float** 批注该函数。 此批注将禁止显示函数体中的警告，并导致调用上下文检查调用是否安全地受到浮点运算的保护。 如果在参数或返回值中出现浮点运算，则效果与使用 **\_ 内核 \_ \_ \_ float** 时相同。
 
-通过使用在 (上** \_ \_ \_ 使用 \_ 的内核 float** ，或添加相应的保存和还原调用来) 使用浮点的所有函数直到不会出现任何警告，可以确保无需使用浮点硬件即可使用驱动程序。 有关详细信息，请参阅 [驱动程序的浮点批注](floating-point-annotations-for-drivers.md)。
+通过使用在 (上 **\_ \_ \_ 使用 \_ 的内核 float** ，或添加相应的保存和还原调用来) 使用浮点的所有函数直到不会出现任何警告，可以确保无需使用浮点硬件即可使用驱动程序。 有关详细信息，请参阅 [驱动程序的浮点批注](floating-point-annotations-for-drivers.md)。
 
  
 

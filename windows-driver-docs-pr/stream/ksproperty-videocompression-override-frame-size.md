@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ VIDEOCOMPRESSION \_ 替代 \_ 帧 \_ 大小
 description: KSPROPERTY \_ VIDEOCOMPRESSION \_ 替代 \_ 帧 \_ 大小属性暂时覆盖帧大小 (字节计数) 。 此属性是可选的。
-ms.assetid: 626b0dcf-3087-407b-8e7f-00314de7d2f2
 keywords:
 - KSPROPERTY_VIDEOCOMPRESSION_OVERRIDE_FRAME_SIZE 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b66f469ff3d7a88154fd503d706f913b724c5fe
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: fbaf9ecdd9a0e8fc5c95e5ed4b3b8b761f1143af
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106534"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840867"
 ---
 # <a name="ksproperty_videocompression_override_frame_size"></a>KSPROPERTY \_ VIDEOCOMPRESSION \_ 替代 \_ 帧 \_ 大小
 
@@ -68,7 +67,7 @@ KSPROPERTY \_ VIDEOCOMPRESSION \_ 替代 \_ 帧 \_ 大小属性暂时覆盖帧�
 
 KSPROPERTY **Value** \_ VIDEOCOMPRESSION S 结构的值成员 \_ 指定帧的覆盖数据速率。
 
-支持此属性的微型驱动程序应将**KS \_ CompressionCaps \_ CanCrunch**标志设置为[**KSPROPERTY \_ VIDEOCOMPRESSION \_ GETINFO \_ S**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videocompression_getinfo_s)结构的**功能**成员，该成员检索设备的视频压缩功能。
+支持此属性的微型驱动程序应将 **KS \_ CompressionCaps \_ CanCrunch** 标志设置为 [**KSPROPERTY \_ VIDEOCOMPRESSION \_ GETINFO \_ S**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videocompression_getinfo_s)结构的 **功能** 成员，该成员检索设备的视频压缩功能。
 
 视频捕获微型驱动程序不支持此属性。
 
@@ -88,7 +87,7 @@ KSPROPERTY **Value** \_ VIDEOCOMPRESSION S 结构的值成员 \_ 指定帧的覆
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

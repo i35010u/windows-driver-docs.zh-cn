@@ -1,15 +1,14 @@
 ---
 title: Windows 内核模式内存管理器
 description: Windows 内核模式内存管理器
-ms.assetid: ab464d5b-7bad-494e-80cd-e32ca9e9fa8d
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 91a457b522e3ce6e98b0a86c7709e864b3d6dd2f
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 091524d636f45cc03395b72d0513c9298e9fe73d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187551"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841213"
 ---
 # <a name="windows-kernel-mode-memory-manager"></a>Windows 内核模式内存管理器
 

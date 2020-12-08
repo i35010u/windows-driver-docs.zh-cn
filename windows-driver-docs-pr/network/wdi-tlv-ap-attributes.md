@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_AP_ATTRIBUTES
-description: WDI_TLV_AP_ATTRIBUTES 是 TLV，其中包含访问点的特性。
-ms.assetid: FD6F635C-85FF-4668-AA17-12677A61F84D
+description: WDI_TLV_AP_ATTRIBUTES 为 TLV，其中包含访问点的属性。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_AP_ATTRIBUTES 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 6630d830c214be4460dfc8fb7261ca3102f6286a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c0ff8a9ce0395531a2aad1f6a1b92b3ec1458f2f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374555"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840887"
 ---
-# <a name="wditlvapattributes"></a>WDI\_TLV\_AP\_ATTRIBUTES
+# <a name="wdi_tlv_ap_attributes"></a>WDI \_ TLV \_ AP \_ 属性
 
 
-WDI\_TLV\_AP\_属性是包含属性的访问点 TLV。
+WDI \_ tlv \_ AP \_ 属性是包含访问点属性的 tlv。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,16 +25,16 @@ WDI\_TLV\_AP\_属性是包含属性的访问点 TLV。
 ## <a name="length"></a>长度
 
 
-所有的大小 （以字节为单位） 总和包含 TLVs。
+Sum (包含所有 TLVs 的大小的) 字节。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入                                                                                        | 允许多个 TLV 实例 | 可选 | 描述                              |
+| 类型                                                                                        | 允许多个 TLV 实例 | 可选 | 说明                              |
 |---------------------------------------------------------------------------------------------|--------------------------------|----------|------------------------------------------|
-| [**WDI\_TLV\_AP\_CAPABILITIES**](wdi-tlv-ap-capabilities.md)                               |                                |          | 访问点功能。           |
-| [**WDI\_TLV\_UNICAST\_ALGORITHM\_LIST**](wdi-tlv-unicast-algorithm-list.md)                |                                |          | 支持的单播算法中。        |
-| [**WDI\_TLV\_MULTICAST\_DATA\_ALGORITHM\_LIST**](wdi-tlv-multicast-data-algorithm-list.md) |                                |          | 支持多播的数据的算法。 |
+| [**WDI \_ TLV \_ AP \_ 功能**](wdi-tlv-ap-capabilities.md)                               |                                |          | 访问点功能。           |
+| [**WDI \_ TLV \_ 单播 \_ 算法 \_ 列表**](wdi-tlv-unicast-algorithm-list.md)                |                                |          | 支持的单播算法。        |
+| [**WDI \_ TLV \_ 多播 \_ 数据 \_ 算法 \_ 列表**](wdi-tlv-multicast-data-algorithm-list.md) |                                |          | 支持的多播数据算法。 |
 
  
 
@@ -54,10 +53,10 @@ WDI\_TLV\_AP\_属性是包含属性的访问点 TLV。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

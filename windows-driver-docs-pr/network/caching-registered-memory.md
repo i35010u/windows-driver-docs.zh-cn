@@ -1,7 +1,6 @@
 ---
 title: 缓存已注册的内存
 description: 缓存已注册的内存
-ms.assetid: e1040f6a-6e65-462a-a79a-5d05d36787b0
 keywords:
 - SAN 连接设置 WDK，缓存已注册内存
 - RDMA 缓冲区缓存 WDK San
@@ -12,12 +11,12 @@ keywords:
 - 内存 WDK San
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f6887498f249b8f2c097bf3e3e5a250124e21097
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 70a380843c19ddd85e327a6d1f2785155ddddc8e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206471"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839047"
 ---
 # <a name="caching-registered-memory"></a>缓存已注册的内存
 
@@ -29,7 +28,7 @@ SAN 服务提供程序可以缓存为本地或远程访问而公开的 RDMA 缓�
 
 ### <a name="caching-rdma-buffers-exposed-for-local-access"></a>缓存为本地访问公开的 RDMA 缓冲区
 
-Windows 套接字开关代表应用程序调用 SAN 服务提供程序的[**WSPRegisterMemory**](/previous-versions/windows/hardware/network/ff566311(v=vs.85)) extension 函数，以便在调用[**WSPRdmaWrite**](/previous-versions/windows/hardware/network/ff566306(v=vs.85))扩展函数时，将充当本地接收 rdma 缓冲区的所有数据缓冲区注册到[**WSPRDMAREAD**](/previous-versions/windows/hardware/network/ff566304(v=vs.85))扩展函数或本地 RDMA 源。 作为此注册过程的一部分，SAN 服务提供程序必须将这些缓冲区锁定到物理内存区域，并将其注册到 SAN NIC。 这两个操作都消耗大量资源。 因此，SAN 服务提供商应使用缓存来减少这些注册的开销。 如果 SAN 服务提供商使用缓存，则为数据传输重复使用缓冲区的应用程序的性能将提高。
+Windows 套接字开关代表应用程序调用 SAN 服务提供程序的 [**WSPRegisterMemory**](/previous-versions/windows/hardware/network/ff566311(v=vs.85)) extension 函数，以便在调用 [**WSPRdmaWrite**](/previous-versions/windows/hardware/network/ff566306(v=vs.85))扩展函数时，将充当本地接收 rdma 缓冲区的所有数据缓冲区注册到 [**WSPRDMAREAD**](/previous-versions/windows/hardware/network/ff566304(v=vs.85))扩展函数或本地 RDMA 源。 作为此注册过程的一部分，SAN 服务提供程序必须将这些缓冲区锁定到物理内存区域，并将其注册到 SAN NIC。 这两个操作都消耗大量资源。 因此，SAN 服务提供商应使用缓存来减少这些注册的开销。 如果 SAN 服务提供商使用缓存，则为数据传输重复使用缓冲区的应用程序的性能将提高。
 
 SAN 服务提供商应缓存并释放为本地访问公开的 RDMA 缓冲区，如以下列表中所述：
 
@@ -43,7 +42,7 @@ SAN 服务提供商应缓存并释放为本地访问公开的 RDMA 缓冲区，�
 
 5.  在本地 SAN 套接字与远程对等端之间的连接关闭之前，SAN 服务提供商应释放所有缓存的缓冲区。
 
-**注意**   代理驱动程序必须在代码上使用**try/except**机制，以访问通过对**MmSecureVirtualMemory**的调用来保护的用户模式缓冲区，以防操作系统崩溃。 有关代理驱动程序如何保护和释放缓冲区的详细信息，请参阅 [保护和释放虚拟地址的所有权](securing-and-releasing-ownership-of-virtual-addresses.md)。 有关 **try/except**的详细信息，请参阅 Visual C++ 文档。 有关 **VirtualFree**的信息，请参阅 Microsoft Windows SDK 文档。
+**注意**  代理驱动程序必须在代码上使用 **try/except** 机制，以访问通过对 **MmSecureVirtualMemory** 的调用来保护的用户模式缓冲区，以防操作系统崩溃。 有关代理驱动程序如何保护和释放缓冲区的详细信息，请参阅 [保护和释放虚拟地址的所有权](securing-and-releasing-ownership-of-virtual-addresses.md)。 有关 **try/except** 的详细信息，请参阅 Visual C++ 文档。 有关 **VirtualFree** 的信息，请参阅 Microsoft Windows SDK 文档。
 
  
 
@@ -54,7 +53,7 @@ Windows 套接交换机调用 SAN 服务提供程序的 [**WSPRegisterRdmaMemory
 SAN 服务提供商应缓存为远程访问公开的 RDMA 缓冲区，如以下列表中所述：
 
 1.  当开关调用 **WSPDeregisterRdmaMemory** 来释放缓冲区时，san 服务提供程序应将缓冲区锁定在物理内存中并向 san NIC 注册。 SAN 服务提供程序还应将缓冲区添加到已注册的缓冲区的缓存，以防在后续的 RDMA 操作中再次使用该缓冲区。 但是，SAN 服务提供商应采取相应的措施来确保远程对等方不能再访问该缓冲区。
-    **注意**   如果只有在 san 服务提供商删除从 SAN NIC 注册的缓冲区时才可以访问该缓冲区，则 SAN 服务提供程序必须这样做。 但是，SAN 服务提供商应将缓冲区锁定为物理内存区域。 此方案不能提供最佳性能，但最好是不提供缓存。
+    **注意**  如果只有在 san 服务提供商删除从 SAN NIC 注册的缓冲区时才可以访问该缓冲区，则 SAN 服务提供程序必须这样做。 但是，SAN 服务提供商应将缓冲区锁定为物理内存区域。 此方案不能提供最佳性能，但最好是不提供缓存。
 
      
 

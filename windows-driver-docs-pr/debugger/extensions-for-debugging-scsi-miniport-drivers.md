@@ -1,27 +1,26 @@
 ---
 title: 用于调试 SCSI 微型端口驱动程序的扩展
 description: 用于调试 SCSI 微型端口驱动程序的扩展
-ms.assetid: 6e6c35e5-d9dd-430a-8fc4-86f24344c24d
 keywords:
 - SCSI 微型端口调试，有用的扩展
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d6cc9c9db0203cd571eb22d24eb88b9632115032
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 46627ea77d5304cbeeb66f2c675852593e96a10c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373929"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840205"
 ---
 # <a name="extensions-for-debugging-scsi-miniport-drivers"></a>用于调试 SCSI 微型端口驱动程序的扩展
 
 
-当调试 SCSI 微型端口驱动程序时，可能会发现以下调试器扩展很有用。 常规调试器扩展会首先列出后, 跟的那些特定 SCSI 微型端口调试。
+调试 SCSI 微型端口驱动程序时，可能会发现以下调试器扩展很有用。 首先列出常规调试器扩展，然后列出特定于 SCSI 微型端口调试的扩展。
 
 [**!devobj**](-devobj.md)  
-**！ Devobj**扩展插件都会显示有关设备的详细的信息\_对象。 如果**当前 Irp**字段为非 null，这可能由 SCSI 驱动程序等待映射注册。
+**！ Devobj** 扩展显示有关设备对象的详细信息 \_ 。 如果 **当前 Irp** 字段为非空，则这可能是由于 SCSI 驱动程序正在等待映射寄存器导致的。
 
-下面是一个示例：
+以下是示例：
 
 ```dbgcmd
 0: kd> !devobj 8633da70
@@ -35,10 +34,10 @@ Device queue is not busy.
 ```
 
 [**!errlog**](-errlog.md)  
-**！ Errlog**扩展 I/O 系统错误日志中显示的任何挂起的项的内容。
+**！ .Errlog** extension 显示 i/o 系统的错误日志中任何挂起项的内容。
 
-[**!object**](-object.md)  
-**！ 对象**扩展显示有关系统对象的信息。 此扩展显示所有 SCSI 设备。
+[**！对象**](-object.md)  
+**！对象** 扩展显示有关系统对象的信息。 此扩展显示所有 SCSI 设备。
 
 例如：
 
@@ -61,26 +60,26 @@ Object: e12a2520  Type: (863d12c8) Directory
 ```
 
 [**!pcr**](-pcr.md)  
-**！ Pcr**扩展处理器上显示有关处理器控件区域 (PCR) 的详细的信息。 信息包括在 DPC 队列中，这可能很有用的项目。 在调试已停止的驱动程序或超时。
+**！ Pcr** 扩展显示处理器上 (pcr) 的处理器控制区域的详细信息。 此信息包括 DPC 队列中的项目，这会很有用。 调试停止的驱动程序或超时。
 
 [**!minipkd.help**](-minipkd-help.md)  
-**！ Minipkd.help**扩展插件都会显示所有 Minipkd.dll 扩展命令的列表。
+**！ Minipkd** 显示所有 Minipkd.dll 扩展命令的列表。
 
-如果出现类似于以下错误消息，它指示符号路径不正确，并且不指向 Scsiport.sys 符号的正确版本。
+如果出现类似于下面的错误消息，则表示符号路径不正确，并且不指向正确的 Scsiport.sys 符号版本。
 
 ```dbgcmd
 minipkd error (0) <path> ... \minipkd\minipkd.c @ line 435
 ```
 
-[ **.Sympath （设置符号路径）** ](-sympath--set-symbol-path-.md)可以使用命令，以显示当前路径以及更改的路径。 [ **.Reload （重新加载模块）** ](-reload--reload-module-.md)命令将重新加载当前路径中的符号。
+可以使用 [**sympath (设置符号路径)**](-sympath--set-symbol-path-.md) 命令来显示当前路径并更改路径。 Reload.sql [**(Reload.sql Module)**](-reload--reload-module-.md) 命令将从当前路径重新加载符号。
 
-[**!minipkd.adapter Adapter**](-minipkd-adapter.md)  
-**！ Minipkd.adapter**扩展显示有关指定的适配器的详细的信息。 **适配器**可以通过查看找到**DevExt**字段中 **！ minipkd.adapters**显示。
+[**！ minipkd 适配器**](-minipkd-adapter.md)  
+**！ Minipkd** 扩展显示有关指定适配器的详细信息。 可以通过查看 **！ minipkd** 显示中的 **DevExt** 字段来找到 **适配器**。
 
 [**!minipkd.adapters**](-minipkd-adapters.md)  
-**！ Minipkd.adapters**扩展显示的所有适配器使用 SCSI 端口驱动程序的已发现的 Windows，并与每个适配器关联的单个设备。
+**！ Minipkd** 扩展显示与 Windows 标识的 SCSI 端口驱动程序一起使用的所有适配器，以及与每个适配器关联的各个设备。
 
-下面是一个示例：
+以下是示例：
 
 ```dbgcmd
 0: kd> !minipkd.adapters
@@ -93,33 +92,33 @@ Adapter \Driver\adpu160m     DO 8633da70         DevExt 8633db28
 Adapter \Driver\adpu160m     DO 86376040         DevExt 863760f8 
 ```
 
-类似于以下错误消息表示的符号路径不正确，并且不指向 Scsiport.sys 符号的正确版本或 Windows 未标识任何使用 SCSI 端口驱动程序的适配器：
+类似于下面的错误消息指示符号路径不正确，并且未指向正确版本的 Scsiport.sys 符号，或者 Windows 尚未识别使用 SCSI 端口驱动程序的任何适配器：
 
 ```dbgcmd
 minipkd error (0) <path> ... \minipkd\minipkd.c @ line 435
 ```
 
-如果[ **！ minipkd.help** ](-minipkd-help.md)扩展命令返回的帮助信息已成功，SCSI 端口符号是否正确。
+如果 [**！ minipkd**](-minipkd-help.md) extension 命令成功返回帮助信息，则 SCSI 端口符号正确。
 
-[**!minipkd.exports Adapter**](-minipkd-exports.md)  
-**！ Minipkd.exports**扩展显示指定的适配器的微型端口导出结果的地址。
+[**！ minipkd 适配器**](-minipkd-exports.md)  
+**！ Minipkd** extension 显示指定适配器的微型端口导出地址。
 
-[**!minipkd.lun {LUN | Device}**](-minipkd-lun.md)  
-**！ Minipkd.lun**扩展显示有关指定的逻辑单元扩展 (LUN) 的详细的信息。 LUN 可以是指定的地址 (可以通过查看找到**LUN**字段中 **！ minipkd.adapters**显示) 或由其物理设备对象 (但可以参阅**DevObj**字段 **！ minipkd.adapters**显示)。
+[**！ minipkd {LUN |装置**](-minipkd-lun.md)  
+**！ Minipkd** 扩展显示 (lun) 的指定逻辑单元扩展的详细信息。 可以 (通过以下方式指定 LUN：通过查看 **！ minipkd** 显示屏中的 **LUN** 字段) 或它的物理设备对象来指定该 lun (可在 **！ minipkd** 显示) 的 **DevObj** 字段中找到该字段。
 
 [**!minipkd.portconfig PortConfig**](-minipkd-portconfig.md)  
-**！ Minipkd.portconfig**扩展插件都会显示有关指定的端口的详细的信息\_配置\_数据。 **PortConfig**中可以找到**端口配置信息**字段 **！ minipkd.adapter**显示。
+**！ Minipkd portconfig** 扩展显示有关指定端口配置数据的详细信息 \_ \_ 。 可以在 **！ minipkd** 显示的 "**端口配置信息**" 字段中找到 **PortConfig** 。
 
-[**!minipkd.req {Adapter | Device}**](-minipkd-req.md)  
-**！ Minipkd.req**扩展指定的适配器或 LUN 设备上显示所有当前处于活动状态的请求有关的信息。
+[**！ minipkd {Adapter |装置**](-minipkd-req.md)  
+**！ Minipkd** 扩展显示有关指定适配器或 LUN 设备上所有当前活动的请求的信息。
 
 [**!minipkd.srb SRB**](-minipkd-srb.md)  
-**！ Minipkd.srb**扩展显示有关指定的 SCSI 请求块 (SRB) 的详细的信息。 SRB 被指定的地址。 当前处于活动状态的所有请求的地址可在**SRB**的输出字段 **！ minipkd.req**命令。
+**！ Minipkd srb** (srb) 中显示有关指定 SCSI 请求块的详细信息。 SRB 由 address 指定。 可以在 **！ minipkd** 命令的输出的 **SRB** 字段中找到所有当前活动的请求的地址。
 
-[**！ scsikd.classext\[设备\[级别\]\]**](-scsikd-classext.md)  
-**！ Scsikd.classext**扩展显示有关指定的类插即用 (PnP) 设备或一组所有此类设备的详细的信息。 *设备*设备对象或类即插即用设备的设备扩展。 如果*设备*是省略，将显示所有类即插即用扩展的列表。
+[**！ scsikd classext \[ 设备 \[ 级别\]\]**](-scsikd-classext.md)  
+**！ Scsikd classext** 扩展显示有关指定类即插即用 (PnP) 设备或所有此类设备的列表的详细信息。 *设备* 是类 PnP 设备的设备对象或设备扩展。 如果省略 *设备* ，则显示所有类 PnP 扩展的列表。
 
-下面是一个示例：
+以下是示例：
 
 ```dbgcmd
 0: kd> !scsikd.classext 
@@ -132,10 +131,10 @@ minipkd error (0) <path> ... \minipkd\minipkd.c @ line 435
  usage: !classext <class fdo> <level [0-2]> 
 ```
 
-[**！ scsikd.scsiext 设备**](-scsikd-scsiext.md)  
-**！ Scsikd.scsiext**扩展显示有关指定的 SCSI 端口扩展的详细的信息。 *设备*可以是设备对象或设备适配器或 LUN 的扩展。
+[**！ scsikd scsiext 设备**](-scsikd-scsiext.md)  
+**！ Scsikd scsiext** 扩展显示有关指定 SCSI 端口扩展的详细信息。 *设备* 可以是适配器或 LUN 的设备对象或设备扩展。
 
-下面是一些可能的恶意活动：
+下面是一些示例：
 
 ```dbgcmd
 0: kd> !scsikd.scsiext 86353040
@@ -166,8 +165,8 @@ Adapter Extension:
   NonCacheExt 0x850d4000  IoBase 0xd80f0000   Int 0x23  < ..omitted.. > 
 ```
 
-[**!scsikd.srbdata Address**](-scsikd-srbdata.md)  
-**！ Scsikd.srbdata**扩展显示详细的信息指定 SRB\_数据跟踪块。
+[**！ scsikd. srbdata Address**](-scsikd-srbdata.md)  
+**！ Scsikd srbdata** 扩展显示有关指定 SRB \_ 数据跟踪块的详细信息。
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: 'MiniportOnlyWdmDevice 规则 (kmdf) '
 description: MiniportOnlyWdmDevice 规则指定 WDF 驱动程序不应使用 IoCreateDevice 和 IoCreateDeviceSecure 函数创建裸机设备对象。
-ms.assetid: 23B9431E-3932-42F3-B797-0820D9A43295
 ms.date: 05/21/2018
 keywords:
 - 'MiniportOnlyWdmDevice 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f28512f4390e0fb53a80f1644b21dca3bd137555
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: c381d08e36f323e7a70784f265d9dfefd2f62534
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106168"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839001"
 ---
 # <a name="miniportonlywdmdevice-rule-kmdf"></a>MiniportOnlyWdmDevice 规则 (kmdf) 
 
 
-**MiniportOnlyWdmDevice**规则指定 WDF 驱动程序不应使用[**IoCreateDevice**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice)和[**IoCreateDeviceSecure**](/windows-hardware/drivers/ddi/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure)函数创建裸机设备对象。 如果有人尝试将 IRP 发送到 WDM 设备，这将导致计算机崩溃。 这是因为，将设备的 IRP 调度条目设置为特定于 WDF 的条目，但框架尚未创建 WDF 设备。 但微型端口驱动程序可以使用 DDIs，因为没有为其设置驱动程序调度入口点。
+**MiniportOnlyWdmDevice** 规则指定 WDF 驱动程序不应使用 [**IoCreateDevice**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice)和 [**IoCreateDeviceSecure**](/windows-hardware/drivers/ddi/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure)函数创建裸机设备对象。 如果有人尝试将 IRP 发送到 WDM 设备，这将导致计算机崩溃。 这是因为，将设备的 IRP 调度条目设置为特定于 WDF 的条目，但框架尚未创建 WDF 设备。 但微型端口驱动程序可以使用 DDIs，因为没有为其设置驱动程序调度入口点。
 
 **驱动程序模型： KMDF**
 

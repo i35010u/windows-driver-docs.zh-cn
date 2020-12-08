@@ -1,9 +1,8 @@
 ---
 title: q、qq（退出）
-description: '问: 和 qq 命令结束调试会话。'
-ms.assetid: 94d35997-8b21-4d25-b2ae-4b2a78240153
+description: 问答命令结束调试会话。
 keywords:
-- 问:、 qq (Quit) Windows 调试
+- 问： qq (Quit) Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1bfe9421c9da02d26bbbc58b3794de108c53093e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c008a50ebac80233b1ee82a3a9d7e8dd3c0d8bd6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362383"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839799"
 ---
 # <a name="q-qq-quit"></a>q、qq（退出）
 
 
-**Q**并**qq**命令结束调试会话。 （在 CDB 和 KD 中，此命令还将退出调试器本身。 在 WinDbg 中，此命令返回调试器到休眠模式。）
+**问答****命令结束** 调试会话。  (在 CDB 和 KD 中，此命令也会退出调试器本身。 在 WinDbg 中，此命令将调试器返回到休眠模式。 ) 
 
 ```dbgcmd
 q 
@@ -41,12 +40,12 @@ qq
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>用户模式下，内核模式</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>用户模式，内核模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>实时、 崩溃转储</p></td>
+<td align="left"><p>实时，故障转储</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>
@@ -60,13 +59,13 @@ qq
 <a name="remarks"></a>备注
 -------
 
-在用户模式下调试中， **q**命令将结束调试会话并关闭目标应用程序。
+在用户模式调试中， **q** 命令结束调试会话并关闭目标应用程序。
 
-在内核模式调试中， **q**命令将保存日志文件，并结束调试会话。 目标计算机保持锁定状态。
+在内核模式调试中， **q** 命令保存日志文件并结束调试会话。 目标计算机保持锁定状态。
 
-如果在 KD 中时，此命令不起作用，请按[ **CTRL + R + ENTER** ](ctrl-r--re-synchronize-.md)上调试器键盘，然后重试**q**命令。 如果此操作不起作用，则必须使用 CTRL + B + ENTER 以退出调试器。
+如果此命令在 KD 中不起作用，请在调试器键盘上按 [**CTRL + R + enter**](ctrl-r--re-synchronize-.md) ，然后重试 **q** 命令。 如果此操作不起作用，则必须使用 CTRL + B + ENTER 退出调试器。
 
-**Qq**命令的行为完全相同**q**命令，除非您正在执行远程调试。 在远程调试期间**q**命令不起作用，但**qq**命令将结束调试服务器。 有关这种效果的详细信息，请参阅[远程调试通过调试器](remote-debugging-through-the-debugger.md)。
+**Qq** 命令的行为与 **q** 命令完全相同，除非执行远程调试。 在远程调试过程中， **q** 命令不起作用，但 **qq** 命令会结束调试服务器。 有关此效果的详细信息，请参阅 [通过调试器进行远程调试](remote-debugging-through-the-debugger.md)。
 
  
 

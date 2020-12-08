@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 分配器 \_ 控件 \_ 捕获 \_ 交错
 description: '\_ \_ \_ \_ 如果可能交错捕获，KSPROPERTY 分配器控制捕获交错属性会通知覆盖混音器。'
-ms.assetid: ea38289f-2d4e-4613-ba08-c8ab49f6fce7
 keywords:
 - KSPROPERTY_ALLOCATOR_CONTROL_CAPTURE_INTERLEAVE 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d2a56bb8b730d7e9b1c0e3f5e7fcc4e89c021344
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 6b77c8808e8ea2ef1f59a4f5b8894b2a3f5274f6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103295"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840571"
 ---
 # <a name="ksproperty_allocator_control_capture_interleave"></a>KSPROPERTY \_ 分配器 \_ 控件 \_ 捕获 \_ 交错
 
@@ -79,7 +78,7 @@ ms.locfileid: "90103295"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

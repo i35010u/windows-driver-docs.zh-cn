@@ -1,15 +1,14 @@
 ---
 title: 默认规则集 (KMDF)
 description: 了解 (KMDF) 的默认规则集，它指定了在分析驱动程序时要使用的建议规则集。
-ms.assetid: A86161C6-52E8-457B-9C75-100D36796183
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 78635d2230910aa4a1bf69ef7ca5eb2224887ee0
-ms.sourcegitcommit: cccf9ba62af357aad1016addbbf6c42c7f564412
+ms.openlocfilehash: a494145dfaaa8916bcab9631119b90ddf49fc133
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91606492"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839777"
 ---
 # <a name="default-rule-set-kmdf"></a>默认规则集 (KMDF)
 
@@ -29,7 +28,7 @@ ms.locfileid: "91606492"
 
 2.  单击 " **规则** " 选项卡。在 " **规则集**" 下，选择 " **默认**"。
 
-    若要从 Visual Studio 开发人员命令提示符窗口中选择默认规则集，请使用 **/check**选项指定**sdv** 。 例如：
+    若要从 Visual Studio 开发人员命令提示符窗口中选择默认规则集，请使用 **/check** 选项指定 **sdv** 。 例如：
 
     ```
     msbuild /t:sdv /p:Inputs="/check:Default.sdv" mydriver.VcxProj /p:Configuration="Win8 Release" /p:Platform=Win32

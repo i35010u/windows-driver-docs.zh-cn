@@ -1,7 +1,6 @@
 ---
 title: 扩展 \_ TDOP \_ 版本
 description: '\_调试请求的 ext TDOP \_ RELEASE 子操作在类型化的 \_ \_ \_ \_ 数据 \_ ANSI 请求操作中，释放了类型化的数据说明。'
-ms.assetid: 4c2bbc65-a98d-4ee7-bbd0-e30b33c330e0
 keywords:
 - EXT_TDOP_RELEASE Windows 调试
 topic_type:
@@ -12,19 +11,19 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e114784729c3d11b463359415dba4bfd4f2b51b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e0aa4b47c95b01e1495e9127a0066aba4194134c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217378"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840217"
 ---
 # <a name="ext_tdop_release"></a>扩展 \_ TDOP \_ 版本
 
 
-\_调试请求的 ext TDOP \_ RELEASE 子操作在[**类型化的 \_ \_ \_ \_ 数据 \_ ANSI**](debug-request-ext-typed-data-ansi.md)[**请求**](request.md)操作中，释放了类型化的数据说明。
+\_调试请求的 ext TDOP \_ RELEASE 子操作在 [**类型化的 \_ \_ \_ \_ 数据 \_ ANSI**](debug-request-ext-typed-data-ansi.md)[**请求**](request.md)操作中，释放了类型化的数据说明。
 
-**参数**
+**Parameters**
 
 <span id="Operation"></span><span id="operation"></span><span id="OPERATION"></span>**运作**  
 \_ \_ 此子操作的 TDOP 版本设置为 EXT。

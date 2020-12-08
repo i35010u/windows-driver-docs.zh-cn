@@ -1,15 +1,14 @@
 ---
 title: 检查 IRP_MJ_LOCK_CONTROL 操作的 Oplock 状态
 description: 检查 IRP_MJ_LOCK_CONTROL 操作的 Oplock 状态
-ms.assetid: 6e0a5287-9a22-465f-b345-c9af556e6cdb
 ms.date: 11/25/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 82d40380be6f2d695abe32bb15b29a67358b1fdf
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: f65a25744285e50fa83de99017cee6c9cd1e6e28
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065936"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839923"
 ---
 # <a name="checking-the-oplock-state-of-an-irp_mj_lock_control-operation"></a>检查 IRP_MJ_LOCK_CONTROL 操作的 Oplock 状态
 
@@ -35,6 +34,6 @@ ms.locfileid: "89065936"
 
   - 读取请求：不需要确认;操作会立即继续。
 
-  - 读取句柄和读写句柄请求：尽管需要确认中断，但操作会立即继续 (例如，无需等待确认) 。
+  - Read-Handle 和读写句柄请求：尽管需要确认中断，但操作会立即继续 (例如，无需等待确认) 。
 
-  - 级别1、批处理和读写请求：必须先收到确认，然后才能继续操作。
+  - 级别1、批处理和 Read-Write 请求：必须先收到确认，然后才能继续操作。

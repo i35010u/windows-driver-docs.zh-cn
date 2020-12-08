@@ -1,7 +1,6 @@
 ---
 title: 'InternalIoctlReqs 规则 (kmdf) '
 description: InternalIoctlReqs 规则指定内部 IOCTL 请求不会传递到不适当的 KMDF 请求-发送设备驱动程序接口 (DDIs) 。
-ms.assetid: a6d75752-21eb-486b-b73a-8d810b392e6b
 ms.date: 05/21/2018
 keywords:
 - 'InternalIoctlReqs 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 207e031014182d1461e443c491cf7359e7c05968
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: c4e0e949f98823a4f1a16b24d352b270b2ba7971
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106634"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841299"
 ---
 # <a name="internalioctlreqs-rule-kmdf"></a>InternalIoctlReqs 规则 (kmdf) 
 
 
-**InternalIoctlReqs**规则指定内部 IOCTL 请求不会传递到不适当的 KMDF 请求-发送设备驱动程序接口 (DDIs) 。
+**InternalIoctlReqs** 规则指定内部 IOCTL 请求不会传递到不适当的 KMDF 请求-发送设备驱动程序接口 (DDIs) 。
 
 在 .EVT \_ WDF \_ io \_ QUEUE io 内部设备控制回调函数中提供给驱动程序的所有请求 \_ \_ \_ \_ 都保证为内部 IOCTL 请求。 因此，不能使用特定于发送读取、写入或 IOCTL 请求的 DDIs （如 **WdfIoTargetSendReadSynchronously**、 **WdfIoTargetSendWriteSynchronously**、 **WdfIoTargetSendIoctlSynchronously**、 **WdfUsbTargetPipeWriteSynchronously**）发送这些 IOCTLs。
 

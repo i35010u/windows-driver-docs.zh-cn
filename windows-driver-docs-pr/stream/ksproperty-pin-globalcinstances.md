@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ PIN \_ GLOBALCINSTANCES
 description: 客户端使用 KSPROPERTY \_ pin \_ GLOBALCINSTANCES 来确定由 pin 工厂实例化的当前 pin 数量，以及此 PIN 工厂可以实例化的最大 pin 数。 此属性是可选的。
-ms.assetid: 888b8ddf-aa36-4e2f-a74c-ab4ee693bb36
 keywords:
 - KSPROPERTY_PIN_GLOBALCINSTANCES 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a5174a14701d1a92685ee04957fc8bb43f96ad6b
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 69c4e601679292173cc8288ceb3caf93bf890240
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102392"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840533"
 ---
 # <a name="ksproperty_pin_globalcinstances"></a>KSPROPERTY \_ PIN \_ GLOBALCINSTANCES
 
@@ -61,7 +60,7 @@ ms.locfileid: "90102392"
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 使用 KSP pin 指定此属性 \_ ，其中 **PinId** 成员指定 PIN 工厂。

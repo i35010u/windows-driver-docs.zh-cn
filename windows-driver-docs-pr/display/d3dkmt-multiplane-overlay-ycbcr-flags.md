@@ -1,7 +1,6 @@
 ---
 title: D3DKMT \_ MULTIPLANE \_ 叠加 \_ YCbCr \_ 标志枚举
 description: 了解 D3DKMT \_ MULTIPLANE \_ 叠加 \_ YCbCr \_ 标志枚举，该枚举是保留供系统使用的。 请勿在您的驱动程序中使用。
-ms.assetid: 3bfcd424-961f-4efe-a928-2ee7fbd29f4a
 keywords:
 - D3DKMT_MULTIPLANE_OVERLAY_YCbCr_FLAGS 枚举显示设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f4736260532e9f9bdf0aa34175ce537a7ca9de59
-ms.sourcegitcommit: fc94eb0d5a41ef81c1b3ab91ad725386db0be0c2
+ms.openlocfilehash: 27f33826430f249d8a303724c825184142e99e72
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91603604"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839623"
 ---
 # <a name="d3dkmt_multiplane_overlay_ycbcr_flags-enumeration"></a>D3DKMT \_ MULTIPLANE \_ 叠加 \_ YCbCr \_ 标志枚举
 
@@ -31,9 +30,9 @@ ms.locfileid: "91603604"
 
 ```ManagedCPlusPlus
 typedef enum D3DKMT_MULTIPLANE_OVERLAY_YCbCr_FLAGS {
-  D3DKMT_MULTIPLANE_OVERLAY_YCbCr_FLAG_NOMINAL_RANGE  = 0x1,
-  D3DKMT_MULTIPLANE_OVERLAY_YCbCr_FLAG_BT709          = 0x2,
-  D3DKMT_MULTIPLANE_OVERLAY_YCbCr_FLAG_xvYCC          = 0x4
+  D3DKMT_MULTIPLANE_OVERLAY_YCbCr_FLAG_NOMINAL_RANGE  = 0x1,
+  D3DKMT_MULTIPLANE_OVERLAY_YCbCr_FLAG_BT709          = 0x2,
+  D3DKMT_MULTIPLANE_OVERLAY_YCbCr_FLAG_xvYCC          = 0x4
 } D3DKMT_MULTIPLANE_OVERLAY_YCbCr_FLAGS;
 ```
 

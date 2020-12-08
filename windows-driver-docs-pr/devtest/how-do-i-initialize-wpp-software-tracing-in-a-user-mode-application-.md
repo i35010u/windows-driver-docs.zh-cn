@@ -1,15 +1,14 @@
 ---
 title: 如何实现在用户模式应用程序中初始化 WPP 软件跟踪
 description: 如何实现在用户模式应用程序中初始化 WPP 软件跟踪
-ms.assetid: 1f1ab873-a1c3-4915-af31-ab74c1898fcb
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a24c9c98fa7fb37e05aef7b321ccadef5e737a0f
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 9bab306d2652f96468e76d005c8be90491050c33
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383187"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839131"
 ---
 # <a name="how-do-i-initialize-wpp-software-tracing-in-a-user-mode-application"></a>如何在用户模式应用程序中初始化 WPP 软件跟踪？
 

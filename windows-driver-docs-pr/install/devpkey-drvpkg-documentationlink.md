@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_DrvPkg_DocumentationLink
 description: DEVPKEY_DrvPkg_DocumentationLink
-ms.assetid: a4ae1f6c-edf5-4490-8f92-6d7a24040304
 keywords:
 - DEVPKEY_DrvPkg_DocumentationLink 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 10297275bd643afca0d5fb81804c9040f8cc88d2
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 03a5eb852bf0ffe30a763f0a37b5147bd539833d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716908"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840699"
 ---
 # <a name="devpkey_drvpkg_documentationlink"></a>DEVPKEY_DrvPkg_DocumentationLink
 
@@ -34,7 +33,7 @@ DEVPKEY_DrvPkg_DocumentationLink 设备属性表示设备实例的文档的 URL�
 
 ## <a name="remarks"></a>备注
 
-文档链接 URL 应是指向包含设备相关信息的文件的链接。 此属性用于为设备提供 Web 辅助的文档。 该文件可以是 HTML 页面、 *.pdf* 文件、 *.doc* 文件或其他文件类型。 唯一的限制是，所有文档内容都必须包含在 URL 指定的文件中。 例如，一个独立的 \* *.htm*文件是有效的， \* 引用其他图形文件的 *.htm*文件无效，并且 \* 包含所引用的图形文件的 " *mta* " Web 存档文件是有效的。
+文档链接 URL 应是指向包含设备相关信息的文件的链接。 此属性用于为设备提供 Web 辅助的文档。 该文件可以是 HTML 页面、 *.pdf* 文件、 *.doc* 文件或其他文件类型。 唯一的限制是，所有文档内容都必须包含在 URL 指定的文件中。 例如，一个独立的 \* *.htm* 文件是有效的， \* 引用其他图形文件的 *.htm* 文件无效，并且 \* 包含所引用的图形文件的 " *mta* " Web 存档文件是有效的。
 
 URL 可以包含参数。 例如，以下 URL 包含提供值 "DSC530" 的 **生产** 参数、提供值 "34" 的 **rev** 参数，以及提供值 "doc" 的 **类型** 参数：
 

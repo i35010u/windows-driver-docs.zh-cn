@@ -1,9 +1,8 @@
 ---
-title: WIA\_IPS\_打印机\_印记签署器\_字符\_旋转
-description: WIA\_IPS\_打印机\_印记签署器\_字符\_旋转属性用于在打印或认可文本中配置的每个字符的旋转。
-ms.assetid: DCEF2CAF-08F3-432B-8688-E04DEAA523E0
+title: WIA \_ IPS \_ PRINTER \_ ENDORSER \_ 字符 \_ 旋转
+description: WIA \_ IPS \_ PRINTER \_ ENDORSER \_ 字符 \_ 旋转属性用于配置打印文本或被认可文本中的单个字符的旋转。
 keywords:
-- WIA_IPS_PRINTER_ENDORSER_CHARACTER_ROTATION 成像设备
+- WIA_IPS_PRINTER_ENDORSER_CHARACTER_ROTATION 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,28 +13,28 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 26e0ee45cb013abd8f07a84374bbb9e6a2d879fc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e4cf51ca707b6302e3a4f25affce4ad98629b005
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389556"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839087"
 ---
-# <a name="wiaipsprinterendorsercharacterrotation"></a>WIA\_IPS\_打印机\_印记签署器\_字符\_旋转
+# <a name="wia_ips_printer_endorser_character_rotation"></a>WIA \_ IPS \_ PRINTER \_ ENDORSER \_ 字符 \_ 旋转
 
 
-**WIA\_IPS\_打印机\_印记签署器\_字符\_旋转**属性用于在打印中配置的每个字符的旋转或认可的文本。 如果支持，可以另外完成单个字符旋转到由描述当前压印或认可区域的轮换[ **WIA\_IPS\_旋转**](wia-ips-rotation.md)属性。 与 Windows 8 和更高版本的 Windows 提供了此功能。
+**WIA \_ IPS \_ PRINTER \_ ENDORSER \_ 字符 \_ 旋转** 属性用于配置打印文本或被认可文本中的单个字符的旋转。 如果支持，则可以执行单个字符旋转，还可以完成 [**WIA \_ IPS \_ 旋转**](wia-ips-rotation.md) 属性描述的当前 imprinted 或认可的区域的旋转。 此功能适用于 windows 8 和更高版本的 Windows。
 
-属性类型：VT\_I4
+属性类型： VT \_ I4
 
-有效值：WIA\_PROP\_列表
+有效值： WIA 内容 \_ \_ 列表
 
-访问权限：读写
+访问权限： Read-Write
 
 <a name="remarks"></a>备注
 -------
 
-有效值**WIA\_IPS\_打印机\_印记签署器\_字符\_旋转**属性是相同的现有值的形式**WIA\_IPS\_旋转**属性。
+**Wia \_ ips \_ PRINTER \_ ENDORSER \_ 字符 \_ 旋转** 属性的有效值与 **wia \_ ips \_ 旋转** 属性的现有值相同。
 
 <a name="requirements"></a>要求
 ------------
@@ -47,8 +46,8 @@ ms.locfileid: "63389556"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>

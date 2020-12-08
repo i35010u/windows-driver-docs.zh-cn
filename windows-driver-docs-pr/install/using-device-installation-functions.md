@@ -1,18 +1,17 @@
 ---
 title: 使用设备安装函数
 description: 使用设备安装函数
-ms.assetid: a7cfa359-a45c-45fa-a854-ee70de66b12e
 keywords:
 - Setupapi.log 函数 WDK，设备安装功能
 - 设备安装功能 WDK Setupapi.log
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ed3f18cddc0e0b5d04cc25176b9c63d1b2902d8d
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 20b7fcf7812d1cf6508ef789544d00a178453ab4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715078"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839501"
 ---
 # <a name="using-device-installation-functions"></a>使用设备安装函数
 
@@ -34,7 +33,7 @@ ms.locfileid: "90715078"
 
 -   管理图标和其他位图。
 
-若要执行本部分中所述的 Setupapi.log 函数不支持的设备安装操作，请调用相应的 [常规设置函数](/previous-versions/ff544985(v=vs.85)) 或 [PnP Configuration Manager 函数](/previous-versions/ff549717(v=vs.85)) (CM_*Xxx* 函数<em>) 。</em>
+若要执行本部分中所述的 Setupapi.log 函数不支持的设备安装操作，请调用相应的 [常规设置函数](/previous-versions/ff544985(v=vs.85)) 或 [PnP Configuration Manager 函数](/previous-versions/ff549717(v=vs.85)) (CM_ *Xxx* 函数 <em>) 。</em>
 
 下表提供了以下类型的函数的摘要：
 
@@ -60,7 +59,7 @@ ms.locfileid: "90715078"
 
 [注册表函数](#ddk-setupdi-registry-functions-dg)
 
-[<c0 />其他函数<c1 />](#ddk-other-setupdi-functions-dg)
+[其他函数](#ddk-other-setupdi-functions-dg)
 
 ### <a name="driver-installation-functions"></a><a href="" id="ddk-update-driver-function-dg"></a>驱动程序安装功能
 

@@ -1,9 +1,8 @@
 ---
 title: ScanDestination 元素
-description: 所需的 ScanDestination 元素指定客户端上的单个扫描目标。
-ms.assetid: 3cd685b2-36b2-4f28-a80f-a68204631e0c
+description: 必需的 ScanDestination 元素在客户端上指定单个扫描目标。
 keywords:
-- ScanDestination 元素成像设备
+- ScanDestination 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a09785e727e2d1e16102b94ddac5b301b3f66cc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 92ba58780b407a47f22afebfb3fe7757a5e28ce5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364385"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840707"
 ---
 # <a name="scandestination-element"></a>ScanDestination 元素
 
 
-所需**ScanDestination**元素指定客户端上的单个扫描目标。
+必需的 **ScanDestination** 元素在客户端上指定单个扫描目标。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -82,7 +81,7 @@ ms.locfileid: "63364385"
 <a name="remarks"></a>备注
 -------
 
-客户端包括一个或多个**ScanDestination**中的元素**ScanDestinations**时创建的订阅发送的元素。 WSD 扫描服务使用中提供的信息**ScanDestination**以创建相应[ **ScanAvailableEvent** ](scanavailableevent.md)事件元素。
+客户端在创建订阅时，在它发送的 **ScanDestinations** 元素中包含一个或多个 **ScanDestination** 元素。 WSD 扫描服务使用 **ScanDestination** 中提供的信息来创建相应的 [**ScanAvailableEvent**](scanavailableevent.md) 事件元素。
 
 ## <a name="see-also"></a>请参阅
 

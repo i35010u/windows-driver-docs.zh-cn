@@ -1,7 +1,6 @@
 ---
 title: 'CancelSpinLock 规则 (wdm) '
 description: CancelSpinLock 规则指定在调用 IoReleaseCancelSpinLock 之前，驱动程序调用 IoAcquireCancelSpinLock，并且驱动程序会在对 IoAcquireCancelSpinLock 的任何后续调用之前调用 IoReleaseCancelSpinLock。
-ms.assetid: 8f21a70f-a82b-4b2b-abff-892a1950da41
 ms.date: 05/21/2018
 keywords:
 - 'CancelSpinLock 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b3e97363a1507b5fa3d6db2c01f01cbf6f2a187a
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 397351c7d5b512250cd8aed35a56af8f945d6d18
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104938"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839655"
 ---
 # <a name="cancelspinlock-rule-wdm"></a>CancelSpinLock 规则 (wdm) 
 
 
-CancelSpinLock 规则指定在调用[**IoReleaseCancelSpinLock**](/previous-versions/windows/hardware/drivers/ff549550(v=vs.85))之前，驱动程序调用[**IoAcquireCancelSpinLock**](/previous-versions/windows/hardware/drivers/ff548196(v=vs.85)) ，并且驱动程序会在对**IoAcquireCancelSpinLock**的任何后续调用之前调用**IoReleaseCancelSpinLock** 。
+CancelSpinLock 规则指定在调用 [**IoReleaseCancelSpinLock**](/previous-versions/windows/hardware/drivers/ff549550(v=vs.85))之前，驱动程序调用 [**IoAcquireCancelSpinLock**](/previous-versions/windows/hardware/drivers/ff548196(v=vs.85)) ，并且驱动程序会在对 **IoAcquireCancelSpinLock** 的任何后续调用之前调用 **IoReleaseCancelSpinLock** 。
 
 此规则还指定在调度例程或取消例程结束时，驱动程序不得保留任何自旋锁。 允许嵌套调用。
 

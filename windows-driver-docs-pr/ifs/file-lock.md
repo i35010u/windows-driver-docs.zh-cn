@@ -1,7 +1,6 @@
 ---
 title: FILE_LOCK 结构
 description: 操作系统使用不透明的文件 \_ 锁定结构来支持文件锁定。
-ms.assetid: 89df2075-c542-4105-847f-9bc7ae4dab50
 keywords:
 - FILE_LOCK 结构可安装文件系统驱动程序
 - PFILE_LOCK 结构指针可安装的文件系统驱动程序
@@ -15,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e289b2a24ca49e2e776fc4b4bc1b3597d10581e
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 7411945e3c5837d52463a465049cfbea21ca130b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063686"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840735"
 ---
 # <a name="file_lock-structure"></a>文件 \_ 锁定结构
 
@@ -33,13 +32,13 @@ ms.locfileid: "89063686"
 ```ManagedCPlusPlus
 typedef struct _FILE_LOCK {
   PCOMPLETE_LOCK_IRP_ROUTINE CompleteLockIrpRoutine;
-  PUNLOCK_ROUTINE            UnlockRoutine;
-  BOOLEAN                    FastIoIsQuestionable;
-  BOOLEAN                    SpareC[3];
-  PVOID                      LockInformation;
-  FILE_LOCK_INFO             LastReturnedLockInfo;
-  PVOID                      LastReturnedLock;
-  volatile LONG              LockRequestsInProgress;
+  PUNLOCK_ROUTINE            UnlockRoutine;
+  BOOLEAN                    FastIoIsQuestionable;
+  BOOLEAN                    SpareC[3];
+  PVOID                      LockInformation;
+  FILE_LOCK_INFO             LastReturnedLockInfo;
+  PVOID                      LastReturnedLock;
+  volatile LONG              LockRequestsInProgress;
 } FILE_LOCK, *PFILE_LOCK;
 ```
 

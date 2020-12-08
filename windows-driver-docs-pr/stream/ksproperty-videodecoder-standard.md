@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ VIDEODECODER \_ 标准
 description: KSPROPERTY \_ VIDEODECODER \_ standard 属性控制当前的模拟视频标准。 必须实现此属性。
-ms.assetid: 955c267a-703e-4d18-a4e9-710f316cfb48
 keywords:
 - KSPROPERTY_VIDEODECODER_STANDARD 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e0718ac0f0633dff19cd491f534ac8250ab1c7a
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 0f72e7e9fdcb604fc24d19271c3c3f3a892e702b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107248"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840859"
 ---
 # <a name="ksproperty_videodecoder_standard"></a>KSPROPERTY \_ VIDEODECODER \_ 标准
 

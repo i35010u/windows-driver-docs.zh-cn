@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x8 IRQL_NOT_DISPATCH_LEVEL
 description: IRQL_NOT_DISPATCH_LEVEL bug 检查的值为0x00000008。此 bug 检查很少出现。
-ms.assetid: e37a2fa2-2a0c-4259-91cc-bb8ccd411189
 keywords:
 - Bug 检查 0x8 IRQL_NOT_DISPATCH_LEVEL
 - IRQL_NOT_DISPATCH_LEVEL
@@ -13,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: add989f8b01a5dd1fa1dad5ee3dc636931dca687
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: f66da0b65854d1d93e75ce42b0d6fed37b6a0838
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534600"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841055"
 ---
 # <a name="bug-check-0x8-irql_not_dispatch_level"></a>Bug 检查0x8： IRQL \_ 非 \_ 调度 \_ 级别
 
@@ -28,7 +27,7 @@ IRQL \_ NOT \_ 调度 \_ 级别 bug 检查的值为0x00000008。
 此 bug 检查很少出现。
 
 > [!IMPORTANT]
-> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
 ## <a name="resolution"></a>解决方法

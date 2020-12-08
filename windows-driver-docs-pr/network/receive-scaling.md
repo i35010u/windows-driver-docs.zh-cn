@@ -1,7 +1,6 @@
 ---
 title: 接收端缩放支持
 description: 接收端缩放支持
-ms.assetid: db0d8178-ae6c-4513-9c8c-f10615d1bbce
 keywords:
 - 可伸缩网络 WDK
 - 接收方缩放 WDK 网络
@@ -10,12 +9,12 @@ keywords:
 - NDIS 微型端口驱动程序 WDK，缩放接收数据包处理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aa3232a3b070d805e25e8f4396122b9d8606f49b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 7675f159a730208834a40ea642ea9e36f77aa5a2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209625"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839439"
 ---
 # <a name="receive-side-scaling-support"></a>接收端缩放支持
 

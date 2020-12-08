@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ CAMERACONTROL \_ IRIS
 description: 用户模式客户端使用 KSPROPERTY \_ CAMERACONTROL \_ IRIS 属性来获取或设置照相机的口径设置。 此属性是可选的。
-ms.assetid: 000fc146-f6bb-490b-93b6-ebf5ad83b92f
 keywords:
 - KSPROPERTY_CAMERACONTROL_IRIS 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: acd854425ec96de6ccfd59d569bb2512d6177ca9
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 2cd80bb312780089b5694f9be13f774efcadd4b1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102944"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840549"
 ---
 # <a name="ksproperty_cameracontrol_iris"></a>KSPROPERTY \_ CAMERACONTROL \_ IRIS
 
@@ -63,7 +62,7 @@ ms.locfileid: "90102944"
 
  (操作数据) 的属性值是指定相机口径设置的 LONG 值。 此值以 fstop 10 的单位表示 \* 。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 KSPROPERTY **Value** \_ CAMERACONTROL S 结构的 Value 成员 \_ 指定相机的口径设置。
@@ -86,7 +85,7 @@ KSPROPERTY **Value** \_ CAMERACONTROL S 结构的 Value 成员 \_ 指定相机�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

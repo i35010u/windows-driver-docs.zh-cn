@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x188 CLUSTER_CSVFS_LIVEDUMP
-description: CLUSTER_CSVFS_LIVEDUMP bug 检查具有 0x00000188 值。 这指示 CSVFS 启动此 livedump 来帮助调试不一致的状态。
-ms.assetid: 220B0CDB-6E10-4262-A07C-042E8BA21D7F
+description: CLUSTER_CSVFS_LIVEDUMP bug 检查的值为0x00000188。 这表明 CSVFS 启动了此 livedump 来帮助调试不一致的状态。
 keywords:
 - Bug 检查 0x188 CLUSTER_CSVFS_LIVEDUMP
 - CLUSTER_CSVFS_LIVEDUMP
@@ -13,23 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ee3a658201214892da36b18bf82e436cd75b104
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 124b159e8fe5da016c072dca8b742db9794f2ca9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519866"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840465"
 ---
-# <a name="bug-check-0x188-clustercsvfslivedump"></a>Bug 检查 0x188：CLUSTER\_CSVFS\_LIVEDUMP
+# <a name="bug-check-0x188-cluster_csvfs_livedump"></a>Bug 检查0x188：群集 \_ CSVFS \_ LIVEDUMP
 
 
-群集\_CSVFS\_LIVEDUMP bug 检查的值为 0x00000188。 这指示 CSVFS 启动此 livedump 来帮助调试不一致的状态。
+群集 \_ CSVFS \_ LIVEDUMP bug 检查的值为0x00000188。 这表明 CSVFS 启动了此 livedump 来帮助调试不一致的状态。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="clustercsvfslivedump-parameters"></a>群集\_CSVFS\_LIVEDUMP 参数
+## <a name="cluster_csvfs_livedump-parameters"></a>群集 \_ CSVFS \_ LIVEDUMP 参数
 
 
 <table>
@@ -47,26 +46,26 @@ ms.locfileid: "67519866"
 <tr class="odd">
 <td align="left">1</td>
 <td align="left"><p>原因代码</p>
-0x1:缓存清除 oplock 降级为无上的已失败
-<p>2-地址 CSVFS ！ _SCB</p>
-0x2:机会锁升级时从无缓存清除已失败
-<p>2-地址 CSVFS ！ _SCB</p>
-0x3:在设置清除失败模式的缓存清除
-<p>2-地址 CSVFS ！ _SCB</p>
-0x4:缓存刷新上 oplock 降级为无失败
-<p>2-地址 CSVFS ！ _SCB</p></td>
+0x1：对 oplock 降级到无的缓存清除操作失败
+<p>2-CSVFS！ _SCB</p>
+0x2：对不是的 oplock 升级的缓存清除操作失败
+<p>2-CSVFS！ _SCB</p>
+0x3：在设置清除失败模式时清除缓存
+<p>2-CSVFS！ _SCB</p>
+0x4： oplock 降级到无失败的缓存刷新
+<p>2-CSVFS！ _SCB</p></td>
 </tr>
 <tr class="even">
 <td align="left">2</td>
-<td align="left">请参阅参数 1</td>
+<td align="left">请参阅参数1</td>
 </tr>
 <tr class="odd">
 <td align="left">3</td>
-<td align="left">保留</td>
+<td align="left">预留</td>
 </tr>
 <tr class="even">
 <td align="left">4</td>
-<td align="left">保留</td>
+<td align="left">预留</td>
 </tr>
 </tbody>
 </table>
@@ -76,7 +75,7 @@ ms.locfileid: "67519866"
 <a name="cause"></a>原因
 -----
 
-第一个参数包含当 CSVFS 检测到当前状态可能会导致数据损坏，原因代码或其他类型的不一致，则会生成与实时转储此状态代码。 Parameter1 具有代码指向此实时转储哪些方案创建的。 其他参数应解释的原因代码的上下文中。
+第一个参数包含以下原因： CSVFS 检测到当前状态可能导致数据损坏或其他种类的不一致时，它将生成具有此状态代码的实时转储。 Parameter1 具有指向为其创建此实时转储的方案的代码。 应在原因代码的上下文中解释其他参数。
 
  
 

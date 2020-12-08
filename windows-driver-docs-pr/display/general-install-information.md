@@ -1,27 +1,26 @@
 ---
 title: 常规安装信息
 description: 常规安装信息
-ms.assetid: e177ae15-4ef8-4d0f-804b-67cf232c6e7e
 keywords:
-- INF 文件 WDK 显示有关驱动程序安装
-- 开箱显示器驱动程序 WDK Windows Vista
+- INF 文件 WDK 显示，关于驱动程序安装
+- 全新显示器驱动程序 WDK Windows Vista
 - 生产显示器驱动程序 WDK Windows Vista
 - 零售显示器驱动程序 WDK Windows Vista
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6332b22d8ae67d449411c98691362afd97ea696d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 34eed4ae27617765d06ae8c2beba0ef3fcfb0554
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341535"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840391"
 ---
 # <a name="general-install-information"></a>常规安装信息
 
 
-通常情况下，对开箱或生产环境和零售二进制文件、 服务和添加注册表或 del 注册表部分通常是零售 Microsoft Windows 硬件质量实验室 (WHQL) 驱动程序包的一部分的所有引用未列出在 Windows 中Vista 中内置驱动程序包。
+通常，对现成或生产和零售二进制文件、服务以及添加注册表或 del-注册表部分的所有引用（通常是零售 Microsoft Windows 硬件质量实验室 (WHQL) 驱动程序包）未在 Windows Vista 内置驱动程序包中列出。
 
-无法列出引用这些类型的示例，因为它们有很大不同每个供应商。 但是，通常情况下，您不应引用任何所需的可安装在 OpenGL 客户端驱动程序的 (ICDs) 可帮助文件、 现成可用的服务、 轮询应用程序等内容。
+不能列出这些类型的引用的示例，因为这些引用的大小因供应商而异。 不过，通常情况下，不应引用 OpenGL 可安装客户端驱动程序所需的任何内容 (ICDs) 帮助文件、全新服务、轮询应用程序等。
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: DIF_SELECTDEVICE
 description: DIF_SELECTDEVICE
-ms.assetid: c1266182-b88f-406a-876c-e0f15050fdf3
 keywords:
 - DIF_SELECTDEVICE 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8f1c47cc980484f5f3981127d1d16224bff85d0c
-ms.sourcegitcommit: 06581a21ca066ddfedab7f9bb7f2159cfac452fd
+ms.openlocfilehash: 677255dddeec2e861d7e5f20baf18f2c91e5ea6c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91145455"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840353"
 ---
 # <a name="dif_selectdevice"></a>DIF_SELECTDEVICE
 
@@ -58,20 +57,20 @@ DIF_SELECTDEVICE 请求允许安装程序选择设备驱动程序。
 ### <a name="installer-input"></a>安装程序输入
 
 <a href="" id="deviceinfoset"></a>*DeviceInfoSet*  
-提供 [设备信息集](./device-information-sets.md) 的句柄，其中包含要为其选择驱动程序的设备。 存在与*DeviceInfoSet*关联的[设备安装程序类](./overview-of-device-setup-classes.md)。
+提供 [设备信息集](./device-information-sets.md) 的句柄，其中包含要为其选择驱动程序的设备。 存在与 *DeviceInfoSet* 关联的 [设备安装程序类](./overview-of-device-setup-classes.md)。
 
 <a href="" id="deviceinfodata"></a>*DeviceInfoData*  
 还可以提供一个指向 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构的指针，该结构在设备信息集中标识设备。
 
-如果*DeviceInfoData*为**NULL**，则此请求将为与*DeviceInfoSet*关联的[设备安装程序类](./overview-of-device-setup-classes.md)选择一个驱动程序。
+如果 *DeviceInfoData* 为 **NULL**，则此请求将为与 *DeviceInfoSet* 关联的 [设备安装程序类](./overview-of-device-setup-classes.md)选择一个驱动程序。
 
 <a href="" id="device-installation-parameters-"></a>设备安装参数   
-如果 *DeviceInfoData* 不为 **NULL**，则 [**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)) 与 *DeviceInfoData*关联的设备安装参数 (。 如果 *DeviceInfoData* 为 **NULL**，则存在与 *DeviceInfoSet*关联的设备安装参数。
+如果 *DeviceInfoData* 不为 **NULL**，则 [**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)) 与 *DeviceInfoData* 关联的设备安装参数 (。 如果 *DeviceInfoData* 为 **NULL**，则存在与 *DeviceInfoSet* 关联的设备安装参数。
 
 特别要注意的是 **DriverPath**，其中包含生成驱动程序列表时要使用) INF (的位置。
 
 <a href="" id="class-installation-parameters"></a>类安装参数  
-如果*DeviceInfoData*不为**NULL**，则[**SP_SELECTDEVICE_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_selectdevice_params_a)结构与*DeviceInfoData*关联。 否则，类安装参数将作为一个整体与设备信息集相关联。
+如果 *DeviceInfoData* 不为 **NULL**，则 [**SP_SELECTDEVICE_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_selectdevice_params_a)结构与 *DeviceInfoData* 关联。 否则，类安装参数将作为一个整体与设备信息集相关联。
 
 ### <a name="installer-output"></a>安装程序输出
 
@@ -91,7 +90,7 @@ DIF_SELECTDEVICE 请求允许安装程序选择设备驱动程序。
 
 如果类安装程序成功处理此请求（包括直接调用默认处理程序），则类安装程序应返回 NO_ERROR 并且 **SetupDiCallClassInstaller** 将不会再次调用默认处理程序。
 
-**注意**   类安装程序可以直接调用默认处理程序，但类安装程序永远不会尝试取代默认处理程序的操作。
+**注意**   类安装程序可以直接调用默认处理程序，但类安装程序永远不会尝试取代默认处理程序的操作。
 
  
 
@@ -99,7 +98,7 @@ DIF_SELECTDEVICE 请求允许安装程序选择设备驱动程序。
 
 如果类安装程序遇到错误，则安装程序应返回相应的 Win32 错误代码，并且 **SetupDiCallClassInstaller** 将不会随后调用默认处理程序。
 
-如果相应[**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)结构的**DriverPath**成员不等于**NULL**，但指定的路径位置没有有效的驱动程序，则类安装程序将返回 ERROR_DI_BAD_PATH。 如果路径位置没有驱动程序，或者存在驱动程序，但每个驱动程序的[**SP_DRVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_drvinstall_params)结构的**Flags**成员是通过 DN_BAD_DRIVER 标志设置的，则会发生这种情况。 为了响应此错误代码，Windows 向用户显示错误。
+如果相应 [**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)结构的 **DriverPath** 成员不等于 **NULL**，但指定的路径位置没有有效的驱动程序，则类安装程序将返回 ERROR_DI_BAD_PATH。 如果路径位置没有驱动程序，或者存在驱动程序，但每个驱动程序的 [**SP_DRVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_drvinstall_params)结构的 **Flags** 成员是通过 DN_BAD_DRIVER 标志设置的，则会发生这种情况。 为了响应此错误代码，Windows 向用户显示错误。
 
 ### <a name="default-dif-code-handler"></a>默认的 DIF 代码处理程序
 
@@ -137,7 +136,7 @@ DIF_SELECTDEVICE 请求允许安装程序选择设备驱动程序。
 
     安装程序通过执行以下步骤来标记错误驱动程序：
 
-    1.  通过使用 SPDIT_CLASSDRIVER 的*DriverType*调用[**SetupDiBuildDriverInfoList**](/windows/win32/api/setupapi/nf-setupapi-setupdibuilddriverinfolist)来生成驱动程序列表。
+    1.  通过使用 SPDIT_CLASSDRIVER 的 *DriverType* 调用 [**SetupDiBuildDriverInfoList**](/windows/win32/api/setupapi/nf-setupapi-setupdibuilddriverinfolist)来生成驱动程序列表。
     2.  通过调用 [**SetupDiEnumDriverInfo**](/windows/win32/api/setupapi/nf-setupapi-setupdienumdriverinfoa) 和 [**SetupDiGetDriverInstallParams**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdriverinstallparamsa)获取有关列表中第一个驱动程序的信息。 如果驱动程序不适合于设备，请在参数的 " **标志** " 字段中设置 DNF_BAD_DRIVER 标志。 通过调用 [**SetupDiSetDriverInstallParams**](/windows/win32/api/setupapi/nf-setupapi-setupdisetdriverinstallparamsa)将更改应用于参数。
     3.  重复上述步骤，直到处理完列表中的所有驱动程序。 请确保将 *MemberIndex* 参数递增为 **SetupDiEnumDriverInfo** ，如该函数的 "引用" 页中所述。
 
@@ -175,7 +174,7 @@ DIF_SELECTDEVICE 请求允许安装程序选择设备驱动程序。
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**DIF_NEWDEVICEWIZARD_SELECT**](dif-newdevicewizard-select.md)

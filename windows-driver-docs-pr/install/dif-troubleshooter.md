@@ -1,7 +1,6 @@
 ---
 title: DIF_TROUBLESHOOTER
 description: DIF_TROUBLESHOOTER
-ms.assetid: e8477d4d-cc81-48aa-9d51-9f37c3cce0cb
 keywords:
 - DIF_TROUBLESHOOTER 设备和驱动程序安装
 topic_type:
@@ -14,19 +13,19 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 39430966041d036ebb27b0f8295ed7543e1ff504
-ms.sourcegitcommit: 06581a21ca066ddfedab7f9bb7f2159cfac452fd
+ms.openlocfilehash: a0bce5091b0ce12d8ce69d68951b119cacffdbac
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91145461"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840351"
 ---
 # <a name="dif_troubleshooter"></a>DIF_TROUBLESHOOTER
 
 
 DIF_TROUBLESHOOTER 请求允许安装程序为设备启动疑难解答，或返回 CHM 和 HTM 疑难解答文件以使 Windows 启动。
 
-**注意**   此 DIF 代码仅在 Windows Server 2003、Windows XP 和 Microsoft Windows 2000 上受支持。
+**注意**  此 DIF 代码仅在 Windows Server 2003、Windows XP 和 Microsoft Windows 2000 上受支持。
 
  
 
@@ -68,10 +67,10 @@ DIF_TROUBLESHOOTER 请求允许安装程序为设备启动疑难解答，或返�
 提供一个指向 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构的指针，该结构在设备信息集中标识设备。
 
 <a href="" id="device-installation-parameters-"></a>设备安装参数   
-与*DeviceInfoData*关联的设备安装参数 ([**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)) 。
+与 *DeviceInfoData* 关联的设备安装参数 ([**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)) 。
 
 <a href="" id="class-installation-parameters"></a>类安装参数  
-[**SP_TROUBLESHOOTER_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_troubleshooter_params_a)结构与*DeviceInfoData*关联。
+[**SP_TROUBLESHOOTER_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_troubleshooter_params_a)结构与 *DeviceInfoData* 关联。
 
 ### <a name="installer-output"></a>安装程序输出
 
@@ -126,7 +125,7 @@ DIF_TROUBLESHOOTER 没有默认的处理程序，但是，如果没有安装程�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**CM_Get_DevNode_Status**](/windows/win32/api/cfgmgr32/nf-cfgmgr32-cm_get_devnode_status)

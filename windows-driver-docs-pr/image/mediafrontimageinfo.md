@@ -1,9 +1,8 @@
 ---
 title: MediaFrontImageInfo 元素
-description: 所需的 MediaFrontImageInfo 元素包含单纯扫描或 ADF 双工扫描正面的图像信息。
-ms.assetid: 4f1bcc3c-0d5f-490f-8d7a-fc357adeecb4
+description: 必需的 MediaFrontImageInfo 元素包含用于单面扫描的图像信息，或用于 ADF 全双工扫描的前端。
 keywords:
-- MediaFrontImageInfo 元素成像设备
+- MediaFrontImageInfo 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 86c02acac48683f92a34b69660d13689f78cdcdb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a65923e427a74c6ed608019c01f15e164c34127e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379683"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840973"
 ---
 # <a name="mediafrontimageinfo-element"></a>MediaFrontImageInfo 元素
 
 
-所需**MediaFrontImageInfo**元素包含单工扫描或 ADF 双工扫描正面的图像信息。
+必需的 **MediaFrontImageInfo** 元素包含用于单面扫描的图像信息，或用于 ADF 全双工扫描的前端。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml

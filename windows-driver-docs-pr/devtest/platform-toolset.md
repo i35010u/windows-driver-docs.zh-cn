@@ -1,47 +1,46 @@
 ---
 title: 平台工具集
 description: Windows 驱动程序工具包 (WDK) 利用 MSBuild 平台工具集功能提供特定于驱动程序开发的工具和库。
-ms.assetid: 9F585CA3-B863-408A-B785-2456460D6626
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 20a0cf485c13ae0ce375fc216c343b8ec5b3ca0b
-ms.sourcegitcommit: 9e5a99dc75dfee3caa9a242adc0ed22ae4df9f29
+ms.openlocfilehash: 13a898270bba003ce30d8749fef60ded6f47f582
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89043159"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839751"
 ---
 # <a name="platform-toolset"></a>平台工具集
 
 
-Windows 驱动程序工具包 (WDK) 利用 MSBuild 平台工具集功能提供特定于驱动程序开发的工具和库。 MSBuild 平台工具集功能是可扩展的。 要使用的平台工具集的特定版本由名为 **PlatformToolset**的 MSBuild 属性控制。 项目可通过设置项目文件中的 **PlatformToolset** 属性在工具和库之间切换。
+Windows 驱动程序工具包 (WDK) 利用 MSBuild 平台工具集功能提供特定于驱动程序开发的工具和库。 MSBuild 平台工具集功能是可扩展的。 要使用的平台工具集的特定版本由名为 **PlatformToolset** 的 MSBuild 属性控制。 项目可通过设置项目文件中的 **PlatformToolset** 属性在工具和库之间切换。
 
 Windows 驱动程序工具包 (WDK) 8.1 为驱动程序开发提供了以下平台工具集。
 
-| **PlatformToolset** (WDK 8.1)        | 用途                                                                                                                                                                                                                                                                                                                                                                                         |
+| **PlatformToolset** (WDK 8.1)        | 使用                                                                                                                                                                                                                                                                                                                                                                                         |
 |-------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **WindowsKernelModeDriver 8。1**      | 用于内核模式驱动程序和组件。                                                                                                                                                                                                                                                                                                                                                     |
 | **WindowsUserModeDriver 8。1**        | 适用于用户模式驱动程序和组件。                                                                                                                                                                                                                                                                                                                                                       |
 | **WindowsApplicationForDrivers 8。1** | 适用于任何类型的应用程序。 此平台工具集为 Windows 7 (WDK 7.1) 中的 Windows 驱动程序工具包 (WDK) 中使用的生成选项提供兼容性，并且还使用用于开发与驱动程序交互的用户模式应用程序的默认设置。 如果要迁移或转换使用 WDK 7 生成的项目，可以使用此设置。 |
-| **Visual Studio 2013 (v120) **       | 将用于任何类型的 Windows 应用程序 (默认) 。                                                                                                                                                                                                                                                                                                                                          |
+| **Visual Studio 2013 (v120)**       | 将用于任何类型的 Windows 应用程序 (默认) 。                                                                                                                                                                                                                                                                                                                                          |
 
  
 
 Windows 驱动程序工具包 (WDK) 8 为驱动程序开发提供了以下平台工具集。 此信息仅供参考。
 
-| **PlatformToolset** (WDK 8)          | 用途                                                                                                                                                                                                                                           |
+| **PlatformToolset** (WDK 8)          | 使用                                                                                                                                                                                                                                           |
 |-------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **WindowsKernelModeDriver 8。0**      | 用于内核模式驱动程序和组件。                                                                                                                                                                                                       |
 | **WindowsUserModeDriver 8。0**        | 适用于用户模式驱动程序和组件。                                                                                                                                                                                                         |
 | **WindowsApplicationForDrivers 8。0** | 适用于任何类型的应用程序。 此平台工具集与用于 Windows 7 (WDK 7.1) 的 WDK 中使用的生成选项兼容。 如果要迁移或转换使用 WDK 7 生成的项目，可以使用此设置。 |
-| **Visual Studio 2012 (v110) **       | 将用于任何类型的 Windows 应用程序 (默认) 。                                                                                                                                                                                            |
+| **Visual Studio 2012 (v110)**       | 将用于任何类型的 Windows 应用程序 (默认) 。                                                                                                                                                                                            |
 
  
 
-**注意**   如果从 Visual Studio 中的一个可用 Windows 驱动程序模板创建驱动程序，则会为你设置**PlatformToolset**属性。 还可以通过使用 Visual Studio 中的 "驱动程序项目" 属性页选择 **PlatformToolset** 。
+**注意**  如果从 Visual Studio 中的一个可用 Windows 驱动程序模板创建驱动程序，则会为你设置 **PlatformToolset** 属性。 还可以通过使用 Visual Studio 中的 "驱动程序项目" 属性页选择 **PlatformToolset** 。
 **在 Visual Studio 中设置平台工具集**
 
-1.  打开驱动程序项目的属性页。 选择并按住 (或右键单击) **解决方案资源管理器** 中的驱动程序项目，然后选择 " **属性**"。
+1.  打开驱动程序项目的属性页。 在“解决方案资源管理器”中，选择并按住（或右键单击）驱动程序项目，然后选择“属性” 。
 2.  在驱动程序项目的属性页中，选择 " **配置属性** "，然后选择 " **常规**"。
 3.  从下拉列表中选择项目的 " **平台工具集** " 属性。
 
@@ -61,18 +60,18 @@ Windows 驱动程序工具包 (WDK) 8 为驱动程序开发提供了以下平台
 </PropertyGroup>
 ```
 
-**配置类型**属性控制正在生成的二进制文件的目标扩展名和输出类型。 此属性的某些可能值为 **Application**、 **例如 dynamiclibrary**、 **StaticLibrary**和 **Utility**。
+**配置类型** 属性控制正在生成的二进制文件的目标扩展名和输出类型。 此属性的某些可能值为 **Application**、 **例如 dynamiclibrary**、 **StaticLibrary** 和 **Utility**。
 
-WDK 为此属性引入了一个新值，称为 " **驱动程序** " 来构建内核模式驱动程序。 如果将此属性设置为 " **驱动程序**"，MSBuild 将生成一个包含 .sys 作为其扩展名的驱动程序文件。 在此示例中， **PlatformToolset** 属性设置为 **windowskernelmodedriver 8.1** 来构建内核模式驱动程序。 **Windowskernelmodedriver 8.1** 是唯一需要 **DriverConfigurationType**的 WDK 平台工具集。 在此示例中， **DriverType** 设置为 KMDF。
+WDK 为此属性引入了一个新值，称为 " **驱动程序** " 来构建内核模式驱动程序。 如果将此属性设置为 " **驱动程序**"，MSBuild 将生成一个包含 .sys 作为其扩展名的驱动程序文件。 在此示例中， **PlatformToolset** 属性设置为 **windowskernelmodedriver 8.1** 来构建内核模式驱动程序。 **Windowskernelmodedriver 8.1** 是唯一需要 **DriverConfigurationType** 的 WDK 平台工具集。 在此示例中， **DriverType** 设置为 KMDF。
 
 ## <a name="span-idabout_the_platformtoolset_property_for_driversspanspan-idabout_the_platformtoolset_property_for_driversspanspan-idabout_the_platformtoolset_property_for_driversspanabout-the-platformtoolset-property-for-drivers"></a><span id="About_the_PlatformToolset_property_for_drivers"></span><span id="about_the_platformtoolset_property_for_drivers"></span><span id="ABOUT_THE_PLATFORMTOOLSET_PROPERTY_FOR_DRIVERS"></span>关于驱动程序的 **PlatformToolset** 属性
 
 
-**PlatformToolset**是一组属性表、目标、工具和任务，它们协同工作以扩展和修改平台，以便为该特定平台构建驱动程序或内核模式组件。 对于驱动程序和相关的组件和应用程序， **PlatformToolset** 属性应在项目文件中设置为 **windowskernelmodedriver 8.1**、 **windowsusermodedriver 8.1**或 **windowsapplicationfordrivers 8.1** 。 这些平台工具集旨在扩展现有的 Visual Studio C \\ + + 工具链编译器和链接器与其他特定于 wdk 的生成工具，并面向 wdk 标头和库。 **Windowsapplicationfordrivers 8.1**工具集提供与适用于 Windows 7 (wdk 7.1) 的 wdk 中可用的生成选项设置的兼容性，以及用于开发与驱动程序交互的用户模式应用程序的默认设置。
+**PlatformToolset** 是一组属性表、目标、工具和任务，它们协同工作以扩展和修改平台，以便为该特定平台构建驱动程序或内核模式组件。 对于驱动程序和相关的组件和应用程序， **PlatformToolset** 属性应在项目文件中设置为 **windowskernelmodedriver 8.1**、 **windowsusermodedriver 8.1** 或 **windowsapplicationfordrivers 8.1** 。 这些平台工具集旨在扩展现有的 Visual Studio C \\ + + 工具链编译器和链接器与其他特定于 wdk 的生成工具，并面向 wdk 标头和库。 **Windowsapplicationfordrivers 8.1** 工具集提供与适用于 Windows 7 (wdk 7.1) 的 wdk 中可用的生成选项设置的兼容性，以及用于开发与驱动程序交互的用户模式应用程序的默认设置。
 
-**平台工具集**具有用于生成任何驱动程序项目的默认平台级别设置和目标。 将默认开关用于生成工具（例如编译器或链接器）、系统信息（如 WDK 的包含或库路径）和功能设置（如使用 Unicode 或 ANSI 字符串生成驱动程序项目时要设置的各种属性）。 如果要为桌面开发 Windows 应用程序，请不要使用 **windowskernelmodedriver 8.1**、 **Windowsusermodedriver 8.1**或 **windowsapplicationfordrivers 8.1** 平台工具集。 请改用 **Visual Studio 2013 (v120) ** 平台工具集。
+**平台工具集** 具有用于生成任何驱动程序项目的默认平台级别设置和目标。 将默认开关用于生成工具（例如编译器或链接器）、系统信息（如 WDK 的包含或库路径）和功能设置（如使用 Unicode 或 ANSI 字符串生成驱动程序项目时要设置的各种属性）。 如果要为桌面开发 Windows 应用程序，请不要使用 **windowskernelmodedriver 8.1**、 **Windowsusermodedriver 8.1** 或 **windowsapplicationfordrivers 8.1** 平台工具集。 请改用 **Visual Studio 2013 (v120)** 平台工具集。
 
-默认情况下，对于新创建的 Win32 用户模式 c + + 项目和已转换为 Visual Studio 2013 的项目， **PlatformToolset** 属性 **Visual Studio 2013 (v120) ** 。 在这两种情况下， **PlatformToolset** 属性不会写入项目文件。
+默认情况下，对于新创建的 Win32 用户模式 c + + 项目和已转换为 Visual Studio 2013 的项目， **PlatformToolset** 属性 **Visual Studio 2013 (v120)** 。 在这两种情况下， **PlatformToolset** 属性不会写入项目文件。
 
 为驱动程序选择一个平台工具集时，将设置以下属性。
 
@@ -83,7 +82,7 @@ WDK 为此属性引入了一个新值，称为 " **驱动程序** " 来构建内
 -   SourcePath
 -   ExcludedPath
 
-**注意**   如果**UseEnv**未设置为**TRUE**，则将从平台工具集中的相应属性值设置 PATH、LIB、INCLUDE、LIBPATH。 当 **UseEnv** 设置为 **TRUE**时，与在旧生成系统中一样，将改为使用 PATH、INCLUDE、LIB 和 LIBPATH 环境变量中的值。
+**注意**  如果 **UseEnv** 未设置为 **TRUE**，则将从平台工具集中的相应属性值设置 PATH、LIB、INCLUDE、LIBPATH。 当 **UseEnv** 设置为 **TRUE** 时，与在旧生成系统中一样，将改为使用 PATH、INCLUDE、LIB 和 LIBPATH 环境变量中的值。
 
  
 
@@ -100,7 +99,7 @@ WDK 为此属性引入了一个新值，称为 " **驱动程序** " 来构建内
 <thead>
 <tr class="header">
 <th align="left">路径变量</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

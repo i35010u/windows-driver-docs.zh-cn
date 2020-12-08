@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ DVDSUBPIC \_ 调色板
 description: KSPROPERTY \_ DVDSUBPIC \_ 调色板属性指定子画面流使用的调色板。
-ms.assetid: 9dafb956-4adf-45ec-b997-8ed35991f7d8
 keywords:
 - KSPROPERTY_DVDSUBPIC_PALETTE 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c24d7dcb0bf215c70c41a826cdaf02f1bb40e6a
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 72b3cccf96c82487be732268a64b7aa176dbde18
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105420"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840537"
 ---
 # <a name="ksproperty_dvdsubpic_palette"></a>KSPROPERTY \_ DVDSUBPIC \_ 调色板
 
@@ -84,7 +83,7 @@ KSPROPERTY \_ DVDSUBPIC \_ 调色板属性指定子画面流使用的调色板�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY \_ SPPAL**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ksproperty_sppal)

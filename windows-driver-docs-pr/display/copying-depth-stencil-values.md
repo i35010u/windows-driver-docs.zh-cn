@@ -1,7 +1,6 @@
 ---
 title: 复制深度模具值
 description: 复制深度模具值
-ms.assetid: b83d4e6d-5645-49ab-bbb0-c694f1410cba
 keywords:
 - 用户模式显示驱动程序 WDK Windows Vista，复制深度-模具值
 - 复制深度-模具值
@@ -9,12 +8,12 @@ keywords:
 - 模具值 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ef90827e0a1c1450f7243230f2100e45bc19bc49
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 59c443aad7a16b0b0c6751497988d457437c82d9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064874"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839117"
 ---
 # <a name="copying-depth-stencil-values"></a>复制深度模具值
 

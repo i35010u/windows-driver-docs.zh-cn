@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ FIELDOFVIEW
 description: View 属性的字段描述了照相机 (FOV) 的当前字段以及照相机位置的螺距角度。
-ms.assetid: AE8DA7EA-639D-48B1-A5BF-5E1FADCA5466
 keywords:
 - KSPROPERTY_CAMERACONTROL_EXTENDED_FIELDOFVIEW 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c2edaea2b294a839eefd108a31d4f356f084f6a
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 12c13c636923200e858967721d2b05c309dc7b0d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106710"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839859"
 ---
 # <a name="ksproperty_cameracontrol_extended_fieldofview"></a>KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ FIELDOFVIEW
 
@@ -60,9 +59,9 @@ View 属性的字段描述了照相机 (FOV) 的当前字段以及照相机位�
 
 属性值 (操作数据) 包含 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header) 结构和 [**KSCAMERA \_ EXTENDEDPROP \_ FIELDOFVIEW**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_fieldofview) 结构。
 
-总属性数据大小为 **sizeof** (KSCAMERA \_ EXTENDEDPROP \_ 标头) + **sizeof** (KSCAMERA \_ EXTENDEDPROP \_ FIELDOFVIEW) 。 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的**Size**成员设置为此总属性数据大小。
+总属性数据大小为 **sizeof** (KSCAMERA \_ EXTENDEDPROP \_ 标头) + **sizeof** (KSCAMERA \_ EXTENDEDPROP \_ FIELDOFVIEW) 。 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的 **Size** 成员设置为此总属性数据大小。
 
-[**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的**功能**和**标志**成员不用于此属性。
+[**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的 **功能** 和 **标志** 成员不用于此属性。
 
 如果驱动程序无法为照相机确定正确的视图字段，则驱动程序不得指示此属性的支持。
 
@@ -82,7 +81,7 @@ View 属性的字段描述了照相机 (FOV) 的当前字段以及照相机位�
 <thead>
 <tr class="header">
 <th>成员</th>
-<th>Value</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -136,7 +135,7 @@ View 属性的字段描述了照相机 (FOV) 的当前字段以及照相机位�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)

@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_DeviceClass_LowerFilters
 description: DEVPKEY_DeviceClass_LowerFilters
-ms.assetid: 39bc784e-a8be-4921-9a12-f423fe502019
 keywords:
 - DEVPKEY_DeviceClass_LowerFilters 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 7f62d592750fcec3b8f946874f8707beb47e35ab
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: f8bc995c5583d7f6fa4d5ce45f72230ee8784a21
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717412"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840966"
 ---
 # <a name="devpkey_deviceclass_lowerfilters"></a>DEVPKEY_DeviceClass_LowerFilters
 

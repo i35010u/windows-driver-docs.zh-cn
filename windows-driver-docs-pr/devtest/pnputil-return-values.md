@@ -1,15 +1,14 @@
 ---
 title: PnPUtil 返回值
 description: PnPUtil 返回值
-ms.assetid: c26ecf54-b3d4-4559-9ec1-ff535cf03d77
 ms.date: 10/13/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: d341ad5b4131d7caef56db90a1cabd2c8361c2f2
-ms.sourcegitcommit: d41f5b17a57dc5dfe517434b9f3a66f483dc5ba5
+ms.openlocfilehash: 533759e8603550d830eaedf2f7c5cbd549de23ff
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92058568"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841023"
 ---
 # <a name="pnputil-return-values"></a>PnPUtil 返回值
 

@@ -1,17 +1,16 @@
 ---
 title: NDIS_STATUS_WDI_INDICATION_ROAMING_NEEDED
 description: 微型端口驱动程序使用 NDIS_STATUS_WDI_INDICATION_DISASSOCIATION 指示主机应尝试查找更好的对等互连以连接到。
-ms.assetid: 25f920e9-af87-48ad-be64-aa3ebfe2db5f
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_ROAMING_NEEDED 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 59c58953fd19b447ee7d39cb3286dc772f835401
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 30e7fab591a70152856e0dc78a538ca90548f73f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218001"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839479"
 ---
 # <a name="ndis_status_wdi_indication_roaming_needed"></a>需要有 NDIS \_ 状态 \_ WDI \_ 指示 \_ 漫游 \_
 
@@ -48,7 +47,7 @@ ms.locfileid: "89218001"
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>
@@ -57,7 +56,7 @@ ms.locfileid: "89218001"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [OID \_ WDI \_ 任务 \_ 漫游](oid-wdi-task-roam.md)

@@ -1,7 +1,6 @@
 ---
 title: 'PcAllocatedPages 规则 (音频) '
 description: PcAllocatedPages 规则指定 PortCls 微型端口驱动程序通过调用 AllocatePagesForMdl 或 AllocateContiguousPagesForMdl 方法释放以前分配的页面。
-ms.assetid: C27B8D30-AE94-4B17-A45B-EBECB8A7B132
 ms.date: 05/21/2018
 keywords:
 - 'PcAllocatedPages 规则 (音频) '
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 456d6bcc1eb9b3a73bb1396ef0348f99ac97ac53
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 4d4c59777a653c0e069dee56193a5453f72f7324
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107086"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839781"
 ---
 # <a name="pcallocatedpages-rule-audio"></a>PcAllocatedPages 规则 (音频) 
 

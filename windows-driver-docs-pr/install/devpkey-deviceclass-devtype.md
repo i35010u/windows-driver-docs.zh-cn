@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_DeviceClass_DevType
 description: DEVPKEY_DeviceClass_DevType
-ms.assetid: 383f2b47-c0ee-49c2-851c-b18c98fd0303
 keywords:
 - DEVPKEY_DeviceClass_DevType 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: dfaa666e4201e23630f2eba05bb63294c5bceac4
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 74c8dbb6d302739efa191f2adbaaf687288a5c5f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714616"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841251"
 ---
 # <a name="devpkey_deviceclass_devtype"></a>DEVPKEY_DeviceClass_DevType
 
@@ -66,9 +65,9 @@ DEVPKEY_DeviceClass_DevType 设备属性表示 [设备安装程序类](./overvie
 <a name="remarks"></a>备注
 -------
 
-安装应用程序安装设备安装程序类时，可以设置 DEVPKEY_DeviceClass_DevType 的值。 有关如何安装设备安装程序类和设置此属性的信息，请参阅[**Inf ClassInstall32 部分**](./inf-classinstall32-section.md)和有关注册表项值**DeviceType**的信息，请参阅[**Inf AddReg 指令**](./inf-addreg-directive.md)的 "特殊的*值-名称*关键字" 部分。
+安装应用程序安装设备安装程序类时，可以设置 DEVPKEY_DeviceClass_DevType 的值。 有关如何安装设备安装程序类和设置此属性的信息，请参阅 [**Inf ClassInstall32 部分**](./inf-classinstall32-section.md)和有关注册表项值 **DeviceType** 的信息，请参阅 [**Inf AddReg 指令**](./inf-addreg-directive.md)的 "特殊的 *值-名称* 关键字" 部分。
 
-DEVPKEY_DeviceClass_DevType 的值是在 Ntddk 和中定义的 FILE_DEVICE_Xxx 值之一。 有关设备类型的详细信息，请参阅[**IoCreateDevice**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice)函数的*DeviceType*参数。
+DEVPKEY_DeviceClass_DevType 的值是在 Ntddk 和中定义的 FILE_DEVICE_Xxx 值之一。 有关设备类型的详细信息，请参阅 [**IoCreateDevice**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice)函数的 *DeviceType* 参数。
 
 可以调用 [**SetupDiGetClassProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclasspropertyw) 或 [**SetupDiGetClassPropertyEx**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclasspropertyexw) 来检索 DEVPKEY_DeviceClass_DevType 的值。
 

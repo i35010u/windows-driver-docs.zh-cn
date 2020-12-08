@@ -1,7 +1,6 @@
 ---
 title: DIF_UNREMOVE
 description: DIF_UNREMOVE
-ms.assetid: 01e39f77-3ee8-44c4-ba1a-19d4356b26ce
 keywords:
 - DIF_UNREMOVE 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f05c620883517603d3d0726c7ccfb64f688de4c0
-ms.sourcegitcommit: 06581a21ca066ddfedab7f9bb7f2159cfac452fd
+ms.openlocfilehash: 5e31f8d1df24a7b608f5394fd2e7bf706a2335f1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91145475"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840349"
 ---
 # <a name="dif_unremove"></a>DIF_UNREMOVE
 
@@ -64,14 +63,14 @@ DIF_UNREMOVE 请求通知安装程序，Windows 将在给定的硬件配置文�
 提供一个指向 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构的指针，该结构在设备信息集中标识设备。
 
 <a href="" id="device-installation-parameters-"></a>设备安装参数   
-与*DeviceInfoData*关联的设备安装参数 ([**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)) 。
+与 *DeviceInfoData* 关联的设备安装参数 ([**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)) 。
 
 <a href="" id="class-installation-parameters"></a>类安装参数  
-[**SP_UNREMOVEDEVICE_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_unremovedevice_params)结构与*DeviceInfoData*关联。 必须将 " **作用域** " 字段设置为 "DI_UNREMOVEDEVICE_CONFIGSPECIFIC"，并且必须在 **hwprofile 中** 字段中指定硬件配置文件。
+[**SP_UNREMOVEDEVICE_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_unremovedevice_params)结构与 *DeviceInfoData* 关联。 必须将 " **作用域** " 字段设置为 "DI_UNREMOVEDEVICE_CONFIGSPECIFIC"，并且必须在 **hwprofile 中** 字段中指定硬件配置文件。
 
 ### <a name="installer-output"></a>安装程序输出
 
-<a href="" id="none"></a>无  
+<a href="" id="none"></a>内容  
 
 ### <a name="installer-return-value"></a>安装程序返回值
 
@@ -81,7 +80,7 @@ DIF_UNREMOVE 请求通知安装程序，Windows 将在给定的硬件配置文�
 
 如果类安装程序成功处理此请求（包括直接调用默认处理程序），则类安装程序应返回 NO_ERROR 并且 **SetupDiCallClassInstaller** 将不会再次调用默认处理程序。
 
-**注意**   类安装程序可以直接调用默认处理程序，但类安装程序永远不会尝试取代默认处理程序的操作。
+**注意**   类安装程序可以直接调用默认处理程序，但类安装程序永远不会尝试取代默认处理程序的操作。
 
  
 
@@ -119,7 +118,7 @@ DIF_UNREMOVE 请求通知安装程序，Windows 将在给定的硬件配置文�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**SetupDiUnremoveDevice**](/windows/win32/api/setupapi/nf-setupapi-setupdiunremovedevice)

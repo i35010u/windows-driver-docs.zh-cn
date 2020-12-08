@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_CompatibleIds
 description: DEVPKEY_Device_CompatibleIds
-ms.assetid: 01858541-9239-48be-8c48-ee163d87e767
 keywords:
 - DEVPKEY_Device_CompatibleIds 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: cdd1f4f3a58b466bab95c57fe5f3eb66792c5d6c
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 87e4ce3f9fbb589173875007869203b028b64088
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717092"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840079"
 ---
 # <a name="devpkey_device_compatibleids"></a>DEVPKEY_Device_CompatibleIds
 
@@ -70,7 +69,7 @@ DEVPKEY_DEVICE_CompatibleIds 设备属性表示设备实例的兼容标识符的
 <a name="remarks"></a>备注
 -------
 
-DEVPKEY_DEVICE_CompatibleIds 的值由在安装设备的 INF 文件的 " [**Inf 模型" 部分**](./inf-models-section.md)中为设备提供的*兼容 id*输入值设置。
+DEVPKEY_DEVICE_CompatibleIds 的值由在安装设备的 INF 文件的 " [**Inf 模型" 部分**](./inf-models-section.md)中为设备提供的 *兼容 id* 输入值设置。
 
 可以调用 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 来检索 DEVPKEY_DEVICE_CompatibleIds 的值。
 

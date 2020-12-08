@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ VIDEOCOMPRESSION \_ 替代 \_ 关键帧
 description: KSPROPERTY \_ VIDEOCOMPRESSION \_ 替代 \_ 关键帧属性暂时替代关键帧速率。 此属性是可选的。
-ms.assetid: 068bd5e6-e283-4c8d-8837-c0e0cef4df65
 keywords:
 - KSPROPERTY_VIDEOCOMPRESSION_OVERRIDE_KEYFRAME 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 07507166f66b5649cc3f1346def7f8c4aab85f4c
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 8a270fbf829aea8af37de557d810c235cf9bb75e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103026"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840863"
 ---
 # <a name="ksproperty_videocompression_override_keyframe"></a>KSPROPERTY \_ VIDEOCOMPRESSION \_ 替代 \_ 关键帧
 
@@ -86,7 +85,7 @@ KSPROPERTY **Value** \_ VIDEOCOMPRESSION S 结构的值成员 \_ 指定要成为
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

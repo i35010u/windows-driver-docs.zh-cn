@@ -1,7 +1,6 @@
 ---
 title: SetupAPI 日志记录
 description: SetupAPI 日志记录
-ms.assetid: 25beff4d-742a-4d46-bb91-16b3e14f2d6c
 keywords:
 - Setupapi.log WDK，日志记录
 - 记录 WDK Setupapi.log
@@ -9,12 +8,12 @@ keywords:
 - Setupapi.log 日志记录 WDK Windows Vista，关于 Setupapi.log 日志记录
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 49eb86ff800a52c7a8ec64deb80f754319684573
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: e674df868fa554000ce638f2ff79a53ae9f8d958
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095803"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838901"
 ---
 # <a name="setupapi-logging"></a>SetupAPI 日志记录
 

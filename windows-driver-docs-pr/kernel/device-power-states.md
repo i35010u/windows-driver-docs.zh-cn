@@ -1,7 +1,6 @@
 ---
 title: 设备电源状态
 description: 设备电源状态
-ms.assetid: 2229f34c-9b88-4e3e-802e-f7be2c7ef168
 keywords:
 - 设备电源状态 WDK 内核
 - 电源状态 WDK 内核
@@ -13,12 +12,12 @@ keywords:
 - 延迟 WDK 电源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4aa17397fb014d23e06c3d15c4fe8d431f46ac82
-ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
+ms.openlocfilehash: f8cd8226fbabf88f8ef78ae1ed5705f96b8e7e83
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89443935"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840037"
 ---
 # <a name="device-power-states"></a>设备电源状态
 

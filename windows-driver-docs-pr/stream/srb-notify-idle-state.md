@@ -1,7 +1,6 @@
 ---
 title: SRB \_ 通知 \_ 空闲 \_ 状态
 description: 类驱动程序会在发送第一个打开请求或最后一个关闭请求之前立即将此请求发送到微型驱动程序。 微型驱动程序可以使用 SRB \_ 通知 \_ 空闲 \_ 状态作为从 USB 选择性挂起唤醒的通知。
-ms.assetid: 7a2950a4-bd9f-4765-bb60-9e3aeeff49fb
 keywords:
 - SRB_NOTIFY_IDLE_STATE 流媒体设备
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 06/19/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: aef0b4d0f6bc8ab4acb2b0593730c83e28c2c58a
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: afab1b188a3ea17f1fb73e52ff7185ab04157884
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189929"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840495"
 ---
 # <a name="srb_notify_idle_state"></a>SRB \_ 通知 \_ 空闲 \_ 状态
 
@@ -43,7 +42,7 @@ SRB \_ 通知 \_ 空闲 \_ 状态修复了 stream 类驱动程序中存在的 US
 
 当 stream 类驱动程序发送 SRB \_ 通知 \_ 空闲 \_ 状态请求时，微型驱动程序将接收对 [*StrMiniReceiveDevicePacket*](/windows-hardware/drivers/ddi/strmini/nc-strmini-phw_receive_device_srb)的调用。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [**SRB \_ 获取 \_ 设备 \_ 属性**](srb-get-device-property.md)
 

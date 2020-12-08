@@ -1,9 +1,8 @@
 ---
 title: PlatenMinimumSize 元素
-description: 所需的 PlatenMinimumSize 元素指定的最小大小的文档的最终用户可以扫描平板辊上。
-ms.assetid: 8db5092f-415c-4942-a4a7-733a381afd16
+description: 必需的 PlatenMinimumSize 元素指定最终用户可以在平板影印上扫描的最小大小的文档。
 keywords:
-- PlatenMinimumSize 元素成像设备
+- PlatenMinimumSize 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 64120f6376fecb2cb864e41b6c0a901f00e56d88
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 187aa3120e820ffd1cf49bb6d10468f159af29b1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360643"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841077"
 ---
 # <a name="platenminimumsize-element"></a>PlatenMinimumSize 元素
 
 
-所需**PlatenMinimumSize**元素指定最小大小的文档的最终用户可以扫描平板辊上。
+必需的 **PlatenMinimumSize** 元素指定最终用户可以在平板影印上扫描的最小大小的文档。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -52,10 +51,10 @@ ms.locfileid: "63360643"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="height.md" data-raw-source="[&lt;strong&gt;Height&lt;/strong&gt;](height.md)"><strong>Height</strong></a></p></td>
+<td><p><a href="height.md" data-raw-source="[&lt;strong&gt;Height&lt;/strong&gt;](height.md)"><strong>高度</strong></a></p></td>
 </tr>
 <tr class="even">
-<td><p><a href="width.md" data-raw-source="[&lt;strong&gt;Width&lt;/strong&gt;](width.md)"><strong>Width</strong></a></p></td>
+<td><p><a href="width.md" data-raw-source="[&lt;strong&gt;Width&lt;/strong&gt;](width.md)"><strong>宽度</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -74,7 +73,7 @@ ms.locfileid: "63360643"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="platen.md" data-raw-source="[&lt;strong&gt;Platen&lt;/strong&gt;](platen.md)"><strong>辊</strong></a></p></td>
+<td><p><a href="platen.md" data-raw-source="[&lt;strong&gt;Platen&lt;/strong&gt;](platen.md)"><strong>Platen</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -82,18 +81,18 @@ ms.locfileid: "63360643"
 <a name="remarks"></a>备注
 -------
 
-[**宽度**](width.md)子元素指定辊支持快速扫描方向中的媒体的最小大小。 [**高度**](height.md)子元素指定辊支持进行慢扫描方向中的媒体的最小大小。
+[**Width**](width.md)子元素指定了在快速扫描方向上，影印支持的媒体的最小大小。 [**Height**](height.md)子元素指定在慢速扫描方向上，影印支持的介质的最小大小。
 
-所有媒体维度都以一个千分之几秒 (1/1000) 的英寸为单位。 两个可能的值**宽度**并**高度**范围从 1 到 2147483648。
+所有介质尺寸都按1分之 (1/1000) 英寸度量。 **宽度** 和 **高度** 的可能值范围是从1到2147483648。
 
 ## <a name="see-also"></a>请参阅
 
 
-[**Height**](height.md)
+[**高度**](height.md)
 
-[**辊**](platen.md)
+[**Platen**](platen.md)
 
-[**Width**](width.md)
+[**宽度**](width.md)
 
  
 

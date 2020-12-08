@@ -1,7 +1,6 @@
 ---
 title: Teletext 类别
 description: Teletext 类别
-ms.assetid: f8eb289f-0b01-43cc-8160-f16dc6de12d9
 keywords:
 - 流类别 WDK 视频捕获，teletext
 - teletext 类别 WDK 视频捕获
@@ -10,12 +9,12 @@ keywords:
 - WST 数据 WDK 视频捕获
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4aad10ebd757067b61ec00c986087cba30a732c4
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: f1c46c069121742fb8838639d97b085453801bcd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103622"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840485"
 ---
 # <a name="teletext-category"></a>Teletext 类别
 

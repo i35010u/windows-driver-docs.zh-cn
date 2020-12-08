@@ -1,15 +1,14 @@
 ---
 title: 用户定义的 ECP
 description: 用户定义的 ECP
-ms.assetid: 8589259b-2b21-44f1-bf69-c6792ee5541f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 49b136505bd94da8ec1aabce5dd17eaef75e43fc
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 3d921b59b9fc929ab7b9c6d3593258443b542496
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065916"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841127"
 ---
 # <a name="user-defined-ecps"></a>用户定义的 ECP
 

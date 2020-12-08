@@ -1,18 +1,17 @@
 ---
 title: 改进操作处理的性能
 description: 改进操作处理的性能
-ms.assetid: 14b5aa90-15ee-40c6-8f5b-e776b07932ab
 keywords:
 - Direct3D WDK Windows 2000 显示，操作代码
 - 操作代码 WDK Direct3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5585f44a6a129efc000e09b2311aef9a650f01df
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 629b5055c973329cc29e6a61cd2c2e7aba3f4c16
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064086"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839313"
 ---
 # <a name="improving-performance-of-operation-handling"></a>改进操作处理的性能
 
@@ -26,7 +25,7 @@ ms.locfileid: "89064086"
 
 -   你的驱动程序只应在绘制基元之前写入呈现状态寄存器，而不会在每次收到 ([**D3DHAL \_ DP2OPERATION**](/windows-hardware/drivers/ddi/d3dhal/ne-d3dhal-_d3dhal_dp2operation)) 的操作请求时进行写入。
 
-有关 **IDirect3DDevice8：： SetRenderState**的详细信息，请参阅 Direct3D SDK 文档。
+有关 **IDirect3DDevice8：： SetRenderState** 的详细信息，请参阅 Direct3D SDK 文档。
 
  
 

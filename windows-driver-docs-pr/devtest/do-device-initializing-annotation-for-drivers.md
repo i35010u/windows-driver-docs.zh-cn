@@ -1,30 +1,29 @@
 ---
 title: 驱动程序的 DO_DEVICE_INITIALIZING 注释
-description: 用于指定是否应清除标志字段中的设备对象的 DO_DEVICE_INITIALIZING 位批注的函数。
-ms.assetid: EFC5F0A3-7B20-49A5-9D50-1737DF76DC9E
+description: 用于指定是否应将带批注的函数清除设备对象的 "标志" 字段中的 DO_DEVICE_INITIALIZING 位。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ca73e667c23f41ee2d7f89b9d651514b861e142c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 72b624ffaf4dff2b4a8ae10027d7dd97356d3ba3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341677"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839013"
 ---
-# <a name="dodeviceinitializing-annotation-for-drivers"></a>不要\_设备\_驱动程序的初始化批注
+# <a name="do_device_initializing-annotation-for-drivers"></a>\_ \_ 为驱动程序初始化设备批注
 
 
-使用\_内核\_清除\_做\_init\_批注指定带批注的函数是否应清除执行\_设备\_中的正在初始化位标记的设备对象的字段。
+使用 \_ 内核 \_ 明文 \_ do \_ init \_ 批注指定是否应在 \_ \_ 设备对象的 "标志" 字段中清除 "执行设备初始化" 位。
 
-此批注的语法如下：
+此批注具有以下语法：
 
 ```
 _Kernel_clear_do_init_(yes|no)
 ```
 
-调用函数的使用进行批注\_内核\_清除\_做\_init\_(yes) 免除对调用函数无需清除执行\_设备\_正在初始化位。
+调用使用 \_ 内核 \_ 清除 \_ do init 进行批注的函数 \_ \_ (是) 豁免调用函数不必清除 "执行 \_ 设备初始化" \_ 位。
 
-批注几乎始终应在条件的上下文中时该函数将返回成功，除非批注应用于函数类型定义。 例如，在驱动程序的以下函数类型定义\_添加\_设备函数类批注指定函数不能提升 IRQL 和该函数会清除执行\_设备\_正在初始化位。
+当函数返回 success 时，注释应始终始终用在条件上下文中，除非将批注应用于函数类型定义。 例如，在以下用于驱动程序的函数类型定义中 \_ 添加 \_ 设备函数类，批注指定该函数不能引发 IRQL，并且函数应清除 "执行 \_ 设备 \_ 初始化" 位。
 
 ```
 typedef
@@ -40,7 +39,7 @@ DRIVER_ADD_DEVICE (
 typedef DRIVER_ADD_DEVICE *PDRIVER_ADD_DEVICE;
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [Windows 驱动程序的 SAL 2.0 注释](sal-2-annotations-for-windows-drivers.md)

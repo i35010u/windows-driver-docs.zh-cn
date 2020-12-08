@@ -1,57 +1,56 @@
 ---
-title: KSPROPSETID\_VPConfig 和 KSPROPSETID\_VPVBIConfig
-description: KSPROPSETID\_VPConfig 和 KSPROPSETID\_VPVBIConfig
-ms.assetid: 3e9a79a2-f217-4736-87b2-a968b358bbc7
+title: KSPROPSETID \_ VPConfig 和 KSPROPSETID \_ VPVBIConfig
+description: KSPROPSETID \_ VPConfig 和 KSPROPSETID \_ VPVBIConfig
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 877251b0bcd4da65c16f64a46ac642d0ed1d70ca
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2d0918f1e00e832b60b6574480a6ae1737d878a6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370901"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840233"
 ---
-# <a name="kspropsetidvpconfig-and-kspropsetidvpvbiconfig"></a>KSPROPSETID\_VPConfig 和 KSPROPSETID\_VPVBIConfig
+# <a name="kspropsetid_vpconfig-and-kspropsetid_vpvbiconfig"></a>KSPROPSETID \_ VPConfig 和 KSPROPSETID \_ VPVBIConfig
 
 
 ## <span id="ddk_kspropsetid_vpconfig_and_kspropsetid_vpvbiconfig_ks"></span><span id="DDK_KSPROPSETID_VPCONFIG_AND_KSPROPSETID_VPVBICONFIG_KS"></span>
 
 
-KSPROPSETID\_VPConfig 和 KSPROPSETID\_VPVBIConfig 属性集定义属性来控制视频端口 (VPs) 和视频端口消隐 (VPVBI)。
+KSPROPSETID \_ VPConfig 和 KSPROPSETID \_ VPVBIConfig 属性集定义属性，用于控制视频端口 (VPs) 和视频端口垂直消隐间隔 (VPVBI) 。
 
-KSPROPERTY\_中的 VPCONFIG 枚举*Ksmedia.h*指定的属性 KSPROPSETID\_VPConfig 和 KSPROPSETID\_VPVBIConfig。
+\_ *Ksmedia* 中的 KSPROPERTY VPCONFIG 枚举指定 KSPROPSETID \_ VPCONFIG 和 KSPROPSETID VPVBIConfig 的属性 \_ 。
 
-使用视频端口的微型驱动程序应实现支持以下属性：
+使用视频端口的微型驱动程序应实现对以下属性的支持：
 
-[**KSPROPERTY\_VPCONFIG\_NUMCONNECTINFO**](ksproperty-vpconfig-numconnectinfo.md)
+[**KSPROPERTY \_ VPCONFIG \_ NUMCONNECTINFO**](ksproperty-vpconfig-numconnectinfo.md)
 
-[**KSPROPERTY\_VPCONFIG\_GETCONNECTINFO**](ksproperty-vpconfig-getconnectinfo.md)
+[**KSPROPERTY \_ VPCONFIG \_ GETCONNECTINFO**](ksproperty-vpconfig-getconnectinfo.md)
 
-[**KSPROPERTY\_VPCONFIG\_SETCONNECTINFO**](ksproperty-vpconfig-setconnectinfo.md)
+[**KSPROPERTY \_ VPCONFIG \_ SETCONNECTINFO**](ksproperty-vpconfig-setconnectinfo.md)
 
-[**KSPROPERTY\_VPCONFIG\_VPDATAINFO**](ksproperty-vpconfig-vpdatainfo.md)
+[**KSPROPERTY \_ VPCONFIG \_ VPDATAINFO**](ksproperty-vpconfig-vpdatainfo.md)
 
-[**KSPROPERTY\_VPCONFIG\_MAXPIXELRATE**](ksproperty-vpconfig-maxpixelrate.md)
+[**KSPROPERTY \_ VPCONFIG \_ MAXPIXELRATE**](ksproperty-vpconfig-maxpixelrate.md)
 
-[**KSPROPERTY\_VPCONFIG\_NUMVIDEOFORMAT**](ksproperty-vpconfig-numvideoformat.md)
+[**KSPROPERTY \_ VPCONFIG \_ NUMVIDEOFORMAT**](ksproperty-vpconfig-numvideoformat.md)
 
-[**KSPROPERTY\_VPCONFIG\_GETVIDEOFORMAT**](ksproperty-vpconfig-getvideoformat.md)
+[**KSPROPERTY \_ VPCONFIG \_ GETVIDEOFORMAT**](ksproperty-vpconfig-getvideoformat.md)
 
-[**KSPROPERTY\_VPCONFIG\_SETVIDEOFORMAT**](ksproperty-vpconfig-setvideoformat.md)
+[**KSPROPERTY \_ VPCONFIG \_ SETVIDEOFORMAT**](ksproperty-vpconfig-setvideoformat.md)
 
-[**KSPROPERTY\_VPCONFIG\_INVERTPOLARITY**](ksproperty-vpconfig-invertpolarity.md)
+[**KSPROPERTY \_ VPCONFIG \_ INVERTPOLARITY**](ksproperty-vpconfig-invertpolarity.md)
 
-[**KSPROPERTY\_VPCONFIG\_DECIMATIONCAPABILITY**](ksproperty-vpconfig-decimationcapability.md)
+[**KSPROPERTY \_ VPCONFIG \_ DECIMATIONCAPABILITY**](ksproperty-vpconfig-decimationcapability.md)
 
-[**KSPROPERTY\_VPCONFIG\_SCALEFACTOR**](ksproperty-vpconfig-scalefactor.md)
+[**KSPROPERTY \_ VPCONFIG \_ SCALEFACTOR**](ksproperty-vpconfig-scalefactor.md)
 
-[**KSPROPERTY\_VPCONFIG\_DDRAWHANDLE**](ksproperty-vpconfig-ddrawhandle.md)
+[**KSPROPERTY \_ VPCONFIG \_ DDRAWHANDLE**](ksproperty-vpconfig-ddrawhandle.md)
 
-[**KSPROPERTY\_VPCONFIG\_VIDEOPORTID**](ksproperty-vpconfig-videoportid.md)
+[**KSPROPERTY \_ VPCONFIG \_ VIDEOPORTID**](ksproperty-vpconfig-videoportid.md)
 
-[**KSPROPERTY\_VPCONFIG\_DDRAWSURFACEHANDLE**](ksproperty-vpconfig-ddrawsurfacehandle.md)
+[**KSPROPERTY \_ VPCONFIG \_ DDRAWSURFACEHANDLE**](ksproperty-vpconfig-ddrawsurfacehandle.md)
 
-[**KSPROPERTY\_VPCONFIG\_SURFACEPARAMS**](ksproperty-vpconfig-surfaceparams.md)
+[**KSPROPERTY \_ VPCONFIG \_ SURFACEPARAMS**](ksproperty-vpconfig-surfaceparams.md)
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: KS \_ AM \_ 速率 \_ SimpleRateChange
 description: KS \_ AM \_ rate \_ SimpleDataRate 属性设置筛选器上的时间戳速率。
-ms.assetid: 07399986-de5a-42fc-975e-05ea57570f58
 keywords:
 - KS_AM_RATE_SimpleRateChange 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 63353736026471c73bd90099099e6ae30495cdb7
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: cf9b5c6c36bd6c22af0eec7defb0c457d48f90fd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103314"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839199"
 ---
 # <a name="ks_am_rate_simpleratechange"></a>KS \_ AM \_ 速率 \_ SimpleRateChange
 
@@ -79,7 +78,7 @@ KS \_ AM \_ rate \_ SimpleDataRate 属性设置筛选器上的时间戳速率。
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KS \_ AM \_ SimpleRateChange**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ks_am_simpleratechange)

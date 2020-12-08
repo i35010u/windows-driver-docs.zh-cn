@@ -1,7 +1,6 @@
 ---
 title: 运动补偿
 description: 运动补偿
-ms.assetid: 3b5c91f9-6c22-4110-943a-5b833f32c014
 keywords:
 - 绘制 WDK DirectDraw，运动补偿
 - DirectDraw WDK Windows 2000 显示，动作补偿
@@ -12,12 +11,12 @@ keywords:
 - 数字视频解码 WDK DirectDraw
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 55e586260b57ea70336f41d9e331e41a91be6486
-ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
+ms.openlocfilehash: f5abddc601e74b22c128313783ac8a0cee68ca1f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91423548"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839593"
 ---
 # <a name="motion-compensation"></a>运动补偿
 
@@ -31,9 +30,9 @@ ms.locfileid: "91423548"
 
 若要启用动作补偿功能，驱动程序必须执行以下步骤：
 
--   在调用[**DrvGetDirectDrawInfo**](/windows/win32/api/winddi/nf-winddi-drvgetdirectdrawinfo)时，实现[**DdGetDriverInfo**](/windows/win32/api/ddrawint/nc-ddrawint-pdd_getdriverinfo)函数并将[**DD \_ HALINFO**](/windows/win32/api/ddrawint/ns-ddrawint-dd_halinfo)结构的**GetDriverInfo**成员设置为指向此函数。 驱动程序的 *DdGetDriverInfo* 函数必须分析 GUID \_ MotionCompCallbacks guid。
+-   在调用 [**DrvGetDirectDrawInfo**](/windows/win32/api/winddi/nf-winddi-drvgetdirectdrawinfo)时，实现 [**DdGetDriverInfo**](/windows/win32/api/ddrawint/nc-ddrawint-pdd_getdriverinfo)函数并将 [**DD \_ HALINFO**](/windows/win32/api/ddrawint/ns-ddrawint-dd_halinfo)结构的 **GetDriverInfo** 成员设置为指向此函数。 驱动程序的 *DdGetDriverInfo* 函数必须分析 GUID \_ MotionCompCallbacks guid。
 
--   使用 GUID MOTIONCOMPCALLBACKS GUID 调用*DdGetDriverInfo*函数时，使用适当的驱动程序回调指针和回调类型标志来填充[**DD \_ MOTIONCOMPCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构 \_ 。 然后，该驱动程序必须将此初始化的结构复制到 Microsoft DirectDraw 分配的缓冲区，该缓冲区中[**DD \_ GETDRIVERINFODATA**](/windows/win32/api/ddrawint/ns-ddrawint-dd_getdriverinfodata)结构的**lpvData**成员指向的位置，并返回写入缓冲区的**dwActualSize**中的字节数。
+-   使用 GUID MOTIONCOMPCALLBACKS GUID 调用 *DdGetDriverInfo* 函数时，使用适当的驱动程序回调指针和回调类型标志来填充 [**DD \_ MOTIONCOMPCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构 \_ 。 然后，该驱动程序必须将此初始化的结构复制到 Microsoft DirectDraw 分配的缓冲区，该缓冲区中 [**DD \_ GETDRIVERINFODATA**](/windows/win32/api/ddrawint/ns-ddrawint-dd_getdriverinfodata)结构的 **lpvData** 成员指向的位置，并返回写入缓冲区的 **dwActualSize** 中的字节数。
 
  
 

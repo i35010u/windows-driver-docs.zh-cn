@@ -1,17 +1,16 @@
 ---
 title: 查询 VidPN 硬件功能
 description: 查询 VidPN 硬件功能
-ms.assetid: fb7939bb-ff7e-4ba8-b801-ac10010c44b7
 keywords:
 - VidPN WDK 显示，硬件功能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b6909fea612440ab7a4a7dbd7bb01b3771b458a
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: f290b89c19393ab0573a45456b09528ef9b4999d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063496"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840181"
 ---
 # <a name="querying-vidpn-hardware-capabilities"></a>查询 VidPN 硬件功能
 

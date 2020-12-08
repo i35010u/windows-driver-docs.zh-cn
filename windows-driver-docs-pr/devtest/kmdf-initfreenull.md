@@ -1,7 +1,6 @@
 ---
 title: 'InitFreeNull 规则 (kmdf) '
 description: InitFreeNull 规则指定 \_ 无法使用指向 WDFDEVICE INIT 结构的 NULL 指针调用作为参数的 DDIs 接收 PWDFDEVICE init \_ 。
-ms.assetid: 99ced415-9af9-4d06-a10f-4c960897ad5f
 ms.date: 05/21/2018
 keywords:
 - 'InitFreeNull 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a0ec7c43bda7e54f7a79a28901a7c8f7acacdbf
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: cb86a7675999cdb96ba31fa11982b5788d767f92
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106638"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841301"
 ---
 # <a name="initfreenull-rule-kmdf"></a>InitFreeNull 规则 (kmdf) 
 
 
-**InitFreeNull**规则指定 \_ 无法使用指向[WDFDEVICE \_ INIT](../wdf/wdfdevice_init.md)结构的**NULL**指针调用作为参数的 DDIs 接收 PWDFDEVICE init。
+**InitFreeNull** 规则指定 \_ 无法使用指向 [WDFDEVICE \_ INIT](../wdf/wdfdevice_init.md)结构的 **NULL** 指针调用作为参数的 DDIs 接收 PWDFDEVICE init。
 
 框架提供的方法初始化 [WDFDEVICE \_ INIT](../wdf/wdfdevice_init.md) 结构。 当驱动程序调用 [**WdfDeviceCreate**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate) 创建功能设备对象 (FDO) 或 (PDO) 的物理设备对象时， **WdfDeviceCreate** 方法会将第一个参数设置为 **NULL** （如果成功）。
 

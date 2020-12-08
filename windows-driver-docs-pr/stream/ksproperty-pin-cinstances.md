@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ PIN \_ CINSTANCES
 description: 此插针工厂实例化的当前插针数量，以及此 pin 工厂可根据筛选器实例化的最大 pin 数。
-ms.assetid: 0a6c0afa-1bdf-4b80-a8d7-55f13d9da74b
 keywords:
 - KSPROPERTY_PIN_CINSTANCES 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f853acd1ea252063b90cf5161c5fbb88d36da0a3
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 8ab5b611fbae53c3751104d9288c26399ba873a2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103744"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839187"
 ---
 # <a name="ksproperty_pin_cinstances"></a>KSPROPERTY \_ PIN \_ CINSTANCES
 

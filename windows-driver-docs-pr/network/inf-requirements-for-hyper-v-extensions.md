@@ -1,15 +1,14 @@
 ---
 title: Hyper-V 可扩展交换机扩展的 INF 要求
 description: Hyper-V 可扩展交换机扩展的 INF 要求
-ms.assetid: 378F619A-C799-4330-A388-9955A67251F8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8da2c212e6df9678d8e1bf15e39ed912f44fe2ec
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 1cd88e0b19f0a39a40ec6da873847d1ff19e9572
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212391"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841191"
 ---
 # <a name="inf-requirements-for-hyper-v-extensible-switch-extensions"></a>Hyper-V 可扩展交换机扩展的 INF 要求
 
@@ -28,7 +27,7 @@ Hyper-v 可扩展交换机扩展开发为 NDIS 筛选器驱动程序。 因此�
 
 - 筛选器 INF 文件中的 **FilterMediaTypes** 条目定义驱动程序与其他驱动程序和接口的绑定。 可扩展交换机扩展的 **FilterMediaTypes** 条目必须包含 **vmnetextension** 值。 此值指定到可扩展交换机扩展微型端口适配器的绑定。
 
-  **FilterMediaTypes**项允许指定以逗号分隔的媒体类型列表。 这允许将扩展绑定到物理接口或可扩展交换机接口。
+  **FilterMediaTypes** 项允许指定以逗号分隔的媒体类型列表。 这允许将扩展绑定到物理接口或可扩展交换机接口。
 
   以下示例显示一个 **FilterMediaTypes** 条目，该条目允许将扩展绑定到物理以太网网络适配器或可扩展交换机虚拟网络适配器。
 
@@ -42,7 +41,7 @@ Hyper-v 可扩展交换机扩展开发为 NDIS 筛选器驱动程序。 因此�
 
   有关 **FilterMediaTypes** 项的详细信息，请参阅 [中间驱动程序 UPPERRANGE 和 LowerRange INF 文件项](intermediate-driver-upperrange-and-lowerrange-inf-file-entries.md)。
 
-- 扩展 INF 文件中的 **FilterClass** 值决定了其在筛选器堆栈中的顺序。 **FilterClass**条目必须包含下表中的其中一个值。
+- 扩展 INF 文件中的 **FilterClass** 值决定了其在筛选器堆栈中的顺序。 **FilterClass** 条目必须包含下表中的其中一个值。
 
   <table>
   <colgroup>
@@ -52,7 +51,7 @@ Hyper-v 可扩展交换机扩展开发为 NDIS 筛选器驱动程序。 因此�
   <thead>
   <tr class="header">
   <th align="left">FilterClass 值</th>
-  <th align="left">说明</th>
+  <th align="left">描述</th>
   </tr>
   </thead>
   <tbody>

@@ -1,15 +1,14 @@
 ---
 title: 页面大小和方向代码示例
 description: 页面大小和方向代码示例
-ms.assetid: 28425df2-131b-4fbc-ae44-043be2fb4813
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c39b7c11caa240d8812b4cf3be5946c448e8f1d8
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 34b2d664c50e9bdfa22c682d7c69abf85eb4ed7f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192601"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841093"
 ---
 # <a name="page-size-and-orientation-code-examples"></a>页面大小和方向代码示例
 

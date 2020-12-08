@@ -1,24 +1,23 @@
 ---
 title: WdfObjectGetTypedContext 宏
 description: WdfObjectGetTypedContext 宏返回指向对象的上下文空间的指针。
-ms.assetid: de0edae4-7c05-4419-972e-c106875dfff1
 keywords:
 - WdfObjectGetTypedContext 宏
 ms.date: 08/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 734781fba81f889a96acc7d43426110cf74628f3
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 1ab261fc1c9e61099f5de02c6e933d147e06834b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187990"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839181"
 ---
 # <a name="wdfobjectgettypedcontext-macro"></a>WdfObjectGetTypedContext 宏
 
 
 \[适用于 KMDF 和 UMDF\]
 
-**WdfObjectGetTypedContext**宏返回指向对象的上下文空间的指针。
+**WdfObjectGetTypedContext** 宏返回指向对象的上下文空间的指针。
 
 <a name="syntax"></a>语法
 ------
@@ -44,7 +43,7 @@ PVOID WdfObjectGetTypedContext(
 
 **WdfObjectGetTypedContext** 返回指向指定对象的上下文空间的指针。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 可以使用 **WdfObjectGetTypedContext** 宏获取指向任何框架对象上下文空间的指针。 使用此宏作为调用 [**WDF_DECLARE_CONTEXT_TYPE**](wdf-declare-context-type.md) 宏或 [**WDF_DECLARE_CONTEXT_TYPE_WITH_NAME**](wdf-declare-context-type-with-name.md) 宏创建的对象特定上下文访问器方法的替代方法。 请注意，如果您使用 **WdfObjectGetTypedContext**，则仍必须使用 WDF_DECLARE_CONTEXT_TYPE 或 WDF_DECLARE_CONTEXT_TYPE_WITH_NAME 来声明您的对象上下文。
@@ -114,7 +113,7 @@ pMyContext = WdfObjectGetTypedContext(
 <td><p>2.0</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wdfobject (包含 Wdf .h) </td>
 </tr>
 <tr class="odd">

@@ -1,26 +1,25 @@
 ---
 title: 驱动程序覆盖范围筛选器驱动程序
 description: 驱动程序覆盖范围筛选器驱动程序
-ms.assetid: 8d345081-b9be-4e22-9276-dacd7815f506
 keywords:
 - 驱动程序覆盖套件 WDK，筛选器驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e954904024db7e31392e9ca071c33c6cebe22e35
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: c213778a36ca5c2a642a41a24c57d135e404234a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89381995"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839011"
 ---
 # <a name="driver-coverage-filter-driver"></a>驱动程序覆盖范围筛选器驱动程序
 
 
-**注意**   Windows 10 不再需要驱动程序覆盖率工具包，并且 WDK 中不再包括该安装程序。 若要在 Windows 10 中执行此处所述的任务，请改用 [驱动程序验证程序](driver-verifier.md) 和 [IRP 日志记录](irp-logging.md)。
+**注意**  Windows 10 不再需要驱动程序覆盖率工具包，并且 WDK 中不再包括该安装程序。 若要在 Windows 10 中执行此处所述的任务，请改用 [驱动程序验证程序](driver-verifier.md) 和 [IRP 日志记录](irp-logging.md)。
 
  
 
- ( # A0) 的驱动程序覆盖率筛选器驱动程序监视 (Irp) 输入或保留指定设备的驱动程序堆栈的 i/o 请求数据包。 在运行 "**启用 IRP 覆盖率" 数据收集**工具时，通过使用*DQ*参数指定驱动程序覆盖率筛选器驱动程序监视的设备。 请参阅 [如何选择和配置设备基础测试](/windows-hardware/drivers) 和 [设备基础测试参数](/windows-hardware/drivers)。
+ ( # A0) 的驱动程序覆盖率筛选器驱动程序监视 (Irp) 输入或保留指定设备的驱动程序堆栈的 i/o 请求数据包。 在运行 "**启用 IRP 覆盖率" 数据收集** 工具时，通过使用 *DQ* 参数指定驱动程序覆盖率筛选器驱动程序监视的设备。 请参阅 [如何选择和配置设备基础测试](/windows-hardware/drivers) 和 [设备基础测试参数](/windows-hardware/drivers)。
 
 <span id="UpperFilter___TRUE"></span><span id="upperfilter___true"></span><span id="UPPERFILTER___TRUE"></span>**UpperFilter = TRUE**  
 此选项将驱动程序覆盖率筛选器驱动程序安装为指定设备的设备驱动程序的上限筛选器。 此配置监视设备驱动程序堆栈中的设备驱动程序的所有 IRP 流量，无论驱动程序是处理 IRP 还是传递到更低的设备驱动程序。
@@ -46,7 +45,7 @@ ms.locfileid: "89381995"
 
 -   如果要在指定的设备和驱动程序堆栈中的设备（例如设备的总线驱动程序）之间 IRP 流量，请将筛选器驱动程序安装为设备驱动程序的较低筛选器。
 
-**注意**   如何安装驱动程序覆盖率筛选器驱动程序以获得最佳 IRP 覆盖范围取决于驱动程序堆栈的拓扑，并要求您了解堆栈内驱动程序的关系和顺序。
+**注意**   如何安装驱动程序覆盖率筛选器驱动程序以获得最佳 IRP 覆盖范围取决于驱动程序堆栈的拓扑，并要求您了解堆栈内驱动程序的关系和顺序。
 
  
 

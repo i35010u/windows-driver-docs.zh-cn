@@ -1,7 +1,6 @@
 ---
 title: D3DKMT \_ MULTIPLANE \_ 叠加 \_ 混合枚举
 description: 了解 \_ \_ \_ 保留供系统使用的 D3DKMT MULTIPLANE 叠加混合枚举。 请勿在您的驱动程序中使用。
-ms.assetid: f0d181a6-f9cc-4e21-a971-7192e245a5c7
 keywords:
 - D3DKMT_MULTIPLANE_OVERLAY_BLEND 枚举显示设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f069b680e0dd2710a094ca01b947482e95a066a8
-ms.sourcegitcommit: fc94eb0d5a41ef81c1b3ab91ad725386db0be0c2
+ms.openlocfilehash: fb72a47fe06110a230794748ff3f01d5f317f8f9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91603675"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839629"
 ---
 # <a name="d3dkmt_multiplane_overlay_blend-enumeration"></a>D3DKMT \_ MULTIPLANE \_ 叠加 \_ 混合枚举
 
@@ -31,8 +30,8 @@ ms.locfileid: "91603675"
 
 ```ManagedCPlusPlus
 typedef enum D3DKMT_MULTIPLANE_OVERLAY_BLEND {
-  D3DKMT_MULTIPLANE_OVERLAY_BLEND_OPAQUE      = 0x0,
-  D3DKMT_MULTIPLANE_OVERLAY_BLEND_ALPHABLEND  = 0x1
+  D3DKMT_MULTIPLANE_OVERLAY_BLEND_OPAQUE      = 0x0,
+  D3DKMT_MULTIPLANE_OVERLAY_BLEND_ALPHABLEND  = 0x1
 } D3DKMT_MULTIPLANE_OVERLAY_BLEND;
 ```
 

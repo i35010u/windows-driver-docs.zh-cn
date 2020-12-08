@@ -1,7 +1,6 @@
 ---
 title: 'WdfInterruptLock 规则 (kmdf) '
 description: WdfInterruptLock 规则指定对 WdfInterruptAcquireLock 方法的调用在严格替换中用于对 WdfInterruptReleaseLock 的调用。
-ms.assetid: bf105e83-dc63-44b1-ba9d-e4d81210fa1a
 ms.date: 05/21/2018
 keywords:
 - 'WdfInterruptLock 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ad7a1711a8bdf0a2861f6e9e1ce518e9a4d7393
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: eb53b09c16f8d717d32c84aa0a9317f59c7d8293
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105046"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840803"
 ---
 # <a name="wdfinterruptlock-rule-kmdf"></a>WdfInterruptLock 规则 (kmdf) 
 
 
-**WdfInterruptLock**规则指定对[**WdfInterruptAcquireLock**](/previous-versions/ff547340(v=vs.85))方法的调用在严格替换中用于对[**WdfInterruptReleaseLock**](/previous-versions/ff547376(v=vs.85))的调用。 此外，在任何 KMDF 回调例程结束时，驱动程序不应持有框架旋转锁对象，这是由先前对 **WdfInterruptAcquireLock**的调用获得的。
+**WdfInterruptLock** 规则指定对 [**WdfInterruptAcquireLock**](/previous-versions/ff547340(v=vs.85))方法的调用在严格替换中用于对 [**WdfInterruptReleaseLock**](/previous-versions/ff547376(v=vs.85))的调用。 此外，在任何 KMDF 回调例程结束时，驱动程序不应持有框架旋转锁对象，这是由先前对 **WdfInterruptAcquireLock** 的调用获得的。
 
 **驱动程序模型： KMDF**
 

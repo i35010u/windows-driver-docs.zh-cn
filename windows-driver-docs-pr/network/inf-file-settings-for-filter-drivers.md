@@ -1,17 +1,16 @@
 ---
 title: 筛选器驱动程序的 INF 文件设置
 description: 筛选器驱动程序的 INF 文件设置
-ms.assetid: e2714e67-62ac-4d9a-bec3-971d1c8b5bd8
 keywords:
-- INF 文件 WDK 网络筛选器驱动程序
+- INF 文件 WDK 网络，筛选器驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b8dcfef30d3870b1dae2335aa4e3981b97f1a13a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 482f4786c746fc349226d67bb9e4b8e61901f971
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327721"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841193"
 ---
 # <a name="inf-file-settings-for-filter-drivers"></a>筛选器驱动程序的 INF 文件设置
 
@@ -19,13 +18,13 @@ ms.locfileid: "63327721"
 
 
 
-筛选器驱动程序 INF 文件设置指定的筛选器驱动程序的特征。 例如，可以修改或监视筛选器驱动程序，可以为必需或可选。 INF 文件还指定常规配置参数和其他信息来将筛选器驱动程序与特定的微型端口适配器相关联。 筛选器驱动程序由唯一的筛选器标识 GUID (FID GUID) 标识。
+筛选器驱动程序 INF 文件设置指定筛选器驱动程序的特征。 例如，筛选器驱动程序可以修改或监视，并且可以是必需的或可选的。 INF 文件还指定了用于将筛选器驱动程序与特定微型端口适配器相关联的常规配置参数和其他信息。 筛选器驱动程序由唯一筛选器标识 GUID (FID GUID) 标识。
 
-本部分包括：
+本节包括：
 
-[配置用于监视的筛选器驱动程序的 INF 文件](configuring-an-inf-file-for-a-monitoring-filter-driver.md)
+[配置监视筛选器驱动程序的 INF 文件](configuring-an-inf-file-for-a-monitoring-filter-driver.md)
 
-[配置用于修改筛选器驱动程序的 INF 文件](configuring-an-inf-file-for-a-modifying-filter-driver.md)
+[配置修改筛选器驱动程序的 INF 文件](configuring-an-inf-file-for-a-modifying-filter-driver.md)
 
  
 

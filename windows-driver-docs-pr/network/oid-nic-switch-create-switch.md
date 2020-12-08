@@ -1,16 +1,15 @@
 ---
 title: OID_NIC_SWITCH_CREATE_SWITCH
 description: NDIS) 方法请求 (OID 发出对象标识符，OID_NIC_SWITCH_CREATE_SWITCH 在网络适配器上创建 NIC 交换机。
-ms.assetid: 16FFC6A4-11A6-45A1-ABCF-8C1EBE3FD953
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_NIC_SWITCH_CREATE_SWITCH 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 768773715f3060ab4810a058df0db9a0e8556241
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: eb7ba3dd0fff532ceeb0b929ac35143f139e1d9d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106054"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839463"
 ---
 # <a name="oid_nic_switch_create_switch"></a>OID \_ NIC \_ 交换机 \_ 创建 \_ 开关
 
@@ -19,18 +18,18 @@ NDIS)  (OID 发出对象标识符，oid \_ NIC \_ 交换机 \_ create \_ 开关�
 
 NDIS 将此 OID 方法请求颁发给网络适配器 PCI Express (PCIe 的微型端口驱动程序，) 物理功能 (PF) 。 对于支持单个根 i/o 虚拟化 (SR-IOV) 接口的 PF 小型端口驱动程序，需要此 OID 方法请求。
 
-**注意**   过量驱动程序（如协议或筛选器驱动程序）无法发出 oid \_ NIC \_ 交换机 \_ CREATE \_ 切换到 PF 微型端口驱动程序的 oid 方法请求。
+**注意**  过量驱动程序（如协议或筛选器驱动程序）无法发出 oid \_ NIC \_ 交换机 \_ CREATE \_ 切换到 PF 微型端口驱动程序的 oid 方法请求。
 
  
 
-[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**NDIS \_ NIC \_ 交换机 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)结构的指针。
+[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ NIC \_ 交换机 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)结构的指针。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 接收到 oid NIC 交换机 CREATE SWITCH 的 OID 方法请求时 \_ \_ \_ \_ ，PF 微型端口驱动程序必须执行以下操作：
 
-1.  如果 PF 微型端口驱动程序支持静态交换机创建和配置，它将在 NDIS 调用 [*MiniportInitializeEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)时创建 NIC 交换机。 当驱动程序处理此 OID 请求时，它必须验证 [**NDIS \_ NIC \_ 交换机 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters) 结构中的配置参数。 参数必须与驱动程序在调用 *MiniportInitializeEx*期间使用的参数相同。 如果不是这样，则驱动程序必须使 OID 请求失败。
+1.  如果 PF 微型端口驱动程序支持静态交换机创建和配置，它将在 NDIS 调用 [*MiniportInitializeEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)时创建 NIC 交换机。 当驱动程序处理此 OID 请求时，它必须验证 [**NDIS \_ NIC \_ 交换机 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters) 结构中的配置参数。 参数必须与驱动程序在调用 *MiniportInitializeEx* 期间使用的参数相同。 如果不是这样，则驱动程序必须使 OID 请求失败。
 
     有关详细信息，请参阅 [创建 NIC 交换机的静态](./static-creation-of-a-nic-switch.md)。
 
@@ -40,7 +39,7 @@ NDIS 将此 OID 方法请求颁发给网络适配器 PCI Express (PCIe 的微型
 
 3.  PF 小型端口驱动程序必须为 NIC 交换机上的默认 VPort 分配必要的硬件和软件资源。
 
-    **注意**   默认 VPort 始终通过 oid \_ nic 交换机 CREATE 开关的 oid 请求创建 \_ \_ \_ ，并通过 oid [ \_ nic \_ 交换机 \_ 删除 \_ 开关](oid-nic-switch-delete-switch.md)的 oid 请求删除。 Oid [ \_ nic \_ 交换机 \_ CREATE \_ VPORT](oid-nic-switch-create-vport.md) 和 [oid \_ nic \_ 交换机 \_ DELETE \_ VPORT](oid-nic-switch-delete-vport.md) 的 Oid 请求用于在 NIC 交换机上创建和删除非默认 VPorts。
+    **注意**  默认 VPort 始终通过 oid \_ nic 交换机 CREATE 开关的 oid 请求创建 \_ \_ \_ ，并通过 oid [ \_ nic \_ 交换机 \_ 删除 \_ 开关](oid-nic-switch-delete-switch.md)的 oid 请求删除。 Oid [ \_ nic \_ 交换机 \_ CREATE \_ VPORT](oid-nic-switch-create-vport.md) 和 [oid \_ nic \_ 交换机 \_ DELETE \_ VPORT](oid-nic-switch-delete-vport.md) 的 Oid 请求用于在 NIC 交换机上创建和删除非默认 VPorts。
 
      
 
@@ -48,7 +47,7 @@ NDIS 将此 OID 方法请求颁发给网络适配器 PCI Express (PCIe 的微型
 
     有关 SR-IOV 配置空间的详细信息，请参阅 PCI-SIG [单根 I/o 虚拟化和共享 1.1](https://go.microsoft.com/fwlink/p/?linkid=221742) 规范。
 
-    **注意**   如果 PF 微型端口驱动程序支持静态交换机创建，则在调用[*MiniportInitializeEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)时，它将启用 sr-iov 虚拟化。
+    **注意**  如果 PF 微型端口驱动程序支持静态交换机创建，则在调用 [*MiniportInitializeEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize) 时，它将启用 sr-iov 虚拟化。
 
      
 

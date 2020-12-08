@@ -1,15 +1,14 @@
 ---
 title: 用于设置自定义属性的示例代码
 description: 用于设置自定义属性的示例代码
-ms.assetid: 726315eb-de5c-47b6-a35b-524ec1c97d52
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 400c7f0f99334d8d6ea877b58249884648043ea1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1b7dbc3613ef465e2b54558041d7cc880c51569f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381549"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840711"
 ---
 # <a name="sample-code-to-set-custom-properties"></a>用于设置自定义属性的示例代码
 
@@ -17,7 +16,7 @@ ms.locfileid: "63381549"
 
 
 
-若要设置自定义属性，你的应用程序或自定义 UI 可能看起来类似于下面的代码：
+若要设置自定义属性，您的应用程序或自定义 UI 可能具有如下所示的代码：
 
 ```cpp
     IWiaPropertyStorage *pItemPropertyStorage = NULL;

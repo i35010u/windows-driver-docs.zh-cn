@@ -1,7 +1,6 @@
 ---
 title: 'StopAckWithinEvtIoStop 规则 (kmdf) '
 description: StopAckWithinEvtIoStop 规则指定仅从 EvtIoStop 回调函数内调用 WdfRequestStopAcknowledge 函数。
-ms.assetid: 10b6278d-a298-41f0-8232-e374bfeb0ab7
 ms.date: 05/21/2018
 keywords:
 - 'StopAckWithinEvtIoStop 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 04ef44377c02eef89a014a351ed8b5483bda3226
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: b9d6a9758b3d4e4c409f26e7cf0eb24f513dc9fc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101624"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840812"
 ---
 # <a name="stopackwithinevtiostop-rule-kmdf"></a>StopAckWithinEvtIoStop 规则 (kmdf) 
 
 
-**StopAckWithinEvtIoStop**规则指定仅从[*EvtIoStop*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_stop)回调函数内调用[**WdfRequestStopAcknowledge**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequeststopacknowledge)函数。
+**StopAckWithinEvtIoStop** 规则指定仅从 [*EvtIoStop*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_stop)回调函数内调用 [**WdfRequestStopAcknowledge**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequeststopacknowledge)函数。
 
 **驱动程序模型： KMDF**
 

@@ -1,15 +1,14 @@
 ---
 title: 其他规则集 (NDIS)
 description: 使用这些规则来验证驱动程序是否正确遵循了对计时器、暂停操作、键、字符串和绑定的正确处理的一组一般要求。
-ms.assetid: 2F4A68DB-7619-4F36-8FA1-C9350604FDED
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ae3c2097758402c0eb8ccbc9fc723ce14cab8ac5
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: b452e73abe04730cc0073b8276fe08e9d46dba88
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104442"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839123"
 ---
 # <a name="miscellaneous-rule-set-ndis"></a>其他规则集 (NDIS)
 
@@ -27,7 +26,7 @@ ms.locfileid: "90104442"
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -70,7 +69,7 @@ ms.locfileid: "90104442"
 
 2.  单击 " **规则** " 选项卡。在 " **规则集**" 下，选择 " **杂项**"。
 
-    若要从 Visual Studio 开发人员命令提示符窗口中选择默认规则集，请使用 **/check**选项指定**sdv** 。 例如：
+    若要从 Visual Studio 开发人员命令提示符窗口中选择默认规则集，请使用 **/check** 选项指定 **sdv** 。 例如：
 
     ```
     msbuild /t:sdv /p:Inputs="/check:Miscellaneous.sdv" mydriver.VcxProj /p:Configuration="Win8 Release" /p:Platform=Win32

@@ -1,15 +1,14 @@
 ---
 title: 扫描仪存储的可选 WIA 项属性
 description: 扫描仪存储的可选 WIA 项属性
-ms.assetid: d21e7195-37be-4821-a326-68bcdff9cdd6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fd2c1b24b13648b441f4f671e8c9e6ca26aff0a4
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: e1ac4c7ec7d278eefd258a24fc2a9e6e8cd95c66
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192613"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841105"
 ---
 # <a name="optional-wia-item-properties-for-scanner-storage"></a>扫描仪存储的可选 WIA 项属性
 

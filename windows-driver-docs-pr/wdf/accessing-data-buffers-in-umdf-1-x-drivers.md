@@ -1,19 +1,18 @@
 ---
 title: 访问 UMDF 1.x 驱动程序中的数据缓冲区
 description: 访问 UMDF 1.x 驱动程序中的数据缓冲区
-ms.assetid: cbd67ada-696e-403e-9b35-d8ed06a844d5
 keywords:
 - 数据缓冲区 WDK UMDF
 - 缓冲 WDK UMDF
 - 请求处理 WDK UMDF，数据缓冲区
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b9f8d6b045b44c8eddd7abf8edca0378a6346543
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: cd74a4ddf6f0fa1d6761b59c0d3bae860c8663e9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189719"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840235"
 ---
 # <a name="accessing-data-buffers-in-umdf-1x-drivers"></a>访问 UMDF 1.x 驱动程序中的数据缓冲区
 
@@ -48,7 +47,7 @@ ms.locfileid: "89189719"
 
 ### <a name="specifying-a-preferred-buffer-access-method"></a><a href="" id="specifying-a-preferred-buffer-access-method"></a> 指定首选的缓冲区访问方法
 
-UMDF 版本1.9 及更高版本支持缓冲和直接 i/o 访问方法。 在调用[**IWDFDriver：： CreateDevice**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdriver-createdevice)创建设备对象之前，驱动程序可以通过调用[**IWDFDeviceInitialize2：： SetIoTypePreference**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdeviceinitialize2-setiotypepreference)来指定想要用于设备的所有读、写和设备 i/o 控制请求的访问方法。 例如，如果驱动程序只为其某个设备的读取和写入请求指定一个首选项，则该驱动程序 [主机进程](umdf-driver-host-process.md) 会在将读取和写入请求传递到该设备的驱动程序时使用该缓冲 i/o 方法。 如果驱动程序为直接 i/o 指定首选项，则 UMDF 可以 (，但可能不) 使用直接 i/o。 有关 UMDF 何时使用直接 i/o 的详细信息，请参阅 [Umdf 如何为 I/o 请求选择缓冲区访问方法](#how-umdf-chooses-a-buffer-access-method-for-an-i-o-request)。
+UMDF 版本1.9 及更高版本支持缓冲和直接 i/o 访问方法。 在调用 [**IWDFDriver：： CreateDevice**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdriver-createdevice)创建设备对象之前，驱动程序可以通过调用 [**IWDFDeviceInitialize2：： SetIoTypePreference**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdeviceinitialize2-setiotypepreference)来指定想要用于设备的所有读、写和设备 i/o 控制请求的访问方法。 例如，如果驱动程序只为其某个设备的读取和写入请求指定一个首选项，则该驱动程序 [主机进程](umdf-driver-host-process.md) 会在将读取和写入请求传递到该设备的驱动程序时使用该缓冲 i/o 方法。 如果驱动程序为直接 i/o 指定首选项，则 UMDF 可以 (，但可能不) 使用直接 i/o。 有关 UMDF 何时使用直接 i/o 的详细信息，请参阅 [Umdf 如何为 I/o 请求选择缓冲区访问方法](#how-umdf-chooses-a-buffer-access-method-for-an-i-o-request)。
 
 对于驱动程序支持的每个设备，驱动程序可以指定缓冲 i/o 的首选项、直接 i/o 或设备的缓冲或直接 i/o。 驱动程序可以为读取和写入请求指定一种类型的访问方法，并为设备 i/o 控制请求指定另一种类型的访问方法。 如果驱动程序未指定访问方法首选项，则 UMDF 使用缓冲方法。
 
@@ -82,15 +81,15 @@ UMDF 版本1.9 及更高版本支持直接检索和 *延迟检索* 模式。 延
 
     你的驱动程序可以调用 [**IWDFDevice2：： GetDeviceStackIoTypePreference**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice2-getdevicestackiotypepreference) 来确定 UMDF 分配给设备的读/写请求和 i/o 控制请求的缓冲区访问方法。
 
--   在某些情况下，驱动程序会在调用 **IWDFDeviceInitialize2：： SetIoTypePreference**时为直接 i/o 指定首选项，但为了获得最佳性能，UMDF 对一个或多个设备的请求使用缓冲 i/o。 例如，如果您可以将数据复制到驱动程序缓冲区的速度快于将数据映射到可直接访问的缓冲区，则该方法对小型缓冲区使用缓冲 i/o。
+-   在某些情况下，驱动程序会在调用 **IWDFDeviceInitialize2：： SetIoTypePreference** 时为直接 i/o 指定首选项，但为了获得最佳性能，UMDF 对一个或多个设备的请求使用缓冲 i/o。 例如，如果您可以将数据复制到驱动程序缓冲区的速度快于将数据映射到可直接访问的缓冲区，则该方法对小型缓冲区使用缓冲 i/o。
 
-    （可选）可以设置 REG \_ DWORD 类型的 **DirectTransferThreshold** 注册表值，框架使用此值来确定框架将对其使用直接 i/o 的最小缓冲区大小。 通常，不需要提供此注册表值，因为框架使用的值可提供最佳性能。 **DirectTransferThreshold**值位于设备的 "**设备参数 \\ WUDF** " 子项下，后者位于设备的 "[硬件密钥](../install/overview-of-registry-trees-and-keys.md)" 下。
+    （可选）可以设置 REG \_ DWORD 类型的 **DirectTransferThreshold** 注册表值，框架使用此值来确定框架将对其使用直接 i/o 的最小缓冲区大小。 通常，不需要提供此注册表值，因为框架使用的值可提供最佳性能。 **DirectTransferThreshold** 值位于设备的 "**设备参数 \\ WUDF** " 子项下，后者位于设备的 "[硬件密钥](../install/overview-of-registry-trees-and-keys.md)" 下。
 
-    此框架使用以下规则根据在 **DirectTransferThreshold**中提供的值确定阈值。 提供的数字采用4096的 **页面 \_ 大小** ，这在基于 Itanium 的系统上是有效的。
+    此框架使用以下规则根据在 **DirectTransferThreshold** 中提供的值确定阈值。 提供的数字采用4096的 **页面 \_ 大小** ，这在基于 Itanium 的系统上是有效的。
 
     -   如果将 **DirectTransferThreshold** 设置为小于或等于 8192 (或 2 \* **页面 \_ 大小**) 的任何值，则该框架会将阈值设置为8192。 此框架对小于8192个字节的缓冲区使用缓冲 i/o，对等于或大于8192字节的缓冲区使用直接 i/o。
 
-    -   如果将 **DirectTransferThreshold** 设置为大于8192的任何值，则框架将向上舍入到 **页面 \_ 大小**的下一个精确倍数。 同样，框架对小于阈值的缓冲区使用缓冲 i/o，并对等于或大于阈值的缓冲区使用直接 i/o。
+    -   如果将 **DirectTransferThreshold** 设置为大于8192的任何值，则框架将向上舍入到 **页面 \_ 大小** 的下一个精确倍数。 同样，框架对小于阈值的缓冲区使用缓冲 i/o，并对等于或大于阈值的缓冲区使用直接 i/o。
 
 -   对于在内存页边界上开始和结束的缓冲区空间，UMDF 只使用直接 i/o。 如果缓冲区的开头或结尾不在页面边界上，则将对该部分缓冲区使用缓冲 i/o。 换句话说，对于包含多个 i/o 请求的大型数据传输，UMDF 可能会同时使用缓冲 i/o 和直接 i/o。
 
@@ -136,9 +135,9 @@ UMDF 版本1.9 及更高版本可支持即时或延迟的请求缓冲区检索�
 
 称为 *非缓冲 i/o 方法和直接 i/o 方法* 的缓冲区访问方法 (或 "这两种方法，对于 short) ，它们允许驱动程序直接访问应用程序的请求缓冲区指针。 基于 UMDF 的驱动程序无法使用此访问方法。
 
-但是，某些设备 i/o 控制代码 (IOCTLs 的 [定义](../kernel/defining-i-o-control-codes.md)) 指定请求使用 "这两个" 方法。 或者，UMDF 可以将此类设备 i/o 控制请求的缓冲区访问方法转换为缓冲 i/o 或直接 i/o。 请使用以下步骤：
+但是，某些设备 i/o 控制代码 (IOCTLs 的 [定义](../kernel/defining-i-o-control-codes.md)) 指定请求使用 "这两个" 方法。 或者，UMDF 可以将此类设备 i/o 控制请求的缓冲区访问方法转换为缓冲 i/o 或直接 i/o。 使用以下步骤：
 
-1.  在驱动程序的 INF 文件的[**Inf DDInstall 部分**](../install/inf-ddinstall-section.md)中包含[UmdfMethodNeitherAction](specifying-wdf-directives-in-inf-files.md)指令。 可以设置指令的值，以指示 UMDF 应将使用 "两个" 访问方法的设备 i/o 控制请求传递给驱动程序。 否则 (，UMDF 完成这些 i/o 请求时出现错误状态值。 ) 
+1.  在驱动程序的 INF 文件的 [**Inf DDInstall 部分**](../install/inf-ddinstall-section.md)中包含 [UmdfMethodNeitherAction](specifying-wdf-directives-in-inf-files.md)指令。 可以设置指令的值，以指示 UMDF 应将使用 "两个" 访问方法的设备 i/o 控制请求传递给驱动程序。 否则 (，UMDF 完成这些 i/o 请求时出现错误状态值。 ) 
 
 2.  使用 UMDF 为 [缓冲 i/o](#using-buffered-i-o-in-umdf-drivers) 或 [直接 i/o](#using-direct-i-o-in-umdf-drivers)提供的对象方法访问 i/o 请求的缓冲区。
 

@@ -1,15 +1,14 @@
 ---
 title: 安装进行了发布签名的驱动程序包
 description: 安装进行了发布签名的驱动程序包
-ms.assetid: cf25858b-7e04-4093-8c81-19d5c0673bcc
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1db62f391c9eb169bf8106ff557026b4cd33d428
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 948ec07f8c345bfbf5852729519cb2877d96ae26
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097281"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839515"
 ---
 # <a name="installing-a-release-signed-driver-package"></a>安装进行了发布签名的驱动程序包
 

@@ -1,7 +1,6 @@
 ---
 title: 了解 TPS 组件
 description: 了解 TPS 组件
-ms.assetid: 4bc962fa-8c05-4b0f-b634-9c0f435907b7
 keywords:
 - 事务处理系统 WDK KTM，组件
 - TPS WDK KTM，组件
@@ -10,12 +9,12 @@ keywords:
 - TPS 的资源管理器 WDK KTM
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ee5b949740fca7b2866b0ee436348d409cc1376
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 6ce7c83e9aaa79c32a2e6d5aceee983b72948112
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89402842"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840687"
 ---
 # <a name="understanding-tps-components"></a>了解 TPS 组件
 
@@ -75,7 +74,7 @@ CloseDataObject (IN DataHandle);
 
 当客户端已经完成调用资源管理器以执行事务操作时，它将调用 KTM 的 [**ZwCommitTransaction**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcommittransaction) 例程。 此时，KTM [通知](transaction-notifications.md) 资源管理器它应使操作永久运行。 然后，资源管理器会将操作结果从日志流移动到数据的永久性存储介质。 最后，资源管理器调用 [**ZwCommitComplete**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcommitcomplete) 来通知 KTM 提交操作已完成。
 
-如果资源管理器报告某个客户端对 *ReadData* 或 *WriteData*的调用之一出现错误，会发生什么情况？ 客户端可以调用 [**ZwRollbackTransaction**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ntrollbacktransaction) 来回滚事务。 此调用的结果是，KTM 通知资源管理器它应将数据还原到其原始状态。 然后，客户端可以为相同操作创建新事务，也可以选择不继续。
+如果资源管理器报告某个客户端对 *ReadData* 或 *WriteData* 的调用之一出现错误，会发生什么情况？ 客户端可以调用 [**ZwRollbackTransaction**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ntrollbacktransaction) 来回滚事务。 此调用的结果是，KTM 通知资源管理器它应将数据还原到其原始状态。 然后，客户端可以为相同操作创建新事务，也可以选择不继续。
 
 以下伪代码显示了客户端事务操作的更详细序列的示例。
 
@@ -116,7 +115,7 @@ Leave:
 
 下面的伪代码演示了客户端如何创建单个事务，其中包含两个资源管理器支持的两个数据库上的操作。
 
-在此示例中，客户端读取第一个数据库中的数据，并将其写入第二个数据库。 然后，客户端从第二个数据库中读取数据，并将其写入第一个数据库。  (第一个资源管理器导出函数以 **Rm1**开头，第二个资源管理器导出以 **Rm2**开头的函数。 ) 
+在此示例中，客户端读取第一个数据库中的数据，并将其写入第二个数据库。 然后，客户端从第二个数据库中读取数据，并将其写入第一个数据库。  (第一个资源管理器导出函数以 **Rm1** 开头，第二个资源管理器导出以 **Rm2** 开头的函数。 ) 
 
 ```cpp
     ZwCreateTransaction (&TransactionHandle, ...);

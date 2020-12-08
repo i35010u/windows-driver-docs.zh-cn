@@ -1,15 +1,14 @@
 ---
 title: WDI IHV 组件模型
 description: 本部分概述了 WDI 微型端口驱动程序的 NDIS 接口以及这些接口的预期。WDI 模型中的 IHV 组件是一个 NDIS 小型端口。
-ms.assetid: FF670015-BB70-4703-BBA9-69130213D7D1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 14e74013b8868a8014ba621d492051e7a37e5d7b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b87a16a12138418652d171eb54d1111fe855a90c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216520"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839871"
 ---
 # <a name="wdi-ihv-component-model"></a>WDI IHV 组件模型
 
@@ -22,7 +21,7 @@ WDI 模型中的 IHV 组件是一个 NDIS 小型端口。 它使用现有的和�
 
 ![本机 wi-fi 和 wdi 驱动程序比较](images/wdi-model-comparison.png)
 
-除了帮助提供本机 Wi-fi 接口要求以外，Microsoft WLAN 组件还处理大多数常见的 NDIS 要求。 例如，它从 NDIS 处理 [*MiniportPause*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_pause) 要求，并将其转换为 WDI 数据和控制路径消息，以确保满足 NDIS 要求。 不过，它还为 IHV 微型端口驱动程序提供了执行其他工作的能力。 该驱动程序可以注册，以在 *MiniportPause* 调用时收到通知，以便在 *MiniportPause*期间执行任何其他清理操作。
+除了帮助提供本机 Wi-Fi 接口要求以外，Microsoft WLAN 组件还处理大多数常见的 NDIS 要求。 例如，它从 NDIS 处理 [*MiniportPause*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_pause) 要求，并将其转换为 WDI 数据和控制路径消息，以确保满足 NDIS 要求。 不过，它还为 IHV 微型端口驱动程序提供了执行其他工作的能力。 该驱动程序可以注册，以在 *MiniportPause* 调用时收到通知，以便在 *MiniportPause* 期间执行任何其他清理操作。
 
  
 

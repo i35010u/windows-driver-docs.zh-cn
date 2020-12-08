@@ -1,17 +1,16 @@
 ---
 title: 移动计划 eSIM 配置文件下载错误处理
 description: 本主题介绍移动计划中的 eSIM 下载错误处理。
-ms.assetid: ADBE885A-76E9-4C1E-A729-40ABE58B77E1
 keywords:
 - Windows Mobile 计划 eSIM 错误处理，移动计划实现移动运营商
 ms.date: 03/25/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f3d55d68b8a4f6b2ddcb6d6737129d17ceeeac1
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 48f780f777b0bcee060b23c6ce121d5c982b87ea
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207327"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840312"
 ---
 # <a name="mobile-plans-esim-profile-download-error-handling"></a>移动计划 eSIM 配置文件下载错误处理
 
@@ -32,7 +31,7 @@ X-MP-LPAError-ICCIDs: 8988247000101997790
 
 移动计划应用添加三个标头，下表对此进行了说明。
 
-| 标头名称              | 说明                                                                                                                                                                                                                                                                                                                          | 示例                                                               |
+| 标头名称              | 描述                                                                                                                                                                                                                                                                                                                          | 示例                                                               |
 | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------- |
 | LPAError-      | 此字段提供 LPA 中捕获的错误代码。 如果存在多个错误，则以逗号分隔的列表形式传递错误代码。 <p>有关可能的错误代码的列表，请参阅 [ESimOperationStatus 枚举](/uwp/api/windows.networking.networkoperators.esimoperationstatus)。</p> | LPAError： ServerFailure，ServerNotReachable                 |
 | LPAError-时间戳 | 此字段提供发生错误时的时间戳。 时间戳的格式为 *日期时间 UTC 偏移量*。 如果存在多个错误，则时间戳将作为以逗号分隔的列表进行传递。                                                                                                                                 | LPAError-时间戳： 5/18/2018 11:17:23 PM，5/18/2018 11:27:33 PM |

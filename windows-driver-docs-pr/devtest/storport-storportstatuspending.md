@@ -1,7 +1,6 @@
 ---
 title: 'StorPortStatusPending 规则 (storport) '
 description: 此规则检查 SRB 是否未完成，状态为 "SRB" 的状态为 " \_ \_ 挂起"。
-ms.assetid: 134BDADA-C475-4D82-A0AB-31410C994AAF
 ms.date: 05/21/2018
 keywords:
 - 'StorPortStatusPending 规则 (storport) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ba4e2a5b7cdab1e8673d48ee1cd0bb08909fa446
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 39c5f6e3f9d522829b423be339cd1d5e06f0f190
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105830"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841287"
 ---
 # <a name="storportstatuspending-rule-storport"></a>StorPortStatusPending 规则 (storport) 
 
 
-此规则检查 SRB 是否未完成，状态为 "SRB" 的状态为 " ** \_ \_ 挂起**"。
+此规则检查 SRB 是否未完成，状态为 "SRB" 的状态为 " **\_ \_ 挂起**"。
 
 **驱动程序模型： Storport**
 

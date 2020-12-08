@@ -1,7 +1,6 @@
 ---
 title: 在 WinDbg 中控制进程和线程
 description: 在 WinDbg 中控制进程和线程
-ms.assetid: d4755889-9a65-4e81-b3a3-e0bbc6324d3e
 keywords:
 - "\"调试信息\" 窗口、\"进程\" 和 \"线程\" 窗口"
 - "\"进程和线程\" 窗口"
@@ -9,12 +8,12 @@ keywords:
 - "\"线程、进程和线程\" 窗口"
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b281fd2cf074177af932d4674cc0415816fcce5
-ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
+ms.openlocfilehash: 636fb4b8f208e34a2a77fc08b1168d133ff0717d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88253111"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840829"
 ---
 # <a name="controlling-processes-and-threads-in-windbg"></a>在 WinDbg 中控制进程和线程
 
@@ -34,7 +33,7 @@ ms.locfileid: "88253111"
 
 "进程" 和 "线程" 窗口显示当前正在调试的所有进程的列表。 进程中的线程显示在每个进程下。 如果将调试器附加到多个系统，则系统会显示在树的顶层，其中包含这些系统的进程，以及从属于进程的线程。
 
-每个系统列表包括服务器名称和协议详细信息。 运行调试器的系统标识为 " ** &lt; 本地 &gt; **"。
+每个系统列表包括服务器名称和协议详细信息。 运行调试器的系统标识为 " **&lt; 本地 &gt;**"。
 
 每个进程列表都包含调试器使用的内部十进制进程索引、十六进制进程 ID 以及与进程关联的应用程序的名称。
 

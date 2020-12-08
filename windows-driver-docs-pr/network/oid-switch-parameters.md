@@ -1,30 +1,29 @@
 ---
 title: OID_SWITCH_PARAMETERS
 description: Hyper-v 可扩展交换机扩展)  (OID 发出对象标识符，OID_SWITCH_PARAMETERS 获取可扩展交换机的配置数据。
-ms.assetid: F2CA0BE5-ED21-4ACF-B26A-4F512D4B15C7
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_SWITCH_PARAMETERS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 4cedcfd1f29fc3d02d2a6bc6e7305d8892cdd018
-ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
+ms.openlocfilehash: f4bfbe6e726765b18c9a5b5b05bbc87a213b25e3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91423632"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839459"
 ---
 # <a name="oid_switch_parameters"></a>OID \_ 开关 \_ 参数
 
 
 Hyper-v 可扩展交换机扩展 (OID 发出对象标识符) 请求 OID \_ 开关 \_ 参数以获取可扩展交换机的配置数据。
 
-如果 OID 查询请求成功完成， [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**ndis \_ 开关 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_parameters)结构的指针。
+如果 OID 查询请求成功完成， [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**ndis \_ 开关 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_parameters)结构的指针。
 
 <a name="remarks"></a>备注
 -------
 
 当扩展处理返回的 [**ndis \_ 开关 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_parameters) 结构时，它不能假定 **ndis \_ 开关 \_ 参数** 结构的各个字符串成员（如 **SwitchName**）都以 null 结尾。 这些字符串成员的数据类型由 [**IF \_ 计数 \_ 字符串**](/windows/win32/api/ifdef/ns-ifdef-if_counted_string_lh) 结构的类型定义。 该扩展必须确定此结构的 **length** 成员值中的字符串长度。
 
-**注意**   如果字符串以 null 结尾，则**长度**成员不能包含终止 null 字符。
+**注意**  如果字符串以 null 结尾，则 **长度** 成员不能包含终止 null 字符。
 
  
 
@@ -81,7 +80,7 @@ Hyper-v 可扩展交换机扩展 (OID 发出对象标识符) 请求 OID \_ 开�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 ****

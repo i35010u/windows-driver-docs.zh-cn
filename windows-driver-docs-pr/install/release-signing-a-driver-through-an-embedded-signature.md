@@ -1,15 +1,14 @@
 ---
 title: 通过嵌入式签名对驱动程序进行发布签名
 description: 通过嵌入式签名对驱动程序进行发布签名
-ms.assetid: ffea2479-83ee-4d94-a5e6-73ecea9fc17d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 48a705768933d65b8d166107ee088e05dc6b4a8e
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: d2a2f848215985113dce7c59cf20f130b2123793
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095641"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839071"
 ---
 # <a name="release-signing-a-driver-through-an-embedded-signature"></a>通过嵌入式签名对驱动程序进行发布签名
 
@@ -39,19 +38,19 @@ Signtool sign /v /fd sha256 /ac MSCV-VSClass3.cer /s MyPersonalStore /n contoso.
 
 其中：
 
-- **Sign**命令将 SignTool 配置为对指定的内核模式二进制文件（ *amd64 \\toaster.sys*）进行签名。
+- **Sign** 命令将 SignTool 配置为对指定的内核模式二进制文件（ *amd64 \\toaster.sys*）进行签名。
 
-- **/V**选项启用详细操作，其中，SignTool 显示成功执行和警告消息。
+- **/V** 选项启用详细操作，其中，SignTool 显示成功执行和警告消息。
 
-- **/Fd**选项指定用于创建文件签名的文件摘要算法。 默认值为 SHA1。
+- **/Fd** 选项指定用于创建文件签名的文件摘要算法。 默认值为 SHA1。
 
-- **/Ac**选项指定文件的名称，该文件包含从 CA 获取的交叉证书 (*MSCV-VSClass3*) 。 如果交叉证书不在当前目录中，请使用完整路径名称。
+- **/Ac** 选项指定文件的名称，该文件包含从 CA 获取的交叉证书 (*MSCV-VSClass3*) 。 如果交叉证书不在当前目录中，请使用完整路径名称。
 
-- **/S**选项指定包含 SPC (*MyPersonalStore) *的个人证书存储的名称。
+- **/S** 选项指定包含 SPC (*MyPersonalStore)* 的个人证书存储的名称。
 
-- **/N**选项指定在指定的证书存储中安装的证书 (*Contoso.com) *的名称。
+- **/N** 选项指定在指定的证书存储中安装的证书 (*Contoso.com)* 的名称。
 
-- **/T**选项指定 `http://timestamp.digicert.com` 将对数字签名进行时间戳的 TSA () 的 URL。
+- **/T** 选项指定 `http://timestamp.digicert.com` 将对数字签名进行时间戳的 TSA () 的 URL。
 
 >[!IMPORTANT]
 >包含时间戳会提供密钥吊销所需的信息，以防签名者的代码签名私钥泄漏。

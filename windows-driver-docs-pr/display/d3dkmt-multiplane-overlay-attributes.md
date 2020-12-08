@@ -1,7 +1,6 @@
 ---
 title: D3DKMT \_ MULTIPLANE \_ 覆盖 \_ 特性结构
 description: 了解 D3DKMT \_ MULTIPLANE \_ 覆盖 \_ 特性结构，它是为系统使用而保留的。 请勿在您的驱动程序中使用。
-ms.assetid: 07abf207-62ab-42d1-84b0-74815d1d42b8
 keywords:
 - D3DKMT_MULTIPLANE_OVERLAY_ATTRIBUTES 结构显示设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c52bb6dd8fd4d9d36f5ce26abaeef1c0d795016
-ms.sourcegitcommit: f1d6c2d0cdbecdc69ba65ed3b530755fc73c8e5e
+ms.openlocfilehash: 6b4ad8891e78040cb6de263edd0f832d15c95a77
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91590393"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839633"
 ---
 # <a name="d3dkmt_multiplane_overlay_attributes-structure"></a>D3DKMT \_ MULTIPLANE \_ 覆盖 \_ 特性结构
 
@@ -31,29 +30,29 @@ ms.locfileid: "91590393"
 
 ```ManagedCPlusPlus
 typedef struct D3DKMT_MULTIPLANE_OVERLAY_ATTRIBUTES {
-  UINT                                         Flags;
-  RECT                                         SrcRect;
-  RECT                                         DstRect;
+  UINT                                         Flags;
+  RECT                                         SrcRect;
+  RECT                                         DstRect;
 #if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM1_3)
-  RECT                                         ClipRect;
+  RECT                                         ClipRect;
 #endif
-  D3DDDI_ROTATION                              Rotation;
-  D3DKMT_MULTIPLANE_OVERLAY_BLEND              Blend;
+  D3DDDI_ROTATION                              Rotation;
+  D3DKMT_MULTIPLANE_OVERLAY_BLEND              Blend;
 #if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM1_3)
-  UINT                                         DirtyRectCount;
-  RECT                                         pDirtyRects;
+  UINT                                         DirtyRectCount;
+  RECT                                         pDirtyRects;
 #else
-  UINT                                         NumFilters;
-  void                                         *pFilters;
+  UINT                                         NumFilters;
+  void                                         *pFilters;
 #endif
   D3DKMT_MULTIPLANE_OVERLAY_VIDEO_FRAME_FORMAT VideoFrameFormat;
-  UINT                                         YCbCrFlags;
-  D3DKMT_MULTIPLANE_OVERLAY_STEREO_FORMAT      StereoFormat;
-  BOOL                                         StereoLeftViewFrame0;
-  BOOL                                         StereoBaseViewFrame0;
-  DXGKMT_MULTIPLANE_OVERLAY_STEREO_FLIP_MODE   StereoFlipMode;
+  UINT                                         YCbCrFlags;
+  D3DKMT_MULTIPLANE_OVERLAY_STEREO_FORMAT      StereoFormat;
+  BOOL                                         StereoLeftViewFrame0;
+  BOOL                                         StereoBaseViewFrame0;
+  DXGKMT_MULTIPLANE_OVERLAY_STEREO_FLIP_MODE   StereoFlipMode;
 #if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM1_3)
-  DXGKMT_MULTIPLANE_OVERLAY_STRETCH_QUALITY    StretchQuality;
+  DXGKMT_MULTIPLANE_OVERLAY_STRETCH_QUALITY    StretchQuality;
 #endif
 } D3DKMT_MULTIPLANE_OVERLAY_ATTRIBUTES;
 ```

@@ -1,30 +1,29 @@
 ---
 title: PF 微型端口驱动程序的初始化序列
 description: PF 微型端口驱动程序的初始化序列
-ms.assetid: A8891D72-314D-4648-ABCA-E917C3091FF6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 31b29dd4740a80835f7b45c4ae8abdaab29259e5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fc993a9a50a795e569c758eb40c094e5057259ea
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379819"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841177"
 ---
 # <a name="initialization-sequence-for-pf-miniport-drivers"></a>PF 微型端口驱动程序的初始化序列
 
 
-本部分介绍有关 PCI Express (PCIe) 物理函数 (PF) 的要求和准则的微型端口驱动程序初始化序列。 PF 是支持单根 I/O 虚拟化 (SR-IOV) 的网络适配器的组件。
+本部分介绍 PCI Express (PCIe 的小型端口驱动程序初始化序列的要求和指导原则) 物理功能 (PF) 。 PF 是网络适配器的一个组件，它支持 (SR-IOV) 的单个根 i/o 虚拟化。
 
-本部分包括以下主题：
+本节包括下列主题：
 
-[DriverEntry PF 微型端口驱动程序的指导原则](driverentry-guidelines-for-pf-miniport-drivers.md)
+[PF 微型端口驱动程序的 DriverEntry 指导原则](driverentry-guidelines-for-pf-miniport-drivers.md)
 
 [*MiniportAddDevice* PF 微型端口驱动程序的准则](miniportadddevice-guidelines-for-pf-miniport-drivers.md)
 
 [*MiniportInitializeEx* PF 微型端口驱动程序的准则](miniportinitializeex-guidelines-for-pf-miniport-drivers.md)
 
-**请注意**  初始化为 PCIe 虚拟函数 (VF) 的 SR-IOV 网络适配器上的微型端口驱动程序的信息，请参阅[初始化 VF 微型端口驱动程序](initializing-a-vf-miniport-driver.md)。
+**注意**  有关在 SR-IOV 网络适配器上初始化 PCIe 虚拟功能 (VF) 的微型端口驱动程序的信息，请参阅 [初始化 Vf 微型端口驱动程序](initializing-a-vf-miniport-driver.md)。
 
  
 

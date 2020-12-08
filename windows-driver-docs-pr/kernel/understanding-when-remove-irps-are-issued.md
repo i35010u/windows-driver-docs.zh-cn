@@ -1,19 +1,18 @@
 ---
 title: 了解删除 IRP 的命令是何时发出的
 description: 了解删除 IRP 的命令是何时发出的
-ms.assetid: e92e30ce-ca0d-4f00-b54a-778bafba15b3
 keywords:
 - 删除 Irp WDK PnP
 - Irp WDK PnP
 - I/o 请求数据包 WDK PnP
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 65377547d917d314e5ff15d77854dd258420fe2c
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 77310b39a4405e21e700c9b0c05a72f3f8940c18
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184403"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840691"
 ---
 # <a name="understanding-when-remove-irps-are-issued"></a>了解删除 IRP 的命令是何时发出的
 

@@ -1,17 +1,16 @@
 ---
 title: 远程 NDIS 消息传送
 description: 远程 NDIS 消息传送
-ms.assetid: 6364a9a1-c65f-463d-971b-cf94cd2a5cde
 keywords:
 - 远程 NDIS WDK 网络，消息传送
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cf1a9674b9b1d7153ac5dd36d1b2cf350c951af6
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 16b3222f74dc7f957acadd20be338b27e1a16f6a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207809"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840607"
 ---
 # <a name="remote-ndis-messaging"></a>远程 NDIS 消息传送
 
@@ -53,7 +52,7 @@ ms.locfileid: "89207809"
 
     远程 NDIS 设备必须通过 [远程 \_ ndis \_ 数据包 \_ ](/previous-versions/ff570635(v=vs.85)) 消息结构中包含的远程 ndis 数据包来发送和接收数据。 远程 NDIS 数据包也可能包含带外数据以及跨网络的数据。
 
-    无连接 (例如，802.3) 和面向连接的 (例如，ATM) 设备使用相同的 **远程 \_ NDIS \_ 数据包 \_ ** 消息结构，以便为数据包处理的常见代码提供便利。
+    无连接 (例如，802.3) 和面向连接的 (例如，ATM) 设备使用相同的 **远程 \_ NDIS \_ 数据包 \_** 消息结构，以便为数据包处理的常见代码提供便利。
 
  
 

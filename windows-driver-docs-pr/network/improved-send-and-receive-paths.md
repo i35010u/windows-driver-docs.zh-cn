@@ -1,19 +1,18 @@
 ---
 title: 改进的发送和接收路径
 description: 改进的发送和接收路径
-ms.assetid: 7edecb49-576f-4058-92e8-39f14268a130
 keywords:
 - NDIS WDK，发送和接收数据
 - 发送数据 WDK 网络
 - 接收数据 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 08b2e13100fe23c3eeab5bd2dddf29cbf0b42625
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 257f48a9fd18e54a164e67dc15490910a4e45dad
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217600"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840649"
 ---
 # <a name="improved-send-and-receive-paths"></a>改进的发送和接收路径
 

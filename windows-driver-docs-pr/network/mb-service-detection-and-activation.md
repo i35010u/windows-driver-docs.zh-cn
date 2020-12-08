@@ -1,15 +1,14 @@
 ---
 title: MB 服务检测和激活
 description: MB 服务检测和激活
-ms.assetid: 7c53528b-722d-44a1-9eac-ee1fe89f21f3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8232b66253b47ae97eff36c13bda9b4d1b7b8111
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a01028a2a9e8a19713af60b65383cd120c87207b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207265"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839883"
 ---
 # <a name="mb-service-detection-and-activation"></a>MB 服务检测和激活
 

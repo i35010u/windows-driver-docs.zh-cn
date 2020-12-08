@@ -1,15 +1,14 @@
 ---
 title: 配置描述符
 description: 配置描述符
-ms.assetid: 256edfa8-de02-438d-b4ce-0a2df0d0f46e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6768651c9c16aff0bbd80941b66938132672ccd7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2ee8525afc8abdb17c236a03df77519a5b913034
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354185"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840657"
 ---
 # <a name="configuration-descriptor"></a>配置描述符
 
@@ -27,11 +26,11 @@ ms.locfileid: "63354185"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">偏移量</th>
+<th align="left">Offset</th>
 <th align="left">字段</th>
 <th align="left">大小</th>
-<th align="left">ReplTest1</th>
-<th align="left">Description</th>
+<th align="left">值</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -40,7 +39,7 @@ ms.locfileid: "63354185"
 <td align="left"><p>bLength</p></td>
 <td align="left"><p>1</p></td>
 <td align="left"><p>0x09</p></td>
-<td align="left"><p>此说明符，以字节为单位的大小</p></td>
+<td align="left"><p>此描述符的大小（以字节为单位）</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>1</p></td>
@@ -54,7 +53,7 @@ ms.locfileid: "63354185"
 <td align="left"><p>wTotalLength</p></td>
 <td align="left"><p>2</p></td>
 <td align="left"><p>0x003E</p></td>
-<td align="left"><p>总配置块，包括此描述符和以下的所有描述符，以字节为单位的长度</p></td>
+<td align="left"><p>总配置块的长度，包括此描述符和所有以下说明符（以字节为单位）</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>4</p></td>
@@ -82,7 +81,7 @@ ms.locfileid: "63354185"
 <td align="left"><p>bmAttributes</p></td>
 <td align="left"><p>1</p></td>
 <td align="left"><p>0x80</p></td>
-<td align="left"><p>总线供电</p></td>
+<td align="left"><p>总线电源</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>8</p></td>

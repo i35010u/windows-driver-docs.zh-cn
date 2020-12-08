@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_Exclusive
 description: DEVPKEY_Device_Exclusive
-ms.assetid: c54c2fe3-cf57-4603-a701-8ddbc28aa47d
 keywords:
 - DEVPKEY_Device_Exclusive 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 25b69d2674a7c784aeb9542701c9b6a305ada3b5
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 96b83e02e72b84e154d1c4179d692d541454f390
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717046"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841255"
 ---
 # <a name="devpkey_device_exclusive"></a>DEVPKEY_Device_Exclusive
 
@@ -68,7 +67,7 @@ DEVPKEY_Device_Exclusive 设备属性表示一个布尔值，该值确定是否�
 
 如果可以打开设备以供独占使用，则 DEVPROP_TRUE DEVPKEY_Device_Exclusive 属性的值。 否则，属性的值为 DEVPROP_FALSE。
 
-您可以使用 Inf DDInstall 中包含的[**AddReg 指令**](./inf-addreg-directive.md)设置 DEVPKEY_Device_Exclusive 的值[**。 *DDInstall***](./inf-ddinstall-hw-section.md)安装设备的硬件部分。
+您可以使用 Inf DDInstall 中包含的 [**AddReg 指令**](./inf-addreg-directive.md)设置 DEVPKEY_Device_Exclusive 的值 [**。 *DDInstall***](./inf-ddinstall-hw-section.md)安装设备的硬件部分。
 
 可以通过调用 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 和 [**SetupDiSetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)检索或设置 DEVPKEY_Device_Exclusive 的值。
 

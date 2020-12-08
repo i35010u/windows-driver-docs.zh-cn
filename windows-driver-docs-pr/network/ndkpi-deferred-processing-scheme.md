@@ -1,15 +1,14 @@
 ---
 title: NDKPI 延迟处理方案
 description: 本部分介绍用于 NDKPI 的延迟处理
-ms.assetid: DA2D0FCA-D84B-4599-A560-8F87A0918D99
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4737bdd18413a5bcded419969696074b0eb7e3b3
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f0d6a6222686d18a38e842f13a98925c23ffa5db
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216154"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839471"
 ---
 # <a name="ndkpi-deferred-processing-scheme"></a>NDKPI 延迟处理方案
 
@@ -39,7 +38,7 @@ ms.locfileid: "89216154"
 
 1.  使用者将第一个快速注册与 **NDK 操作 \_ \_ 标志 \_ 延迟** 标志一起发布， *NdkFastRegister* 返回状态 \_ SUCCESS。
 2.  同样，第二个快速注册将与 **NDK \_ OP \_ 标志 \_ 延迟** 标志集一起发布，但现在 *NdkFastRegister* 返回失败状态。 在这种情况下，使用者将不会发布发送请求。
-3.  当第二次调用 *NdkFastRegister*时返回内联失败时，在这种情况下，NDK 提供程序将确保所有之前 unindicated 的请求都 (第一个 fast 注册，) 被指示到硬件进行处理。
+3.  当第二次调用 *NdkFastRegister* 时返回内联失败时，在这种情况下，NDK 提供程序将确保所有之前 unindicated 的请求都 (第一个 fast 注册，) 被指示到硬件进行处理。
 4.  由于对 *NdkFastRegister* 的第一次调用成功，因此必须在 CQ 中生成完成。
 5.  由于对 *NdkFastRegister* 的第二次调用失败，因此不能在 CQ 中生成完成。
 

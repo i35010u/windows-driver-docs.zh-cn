@@ -1,25 +1,24 @@
 ---
 title: C28111
-description: 保存浮点状态警告 C28111 IRQL 与当前 IRQL （适用于此恢复操作） 不匹配。
-ms.assetid: 3573ebf0-5f5b-4b04-835a-7dba36e95e8c
+description: 警告 C28111 保存浮点状态的 IRQL 与当前 IRQL () 的此还原操作不匹配。
 keywords:
-- 警告列出 WDK PREfast for Drivers
-- 错误列出 WDK PREfast for Drivers
+- 列出用于驱动程序的 WDK PREfast 的警告
+- 为驱动程序列出的 WDK PREfast 的错误
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28111
-ms.openlocfilehash: 1cc2af385b96e1177fce0c8e425eab5c19fcf1bf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: da383a2514bee6a2b2d5215af09d386fcfb36c66
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361445"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838801"
 ---
 # <a name="c28111"></a>C28111
 
 
-警告 C28111:保存浮点状态的 IRQL 与当前 IRQL （适用于此恢复操作） 不匹配。
+警告 C28111：保存浮点状态的 IRQL 与当前 IRQL () 此还原操作不匹配。
 
 <table>
 <colgroup>
@@ -28,21 +27,21 @@ ms.locfileid: "63361445"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>其他信息</strong></p></td>
-<td align="left"><p>浮动的保存/还原功能要求 IRQL 相同在保存的时间和相应的还原。</p></td>
+<td align="left"><p>其他信息</p></td>
+<td align="left"><p>浮动保存/还原函数要求在保存时具有相同的 IRQL 和相应的还原。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-还原浮点状态时执行该驱动程序 IRQL 与不同的执行时保存浮点状态的 IRQL。
+驱动程序在还原浮点状态时执行的 IRQL 不同于它在保存浮点状态时所执行的 IRQL 操作。
 
-驱动程序在运行的 IRQL 确定如何保存浮点状态，因为驱动程序必须执行相同的 IRQL 在中，当调用函数以保存并还原浮点状态。
+由于驱动程序运行的 IRQL 决定了如何保存浮点状态，因此当驱动程序调用函数来保存和还原浮点状态时，必须在相同的 IRQL 处执行该驱动程序。
 
 ### <a name="span-idexamplespanspan-idexamplespanexample"></a><span id="example"></span><span id="EXAMPLE"></span>示例
 
-下面的代码示例会引起此警告。
+下面的代码示例 elicits 此警告。
 
 ```
 void driver_utility()

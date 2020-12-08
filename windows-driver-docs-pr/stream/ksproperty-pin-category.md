@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ PIN \_ 类别
 description: 客户端使用 KSPROPERTY \_ pin \_ 类别属性检索 PIN 工厂的类别。
-ms.assetid: 6579408c-9ec5-4b09-9a63-815cec5bd5a3
 keywords:
 - KSPROPERTY_PIN_CATEGORY 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b9d166657da81e9583c0f90d03b4b944160ace2
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 0b97142ca4beae060ec0a38607803b59e839b85f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103746"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839189"
 ---
 # <a name="ksproperty_pin_category"></a>KSPROPERTY \_ PIN \_ 类别
 
@@ -86,7 +85,7 @@ Stream 微型驱动程序不需要直接处理此属性;流类驱动程序使用
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSP \_ PIN**](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin)

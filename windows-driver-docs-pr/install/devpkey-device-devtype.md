@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_DevType
 description: DEVPKEY_Device_DevType
-ms.assetid: acbc0d6f-96e7-4e7c-acc3-d4cded2080d7
 keywords:
 - DEVPKEY_Device_DevType 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 898546a976910e242fdc84344b8dfc6cf8a1e335
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 41dd70c90876ad91bd28bac0a23b05e5e0cf7c66
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717078"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840071"
 ---
 # <a name="devpkey_device_devtype"></a>DEVPKEY_Device_DevType
 
@@ -68,7 +67,7 @@ DEVPKEY_Device_DevType 设备属性表示设备实例的设备类型。
 
 Windows 将 DEVPKEY_Device_DevType 的值设置为设备实例的 [**DEVICE_OBJECT**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_object) 结构的 DeviceType 成员的值。 DEVPKEY_Device_DevType 的值是在 [指定设备类型](../kernel/specifying-device-types.md)中列出的系统定义的设备类型值之一。
 
-您可以使用 Inf DDInstall 中包含的[**AddReg 指令**](./inf-addreg-directive.md)设置 DEVPKEY_Device_DevType 的值[**。 *DDInstall***](./inf-ddinstall-hw-section.md)安装设备的 INF 文件中的 "硬件" 部分。
+您可以使用 Inf DDInstall 中包含的 [**AddReg 指令**](./inf-addreg-directive.md)设置 DEVPKEY_Device_DevType 的值 [**。 *DDInstall***](./inf-ddinstall-hw-section.md)安装设备的 INF 文件中的 "硬件" 部分。
 
 可以调用 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 来检索 DEVPKEY_Device_DevType 的值。
 

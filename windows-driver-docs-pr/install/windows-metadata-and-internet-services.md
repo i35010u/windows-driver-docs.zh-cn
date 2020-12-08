@@ -1,19 +1,18 @@
 ---
 title: Windows 元数据和 Internet 服务
 description: Windows 元数据和 Internet 服务
-ms.assetid: 9e814be5-e22a-48d5-b46b-d22baa89e229
 keywords:
 - WMIS
 - Metadata Information Server WDK
 - 元数据服务器 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f7fdb123dd2c7ac918f2801c4c7788421b9cde16
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 0d19fd905a5266ef6572a88f2de2959209c3f63d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734267"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840937"
 ---
 # <a name="windows-metadata-and-internet-services"></a>Windows 元数据和 Internet 服务
 

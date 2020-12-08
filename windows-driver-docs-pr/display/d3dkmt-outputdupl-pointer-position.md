@@ -1,7 +1,6 @@
 ---
 title: D3DKMT \_ OUTPUTDUPL \_ 指针 \_ 位置结构
 description: 了解 D3DKMT \_ OUTPUTDUPL \_ 指针 \_ 位置结构，它是为系统使用而保留的。 请勿在您的驱动程序中使用。
-ms.assetid: c05205bf-3f7c-487d-8cce-d708d50eb4d9
 keywords:
 - D3DKMT_OUTPUTDUPL_POINTER_POSITION 结构显示设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: fce460a6dce9508ca15799579978cf765ae7630f
-ms.sourcegitcommit: fc94eb0d5a41ef81c1b3ab91ad725386db0be0c2
+ms.openlocfilehash: 099007000c7ce7aca8c4b00020b27694f34c1727
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91603547"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839607"
 ---
 # <a name="d3dkmt_outputdupl_pointer_position-structure"></a>D3DKMT \_ OUTPUTDUPL \_ 指针 \_ 位置结构
 
@@ -32,7 +31,7 @@ ms.locfileid: "91603547"
 ```ManagedCPlusPlus
 typedef struct _D3DKMT_OUTPUTDUPL_POINTER_POSITION {
   POINT Position;
-  BOOL  Visible;
+  BOOL  Visible;
 } D3DKMT_OUTPUTDUPL_POINTER_POSITION;
 ```
 

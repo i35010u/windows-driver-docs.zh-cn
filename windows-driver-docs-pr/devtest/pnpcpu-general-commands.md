@@ -1,22 +1,21 @@
 ---
 title: PNPCPU 常规命令
 description: PNPCPU 常规命令
-ms.assetid: 8b98149c-6c5a-4c1f-b988-dce86bdc3e29
 keywords:
-- PNPCPU WDK 命令
+- PNPCPU WDK，命令
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 39df37eae40b56f336c075e0d047cbb68431a4bf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ac6b1768028caad0150d37098eed786488fbb12e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343067"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841043"
 ---
 # <a name="pnpcpu-general-commands"></a>PNPCPU 常规命令
 
 
-下面的语法是常见的 PNPCPU 的所有操作。
+以下语法适用于所有 PNPCPU 操作。
 
 ```
 pnpcpu.exe -operation
@@ -27,20 +26,20 @@ pnpcpu.exe -operation
 <span id="-install"></span><span id="-INSTALL"></span>**-install**  
 在本地计算机上安装该工具。
 
-<span id="-uninstall"></span><span id="-UNINSTALL"></span>**-uninstall**  
-从本地计算机中删除该工具并将计算机恢复到之前运行的状态 **-安装**。
+<span id="-uninstall"></span><span id="-UNINSTALL"></span>**-卸载**  
+从本地计算机中删除该工具，并将计算机恢复 **为运行前的状态**。
 
-这包括清除无法观察到之后的所有处理器错误代码 **-安装**命令已运行，并且重新启动系统。
+这包括清除运行 **安装** 命令后可能观察到的所有处理器错误代码，并重新启动系统。
 
-<span id="-add"></span><span id="-ADD"></span>**-add**  
-执行热添加每个逻辑处理器上的操作在系统中，最多支持许可证的最大。
+<span id="-add"></span><span id="-ADD"></span>**-添加**  
+在系统中的每个逻辑处理器上执行热添加操作，最高可达许可的最大支持。
 
-<span id="-__or_-help"></span><span id="-__OR_-HELP"></span>**-?** or **-help**  
-显示类似于本文档的使用情况信息。
+<span id="-__or_-help"></span><span id="-__OR_-HELP"></span>**-?** 或 **-help**  
+显示类似于此文档的使用情况信息。
 
-### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>注释
+### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>提出
 
-无需再有任何列出的命令的可选参数。
+对于列出的任何命令，没有其他可选参数。
 
  
 

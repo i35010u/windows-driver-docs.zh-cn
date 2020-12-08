@@ -1,7 +1,6 @@
 ---
 title: 有关实现 DispatchCreate、DispatchClose 和 DispatchCreateClose 例程的规则
 description: 有关实现 DispatchCreate、DispatchClose 和 DispatchCreateClose 例程的规则
-ms.assetid: 4ce37675-92a6-41c2-b386-6570c989e56c
 keywords:
 - 调度例程 WDK 内核，DispatchCreate 例程
 - 调度例程 WDK 内核，DispatchClose 例程
@@ -9,18 +8,18 @@ keywords:
 - DispatchCreateClose 例程
 - DispatchClose 例程
 - DispatchCreate 例程
-- IRP_MJ_CREATE I/O 函数代码
-- IRP_MJ_CLOSE I/O 函数代码
+- IRP_MJ_CREATE i/o 函数代码
+- IRP_MJ_CLOSE i/o 函数代码
 - 创建调度例程 WDK 内核
 - 关闭调度例程 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a5c955c734e5c0a1166f59367f44eaa952004712
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 07ff69d254c92bf11c1424ba69115345078d0a72
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383200"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839053"
 ---
 # <a name="rules-for-implementing-dispatchcreate-dispatchclose-and-dispatchcreateclose-routines"></a>有关实现 DispatchCreate、DispatchClose 和 DispatchCreateClose 例程的规则
 
@@ -28,18 +27,18 @@ ms.locfileid: "63383200"
 
 
 
-在实现时记住以下几点*DispatchCreate*， *DispatchClose*，并*DispatchCreateClose*例程：
+实现 *DispatchCreate*、 *DispatchClose* 和 *DispatchCreateClose* 例程时，请注意以下几点：
 
--   最小值，该例程必须执行以下步骤：
-    1.  设置**状态**字段输入的 IRP I/O 状态块包含相应的 NTSTATUS，通常状态\_成功。
-    2.  设置**信息**输入的 IRP I/O 状态块为零的字段。
-    3.  调用**IoCompleteRequest** IRP 与和一个*PriorityBoost*的 IO\_否\_增量。
-    4.  返回在中设置该 NTSTATUS**状态**IRP 的 I/O 状态块的字段。
--   在最高级别的或中间驱动程序，该例程可能需要执行其他工作来处理创建或关闭请求，具体取决于其设备的或的基础设备，并对设计的驱动程序的性质。
+-   例程至少必须执行以下操作：
+    1.  使用适当的 NTSTATUS （通常为成功状态）设置输入 IRP 的 i/o 状态块的 " **状态** " 字段 \_ 。
+    2.  将输入 IRP 的 i/o 状态块的 **信息** 字段设置为零。
+    3.  使用 IRP 调用 **IoCompleteRequest** ，并将 *PRIORITYBOOST* 替换为 IO \_ 无 \_ 增量。
+    4.  返回在 IRP 的 i/o 状态块的 " **状态** " 字段中设置的 NTSTATUS。
+-   在最高级或中间的驱动程序中，例程可能需要执行其他工作来处理创建或关闭请求，具体取决于其设备或基础设备的性质，以及驱动程序的设计。
 
--   若要打开的文件对象，表示逻辑或物理设备的创建请求，最高级别的驱动程序应检查**FileObject.FileName** i/o 堆栈位置，并完成状态 IRP\_成功如果处的 Unicode 字符串**文件名**长度为零。 否则，它应完成状态 IRP\_无效\_参数。
+-   若要创建用于打开表示逻辑或物理设备的文件对象的 create 请求，最高级别的驱动程序应检查 i/o 堆栈位置中的 **FileObject** ，并在 \_ **文件名** 的 Unicode 字符串长度为零时完成 IRP，状态为 "成功"。 否则，它应完成 IRP，其状态为 \_ 无效 \_ 参数。
 
--   仅在下一更高级别驱动程序调用时调用的最低级别的驱动程序的例程**IoAttachDeviceToDeviceStack**， **IoGetDeviceObjectPointer**，或**IoAttachDevice**. 分层驱动程序的链中的最低级别驱动程序频繁地执行所需的创建或关闭请求处理的最小值。
+-   仅当下一级驱动程序调用 **IoAttachDeviceToDeviceStack**、 **plxntb** 或 **IoAttachDevice** 时，才调用最低级别驱动程序的例程。 分层驱动程序链中的最低级别驱动程序通常只执行创建或关闭请求所需的最低处理。
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: 使用 Dirids
 description: 使用 Dirids
-ms.assetid: 231bc313-b5c3-48ef-b2e2-c4e287517679
 keywords:
 - dirids WDK
 - INF 文件 WDK 设备安装，目录标识符
@@ -9,12 +8,12 @@ keywords:
 - 目录 WDK INF 文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 118f1adcce90022fc1aef71f55dc3cd28c5fbd07
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 92d76b6f5ef701d16834166b1e42edd66f48ddcf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104088"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839493"
 ---
 # <a name="using-dirids"></a>使用 Dirids
 
@@ -52,9 +51,9 @@ INF 文件中的许多目录都可以通过使用目录标识符 (*dirids*) 来�
    ServiceBinary = %12%\aic78xx.sys
    ```
 
-   完全展开后，在前面的示例中显示的路径将变成*c：* \\ *windows* \\ *system32* \\ *驱动程序* \\ *aic78xx.sys* (假定 windows 安装在*c：* \\ *windows*目录) 中。 请注意，字符串替换或%*dirid*% 格式可以在预期字符串的任何位置使用，但 inf 文件的 [**inf 字符串部分**](inf-strings-section.md) 除外。
+   完全展开后，在前面的示例中显示的路径将变成 *c：* \\ *windows* \\ *system32* \\ *驱动程序* \\ *aic78xx.sys* (假定 windows 安装在 *c：* \\ *windows* 目录) 中。 请注意，字符串替换或%*dirid*% 格式可以在预期字符串的任何位置使用，但 inf 文件的 [**inf 字符串部分**](inf-strings-section.md) 除外。
 
-   下面两个示例演示如何使用字符串替换*not* 。
+   下面两个示例演示如何使用字符串替换 *not* 。
 
    ```cpp
    [DestinationDirs]
@@ -66,7 +65,7 @@ INF 文件中的许多目录都可以通过使用目录标识符 (*dirids*) 来�
 
    在第一个示例中， **DefaultDestDir** 项的语法要求其值为数值。 但是，%11% 表达式扩展为字符串。 在第二个示例中，INF 编写器显然打算将 **ServiceBinary** 条目的值设置为包含驱动程序的目录中的文件 (参阅下表以了解详细信息) 。 之所以发生此错误，是因为 Windows 将在名为 "12" 的目录中查找指定文件，这可能在计算机上不存在。
 
-下表显示了几个常用的 *dirids*及其表示的目录。 设备 INF 文件和驱动程序 INF 文件最常指定的值在表的顶部列出。
+下表显示了几个常用的 *dirids* 及其表示的目录。 设备 INF 文件和驱动程序 INF 文件最常指定的值在表的顶部列出。
 
 <table>
 <colgroup>
@@ -132,7 +131,7 @@ INF 文件中的许多目录都可以通过使用目录标识符 (*dirids*) 来�
 <td align="left"><p>颜色目录 (ICM)  (<em>不</em> 用于安装打印机驱动程序) </p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>随时</strong></p></td>
+<td align="left"><p><strong>24</strong></p></td>
 <td align="left"><p>系统磁盘的根目录。</p>
 <p>这是安装了 Windows 文件的磁盘的根目录。 例如，如果 <em>dirid</em> 10 是 "<em>C:\winnt</em>"，则 <em>dirid</em> 24 为 "<em>C：\</em>"。</p></td>
 </tr>
@@ -178,7 +177,7 @@ INF 文件中的许多目录都可以通过使用目录标识符 (*dirids*) 来�
 
  
 
-从16384到32767的*Dirid*值保留给特殊 shell 文件夹。 下表显示了这些文件夹的 *dirid* 值。
+从16384到32767的 *Dirid* 值保留给特殊 shell 文件夹。 下表显示了这些文件夹的 *dirid* 值。
 
 <table>
 <colgroup>
@@ -249,7 +248,7 @@ INF 文件中的许多目录都可以通过使用目录标识符 (*dirids*) 来�
 
  
 
-除了在*setupapi.log*中定义的此表中的值之外，还可以使用*Shlobj*中定义的任何 CSIDL_*Xxx*值。 若要为未在此表中列出的文件夹定义 *dirid* 值，请将 16384 (0x4000) 添加到 CSIDL_*Xxx* 值。 有关 CSIDL_*Xxx* 值的详细信息，请参阅 Windows SDK 文档。
+除了在 *setupapi.log* 中定义的此表中的值之外，还可以使用 *Shlobj* 中定义的任何 CSIDL_ *Xxx* 值。 若要为未在此表中列出的文件夹定义 *dirid* 值，请将 16384 (0x4000) 添加到 CSIDL_ *Xxx* 值。 有关 CSIDL_ *Xxx* 值的详细信息，请参阅 Windows SDK 文档。
 
  
 

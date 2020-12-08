@@ -1,17 +1,16 @@
 ---
-title: 时间
-description: 时间
-ms.assetid: 63d19145-0f18-472c-a3ba-280de346b200
+title: time
+description: time
 keywords:
-- 时间扩展 （已过时）
+- '时间延长 (过时) '
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b29530395f60e98a07f22c67c4a1b66ac5b176f5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7c080b7d6f92a64b90ae512e74f3f8ff1c93dcb1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339905"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838841"
 ---
 # <a name="time"></a>!time
 
@@ -19,7 +18,7 @@ ms.locfileid: "63339905"
 ## <span id="ddk__time_dbg"></span><span id="DDK__TIME_DBG"></span>
 
 
-**！ 时间**扩展命令已过时。 使用[ **.time （显示系统时间）** ](-time--display-system-time-.md)命令。
+**！ Time** extension 命令已过时。 改为使用 [**. time (显示系统时间)**](-time--display-system-time-.md) 命令。
 
  
 

@@ -1,9 +1,8 @@
 ---
 title: PlatenResolutions 元素
-description: 所需的 PlatenResolutions 元素包含一系列的扫描程序的辊可以扫描的解决方法。
-ms.assetid: 9adf54d7-4cca-4d43-b467-c0b2c84a4a7f
+description: 必需的 PlatenResolutions 元素包含扫描仪的影印可扫描的分辨率列表。
 keywords:
-- PlatenResolutions 元素成像设备
+- PlatenResolutions 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a70e40e26d8475d4b6631e6fb2e76dc2f44f45d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 711b8c6b80c098d2f69f90b1c39d86b24617d282
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360640"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841073"
 ---
 # <a name="platenresolutions-element"></a>PlatenResolutions 元素
 
 
-所需**PlatenResolutions**元素包含一系列的扫描程序的辊可以扫描的解决方法。
+必需的 **PlatenResolutions** 元素包含扫描仪的影印可扫描的分辨率列表。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -52,7 +51,7 @@ ms.locfileid: "63360640"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="heights.md" data-raw-source="[&lt;strong&gt;Heights&lt;/strong&gt;](heights.md)"><strong>高度</strong></a></p></td>
+<td><p><a href="heights.md" data-raw-source="[&lt;strong&gt;Heights&lt;/strong&gt;](heights.md)"><strong>Heights</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p><a href="widths.md" data-raw-source="[&lt;strong&gt;Widths&lt;/strong&gt;](widths.md)"><strong>Widths</strong></a></p></td>
@@ -74,7 +73,7 @@ ms.locfileid: "63360640"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="platen.md" data-raw-source="[&lt;strong&gt;Platen&lt;/strong&gt;](platen.md)"><strong>辊</strong></a></p></td>
+<td><p><a href="platen.md" data-raw-source="[&lt;strong&gt;Platen&lt;/strong&gt;](platen.md)"><strong>Platen</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -82,22 +81,22 @@ ms.locfileid: "63360640"
 <a name="remarks"></a>备注
 -------
 
-解决方法指定为[**宽度**](width.md) x [**高度**](height.md)对，其中以每英寸点数的像素为单位指定宽度和高度。
+分辨率指定为 [**宽度**](width.md) x [**高度**](height.md) 对，其中的宽度和高度均以每英寸像素数来指定。
 
-扫描设备支持宽度子元素内的所有可能的宽度和高度子元素内支持扫描设备的所有可能高度应列出 WSD 扫描服务。 所有的宽度和高度值都是独立于彼此，和大多数设备将支持这些配对中的任意组合[ **ScanTicket** ](scanticket.md)元素。
+WSD 扫描服务应列出扫描设备支持的宽度子元素中的所有可能宽度，以及扫描设备支持的高度子元素中的所有可能的高度。 所有的宽度和高度值都彼此独立，并且大多数设备将支持在 [**ScanTicket**](scanticket.md) 元素内的任何组合中配对它们。
 
 ## <a name="see-also"></a>请参阅
 
 
-[**Height**](height.md)
+[**高度**](height.md)
 
-[**高度**](heights.md)
+[**Heights**](heights.md)
 
-[**辊**](platen.md)
+[**Platen**](platen.md)
 
 [**ScanTicket**](scanticket.md)
 
-[**Width**](width.md)
+[**宽度**](width.md)
 
 [**Widths**](widths.md)
 

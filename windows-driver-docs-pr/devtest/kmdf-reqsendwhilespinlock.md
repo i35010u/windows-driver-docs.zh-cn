@@ -1,7 +1,6 @@
 ---
 title: 'ReqSendWhileSpinlock 规则 (kmdf) '
 description: ReqSendWhileSpinlock 规则指定在驱动程序持有旋转锁时不发送请求。
-ms.assetid: f038f4ca-aa24-4df3-9c31-d8eec928c306
 ms.date: 05/21/2018
 keywords:
 - 'ReqSendWhileSpinlock 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1fdd5e1b7f202c561b197b90c6cec4559cb41dec
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 81caf72fef4b4d0e1ed6a69b174249649e5d967c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103708"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840815"
 ---
 # <a name="reqsendwhilespinlock-rule-kmdf"></a>ReqSendWhileSpinlock 规则 (kmdf) 
 
 
-**ReqSendWhileSpinlock**规则指定在驱动程序持有旋转锁时不发送请求。
+**ReqSendWhileSpinlock** 规则指定在驱动程序持有旋转锁时不发送请求。
 
 如果驱动程序在包含旋转锁的情况下发送任何请求，则可能会导致死锁或与接收请求的低级驱动程序发生冲突，前提是该驱动程序还尝试获取锁或访问共享资源。
 

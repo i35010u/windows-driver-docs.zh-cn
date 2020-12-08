@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ BDA \_ RF \_ 调谐器 \_ 极性
 description: 客户端使用 KSPROPERTY \_ BDA \_ RF RF \_ \_ 极性来控制调谐器节点的极性设置。
-ms.assetid: 6778b4ac-2444-4e27-ab80-5802dda09fdd
 keywords:
 - KSPROPERTY_BDA_RF_TUNER_POLARITY 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a585454d45bd8bc76ff973eb566574de842a9af
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: dbc0eda56fd3d4f4512741abccc371fa45150a8c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187105"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840253"
 ---
 # <a name="ksproperty_bda_rf_tuner_polarity"></a>KSPROPERTY \_ BDA \_ RF \_ 调谐器 \_ 极性
 
@@ -61,7 +60,7 @@ ms.locfileid: "89187105"
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 KSP **NodeId** \_ 节点的节点标识号指定调谐器节点的标识符。
@@ -80,7 +79,7 @@ KSP **NodeId** \_ 节点的节点标识号指定调谐器节点的标识符。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Bdamedia (包含 Bdamedia) </td>
 </tr>
 </tbody>

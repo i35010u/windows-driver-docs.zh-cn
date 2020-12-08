@@ -1,15 +1,14 @@
 ---
 title: 内核模式安全整数函数摘要
 description: 下表总结了可用于内核模式驱动程序的安全整数函数。
-ms.assetid: 3DC016FA-5434-4581-9FBB-F6A8B54AB97B
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: b4c3a37c25441cfddfb397af085a3e4d70678a30
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 1d24f1e90141fdb650756c58a14f61d2a7eab3ca
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107274"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839235"
 ---
 # <a name="summary-of-kernel-mode-safe-integer-functions"></a>内核模式安全整数函数摘要
 

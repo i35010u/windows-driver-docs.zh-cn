@@ -1,17 +1,16 @@
 ---
 title: NDIS 配置函数
 description: NDIS 配置函数
-ms.assetid: 248e08d0-6145-499a-b307-2a5ffbd3733f
 keywords:
 - 配置函数 WDK NDIS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aecdb5810087e481c8803ea7fc9c602c9e2d44ea
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3e11bbd3b4aa2a334b2e4173081d337a0d4564ce
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213461"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841169"
 ---
 # <a name="ndis-configuration-functions"></a>NDIS 配置函数
 

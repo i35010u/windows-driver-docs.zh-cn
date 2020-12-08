@@ -1,22 +1,21 @@
 ---
-title: 正在检查 IRP_MJ_CREATE 操作 Oplock 状态
-description: 正在检查 IRP_MJ_CREATE 操作 Oplock 状态
-ms.assetid: 30684025-9da0-4f4c-a850-ab0390bef091
+title: 检查 IRP_MJ_CREATE 操作的 Oplock 状态
+description: 检查 IRP_MJ_CREATE 操作的 Oplock 状态
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 883d03a15f8c0f8eb2a1773d4cf955d32d406b03
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7b2410294537a3367fdc5259926512a10577ad1e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379699"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840733"
 ---
-# <a name="checking-the-oplock-state-of-an-irpmjcreate-operation"></a>正在检查 IRP_MJ_CREATE 操作 Oplock 状态
+# <a name="checking-the-oplock-state-of-an-irp_mj_create-operation"></a>检查 IRP_MJ_CREATE 操作的 Oplock 状态
 
 
-以下仅适用于正在打开现有文件的流 （即，新创建的流不能对预先存在的 oplock 它们）。
+以下内容仅适用于打开现有文件流 (即，新创建的流不能) 上预先存在的 oplock。
 
-**请注意**  时处理 IRP_MJ_CREATE 任何 oplock，如果所需的访问不包含任何内容 FILE_READ_ATTRIBUTES、 FILE_WRITE_ATTRIBUTES 或同步以外，机会锁不会中断 FILE_RESERVE_OPFILTER 除非指定。 始终指定 FILE_RESERVE_OPFILTER 导致破坏 oplock，如果创建成功。 为了简洁起见和简单起见下, 表中省略上述条款，因为它适用于所有 oplock。
+**注意**  在为任何 oplock 处理 IRP_MJ_CREATE 时，如果所需的访问权限包含除 FILE_READ_ATTRIBUTES、FILE_WRITE_ATTRIBUTES 或同步以外的任何内容，则 oplock 不会中断，除非指定了 FILE_RESERVE_OPFILTER。 如果创建成功，则指定 FILE_RESERVE_OPFILTER 始终导致 oplock 中断。 为简洁起见，下表省略了上述内容，因为它适用于所有 oplock。
 <table>
 <tr>
 <th>请求类型</th>
@@ -27,25 +26,25 @@ ms.locfileid: "63379699"
 <p>级别 1</p>
 </td>
 <td>
-<p>IRP_MJ_CREATE 上中断时：</p>
+<p>IRP_MJ_CREATE 时中断：</p>
 <ul>
 <li>
-<p> 与在其发生打开 FILE_OBJECT 关联的 oplock 键与拥有 oplock FILE_OBJECT 与关联的 oplock 密钥不同。</p>
+<p> 与所打开的 FILE_OBJECT 关联的 oplock 键不同于与拥有 oplock 的 FILE_OBJECT 相关联的 oplock 键。</p>
 </li>
 </ul>
 </td>
 </tr>
 <tr>
 <td>
-<p>如果 oplock 已损坏：</p>
+<p>如果 oplock 中断：</p>
 <ul>
 <li>
-<p>为无中断<b>如果</b>:<ul>
+<p><b>如果</b>：<ul>
 <li>
-<p>FILE_RESERVE_OPFILTER 标志设置</p>
+<p>已设置 FILE_RESERVE_OPFILTER 标志</p>
 <p><b>OR</b></p>
 </li>
-<li>以下任一创建处理设置指定的值：<ul>
+<li>指定以下任何创建处置值：<ul>
 <li>FILE_SUPERSEDE</li>
 <li>FILE_OVERWRITE</li>
 <li>FILE_OVERWRITE_IF</li>
@@ -53,13 +52,13 @@ ms.locfileid: "63379699"
 </li>
 </ul>
 </p>
-<p><b>其他：</b></p>
+<p><b>其它</b></p>
 <ul>
-<li>中断到级别 2。</li>
+<li>分解为级别2。</li>
 </ul>
 </li>
 <li>
-<p>继续操作之前必须收到确认。</p>
+<p>必须先收到确认，然后才能继续操作。</p>
 </li>
 </ul>
 </td>
@@ -69,15 +68,15 @@ ms.locfileid: "63379699"
 <p>级别 2</p>
 </td>
 <td>
-<p>IRP_MJ_CREATE 上中断时：</p>
+<p>IRP_MJ_CREATE 时中断：</p>
 <ul>
-<li>与在其发生打开 FILE_OBJECT 关联的 oplock 键与拥有 oplock FILE_OBJECT 与关联的 oplock 密钥不同。</li>
-<li><b>和：</b><ul>
+<li>与所打开的 FILE_OBJECT 关联的 oplock 键不同于与拥有 oplock 的 FILE_OBJECT 相关联的 oplock 键。</li>
+<li><b>与</b><ul>
 <li>
-<p>FILE_RESERVE_OPFILTER 标志设置</p>
+<p>已设置 FILE_RESERVE_OPFILTER 标志</p>
 <p><b>OR</b></p>
 </li>
-<li> 以下任一创建处理设置指定的值：<ul>
+<li> 指定以下任何创建处置值：<ul>
 <li>FILE_SUPERSEDE</li>
 <li>FILE_OVERWRITE</li>
 <li>FILE_OVERWRITE_IF</li>
@@ -90,13 +89,13 @@ ms.locfileid: "63379699"
 </tr>
 <tr>
 <td>
-<p>如果 oplock 已损坏：</p>
+<p>如果 oplock 中断：</p>
 <ul>
 <li>
-<p> 中断为无。</p>
+<p> 中断到无。</p>
 </li>
 <li>
-<p> 不发送任何确认是必需的可以立即继续操作。</p>
+<p> 不需要确认，操作会立即继续。</p>
 </li>
 </ul>
 </td>
@@ -106,25 +105,25 @@ ms.locfileid: "63379699"
 <p>Batch</p>
 </td>
 <td>
-<p>IRP_MJ_CREATE 上中断时：</p>
+<p>IRP_MJ_CREATE 时中断：</p>
 <ul>
 <li>
-<p> 与在其发生打开 FILE_OBJECT 关联的 oplock 键与拥有 oplock FILE_OBJECT 与关联的 oplock 密钥不同。</p>
+<p> 与所打开的 FILE_OBJECT 关联的 oplock 键不同于与拥有 oplock 的 FILE_OBJECT 相关联的 oplock 键。</p>
 </li>
 </ul>
 </td>
 </tr>
 <tr>
 <td>
-<p>如果 oplock 已损坏：</p>
+<p>如果 oplock 中断：</p>
 <ul>
 <li>
-<p>为无中断<b>如果</b>:<ul>
+<p><b>如果</b>：<ul>
 <li>
-<p>FILE_RESERVE_OPFILTER 标志设置。</p>
+<p>设置了 FILE_RESERVE_OPFILTER 标志。</p>
 <p><b>OR</b></p>
 </li>
-<li>以下任一创建处理设置指定的值：<ul>
+<li>指定以下任何创建处置值：<ul>
 <li>FILE_SUPERSEDE</li>
 <li>FILE_OVERWRITE</li>
 <li>FILE_OVERWRITE_IF</li>
@@ -132,37 +131,37 @@ ms.locfileid: "63379699"
 </li>
 </ul>
 </p>
-<p><b>其他：</b></p>
+<p><b>其它</b></p>
 <ul>
-<li>中断到级别 2。</li>
+<li>分解为级别2。</li>
 </ul>
 </li>
 <li>
-<p>继续操作之前必须收到确认。</p>
+<p>必须先收到确认，然后才能继续操作。</p>
 </li>
 </ul>
 </td>
 </tr>
 <tr>
 <td rowspan="2">
-<p>Filter</p>
+<p>筛选器</p>
 </td>
 <td>
-<p>IRP_MJ_CREATE 上中断时：</p>
+<p>IRP_MJ_CREATE 时中断：</p>
 <ul>
 <li>
-<p> 与在其发生打开 FILE_OBJECT 关联的 oplock 键与拥有 oplock FILE_OBJECT 与关联的 oplock 密钥不同。</p>
+<p> 与所打开的 FILE_OBJECT 关联的 oplock 键不同于与拥有 oplock 的 FILE_OBJECT 相关联的 oplock 键。</p>
 </li>
-<li><b>和：</b><ul>
+<li><b>与</b><ul>
 <li>
-<p>在未打开进行 FILE_SHARE_READ 访问的流上请求的"可写"所需的访问权限。  请注意，任何特性而不定义"写"访问权限：</p>
+<p>在流上请求了所需的 "可写入" 的访问权限，但未打开 FILE_SHARE_READ 访问。  请注意，"可写" 访问被定义为除之外的任何属性：</p>
 <ul>
 <li>FILE_READ_ATTRIBUTES</li>
 <li>FILE_WRITE_ATTRIBUTES</li>
 <li>FILE_READ_DATA</li>
 <li>FILE_READ_EA</li>
 <li>FILE_EXECUTE</li>
-<li>同步</li>
+<li>SYNCHRONIZE</li>
 <li>READ_CONTROL</li>
 </ul>
 </li>
@@ -173,33 +172,33 @@ ms.locfileid: "63379699"
 </tr>
 <tr>
 <td>
-<p>如果 oplock 已损坏：</p>
+<p>如果 oplock 中断：</p>
 <ul>
 <li>
-<p> 中断为无。</p>
+<p> 中断到无。</p>
 </li>
 <li>
-<p> 继续操作之前必须收到确认。</p>
+<p> 必须先收到确认，然后才能继续操作。</p>
 </li>
 </ul>
 </td>
 </tr>
 <tr>
 <td rowspan="2">
-<p>Read</p>
+<p>读取</p>
 </td>
 <td>
-<p>IRP_MJ_CREATE 上中断时：</p>
+<p>IRP_MJ_CREATE 时中断：</p>
 <ul>
 <li>
-<p>与在其发生打开 FILE_OBJECT 关联的 oplock 键与拥有 oplock FILE_OBJECT 与关联的 oplock 密钥不同。</p>
+<p>与所打开的 FILE_OBJECT 关联的 oplock 键不同于与拥有 oplock 的 FILE_OBJECT 相关联的 oplock 键。</p>
 </li>
-<li><b>和：</b><ul>
+<li><b>与</b><ul>
 <li>
-<p>FILE_RESERVE_OPFILTER 标志设置</p>
+<p>已设置 FILE_RESERVE_OPFILTER 标志</p>
 <p><b>OR</b></p>
 </li>
-<li> 以下任一创建处理设置指定的值：<ul>
+<li> 指定以下任何创建处置值：<ul>
 <li>FILE_SUPERSEDE</li>
 <li>FILE_OVERWRITE</li>
 <li>FILE_OVERWRITE_IF</li>
@@ -212,58 +211,58 @@ ms.locfileid: "63379699"
 </tr>
 <tr>
 <td>
-<p>如果 oplock 已损坏：</p>
+<p>如果 oplock 中断：</p>
 <ul>
 <li>
-<p> 中断为无。</p>
+<p> 中断到无。</p>
 </li>
 <li>
-<p> 不发送任何确认是必需的可以立即继续操作。</p>
+<p> 不需要确认，操作会立即继续。</p>
 </li>
 </ul>
 </td>
 </tr>
 <tr>
 <td rowspan="2">
-<p>读取句柄</p>
+<p>Read-Handle</p>
 </td>
 <td>
-<p>IRP_MJ_CREATE 上中断时：</p>
+<p>IRP_MJ_CREATE 时中断：</p>
 <ul>
 <li>
-<p>这样会发生共享冲突的现有打开与当前打开的冲突。</p>
+<p>当前打开的与现有打开的冲突，这样就会发生共享冲突。</p>
 <p><b>OR</b></p>
 </li>
 <li>
-<p>FILE_RESERVE_OPFILTER 标志设置。</p>
+<p>设置了 FILE_RESERVE_OPFILTER 标志。</p>
 <p><b>OR</b></p>
 </li>
 <li>
-<p>以下任一创建处理设置指定的值：<ul>
+<p>指定以下任何创建处置值：<ul>
 <li>FILE_SUPERSEDE</li>
 <li>FILE_OVERWRITE</li>
 <li>FILE_OVERWRITE_IF</li>
 </ul>
 </p>
-<p><b>和</b>（适用于任何上述三个条件）</p>
+<p><b>并且</b> (以上三个条件中的任何一种) </p>
 </li>
 <li>
-<p> 与在其发生打开 FILE_OBJECT 关联的 oplock 键与拥有 oplock FILE_OBJECT 与关联的 oplock 密钥不同。</p>
+<p> 与所打开的 FILE_OBJECT 关联的 oplock 键不同于与拥有 oplock 的 FILE_OBJECT 相关联的 oplock 键。</p>
 </li>
 </ul>
 </td>
 </tr>
 <tr>
 <td>
-<p>如果 oplock 已损坏：</p>
+<p>如果 oplock 中断：</p>
 <ul>
 <li>
-<p>为无中断<b>如果</b>:<ul>
+<p><b>如果</b>：<ul>
 <li>
-<p>FILE_RESERVE_OPFILTER 标志设置。</p>
+<p>设置了 FILE_RESERVE_OPFILTER 标志。</p>
 <p><b>OR</b></p>
 </li>
-<li>以下任一创建处理设置指定的值：<ul>
+<li>指定以下任何创建处置值：<ul>
 <li>FILE_SUPERSEDE</li>
 <li>FILE_OVERWRITE</li>
 <li>FILE_OVERWRITE_IF</li>
@@ -271,41 +270,41 @@ ms.locfileid: "63379699"
 </li>
 </ul>
 </p>
-<p><b>其他：</b></p>
+<p><b>其它</b></p>
 <ul>
-<li>中断到读取。</li>
+<li>要读取的断点。</li>
 </ul>
 </li>
-<li>如果由于与现有的当前打开冲突打开，以便将发生共享冲突，操作破坏 oplock，继续操作之前必须收到确认。
+<li>如果 oplock 因为当前打开的与现有打开的冲突而中断，以便发生共享冲突，则必须在该操作继续之前接收确认。
       </li>
-<li>如果 oplock 破坏出于其他原因，虽然是必需的分页符的确认，该操作将继续立即 （例如，而无需等待确认）。</li>
+<li>如果 oplock 因任何其他原因而中断，尽管需要确认中断，但操作会立即继续 (例如，无需等待确认) 。</li>
 </ul>
 </td>
 </tr>
 <tr>
 <td rowspan="2">
-<p>读写</p>
+<p>Read-Write</p>
 </td>
 <td>
-<p>IRP_MJ_CREATE 上中断时：</p>
+<p>IRP_MJ_CREATE 时中断：</p>
 <ul>
 <li>
-<p>与在其发生打开 FILE_OBJECT 关联的 oplock 键与拥有 oplock FILE_OBJECT 与关联的 oplock 密钥不同。</p>
+<p>与所打开的 FILE_OBJECT 关联的 oplock 键不同于与拥有 oplock 的 FILE_OBJECT 相关联的 oplock 键。</p>
 </li>
 </ul>
 </td>
 </tr>
 <tr>
 <td>
-<p>如果 oplock 已损坏：</p>
+<p>如果 oplock 中断：</p>
 <ul>
 <li>
-<p>为无中断<b>如果</b>:<ul>
+<p><b>如果</b>：<ul>
 <li>
-<p>FILE_RESERVE_OPFILTER 标志设置。</p>
+<p>设置了 FILE_RESERVE_OPFILTER 标志。</p>
 <p><b>OR</b></p>
 </li>
-<li>以下任一创建处理设置指定的值：<ul>
+<li>指定以下任何创建处置值：<ul>
 <li>FILE_SUPERSEDE</li>
 <li>FILE_OVERWRITE</li>
 <li>FILE_OVERWRITE_IF</li>
@@ -313,41 +312,41 @@ ms.locfileid: "63379699"
 </li>
 </ul>
 </p>
-<p><b>其他：</b></p>
+<p><b>其它</b></p>
 <ul>
-<li>中断到读取。</li>
+<li>要读取的断点。</li>
 </ul>
 </li>
 <li>
-<p>继续操作之前必须收到确认。</p>
+<p>必须先收到确认，然后才能继续操作。</p>
 </li>
 </ul>
 </td>
 </tr>
 <tr>
 <td rowspan="2">
-<p>读写句柄</p>
+<p>读写-句柄</p>
 </td>
 <td>
-<p>IRP_MJ_CREATE 上中断时：</p>
+<p>IRP_MJ_CREATE 时中断：</p>
 <ul>
 <li>
-<p> 与在其发生打开 FILE_OBJECT 关联的 oplock 键与拥有 oplock FILE_OBJECT 与关联的 oplock 密钥不同。</p>
+<p> 与所打开的 FILE_OBJECT 关联的 oplock 键不同于与拥有 oplock 的 FILE_OBJECT 相关联的 oplock 键。</p>
 </li>
 </ul>
 </td>
 </tr>
 <tr>
 <td>
-<p>如果 oplock 已损坏：</p>
+<p>如果 oplock 中断：</p>
 <ul>
 <li>
-<p>为无中断<b>如果</b>:<ul>
+<p><b>如果</b>：<ul>
 <li>
-<p>FILE_RESERVE_OPFILTER 标志设置。</p>
+<p>设置了 FILE_RESERVE_OPFILTER 标志。</p>
 <p><b>OR</b></p>
 </li>
-<li>以下任一创建处理设置指定的值：<ul>
+<li>指定以下任何创建处置值：<ul>
 <li>FILE_SUPERSEDE</li>
 <li>FILE_OVERWRITE</li>
 <li>FILE_OVERWRITE_IF</li>
@@ -355,15 +354,15 @@ ms.locfileid: "63379699"
 </li>
 </ul>
 </p>
-<p><b>其他：</b></p>
+<p><b>其它</b></p>
 <ul>
 <li>
-<p>如果当前打开冲突与现有打开，这样会发生共享冲突，则中断到读写。  否则，中断到读取句柄。</p>
+<p>如果当前打开的与现有打开的冲突，以便发生共享冲突，则中断到 Read-Write。  否则，中断到读取句柄。</p>
 </li>
 </ul>
 </li>
 <li>
-<p>继续操作之前必须收到确认。</p>
+<p>必须先收到确认，然后才能继续操作。</p>
 </li>
 </ul>
 </td>
@@ -371,17 +370,17 @@ ms.locfileid: "63379699"
 </table>
  
 
-文件系统的批处理和筛选器 oplocks （而非 oplock 包本身） 进行其他检查时处理 IRP_MJ_CREATE 操作，这会影响是否在文件系统会要求 oplock 包来执行 oplock 中断处理。 这是其中一种数据流上的执行操作可能会影响对同一文件 （即，以下条件列表中的最后两个列表项） 的其他数据流 oplock 的用例。 如果满足一个或多个以下条件，文件系统将请求发送到 oplock 包来执行 oplock 中断处理：
+在处理 IRP_MJ_CREATE 操作时，文件系统会为批处理和筛选器 oplock (而不是 oplock 包) 本身执行其他检查，这会影响文件系统是否要求 oplock 包执行 oplock 中断处理。 这种情况下，一个数据流上的操作可能会影响同一文件的其他数据流上的 oplock， (也就是说，以下条件列表的最后两个列表项) 。 如果满足以下一个或多个条件，则文件系统会向 oplock 包发送请求，以执行 oplock 中断处理：
 
--   如果这是一个开放的网络查询和请求中断[KTM](https://go.microsoft.com/fwlink/p/?linkid=124745)存在事务时。 否则，请执行的请求打开网络查询中断。
+-   如果这是一个已打开的网络查询并且存在 [KTM](https://go.microsoft.com/fwlink/p/?linkid=124745) 事务，则请求中断。 否则，请不要在网络查询打开时请求中断。
 
--   如果对备用数据流执行 SUPERSEDE、 覆盖或 OVERWRITE_IF 操作和未指定 FILE_SHARE_DELETE 并且对主数据的流没有批处理或筛选器 oplock，请求主数据的流上的批处理或筛选器 oplock 的中断.
+-   如果在备用数据流上执行了替代、覆盖或 OVERWRITE_IF 操作，并且未指定 FILE_SHARE_DELETE，并且主数据流上存在批处理或筛选器 oplock，则请求主数据流上的批处理或筛选器 oplock 中断。
 
--   如果 SUPERSEDE、 覆盖或 OVERWRITE_IF 操作不执行对主数据的流和已请求删除访问权限并且有批处理或筛选器 oplocks 任何备用数据流，请求对所有的备用数据批处理或筛选器 oplocks 的中断将它们的流。
+-   如果在主数据流上执行了替代、覆盖或 OVERWRITE_IF 操作，并且已请求删除访问权限，并且在任何备用数据流上有批处理或筛选器 oplock，则请求批处理的中断或筛选 oplock。
 
-当文件系统决定要求 oplock 包来执行 oplock 中断处理时上, 表中列出的规则适用。
+当文件系统决定要求 oplock 包执行 oplock 中断处理时，将应用上表中所述的规则。
 
-进行共享访问检查之前，将发生中断批处理和筛选器 oplocks 的检查。 这意味着即使打开请求最终会由于共享冲突而失败，批处理或筛选器 oplock 已中断。
+用于中断批处理和筛选器 oplock 的检查发生在进行共享访问检查之前。 这意味着批处理或筛选器 oplock 会断开，即使打开的请求最终由于共享冲突而失败。
 
  
 

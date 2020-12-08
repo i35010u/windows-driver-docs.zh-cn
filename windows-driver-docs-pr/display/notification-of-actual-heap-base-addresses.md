@@ -1,7 +1,6 @@
 ---
 title: 实际堆基址的通知
 description: 实际堆基址的通知
-ms.assetid: b2fe29c7-7c97-41c2-a6be-2c0ef25c5b58
 keywords:
 - 堆 WDK DirectDraw
 - 显示内存 WDK DirectDraw，堆
@@ -15,12 +14,12 @@ keywords:
 - 物理堆 DirectDraw
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3cf2180f0566a5e032b4a707c511a55a655826de
-ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
+ms.openlocfilehash: cdfd91ed03b931baade96ac34814539f770009db
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91423714"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840375"
 ---
 # <a name="notification-of-actual-heap-base-addresses"></a>实际堆基址的通知
 

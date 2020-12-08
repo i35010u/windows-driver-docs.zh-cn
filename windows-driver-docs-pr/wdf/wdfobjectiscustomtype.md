@@ -1,32 +1,31 @@
 ---
 title: WdfObjectIsCustomType 宏
 description: WdfObjectIsCustomType 宏确定框架对象是否为指定的自定义类型。
-ms.assetid: EE3CC41D-6FBA-49A2-A2A0-C7E818F6FAAA
 keywords:
 - WdfObjectIsCustomType 宏
 ms.date: 08/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cebeadd6579bb59c39575c8dff8e09ef2397cdbe
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 929bca896545a3f122757ff14691799c960d99f6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188685"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839179"
 ---
 # <a name="wdfobjectiscustomtype-macro"></a>WdfObjectIsCustomType 宏
 
 
 \[适用于 KMDF 和 UMDF\]
 
-**WdfObjectIsCustomType**宏确定框架对象是否为指定的自定义类型。
+**WdfObjectIsCustomType** 宏确定框架对象是否为指定的自定义类型。
 
 <a name="syntax"></a>语法
 ------
 
 ```ManagedCPlusPlus
 BOOLEAN WdfObjectIsCustomType(
-  [in]  Handle,
-  [in]  Type
+  [in]  Handle,
+  [in]  Type
 );
 ```
 
@@ -77,7 +76,7 @@ BOOLEAN WdfObjectIsCustomType(
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**WDF_DECLARE_CUSTOM_TYPE**](wdf-declare-custom-type.md)

@@ -1,7 +1,6 @@
 ---
 title: 写入缩进日志条目
 description: 写入缩进日志条目
-ms.assetid: 8ce6b433-a004-43f6-9481-9c23c5e7e8da
 keywords:
 - 缩进日志条目 WDK Setupapi.log
 - 格式化 WDK Setupapi.log 日志记录
@@ -9,12 +8,12 @@ keywords:
 - SetupWriteTextLog
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b6319be881e2564b5ef1c8be2f957bb9d633af6
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 6069209ab49d7f271d481017dbbfaa9d487eb4d7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717526"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840919"
 ---
 # <a name="writing-indented-log-entries"></a>写入缩进日志条目
 

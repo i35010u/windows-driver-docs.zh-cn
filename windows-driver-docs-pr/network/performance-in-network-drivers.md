@@ -1,15 +1,14 @@
 ---
 title: 网络驱动程序的性能
 description: 本部分介绍提高网络驱动程序性能的方法
-ms.assetid: 7EA23AA6-7673-4D88-91CA-BDDD8FBB2A4F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4648ee6a4efab1a4263018fc31fe6d88f040ac2d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: bfe7da09580c75c974dd90553df56090df1e141d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211637"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839451"
 ---
 # <a name="performance-in-network-drivers"></a>网络驱动程序中的性能
 
@@ -20,7 +19,7 @@ ms.locfileid: "89211637"
 -   [正确使用锁定机制](#using-locking-mechanisms-properly)
 -   [使用64位 DMA](#using-64-bit-dma)
 -   [确保缓冲区对齐正确](#ensuring-proper-buffer-alignment)
--   [使用散播-聚集 DMA](#using-scatter-gather-dma)
+-   [使用 Scatter-Gather DMA](#using-scatter-gather-dma)
 -   [支持接收端限制](#supporting-receive-side-throttle)
 
 ## <a name="minimizing-send-and-receive-path-length"></a>最小化发送和接收路径长度
@@ -90,21 +89,21 @@ ms.locfileid: "89211637"
 ## <a name="using-64-bit-dma"></a>使用64位 DMA
 
 
-64位 DMA 如果网络适配器支持64位 DMA，则必须采取步骤来避免 4 GB 范围以上的地址产生额外的副本。 当驱动程序调用[**NdisMRegisterScatterGatherDma**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismregisterscattergatherdma)时，必须在*Flags*参数中设置**NDIS \_ SG \_ DMA \_ 64 \_ 位 \_ 地址**标志。
+64位 DMA 如果网络适配器支持64位 DMA，则必须采取步骤来避免 4 GB 范围以上的地址产生额外的副本。 当驱动程序调用 [**NdisMRegisterScatterGatherDma**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismregisterscattergatherdma)时，必须在 *Flags* 参数中设置 **NDIS \_ SG \_ DMA \_ 64 \_ 位 \_ 地址** 标志。
 
 ## <a name="ensuring-proper-buffer-alignment"></a>确保缓冲区对齐正确
 
 
 缓存行边界上的缓冲区对齐可提高将数据从一个缓冲区复制到另一个缓冲区时的性能。 大多数网络适配器接收缓冲区在首次分配时均正确对齐，但必须最终复制到应用程序缓冲区的用户数据未对齐，因为使用了标头空间。 对于 TCP 数据 (最常见的方案) ，由于 TCP、IP 和以太网标头的变化导致了0x36 字节的变化。 为了解决此问题，我们建议驱动程序分配一个略大的缓冲区，并以0xA 字节的偏移量插入数据包数据。 这将确保在为标头的0x36 字节移动缓冲区后，用户数据已正确对齐。 有关缓存行边界的详细信息，请参阅 [**NdisMAllocateSharedMemory**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismallocatesharedmemory)的 "备注" 部分。
 
-## <a name="using-scatter-gather-dma"></a>使用散播-聚集 DMA
+## <a name="using-scatter-gather-dma"></a>使用 Scatter-Gather DMA
 
 
-[NDIS 散播/聚集 DMA](ndis-scatter-gather-dma.md) 为硬件提供了支持，以便在物理内存的非连续范围之间传输数据。 散播-聚集 DMA 使用 [**散播 \_ 聚集 \_ 列表**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_scatter_gather_list) 结构，该结构包含 **散点 \_ 集合 \_ 元素** 结构的数组和数组中的元素数目。 此结构是从传递给驱动程序的 send 函数的数据包描述符中检索的。 数组的每个元素都提供物理上邻接的分散收集区域的长度和起始物理地址。 驱动程序使用长度和地址信息传输数据。
+[NDIS 散播/聚集 DMA](ndis-scatter-gather-dma.md) 为硬件提供了支持，以便在物理内存的非连续范围之间传输数据。 Scatter-Gather DMA 使用 [**散播 \_ 聚集 \_ 列表**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_scatter_gather_list) 结构，该结构包含 **散点 \_ 集合 \_ 元素** 结构的数组和数组中元素的数目。 此结构是从传递给驱动程序的 send 函数的数据包描述符中检索的。 数组的每个元素都提供物理上连续 Scatter-Gather 区域的长度和起始物理地址。 驱动程序使用长度和地址信息传输数据。
 
-使用用于 DMA 操作的分散收集例程可以通过静态锁定这些资源来提高系统资源的利用率，如使用映射寄存器时的情况。 有关详细信息，请参阅 [NDIS 散播/聚集 DMA](ndis-scatter-gather-dma.md)。
+将 Scatter-Gather 例程用于 DMA 操作可以通过静态锁定这些资源来提高系统资源的利用率，如使用映射寄存器时出现的情况。 有关详细信息，请参阅 [NDIS 散播/聚集 DMA](ndis-scatter-gather-dma.md)。
 
-如果网络适配器支持 TCP 分段卸载 (大规模发送卸载) ，则驱动程序将需要传入它可以从 TCP/IP 获取的最大缓冲区大小（ [**NdisMRegisterScatterGatherDma**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismregisterscattergatherdma)函数内的*MaximumPhysicalMapping*参数）。 这将保证驱动程序具有足够的映射寄存器来构建分散收集列表，并消除任何可能的缓冲分配和复制。 有关详细信息，请参阅以下主题：
+如果网络适配器支持 TCP 分段卸载 (大规模发送卸载) ，则驱动程序将需要传入它可以从 TCP/IP 获取的最大缓冲区大小（ [**NdisMRegisterScatterGatherDma**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismregisterscattergatherdma)函数内的 *MaximumPhysicalMapping* 参数）。 这将保证驱动程序具有足够的映射寄存器来生成 Scatter-Gather 列表，并消除任何可能的缓冲分配和复制。 有关详细信息，请参阅以下主题：
 
 - [确定任务卸载功能](determining-task-offload-capabilities.md)
 - [卸载大型 TCP 数据包的段](offloading-the-segmentation-of-large-tcp-packets.md)

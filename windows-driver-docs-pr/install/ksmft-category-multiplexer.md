@@ -1,7 +1,6 @@
 ---
 title: KSMFT_CATEGORY_MULTIPLEXER
 description: KSMFT_CATEGORY_MULTIPLEXER
-ms.assetid: 79849eeb-7e5d-45bb-a0e4-cd6f413aa3dc
 keywords:
 - KSMFT_CATEGORY_MULTIPLEXER 设备和驱动程序安装
 topic_type:
@@ -14,17 +13,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 37ba207c1bf8c445d1781782b86bc5148f95fb2c
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: a5ac703d69b7d20424e86f723f6f3dfd5e974a85
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097331"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839505"
 ---
 # <a name="ksmft_category_multiplexer"></a>KSMFT_CATEGORY_MULTIPLEXER
 
 
-为 (KSMFT_CATEGORY_MULTIPLEXER[设备接口类](./overview-of-device-interface-classes.md)定义了将 (*多路复用*) 媒体流组合在一起的设备的[内核流式处理](../stream/kernel-streaming.md)KS) 功能类别。
+为 (KSMFT_CATEGORY_MULTIPLEXER [设备接口类](./overview-of-device-interface-classes.md)定义了将 (*多路复用*) 媒体流组合在一起的设备的 [内核流式处理](../stream/kernel-streaming.md)KS) 功能类别。
 
 <table>
 <colgroup>

@@ -1,7 +1,6 @@
 ---
 title: EXT \_ TDOP \_ GET \_ FIELD \_ OFFSET
 description: '\_调试请求的 ext TDOP \_ GET \_ FIELD \_ OFFSET 子操作 \_ \_ ext \_ 类型化 \_ 数据 \_ ANSI 请求操作返回结构内成员的偏移量。'
-ms.assetid: 2703d518-1bc3-42a2-9a22-f9ea88a12c05
 keywords:
 - EXT_TDOP_GET_FIELD_OFFSET Windows 调试
 topic_type:
@@ -12,19 +11,19 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f685493fecda4479ccd73e51d02490c30f02779
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: fd70725c6785fd5886e18abfe092f4f7ab1da611
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213013"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839953"
 ---
 # <a name="ext_tdop_get_field_offset"></a>EXT \_ TDOP \_ GET \_ FIELD \_ OFFSET
 
 
-\_调试请求的 ext TDOP \_ GET \_ FIELD \_ OFFSET 子操作[** \_ \_ ext \_ 类型化 \_ 数据 \_ ANSI**](debug-request-ext-typed-data-ansi.md)[**请求**](request.md)操作返回结构内成员的偏移量。
+\_调试请求的 ext TDOP \_ GET \_ FIELD \_ OFFSET 子操作 [**\_ \_ ext \_ 类型化 \_ 数据 \_ ANSI**](debug-request-ext-typed-data-ansi.md)[**请求**](request.md)操作返回结构内成员的偏移量。
 
-**参数**
+**Parameters**
 
 <span id="Operation"></span><span id="operation"></span><span id="OPERATION"></span>**运作**  
 设置为 EXT \_ TDOP \_ 获取 \_ \_ 此子操作的字段偏移量。

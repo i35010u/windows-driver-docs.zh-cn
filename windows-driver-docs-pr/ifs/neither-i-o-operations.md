@@ -1,7 +1,6 @@
 ---
 title: 两种 I/O 操作都不是
 description: 两种 I/O 操作都不是
-ms.assetid: c8fc4742-e220-45c4-9113-ec5658bc09cc
 keywords:
 - 安全 WDK 文件系统，语义模型检查
 - 语义模型检查 WDK 文件系统，i/o 操作都不是
@@ -9,12 +8,12 @@ keywords:
 - i/o 操作 WDK 文件系统都不是
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bac5c73f36c64cb50c6a5591692abdecae91ba1
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: e14edcb6d1d49dcec51d0e653098c89e95424b40
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064984"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841137"
 ---
 # <a name="neither-io-operations"></a>两种 I/O 操作都不是
 

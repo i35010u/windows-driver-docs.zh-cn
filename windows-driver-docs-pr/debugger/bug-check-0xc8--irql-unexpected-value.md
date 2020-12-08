@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0xC8 IRQL_UNEXPECTED_VALUE
-description: IRQL_UNEXPECTED_VALUE bug 检查具有 0x000000C8 值。 这表示处理器的 IRQL 不应在此时间。
-ms.assetid: eff166ab-e245-48ea-ab9e-9bb722814acf
+description: IRQL_UNEXPECTED_VALUE bug 检查的值为0x000000C8。 这表明该处理器的 IRQL 目前并不应如此。
 keywords:
 - Bug 检查 0xC8 IRQL_UNEXPECTED_VALUE
 - IRQL_UNEXPECTED_VALUE
@@ -13,23 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a52a8a047cd55e36daafa2bf6046a95779773809
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 00d0def668079ee8b7e02069a2df0fa8aca6cfe2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67518931"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841157"
 ---
-# <a name="bug-check-0xc8-irqlunexpectedvalue"></a>Bug 检查 0xC8：IRQL\_UNEXPECTED\_VALUE
+# <a name="bug-check-0xc8-irql_unexpected_value"></a>Bug 检查0xC8： IRQL \_ 意外 \_ 值
 
 
-IRQL\_意外的\_值 bug 检查的值为 0x000000C8。 这表示处理器的 IRQL 不应在此时间。
+IRQL \_ 意外 \_ 值 bug 检查的值为0x000000C8。 这表明该处理器的 IRQL 目前并不应如此。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="irqlunexpectedvalue-parameters"></a>IRQL\_意外的\_值参数
+## <a name="irql_unexpected_value-parameters"></a>IRQL \_ 意外 \_ 值参数
 
 
 <table>
@@ -47,31 +46,31 @@ IRQL\_意外的\_值 bug 检查的值为 0x000000C8。 这表示处理器的 IRQ
 <tr class="odd">
 <td align="left"><p>1</p></td>
 <td align="left"><p>以下位计算的值：</p>
-<p>(Current IRQL &lt;&lt; 16) | (Expected IRQL &lt;&lt; 8) | UniqueValue</p></td>
+<p> (当前 IRQL &lt; &lt; 16) | (预期的 irql &lt; &lt; 8) |UniqueValue</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
-<td align="left"><p>零，或<strong>APC-&gt;KernelRoutine</strong></p></td>
+<td align="left"><p>零或 <strong>APC- &gt; KernelRoutine</strong></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>3</p></td>
-<td align="left"><p>零，或<strong>APC</strong></p></td>
+<td align="left"><p>零或 <strong>APC</strong></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>4</p></td>
-<td align="left"><p>零，或<strong>APC-&gt;NormalRoutine</strong></p></td>
+<td align="left"><p>零或 <strong>APC- &gt; NormalRoutine</strong></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-您可以通过计算 （参数 1 和 0xFF） 来确定"UniqueValue"。 如果"UniqueValue"是零个或一个，参数 2、 参数 3 和参数 4 将等于所指示的 APC 指针。 否则，这些参数将等于零。
+可以通过计算 (参数1和 0xFF) 来确定 "UniqueValue"。 如果 "UniqueValue" 为零或1，参数2、参数3和参数4将等于指示的 APC 指针。 否则，这些参数将等于零。
 
 <a name="cause"></a>原因
 -----
 
-此错误通常是由设备驱动程序或一段时间内更改的 IRQL 和不能在该时间段的末尾还原原始的 IRQL 的另一个较低级别程序引起的。 例如，该例程可能已获取旋转锁并无法释放它。
+此错误通常是由设备驱动程序或另一个较低级别的程序导致的，这些程序在某段时间内更改了 IRQL，而在该时间段结束时未还原原始的 IRQL。 例如，例程可能已获取旋转锁，但未能释放它。
 
  
 

@@ -1,15 +1,14 @@
 ---
 title: 使用 INF AddProperty 指令和 INF DelProperty 指令
 description: 使用 INF AddProperty 指令和 INF DelProperty 指令
-ms.assetid: e5ae8d66-b2dc-409e-bdac-9034a9e24672
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fd046f1810898ccffcef1b6aaac3ccebd98568db
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: c714c9ed1ee6c38359706cf1b3bfe46de0c31801
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096379"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840961"
 ---
 # <a name="using-the-inf-addproperty-directive-and-the-inf-delproperty-directive"></a>使用 INF AddProperty 指令和 INF DelProperty 指令
 
@@ -26,24 +25,24 @@ ms.locfileid: "89096379"
 
 -   [**INF ClassInstall32 节**](inf-classinstall32-section.md)
 
--   [**INF InterfaceInstall32 部分**](inf-interfaceinstall32-section.md)引用的*安装界面部分*
+-   [**INF InterfaceInstall32 部分**](inf-interfaceinstall32-section.md)引用的 *安装界面部分*
 
--   由[**INF AddInterface 指令**](inf-addinterface-directive.md)引用的*添加接口部分*
+-   由 [**INF AddInterface 指令**](inf-addinterface-directive.md)引用的 *添加接口部分*
 
 ### <a name="using-the-inf-addproperty-directive"></a>使用 INF AddProperty 指令
 
-若要修改属性值，请在安装设备实例、设备安装程序类、设备接口类或设备接口的部分中包括 INF **AddProperty** 指令。 **AddProperty**指令引用一个或多个*添加属性节*，其中包含指定属性的项、如何修改属性以及用于修改属性的值。 **AddProperty**指令的格式如下所示：
+若要修改属性值，请在安装设备实例、设备安装程序类、设备接口类或设备接口的部分中包括 INF **AddProperty** 指令。 **AddProperty** 指令引用一个或多个 *添加属性节*，其中包含指定属性的项、如何修改属性以及用于修改属性的值。 **AddProperty** 指令的格式如下所示：
 
 **AddProperty =**<em>添加属性</em>-节 \[ **，**<em>添加属性-节</em> \] .。。
 
-添加属性部分中的每行指定一个属性。 下面显示了两个可能的行格式，它们指定属性信息。 显示的第一行格式按其名称指定属性。 此格式只能与 DEVPKEY_DrvPkg_*Xxx* 属性一起使用。 第二个线条格式通过相应 [属性键](property-keys.md)的属性类别和属性标识符来指定属性。 此第二种格式可用于指定系统定义的属性或 [自定义设备属性](creating-custom-device-properties.md)。
+添加属性部分中的每行指定一个属性。 下面显示了两个可能的行格式，它们指定属性信息。 显示的第一行格式按其名称指定属性。 此格式只能与 DEVPKEY_DrvPkg_ *Xxx* 属性一起使用。 第二个线条格式通过相应 [属性键](property-keys.md)的属性类别和属性标识符来指定属性。 此第二种格式可用于指定系统定义的属性或 [自定义设备属性](creating-custom-device-properties.md)。
 
 **\[**<em>添加-属性部分</em> **\]** 
-<em>属性-名称</em>**,,, \[ **<em>标志</em>** \] 、**<em>值</em> 
- **{**<em>属性类别-guid</em>**}、**<em>属性 pid</em>**、**<em>类型</em>**、 \[ **<em>标志</em>** \] 、**<em>值</em>输入值提供以下内容：
+<em>属性-名称</em>**,,, \[**<em>标志</em>**\] 、**<em>值</em> 
+ **{**<em>属性类别-guid</em>**}、**<em>属性 pid</em>**、**<em>类型</em>**、 \[**<em>标志</em>**\] 、**<em>值</em>输入值提供以下内容：
 
 <a href="" id="property-name"></a>*属性-名称*  
-标识 DEVPKEY_DrvPkg_*Xxx* 属性的名称。 例如， **DeviceModel**表示[**DEVPKEY_DrvPkg_VendorWebSite**](./devpkey-drvpkg-vendorwebsite.md)属性的[**DEVPKEY_DrvPkg_Model**](./devpkey-drvpkg-model.md)属性或**DeviceVendorWebSite**。
+标识 DEVPKEY_DrvPkg_ *Xxx* 属性的名称。 例如， **DeviceModel** 表示 [**DEVPKEY_DrvPkg_VendorWebSite**](./devpkey-drvpkg-vendorwebsite.md)属性的 [**DEVPKEY_DrvPkg_Model**](./devpkey-drvpkg-model.md)属性或 **DeviceVendorWebSite**。
 
 <a href="" id="property-category-guid"></a>*属性类别-guid*  
 属性所属的属性类别的 GUID 值。 例如，系统定义的 [**DEVPKEY_Device_FriendlyName**](./devpkey-device-friendlyname.md) 属性。 GUID 值还可以指定自定义设备类别。
@@ -60,7 +59,7 @@ ms.locfileid: "89096379"
 <a href="" id="value"></a>value  
 用于修改属性值的值。
 
-下面的 **AddProperty** 指令示例包含两个行条目。 第一行包含 *属性名称* 条目值 "DeviceModel" 和 *值* 输入值 "采样设备型号名称"。 此项设置 DEVPKEY_DrvPkg_Model 属性。 第二行条目在自定义属性类别中设置自定义属性。 *属性类别 guid*条目值为 "c22189e4-8bf3-4e6d-8467-8dc6d95e2a7e"，*属性标识符*条目值为 "2"。 可选的 *Flags* 条目值不存在， *类型* entry 值为 "18" (DEVPROP_TYPE_STRING) 。 *值*输入值为 "属性1的字符串值"。
+下面的 **AddProperty** 指令示例包含两个行条目。 第一行包含 *属性名称* 条目值 "DeviceModel" 和 *值* 输入值 "采样设备型号名称"。 此项设置 DEVPKEY_DrvPkg_Model 属性。 第二行条目在自定义属性类别中设置自定义属性。 *属性类别 guid* 条目值为 "c22189e4-8bf3-4e6d-8467-8dc6d95e2a7e"，*属性标识符* 条目值为 "2"。 可选的 *Flags* 条目值不存在， *类型* entry 值为 "18" (DEVPROP_TYPE_STRING) 。 *值* 输入值为 "属性1的字符串值"。
 
 ```cpp
 [Root_Install.NT]
@@ -75,19 +74,19 @@ DeviceModel,,,,"Sample Device Model Name"
 
 若要删除属性，请在安装设备实例、设备安装程序类、设备接口类或设备接口的部分中包括 INF **DelProperty** 指令。
 
-[**Inf DelProperty 指令**](inf-delproperty-directive.md)的主要用途是在用于更新设备安装的 inf 文件中使用。 在这种情况下， **DelProperty** 指令可用于删除以前安装设置的属性，但更新的安装不再需要该属性。 使用 **DelProperty** 指令时要格外小心。 不应使用**DelProperty**来删除可能还由系统组件或其他 INF 文件设置的属性。
+[**Inf DelProperty 指令**](inf-delproperty-directive.md)的主要用途是在用于更新设备安装的 inf 文件中使用。 在这种情况下， **DelProperty** 指令可用于删除以前安装设置的属性，但更新的安装不再需要该属性。 使用 **DelProperty** 指令时要格外小心。 不应使用 **DelProperty** 来删除可能还由系统组件或其他 INF 文件设置的属性。
 
-**DelProperty**指令具有以下格式：
+**DelProperty** 指令具有以下格式：
 
 **DelProperty =**<em>del-property 节</em> \[ **，**<em>del</em> \] .。。
 
-*Del-属性部分*中的每行指定一个属性。 下面显示了两个可能的行格式，它们指定属性信息。 显示的第一行格式按其名称指定属性。 此格式只能与 DEVPKEY_DrvPkg_*Xxx* 属性一起使用。 第二个线条格式通过相应 [属性键](property-keys.md)的属性类别和属性标识符来指定属性。 第二种格式可用于指定系统定义的属性或 [自定义设备属性](creating-custom-device-properties.md)。
+*Del-属性部分* 中的每行指定一个属性。 下面显示了两个可能的行格式，它们指定属性信息。 显示的第一行格式按其名称指定属性。 此格式只能与 DEVPKEY_DrvPkg_ *Xxx* 属性一起使用。 第二个线条格式通过相应 [属性键](property-keys.md)的属性类别和属性标识符来指定属性。 第二种格式可用于指定系统定义的属性或 [自定义设备属性](creating-custom-device-properties.md)。
 
 **\[**<em>del-属性部分</em> **\]** 
 *属性-名称* \[**，，** *标志* \[ **，**<em>值</em> \] \] **{**<em>属性类别-guid</em>**}，** *属性 pid* \[ **，** *标志* \[ **，**<em>值</em> \] \] 输入值提供以下内容：
 
 <a href="" id="property-name"></a>*属性-名称*  
-标识 DEVPKEY_DrvPkg_*Xxx* 属性的名称。 例如， **DeviceModel**表示[**DEVPKEY_Device_FriendlyName**](./devpkey-device-friendlyname.md)属性的[**DEVPKEY_DrvPkg_Model**](./devpkey-drvpkg-model.md)属性或**DeviceVendorWebSite**。
+标识 DEVPKEY_DrvPkg_ *Xxx* 属性的名称。 例如， **DeviceModel** 表示 [**DEVPKEY_Device_FriendlyName**](./devpkey-device-friendlyname.md)属性的 [**DEVPKEY_DrvPkg_Model**](./devpkey-drvpkg-model.md)属性或 **DeviceVendorWebSite**。
 
 <a href="" id="property-category-guid"></a>*属性类别-guid*  
 属性所属的属性类别的 GUID 值。 例如，系统定义的 [**DEVPKEY_Device_FriendlyName**](./devpkey-device-friendlyname.md) 属性。 GUID 值还可以指定自定义设备类别。

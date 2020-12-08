@@ -1,15 +1,14 @@
 ---
 title: 安全 \_ 信息
 description: 安全 \_ 信息
-ms.assetid: 28023f0f-62ae-407b-b81b-1c98499df9a2
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a05922f2e7661fc7315f5f73e3ca924f97d64233
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 30774dfb008eaa9460225f47d0cf8eaa58fcf4eb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89062972"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839917"
 ---
 # <a name="security_information"></a>安全 \_ 信息
 
@@ -43,9 +42,9 @@ typedef ULONG SECURITY_INFORMATION, *PSECURITY_INFORMATION;
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
+<th align="left">“值”</th>
 <th align="left">含义</th>
-<th align="left">Access</th>
+<th align="left">访问</th>
 </tr>
 </thead>
 <tbody>

@@ -1,19 +1,18 @@
 ---
 title: 纹理格式列表
 description: 纹理格式列表
-ms.assetid: 5e60d6e3-d0a2-4b52-86cb-06de839f970a
 keywords:
 - DirectX 8.0 发行说明 WDK Windows 2000 显示，纹理格式列表
 - 纹理格式列出 WDK DirectX 8。0
 - DPIXELFORMAT
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c07b45f4f348591ddd1b3ce4af4fc0d53305037
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: 53a22fbc190a1a7cde649966dcd172c99862eb6c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361425"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838931"
 ---
 # <a name="the-texture-format-list"></a>纹理格式列表
 
@@ -21,13 +20,13 @@ ms.locfileid: "94361425"
 ## <span id="ddk_the_texture_format_list_gg"></span><span id="DDK_THE_TEXTURE_FORMAT_LIST_GG"></span>
 
 
-Direct 8.0 引入了一种用于描述像素格式的新机制。 在以前版本的 DirectDraw 和 Direct3D 像素格式中，数据结构 ( [**DDPIXELFORMAT**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ddpixelformat)) ，其中包含有关每个颜色通道的位数以及每个颜色通道的位数 (以及标志和大小字段) 的信息。 DirectX 8.0 中的像素格式是简单的 Dword，用于识别特定像素格式，并与 *fourcc* 兼容 (Direct3D 像素格式只需 fourcc，而不是最小有效字节数为零) 。
+Direct 8.0 引入了一种用于描述像素格式的新机制。 在以前版本的 DirectDraw 和 Direct3D 像素格式中，数据结构 ([**DDPIXELFORMAT**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ddpixelformat)) ，其中包含有关每个颜色通道的位数以及每个颜色通道的位数 (以及标志和大小字段) 的信息。 DirectX 8.0 中的像素格式是简单的 Dword，用于识别特定像素格式，并与 *fourcc* 兼容 (Direct3D 像素格式只需 fourcc，而不是最小有效字节数为零) 。
 
 DDPIXELFORMAT 数据结构不再通过 API 级接口公开。 但是，它仍在 DDI 级别使用。 驱动程序通过纹理格式数组（其中包含其嵌入式 DDPIXELFORMAT 数据结构的图面说明）来报告其支持的纹理格式。 不过，现在可以使用嵌入的像素格式结构来报告新样式像素格式。 若要使用 DDPIXELFORMAT 数据结构指定新的样式像素格式，请将结构的 **dwFlags** 字段设置为值 DDPF \_ D3DFORMAT，并将新的像素格式标识符存储在 **dwFourCC** 字段中。
 
-此外，某些其他新字段已添加到 DDPIXELFORMAT (新字段已添加为具有现有字段的联合成员，因此数据结构的大小) 相同。 这些字段包括： **dwOperations** 、 **dwPrivateFormatBitCount** 、 **wFlipMSTypes** 和 **wBltMSTypes** 。
+此外，某些其他新字段已添加到 DDPIXELFORMAT (新字段已添加为具有现有字段的联合成员，因此数据结构的大小) 相同。 这些字段包括： **dwOperations**、 **dwPrivateFormatBitCount**、 **wFlipMSTypes** 和 **wBltMSTypes**。
 
-DirectX 8.0 DDI 兼容驱动程序应继续通过标准机制（即，全局驱动程序数据结构中所报告的纹理格式列表 ( [**D3DHAL \_ GLOBALDRIVERDATA**](/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_d3dhal_globaldriverdata)) 和为响应 \_ 来自 [**DdGetDriverInfo**](/windows/win32/api/ddrawint/nc-ddrawint-pdd_getdriverinfo)的 GUID ZPixelFormats 报告的 Z/模具列表）来报告 DX7 样式表面格式。 但是，驱动程序还应通过下面所述的新的 DirectX 8.0 DDI 机制来报告其所有受支持的表面格式。
+DirectX 8.0 DDI 兼容驱动程序应继续通过标准机制（即，全局驱动程序数据结构中所报告的纹理格式列表 ([**D3DHAL \_ GLOBALDRIVERDATA**](/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_d3dhal_globaldriverdata)) 和为响应 \_ 来自 [**DdGetDriverInfo**](/windows/win32/api/ddrawint/nc-ddrawint-pdd_getdriverinfo)的 GUID ZPixelFormats 报告的 Z/模具列表）来报告 DX7 样式表面格式。 但是，驱动程序还应通过下面所述的新的 DirectX 8.0 DDI 机制来报告其所有受支持的表面格式。
 
 DirectX 8.0 DDI 样式表面格式使用 **GetDriverInfo2** 报告。 运行时使用两个 **GetDriverInfo2** 查询类型从驱动程序查询表面格式。 D3DGDI2 \_ 类型 \_ GETFORMATCOUNT 用于请求驱动程序支持的 DirectX 8.0 样式表面格式的数目。 D3DGDI2 \_ 类型 \_ iformatprovider.getformat 用于从驱动程序查询特定的表面格式。
 

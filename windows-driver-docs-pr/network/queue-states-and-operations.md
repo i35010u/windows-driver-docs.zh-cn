@@ -1,15 +1,14 @@
 ---
 title: 队列状态和操作
 description: 队列状态和操作
-ms.assetid: 892f8f19-b94e-4950-af88-334c9a8b8c0d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ccd0504896538435e1691c34048a2378786fb7e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 6bd9eeb7f23252d6552368c7f65edd86d31f4dd9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206283"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839449"
 ---
 # <a name="queue-states-and-operations"></a>队列状态和操作
 
@@ -19,16 +18,16 @@ ms.locfileid: "89206283"
 
 对于每个队列，网络适配器必须支持以下操作状态集：
 
-<a href="" id="undefined"></a>Undefined  
+<a href="" id="undefined"></a>尚未  
 队列未分配。 为了分配队列，过量驱动程序将发送 [OID \_ 接收 \_ 筛选器 \_ 分配 \_ 队列](./oid-receive-filter-allocate-queue.md) OID 请求。
 
 <a href="" id="allocated"></a>已分配  
-*分配*状态是队列的初始状态。 当队列处于分配状态时，过量驱动程序通常使用 [oid \_ 接收 \_ 筛选器 \_ 设置 \_ 筛选器](./oid-receive-filter-set-filter.md) OID 在队列上设置筛选器，或使用 [oid \_ 接收 \_ 筛选器 \_ 队列 \_ 分配 \_ 完成](./oid-receive-filter-queue-allocation-complete.md) oid 请求完成队列分配。
+*分配* 状态是队列的初始状态。 当队列处于分配状态时，过量驱动程序通常使用 [oid \_ 接收 \_ 筛选器 \_ 设置 \_ 筛选器](./oid-receive-filter-set-filter.md) OID 在队列上设置筛选器，或使用 [oid \_ 接收 \_ 筛选器 \_ 队列 \_ 分配 \_ 完成](./oid-receive-filter-queue-allocation-complete.md) oid 请求完成队列分配。
 
-<a href="" id="set"></a>字符集  
+<a href="" id="set"></a>设置  
 在 *设置* 状态下，队列至少分配了一个筛选器，但过量驱动程序尚未发送 [OID \_ 接收 \_ 筛选器 \_ 队列 \_ 分配 \_ 完成](./oid-receive-filter-queue-allocation-complete.md) oid。
 
-<a href="" id="running"></a>耗尽  
+<a href="" id="running"></a>正在运行  
 在 " *正在运行* " 状态下，队列设置了筛选器，队列分配已完成，微型端口适配器指示队列的接收数据包。
 
 <a href="" id="paused"></a>悬停  
@@ -101,8 +100,8 @@ ms.locfileid: "89206283"
 <td align="left"></td>
 <td align="left"><p>设置</p></td>
 <td align="left"><p>设置</p></td>
-<td align="left"><p>正在运行</p></td>
-<td align="left"><p>正在运行</p></td>
+<td align="left"><p>运行</p></td>
+<td align="left"><p>运行</p></td>
 <td align="left"></td>
 <td align="left"></td>
 </tr>
@@ -201,7 +200,7 @@ ms.locfileid: "89206283"
 
  
 
-**注意**   上表中列出的事件包括一些不会导致状态更改的辅助事件。 这些辅助事件包括在表中，用于指定这些事件的有效状态。
+**注意**  上表中列出的事件包括一些不会导致状态更改的辅助事件。 这些辅助事件包括在表中，用于指定这些事件的有效状态。
 
  
 

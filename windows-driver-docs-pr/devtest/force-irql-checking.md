@@ -1,19 +1,18 @@
 ---
 title: 强制 IRQL 检查
 description: 强制 IRQL 检查
-ms.assetid: cb972a72-6504-4ed7-9618-2830192fda1d
 keywords:
 - 强制执行 IRQL 检查功能 WDK 驱动程序验证程序
 - IRQL 监视 WDK 驱动程序验证程序
 - 旋转锁定 WDK 驱动程序验证程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 785badb456afbfcf5c68419d1e58e7a1d1d1a34d
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 04b51ead05842565710d26982a0f8eecf53cd304
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383443"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839755"
 ---
 # <a name="force-irql-checking"></a>强制 IRQL 检查
 
@@ -37,7 +36,7 @@ ms.locfileid: "89383443"
 
 ### <a name="span-idcalling_keentercriticalregion_or_keleavecriticalregion_at_dispatch_level_or_abovespanspan-idcalling_keentercriticalregion_or_keleavecriticalregion_at_dispatch_level_or_abovespanspan-idcalling_keentercriticalregion_or_keleavecriticalregion_at_dispatch_level_or_abovespancalling-keentercriticalregion-or-keleavecriticalregion-at-dispatch_level-or-above"></a><span id="Calling_KeEnterCriticalRegion_or_KeLeaveCriticalRegion_at_DISPATCH_LEVEL_or_Above"></span><span id="calling_keentercriticalregion_or_keleavecriticalregion_at_dispatch_level_or_above"></span><span id="CALLING_KEENTERCRITICALREGION_OR_KELEAVECRITICALREGION_AT_DISPATCH_LEVEL_OR_ABOVE"></span>在调度 \_ 级别或更高级别调用 KeEnterCriticalRegion 或 KeLeaveCriticalRegion
 
-[**KeEnterCriticalRegion**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keentercriticalregion) 和 [**KeLeaveCriticalRegion**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keleavecriticalregion) 是一些 api，可用于同步关键驱动程序代码序列的执行，同时提供普通的内核异步过程调用 (apc) 。 不能在**KeLeaveCriticalRegion** IRQL = 调度**KeEnterCriticalRegion** \_ 级别或更高级别调用 KeEnterCriticalRegion 和 KeLeaveCriticalRegion api。 在调度级别或更高级别调用 **KeEnterCriticalRegion** 或 **KeLeaveCriticalRegion** \_ 可能会导致系统挂起或内存损坏。
+[**KeEnterCriticalRegion**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keentercriticalregion) 和 [**KeLeaveCriticalRegion**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keleavecriticalregion) 是一些 api，可用于同步关键驱动程序代码序列的执行，同时提供普通的内核异步过程调用 (apc) 。 不能在 **KeLeaveCriticalRegion** IRQL = 调度 **KeEnterCriticalRegion** \_ 级别或更高级别调用 KeEnterCriticalRegion 和 KeLeaveCriticalRegion api。 在调度级别或更高级别调用 **KeEnterCriticalRegion** 或 **KeLeaveCriticalRegion** \_ 可能会导致系统挂起或内存损坏。
 
 从 Windows 7 开始，如果启用了强制 IRQL 检查选项，则驱动程序验证程序将检测在调度 \_ 级别或更高级别上对这些 api 的调用。
 
@@ -47,7 +46,7 @@ ms.locfileid: "89383443"
 
 -   **在命令行中**
 
-    在命令行中，强制 IRQL 检查选项由 **Bit 1 (0x2) **表示。 若要激活强制 IRQL 检查，请使用标志值0x2 或向标志值添加0x2。 例如：
+    在命令行中，强制 IRQL 检查选项由 **Bit 1 (0x2)** 表示。 若要激活强制 IRQL 检查，请使用标志值0x2 或向标志值添加0x2。 例如：
 
     ```
     verifier /flags 0x2 /driver MyDriver.sys
@@ -72,7 +71,7 @@ ms.locfileid: "89383443"
 -   **使用驱动程序验证器管理器**
 
     1.  启动驱动程序验证器管理器。 在命令提示符窗口中键入 **Verifier** 。
-    2.  选择 " **为代码开发人员 (创建自定义设置") ** ，然后单击 " **下一步**"。
+    2.  选择 " **为代码开发人员 (创建自定义设置")** ，然后单击 " **下一步**"。
     3.  选择 " **从完整列表中选择单个设置**"。
     4.  选择 (检查) **强制执行 IRQL 检查**。
 

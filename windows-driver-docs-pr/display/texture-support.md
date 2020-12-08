@@ -1,23 +1,22 @@
 ---
 title: 纹理支持
 description: 纹理支持
-ms.assetid: 8ae4d4bf-9fef-4e5e-a88a-5cb93519c802
 keywords:
-- 绘图页上翻转 WDK DirectDraw，纹理
+- 绘图页翻转 WDK DirectDraw，纹理
 - DirectDraw 翻转 WDK Windows 2000 显示，纹理
-- 页翻转 WDK DirectDraw，纹理
+- 页面翻转 WDK DirectDraw，纹理
 - 翻转 WDK DirectDraw，纹理
-- 纹理 WDK DirectDraw 翻转
-- 三维表面之上翻转 WDK DirectDraw
-- 显示 WDK DirectDraw 翻转
+- 纹理 WDK DirectDraw，翻转
+- 3D surface 反向 WDK DirectDraw
+- surface DirectDraw，翻转
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e03513d780c4ccdbcf70b84919c46266c84f7672
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 51f9f241aa24c843a9c82a5ab0451e587608d6cf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545794"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838933"
 ---
 # <a name="texture-support"></a>纹理支持
 
@@ -25,7 +24,7 @@ ms.locfileid: "56545794"
 ## <span id="ddk_texture_support_gg"></span><span id="DDK_TEXTURE_SUPPORT_GG"></span>
 
 
-在 3D 空间中的纹理翻转像任何其他面一样。 一个*纹理*是只是一个平面映像，具有到三维表面之上的位设置为指定可以将转换 （纹理映射）。 纹理可以映射到三维表面之上，动作可以顺利地呈现的页面翻转纹理。 翻转等待呈现器完成读取 （如正在等待扫描行）。 如果翻转的驱动程序支持纹理，它必须能够识别并进行相应处理。 纹理的更多详细信息，请参阅[Direct3D 纹理管理](direct3d-texture-management.md)。
+三维空间中的纹理与任何其他表面的翻转方式相同。 *纹理* 只是一个平面图像，其位设置为指定可将其转换 (纹理映射) 到三维表面。 纹理可以映射到3D 图面上，可以通过页面翻转纹理来平滑地呈现运动。 反向等待呈现器完成读取 (如等待扫描行) 。 如果翻转驱动程序支持纹理，则它必须能够相应地识别和处理它们。 有关纹理的详细信息，请参阅 [Direct3D 纹理管理](direct3d-texture-management.md)。
 
  
 

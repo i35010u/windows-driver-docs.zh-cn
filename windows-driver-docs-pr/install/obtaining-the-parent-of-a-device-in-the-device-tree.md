@@ -1,7 +1,6 @@
 ---
 title: 在设备树中获取某个设备的父设备
 description: 在设备树中获取某个设备的父设备
-ms.assetid: 0ac1ccbb-c926-4d14-975e-127159309361
 keywords:
 - Setupapi.log 函数 WDK，确定父项
 - 确定 WDK Setupapi.log 的父设备
@@ -12,12 +11,12 @@ keywords:
 - 设备树 WDK 中的直接父项
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 32bd735dd4b224dede66fd6df26c5da339aefe85
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: bca3a501a77413913c76e8e324d917217cb33252
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361389"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839075"
 ---
 # <a name="obtaining-the-parent-of-a-device-in-the-device-tree"></a>在设备树中获取某个设备的父设备
 
@@ -25,7 +24,7 @@ ms.locfileid: "94361389"
 
 
 
-本主题介绍如何获取设备树中具有设备节点 ( *devnode* ) 的设备父级的 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data)结构。
+本主题介绍如何获取设备树中具有设备节点 (*devnode*) 的设备父级的 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data)结构。
 
 **在设备树中获取设备的直接父级的 SP_DEVINFO_DATA 结构**
 

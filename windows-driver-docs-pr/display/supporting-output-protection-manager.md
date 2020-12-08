@@ -1,7 +1,6 @@
 ---
 title: 支持输出保护管理器
 description: 支持输出保护管理器
-ms.assetid: 2c138dbd-55ca-4c71-8c8b-b2efd1ca80f2
 keywords:
 - COPP WDK DirectX VA，输出保护管理器
 - 输出保护管理器 WDK 显示
@@ -11,12 +10,12 @@ keywords:
 - 受保护的视频 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c7e65ac55e31c06600d3bd7c7f2d7ab2d48bdd5b
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 19fcf3ee519016cf4c78e6fbec6911dbafdbf540
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064560"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838991"
 ---
 # <a name="supporting-output-protection-manager"></a>支持输出保护管理器
 
@@ -27,7 +26,7 @@ OPM 是) [Windows 2000 显示器驱动程序模型](windows-2000-display-driver-
 
 ## <a name="opm-interface"></a>OPM 接口
 
-**OPM ddi**在语义上类似于[COPP ddi](sample-functions-for-copp.md) ，因为对于 Windows Vista 显示器驱动程序模型，OPM 实质上是 COPP 1.1。 但是，OPM DDI 比 COPP DDI 简单得多，因为 OPM DDI 包含一组函数，而 COPP DDI 通过 DirectDraw 和 DirectX 视频加速 (VA) DDI 进行映射。
+**OPM ddi** 在语义上类似于 [COPP ddi](sample-functions-for-copp.md) ，因为对于 Windows Vista 显示器驱动程序模型，OPM 实质上是 COPP 1.1。 但是，OPM DDI 比 COPP DDI 简单得多，因为 OPM DDI 包含一组函数，而 COPP DDI 通过 DirectDraw 和 DirectX 视频加速 (VA) DDI 进行映射。
 
 如果显示微型端口驱动程序支持在应用程序和驱动程序之间传递受保护的命令、信息和状态，则 Microsoft DirectX 图形内核子系统 (*Dxgkrnl.sys*) 可以成功地打开驱动程序的 OPM DDI。
 
@@ -63,7 +62,7 @@ OPM 是) [Windows 2000 显示器驱动程序模型](windows-2000-display-driver-
 
 [检索有关受保护输出的信息](retrieving-information-about-a-protected-output.md)
 
-[检索有关受保护输出的 COPP 兼容信息](retrieving-copp-compatible-information-about-a-protected-output.md)
+[检索有关受保护输出的 COPP-Compatible 信息](retrieving-copp-compatible-information-about-a-protected-output.md)
 
 [配置受保护输出](configuring-a-protected-output.md)
 

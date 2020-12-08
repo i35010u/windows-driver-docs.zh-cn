@@ -1,7 +1,6 @@
 ---
 title: DEVMODEW 结构
 description: DEVMODEW 结构
-ms.assetid: 26212e3b-a591-4ed6-b441-b130d8d4d948
 keywords:
 - GDI WDK Windows 2000 显示，DEVMODEW 结构
 - 图形驱动程序 WDK Windows 2000 显示，DEVMODEW 结构
@@ -10,12 +9,12 @@ keywords:
 - 绘制 WDK GDI，DEVMODEW 结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f2983e851fafef1a3aed4cee99ca63c1d8a20b10
-ms.sourcegitcommit: abe7fe9f3fbee8d12641433eeab623a4148ffed3
+ms.openlocfilehash: 1b414e634f3f69bb2d35a7473bf8ac18c93cbd36
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92185197"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838935"
 ---
 # <a name="the-devmodew-structure"></a>DEVMODEW 结构
 
@@ -37,7 +36,7 @@ ms.locfileid: "92185197"
 
 - 显示驱动程序 DEVMODEW 初始化
 
-  显示驱动程序的 [**DrvGetModes**](/windows/win32/api/winddi/nf-winddi-drvgetmodes) 入口点将 DEVMODEW 结构的所有成员初始化为零。 然后， *DrvGetModes*将显示驱动程序 DLL 的名称复制到**dmDeviceName**成员，用 DEVMODEW 结构的版本填充**dmSpecVersion**和**dmDriverVersion**成员，并将显示属性信息复制到相应成员。
+  显示驱动程序的 [**DrvGetModes**](/windows/win32/api/winddi/nf-winddi-drvgetmodes) 入口点将 DEVMODEW 结构的所有成员初始化为零。 然后， *DrvGetModes* 将显示驱动程序 DLL 的名称复制到 **dmDeviceName** 成员，用 DEVMODEW 结构的版本填充 **dmSpecVersion** 和 **dmDriverVersion** 成员，并将显示属性信息复制到相应成员。
 
 - 打印机驱动程序 DEVMODEW 初始化
 

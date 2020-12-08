@@ -1,17 +1,16 @@
 ---
 title: 在移动宽带元数据创作向导中描述服务
 description: 在移动宽带元数据创作向导中描述服务
-ms.assetid: 0FA4945C-3CD9-4106-BC47-F89CEF168FDC
 keywords:
 - 在移动宽带元数据创作向导中描述服务
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4bf0caaab67eea403aef7eb505e498813ab939d2
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 8cdf40f5907c138d56c5450f8286be09db6ec2a3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732759"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839761"
 ---
 # <a name="describe-your-service-in-the-mobile-broadband-metadata-authoring-wizard"></a>在移动宽带元数据创作向导中描述服务
 

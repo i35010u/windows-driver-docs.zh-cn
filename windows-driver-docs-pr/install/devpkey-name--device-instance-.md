@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_NAME（设备实例）
 description: DEVPKEY_NAME（设备实例）
-ms.assetid: 4968a215-7e22-4d17-938c-4aa5289b2803
 keywords:
 - ) 设备和驱动程序安装 (设备实例 DEVPKEY_NAME
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: ec2a7f852be8ae1601efda153e825ef07e31ec08
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 4932cfef611f17c5f288ec61c59be7c5b0e26ccd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716902"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839899"
 ---
 # <a name="devpkey_name-device-instance"></a>DEVPKEY_NAME（设备实例）
 
@@ -58,7 +57,7 @@ DEVPKEY_NAME 设备属性表示设备实例的名称。
 
 应使用 DEVPKEY_NAME 设备的值来向用户界面项中的最终用户标识设备实例。
 
-如果设置**DEVPKEY_Device_FriendlyName** ，则检索到的属性值与[**DEVPKEY_Device_FriendlyName**](devpkey-device-friendlyname.md)设备属性的值相同。 否则，DEVPKEY_NAME 的值与 [**DEVPKEY_Device_DeviceDesc**](devpkey-device-devicedesc.md) 设备属性的值相同。
+如果设置 **DEVPKEY_Device_FriendlyName** ，则检索到的属性值与 [**DEVPKEY_Device_FriendlyName**](devpkey-device-friendlyname.md)设备属性的值相同。 否则，DEVPKEY_NAME 的值与 [**DEVPKEY_Device_DeviceDesc**](devpkey-device-devicedesc.md) 设备属性的值相同。
 
 可以调用 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 来检索 DEVPKEY_NAME 属性的值。
 

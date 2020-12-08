@@ -1,19 +1,18 @@
 ---
 title: RSS 哈希函数
 description: RSS 哈希函数
-ms.assetid: e7698573-c3d1-4ac6-a985-93cf7fc6e585
 keywords:
 - 接收方缩放 WDK 网络，哈希
 - RSS WDK 网络，哈希
 - 哈希 WDK RSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 34c86f66053b54087d1447435b39450ce7d7a537
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: d1373a360f9aeb95d9a202c529c56ee09bb1f13f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211593"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839221"
 ---
 # <a name="rss-hashing-functions"></a>RSS 哈希函数
 
@@ -32,13 +31,13 @@ NIC 或其微型端口驱动程序使用 RSS 哈希函数来计算 RSS 哈希值
 - **NdisHashFunctionReserved3**
 
 >[!NOTE]
-> 目前， **NdisHashFunctionToeplitz** 是可用于微型端口驱动程序的唯一哈希函数。 其他哈希函数是为 NDIS 预留的。 
+> 目前， **NdisHashFunctionToeplitz** 是可用于微型端口驱动程序的唯一哈希函数。 其他哈希函数是为 NDIS 预留的。 
 
 微型端口驱动程序应标识在驱动程序指示接收的数据之前，它在每个 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构中所使用的哈希函数和值。 有关详细信息，请参阅 [指示 RSS 接收数据](indicating-rss-receive-data.md)。
 
 ## <a name="examples"></a>示例
 
-以下四个伪代码示例显示了如何计算 **NdisHashFunctionToeplitz** 哈希值。 这些示例表示可用于 **NdisHashFunctionToeplitz**的四种可能的哈希类型。 有关哈希类型的详细信息，请参阅 [RSS 哈希类型](rss-hashing-types.md)。
+以下四个伪代码示例显示了如何计算 **NdisHashFunctionToeplitz** 哈希值。 这些示例表示可用于 **NdisHashFunctionToeplitz** 的四种可能的哈希类型。 有关哈希类型的详细信息，请参阅 [RSS 哈希类型](rss-hashing-types.md)。
 
 若要简化示例，需要一个用于处理输入字节流的通用算法。 在后面的四个示例中定义字节流的特定格式。
 

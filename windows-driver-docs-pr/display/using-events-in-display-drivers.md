@@ -1,18 +1,17 @@
 ---
 title: 使用显示驱动程序中的事件
 description: 使用显示驱动程序中的事件
-ms.assetid: 0c02d64f-0aad-43b4-b105-09ab8901e0de
 keywords:
 - 事件 WDK Windows 2000 显示
 - 显示驱动程序 WDK Windows 2000，事件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 12a5c613dcf4515980b5bd358fc6dd978610a59d
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: e85dd7a4bdedbe99b4acb58dcd6d23a0788f051c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717570"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840745"
 ---
 # <a name="using-events-in-display-drivers"></a>使用显示驱动程序中的事件
 
@@ -36,7 +35,7 @@ GDI 为事件提供支持，这是一种可用于同步在调度级别下运行�
 <thead>
 <tr class="header">
 <th align="left">函数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

@@ -1,7 +1,6 @@
 ---
 title: 使用 AVStream 将视频捕获到 VRAM
 description: 使用 AVStream 将视频捕获到 VRAM
-ms.assetid: c4ca4a67-83cb-4a89-bc84-e06b1dc67b66
 keywords:
 - AVStream WDK，VRAM 捕获
 - VRAM 捕获 WDK AVStream
@@ -13,12 +12,12 @@ keywords:
 - 微型驱动程序 WDK VRAM 捕获
 ms.date: 06/16/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 152a2253a1cf39820c69ddf8c5f3f7e65fc8463e
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: dd38a5bff850dd99667e242aef2098893d28560c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191601"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839363"
 ---
 # <a name="capturing-video-to-vram-using-avstream"></a>使用 AVStream 将视频捕获到 VRAM
 

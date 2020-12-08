@@ -1,15 +1,14 @@
 ---
 title: 供应商扩展的属性
 description: 供应商扩展的属性
-ms.assetid: bcc89272-c14d-4d46-a2ca-7da0fb188111
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f1279041b5a64aacdc02117432c8a06a84a4993a
-ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
+ms.openlocfilehash: 21942a8fc77b6371d096b5564b96527c2ab18c44
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67716903"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840703"
 ---
 # <a name="vendor-extended-properties"></a>供应商扩展的属性
 
@@ -17,9 +16,9 @@ ms.locfileid: "67716903"
 
 
 
-一个**PropCode**中的条目**DeviceData** INF 文件部分 (请参阅中的示例[Vendor-Extended 功能](vendor-extended-features.md)) 列出了所有供应商扩展的属性代码，以分隔逗号。 对于每个属性的代码，窗体的条目**PropCode**_XXXX_必须存在，其中 XXXX 是大写十六进制代码值。 该条目应列出 WIA 属性代码和文本说明 （它不需要进行本地化） 用引号括起来。
+" **DeviceData** INF 文件" 部分中的 **PropCode** 条目 (参阅供应商 [扩展功能](vendor-extended-features.md)) 中的示例列出了所有供应商扩展的属性代码，用逗号分隔。 对于每个属性代码，都必须存在 **PropCode**_XXXX_ 形式的条目，其中 XXXX 是大写十六进制形式的代码值。 该条目应列出 WIA 属性代码和文本说明 (不需要将其本地化) 括在引号中。
 
-WIA 属性代码应在 0x9802 和 0x11802，是为供应商定义 WIA 设备属性定义的范围之间。 可以通过访问的属性**IWiaPropertyStorage::GetPropertyStream**并**IWiaPropertyStorage::SetPropertyStream** Microsoft Windows SDK 中介绍的方法文档。
+WIA 属性代码应介于0x9802 和0x11802 之间，这是为供应商定义的 WIA 设备属性定义的范围。 可以通过 Microsoft Windows SDK 文档中所述的 **IWiaPropertyStorage：： GetPropertyStream** 和 **IWiaPropertyStorage：： SetPropertyStream** 方法来访问这些属性。
 
  
 

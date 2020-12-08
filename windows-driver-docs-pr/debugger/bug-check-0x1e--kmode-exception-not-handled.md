@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x1E KMODE_EXCEPTION_NOT_HANDLED
 description: KMODE_EXCEPTION_NOT_HANDLED bug 检查的值为0x0000001E。 这表示内核模式程序生成了错误处理程序未捕获的异常。
-ms.assetid: 4a30b770-b2c4-4fdd-b431-95f2b40ef5f7
 keywords:
 - Bug 检查 0x1E KMODE_EXCEPTION_NOT_HANDLED
 - KMODE_EXCEPTION_NOT_HANDLED
@@ -13,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 96dda9cf11e66d889dfdbd59ad52e60b38e8380b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 327e93619000a55b571485bc750c62681b96e785
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210239"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839823"
 ---
 # <a name="bug-check-0x1e-kmode_exception_not_handled"></a>Bug 检查0x1E： \_ \_ 未处理 KMODE \_ 异常
 
@@ -40,7 +39,7 @@ ms.locfileid: "89210239"
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -83,7 +82,7 @@ ms.locfileid: "89210239"
 
     发生了内存访问冲突。 Bug 检查 (参数4是驱动程序尝试访问的地址。 ) 
 
-有关异常代码的完整列表，请参阅 [NTSTATUS 值](/openspecs/windows_protocols/ms-erref/596a1078-e883-4972-9bbc-49e60bebca55)。 异常代码在 *ntstatus*中定义，该文件是 [Windows 驱动程序工具包](../index.yml)提供的标头文件。  (有关详细信息，请参阅 [Windows 驱动程序工具包中的头文件](../gettingstarted/header-files-in-the-windows-driver-kit.md)) 。 
+有关异常代码的完整列表，请参阅 [NTSTATUS 值](/openspecs/windows_protocols/ms-erref/596a1078-e883-4972-9bbc-49e60bebca55)。 异常代码在 *ntstatus* 中定义，该文件是 [Windows 驱动程序工具包](../index.yml)提供的标头文件。  (有关详细信息，请参阅 [Windows 驱动程序工具包中的头文件](../gettingstarted/header-files-in-the-windows-driver-kit.md)) 。 
 
 
 <a name="remarks"></a>备注
@@ -119,11 +118,11 @@ ms.locfileid: "89210239"
 如果异常的特定原因未知，请考虑使用以下过程获取堆栈跟踪。
 
 > [!NOTE]
-> 此过程假定您可以找到 **NT！PspUnhandledExceptionInSystemThread**。 但是，在某些情况下 (如访问冲突崩溃) 你将无法执行此操作。 在这种情况下，请查找 **ntoskrnl.exe！KiDispatchException**。 传递给此函数的第三个参数是一个陷阱帧地址。 使用 " [**陷井** (显示 ](-trap--display-trap-frame-.md) 带有此地址的捕获帧) 命令，将注册上下文设置为合适的值。 然后，你可以执行堆栈跟踪并发出其他命令。
+> 此过程假定您可以找到 **NT！PspUnhandledExceptionInSystemThread**。 但是，在某些情况下 (如访问冲突崩溃) 你将无法执行此操作。 在这种情况下，请查找 **ntoskrnl.exe！KiDispatchException**。 传递给此函数的第三个参数是一个陷阱帧地址。 使用 " [**陷井** (显示](-trap--display-trap-frame-.md) 带有此地址的捕获帧) 命令，将注册上下文设置为合适的值。 然后，你可以执行堆栈跟踪并发出其他命令。
 
 **如果正常堆栈跟踪过程失败，则获取堆栈跟踪**
 
-1.  使用[ **kb** (显示 stack backtrace) ](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)命令在堆栈跟踪中显示参数。 查找对 **NT！PspUnhandledExceptionInSystemThread**。  (如果未列出此函数，请参阅下面的说明。 ) 
+1.  使用 [ **kb** (显示 stack backtrace)](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)命令在堆栈跟踪中显示参数。 查找对 **NT！PspUnhandledExceptionInSystemThread**。  (如果未列出此函数，请参阅下面的说明。 ) 
 
 2.  NT！的第一个参数 **PspUnhandledExceptionInSystemThread** 是指向结构的指针，该结构包含指向 **except** 语句的指针：
 
@@ -138,9 +137,9 @@ ms.locfileid: "89210239"
         )
     ```
 
-    使用[ **dd** (显示内存) ](d--da--db--dc--dd--dd--df--dp--dq--du--dw--dw--dyb--dyd--display-memor.md)命令，以显示所需数据。
+    使用 [ **dd** (显示内存)](d--da--db--dc--dd--dd--df--dp--dq--du--dw--dw--dyb--dyd--display-memor.md)命令，以显示所需数据。
 
-3.  第一个检索到的值是异常记录，第二个值是上下文记录。 使用[ **.exr** (显示 "异常记录") ](-exr--display-exception-record-.md)命令，然后使用这两个值作为其参数，分别为[ **.cxr** (显示上下文) 记录](-cxr--display-context-record-.md)。
+3.  第一个检索到的值是异常记录，第二个值是上下文记录。 使用 [ **.exr** (显示 "异常记录")](-exr--display-exception-record-.md)命令，然后使用这两个值作为其参数，分别为 [ **.cxr** (显示上下文) 记录](-cxr--display-context-record-.md)。
 
 4.  执行 **.cxr** 命令后，使用 **kb** 命令显示基于上下文记录信息的堆栈跟踪。 此堆栈跟踪指示出现未处理异常的调用堆栈。
 

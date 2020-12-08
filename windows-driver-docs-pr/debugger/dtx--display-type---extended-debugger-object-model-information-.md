@@ -1,9 +1,8 @@
 ---
 title: dtx（显示类型 - 扩展的调试器对象模型信息）
-description: Dtx 命令显示使用调试器对象模型的扩展符号类型信息。 Dtx 命令为类似于 dt （显示类型） 命令。
-ms.assetid: 758D752E-65A0-4F1D-BB56-06E4ECEC6D48
+description: Dtx 命令使用调试器对象模型显示扩展符号类型信息。 Dtx 命令类似于 dt (显示类型) 命令。
 keywords:
-- dtx （显示类型的扩展的调试器对象模型信息） Windows 调试
+- dtx (显示类型-扩展调试器对象模型信息) Windows 调试
 ms.date: 09/17/2017
 topic_type:
 - apiref
@@ -12,42 +11,42 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 148b1f9be720fcdfa9fbe669c64778803b49659f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0738f17db19a1b2d041816aa3376cc8bcf2eca85
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370860"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839321"
 ---
-# <a name="span-iddebuggerdtxdisplaytype-extendeddebuggerobjectmodelinformationspandtx-display-type---extended-debugger-object-model-information"></a><span id="debugger.dtx__display_type_-_extended_debugger_object_model_information_"></span>dtx （显示类型的扩展的调试器对象模型信息）
+# <a name="span-iddebuggerdtx__display_type_-_extended_debugger_object_model_information_spandtx-display-type---extended-debugger-object-model-information"></a><span id="debugger.dtx__display_type_-_extended_debugger_object_model_information_"></span>dtx（显示类型 - 扩展的调试器对象模型信息）
 
 
-Dtx 命令显示使用调试器对象模型的扩展符号类型信息。 Dtx 命令是类似于[ **dt （显示类型）** ](dt--display-type-.md)命令。
+Dtx 命令使用调试器对象模型显示扩展符号类型信息。 Dtx 命令类似于 [**dt (显示类型)**](dt--display-type-.md) 命令。
 
 ```dbgcmd
 dtx -DisplayOpts [Module!]Name Address
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="________DisplayOpts_______"></span><span id="________displayopts_______"></span><span id="________DISPLAYOPTS_______"></span> **DisplayOpts**   
+<span id="________DisplayOpts_______"></span><span id="________displayopts_______"></span><span id="________DISPLAYOPTS_______"></span>**DisplayOpts**   
 使用以下可选标志来更改输出的显示方式。
 
-*-a*显示数组具有其索引的新行中的元素。
+*-a* 用索引在新行中显示数组元素。
 
-*-r \[n\]* 以递归方式转储子类型 （字段） 最多*n*级别。
+*-r \[ n \]* 将 (字段的子类型递归转储) 多 *个级别。*
 
-*-h*显示 dtx 命令的命令行帮助。
+*-h* 显示 dtx 命令的命令行帮助。
 
-<span id="Module______________"></span><span id="module______________"></span><span id="MODULE______________"></span>**模块 ！**   
-可选参数，指定定义此结构后, 跟感叹号的模块。 如果没有本地变量或具有全局变量或类型的名称相同的类型，则应包含*模块*名称来指定一个全局变量。
+<span id="Module______________"></span><span id="module______________"></span><span id="MODULE______________"></span>**模块!**   
+一个可选参数，它指定定义此结构的模块，后跟惊叹号。 如果存在与全局变量或类型同名的局部变量或类型，则应包含 *模块* 名称以指定全局变量。
 
-<span id="________Name_______"></span><span id="________name_______"></span><span id="________NAME_______"></span> **名称**   
+<span id="________Name_______"></span><span id="________name_______"></span><span id="________NAME_______"></span>**名称**   
 类型名称或全局符号。
 
-<span id="________Address_______"></span><span id="________address_______"></span><span id="________ADDRESS_______"></span> **Address**   
-包含该类型的内存地址。
+<span id="________Address_______"></span><span id="________address_______"></span><span id="________ADDRESS_______"></span>**地址**   
+包含类型的内存地址。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>环境
 
@@ -58,27 +57,27 @@ dtx -DisplayOpts [Module!]Name Address
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>用户模式下，内核模式</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>用户模式，内核模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>实时、 崩溃转储</p></td>
+<td align="left"><p>实时，故障转储</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>
-<td align="left"><p>全部</p></td>
+<td align="left"><p>all</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-以下示例演示如何使用 dtx 命令。
+下面的示例演示如何使用 dtx 命令。
 
-使用的地址和名称以显示扩展符号类型信息。
+使用 address 和 name 显示扩展符号类型信息。
 
 ```dbgcmd
 0: kd> dtx nt!_EPROCESS ffffb607560b56c0
@@ -90,7 +89,7 @@ dtx -DisplayOpts [Module!]Name Address
     [+0x2f0] ActiveProcessLinks [Type: _LIST_ENTRY]
 ```
 
-显示使用-r 递归选项的其他信息。
+使用-r 递归选项显示其他信息。
 
 ```dbgcmd
 0: kd> dtx -r2 HdAudio!CAzMixertopoMiniport fffff806`d24992b8
@@ -120,7 +119,7 @@ dtx -DisplayOpts [Module!]Name Address
             [+0x018] KsPinDescriptor  [Type: KSPIN_DESCRIPTOR]
 ```
 
-提示：使用[ **（检查符号） x** ](x--examine-symbols-.md)命令以显示感兴趣的项的地址。
+提示：使用 [**x (检查符号)**](x--examine-symbols-.md) 命令显示感兴趣的项的地址。
 
 ```dbgcmd
 0: kd> x /d HdAudio!CazMixertopoMiniport*
@@ -129,10 +128,10 @@ fffff806`d24992b8 HdAudio!CAzMixertopoMiniport::`vftable' = <no type information
 ...
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**dt （显示类型）**](dt--display-type-.md)
+[**dt（显示类型）**](dt--display-type-.md)
 
  
 

@@ -1,17 +1,16 @@
 ---
 title: 指定 GDI 硬件加速渲染操作
 description: 指定 GDI 硬件加速渲染操作
-ms.assetid: 71eb9cdf-0448-48d1-835a-84bbbba13670
 keywords:
 - 带有 GDI 硬件加速 WDK 显示的渲染操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 22f2119df058fdd39f937c07e957b30f33071644
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: a694098a2262260675391d246cee5e5abc23bba2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102778"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840749"
 ---
 # <a name="specifying-gdi-hardware-accelerated-rendering-operations"></a>指定 GDI 硬件加速渲染操作
 
@@ -19,7 +18,7 @@ ms.locfileid: "90102778"
 ## <span id="ddk_introduction_to_command_and_dma_buffers_gg"></span><span id="DDK_INTRODUCTION_TO_COMMAND_AND_DMA_BUFFERS_GG"></span>
 
 
-调用 [**DxgkDdiRenderKm**](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_renderkm) 函数时，操作系统将通过 *pRenderKmArgs* 参数指定要执行的 GDI 硬件加速呈现操作的类型。 DirectX 图形内核子系统的显示端口驱动程序 (*Dxgkrnl.sys*) 将*pRenderKmArgs* - &gt; **pCommand**成员设置为指向包含可变大小[**DXGK \_ RENDERKM \_ 命令**](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_renderkm_command)结构数组的命令缓冲区。 它还将*pRenderKmArgs* - &gt; **pCommandLength**成员设置为命令缓冲区的大小（以字节为单位）。
+调用 [**DxgkDdiRenderKm**](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_renderkm) 函数时，操作系统将通过 *pRenderKmArgs* 参数指定要执行的 GDI 硬件加速呈现操作的类型。 DirectX 图形内核子系统的显示端口驱动程序 (*Dxgkrnl.sys*) 将 *pRenderKmArgs* - &gt; **pCommand** 成员设置为指向包含可变大小 [**DXGK \_ RENDERKM \_ 命令**](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_renderkm_command)结构数组的命令缓冲区。 它还将 *pRenderKmArgs* - &gt; **pCommandLength** 成员设置为命令缓冲区的大小（以字节为单位）。
 
 驱动程序必须将输入 DXGK \_ RENDERKM \_ 命令命令缓冲区转换为 DMA 缓冲区命令并构建修补程序位置列表。
 
@@ -82,9 +81,9 @@ DXGK \_ RENDERKM \_ 命令包含一些成员，这些成员指定 GDI 硬件加�
 
  
 
-操作系统使用 DXGK RENDERKM 命令的 **OpCode** 成员 \_ \_ 来指示显示微型端口驱动程序必须处理的特定 GDI 硬件加速呈现操作。 **OpCode**成员的类型为[**DXGK \_ RENDERKM \_ OPERATION**](/windows-hardware/drivers/ddi/d3dkmddi/ne-d3dkmddi-_dxgk_renderkm_operation)，其值显示在表中。
+操作系统使用 DXGK RENDERKM 命令的 **OpCode** 成员 \_ \_ 来指示显示微型端口驱动程序必须处理的特定 GDI 硬件加速呈现操作。 **OpCode** 成员的类型为 [**DXGK \_ RENDERKM \_ OPERATION**](/windows-hardware/drivers/ddi/d3dkmddi/ne-d3dkmddi-_dxgk_renderkm_operation)，其值显示在表中。
 
-操作系统还将提供 DXGK RENDERKM 命令 CommandSize 成员的适当值，该 \_ \_ 成员指定当前呈现命令的大小（以字节为单位），其中包括**操作码**的值以及命令中子矩形的数目。 **CommandSize**
+操作系统还将提供 DXGK RENDERKM 命令 CommandSize 成员的适当值，该 \_ \_ 成员指定当前呈现命令的大小（以字节为单位），其中包括 **操作码** 的值以及命令中子矩形的数目。 **CommandSize**
 
-DXGK GDIARG TRANSPARENTBLT 成员中包含的[**D3DKM \_ TRANSPARENTBLTFLAGS**](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_d3dkm_transparentbltflags)结构中提供了有关显示适配器的功能的详细信息，以执行具有透明度的位块 \_ 传输 \_ &gt; **Flags** 。
+DXGK GDIARG TRANSPARENTBLT 成员中包含的 [**D3DKM \_ TRANSPARENTBLTFLAGS**](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_d3dkm_transparentbltflags)结构中提供了有关显示适配器的功能的详细信息，以执行具有透明度的位块 \_ 传输 \_ &gt; **Flags** 。
 

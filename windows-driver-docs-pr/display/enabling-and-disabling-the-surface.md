@@ -1,7 +1,6 @@
 ---
 title: 启用和禁用图面
 description: 启用和禁用图面
-ms.assetid: 34a1d1a5-b139-4d59-8754-b77d71bc75ad
 keywords:
 - 绘制 WDK GDI，初始化，启用和禁用图面
 - 初始化图形驱动程序 WDK Windows 2000 显示、启用和禁用图面
@@ -11,12 +10,12 @@ keywords:
 - surface 禁用 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 049a56176062e558c86849310dfe52ee0f68d707
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: e4a67b67fdeaa2ac4a84c644377412a5da541e69
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361317"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840393"
 ---
 # <a name="enabling-and-disabling-the-surface"></a>启用和禁用图面
 
@@ -26,9 +25,9 @@ ms.locfileid: "94361317"
 
 作为最终的初始化阶段，GDI 将调用 [**DrvEnableSurface**](/windows/win32/api/winddi/nf-winddi-drvenablesurface) 来使驱动程序启用现有 *PDEV* 的表面。 *DrvEnableSurface* 必须通过调用相应的 GDI 服务来指定 surface 类型来创建它。 如 [GDI 支持](gdi-support-for-surfaces.md)中所述，根据设备和环境，驱动程序可以从 *DrvEnableSurface* 中调用相应的 GDI 服务来创建图面：
 
--   对于 *设备管理的图面* ，驱动程序应调用 [**EngCreateDeviceSurface**](/windows/win32/api/winddi/nf-winddi-engcreatedevicesurface) 函数以获取图面的句柄。
+-   对于 *设备管理的图面*，驱动程序应调用 [**EngCreateDeviceSurface**](/windows/win32/api/winddi/nf-winddi-engcreatedevicesurface) 函数以获取图面的句柄。
 
--   若要创建 GDI 可以完全管理的标准格式 ( *DIB* ) 位图（包括所有绘图操作的性能），驱动程序应调用 [**EngCreateBitmap**](/windows/win32/api/winddi/nf-winddi-engcreatebitmap) 函数。 驱动程序可以挂钩它可以优化的任何绘图操作。 驱动程序可以让 GDI 为像素分配空间，也可以提供空间本身，尽管后一种选项通常仅由打印机和 *帧缓冲* 驱动程序使用。
+-   若要创建 GDI 可以完全管理的标准格式 (*DIB*) 位图（包括所有绘图操作的性能），驱动程序应调用 [**EngCreateBitmap**](/windows/win32/api/winddi/nf-winddi-engcreatebitmap) 函数。 驱动程序可以挂钩它可以优化的任何绘图操作。 驱动程序可以让 GDI 为像素分配空间，也可以提供空间本身，尽管后一种选项通常仅由打印机和 *帧缓冲* 驱动程序使用。
 
 *DrvEnableSurface* 返回有效的 surface 控点作为返回值。
 

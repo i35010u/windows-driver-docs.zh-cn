@@ -1,17 +1,16 @@
 ---
 title: C28644
 description: 警告 C28644 返回值未选中 DPA_InsertPtr。
-ms.assetid: F145330F-E597-405F-935E-B12D65F64DDB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28644
-ms.openlocfilehash: 9bc8ffe896d2659e181a3e8382031ffdf4abff1f
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 32dbaeb6d5f7d6b7b44f5ad8a51e3904061aa90b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717264"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840197"
 ---
 # <a name="c28644"></a>C28644
 

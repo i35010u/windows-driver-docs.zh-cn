@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x97 BOUND_IMAGE_UNSUPPORTED
-description: BOUND_IMAGE_UNSUPPORTED bug 检查具有 0x00000097 值。检查此错误极少出现。
-ms.assetid: 51d96612-d7a4-4e0f-b83b-208311cf1e1a
+description: BOUND_IMAGE_UNSUPPORTED bug 检查的值为0x00000097。此 bug 检查很少出现。
 keywords:
 - Bug 检查 0x97 BOUND_IMAGE_UNSUPPORTED
 - BOUND_IMAGE_UNSUPPORTED
@@ -13,22 +12,22 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ddeee1870dabeb5b111e123dea79b220822713c
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: d8d0712d6d5c6e787a827e6e8a7fe9de6357e4f4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519110"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840449"
 ---
-# <a name="bug-check-0x97-boundimageunsupported"></a>Bug 检查 0x97：绑定\_图像\_不受支持
+# <a name="bug-check-0x97-bound_image_unsupported"></a>Bug 检查0x97： \_ \_ 不支持绑定的映像
 
 
-绑定\_图像\_不受支持的 bug 检查的值为 0x00000097。
+\_不支持的绑定图像 \_ bug 检查的值为0x00000097。
 
-检查此错误极少出现。
+此 bug 检查很少出现。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
  

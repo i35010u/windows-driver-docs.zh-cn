@@ -1,19 +1,18 @@
 ---
 title: 相机控件属性
 description: 相机控件属性
-ms.assetid: 36a57245-e89e-4418-b0c4-a4c1479413b2
 keywords:
 - 照相机控件属性 WDK 视频捕获
 - 控件属性 WDK 视频捕获
 - PROPSETID_VIDCAP_CAMERACONTROL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ef24ec2581bd82a058fa9e264092eabe4d883b92
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 3b46fd8544a114ce62ba78a58d4fd3df32a04137
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101550"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839207"
 ---
 # <a name="camera-control-properties"></a>相机控件属性
 
@@ -117,7 +116,7 @@ ms.locfileid: "90101550"
 
  
 
-## <a name="windows8-extended-camera-control-properties"></a>Windows 8 扩展相机控制属性
+## <a name="windows-8-extended-camera-control-properties"></a>Windows 8 扩展相机控制属性
 
 
 从 Windows 8 开始，用户模式客户端支持使用这些附加属性来获取或设置照相机的控制设置。 有关详细信息，请参阅 [扩展相机控制属性](extended-camera-control-properties.md) 和 [如何实现扩展相机控制属性](how-to-implement-extended-camera-control-properties.md)。
@@ -131,7 +130,7 @@ ms.locfileid: "90101550"
 
  
 
-## <a name="windows81-extended-camera-control-properties"></a><a href="" id="win8-1-extended-props"></a>Windows 8.1 扩展相机控制属性
+## <a name="windows-81-extended-camera-control-properties"></a><a href="" id="win8-1-extended-props"></a>Windows 8.1 扩展相机控制属性
 
 
 从 Windows 8.1 开始， [KSPROPERTYSETID \_ ExtendedCameraControl](./kspropertysetid-extendedcameracontrol.md) 属性集为相机照片顺序提供附加控件。 有关如何实现这些控件的详细信息，请参阅以下主题：

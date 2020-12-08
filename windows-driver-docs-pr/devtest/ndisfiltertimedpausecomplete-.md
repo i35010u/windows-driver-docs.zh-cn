@@ -1,7 +1,6 @@
 ---
 title: 'NdisFilterTimedPauseComplete 规则 (ndis) '
 description: NdisFilterTimedPauseComplete 验证三项 FilterPause 函数将在10秒或更短时间内完成。FilterPause 函数不能失败。FilterPause 函数不得完成两次。
-ms.assetid: 60B926CC-E2C4-42B8-8555-5E620DCDDAFC
 ms.date: 05/21/2018
 keywords:
 - 'NdisFilterTimedPauseComplete 规则 (ndis) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7854c6c8239bb7178d6747e9d688fa2f32a3bf3d
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: c907c0ecd1e7d52e93ca5b15da47e6c0b88dd26b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105110"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838997"
 ---
 # <a name="ndisfiltertimedpausecomplete-rule-ndis"></a>NdisFilterTimedPauseComplete 规则 (ndis) 
 
 
-**NdisFilterTimedPauseComplete**验证三个方面：
+**NdisFilterTimedPauseComplete** 验证三个方面：
 
 -   [*FilterPause*](/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_pause)函数将在10秒或更短时间内完成。
 

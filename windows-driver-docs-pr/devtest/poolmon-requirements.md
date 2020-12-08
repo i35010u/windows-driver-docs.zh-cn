@@ -1,21 +1,20 @@
 ---
 title: PoolMon 要求
 description: PoolMon 要求
-ms.assetid: 5ee1ed1c-5392-4ce4-8edb-e600b93f82d7
 keywords:
-- PoolMon WDK 要求
-- 内存池监视器 WDK 要求
-- PoolMon WDK 显示
+- PoolMon WDK，要求
+- 内存池监视 WDK，要求
+- PoolMon WDK，显示
 - 内存池监视器 WDK，显示
 - 文件 WDK PoolMon
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fe393b2b7ab5da1a5fcdceefca843d9cea6df178
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 84a19034d3046fcf5ae0be7eea6d16d4f8793881
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63326991"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841013"
 ---
 # <a name="poolmon-requirements"></a>PoolMon 要求
 
@@ -23,35 +22,35 @@ ms.locfileid: "63326991"
 ## <span id="ddk_poolmon_requirements_tools"></span><span id="DDK_POOLMON_REQUIREMENTS_TOOLS"></span>
 
 
-PoolMon 要求以下系统配置、 权限和文件。
+PoolMon 需要以下系统配置、权限和文件。
 
-### <a name="span-idsystemrequirementsspanspan-idsystemrequirementsspanspan-idsystemrequirementsspansystem-requirements"></a><span id="System_Requirements"></span><span id="system_requirements"></span><span id="SYSTEM_REQUIREMENTS"></span>系统要求
+### <a name="span-idsystem_requirementsspanspan-idsystem_requirementsspanspan-idsystem_requirementsspansystem-requirements"></a><span id="System_Requirements"></span><span id="system_requirements"></span><span id="SYSTEM_REQUIREMENTS"></span>系统要求
 
-只能在 Microsoft Windows XP 和更高版本的 Windows 上运行 PoolMon 包含在 Windows Driver Kit (WDK) 中，本文档中所述的版本。
+Windows 驱动程序工具包中包含的 PoolMon 版本 (WDK) 并在本文档中所述仅在 Microsoft Windows XP 和更高版本的 Windows 上运行。
 
-### <a name="span-idpooltaggingrequirementspanspan-idpooltaggingrequirementspanspan-idpooltaggingrequirementspanpool-tagging-requirement"></a><span id="Pool_Tagging_Requirement"></span><span id="pool_tagging_requirement"></span><span id="POOL_TAGGING_REQUIREMENT"></span>池标记要求
+### <a name="span-idpool_tagging_requirementspanspan-idpool_tagging_requirementspanspan-idpool_tagging_requirementspanpool-tagging-requirement"></a><span id="Pool_Tagging_Requirement"></span><span id="pool_tagging_requirement"></span><span id="POOL_TAGGING_REQUIREMENT"></span>池标记要求
 
-在 Windows XP 或更早版本的 Windows 上运行任何版本的 PoolMon 前, 必须启用池标记。 Windows Server 2003 和更高版本的 Windows 上永久启用池标记。
+在 Windows XP 或更早版本的 Windows 上运行 PoolMon 的任何版本之前，必须启用池标记。 在 Windows Server 2003 和更高版本的 Windows 上永久启用池标记。
 
-池标记功能收集并计算按分配的标记值的池内存有关的统计信息。
+池标记功能收集和计算按分配的标记值排序的池内存的统计信息。
 
-若要启用池标记，请使用 GFlags、 在有关 Windows 调试工具中包含的工具。 打开**全局标志**对话框中，选中**启用池标记**复选框，然后再重新启动计算机。
+若要启用池标记，请使用 GFlags，它是 Windows 调试工具中包含的工具。 打开 " **全局标志** " 对话框，选中 " **启用池标记** " 复选框，然后重新启动计算机。
 
-### <a name="span-idrequirementsforterminalservicessessionpoolmonitoringspanspan-idrequirementsforterminalservicessessionpoolmonitoringspanspan-idrequirementsforterminalservicessessionpoolmonitoringspanrequirements-for-terminal-services-session-pool-monitoring"></a><span id="Requirements_for_Terminal_Services_Session_Pool_Monitoring"></span><span id="requirements_for_terminal_services_session_pool_monitoring"></span><span id="REQUIREMENTS_FOR_TERMINAL_SERVICES_SESSION_POOL_MONITORING"></span>要求的终端服务会话池监视
+### <a name="span-idrequirements_for_terminal_services_session_pool_monitoringspanspan-idrequirements_for_terminal_services_session_pool_monitoringspanspan-idrequirements_for_terminal_services_session_pool_monitoringspanrequirements-for-terminal-services-session-pool-monitoring"></a><span id="Requirements_for_Terminal_Services_Session_Pool_Monitoring"></span><span id="requirements_for_terminal_services_session_pool_monitoring"></span><span id="REQUIREMENTS_FOR_TERMINAL_SERVICES_SESSION_POOL_MONITORING"></span>终端服务会话池监视的要求
 
-PoolMon 显示仅在 Windows Server 2003 和更高版本的 Windows 上从终端服务会话池分配。
+PoolMon 仅显示来自 Windows Server 2003 和更高版本的 Windows 上的终端服务会话池的分配。
 
-仅当计算机配置为终端服务器时，Windows 的终端服务会话池中分配内存。 终端服务器上的 Win32 子系统的内核模式部分的会话池中分配的内存。 否则，Windows 池内存用于终端服务从系统池分配。
+仅当计算机配置为终端服务器时，Windows 才从终端服务会话池分配内存。 在终端服务器上，Win32 子系统的内核模式部分从会话池分配内存。 否则，Windows 将从系统池中为终端服务分配池内存。
 
-### <a name="span-idrequirementsforgeneratingalocaltagfilespanspan-idrequirementsforgeneratingalocaltagfilespanspan-idrequirementsforgeneratingalocaltagfilespanrequirements-for-generating-a-local-tag-file"></a><span id="Requirements_for_Generating_a_Local_Tag_File"></span><span id="requirements_for_generating_a_local_tag_file"></span><span id="REQUIREMENTS_FOR_GENERATING_A_LOCAL_TAG_FILE"></span>生成本地标记文件的要求
+### <a name="span-idrequirements_for_generating_a_local_tag_filespanspan-idrequirements_for_generating_a_local_tag_filespanspan-idrequirements_for_generating_a_local_tag_filespanrequirements-for-generating-a-local-tag-file"></a><span id="Requirements_for_Generating_a_Local_Tag_File"></span><span id="requirements_for_generating_a_local_tag_file"></span><span id="REQUIREMENTS_FOR_GENERATING_A_LOCAL_TAG_FILE"></span>生成本地标记文件的要求
 
-**/C**参数，它创建的本地计算机上的驱动程序使用的池标记 localtag.txt 文件，仅支持 32 位版本的 Windows。
+**/C** 参数用于创建本地计算机上的驱动程序所使用的池标记 localtag.txt 文件，仅在32位版本的 Windows 上受支持。
 
-### <a name="span-iddisplayrequirementsspanspan-iddisplayrequirementsspanspan-iddisplayrequirementsspandisplay-requirements"></a><span id="Display_Requirements"></span><span id="display_requirements"></span><span id="DISPLAY_REQUIREMENTS"></span>显示要求
+### <a name="span-iddisplay_requirementsspanspan-iddisplay_requirementsspanspan-iddisplay_requirementsspandisplay-requirements"></a><span id="Display_Requirements"></span><span id="display_requirements"></span><span id="DISPLAY_REQUIREMENTS"></span>显示要求
 
-若要查看整个 PoolMon 显示，命令提示符窗口大小必须为至少 80 个字符宽 (宽度 = 80) 和高至少 53 行 (高度 = 53)，并且命令提示符窗口缓冲区必须至少 500 个字符宽 (宽度 = 500) 和高 （至少 2000年行高度 = 2000年)。 否则，显示可能会被截断。
+若要查看整个 PoolMon 显示，"命令提示符" 窗口大小必须至少为80个字符宽 (width = 80) ，至少53行高 (height = 53) ，并且命令提示符窗口缓冲区必须至少为500个字符宽 (width = 500) 并且至少2000行高 (height = 2000) 。 否则，显示可能会被截断。
 
-### <a name="span-idrequiredfilesspanspan-idrequiredfilesspanspan-idrequiredfilesspanrequired-files"></a><span id="Required_Files"></span><span id="required_files"></span><span id="REQUIRED_FILES"></span>所需的文件
+### <a name="span-idrequired_filesspanspan-idrequired_filesspanspan-idrequired_filesspanrequired-files"></a><span id="Required_Files"></span><span id="required_files"></span><span id="REQUIRED_FILES"></span>必需的文件
 
 poolmon.exe
 

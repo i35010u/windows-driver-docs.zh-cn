@@ -1,7 +1,6 @@
 ---
 title: 类/端口驱动程序中的 Dispatch(Internal)DeviceControl
 description: 类/端口驱动程序中的 Dispatch(Internal)DeviceControl
-ms.assetid: 94f6050d-c47e-4fb2-8b7f-afadcf12e0b8
 keywords:
 - 调度例程 WDK 内核，DispatchDeviceControl 例程
 - 调度 DispatchDeviceControl 例程
@@ -9,12 +8,12 @@ keywords:
 - 设备控制调度例程 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b1c3a81ccef57a428b88de496e5f8506f2c93dc
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: f344ab9d358afdad1a3e9e2a5426776e1a17099f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403134"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841227"
 ---
 # <a name="dispatchinternaldevicecontrol-in-classport-drivers"></a>类/端口驱动程序中的 Dispatch(Internal)DeviceControl
 
@@ -28,13 +27,13 @@ ms.locfileid: "89403134"
 
 例如，系统键盘和鼠标类驱动程序中的 *DispatchCreateClose* 例程发送系统定义的内部设备控制请求，以启用或禁用对基础端口驱动程序的键盘和鼠标中断。 这些系统类驱动程序为底层端口驱动程序设置 **IRP \_ MJ \_ 内部 \_ 设备 \_ 控制** 请求。 任何与这些系统类驱动程序互操作的新键盘或鼠标端口驱动程序也必须支持这些公共内部设备控制请求。
 
-系统并行类/端口驱动程序模型具有相似的功能。 新的并行类驱动程序可以通过使用公共 IOCTL 并行端口 XXX 控制代码为**irp \_ MJ \_ 内部 \_ 设备 \_ 控制**请求设置 irp，从而从系统并行端口驱动程序获得支持 \_ \_ \_ *XXX* 。 可以替换系统并行端口驱动程序，但任何新的驱动程序也必须支持这组公共内部设备控制请求。
+系统并行类/端口驱动程序模型具有相似的功能。 新的并行类驱动程序可以通过使用公共 IOCTL 并行端口 XXX 控制代码为 **irp \_ MJ \_ 内部 \_ 设备 \_ 控制** 请求设置 irp，从而从系统并行端口驱动程序获得支持 \_ \_ \_ *XXX* 。 可以替换系统并行端口驱动程序，但任何新的驱动程序也必须支持这组公共内部设备控制请求。
 
 有关这些公共内部设备控制请求的详细信息，请参阅 Windows 驱动程序工具包中的设备特定文档 (WDK) 。 有关如何定义专用 i/o 控制代码的信息，请参阅 [使用 I/o 控制代码](introduction-to-i-o-control-codes.md)。
 
 对于紧密耦合的端口/类驱动程序，类驱动程序可能会处理某些设备控制请求的处理，而不会将这些请求传递到端口驱动程序。 在新的类/端口驱动程序对中，类驱动程序的 *DispatchDeviceControl* 例程可以执行以下任一操作：
 
--   检查其自己的 i/o 堆栈位置中参数的有效性，如果找到任何参数错误，则设置 i/o 状态块，并使用 IO 的*PriorityBoost*调用[**IoCompleteRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)而 \_ 无 \_ 增量; 否则，调用[**IoGetNextIrpStackLocation**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetnextirpstacklocation)将其自己的 i/o 堆栈位置复制到端口驱动程序中，并通过[**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)传递 IRP。
+-   检查其自己的 i/o 堆栈位置中参数的有效性，如果找到任何参数错误，则设置 i/o 状态块，并使用 IO 的 *PriorityBoost* 调用 [**IoCompleteRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)而 \_ 无 \_ 增量; 否则，调用 [**IoGetNextIrpStackLocation**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetnextirpstacklocation)将其自己的 i/o 堆栈位置复制到端口驱动程序中，并通过 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)传递 IRP。
 
 -   或者，不要在 IRP 中设置端口驱动程序的 i/o 堆栈位置，而不检查参数，然后将其传递到端口驱动程序进行处理。
 

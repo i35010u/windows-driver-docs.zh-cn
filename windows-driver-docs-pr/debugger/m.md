@@ -1,15 +1,14 @@
 ---
-title: M （Windows 调试器词汇表）
+title: 'M (Windows 调试器词汇表) '
 description: 词汇表页-M
-ms.assetid: 41d36320-1a5b-4919-bad8-e6d6e62ec355
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 41054026656fc5a0b362d81aeabc97a0e007f1b6
-ms.sourcegitcommit: 48c4b6d3a504583d2f588ed892a4a281d4b58301
+ms.openlocfilehash: 4c1bb3fd82754d92aaf577e17390ef433ecc7586
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70387041"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838815"
 ---
 # <a name="m"></a>M
 

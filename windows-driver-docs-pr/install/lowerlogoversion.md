@@ -1,17 +1,16 @@
 ---
 title: LowerLogoVersion
 description: LowerLogoVersion
-ms.assetid: b11b9190-9e3f-473d-b78f-b472601c60e2
 keywords:
 - LowerLogoVersion
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9670c9956af0aa310ae70fa5aac05c54e2ab432f
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: f0a567f3d55fb107d05e7e7ce62644d66a48e180
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095919"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840045"
 ---
 # <a name="lowerlogoversion"></a>LowerLogoVersion
 
@@ -22,7 +21,7 @@ ms.locfileid: "89095919"
 
 -   Windows 将下一个最佳签名评分分配给由第三方使用 Authenticode 技术签名的驱动程序，并将其分配给具有早于 **LowerLogoVersion** 值的 Windows 版本的 WHQL 签名的驱动程序。
 
-**LowerLogoVersion**值是以 NULL 结尾的字符串，它指定 Windows 版本，如下表所示。
+**LowerLogoVersion** 值是以 NULL 结尾的字符串，它指定 Windows 版本，如下表所示。
 
 <table>
 <colgroup>
@@ -65,7 +64,7 @@ ms.locfileid: "89095919"
 
  
 
-系统定义的[设备安装程序类](./overview-of-device-setup-classes.md)的系统默认**LowerLogoVersion**值为 "5.1"。 这意味着，具有 Windows Server 2003 和 Windows XP WHQL 签名的驱动程序与 Microsoft 为 Windows Vista 和更高版本的 Windows 签名的驱动程序具有相同的签名分数。
+系统定义的 [设备安装程序类](./overview-of-device-setup-classes.md)的系统默认 **LowerLogoVersion** 值为 "5.1"。 这意味着，具有 Windows Server 2003 和 Windows XP WHQL 签名的驱动程序与 Microsoft 为 Windows Vista 和更高版本的 Windows 签名的驱动程序具有相同的签名分数。
 
 有关驱动程序排名的详细信息，请参阅 [windows (Windows Vista 和更高版本) 的驱动程序的方式 ](how-setup-ranks-drivers--windows-vista-and-later-.md)。
 

@@ -1,7 +1,6 @@
 ---
 title: 显示跟踪日志
 description: 显示跟踪日志
-ms.assetid: c60c801a-6128-43d6-a435-4537c597177f
 keywords:
 - 跟踪日志 WDK TraceView，显示
 - TraceView WDK，显示日志
@@ -12,35 +11,35 @@ keywords:
 - etl 文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b3687f2b7aaa26d058684d92ffa006113ddeb5e6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3c3919bda7c14e128cfda46aeea279b5ff9915f0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348319"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839017"
 ---
 # <a name="displaying-a-trace-log"></a>显示跟踪日志
 
 
-可以使用 TraceView 要显示的任何内容[事件跟踪日志 (.etl) 文件](trace-level.md)(也称为*跟踪日志*)，包括使用 TraceView 没有生成的事件跟踪日志文件。
+你可以使用 TraceView 来显示任何 [事件跟踪日志 ( .etl) 文件](trace-level.md) 的内容 (也称为 *跟踪日志*) ，包括未使用 TraceView 生成的事件跟踪日志文件。
 
-所有需要显示跟踪日志格式设置信息，可以通过定位提供给 TraceView [PDB 符号文件](pdb-symbol-files.md)(.pdb)[跟踪消息格式 (.tmf) 文件](trace-message-format-file.md)，或 TMF 文件的路径用于跟踪消息中。
+显示跟踪日志所需的所有内容都是格式设置信息，你可以通过 () 中找到 [pdb 符号文件](pdb-symbol-files.md) 、 [跟踪消息格式 ( tmf) 文件](trace-message-format-file.md)或跟踪消息的 tmf 文件的路径来向 TraceView 提供这些信息。
 
-在查看跟踪日志时，可以分组和取消分组跟踪日志、 生成新的跟踪日志文件，并复制用于以其他格式显示的跟踪消息。
+查看跟踪日志时，您可以对跟踪日志进行分组和取消分组，生成新的跟踪日志文件，并复制跟踪消息以便以其他格式显示。
 
-本部分包括：
+本节包括：
 
-[显示使用 PDB 文件跟踪日志](displaying-a-trace-log-with-a-pdb-file.md)
+[使用 PDB 文件显示跟踪日志](displaying-a-trace-log-with-a-pdb-file.md)
 
-[显示与 TMF 文件跟踪日志](displaying-a-trace-log-with-a-tmf-file.md)
+[显示包含 TMF 文件的跟踪日志](displaying-a-trace-log-with-a-tmf-file.md)
 
 [设置跟踪日志选项](setting-trace-log-options.md)
 
-### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>注释
+### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>提出
 
-TraceView 需要 PDB 文件、 TMF 文件或 TMF 目录以显示跟踪日志的内容。 TraceView 不使用 %跟踪\_格式\_搜索\_PATH %环境变量。
+TraceView 需要 PDB 文件、TMF 文件或 TMF 目录来显示跟踪日志的内容。 TraceView 不使用% 跟踪 \_ 格式 \_ 搜索 \_ 路径% 环境变量。
 
-跟踪会话名称不会保存在事件跟踪日志 (.etl) 文件，或在 TraceView 输出文件或摘要文件。 当您使用 TraceView 显示跟踪日志时，它使用默认的会话名称，**LogSession * * * N*，作为跟踪会话的名称 (其中*N*是一个从零开始的整数，它表示的顺序创建会话）。
+跟踪会话名称不会保存在事件跟踪日志 ( .etl) 文件中，也不会保存在 TraceView 输出文件或摘要文件中。 使用 TraceView 显示跟踪日志时，它将使用默认会话名称 **LogSession**_N_ 作为跟踪 (会话的名称，其中 *N* 是一个从零开始的整数，该整数表示) 创建会话的顺序。
 
  
 

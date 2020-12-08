@@ -1,34 +1,33 @@
 ---
 title: C28648
-description: 警告 C28648 PulseEvent 是不可靠的函数。
-ms.assetid: 6132e35c-f1ae-44cc-9a6c-b61d6e7f8c57
+description: 警告 C28648 PulseEvent 是一种不可靠的函数。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28648
-ms.openlocfilehash: 3d171485cf2515030799d95b466c4f73d2831be5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b46354f750d6ee0f3039cb57ff505f48d26bb3c0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345907"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840195"
 ---
 # <a name="c28648"></a>C28648
 
 
-警告 C28648:PulseEvent 是不可靠的函数
+警告 C28648： PulseEvent 是不可靠的函数
 
-等待同步对象的线程可以暂时从等待状态删除由内核模式 APC，并后 APC 已完成，然后返回到等待状态。 如果在调用**PulseEvent**发生在该线程从等待状态已删除的时间段内，线程不会释放，并将"挂起"永远。 这是因为**PulseEvent**释放的就是目前正在等待的线程。
+等待同步对象的线程可以通过内核模式 APC 暂时从等待状态中删除，然后在 APC 完成后返回到等待状态。 如果在线程从等待状态中移除时，对 **PulseEvent** 的调用发生，则不会释放该线程，并将永远 "挂起"。 这是因为， **PulseEvent** 仅释放在调用它时等待的线程。
 
-若要修复的使用方式的一些**PulseEvent**:
+修复 **PulseEvent** 使用的一些方法：
 
--   如果仅需要释放一个线程等待事件和事件是手动重置事件，则将其更改为自动重置事件，并调用**SetEvent**而不是**PulseEvent**。
+-   如果只需要释放一个等待事件的线程，并且事件为手动重置事件，请将其更改为自动重置事件，并调用 **SetEvent** 而不是 **PulseEvent**。
 
--   如果仅需要释放一个线程等待事件和事件是一个自动重置事件，调用**SetEvent**而不是**PulseEvent**。
+-   如果只需要释放一个等待事件的线程，并且事件为自动重置事件，请调用 **SetEvent** 而不是 **PulseEvent**。
 
--   如果需要释放所有线程等待事件和事件是手动重置事件，重新设计代码以使用一种不同的同步对象 （如信号量）。
+-   如果需要释放所有等待事件的线程，并且事件是手动重置事件，请重新设计代码，以使用不同类型的同步对象 (如信号量) 。
 
--   如果需要释放所有线程等待事件和事件是一个自动重置事件，调用**SetEvent**而不是**PulseEvent** (对原始调用**PulseEvent**已释放只有一个线程仍要）。
+-   如果每个等待事件的线程都需要释放，并且事件是自动重置事件，请调用 **SetEvent** 而不是 **PulseEvent** (你对 **PulseEvent** 的原始调用仅) 一个线程。
 
  
 

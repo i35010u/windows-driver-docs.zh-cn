@@ -1,15 +1,14 @@
 ---
 title: 警告规则集 (WDM)
 description: 使用这些规则来验证驱动程序是否可以在不同的上下文中正确处理 Irp，并遵循 Microsoft 推荐的最佳做法。
-ms.assetid: 29374BBE-D1DF-48C0-80A9-96CBAC6D8A22
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 3249d72b8537911745da904876348e7d25c41350
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 2bb99c5e6a9a9b8969d651cd60e5feaf435e2f1e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106446"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840769"
 ---
 # <a name="warning-rule-set-wdm"></a>警告规则集 (WDM)
 
@@ -27,7 +26,7 @@ ms.locfileid: "90106446"
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -70,7 +69,7 @@ ms.locfileid: "90106446"
 
 2.  单击 " **规则** " 选项卡。在 " **规则集**" 下，选择 " **警告**"。
 
-    若要从 Visual Studio 开发人员命令提示符窗口中选择默认规则集，请指定带有 **/check**选项的**sdv** 。 例如：
+    若要从 Visual Studio 开发人员命令提示符窗口中选择默认规则集，请指定带有 **/check** 选项的 **sdv** 。 例如：
 
     ```
     msbuild /t:sdv /p:Inputs="/check:Warning.sdv" mydriver.VcxProj /p:Configuration="Win8 Release" /p:Platform=Win32

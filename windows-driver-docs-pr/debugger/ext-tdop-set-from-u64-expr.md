@@ -1,7 +1,6 @@
 ---
 title: '\_ \_ \_ \_ U64 EXPR 中的 EXT TDOP 集 \_'
 description: '\_ \_ \_ \_ \_ DEBUG 请求的 U64 EXPR sub 操作的 ext TDOP 集 \_ \_ ext \_ 类型化 \_ 数据 \_ ANSIRequest 操作返回一个表示表达式的值的类型化数据说明。'
-ms.assetid: 3d0007f8-09c7-4333-a1f0-090918c9f8fa
 keywords:
 - EXT_TDOP_SET_FROM_U64_EXPR Windows 调试
 topic_type:
@@ -12,17 +11,17 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 05b7f00962c1b9fceacf057fd0de599d0bf46120
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 181fcd3f9179fab99a7e59b566b2fe5f77b67c74
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206811"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840209"
 ---
 # <a name="ext_tdop_set_from_u64_expr"></a>\_ \_ \_ \_ U64 EXPR 中的 EXT TDOP 集 \_
 
 
-\_ \_ \_ \_ \_ DEBUG 请求的 U64 EXPR sub 操作的 ext TDOP 集[** \_ \_ ext \_ 类型化的 \_ 数据 \_ ANSI**](debug-request-ext-typed-data-ansi.md)[**请求**](request.md)操作返回一个表示表达式的值的类型化数据说明。
+\_ \_ \_ \_ \_ DEBUG 请求的 U64 EXPR sub 操作的 ext TDOP 集 [**\_ \_ ext \_ 类型化的 \_ 数据 \_ ANSI**](debug-request-ext-typed-data-ansi.md)[**请求**](request.md)操作返回一个表示表达式的值的类型化数据说明。
 
 <span id="Operation"></span><span id="operation"></span><span id="OPERATION"></span>**运作**  
 \_ \_ \_ \_ 对于此子操作，设置为从 U64 EXPR 的 EXT TDOP 集 \_ 。
@@ -31,7 +30,7 @@ ms.locfileid: "89206811"
 指定用于描述表达式的值所在的目标内存的位标志。 有关这些标志的详细信息，请参阅 [**EXT \_ 类型化 \_ 数据**](/windows-hardware/drivers/ddi/wdbgexts/ns-wdbgexts-_ext_typed_data) 。
 
 <span id="InData"></span><span id="indata"></span><span id="INDATA"></span>**InData**  
-指定可在 **InStrIndex**指定的表达式中使用目标内存中的地址的可选类型化数据。 表达式使用此地址作为伪寄存器 **$extin**。
+指定可在 **InStrIndex** 指定的表达式中使用目标内存中的地址的可选类型化数据。 表达式使用此地址作为伪寄存器 **$extin**。
 
 <span id="OutData"></span><span id="outdata"></span><span id="OUTDATA"></span>**OutData**  
 接收表示表达式的值的 [**调试 \_ 类型化 \_ 数据**](/windows-hardware/drivers/ddi/wdbgexts/ns-wdbgexts-_debug_typed_data) 结构。

@@ -1,7 +1,6 @@
 ---
 title: 'StorPortStartIo 规则 (storport) '
 description: 永远不能在微型端口的 StartIo 例程中执行等待或数据分配。
-ms.assetid: 88CC6D8E-A493-4094-B30B-F6AE67A84B0F
 ms.date: 05/21/2018
 keywords:
 - 'StorPortStartIo 规则 (storport) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a0e115cf1f1d470c8a98090479814cf94f2ca0e
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 94da7f26ce4004f120fdaf1eb723fbe8e9eb8d11
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105834"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840775"
 ---
 # <a name="storportstartio-rule-storport"></a>StorPortStartIo 规则 (storport) 
 
 
-永远不能在微型端口的 **StartIo** 例程中执行等待或数据分配。 如果该驱动程序调用 **StorPortStallExecution** 或其他涉及耗时操作的函数，则该驱动程序将无法使用该规则。 由于 **StartIo** 已同步，因此这些调用通常应在 **BuildIo**中完成。
+永远不能在微型端口的 **StartIo** 例程中执行等待或数据分配。 如果该驱动程序调用 **StorPortStallExecution** 或其他涉及耗时操作的函数，则该驱动程序将无法使用该规则。 由于 **StartIo** 已同步，因此这些调用通常应在 **BuildIo** 中完成。
 
 **驱动程序模型： Storport**
 

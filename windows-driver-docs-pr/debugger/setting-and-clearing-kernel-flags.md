@@ -1,18 +1,17 @@
 ---
 title: 设置和清除内核标志
 description: 设置和清除内核标志
-ms.assetid: 6bca8007-2d9f-4b93-b5fb-300c262604c8
 keywords:
-- GFlags、 内核标志
-- GFlags、 运行时间设置
+- GFlags，内核标志
+- GFlags，运行时设置
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6fe55fef0fd81b02ca7b5a976e3bbc2e81d5a160
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1533711541ab4dc6aa49e6baa4dd4e4647398a60
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381970"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840429"
 ---
 # <a name="setting-and-clearing-kernel-flags"></a>设置和清除内核标志
 
@@ -20,21 +19,21 @@ ms.locfileid: "63381970"
 ## <span id="ddk_setting_and_clearing_kernel_mode_flags_dtools"></span><span id="DDK_SETTING_AND_CLEARING_KERNEL_MODE_FLAGS_DTOOLS"></span>
 
 
-内核标志设置，也称为"运行设置"会影响整个系统。 它们会立即生效时避免重新启动，但如果你关闭或重新启动系统，它们会丢失。
+内核标志设置（也称为 "运行时设置"）会影响整个系统。 它们会立即生效，无需重新启动，但当你关闭或重新启动系统时，它们会丢失。
 
-内核设置优先于注册表设置在运行时，但在关闭或重新启动系统时，内核标志设置都将丢失，再次是有效的注册表设置。
+内核设置在运行时优先于注册表设置，但当你关闭或重新启动系统时，内核标志设置会丢失，并且注册表设置将再次生效。
 
-**若要设置和清除内核标志**
+**设置和清除内核标志**
 
-1.  单击**内核标志**选项卡。
+1.  单击 " **内核标志** " 选项卡。
 
-    下面的屏幕截图所示**内核标志**Windows Vista 中的选项卡。
+    以下屏幕截图显示 Windows Vista 中的 " **内核标志** " 选项卡。
 
-    ![windows vista 中内核标志选项卡的屏幕截图 ](images/gflags-kernel.png)
+    ![windows vista 中的 "内核标志" 选项卡的屏幕截图 ](images/gflags-kernel.png)
 
-2.  设置或清除标志，通过选中或清除关联的标志的复选框。
+2.  通过选中或清除与标志关联的复选框来设置或清除标志。
 
-3.  已选择或清除所有所需的标志，请单击**应用**。
+3.  如果选择或清除了所需的所有标志，请单击 " **应用**"。
 
  
 

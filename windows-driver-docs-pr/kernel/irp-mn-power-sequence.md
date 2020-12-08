@@ -2,16 +2,15 @@
 title: IRP_MN_POWER_SEQUENCE
 description: 此 IRP 返回设备的电源序列值。
 ms.date: 08/12/2017
-ms.assetid: f00c0021-a909-4d76-9114-6710e1aa4307
 keywords:
-- IRP_MN_POWER_SEQUENCE 内核模式驱动程序体系结构
+- IRP_MN_POWER_SEQUENCE Kernel-Mode 驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 16eb2bf798fc8e890f2f78c24d4f820b69d6d30c
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: aab954062837d4706ebcbcdb5ab8d8a4e4d07fac
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185143"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840327"
 ---
 # <a name="irp_mn_power_sequence"></a>IRP \_ MN \_ 幂 \_ 序列
 
@@ -53,7 +52,7 @@ ms.locfileid: "89185143"
 
 序列值跟踪设备处于相应电源状态或降低电源状态的最小次数。
 
-总线驱动程序会在每次设备进入相应电源状态或降低电源状态时，增加 **SequenceD1**、 **SequenceD2**和 **SequenceD3** 中的值。
+总线驱动程序会在每次设备进入相应电源状态或降低电源状态时，增加 **SequenceD1**、 **SequenceD2** 和 **SequenceD3** 中的值。
 
 ## <a name="io-status-block"></a>I/o 状态块
 
@@ -81,7 +80,7 @@ ms.locfileid: "89185143"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wdm.h（包括 Wdm.h、Ntddk.h 或 Ntifs.h）</td>
 </tr>
 </tbody>

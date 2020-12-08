@@ -1,7 +1,6 @@
 ---
 title: 'UsbKmdfIrqlExplicit 规则 (kmdf) '
 description: UsbKmdfIrqlExplicit 规则验证是否在正确的 IRQL 级别调用 KMDF DDIs。 此规则适用于所有 EvtIoCallback 函数。
-ms.assetid: 4762C541-5A64-4074-9D01-63482E9B79E8
 ms.date: 05/21/2018
 keywords:
 - 'UsbKmdfIrqlExplicit 规则 (kmdf) '
@@ -12,25 +11,25 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7529a78ef9ccb60426a15d8cb8ab7ed99c7959a4
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 45b1fb39485808c0b6bf0e39a51a9f8fe053b69e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103194"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840773"
 ---
 # <a name="usbkmdfirqlexplicit-rule-kmdf"></a>UsbKmdfIrqlExplicit 规则 (kmdf) 
 
 
-**UsbKmdfIrqlExplicit**规则验证是否在正确的 IRQL 级别调用 KMDF DDIs。 此规则适用于所有 EvtIoCallback 函数。
+**UsbKmdfIrqlExplicit** 规则验证是否在正确的 IRQL 级别调用 KMDF DDIs。 此规则适用于所有 EvtIoCallback 函数。
 
 如果你的驱动程序调用了包含 [**WDF \_ 对象 \_ 特性**](/windows-hardware/drivers/ddi/wdfobject/ns-wdfobject-_wdf_object_attributes) struct 的 WdfIoQueueCreate 函数，并使用默认特性（ (WDF \_ 对象 \_ 属性 \_ init \_ 上下文 \_ 类型或 VOID wdf \_ 对象 \_ 属性 \_ init) 创建），则可能需要采用以下方式之一来修改驱动程序，使 [静态驱动程序验证](./static-driver-verifier.md) 程序不报告与此规则相关的缺陷：
 
 通过将驱动程序代码更改为设置特性，将设备特性显式设置为 WdfExecutionLevelPassive 或 WdfExecutionLevelDispatch，方法是调用使用 [**WDF \_ 对象 \_ 特性**](/windows-hardware/drivers/ddi/wdfobject/ns-wdfobject-_wdf_object_attributes) struct 作为参数的函数。
 
-显式假设/断言，以分析使用** \_ \_ 分析 \_ 假设**宏在设备属性中设置的 WdfExecutionLevelPassive 或 WdfExecutionLevelDispatch。 下面是一个示例： \_ \_ 分析 \_ 假定 ( # B0 CutionLevel = = WdfExecutionLevelPassive) 
+显式假设/断言，以分析使用 **\_ \_ 分析 \_ 假设** 宏在设备属性中设置的 WdfExecutionLevelPassive 或 WdfExecutionLevelDispatch。 下面是一个示例： \_ \_ 分析 \_ 假定 ( # B0 CutionLevel = = WdfExecutionLevelPassive) 
 
-如果你的驱动程序在被动级别处理某些 IOCTLs， \_ 而其他人在调度 \_ 级别处理，则你可能需要 \_ 从验证中排除在调度级别处理的 IOCTLs。 您可以使用** \_ \_ 分析 \_ 假设**执行此操作。 下面是一个示例： \_ \_ 分析 \_ 假定 (IOCONTROLCODE！ = ioctl \_ RH \_ query \_ 虚拟 \_ 转换器 \_ 接口) ，其中 IOCTL \_ RH \_ 查询 \_ 虚拟 \_ 转换器 \_ 接口在 \_ 驱动程序 EvtIoDeviceControlCallback 中的调度级别处理。
+如果你的驱动程序在被动级别处理某些 IOCTLs， \_ 而其他人在调度 \_ 级别处理，则你可能需要 \_ 从验证中排除在调度级别处理的 IOCTLs。 您可以使用 **\_ \_ 分析 \_ 假设** 执行此操作。 下面是一个示例： \_ \_ 分析 \_ 假定 (IOCONTROLCODE！ = ioctl \_ RH \_ query \_ 虚拟 \_ 转换器 \_ 接口) ，其中 IOCTL \_ RH \_ 查询 \_ 虚拟 \_ 转换器 \_ 接口在 \_ 驱动程序 EvtIoDeviceControlCallback 中的调度级别处理。
 
 **驱动程序模型： KMDF**
 

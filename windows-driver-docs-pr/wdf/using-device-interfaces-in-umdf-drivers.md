@@ -1,33 +1,32 @@
 ---
 title: 在 UMDF 驱动程序中使用设备接口
 description: 在 UMDF 驱动程序中使用设备接口
-ms.assetid: acb6da80-bd04-48f0-b42a-96463f091b0a
 keywords:
 - 用户模式驱动程序 WDK UMDF，设备接口
 - UMDF WDK，设备接口
-- 用户模式驱动程序框架 WDK，设备接口
+- User-Mode Driver Framework WDK，设备接口
 - 设备接口 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fc3d5bcc0aa14f4351fe826ce9bac04d8827aa94
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: e7417e9537bdc7d782d5ef5e986c8b26d06984f7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715504"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840853"
 ---
 # <a name="using-device-interfaces-in-umdf-drivers"></a>在 UMDF 驱动程序中使用设备接口
 
 
 [!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
-*设备接口*是应用程序可用于访问设备即插即用 (PnP) 设备的符号链接。 用户模式应用程序可将接口的符号链接名称传递到 API 元素，例如 Microsoft Win32 [**CreateFile**](/windows/win32/api/fileapi/nf-fileapi-createfilea) 函数。 若要获取设备接口的符号链接名称，用户模式应用程序可以调用 **SetupDi** 函数。 有关 SetupDi 函数的详细信息，请参阅 SetupDi 设备接口函数。
+*设备接口* 是应用程序可用于访问设备即插即用 (PnP) 设备的符号链接。 用户模式应用程序可将接口的符号链接名称传递到 API 元素，例如 Microsoft Win32 [**CreateFile**](/windows/win32/api/fileapi/nf-fileapi-createfilea) 函数。 若要获取设备接口的符号链接名称，用户模式应用程序可以调用 **SetupDi** 函数。 有关 SetupDi 函数的详细信息，请参阅 SetupDi 设备接口函数。
 
 每个设备接口属于一个 *设备接口类*。 例如，cd-rom 设备的驱动程序堆栈可能提供属于 GUID \_ DEVINTERFACE \_ CDROM 类的接口。 Cd-rom 设备的驱动程序之一将注册 GUID \_ DEVINTERFACE CDROM 类的实例， \_ 以通知系统和应用程序提供 cd-rom 设备。 有关设备接口类的详细信息，请参阅 [设备接口简介](../install/overview-of-device-interface-classes.md)。
 
 ### <a name="registering-a-device-interface"></a>注册设备接口
 
-若要注册设备接口类的实例，基于 UMDF 的驱动程序可以从其[**IDriverEntry：： OnDeviceAdd**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)回调函数中调用[**IWDFDevice：： CreateDeviceInterface**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createdeviceinterface) 。 如果驱动程序支持多个接口实例，则可以为每个实例分配一个唯一的引用字符串。
+若要注册设备接口类的实例，基于 UMDF 的驱动程序可以从其 [**IDriverEntry：： OnDeviceAdd**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)回调函数中调用 [**IWDFDevice：： CreateDeviceInterface**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createdeviceinterface) 。 如果驱动程序支持多个接口实例，则可以为每个实例分配一个唯一的引用字符串。
 
 ### <a name="enabling-and-disabling-a-device-interface"></a>启用和禁用设备接口
 
@@ -41,7 +40,7 @@ ms.locfileid: "90715504"
 
 ### <a name="creating-device-events"></a>创建设备事件
 
-基于 UMDF 的驱动程序可以通过调用[**IWDFDevice：:P ostevent**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-postevent)，创建称为*设备) 事件* (设备特定的自定义事件。 已注册为使用任何设备接口的驱动程序可以接收设备自定义事件的通知。 基于 UMDF 的驱动程序通过提供 [**IRemoteInterfaceCallbackEvent：： OnRemoteInterfaceEvent**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iremoteinterfacecallbackevent-onremoteinterfaceevent) 回调函数来接收此类通知。
+基于 UMDF 的驱动程序可以通过调用 [**IWDFDevice：:P ostevent**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-postevent)，创建称为 *设备) 事件* (设备特定的自定义事件。 已注册为使用任何设备接口的驱动程序可以接收设备自定义事件的通知。 基于 UMDF 的驱动程序通过提供 [**IRemoteInterfaceCallbackEvent：： OnRemoteInterfaceEvent**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iremoteinterfacecallbackevent-onremoteinterfaceevent) 回调函数来接收此类通知。
 
 自定义事件对于设备是唯一的。 创建事件的驱动程序开发人员和接收事件的驱动程序的开发人员必须了解事件的含义。
 
@@ -49,7 +48,7 @@ ms.locfileid: "90715504"
 
 如果希望基于 UMDF 的驱动程序将 i/o 请求发送到另一个驱动程序提供的设备接口，则可以创建表示设备接口的 [远程 i/o 目标](general-i-o-targets-in-umdf.md) 。
 
-首先，你的驱动程序必须注册，以便在设备接口可用时接收通知。 请使用以下步骤：
+首先，你的驱动程序必须注册，以便在设备接口可用时接收通知。 使用以下步骤：
 
 1.  当驱动程序调用 [**IWDFDriver：： CreateDevice**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdriver-createdevice)时，驱动程序可以提供一个 [IPnpCallbackRemoteInterfaceNotification](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-ipnpcallbackremoteinterfacenotification) 接口。 当设备接口可用时，此接口的 [**IPnpCallbackRemoteInterfaceNotification：： OnRemoteInterfaceArrival**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackremoteinterfacenotification-onremoteinterfacearrival) 回调函数会通知你的驱动程序。
 

@@ -1,9 +1,8 @@
 ---
-title: 辊元素
-description: 可选辊元素描述平板辊上扫描程序提供的功能。
-ms.assetid: bda5aa6d-ac19-4af2-9b21-64b29d726e80
+title: 影印元素
+description: 可选的 "影印" 元素说明扫描仪上可用的平板影印功能。
 keywords:
-- 辊元素成像设备
+- 影印元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5de6cb52af56399dee1cd6d0ba67b6a4dd038028
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 615e4dbde2fb9c3c0d18c124f8f8adcd2fd761d1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360673"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841083"
 ---
-# <a name="platen-element"></a>辊元素
+# <a name="platen-element"></a>影印元素
 
 
-可选**辊**元素描述平板辊上扫描程序提供的功能。
+可选的 " **影印** " 元素说明扫描仪上可用的平板影印功能。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -91,7 +90,7 @@ ms.locfileid: "63360673"
 <a name="remarks"></a>备注
 -------
 
-如果扫描设备具有平板辊，WSD 扫描服务必须提供所有的配置信息**辊**子元素。
+如果扫描设备有平板影印，则 WSD 扫描服务必须 **提供所有子** 元素的配置信息。
 
 ## <a name="see-also"></a>请参阅
 

@@ -2,16 +2,15 @@
 title: IRP_MN_ENABLE_EVENTS
 description: 注册一个或多个事件块的任何 WMI 驱动程序都必须处理此 IRP。
 ms.date: 08/12/2017
-ms.assetid: 35b95ba0-efd0-420a-abe0-664fc6311d02
 keywords:
-- IRP_MN_ENABLE_EVENTS 内核模式驱动程序体系结构
+- IRP_MN_ENABLE_EVENTS Kernel-Mode 驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: b7375b9531db59ff79dabeaedc987e336019358c
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 7f1b22a92ea7a82d5484af6f4ebf67d050f8ef05
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185159"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838867"
 ---
 # <a name="irp_mn_enable_events"></a>IRP \_ MN \_ 启用 \_ 事件
 
@@ -39,9 +38,9 @@ WMI \_ 在任意线程上下文中以 IRQL = 被动级别发送此 IRP。
 
 **数据路径** 指向标识要启用的事件块的 GUID。
 
-WNODE**指示非**分页缓冲区的大小（在**参数.**) 中，该缓冲区必须大于或等于**sizeof** (的** \_ 标头**。 不注册跟踪块 (WMIREG \_ 标志 \_ 跟踪 GUID) 的驱动程序 \_ 可以忽略此参数。
+WNODE **指示非** 分页缓冲区的大小（在 **参数.**) 中，该缓冲区必须大于或等于 **sizeof** (的 **\_ 标头**。 不注册跟踪块 (WMIREG \_ 标志 \_ 跟踪 GUID) 的驱动程序 \_ 可以忽略此参数。
 
-**Parameters.WMI.Buffer** **WNODE \_ 标头**指示是否应跟踪事件 (WMI \_ 标志 \_ 跟踪 \_ GUID) 并提供系统记录器的句柄。 不注册跟踪块 (WMIREG \_ 标志 \_ 跟踪 GUID) 的驱动程序 \_ 可以忽略此参数。
+**Parameters.WMI.Buffer** **WNODE \_ 标头** 指示是否应跟踪事件 (WMI \_ 标志 \_ 跟踪 \_ GUID) 并提供系统记录器的句柄。 不注册跟踪块 (WMIREG \_ 标志 \_ 跟踪 GUID) 的驱动程序 \_ 可以忽略此参数。
 
 ## <a name="output-parameters"></a>输出参数
 
@@ -51,7 +50,7 @@ WNODE**指示非**分页缓冲区的大小（在**参数.**) 中，该缓冲区�
 ## <a name="io-status-block"></a>I/o 状态块
 
 
-如果驱动程序通过调用[**WmiSystemControl**](/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmisystemcontrol)来处理 IRP，WMI 将在 i/o 状态块中设置**irp- &gt; IoStatus**和**irp- &gt; IoStatus。**
+如果驱动程序通过调用 [**WmiSystemControl**](/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmisystemcontrol)来处理 IRP，WMI 将在 i/o 状态块中设置 **irp- &gt; IoStatus** 和 **irp- &gt; IoStatus。**
 
 否则，驱动程序会将 **Irp- &gt; IoStatus** 设置为状态 \_ 成功，或设置为适当的错误状态，如下所示：
 
@@ -90,7 +89,7 @@ WNODE**指示非**分页缓冲区的大小（在**参数.**) 中，该缓冲区�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wdm.h（包括 Wdm.h、Ntddk.h 或 Ntifs.h）</td>
 </tr>
 </tbody>

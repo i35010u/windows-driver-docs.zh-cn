@@ -1,7 +1,6 @@
 ---
 title: WriteOnceDiskClassGuid
 description: WriteOnceDiskClassGuid
-ms.assetid: 3632a304-54e7-4947-b57f-6cb985c63e8a
 keywords:
 - WriteOnceDiskClassGuid 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 330ecada8e54b27ce285cd5d87bf4d6a1d95a6c0
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 81b81e24e6cb06c5b50c2bde379b2918170549bc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097211"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840933"
 ---
 # <a name="writeoncediskclassguid"></a>WriteOnceDiskClassGuid
 
@@ -46,7 +45,7 @@ WriteOnceDiskClassGuid 是用于写入一次写入磁盘设备的 [设备接口�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**GUID_DEVINTERFACE_WRITEONCEDISK**](guid-devinterface-writeoncedisk.md)

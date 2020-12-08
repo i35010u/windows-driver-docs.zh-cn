@@ -1,7 +1,6 @@
 ---
 title: 'UsbDeviceCreateFail 规则 (kmdf) '
 description: UsbDeviceCreateFail 规则指定如果创建 WDFUSBDEVICE 对象失败，驱动程序从 EvtDevicePrepareHardware 事件回调函数返回并返回错误状态。
-ms.assetid: f8a3b994-231f-44b4-995a-0da4eafa097e
 ms.date: 05/21/2018
 keywords:
 - 'UsbDeviceCreateFail 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 83cff5d4860884299c6bc3008c50992894e4a3e5
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: eed4d5bdc6d58c1975bddd7ba2a60b4c0a7f51cd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104748"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840809"
 ---
 # <a name="usbdevicecreatefail-rule-kmdf"></a>UsbDeviceCreateFail 规则 (kmdf) 
 
 
-**UsbDeviceCreateFail**规则指定如果创建 WDFUSBDEVICE 对象失败，驱动程序从[*EvtDevicePrepareHardware*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)事件回调函数返回并返回错误状态。
+**UsbDeviceCreateFail** 规则指定如果创建 WDFUSBDEVICE 对象失败，驱动程序从 [*EvtDevicePrepareHardware*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)事件回调函数返回并返回错误状态。
 
 **驱动程序模型： KMDF**
 

@@ -1,7 +1,6 @@
 ---
 title: C28134
 description: 警告 C28134 池标记的类型应为整数，而不是字符串或字符串指针。
-ms.assetid: f61aec4c-4072-421f-aa6d-d9399d0c439c
 keywords:
 - 列出用于驱动程序的 WDK PREfast 的警告
 - 为驱动程序列出的 WDK PREfast 的错误
@@ -9,12 +8,12 @@ ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28134
-ms.openlocfilehash: 7206c49b97ad64590eed899771e536f888cf3d17
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: bf14916c66813cad2341d173bb3de15ff2c53b8b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382595"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840407"
 ---
 # <a name="c28134"></a>C28134
 

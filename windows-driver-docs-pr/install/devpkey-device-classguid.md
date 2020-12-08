@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_ClassGuid
 description: DEVPKEY_Device_ClassGuid
-ms.assetid: 32527200-dd3d-4e2b-acf3-9005ab511e60
 keywords:
 - DEVPKEY_Device_ClassGuid 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: cc389e0344f9d0db00b802526e4e4a1c5cfa5bed
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 0661fc89aa6041586411a4de52087a6f6bce2f5d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717096"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840083"
 ---
 # <a name="devpkey_device_classguid"></a>DEVPKEY_Device_ClassGuid
 
@@ -81,7 +80,7 @@ Windows Server 2003、Windows XP 和 Windows 2000 支持此属性，但不支持
 ## <a name="see-also"></a>请参阅
 
 
-[**INF 版本部分**](./inf-version-section.md)
+[**INF Version 节**](./inf-version-section.md)
 
 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 

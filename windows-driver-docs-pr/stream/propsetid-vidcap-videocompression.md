@@ -1,47 +1,46 @@
 ---
-title: PROPSETID\_VIDCAP\_VIDEOCOMPRESSION
-description: PROPSETID\_VIDCAP\_VIDEOCOMPRESSION
-ms.assetid: 7af6f7f0-d446-4b44-9423-efd37f731e0b
+title: PROPSETID \_ VIDCAP \_ VIDEOCOMPRESSION
+description: PROPSETID \_ VIDCAP \_ VIDEOCOMPRESSION
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 70c4b7bea33a0f37fe006bd7e4fea498966d13b2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0d23f55defd7966dac99bbf8ed6a351d3888ded1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349110"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840507"
 ---
-# <a name="propsetidvidcapvideocompression"></a>PROPSETID\_VIDCAP\_VIDEOCOMPRESSION
+# <a name="propsetid_vidcap_videocompression"></a>PROPSETID \_ VIDCAP \_ VIDEOCOMPRESSION
 
 
 ## <span id="ddk_propsetid_vidcap_videocompression_ks"></span><span id="DDK_PROPSETID_VIDCAP_VIDEOCOMPRESSION_KS"></span>
 
 
-PROPSETID\_VIDCAP\_VIDEOCOMPRESSION 属性设置控制设备的视频的压缩设置。
+PROPSETID \_ VIDCAP \_ VIDEOCOMPRESSION 属性集控制设备的视频压缩设置。
 
-KSPROPERTY\_VIDCAP\_中的 VIDEOCOMPRESSION 枚举*ksmedia.h*指定此集的属性。
+\_Ksmedia 中的 KSPROPERTY VIDCAP \_ VIDEOCOMPRESSION *ksmedia.h* 枚举指定此集的属性。
 
-支持设置此属性是可选的应仅通过实现将视频的压缩编解码器的设备来实现。
+对此属性集的支持是可选的，只应由实现视频压缩编解码器的设备来实现。
 
-视频捕获微型驱动程序需要实现以下属性：
+需要视频捕获微型驱动程序来实现以下属性：
 
-[**KSPROPERTY\_VIDEOCOMPRESSION\_GETINFO**](ksproperty-videocompression-getinfo.md)
+[**KSPROPERTY \_ VIDEOCOMPRESSION \_ GETINFO**](ksproperty-videocompression-getinfo.md)
 
-[**KSPROPERTY\_VIDEOCOMPRESSION\_KEYFRAME\_RATE**](ksproperty-videocompression-keyframe-rate.md)
+[**KSPROPERTY \_ VIDEOCOMPRESSION \_ 关键帧 \_ 速率**](ksproperty-videocompression-keyframe-rate.md)
 
-[**KSPROPERTY\_VIDEOCOMPRESSION\_重写\_帧\_大小**](ksproperty-videocompression-override-frame-size.md)
+[**KSPROPERTY \_ VIDEOCOMPRESSION \_ 替代 \_ 帧 \_ 大小**](ksproperty-videocompression-override-frame-size.md)
 
-[**KSPROPERTY\_VIDEOCOMPRESSION\_OVERRIDE\_KEYFRAME**](ksproperty-videocompression-override-keyframe.md)
+[**KSPROPERTY \_ VIDEOCOMPRESSION \_ 替代 \_ 关键帧**](ksproperty-videocompression-override-keyframe.md)
 
-[**KSPROPERTY\_VIDEOCOMPRESSION\_PFRAMES\_每\_关键帧**](ksproperty-videocompression-pframes-per-keyframe.md)
+[**\_ \_ \_ 每个 \_ 关键帧的 KSPROPERTY VIDEOCOMPRESSION PFRAMES**](ksproperty-videocompression-pframes-per-keyframe.md)
 
-[**KSPROPERTY\_VIDEOCOMPRESSION\_质量**](ksproperty-videocompression-quality.md)
+[**KSPROPERTY \_ VIDEOCOMPRESSION \_ QUALITY**](ksproperty-videocompression-quality.md)
 
-[**KSPROPERTY\_VIDEOCOMPRESSION\_窗口大小**](ksproperty-videocompression-windowsize.md)
+[**KSPROPERTY \_ VIDEOCOMPRESSION \_ WINDOWSIZE**](ksproperty-videocompression-windowsize.md)
 
-### <a name="span-iddirectshowinterfacespanspan-iddirectshowinterfacespandirectshow-interface"></a><span id="directshow_interface"></span><span id="DIRECTSHOW_INTERFACE"></span>DirectShow 接口
+### <a name="span-iddirectshow_interfacespanspan-iddirectshow_interfacespandirectshow-interface"></a><span id="directshow_interface"></span><span id="DIRECTSHOW_INTERFACE"></span>DirectShow 接口
 
-DirectShow **IAMVideoCompression**接口 （请参阅 Microsoft Windows SDK 中的 DirectShow 文档） 提供对此集的属性的访问。
+DirectShow **IAMVideoCompression** 接口 (参阅 Microsoft Windows SDK 中的 directshow 文档) 提供对此集的属性的访问权限。
 
  
 

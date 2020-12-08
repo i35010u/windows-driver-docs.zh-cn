@@ -1,7 +1,6 @@
 ---
 title: SM \_ AddPort 函数
 description: SM \_ ADDPORT wmi 方法将 wmi 提供程序配置为通知 wmi 客户端与所指示的端口关联的事件。
-ms.assetid: 1667487e-80b1-47eb-9f3c-2f5e1909c73b
 keywords:
 - SM_AddPort 函数存储设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 1329bc028a6a050496ead1695e5b606f4f86de2d
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ec44754a5483348abaf2555b7b7419f9cb1eb033
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188488"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839371"
 ---
 # <a name="sm_addport-function"></a>SM \_ AddPort 函数
 
@@ -31,8 +30,8 @@ SM \_ ADDPORT wmi 方法将 wmi 提供程序配置为通知 wmi 客户端与所�
 
 ```ManagedCPlusPlus
 void SM_AddPort(
-   [in, HBAType("HBA_WWN")] uint8          PortWWN[8],
-   [in, EVENT_TYPES_QUALIFIERS] uint32     EventType,
+   [in, HBAType("HBA_WWN")] uint8          PortWWN[8],
+   [in, EVENT_TYPES_QUALIFIERS] uint32     EventType,
    [out, HBA_STATUS_QUALIFIERS] HBA_STATUS HBAStatus
 );
 ```
@@ -54,7 +53,7 @@ void SM_AddPort(
 
 不适用于 WMI 方法。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 此 WMI 方法属于 MS \_ SM \_ EventControl WMI 类。
@@ -73,7 +72,7 @@ void SM_AddPort(
 <td align="left">台式机</td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
+<td align="left"><p>标头</p></td>
 <td align="left">Hbapiwmi</td>
 </tr>
 </tbody>

@@ -1,15 +1,14 @@
 ---
 title: SetupAPI 日志记录函数
 description: SetupAPI 日志记录函数
-ms.assetid: d27bd44c-41c1-4546-b463-11ed3f5c7d84
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b28591f2488a9641b68da929874801670c674cb
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: c6d265dd1a7ac7725f03b3bb85bcb6131878dbd9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715414"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838899"
 ---
 # <a name="setupapi-logging-functions"></a>SetupAPI 日志记录函数
 
@@ -24,7 +23,7 @@ ms.locfileid: "90715414"
 <thead>
 <tr class="header">
 <th align="left">函数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

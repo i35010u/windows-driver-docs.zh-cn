@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x24 NTFS_FILE_SYSTEM
 description: NTFS_FILE_SYSTEM bug 检查的值为0x00000024。 这表明 ntfs.sys 中出现问题，该驱动程序文件允许系统读写 NTFS 驱动器。
-ms.assetid: 9d2dd8a8-b550-4392-b663-6902a015ef7b
 keywords:
 - Bug 检查 0x24 NTFS_FILE_SYSTEM
 - NTFS_FILE_SYSTEM
@@ -13,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d53f5afab53d6190f2adad32d2dd11ef974ee96
-ms.sourcegitcommit: 9e13d3fbc74bb75335c4d2927c55b0085e46b0ea
+ms.openlocfilehash: 6324e9edb0dd3f5745d52273d9ebc6aa215ef6f2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/16/2020
-ms.locfileid: "94639031"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839805"
 ---
 # <a name="bug-check-0x24-ntfs_file_system"></a>Bug 检查0x24： NTFS \_ 文件 \_ 系统
 
@@ -83,7 +82,7 @@ NTFS \_ 文件 \_ 系统 bug 检查的值为0x00000024。 这表明 ntfs.sys 中
 
 -   还应运行系统制造商提供的与存储子系统相关的硬件诊断。
 
--   使用扫描磁盘实用工具确认没有文件系统错误。 选择并按住 (或右键单击要扫描的驱动器) ，然后选择 " **属性** "。 选择 " **工具** "。 选择 " **立即检查** " 按钮。
+-   使用扫描磁盘实用工具确认没有文件系统错误。 选择并按住 (或右键单击要扫描的驱动器) ，然后选择 " **属性**"。 选择 " **工具**"。 选择 " **立即检查** " 按钮。
 -   确认硬盘上有足够的可用空间。 操作系统和某些应用程序需要足够的可用空间来创建交换文件和其他功能。 根据系统配置，具体要求会有所不同，但通常最好使用10% 到15% 的可用空间。
 
 -   使用系统文件检查器工具修复丢失或损坏的系统文件。 系统文件检查器是 Windows 中的一个实用工具，它允许用户在 Windows 系统文件中扫描损坏并还原损坏的文件。 使用以下命令 ( # A0) 运行系统文件检查器工具。

@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_DeviceInterface_Enabled
 description: DEVPKEY_DeviceInterface_Enabled
-ms.assetid: 8e7ea36c-827d-43bd-b424-41c06ba8c20d
 keywords:
 - DEVPKEY_DeviceInterface_Enabled 设备和驱动程序安装
 topic_type:
@@ -14,17 +13,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 4ef26f67ba8c600399c7bee944b763ef5419dcdf
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 3c91c81e5333ed38539597d1513406efcc6c26aa
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716366"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841245"
 ---
 # <a name="devpkey_deviceinterface_enabled"></a>DEVPKEY_DeviceInterface_Enabled
 
 
-**DeviceInterfaceEnabled**设备属性表示一个布尔型标志，该标志指示是否已启用设备接口。
+**DeviceInterfaceEnabled** 设备属性表示一个布尔型标志，该标志指示是否已启用设备接口。
 
 <table>
 <colgroup>
@@ -66,7 +65,7 @@ ms.locfileid: "90716366"
 
 可以调用 [**SetupDiGetDeviceInterfaceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdeviceinterfacepropertyw) 来检索 DEVPKEY_DeviceInterface_Enabled 的值。
 
-Windows Server 2003、Windows XP 和 Windows 2000 支持此属性，但不支持 DEVPKEY_DeviceInterface_Enabled 属性键。 有关如何在这些早期版本的 Windows 上检索设备接口的活动状态的信息，请参阅有关如何使用在[访问设备接口属性](./accessing-device-interface-properties.md)中提供的[**SetupDiEnumDeviceInterfaces**](/windows/win32/api/setupapi/nf-setupapi-setupdienumdeviceinterfaces)的信息。
+Windows Server 2003、Windows XP 和 Windows 2000 支持此属性，但不支持 DEVPKEY_DeviceInterface_Enabled 属性键。 有关如何在这些早期版本的 Windows 上检索设备接口的活动状态的信息，请参阅有关如何使用在 [访问设备接口属性](./accessing-device-interface-properties.md)中提供的 [**SetupDiEnumDeviceInterfaces**](/windows/win32/api/setupapi/nf-setupapi-setupdienumdeviceinterfaces)的信息。
 
 有关设备接口的详细信息，请参阅 [设备接口类](./overview-of-device-interface-classes.md) 和 [**INF AddInterface 指令**](./inf-addinterface-directive.md)。
 

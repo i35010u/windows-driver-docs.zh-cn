@@ -1,23 +1,22 @@
 ---
 title: 权限
 description: 权限
-ms.assetid: 15deec90-73a3-4443-90b7-de4ec9673169
 keywords:
 - 权限 WDK 对象
 - 处理特权 WDK
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b5eb819811915494dfb37b71c463773f1c1774bf
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 03347aafbfa0cbf1030ad3e7074a0aecc43c57ee
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106114"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840689"
 ---
 # <a name="privileges"></a>权限
 
 
-*权限*是与进程关联的权限，而不是与对象关联的权限。 权限的典型示例是 **SeBackupPrivilege**，它在某个进程上授予备份磁盘上的文件。
+*权限* 是与进程关联的权限，而不是与对象关联的权限。 权限的典型示例是 **SeBackupPrivilege**，它在某个进程上授予备份磁盘上的文件。
 
 在完成操作之前，有几个例程检查当前进程的权限。 如果驱动程序例程由系统进程执行，则操作始终会成功，但如果驱动程序例程由没有所需权限的用户进程执行，则操作可能会失败。
 

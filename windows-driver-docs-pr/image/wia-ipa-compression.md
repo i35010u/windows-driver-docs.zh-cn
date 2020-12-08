@@ -1,9 +1,8 @@
 ---
-title: WIA\_IPA\_压缩
-description: WIA\_IPA\_压缩属性包含当前使用的压缩类型。 WIA 微型驱动程序创建并维护此属性。
-ms.assetid: 6853dc51-bde0-4548-92f6-678b55cf6275
+title: WIA \_ IPA \_ 压缩
+description: WIA \_ IPA \_ COMPRESSION 属性包含使用的当前压缩类型。 WIA 微型驱动程序创建并维护此属性。
 keywords:
-- WIA_IPA_COMPRESSION 成像设备
+- WIA_IPA_COMPRESSION 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,33 +13,33 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fbca734cb6848f23608573f3be77e326b9212d1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: abb57658d02b0fd304db843f79eef83b08fa5351
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369563"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840971"
 ---
-# <a name="wiaipacompression"></a>WIA\_IPA\_压缩
+# <a name="wia_ipa_compression"></a>WIA \_ IPA \_ 压缩
 
 
-WIA\_IPA\_压缩属性包含当前使用的压缩类型。 WIA 微型驱动程序创建并维护此属性。
+WIA \_ IPA \_ COMPRESSION 属性包含使用的当前压缩类型。 WIA 微型驱动程序创建并维护此属性。
 
 ## <span id="ddk_wia_ipa_compression_si"></span><span id="DDK_WIA_IPA_COMPRESSION_SI"></span>
 
 
-属性类型：VT\_I4
+属性类型： VT \_ I4
 
-有效值：WIA\_PROP\_列表
+有效值： WIA 内容 \_ \_ 列表
 
-访问权限：读/写 （图像收购）;只读的 （映像存储）
+访问权限：读取/写入 (映像) ;只读 (映像存储) 
 
 <a name="remarks"></a>备注
 -------
 
-应用程序读取 WIA\_IPA\_压缩属性来确定映像压缩类型或应用程序设置此属性可配置的压缩设置。
+应用程序读取 WIA \_ IPA \_ COMPRESSION 属性以确定映像压缩类型，或者应用程序将此属性设置为配置压缩设置。
 
-下表描述了有效使用 WIA 的常量\_IPA\_压缩。
+下表介绍了 WIA IPA 压缩的有效常量 \_ \_ 。
 
 <table>
 <colgroup>
@@ -49,7 +48,7 @@ WIA\_IPA\_压缩属性包含当前使用的压缩类型。 WIA 微型驱动程�
 </colgroup>
 <thead>
 <tr class="header">
-<th>ReplTest1</th>
+<th>值</th>
 <th>定义</th>
 </tr>
 </thead>
@@ -64,15 +63,15 @@ WIA\_IPA\_压缩属性包含当前使用的压缩类型。 WIA 微型驱动程�
 </tr>
 <tr class="odd">
 <td><p>WIA_COMPRESSION_G3</p></td>
-<td><p>组 3 压缩</p></td>
+<td><p>组3压缩</p></td>
 </tr>
 <tr class="even">
 <td><p>WIA_COMPRESSION_G4</p></td>
-<td><p>组 4 压缩</p></td>
+<td><p>组4压缩</p></td>
 </tr>
 <tr class="odd">
 <td><p>WIA_COMPRESSION_JBIG<em></p></td>
-<td><p>是 11544 (ITU-T T.82) 压缩</p></td>
+<td><p>为 11544 (ITU-T) 压缩</p></td>
 </tr>
 <tr class="even">
 <td><p>WIA_COMPRESSION_JPEG</p></td>
@@ -84,10 +83,10 @@ WIA\_IPA\_压缩属性包含当前使用的压缩类型。 WIA 微型驱动程�
 </tr>
 <tr class="even">
 <td><p>WIA_COMPRESSION_NONE</p></td>
-<td><p>不进行压缩</p></td>
+<td><p>无压缩</p></td>
 </tr>
 <tr class="odd">
-<td><p>WIA_COMPRESSION_PNG*</p></td>
+<td><p>WIA_COMPRESSION_PNG *</p></td>
 <td><p>W3C PNG 压缩</p></td>
 </tr>
 </tbody>
@@ -95,15 +94,15 @@ WIA\_IPA\_压缩属性包含当前使用的压缩类型。 WIA 微型驱动程�
 
  
 
-标有星号值 (\*) 适用于 Windows Vista 和更高版本仅操作系统。
+用星号标记 () 的值 \* 仅适用于 Windows Vista 和更高版本的操作系统。
 
-**请注意**  文件格式时 WiaImgFmt\_XPS 或 WiaImgFmt\_PDFA、 WIA\_压缩\_无表示"未定义"; 在设备不能选择内部压缩 （如果有）对于存储在以下两种文档格式的映像。
+**注意**   当文件格式为 WiaImgFmt \_ XPS 或 WiaImgFmt \_ PDFA 时，WIA \_ 压缩 \_ NONE 表示 "未定义"; 如果有任何以这两种文档格式存储的图像) ，则设备不能选择内部压缩 (。
 
  
 
-所有 WIA 2.0 微型驱动程序必须将此属性的初始值都设置为其默认值，即 WIA\_压缩\_NONE。
+所有 WIA 2.0 微型驱动程序都必须将此属性的初始值设置为其默认值，即 WIA \_ COMPRESSION \_ NONE。
 
-WIA 的访问权限\_IPA\_压缩属性是读/写所有图像但只读存储的图像项的收购。
+WIA \_ IPA COMPRESSION 属性的访问权限 \_ 对于所有图像获取都是可读/写的，但存储的图像项是只读的。
 
 <a name="requirements"></a>要求
 ------------
@@ -115,8 +114,8 @@ WIA 的访问权限\_IPA\_压缩属性是读/写所有图像但只读存储的�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>

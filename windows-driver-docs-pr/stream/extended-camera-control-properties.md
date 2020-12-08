@@ -1,15 +1,14 @@
 ---
 title: 扩展的相机控件属性
-ms.assetid: 27D94D73-D190-4C01-B082-7798CA71EDB4
 description: 扩展相机控制接口用于在映像捕获期间控制相机功能。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 54c84cfcef4f350b77ac42d1300c410758c947d2
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: bf9ebeceabe7da5d0090f99e2f2768faca9d85c3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101438"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839205"
 ---
 # <a name="extended-camera-control-properties"></a>扩展的相机控件属性
 
@@ -21,7 +20,7 @@ ms.locfileid: "90101438"
 -   映像中的相关区域
 -   视频抖动
 
-驱动程序还可以选择以异步方式执行照相机控件操作，也就是说，在第一个请求完成之前，对某个操作的所有请求都将被拒绝。 如果驱动程序已成功执行异步照相机控制操作，它应触发 [**KSEVENTSETID \_ CameraAsyncControl**](./kseventsetid-cameraasynccontrol.md) 事件。 有关详细信息，请参阅 [**KSPROPERTY \_ CAMERACONTROL \_ \_ **](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s_ex) 。
+驱动程序还可以选择以异步方式执行照相机控件操作，也就是说，在第一个请求完成之前，对某个操作的所有请求都将被拒绝。 如果驱动程序已成功执行异步照相机控制操作，它应触发 [**KSEVENTSETID \_ CameraAsyncControl**](./kseventsetid-cameraasynccontrol.md) 事件。 有关详细信息，请参阅 [**KSPROPERTY \_ CAMERACONTROL \_ \_**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s_ex) 。
 
 UWP 应用可以访问这些属性来配置照相机：
 
@@ -50,7 +49,7 @@ UWP 应用可以访问这些属性来配置照相机：
 <thead>
 <tr class="header">
 <th>术语</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -133,7 +132,7 @@ UWP 应用可以访问这些属性来配置照相机：
 
 这些结构和枚举支持扩展相机控制界面：
 
-## <a name="structures"></a>结构
+## <a name="structures"></a>結構
 
 
 -   [**KSPROPERTY \_ CAMERACONTROL \_ \_ EX**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s_ex)

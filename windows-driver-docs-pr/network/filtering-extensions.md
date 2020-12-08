@@ -1,15 +1,14 @@
 ---
 title: 筛选扩展
 description: 筛选扩展
-ms.assetid: EDE50213-DFA0-4D8B-9E15-12AED8FDE5CA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 45074bb28beb7926e8ee50d05327b6cebed8b82b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3d7fd603c7be664c7ccc3000b2ca44f562f8df60
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211779"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840655"
 ---
 # <a name="filtering-extensions"></a>筛选扩展
 

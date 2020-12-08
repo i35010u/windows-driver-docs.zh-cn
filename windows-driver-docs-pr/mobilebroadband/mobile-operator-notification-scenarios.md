@@ -1,15 +1,14 @@
 ---
 title: 移动运营商通知方案
 description: 移动运营商通知方案
-ms.assetid: 3749d9ab-3dff-4216-a23b-0e75c04d9a22
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 003d4d272083add470a2b4f42bf874dd6ad381f7
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 69a4cd5a95d3bd3eb1499e111dbdb856ec2ea9a4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209831"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840321"
 ---
 # <a name="mobile-operator-notification-scenarios"></a>移动运营商通知方案
 
@@ -101,7 +100,7 @@ DUSM 跟踪有关用户帐户的详细信息，包括预先支付的数据计划
 ## <a name="span-idsharingspanspan-idsharingspanentitlement-check-for-internet-sharing"></a><span id="sharing"></span><span id="SHARING"></span>Internet 共享的权利检查
 
 
-在 Windows 8.1 中，已添加 Internet 共享（通常称为 tethering），以使用户能够与不支持移动宽带功能的一个或多个其他设备共享其移动宽带网络连接。 传统的 tethering 机制包括蓝牙和 USB。 但是，Wi-fi 可以提供快速轻松的移动宽带连接共享机制（如个人热点、移动热点等），因为它只需很少的配置，可实现高速数据传输，并依赖于熟悉的 Wi-fi 连接过程。
+在 Windows 8.1 中，已添加 Internet 共享（通常称为 tethering），以使用户能够与不支持移动宽带功能的一个或多个其他设备共享其移动宽带网络连接。 传统的 tethering 机制包括蓝牙和 USB。 不过，Wi-Fi 可以提供快速轻松的移动宽带连接共享机制（如个人热点、移动热点等），因为它需要较少的配置、支持高速数据传输，并依赖于熟悉的 Wi-Fi 连接过程。
 
 某些 Mno 或 Mvno 在其网络上不支持 Internet 共享功能，或者在设置 Internet 共享连接之前需要进行权利检查。 Windows 提供必要的控件，以确保 Windows 设备符合网络策略。 如果移动运营商已在服务元数据包中将 [AllowTethering](allowtethering.md) 元素设置为 **EntitlementCheckRequired** ，则系统将触发 [MobileOperatorNotification](mobile-operator-notification-event-technical-details.md) 事件。 然后，移动宽带应用与网络服务通信，以检查是否允许用户使用 Internet 共享功能并响应系统。 如果允许用户使用此功能，则 Internet 共享将成功启动，否则，将显示默认错误消息或移动运营商定义的消息。
 

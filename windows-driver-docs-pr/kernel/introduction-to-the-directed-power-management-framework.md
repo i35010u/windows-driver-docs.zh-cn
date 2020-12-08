@@ -1,15 +1,14 @@
 ---
 title: 导向式电源管理框架简介
 description: 描述定向电源管理框架，或 DFx，它是 Power Framework 的一部分或 PoFx （版本3）。
-ms.assetid: 58550c57-3439-4212-b0c6-6a2fbfd38414
 ms.date: 02/21/2020
 ms.custom: 19H1
-ms.openlocfilehash: 7555842a4ec57f7b923db442e9726ef4b236b148
-ms.sourcegitcommit: 015689b4cc3a288ff4296ab0954a4e866e09c113
+ms.openlocfilehash: e70ceaeb17142769670415c1aad0909d4513c4b3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90574273"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838873"
 ---
 # <a name="introduction-to-the-directed-power-management-framework"></a>导向式电源管理框架简介
 
@@ -25,7 +24,7 @@ DFx 不会关闭分页或调试设备。
 
 ## <a name="requirements-for-wdf-non-miniport-drivers"></a>WDF (非微型端口) 驱动程序的要求
 
-在[WDF_DEVICE_POWER_POLICY_IDLE_SETTINGS](/windows-hardware/drivers/ddi/wdfdevice/ns-wdfdevice-_wdf_device_power_policy_idle_settings)结构中指定**SystemManagedIdleTimeout**或**SystemManagedIdleTimeoutWithHint**的 WDF 驱动程序可以通过将以下注册表项添加到[DDInstall 部分](../install/inf-ddinstall-hw-section.md)中 INF 的[AddReg 指令部分](../install/inf-addreg-directive.md)来选择 DFx：
+在 [WDF_DEVICE_POWER_POLICY_IDLE_SETTINGS](/windows-hardware/drivers/ddi/wdfdevice/ns-wdfdevice-_wdf_device_power_policy_idle_settings)结构中指定 **SystemManagedIdleTimeout** 或 **SystemManagedIdleTimeoutWithHint** 的 WDF 驱动程序可以通过将以下注册表项添加到 [DDInstall 部分](../install/inf-ddinstall-hw-section.md)中 INF 的 [AddReg 指令部分](../install/inf-addreg-directive.md)来选择 DFx：
 
 `HKR,"WDF","WdfDirectedPowerTransitionEnable",0x00010001,1`
 
@@ -52,7 +51,7 @@ DFx 不会关闭分页或调试设备。
 若要获得 DFx 支持，驱动程序必须：
 
 * `PO_FX_DIRECTED_POWER*`注册 PoFx 时提供回调
-* 从 Sx 转换的恢复时，从其[PO_FX_DIRECTED_POWER_UP_CALLBACK](/windows-hardware/drivers/ddi/wdm/nc-wdm-po_fx_directed_power_up_callback)回调函数调用[**PoFxReportDevicePoweredOn**](/windows-hardware/drivers/ddi/wdm/nf-wdm-pofxreportdevicepoweredon)
+* 从 Sx 转换的恢复时，从其 [PO_FX_DIRECTED_POWER_UP_CALLBACK](/windows-hardware/drivers/ddi/wdm/nc-wdm-po_fx_directed_power_up_callback)回调函数调用 [**PoFxReportDevicePoweredOn**](/windows-hardware/drivers/ddi/wdm/nf-wdm-pofxreportdevicepoweredon)
 
 ## <a name="example"></a>示例
 

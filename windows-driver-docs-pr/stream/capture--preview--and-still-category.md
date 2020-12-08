@@ -1,7 +1,6 @@
 ---
 title: 捕获、预览和静态类别
 description: 捕获、预览和静态类别
-ms.assetid: b82cc3b6-1cea-4864-9501-95919f05455f
 keywords:
 - 流类别 WDK 视频捕获、捕获视频流
 - 流类别 WDK 视频捕获，预览视频流
@@ -14,12 +13,12 @@ keywords:
 - PINNAME_VIDEO_STILL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 80cacdbc2f772130bc59ab1cfe587f8c302fdff0
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 94c26fdafb909a02a0a7e1602eb69cac42447ca1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106846"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839977"
 ---
 # <a name="capture-preview-and-still-category"></a>捕获、预览和静态类别
 
@@ -40,11 +39,11 @@ ms.locfileid: "90106846"
 
 "捕获"、"预览" 和 "静止流" pin 类别在数据格式和流特征方面几乎完全相同。
 
-**注意**    ：由于很多照相机仅生成一个输出流，因此 Microsoft DirectShow 包含一个智能 t 筛选器，该筛选器将单个流拆分为捕获和预览流。 因此，仅生成一个流的照相机微型驱动程序不应在内部复制其数据流以生成预览流。
+**注意**  ：由于很多照相机仅生成一个输出流，因此 Microsoft DirectShow 包含一个智能 t 筛选器，该筛选器将单个流拆分为捕获和预览流。 因此，仅生成一个流的照相机微型驱动程序不应在内部复制其数据流以生成预览流。
 
  
 
-指定 **PINNAME \_ 视频 \_ 捕获**、 **PINNAME \_ 视频 \_ 预览**或 **PINNAME \_ video \_ 静止** pin 时，请使用下表中列出的信息。
+指定 **PINNAME \_ 视频 \_ 捕获**、 **PINNAME \_ 视频 \_ 预览** 或 **PINNAME \_ video \_ 静止** pin 时，请使用下表中列出的信息。
 
 <table>
 <colgroup>

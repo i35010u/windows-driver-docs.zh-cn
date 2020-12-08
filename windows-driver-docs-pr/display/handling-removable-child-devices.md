@@ -1,17 +1,16 @@
 ---
 title: 处理可移动子设备
 description: 处理可移动子设备
-ms.assetid: 0edc0331-7178-4986-b818-9f1ee8f12995
 keywords:
 - 可移动子设备 WDK Windows 2000 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dae859f968c104550fe61be5a44b194b0d3a4240
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: 1b59c4d164671ae453be90c3bf45715b5a195e72
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361455"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839107"
 ---
 # <a name="handling-removable-child-devices"></a>处理可移动子设备
 

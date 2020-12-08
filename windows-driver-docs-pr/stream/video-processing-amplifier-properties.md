@@ -1,7 +1,6 @@
 ---
 title: 视频处理放大器属性
 description: 视频处理放大器属性
-ms.assetid: 1adc4fcc-c9a2-41a8-90db-1030ba7c257f
 keywords:
 - 视频处理放大器属性 WDK 视频捕获
 - 放大属性 WDK 视频捕获
@@ -11,12 +10,12 @@ keywords:
 - PROPSETID_VIDCAP_VIDEOPROCAMP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a13479d17386bd571b422e0f52a076b28df8d7b0
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 1f8e04874804eb3b241b11ac6005ff08ace3e0bb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104810"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840857"
 ---
 # <a name="video-processing-amplifier-properties"></a>视频处理放大器属性
 

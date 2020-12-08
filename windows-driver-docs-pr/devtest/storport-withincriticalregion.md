@@ -1,7 +1,6 @@
 ---
 title: 'WithinCriticalRegion 规则 (storport) '
 description: 此规则验证是否只有在禁用正常内核 APC 传递时才对驱动程序的某些同步函数进行调用。
-ms.assetid: 338E6995-0EB2-476D-B5F5-504DC8FF8609
 ms.date: 05/21/2018
 keywords:
 - 'WithinCriticalRegion 规则 (storport) '
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e26c75310ea31d6d2ef9e72f36c62aa6e7631f2
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 1f05c21c6755718f06752fc289c676b2b354087c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105902"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841279"
 ---
 # <a name="withincriticalregion-rule-storport"></a>WithinCriticalRegion 规则 (storport) 
 

@@ -1,17 +1,16 @@
 ---
 title: NDIS_STATUS_WWAN_BASE_STATIONS_INFO
 description: NDIS_STATUS_WWAN_BASE_STATIONS_INFO
-ms.assetid: 57E22B53-5ECC-4B4C-8A98-C1125314868B
 keywords:
 - NDIS_STATUS_WWAN_BASE_STATIONS_INFO，基站信息查询状态通知，移动宽带基本工作站信息查询状态通知，MB 基站信息查询状态通知
 ms.date: 08/21/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 94c459d14b1dba33e68d5b213a44b96033bbd84e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 5bdeafb83f8a48f8e7e933fab9d8f26ed354dc1f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207431"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839475"
 ---
 # <a name="ndis_status_wwan_base_stations_info"></a>NDIS_STATUS_WWAN_BASE_STATIONS_INFO
 
@@ -23,7 +22,7 @@ NDIS_STATUS_WWAN_BASE_STATIONS_INFO 通知由调制解调器端口驱动程序�
 
 **版本**： Windows 10，版本 1709 **头**： Ndis。h
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [OID_WWAN_BASE_STATIONS_INFO](oid-wwan-base-stations-info.md)
 

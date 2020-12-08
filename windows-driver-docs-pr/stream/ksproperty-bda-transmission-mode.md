@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ BDA \_ 传输 \_ 模式
 description: 客户端使用 KSPROPERTY \_ BDA \_ 传输 \_ 模式来控制如何传输广播信号的解调器节点上的设置。
-ms.assetid: 8d49a45f-031f-445f-ae2e-d98223a7d524
 keywords:
 - KSPROPERTY_BDA_TRANSMISSION_MODE 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 14a11fadad90603edd466ea2bc0bb8edd7d2fc3a
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 1a74b2e7102168892a85cd61c7c630c7509ebb7b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186595"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839197"
 ---
 # <a name="ksproperty_bda_transmission_mode"></a>KSPROPERTY \_ BDA \_ 传输 \_ 模式
 
@@ -61,7 +60,7 @@ ms.locfileid: "89186595"
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 TransmissionMode 枚举类型返回的值标识了如何传输广播信号的设置。
@@ -78,7 +77,7 @@ KSP **NodeId** \_ 节点的节点标识号指定了解调器节点的标识符�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Bdamedia (包含 Bdamedia) </td>
 </tr>
 </tbody>

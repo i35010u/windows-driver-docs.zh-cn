@@ -1,17 +1,16 @@
 ---
 title: 启用按 DLL 的堆标记
 description: 启用按 DLL 的堆标记
-ms.assetid: d8f8f6f6-7365-4208-834f-3f5ccacdb7b6
 keywords:
-- 启用堆标记 dll （全局标志）
+- '按 DLL (全局标志启用堆标记) '
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f53fa81c682e0bd6d549ab6bb712310aa0afc77
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6e466ae99d874aef1f283bf295f0a7cb884850e9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330795"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841151"
 ---
 # <a name="enable-heap-tagging-by-dll"></a>启用按 DLL 的堆标记
 
@@ -19,7 +18,7 @@ ms.locfileid: "63330795"
 ## <span id="ddk_enable_heap_tagging_by_dll_dtools"></span><span id="DDK_ENABLE_HEAP_TAGGING_BY_DLL_DTOOLS"></span>
 
 
-**启用按 DLL 标记堆**标志将唯一的标记分配给堆分配创建的同一个 DLL。
+**启用堆标记按 DLL** 标志为同一 DLL 创建的堆分配分配唯一标记。
 
 <table>
 <colgroup>
@@ -41,18 +40,18 @@ ms.locfileid: "63330795"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>整个系统的注册表项、 内核标志和图像文件注册表项</p></td>
+<td align="left"><p>系统范围的注册表项、内核标志、映像文件注册表项</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>注释
+### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>提出
 
-可以通过使用显示标记[ **！ 堆**](-heap.md)调试器扩展与-t 参数。
+可以通过将 [**！堆**](-heap.md) 调试程序扩展与-t 参数一起使用来显示标记。
 
-### <a name="span-idseealsospanspan-idseealsospansee-also"></a><span id="see_also"></span><span id="SEE_ALSO"></span>另请参阅
+### <a name="span-idsee_alsospanspan-idsee_alsospansee-also"></a><span id="see_also"></span><span id="SEE_ALSO"></span>另请参阅
 
 [启用堆标记](enable-heap-tagging.md)
 

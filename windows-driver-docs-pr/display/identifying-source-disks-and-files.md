@@ -1,7 +1,6 @@
 ---
 title: 识别源磁盘和文件
 description: 识别源磁盘和文件
-ms.assetid: 0eb8fe7f-1e44-4f3d-8567-31a2cd659805
 keywords:
 - INF 文件 WDK 显示，标识源磁盘或文件
 - 源磁盘 WDK 显示
@@ -9,12 +8,12 @@ keywords:
 - 标识显示源磁盘或文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 81cd5a1fa5ab959a68bb8a2502dde3cdf1c18bb5
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: a4bbfbe228d291e9a17044f2777b6f9c9b7f6510
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064096"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839597"
 ---
 # <a name="identifying-source-disks-and-files"></a>识别源磁盘和文件
 

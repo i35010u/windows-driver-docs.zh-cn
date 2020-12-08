@@ -1,17 +1,16 @@
 ---
 title: 禁用受保护的 DLL 验证
 description: 禁用受保护的 DLL 验证
-ms.assetid: 28b5c4f8-18d3-44ed-a424-92e8e04dcdbc
 keywords:
-- 禁用保护 DLL 验证 （全局标志）
+- " (全局标志禁用受保护的 DLL 验证) "
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a55ea3f776d73ebf9afa1c25d5698bee5db3d048
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9a16c5eb75fd3ed7923b5445a8f6c8c5f828ee1c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358551"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840843"
 ---
 # <a name="disable-protected-dll-verification"></a>禁用受保护的 DLL 验证
 
@@ -19,7 +18,7 @@ ms.locfileid: "63358551"
 ## <span id="ddk_disable_protected_dll_verification_dtools"></span><span id="DDK_DISABLE_PROTECTED_DLL_VERIFICATION_DTOOLS"></span>
 
 
-**禁用受保护的 DLL 验证**标志将出现在 GFlags、 但在 Windows 上无效。
+**禁用受保护的 DLL 验证** 标志显示在 GFlags 中，但它对 Windows 不起作用。
 
 <table>
 <colgroup>
@@ -41,7 +40,7 @@ ms.locfileid: "63358551"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>整个系统的注册表项、 内核标志和图像文件注册表项</p></td>
+<td align="left"><p>系统范围的注册表项、内核标志、映像文件注册表项</p></td>
 </tr>
 </tbody>
 </table>

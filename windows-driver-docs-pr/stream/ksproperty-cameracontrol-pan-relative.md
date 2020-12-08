@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ CAMERACONTROL \_ 全景 \_ 相对
 description: KSPROPERTY \_ CAMERACONTROL \_ 平移 \_ 相对属性指定相机绕垂直轴旋转。
-ms.assetid: 11b6ac3e-e65e-4a85-bfcc-f45e8e96c8fb
 keywords:
 - KSPROPERTY_CAMERACONTROL_PAN_RELATIVE 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 07dbd1276bb0d5fc54a776f853c9a6b9cda75f53
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 8c8b0684f69e3c8a45658435c074b71f2320cd13
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106540"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840547"
 ---
 # <a name="ksproperty_cameracontrol_pan_relative"></a>KSPROPERTY \_ CAMERACONTROL \_ 全景 \_ 相对
 
@@ -71,7 +70,7 @@ KSPROPERTY \_ CAMERACONTROL \_ 平移 \_ 相对属性指定相机绕垂直轴旋
 <thead>
 <tr class="header">
 <th>“值”</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -95,9 +94,9 @@ KSPROPERTY \_ CAMERACONTROL \_ 平移 \_ 相对属性指定相机绕垂直轴旋
 <a name="remarks"></a>备注
 -------
 
-[**KSPROPERTY \_ CAMERACONTROL \_ 节点 \_ **](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s)结构的**值**成员指定了相对平移。
+[**KSPROPERTY \_ CAMERACONTROL \_ 节点 \_**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s)结构的 **值** 成员指定了相对平移。
 
-请注意，特定设备可能仅支持特定的速度范围。 若要确定设备支持的速度范围，应用程序可以发出 KSPROPERTY \_ 类型 \_ BASICSUPPORT 请求。 可以 \_ \_ 在[**KSPROPERTY \_ 项**](/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_item)结构的**Flags**成员中指定 KSPROPERTY 类型 BASICSUPPORT。
+请注意，特定设备可能仅支持特定的速度范围。 若要确定设备支持的速度范围，应用程序可以发出 KSPROPERTY \_ 类型 \_ BASICSUPPORT 请求。 可以 \_ \_ 在 [**KSPROPERTY \_ 项**](/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_item)结构的 **Flags** 成员中指定 KSPROPERTY 类型 BASICSUPPORT。
 
 某些设备只支持单一平移速度。 在这种情况下， **值** 成员的符号指示平移方向。
 
@@ -125,7 +124,7 @@ KSPROPERTY \_ CAMERACONTROL \_ 平移 \_ 相对属性指定相机绕垂直轴旋
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY \_ CAMERACONTROL \_ 节点 \_ S**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s)

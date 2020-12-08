@@ -1,7 +1,6 @@
 ---
 title: 间接显示驱动程序模型概述
 description: 间接显示驱动程序模型提供了一个简单的用户模式驱动程序模型，用于支持未连接到传统 GPU 显示输出的监视器。
-ms.assetid: E2E64500-5F99-42A7-8945-B496026EA142
 keywords:
 - 间接显示驱动程序，WDK
 - IDD，WDK
@@ -11,12 +10,12 @@ keywords:
 - IDD 实现
 ms.date: 09/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 51593014c897d9a98836484fc9f0b4ecb7c87df2
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: fa0b7f973b8875a35daa42f0d4ba4a805dd9d01b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733103"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839317"
 ---
 # <a name="indirect-display-driver-overview"></a>间接显示驱动程序概述
 
@@ -55,11 +54,11 @@ IDD 是仅限用户模式的模型，不支持内核模式组件。 因此，该
 
 ## <a name="iddcx-callback-and-function-naming-conventions"></a>IddCx 回调和函数命名约定
 
-| 前缀 | 类型 | 注释 |
+| 前缀 | 类型 | 说明 |
 | ------ | ---- | ----- |
 | **EVT_IDD_CX** \_*XXX* | IDD 回调函数 | IDDs 实现了 IddCx 特定的回调（如 [**EVT_IDD_CX_ADAPTER_COMMIT_MODES**](/windows-hardware/drivers/ddi/iddcx/nc-iddcx-evt_idd_cx_adapter_commit_modes)）以及相关的 WDF 回调（如 [**EVT_WDF_DEVICE_D0_EXIT**](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_exit)）。 |
-| **IddCx * * * Xxx* | 函数 | 系统提供的、可调用 IDDs 的 IddCx 类扩展函数;例如， [**IddCxAdapterInitAsync**](/windows-hardware/drivers/ddi/iddcx/nf-iddcx-iddcxadapterinitasync)。 |
-| **PFN_IDDCX** \_*XXX* | 指向 IddCx 函数的指针 | IDDs 不使用这些指针。 相反，驱动程序应使用 **IddCx * * Xxx* 函数。 |
+| **IddCx**_Xxx_ | 函数 | 系统提供的、可调用 IDDs 的 IddCx 类扩展函数;例如， [**IddCxAdapterInitAsync**](/windows-hardware/drivers/ddi/iddcx/nf-iddcx-iddcxadapterinitasync)。 |
+| **PFN_IDDCX** \_*XXX* | 指向 IddCx 函数的指针 | IDDs 不使用这些指针。 相反，驱动程序应使用 **IddCx**_Xxx_ 函数。 |
 
 ## <a name="sample-code"></a>示例代码
 

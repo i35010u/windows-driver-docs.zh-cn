@@ -1,17 +1,16 @@
 ---
 title: 测试签名简介
 description: 测试签名简介
-ms.assetid: 63d4627d-b92c-489d-accf-16cfb5ac1410
 keywords:
 - 测试签名驱动程序包 WDK，关于测试签名驱动程序包
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a5468fc8da73b9640eece3f47a900b79687b9a3
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 90c0754718eadb825072e2af0d1f2bc68cf11101
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096335"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841235"
 ---
 # <a name="introduction-to-test-signing"></a>测试签名简介
 
@@ -30,7 +29,7 @@ ms.locfileid: "89096335"
 
 由于这些原因，Windows Vista 和更高版本的 Windows 的驱动程序应使用通过使用 Microsoft Authenticode 创建的数字证书进行测试签名。 此类数字证书称为 *测试证书* ，使用测试证书生成的签名被称为 *测试签名*。
 
-**注意**   Windows Vista 和更高版本的 Windows 支持测试签名的驱动程序，仅用于开发和测试目的。 测试签名不得用于生产目的或向客户发布。
+**注意**  Windows Vista 和更高版本的 Windows 支持测试签名的驱动程序，仅用于开发和测试目的。 测试签名不得用于生产目的或向客户发布。
 
  
 
@@ -44,13 +43,13 @@ ms.locfileid: "89096335"
 
 有关测试团队在团队创建、获取或提供测试证书后对驱动程序包进行签名的信息，请参阅 [测试签名驱动程序包](test-signing-driver-packages.md)。
 
-有关如何安装经过测试签名的驱动程序包的信息，请参阅 [安装测试签名的驱动程序包](installing-test-signed-driver-packages.md)。
+有关如何安装经过测试签名的驱动程序包的信息，请参阅 [安装 Test-Signed 驱动程序包](installing-test-signed-driver-packages.md)。
 
 为了便于提前驱动程序开发和调试，你可以暂时禁用内核模式代码签名要求，以便加载和测试未签名的内核模式驱动程序。 但是，您不能禁用 PnP 驱动程序安装策略，要求系统管理员授权安装未签名的驱动程序。 有关如何安装未签名的驱动程序的详细信息，请参阅 [在开发和测试过程中安装未签名的驱动程序](installing-an-unsigned-driver-during-development-and-test.md)。
 
 有关用于测试签名驱动程序包的最合适工具的信息，请参阅 [用于签署驱动程序的工具](../devtest/tools-for-signing-drivers.md)。
 
-**注意**   若要更好地了解测试签名驱动程序包中涉及的步骤，请参阅如何对[驱动程序包进行测试签名](how-to-test-sign-a-driver-package.md)。 本主题提供了测试签名过程的摘要，并通过使用 Windows 驱动程序工具包 (WDK) 中的 *toastpkg.inf* 示例 [驱动程序包](driver-packages.md) ，逐步完成测试签名示例。
+**注意**  若要更好地了解测试签名驱动程序包中所涉及的步骤，请参阅 [如何 Test-Sign 驱动程序包](how-to-test-sign-a-driver-package.md)。 本主题提供了测试签名过程的摘要，并通过使用 Windows 驱动程序工具包 (WDK) 中的 *toastpkg.inf* 示例 [驱动程序包](driver-packages.md) ，逐步完成测试签名示例。
 
  
 

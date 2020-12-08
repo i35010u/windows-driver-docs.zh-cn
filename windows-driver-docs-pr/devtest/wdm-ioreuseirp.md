@@ -1,7 +1,6 @@
 ---
 title: 'IoReuseIrp 规则 (wdm) '
 description: IoReuseIrp 规则指定，驱动程序只应在以前使用 IoAllocateIrp 分配的 Irp 上使用 IoReuseIrp。
-ms.assetid: E927D12D-03DE-41D7-B130-BA86F0C0CB8A
 ms.date: 05/21/2018
 keywords:
 - 'IoReuseIrp 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ea7aacb6e8afde224ff777ad93958f2243b971b6
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e3d1832c798f8e7a57aa720b93b5b588ad37cea1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106524"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839653"
 ---
 # <a name="ioreuseirp-rule-wdm"></a>IoReuseIrp 规则 (wdm) 
 
 
-**IoReuseIrp**规则指定，驱动程序只应在以前使用[**IoAllocateIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateirp)分配的 irp 上使用[**IoReuseIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreuseirp) 。
+**IoReuseIrp** 规则指定，驱动程序只应在以前使用 [**IoAllocateIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateirp)分配的 irp 上使用 [**IoReuseIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreuseirp) 。
 
 **驱动程序模型： WDM**
 

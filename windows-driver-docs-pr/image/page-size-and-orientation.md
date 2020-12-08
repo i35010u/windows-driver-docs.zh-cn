@@ -1,15 +1,14 @@
 ---
 title: 页面大小和方向
 description: 页面大小和方向
-ms.assetid: f744a00c-8614-4488-9a29-d193a0c4268f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f4e9920210462ca1c00a5e7dd41ed4080ae0f580
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: f739c27f78c28696f8a1fb76ffa4642300b5f42f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192607"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841091"
 ---
 # <a name="page-size-and-orientation"></a>页面大小和方向
 

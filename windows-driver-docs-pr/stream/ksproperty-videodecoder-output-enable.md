@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ VIDEODECODER \_ OUTPUT \_ ENABLE
 description: KSPROPERTY \_ VIDEODECODER \_ output \_ ENABLE 属性控制位于共享视频端口总线上的视频解码器的三状态输出。 此属性是可选的。
-ms.assetid: 33c9a3d2-ffc0-4460-abc4-56bc83c64b55
 keywords:
 - KSPROPERTY_VIDEODECODER_OUTPUT_ENABLE 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 662cd2ff1e728d8d39cb07a3b89b22a47992e746
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: f0402d6aa57922da8b8faf813e97d80a58a88e83
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107162"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840527"
 ---
 # <a name="ksproperty_videodecoder_output_enable"></a>KSPROPERTY \_ VIDEODECODER \_ OUTPUT \_ ENABLE
 
@@ -84,7 +83,7 @@ KSPROPERTY **Value** \_ VIDEODECODER S 结构的 Value 成员 \_ 指定三个输
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

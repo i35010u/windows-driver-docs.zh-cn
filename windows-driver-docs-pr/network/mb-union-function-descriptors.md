@@ -1,15 +1,14 @@
 ---
 title: MB 联合函数描述符
 description: 本部分介绍适用于 MB 设备的联合函数描述符和 MBIM 后向兼容函数
-ms.assetid: 4B8C63DD-4B8D-40AB-A6DF-0466343E7E45
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2006acafbb1dd13848dbd8f404c544ce4a9f7e2e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 6fedc279b8844ddcc02dd92212e632d33884bb0b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207255"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841179"
 ---
 # <a name="mb-union-function-descriptors"></a>MB 联合功能描述符
 
@@ -45,7 +44,7 @@ USBCCGP 选择 \# 设备上的配置1。
 
 设备报告其功能的所有兼容 ID。 然后，USBCCGP 为设备中的每个函数创建子设备节点。
 
-## <a name="mbim-backward-compatible-functions"></a>MBIM 向后兼容的函数
+## <a name="mbim-backward-compatible-functions"></a>MBIM Backward-Compatible 函数
 
 
 默认情况下，MBIM 函数与 NCM 1.0 1.0 规范向后兼容。 由 MBIM 向后兼容的函数组成的移动宽带设备应报告 MBIM 函数的 Microsoft OS 兼容 ID "MBIM"。 这允许 Windows 8 检测 NCM 1.0 函数作为 MBIM 函数，并将 MBCD 作为函数驱动程序进行加载。

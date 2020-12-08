@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ EXTDEVICE \_ ID
 description: KSPROPERTY \_ EXTDEVICE \_ id 属性检索外部设备通用化系统范围内的 id。
-ms.assetid: ff0f37f8-55a8-45b9-8cf1-81e2cc5ac3aa
 keywords:
 - KSPROPERTY_EXTDEVICE_ID 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 13704347f88fc0a0c5d1378a834a3c0d22c55338
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 3e631a510f3bd85cbaece8a1e76051c61e976b56
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105418"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839352"
 ---
 # <a name="ksproperty_extdevice_id"></a>KSPROPERTY \_ EXTDEVICE \_ ID
 
@@ -84,7 +83,7 @@ KSPROPERTY **NodeUniqueID** \_ EXTDEVICE S 结构的 NodeUniqueID 成员 \_ 指�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

@@ -1,7 +1,6 @@
 ---
 title: 使用虚拟时钟值
 description: 使用虚拟时钟值
-ms.assetid: de01b0f1-86b1-4e7d-af22-84dbbe3a3f83
 keywords:
 - 虚拟时钟值 WDK KTM
 - 内核事务管理器 WDK，虚拟时钟值
@@ -9,12 +8,12 @@ keywords:
 - 事务 WDK KTM，虚拟时钟值
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c552969b92f12a2674563ba31fd912f9073361a2
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: a5c5ba2a2bf1dce762a06094434fea9cc17bb7df
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190311"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840671"
 ---
 # <a name="using-virtual-clock-values"></a>使用虚拟时钟值
 

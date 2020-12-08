@@ -1,16 +1,15 @@
 ---
 title: NDIS 6.80 中的接收端缩放版本 2 (RSSv2)
 description: '本主题介绍 NDIS 6.80 中的接收方缩放版本 2 (RSSv2) '
-ms.assetid: 39FAE4C5-D4AA-4B99-A9B6-82E2D9C86FCC
 keywords: NDIS 6.80 中的接收方缩放版本2，NDIS 6.80 中的 RSSv2，接收方缩放版本 2 WDK NDIS 6.80，RSSv2 网络驱动程序 NDIS 6.80
 ms.date: 10/11/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8599885902ed474290924bd48c20a72c65d0ab6d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f8be56e55da460e2a978bd0736726f864656329e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214496"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840617"
 ---
 # <a name="receive-side-scaling-version-2-rssv2-in-ndis-680"></a>NDIS 6.80 中的接收端缩放版本 2 (RSSv2)
 

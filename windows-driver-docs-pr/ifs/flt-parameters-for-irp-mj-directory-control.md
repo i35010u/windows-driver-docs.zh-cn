@@ -1,7 +1,6 @@
 ---
 title: IRP_MJ_DIRECTORY_CONTROL 联合的 FLT_PARAMETERS
 description: 当 IRP_MJ_DIRECTORY_CONTROL 操作的 FLT_IO_PARAMETER_BLOCK 结构的 MajorFunction 字段时使用的联合组件。
-ms.assetid: 3dadd64b-7e93-4c75-808d-2f26edb3ebd7
 keywords:
 - IRP_MJ_DIRECTORY_CONTROL 联合可安装文件系统驱动程序的 FLT_PARAMETERS
 - FLT_PARAMETERS 联合可安装文件系统驱动程序
@@ -16,41 +15,41 @@ api_type:
 - HeaderDef
 ms.date: 02/04/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: f75e00895b96e79e3148db1aaf43f800022ebb95
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 01b8882088c0a63e703cac218e5cc23294258426
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732733"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839279"
 ---
 # <a name="flt_parameters-for-irp_mj_directory_control-union"></a>IRP_MJ_DIRECTORY_CONTROL 联合的 FLT_PARAMETERS
 
-当[**IRP_MJ_DIRECTORY_CONTROL**](irp-mj-directory-control.md)操作的[**FLT_IO_PARAMETER_BLOCK**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构的**MajorFunction**字段时使用的联合组件。
+当 [**IRP_MJ_DIRECTORY_CONTROL**](irp-mj-directory-control.md)操作的 [**FLT_IO_PARAMETER_BLOCK**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构的 **MajorFunction** 字段时使用的联合组件。
 
 ## <a name="syntax"></a>语法
 
 ```ManagedCPlusPlus
 typedef union _FLT_PARAMETERS {
-  ...   ;
+  ...   ;
   union {
     struct {
-      ULONG                   Length;
-      PUNICODE_STRING         FileName;
-      FILE_INFORMATION_CLASS  FileInformationClass;
+      ULONG                   Length;
+      PUNICODE_STRING         FileName;
+      FILE_INFORMATION_CLASS  FileInformationClass;
       ULONG POINTER_ALIGNMENT FileIndex;
-      PVOID                   DirectoryBuffer;
-      PMDL                    MdlAddress;
-    } QueryDirectory;
+      PVOID                   DirectoryBuffer;
+      PMDL                    MdlAddress;
+    } QueryDirectory;
     struct {
-      ULONG                   Length;
+      ULONG                   Length;
       ULONG POINTER_ALIGNMENT CompletionFilter;
-      ULONG                   Spare1;
+      ULONG                   Spare1;
       ULONG POINTER_ALIGNMENT Spare2;
-      PVOID                   DirectoryBuffer;
-      PMDL                    MdlAddress;
-    } NotifyDirectory;
-  } DirectoryControl;
-  ...   ;
+      PVOID                   DirectoryBuffer;
+      PMDL                    MdlAddress;
+    } NotifyDirectory;
+  } DirectoryControl;
+  ...   ;
 } FLT_PARAMETERS, *PFLT_PARAMETERS;
 ```
 
@@ -63,7 +62,7 @@ typedef union _FLT_PARAMETERS {
 用于 IRP_MN_QUERY_DIRECTORY 操作的联合组件。
 
 **长度**  
-**DirectoryBuffer**成员指向的缓冲区的长度（以字节为单位）。
+**DirectoryBuffer** 成员指向的缓冲区的长度（以字节为单位）。
 
 **FileName**  
 指向 [**UNICODE_STRING**](/windows-hardware/drivers/ddi/wudfwdm/ns-wudfwdm-_unicode_string) 结构的指针，该结构包含指定目录中的文件的名称。
@@ -71,7 +70,7 @@ typedef union _FLT_PARAMETERS {
 **FileInformationClass**  
 指定下面描述的值之一。
 
-| 值 | 含义 |
+| “值” | 含义 |
 |-------|---------|
 | FileBothDirectoryInformation   | 为每个文件返回 [**FILE_BOTH_DIR_INFORMATION**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_both_dir_information) 结构。                      |
 | FileDirectoryInformation       | 为每个文件返回 [**FILE_DIRECTORY_INFORMATION**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_directory_information) 结构。                     |
@@ -86,16 +85,16 @@ typedef union _FLT_PARAMETERS {
 目录扫描开始处的文件的索引。 如果未设置 SL_INDEX_SPECIFIED 标志，则忽略。 不能在任何 Win32 函数或内核模式支持例程中指定此参数。 目前，它仅由 NT 虚拟 DOS 计算机使用 (NTVDM) ，后者仅存在于基于32位 NT 的操作系统上。 请注意，文件索引对于文件系统是不确定的，例如 NTFS，在这种情况下，父目录中文件的位置不是固定的，可以随时更改以维护排序顺序。
 
 **DirectoryBuffer**  
-指向调用方提供的输出缓冲区的指针，该缓冲区接收有关目录内容的请求信息。 此成员是可选的，如果在 **QueryDirectory. MdlAddress**中提供 MDL，则可以为 NULL。 请参阅 " **备注**"。
+指向调用方提供的输出缓冲区的指针，该缓冲区接收有关目录内容的请求信息。 此成员是可选的，如果在 **QueryDirectory. MdlAddress** 中提供 MDL，则可以为 NULL。 请参阅 " **备注**"。
 
 **MdlAddress**  
- (MDL 的内存描述符列表的地址) 描述 **DirectoryBuffer** 成员指向的缓冲区。 此成员是可选的，如果**QueryDirectory**中提供了缓冲区，则可以为**NULL** 。 请参阅 " **备注**"。
+ (MDL 的内存描述符列表的地址) 描述 **DirectoryBuffer** 成员指向的缓冲区。 此成员是可选的，如果 **QueryDirectory** 中提供了缓冲区，则可以为 **NULL** 。 请参阅 " **备注**"。
 
 **NotifyDirectory**  
 用于 IRP_MN_NOTIFY_CHANGE_DIRECTORY 操作的联合组件。
 
 **长度**  
-**DirectoryBuffer**成员指向的缓冲区的长度（以字节为单位）。
+**DirectoryBuffer** 成员指向的缓冲区的长度（以字节为单位）。
 
 **CompletionFilter**  
 标志的位掩码，用于指定应在通知列表中完成 Irp 的文件或目录的更改类型。 下面描述了可能的标志值。
@@ -123,10 +122,10 @@ typedef union _FLT_PARAMETERS {
 当前未使用。
 
 **DirectoryBuffer**  
-指向调用方提供的输出缓冲区的指针，该缓冲区接收有关目录内容的请求信息。 此成员是可选的，如果在 **NotifyDirectory. MdlAddress**中提供 MDL，则可以为 NULL。 请参阅 " **备注**"。
+指向调用方提供的输出缓冲区的指针，该缓冲区接收有关目录内容的请求信息。 此成员是可选的，如果在 **NotifyDirectory. MdlAddress** 中提供 MDL，则可以为 NULL。 请参阅 " **备注**"。
 
 **MdlAddress**  
-描述 **NotifyDirectory DirectoryBuffer** 成员指向的缓冲区的 MDL 地址。 此成员是可选的，如果**NotifyDirectory**中提供了缓冲区，则可以为**NULL** 。 请参阅 " **备注**"。
+描述 **NotifyDirectory DirectoryBuffer** 成员指向的缓冲区的 MDL 地址。 此成员是可选的，如果 **NotifyDirectory** 中提供了缓冲区，则可以为 **NULL** 。 请参阅 " **备注**"。
 
 ## <a name="remarks"></a>备注
 
@@ -134,7 +133,7 @@ IRP_MJ_DIRECTORY_CONTROL 操作的 [**FLT_PARAMETERS**](/windows-hardware/driver
 
 如果同时提供了 **DirectoryBuffer** 和 **MdlAddress** 缓冲区，则建议 minifilters 使用 MDL。 当 **DirectoryBuffer** 指向的内存是在调用进程的上下文中访问的用户模式地址时，或者如果它是内核模式地址，则它是有效的。
 
-如果微筛选器更改 **MdlAddress**的值，则在其后回拨后，筛选器管理器将释放当前存储在 **MDLADDRESS** 中的 MDL，并还原以前的 **MdlAddress**值。
+如果微筛选器更改 **MdlAddress** 的值，则在其后回拨后，筛选器管理器将释放当前存储在 **MDLADDRESS** 中的 MDL，并还原以前的 **MdlAddress** 值。
 
 IRP_MJ_DIRECTORY_CONTROL 是基于 IRP 的操作。
 
@@ -143,7 +142,7 @@ IRP_MJ_DIRECTORY_CONTROL 是基于 IRP 的操作。
 **标头**： Fltkernel (包含 Fltkernel) 
 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [**FILE_BOTH_DIR_INFORMATION**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_both_dir_information)
 

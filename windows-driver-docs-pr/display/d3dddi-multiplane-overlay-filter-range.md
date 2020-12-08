@@ -1,7 +1,6 @@
 ---
 title: D3DDDI \_ MULTIPLANE \_ 叠加 \_ 筛选 \_ 范围结构
 description: 了解 D3DDDI \_ MULTIPLANE \_ 叠加 \_ 筛选 \_ 范围结构，该结构已保留供系统使用。 不要在您的驱动程序中使用它。
-ms.assetid: 61393cb5-eedc-4186-a321-703b74450ee5
 keywords:
 - D3DDDI_MULTIPLANE_OVERLAY_FILTER_RANGE 结构显示设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 76e124ae5c483e0c16c39cd3eb060851104a681f
-ms.sourcegitcommit: fc94eb0d5a41ef81c1b3ab91ad725386db0be0c2
+ms.openlocfilehash: ce1e970c577b2bb60950bc6e5ae2b5e1c1a28c1d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91603670"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839649"
 ---
 # <a name="d3dddi_multiplane_overlay_filter_range-structure"></a>D3DDDI \_ MULTIPLANE \_ 叠加 \_ 筛选 \_ 范围结构
 
@@ -27,7 +26,7 @@ ms.locfileid: "91603670"
 预留给系统使用。 不要在您的驱动程序中使用它。
 
 > [!NOTE]
-> 此结构仅在随 windows 8) 版本8随附的 Windows 驱动程序工具包 (的 D3dumddi 标头中提供。 它已从标头的更高版本中删除。
+> 此结构仅在随 windows 8) 版本8随附的 Windows 驱动程序工具包 (的 D3dumddi 标头中提供。 它已从标头的更高版本中删除。
 
  
 
@@ -36,9 +35,9 @@ ms.locfileid: "91603670"
 
 ```ManagedCPlusPlus
 typedef struct D3DDDI_MULTIPLANE_OVERLAY_FILTER_RANGE {
-  INT   Minimum;
-  INT   Maximum;
-  INT   Default;
+  INT   Minimum;
+  INT   Maximum;
+  INT   Default;
   FLOAT Multiplier;
 } D3DDDI_MULTIPLANE_OVERLAY_FILTER_RANGE;
 ```

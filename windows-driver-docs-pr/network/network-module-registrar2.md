@@ -1,7 +1,6 @@
 ---
 title: 网络模块注册机构主题
 description: 网络模块注册机构主题
-ms.assetid: 23c15c42-94aa-410b-8551-fafa8b24ad86
 keywords:
 - 网络模块注册 WDK
 - NMR WDK
@@ -10,12 +9,12 @@ keywords:
 - 软件模块 WDK 网络模块注册器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b5d14529a4039d3e9e98fdd7b81f08dbc119f1fc
-ms.sourcegitcommit: db9d058a9e592d4c47c67fc14f04f0ddc3aa92af
+ms.openlocfilehash: 01869d1074b1d143ae391ecb797e704471bfc4e3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91989845"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840303"
 ---
 # <a name="network-module-registrar-topics"></a>网络模块注册机构主题
 

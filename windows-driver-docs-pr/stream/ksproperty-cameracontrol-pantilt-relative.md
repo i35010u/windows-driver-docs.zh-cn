@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ CAMERACONTROL \_ PANTILT \_ 相对
 description: KSPROPERTY \_ CAMERACONTROL \_ PANTILT \_ 相对属性指定相机的水平或垂直旋转，并可同时指定两者。
-ms.assetid: c2c9405c-7713-439f-a150-51969a2a5e6b
 keywords:
 - KSPROPERTY_CAMERACONTROL_PANTILT_RELATIVE 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d93217f4a0559db489ad9e4eb5703c44d2a37966
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: dd8f0fba85a9e9030b3c7246e7056cb5e455dae8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103289"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840543"
 ---
 # <a name="ksproperty_cameracontrol_pantilt_relative"></a>KSPROPERTY \_ CAMERACONTROL \_ PANTILT \_ 相对
 
@@ -71,7 +70,7 @@ KSPROPERTY \_ CAMERACONTROL \_ PANTILT \_ 相对属性指定相机的水平或�
 <thead>
 <tr class="header">
 <th>Value1</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -102,7 +101,7 @@ KSPROPERTY \_ CAMERACONTROL \_ PANTILT \_ 相对属性指定相机的水平或�
 <thead>
 <tr class="header">
 <th>Value2</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -123,16 +122,16 @@ KSPROPERTY \_ CAMERACONTROL \_ PANTILT \_ 相对属性指定相机的水平或�
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 发出用于平移照相机的 set 请求时，客户端应在属性描述符结构的 **Value1** 成员的上表中提供其中一个值。
 
 同样，在发出用于倾斜照相机的集的请求时，客户端将提供属性说明符结构的 **Value2** 成员的上表中的值之一。
 
-发出 get 请求时，客户端将接收**Value1**成员中的平移值和 KSPROPERTY **Value2** \_ CAMERACONTROL \_ s2 或 KSPROPERTY \_ CAMERACONTROL \_ NODE \_ s2 结构的 Value2 成员中的倾斜值。 值指示相机的当前平移或倾斜状态。
+发出 get 请求时，客户端将接收 **Value1** 成员中的平移值和 KSPROPERTY **Value2** \_ CAMERACONTROL \_ s2 或 KSPROPERTY \_ CAMERACONTROL \_ NODE \_ s2 结构的 Value2 成员中的倾斜值。 值指示相机的当前平移或倾斜状态。
 
-请注意，特定设备可能仅支持特定的速度范围。 若要确定设备支持的速度范围，应用程序可以发出 KSPROPERTY \_ 类型 \_ BASICSUPPORT 请求。 可以 \_ \_ 在[**KSPROPERTY \_ 项**](/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_item)结构的**Flags**成员中指定 KSPROPERTY 类型 BASICSUPPORT。
+请注意，特定设备可能仅支持特定的速度范围。 若要确定设备支持的速度范围，应用程序可以发出 KSPROPERTY \_ 类型 \_ BASICSUPPORT 请求。 可以 \_ \_ 在 [**KSPROPERTY \_ 项**](/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_item)结构的 **Flags** 成员中指定 KSPROPERTY 类型 BASICSUPPORT。
 
 某些设备只支持单一平移或倾斜速度。 在这种情况下， **Value1** 或 **Value2** 成员的符号指示平移方向。
 

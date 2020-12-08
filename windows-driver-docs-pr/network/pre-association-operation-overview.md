@@ -1,24 +1,23 @@
 ---
 title: 关联前的操作概述
 description: 关联前的操作概述
-ms.assetid: c33cf228-720f-4204-820c-0fb9a288bc6e
 keywords:
 - 预关联操作 WDK 本机 802.11 IHV 扩展 DLL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 30f1ff4a8036877e32ebe228a08171d7e3e86ae8
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a57c5daaead9a7020e3acc572ca0cdc015042f93
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209633"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839995"
 ---
 # <a name="pre-association-operation-overview"></a>关联前的操作概述
 
 
 
 
- 
+ 
 
 用户选择基本服务集的配置文件) 网络连接 (BSS 后，操作系统将调用 [*Dot11ExtIhvPerformPreAssociate*](/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_perform_pre_associate) 函数来启动预关联操作。 调用此函数时，将执行以下操作：
 
@@ -81,6 +80,6 @@ IHV 扩展 DLL 通过调用 [**Dot11ExtPreAssociateCompletion**](/windows-hardwa
 
 有关 BSS 网络的连接操作的详细信息，请参阅 [连接操作](/previous-versions/windows/hardware/wireless/connection-operations)。
 
- 
+ 
 
- 
+ 

@@ -1,20 +1,19 @@
 ---
 title: METransformInputStreamStateChanged
 description: METransformInputStreamStateChanged 事件表示必须更改输入流状态或媒体类型。
-ms.assetid: 734080DD-8D96-4AF3-BB13-FDA8E0398C0B
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d166ee4e59b26637be53f389c844846ea56aa7ab
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 671fd0103ee9bcff172f4952574d757c99b52aec
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189671"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840525"
 ---
 # <a name="metransforminputstreamstatechanged"></a>METransformInputStreamStateChanged
 
 
-**METransformInputStreamStateChanged**事件表示必须更改输入流状态或媒体类型。
+**METransformInputStreamStateChanged** 事件表示必须更改输入流状态或媒体类型。
 
 ## <a name="span-idwhen_sentspanspan-idwhen_sentspanspan-idwhen_sentspanwhen-sent"></a><span id="When_sent"></span><span id="when_sent"></span><span id="WHEN_SENT"></span>发送时间
 
@@ -24,13 +23,13 @@ ms.locfileid: "89189671"
 ## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-| 参数              | 说明                                                                     |
+| 参数              | 描述                                                                     |
 |------------------------|---------------------------------------------------------------------------------|
 | **输入流索引** | 必须在 IMFMediaEvent 的属性存储上设置输入流索引。 |
 
  
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 
 对于此事件，设备转换管理器 (DTM) 将在具有指定输入流索引的设备 MFT 上调用 [**GetInputStreamPreferredState**](/windows/win32/api/mftransform/nf-mftransform-imfdevicetransform-getinputstreampreferredstate) 。 设备 MFT 将返回首选的状态和媒体状态。

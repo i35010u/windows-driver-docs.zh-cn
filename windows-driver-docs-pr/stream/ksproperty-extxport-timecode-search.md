@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ EXTXPORT 时间 \_ 码 \_ 搜索
 description: KSPROPERTY \_ EXTXPORT 时间 \_ 码 \_ 搜索属性搜索特定时间码。
-ms.assetid: 34252fce-426b-4f75-b57f-fa86654ffc5f
 keywords:
 - KSPROPERTY_EXTXPORT_TIMECODE_SEARCH 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 85542274513ccf33a102ae1d0545b3344256d29d
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: bccb82123da060e2f7d77594c76dd1b1eec2a4ea
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102698"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840535"
 ---
 # <a name="ksproperty_extxport_timecode_search"></a>KSPROPERTY \_ EXTXPORT 时间 \_ 码 \_ 搜索
 
@@ -84,7 +83,7 @@ KSPROPERTY \_ EXTXPORT 时间 \_ 码 \_ 搜索属性搜索特定时间码。
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

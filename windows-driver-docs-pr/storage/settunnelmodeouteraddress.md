@@ -1,15 +1,14 @@
 ---
 title: SetTunnelModeOuterAddress
 description: SetTunnelModeOuterAddress
-ms.assetid: 0f67a15c-5077-460a-923c-8d86cc79a1bb
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e33d32d7e30642fb3af30349b802335bbb7a8ed9
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 4bd6ce0118fdfd14880b242b538322dc682de536
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185087"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839375"
 ---
 # <a name="settunnelmodeouteraddress"></a>SetTunnelModeOuterAddress
 

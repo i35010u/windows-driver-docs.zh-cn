@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ DVDSUBPIC \_ 复合相比 \_
 description: KSPROPERTY \_ DVDSUBPIC \_ 复合相比 \_ ON 属性启用或禁用显示子画面。
-ms.assetid: f9dcf8ca-44fb-45e2-9993-813439c742ef
 keywords:
 - KSPROPERTY_DVDSUBPIC_COMPOSIT_ON 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a7723a7c92fcc4595789062f386f3fd79f13515a
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: f83c61672f21769def32e4c672368c614c8962b3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107256"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839349"
 ---
 # <a name="ksproperty_dvdsubpic_composit_on"></a>KSPROPERTY \_ DVDSUBPIC \_ 复合相比 \_
 

@@ -1,15 +1,14 @@
 ---
 title: 如何生成容器 ID
 description: 如何生成容器 ID
-ms.assetid: baa3c045-05ee-4012-97a3-c6e575c897be
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fe08d259f3354aff62e3fe8d4100bd22f811d36b
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 22de63b1c1f7beda2f0cac0ae0b84d004a027188
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095273"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839523"
 ---
 # <a name="how-container-ids-are-generated"></a>如何生成容器 ID
 
@@ -27,7 +26,7 @@ ms.locfileid: "89095273"
 
 
 
-有关详细信息，请参阅 [从特定于总线的唯一 ID 生成的容器 id](container-ids-generated-from-a-bus-specific-unique-id.md)。
+有关详细信息，请参阅 [从 Bus-Specific 唯一 ID 生成的容器 id](container-ids-generated-from-a-bus-specific-unique-id.md)。
 
 
 -   PnP 管理器通过可移动设备功能生成容器 ID。

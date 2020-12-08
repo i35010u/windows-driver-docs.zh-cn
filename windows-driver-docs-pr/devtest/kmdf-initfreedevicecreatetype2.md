@@ -1,7 +1,6 @@
 ---
 title: 'InitFreeDeviceCreateType2 规则 (kmdf) '
 description: InitFreeDeviceCreateType2 规则指定驱动程序在调用 WdfDeviceInitFree 后不得调用 WdfDeviceCreate。
-ms.assetid: 43defbbb-ab5e-4c3e-bb9d-fdcbe203c617
 ms.date: 05/21/2018
 keywords:
 - 'InitFreeDeviceCreateType2 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 172030e24175440507a4cff1cc9ca40b1bf38cf9
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: a4ae1fc6b378bdcd475b2605dc6a1d96ae6bf3c2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106656"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841309"
 ---
 # <a name="initfreedevicecreatetype2-rule-kmdf"></a>InitFreeDeviceCreateType2 规则 (kmdf) 
 
 
-InitFreeDeviceCreateType2 规则指定驱动程序在调用[**WdfDeviceInitFree**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitfree)后不得调用[**WdfDeviceCreate**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate) 。
+InitFreeDeviceCreateType2 规则指定驱动程序在调用 [**WdfDeviceInitFree**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitfree)后不得调用 [**WdfDeviceCreate**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate) 。
 
 **驱动程序模型： KMDF**
 

@@ -1,7 +1,6 @@
 ---
 title: 流微型驱动程序
 description: 流微型驱动程序
-ms.assetid: 9f669a1a-50fd-482f-a5af-28e5685dc68c
 keywords:
 - Windows 2000 内核流式处理模型 WDK，流式处理微型驱动程序
 - 流式处理模型 WDK Windows 2000 内核，流式处理微型驱动程序
@@ -14,12 +13,12 @@ keywords:
 - 微型驱动程序 WDK Windows 2000 内核流式处理，
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 05561488d3d0e499ade784ba939beef544c15649
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 117b952b18a5f568b683f0415126cf85a529caa7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190347"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839839"
 ---
 # <a name="streaming-minidrivers"></a>流微型驱动程序
 
@@ -27,7 +26,7 @@ ms.locfileid: "89190347"
 
 
 
-**注意**   本部分详细介绍过时的*Stream.sys*类驱动程序。 随着 Microsoft Windows XP 的发布，Microsoft 仅支持现有驱动程序的 *Stream.sys* 。 在此版本中，Microsoft 建议供应商考虑使用 AVStream 类驱动程序模型开发新的视频或音频/视频多媒体驱动程序。 请参阅 [AVStream 概述](avstream-overview.md)中的详细信息。 如果要开发仅音频驱动程序，则应在 Microsoft 提供的 *Portcls.sys* 类驱动程序下编写音频微型端口驱动程序。 有关详细信息，请参阅 [音频微型端口驱动程序](../audio/audio-miniport-drivers.md)。
+**注意**   本部分详细介绍过时的 *Stream.sys* 类驱动程序。 随着 Microsoft Windows XP 的发布，Microsoft 仅支持现有驱动程序的 *Stream.sys* 。 在此版本中，Microsoft 建议供应商考虑使用 AVStream 类驱动程序模型开发新的视频或音频/视频多媒体驱动程序。 请参阅 [AVStream 概述](avstream-overview.md)中的详细信息。 如果要开发仅音频驱动程序，则应在 Microsoft 提供的 *Portcls.sys* 类驱动程序下编写音频微型端口驱动程序。 有关详细信息，请参阅 [音频微型端口驱动程序](../audio/audio-miniport-drivers.md)。
 
  
 

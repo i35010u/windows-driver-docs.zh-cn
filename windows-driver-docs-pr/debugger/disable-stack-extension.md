@@ -1,17 +1,16 @@
 ---
 title: 禁用堆栈扩展
 description: 禁用堆栈扩展
-ms.assetid: e4c95103-4f98-4f79-a46c-c8040e39791b
 keywords:
-- 禁用堆栈扩展 （全局标志）
+- '禁用 (全局标志的堆栈扩展) '
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 554fac533a332b92db0c2cb62816f05a151fe00c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 76a7e1aaeaf751f7409fed7aaaab2027eb42fb2c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363959"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840841"
 ---
 # <a name="disable-stack-extension"></a>禁用堆栈扩展
 
@@ -19,7 +18,7 @@ ms.locfileid: "63363959"
 ## <span id="ddk_disable_stack_extension_dtools"></span><span id="DDK_DISABLE_STACK_EXTENSION_DTOOLS"></span>
 
 
-**禁用 stack 扩展**标志可防止内核扩展中的初始提交的内存之外进程的线程的堆栈。
+**禁用堆栈扩展** 标志可防止内核将进程中的线程堆栈扩展到超出初始提交的内存。
 
 <table>
 <colgroup>
@@ -41,16 +40,16 @@ ms.locfileid: "63363959"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>图像文件注册表项</p></td>
+<td align="left"><p>映像文件注册表项</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>注释
+### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>提出
 
-若要模拟内存不足的情况 （其中堆栈扩展会失败） 和测试的战略系统进程的预期也甚至使用低内存来运行使用此功能。
+此功能用于模拟内存不足的情况 (其中，堆栈扩展) 并测试预期在内存不足的情况下正常运行的战略系统进程。
 
  
 

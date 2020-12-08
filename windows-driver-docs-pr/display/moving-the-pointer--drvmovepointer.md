@@ -1,7 +1,6 @@
 ---
 title: 移动指针 DrvMovePointer
 description: 移动指针 DrvMovePointer
-ms.assetid: cd82cea8-a37e-4e00-9342-9d6491e8c83c
 keywords:
 - 绘图指针 WDK Windows 2000 显示
 - 显示驱动程序 WDK Windows 2000，指针
@@ -11,12 +10,12 @@ keywords:
 - 重定位指针
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ff61aae629e2c2cb395d300b1c61b7847834023
-ms.sourcegitcommit: abe7fe9f3fbee8d12641433eeab623a4148ffed3
+ms.openlocfilehash: 6fd57e764d97ba7067c5a8826cba069f56760436
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92185211"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839589"
 ---
 # <a name="moving-the-pointer-drvmovepointer"></a>移动指针：DrvMovePointer
 

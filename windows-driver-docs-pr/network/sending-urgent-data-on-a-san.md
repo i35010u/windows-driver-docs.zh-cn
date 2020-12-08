@@ -1,17 +1,16 @@
 ---
 title: 在 SAN 上发送紧急数据
 description: 在 SAN 上发送紧急数据
-ms.assetid: 9ff9719a-dd42-4ce7-8c07-370afa17fd7b
 keywords:
 - 紧急数据 WDK San
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a05d44b866b860d4c3d794ee15bbbcb69504662
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: cca0ce40c9c2f0af2f4c769b67b578a9beb2cb8d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214450"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839433"
 ---
 # <a name="sending-urgent-data-on-a-san"></a>在 SAN 上发送紧急数据
 

@@ -1,7 +1,6 @@
 ---
 title: 注册目标设备更改通知
 description: 注册目标设备更改通知
-ms.assetid: 5f7a9c44-c9a4-4ff8-a97d-ad2462b86af0
 keywords:
 - 通知 WDK PnP，目标设备更改
 - 目标设备更改通知 WDK PnP
@@ -10,12 +9,12 @@ keywords:
 - IoRegisterPlugPlayNotification
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9deaf59a355467105a3673689b2a9b037fbd18c8
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: bf2359633bd5a26213a0eb61707a179c83b598fe
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191841"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841225"
 ---
 # <a name="registering-for-target-device-change-notification"></a>注册目标设备更改通知
 
@@ -23,11 +22,11 @@ ms.locfileid: "89191841"
 
 以下信息适用于针对目标设备更改通知调用此例程：
 
--   指定**EventCategoryTargetDeviceChange**的*EventCategory* 。
+-   指定 **EventCategoryTargetDeviceChange** 的 *EventCategory* 。
 
 -   *EventCategoryData* 必须指向请求通知的设备的文件对象。
 
-    如果驱动程序的回调例程需要访问文件对象，则在调用 **IoRegisterPlugPlayNotification**之前，驱动程序应在文件对象上执行引用。
+    如果驱动程序的回调例程需要访问文件对象，则在调用 **IoRegisterPlugPlayNotification** 之前，驱动程序应在文件对象上执行引用。
 
     如果驱动程序的回调例程不需要访问文件对象，则驱动程序无需引用对象。
 
@@ -39,7 +38,7 @@ ms.locfileid: "89191841"
 
     驱动程序还可以使用 *上下文* 来存储它最初打开设备所用的路径。 驱动程序可以在取消删除操作后使用此路径重新打开设备。 有关详细信息，请参阅 [处理 GUID \_ 目标 \_ 设备 \_ 删除已 \_ 取消事件](handling-a-guid-target-device-remove-cancelled-event.md) (。 ) 
 
-驱动程序通过使用**IoRegisterPlugPlayNotification**返回的*NotificationEntry*调用[**IoUnregisterPlugPlayNotification**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iounregisterplugplaynotification)来删除通知注册。 如果驱动程序在注册通知时已对文件对象进行了引用，但该引用仍未完成，则驱动程序必须在删除注册后释放该引用。
+驱动程序通过使用 **IoRegisterPlugPlayNotification** 返回的 *NotificationEntry* 调用 [**IoUnregisterPlugPlayNotification**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iounregisterplugplaynotification)来删除通知注册。 如果驱动程序在注册通知时已对文件对象进行了引用，但该引用仍未完成，则驱动程序必须在删除注册后释放该引用。
 
  
 

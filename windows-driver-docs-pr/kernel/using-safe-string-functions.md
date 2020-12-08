@@ -1,19 +1,18 @@
 ---
 title: 使用安全字符串函数
 description: 使用安全字符串函数
-ms.assetid: a84008e8-e490-4640-a734-ef55cfbdfea3
 keywords:
 - 安全字符串函数 WDK
 - 字符串操作函数 WDK
 - 缓冲 WDK 安全字符串函数
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 24d5086080a8eac2c25df5e6c9ad56bb2eb30a63
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: e24164af59ecf09ca08b634079e4dcc60c93cd00
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733667"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838859"
 ---
 # <a name="using-safe-string-functions"></a>使用安全字符串函数
 
@@ -21,7 +20,7 @@ ms.locfileid: "91733667"
 
 
 
-许多系统安全问题都是由于缓冲区处理不当和生成的缓冲区溢出导致的。 不良缓冲区处理通常与字符串操作操作相关联。 C/c + + 语言运行库提供的标准字符串操作函数 (**strcat**、 **strcpy**、 **sprintf**等) 不阻止写入缓冲区的末尾。
+许多系统安全问题都是由于缓冲区处理不当和生成的缓冲区溢出导致的。 不良缓冲区处理通常与字符串操作操作相关联。 C/c + + 语言运行库提供的标准字符串操作函数 (**strcat**、 **strcpy**、 **sprintf** 等) 不阻止写入缓冲区的末尾。
 
 两组新的字符串操作函数（称为 *安全字符串函数*）为代码中的正确缓冲区处理提供额外处理。 这些安全的字符串函数在 Windows 驱动程序工具包 (WDK) 中提供，适用于 Microsoft Windows XP SP1 和更高版本的驱动程序开发工具包 (DDK) 和 Windows SDK。 它们旨在替换 Windows 提供的内置 C/c + + 和类似的例程。
 

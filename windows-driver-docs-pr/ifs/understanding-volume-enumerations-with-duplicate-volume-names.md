@@ -1,7 +1,6 @@
 ---
 title: 了解具有重复卷名称的卷枚举
 description: 了解具有重复卷名称的卷枚举
-ms.assetid: c05982dc-4124-4f9a-93b8-0e56ac296d1b
 keywords:
 - 卷 WDK 文件系统，名称重复
 - 卷 WDK 文件系统，枚举
@@ -10,12 +9,12 @@ keywords:
 - 枚举卷 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 831b0db6d84daba8aeba9300f10051d91826aa40
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 8f0fef9409aae3dd88461ec45866cef55d1ebdb7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714960"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841131"
 ---
 # <a name="understanding-volume-enumerations-with-duplicate-volume-names"></a>了解具有重复卷名称的卷枚举
 
@@ -32,7 +31,7 @@ ms.locfileid: "90714960"
 
 -   如果列表中填充了类型为 "筛选器 \_ \_ " "基本信息" 的结构 \_ ，则将此列表转换为其等效的筛选器 \_ 批量 \_ 标准 \_ 信息结构窗体，然后在上一项目符号点中继续。
 
-**注意**   \_ \_ \_ 仅从 Windows VISTA 开始使用筛选器卷标准信息结构。
+**注意**  \_ \_ \_ 仅从 Windows VISTA 开始使用筛选器卷标准信息结构。
 
  
 

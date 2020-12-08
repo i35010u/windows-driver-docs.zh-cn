@@ -1,15 +1,14 @@
 ---
 title: 创建 "Hello World" WIA 微型驱动程序
 description: 创建 "Hello World" WIA 微型驱动程序
-ms.assetid: 074da2ff-bc60-48a9-b2ff-83f070bd5351
 ms.date: 05/29/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 22ff8de6891fba6bb0ed7213b5ba497e43aa15f9
-ms.sourcegitcommit: 609c5731b2db4c17b9959082c4621c001e012db1
+ms.openlocfilehash: a167b0cec8a2d73032a49da2ca98e7852f3dd8a1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84223568"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839541"
 ---
 # <a name="creating-a-hello-world-wia-minidriver"></a>创建 "Hello World" WIA 微型驱动程序
 
@@ -23,4 +22,4 @@ ms.locfileid: "84223568"
 
 *hellowld* − ["Hello World" 实现文件](--hello-world---implementation-file.md)。
 
-有关如何将自定义 UI 添加到微型驱动程序的信息，请参阅[创建 "Hello World" WIA 微型驱动程序 UI 扩展](creating-a--hello-world--wia-minidriver-ui-extension.md)。
+有关如何将自定义 UI 添加到微型驱动程序的信息，请参阅 [创建 "Hello World" WIA 微型驱动程序 UI 扩展](creating-a--hello-world--wia-minidriver-ui-extension.md)。

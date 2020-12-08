@@ -1,18 +1,17 @@
 ---
 title: NetAdapterCx 数据路径简介
 description: NetAdapterCx 数据路径简介
-ms.assetid: D2AC8269-F2D5-4FDC-A59E-6A35DBB18FF0
 keywords:
 - NetAdapterCx 传输网络数据，NetCx 传输网络数据
 ms.date: 07/01/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: f74c02c041ccc51e89e866826416b47f1dd42fe3
-ms.sourcegitcommit: 5587af31b12cf96c1a31d42f7b40e8f72e3d739c
+ms.openlocfilehash: 8cea446e0e1ad0ca3096bc966dafe13744e29496
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94570373"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841211"
 ---
 # <a name="introduction-to-the-netadaptercx-data-path"></a>NetAdapterCx 数据路径简介
 

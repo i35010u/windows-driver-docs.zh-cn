@@ -1,7 +1,6 @@
 ---
 title: 初始化视频微型端口/显示器驱动程序通信
 description: 初始化视频微型端口以便与显示驱动程序通信
-ms.assetid: 73ba423c-7ebc-4a07-aed0-d2e33f11b878
 keywords:
 - 视频微型端口驱动程序 WDK Windows 2000，初始化
 - 初始化视频微型端口驱动程序
@@ -10,12 +9,12 @@ keywords:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: acfc39fb3418168b9ba4f9ae9fe8acbcafd4d3c0
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: ef802b5fa2b66162fb7eb6b45f52ddb11536116d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361579"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839299"
 ---
 # <a name="initializing-the-video-miniport-for-communication-with-display-driver"></a>初始化视频微型端口以便与显示驱动程序通信
 
@@ -23,7 +22,7 @@ ms.locfileid: "94361579"
 
 如果需要，微型端口驱动程序的 *HwVidInitialize* 函数可以在适配器上执行由其 *HwVidFindAdapter* 函数延迟的一次性初始化操作。 例如，微型端口驱动程序可能会延迟在适配器上加载微码，并使 *HwVidInitialize* 函数调用 [**VideoPortGetRegistryParameters**](/windows-hardware/drivers/ddi/video/nf-video-videoportgetregistryparameters)。
 
-当 [*HwVidInitialize*](/windows-hardware/drivers/ddi/video/nc-video-pvideo_hw_initialize) 函数返回 control 时，图形引擎会为微型端口驱动程序的适配器提供一个句柄。 然后，相应的显示驱动程序可以调用引擎的 [**EngDeviceIoControl**](/windows/win32/api/winddi/nf-winddi-engdeviceiocontrol) 函数，以请求访问映射的视频内存或请求任何其他操作。 视频端口驱动程序将此类请求发送到微型端口驱动程序的 [*HwVidStartIO*](/windows-hardware/drivers/ddi/video/nc-video-pvideo_hw_start_io) 函数， *VRP* 。 有关详细信息，请参阅 [处理 (Windows 2000 模型的视频请求) ](processing-video-requests--windows-2000-model-.md) 。
+当 [*HwVidInitialize*](/windows-hardware/drivers/ddi/video/nc-video-pvideo_hw_initialize) 函数返回 control 时，图形引擎会为微型端口驱动程序的适配器提供一个句柄。 然后，相应的显示驱动程序可以调用引擎的 [**EngDeviceIoControl**](/windows/win32/api/winddi/nf-winddi-engdeviceiocontrol) 函数，以请求访问映射的视频内存或请求任何其他操作。 视频端口驱动程序将此类请求发送到微型端口驱动程序的 [*HwVidStartIO*](/windows-hardware/drivers/ddi/video/nc-video-pvideo_hw_start_io) 函数， *VRP*。 有关详细信息，请参阅 [处理 (Windows 2000 模型的视频请求) ](processing-video-requests--windows-2000-model-.md) 。
 
 通常，显示驱动程序会控制最终用户看到的显示，但在运行基于 NT 的操作系统的基于 x86 的计算机中运行全屏 MS-DOS 应用程序时偶尔除外。 若要详细了解如何在 VGA 兼容的微型端口驱动程序中支持此功能，请参阅 [与 Vga 兼容的视频微型端口驱动程序 (Windows 2000 模型) ](vga-compatible-video-miniport-drivers--windows-2000-model-.md)。
 

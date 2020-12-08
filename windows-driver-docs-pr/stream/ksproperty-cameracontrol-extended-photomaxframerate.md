@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ PHOTOMAXFRAMERATE
 description: 此属性提供照相机处于照片序列模式时的最大捕获帧速率。
-ms.assetid: 49A93E02-232C-4009-8F18-75D067CA7150
 keywords:
 - KSPROPERTY_CAMERACONTROL_EXTENDED_PHOTOMAXFRAMERATE 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 09/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 02bf9ba7ed253daabbbfc00ccb26882c89faa0dc
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 94df8645f023c04db543cf2430c16192c9af0148
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104380"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840565"
 ---
 # <a name="ksproperty_cameracontrol_extended_photomaxframerate"></a>KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ PHOTOMAXFRAMERATE
 
@@ -55,11 +54,11 @@ ms.locfileid: "90104380"
 </tbody>
 </table>
 
-属性值 (操作数据) 包含 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header) 结构和 [**KSCAMERA \_ EXTENDEDPROP \_ 值**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value) 结构。 在 **KSCAMERA \_ EXTENDEDPROP \_ 值**中设置或返回的最大照片帧速率，以帧/秒为单位。
+属性值 (操作数据) 包含 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header) 结构和 [**KSCAMERA \_ EXTENDEDPROP \_ 值**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value) 结构。 在 **KSCAMERA \_ EXTENDEDPROP \_ 值** 中设置或返回的最大照片帧速率，以帧/秒为单位。
 
-此属性的[**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的**flags**成员中未设置任何标志。
+此属性的 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的 **flags** 成员中未设置任何标志。
 
-总的属性数据大小为 **sizeof** (KSCAMERA \_ EXTENDEDPROP \_ 标头) + **sizeof** (KSCAMERA \_ EXTENDEDPROP \_ VALUE) 。 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的**Size**成员设置为此总属性数据大小。
+总的属性数据大小为 **sizeof** (KSCAMERA \_ EXTENDEDPROP \_ 标头) + **sizeof** (KSCAMERA \_ EXTENDEDPROP \_ VALUE) 。 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的 **Size** 成员设置为此总属性数据大小。
 
 此属性控件是异步的，不可取消。
 
@@ -75,7 +74,7 @@ ms.locfileid: "90104380"
 <thead>
 <tr class="header">
 <th>成员</th>
-<th>Value</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -108,7 +107,7 @@ ms.locfileid: "90104380"
 </tbody>
 </table>
 
-帧速率值是在[**KSCAMERA \_ EXTENDEDPROP \_ 值**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value)的**比值**成员中设置的。 **Largeint.highpart** 包含帧速率和比率的分子 **。 LowPart** 包含帧速率的分母。
+帧速率值是在 [**KSCAMERA \_ EXTENDEDPROP \_ 值**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value)的 **比值** 成员中设置的。 **Largeint.highpart** 包含帧速率和比率的分子 **。 LowPart** 包含帧速率的分母。
 
 当驱动程序处于照片序列模式时，可能需要限制照片捕获的最大帧速率。 这是为了确保 "时间点" 捕获方案（具有一定数量的历史记录帧）包含在配置的时间范围内。 例如，根据内存限制，如果应用程序希望捕获1秒的过去历史记录，则必须将捕获速率限制为，以便只需要 N 个帧。
 

@@ -1,7 +1,6 @@
 ---
 title: 'NdisTimedDataHang 规则 (ndis) '
 description: NdisTimedDataHang 规则验证 NDIS 微型端口驱动程序是否 \_ \_ 在22秒内处理网络缓冲区列表结构的任何挂起发送请求。
-ms.assetid: CDFC9C23-B065-4916-BF1C-5429B6B57A23
 ms.date: 05/21/2018
 keywords:
 - 'NdisTimedDataHang 规则 (ndis) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1db418bed28cc7c931f2eda25bd7628f30ca9894
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 3e2bab1be70f029cf732758ba9cdf382ea684b7c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104338"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839753"
 ---
 # <a name="ndistimeddatahang-rule-ndis"></a>NdisTimedDataHang 规则 (ndis) 
 
 
-**NdisTimedDataHang**规则验证 NDIS 微型端口驱动程序是否在22秒内处理[**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构的任何挂起发送请求。
+**NdisTimedDataHang** 规则验证 NDIS 微型端口驱动程序是否在22秒内处理 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构的任何挂起发送请求。
 
 微型端口驱动程序必须调用 [**NdisMSendNetBufferListsComplete**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsendnetbufferlistscomplete) 函数来完成所有 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构的挂起发送请求。 如果有挂起的发送请求，NDIS 微型端口驱动程序必须继续完成这些请求。 如果 **网络 \_ 缓冲区 \_ 列表** 结构至少有一个挂起的发送请求，但在过去22秒内没有完成此类发送请求，则将违反此规则。
 

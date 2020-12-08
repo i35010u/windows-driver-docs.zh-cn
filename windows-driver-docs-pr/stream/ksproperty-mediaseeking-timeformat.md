@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ MEDIASEEKING \_ TIMEFORMAT
 description: KSPROPERTY \_ MEDIASEEKING \_ TIMEFORMAT 属性检索筛选器的当前媒体时间格式。
-ms.assetid: 3a7b6873-7351-4e87-8fa7-a804894c56bb
 keywords:
 - KSPROPERTY_MEDIASEEKING_TIMEFORMAT 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a7ce6fdc0cd68eb281fb95b1030e99d19fb17e8
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 712a218455d3a76573f91646c07a2f0f21d64659
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103747"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839191"
 ---
 # <a name="ksproperty_mediaseeking_timeformat"></a>KSPROPERTY \_ MEDIASEEKING \_ TIMEFORMAT
 
@@ -82,7 +81,7 @@ KSPROPERTY \_ MEDIASEEKING \_ TIMEFORMAT 属性检索筛选器的当前媒体时
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [KSPROPSETID \_ MediaSeeking](kspropsetid-mediaseeking.md)

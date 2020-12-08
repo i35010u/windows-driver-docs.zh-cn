@@ -1,43 +1,42 @@
 ---
-title: PROPSETID\_VIDCAP\_VIDEOCONTROL
-description: PROPSETID\_VIDCAP\_VIDEOCONTROL
-ms.assetid: 892663c1-a807-4d03-9af0-f065149e7d42
+title: PROPSETID \_ VIDCAP \_ VIDEOCONTROL
+description: PROPSETID \_ VIDCAP \_ VIDEOCONTROL
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9bb5c9851e41e63293133c5abdf2e261cf2e5bf4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f266d200c6ea0a5c2c49ddbe161992aa1909cf6b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390883"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840505"
 ---
-# <a name="propsetidvidcapvideocontrol"></a>PROPSETID\_VIDCAP\_VIDEOCONTROL
+# <a name="propsetid_vidcap_videocontrol"></a>PROPSETID \_ VIDCAP \_ VIDEOCONTROL
 
 
 ## <span id="ddk_propsetid_vidcap_videocontrol_ks"></span><span id="DDK_PROPSETID_VIDCAP_VIDEOCONTROL_KS"></span>
 
 
-PROPOSETID\_VIDCAP\_VIDEOCONTROL 属性设置控件的视频捕获操作，例如枚举可用的帧速率和图像方向的补充方面。 通常情况下，模拟数字化器可以支持任何 USB 和 1394年会议摄像机支持，但具有有限的帧速率的帧速率请求。
+PROPOSETID \_ VIDCAP \_ VIDEOCONTROL 属性集控制视频捕获操作的补充方面，如枚举可用帧速率和图像方向。 通常，模拟数字化器可以支持 USB 和1394会议照相机支持的任何帧速率请求，但使用有限的帧速率集。
 
-KSPROPERTY\_VIDCAP\_中的 VIDEOCONTROL 枚举*ksmedia.h*指定此集的属性。
+\_Ksmedia 中的 KSPROPERTY VIDCAP \_ VIDEOCONTROL *ksmedia.h* 枚举指定此集的属性。
 
-支持设置此属性是可选的应仅由微型驱动程序不能捕获在任意帧速率视频的设备的实现。
+对此属性集的支持是可选的，只应由无法以任意帧速率捕获视频的设备微型驱动程序来实现。
 
-视频捕获微型驱动程序需要实现以下属性：
+需要视频捕获微型驱动程序来实现以下属性：
 
-[**KSPROPERTY\_VIDEOCONTROL\_CAP**](ksproperty-videocontrol-caps.md)
+[**KSPROPERTY \_ VIDEOCONTROL \_ CAP**](ksproperty-videocontrol-caps.md)
 
-视频捕获微型驱动程序可以根据需要实现以下属性：
+视频捕获微型驱动程序可以选择实现以下属性：
 
-[**KSPROPERTY\_VIDEOCONTROL\_实际\_帧\_速率**](ksproperty-videocontrol-actual-frame-rate.md)
+[**KSPROPERTY \_ VIDEOCONTROL \_ 实际 \_ 帧 \_ 速率**](ksproperty-videocontrol-actual-frame-rate.md)
 
-[**KSPROPERTY\_VIDEOCONTROL\_FRAME\_RATES**](ksproperty-videocontrol-frame-rates.md)
+[**KSPROPERTY \_ VIDEOCONTROL \_ 帧 \_ 速率**](ksproperty-videocontrol-frame-rates.md)
 
-[**KSPROPERTY\_VIDEOCONTROL\_模式**](ksproperty-videocontrol-mode.md)
+[**KSPROPERTY \_ VIDEOCONTROL \_ 模式**](ksproperty-videocontrol-mode.md)
 
-### <a name="span-iddirectshowinterfacespanspan-iddirectshowinterfacespandirectshow-interface"></a><span id="directshow_interface"></span><span id="DIRECTSHOW_INTERFACE"></span>DirectShow 接口
+### <a name="span-iddirectshow_interfacespanspan-iddirectshow_interfacespandirectshow-interface"></a><span id="directshow_interface"></span><span id="DIRECTSHOW_INTERFACE"></span>DirectShow 接口
 
-没有 DirectShow 界面提供访问此属性集。
+没有可提供对此属性集的访问的 DirectShow 接口。
 
  
 

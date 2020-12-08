@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_ConfigFlags
 description: DEVPKEY_Device_ConfigFlags
-ms.assetid: 67ff3b29-ba25-4dcd-b21b-75203ee17973
 keywords:
 - DEVPKEY_Device_ConfigFlags 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 2d451ac1cd9981703d955e87c5f731e9be9a2a5f
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 88749f58f9c7a9fdfcbe189f2ac8e96e7127fba1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717090"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840081"
 ---
 # <a name="devpkey_device_configflags"></a>DEVPKEY_Device_ConfigFlags
 

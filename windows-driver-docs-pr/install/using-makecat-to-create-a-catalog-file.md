@@ -1,15 +1,14 @@
 ---
 title: 使用 MakeCat 创建目录文件
 description: 使用 MakeCat 创建目录文件
-ms.assetid: c9f9360b-2b1d-4060-af4d-8d281319e181
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d4b70d0c3e471b79304e0d04caaa897146a8c5b
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 4279c7d12f822dc3f169673247d04a0318bc2fdb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732717"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840963"
 ---
 # <a name="using-makecat-to-create-a-catalog-file"></a>使用 MakeCat 创建目录文件
 
@@ -18,7 +17,7 @@ ms.locfileid: "91732717"
 
 只有使用 MakeCat 工具才能为未使用 INF 文件安装的驱动程序包创建编录文件。 如果使用 INF 文件安装了驱动程序包，请使用 [**Inf2Cat**](../devtest/inf2cat.md) 工具创建编录文件。 Inf2Cat 自动包括在包的 INF 文件中引用的驱动程序包中的所有文件。 有关如何使用 Inf2Cat 工具的详细信息，请参阅 [使用 Inf2Cat 创建编录文件](using-inf2cat-to-create-a-catalog-file.md)。
 
-**注意**   你还可以将签名嵌入[驱动程序包](driver-packages.md)的内核模式二进制文件（如驱动程序和包可能提供的任何 .dll 文件），而不是创建和签名目录文件。 有关此过程的详细信息，请参阅 [通过嵌入签名对驱动程序进行测试签名](test-signing-a-driver-through-an-embedded-signature.md)。
+**注意**  你还可以将签名嵌入 [驱动程序包](driver-packages.md)的内核模式二进制文件（如驱动程序和包可能提供的任何 .dll 文件），而不是创建和签名目录文件。 有关此过程的详细信息，请参阅 [通过嵌入签名对驱动程序进行测试签名](test-signing-a-driver-through-an-embedded-signature.md)。
 
  
 
@@ -32,9 +31,9 @@ ms.locfileid: "91732717"
 
 -   将每个文件的指纹存储在目录文件中。
 
-本主题介绍如何为*toastpkg.inf*示例驱动程序包的64位内核模式二进制文件创建一个文件 *。* 在 WDK 安装目录中，这些二进制文件位于 *src \\ general \\ toaster \\ toastpkg.inf \\ toastcd \\ amd64* 目录中。
+本主题介绍如何为 *toastpkg.inf* 示例驱动程序包的64位内核模式二进制文件创建一个文件 *。* 在 WDK 安装目录中，这些二进制文件位于 *src \\ general \\ toaster \\ toastpkg.inf \\ toastcd \\ amd64* 目录中。
 
-若要为*toastpkg.inf*示例[驱动程序包](driver-packages.md)创建一个*cdf*文件，请执行以下操作：
+若要为 *toastpkg.inf* 示例 [驱动程序包](driver-packages.md)创建一个 *cdf* 文件，请执行以下操作：
 
 1.  启动记事本并复制以下示例中的文本。 它包含要分类的文件的列表及其属性。
 
@@ -55,8 +54,8 @@ ms.locfileid: "91732717"
     <hash>File8=amd64\tostrco2.pdb
     ```
 
-2.  将该文件另存为与驱动程序包相同的文件夹中的*tstamd64。*
-    **注意**   为多个平台构建驱动程序时，为每个平台创建一个单独的目录文件。
+2.  将该文件另存为与驱动程序包相同的文件夹中的 *tstamd64。*
+    **注意**  为多个平台构建驱动程序时，为每个平台创建一个单独的目录文件。
 
      
 

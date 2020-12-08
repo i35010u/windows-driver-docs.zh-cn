@@ -1,7 +1,6 @@
 ---
 title: 'DeviceInitAPI 规则 (kmdf) '
 description: 对于 FDO 设备，必须先调用框架设备对象初始化方法和框架 FDO 初始化方法，然后再调用设备对象的 WdfDeviceCreate 方法。
-ms.assetid: 526807b8-748e-4bc1-b795-9971ed98509c
 ms.date: 05/21/2018
 keywords:
 - 'DeviceInitAPI 规则 (kmdf) '
@@ -12,19 +11,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 74c0baaa75ed9e922de874f09108d095ffa1ba62
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: b30042fdb41b199ec849f26fa68c24f077d7bf10
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107420"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841311"
 ---
 # <a name="deviceinitapi-rule-kmdf"></a>DeviceInitAPI 规则 (kmdf) 
 
 
 对于 FDO 设备，必须先调用框架设备对象初始化方法和框架 FDO 初始化方法，然后再调用设备对象的 [**WdfDeviceCreate**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate) 方法。
 
-对于 FDO 设备，在驱动程序为框架设备对象调用[**WdfDeviceCreate**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)后，不能调用在[WDFDEVICE \_ INIT](../wdf/wdfdevice_init.md)结构中存储信息的 framework 设备对象初始化方法和框架 FDO 初始化方法。
+对于 FDO 设备，在驱动程序为框架设备对象调用 [**WdfDeviceCreate**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)后，不能调用在 [WDFDEVICE \_ INIT](../wdf/wdfdevice_init.md)结构中存储信息的 framework 设备对象初始化方法和框架 FDO 初始化方法。
 
 **驱动程序模型： KMDF**
 

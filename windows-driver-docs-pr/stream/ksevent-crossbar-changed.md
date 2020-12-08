@@ -1,7 +1,6 @@
 ---
 title: KSEVENT \_ 横线 \_ 已更改
 description: KSEVENT \_ 横线 \_ CHANGED 事件会在用户模式下从内核模式视频捕获微型驱动程序到 DirectShow 传播操作，例如新的路由配置。
-ms.assetid: b67d95a3-7c30-49ae-a2df-eb88491c2e97
 keywords:
 - KSEVENT_CROSSBAR_CHANGED 流媒体设备
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a2da809bfd80aafbecfe1551d13e6bb19eb5a614
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 358227fa206d04e41f3c7707cb9d345132f96fe1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105072"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839971"
 ---
 # <a name="ksevent_crossbar_changed"></a>KSEVENT \_ 横线 \_ 已更改
 

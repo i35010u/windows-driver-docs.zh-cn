@@ -1,19 +1,18 @@
 ---
 title: 网络 INF 文件中的 Version 节
 description: 网络 INF 文件中的 Version 节
-ms.assetid: c76151e9-fef2-4bfe-8587-d58d95d234bc
 keywords:
 - INF 文件 WDK 网络，版本部分
 - 网络 INF 文件 WDK，版本部分
 - 版本部分 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 13fd04c42a7441642fad530d9a5b0416f0c65f4a
-ms.sourcegitcommit: f86e44d595be2c9e4efe3c196f6c0a9c71f4231e
+ms.openlocfilehash: 30f1764d332c69cb09cb4f72a5bfa8a2a6c23d01
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96470532"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839219"
 ---
 # <a name="version-section-in-a-network-inf-file"></a>网络 INF 文件中的 Version 节
 

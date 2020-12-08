@@ -1,19 +1,18 @@
 ---
 title: SCSI 端口驱动程序支持例程
 description: 介绍 SCSI 端口驱动程序例程。
-ms.assetid: b4bd6afe-77a2-4bd1-a762-5887f77cc737
 keywords:
 - SCSI 端口驱动程序支持例程
 - 存储 WDK
 - 存储支持例程
 ms.date: 10/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: ede9ab9fbaa308ef00dfd6ab181927ea6491cf18
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 936fde8f810b7d36fe082876db8cac3e305dc69d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186688"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839409"
 ---
 # <a name="scsi-port-driver-support-routines"></a>SCSI 端口驱动程序支持例程
 

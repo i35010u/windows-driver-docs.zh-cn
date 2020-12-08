@@ -1,7 +1,6 @@
 ---
 title: 'DeviceCreateFail 规则 (kmdf) '
 description: DeviceCreateFail 规则指定 \_ \_ 如果对 \_ \_ WdfDeviceCreate 的调用失败，则将返回一个错误状态。
-ms.assetid: 07272d72-d9a2-42b2-b89b-c7bc903c1425
 ms.date: 05/21/2018
 keywords:
 - 'DeviceCreateFail 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b6bb255533209c97bdb7769e2fc764766bb8bc3
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: b1288c74dfea674d55b71fe37dafbd16877450de
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106896"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841315"
 ---
 # <a name="devicecreatefail-rule-kmdf"></a>DeviceCreateFail 规则 (kmdf) 
 
 
-**DeviceCreateFail**规则指定 \_ 如果对 \_ \_ \_ [**WdfDeviceCreate**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)的调用失败，则将返回一个错误状态。
+**DeviceCreateFail** 规则指定 \_ 如果对 \_ \_ \_ [**WdfDeviceCreate**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)的调用失败，则将返回一个错误状态。
 
 若要使驱动程序对设备进行服务，必须成功创建设备对象。
 

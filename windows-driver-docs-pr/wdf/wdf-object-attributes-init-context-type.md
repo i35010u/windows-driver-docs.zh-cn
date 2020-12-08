@@ -1,24 +1,23 @@
 ---
 title: WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE 宏
 description: WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE 宏可初始化驱动程序的 WDF_OBJECT_ATTRIBUTES 结构，并将对象的驱动程序定义的上下文信息插入到结构中。
-ms.assetid: 83e397b1-e37d-451d-9007-3b34993187c3
 keywords:
 - WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE 宏
 ms.date: 08/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d26760781adbf79961f4ab57c11b86f4698b9341
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 97243a850d12a4919ce6b1bafd10858455b87bf8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188123"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840229"
 ---
 # <a name="wdf_object_attributes_init_context_type-macro"></a>WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE 宏
 
 
 \[适用于 KMDF 和 UMDF\]
 
-**WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE**宏可初始化驱动程序的[**WDF_OBJECT_ATTRIBUTES**](/windows-hardware/drivers/ddi/wdfobject/ns-wdfobject-_wdf_object_attributes)结构，并将对象的驱动程序定义的上下文信息插入到结构中。
+**WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE** 宏可初始化驱动程序的 [**WDF_OBJECT_ATTRIBUTES**](/windows-hardware/drivers/ddi/wdfobject/ns-wdfobject-_wdf_object_attributes)结构，并将对象的驱动程序定义的上下文信息插入到结构中。
 
 <a name="syntax"></a>语法
 ------
@@ -44,12 +43,12 @@ void WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE(
 
 此宏不返回值。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
-在调用 **WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE**之前，必须 [**WDF_DECLARE_CONTEXT_TYPE**](wdf-declare-context-type.md) 或 [**WDF_DECLARE_CONTEXT_TYPE_WITH_NAME**](wdf-declare-context-type-with-name.md) 全局 (不在函数) 中。
+在调用 **WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE** 之前，必须 [**WDF_DECLARE_CONTEXT_TYPE**](wdf-declare-context-type.md) 或 [**WDF_DECLARE_CONTEXT_TYPE_WITH_NAME**](wdf-declare-context-type-with-name.md) 全局 (不在函数) 中。
 
-**WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE**宏结合了[**WDF_OBJECT_ATTRIBUTES_INIT**](/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdf_object_attributes_init)函数和[**WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE**](wdf-object-attributes-set-context-type.md)的宏。
+**WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE** 宏结合了 [**WDF_OBJECT_ATTRIBUTES_INIT**](/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdf_object_attributes_init)函数和 [**WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE**](wdf-object-attributes-set-context-type.md)的宏。
 
 <a name="examples"></a>示例
 --------
@@ -101,7 +100,7 @@ WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE( &attributes, WDM_NDIS_REQUEST );
 <td><p>2.0</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wdfobject (包含 Wdf .h) </td>
 </tr>
 </tbody>

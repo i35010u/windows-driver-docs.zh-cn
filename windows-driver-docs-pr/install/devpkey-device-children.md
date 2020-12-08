@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_Children
 description: DEVPKEY_Device_Children
-ms.assetid: bdcc60e3-0c27-4f2c-9c91-a5282f3d4614
 keywords:
 - DEVPKEY_Device_Children 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 33b866b259585685e58749585ebd2715d4a4dd26
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: de7804fedb7d82efabd85df3adf3167a6165f0cd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717110"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840087"
 ---
 # <a name="devpkey_device_children"></a>DEVPKEY_Device_Children
 

@@ -1,17 +1,16 @@
 ---
 title: 取消注册微筛选器
 description: 取消注册微筛选器
-ms.assetid: 4af2d4fd-bfbe-4a75-bbfb-2a1c4b5c2032
 keywords:
 - 正在取消注册 minifilters
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f0c0cdb1879ba4ab44e74c3ee8ec21a71af7863f
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 7ba4c81badad46b23767166e0d5ac4e64e4c312e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063218"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841129"
 ---
 # <a name="unregistering-the-minifilter"></a>取消注册微筛选器
 

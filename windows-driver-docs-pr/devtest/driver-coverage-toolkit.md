@@ -1,46 +1,45 @@
 ---
 title: 驱动程序覆盖范围工具包
-description: 驱动程序覆盖范围工具包监视器和各种 I/O 请求数据包 (Irp)，进入或离开指定设备驱动程序堆栈上的报表。
-ms.assetid: b35ca87e-9ec7-4e25-89ce-0e7c121f6445
+description: 驱动程序覆盖率工具包监视和报告各种 i/o 请求数据包 (Irp) 为指定设备进入或离开驱动程序堆栈。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5facc6b1d8962aad294e99983f4a6372bfd407ca
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 201e611912d53773c51be59f42c8e5a662774d41
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380615"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839007"
 ---
 # <a name="driver-coverage-toolkit"></a>驱动程序覆盖范围工具包
 
 
-驱动程序覆盖范围工具包监视器和各种 I/O 请求数据包 (Irp)，进入或离开指定设备驱动程序堆栈上的报表。 该驱动程序覆盖范围工具包中的数据可帮助标识驱动程序测试和验证过程中的覆盖率的弱点。
+驱动程序覆盖率工具包监视和报告各种 i/o 请求数据包 (Irp) 为指定设备进入或离开驱动程序堆栈。 驱动程序覆盖套件中的数据可帮助确定驱动程序测试和验证期间的覆盖漏洞。
 
-**请注意**  的驱动程序覆盖范围工具包不再需要在 Windows 10 中，安装程序不再包含在 WDK 中。 若要执行此处所述在 Windows 10 中的任务，请改用[Driver Verifier](driver-verifier.md)并[IRP 日志记录](irp-logging.md)。
+**注意**  Windows 10 不再需要驱动程序覆盖率工具包，并且 WDK 中不再包括该安装程序。 若要在 Windows 10 中执行此处所述的任务，请改用 [驱动程序验证程序](driver-verifier.md) 和 [IRP 日志记录](irp-logging.md)。
 
  
 
-驱动程序覆盖范围工具包包含 Windows Driver Kit (WDK) 中，从 Visual Studio 运行作为的一部分[设备基础测试](device-fundamentals-tests.md)。
+驱动程序覆盖套件包含在 Windows 驱动程序工具包 (WDK) 中，并从 Visual Studio 运行，作为 [设备基础测试](device-fundamentals-tests.md)的一部分。
 
-驱动程序覆盖范围工具包包括以下工具：
+驱动程序覆盖套件包含以下工具：
 
--   [驱动程序覆盖范围筛选器驱动程序](driver-coverage-filter-driver.md)(Drvcov.sys)，它会监视 IRP 请求执行和跳出执行一个或多个指定设备驱动程序堆栈。
+-   [驱动程序覆盖范围筛选器驱动程序](driver-coverage-filter-driver.md) ( # A0) ，用于监视一个或多个指定设备对驱动程序堆栈的 IRP 请求。
 
--   驱动程序覆盖工具都可用作的一部分[设备基础测试](device-fundamentals-tests.md)，请参阅[覆盖率测试 （设备基础）](coverage-tests--device-fundamentals-.md)。 这些工具可用于启用或禁用指定设备上的 IRP 覆盖，以及生成报表从覆盖率数据。
+-   驱动程序覆盖工具在 [设备基础测试](device-fundamentals-tests.md)中提供，请参阅 [覆盖率测试 (设备基础) ](coverage-tests--device-fundamentals-.md)。 您可以使用这些工具在指定的设备上启用或禁用 IRP 覆盖区，并从覆盖面数据生成报表。
 
-可以安装并无大影响的测试计算机上运行的驱动程序覆盖范围工具包。 这些工具不会修改 IRP 请求或将其他 Irp 注入到设备的驱动程序堆栈。 这些工具只需在每个 IRP 的进入或离开设备驱动程序上收集数据。
+您可以在测试计算机上安装并运行驱动程序覆盖套件，而不会产生很大影响。 这些工具不会修改 IRP 请求，也不会将其他 Irp 注入到设备的驱动程序堆栈中。 这些工具只收集进入或离开设备驱动程序的每个 IRP 上的数据。
 
-在运行 Windows Vista 和更高版本的 Windows 的系统上支持的驱动程序覆盖范围工具包。
+在运行 Windows Vista 和更高版本的 Windows 的系统上支持驱动程序覆盖套件。
 
-本部分包含以下主题：
+本节包含下列主题：
 
-[驱动程序覆盖范围 Toolkit 概述](overview-of-the-driver-coverage-toolkit.md)
+[驱动程序覆盖范围工具包概述](overview-of-the-driver-coverage-toolkit.md)
 
 [驱动程序覆盖范围筛选器驱动程序](driver-coverage-filter-driver.md)
 
-[如何收集 IRP 覆盖率数据](how-to-collect-irp-coverage-data.md)
+[如何收集 IRP 覆盖范围数据](how-to-collect-irp-coverage-data.md)
 
-[如何分析 IRP 覆盖率数据](how-to-analyze-irp-coverage-data.md)
+[如何分析 IRP 覆盖范围数据](how-to-analyze-irp-coverage-data.md)
 
  
 

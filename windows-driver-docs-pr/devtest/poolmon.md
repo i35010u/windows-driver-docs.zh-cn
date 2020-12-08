@@ -1,7 +1,6 @@
 ---
 title: PoolMon
 description: PoolMon
-ms.assetid: 3cda6297-0e6f-48d5-b9d9-670ccf102c86
 keywords:
 - PoolMon WDK
 - 池监视器 WDK
@@ -19,12 +18,12 @@ keywords:
 - 状态信息 WDK PoolMon
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f461497675b7e492d768b6209d786ef555c20428
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 0cd78cbc77f10c9ddaa9cde605f29ba41781a6ac
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382403"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841007"
 ---
 # <a name="poolmon"></a>PoolMon
 

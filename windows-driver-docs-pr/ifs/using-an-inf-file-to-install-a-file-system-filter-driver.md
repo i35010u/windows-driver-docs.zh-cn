@@ -1,17 +1,16 @@
 ---
 title: 使用 INF 文件安装文件系统筛选器驱动程序
 description: 使用 INF 文件安装文件系统筛选器驱动程序
-ms.assetid: 0bc70cdb-d115-4329-9fcc-a085a57c5f78
 keywords:
 - INF 文件系统和安装步骤
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4cd92126d2c386ea4c3d9ee516449f575711741c
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: a210ceff479af62e555ee3b5c567d5b89f9b65af
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714957"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841123"
 ---
 # <a name="using-an-inf-file-to-install-a-file-system-filter-driver"></a>使用 INF 文件安装文件系统筛选器驱动程序
 
@@ -27,9 +26,9 @@ ms.locfileid: "90714957"
 
 1.  在 Windows 资源管理器中，选择并按住 (或右键单击) INF 文件名。 将显示一个快捷菜单。
 
-2.  选择“安装”  。
+2.  选择“安装”。
 
-**注意**   仅当 INF 文件包含**DefaultInstall**部分时，才会显示快捷菜单。
+**注意**   仅当 INF 文件包含 **DefaultInstall** 部分时，才会显示快捷菜单。
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: IRP_MJ_MDL_READ_COMPLETE 联合的 FLT_PARAMETERS
 description: 当操作的 FLT \_ IO \_ 参数块结构的 MajorFunction 字段 \_ 为 IRP \_ MJ \_ MDL \_ 读取 \_ 完成时，将使用以下联合组件。
-ms.assetid: 1add3569-100d-4c9c-9a62-2333b5bad23b
 keywords:
 - IRP_MJ_MDL_READ_COMPLETE 联合可安装文件系统驱动程序的 FLT_PARAMETERS
 - FLT_PARAMETERS 联合可安装文件系统驱动程序
@@ -16,28 +15,28 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9dab57454096fe751f88193bc11d075a11488e03
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 00f107d7ecf6e474ef825d12a4c17988b8d04af5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066216"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839271"
 ---
 # <a name="flt_parameters-for-irp_mj_mdl_read_complete-union"></a>\_IRP MJ MDL 的 FLT 参数 \_ \_ \_ 读取 \_ 完成联合
 
 
-当操作的[**FLT \_ IO \_ 参数 \_ 块**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构的**MajorFunction**字段为 IRP \_ MJ \_ MDL \_ 读取 \_ 完成时，将使用以下联合组件。
+当操作的 [**FLT \_ IO \_ 参数 \_ 块**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构的 **MajorFunction** 字段为 IRP \_ MJ \_ MDL \_ 读取 \_ 完成时，将使用以下联合组件。
 
 <a name="syntax"></a>语法
 ------
 
 ```ManagedCPlusPlus
 typedef union _FLT_PARAMETERS {
-  ...    ;
+  ...    ;
   struct {
     PMDL MdlChain;
-  } MdlReadComplete;
-  ...    ;
+  } MdlReadComplete;
+  ...    ;
 } FLT_PARAMETERS, *PFLT_PARAMETERS;
 ```
 
@@ -73,7 +72,7 @@ IRP \_ MJ \_ MDL \_ 读取 \_ 完成是一种快速的 i/o 操作。
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**FLT \_ 回调 \_ 数据**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)

@@ -1,15 +1,14 @@
 ---
 title: 静态图像 USB I/O 结构
 description: 静态图像 USB I/O 结构
-ms.assetid: d70c5c11-c8f2-4196-a7f5-d97ceef10ca2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c77b155a7cb7786e0a13ec506eb3e85bd7c1ed3e
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 258ff163ebecc37f520ede44cef253d65006ed9c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715116"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839095"
 ---
 # <a name="still-image-usb-io-structures"></a>静态图像 USB I/O 结构
 
@@ -27,7 +26,7 @@ ms.locfileid: "90715116"
 <thead>
 <tr class="header">
 <th>结构</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -72,7 +71,7 @@ ms.locfileid: "90715116"
 
  
 
-这些结构在 *usbscan*中定义。 有关这些结构的详细信息，请参阅：
+这些结构在 *usbscan* 中定义。 有关这些结构的详细信息，请参阅：
 
 [USB 静止图像结构](/windows-hardware/drivers/ddi/_image/index)
 

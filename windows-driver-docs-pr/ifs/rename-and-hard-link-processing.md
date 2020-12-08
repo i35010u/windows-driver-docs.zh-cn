@@ -1,22 +1,21 @@
 ---
 title: 重命名和硬链接处理
 description: 重命名和硬链接处理
-ms.assetid: 53eb3c9b-cb48-4d5f-8e26-dc93b7607813
 keywords:
 - 安全 WDK 文件系统，语义模型检查
-- 语义模型检查 WDK 文件系统中，重命名操作
-- 重命名操作 WDK 的文件系统
-- 语义模型检查 WDK 的文件系统，硬链接操作
+- 语义模型检查 WDK 文件系统，重命名操作
+- 重命名操作 WDK 文件系统
+- 语义模型检查 WDK 文件系统、硬链接操作
 - 硬链接操作 WDK 文件系统
-- 名称 WDK 文件系统
+- 命名 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 781e954139ec90a2085b75c49b9e27855f6ead1b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ae48eb05f2a89438804296eb6a9c0a64e96b5e68
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365922"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840717"
 ---
 # <a name="rename-and-hard-link-processing"></a>重命名和硬链接处理
 
@@ -24,9 +23,9 @@ ms.locfileid: "63365922"
 ## <span id="ddk_rename_and_hard_link_processing_if"></span><span id="DDK_RENAME_AND_HARD_LINK_PROCESSING_IF"></span>
 
 
-对于文件系统的特定需要关注的方面是正确处理重命名操作。 考虑类似区域都是问题的支持硬链接的文件系统的硬链接创建。 对于重命名操作，就可以删除额外的安全检查所需的文件系统的文件 （重命名操作的目标） 的文件系统。
+文件系统的一个特别关注的方面是正确处理重命名操作。 需要考虑的一个类似领域是支持硬链接的文件系统的硬链接创建。 对于重命名操作，文件系统可能会)  (重命名操作的目标删除文件，这需要文件系统进行其他安全检查。
 
-在查看时重命名操作的控制结构，结构字段之一是**ReplaceIfExists**选项：
+查看用于重命名操作的控制结构时，其中一个结构字段是 **ReplaceIfExists** 选项：
 
 ```cpp
 typedef struct _FILE_RENAME_INFORMATION {
@@ -37,7 +36,7 @@ typedef struct _FILE_RENAME_INFORMATION {
 } FILE_RENAME_INFORMATION, *PFILE_RENAME_INFORMATION;
 ```
 
-同样，硬链接操作的控制结构中的结构字段之一是**ReplaceIfExists**选项：
+同样，在硬链接操作的控制结构中，其中一个结构字段是 **ReplaceIfExists** 选项：
 
 ```cpp
 typedef struct _FILE_LINK_INFORMATION {
@@ -48,9 +47,9 @@ typedef struct _FILE_LINK_INFORMATION {
 } FILE_LINK_INFORMATION, *PFILE_LINK_INFORMATION;
 ```
 
-在这两种情况下，选项将替换为目标的操作，如果它存在。 虽然 FASTFAT 文件系统不支持的硬链接，但它支持重命名操作。 中的 FASTFAT 文件系统源代码中可以看到这些语义和行为**FatSetRenameInfo**函数 (请参阅*Fileinfo.c*从 WDK 包含 fastfat 示例的源文件)。
+在这两种情况下，选项是替换操作的目标（如果存在）。 尽管 FASTFAT 文件系统不支持硬链接，但它确实支持重命名操作。 可以在 **FatSetRenameInfo** 函数的 FASTFAT 文件系统源代码中看到这些语义和行为 (请参阅 WDK 包含) 的 FASTFAT 示例中的 *Fileinfo* 源文件。
 
-下面的代码示例，以处理重命名操作模仿用于删除该文件的文件系统检查。 与更强大的安全的文件系统的模型 (例如 NTFS)，此检查还需要安全检查以确保允许调用方删除给定的文件 （调用方必须为要删除所需的相应权限）。
+下面的代码示例用于处理重命名操作，模拟文件系统检查是否有删除文件。 对于具有更可靠安全模型 (NTFS 的文件系统，例如) ，此检查还需要进行安全检查，以确保允许调用方删除给定文件， (调用方具有删除) 所需的相应权限。
 
 ```cpp
     //

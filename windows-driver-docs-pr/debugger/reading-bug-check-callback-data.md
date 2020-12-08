@@ -1,7 +1,6 @@
 ---
 title: 读取 Bug 检查回调数据
 description: 读取 Bug 检查回调数据
-ms.assetid: 638074bb-5133-4edc-86c5-33aafa837a0c
 keywords:
 - bug 检查的回调数据
 - bug 检查的回调数据，显示回调数据
@@ -14,25 +13,25 @@ keywords:
 - dbgeng 头文件，GetNextTagged
 ms.date: 06/05/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: a03eb8ca32e0ff306548094642151878225d41cf
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: cbdb8e6925841868250e5a94097b3d28176c4cfd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206803"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839157"
 ---
 # <a name="reading-bug-check-callback-data"></a>读取 Bug 检查回调数据
 
-许多驱动程序提供 *bug 检查回调例程*。 当 Windows 发出 bug 检查时，它将在关闭系统之前调用这些例程。 这些例程可以指定并写入到称为 *回调数据* 和 *辅助回调数据*的内存区域。
+许多驱动程序提供 *bug 检查回调例程*。 当 Windows 发出 bug 检查时，它将在关闭系统之前调用这些例程。 这些例程可以指定并写入到称为 *回调数据* 和 *辅助回调数据* 的内存区域。
 
 **BugCheckCallback** 使用 [KBUGCHECK_CALLBACK_ROUTINE](/windows-hardware/drivers/ddi/wdm/nc-wdm-kbugcheck_callback_routine)  
-此例程写入的数据会成为 *回调数据*的一部分。 数据不包括在故障转储文件中。
+此例程写入的数据会成为 *回调数据* 的一部分。 数据不包括在故障转储文件中。
 
 **BugCheckSecondaryDumpDataCallback** 使用 [KBUGCHECK_REASON_CALLBACK_ROUTINE](/windows-hardware/drivers/ddi/wdm/nc-wdm-kbugcheck_reason_callback_routine)  
-此例程写入的数据会成为 *辅助回调数据*的一部分。 数据包含在故障转储文件中。
+此例程写入的数据会成为 *辅助回调数据* 的一部分。 数据包含在故障转储文件中。
 
 **BugCheckAddPagesCallback** 使用 [KBUGCHECK_REASON_CALLBACK_ROUTINE](/windows-hardware/drivers/ddi/wdm/nc-wdm-kbugcheck_reason_callback_routine)  
-此例程指定的页面将成为 *回调数据*的一部分。 这些页面中的数据包含在故障转储文件中。
+此例程指定的页面将成为 *回调数据* 的一部分。 这些页面中的数据包含在故障转储文件中。
 
 调试器可用的回叫和辅助回叫数据量取决于多个因素：
 
@@ -42,7 +41,7 @@ ms.locfileid: "89206803"
 
 - 如果调试的是小内存转储，则回调数据将不可用。 辅助回调数据将可用。
 
-有关这些不同转储文件大小的详细信息，请参阅 [内核模式转储文件的种类](varieties-of-kernel-mode-dump-files.md) 。
+有关这些不同转储文件大小的详细信息，请参阅多种 [Kernel-Mode 转储文件](varieties-of-kernel-mode-dump-files.md) 。
 
 ## <a name="displaying-callback-data"></a>显示回调数据
 
@@ -56,9 +55,9 @@ ms.locfileid: "89206803"
 
 可以通过两种方法来显示辅助回叫数据。 可以使用 **enumtag** 命令，也可以编写自己的调试器扩展。
 
-每个辅助回调数据块由 GUID 标记标识。 此标记由传递给[BugCheckSecondaryDumpDataCallback](/windows-hardware/drivers/ddi/wdm/nc-wdm-kbugcheck_reason_callback_routine) **) REASONSPECIFICDATA 参数 (KBUGCHECK \_ 辅助 \_ 转储 \_ 数据**的**Guid**字段指定。
+每个辅助回调数据块由 GUID 标记标识。 此标记由传递给 [BugCheckSecondaryDumpDataCallback](/windows-hardware/drivers/ddi/wdm/nc-wdm-kbugcheck_reason_callback_routine) **) REASONSPECIFICDATA 参数 (KBUGCHECK \_ 辅助 \_ 转储 \_ 数据** 的 **Guid** 字段指定。
 
-[**Enumtag (枚举辅助回调数据) **](-enumtag--enumerate-secondary-callback-data-.md)命令不是非常精确的检测。 它显示每个辅助数据块，显示标记，然后以十六进制和 ASCII 格式显示数据。 通常，它仅用于确定哪些标记实际上用于辅助数据块。
+[**Enumtag (枚举辅助回调数据)**](-enumtag--enumerate-secondary-callback-data-.md)命令不是非常精确的检测。 它显示每个辅助数据块，显示标记，然后以十六进制和 ASCII 格式显示数据。 通常，它仅用于确定哪些标记实际上用于辅助数据块。
 
 若要以更实用的方式使用此数据，建议编写自己的调试器扩展。 此扩展必须调用 dbgeng 标头文件中的方法。 有关详细信息，请参阅 [编写新调试器扩展](writing-new-debugger-extensions.md)。
 
@@ -85,11 +84,11 @@ Success = DataSpaces->ReadTagged(  &MyGuid,  0,  RawData,
                                    sizeof(RawData),  NULL); 
 ```
 
-如果提供的 *BufferSize* 太小， **ReadTagged** 将会成功，但只会将请求的字节数写入 *缓冲区*。 如果指定的 *BufferSize* 太大， **ReadTagged** 将会成功，但只会将实际块大小写入 *缓冲区*。 如果为 *TotalSize*提供指针，则 **ReadTagged** 将使用它来返回实际块的大小。 如果块无法访问， **ReadTagged** 将返回失败状态代码。
+如果提供的 *BufferSize* 太小， **ReadTagged** 将会成功，但只会将请求的字节数写入 *缓冲区*。 如果指定的 *BufferSize* 太大， **ReadTagged** 将会成功，但只会将实际块大小写入 *缓冲区*。 如果为 *TotalSize* 提供指针，则 **ReadTagged** 将使用它来返回实际块的大小。 如果块无法访问， **ReadTagged** 将返回失败状态代码。
 
 如果两个块具有相同的 GUID 标记，则将返回第一个匹配块，并将无法访问第二个块。
 
-如果不确定块的 GUID 标记，可以使用 **IDebugDataSpaces3：： StartEnumTagged**、 **IDebugDataSpaces3：： GetNextTagged**和 **IDebugDataSpaces3：： EndEnumTagged** 方法来枚举标记的块。 它们的原型如下所示：
+如果不确定块的 GUID 标记，可以使用 **IDebugDataSpaces3：： StartEnumTagged**、 **IDebugDataSpaces3：： GetNextTagged** 和 **IDebugDataSpaces3：： EndEnumTagged** 方法来枚举标记的块。 它们的原型如下所示：
 
 ```cpp
 STDMETHOD(StartEnumTagged)(

@@ -1,7 +1,6 @@
 ---
 title: D3DKMT \_ OUTPUTDUPL \_ 元数据结构
 description: 了解 D3DKMT \_ OUTPUTDUPL \_ 元数据结构，该结构已保留供系统使用。 请勿在您的驱动程序中使用。
-ms.assetid: abf4f00a-05bb-48f6-989e-f1b453fb0708
 keywords:
 - D3DKMT_OUTPUTDUPL_METADATA 结构显示设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e67a8379c48f6d23708477ce84f54cba36e56b0
-ms.sourcegitcommit: fc94eb0d5a41ef81c1b3ab91ad725386db0be0c2
+ms.openlocfilehash: 9225d27001e3d0697a6533ffacc095a1a22425c0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91603664"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839609"
 ---
 # <a name="d3dkmt_outputdupl_metadata-structure"></a>D3DKMT \_ OUTPUTDUPL \_ 元数据结构
 
@@ -31,12 +30,12 @@ ms.locfileid: "91603664"
 
 ```ManagedCPlusPlus
 typedef struct _D3DKMT_OUTPUTDUPL_METADATA {
-  D3DKMT_HANDLE                  hAdapter;
+  D3DKMT_HANDLE                  hAdapter;
   D3DDDI_VIDEO_PRESENT_SOURCE_ID VidPnSourceId;
   D3DKMT_OUTPUTDUPL_METADATATYPE Type;
-  UINT                           BufferSizeSupplied;
-  PVOID                          pBuffer;
-  UINT                           BufferSizeRequired;
+  UINT                           BufferSizeSupplied;
+  PVOID                          pBuffer;
+  UINT                           BufferSizeRequired;
 } D3DKMT_OUTPUTDUPL_METADATA;
 ```
 

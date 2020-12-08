@@ -1,18 +1,17 @@
 ---
 title: UDP-ESP 封装类型
 description: UDP-ESP 封装类型
-ms.assetid: 126d2fd5-778e-43ff-87f6-5b0b54a83bac
 keywords:
-- UDP 封装的 ESP 数据包 WDK IPsec 卸载、 封装类型和子
-- 封装 WDK UDP ESP
+- UDP 封装的 ESP 数据包 WDK IPsec 卸载，封装类型和子类型
+- 封装 WDK UDP-ESP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b1dc8ff441c908c7b1e9a395ace740e5601dfed6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8f80b83390534e4ff6259236f501011b1712eed0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358358"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839429"
 ---
 # <a name="udp-esp-encapsulation-types"></a>UDP-ESP 封装类型
 
@@ -21,37 +20,37 @@ ms.locfileid: "63358358"
 
 
 
-下图显示了 Internet 密钥交换 (IKE) 数据包和 ESP 受保护的数据端口 4500 收到的数据包的 UDP 封装。
+下图显示了在端口4500上收到的 Internet 密钥交换 (IKE) 数据包和受 ESP 保护的数据包的 UDP 封装。
 
-![说明端口 4500 的基本 udp esp 封装的关系图](images/4500-encap-types.png)
+![说明端口4500的基本 udp esp 封装的示意图](images/4500-encap-types.png)
 
-请注意按照 IKE 数据包中的 UDP 标头的零四个字节。 此字段的零用于 IKE 数据包与端口 4500 上的 UDP 封装 ESP 数据包区分开来。 而不是零，ESP 标头的数据包中的此位置具有非零的 ESP 标头。
+请注意在 IKE 数据包中跟随 UDP 标头后的四个字节。 此零字段将从端口4500上的 UDP 封装的 ESP 数据包中区分 IKE 数据包。 ESP 标头在数据包中的此位置不会有一个非零的 ESP 标头。
 
-### <a name="udp-esp-encapsulation-subtypes"></a>UDP ESP 封装子类型
+### <a name="udp-esp-encapsulation-subtypes"></a>UDP-ESP 封装子类型
 
-ESP 数据包端口 4500 上的可根据下列 UDP ESP 封装子类型之一进行格式设置：
+可以根据以下 UDP-ESP 封装子类型之一来格式化端口4500上的 ESP 数据包：
 
 -   UDP 封装的传输。
 
-    ESP 封装的传输模式数据包通过 UDP 封装。
+    由 UDP 封装的 ESP 封装传输模式数据包。
 
--   UDP 封装隧道。
+-   UDP 封装的隧道。
 
-    数据包隧道模式部分是 UDP 封装。 数据包的传输模式部分不是 UDP 封装，并且未被 ESP 保护。
+    数据包的隧道模式部分以 UDP 方式封装。 数据包的传输模式部分不是 UDP 封装的，并且不受 ESP 保护。
 
--   通过 UDP 封装隧道传输。
+-   经由 UDP 封装的隧道传输。
 
-    数据包隧道模式部分是 UDP 封装。 数据包的传输模式部分不 UDP 封装，而是 ESP 保护。
+    数据包的隧道模式部分以 UDP 方式封装。 数据包的传输模式部分不是 UDP 封装的，而是受 ESP 保护。
 
--   UDP 封装通过隧道传输。
+-   UDP 封装的经由隧道传输。
 
-    数据包隧道模式部分不是 UDP 封装。 数据包的传输模式部分是 UDP 封装和 ESP 保护。
+    数据包的隧道模式部分未封装为 UDP。 数据包的传输模式部分是 UDP 封装的，并受 ESP 保护。
 
-请注意，通过 UDP 封装隧道的 UDP 封装传输不受支持的封装子类型。
+请注意，通过 UDP 封装的隧道的 UDP 封装的传输不是受支持的封装子类型。
 
-下图显示了端口 4500 UDP ESP 封装子类型。
+下图显示了端口4500的 UDP-ESP 封装子类型。
 
-![说明端口 4500 udp esp 封装子类型的关系图](images/4500-encap-subtypes.png)
+![说明端口4500的 udp esp 封装子类型的示意图](images/4500-encap-subtypes.png)
 
  
 

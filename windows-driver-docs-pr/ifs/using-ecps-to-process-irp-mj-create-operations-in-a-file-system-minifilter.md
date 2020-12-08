@@ -1,15 +1,14 @@
 ---
 title: 使用 ECPs 在文件系统筛选器驱动程序中处理 IRP_MJ_CREATE
 description: 在文件系统筛选器驱动程序中使用 ECP 处理 IRP_MJ_CREATE 操作
-ms.assetid: 969709a9-cdca-4a1a-95a0-0bb89cd17693
 ms.date: 10/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: eafdf808af341b1e1f979f2126b2ac0fc92daa07
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 3bb2f6874df41aa2aa2668927993d9f884bd1a67
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89088478"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841119"
 ---
 # <a name="using-ecps-to-process-irp_mj_create-operations-in-a-file-system-filter-driver"></a>在文件系统筛选器驱动程序中使用 ECP 处理 IRP_MJ_CREATE 操作
 

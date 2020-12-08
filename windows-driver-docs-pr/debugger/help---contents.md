@@ -1,18 +1,17 @@
 ---
 title: 帮助目录
 description: 帮助目录
-ms.assetid: 9a37d67b-2c1d-4dc7-af15-7b006ab0f621
 keywords:
 - 帮助目录
 - 帮助文件，帮助内容
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 48eeefd6251b8134ed1fd7c268a61a48115aac9c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 353c20905e11942ffd38bbcf38afa29aee94bcf9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342043"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839941"
 ---
 # <a name="help--contents"></a>帮助 | 内容
 
@@ -20,13 +19,13 @@ ms.locfileid: "63342043"
 ## <span id="ddk_help_contents_dbg"></span><span id="DDK_HELP_CONTENTS_DBG"></span>
 
 
-单击**内容**上**帮助**菜单打开**内容**此帮助文档中的选项卡。
+单击 "**帮助**" 菜单上的 "**内容**"，打开此帮助文档中的 "**内容**" 选项卡。
 
-此命令相当于按下 f1 键。
+此命令等效于按 F1。
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关如何使用此帮助文件的详细信息，请参阅[使用的帮助文件](using-the-help-documentation.md)。
+有关如何使用此帮助文件的详细信息，请参阅 [使用帮助文件](using-the-help-documentation.md)。
 
  
 

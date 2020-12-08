@@ -1,7 +1,6 @@
 ---
 title: 'InvalidReqAccess 规则 (kmdf) '
 description: InvalidReqAccess 规则指定在完成或取消请求后，不会对其进行访问。
-ms.assetid: dc7609a5-8b18-44b9-88b0-a9616bc220d4
 ms.date: 05/21/2018
 keywords:
 - 'InvalidReqAccess 规则 (kmdf) '
@@ -12,19 +11,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ff4e9e614aa557a55c54fd820a3e6c9f679e156
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 8061adb17c0627f8ad876854dca35c2be427924e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103248"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841297"
 ---
 # <a name="invalidreqaccess-rule-kmdf"></a>InvalidReqAccess 规则 (kmdf) 
 
 
-**InvalidReqAccess**规则指定在完成或取消请求后，不会对其进行访问。 此规则可能与其他规则重叠，如检查双重完成的规则或检查请求的规则是否已标记为可取消两次。
+**InvalidReqAccess** 规则指定在完成或取消请求后，不会对其进行访问。 此规则可能与其他规则重叠，如检查双重完成的规则或检查请求的规则是否已标记为可取消两次。
 
-如果请求已完成、标记为可取消或在发送之后被取消，则该请求将被视为无效。 请求被视为无效后，不能将请求传递给 **WdfRequest * * * Xxx* 函数，但如果请求之前标记为可取消，则该驱动程序将调用 **WdfRequestUnmarkCancelable** 。
+如果请求已完成、标记为可取消或在发送之后被取消，则该请求将被视为无效。 请求被视为无效后，将无法向 **WdfRequest**_Xxx_ 函数传递请求，但如果请求之前标记为可取消，则该驱动程序将调用 **WdfRequestUnmarkCancelable** 。
 
 此规则类似于 [**InvalidReqAccessLocal**](kmdf-invalidreqaccesslocal.md) 规则;但是，只在默认 i/o 队列回调函数中执行 **InvalidReqAccessLocal** 规则。
 

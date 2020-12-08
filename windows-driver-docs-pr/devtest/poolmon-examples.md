@@ -1,19 +1,18 @@
 ---
 title: PoolMon 示例
 description: PoolMon 示例
-ms.assetid: aff0abdd-7d68-49b8-b9a1-71ab866c8487
 keywords:
 - PoolMon WDK，示例
 - 内存池监视器 WDK，示例
 - 示例 WDK PoolMon
 ms.date: 07/02/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f033c410126cc798d1106aafdbbd570f49f85e56
-ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
+ms.openlocfilehash: 792e4a944c126150bda113d494d432bfbf385633
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83769373"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841017"
 ---
 # <a name="poolmon-examples"></a>PoolMon 示例
 
@@ -49,7 +48,7 @@ poolmon
 poolmon /f
 ```
 
-当 poolmon 正在运行时，你可以使用运行时命令来更改显示。 例如，若要按使用的字节数排序显示，请按**b**。 若要按每个分配的字节排序，请按**m**。
+当 poolmon 正在运行时，你可以使用运行时命令来更改显示。 例如，若要按使用的字节数排序显示，请按 **b**。 若要按每个分配的字节排序，请按 **m**。
 
 以下命令启动 PoolMon 并仅显示非分页池的分配：
 
@@ -57,55 +56,55 @@ poolmon /f
 poolmon /p
 ```
 
-当 PoolMon 正在运行时，按**p**可通过分页池的分配、非分页池或两者进行切换。
+当 PoolMon 正在运行时，按 **p** 可通过分页池的分配、非分页池或两者进行切换。
 
-若要为具有特定标记的分配启动 PoolMon 并显示数据，请使用 **/i**参数。 以下命令显示具有**AfdB**标记（afd 用于数据缓冲区的标记）的分配。
+若要为具有特定标记的分配启动 PoolMon 并显示数据，请使用 **/i** 参数。 以下命令显示具有 **AfdB** 标记的分配 (afd.sys 用于数据缓冲区) 的标记。
 
 ```
 poolmon /iAfdB
 ```
 
-若要排除具有特定标记的分配，请使用 **/x**参数。 以下命令显示没有**AfdB**标记的所有分配;
+若要排除具有特定标记的分配，请使用 **/x** 参数。 以下命令显示没有 **AfdB** 标记的所有分配;
 
 ```
 poolmon /xAfdB
 ```
 
-您可以使用星号（ \* ）和/或问号（？）来指定具有相同字符的一组标记。 以下命令显示具有以**Afd**开头的池标记、Afd 使用的标记的分配;
+您可以使用星号 (\*) 和/或问号 (？ ) 来指定具有相同字符的一组标记。 以下命令显示具有以 **Afd** 开头的池标记（afd.sys 使用的标记）的分配;
 
 ```
 poolmon /iAfd*
 ```
 
-PoolMon 启动命令可以包含多个 **/i**和 **/x**参数。 以下命令显示具有以**Aud**开头的标记和以**Cc**开头的四个字符标记之外的四个字符的分配，但使用**CcBc**标记的分配除外;
+PoolMon 启动命令可以包含多个 **/i** 和 **/x** 参数。 以下命令显示具有以 **Aud** 开头的标记和以 **Cc** 开头的四个字符标记之外的四个字符的分配，但使用 **CcBc** 标记的分配除外;
 
 ```
 poolmon /iAud* /iCc?? /xCcBc
 ```
 
-你还可以通过更新之间的值的更改对 PoolMon 显示进行排序。 **/（** 参数将 PoolMon 置于逐更改模式。
+你还可以通过更新之间的值的更改对 PoolMon 显示进行排序。 **/ (** 参数将 PoolMon 置于逐更改模式。
 
-以下命令显示标记以**Afd**开头的分配，并按分配中的更改进行排序。 它使用 **/a**参数按分配数和 **/）** 参数进行排序，以按分配数的更改进行排序。
+以下命令显示标记以 **Afd** 开头的分配，并按分配中的更改进行排序。 它使用 **/a** 参数按分配数和 **/)** 参数排序以按分配数的更改进行排序。
 
 ```
 poolmon /iAfd* /( /a
 ```
 
-**/（** 参数和括号键是切换开关。 当 PoolMon 处于按更改模式时，它会将所有排序命令解释为按值中的更改进行排序的命令。 如果再次按下括号键，则将按值排序。
+**/ (** 参数和括号键是切换开关。 当 PoolMon 处于按更改模式时，它会将所有排序命令解释为按值中的更改进行排序的命令。 如果再次按下括号键，则将按值排序。
 
 ### <a name="span-idddk_example_2_display_driver_names_toolsspanspan-idddk_example_2_display_driver_names_toolsspanexample-2-display-driver-names"></a><span id="ddk_example_2_display_driver_names_tools"></span><span id="DDK_EXAMPLE_2_DISPLAY_DRIVER_NAMES_TOOLS"></span>示例2：显示驱动程序名称
 
-可以使用 PoolMon **/g**参数显示分配每个池标记的 Windows 组件和常用驱动程序的名称。 如果发现具有特定标记的分配有问题，此功能可帮助你确定问题的组件或驱动程序。
+可以使用 PoolMon **/g** 参数显示分配每个池标记的 Windows 组件和常用驱动程序的名称。 如果发现具有特定标记的分配有问题，此功能可帮助你确定问题的组件或驱动程序。
 
-组件和驱动程序列在 "映射的 \_ 驱动程序" 列中显示的最右侧列中。 映射的 \_ 驱动程序列的数据来自 pooltag （使用 PoolMon 安装的文件）。
+组件和驱动程序列在 "映射的 \_ 驱动程序" 列中显示的最右侧列中。 映射的 \_ 驱动程序列的数据来自 pooltag.txt （与 PoolMon 一起安装的文件）。
 
-以下命令显示用以**contoso.ntf**开头的标记分配的内存。 （它使用问号字符（**？**）作为通配符。）**/G**参数添加映射的 \_ 驱动程序列。
+以下命令显示用以 **contoso.ntf** 开头的标记分配的内存。  (它使用问号 (**？**) 作为通配符。 ) **/G** 参数添加映射的 \_ 驱动程序列。
 
 ```
 poolmon /iNtF? /g
 ```
 
-生成的显示列表以**contoso.ntf**开头的标记进行分配。 显示 "映射的驱动程序" 中最右边的列 \_ 显示该内存是由 ntfs 为 ntfs 文件系统的驱动程序分配的。 在这种情况下，显示内容更为具体，因为 pooltag 包含 NTFS 分配的源文件。
+生成的显示列表以 **contoso.ntf** 开头的标记进行分配。 显示 "映射的驱动程序" 中最右边的列 \_ 显示 ntfs.sys （NTFS 文件系统的驱动程序）分配的内存。 在这种情况下，显示内容更为具体，因为 pooltag.txt 包含 NTFS 分配的源文件。
 
 ```
  Memory:  260620K Avail:   65152K  PageFlts:    85   InRam Krnl: 2116K P:19560K
@@ -128,17 +127,17 @@ poolmon /iNtF? /g
  NtFv Paged       551 (   0)       551 (   0)     0       0 (     0)      0 [ntfs.sys  -  ViewSup.c]
 ```
 
-Pooltag 很多，但它不是 Windows 中使用的所有标记的完整列表。 当显示中显示的标记不包含在 pooltag 中时，PoolMon 会在标记的映射驱动程序列中显示 "未知驱动程序" \_ 。 出现这种情况时，可以使用 **/c**参数搜索本地系统上的驱动程序，并确定它们是否分配了标记。
+Pooltag.txt 很多，但它不是 Windows 中使用的所有标记的完整列表。 当显示中的标记不包含在 pooltag.txt 中时，PoolMon 会在标记的映射驱动程序列中显示 "未知的驱动程序" \_ 。 出现这种情况时，可以使用 **/c** 参数搜索本地系统上的驱动程序，并确定它们是否分配了标记。
 
 下面的示例演示了此方法。
 
-以下命令使用 **/i**参数列出了以 MEM 结尾的标记的分配。 **/G**参数将驱动程序名称从 pooltag 文件添加到显示中。
+以下命令使用 **/i** 参数列出了以 MEM 结尾的标记的分配。 **/G** 参数将驱动程序名称从 pooltag.txt 文件添加到显示中。
 
 ```
 poolmon /i?MEM /g
 ```
 
-生成的显示将列出标记以 MEM 结尾的分配。 但是，由于 pooltag 中未包含 MEM 标记，因此 "未知驱动程序" 会显示在 "映射的驱动程序" 列中， \_ 代替驱动程序名称。
+生成的显示将列出标记以 MEM 结尾的分配。 但是，因为内存标记不包含在 pooltag.txt 中，所以 "未知驱动程序" 出现在 "映射的驱动程序" \_ 列中，代替驱动程序名称。
 
 ```
  Tag  Type        Allocs          Frees      Diff   Bytes      Per Alloc    Mapped_Driver
@@ -148,15 +147,15 @@ poolmon /i?MEM /g
  3MEM Nonp       3 (   0)         0 (   0)     3     248 (     0)     82   Unknown Driver
 ```
 
-在这种情况下，可以使用 **/c**参数来编译本地驱动程序的列表及其分配的标记，然后在 "映射的驱动程序" 列中显示本地驱动程序的名称 \_ 。
+在这种情况下，可以使用 **/c** 参数来编译本地驱动程序的列表及其分配的标记，然后在 "映射的驱动程序" 列中显示本地驱动程序的名称 \_ 。
 
-以下命令启动 PoolMon。 它使用 **/i**参数列出标记以内存结尾的分配，并使用 **/c**参数显示分配标记的本地驱动程序。
+以下命令启动 PoolMon。 它使用 **/i** 参数列出标记以内存结尾的分配，并使用 **/c** 参数显示分配标记的本地驱动程序。
 
 ```
 poolmon /i?MEM /c
 ```
 
-如果未指定本地标记文件，并且 PoolMon 找不到 localtag 文件，则会创建一个，如下面的屏幕消息中所示。 （PoolMon 无法在64位版本的 Windows 上生成本地标记文件。）
+如果未指定本地标记文件，并且 PoolMon 找不到 localtag.txt 文件，则会创建一个，如下面的屏幕消息中所示。  (PoolMon 无法在64位版本的 Windows 上生成本地标记文件。 ) 
 
 ```
 d:\tools\poolmon>poolmon /?MEM /c
@@ -164,7 +163,7 @@ PoolMon: No localtag.txt in current directory
 PoolMon: Creating localtag.txt in current directory......
 ```
 
-生成的显示将使用新创建的 localtag 文件中的内容，在 "映射的驱动程序" 列中显示本地驱动程序名称 \_ 。
+生成的显示将使用新创建的 localtag.txt 文件中的内容，在 "映射的驱动程序" 列中显示本地驱动程序名称 \_ 。
 
 ```
  Memory:  260620K Avail:   57840K  PageFlts:   162   InRam Krnl: 2116K P:19448K
@@ -177,13 +176,13 @@ PoolMon: Creating localtag.txt in current directory......
  3MEM Nonp          3 (   0)         0 (   0)        3     248 (     0)     82 [el90xbc5]
 ```
 
-若要显示完整的驱动程序名称，可以在命令中组合 **/c**和 **/g**参数。 （参数顺序不更改输出。）以下命令列出了以**Ip**开头的标记的分配。 它使用 **/c**参数，该参数使用映射的驱动程序列中 localtag 文件的内容 \_ 和 **/g**参数，该参数使用映射的 \_ 驱动程序列中 pooltag 文件的内容。
+若要显示完整的驱动程序名称，可以在命令中组合 **/c** 和 **/g** 参数。  (参数顺序不会更改输出。 ) 以下命令列出了以 **Ip** 开头的标记的分配。 它使用 **/c** 参数，该参数使用映射的驱动程序列中 localtag.txt 文件的内容 \_ ，并使用 **/g** 参数，该参数使用映射的 \_ 驱动程序列中 pooltag.txt 文件的内容。
 
 ```
 poolmon /iIp* /c /g
 ```
 
-在生成的显示中，"映射的 \_ 驱动程序" 列包含来自 localtag 和 pooltag 文件的数据。
+在生成的显示中，"映射的 \_ 驱动程序" 列包含来自 localtag.txt 和 pooltag.txt 文件的数据。
 
 ```
  Memory:  130616K Avail:   23692K  PageFlts:   146   InRam Krnl: 2108K P: 9532K
@@ -205,7 +204,7 @@ poolmon /iIp* /c /g
 
 此示例建议使用 PoolMon 检测内存泄漏的过程。
 
-1.  使用参数 **/p/p** （仅显示分页池的分配）和 **/b** （按字节数排序）开始 PoolMon。
+1.  使用参数开始 PoolMon **/p/p** (仅显示分页池的分配) 和 **/b** (按) 字节数排序。
     ```
     poolmon /p /p /b
     ```
@@ -214,11 +213,11 @@ poolmon /iIp* /c /g
 
 3.  保存由 PoolMon 生成的信息，无论是屏幕截图，还是从命令窗口中复制并粘贴到记事本中。
 
-4.  返回到 PoolMon，按两次**p**键，只显示非分页池的分配。
+4.  返回到 PoolMon，按两次 **p** 键，只显示非分页池的分配。
 
 5.  大约每半小时重复执行步骤3和4，每隔两小时一次，每次都会显示分页和非分页池。
 
-6.  数据收集完成后，请检查每个标记的差异（分配操作减去可用操作）和字节数（分配的字节数减去已释放的字节数），并记下持续增加的任何值。
+6.  数据收集完成后，请检查差异 (分配操作减去免费操作) 和字节 (分配的字节数减去为每个标记的值) 释放的字节数，并注意持续增加的任何值。
 
 7.  接下来，停止 PoolMon，等待几个小时，然后重启 PoolMon。
 
@@ -229,9 +228,9 @@ poolmon /iIp* /c /g
 
 下面的示例演示如何使用 PoolMon 来调查来自可疑打印机驱动程序的池内存泄露。 在此示例中，PoolMon 显示 Windows 收集的有关带有 Dsrd 标记的内存分配的数据。
 
-打印机驱动程序在分配图形设备接口（GDI）对象和相关内存时分配 Drsd 标记。 如果打印机驱动程序有对象泄漏，则使用 Drsd 标记分配的内存也会泄漏。
+打印机驱动程序在) 对象和关联内存 (分配图形设备接口时分配 Drsd 标记。 如果打印机驱动程序有对象泄漏，则使用 Drsd 标记分配的内存也会泄漏。
 
-**注意**   在运行此示例中的步骤之前，请确保你正在使用的打印机不会中断，直到你完成。 否则，结果可能无效。
+**注意**   在运行此示例中的步骤之前，请确保你正在使用的打印机不会中断，直到你完成。 否则，结果可能无效。
 
  
 
@@ -241,7 +240,7 @@ poolmon /iIp* /c /g
 poolmon /iDrsd
 ```
 
-此命令指示 PoolMon 显示带有 Drsd 标记的分配的信息。 （池标记区分大小写，因此请务必严格按所示键入命令。）
+此命令指示 PoolMon 显示带有 Drsd 标记的分配的信息。  (池标记区分大小写，因此请务必严格按所示键入命令。 ) 
 
 记录 Diff 和 Bytes 列中的值。 在下面的示例显示中，Diff 的值为21，字节数为17472。
 
@@ -267,11 +266,11 @@ Drsd Paged       737 (   0)       710 (   0)       27   22464 (     0)    832
 
 ### <a name="span-idfor_more_informationspanspan-idfor_more_informationspanspan-idfor_more_informationspanfor-more-information"></a><span id="For_More_Information"></span><span id="for_more_information"></span><span id="FOR_MORE_INFORMATION"></span>了解详细信息
 
-如果你认为已识别出泄漏的驱动程序，请参阅[Microsoft 支持](https://support.microsoft.com/)网站并在知识库中搜索相关文章。
+如果你认为已识别出泄漏的驱动程序，请参阅 [Microsoft 支持](https://support.microsoft.com/) 网站并在知识库中搜索相关文章。
 
 ### <a name="span-idddk_example_5_monitor_a_terminal_server_session_toolsspanspan-idddk_example_5_monitor_a_terminal_server_session_toolsspanexample-5-monitor-a-terminal-server-session"></a><span id="ddk_example_5_monitor_a_terminal_server_session_tools"></span><span id="DDK_EXAMPLE_5_MONITOR_A_TERMINAL_SERVER_SESSION_TOOLS"></span>示例5：监视终端服务器会话
 
-此示例显示了几种显示终端服务会话池分配的方式。 它演示了如何使用 **/s**命令行参数，以及**s**、 *TSSessionID*和**i**正在运行的参数。
+此示例显示了几种显示终端服务会话池分配的方式。 它演示了如何使用 **/s** 命令行参数，以及 **s**、 *TSSessionID* 和 **i** 正在运行的参数。
 
 以下命令显示来自所有终端服务会话池的分配。 在此示例中，本地计算机（配置为终端服务器）正在托管会话，客户端计算机正在使用远程桌面功能连接到主机。
 
@@ -306,7 +305,7 @@ All sessions pool information
  ...
 ```
 
-若要查看特定会话池的分配，请立即键入 **/s**参数之后的会话 ID，如以下命令中所示。 此命令显示终端服务会话0的会话池分配。
+若要查看特定会话池的分配，请立即键入 **/s** 参数之后的会话 ID，如以下命令中所示。 此命令显示终端服务会话0的会话池分配。
 
 ```
 poolmon /s0
@@ -339,7 +338,7 @@ Memory:  523572K Avail:  233024K  PageFlts:   525   InRam Krnl: 1828K P:18384K
  ...
 ```
 
-若要帮助确定哪些驱动程序和组件正在从会话池中分配内存，请添加 **/g**参数，如以下命令中所示。 **/G**参数添加 \_ 列出了分配每个标记的 Windows 组件和驱动程序的映射驱动程序列。
+若要帮助确定哪些驱动程序和组件正在从会话池中分配内存，请添加 **/g** 参数，如以下命令中所示。 **/G** 参数添加 \_ 列出了分配每个标记的 Windows 组件和驱动程序的映射驱动程序列。
 
 ```
 poolmon /s0 /g
@@ -383,7 +382,7 @@ poolmon
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">密钥</th>
+<th align="left">键</th>
 <th align="left">结果</th>
 <th align="left">说明</th>
 </tr>
@@ -395,7 +394,7 @@ poolmon
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>些</strong></p></td>
+<td align="left"><p><strong>s</strong></p></td>
 <td align="left"><p>显示系统池。</p></td>
 <td align="left"><p><strong>S</strong>参数用于切换系统池与终端服务会话池之间的显示。</p></td>
 </tr>
@@ -420,19 +419,19 @@ poolmon
 <td align="left"><p>会话和排序选项会一直保留，直到发生更改。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>些</strong></p></td>
+<td align="left"><p><strong>s</strong></p></td>
 <td align="left"><p>显示系统池。</p></td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>些</strong></p></td>
+<td align="left"><p><strong>s</strong></p></td>
 <td align="left"><p>显示会话0的分配，按分配数排序。</p></td>
 <td align="left"><p>会话选项已保留。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>10ENTER</strong></p></td>
 <td align="left"><p>显示会话1分配，并显示会话0分配。</p></td>
-<td align="left"><p>如果<strong>没有，</strong>则只能输入0到9的会话 id。</p></td>
+<td align="left"><p>如果 <strong>没有，</strong>则只能输入0到9的会话 id。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>i</strong></p></td>
@@ -447,10 +446,10 @@ poolmon
 <tr class="even">
 <td align="left"><p><strong>i</strong></p></td>
 <td align="left"><p>提示输入终端服务器会话 ID。</p></td>
-<td align="left"><p>若要显示所有会话池，请按<strong>i</strong> ，然后按 enter。</p></td>
+<td align="left"><p>若要显示所有会话池，请按 <strong>i</strong> ，然后按 enter。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>回车</strong></p></td>
+<td align="left"><p><strong>ENTER</strong></p></td>
 <td align="left"><p>显示所有会话池。</p></td>
 <td align="left"></td>
 </tr>
@@ -467,7 +466,7 @@ poolmon
 poolmon /s
 ```
 
-下图显示了向运行 Windows XP 但未能配置为终端服务器的计算机提交了 **/s**命令后会产生的 PoolMon 显示：
+下图显示了向运行 Windows XP 但未能配置为终端服务器的计算机提交了 **/s** 命令后会产生的 PoolMon 显示：
 
 ```
  Memory:  260620K Avail:   44956K  PageFlts:   308   InRam Krnl: 2744K P:20444K

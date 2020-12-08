@@ -1,7 +1,6 @@
 ---
 title: D3DKMT \_ 创建 \_ OUTPUTDUPL 结构
 description: 了解 D3DKMT \_ CREATE \_ OUTPUTDUPL 结构，它是为系统使用而保留的。 请勿在您的驱动程序中使用。
-ms.assetid: 3fdbf129-331d-4dd5-a417-79c88b7e7947
 keywords:
 - D3DKMT_CREATE_OUTPUTDUPL 结构显示设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c1f917f79e786fd3177cf896c955b434e5ed129
-ms.sourcegitcommit: f1d6c2d0cdbecdc69ba65ed3b530755fc73c8e5e
+ms.openlocfilehash: 613c1e871660fb8f4ebf4bf8ec3d017a3b9322e2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91590365"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839637"
 ---
 # <a name="d3dkmt_create_outputdupl-structure"></a>D3DKMT \_ 创建 \_ OUTPUTDUPL 结构
 
@@ -31,11 +30,11 @@ ms.locfileid: "91590365"
 
 ```ManagedCPlusPlus
 typedef struct _D3DKMT_CREATE_OUTPUTDUPL {
-  D3DKMT_HANDLE                  hAdapter;
+  D3DKMT_HANDLE                  hAdapter;
   D3DDDI_VIDEO_PRESENT_SOURCE_ID VidPnSourceId;
-  D3DKMT_HANDLE                  hSharedSurfaceGlobal;
-  D3DKMT_HANDLE                  hGPUFencefaceGlobal;
-  D3DKMT_HANDLE                  hKeyedMutexGlobal;
+  D3DKMT_HANDLE                  hSharedSurfaceGlobal;
+  D3DKMT_HANDLE                  hGPUFencefaceGlobal;
+  D3DKMT_HANDLE                  hKeyedMutexGlobal;
 } D3DKMT_CREATE_OUTPUTDUPL;
 ```
 

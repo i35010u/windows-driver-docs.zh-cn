@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_ResourcePickerExceptions
 description: DEVPKEY_Device_ResourcePickerExceptions
-ms.assetid: 65a2c709-fe3a-44e2-90f9-4ad6dbcb50bd
 keywords:
 - DEVPKEY_Device_ResourcePickerExceptions 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 883b1828299a021d54bdb02fd649211d9b601acf
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 153bda9d78759460d94b5fb3752764f7b9bb0230
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714934"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839079"
 ---
 # <a name="devpkey_device_resourcepickerexceptions"></a>DEVPKEY_Device_ResourcePickerExceptions
 
@@ -67,7 +66,7 @@ DEVPKEY_Device_ResourcePickerExceptions 设备属性表示设备实例允许的�
 <a name="remarks"></a>备注
 -------
 
-你可以使用安装设备的 INF 文件的[**Inf *DDInstall*部分**](./inf-ddinstall-section.md)中包含的[**inf AddReg 指令**](./inf-addreg-directive.md)来设置 DEVPKEY_Device_ResourcePickerExceptions 的值。
+你可以使用安装设备的 INF 文件的 [**Inf *DDInstall* 部分**](./inf-ddinstall-section.md)中包含的 [**inf AddReg 指令**](./inf-addreg-directive.md)来设置 DEVPKEY_Device_ResourcePickerExceptions 的值。
 
 可以通过调用 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)来检索 DEVPKEY_Device_ResourcePickerExceptions 的值。
 

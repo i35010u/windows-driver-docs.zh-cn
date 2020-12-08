@@ -1,9 +1,8 @@
 ---
 title: ScanDestinations 元素
-description: 所需的 ScanDestinations 元素是所有客户端想要使用扫描设备注册的扫描目标的集合。
-ms.assetid: 50f87269-4d95-4653-ba93-aa752bdc9168
+description: 必需的 ScanDestinations 元素是客户端想要向扫描设备注册的所有扫描目标的集合。
 keywords:
-- ScanDestinations 元素成像设备
+- ScanDestinations 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f05c61058b070b9ababa8112169b6a3f407fc377
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3865439dbf64015a95c5e5745021deff76d93eff
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364368"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841263"
 ---
 # <a name="scandestinations-element"></a>ScanDestinations 元素
 
 
-所需**ScanDestinations**元素是所有客户端想要使用扫描设备注册的扫描目标的集合。
+必需的 **ScanDestinations** 元素是客户端想要向扫描设备注册的所有扫描目标的集合。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -76,7 +75,7 @@ ms.locfileid: "63364368"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>&lt;wse:Subscribe&gt;</p></td>
+<td><p>&lt;wse：订阅&gt;</p></td>
 </tr>
 </tbody>
 </table>
@@ -84,9 +83,9 @@ ms.locfileid: "63364368"
 <a name="remarks"></a>备注
 -------
 
-客户端必须发送**ScanDestinations**中的元素 **&lt;wse： 订阅&gt;** 请求操作元素，将注册一个或多个扫描目标 WSD 扫描服务。 客户端订阅之前从 WSD 扫描服务获取扫描票证信息的客户端安装过程。 **&lt;Wse： 订阅&gt;** 规范中定义元素。
+客户端必须发送 **&lt; Wse：订阅 &gt;** 请求操作元素中的 **ScanDestinations** 元素，以将一个或多个扫描目标注册到 WSD 扫描服务。 在客户端安装过程中，客户端在从 WSD 扫描服务获取扫描票证信息之前进行订阅。 在规范中定义了 **&lt; Wse：订阅 &gt;** 元素。
 
-**ScanDestinations**元素提供客户端可以灵活地同时注册多个唯一扫描目标。
+**ScanDestinations** 元素为客户端提供一次注册多个唯一扫描目标的灵活性。
 
 ## <a name="see-also"></a>请参阅
 

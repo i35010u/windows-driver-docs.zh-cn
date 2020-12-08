@@ -1,7 +1,6 @@
 ---
 title: CreateScanJobResponse 元素
 description: 必需的 CreateScanJobResponse 元素包含 WSD 扫描服务对客户端扫描请求的响应。
-ms.assetid: a832bdc2-9c47-41da-ac78-a844b8f84ec1
 keywords:
 - CreateScanJobResponse 元素图像设备
 topic_type:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8aa2db14d95976c4f47c68b53cf5f60ea6593648
-ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
+ms.openlocfilehash: ae038f59862b0b29b72eb60ac8849a7ee27d61a7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75652985"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839543"
 ---
 # <a name="createscanjobresponse-element"></a>CreateScanJobResponse 元素
 
 
-必需的**CreateScanJobResponse**元素包含 WSD 扫描服务对客户端扫描请求的响应。
+必需的 **CreateScanJobResponse** 元素包含 WSD 扫描服务对客户端扫描请求的响应。
 
-<a name="usage"></a>Usage
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -33,7 +32,7 @@ ms.locfileid: "75652985"
 </wscn:CreateScanJobResponse>
 ```
 
-<a name="attributes"></a>属性
+<a name="attributes"></a>特性
 ----------
 
 没有特性。
@@ -74,18 +73,18 @@ ms.locfileid: "75652985"
 <a name="remarks"></a>备注
 -------
 
-WSD 扫描服务必须支持**CreateScanJobResponse**操作元素。
+WSD 扫描服务必须支持 **CreateScanJobResponse** 操作元素。
 
-WSD 扫描服务会向客户端发送**CreateScanJobResponse**操作元素，以响应客户端的[**CreateScanJobRequest**](createscanjobrequest.md)。
+WSD 扫描服务会向客户端发送 **CreateScanJobResponse** 操作元素，以响应客户端的 [**CreateScanJobRequest**](createscanjobrequest.md)。
 
 如果客户端发出了有效的扫描请求，则 WSD 扫描服务必须返回以下信息：
 
--   用于标识作业的唯一[**JobId**](jobid.md) 。 扫描程序在定义的范围内以实现定义的方式生成**JobId** 。 扫描服务不能重复使用最近分配的值，因此客户端不会将作业与较旧的作业混淆。
+-   用于标识作业的唯一 [**JobId**](jobid.md) 。 扫描程序在定义的范围内以实现定义的方式生成 **JobId** 。 扫描服务不能重复使用最近分配的值，因此客户端不会将作业与较旧的作业混淆。
 -   JobToken 中的唯一标识符。 JobToken 与 JobId 配对，以唯一表示扫描作业。 JobToken 传递给 RetrieveImageRequest 操作元素中的扫描服务，以使扫描设备能够验证扫描请求者是否确实创建了扫描作业。
 -   ImageInformation，其中包含与当前正在验证的 ScanTicket 进行的扫描有关得到的图像数据有关的信息。
 -   DocumentFinalParameters，其中包含扫描服务用于此扫描作业的实际 DocumentParameters 元素。
 
-客户端必须通过发送一个或多个[**RetrieveImageRequest**](retrieveimagerequest.md)操作元素，从扫描服务检索实际图像数据。 在扫描服务响应客户端的[**CreateScanJobRequest**](createscanjobrequest.md)之后，客户端有60秒的时间来发送**RetrieveImageRequest**操作元素。 如果扫描服务在这段时间内没有收到**RetrieveImageRequest** ，它应中止[**JobStateReason**](jobstatereason.md)为**JobTimedOut**的作业。 如果作业包含多个文档，则此超时适用于每个连续的**RetrieveImageRequest/响应**操作。
+客户端必须通过发送一个或多个 [**RetrieveImageRequest**](retrieveimagerequest.md) 操作元素，从扫描服务检索实际图像数据。 在扫描服务响应客户端的 [**CreateScanJobRequest**](createscanjobrequest.md)之后，客户端有60秒的时间来发送 **RetrieveImageRequest** 操作元素。 如果扫描服务在这段时间内没有收到 **RetrieveImageRequest** ，它应中止 [**JobStateReason**](jobstatereason.md) 为 **JobTimedOut** 的作业。 如果作业包含多个文档，则此超时适用于每个连续的 **RetrieveImageRequest/响应** 操作。
 
 <a name="examples"></a>示例
 --------
@@ -177,7 +176,7 @@ WSD 扫描服务会向客户端发送**CreateScanJobResponse**操作元素，以
 </soap:Envelope>
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**CreateScanJobRequest**](createscanjobrequest.md)

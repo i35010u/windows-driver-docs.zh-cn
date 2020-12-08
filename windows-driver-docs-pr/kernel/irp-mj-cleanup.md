@@ -2,16 +2,15 @@
 title: IRP_MJ_CLEANUP
 description: 维护特定于进程的上下文信息的驱动程序必须在 DispatchCleanup 例程中处理清除请求。
 ms.date: 08/12/2017
-ms.assetid: 097f5f1d-3e88-4db0-bb79-db2267bdaf38
 keywords:
-- IRP_MJ_CLEANUP 内核模式驱动程序体系结构
+- IRP_MJ_CLEANUP Kernel-Mode 驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 8fedc61336f807370094f01a5c3bd1d926196c46
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 83d85f49eda3d46cf3ef80946feb995bdb1c895b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184443"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839065"
 ---
 # <a name="irp_mj_cleanup"></a>IRP\_MJ\_CLEANUP
 
@@ -40,7 +39,7 @@ ms.locfileid: "89184443"
 
 如果驱动程序的设备对象设置为 "专用"，以便一次只有一个线程可以使用设备，则驱动程序必须将当前排队的每个 IRP 都完成为目标设备对象，并 \_ 在每个 irp 的 i/o 状态块中设置 "已取消" 状态。
 
-否则，驱动程序必须取消并只完成当前排队的 Irp，该 Irp 与正在发布的文件对象句柄关联。  (指向文件对象的指针位于 IRP 的驱动程序[**IO \_ 堆栈 \_ 位置**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)的**FileObject**成员中。 ) 在取消这些已排队的 irp 后，该驱动程序将完成清除 irp 并 \_ 在其 I/o 状态块中设置状态 "成功"。
+否则，驱动程序必须取消并只完成当前排队的 Irp，该 Irp 与正在发布的文件对象句柄关联。  (指向文件对象的指针位于 IRP 的驱动程序 [**IO \_ 堆栈 \_ 位置**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)的 **FileObject** 成员中。 ) 在取消这些已排队的 irp 后，该驱动程序将完成清除 irp 并 \_ 在其 I/o 状态块中设置状态 "成功"。
 
 有关处理此请求的详细信息，请参阅 [DispatchCleanup 例程](./dispatchcleanup-routines.md)。
 
@@ -60,7 +59,7 @@ ms.locfileid: "89184443"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [*DispatchCleanup*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)

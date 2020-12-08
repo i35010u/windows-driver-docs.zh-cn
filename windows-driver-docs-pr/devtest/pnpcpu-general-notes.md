@@ -1,22 +1,21 @@
 ---
 title: PNPCPU 常规说明
 description: PNPCPU 常规说明
-ms.assetid: 7b74ac26-8aeb-495d-af8a-1a3b33eec1fa
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 80371dc471a4e5a17abe8c6fc48ee8ee335458e5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 597eaab46f3b0d4f692021234d579c33edc4446f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366219"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841039"
 ---
 # <a name="pnpcpu-general-notes"></a>PNPCPU 常规说明
 
 
 PNPCPU 目录应包含：
 
--   BUS.INF
+-   总线.遵从
 
 -   BUSENUM.SYS
 
@@ -26,9 +25,9 @@ PNPCPU 目录应包含：
 
 -   PNPCPU.SYS
 
--   处理器。INF
+-   双核处理器.遵从
 
-虽然是必需的没有特定的路径的设置所需运行 PNPCPU 工具中，从包含所有上面列出的文件的目录运行 Pnpcpu.exe。
+运行 PNPCPU 工具不需要特定路径设置，尽管需要从包含以上列出的所有文件的目录运行 Pnpcpu.exe。
 
  
 

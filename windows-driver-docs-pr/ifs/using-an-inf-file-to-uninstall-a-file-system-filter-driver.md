@@ -1,30 +1,29 @@
 ---
 title: 使用 INF 文件卸载文件系统筛选器驱动程序
 description: 描述卸载文件系统筛选器驱动程序的各种方法
-ms.assetid: e41deb65-7977-479c-ac42-c550aa6a3f1b
 keywords:
 - INF 文件系统，卸载筛选器驱动程序
 - 卸载筛选器驱动程序 WDK 文件系统
 ms.date: 08/21/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: be357fa87c2cd7d877568d54127ccc15750680b3
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 7a29ed5ae0a95638561a6823662c14b9385552df
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89062970"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841121"
 ---
 # <a name="using-an-inf-file-to-uninstall-a-file-system-filter-driver"></a>使用 INF 文件卸载文件系统筛选器驱动程序
 
 > [!NOTE]
 >
-> 从 Windows 10 版本1903开始， **DefaultUninstall** 和 **DefaultUninstall** INF 部分禁止 [ (例外) ](../develop/creating-a-primitive-driver.md#legacy-compatibility)。
+> 从 Windows 10 版本1903开始， **DefaultUninstall** 和 **DefaultUninstall** INF 部分禁止 [ (例外)](../develop/creating-a-primitive-driver.md#legacy-compatibility)。
 
 在1903版之前的 Windows 10 中， **DefaultUninstall** 和 **DefaultUninstall** 部分是可选的，但建议在卸载驱动程序时使用。 对于这些操作系统版本，你可以通过使用命令行、PowerShell 或批处理文件来卸载筛选器驱动程序，以执行这些 INF 文件部分或用户模式卸载应用程序。
 
 没有 "右键单击卸载" 选项。
 
-## <a name="command-line-or-batch-file-uninstall"></a>命令行或批处理文件卸载
+## <a name="command-line-or-batch-file-uninstall"></a>Command-Line 或批处理文件卸载
 
 若要在命令行上执行 INF 文件的 **DefaultUninstall** 和 **DefaultUninstall** 部分，请在命令提示符下键入以下命令，或创建并运行包含以下命令的批处理文件：
 

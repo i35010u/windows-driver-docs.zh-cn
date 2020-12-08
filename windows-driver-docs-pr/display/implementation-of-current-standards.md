@@ -1,19 +1,18 @@
 ---
 title: 当前标准的实施
 description: 当前标准的实施
-ms.assetid: b81c95f6-e6bc-4a2b-b3b8-e41451d5c0ef
 keywords:
-- DirectX 视频加速 WDK Windows 2000 显示标准
-- 视频加速 WDK DirectX 标准
-- VA WDK DirectX 标准
+- DirectX 视频加速 WDK Windows 2000 显示器，标准
+- 视频加速 WDK DirectX，标准
+- VA WDK DirectX，标准
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 078826501071d3156f8ce80c4189a97d7830cf03
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8e6836533151140babde67f95cb16d7e2d1a7db5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369604"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839315"
 ---
 # <a name="implementation-of-current-standards"></a>当前标准的实施
 
@@ -21,7 +20,7 @@ ms.locfileid: "63369604"
 ## <span id="ddk_implementation_of_current_standards_gg"></span><span id="DDK_IMPLEMENTATION_OF_CURRENT_STANDARDS_GG"></span>
 
 
-DirectX VA 提供支持 ITU-T H.261、 mpeg-1、 mpeg-2 (H.262)、 ITU-T H.263、 MPEG 4、 MPEG 4 AVC (H.264) 和 vc-1。 以下主题介绍了这些视频标准的实现。 某些操作必须由硬件加速器部分 DirectX VA 和软件解码器的一些实现，并说明了这种情况下。
+DirectX VA 提供对261、MPEG-2、mpeg-2 (262) 、ITU-T AVC、MPEG-2、mpeg-2 (h.264) 和 VC-1 的支持）的支持。 "）"。 以下主题介绍了这些视频标准的实现。 某些操作必须由 DirectX VA 的硬件加速器部分来实现，一些操作必须由软件解码器实现，并按如下所述进行说明。
 
 [ITU-T H.261](itu-t-h-261.md)
 
@@ -31,7 +30,7 @@ DirectX VA 提供支持 ITU-T H.261、 mpeg-1、 mpeg-2 (H.262)、 ITU-T H.263�
 
 [ITU-T H.263](itu-t-h-263.md)
 
-[MPEG 4](mpeg-4.md)
+[MPEG-4](mpeg-4.md)
 
 [MPEG-4 AVC (H.264)](mpeg-4-avc--h-264-.md)
 

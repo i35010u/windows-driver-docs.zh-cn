@@ -1,7 +1,6 @@
 ---
 title: D3DKMT \_ OUTPUTDUPL \_ FRAMEINFO 结构
 description: 了解 D3DKMT \_ OUTPUTDUPL \_ FRAMEINFO 结构，它是保留供系统使用的。 请勿在您的驱动程序中使用。
-ms.assetid: e35389b2-52aa-4481-a5d7-6c45c795885f
 keywords:
 - D3DKMT_OUTPUTDUPL_FRAMEINFO 结构显示设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d7d3480b9e752c8e904d0af5af920988fe31d2cb
-ms.sourcegitcommit: fc94eb0d5a41ef81c1b3ab91ad725386db0be0c2
+ms.openlocfilehash: bcca2e83b753af62fbff4a2f8e9081776bc5551b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91603597"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839615"
 ---
 # <a name="d3dkmt_outputdupl_frameinfo-structure"></a>D3DKMT \_ OUTPUTDUPL \_ FRAMEINFO 结构
 
@@ -31,14 +30,14 @@ ms.locfileid: "91603597"
 
 ```ManagedCPlusPlus
 typedef struct _D3DKMT_OUTPUTDUPL_FRAMEINFO {
-  LARGE_INTEGER                      LastPresentTime;
-  LARGE_INTEGER                      LastMouseUpdateTime;
-  UINT                               AccumulatedFrames;
-  BOOL                               RectsCoalesced;
-  BOOL                               ProtectedContentMaskedOut;
+  LARGE_INTEGER                      LastPresentTime;
+  LARGE_INTEGER                      LastMouseUpdateTime;
+  UINT                               AccumulatedFrames;
+  BOOL                               RectsCoalesced;
+  BOOL                               ProtectedContentMaskedOut;
   D3DKMT_OUTPUTDUPL_POINTER_POSITION PointerPosition;
-  UINT                               TotalMetadataBufferSize;
-  UINT                               PointerShapeBufferSize;
+  UINT                               TotalMetadataBufferSize;
+  UINT                               PointerShapeBufferSize;
 } D3DKMT_OUTPUTDUPL_FRAMEINFO;
 ```
 

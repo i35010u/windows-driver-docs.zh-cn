@@ -1,7 +1,6 @@
 ---
 title: 'IoctlReqs 规则 (kmdf) '
 description: IoctlReqs 规则指定不能将 IOCTL 请求传递到不适当的 KMDF 请求或 (DDIs) 发送设备驱动程序接口。
-ms.assetid: f13aef5a-61e7-4b99-b86e-e1857de3c2f1
 ms.date: 05/21/2018
 keywords:
 - 'IoctlReqs 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e8564fe2104294da194ae69ff64c2c8f1900f0c
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 0f9c47494663c4550738004a111cf0fd36a15a17
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104390"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841293"
 ---
 # <a name="ioctlreqs-rule-kmdf"></a>IoctlReqs 规则 (kmdf) 
 
 
-**IoctlReqs**规则指定不能将 IOCTL 请求传递到不适当的 KMDF 请求或 (DDIs) 发送设备驱动程序接口。
+**IoctlReqs** 规则指定不能将 IOCTL 请求传递到不适当的 KMDF 请求或 (DDIs) 发送设备驱动程序接口。
 
 提供给驱动程序的 [*EvtIoDeviceControl*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_device_control) 事件回调函数的所有请求都保证为 IOCTL 请求。 驱动程序的 *EvtIoDeviceControl* 函数是使用 .Evt \_ WDF \_ io \_ QUEUE \_ io \_ DEVICE \_ CONTROL function role type 声明声明的。
 

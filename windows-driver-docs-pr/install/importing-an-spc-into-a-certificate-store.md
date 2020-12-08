@@ -1,20 +1,19 @@
 ---
 title: 将 SPC 导入证书存储
 description: 将 SPC 导入证书存储
-ms.assetid: 4640b48c-e56f-4c6b-8943-f8b6fc3e37d7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f8f673a7793d4e25c6e8b7b531a5f86f43d446ba
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 903208d2db439be49078d2ece071f69888d64c1f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733949"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840697"
 ---
 # <a name="importing-an-spc-into-a-certificate-store"></a>将 SPC 导入证书存储
 
 
-个人信息交换 (。已创建*pfx*) 文件，用于存储 [ (SPC) ](software-publisher-certificate.md) 及其私钥和公钥的软件发行者证书，则必须将 *.pfx* 文件导入到签名计算机上的个人证书存储区中。 有关 *.pfx* 文件的详细信息，请参阅 [个人信息交换 ( .pfx) 文件](personal-information-exchange---pfx--files.md)。
+个人信息交换 (。已创建 *pfx*) 文件，用于存储 [ (SPC)](software-publisher-certificate.md) 及其私钥和公钥的软件发行者证书，则必须将 *.pfx* 文件导入到签名计算机上的个人证书存储区中。 有关 *.pfx* 文件的详细信息，请参阅 [个人信息交换 ( .pfx) 文件](personal-information-exchange---pfx--files.md)。
 
 若要将 *.pfx* 文件导入到本地个人证书存储中，请执行以下操作：
 
@@ -32,11 +31,11 @@ certutil -user -p pfxpassword -importPFX abc.pfx
 
 其中：
 
--   **-User**选项指定 "当前用户" 的个人存储。
+-   **-User** 选项指定 "当前用户" 的个人存储。
 
--   **-P**选项指定 *.pfx*文件 (*pfxpassword*) 的密码。
+-   **-P** 选项指定 *.pfx* 文件 (*pfxpassword*) 的密码。
 
--   **-ImportPFX**选项指定 *.pfx*文件 (的名称 *) 。*
+-   **-ImportPFX** 选项指定 *.pfx* 文件 (的名称 *) 。*
 
 一旦将 *.pfx* 文件导入到签名计算机上的个人证书存储中，就可以使用 [**SignTool**](../devtest/signtool.md) 对 [驱动程序包](driver-packages.md)进行发布签名。
 

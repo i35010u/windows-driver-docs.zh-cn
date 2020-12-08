@@ -1,19 +1,18 @@
 ---
 title: 使用 SetupAPI 日志记录函数
 description: 使用 SetupAPI 日志记录函数
-ms.assetid: a2ba0da4-b891-4ff9-827b-0d64a7a02c0d
 keywords:
 - Setupapi.log 日志记录 WDK Windows Vista，函数
 - 函数 WDK Setupapi.log
 - 文本日志 WDK Setupapi.log，函数
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 06029607344dd8152a21304be0727c0ce31acd7b
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 86b8886f360b53ec33c0ca3d361004e3d364b31f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717568"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840957"
 ---
 # <a name="using-the-setupapi-logging-functions"></a>使用 SetupAPI 日志记录函数
 

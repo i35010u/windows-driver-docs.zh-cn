@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x1F SHARED_RESOURCE_CONV_ERROR
-description: SHARED_RESOURCE_CONV_ERROR bug 检查的值为 0x0000001F.This bug 检查极少出现。
-ms.assetid: 36262cbf-29e1-4e75-bb25-ca71bf819272
+description: SHARED_RESOURCE_CONV_ERROR bug 检查的值为0x0000001F。此 bug 检查很少出现。
 keywords:
 - Bug 检查 0x1F SHARED_RESOURCE_CONV_ERROR
 - SHARED_RESOURCE_CONV_ERROR
@@ -13,22 +12,22 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: afe7313ed1edc83f1178ce4d5f3afa2cae92c28a
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 3dde47a9da665db1bfd2015f0deabd608604c66a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519615"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839821"
 ---
-# <a name="bug-check-0x1f-sharedresourceconverror"></a>Bug 检查 0x1F：共享\_资源\_CONV\_错误
+# <a name="bug-check-0x1f-shared_resource_conv_error"></a>Bug 检查0x1F：共享 \_ 资源 \_ 约定 \_ 错误
 
 
-共享\_资源\_CONV\_错误 bug 检查的值为 0x0000001F。
+共享 \_ 资源 \_ 约定 \_ 错误检查的值为0x0000001F。
 
-检查此错误极少出现。
+此 bug 检查很少出现。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
  

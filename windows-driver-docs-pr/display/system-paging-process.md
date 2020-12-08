@@ -1,15 +1,14 @@
 ---
 title: 系统分页进程
 description: 大多数分页操作都在系统分页过程的上下文中发生。 唯一的例外是 UpdateGpuVirtualAddress 回调中的页表更新，它在一个特殊的伴随上下文中发生，并在同步呈现时出现。
-ms.assetid: B010C7E5-6B67-43D2-92A6-5258B132FB5D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 447cadb2fdc023423a9ced2368d3c21d0b021cbb
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 14d8b71f650e27607ef8b2ed330f4486d02292eb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063966"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839579"
 ---
 # <a name="system-paging-process"></a>系统分页进程
 
@@ -37,8 +36,8 @@ DirectX 图形内核在根页表中初始化足够多的页表和页表项，以
 系统进程的页表分为两部分：
 
 系统将创建一个 *系统页表，该表* 将 *暂存区页表* 反射到系统进程的地址空间中。 这允许系统进程在必要时从草稿区修改暂存区页面和映射/取消映射内存。 页表的内容是在适配器初始化期间设置的，永远不会发生更改。
-*草稿区域页*表项用于将分配映射到分页进程的虚拟地址空间。 它们在初始化期间初始化为 *无效* ，以后用于分页操作。
-分页过程的页表在适配器初始化和开机事件期间通过 [*UpdatePageTable*](./dxgkddiupdatepagetable.md) 分页操作进行初始化。 对于这些操作， **PageTableUpdateMode** 强制使用 cpu ** \_ 虚拟** ，并且必须使用 cpu 立即完成， (不应) 使用分页缓冲。
+*草稿区域页* 表项用于将分配映射到分页进程的虚拟地址空间。 它们在初始化期间初始化为 *无效* ，以后用于分页操作。
+分页过程的页表在适配器初始化和开机事件期间通过 [*UpdatePageTable*](./dxgkddiupdatepagetable.md) 分页操作进行初始化。 对于这些操作， **PageTableUpdateMode** 强制使用 cpu **\_ 虚拟** ，并且必须使用 cpu 立即完成， (不应) 使用分页缓冲。
 
 所有其他进程的页表项的更新都是使用驱动程序指定的 **PageTableUpdateMode** 来完成的。 这些更新在分页过程的上下文中完成。
 

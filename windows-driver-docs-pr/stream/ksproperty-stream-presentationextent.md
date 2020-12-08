@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 流 \_ PRESENTATIONEXTENT
 description: 客户端发送 KSPROPERTY \_ stream \_ PRESENTATIONEXTENT 请求来查询流区。
-ms.assetid: 36b66035-f935-4264-8555-d949865d708e
 keywords:
 - KSPROPERTY_STREAM_PRESENTATIONEXTENT 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f6f1cf4942640c835bd72afcfaee709728df72d
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: df3ff80fe9b658e5d9ad81ff2c6a1ce93e8aa555
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105266"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840245"
 ---
 # <a name="ksproperty_stream_presentationextent"></a>KSPROPERTY \_ 流 \_ PRESENTATIONEXTENT
 
@@ -82,7 +81,7 @@ ms.locfileid: "90105266"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

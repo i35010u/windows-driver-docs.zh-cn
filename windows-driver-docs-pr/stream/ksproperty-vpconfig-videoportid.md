@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ VPCONFIG \_ VIDEOPORTID
 description: KSPROPERTY \_ VPCONFIG \_ VIDEOPORTID 属性返回 Microsoft DirectDraw 视频端口 ID 属性信息。
-ms.assetid: 59323fbc-fdce-4615-914b-da65debde621
 keywords:
 - KSPROPERTY_VPCONFIG_VIDEOPORTID 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0be4721afb92ccd7a3d77b641e484ab2340f7869
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 0b990486cd3559944036f1d2d5cb62c953786530
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105260"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839343"
 ---
 # <a name="ksproperty_vpconfig_videoportid"></a>KSPROPERTY \_ VPCONFIG \_ VIDEOPORTID
 
@@ -79,7 +78,7 @@ KSPROPERTY \_ VPCONFIG \_ VIDEOPORTID 属性返回 Microsoft DirectDraw 视频�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

@@ -1,15 +1,14 @@
 ---
 title: 指定硬件 ID 的最佳做法
 description: 指定硬件 ID 的最佳做法
-ms.assetid: 95dcf1b1-b2cd-473f-9660-a91fda20ffc2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 07b34246cad4d78727afe4eda116db05b2a9a248
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: e985fb83ea53c0d455a8b1eacb592a2fcfb0018e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095625"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839901"
 ---
 # <a name="best-practices-for-specifying-hardware-ids"></a>指定硬件 ID 的最佳做法
 

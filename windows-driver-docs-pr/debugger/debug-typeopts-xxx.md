@@ -1,7 +1,6 @@
 ---
 title: 调试 \_ TYPEOPTS \_ XXX
 description: 类型选项会影响引擎格式化输出的数字和字符串的方式。
-ms.assetid: 1c39fb80-d51b-43a6-8a68-8479022baf8a
 ms.date: 12/07/2017
 topic_type:
 - apiref
@@ -14,12 +13,12 @@ api_location:
 api_type:
 - HeaderDef
 ms.localizationpriority: medium
-ms.openlocfilehash: 377d832a259dc3ed178ea930c4f2ccae7b8a85a1
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 7ec25689c37b33b79842fe2604219603e86ebc34
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213035"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838823"
 ---
 # <a name="debug_typeopts_xxx"></a>调试 \_ TYPEOPTS \_ XXX
 
@@ -36,7 +35,7 @@ ms.locfileid: "89213035"
 <thead>
 <tr class="header">
 <th align="left">返回的常量</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -44,19 +43,19 @@ ms.locfileid: "89213035"
 <td align="left"><span id="DEBUG_TYPEOPTS_UNICODE_DISPLAY"></span><span id="debug_typeopts_unicode_display"></span>
 <strong>DEBUG_TYPEOPTS_UNICODE_DISPLAY</strong></td>
 <td align="left"><p>设置此位后，USHORT 指针和数组作为 Unicode 字符输出。</p>
-<p>这等效于调试器命令 <strong>。 enable_unicode 1</strong>。</p></td>
+<p>这等效于调试器命令 <strong>.enable_unicode 1</strong>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><span id="DEBUG_TYPEOPTS_LONGSTATUS_DISPLAY"></span><span id="debug_typeopts_longstatus_display"></span>
 <strong>DEBUG_TYPEOPTS_LONGSTATUS_DISPLAY</strong></td>
 <td align="left"><p>设置此位后，长整数将输出为默认的基数，而不是十进制。</p>
-<p>这等效于调试器命令 <strong>。 enable_long_status 1</strong>。</p></td>
+<p>这等效于调试器命令 <strong>.enable_long_status 1</strong>。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><span id="DEBUG_TYPEOPTS_FORCERADIX_OUTPUT"></span><span id="debug_typeopts_forceradix_output"></span>
 <strong>DEBUG_TYPEOPTS_FORCERADIX_OUTPUT</strong></td>
 <td align="left"><p>设置此位时，整数 (除了长整数外) ，将输出默认的基数而不是 decimal。</p>
-<p>这等效于调试器命令 <strong>。 force_radix_output 1</strong>。</p></td>
+<p>这等效于调试器命令 <strong>.force_radix_output 1</strong>。</p></td>
 </tr>
 </tbody>
 </table>

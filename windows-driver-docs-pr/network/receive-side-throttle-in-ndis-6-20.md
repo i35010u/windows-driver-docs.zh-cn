@@ -1,19 +1,18 @@
 ---
 title: NDIS 6.20 中的接收端限制
 description: NDIS 6.20 中的接收端限制
-ms.assetid: dc8d0f32-37ee-4383-864d-7d814d37c3c8
 keywords:
 - NDIS 6.20 WDK，接收方限制
 - 接收方限制 (RST) WDK NDIS 6.20
 - RST WDK NDIS 6.20
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 26e8c6c9feecd08ae7782d825b013b23674b5c6e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 92f631c644c32abcbb2e5337ebac1a834bc9c4c8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211609"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841165"
 ---
 # <a name="receive-side-throttle-in-ndis-620"></a>NDIS 6.20 中的接收端限制
 

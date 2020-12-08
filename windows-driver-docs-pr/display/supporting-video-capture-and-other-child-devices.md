@@ -1,7 +1,6 @@
 ---
 title: 支持视频捕获和其他子设备
 description: 支持视频捕获和其他子设备
-ms.assetid: 15575700-7525-459e-a099-158f0c13899c
 keywords:
 - 视频捕获 WDK 显示
 - 捕获视频 WDK 显示
@@ -14,19 +13,19 @@ keywords:
 - Windows Vista 显示器驱动程序模型 WDK，子视频捕获驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 24d2d589111a20ede2946653b9c8b9a3cc2e7ffc
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: a6cd340819fa03608e5424dc8d9467351d58949c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361545"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838963"
 ---
 # <a name="supporting-video-capture-and-other-child-devices"></a>支持视频捕获和其他子设备
 
 
 视频捕获设备或其他子设备的显示微型端口驱动程序和驱动程序可以相互定义专用接口，子驱动程序可以使用该接口通过父微型端口驱动程序与其设备通信。 子视频捕获驱动程序必须紧耦合到父显示器微型端口驱动程序。 事实上，视频捕获可能作为显示微型端口驱动程序的一部分实现。 视频捕获驱动程序可以将专用接口与显示微型端口驱动程序一起使用，以访问 *I2C* 总线和其他目的。
 
-为了初始化专用接口，视频捕获驱动程序会将 [**IRP \_ MN \_ 查询 \_ 接口**](../kernel/irp-mn-query-interface.md) 请求发送到显示端口驱动程序 (显示微型端口驱动程序 *Dxgkrnl.sys* ) 的一部分。 在显示端口驱动程序收到此类请求后，它将调用微型端口驱动程序的 [**DxgkDdiQueryInterface**](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_query_interface) 函数，并传递指向 [**查询 \_ 接口**](/windows-hardware/drivers/ddi/video/ns-video-_query_interface) 结构的指针，该结构包含用于初始化专用接口的信息。
+为了初始化专用接口，视频捕获驱动程序会将 [**IRP \_ MN \_ 查询 \_ 接口**](../kernel/irp-mn-query-interface.md) 请求发送到显示端口驱动程序 (显示微型端口驱动程序 *Dxgkrnl.sys*) 的一部分。 在显示端口驱动程序收到此类请求后，它将调用微型端口驱动程序的 [**DxgkDdiQueryInterface**](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_query_interface) 函数，并传递指向 [**查询 \_ 接口**](/windows-hardware/drivers/ddi/video/ns-video-_query_interface) 结构的指针，该结构包含用于初始化专用接口的信息。
 
 **注意**   如果视频捕获是作为显示微型端口驱动程序的一部分实现的，则视频捕获可能会直接调用 *DxgkDdiQueryInterface* 。
 

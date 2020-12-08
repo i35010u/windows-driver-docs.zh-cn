@@ -1,7 +1,6 @@
 ---
 title: D3DKMT \_ MULTIPLANE \_ 叠加 \_ 标志枚举
 description: 了解 D3DKMT \_ MULTIPLANE \_ 叠加 \_ 标志枚举，该枚举是保留供系统使用的。 请勿在您的驱动程序中使用。
-ms.assetid: e4199b1a-b339-4b0d-8540-2c582675f24f
 keywords:
 - D3DKMT_MULTIPLANE_OVERLAY_FLAGS 枚举显示设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 89d955acca13b1dc547bede959d1448ebbff55a2
-ms.sourcegitcommit: fc94eb0d5a41ef81c1b3ab91ad725386db0be0c2
+ms.openlocfilehash: 73bf814be33b860085e79429ff0c5233aaefcce7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91603561"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839627"
 ---
 # <a name="d3dkmt_multiplane_overlay_flags-enumeration"></a>D3DKMT \_ MULTIPLANE \_ 叠加 \_ 标志枚举
 
@@ -31,8 +30,8 @@ ms.locfileid: "91603561"
 
 ```ManagedCPlusPlus
 typedef enum D3DKMT_MULTIPLANE_OVERLAY_FLAGS {
-  D3DKMT_MULTIPLANE_OVERLAY_FLAG_VERTICAL_FLIP    = 0x1,
-  D3DKMT_MULTIPLANE_OVERLAY_FLAG_HORIZONTAL_FLIP  = 0x2
+  D3DKMT_MULTIPLANE_OVERLAY_FLAG_VERTICAL_FLIP    = 0x1,
+  D3DKMT_MULTIPLANE_OVERLAY_FLAG_HORIZONTAL_FLIP  = 0x2
 } D3DKMT_MULTIPLANE_OVERLAY_FLAGS;
 ```
 

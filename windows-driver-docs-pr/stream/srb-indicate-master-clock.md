@@ -1,7 +1,6 @@
 ---
 title: SRB \_ 表示 \_ 主 \_ 时钟
 description: SRB \_ 表示 \_ 主 \_ 时钟
-ms.assetid: 76ce59d2-d33c-4cec-a90e-563a16dc476b
 keywords:
 - SRB_INDICATE_MASTER_CLOCK 流媒体设备
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: adb9a64a81f716cd1a67832f11764abf37e13fa2
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: b1ddcd14f3ec17afcfc99bee08d993fcad6e914d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186755"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840499"
 ---
 # <a name="srb_indicate_master_clock"></a>SRB \_ 表示 \_ 主 \_ 时钟
 
@@ -42,7 +41,7 @@ ms.locfileid: "89186755"
 
 ### <a name="comments"></a>注释
 
-类驱动程序设置**CommandData**。*PSrb*指向表示主时钟的时钟对象的句柄的**MasterClockHandle**成员。 *PSrb*指针指向[**HW \_ 流 \_ 请求 \_ 块**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_request_block)结构。
+类驱动程序设置 **CommandData**。*PSrb* 指向表示主时钟的时钟对象的句柄的 **MasterClockHandle** 成员。 *PSrb* 指针指向 [**HW \_ 流 \_ 请求 \_ 块**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_request_block)结构。
 
 流可以通过将主时钟句柄传递到 [**StreamClassQueryMasterClock**](/windows-hardware/drivers/ddi/strmini/nf-strmini-streamclassquerymasterclock) 或 [**StreamClassQueryMasterClockSync**](/windows-hardware/drivers/ddi/strmini/nf-strmini-streamclassquerymasterclocksync)来查询主时钟的时间值。
 

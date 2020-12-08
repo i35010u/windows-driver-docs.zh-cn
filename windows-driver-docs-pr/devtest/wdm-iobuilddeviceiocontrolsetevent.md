@@ -1,7 +1,6 @@
 ---
 title: 'IoBuildDeviceIoControlSetEvent 规则 (wdm) '
 description: IoBuildDeviceIoControlSetEvent 规则指定如果驱动程序提供指向调用方分配和初始化的事件对象的指针，则调用 IoBuildDeviceIoControlRequest 的驱动程序不得调用 KeSetEvent。
-ms.assetid: F9721484-3156-4AF5-8C60-AF68644E602D
 ms.date: 05/21/2018
 keywords:
 - 'IoBuildDeviceIoControlSetEvent 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d635a899012533f4f51773d73605cebee7343352
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 39f462d2dc3bda7d61e5aeff21a5c2ef996abc80
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106154"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839657"
 ---
 # <a name="iobuilddeviceiocontrolsetevent-rule-wdm"></a>IoBuildDeviceIoControlSetEvent 规则 (wdm) 
 
 
-**IoBuildDeviceIoControlSetEvent**规则指定如果驱动程序提供指向调用方分配和初始化的事件对象的指针，则调用[**IoBuildDeviceIoControlRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuilddeviceiocontrolrequest)的驱动程序不得调用[**KeSetEvent**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kesetevent) 。 此 IRP 的驱动程序无需调用 **KeSetEvent** 。
+**IoBuildDeviceIoControlSetEvent** 规则指定如果驱动程序提供指向调用方分配和初始化的事件对象的指针，则调用 [**IoBuildDeviceIoControlRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuilddeviceiocontrolrequest)的驱动程序不得调用 [**KeSetEvent**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kesetevent) 。 此 IRP 的驱动程序无需调用 **KeSetEvent** 。
 
 **驱动程序模型： WDM**
 

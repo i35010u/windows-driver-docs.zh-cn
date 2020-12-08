@@ -1,15 +1,14 @@
 ---
 title: 数据类接口的接口描述符
 description: 数据类接口的接口描述符
-ms.assetid: 258dde6f-952a-4b92-8b76-e26da1b51480
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 782aba0d7660460ebff07cd6370d545c1a7ccc8e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5cc5e1cf184ce463c43114bfcee69f87bb0c6be8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380721"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840641"
 ---
 # <a name="interface-descriptor-for-data-class-interface"></a>数据类接口的接口描述符
 
@@ -27,11 +26,11 @@ ms.locfileid: "63380721"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">偏移量</th>
+<th align="left">Offset</th>
 <th align="left">字段</th>
 <th align="left">大小</th>
 <th align="left">值</th>
-<th align="left">Description</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -40,7 +39,7 @@ ms.locfileid: "63380721"
 <td align="left"><p>bLength</p></td>
 <td align="left"><p>1</p></td>
 <td align="left"><p>0x09</p></td>
-<td align="left"><p>此说明符，以字节为单位的大小</p></td>
+<td align="left"><p>此描述符的大小（以字节为单位）</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>1</p></td>
@@ -68,7 +67,7 @@ ms.locfileid: "63380721"
 <td align="left"><p>bNumEndpoints</p></td>
 <td align="left"><p>1</p></td>
 <td align="left"><p>0x02</p></td>
-<td align="left"><p>2 个终结点</p></td>
+<td align="left"><p>2个终结点</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>5</p></td>

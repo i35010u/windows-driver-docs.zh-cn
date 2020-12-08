@@ -1,19 +1,18 @@
 ---
 title: RAS 体系结构概述
 description: RAS 体系结构概述
-ms.assetid: 1ff285d7-2aed-46e1-979e-3b77614dcbf5
 keywords:
 - 远程访问服务 WDK 网络
 - RAS WDK 网络
 - 体系结构 WDK WAN，RAS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: af1daf11d278fdeff67e399da9cc4d73f493934a
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a62e67e61a2fe25aeb1f56c0da907d7fe72fec68
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218316"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839453"
 ---
 # <a name="ras-architecture-overview"></a>RAS 体系结构概述
 
@@ -69,7 +68,7 @@ KMDDSP 使用 NDISTAPI 将用户模式请求转换为相应的 TAPI Oid (OID \_ 
 
 NDPTSP (Ndptsp) 是在 TAPI 服务进程的上下文中运行的服务提供程序 DLL。 NDPTSP 提供了一个 TSPI 接口，该接口可让 TAPI 服务向 TAPI 感知应用程序提供，以便 [NDPROXY](#ddk-ndproxy-ng) 能够与用户模式应用程序进行通信。
 
-NDPTSP 使用 NDPROXY 将用户模式请求转换为面向 TAPI 连接的 Oid (OID \_ CO \_ TAPI \_ *Xxx*) 。 有关 TAPI 面向连接的 Oid 的详细信息，请参阅 [面向连接的 NDIS 的 Tapi 扩展](./tapi-extension-oids-for-connection-oriented-ndis.md)。
+NDPTSP 使用 NDPROXY 将用户模式请求转换为面向 TAPI 连接的 Oid (OID \_ CO \_ TAPI \_ *Xxx*) 。 有关 TAPI 面向连接的 Oid 的详细信息，请参阅 [Connection-Oriented NDIS 的 Tapi 扩展](./tapi-extension-oids-for-connection-oriented-ndis.md)。
 
 ### <a name="ndistapi"></a><a href="" id="ddk-ndistapi-ng"></a>NDISTAPI
 
@@ -99,7 +98,7 @@ NDISWAN 提供 PPP 协议/链接帧、压缩/解压缩和加密/解密。 具有
 
 串行驱动程序组件是用于内部串行端口或多端口串行卡的标准设备驱动程序。 Microsoft Windows 2000 和更高版本附带的异步 WAN 微型端口驱动程序使用内部串行驱动程序进行调制解调器通信。 任何与串行驱动程序导出相同功能的驱动程序都可以与内置的异步 WAN 微型端口驱动程序交互。
 
-**注意**   与25个供应商可以为一个 X-blade 接口卡实现串行驱动程序仿真程序。 在这种情况下，每个虚拟电路都显示为一个串行端口，其中包含一个带有 (PAD) 的 X 25 包组装器/拆装器。 连接接口必须正确地模拟串行信号，如 DTR、DCD、CTS、RTS 和 DSR。
+**注意**  与25个供应商可以为一个 X-blade 接口卡实现串行驱动程序仿真程序。 在这种情况下，每个虚拟电路都显示为一个串行端口，其中包含一个带有 (PAD) 的 X 25 包组装器/拆装器。 连接接口必须正确地模拟串行信号，如 DTR、DCD、CTS、RTS 和 DSR。
 为其 X-blade 卡实现串行驱动程序模拟器的 x 25 供应商还必须在 Pad .inf 文件中为其填充提供一个条目。 此文件包含通过连接到连接到连接的连接所需的命令/响应脚本。 有关 Pad .inf 文件的详细信息，请参阅 Microsoft Windows SDK 文档。
 
  

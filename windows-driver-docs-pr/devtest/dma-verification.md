@@ -1,7 +1,6 @@
 ---
 title: DMA 验证
 description: DMA 验证
-ms.assetid: ffcb718a-63f5-49ff-9d36-67b2aa59761f
 keywords:
 - DMA 验证功能 WDK 驱动程序验证程序
 - HAL 验证 WDK 驱动程序验证程序
@@ -13,12 +12,12 @@ keywords:
 - DMA 错误 WDK 驱动程序验证程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f359baf9c04bce86c6527debaafa5e87bfbad39b
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: b05481831914d796a6f9b55af34f3b8055853196
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382895"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839015"
 ---
 # <a name="dma-verification"></a>DMA 验证
 
@@ -49,7 +48,7 @@ Windows 2000 和更高版本中使用了几种类型的 DMA：
 <span id="Scatter_gather_DMA"></span><span id="scatter_gather_dma"></span><span id="SCATTER_GATHER_DMA"></span>*散点/集合 DMA*  
 散点/集合 DMA 是一种快捷方法，可同时设置多个数据包 DMA 传输。 例如，如果要通过网络传输数据包，则网络堆栈的每个部分会将其自己的标头添加 (TCP、IP、以太网等) 。 将从内存中的不同位置分配这些标头。 在这种情况下，散点/集合 DMA 通过向 HAL 发出批处理请求来映射每个标头和数据段以供硬件访问，从而节省时间。 此方法不需要调用每个数据包的每个部分，而是调用每个例程一次，并让 HAL 负责单独映射每个例程。
 
-**请注意**，  *散点/收集功能*并不意味着设备可以使用散点/收集例程。 散点/收集功能是指设备说明中的一个标志，该标志指示该设备能够从内存中的任何区域读取或写入，而不只是特定范围。
+**请注意**，*散点/收集功能* 并不意味着设备可以使用散点/收集例程。   散点/收集功能是指设备说明中的一个标志，该标志指示该设备能够从内存中的任何区域读取或写入，而不只是特定范围。
 
  
 
@@ -124,7 +123,7 @@ DMA 验证也可以是检测内存损坏的有效方法，因为当驱动程序�
 
 -   **在命令行中**
 
-    在命令行中，DMA 验证选项由 **第7位 (0x80) **表示。 若要激活 DMA 验证，请使用值为0x80 的标志值或将0x80 添加到标志值。 例如：
+    在命令行中，DMA 验证选项由 **第7位 (0x80)** 表示。 若要激活 DMA 验证，请使用值为0x80 的标志值或将0x80 添加到标志值。 例如：
 
     ```
     verifier /flags 0x80 /driver MyDriver.sys
@@ -149,7 +148,7 @@ DMA 验证也可以是检测内存损坏的有效方法，因为当驱动程序�
 -   **使用驱动程序验证器管理器**
 
     1.  启动驱动程序验证器管理器。 在命令提示符窗口中键入 **Verifier** 。
-    2.  选择 " **为代码开发人员 (创建自定义设置") ** ，然后单击 " **下一步**"。
+    2.  选择 " **为代码开发人员 (创建自定义设置")** ，然后单击 " **下一步**"。
     3.  选择 " **从完整列表中选择单个设置**"。
     4.  选择 (检查) **DMA 验证**。
 

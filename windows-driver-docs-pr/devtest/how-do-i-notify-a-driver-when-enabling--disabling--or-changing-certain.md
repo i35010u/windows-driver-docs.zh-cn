@@ -1,26 +1,25 @@
 ---
-title: 如何通知时启用、 禁用或更改某些标志的驱动程序
-description: 如何通知时启用、 禁用或更改某些标志的驱动程序
-ms.assetid: 1bdf8047-8d3f-4cdf-883b-3544dea06705
+title: 启用、禁用或更改某些标志时，如何实现通知驱动程序
+description: 启用、禁用或更改某些标志时，如何实现通知驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fa2f2156dcf1d1917d44fb7abb33af31c08533a5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ddf03ef6f9cfd7ff4ba4fbd8282a49174359f7fc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63329739"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839127"
 ---
 # <a name="how-do-i-notify-a-driver-when-enabling-disabling-or-changing-certain-flags"></a>启用、禁用或更改特定的标志时如何通知驱动程序？
 
 
-某些驱动程序需要执行一些附加工作时启用、 禁用或更改跟踪标志。 若要通知一个驱动程序，发生此类更改时，请使用以下命令：
+当启用、禁用或更改跟踪标志时，某些驱动程序需要执行一些额外的工作。 若要在发生此类更改时通知驱动程序，请使用以下命令：
 
 ```
 #define WPP_PRIVATE_ENABLE_CALLBACK 
 ```
 
-包括 TMH 文件之前，必须定义此符号常量。 您需要编写的函数签名如下所示：
+必须先定义此符号常量，然后才能包含 TMH 文件。 需要编写的函数签名如下所示：
 
 ```
 typedef
@@ -33,7 +32,7 @@ __in ULONG Flags,
 __in UCHAR Level);
 ```
 
-下面是方式的启用的某些标志时通知驱动程序的示例：
+下面的示例演示如何在启用特定标志时通知驱动程序：
 
 ```
 #define WPP_PRIVATE_ENABLE_CALLBACK MyOwnCallback

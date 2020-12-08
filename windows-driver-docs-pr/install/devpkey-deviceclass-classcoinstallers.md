@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_DeviceClass_ClassCoInstallers
 description: DEVPKEY_DeviceClass_ClassCoInstallers
-ms.assetid: c1369006-5329-48c7-afe0-ddce44889bbc
 keywords:
 - DEVPKEY_DeviceClass_ClassCoInstallers 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 49a983f3fe36973ae8b0568e05c1cc40aad1ea34
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: d47bcde0b17cc9f9cdef541e30e10b884575b747
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715584"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841067"
 ---
 # <a name="devpkey_deviceclass_classcoinstallers"></a>DEVPKEY_DeviceClass_ClassCoInstallers
 

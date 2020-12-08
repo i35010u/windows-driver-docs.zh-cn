@@ -1,15 +1,14 @@
 ---
 title: 页面方向
 description: 页面方向
-ms.assetid: fb28863a-920a-4b26-a652-fb255622824f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 509cfff640f400cdbc474fb3fa447a4020f28a32
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 028a014b3fe9dfccabb2d85e783279ec5a7a045b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192603"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841095"
 ---
 # <a name="page-orientation"></a>页面方向
 

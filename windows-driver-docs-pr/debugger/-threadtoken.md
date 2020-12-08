@@ -1,7 +1,6 @@
 ---
 title: threadtoken
 description: Threadtoken 扩展显示当前线程的模拟状态。
-ms.assetid: df16bdb5-0834-4e07-ad5f-a712f9282bb0
 keywords:
 - threadtoken Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b43026e988abdcd6cb5f9d5b2358a2f42cb5baf
-ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
+ms.openlocfilehash: f45adbd2b66885fa3e8cfe00f22c8abcb73f7f63
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70025158"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838845"
 ---
 # <a name="threadtoken"></a>!threadtoken
 
 
-**! Threadtoken**扩展显示当前线程的模拟状态。
+**！ Threadtoken** 扩展显示当前线程的模拟状态。
 
 ```dbgcmd
 !threadtoken
@@ -41,10 +40,10 @@ ms.locfileid: "70025158"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>Windows 2000</strong></p></td>
-<td align="left"><p>Ntsdexts</p></td>
+<td align="left"><p>Ntsdexts.dll</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>Windows XP 和更高版本</strong></p></td>
+<td align="left"><p><strong>Windows XP 及更高版本</strong></p></td>
 <td align="left"><p>不可用</p></td>
 </tr>
 </tbody>
@@ -54,20 +53,20 @@ ms.locfileid: "70025158"
 
 ### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关线程和模拟的信息, 请参阅 Russinovich 文档和*Microsoft Windows 内部机制*, 并标记 Microsoft Windows SDK 为和 David 所罗门群岛。
+有关线程和模拟的信息，请参阅 Russinovich 文档和 *Microsoft Windows 内部机制* ，并标记 Microsoft Windows SDK 为和 David 所罗门群岛。
 
 <a name="remarks"></a>备注
 -------
 
-在 Windows XP 和更高版本的 Windows 中, **! threadtoken**扩展已过时。 请改用[ **! 标记**](-token.md)。
+在 Windows XP 和更高版本的 Windows 中， **！ threadtoken** 扩展已过时。 请改用 [**！标记**](-token.md) 。
 
-如果当前线程正在模拟, 将显示此线程正在使用的令牌。
+如果当前线程正在模拟，将显示此线程正在使用的令牌。
 
-否则, 将显示 "线程未模拟" 消息。 然后, 将显示进程令牌。
+否则，将显示 "线程未模拟" 消息。 然后，将显示进程令牌。
 
-令牌的显示格式与[ **! 句柄**](-handle.md)在显示标记句柄时使用的格式相同。
+令牌的显示格式与 [**！句柄**](-handle.md) 在显示标记句柄时使用的格式相同。
 
-下面是一个示例：
+以下是示例：
 
 ```dbgcmd
 0:000> ~
@@ -76,7 +75,7 @@ ms.locfileid: "70025158"
 
 0:000> !threadtoken
 
-***Thread is not impersonating, using process token***
+**_Thread is not impersonating, using process token_**
     Auth Id    0 : 0x1c93d
     Type       Primary
     Imp Level  Anonymous

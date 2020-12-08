@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_Class
 description: DEVPKEY_Device_Class
-ms.assetid: e6fb0925-ff60-430e-aea4-1dd706a60de8
 keywords:
 - DEVPKEY_Device_Class 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 892417a055688697f7d45e90903fb86dd1506f44
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 43ca04afa65421ff1fb6bf93e259e19f8444f5d2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717094"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840085"
 ---
 # <a name="devpkey_device_class"></a>DEVPKEY_Device_Class
 
@@ -66,7 +65,7 @@ DEVPKEY_Device_Class 设备属性表示设备实例所属的 [设备安装程序
 <a name="remarks"></a>备注
 -------
 
-DEVPKEY_Device_Class 属性的值由安装设备的 INF 文件的[**Inf 版本部分**](./inf-addservice-directive.md)中的类指令提供的*类名称*值设置。
+DEVPKEY_Device_Class 属性的值由安装设备的 INF 文件的 [**Inf 版本部分**](./inf-addservice-directive.md)中的类指令提供的 *类名称* 值设置。
 
 可以调用 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 来检索 DEVPKEY_Device_Class 的值。
 
@@ -81,7 +80,7 @@ Windows Server 2003、Windows XP 和 Windows 2000 支持此属性，但不支持
 ## <a name="see-also"></a>请参阅
 
 
-[**INF 版本部分**](./inf-addservice-directive.md)
+[**INF Version 节**](./inf-addservice-directive.md)
 
 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 

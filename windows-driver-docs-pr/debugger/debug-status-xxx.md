@@ -1,7 +1,6 @@
 ---
 title: 调试 \_ 状态 \_ XXX
 description: 调试 \_ 状态 \_ XXX
-ms.assetid: 3f5fcdb6-b4fc-4155-bf39-929d00fb210c
 ms.date: 12/07/2017
 keywords:
 - DEBUG_STATUS_XXX Windows 调试
@@ -14,12 +13,12 @@ api_location:
 api_type:
 - HeaderDef
 ms.localizationpriority: medium
-ms.openlocfilehash: 0eecbf3795f7820372ffd6f803c4b366fc035f7a
-ms.sourcegitcommit: 2f37e8de9759164804a3b1c7f5c9e497a607539b
+ms.openlocfilehash: 6600374a258498825bc1f71ecc3900caf20e9a16
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83852214"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838825"
 ---
 # <a name="debug_status_xxx"></a>调试 \_ 状态 \_ XXX
 
@@ -27,7 +26,7 @@ ms.locfileid: "83852214"
 ## <span id="ddk_debug_status_xxx_dbx"></span><span id="DDK_DEBUG_STATUS_XXX_DBX"></span>
 
 
-调试 \_ 状态 \_ *XXX*状态代码有两个用途。 它们指示引擎在目标中的执行如何继续，引擎使用这些方法来报告目标的执行状态。
+调试 \_ 状态 \_ *XXX* 状态代码有两个用途。 它们指示引擎在目标中的执行如何继续，引擎使用这些方法来报告目标的执行状态。
 
 事件发生后，引擎可能会收到若干说明，告诉它应如何继续目标中的执行。 在这种情况下，它对具有最高优先级的指令进行操作。 通常，较高优先级的状态代码表示更少的目标执行。
 
@@ -151,8 +150,8 @@ ms.locfileid: "83852214"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">DbgEng （包括 DbgEng）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">DbgEng (包含 DbgEng) </td>
 </tr>
 </tbody>
 </table>

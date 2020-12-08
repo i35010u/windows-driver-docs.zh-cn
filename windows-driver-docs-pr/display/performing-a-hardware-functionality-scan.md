@@ -1,18 +1,17 @@
 ---
 title: 执行硬件功能性扫描
 description: 执行硬件功能性扫描
-ms.assetid: 966b30b7-2f08-4611-9f4d-f85b301de414
 keywords:
 - OPM WDK 显示，HFS
 - OPM WDK 显示，硬件功能扫描
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ae9161cf8188579fb61a047a11f01cd6498587a
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: d5b5e50d52edcc3e9cc62c3b6656dcc18c7f775d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066462"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840761"
 ---
 # <a name="performing-a-hardware-functionality-scan"></a>执行硬件功能性扫描
 
@@ -23,6 +22,6 @@ ms.locfileid: "89066462"
 
 -   [**DxgkDdiStartDevice**](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_start_device)
 
--   将图形适配器的电源状态设置为 "D0" 的[**DxgkDdiSetPowerState**](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_set_power_state) 。
+-   将图形适配器的电源状态设置为 "D0" 的 [**DxgkDdiSetPowerState**](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_set_power_state) 。
 
 HFS 可以是异步的，并且不需要在 [**DxgkDdiStartDevice**](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_start_device) 或 [**DxgkDdiSetPowerState**](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_set_power_state) 返回之前完成。 但是，在 HFS 完成之前，不会返回 [OPM DDI](supporting-output-protection-manager.md) 函数。

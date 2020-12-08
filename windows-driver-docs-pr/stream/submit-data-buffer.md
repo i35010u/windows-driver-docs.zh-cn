@@ -1,21 +1,20 @@
 ---
 title: 提交数据缓冲区
 description: 提交数据缓冲区
-ms.assetid: 151f5139-3706-4255-9d71-d8e6e3416b7c
 keywords:
-- Avcstrm.sys 流式处理筛选器驱动程序 WDK，数据缓冲提交
-- 数据缓冲 WDK AV/C 流式处理
-- 提交数据缓冲区 WDK AV/C 进行流式处理
+- Avcstrm.sys 流筛选器驱动程序 WDK，数据缓冲区提交
+- 数据缓冲区 WDK AV/C 流式处理
+- 提交数据缓冲区 WDK AV/C 流式处理
 - 缓冲 WDK AV/C 流式处理
-- 挂起的流式处理 WDK AV/C 流式处理
+- 挂起流 WDK AV/C 流式处理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9da43ed6acf278b3ce8ee402e75f0b2206fb3c89
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3d3b9132ebde93e3805111bcc4eade018c1974ad
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390867"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839835"
 ---
 # <a name="submit-data-buffer"></a>提交数据缓冲区
 
@@ -23,7 +22,7 @@ ms.locfileid: "63390867"
 
 
 
-与打开流，可以开始的子单元驱动程序将附加到 AV/C 流式处理流示例。 这些示例可以既读取或写入操作，并可将其提交到 AV/C 流式处理筛选器驱动程序，相同的方式*Avcstrm.sys*。 此服务是始终异步因为其对当前的流状态和流数据可用性的依赖关系。
+使用打开流时，子单位驱动程序可以开始将流样本附加到 AV/C 流式处理。 这些示例可以是读取或写入操作，并且可以通过与 AV/C 流式处理筛选器驱动程序相同的方式提交 *Avcstrm.sys*。 此服务始终是异步的，因为它依赖于当前流状态和流数据可用性。
 
 ```cpp
 INIT_AVCSTRM_HEADER(pAVCStrmReq, (pSrb->Command == SRB_READ_DATA) ?      <mark type="enumval">AVCSTRM_READ</mark> : AVCSTRM_WRITE);
@@ -66,7 +65,7 @@ Status =
         );
 ```
 
-因为该操作是异步的状态应显示为状态\_PENDING。 完成数据后，将调用完成例程。 在完成例程，子单元驱动程序可以执行后续处理，包括更新处理的数据的统计信息和可能是仅当子单元是时钟提供程序添加呈现时间。
+由于操作是异步的，因此状态应为 " \_ 挂起"。 数据完成后，将调用完成例程。 在完成例程中，子单位驱动程序可以执行后处理，包括更新处理的数据的统计信息，并且在子单位为时钟提供程序时可能会增加演示时间。
 
 ```cpp
 // Keep track of the number of frames processed

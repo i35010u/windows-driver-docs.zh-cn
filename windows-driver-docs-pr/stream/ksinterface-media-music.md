@@ -1,9 +1,8 @@
 ---
-title: KSINTERFACE\_MEDIA\_MUSIC
-description: KSINTERFACE\_MEDIA\_MUSIC
-ms.assetid: 5f81dc68-a2f7-4f74-825d-5f3ebdedf5ba
+title: KSINTERFACE \_ MEDIA \_ 音乐
+description: KSINTERFACE \_ MEDIA \_ 音乐
 keywords:
-- KSINTERFACE_MEDIA_MUSIC 流式处理媒体设备
+- KSINTERFACE_MEDIA_MUSIC 流媒体设备
 topic_type:
 - apiref
 api_name:
@@ -12,20 +11,20 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a37c2c23c971f17e67b82c54ab1ca7cd38e85cd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7346101996f654c2fa9c6f9a432f411ed474f521
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334024"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840575"
 ---
-# <a name="ksinterfacemediamusic"></a>KSINTERFACE\_MEDIA\_MUSIC
+# <a name="ksinterface_media_music"></a>KSINTERFACE \_ MEDIA \_ 音乐
 
 
 ## <span id="ddk_ksinterface_media_music_ks"></span><span id="DDK_KSINTERFACE_MEDIA_MUSIC_KS"></span>
 
 
-KSINTERFACE\_媒体\_音乐接口不支持。
+\_ \_ 不支持 KSINTERFACE MEDIA 音乐界面。
 
 <a name="requirements"></a>要求
 ------------
@@ -37,7 +36,7 @@ KSINTERFACE\_媒体\_音乐接口不支持。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
+<td><p>版本</p></td>
 <td><p>不支持。</p></td>
 </tr>
 </tbody>

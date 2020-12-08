@@ -1,7 +1,6 @@
 ---
 title: AVStream 中基于数据包的 DMA
 description: AVStream 中基于数据包的 DMA
-ms.assetid: 4246819e-d8d6-4302-9477-675ca181b1e3
 keywords:
 - AVStream WDK，硬件
 - 硬件 WDK AVStream
@@ -13,12 +12,12 @@ keywords:
 - 缓冲区 WDK AVStream
 ms.date: 06/18/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: a5106f01bf233ae4c4e1f255b16b9d31e6f2eabb
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 34542f63ebe75eb7f4d854daebd9f5872538dd7b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89183945"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840517"
 ---
 # <a name="packet-based-dma-in-avstream"></a>AVStream 中基于数据包的 DMA
 
@@ -26,7 +25,7 @@ ms.locfileid: "89183945"
 
 实现基于数据包的 DMA 方案：
 
-1. 指定 KSPIN \_ 标志 \_ 会 \_ 在相关[**KSPIN \_ 描述符 \_ EX**](/windows-hardware/drivers/ddi/ks/ns-ks-_kspin_descriptor_ex)结构的**Flags**成员中生成映射。 请注意，此标志仅应由具有散点/集合支持的总线主机使用。
+1. 指定 KSPIN \_ 标志 \_ 会 \_ 在相关 [**KSPIN \_ 描述符 \_ EX**](/windows-hardware/drivers/ddi/ks/ns-ks-_kspin_descriptor_ex)结构的 **Flags** 成员中生成映射。 请注意，此标志仅应由具有散点/集合支持的总线主机使用。
 
 1.  (ISR 注册中断服务例程) 如 [编写硬件的 AVStream 微型驱动程序](writing-avstream-minidrivers-for-hardware.md)中所述。
 
@@ -36,9 +35,9 @@ ms.locfileid: "89183945"
 
 1. 通过调用 [**KsDeviceRegisterAdapterObject**](/windows-hardware/drivers/ddi/ks/nf-ks-ksdeviceregisteradapterobject)，将 DMA 适配器对象注册到 AVStream。
 
-微型驱动程序通过在对[**KsDeviceRegisterAdapterObject**](/windows-hardware/drivers/ddi/ks/nf-ks-ksdeviceregisteradapterobject)的调用中提供*MaxMappingByteCount*参数来指定单个散点/集合映射的最大大小。
+微型驱动程序通过在对 [**KsDeviceRegisterAdapterObject**](/windows-hardware/drivers/ddi/ks/nf-ks-ksdeviceregisteradapterobject)的调用中提供 *MaxMappingByteCount* 参数来指定单个散点/集合映射的最大大小。
 
-如果任何散点/集合映射超出了此最大大小，则 AVStream 会自动将映射拆分为多个散点/集合映射，每个映射的大小不能大于在 *MaxMappingByteCount*中指定的大小。
+如果任何散点/集合映射超出了此最大大小，则 AVStream 会自动将映射拆分为多个散点/集合映射，每个映射的大小不能大于在 *MaxMappingByteCount* 中指定的大小。
 
 还必须提供 [*AVStrMiniPinProcess*](/windows-hardware/drivers/ddi/ks/nc-ks-pfnkspin) 回调例程。 驱动程序编写器应为此回调选择合适的功能。 例如，你可以执行以下操作：
 

@@ -1,9 +1,8 @@
 ---
 title: PixelsPerLine 元素
-description: 所需的 PixelsPerLine 元素描述的确切宽度，以像素为单位，最终输出图像。
-ms.assetid: aad46ca7-025e-4f50-9bc5-7f584a7bf684
+description: 必需的 PixelsPerLine 元素描述最终输出图像的精确宽度（以像素为单位）。
 keywords:
-- PixelsPerLine 元素成像设备
+- PixelsPerLine 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: beb284b4f16157c775febd4ede0838f122f43f81
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c6c483d7224afb5d3bfb0e9e349e4f247d292132
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375853"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841087"
 ---
 # <a name="pixelsperline-element"></a>PixelsPerLine 元素
 
 
-所需**PixelsPerLine**元素描述的确切宽度，以像素为单位，最终输出图像。
+必需的 **PixelsPerLine** 元素描述最终输出图像的精确宽度（以像素为单位）。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -41,12 +40,12 @@ ms.locfileid: "63375853"
 <a name="text-value"></a>文本值
 ----------
 
-必需。 一个从 1 到 2147483647 范围内的整数值。
+必需。 介于1到2147483647之间的整数值。
 
 ## <a name="child-elements"></a>子元素
 
 
-没有子元素。
+没有任何子元素。
 
 ## <a name="parent-elements"></a>父元素
 
@@ -73,7 +72,7 @@ ms.locfileid: "63375853"
 <a name="remarks"></a>备注
 -------
 
-指定的值说明了确切宽度 （像素），将使用当前生成的最终输出图像[ **ScanTicket** ](scanticket.md)要验证的设置。 此宽度包括旋转和扫描程序可能再传输到客户端扫描图像执行任何调整。
+指定的值描述最终输出图像的精确宽度（以像素为单位），该输出图像将使用当前正在验证的 [**ScanTicket**](scanticket.md) 设置生成。 此宽度包括旋转以及扫描程序在将扫描图像传输到客户端之前可能对其执行的任何调整。
 
 ## <a name="see-also"></a>请参阅
 

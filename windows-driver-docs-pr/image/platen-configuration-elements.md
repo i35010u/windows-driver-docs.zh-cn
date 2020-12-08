@@ -1,30 +1,29 @@
 ---
 title: 辊配置元素
 description: 辊配置元素
-ms.assetid: 8f3d61cc-1aee-4f2d-82c3-1bd357c8e771
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3877e0754708debee4223a925a6678616dfe01e3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 591a109b9b84c1fe1112520485adb97ee783942a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360695"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841085"
 ---
 # <a name="platen-configuration-elements"></a>辊配置元素
 
 
-本部分介绍 Web Services for Devices (WSD) 扫描服务架构的辊配置的元素。 辊配置元素描述的平板扫描辊上扫描程序提供的功能。
+本部分介绍 (WSD) 扫描服务架构的设备 Web 服务的影印配置元素。 "影印" 配置元素说明扫描仪上可用的平板扫描影印功能。
 
-架构描述以下辊配置元素：
+此架构描述以下影印配置元素：
 
 [**ColorEntry**](colorentry.md)
 
-[**Height**](height.md)
+[**高度**](height.md)
 
-[**高度**](heights.md)
+[**Heights**](heights.md)
 
-[**辊**](platen.md)
+[**Platen**](platen.md)
 
 [**PlatenColor**](platencolor.md)
 
@@ -36,7 +35,7 @@ ms.locfileid: "63360695"
 
 [**PlatenResolutions**](platenresolutions.md)
 
-[**Width**](width.md)
+[**宽度**](width.md)
 
 [**Widths**](widths.md)
 

@@ -1,7 +1,6 @@
 ---
 title: 'StorPortEnablePassive 规则 (storport) '
 description: 此规则验证不会从 HwInitialize 以外的任何 StorPort 微型端口驱动程序例程中调用 StorPortEnablePassiveInitialization。
-ms.assetid: 3B6EDA79-B17D-43A7-B1A3-BCC7134D13EA
 ms.date: 05/21/2018
 keywords:
 - 'StorPortEnablePassive 规则 (storport) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 98eda348ee31f7d1365389a67e6efa28e373ba64
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: af3035f55593928db19add6b41813b4fec0f398a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107312"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840189"
 ---
 # <a name="storportenablepassive-rule-storport"></a>StorPortEnablePassive 规则 (storport) 
 
 
-此规则验证不会从**HwInitialize**以外的任何 StorPort 微型端口驱动程序例程中调用**StorPortEnablePassiveInitialization** 。
+此规则验证不会从 **HwInitialize** 以外的任何 StorPort 微型端口驱动程序例程中调用 **StorPortEnablePassiveInitialization** 。
 
 **驱动程序模型： Storport**
 

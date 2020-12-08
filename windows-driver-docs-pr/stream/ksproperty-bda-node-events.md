@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ BDA \_ 节点 \_ 事件
 description: 客户端使用 KSPROPERTY \_ BDA \_ 节点 \_ 事件检索节点上支持的事件列表。
-ms.assetid: 4923a88b-abb3-4608-95b3-b0e74eeadaa8
 keywords:
 - KSPROPERTY_BDA_NODE_EVENTS 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f7d47f48d5e0141152873abbb47da257ce367a47
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 415f720d1c913c3037a0b4903310fe3ffb207473
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186137"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840257"
 ---
 # <a name="ksproperty_bda_node_events"></a>KSPROPERTY \_ BDA \_ 节点 \_ 事件
 
@@ -61,7 +60,7 @@ ms.locfileid: "89186137"
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 节点支持的事件列表是 Guid 列表。
@@ -78,7 +77,7 @@ ms.locfileid: "89186137"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Bdamedia (包含 Bdamedia) </td>
 </tr>
 </tbody>

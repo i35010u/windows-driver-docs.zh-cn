@@ -1,15 +1,14 @@
 ---
 title: YUV-RGB 数据范围转换
-ms.assetid: 0A439686-0BAE-4E4D-AA23-06A6EF72C4B3
 description: 输入数据范围对预期的视频转换行为的影响
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e0f278d457924c5af25d56ee2fd4a340ed0819a4
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 07abb939e5a30a85ede6348f541d8bdb45c8c315
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063430"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839557"
 ---
 # <a name="span-iddisplayyuv-rgb_data_range_conversionsspanyuv-rgb-data-range-conversions"></a><span id="display.yuv-rgb_data_range_conversions"></span>YUV-RGB 数据范围转换
 

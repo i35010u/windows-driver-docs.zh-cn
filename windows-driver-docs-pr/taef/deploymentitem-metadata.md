@@ -1,15 +1,14 @@
 ---
 title: DeploymentItem 元数据
 description: DeploymentItem 元数据
-ms.assetid: 7F18CD71-F000-4231-9093-82980EB7584D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 36303af5f665758b44d967f87fc6b06c0c16758a
-ms.sourcegitcommit: ff471af346839fc119058b4fc30fe454b66a5f12
+ms.openlocfilehash: 3ac6e9a94928137d2338ad6b02fd38d4f207f28a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94974658"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840471"
 ---
 # <a name="deploymentitem-metadata"></a>DeploymentItem 元数据
 

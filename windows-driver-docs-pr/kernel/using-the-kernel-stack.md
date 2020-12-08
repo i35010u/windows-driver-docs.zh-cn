@@ -1,19 +1,18 @@
 ---
 title: 使用内核堆栈
 description: 使用内核堆栈
-ms.assetid: f1df01f4-f156-4267-a4a0-c548e16c02ea
 keywords:
 - 内存管理 WDK 内核，内核堆栈
 - 内核模式堆栈空间 WDK
 - 内核堆栈空间 WDK
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 496afd3ebfe401a23cd36b29c1fbf47abe03c98b
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: bc35fc77d7359a3b2eac96535e5f66f25711baee
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185581"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840677"
 ---
 # <a name="using-the-kernel-stack"></a>使用内核堆栈
 

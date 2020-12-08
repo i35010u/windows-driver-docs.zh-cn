@@ -1,7 +1,6 @@
 ---
 title: '\_ \_ \_ 来自 EXPR 的 EXT TDOP 集 \_'
 description: '\_ \_ \_ \_ 用于调试请求的 EXPR 子操作的 ext TDOP 集 \_ \_ Ext \_ 类型化的 \_ 数据 \_ ANSI 请求操作返回一个表示表达式的值的类型化数据说明。'
-ms.assetid: 51d5884e-da7f-4bce-ba49-12500208d117
 keywords:
 - EXT_TDOP_SET_FROM_EXPR Windows 调试
 topic_type:
@@ -12,19 +11,19 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 78581755eced11de552f701221ecb763d2157cfc
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c58df5d677e7ffec9049f6c00c7b32720a532ebd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206813"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840215"
 ---
 # <a name="ext_tdop_set_from_expr"></a>\_ \_ \_ 来自 EXPR 的 EXT TDOP 集 \_
 
 
-\_ \_ \_ \_ 用于调试请求的 EXPR 子操作的 ext TDOP 集[** \_ \_ ext \_ 类型化的 \_ 数据 \_ ANSI**](debug-request-ext-typed-data-ansi.md)[**请求**](request.md)操作返回一个表示表达式的值的类型化数据说明。
+\_ \_ \_ \_ 用于调试请求的 EXPR 子操作的 ext TDOP 集 [**\_ \_ ext \_ 类型化的 \_ 数据 \_ ANSI**](debug-request-ext-typed-data-ansi.md)[**请求**](request.md)操作返回一个表示表达式的值的类型化数据说明。
 
-**参数**
+**Parameters**
 
 <span id="Operation"></span><span id="operation"></span><span id="OPERATION"></span>**运作**  
 \_ \_ \_ \_ 对于此子操作，请将设置为 "EXT TDOP set FROM EXPR"。
@@ -44,7 +43,7 @@ ms.locfileid: "89206813"
 <a name="remarks"></a>备注
 -------
 
-\_来自 EXPR 的 ext TDOP \_ SET \_ \_ 是[**ext \_ TDOP**](/windows-hardware/drivers/ddi/wdbgexts/ne-wdbgexts-_ext_tdop)枚举中的一个值。
+\_来自 EXPR 的 ext TDOP \_ SET \_ \_ 是 [**ext \_ TDOP**](/windows-hardware/drivers/ddi/wdbgexts/ne-wdbgexts-_ext_tdop)枚举中的一个值。
 
 此子操作的参数是 [**EXT \_ 类型化 \_ 数据**](/windows-hardware/drivers/ddi/wdbgexts/ns-wdbgexts-_ext_typed_data) 结构的成员。 \_ \_ 此子操作不使用上面的参数部分中未列出的 EXT 类型化数据的成员，并且应将其设置为零。 前面参数部分中的成员的说明指定了成员的用途。 有关更多详细信息，请参阅 **EXT \_ 类型化 \_ 数据** 。
 

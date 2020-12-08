@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ CAMERACONTROL \_ 曝露
 description: 用户模式客户端使用 KSPROPERTY \_ CAMERACONTROL \_ 公开的属性获取或设置数码相机的曝光时间。 此属性是可选的。
-ms.assetid: e9ad7a82-0c2d-46e5-a5d5-9f33848f129c
 keywords:
 - KSPROPERTY_CAMERACONTROL_EXPOSURE 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 79b9cdb4dd67b7c507e1b256f6cee961b3171ee8
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: ad47243e733c45a9ceed0d3d3a4007717aecda10
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105272"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840567"
 ---
 # <a name="ksproperty_cameracontrol_exposure"></a>KSPROPERTY \_ CAMERACONTROL \_ 曝露
 
@@ -141,7 +140,7 @@ KSPROPERTY **Value** \_ CAMERACONTROL S 结构的值成员 \_ 指定了公开的
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

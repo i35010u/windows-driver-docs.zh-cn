@@ -1,6 +1,5 @@
 ---
 title: Windows 8.1 中的 YUV 格式范围
-ms.assetid: D76FFB8C-CA42-446E-826F-52982B1849E5
 description: 用户模式显示驱动程序如何利用 YUV 视频格式
 keywords:
 - 全范围 YUV WDK 显示
@@ -9,19 +8,19 @@ keywords:
 - YUV 格式和 WMF 支持 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ec5c83a33b9144a9d30fd42d6808eb47fba80c1d
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 98f830a1168032c8aef0f40893161aa0f8c7d8f2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067016"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839561"
 ---
-# <a name="yuv-format-ranges-in-windows81"></a>Windows 8.1 中的 YUV 格式范围
+# <a name="yuv-format-ranges-in-windows-81"></a>Windows 8.1 中的 YUV 格式范围
 
 
 应用可向用户模式显示驱动程序发出信号，以利用 \[ 从 Windows 8.1 开始的扩展范围0，255 \] YUV 视频格式，如下表所示：
 
-| YUV 范围                | 输入数据范围 | 典型用途                                           | 标准                                                  |
+| YUV 范围                | 输入数据范围 | 典型用途                                           | Standard                                                  |
 |--------------------------|------------------|---------------------------------------------------------|-----------------------------------------------------------|
 | *扩展范围*         | \[0，255\]       | 消费者设备：网络摄像机和点和拍摄摄像头 | JFIF standard 和 MJPEG 视频格式使用作为默认值 |
 | *studio 亮度范围* | \[16，235\]      | 职业相机和视频设备                | ITU BT. 601 和 BT。为709                                     |
@@ -64,7 +63,7 @@ ms.locfileid: "89067016"
 -   [**DXVAHDDDI \_ 流 \_ 状态 \_ 输入 \_ 颜色 \_ 空间 \_ 数据**](/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_dxvahdddi_stream_state_input_color_space_data)
 -   [**DXVAHDDDI \_ VPDEVCAPS**](/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_dxvahdddi_vpdevcaps)
 
-**注意**   WDDM 1.3 和更高版本的用户模式显示驱动程序必须支持所有这些新的和更改的结构和枚举。
+**注意**  WDDM 1.3 和更高版本的用户模式显示驱动程序必须支持所有这些新的和更改的结构和枚举。
 
  
 

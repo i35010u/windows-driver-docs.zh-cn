@@ -1,22 +1,21 @@
 ---
 title: 扫描仪配置元素
 description: 扫描仪配置元素
-ms.assetid: f8adb58e-389e-4411-bbc0-3f74bba691df
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3095866b0e682d6ec00aaf7a9bf7f4aa65eb5c60
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 717e4df100b545ecd2652fb354c20a44ed55daad
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364366"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841265"
 ---
 # <a name="scanner-configuration-elements"></a>扫描仪配置元素
 
 
-本部分介绍 Web Services for Devices (WSD) 扫描服务架构的扫描程序配置的元素。
+本部分介绍 (WSD) 扫描服务架构的设备 Web 服务的扫描程序配置元素。
 
-架构包括以下配置元素：
+该架构包含以下配置元素：
 
 [**ScannerConfiguration**](scannerconfiguration.md)
 
@@ -26,7 +25,7 @@ ms.locfileid: "63364366"
 
 [ADF 配置元素](adf-configuration-elements.md)
 
-[电影配置元素](film-configuration-elements.md)
+[底片配置元素](film-configuration-elements.md)
 
  
 

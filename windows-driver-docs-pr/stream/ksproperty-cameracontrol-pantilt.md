@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ CAMERACONTROL \_ PANTILT
 description: KSPROPERTY \_ CAMERACONTROL \_ PANTILT 属性指定绝对平移和倾斜设置。
-ms.assetid: d6f151c9-a428-4d76-9854-5064d901643e
 keywords:
 - KSPROPERTY_CAMERACONTROL_PANTILT 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cdd00441841a6a4cbab5b4693509261837669ab
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: af7184765a033a665184b2eb774c820e5eecaf52
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107514"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840541"
 ---
 # <a name="ksproperty_cameracontrol_pantilt"></a>KSPROPERTY \_ CAMERACONTROL \_ PANTILT
 
@@ -72,7 +71,7 @@ KSPROPERTY \_ CAMERACONTROL \_ PANTILT 属性指定绝对平移和倾斜设置�
 <a name="remarks"></a>备注
 -------
 
-[**KSPROPERTY \_ CAMERACONTROL \_ s2**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s2)或[**KSPROPERTY \_ CAMERACONTROL \_ 节点 \_ s2**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s2)结构的**Value1**成员指定平移设置。 **Value2**成员指定倾斜设置。
+[**KSPROPERTY \_ CAMERACONTROL \_ s2**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s2)或 [**KSPROPERTY \_ CAMERACONTROL \_ 节点 \_ s2**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s2)结构的 **Value1** 成员指定平移设置。 **Value2** 成员指定倾斜设置。
 
 <a name="requirements"></a>要求
 ------------
@@ -94,7 +93,7 @@ KSPROPERTY \_ CAMERACONTROL \_ PANTILT 属性指定绝对平移和倾斜设置�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY \_ CAMERACONTROL \_ S2**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s2)

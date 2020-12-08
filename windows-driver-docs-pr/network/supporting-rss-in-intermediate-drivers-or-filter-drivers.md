@@ -1,22 +1,21 @@
 ---
 title: 在中间驱动程序或筛选器驱动程序中支持 RSS
 description: 在中间驱动程序或筛选器驱动程序中支持 RSS
-ms.assetid: 5e1bfbb0-0b7a-4a9d-a228-4089f7208880
 keywords:
-- 接收方缩放 WDK 网络连接、 中间驱动程序
-- RSS WDK 网络连接、 中间驱动程序
+- 接收方缩放 WDK 网络，中间驱动程序
+- RSS WDK 网络，中间驱动程序
 - 接收方缩放 WDK 网络，筛选器驱动程序
-- RSS WDK 网络、 筛选器驱动程序
+- RSS WDK 网络，筛选器驱动程序
 - 筛选器驱动程序 WDK RSS
 - 中间驱动程序 WDK RSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 43374f491a5540a6dfc23e609effca7fc8f8e621
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2df3254193a195ad735fcaf52c9097e9cba77675
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384216"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841161"
 ---
 # <a name="supporting-rss-in-intermediate-drivers-or-filter-drivers"></a>在中间驱动程序或筛选器驱动程序中支持 RSS
 
@@ -24,23 +23,23 @@ ms.locfileid: "63384216"
 
 
 
-所有中间驱动程序和筛选器驱动程序应该至少传递 OID 请求、 其他请求和状态的指示。 中间驱动程序或筛选器驱动程序应提供其他驱动程序特定支持接收方缩放 (RSS) 如果驱动程序执行以下任一项：
+所有中间驱动程序和筛选器驱动程序至少应传递 OID 请求、其他请求和状态指示。 中间驱动程序或筛选器驱动程序应为接收方缩放提供额外的特定于驱动程序的支持 (RSS) 如果驱动程序执行以下任一操作：
 
--   之后，发送请求。
+-   发起发送请求。
 
--   源自接收的指示。
+-   源自接收指示。
 
--   队列将请求发送或接收供以后处理的迹象。
+-   队列发送请求或接收指示以便以后处理。
 
-跳过发送和接收处理的筛选器驱动程序不需要执行其他任何组件即可支持 RSS。 有关发送或接收请求筛选器驱动程序中有关跳过的详细信息，请参阅[数据绕过模式](data-bypass-mode.md)。
+绕过发送和接收处理的筛选器驱动程序无需执行任何其他操作即可支持 RSS。 有关跳过筛选器驱动程序中的发送或接收请求的详细信息，请参阅 [数据绕过模式](data-bypass-mode.md)。
 
-QoS 计划程序是应支持 RSS 的筛选器驱动程序的示例。 这类驱动程序队列发送适当的时候发送的数据包。 筛选器驱动程序应使用给定的连接协议驱动程序使用同一个 CPU。
+QoS 计划程序是应支持 RSS 的筛选器驱动程序的一个示例。 此类驱动程序在适当的时间发送用于发送的数据包。 筛选器驱动程序应使用协议驱动程序为给定连接使用的同一个 CPU。
 
-中间驱动程序或不支持 RSS 的筛选器驱动程序可以截获 RSS OID 请求并通过报告不支持 RSS 禁用 RSS。
+不支持 RSS 的中间驱动程序或筛选器驱动程序可以通过报告不支持 rss 来截获 RSS OID 请求并禁用 RSS。
 
-筛选器驱动程序或中间支持 RSS 的驱动程序可以使用从 RSS Oid 信息要将连接分配到相同的 Cpu 使用的协议驱动程序和微型端口驱动程序。
+支持 RSS 的筛选器驱动程序或中间驱动程序可以使用 RSS Oid 中的信息将连接分配到协议驱动程序和微型端口驱动程序所使用的相同 Cpu。
 
-有关 RSS Oid 的详细信息，请参阅[RSS 配置](rss-configuration.md)。
+有关 RSS Oid 的详细信息，请参阅 [Rss 配置](rss-configuration.md)。
 
  
 

@@ -1,15 +1,14 @@
 ---
 title: MB 接口概述
 description: MB 接口概述
-ms.assetid: fcb79029-4225-4759-a130-6ef8b3f2d25d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a739650cbcf50546cbb96f042569c50181c3b2b8
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a0cb1344433aba63ebaddc3cff9e6fa8be056cf8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207503"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840643"
 ---
 # <a name="mb-interface-overview"></a>MB 接口概述
 
@@ -26,7 +25,7 @@ Windows 8 MB 微型端口驱动程序基于 [NDIS 6.30](introduction-to-ndis-6-3
 
 请注意，在整个文档中，将 *无线广域网* (WWAN) 和 *移动宽带* (MB) 用于表示移动宽带技术。
 
-本文档中的 " *激活* " 和 " *激活* " 一词具有两种不同的含义。 *激活*期限与服务激活相关，例如，当网络提供商必须在使用提供程序的服务之前显式启用 MB 订阅。 术语 *激活* 特定于在基于 GSM 的 (GPRS/EDGE/UMTS/HSDPA/TD-SCDMA) 技术中设置连接。 例如， *pdp 上下文激活* 是指根据 PDP 上下文中指定的参数设置 MB 连接。
+本文档中的 " *激活* " 和 " *激活* " 一词具有两种不同的含义。 *激活* 期限与服务激活相关，例如，当网络提供商必须在使用提供程序的服务之前显式启用 MB 订阅。 术语 *激活* 特定于在基于 GSM 的 (GPRS/EDGE/UMTS/HSDPA/TD-SCDMA) 技术中设置连接。 例如， *pdp 上下文激活* 是指根据 PDP 上下文中指定的参数设置 MB 连接。
 
 *Sim 访问* 是指 (SIM （也称为 R-UIM) ）访问订阅服务器标识模块。 如果 MB 设备没有 SIM/R-UIM 作为物理实体，而是在设备中有一个逻辑等效项，则此术语同样适用于该逻辑环路。 当不需要使用 SIM 时，无需使用微型端口驱动程序即可从 SIM 中检索信息以完成请求。
 

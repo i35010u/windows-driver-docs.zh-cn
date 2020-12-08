@@ -1,17 +1,16 @@
 ---
 title: OID_CO_ADD_ADDRESS
-description: 本主题介绍 OID_CO_ADD_ADDRESS 对象标识符（OID）。
-ms.assetid: ca6bb3eb-87db-4e71-9585-34cd1e978b6a
+description: 本主题介绍) OID_CO_ADD_ADDRESS 对象标识符 (OID。
 keywords:
 - OID_CO_ADD_ADDRESS
 ms.date: 11/03/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 05a27322f98fc08570bfb2d17d51aa115c90852a
-ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
+ms.openlocfilehash: cb2ca63ccdbb51da7389e59a67867a0664e200fa
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85916837"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839469"
 ---
 # <a name="oid_co_add_address"></a>OID_CO_ADD_ADDRESS
 
@@ -27,7 +26,7 @@ typedef struct _CO_ADDRESS{
 此结构的成员包含以下信息：
 
 **AddressSize**  
-指定**地址**处的结构的大小（以字节为单位）。
+指定 **地址** 处的结构的大小（以字节为单位）。
 
 **Address**  
 指定包含别名地址的可变长度数组。 地址格式特定于呼叫管理器使用的信号协议。
@@ -37,5 +36,5 @@ typedef struct _CO_ADDRESS{
 
 ## <a name="requirements"></a>要求
 
-**版本**： Windows Vista 和更高版本的**标头**： Ntddndis （包括 Ndis .h）
+**版本**： Windows Vista 和更高版本的 **标头**： Ntddndis (包括 Ndis .h) 
 

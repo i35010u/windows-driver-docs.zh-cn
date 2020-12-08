@@ -1,15 +1,14 @@
 ---
 title: 用于建议 VidPN 拓扑的系统调用
 description: 用于建议 VidPN 拓扑的系统调用
-ms.assetid: cc23be93-be31-4069-960c-268a8b151063
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ddfd9538d9bddd6dd6fd3bd8935cd58c4c7e7367
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 5130ebee3882cc50c3cd5bce7de43f1db9f20925
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063972"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839571"
 ---
 # <a name="system-calls-to-recommend-vidpn-topology"></a>用于建议 VidPN 拓扑的系统调用
 

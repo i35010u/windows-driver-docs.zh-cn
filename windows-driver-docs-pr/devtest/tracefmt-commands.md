@@ -1,7 +1,6 @@
 ---
 title: Tracefmt 命令
 description: 若要使用 Tracefmt，请在命令提示符窗口中键入命令。
-ms.assetid: 79e56383-ce67-4716-98d6-4266b76a4b0a
 keywords:
 - Tracefmt 命令驱动程序开发工具
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 77277cb25cdac0de3a495b0b6337f806c8291ab3
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: d2f38f1b0b43d56caa3c54408f9d0dc631a3d857
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383323"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839661"
 ---
 # <a name="tracefmt-commands"></a>Tracefmt 命令
 
@@ -64,18 +63,18 @@ ms.locfileid: "89383323"
 *ImageFiles* 表示 [跟踪提供程序](trace-provider.md) ( .exe、.dll 或 .sys) 的一个或多个二进制文件的路径和文件名。 使用分号 (; ) 分隔图像文件名。
 
 <span id="_______-r_______SymbolPaths______"></span><span id="_______-r_______symbolpaths______"></span><span id="_______-R_______SYMBOLPATHS______"></span>**-r** *SymbolPaths*   
-指定 **-i**中指定的映像文件的专用 PDB 符号文件的位置。
+指定 **-i** 中指定的映像文件的专用 PDB 符号文件的位置。
 
-*SymbolPaths* 表示存储私有符号或符号服务器路径的目录的一个或多个路径。 使用分号 (; ) 分隔路径名。 *SymbolPaths*中的路径名称可以包含通配符，如星号 (\*) 以表示多个字符， (？ ) 表示单个字符。
+*SymbolPaths* 表示存储私有符号或符号服务器路径的目录的一个或多个路径。 使用分号 (; ) 分隔路径名。 *SymbolPaths* 中的路径名称可以包含通配符，如星号 (\*) 以表示多个字符， (？ ) 表示单个字符。
 
-如果在命令中包含 **-i** ，但忽略 **-r**，则 Tracepdb 会在% \_ NT \_ 符号 \_ 路径% 环境变量指定的路径中搜索指定映像的 PDB 文件。 如果未设置环境变量，则 Tracepdb 会在默认符号路径中搜索**srv \* \\ \\ \\ \\ 符号 \\ \\ 符号**。
+如果在命令中包含 **-i** ，但忽略 **-r**，则 Tracepdb 会在% \_ NT \_ 符号 \_ 路径% 环境变量指定的路径中搜索指定映像的 PDB 文件。 如果未设置环境变量，则 Tracepdb 会在默认符号路径中搜索 **srv \* \\ \\ \\ \\ 符号 \\ \\ 符号**。
 
 <span id="_______-p_______TMFPath______"></span><span id="_______-p_______tmfpath______"></span><span id="_______-P_______TMFPATH______"></span>**-p** *TMFPath*   
 指定存储 TMF 文件的目录的路径。
 
 如果使用 **-p** 而不使用 **-i**，Tracefmt 将在 **-p** 指定的路径中搜索现有的 TMF 文件。 如果省略 **-p** ，Tracefmt 将在% TRACE \_ 格式搜索路径% 环境变量的值中查找 TMF 文件 \_ \_ （如果已设置）。 否则，Tracefmt 会尝试在 tmf 文件中应用格式说明。
 
-将 **-p** 与 **-i**一起使用时，Tracefmt 会将它创建的 TMF 文件放在 **-p**指定的目录中。 如果省略 **-p** ，则 Tracefmt 会将 TMF 文件放在% TRACE 格式搜索路径% 环境变量的值所指定的目录中 \_ \_ \_ （如果已设置）。 否则，Tracefmt 会将文件放在本地目录中。
+将 **-p** 与 **-i** 一起使用时，Tracefmt 会将它创建的 TMF 文件放在 **-p** 指定的目录中。 如果省略 **-p** ，则 Tracefmt 会将 TMF 文件放在% TRACE 格式搜索路径% 环境变量的值所指定的目录中 \_ \_ \_ （如果已设置）。 否则，Tracefmt 会将文件放在本地目录中。
 
 <span id="_______-h_____"></span><span id="_______-H_____"></span>**-h**  | **/?**  
 显示帮助。
@@ -148,9 +147,9 @@ ms.locfileid: "89383323"
 
 如果省略 **-i** 参数，Tracefmt 将使用以下方法来查找 TMF 文件。 按 Tracefmt 使用这些方法的顺序列出这些方法。
 
--   **-Tmf**参数。
+-   **-Tmf** 参数。
 
--   **-P**参数。
+-   **-P** 参数。
 
 -   % TRACE \_ 格式 \_ 搜索 \_ 路径% 环境变量。
 
@@ -186,7 +185,7 @@ No Format Information found.
 
 **设置 QPC 时间戳的格式**
 
-Tracefmt **) 正确** 设置系统性能计数器时钟 (的值的格式。 如果使用的是高分辨率时间，请使用 Tracerpt （Windows XP 及更高版本的 Windows 中包含的工具）来格式化跟踪消息。 有关详细信息，请参阅[**Tracelog 命令语法**](tracelog-command-syntax.md)中 **-UsePerfCounter**参数的描述。
+Tracefmt **) 正确** 设置系统性能计数器时钟 (的值的格式。 如果使用的是高分辨率时间，请使用 Tracerpt （Windows XP 及更高版本的 Windows 中包含的工具）来格式化跟踪消息。 有关详细信息，请参阅 [**Tracelog 命令语法**](tracelog-command-syntax.md)中 **-UsePerfCounter** 参数的描述。
 
 **不顺序跟踪消息**
 

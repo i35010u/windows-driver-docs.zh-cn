@@ -1,7 +1,6 @@
 ---
 title: KSMFT_CATEGORY_DEMULTIPLEXER
 description: KSMFT_CATEGORY_DEMULTIPLEXER
-ms.assetid: 8cb22e49-67e5-474f-8e71-d540c789c798
 keywords:
 - KSMFT_CATEGORY_DEMULTIPLEXER 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c196bd2f0f0d5ba67814d90dc913e5e86c745d9d
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: ce99cb89b181fe07ecdb2af705055a3c15b1e28a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097333"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839503"
 ---
 # <a name="ksmft_category_demultiplexer"></a>KSMFT_CATEGORY_DEMULTIPLEXER
 

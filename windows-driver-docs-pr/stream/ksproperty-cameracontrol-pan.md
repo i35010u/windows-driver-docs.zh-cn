@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ CAMERACONTROL \_ 平移
 description: 用户模式客户端使用 KSPROPERTY \_ CAMERACONTROL \_ 平移属性来获取或设置照相机的平移设置。 此属性是可选的。
-ms.assetid: 765eecbf-ecde-4268-9ab5-c0c099c06d2f
 keywords:
 - KSPROPERTY_CAMERACONTROL_PAN 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 202673d9dd1adc6b9b629ca8e23e217398ef9312
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: acea4b0368c7823e5fa75ffee19731f72f55bcc2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102412"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840545"
 ---
 # <a name="ksproperty_cameracontrol_pan"></a>KSPROPERTY \_ CAMERACONTROL \_ 平移
 
@@ -69,7 +68,7 @@ ms.locfileid: "90102412"
 
 支持此属性的每个视频捕获微型驱动程序都必须为此属性定义一个范围和默认值。 设备的范围必须是-180 到 + 180。 默认值必须为0。
 
-**警告**   在编写或测试应用程序时，应注意，在实践中，某些驱动程序定义了一系列自定义的平移值和自定义步骤值，这些值可能不基于典型单位。 驱动程序可能会以物理方式或数字方式实现平移控件。
+**警告**  在编写或测试应用程序时，应注意，在实践中，某些驱动程序定义了一系列自定义的平移值和自定义步骤值，这些值可能不基于典型单位。 驱动程序可能会以物理方式或数字方式实现平移控件。
 
  
 
@@ -94,7 +93,7 @@ KSPROPERTY **Value** \_ CAMERACONTROL S 结构的 Value 成员 \_ 指定平移�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

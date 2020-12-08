@@ -1,19 +1,18 @@
 ---
 title: NDIS 6.20 中的电源管理增强功能
 description: 介绍 NDIS 6.20 电源管理增强功能，以减少计算机能耗
-ms.assetid: 99900def-66f8-4ba1-a7c1-3a5e9f456ca1
 keywords:
 - NDIS 6.20 WDK，电源管理增强功能
 - 电源管理 WDK 网络，NDIS 6.20 增强功能
 - 电源管理增强功能 WDK NDIS 6.20
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 422bb22f53aa3c4dad962e0c926d02dbd3d3da1b
-ms.sourcegitcommit: db9d058a9e592d4c47c67fc14f04f0ddc3aa92af
+ms.openlocfilehash: 5c8027cb6ee351a25fdde9ccc3966bfe431ce52b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91989831"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841167"
 ---
 # <a name="power-management-enhancements-in-ndis-620"></a>NDIS 6.20 中的电源管理增强
 

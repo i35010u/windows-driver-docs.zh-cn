@@ -1,7 +1,6 @@
 ---
 title: QueryDisplayConfig 摘要和方案
 description: QueryDisplayConfig 摘要和方案
-ms.assetid: a556b3d7-3cac-49b1-99db-7ce8a844a8a8
 keywords:
 - 连接显示 WDK Windows 7 显示、CCD Api、QueryDisplayConfig
 - 连接显示 WDK Windows Server 2008 R2 display、CCD Api、QueryDisplayConfig
@@ -13,19 +12,19 @@ keywords:
 - QueryDisplayConfig WDK Windows Server 2008 R2 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f46b7090d971c0d15fab1479ddd400b63138e26
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 197cf421f0d0e4708082aba09a6df16b18ad770a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715814"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839581"
 ---
 # <a name="querydisplayconfig-summary-and-scenarios"></a>QueryDisplayConfig 摘要和方案
 
 
 本部分仅适用于 Windows 7 和更高版本，以及 windows Server 2008 R2 及更高版本的 Windows 操作系统。
 
-以下部分概述了调用方如何使用 [**QueryDisplayConfig**](/windows/win32/api/winuser/nf-winuser-querydisplayconfig) CCD 函数并提供使用 **QueryDisplayConfig**的方案。
+以下部分概述了调用方如何使用 [**QueryDisplayConfig**](/windows/win32/api/winuser/nf-winuser-querydisplayconfig) CCD 函数并提供使用 **QueryDisplayConfig** 的方案。
 
 ### <a name="span-idquerydisplayconfig_summaryspanspan-idquerydisplayconfig_summaryspanquerydisplayconfig-summary"></a><span id="querydisplayconfig_summary"></span><span id="QUERYDISPLAYCONFIG_SUMMARY"></span>QueryDisplayConfig 摘要
 
@@ -43,7 +42,7 @@ ms.locfileid: "90715814"
 
 ### <a name="span-idquerydisplayconfig_scenariosspanspan-idquerydisplayconfig_scenariosspanquerydisplayconfig-scenarios"></a><span id="querydisplayconfig_scenarios"></span><span id="QUERYDISPLAYCONFIG_SCENARIOS"></span>QueryDisplayConfig 方案
 
-在以下情况下，将调用[**QueryDisplayConfig**](/windows/win32/api/winuser/nf-winuser-querydisplayconfig) ：
+在以下情况下，将调用 [**QueryDisplayConfig**](/windows/win32/api/winuser/nf-winuser-querydisplayconfig) ：
 
 -   当控制面板首次启动时，显示控制面板小程序会调用 [**QueryDisplayConfig**](/windows/win32/api/winuser/nf-winuser-querydisplayconfig) 来向控制面板的用户界面填充当前已应用的拓扑。 当前应用的拓扑包括启用强制投影时所显示的拓扑。
 

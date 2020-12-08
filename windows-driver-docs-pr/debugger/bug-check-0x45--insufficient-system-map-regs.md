@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x45 INSUFFICIENT_SYSTEM_MAP_REGS
-description: INSUFFICIENT_SYSTEM_MAP_REGS bug 检查具有 0x00000045 值。检查此错误极少出现。
-ms.assetid: fc01b455-a0b5-4d25-a115-076c227ed303
+description: INSUFFICIENT_SYSTEM_MAP_REGS bug 检查的值为0x00000045。此 bug 检查很少出现。
 keywords:
 - Bug 检查 0x45 INSUFFICIENT_SYSTEM_MAP_REGS
 - INSUFFICIENT_SYSTEM_MAP_REGS
@@ -13,22 +12,22 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c8314873f4fe5155f02ead9fc28fbb35207c0c4
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 07af53a7f259b2a68e7d462c21c6e5d6e8b9d9f7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519434"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840457"
 ---
-# <a name="bug-check-0x45-insufficientsystemmapregs"></a>Bug 检查 0x45：不足\_系统\_映射\_REGS
+# <a name="bug-check-0x45-insufficient_system_map_regs"></a>Bug 检查0x45： \_ 系统 \_ 映射不足 \_ REGS
 
 
-不足\_系统\_映射\_REGS bug 检查的值为 0x00000045。
+\_系统 \_ 映射 \_ REGS bug 检查的值为0x00000045。
 
-检查此错误极少出现。
+此 bug 检查很少出现。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
  

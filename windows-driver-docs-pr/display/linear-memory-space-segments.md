@@ -1,19 +1,18 @@
 ---
 title: 线性内存空间段
 description: 线性内存空间段
-ms.assetid: c937eb39-b9ec-454e-98c5-7f5274328226
 keywords:
 - 内存段 WDK 显示，线性内存空间段
 - 线性内存空间段 WDK 显示
 - 内存空间段 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: feed453aa542cfec581dcacf289ba28c2bd01f14
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: c25f1cc23082b971914036fdd54fcfd736b627f8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065808"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838999"
 ---
 # <a name="linear-memory-space-segments"></a>线性内存空间段
 
@@ -29,7 +28,7 @@ ms.locfileid: "89065808"
 
 -   在一维地址空间中以线性方式进行管理。
 
-驱动程序将[**DXGK \_ SEGMENTDESCRIPTOR**](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_segmentdescriptor)结构的**Flags**成员设置为0，以指定线性内存空间段。 但是，驱动程序可以设置以下位域标志以指示其他段支持：
+驱动程序将 [**DXGK \_ SEGMENTDESCRIPTOR**](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_segmentdescriptor)结构的 **Flags** 成员设置为0，以指定线性内存空间段。 但是，驱动程序可以设置以下位域标志以指示其他段支持：
 
 -   **CpuVisible** ，指示段是 CPU 可访问的。
 

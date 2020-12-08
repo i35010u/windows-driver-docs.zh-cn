@@ -1,15 +1,14 @@
 ---
 title: PoolMon 命令
 description: PoolMon 命令
-ms.assetid: 29f2c664-8a04-4e98-ac80-3900e0076d29
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 143aa4e17442f21a233dea569347366458e99e6d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 22e83752ba5b1cd48ee5abd3a4192654f42efb24
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379881"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841021"
 ---
 # <a name="poolmon-commands"></a>PoolMon 命令
 
@@ -17,11 +16,11 @@ ms.locfileid: "63379881"
 ## <span id="ddk_poolmon_commands_tools"></span><span id="DDK_POOLMON_COMMANDS_TOOLS"></span>
 
 
-PoolMon 具有两个单独但相关，命令集。
+PoolMon 有两个单独的相关命令集。
 
--   [**PoolMon 启动命令**](poolmon-startup-command.md):若要启动 PoolMon，请在命令行上使用的启动命令语法和参数键入命令。
+-   [**PoolMon 启动命令**](poolmon-startup-command.md)：若要启动 PoolMon，请使用 Startup 命令语法和参数在命令行中键入命令。
 
--   [**PoolMon 运行命令**](poolmon-run-time-commands.md):若要在运行时配置 PoolMon，键入运行命令。
+-   [**Poolmon 运行时命令**](poolmon-run-time-commands.md)：若要在运行时配置 PoolMon，请键入运行时命令。
 
  
 

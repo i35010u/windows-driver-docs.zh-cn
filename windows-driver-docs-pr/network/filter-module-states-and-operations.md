@@ -1,7 +1,6 @@
 ---
 title: 筛选器模块状态和操作
 description: 筛选器模块状态和操作
-ms.assetid: b5798865-8332-477b-b155-79a3db6ff6fa
 keywords:
 - 筛选器驱动程序 WDK 网络，状态
 - NDIS 筛选器驱动程序 WDK，状态
@@ -13,12 +12,12 @@ keywords:
 - 运行状态 WDK ne
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a912e3032f8e1b512fa55c4a26e6c8c7ebacec56
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: eaa0bbcc3ed9abfd6ff3972dc8b2cf1f47f8e677
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218418"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840913"
 ---
 # <a name="filter-module-states-and-operations"></a>筛选器模块状态和操作
 
@@ -28,8 +27,8 @@ ms.locfileid: "89218418"
 
 筛选器驱动程序必须支持驱动程序所管理) 的筛选器驱动程序的每个筛选器模块 (实例的下列操作状态：
 
-<a href="" id="detached"></a>分离  
-*分离*状态是筛选器模块的初始状态。 当筛选器模块处于此状态时，NDIS 可以调用筛选器驱动程序的 [*FilterAttach*](/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_attach) 函数将筛选器模块附加到驱动程序堆栈。
+<a href="" id="detached"></a>已分离  
+*分离* 状态是筛选器模块的初始状态。 当筛选器模块处于此状态时，NDIS 可以调用筛选器驱动程序的 [*FilterAttach*](/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_attach) 函数将筛选器模块附加到驱动程序堆栈。
 
 <a href="" id="attaching"></a>附加  
 在 *附加* 状态下，筛选器驱动程序准备将筛选器模块附加到驱动程序堆栈。
@@ -37,10 +36,10 @@ ms.locfileid: "89218418"
 <a href="" id="paused"></a>悬停  
 在 *暂停* 状态下，筛选器驱动程序不执行发送或接收操作。
 
-<a href="" id="restarting"></a>重新启动  
+<a href="" id="restarting"></a>重新  
 在 *重新启动* 状态下，筛选器驱动程序完成为筛选器模块重新启动发送和接收操作所需的任何操作。
 
-<a href="" id="running"></a>耗尽  
+<a href="" id="running"></a>正在运行  
 在 " *正在运行* " 状态下，筛选器驱动程序将执行筛选器模块的正常发送和接收处理。
 
 <a href="" id="pausing"></a>暂停  
@@ -61,7 +60,7 @@ ms.locfileid: "89218418"
 <thead>
 <tr class="header">
 <th align="left">事件/状态</th>
-<th align="left">分离</th>
+<th align="left">已分离</th>
 <th align="left">附加</th>
 <th align="left">已暂停</th>
 <th align="left">重新启动</th>
@@ -92,7 +91,7 @@ ms.locfileid: "89218418"
 <td align="left"><p>筛选器分离</p></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>分离</p></td>
+<td align="left"><p>已分离</p></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -136,7 +135,7 @@ ms.locfileid: "89218418"
 <tr class="even">
 <td align="left"><p>附加失败</p></td>
 <td align="left"></td>
-<td align="left"><p>分离</p></td>
+<td align="left"><p>已分离</p></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -204,10 +203,10 @@ NDIS 调用驱动程序的 [*FilterPause*](/windows-hardware/drivers/ddi/ndis/nc
 如果 NDIS 调用驱动程序的 [*FilterRestart*](/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_restart) 函数，并且重新启动尝试失败，则筛选器模块将返回到 "已 *暂停* " 状态。
 
 <a href="" id="send-and-receive-operations"></a>发送和接收操作  
-驱动程序可以在*正在运行和正在**暂停*的状态处理发送和接收操作。 有关发送和接收操作的详细信息，请参阅 [筛选模块发送和接收操作](filter-module-send-and-receive-operations.md)。
+驱动程序可以在 *正在运行和正在**暂停* 的状态处理发送和接收操作。 有关发送和接收操作的详细信息，请参阅 [筛选模块发送和接收操作](filter-module-send-and-receive-operations.md)。
 
 <a href="" id="oid-requests"></a>OID 请求  
-驱动程序可以在*正在运行、正在**重新启动*、已*暂停*和正在*暂停*的状态处理 OID 请求。 有关 OID 请求的详细信息，请参阅 [筛选器模块 OID 请求](filter-module-oid-requests.md)。
+驱动程序可以在 *正在运行、正在**重新启动*、已 *暂停* 和正在 *暂停* 的状态处理 OID 请求。 有关 OID 请求的详细信息，请参阅 [筛选器模块 OID 请求](filter-module-oid-requests.md)。
 
  
 

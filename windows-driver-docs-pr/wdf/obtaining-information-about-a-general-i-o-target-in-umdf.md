@@ -1,18 +1,17 @@
 ---
 title: 在 UMDF 中获取有关常规 I/O 目标的信息
 description: 在 UMDF 中获取有关常规 I/O 目标的信息
-ms.assetid: 306a7f46-423a-4647-846d-76f917ca0f7c
 keywords:
 - 一般 i/o 目标为 WDK UMDF，有关
 - 状态信息 WDK i/o 目标
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e66206f1d6a4f021d3f389adbcf29f34627d28a
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d13027f5da7db51ea4948232f0461ab2a1bc5e7e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184621"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839339"
 ---
 # <a name="obtaining-information-about-a-general-io-target-in-umdf"></a>在 UMDF 中获取有关常规 I/O 目标的信息
 

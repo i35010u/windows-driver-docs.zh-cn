@@ -1,20 +1,19 @@
 ---
 title: 重排范围
-description: 在 Windows 显示驱动程序模型 (WDDM) v2 中不再支持 swizzling 范围。
-ms.assetid: C847C987-36E0-43A6-9735-608FF53838BE
+description: " (WDDM) v2，Windows 显示驱动程序模型中不再支持 Swizzling 范围。"
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f982c26b4e08ac20dc1bdac6eb75974cde4ff6b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f8c42c135da40ed066fdb545988cef99760e519a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345479"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839573"
 ---
 # <a name="swizzling-ranges"></a>重排范围
 
 
-在 Windows 显示驱动程序模型 (WDDM) v2 中不再支持 swizzling 范围。
+ (WDDM) v2，Windows 显示驱动程序模型中不再支持 Swizzling 范围。
 
  
 

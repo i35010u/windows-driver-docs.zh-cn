@@ -1,41 +1,40 @@
 ---
 title: PNPCPU 典型会话
 description: PNPCPU 典型会话
-ms.assetid: d0c1b6aa-fe23-4d01-aecf-897aba3672c9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b385dd4a84415d30c9178e0f88a62548ed63067a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 96a57f481d1b5e74f75eeaa02d35e4622968e073
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365492"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841041"
 ---
 # <a name="pnpcpu-typical-session"></a>PNPCPU 典型会话
 
 
-在运行时 **-安装**命令，PNPCPU 执行以下操作：
+运行 **-install** 命令时，PNPCPU 会执行以下操作：
 
 -   安装总线枚举器驱动程序。
 
--   将标记显示问题代码 28-设备管理器中可见的所有现有处理器。
+-   用设备管理器中显示的问题代码28标记所有现有处理器。
 
 -   将 ONECPU 添加到引导配置数据 (BCD) 设置。
 
--   Windows 正在使用时保存的处理器数 **-安装**运行。
+-   在运行 **安装** 时，保存 Windows 正在使用的处理器数。
 
--   预安装的处理器驱动程序的 INF 文件。
+-   预先安装处理器驱动程序的 INF 文件。
 
-在安装完成后，将看到以下消息：
+安装完成后，你将看到以下消息：
 
 ```
 Enabled hot add cpu...
 Please reboot the system before proceeding with the test
 ```
 
-重新启动系统通过执行关闭，从命令行中，或从系统菜单选项。
+通过从命令行或系统菜单选项执行关机来重新启动系统。
 
-重新启动计算机后，Windows 将仅使用一个逻辑处理器。 您可以通过查找具有错误代码 28 处理器确认这在设备管理器。
+重新启动计算机后，Windows 将只使用一个逻辑处理器。 可以通过查找具有错误代码28的处理器，在设备管理器中确认这一点。
 
  
 

@@ -1,6 +1,5 @@
 ---
 title: 'InputBufferAPI 规则 (kmdf) '
-ms.assetid: 11388ffa-633d-4129-9693-a351ec8b0735
 ms.date: 05/21/2018
 description: '了解详细信息： InputBufferAPI 规则 (kmdf) '
 keywords:
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f2a3c26b8a9b6b2bc8bfa2cd9609b26c542e932
-ms.sourcegitcommit: f47c072e88dce59daba1231027b60eb56bd2cde9
+ms.openlocfilehash: a685abf17989f27149740bc1a2f528e2a012c8d0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92689357"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841303"
 ---
 # <a name="inputbufferapi-rule-kmdf"></a>InputBufferAPI 规则 (kmdf) 
 

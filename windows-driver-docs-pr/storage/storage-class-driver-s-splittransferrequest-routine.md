@@ -1,7 +1,6 @@
 ---
 title: 存储类驱动程序的 SplitTransferRequest 例程
 description: 存储类驱动程序的 SplitTransferRequest 例程
-ms.assetid: 4f449d3b-9a0a-4ff9-a7fb-bfa21b8a56c0
 keywords:
 - SplitTransferRequest
 - 不连续的页面 WDK 存储
@@ -9,12 +8,12 @@ keywords:
 - 传输请求拆分 WDK 存储
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: da169b31354b811593e0b154f9773a2cef1ae33d
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 229339aee938c590bb2062048fcdf895770b3b45
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187507"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840875"
 ---
 # <a name="storage-class-drivers-splittransferrequest-routine"></a>存储类驱动程序的 SplitTransferRequest 例程
 
@@ -22,7 +21,7 @@ ms.locfileid: "89187507"
 ## <span id="ddk_storage_class_drivers_splittransferrequest_routine_kg"></span><span id="DDK_STORAGE_CLASS_DRIVERS_SPLITTRANSFERREQUEST_ROUTINE_KG"></span>
 
 
-\_ \_ 返回到*GETDESCRIPTOR*例程的存储适配器描述符数据指示给定 HBA 到类驱动程序的传输功能。 具体而言，此数据指示 **MaximumTransferLength** （以字节为单位）和 **MaximumPhysicalPages**：也就是说，HBA 可以在支持系统缓冲区的物理内存中管理的非连续页数量 (即，其散播/聚集支持) 的程度。
+\_ \_ 返回到 *GETDESCRIPTOR* 例程的存储适配器描述符数据指示给定 HBA 到类驱动程序的传输功能。 具体而言，此数据指示 **MaximumTransferLength** （以字节为单位）和 **MaximumPhysicalPages**：也就是说，HBA 可以在支持系统缓冲区的物理内存中管理的非连续页数量 (即，其散播/聚集支持) 的程度。
 
 大多数类驱动程序在每个设备对象的设备扩展中存储指向此配置数据的指针，因为存储类驱动程序负责拆分超过 HBA 传输数据的所有传输请求。 换句话说，类驱动程序的 [**DispatchReadWrite**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch) 例程必须确定每个 IRP 是否请求的传输超过 HBA 可以在单个传输操作中处理的情况。
 
@@ -72,9 +71,9 @@ if (currentIrpStack->Parameters.Read.Length > maximumTransferLength ||
 
 -   将 SRB 中的 **DataBuffer** 设置为这部分传输的 MDL 中的偏移量（以字节为单位）
 
--   在将 IRP 发送到带有[**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)的端口驱动程序之前设置其*IoCompletion*例程
+-   在将 IRP 发送到带有 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)的端口驱动程序之前设置其 *IoCompletion* 例程
 
-为了跟踪传输的每个部分， *SplitTransferRequest* 会为它发送到下一个较低驱动程序的每个由驱动程序分配的 IRP 注册一个 *IoCompletion* 例程。 *IoCompletion*例程使用**InterlockedIncrement**和**InterlockedDecrement**来维护原始 IRP 中已完成的部分传输请求计数，以确保计数准确无误。
+为了跟踪传输的每个部分， *SplitTransferRequest* 会为它发送到下一个较低驱动程序的每个由驱动程序分配的 IRP 注册一个 *IoCompletion* 例程。 *IoCompletion* 例程使用 **InterlockedIncrement** 和 **InterlockedDecrement** 来维护原始 IRP 中已完成的部分传输请求计数，以确保计数准确无误。
 
 此类 *IoCompletion* 例程必须释放已分配的任何 irp 和/或 SRBs，并在传输所有请求的数据时或类驱动程序已用尽 irp 的重试时，必须完成原始 IRP，并因设备传输错误而必须失败。
 

@@ -1,7 +1,6 @@
 ---
 title: 'NdisMFreeSharedMemory 规则 (ndis) '
 description: 不能从 MiniportShutdownEx 函数调用 NdisMFreeSharedMemory。
-ms.assetid: 86109F0F-38ED-4A20-9BFF-7738D7944DD8
 ms.date: 05/21/2018
 keywords:
 - 'NdisMFreeSharedMemory 规则 (ndis) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b64e41cddd5d6f69990bebfe2efb72148c746422
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 08baab4f2b24b7efa74afd475b15d5d26313fb70
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106370"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840805"
 ---
 # <a name="ndismfreesharedmemory-rule-ndis"></a>NdisMFreeSharedMemory 规则 (ndis) 
 
 
-不能从[*MiniportShutdownEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_shutdown)函数调用[**NdisMFreeSharedMemory**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismfreesharedmemory) 。
+不能从 [*MiniportShutdownEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_shutdown)函数调用 [**NdisMFreeSharedMemory**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismfreesharedmemory) 。
 
 **驱动程序模型： NDIS**
 

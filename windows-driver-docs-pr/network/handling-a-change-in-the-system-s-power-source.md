@@ -1,7 +1,6 @@
 ---
 title: 处理系统电源的更改
 description: 处理系统电源的更改
-ms.assetid: 80e36a23-8a41-46f0-a7cb-0039c306a695
 keywords:
 - power source 更改 WDK 网络
 - Nic WDK 网络，电源更改
@@ -9,12 +8,12 @@ keywords:
 - 即插即用 WDK NDIS 微型端口，电源更改
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 40461e86b3ca840aa79001575de5c92e61378878
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e0e0da018110d6e33a09291b907864bb26fd2fc3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207954"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840017"
 ---
 # <a name="handling-a-change-in-the-systems-power-source"></a>处理系统电源的更改
 

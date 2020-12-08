@@ -1,7 +1,6 @@
 ---
 title: PnP 设备的状态转换
 description: PnP 设备的状态转换
-ms.assetid: 31969515-899b-407e-ab73-f6f7f36adb85
 keywords:
 - PnP WDK 内核，状态转换
 - 即插即用 WDK 内核，状态转换
@@ -9,12 +8,12 @@ keywords:
 - 设备状态 WDK PnP
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 712eb15d09466797563af45e39c0a7ce227803e8
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 9e908aeb06b409ad308549230de8f1ab442d06c8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89402926"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839051"
 ---
 # <a name="state-transitions-for-pnp-devices"></a>PnP 设备的状态转换
 

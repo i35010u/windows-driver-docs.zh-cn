@@ -1,9 +1,8 @@
 ---
-title: CTRL + ALT + \ （调试当前调试器）
-description: CTRL + ALT + \ 键组合启动 CDB; 的新实例此新调试器将当前的调试器作为其目标。
-ms.assetid: 0a36baa4-fe40-4498-9cf8-ae81497f1dda
+title: 'CTRL + ALT + \ (调试当前调试器) '
+description: CTRL + ALT + \ 组合键将启动一个新的 CDB 实例;此新调试器使用当前调试器作为其目标。
 keywords:
-- CTRL + ALT + （调试当前调试器） Windows 调试
+- CTRL + ALT + (调试当前调试器) Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: de0743fec4ff83632b8a67676265b0797dbb866b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d2591751902e4ebe77103a627531a5f7c8cce7ce
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374430"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839029"
 ---
-# <a name="ctrlalt-debug-current-debugger"></a>CTRL + ALT +\\ （调试当前调试器）
+# <a name="ctrlalt-debug-current-debugger"></a>CTRL + ALT + \\ (调试当前调试器) 
 
 
-**CTRL + ALT +\\** 密钥启动 CDB 的新实例; 此新的调试程序会为其目标为当前的调试器。
+**CTRL + ALT + \\** 键会启动新的 CDB 实例; 此新调试器将使用当前调试器作为其目标。
 
 ```dbgcmd
 CTRL+ALT+\ 
@@ -44,16 +43,16 @@ CTRL+ALT+\
 <td align="left"><p>WinDbg</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>用户模式下，内核模式</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>用户模式，内核模式</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>实时、 崩溃转储</p></td>
+<td align="left"><p>实时，故障转储</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>平台</strong></p></td>
-<td align="left"><p>全部</p></td>
+<td align="left"><p>all</p></td>
 </tr>
 </tbody>
 </table>
@@ -63,9 +62,9 @@ CTRL+ALT+\
 <a name="remarks"></a>备注
 -------
 
-这相当于启动通过新 CDB [ **remote.exe** ](the-remote-exe-utility.md)实用程序，并使用它进行调试的调试程序已运行。
+这等效于通过 [**remote.exe**](the-remote-exe-utility.md) 实用工具启动新的 CDB，并使用它来调试已经在运行的调试器。
 
-**CTRL + ALT +\\** 类似于[ **.dbgdbg （调试当前调试器）** ](-dbgdbg--debug-current-debugger-.md)命令，但是**CTRL + ALT +\\** 具有优势，可以在没有调试程序命令行可用时。
+**CTRL + ALT + \\** 类似于 [**. dbgdbg (调试当前调试器)**](-dbgdbg--debug-current-debugger-.md)命令，但 **CTRL + ALT + \\** 具有可在没有调试器命令行可用时使用的优点。
 
  
 

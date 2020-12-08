@@ -1,7 +1,6 @@
 ---
 title: PnPUtil 命令语法
 description: 如何运行 PnPUtil，包括语法和参数。
-ms.assetid: f14ceb98-8d82-43dd-b06e-2595b59b6999
 keywords:
 - PnPUtil 命令语法驱动程序开发工具
 topic_type:
@@ -12,19 +11,19 @@ api_type:
 - NA
 ms.date: 03/03/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: a2ed3db055449f41a7cdb30d126641ecf1ea6336
-ms.sourcegitcommit: f001f5163e1f6350cc8b6dffcc078733defcd053
+ms.openlocfilehash: 7dd3801f8d3e55f6f62b2dd53f16e8dca897ab8d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92061739"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841029"
 ---
 # <a name="pnputil-command-syntax"></a>PnPUtil 命令语法
 
 
 若要运行 PnPUtil，请打开命令提示符窗口 (**以管理员身份运行**) 并使用以下语法和参数键入命令。
 
-**注意**   Windows 的每个版本都包含了 PnPUtil ( # A0) ，从% windir% system32 目录) 中的 Windows Vista (开始 \\ 。
+**注意**  Windows 的每个版本都包含了 PnPUtil ( # A0) ，从% windir% system32 目录) 中的 Windows Vista (开始 \\ 。
 
  
 
@@ -84,7 +83,7 @@ pnputil [/add-driver <...> | /delete-driver <...> |
 /reboot - reboot system if needed to complete the operation.
 ```
 
-**/enable-device** * \<instance ID\> [/reboot]*
+**/enable-device** *\<instance ID\> [/reboot]*
 
 **从 Windows 10 版本2004开始提供**
 
@@ -94,7 +93,7 @@ pnputil [/add-driver <...> | /delete-driver <...> |
 /reboot - reboot system if needed to complete the operation.
 ```
 
-**/restart-device** * \<instance ID\> [/reboot]*
+**/restart-device** *\<instance ID\> [/reboot]*
 
 **从 Windows 10 版本2004开始提供**
 
@@ -104,7 +103,7 @@ pnputil [/add-driver <...> | /delete-driver <...> |
 /reboot - reboot system if needed to complete the operation.
 ```
 
-**/remove-device** * \<instance ID\> [/subtree] [/reboot]*
+**/remove-device** *\<instance ID\> [/subtree] [/reboot]*
 
 **从 Windows 10 版本2004开始提供**
 
@@ -169,7 +168,7 @@ pnputil [/add-driver <...> | /delete-driver <...> |
 ```
  
 
-###  <a name="comments"></a>说明
+###  <a name="comments"></a>注释
 
 
 

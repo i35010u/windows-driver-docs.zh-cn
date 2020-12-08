@@ -1,15 +1,14 @@
 ---
 title: 底片扫描仪的可选 WIA 子项属性
 description: 底片扫描仪的可选 WIA 子项属性
-ms.assetid: 85364b59-e0a8-4a82-bc89-6f160609f35d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c4837cba78d6b97f3268565af7331c6a4579a1b
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: abd0a722e346c6151fc4a0066976ef44e0750164
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184811"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841111"
 ---
 # <a name="optional-wia-child-item-properties-for-film-scanners"></a>底片扫描仪的可选 WIA 子项属性
 

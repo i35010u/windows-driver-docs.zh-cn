@@ -1,18 +1,17 @@
 ---
 title: 动作矢量
 description: 动作矢量
-ms.assetid: 463a2434-7f3e-4960-a595-8ca2ccc21504
 keywords:
 - macroblocks WDK DirectX VA，运动向量
 - 运动向量 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1dc47012631e129aecbfeaa1adfb820c8925e220
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: 7c932b41eaa179126f678f3087a3338b32d54df3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361569"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839590"
 ---
 # <a name="motion-vectors"></a>动作矢量
 
@@ -20,7 +19,7 @@ ms.locfileid: "94361569"
 ## <span id="ddk_motion_vectors_gly"></span><span id="DDK_MOTION_VECTORS_GLY"></span>
 
 
-如果图片不是图片内部 ( [**DXVA \_ PictureParameters**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)结构的 **bPicIntra** 成员为零) ，则运动向量包含在宏块控件命令结构中。 结构中包含的运动矢量的数目取决于图片的类型 (例如， *B picture* 或 *P picture* ) 。 此外，如果宏块中所定义 (基于的参考图片选择，则在使用) 中，每个运动矢量的参考图片选择索引也包含在宏块控制-命令结构中。
+如果图片不是图片内部 ([**DXVA \_ PictureParameters**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)结构的 **bPicIntra** 成员为零) ，则运动向量包含在宏块控件命令结构中。 结构中包含的运动矢量的数目取决于图片的类型 (例如， *B picture* 或 *P picture*) 。 此外，如果宏块中所定义 (基于的参考图片选择，则在使用) 中，每个运动矢量的参考图片选择索引也包含在宏块控制-命令结构中。
 
 为每个宏块控件命令结构中的运动矢量保留的空间通常是四个运动向量所需的数量。 每个运动向量都是使用 [**DXVA \_ MVvalue**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_mvvalue) 结构指定的。 通常情况下，这两种情况下会包括这两个 nonintra。 不 (在 *dxva* 头文件中显式定义的其余情况) 如下所示：
 

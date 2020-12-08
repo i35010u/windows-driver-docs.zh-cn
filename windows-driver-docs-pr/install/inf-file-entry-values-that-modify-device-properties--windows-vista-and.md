@@ -1,15 +1,14 @@
 ---
 title: 可修改设备属性的 INF 文件条目值
 description: 可修改设备属性的 INF 文件条目值
-ms.assetid: 5ce0875f-2687-42d9-b980-ed184b552a62
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b88ba151c77dea26104980fc8035308345920736
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: ad90b2f40f101e0e1dd860615aaac58dea4b707e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095057"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840059"
 ---
 # <a name="inf-file-entry-values-that-modify-device-properties"></a>可修改设备属性的 INF 文件条目值
 
@@ -22,7 +21,7 @@ ms.locfileid: "89095057"
 
 -   INF **AddReg** 指令和 inf **DelReg** 指令，用于设置或删除自定义注册表项值
 
--   用于设置和删除设备属性的[**Inf AddProperty 指令**](inf-addproperty-directive.md)和**inf DelProperty 指令**。 有关如何使用这些指令的详细信息，请参阅 [使用 Inf AddProperty 指令和 Inf DelProperty 指令](using-the-inf-addproperty-directive-and-the-inf-delproperty-directive.md)。
+-   用于设置和删除设备属性的 [**Inf AddProperty 指令**](inf-addproperty-directive.md)和 **inf DelProperty 指令**。 有关如何使用这些指令的详细信息，请参阅 [使用 Inf AddProperty 指令和 Inf DelProperty 指令](using-the-inf-addproperty-directive-and-the-inf-delproperty-directive.md)。
 
 有关安装设备实例、 [设备安装程序类](./overview-of-device-setup-classes.md)、 [设备接口类](./overview-of-device-interface-classes.md)和设备接口的 INF 文件部分的常规信息，请参阅以下主题：
 
@@ -34,17 +33,17 @@ ms.locfileid: "89095057"
 
 [**INF *DDInstall*。接口部分**](inf-ddinstall-interfaces-section.md)
 
-### <a name="inf-file-entry-values-that-set-corresponding-system-defined-device-properties"></a><a href="" id="inf-file-entry-values-that-set-corresponding-system-defined-device-pro"></a>用于设置相应系统定义设备属性的 INF 文件输入值
+### <a name="inf-file-entry-values-that-set-corresponding-system-defined-device-properties"></a><a href="" id="inf-file-entry-values-that-set-corresponding-system-defined-device-pro"></a>用于设置相应 System-Defined 设备属性的 INF 文件输入值
 
 某些 INF 文件输入值提供 Windows 用于设置相应系统定义的设备属性的信息。 下面是一些设备属性示例，它们的值由以下 INF 文件条目值提供：
 
--   设备实例的[**DEVPKEY_Device_DeviceDesc**](./devpkey-device-devicedesc.md)属性是通过 " [**INF 模型" 部分**](inf-models-section.md)中的*设备说明*条目值设置的。
+-   设备实例的 [**DEVPKEY_Device_DeviceDesc**](./devpkey-device-devicedesc.md)属性是通过 " [**INF 模型" 部分**](inf-models-section.md)中的 *设备说明* 条目值设置的。
 
--   [设备安装程序类](./overview-of-device-setup-classes.md)的[**DEVPKEY_DeviceClass_ClassName**](./devpkey-deviceclass-classname.md)属性是由[**INF 版本部分**](inf-version-section.md)中的 inf**类**指令中的*类名称*条目值设置的。
+-   [设备安装程序类](./overview-of-device-setup-classes.md)的 [**DEVPKEY_DeviceClass_ClassName**](./devpkey-deviceclass-classname.md)属性是由 [**INF 版本部分**](inf-version-section.md)中的 inf **类** 指令中的 *类名称* 条目值设置的。
 
--   设备接口的[**DEVPKEY_DeviceInterface_ClassGuid**](./devpkey-deviceinterface-classguid.md)属性是由[**INF InterfaceInstall32 部分**](inf-interfaceinstall32-section.md)中的*InterfaceClassGuid*条目值设置的。
+-   设备接口的 [**DEVPKEY_DeviceInterface_ClassGuid**](./devpkey-deviceinterface-classguid.md)属性是由 [**INF InterfaceInstall32 部分**](inf-interfaceinstall32-section.md)中的 *InterfaceClassGuid* 条目值设置的。
 
-### <a name="inf-addreg-directives-and-inf-delreg-directives-that-modify-system-defined-device-properties"></a><a href="" id="inf-addreg-directives-and-inf-delreg-directives-that-modify-system-def"></a>用于修改系统定义的设备属性的 INF AddReg 指令和 INF DelReg 指令
+### <a name="inf-addreg-directives-and-inf-delreg-directives-that-modify-system-defined-device-properties"></a><a href="" id="inf-addreg-directives-and-inf-delreg-directives-that-modify-system-def"></a>用于修改 System-Defined 设备属性的 INF AddReg 指令和 INF DelReg 指令
 
 许多系统定义的设备属性具有相应的系统定义的注册表项值。 对于具有相应注册表项值的设备属性，使用 [**INF AddReg 指令**](inf-addreg-directive.md) 添加相应的注册表项值将设置相应的设备属性。 同样，使用 [**INF DelReg 指令**](inf-delreg-directive.md) 删除注册表项值时，将删除相应的设备属性。
 

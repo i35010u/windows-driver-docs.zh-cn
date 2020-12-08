@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x43 NO_SUCH_PARTITION
-description: NO_SUCH_PARTITION bug 检查具有 0x00000043 值。检查此错误极少出现。
-ms.assetid: cf0888c7-633a-4df4-afce-bec6a0205fac
+description: NO_SUCH_PARTITION bug 检查的值为0x00000043。此 bug 检查很少出现。
 keywords:
 - Bug 检查 0x43 NO_SUCH_PARTITION
 - NO_SUCH_PARTITION
@@ -13,22 +12,22 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c9bdfb669eca2e6db05b3bf578dfe1455e11bf5d
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 32c38d7789baa1e343e1e67695c0fc42138bd906
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519447"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840461"
 ---
-# <a name="bug-check-0x43-nosuchpartition"></a>Bug 检查 0x43：否\_SUCH\_分区
+# <a name="bug-check-0x43-no_such_partition"></a>Bug 检查0x43：没有 \_ 此类 \_ 分区
 
 
-否\_SUCH\_分区 bug 检查的值为 0x00000043。
+"无 \_ 此类 \_ 分区 bug 检查" 的值为 "0x00000043"。
 
-检查此错误极少出现。
+此 bug 检查很少出现。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
  

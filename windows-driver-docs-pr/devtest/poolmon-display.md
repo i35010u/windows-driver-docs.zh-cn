@@ -1,18 +1,17 @@
 ---
 title: PoolMon 显示
 description: PoolMon 显示
-ms.assetid: 1dee4331-a508-4e7f-b621-4d22f6572aec
 keywords:
 - PoolMon WDK，显示
 - 内存池监视器 WDK，显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 17e8b9412290a48506680ad0f5e943e9d909c44f
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: a54a2327068a38d383efa017c070d44110976635
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382717"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841019"
 ---
 # <a name="poolmon-display"></a>PoolMon 显示
 
@@ -57,7 +56,7 @@ PoolMon 在命令窗口中显示有关池内存分配的数据的列。 使用�
 
 ## <a name="update-rate"></a>更新速率
 
-PoolMon 每5秒钟更新一次。 不能以编程方式更改更新速率。 但是，如果在中运行的 windows PoolMon 有焦点，则可以通过单击某些键来强制刷新 PoolMon 结果。 例如，按**CTRL**和**ALT**; 强制刷新;不过，**打印屏幕**却不能。
+PoolMon 每5秒钟更新一次。 不能以编程方式更改更新速率。 但是，如果在中运行的 windows PoolMon 有焦点，则可以通过单击某些键来强制刷新 PoolMon 结果。 例如，按 **CTRL** 和 **ALT**; 强制刷新;不过，**打印屏幕** 却不能。
 
 ## <a name="accumulated-values"></a>累计值
 

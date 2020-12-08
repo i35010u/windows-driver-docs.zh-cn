@@ -1,7 +1,6 @@
 ---
 title: 流和顶点缓冲区绑定通知
 description: 流和顶点缓冲区绑定通知
-ms.assetid: 9ab9727f-053d-404b-95cc-ffd64fde7997
 keywords:
 - DirectX 8.0 发行说明 WDK Windows 2000 显示，多个顶点流
 - 多个顶点流 WDK DirectX 8。0
@@ -10,12 +9,12 @@ keywords:
 - 流绑定到顶点缓冲区 WDK DirectX 8。0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b9abc133e9e770681eb25fefdc58f1201a070a6b
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 923680d41d01d9318ce2ef2b38d9502fe3212386
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067312"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840369"
 ---
 # <a name="notification-of-stream-and-vertex-buffer-binding"></a>流和顶点缓冲区绑定通知
 

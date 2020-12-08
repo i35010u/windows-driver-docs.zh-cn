@@ -1,19 +1,18 @@
 ---
 title: 纹理坐标转换
 description: 纹理坐标转换
-ms.assetid: d0857496-a7ce-4e9f-89d9-03c73d6f59e3
 keywords:
 - 坐标转换 WDK Direct3D
 - 纹理转换 WDK Direct3D
 - 转换 WDK Direct3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bbc2f66a0d2580f74ebbe2b67def773e4886585c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 38c7c28362bbbd31dd9aee298a480157b8b94440
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362620"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838939"
 ---
 # <a name="texture-coordinate-transformations"></a>纹理坐标转换
 
@@ -21,43 +20,43 @@ ms.locfileid: "63362620"
 ## <span id="ddk_texture_coordinate_transformations_gg"></span><span id="DDK_TEXTURE_COORDINATE_TRANSFORMATIONS_GG"></span>
 
 
-启用纹理坐标转换为最新的直接 X 版本。
+为最新的直接 X 版本启用纹理坐标转换。
 
-纹理转换是顶点级别转换操作。 按任何转换和照明启用 HAL 驱动程序和任何 HAL 设备类型，可以执行这些操作。
+纹理转换是顶点级转换操作。 这些操作可通过任何转换和启用照明的 HAL 驱动程序以及任何 HAL 设备类型执行。
 
-通过定义与每个纹理阶段相关联的 4 X 4 矩阵来启用纹理转换。 使用几何管道的软件实现的关键状态和数据结构的所有在 DDI 级别均可用。
+通过定义与每个纹理阶段关联的4X4 矩阵来启用纹理转换。 几何管道软件实现所使用的所有密钥状态和数据结构都在 DDI 级别可用。
 
-使用纹理转换，纹理坐标可以移动，相对于它们所来自的顶点。 纹理转换描述如何将纹理坐标转移纹理贴图中。 每次应用纹理转换时，矩阵将更改的纹理坐标。 这些转换中使用标准世界矩阵。
+使用纹理转换，可以移动纹理坐标，相对于绘制它们的顶点。 纹理转换说明纹理坐标如何移动纹理地图。 每次应用纹理转换时，矩阵都会更改纹理的坐标。 在这些转换中使用标准世界矩阵。
 
-在 API 级别**IDirect3DDevice7::SetTransform** （Direct3D SDK 文档中所述） 的方法定义了与当前绑定到的纹理的纹理转换矩阵*我***-*** th*纹理阶段。 此矩阵应在呈现期间应用于该纹理的纹理坐标。 请注意，可以在具有单独的纹理转换矩阵，可以应用不同的纹理的不同阶段使用相同的顶点级别的纹理坐标集。
+在 API 级别，Direct3D SDK) 文档中的 **IDirect3DDevice7：： SetTransform** 方法 (描述了与当前绑定到 * i * **-** _th_ 纹理阶段的纹理相关联的纹理转换矩阵。 在呈现期间，此矩阵应应用于纹理的纹理坐标。 请注意，可以在不同的阶段使用同一顶点级别的纹理坐标集，这可能会应用不同的纹理。
 
-纹理转换的操作受**IDirect3DDevice7::SetTextureStageState** （Direct3D SDK 文档中所述） 的方法使用 D3DTSS\_TEXTURETRANSFORMFLAGS 标志。
+纹理转换的操作由 Direct3D SDK 文档) 使用 D3DTSS TEXTURETRANSFORMFLAGS 标志 (中所述的 **IDirect3DDevice7：： SetTextureStageState** 方法控制 \_ 。
 
-DirectX SDK 文档中所述的 D3DTEXTURETRANSFORMFLAGS 枚举类型用于控制生成纹理坐标转换操作，并控制是否有任何的纹理坐标集的维度透视部门应应用于它。
+DirectX SDK 文档中所述的 D3DTEXTURETRANSFORMFLAGS 枚举类型用于控制由纹理坐标转换操作生成的纹理坐标集的维度，并控制是否应对其应用任何透视划分。
 
-D3DTTFF\_禁用指示，纹理坐标直接传递到硬件。
+D3DTTFF \_ DISABLE 表示纹理坐标直接传递到硬件。
 
-D3DTTFF 数\_计数*n*标志指示纹理坐标数量将会显示。 请注意，这不会不一定等同于维度的纹理本身，是否使用投影的纹理。
+D3DTTFF \_ COUNT *n* 标志的数字表示将存在多少纹理坐标。 请注意，如果使用了投影纹理，则这不一定等于纹理的尺寸。
 
-如果使用投影的纹理，D3DTTFF\_预计标志设置为指示是否要作为被除数由最后一个纹理坐标 (计数*th*) 的纹理坐标集的元素。 因此，对于 2D 预计纹理，计数是三种模型，因为前两个元素除以第三，从而导致 2D 纹理查找两个浮点值。 也就是说，这两个 D3DTTFF\_数 2 和 D3DTTFF\_COUNT3 |D3DTTFF\_预计指 2D 纹理。
+如果使用了投影纹理，则 \_ 将 D3DTTFF 投影标志设置为指示纹理坐标将除以纹理坐标集) 元素的最后一个 (*th* 计数。 因此，对于2D 投影纹理，此计数为三个，因为前两个元素除以第三个元素，因此，两个浮点数用于2D 纹理查找。 也就是说，D3DTTFF \_ COUNT2 和 D3DTTFF \_ COUNT3 |D3DTTFF \_ 投影指的是2d 纹理。
 
 对于 nonprojected 纹理：
 
--   D3DTTFF\_COUNT1 指示光栅器应该获得 1d 纹理坐标。
+-   D3DTTFF \_ COUNT1 指示光栅区应有一维纹理坐标。
 
--   D3DTTFF\_数 2 指示光栅器应该获得 2D 纹理坐标。
+-   D3DTTFF \_ COUNT2 指示光栅图应需要2d 纹理坐标。
 
--   D3DTTFF\_COUNT3 指示光栅器应该获得三维纹理坐标。
+-   D3DTTFF \_ COUNT3 指示光栅图应需要3d 纹理坐标。
 
--   D3DTTFF\_COUNT4 指示光栅器应该获得 4d 纹理坐标。
+-   D3DTTFF \_ COUNT4 指示光栅化应期待4d 纹理坐标。
 
-第一个字节进行编码的纹理坐标预期要在某个特定阶段使用的纹理的计数。 此项设置为零将导致任何纹理转换，即使已通过定义要应用**IDirect3DDevice7::SetTransform**方法。 这是数，它是从纹理坐标转换阶段的输出。
+第一个字节对纹理坐标的计数进行编码，纹理坐标应在特定阶段由纹理使用。 如果将此值设置为零，则不会应用任何纹理转换，即使它是由 **IDirect3DDevice7：： SetTransform** 方法定义的。 这是从 "纹理坐标转换" 阶段输出的数字。
 
-传递到纹理转换纹理坐标的数由 Direct3D API 定义[FVF](fvf--flexible-vertex-format-.md)代码。
+传递给纹理转换的纹理坐标的数目由 Direct3D API [FVF](fvf--flexible-vertex-format-.md) 代码定义。
 
-D3DTSS\_TEXTURETRANSFORMFLAGS 默认为 D3DTFF\_已禁用并没有 D3DTTFF\_预计标志设置。 纹理转换矩阵默认为 4 X 4 标识矩阵。
+默认情况下 \_ ，D3DTSS TEXTURETRANSFORMFLAGS 默认为 \_ 禁用 D3DTFF，未 \_ 设置 D3DTTFF 投影标志。 纹理转换矩阵默认为4X4 恒等矩阵。
 
-Nontransform 照明 HAL 在设备上 （即，那些需要对主机处理器的转换操作），与可能不同于在 API 级别指定的相应 DDI 级别 FVF 代码驱动程序提供了输出顶点。 不支持硬件加速转换和照明的设备仍可能会执行投影的纹理，并因此驱动程序必须仍然响应 D3DTSS\_TEXTURETRANSFORMFLAGS。
+在 nontransform HAL 设备上 (也就是说，需要对主机处理器进行转换操作) 的输出顶点会提供给驱动程序，该驱动程序具有可能不同于 API 级别指定的 FVF 代码。 不支持硬件加速转换和照明的设备仍可进行投影纹理，因此驱动程序必须仍响应 D3DTSS \_ TEXTURETRANSFORMFLAGS。
 
  
 

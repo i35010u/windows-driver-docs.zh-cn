@@ -1,17 +1,16 @@
 ---
 title: FVF 更新
 description: FVF 更新
-ms.assetid: 2bbcb1fd-b29f-41f4-93eb-5bd1cde9cb20
 keywords:
 - FVF WDK Direct3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6377146b9f5afc5506b3e43a5f6664d3cc32f903
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: c90bd36e5bf8736a96f9f913ee62d8a69568ef96
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065432"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839929"
 ---
 # <a name="fvf-update"></a>FVF 更新
 
@@ -21,7 +20,7 @@ ms.locfileid: "89065432"
 
 最初在 DirectX 6.0 中定义的 FVF 代码现在支持 DirectX 7.0 中纹理坐标集的规范。
 
-除了 DirectX 6.0 中支持的常规2D 纹理以外，DirectX 7.0 还支持1D、3D 和4D 纹理。 此外，可能还会投影纹理。 调用[**D3dDrawPrimitives2**](/windows-hardware/drivers/ddi/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)时，可以检查[**D3DHAL \_ DRAWPRIMITIVES2DATA**](/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_d3dhal_drawprimitives2data)的**dwVertexType**成员，以确定每个纹理坐标集的尺寸。
+除了 DirectX 6.0 中支持的常规2D 纹理以外，DirectX 7.0 还支持1D、3D 和4D 纹理。 此外，可能还会投影纹理。 调用 [**D3dDrawPrimitives2**](/windows-hardware/drivers/ddi/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)时，可以检查 [**D3DHAL \_ DRAWPRIMITIVES2DATA**](/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_d3dhal_drawprimitives2data)的 **dwVertexType** 成员，以确定每个纹理坐标集的尺寸。
 
 例如，如果有一个包含五个纹理坐标集的顶点，则这些纹理中的每一个都可以是一维、二维、三维或4D，它们可能会被投影纹理。 每个纹理阶段都是独立的，因此每个坐标集的尺寸都可能不同。 可以检查 **dwVertexType** 中包含的 FVF 标志的上限，以确定纹理坐标的尺寸。
 
@@ -40,11 +39,11 @@ ms.locfileid: "89065432"
  
 </div>
 模式</th>
-<th align="left">Decimal
+<th align="left">小数
 <div>
  
 </div>
-值</th>
+“值”</th>
 <th align="left">含义</th>
 </tr>
 </thead>
@@ -76,7 +75,7 @@ ms.locfileid: "89065432"
 
 3D 纹理坐标集可用于以下三种不同目的中的任何一种：投影纹理 (通过 D3DTTFF 的指示 \_) ，请参阅 DirectX SDK 文档中的 D3DTEXTURETRANSFORMFLAGS，请参阅 DirectX SDK 文档中的，请参阅 DirectX SDK 文档中的 \_ \_ 。
 
-下表描述了用于一 \_ 维到4d 纹理坐标的 D3DRENDERSTATE WRAP*n* 呈现状态的标志。
+下表描述了用于一 \_ 维到4d 纹理坐标的 D3DRENDERSTATE WRAP *n* 呈现状态的标志。
 
 <table>
 <colgroup>

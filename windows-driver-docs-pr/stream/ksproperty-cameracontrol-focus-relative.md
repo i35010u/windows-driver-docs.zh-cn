@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ CAMERACONTROL \_ 焦点 \_ 相对
 description: KSPROPERTY \_ CAMERACONTROL \_ focus \_ 相对属性指定照相机的焦点设置。
-ms.assetid: 8282c703-5ff7-437e-87f9-e05f504d6f2c
 keywords:
 - KSPROPERTY_CAMERACONTROL_FOCUS_RELATIVE 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bca1e75b65ba7f214141f68e7f276aebeadfa16f
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 39a4eab2c431190bce4354b838c49b25c22db6a3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107264"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840557"
 ---
 # <a name="ksproperty_cameracontrol_focus_relative"></a>KSPROPERTY \_ CAMERACONTROL \_ 焦点 \_ 相对
 
@@ -71,7 +70,7 @@ KSPROPERTY \_ CAMERACONTROL \_ focus \_ 相对属性指定照相机的焦点设�
 <thead>
 <tr class="header">
 <th>“值”</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -99,7 +98,7 @@ KSPROPERTY \_ CAMERACONTROL \_ focus \_ 相对属性指定照相机的焦点设�
 
 发出 get 请求时，客户端将接收 KSPROPERTY **Value** \_ CAMERACONTROL \_ 节点 S 结构的值成员中前一个表中的值之一 \_ 。 值指示照相机的当前焦点设置。
 
-请注意，特定设备可能仅支持特定的速度范围。 若要确定设备支持的速度范围，应用程序可以发出 KSPROPERTY \_ 类型 \_ BASICSUPPORT 请求。 可以 \_ \_ 在[**KSPROPERTY \_ 项**](/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_item)结构的**Flags**成员中指定 KSPROPERTY 类型 BASICSUPPORT。
+请注意，特定设备可能仅支持特定的速度范围。 若要确定设备支持的速度范围，应用程序可以发出 KSPROPERTY \_ 类型 \_ BASICSUPPORT 请求。 可以 \_ \_ 在 [**KSPROPERTY \_ 项**](/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_item)结构的 **Flags** 成员中指定 KSPROPERTY 类型 BASICSUPPORT。
 
 某些设备只支持单一的聚焦速度。 在这种情况下， **值** 成员的符号仅指示该镜头是应缩短其焦点还是加长该镜头。
 
@@ -123,7 +122,7 @@ KSPROPERTY \_ CAMERACONTROL \_ focus \_ 相对属性指定照相机的焦点设�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY \_ CAMERACONTROL \_ 节点 \_ S**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s)

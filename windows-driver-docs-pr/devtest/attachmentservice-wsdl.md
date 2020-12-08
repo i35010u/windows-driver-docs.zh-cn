@@ -1,7 +1,6 @@
 ---
 title: AttachmentService WSDL
 description: AttachmentService WSDL
-ms.assetid: 1a886bd8-5eb4-4990-9d39-bacbbbbe3d3d
 keywords:
 - WSDBIT 工具 WDK，WSDL
 - WSDAPI 基本互操作性工具 WDK、WSDL
@@ -10,12 +9,12 @@ keywords:
 - WSDAPI 基本互操作性工具 WDK，服务
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 03297db4e7aa7d80dfd347238308cd3e0826ec1b
-ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
+ms.openlocfilehash: d2e9c07fc08276b9b509fd76561925a27e3b405c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88802747"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840819"
 ---
 # <a name="attachmentservice-wsdl"></a>AttachmentService WSDL
 

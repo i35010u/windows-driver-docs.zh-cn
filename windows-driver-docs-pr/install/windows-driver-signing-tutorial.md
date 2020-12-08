@@ -1,15 +1,14 @@
 ---
 title: Windows 驱动程序签名教程
-ms.assetid: B6F907DC-74DC-4BF3-A2F9-481AE706733C
 description: 提供概述并详细说明对 Windows 的驱动程序二进制文件进行签名的步骤
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a3aabfaf7f3b511f97f4288e4690ed24b34f01ef
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: be4044b0bb44e9c97c9e4a2bf1f6ea80dbe85934
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89094809"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840939"
 ---
 # <a name="windows-driver-signing-tutorial"></a>Windows 驱动程序签名教程
 
@@ -32,7 +31,7 @@ Microsoft 提供了以下两种对驱动程序进行数字签名的方法：
 
 在系统启动期间启动驱动程序的情况下，系统加载程序 (Windows Vista 和更高版本的 Windows) 加载的驱动程序必须使用软件发行者证书 (SPC) 来嵌入签署其驱动程序二进制映像文件。
 
-**注意**   必需的内核模式代码签名策略适用于 Windows Vista 和更高版本的 Windows 上运行的基于 x64 的系统的所有内核模式软件。 但是，Microsoft 鼓励发布者对所有内核模式软件进行数字签名，包括设备驱动程序 (包含32位系统) 的用户模式驱动程序。 Windows Vista 和更高版本的 Windows，请验证32位系统上的内核模式签名。 支持受保护媒体内容的软件必须进行数字签名，即使它是32位。
+**注意**  必需的内核模式代码签名策略适用于 Windows Vista 和更高版本的 Windows 上运行的基于 x64 的系统的所有内核模式软件。 但是，Microsoft 鼓励发布者对所有内核模式软件进行数字签名，包括设备驱动程序 (包含32位系统) 的用户模式驱动程序。 Windows Vista 和更高版本的 Windows，请验证32位系统上的内核模式签名。 支持受保护媒体内容的软件必须进行数字签名，即使它是32位。
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: 重新汇编的 NET_BUFFER_LIST 结构
 description: 重新汇编的 NET_BUFFER_LIST 结构
-ms.assetid: 0bfbfef3-c3ac-4add-b3b8-a4c3a96c8baa
 keywords:
 - NET_BUFFER_LIST
 - 重新组合结构 WDK 网络
@@ -10,12 +9,12 @@ keywords:
 - 关系 WDK NET_BUFFER_LIST
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f186db1cde6f7a0f5135071489f0435de4e73cd
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e7d44b860eb95f3672728d8bb5c5b518678c3493
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208597"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839447"
 ---
 # <a name="reassembled-net_buffer_list-structures"></a>重新组合网络 \_ 缓冲区 \_ 列表结构
 
@@ -31,7 +30,7 @@ NDIS 驱动程序可以从现有的网络缓冲区列表结构创建重新组合
 
 上图包含一个父 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构和一个派生自该父级的子结构。 父结构具有一个 [**网络 \_ 缓冲区 \_ 列表 \_ 上下文**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list_context) 结构和三个附加了 MDLs 的 [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer) 结构。 父结构的父指针为 **NULL** ，表示它不是派生的结构。
 
-子网络 \_ 缓冲区 \_ 列表结构具有一个 \_ 附加了 MDLs 的网络缓冲区结构。 子网络 \_ 缓冲区 \_ 列表结构具有指向父结构的指针。 如果**NULL**网络 \_ 缓冲区 \_ 列表 \_ 上下文指针为 NULL，则表示子级没有网络 \_ 缓冲区 \_ 列表 \_ 上下文结构。
+子网络 \_ 缓冲区 \_ 列表结构具有一个 \_ 附加了 MDLs 的网络缓冲区结构。 子网络 \_ 缓冲区 \_ 列表结构具有指向父结构的指针。 如果 **NULL** 网络 \_ 缓冲区 \_ 列表 \_ 上下文指针为 NULL，则表示子级没有网络 \_ 缓冲区 \_ 列表 \_ 上下文结构。
 
 NDIS 驱动程序调用 [**NdisAllocateReassembledNetBufferList**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatereassemblednetbufferlist) 函数来重新组装分段 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构。 NDIS 使用重新组合的网络缓冲区列表结构分配新的 [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer) 结构和 MDLs \_ \_ 。 对于重新组合结构，NDIS 不分配网络 \_ 缓冲区 \_ 列表 \_ 上下文结构。 重新组合的网络 \_ 缓冲区结构和 MDLs 描述的数据与父结构相同。 不会复制数据。
 

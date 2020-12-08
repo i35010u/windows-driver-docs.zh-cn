@@ -1,9 +1,8 @@
 ---
-title: WIA\_IPS\_打印机\_印记签署器\_顺序
-description: WIA\_IPS\_打印机\_印记签署器\_顺序属性用于配置在其中的扫描和认可 imprinting/操作都要执行相对于彼此的顺序。 WIA 微型驱动程序创建并维护此属性。
-ms.assetid: DE146E16-C956-497D-BAF5-F7CE6FAF382B
+title: WIA \_ IPS \_ 打印机 \_ ENDORSER \_ 订单
+description: WIA \_ IPS \_ PRINTER \_ ENDORSER \_ ORDER 属性用于配置要相对于彼此执行扫描和 imprinting/认可操作的顺序。 WIA 微型驱动程序创建并维护此属性。
 keywords:
-- WIA_IPS_PRINTER_ENDORSER_ORDER 成像设备
+- WIA_IPS_PRINTER_ENDORSER_ORDER 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,31 +13,31 @@ api_type:
 - HeaderDef
 ms.date: 05/22/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e6f322a6a021c5c4a965ea7a32ba34c1750b88fa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 587088c74182949ca536d5281668dd6e740fb3a4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351133"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839527"
 ---
-# <a name="wiaipsprinterendorserorder"></a>WIA\_IPS\_打印机\_印记签署器\_顺序
+# <a name="wia_ips_printer_endorser_order"></a>WIA \_ IPS \_ 打印机 \_ ENDORSER \_ 订单
 
 
-**WIA\_IPS\_打印机\_印记签署器\_顺序**属性用于配置在其中的扫描和认可 imprinting/操作是相对于每个要执行的顺序其他。 WIA 微型驱动程序创建并维护此属性。
+**WIA \_ IPS \_ PRINTER \_ ENDORSER \_ ORDER** 属性用于配置要相对于彼此执行扫描和 imprinting/认可操作的顺序。 WIA 微型驱动程序创建并维护此属性。
 
 
 
 
-属性类型：VT\_I4
+属性类型： VT \_ I4
 
-有效值：WIA\_PROP\_NONE
+有效值： WIA " \_ \_ 无"
 
 访问权限：只读
 
 <a name="remarks"></a>备注
 -------
 
-下表描述了与有效的常量[ **WIA\_IPS\_预览\_类型**](wia-ips-preview-type.md)属性。
+下表介绍了在 " [**WIA \_ ip \_ 预览 \_ 类型**](wia-ips-preview-type.md) " 属性中有效的常量。
 
 <table>
 <colgroup>
@@ -47,25 +46,25 @@ ms.locfileid: "63351133"
 </colgroup>
 <thead>
 <tr class="header">
-<th>ReplTest1</th>
+<th>值</th>
 <th>定义</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>WIA_PRINTER_ENDORSER_BEFORE_SCAN</p></td>
-<td><p>扫描此文档页之前，认可打印/是文档页面上执行。</p></td>
+<td><p>在扫描此文档页面之前，将在文档页面上执行打印/认可。</p></td>
 </tr>
 <tr class="even">
 <td><p>WIA_PRINTER_ENDORSER_AFTER_SCAN</p></td>
-<td><p>在此文档页扫描之后，认可打印/是文档页面上执行。</p></td>
+<td><p>扫描此文档页后，将在文档页上执行打印/认可。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-此属性必须受所有印刷器/印记签署器数据源项。 没有所需的默认值。
+此属性必须受所有 Imprinter/Endorser 数据源项支持。 无必需的默认值。
 
 <a name="requirements"></a>要求
 ------------
@@ -77,8 +76,8 @@ ms.locfileid: "63351133"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>

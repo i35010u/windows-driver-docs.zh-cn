@@ -1,7 +1,6 @@
 ---
 title: DIF_INSTALLDEVICEFILES
 description: DIF_INSTALLDEVICEFILES
-ms.assetid: 544a9a88-156e-494d-9ef0-8070addfa86b
 keywords:
 - DIF_INSTALLDEVICEFILES 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8b5d9530d7ae1674902049a40c4b755c0835b87f
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 21d81626ed24c284bc50200f5dd73bdc5c2c9e6d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717540"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841239"
 ---
 # <a name="dif_installdevicefiles"></a>DIF_INSTALLDEVICEFILES
 
@@ -64,7 +63,7 @@ DIF_INSTALLDEVICEFILES 请求允许安装程序参与复制文件以支持设备
 提供一个指向 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构的指针，该结构在设备信息集中标识设备。
 
 <a href="" id="device-installation-parameters-"></a>设备安装参数   
-与*DeviceInfoData*关联的设备安装参数 ([**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)) 。
+与 *DeviceInfoData* 关联的设备安装参数 ([**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)) 。
 
 如果设置了 DI_NOVCP 标志，则设备安装参数包含有效的 **FileQueue** 句柄，处理此 DIF 请求的安装程序会将其文件操作添加到此队列中，并且不提交队列。
 
@@ -84,7 +83,7 @@ DIF_INSTALLDEVICEFILES 请求允许安装程序参与复制文件以支持设备
 
 如果类安装程序成功处理此请求（包括直接调用默认处理程序），则类安装程序应返回 NO_ERROR 并且 **SetupDiCallClassInstaller** 将不会再次调用默认处理程序。
 
-**注意**   类安装程序可以直接调用默认处理程序，但类安装程序永远不会尝试取代默认处理程序的操作。
+**注意**  类安装程序可以直接调用默认处理程序，但类安装程序永远不会尝试取代默认处理程序的操作。
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: 查看隐藏的设备
 description: 查看隐藏的设备
-ms.assetid: 5dd02478-9937-4364-bd33-b64ac89c32eb
 keywords:
 - nonpresent 设备 WDK
 - 设备管理器 WDK，隐藏设备
@@ -14,12 +13,12 @@ keywords:
 - 显示 nonpresent 设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fed3bc410bc304b79f3a1604c67a863e48570a85
-ms.sourcegitcommit: f5222e608f2853003175244505d5daa3465ac6b3
+ms.openlocfilehash: 338ba147d0ee4c6919aadaca037867ab04f65535
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88615079"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840035"
 ---
 # <a name="viewing-hidden-devices"></a>查看隐藏的设备
 

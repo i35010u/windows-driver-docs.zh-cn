@@ -1,7 +1,6 @@
 ---
 title: 系统电源策略
 description: 系统电源策略
-ms.assetid: 98b1a777-3ac1-40c2-a902-cb5326c20621
 keywords:
 - 系统范围电源策略 WDK 内核
 - 电源策略 WDK 内核
@@ -11,12 +10,12 @@ keywords:
 - DC power WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 06dbc3b1dd15f881a0f70304bd317c71892eba7f
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 1cf6951d81d626413a3f3c24520880a445f0a171
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185921"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839227"
 ---
 # <a name="system-power-policy"></a>系统电源策略
 

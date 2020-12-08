@@ -1,18 +1,17 @@
 ---
 title: 使用净环接收网络数据
 description: 本主题介绍 NetAdapterCx 客户端驱动程序如何使用净环和网络环迭代器来接收网络数据。
-ms.assetid: 78D202E2-4123-4F63-9B86-48400C2CCC38
 keywords:
 - NetAdapterCx 网络环和网络环迭代器、NetCx 网络环和网络环迭代器、NetAdapterCx PCI 设备网络环、NetAdapterCx 异步 i/o
 ms.date: 11/04/2019
 ms.localizationpriority: medium
 ms.custom: Vib
-ms.openlocfilehash: e37105f0d811b7a00c2a2b1fbd8bc32a705837a7
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 033643962165b701d15cf1eb6a696a99f453a659
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210215"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841217"
 ---
 # <a name="receiving-network-data-with-net-rings"></a>使用网环接收网络数据
 

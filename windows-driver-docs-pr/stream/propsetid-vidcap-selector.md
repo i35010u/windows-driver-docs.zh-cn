@@ -1,15 +1,14 @@
 ---
 title: PROPSETID \_ VIDCAP \_ 选择器
 description: PROPSETID \_ VIDCAP \_ 选择器
-ms.assetid: a7328f22-be49-48ac-b923-15f66dc38ccb
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cd007d0cadc25b3b1207dcac22fff4ffadf840ff
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 9dab6f95ef4f852b4721f9312264d4388f54fe6d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187351"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840511"
 ---
 # <a name="propsetid_vidcap_selector"></a>PROPSETID \_ VIDCAP \_ 选择器
 
@@ -19,7 +18,7 @@ ms.locfileid: "89187351"
 
 PROPSETID \_ VIDCAP \_ 选择器属性集是与 [USB 视频类驱动程序](./usb-video-class-driver.md)一起使用的新集。 此属性集包含实现 **ISelector** 接口所需的属性 (参阅 Microsoft Windows SDK) 中的 DirectShow 文档。
 
-\_Ksmedia 中的 KSPROPERTY VIDCAP \_ 选择*ksmedia.h*器枚举指定此集的属性。
+\_Ksmedia 中的 KSPROPERTY VIDCAP \_ 选择 *ksmedia.h* 器枚举指定此集的属性。
 
 此属性集控制当前提供镜头输入的节点。 对此属性集的支持是可选的，只应由提供这些控件的设备来实现。
 

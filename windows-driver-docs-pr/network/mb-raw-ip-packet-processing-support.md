@@ -1,15 +1,14 @@
 ---
 title: MB 原始 IP 数据包处理支持
 description: MB 原始 IP 数据包处理支持
-ms.assetid: 1c3327fa-1858-4247-9a18-b49d26e9a095
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cdfbcdc2887ac990235105bae9eaed4d1bbb074
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 2db313431b74218be110012185a59ff92db4cd1f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207277"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839889"
 ---
 # <a name="mb-raw-ip-packet-processing-support"></a>MB 原始 IP 数据包处理支持
 
@@ -20,13 +19,13 @@ MB 微型端口驱动程序支持其发送/接收数据路径中的原始 IP 数
 
 -   对于 IPv4 数据包：
 
-    [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构的**NBLFLAGS**成员必须设置为 NDIS \_ NBL \_ 标志 \_ 为 \_ IPV4。
+    [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构的 **NBLFLAGS** 成员必须设置为 NDIS \_ NBL \_ 标志 \_ 为 \_ IPV4。
 
     **NetBufferListFrameType** \_ 网络缓冲区列表结构的 NetBufferListFrameType 成员 \_ 必须按网络字节顺序设置为 0x0800 (Ethertype IPv4) 。
 
 -   对于 IPv6 数据包：
 
-    网络**NblFlags** \_ 缓冲区列表结构的 NblFlags 成员 \_ 必须设置为 NDIS \_ NBL \_ 标志 \_ 为 \_ IPV6。
+    网络 **NblFlags** \_ 缓冲区列表结构的 NblFlags 成员 \_ 必须设置为 NDIS \_ NBL \_ 标志 \_ 为 \_ IPV6。
 
     **NetBufferListFrameType** \_ 网络缓冲区列表结构的 NetBufferListFrameType 成员 \_ 必须按网络字节顺序设置为 0x86dd (Ethertype IPv6) 。
 

@@ -1,15 +1,14 @@
 ---
 title: 通过驱动程序读取 WIA 项属性
 description: 通过驱动程序读取 WIA 项属性
-ms.assetid: 4e592c62-e8bf-4b25-9c65-5a0079d3a857
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 10cf879521aad3d30ad0d970d6cddeb047df12fc
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 5b1fda423f305d790d433128e187e6f54f1e206e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187593"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839245"
 ---
 # <a name="reading-wia-item-properties-by-a-driver"></a>通过驱动程序读取 WIA 项属性
 

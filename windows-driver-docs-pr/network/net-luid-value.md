@@ -1,7 +1,6 @@
 ---
 title: NET_LUID 值
 description: NET_LUID 值
-ms.assetid: 9b9c63c1-f8b4-4e26-afc1-a3e4910609e2
 keywords:
 - NDIS 网络接口 WDK，NET_LUID
 - 网络接口 WDK，NET_LUID
@@ -10,12 +9,12 @@ keywords:
 - 本地唯一标识符 WDK 网络接口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c0678c2e28eb5d17862395787aab2a908ce39c6
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 107a930391605ce87a151edeaf8de07cb3c9e089
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716994"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840899"
 ---
 # <a name="net_luid-value"></a>NET \_ LUID 值
 
@@ -27,7 +26,7 @@ ms.locfileid: "90716994"
 
 NET luid 联合的 **NetLuidIndex** 成员 \_ 是一个24位 net \_ luid 索引，该索引是在接口提供程序调用 [**NdisIfAllocateNetLuidIndex**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisifallocatenetluidindex) 函数时 NDIS 分配的。 NDIS 和接口提供程序使用此索引来区分具有相同接口类型的多个接口。 因此，此索引在本地计算机中是唯一的。
 
-[**NET \_ LUID**](/windows/win32/api/ifdef/ns-ifdef-net_luid_lh)联合的**IfType**成员是一个16位值，其中包含 INTERNET 号码分配机构 (IANA) 定义的接口类型。 有关有效接口类型的列表，请参阅 [NDIS 接口类型](./ndis-interface-types.md)。
+[**NET \_ LUID**](/windows/win32/api/ifdef/ns-ifdef-net_luid_lh)联合的 **IfType** 成员是一个16位值，其中包含 INTERNET 号码分配机构 (IANA) 定义的接口类型。 有关有效接口类型的列表，请参阅 [NDIS 接口类型](./ndis-interface-types.md)。
 
 NET \_ luid 数据类型等效于 RFC 2863 中的 *ifName* 对象，因为 NDIS 从 NET LUID 值派生了 *ifName* 字符串 \_ 。
 

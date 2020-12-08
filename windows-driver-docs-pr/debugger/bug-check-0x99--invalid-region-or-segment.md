@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x99 INVALID_REGION_OR_SEGMENT
-description: INVALID_REGION_OR_SEGMENT bug 检查具有 0x00000099 值。 此 bug 检查指示 ExInitializeRegion 或 ExInterlockedExtendRegion 已使用一组无效的参数调用。
-ms.assetid: 353b9028-7ba4-405e-9ac9-f3c12fd595ab
+description: INVALID_REGION_OR_SEGMENT bug 检查的值为0x00000099。 此 bug 检查指示使用一组无效参数调用了 ExInitializeRegion 或 ExInterlockedExtendRegion。
 keywords:
 - Bug 检查 0x99 INVALID_REGION_OR_SEGMENT
 - INVALID_REGION_OR_SEGMENT
@@ -13,23 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a6ed92866c74547849eceba7fa7228fcce5d67d5
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 6107ba3e6dafcbd1589d7c2943d826ac120deaf7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519106"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840445"
 ---
-# <a name="bug-check-0x99-invalidregionorsegment"></a>Bug 检查 0x99：无效\_地区\_或\_段
+# <a name="bug-check-0x99-invalid_region_or_segment"></a>Bug 检查0x99：无效 \_ \_ 的区域或 \_ 段
 
 
-无效\_地区\_或\_段 bug 检查的值为 0x00000099。 此 bug 检查指示**ExInitializeRegion**或**ExInterlockedExtendRegion**调用时使用的一组无效的参数。
+无效 \_ 区域 \_ 或 \_ 段 bug 检查的值为0x00000099。 此 bug 检查指示使用一组无效参数调用了 **ExInitializeRegion** 或 **ExInterlockedExtendRegion** 。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="invalidregionorsegment-parameters"></a>无效\_地区\_或\_段参数
+## <a name="invalid_region_or_segment-parameters"></a>无效 \_ \_ 的区域或 \_ 段参数
 
 
 无

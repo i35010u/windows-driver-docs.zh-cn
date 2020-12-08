@@ -1,17 +1,16 @@
 ---
 title: 在 CoNDIS 中发送和接收数据
 description: 在 CoNDIS 中发送和接收数据
-ms.assetid: aad7ccf9-0eaa-4327-b048-268d12593a70
 keywords:
 - 虚拟连接 WDK CoNDIS，数据传输
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b8f4828ae07b2b6658d9feb02d4436a97e4fe1d5
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 1cf85dcffd697e43193a90516aa4017c14aea39a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216586"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840275"
 ---
 # <a name="sending-and-receiving-data-in-condis"></a>在 CoNDIS 中发送和接收数据
 
@@ -21,13 +20,13 @@ ms.locfileid: "89216586"
 
 传输数据涉及到通过已建立并激活的 VC 发送或接收数据包。
 
-**注意**   在为 VC 调用[**NdisClCloseCall**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclclosecall)后，协议驱动程序不得调用[**NdisCoSendNetBufferLists**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscosendnetbufferlists)将数据发送到 vc。
+**注意** 在为 VC 调用 [**NdisClCloseCall**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclclosecall)后，协议驱动程序不得调用 [**NdisCoSendNetBufferLists**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscosendnetbufferlists)将数据发送到 vc。
 
  
 
 CoNDIS 发送和接收函数类似于无连接发送和接收功能。 CoNDIS 和无连接接口的主要区别在于 (VCs) 管理虚拟连接。 有关无连接发送和接收操作的详细信息，请参阅 [发送和接收操作](send-and-receive-operations.md)。
 
-在单个函数调用中，CoNDIS 驱动程序可以在每个网络缓冲区列表结构上发送多个具有多个[**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)结构的[**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构 \_ \_ 。 此外，CoNDIS 驱动程序还可以针对每个网络缓冲区 \_ \_ \_ 列表结构上具有多个网络缓冲区结构的多个网络缓冲区列表结构指示已完成的发送操作 \_ \_ 。
+在单个函数调用中，CoNDIS 驱动程序可以在每个网络缓冲区列表结构上发送多个具有多个 [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)结构的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构 \_ \_ 。 此外，CoNDIS 驱动程序还可以针对每个网络缓冲区 \_ \_ \_ 列表结构上具有多个网络缓冲区结构的多个网络缓冲区列表结构指示已完成的发送操作 \_ \_ 。
 
 在接收路径中，CoNDIS 微型端口驱动程序可以提供网络 \_ 缓冲区 \_ 列表结构的列表来指示接收。 \_ \_ 微型端口驱动程序提供的每个网络缓冲区列表包含一个网络 \_ 缓冲区结构。 由于不同的协议绑定可以处理每个网络 \_ 缓冲区 \_ 列表结构，因此 NDIS 可以独立地将每个网络 \_ 缓冲区 \_ 列表结构返回到微型端口驱动程序。
 
