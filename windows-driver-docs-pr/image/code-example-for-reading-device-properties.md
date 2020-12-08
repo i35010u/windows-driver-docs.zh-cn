@@ -1,20 +1,19 @@
 ---
 title: 演示如何读取设备属性的代码示例
 description: 演示如何读取设备属性的代码示例
-ms.assetid: 9ff3f30d-fd1c-4241-a068-1af2160e9296
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b6e556d692e62151b5f5f09f94ceb355073b6c0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 118e7bc1e9fc01daa5ee5d28e9ae5ac59be8c60e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373231"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823189"
 ---
 # <a name="code-example-for-reading-device-properties"></a>演示如何读取设备属性的代码示例
 
 
-下面的代码示例演示如何从属性存储中读取设备属性。 有关如何打开用于当前函数实例对象的属性存储的示例，请参阅[打开属性存储的代码示例](code-example-for-opening-a-property-store.md)。
+下面的代码示例演示如何从属性存储区中读取设备属性。 有关如何为当前函数实例对象打开属性存储的示例，请参阅 [用于打开属性存储的代码示例](code-example-for-opening-a-property-store.md)。
 
 ```cpp
 /**************************************************************************\

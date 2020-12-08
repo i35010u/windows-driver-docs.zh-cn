@@ -1,18 +1,17 @@
 ---
 title: Windows 驱动程序框架中的 DMA 简介
 description: Windows 驱动程序框架中的 DMA 简介
-ms.assetid: 9bcd8ac1-f3dd-4bb3-a671-51c9465f8efa
 keywords:
 - DMA 操作 WDK KMDF，关于 DMA 操作
 - 总线主控 DMA WDK KMDF，关于 DMA 操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a1fcc637c53a6e8404077bb57708aaff23729786
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 1dd7a1c3ff99f062a76a5e226d1ba37a32650468
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89183805"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821739"
 ---
 # <a name="introduction-to-dma-in-windows-driver-framework"></a>Windows 驱动程序框架中的 DMA 简介
 
@@ -22,7 +21,7 @@ ms.locfileid: "89183805"
 
 
 
-在 Windows 7 和更早版本中， (KMDF) 的内核模式驱动程序框架仅支持 (DMA) 设备的总线主直接内存访问。 此类设备包含它们自己的 DMA 控制器。
+在 Windows 7 和更早版本中，Kernel-Mode Driver Framework (KMDF) 仅支持 (DMA) 设备的总线主直接内存访问。 此类设备包含它们自己的 DMA 控制器。
 
 在运行 Windows 8 和更高版本的基于芯片 (SoC) 平台上的系统上，该框架还支持系统模式 DMA，其中多个设备共享单个多通道 DMA 控制器。
 
@@ -34,7 +33,7 @@ ms.locfileid: "89183805"
 
 此框架支持单数据包和散播/聚集 DMA 传输。 它还支持使用公用缓冲区。
 
-在运行 Windows 8 和更高版本的基于 SoC 的平台上，该框架支持单数据包系统模式 DMA 传输。 有关详细信息，请参阅 [支持系统模式 DMA](supporting-system-mode-dma.md)。
+在运行 Windows 8 和更高版本的基于 SoC 的平台上，该框架支持单数据包系统模式 DMA 传输。 有关详细信息，请参阅 [支持 System-Mode DMA](supporting-system-mode-dma.md)。
 
 此框架不支持基于 PC 的平台上的系统模式 DMA 传输。
 

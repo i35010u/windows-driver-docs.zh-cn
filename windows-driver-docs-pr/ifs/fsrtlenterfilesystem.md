@@ -2,7 +2,6 @@
 title: FsRtlEnterFileSystem 函数
 description: FsRtlEnterFileSystem 宏暂时禁用 (APC) 的正常内核模式异步过程调用。 还提供了特殊的内核模式 Apc。
 date: 06/25/2019
-ms.assetid: 6aa6315d-e430-4189-8eb5-9427a2e5ba46
 keywords:
 - FsRtlEnterFileSystem 函数可安装的文件系统驱动程序
 topic_type:
@@ -15,16 +14,16 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c01281d98286adcd0a5145af53a0d3baf66f51e6
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: b7671baf3bc7ebe848f7b4937b3ed8b5fa937cbe
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066924"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821481"
 ---
 # <a name="fsrtlenterfilesystem-function"></a>FsRtlEnterFileSystem 函数
 
-**FsRtlEnterFileSystem**宏暂时禁用 (APC) 的正常内核模式异步过程调用。 还提供了特殊的内核模式 Apc。
+**FsRtlEnterFileSystem** 宏暂时禁用 (APC) 的正常内核模式异步过程调用。 还提供了特殊的内核模式 Apc。
 
 ## <a name="syntax"></a>语法
 
@@ -46,9 +45,9 @@ None
 
 每个文件系统驱动程序入口点例程在获取执行文件 i/o 请求所需的资源之前，必须立即调用 **FsRtlEnterFileSystem** ，并立即调用 [**FsRtlExitFileSystem**](fsrtlexitfilesystem.md) 。 这可确保在运行时无法挂起例程，从而阻止其他文件 i/o 请求。
 
-必须通过对[**FsRtlExitFileSystem**](fsrtlexitfilesystem.md)的后续调用来匹配每个对**FsRtlEnterFileSystem**的成功调用。
+必须通过对 [**FsRtlExitFileSystem**](fsrtlexitfilesystem.md)的后续调用来匹配每个对 **FsRtlEnterFileSystem** 的成功调用。
 
-文件系统筛选器驱动程序可以通过在[**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)之前调用**FsRtlEnterFileSystem**或[**KeEnterCriticalRegion**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keentercriticalregion)来禁止交付普通内核 apc [**FsRtlExitFileSystem**](./fsrtlexitfilesystem.md) [**KeLeaveCriticalRegion**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keleavecriticalregion) 它们不应在**IoCallDriver**之前调用**FsRtlEnterFileSystem**或**KeEnterCriticalRegion** ，然后在 IRP 的*完成例程*中调用**FsRtlExitFileSystem**或**KeLeaveCriticalRegion** 。 驱动程序验证程序提供了一个有助于捕获此情况的规则。
+文件系统筛选器驱动程序可以通过在 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)之前调用 **FsRtlEnterFileSystem** 或 [**KeEnterCriticalRegion**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keentercriticalregion)来禁止交付普通内核 apc [**FsRtlExitFileSystem**](./fsrtlexitfilesystem.md) [**KeLeaveCriticalRegion**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keleavecriticalregion) 它们不应在 **IoCallDriver** 之前调用 **FsRtlEnterFileSystem** 或 **KeEnterCriticalRegion** ，然后在 IRP 的 *完成例程* 中调用 **FsRtlExitFileSystem** 或 **KeLeaveCriticalRegion** 。 驱动程序验证程序提供了一个有助于捕获此情况的规则。
 
 文件系统筛选器驱动程序应在获取任何资源之前禁用正常内核 Apc。 文件系统筛选器驱动程序通过以下例程获取资源：
 
@@ -59,7 +58,7 @@ None
 * [**ExAcquireSharedStarveExclusive**](/previous-versions/ff544367(v=vs.85))
 * [**ExAcquireSharedWaitForExclusive**](/previous-versions/ff544370(v=vs.85))
 
-作为 **FsRtlEnterFileSystem**的一种替代方法，微筛选器驱动程序可以使用 [**FltAcquireResourceExclusive**](fltacquireresourceexclusive.md)、 [**FltAcquireResourceShared**](fltacquireresourceshared.md)和 [**FltReleaseResource**](fltreleaseresource.md) 例程，在获取和释放资源时正确处理 apc。
+作为 **FsRtlEnterFileSystem** 的一种替代方法，微筛选器驱动程序可以使用 [**FltAcquireResourceExclusive**](fltacquireresourceexclusive.md)、 [**FltAcquireResourceShared**](fltacquireresourceshared.md)和 [**FltReleaseResource**](fltreleaseresource.md) 例程，在获取和释放资源时正确处理 apc。
 
 ## <a name="requirements"></a>要求
 

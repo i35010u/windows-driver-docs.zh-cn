@@ -1,19 +1,18 @@
 ---
 title: 调试事件筛选器
 description: 调试事件筛选器
-ms.assetid: ffa1241a-8a75-44ac-94b7-608393cf4138
 keywords:
 - 调试事件筛选器
 - 异常，调试事件筛选器
 - 事件，调试事件筛选器
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cc5a4284a241b2756acdef04bcbe55a133473bd0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 55c77aad0a47f023a922fe96e26a9e96baa210c0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374363"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823439"
 ---
 # <a name="debug--event-filters"></a>调试 | 事件筛选器
 
@@ -21,29 +20,29 @@ ms.locfileid: "63374363"
 ## <span id="ddk_debug_event_filters_dbg"></span><span id="DDK_DEBUG_EVENT_FILTERS_DBG"></span>
 
 
-单击**事件筛选器**上**调试**菜单打开**事件筛选器**对话框。 在此对话框中，可以配置的中断状态和异常和事件的处理状态。
+单击 "**调试**" 菜单上的 "**事件筛选器**" 以打开 "**事件筛选器**" 对话框。 在此对话框中，可以配置 "中断状态" 和 "处理异常和事件的状态"。
 
-### <a name="span-iddialogboxspanspan-iddialogboxspandialog-box"></a><span id="dialog_box"></span><span id="DIALOG_BOX"></span>对话框
+### <a name="span-iddialog_boxspanspan-iddialog_boxspandialog-box"></a><span id="dialog_box"></span><span id="DIALOG_BOX"></span>对话框
 
-**事件筛选器**对话框框中列出的调试器识别的所有事件。 您可以向将显示的列表添加带编号的异常。
+" **事件筛选器** " 对话框列出调试器可识别的所有事件。 您可以向随后将显示的列表添加已编号的例外。
 
-若要更改的事件的中断状态，请选择事件，然后单击之一**执行**选项按钮 (**已启用**，**禁用**，**输出**，或**忽略**)。
+若要更改事件的中断状态，请选择该事件，然后单击其中一个 **执行** 选项按钮 (**启用**、 **禁用**、 **输出** 或 **忽略**) 。
 
-若要更改的事件的处理状态，请选择该事件，然后单击之一**继续**选项按钮 (**Handled**或**未处理**)。
+若要更改事件的处理状态，请选择该事件，然后单击 " **继续** " 选项按钮之一 (**处理** 或 **未处理**) 。
 
-若要添加新的带编号的异常，请单击**添加**。 当**异常筛选器**出现对话框，请输入异常代码，单击相应的按钮的中断状态和处理状态，然后单击**确定**。
+若要添加新的带编号的异常，请单击 " **添加**"。 当 " **异常筛选器** " 对话框出现时，输入异常代码，单击相应的 "中断状态和处理状态" 按钮，然后单击 **"确定"**。
 
-若要删除带编号的异常，请选择该异常，然后单击**删除**。 无法删除标准事件。
+若要删除已编号的异常，请选择该异常，然后单击 " **删除**"。 不能删除标准事件。
 
-如果设置的状态**负载模块**或**卸载模块**事件，可以限制此状态设置为特定模块。 单击**自变量**，输入模块的名称或中的模块的基址**筛选器参数**对话框中，然后单击**确定**。 可以使用[通配符](string-wildcard-syntax.md)时指定的基址。 如果未指定模块，在加载或卸载的任何模块时，会发生中断。
+当你为 **Load 模块** 或 **卸载模块** 事件设置状态时，你可以将此状态限制为特定模块。 单击 " **参数**"，在 " **筛选器参数** " 对话框中输入模块名称或模块的基址，然后单击 **"确定"**。 指定基址时，可以使用 [通配符](string-wildcard-syntax.md) 。 如果未指定模块，则在加载或卸载任何模块时会发生中断。
 
-如果设置的状态**调试对象输出**事件，可以限制此状态设置为特定输出模式。 单击**自变量**，输入中的输出模式**筛选器参数**对话框中，然后单击**确定**。 如果未指定输出模式，在中断发生的任何输出。
+设置 **调试对象输出** 事件的状态时，可以将此状态限制为特定的输出模式。 单击 " **参数**"，在 " **筛选器参数** " 对话框中输入输出模式，然后单击 **"确定"**。 如果未指定输出模式，则会对任何输出进行中断。
 
-如果你想要设置自动事件进入调试器时就会执行的命令，选择事件，然后单击**命令**。 **筛选器命令**对话框将出现。 输入想要登录到任何命令**命令**或**第二次命令**框。 使用分号分隔多个命令，不要将这些命令括在引号中。
+如果要设置在事件中断到调试器时执行的自动命令，请选择该事件，然后单击 " **命令**"。 将显示 " **筛选器命令** " 对话框。 在 " **命令** " 或 " **第二个命令** " 框中输入所需的任何命令。 使用分号分隔多个命令，并不要将这些命令用引号引起来。
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关中断状态和处理状态、 所有事件代码、 所有事件和控制此状态的其他方法的默认状态的详细信息，请参阅[控制异常和事件](controlling-exceptions-and-events.md)。
+有关中断状态和处理状态、所有事件代码、所有事件的默认状态和控制此状态的其他方法的详细信息，请参阅 [控制异常和事件](controlling-exceptions-and-events.md)。
 
  
 

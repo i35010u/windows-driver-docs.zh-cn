@@ -1,18 +1,17 @@
 ---
 title: 暂停驱动程序堆栈
 description: 暂停驱动程序堆栈
-ms.assetid: 6c6300e9-aea6-4da3-a91a-73db6ba8ff1f
 keywords:
 - 驱动程序堆栈 WDK 网络，暂停
 - 暂停驱动程序堆栈 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 31db0c41a4fa446e5bae9b228eaea950db87fbaf
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c1b46275c16940a29661aff48a6d421f1b469b32
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218339"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822865"
 ---
 # <a name="pausing-a-driver-stack"></a>暂停驱动程序堆栈
 
@@ -34,7 +33,7 @@ NDIS 暂停驱动程序堆栈以完成操作，例如插入筛选器模块或添
 
     在 NDIS 调用微型端口驱动程序的 [*MiniportPause*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_pause) 函数后，微型端口适配器将进入暂停状态。 当 NDIS 返回所有未完成的接收指示后，微型端口适配器将进入暂停状态。
 
-**注意**   NDIS 驱动程序无法使暂停请求失败。 应记录发生的任何错误。
+**注意**  NDIS 驱动程序无法使暂停请求失败。 应记录发生的任何错误。
 
  
 

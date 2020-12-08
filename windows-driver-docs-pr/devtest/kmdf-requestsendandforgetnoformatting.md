@@ -1,7 +1,6 @@
 ---
 title: 'RequestSendAndForgetNoFormatting 规则 (kmdf) '
 description: RequestSendAndForgetNoFormatting 规则验证驱动程序在将请求发送到带有发送选项 WDF \_ 请求 \_ 发送选项 "发送 \_ \_ \_ 并 \_ 忘记" 的 i/o 目标之前，不会使用 i/o 目标格式设置函数对请求进行格式设置。
-ms.assetid: C98C0C04-3345-49D6-9669-40D1A4F9CDBB
 ms.date: 05/21/2018
 keywords:
 - 'RequestSendAndForgetNoFormatting 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: fe203d0a85439b0a18a0b6c406bb8bb794c32f88
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: d3663fb7c8617fd770aab86f9bfc473c3487460f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105762"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822553"
 ---
 # <a name="requestsendandforgetnoformatting-rule-kmdf"></a>RequestSendAndForgetNoFormatting 规则 (kmdf) 
 
 
-**RequestSendAndForgetNoFormatting**规则验证驱动程序在将请求发送到带有发送选项 WDF \_ 请求 \_ 发送选项 "发送 \_ \_ \_ 并 \_ 忘记" 的 i/o 目标之前，不会使用 i/o 目标格式设置函数对请求进行格式设置。
+**RequestSendAndForgetNoFormatting** 规则验证驱动程序在将请求发送到带有发送选项 WDF \_ 请求 \_ 发送选项 "发送 \_ \_ \_ 并 \_ 忘记" 的 i/o 目标之前，不会使用 i/o 目标格式设置函数对请求进行格式设置。
 
 **驱动程序模型： KMDF**
 

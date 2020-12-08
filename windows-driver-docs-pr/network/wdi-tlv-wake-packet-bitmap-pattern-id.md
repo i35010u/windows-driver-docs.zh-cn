@@ -1,17 +1,16 @@
 ---
 title: WDI_TLV_WAKE_PACKET_BITMAP_PATTERN_ID
 description: WDI_TLV_WAKE_PACKET_BITMAP_PATTERN_ID 是包含 LAN 唤醒模式 ID 的 TLV。
-ms.assetid: 78807D91-189B-4E66-B3DC-500E9A59AEF2
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_WAKE_PACKET_BITMAP_PATTERN_ID 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: efecaa51da2c9e63c2fdc939c1bb79ab0e3329c2
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 65f019d7ea989ccd867dc26e130d96506b4abf4c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215419"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821927"
 ---
 # <a name="wdi_tlv_wake_packet_bitmap_pattern_id"></a>WDI \_ TLV \_ 唤醒 \_ 数据包 \_ 位图 \_ 模式 \_ ID
 
@@ -25,7 +24,7 @@ WDI \_ tlv \_ 唤醒 \_ 数据包 \_ 位图 \_ 模式 \_ ID 是包含 LAN 唤醒
 
 0xE3
 
-## <a name="length"></a>Length
+## <a name="length"></a>长度
 
 
 UINT32) 的大小 (以字节为单位）。
@@ -33,7 +32,7 @@ UINT32) 的大小 (以字节为单位）。
 ## <a name="values"></a>值
 
 
-| 类型   | 说明                 |
+| 类型   | 描述                 |
 |--------|-----------------------------|
 | UINT32 | LAN 唤醒模式 ID。 |
 
@@ -54,7 +53,7 @@ UINT32) 的大小 (以字节为单位）。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>
@@ -63,7 +62,7 @@ UINT32) 的大小 (以字节为单位）。
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [OID \_ WDI \_ 设置 \_ 添加 \_ WOL \_ 模式](./oid-wdi-set-add-wol-pattern.md)

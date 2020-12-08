@@ -1,15 +1,14 @@
 ---
 title: 示例简单分段筛选器
 description: 示例简单分段筛选器
-ms.assetid: 9c77fea4-61d9-4bec-8d8d-35436d00c1ed
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 17128a5ccbcf4bf9c6131b86d581f57002305903
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 167e4cedd6b3e3b64d4a95469e1836441d6910d3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192085"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822431"
 ---
 # <a name="example-simple-segmentation-filter"></a>示例：简单分段筛选器
 

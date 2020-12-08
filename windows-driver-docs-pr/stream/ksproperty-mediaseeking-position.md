@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ MEDIASEEKING \_ 位置
 description: KSPROPERTY \_ MEDIASEEKING \_ POSITION 检索筛选器的媒体时间。
-ms.assetid: 46b246c6-63e9-4f38-91cc-eed762126097
 keywords:
 - KSPROPERTY_MEDIASEEKING_POSITION 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a898a6e975b1baffc884a5691b231f89dc917fab
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 46bd9a7b0de3186baf2fa92cdad412abbac812f5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102692"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821783"
 ---
 # <a name="ksproperty_mediaseeking_position"></a>KSPROPERTY \_ MEDIASEEKING \_ 位置
 
@@ -82,7 +81,7 @@ KSPROPERTY \_ MEDIASEEKING \_ POSITION 检索筛选器的媒体时间。
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [KSPROPSETID \_ MediaSeeking](kspropsetid-mediaseeking.md)

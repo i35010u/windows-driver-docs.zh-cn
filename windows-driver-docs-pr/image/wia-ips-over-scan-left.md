@@ -1,9 +1,8 @@
 ---
-title: WIA\_IPS\_转移\_扫描\_左侧
-description: WIA\_IP\_转移\_扫描\_左边缘的属性以及 WIA\_IP\_通过\_扫描\_右、 WIA\_IP\_转移\_扫描\_上边缘和 WIA\_IPS\_转移\_扫描\_底部用于通过扫描英寸为单位的千分之几秒中配置的金额 (0.001 \ 0034;)单元，相对于物理文档。
-ms.assetid: D1C2ADF5-A38C-4E30-A377-E62C5B4208A6
+title: WIA \_ IPS \_ OVER \_ SCAN \_
+description: "\"WIA \\_ ip \\_ over \\_ scan\" \\_ 属性连同 \"wia \\_ ip \\_ over \\_ 扫描 \\_ \" 权限一起使用，通过 \"扫描\" 顶部的 \\_ \"wia ip\" \\_ \\_ 和 \"wia ips over 扫描\"， \\_ \\_ \\_ \\_ \\_ 可用于配置与物理文档相关的扫描量（以英寸 (0.001 \\ 0034; ) 单位为单位）。"
 keywords:
-- WIA_IPS_OVER_SCAN_LEFT 成像设备
+- WIA_IPS_OVER_SCAN_LEFT 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,31 +13,31 @@ api_type:
 - HeaderDef
 ms.date: 05/22/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e1868a67a629f2e519e1de2fb12a4fecefce085
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dbc45b148422322032257cc25da0e33c5ce762cb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341985"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823137"
 ---
-# <a name="wiaipsoverscanleft"></a>WIA\_IPS\_转移\_扫描\_左侧
+# <a name="wia_ips_over_scan_left"></a>WIA \_ IPS \_ OVER \_ SCAN \_
 
 
-**WIA\_IPS\_转移\_扫描\_左侧**属性连同[ **WIA\_IP\_通过\_扫描\_右**](wia-ips-over-scan-right.md)， [ **WIA\_IP\_通过\_扫描\_顶部**](wia-ips-over-scan-top.md)，和[ **WIA\_IP\_转移\_扫描\_底部**](wia-ips-over-scan-bottom.md)用于通过扫描千分之一英寸 （0.001 英寸） 单元中配置的量相对于物理文档。 WIA 微型驱动程序创建并维护此属性。
+使用 " **wia ip \_ \_ over \_ Scan \_** " 属性连同 [**wia \_ ip \_ 在 "扫描" \_ \_ 权限**](wia-ips-over-scan-right.md)上，使用 "wia Ip over 扫描"，并使用 "使用 [**\_ \_ \_ 扫描 \_ 底部的 wia ip**](wia-ips-over-scan-bottom.md) " 来配置与物理文档相关的扫描量（以英寸为单位 (0.001 ") 单位）。 [**\_ \_ \_ \_**](wia-ips-over-scan-top.md) WIA 微型驱动程序创建并维护此属性。
 
 
 
 
-属性类型：VT\_UI4
+属性类型： VT \_ UI4
 
-有效值：WIA\_PROP\_RANGE
+有效值： WIA 内容 \_ \_ 范围
 
 访问权限：读/写
 
 <a name="remarks"></a>备注
 -------
 
-此属性仅适用于所有可编程图像数据源项，包括平板 (WIA\_类别\_平板) 和送纸器 (WIA\_类别\_送纸器)，但仅当[ **WIA\_IPS\_转移\_扫描**](wia-ips-over-scan.md)支持属性。 如果支持，此属性是必需的。
+此属性对所有可编程的图像数据源项有效，包括平板 (WIA \_ 类别 \_ 平板) 和送纸器 (wia \_ 类别 \_ 进纸器) 但仅当支持 [**wia \_ ip \_ OVER \_ SCAN**](wia-ips-over-scan.md) 属性时。 如果支持该属性，则此属性是必需的。
 
 <a name="requirements"></a>要求
 ------------
@@ -50,8 +49,8 @@ ms.locfileid: "63341985"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>

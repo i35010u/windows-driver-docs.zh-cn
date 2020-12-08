@@ -1,15 +1,14 @@
 ---
 title: WDI 选择性挂起功能注册
 description: 下面是用于注册 USB 选择性挂起功能的流关系图。
-ms.assetid: E4AE424F-2017-4111-B4C7-DF0BA6A40A15
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 72b9b609ffc5b2eeba8462adc426c9069ee5a9dd
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 9f4d787c09c6fe7bc0bfc4d5a5007a31d6cc528b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213153"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822089"
 ---
 # <a name="wdi-selective-suspend-capability-registration"></a>WDI 选择性挂起功能注册
 
@@ -18,7 +17,7 @@ ms.locfileid: "89213153"
 
 ![wdi 选择性挂起功能注册](images/wdi-register-usb-selective-suspend-flow.png)
 
-AdapterCap (PM (ss) # A3、 \* SelectiveSuspend、 **LeIdleNotificationHandler**和 **LeCancelIdleNotificationHandler** 必须为 true 或有效，WDI 才能注册 WLAN 支持选择性挂起。
+AdapterCap (PM (ss) # A3、 \* SelectiveSuspend、 **LeIdleNotificationHandler** 和 **LeCancelIdleNotificationHandler** 必须为 true 或有效，WDI 才能注册 WLAN 支持选择性挂起。
 
 当 WDI 决定可以支持选择性挂起时，WDI 还会向 NDIS 注册一个可选的处理程序。
 

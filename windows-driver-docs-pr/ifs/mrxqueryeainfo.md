@@ -1,7 +1,6 @@
 ---
 title: MRxQueryEaInfo 例程
 description: MRxQueryEaInfo 例程由 RDBSS 调用，请求网络小型重定向器查询文件系统对象上的扩展属性信息。
-ms.assetid: 4471eb82-c176-4976-b722-5a6e067a7e69
 keywords:
 - MRxQueryEaInfo 例程可安装文件系统驱动程序
 - PMRX_CALLDOWN
@@ -15,17 +14,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7cad7123b0f5591f19d68945343b749f0bf1a856
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 51e7adc3b782f66738574cd8d0f4262438417c29
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066884"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823217"
 ---
 # <a name="mrxqueryeainfo-routine"></a>MRxQueryEaInfo 例程
 
 
-*MRxQueryEaInfo*例程由[RDBSS](./the-rdbss-driver-and-library.md)调用，请求网络小型重定向器查询文件系统对象上的扩展属性信息。
+*MRxQueryEaInfo* 例程由 [RDBSS](./the-rdbss-driver-and-library.md)调用，请求网络小型重定向器查询文件系统对象上的扩展属性信息。
 
 <a name="syntax"></a>语法
 ------
@@ -34,12 +33,12 @@ ms.locfileid: "89066884"
 PMRX_CALLDOWN MRxQueryEaInfo;
 
 NTSTATUS MRxQueryEaInfo(
-  _Inout_ PRX_CONTEXT RxContext
+  _Inout_ PRX_CONTEXT RxContext
 )
 { ... }
 ```
 
-<a name="parameters"></a>parameters
+<a name="parameters"></a>参数
 ----------
 
 *RxContext* \[in、out\]  
@@ -118,25 +117,25 @@ NTSTATUS MRxQueryEaInfo(
 
 RDBSS 发出对 *MRxQueryEaInfo* 的调用，以响应接收 [**IRP \_ MJ \_ 查询 \_ EA**](irp-mj-query-ea.md) 请求。
 
-在调用 *MRxQueryEaInfo*之前，RDBSS 会修改 \_ *RXCONTEXT* 参数指向的 RX 上下文结构中的以下成员：
+在调用 *MRxQueryEaInfo* 之前，RDBSS 会修改 \_ *RXCONTEXT* 参数指向的 RX 上下文结构中的以下成员：
 
-**信息. buffer**成员设置为 i/o 请求数据包中的用户缓冲区。 如果需要，此缓冲区已被 RDBSS 锁定。
+**信息. buffer** 成员设置为 i/o 请求数据包中的用户缓冲区。 如果需要，此缓冲区已被 RDBSS 锁定。
 
-**LengthRemaining**成员设置为**IrpSp &gt; 参数. QueryEa**。
+**LengthRemaining** 成员设置为 **IrpSp &gt; 参数. QueryEa**。
 
-**QueryEa. UserEaList**成员设置为**IrpSp-QueryEa. &gt; EaList**。
+**QueryEa. UserEaList** 成员设置为 **IrpSp-QueryEa. &gt; EaList**。
 
-**QueryEa. UserEaListLength**成员设置为**IrpSp-QueryEa. &gt; EaListLength**。
+**QueryEa. UserEaListLength** 成员设置为 **IrpSp-QueryEa. &gt; EaListLength**。
 
-**QueryEa. UserEaIndex**成员设置为**IrpSp-QueryEa. &gt; EaIndex**。
+**QueryEa. UserEaIndex** 成员设置为 **IrpSp-QueryEa. &gt; EaIndex**。
 
-如果**QueryEa.RestartScan** IrpSp 在上具有 SL ** &gt; ** \_ RESTART \_ 扫描位，则 RestartScan 成员将设置为非零值。
+如果 **QueryEa.RestartScan** IrpSp 在上具有 SL **&gt;** \_ RESTART \_ 扫描位，则 RestartScan 成员将设置为非零值。
 
-如果**QueryEa.ReturnSingleEntry** **IrpSp &gt; ** \_ \_ \_ 在上返回单比 bit，则 ReturnSingleEntry 成员将设置为非零值。
+如果 **QueryEa.ReturnSingleEntry** **IrpSp &gt;** \_ \_ \_ 在上返回单比 bit，则 ReturnSingleEntry 成员将设置为非零值。
 
-如果** &gt; IrpSp**在上指定了 SL 索引，则**QueryEa IndexSpecified**成员将设置为非零值 \_ \_ 。
+如果 **&gt; IrpSp** 在上指定了 SL 索引，则 **QueryEa IndexSpecified** 成员将设置为非零值 \_ \_ 。
 
-成功后， *MRxQueryEaInfo* 应将 RX 上下文结构的 **LengthRemaininging** 成员设置 \_ 为返回的扩展属性信息的长度，同时更新 **Fobx &gt; ** 成员。 如果对*MRxQueryEaInfo*的调用成功，则 RDBSS 会将 IRP 的**IoStatus**成员设置为 IrpSp，而不是 RX 上下文的**QueryEa**成员。 ** &gt; ** \_
+成功后， *MRxQueryEaInfo* 应将 RX 上下文结构的 **LengthRemaininging** 成员设置 \_ 为返回的扩展属性信息的长度，同时更新 **Fobx &gt;** 成员。 如果对 *MRxQueryEaInfo* 的调用成功，则 RDBSS 会将 IRP 的 **IoStatus** 成员设置为 IrpSp，而不是 RX 上下文的 **QueryEa** 成员。 **&gt;** \_
 
 <a name="requirements"></a>要求
 ------------
@@ -149,7 +148,7 @@ RDBSS 发出对 *MRxQueryEaInfo* 的调用，以响应接收 [**IRP \_ MJ \_ 查
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面型</td>
+<td align="left">台式机</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
@@ -158,7 +157,7 @@ RDBSS 发出对 *MRxQueryEaInfo* 的调用，以响应接收 [**IRP \_ MJ \_ 查
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**MRxIsValidDirectory**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkdir_calldown)

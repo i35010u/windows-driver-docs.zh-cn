@@ -1,19 +1,18 @@
 ---
 title: 请求处理程序
 description: 请求处理程序
-ms.assetid: bfc543bf-18a8-4e2c-ba7a-d0a21cefb038
 keywords:
 - I/o 队列 WDK KMDF，创建
 - I/o 队列 WDK KMDF，请求处理程序
 - 请求处理程序 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 39a4d284859c4c8eadc16034eeb8e96527d08c4f
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 6234a16c2da0624887b0f1473296cbb12d8e510d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188707"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821721"
 ---
 # <a name="request-handlers"></a>请求处理程序
 
@@ -23,7 +22,7 @@ ms.locfileid: "89188707"
 
 如果你的驱动程序为 i/o 队列指定了顺序或并行 [调度方法](dispatching-methods-for-i-o-requests.md) ，则该框架将在每次准备向驱动程序提供队列请求之一时调用驱动程序提供的回调函数。
 
-对于每个 i/o 队列，驱动程序可以提供以下一个或多个称为 *请求处理程序*的回调函数：
+对于每个 i/o 队列，驱动程序可以提供以下一个或多个称为 *请求处理程序* 的回调函数：
 
 <a href="" id="evtioread"></a>[*EvtIoRead*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_read)  
 当队列中有可用的读取请求时，框架将调用 i/o 队列的 [*EvtIoRead*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_read) 回调函数。

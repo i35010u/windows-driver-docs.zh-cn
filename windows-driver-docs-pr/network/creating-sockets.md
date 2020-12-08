@@ -1,7 +1,6 @@
 ---
 title: 创建套接字
 description: 创建套接字
-ms.assetid: 84cd0503-15bd-401f-836c-1fdc8425d073
 keywords:
 - Winsock 内核 WDK 网络，套接字创建
 - WSK WDK 网络，套接字创建
@@ -9,12 +8,12 @@ keywords:
 - WskSocket
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 525027321a0cf03a6d5d97cfa48bfc963fe715ef
-ms.sourcegitcommit: 409dd20db50c58b817ef985048fb7aab952cb0ad
+ms.openlocfilehash: 937fd41e6c66a9dd46cf858b95fbc541fabed511
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93244858"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822215"
 ---
 # <a name="creating-sockets"></a>创建套接字
 

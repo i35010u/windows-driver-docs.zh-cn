@@ -1,15 +1,14 @@
 ---
 title: 自定义端口属性定义和注册
 description: 自定义端口属性定义和注册
-ms.assetid: 55FCA402-191B-4DC9-A126-77AA15183E90
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 680731bfb4dc29dbc601cc8433097fe305203c04
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 11d3799a530b224b7a24ab2ba255208c81e05439
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207611"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822193"
 ---
 # <a name="custom-port-property-definition-and-registration"></a>自定义端口属性定义和注册
 

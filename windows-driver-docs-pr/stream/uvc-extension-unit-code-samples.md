@@ -1,41 +1,40 @@
 ---
 title: UVC 扩展单元代码示例
 description: UVC 扩展单元代码示例
-ms.assetid: c4f24646-57ea-4467-ad48-a3e6044658e3
 keywords:
-- 扩展单位 WDK USB 视频类，示例
-- WDK USB 视频类的示例代码
+- 扩展单元-WDK USB 视频类，示例
+- 示例代码 WDK USB 视频类
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 61190b022ef78b5e0d40c9eacb588806fbc8b0ff
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8a49916ab23ef9468ac74bc4db624c7f31158dbf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374045"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821745"
 ---
 # <a name="uvc-extension-unit-code-samples"></a>UVC 扩展单元代码示例
 
 
-本部分包含以下主题：
+本节包含下列主题：
 
 [生成扩展单元示例控件](building-the-extension-unit-sample-control.md)
 
-[示例 UVC 扩展单位的接口](sample-interface-for-uvc-extension-units.md)包含*Interface.idl*。
+[UVC 扩展单元的示例接口](sample-interface-for-uvc-extension-units.md) 包含 *接口 .idl*。
 
-[示例扩展单元插件 DLL](sample-extension-unit-plug-in-dll.md)包含*Xuproxy.h*并*Xuproxy.cpp*。
+[示例扩展单元 DLL](sample-extension-unit-plug-in-dll.md) 包含 *Xuproxy* 和 *Xuproxy*。
 
-[UVC 扩展单位的示例注册表条目](sample-registry-entry-for-uvc-extension-units.md)包含*Xusample.rgs*。
+[UVC 扩展单元的示例注册表项](sample-registry-entry-for-uvc-extension-units.md) 包含 *Xusample*。
 
-[UVC 扩展单位的示例应用程序](sample-application-for-uvc-extension-units.md)包含*TestApp.cpp*。
+[UVC 扩展单元的示例应用程序](sample-application-for-uvc-extension-units.md) 包含 *TestApp*。
 
-[支持扩展单位的自动更新事件](supporting-autoupdate-events-with-extension-units.md)
+[支持扩展单元的自动更新事件](supporting-autoupdate-events-with-extension-units.md)
 
 [示例扩展单元描述符](sample-extension-unit-descriptor.md)
 
 [提供 UVC INF 文件](providing-a-uvc-inf-file.md)
 
-在 Windows 中的 UVC 驱动程序的详细信息，请参阅[USB 视频类驱动程序概述](usb-video-class-driver-overview.md)。
+有关 Windows 中的 UVC 驱动程序的详细信息，请参阅 [USB 视频类驱动程序概述](usb-video-class-driver-overview.md)。
 
  
 

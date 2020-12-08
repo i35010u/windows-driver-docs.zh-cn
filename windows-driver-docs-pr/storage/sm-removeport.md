@@ -1,7 +1,6 @@
 ---
 title: SM \_ RemovePort 函数
 description: SM \_ REMOVEPORT wmi 方法配置 wmi 提供程序，使其停止将与所指示的端口关联的事件传递给 WMI 客户端。
-ms.assetid: aa868e5d-32d3-4bb0-9128-5f213bf62146
 keywords:
 - SM_RemovePort 函数存储设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: b138a66de9e2283e7e64ab5b0fda01d6abbe4be5
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 4520ea40577d96e482b112eff57576216ad2395e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186393"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821831"
 ---
 # <a name="sm_removeport-function"></a>SM \_ RemovePort 函数
 
@@ -31,8 +30,8 @@ SM \_ REMOVEPORT wmi 方法配置 wmi 提供程序，使其停止将与所指示
 
 ```ManagedCPlusPlus
 void SM_RemovePort(
-   [in, HBAType("HBA_WWN")] uint8          PortWWN[8],
-   [in, EVENT_TYPES_QUALIFIERS] uint32     EventType,
+   [in, HBAType("HBA_WWN")] uint8          PortWWN[8],
+   [in, EVENT_TYPES_QUALIFIERS] uint32     EventType,
    [out, HBA_STATUS_QUALIFIERS] HBA_STATUS HBAStatus
 );
 ```
@@ -54,7 +53,7 @@ void SM_RemovePort(
 
 不适用于 WMI 方法。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 此 WMI 方法属于 MS \_ SM \_ EventControl WMI 类。
@@ -73,7 +72,7 @@ void SM_RemovePort(
 <td align="left">台式机</td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
+<td align="left"><p>标头</p></td>
 <td align="left">Hbapiwmi</td>
 </tr>
 </tbody>

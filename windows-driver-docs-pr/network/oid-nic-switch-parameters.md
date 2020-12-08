@@ -1,16 +1,15 @@
 ---
 title: OID_NIC_SWITCH_PARAMETERS
 description: 过量驱动程序发出对象标识符 (OID) 方法请求 OID_NIC_SWITCH_PARAMETERS 获取网络适配器上指定 NIC 交换机的当前配置参数。
-ms.assetid: 3F2FF2C0-8710-4243-8583-CD80F244FCFB
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_NIC_SWITCH_PARAMETERS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 7774ab894c7ec877c0d362de066c233dfb2ac406
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: dd6818f6768dbfa350bdbda219ba59d22e408d9b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106016"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822126"
 ---
 # <a name="oid_nic_switch_parameters"></a>OID \_ NIC \_ 交换机 \_ 参数
 
@@ -19,17 +18,17 @@ ms.locfileid: "90106016"
 
 过量驱动程序发出 oid NIC 交换机参数的 OID 集请求 \_ \_ \_ ，以设置网络适配器上指定 NIC 交换机的配置参数。 这些 OID 集请求将颁发给网络适配器 PCI Express (PCIe) 物理功能 (PF) 的微型端口驱动程序。 对于支持 (SR-IOV) 接口的单个根 i/o 虚拟化的 PF 微型端口驱动程序，这些 OID 设置请求是必需的。
 
-[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**NDIS \_ NIC \_ 交换机 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)结构的指针。
+[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ NIC \_ 交换机 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)结构的指针。
 
-过量驱动程序通过将[**NDIS \_ NIC \_ 交换机 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)结构的**SwitchId**成员设置为 switch 标识符，来指定 OID 方法或 set 请求的 NIC 开关。 过量驱动程序通过以下方式之一获取交换机标识符：
+过量驱动程序通过将 [**NDIS \_ NIC \_ 交换机 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)结构的 **SwitchId** 成员设置为 switch 标识符，来指定 OID 方法或 set 请求的 NIC 开关。 过量驱动程序通过以下方式之一获取交换机标识符：
 
 -   从 [oid \_ NIC \_ 交换机 \_ 枚举 \_ 参数](oid-nic-switch-enum-switches.md)的上一个 oid 方法请求开始。
 
--   从[**NDIS \_ 绑定 \_ 参数**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_bind_parameters)结构的**NicSwitchArray**成员。 NDIS 在[*ProtocolBindAdapterEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_bind_adapter_ex)函数的*BindParameters*参数中传递指向此结构的指针。
+-   从 [**NDIS \_ 绑定 \_ 参数**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_bind_parameters)结构的 **NicSwitchArray** 成员。 NDIS 在 [*ProtocolBindAdapterEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_bind_adapter_ex)函数的 *BindParameters* 参数中传递指向此结构的指针。
 
--   从[**NDIS \_ 筛选器 \_ 附加 \_ 参数**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_filter_attach_parameters)结构的**NicSwitchArray**成员。 NDIS 在[*FilterAttach*](/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_attach)函数的*AttachParameters*参数中传递指向此结构的指针。
+-   从 [**NDIS \_ 筛选器 \_ 附加 \_ 参数**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_filter_attach_parameters)结构的 **NicSwitchArray** 成员。 NDIS 在 [*FilterAttach*](/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_attach)函数的 *AttachParameters* 参数中传递指向此结构的指针。
 
-**注意**   从 Windows Server 2012 开始，Windows 只支持网络适配器上的默认 NIC 交换机。 必须将[**ndis \_ NIC \_ 交换机 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)结构的**SwitchId**成员设置为 ndis \_ 默认 \_ 交换机 \_ ID。
+**注意**  从 Windows Server 2012 开始，Windows 只支持网络适配器上的默认 NIC 交换机。 必须将 [**ndis \_ NIC \_ 交换机 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)结构的 **SwitchId** 成员设置为 ndis \_ 默认 \_ 交换机 \_ ID。
 
  
 
@@ -40,13 +39,13 @@ ms.locfileid: "90106016"
 
 -   过量驱动程序发出 OID \_ nic 交换机参数的 oid 方法 \_ 请求 \_ ，以获取指定 NIC 交换机的当前参数。 有关详细信息，请参阅 [查询 NIC 交换机的参数](./querying-the-parameters-of-a-nic-switch.md)。
 
-    **注意**   NDIS 处理 PF NIC 交换机参数的 OID 方法请求， \_ \_ \_ 用于 PF 的微型端口驱动程序。
+    **注意**  NDIS 处理 PF NIC 交换机参数的 OID 方法请求， \_ \_ \_ 用于 PF 的微型端口驱动程序。
 
      
 
 -   过量驱动程序发出 oid \_ nic 交换机参数的 oid 集 \_ 请求 \_ ，以更改指定 NIC 交换机的当前参数。 有关详细信息，请参阅 [设置 NIC 交换机的参数](./setting-the-parameters-of-a-nic-switch.md)。
 
-    **注意**   PF 微型端口驱动程序处理 OID \_ NIC 交换机参数的 oid 设置请求 \_ \_ 。
+    **注意**  PF 微型端口驱动程序处理 OID \_ NIC 交换机参数的 oid 设置请求 \_ \_ 。
 
      
 
@@ -115,7 +114,7 @@ NDIS 或 PF 微型端口驱动程序为 OID \_ NIC 交换机参数的设置或�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 ****

@@ -1,7 +1,6 @@
 ---
 title: 诊断和调试
 description: 诊断和调试
-ms.assetid: 6c5c1b4a-338d-4550-903d-c6905ce743f9
 keywords:
 - RDBSS WDK 文件系统，诊断
 - 重定向驱动器缓冲子系统 WDK 文件系统，诊断
@@ -15,12 +14,12 @@ keywords:
 - 断言例程 WDK RDBSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6137bc16c94fce820d576e732e3ad0db6bea22c9
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 8eb026c6aeb2b0d0a0cbc7d0debe5ae0da42747c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104596"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823255"
 ---
 # <a name="diagnostics-and-debugging"></a>诊断和调试
 
@@ -44,7 +43,7 @@ RDBSS 提供了许多用于诊断和调试的例程。 这些例程分为两类�
 <thead>
 <tr class="header">
 <th align="left">例程所返回的值</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -72,7 +71,7 @@ RDBSS 提供了许多用于诊断和调试的例程。 这些例程分为两类�
 
  
 
-除了上表中列出的例程以外，还定义了多个调用这些例程的宏用于调试。 下表中列出了这些宏，其中提供了围绕 SRV 调用、NET [**RxReference**](/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxreference) [**RxDereference**](/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxdereference) \_ \_ ROOT、NET.TCP \_ NET \_ root、FOBX、FCB 和 SRV \_ 开放式结构的文件结构管理操作的 RxReference 或 RxDereference 例程的包装。 在调用相应的**RxReference**或**RxDeference**例程之前，这些宏首先调用相应的[**RxpTrackReference**](/windows-hardware/drivers/ddi/fcb/nf-fcb-rxptrackreference)或[**RxpTrackDereference**](/windows-hardware/drivers/ddi/fcb/nf-fcb-rxptrackdereference)例程来记录诊断信息。 RDBSS 日志记录系统和 WMI 可以访问引用和取消引用请求的日志。
+除了上表中列出的例程以外，还定义了多个调用这些例程的宏用于调试。 下表中列出了这些宏，其中提供了围绕 SRV 调用、NET [**RxReference**](/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxreference) [**RxDereference**](/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxdereference) \_ \_ ROOT、NET.TCP \_ NET \_ root、FOBX、FCB 和 SRV \_ 开放式结构的文件结构管理操作的 RxReference 或 RxDereference 例程的包装。 在调用相应的 **RxReference** 或 **RxDeference** 例程之前，这些宏首先调用相应的 [**RxpTrackReference**](/windows-hardware/drivers/ddi/fcb/nf-fcb-rxptrackreference)或 [**RxpTrackDereference**](/windows-hardware/drivers/ddi/fcb/nf-fcb-rxptrackdereference)例程来记录诊断信息。 RDBSS 日志记录系统和 WMI 可以访问引用和取消引用请求的日志。
 
 <table>
 <colgroup>

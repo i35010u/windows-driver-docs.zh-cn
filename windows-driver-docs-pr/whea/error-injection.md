@@ -1,7 +1,6 @@
 ---
 title: 错误注入
 description: 错误注入
-ms.assetid: d97d49bc-b216-40d6-afd1-aecff624624d
 keywords:
 - Windows 硬件错误体系结构 WDK，错误注入
 - WHEA WDK，错误注入
@@ -12,12 +11,12 @@ keywords:
 - 错误注入 WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 80a2c1d11f882f5c67ae8c9bc7d9f435981aeb18
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 24163764bc0a4d7ccf3b32930c868080add9cf7e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213087"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822677"
 ---
 # <a name="error-injection"></a>错误注入
 

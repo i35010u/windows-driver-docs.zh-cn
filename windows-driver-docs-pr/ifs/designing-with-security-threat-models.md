@@ -1,7 +1,6 @@
 ---
 title: 安全威胁模型
 description: 安全威胁模型
-ms.assetid: a505df1a-82c0-4e0b-88bb-d96654a098fb
 keywords:
 - 安全 WDK 文件系统，威胁模型
 - 系统威胁模型 WDK 文件系统
@@ -12,12 +11,12 @@ keywords:
 - I/o WDK 安全性
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a2374f634cf638f30e76123f1088a68435f67040
-ms.sourcegitcommit: 8c898615009705db7633649a51bef27a25d72b26
+ms.openlocfilehash: 2052b1eb8e86657f3ba1b31ef20a616d449b1b3b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78910429"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823263"
 ---
 # <a name="security-threat-models"></a>安全威胁模型
 
@@ -27,7 +26,7 @@ ms.locfileid: "78910429"
 
 考虑到安全性，一种常见的方法是创建具体的威胁模型，以尝试描述可能的攻击类型。 此方法在设计文件系统或文件系统筛选器驱动程序时很有用，因为它会强制开发人员考虑针对驱动程序的潜在攻击媒介。 如果已确定潜在的威胁，驱动程序开发人员就可以考虑防御这些威胁，从而加强驱动程序组件的总体安全性。
 
-考虑安全威胁模型时，必须区分代表用户 i/o 请求管理的操作驱动程序（受安全检查）和由驱动程序本身启动的 i/o 操作（默认情况下不受安全检查）。 对一个驱动程序的用户模式请求还可以通过内部 FSCTL 或 IOCTL 请求（例如，Srv 驱动程序）传递给其他驱动程序（例如，Srv 驱动程序），进一步使这些问题更加复杂。
+考虑安全威胁模型时，区分 "操作驱动程序管理" 的操作将代表用户 i/o 请求，这一点也很重要 (这些请求受安全检查) 和驱动程序本身启动的 i/o 操作 (默认情况下不受安全检查) 。 对于一个驱动程序的用户模式请求，还可以通过内部 FSCTL 或 IOCTL 请求（ (Srv.sys 驱动程序）传递给另一驱动程序，如) ，进一步使这些问题更加复杂。
 
 对于内核模式驱动程序的开发人员，应考虑以下重要问题：
 

@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_DriverInfSection
 description: DEVPKEY_Device_DriverInfSection
-ms.assetid: 42f41a61-b29b-4c07-a348-e876050a4670
 keywords:
 - DEVPKEY_Device_DriverInfSection 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8e7526d495d963826ee540fbd96dfb31a35785e3
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: ad89cde58e0bb91c4a129d6221d65bb5d7f62bf9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717434"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823103"
 ---
 # <a name="devpkey_device_driverinfsection"></a>DEVPKEY_Device_DriverInfSection
 

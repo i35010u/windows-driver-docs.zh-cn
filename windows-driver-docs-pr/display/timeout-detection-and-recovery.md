@@ -1,21 +1,20 @@
 ---
-title: '超时检测和恢复 (TDR) '
+title: 超时检测和恢复 (TDR)
 description: '描述 Windows 显示驱动程序模型 (WDDM) 的超时检测和恢复 (TDR) '
-ms.assetid: f410eec7-026f-41e0-8c60-72f651659ead
 keywords:
 - TDR (超时检测和恢复) WDK 显示
 - TDR (超时检测和恢复) WDK 图形
 ms.date: 10/06/2020
 ms.localizationpriority: medium
 ms.custom: contperfq2
-ms.openlocfilehash: feec29945c3d2e8dec2dcac2ba9dd8a534192198
-ms.sourcegitcommit: f2fbb6e54e085e9329288cee49860fe380be9c4c
+ms.openlocfilehash: 90a4e0581a1cd6f527bf9bfad4df792b0344035f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91778768"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821513"
 ---
-# <a name="timeout-detection-and-recovery-tdr"></a>超时检测和恢复 (TDR) 
+# <a name="timeout-detection-and-recovery-tdr"></a>超时检测和恢复 (TDR)
 
 本页介绍了驱动程序开发人员 (TDR) 的超时检测和恢复。 另请参阅 [Windows 8 及更高版本中的 TDR](tdr-changes-in-windows-8.md) ，以获取其他实现详细信息。
 
@@ -45,7 +44,7 @@ GPU 计划程序将调用显示微型端口驱动程序的 [*DxgkDdiResetFromTim
 
 ## <a name="desktop-recovery"></a>桌面恢复
 
-OS 将重置图形堆栈的适当状态。 视频内存管理器也是 *Dxgkrnl.sys*的一部分，它将清除视频内存中的所有分配。 显示微型端口驱动程序会重置 GPU 硬件状态。 图形堆栈会执行最后的操作，并将桌面还原为响应状态。
+OS 将重置图形堆栈的适当状态。 视频内存管理器也是 *Dxgkrnl.sys* 的一部分，它将清除视频内存中的所有分配。 显示微型端口驱动程序会重置 GPU 硬件状态。 图形堆栈会执行最后的操作，并将桌面还原为响应状态。
 
 从挂起检测到恢复的唯一可见项目是屏幕闪烁。 当 OS 重置图形堆栈的某些部分（这会导致屏幕重绘）时，会出现此闪烁。 如果显示微型端口驱动程序符合 WDDM 1.2 和更高版本，则会将其排除 (请参阅 [在 WDDM 1.2 和更高) 版本中提供无缝状态转换](seamless-state-transitions-in-wddm-1-2-and-later.md) 。
 

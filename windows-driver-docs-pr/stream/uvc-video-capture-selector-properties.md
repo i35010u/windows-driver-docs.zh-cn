@@ -1,19 +1,18 @@
 ---
 title: UVC 视频捕获选择器属性
 description: UVC 视频捕获选择器属性
-ms.assetid: f3af81a1-5c9b-4af6-a931-5146ef187b36
 keywords:
 - UVC 视频捕获选择器属性 WDK 视频捕获
 - 选择器属性 WDK 视频捕获
 - PROPSETID_VIDCAP_SELECTOR
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 147dc21ee1dd40327037489a3a538c71db85b28f
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: a244e73bba79a8b2eb0a83c0b904edb548039143
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107118"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821741"
 ---
 # <a name="uvc-video-capture-selector-properties"></a>UVC 视频捕获选择器属性
 

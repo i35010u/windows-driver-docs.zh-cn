@@ -1,30 +1,29 @@
 ---
 title: OID_PACKET_COALESCING_FILTER_MATCH_COUNT
 description: NDIS 发出 OID_PACKET_COALESCING_FILTER_MATCH_COUNT 的 OID 查询请求，以获取网络适配器上缓存或合并的数据包数。
-ms.assetid: 3325865D-A329-4562-8270-CC2F42043D48
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_PACKET_COALESCING_FILTER_MATCH_COUNT 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 823e85bc50d47155e2be27c2c4e23351a36c9faf
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 4a49ab63590dd0b0bbecd6bf0354b489581df7df
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210657"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822141"
 ---
 # <a name="oid_packet_coalescing_filter_match_count"></a>OID \_ 数据包 \_ 合并 \_ 筛选器 \_ 匹配 \_ 计数
 
 
-NDIS 发出 OID \_ 数据包 \_ 合并筛选器匹配计数的 oid 查询请求， \_ \_ \_ 以获取网络适配器上缓存或 *合并*的数据包数。 如果为 [NDIS 数据包合并](./ndis-packet-coalescing.md) 启用了适配器并且数据包与接收筛选器匹配，网络适配器将合并收到的数据包。
+NDIS 发出 OID \_ 数据包 \_ 合并筛选器匹配计数的 oid 查询请求， \_ \_ \_ 以获取网络适配器上缓存或 *合并* 的数据包数。 如果为 [NDIS 数据包合并](./ndis-packet-coalescing.md) 启用了适配器并且数据包与接收筛选器匹配，网络适配器将合并收到的数据包。
 
-[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向分配给调用方的 ULONG64 变量的指针。 在成功返回查询请求之前，驱动程序会使用网络适配器上已匹配的接收筛选器更新 ULONG64 变量。
+[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向分配给调用方的 ULONG64 变量的指针。 在成功返回查询请求之前，驱动程序会使用网络适配器上已匹配的接收筛选器更新 ULONG64 变量。
 
 <a name="remarks"></a>备注
 -------
 
 从 NDIS 6.30 开始，支持 [NDIS 数据包合并](./ndis-packet-coalescing.md) 的驱动程序必须支持 OID 请求 oid \_ \_ \_ 筛选器 \_ 匹配 \_ 计数。
 
-**注意**   支持[单一根 i/o 虚拟化的驱动程序 (sr-iov) ](./single-root-i-o-virtualization--sr-iov-.md)或[虚拟机队列 (VMQ) ](./virtual-machine-queue--vmq--in-ndis-6-20.md)接口不需要支持此 oid 的 oid 查询请求。
+**注意**  支持 [单一根 i/o 虚拟化的驱动程序 (sr-iov)](./single-root-i-o-virtualization--sr-iov-.md) 或 [虚拟机队列 (VMQ)](./virtual-machine-queue--vmq--in-ndis-6-20.md) 接口不需要支持此 oid 的 oid 查询请求。
 
  
 
@@ -73,7 +72,7 @@ OID 请求已成功完成。
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [*MiniportResetEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_reset)

@@ -1,9 +1,8 @@
 ---
 title: scsikd.srbdata
-description: Scsikd.srbdata 扩展，将显示指定的 SRB_DATA 跟踪块。
-ms.assetid: 9c0ba4d9-124f-4e86-a0e1-7f8796b6571a
+description: Scsikd. srbdata 扩展显示指定 SRB_DATA 跟踪块。
 keywords:
-- scsikd.srbdata Windows 调试
+- scsikd srbdata Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,29 +11,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e6d90a77a2c51f5c738bcfb90a16241160589b66
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e559724e5c1f9b071a191661ae811f48b9dc6377
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334297"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821663"
 ---
 # <a name="scsikdsrbdata"></a>!scsikd.srbdata
 
 
-**！ Scsikd.srbdata**扩展插件都会显示指定的 SRB\_数据跟踪块。
+**！ Scsikd srbdata** 扩展显示指定的 SRB \_ 数据跟踪块。
 
 ```dbgcmd
 !scsikd.srbdata Address 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *Address*   
-指定的地址 SRB\_数据跟踪块。
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*地址*   
+指定 SRB \_ 数据跟踪块的地址。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -55,9 +54,9 @@ ms.locfileid: "63334297"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关详细信息，请参阅[SCSI 微型端口调试](scsi-miniport-debugging.md)。
+有关详细信息，请参阅 [SCSI 微型端口调试](scsi-miniport-debugging.md)。
 
  
 

@@ -1,15 +1,14 @@
 ---
 title: 常用属性、相机属性和扫描仪属性
 description: 常用属性、相机属性和扫描仪属性
-ms.assetid: 7d988a1b-4c2f-43f7-be09-a250d9ede35c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ecef977d790610fce474c2e2b5576ca4af690b8f
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 1a485a68cfb4567c8976363564b76a05bdec73c2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192957"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823177"
 ---
 # <a name="common-camera-and-scanner-properties"></a>常用属性、相机属性和扫描仪属性
 

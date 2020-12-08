@@ -1,24 +1,23 @@
 ---
 title: Windows SDK 参考
 description: Windows SDK 参考
-ms.assetid: 4ada216c-c51e-4357-9a16-f5932c39b31e
 keywords:
 - IHV UI 扩展 DLL WDK 本机802.11，Windows SDK 引用
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d3e52936bc748c32791c5601b2faf8bebf0cf7d
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 4620531f0df67be240f4cd7ec7f847f8eb92f474
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734157"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821861"
 ---
 # <a name="windows-sdk-references"></a>Windows SDK 参考
 
 
 
 
- 
+ 
 
 若要理解本部分中的材料，应 befamiliar 标准 COM 接口和方法，具体如下：
 
@@ -30,6 +29,6 @@ ms.locfileid: "91734157"
 
 [IPropertyBag COM 接口](/previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa768196(v=vs.85))
 
- 
+ 
 
- 
+ 

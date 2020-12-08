@@ -1,15 +1,14 @@
 ---
 title: WIA 项标志和类别的示例用法
 description: WIA 项标志和类别的示例用法
-ms.assetid: 8c9f7d85-6c84-4df9-9db3-6554d7eddf93
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 176cf4fdd9c0e94b9e545eee9706ecb601e39ad6
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 01eb877bde3db82bcc90e63f95bcbe37603e10db
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192093"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822427"
 ---
 # <a name="example-usage-of-wia-item-flags-and-categories"></a>WIA 项标志和类别的示例用法
 

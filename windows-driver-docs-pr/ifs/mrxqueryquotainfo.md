@@ -1,7 +1,6 @@
 ---
 title: MRxQueryQuotaInfo 例程
 description: MRxQueryQuotaInfo 例程由 RDBSS 调用，请求网络微型重定向程序查询有关文件系统对象的配额信息。
-ms.assetid: 44bf976b-09bc-4270-8c2e-8e55784aaa38
 keywords:
 - MRxQueryQuotaInfo 例程可安装文件系统驱动程序
 - PMRX_CALLDOWN
@@ -15,17 +14,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 255b839f82252a544948b7850df7ea42c2608b14
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 12dba11aef8823327b08e6431d0b5e4e1b4f61b1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066114"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823229"
 ---
 # <a name="mrxqueryquotainfo-routine"></a>MRxQueryQuotaInfo 例程
 
 
-*MRxQueryQuotaInfo*例程由[RDBSS](./the-rdbss-driver-and-library.md)调用，请求网络微型重定向程序查询有关文件系统对象的配额信息。
+*MRxQueryQuotaInfo* 例程由 [RDBSS](./the-rdbss-driver-and-library.md)调用，请求网络微型重定向程序查询有关文件系统对象的配额信息。
 
 <a name="syntax"></a>语法
 ------
@@ -34,12 +33,12 @@ ms.locfileid: "89066114"
 PMRX_CALLDOWN MRxQueryQuotaInfo;
 
 NTSTATUS MRxQueryQuotaInfo(
-  _Inout_ PRX_CONTEXT RxContext
+  _Inout_ PRX_CONTEXT RxContext
 )
 { ... }
 ```
 
-<a name="parameters"></a>parameters
+<a name="parameters"></a>参数
 ----------
 
 *RxContext* \[in、out\]  
@@ -102,25 +101,25 @@ NTSTATUS MRxQueryQuotaInfo(
 
 RDBSS 发出对 *MRxQueryQuotaInfo* 的调用，以响应接收 [**IRP \_ MJ \_ 查询 \_ 配额**](irp-mj-query-quota.md) 请求。
 
-在调用 *MRxQueryQuotaInfo*之前，RDBSS 会修改 \_ *RXCONTEXT* 参数指向的 RX 上下文结构中的以下成员：
+在调用 *MRxQueryQuotaInfo* 之前，RDBSS 会修改 \_ *RXCONTEXT* 参数指向的 RX 上下文结构中的以下成员：
 
-**信息. Buffer**成员设置为 i/o 请求数据包中的用户缓冲区。 如果需要，此缓冲区已被 RDBSS 锁定。
+**信息. Buffer** 成员设置为 i/o 请求数据包中的用户缓冲区。 如果需要，此缓冲区已被 RDBSS 锁定。
 
-**LengthRemaining**成员设置为**IrpSp &gt; 参数. QueryQuota**。
+**LengthRemaining** 成员设置为 **IrpSp &gt; 参数. QueryQuota**。
 
-**QueryQuota. SidList**成员设置为**IrpSp-QueryQuota. &gt; SidList**。
+**QueryQuota. SidList** 成员设置为 **IrpSp-QueryQuota. &gt; SidList**。
 
-**QueryQuota. SidListLength**成员设置为**IrpSp-QueryQuota. &gt; SidListLength**。
+**QueryQuota. SidListLength** 成员设置为 **IrpSp-QueryQuota. &gt; SidListLength**。
 
-**QueryQuota. StartSid**成员设置为**IrpSp-QueryQuota. &gt; StartSid**。
+**QueryQuota. StartSid** 成员设置为 **IrpSp-QueryQuota. &gt; StartSid**。
 
-**QueryQuota**成员设置为**IrpSp &gt; 参数. QueryQuota**。
+**QueryQuota** 成员设置为 **IrpSp &gt; 参数. QueryQuota**。
 
-如果**QueryQuota.RestartScan** IrpSp 设置了 SL ** &gt; ** \_ RESTART \_ 扫描位集，则 RestartScan 成员将设置为非零值。
+如果 **QueryQuota.RestartScan** IrpSp 设置了 SL **&gt;** \_ RESTART \_ 扫描位集，则 RestartScan 成员将设置为非零值。
 
-如果**IrpSp 的 &gt; ** "SL 返回**QueryQuota.ReturnSingleEntry** \_ \_ 单一 \_ 条目位" 位集，则 QueryQuota ReturnSingleEntry 成员将设置为非零值。
+如果 **IrpSp 的 &gt;** "SL 返回 **QueryQuota.ReturnSingleEntry** \_ \_ 单一 \_ 条目位" 位集，则 QueryQuota ReturnSingleEntry 成员将设置为非零值。
 
-如果**QueryQuota.IndexSpecified** **IrpSp &gt; 标志**的 \_ \_ 指定位设置为0，则 IndexSpecified 成员将设置为非零值。
+如果 **QueryQuota.IndexSpecified** **IrpSp &gt; 标志** 的 \_ \_ 指定位设置为0，则 IndexSpecified 成员将设置为非零值。
 
 成功时，网络小型重定向程序应将 RX 上下文结构的 **LengthRemaining** 成员设置为 \_ 要返回的配额信息的长度。 如果对 *MRxQueryQuotaInfo* 的调用成功，则 RDBSS 会将 IRP 的 **IoStatus** 成员设置为 RX 上下文的 **LengthRemaining** 成员 \_ 。
 
@@ -137,7 +136,7 @@ RDBSS 发出对 *MRxQueryQuotaInfo* 的调用，以响应接收 [**IRP \_ MJ \_ 
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面型</td>
+<td align="left">台式机</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
@@ -146,7 +145,7 @@ RDBSS 发出对 *MRxQueryQuotaInfo* 的调用，以响应接收 [**IRP \_ MJ \_ 
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**MRxIsValidDirectory**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkdir_calldown)

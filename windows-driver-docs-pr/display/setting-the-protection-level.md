@@ -1,7 +1,6 @@
 ---
 title: 设置保护级别
 description: 设置保护级别
-ms.assetid: e0fecc58-59d9-470a-83e6-9b08e2f59169
 keywords:
 - 复制保护 WDK COPP，保护级别
 - 视频副本保护 WDK COPP，保护级别
@@ -9,12 +8,12 @@ keywords:
 - 受保护的视频 WDK COPP，保护级别
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fb3294dfd68c7e75d34df16feb68e6828ee12d3a
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 1eac718f270984c43c9d62b666cfc576c0a0cf37
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064012"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822459"
 ---
 # <a name="setting-the-protection-level"></a>设置保护级别
 

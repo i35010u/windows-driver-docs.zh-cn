@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ MEDIASEEKING \_ 位置
 description: "\"KSPROPERTY \\_ MEDIASEEKING \\_ 位置\" 属性设置筛选器的媒体时间和/或停止时间。"
-ms.assetid: 20f0e97a-37bb-4c01-8012-b73bb765f4b9
 keywords:
 - KSPROPERTY_MEDIASEEKING_POSITIONS 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d37b4306faa7a17eeea087809ff1089e5384954b
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 9e22c70c9e38632de58ddb681055f546c5dc4648
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107486"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821781"
 ---
 # <a name="ksproperty_mediaseeking_positions"></a>KSPROPERTY \_ MEDIASEEKING \_ 位置
 
@@ -82,7 +81,7 @@ KSPROPERTY \_ 位置结构指定相对于流的总持续时间的当前位置和
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY \_ 位置**](/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_positions)

@@ -1,15 +1,14 @@
 ---
 title: 公开 PTP 相机的供应商扩展
 description: 公开 PTP 相机的供应商扩展
-ms.assetid: b3a8b70b-c7ac-4e45-97bb-9b58e013100d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e8c38cb4457a99f093d5c0a2f973b8872459cc8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: db4edc3da94bcc1a2908062d68daafaf3b5f61bf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373123"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822409"
 ---
 # <a name="exposing-the-vendor-extensions-of-your-ptp-camera"></a>公开 PTP 相机的供应商扩展
 
@@ -17,9 +16,9 @@ ms.locfileid: "63373123"
 
 
 
-PTP 设备可以支持供应商扩展属性、 供应商扩展事件和供应商扩展的命令。
+PTP 设备可以支持供应商扩展的属性、供应商扩展的事件和供应商扩展的命令。
 
-中列出了供应商扩展属性和事件**DeviceData** INF 文件条目 (请参阅[WIA 设备 INF 文件](inf-files-for-wia-devices.md)有关详细信息)，因此驱动程序是如何处理它们。 列出供应商扩展 ID 的条目是必需的。 它必须匹配在 DeviceInfo 数据集中的 VendorExtensionID 字段。 其他条目的示例如下所示，以下各节中所述。
+供应商扩展的属性和事件在 **DeviceData** INF 文件条目中列出 (参阅 [WIA 设备的 INF 文件](inf-files-for-wia-devices.md)) 的详细信息，以便驱动程序能够处理它们。 列出供应商扩展 ID 的条目是必需的。 这必须与 DeviceInfo 数据集中的 VendorExtensionID 字段匹配。 以下部分介绍了其他条目的示例。
 
 ```INF
 [DeviceData]

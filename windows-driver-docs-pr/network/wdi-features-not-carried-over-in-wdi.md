@@ -1,29 +1,28 @@
 ---
-title: 不能在 WDI 中的功能
-description: 以下功能可在先前的本机 WLAN 驱动程序模型，但在 WDI 中不可用。
-ms.assetid: 38CFD9D9-61E7-4139-83E3-30B25EEB1F9D
+title: 未转入 WDI 的功能
+description: 以下功能在以前的本机 WLAN 驱动程序模型中可用，但在 WDI 中不可用。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2746d2fadbf961613664a32195fccd7e4b0839c4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: e6c6e9eda4cdc9c8097be4a94300908de60f2984
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546532"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822761"
 ---
-# <a name="features-not-carried-over-in-wdi"></a>不能在 WDI 中的功能
+# <a name="features-not-carried-over-in-wdi"></a>未转入 WDI 的功能
 
 
-以下功能可在先前的本机 WLAN 驱动程序模型，但在 WDI 中不可用。
+以下功能在以前的本机 WLAN 驱动程序模型中可用，但在 WDI 中不可用。
 
--   软亚太
+-   软 AP
 -   IBSS
--   网络监视器
+-   Netmon
 
-以下软 AP 所需功能移植到 Wi-Fi Direct。
+以下软 AP 必需功能将移植到 Wi-Fi 直接。
 
 -   添加了 802.11 b。
--   移动到 Wi-Fi Direct 软亚太的所有 tethering 要求。
+-   已将软 AP 的所有 tethering 要求移到 Wi-Fi 直接。
 
  
 

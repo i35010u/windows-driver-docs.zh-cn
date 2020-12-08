@@ -1,19 +1,18 @@
 ---
 title: 设置存储类驱动程序的设备扩展
 description: 设置存储类驱动程序的设备扩展
-ms.assetid: 9d050d23-39c0-406e-9f4b-2e95d388f5cf
 keywords:
 - 存储类驱动程序 WDK，设备扩展
 - 类驱动程序 WDK 存储，设备扩展
 - 设备扩展 WDK 存储
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f339755e582e1d522dad434893177d7c4fb5d4d
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: dad555e37ae8b9b2e0c3d1acf7faf5c67c769b8c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191281"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822731"
 ---
 # <a name="setting-up-a-storage-class-drivers-device-extension"></a>设置存储类驱动程序的设备扩展
 
@@ -37,7 +36,7 @@ ms.locfileid: "89191281"
 
 -   指向用于识别数据的驱动程序分配的缓冲区的指针
 
-    类驱动程序必须从缓存对齐的非分页池为返回的有用数据分配内存。 有关为驱动程序缓冲区分配内存的详细信息，请参阅 [分配系统空间内存](../kernel/allocating-system-space-memory.md)。
+    类驱动程序必须从缓存对齐的非分页池为返回的有用数据分配内存。 有关为驱动程序缓冲区分配内存的详细信息，请参阅 [分配 System-Space 内存](../kernel/allocating-system-space-memory.md)。
 
 -   驱动程序确定的 **SrbFlags** 的默认值，该类驱动程序在 SRBs 中设置这些值
 

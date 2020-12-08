@@ -1,7 +1,6 @@
 ---
 title: SRB \_ 读取 \_ 数据
 description: SRB \_ 读取 \_ 数据
-ms.assetid: b59d705d-5215-42ee-85cf-369a2e69f99b
 keywords:
 - SRB_READ_DATA 流媒体设备
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0589952298812f8c4102dc861d127870c88f3a67
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: e2e77aad8db26932afdd154440d9f94140c45910
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186297"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821751"
 ---
 # <a name="srb_read_data"></a>SRB \_ 读取 \_ 数据
 
@@ -40,9 +39,9 @@ ms.locfileid: "89186297"
 <span id="STATUS_IO_DEVICE_ERROR"></span><span id="status_io_device_error"></span>状态 \_ IO \_ 设备 \_ 错误  
 指示出现硬件故障。
 
-### <a name="comments"></a>说明
+### <a name="comments"></a>注释
 
-*PSrb* - &gt; **CommandData**的值。**DataBufferArray**指向[**KSSTREAM \_ 标头**](/windows-hardware/drivers/ddi/ks/ns-ks-ksstream_header)结构的数组，它们共同描述了数据缓冲区。 *PSrb*指针指向[**HW \_ 流 \_ 请求 \_ 块**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_request_block)结构。 *pSrb* - pSrb &gt;**CommandData**。**NumberOfBuffers**指定数组的大小。
+*PSrb* - &gt; **CommandData** 的值。**DataBufferArray** 指向 [**KSSTREAM \_ 标头**](/windows-hardware/drivers/ddi/ks/ns-ks-ksstream_header)结构的数组，它们共同描述了数据缓冲区。 *PSrb* 指针指向 [**HW \_ 流 \_ 请求 \_ 块**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_request_block)结构。 *pSrb* - pSrb &gt;**CommandData**。**NumberOfBuffers** 指定数组的大小。
 
 **当 \_ 微型驱动程序接收到 SRB READ \_ DATA 命令时，响应的微型驱动程序例程应：**
 

@@ -1,18 +1,17 @@
 ---
 title: NDIS 端口的类型
 description: NDIS 端口的类型
-ms.assetid: a77ceb1b-d4b9-4a42-aa5b-685295722fa3
 keywords:
 - 端口 WDK NDIS，类型
 - NDIS 端口 WDK，类型
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6871c8bf6c8b8884869022d0db889e126a7f4b14
-ms.sourcegitcommit: db9d058a9e592d4c47c67fc14f04f0ddc3aa92af
+ms.openlocfilehash: 3c53aca20dd8693fcea98a862ae482266118ce25
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91989827"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822805"
 ---
 # <a name="types-of-ndis-ports"></a>NDIS 端口的类型
 
@@ -37,7 +36,7 @@ NDIS 端口可以是以下类型之一：
 <a href="" id="ndisporttypendisimplatform"></a>**NdisPortTypeNdisImPlatform**  
 预留给系统使用。
 
-**注意**   此值仅在 NDIS 6.30 和更高版本中受支持。
+**注意**  此值仅在 NDIS 6.30 和更高版本中受支持。
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: 'StorPortNotification2 规则 (storport) '
 description: 此规则验证对 StorPortNotification 的调用是否仅使用允许的 (即) 通知类型。
-ms.assetid: 74363E6D-1D1B-484D-A558-8996DFE02FA8
 ms.date: 05/21/2018
 keywords:
 - 'StorPortNotification2 规则 (storport) '
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d22533ec75995bf4de45890e484caa6bb731a75d
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 6aaeb732d2def4f184ad2952757e61908fd39dfe
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107356"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821569"
 ---
 # <a name="storportnotification2-rule-storport"></a>StorPortNotification2 规则 (storport) 
 

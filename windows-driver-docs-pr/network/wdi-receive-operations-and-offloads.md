@@ -1,15 +1,14 @@
 ---
 title: WDI 接收操作和卸载
 description: 操作卸载的主要类别是可配置的。MSDU operationsFrame 转发 (转发决策和传动) 协议/任务卸载。
-ms.assetid: 7D2648BC-05F2-4F75-BA01-E0385C83E0E8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bfe9f633734f7e770a5a3ce94db71ff9ae1fbf21
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: f788fc171bb65f90aee95a371d25b7361ae5b204
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102414"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822083"
 ---
 # <a name="wdi-receive-operations-and-offloads"></a>WDI 接收操作和卸载
 
@@ -32,9 +31,9 @@ ms.locfileid: "90102414"
 <thead>
 <tr class="header">
 <th align="left">函数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 <th align="left">所有权</th>
-<th align="left">备注</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -109,7 +108,7 @@ ms.locfileid: "90102414"
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><p>碎片</p></td>
+<td align="left"><p>碎片整理</p></td>
 <td align="left"><p>将802.11 碎片重组为其原始 MSDU。</p></td>
 <td align="left"><p>Target/TAL</p></td>
 <td align="left"></td>
@@ -137,7 +136,7 @@ ms.locfileid: "90102414"
 
  
 
-## <a name="receive-operations-in-host-implemented-fips-mode"></a>宿主实现的 FIPS 模式下的接收操作
+## <a name="receive-operations-in-host-implemented-fips-mode"></a>在 FIPS 模式下接收操作 Host-Implemented
 
 
 在此模式下，目标可能会指示收到的帧具有802.11 标头或802.3 标头。 在指示之前，不能对帧进行解密。

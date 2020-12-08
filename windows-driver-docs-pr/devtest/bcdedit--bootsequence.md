@@ -1,7 +1,6 @@
 ---
-title: BCDEdit/bootsequence
+title: BCDEdit /bootsequence
 description: Bootsequence 命令将启动管理器设置为要使用的一次性启动顺序。
-ms.assetid: 74eb527c-78f3-41d0-bac6-f6fc200096a5
 ms.date: 09/23/2020
 keywords:
 - BCDEdit/bootsequence 驱动程序开发工具
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 92d52abeaa43c017d973385d83e1a276c8953ff0
-ms.sourcegitcommit: f2fbb6e54e085e9329288cee49860fe380be9c4c
+ms.openlocfilehash: e461fa96b912aa68b6618be4f45db0e835412ea8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91778993"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822593"
 ---
-<a name="bcdedit-bootsequence"></a>BCDEdit/bootsequence
+<a name="bcdedit-bootsequence"></a>BCDEdit /bootsequence
 ============
 
-**/Bootsequence**命令将启动管理器设置为要使用的一次性启动顺序。
+**/Bootsequence** 命令将启动管理器设置为要使用的一次性启动顺序。
 
 ``` syntax
 bcdedit /bootsequence <id> [...] [ /addfirst | /addlast | /remove ]

@@ -1,17 +1,16 @@
 ---
 title: WDF 验证
 description: 驱动程序验证程序的 WDF 验证
-ms.assetid: 9ee72369-878f-4710-a38b-1c93042178bd
 keywords:
 - 驱动程序验证程序的 WDF 验证
 ms.date: 09/14/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d3b488b78a019a0d74c30d2e4f311ece9d33fb5b
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 248038a7b733a066ea0bfd5bb9129c43879a7338
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384863"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823341"
 ---
 # <a name="wdf-verification"></a>WDF 验证
 
@@ -26,7 +25,7 @@ WDF 验证检查内核模式驱动程序是否遵循 [内核模式驱动程序�
 
 * **在命令行中**
 
-    在命令行中，端口微型端口接口检查由 **0x00100000**表示。 例如：
+    在命令行中，端口微型端口接口检查由 **0x00100000** 表示。 例如：
     
     `verifier /flags 0x00100000 /driver MyDriver.sys`
 

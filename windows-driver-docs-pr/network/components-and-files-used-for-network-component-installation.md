@@ -1,7 +1,6 @@
 ---
 title: 用于网络组件安装的组件和文件
 description: 用于网络组件安装的组件和文件
-ms.assetid: be056ff1-0b92-4e81-a506-7750012aad4e
 keywords:
 - 安装网络组件 WDK，使用的组件和文件
 - 网络组件安装 WDK，使用的组件和文件
@@ -17,12 +16,12 @@ keywords:
 - 文件 WDK 网络组件安装
 ms.date: 01/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f6392187ffb7bca3121438a29a23037547decd4e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b4e76b47c39613661d24bdecc05a25216603a033
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218115"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823035"
 ---
 # <a name="components-and-files-used-for-network-component-installation"></a>用于网络组件安装的组件和文件
 

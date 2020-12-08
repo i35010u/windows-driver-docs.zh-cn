@@ -1,7 +1,6 @@
 ---
 title: 半色调
 description: 半色调
-ms.assetid: 94cf0d87-055d-470e-94ca-225d519aeb14
 keywords:
 - GDI WDK Windows 2000 显示，半色调
 - 图形驱动程序 WDK Windows 2000 显示，半色调
@@ -11,12 +10,12 @@ keywords:
 - 大小 WDK GDI 半色调
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e99ddb1f2d27578ad14659a2f033d834d6e1fa23
-ms.sourcegitcommit: eba1bbec165d56f64d4c1ab5c3f7465dcd299ae3
+ms.openlocfilehash: 50e19024155800a932e444ad52596ec80a1ca9d5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91510624"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822507"
 ---
 # <a name="halftoning"></a>半色调
 
@@ -28,7 +27,7 @@ ms.locfileid: "91510624"
 
 在计算机上，大部分打印或屏幕底纹也使用固定单元像素大小。 若要模拟可变点大小，可通过组合群集像素来模拟半色调屏幕。 GDI 包含了半色调默认参数，可提供良好的第一个近似值。 其他特定于设备的信息可添加到系统中，以改进输出。
 
-驱动程序通过[**DrvEnablePDEV**](/windows/win32/api/winddi/nf-winddi-drvenablepdev)函数返回的[**GDIINFO**](/windows/win32/api/winddi/ns-winddi-gdiinfo)结构向 gdi 发送与设备相关的规范，gdi 需要执行半色调。 驱动程序通过 GDIINFO 的 **ulHTPatternSize** 成员指定模式大小，此成员定义半色调的首选输出格式。 对于特定设备，半色调与半色调模式大小相关。 GDI 提供了许多预定义的模式大小（从 2 x 2 到 16 x 16）。
+驱动程序通过 [**DrvEnablePDEV**](/windows/win32/api/winddi/nf-winddi-drvenablepdev)函数返回的 [**GDIINFO**](/windows/win32/api/winddi/ns-winddi-gdiinfo)结构向 gdi 发送与设备相关的规范，gdi 需要执行半色调。 驱动程序通过 GDIINFO 的 **ulHTPatternSize** 成员指定模式大小，此成员定义半色调的首选输出格式。 对于特定设备，半色调与半色调模式大小相关。 GDI 提供了许多预定义的模式大小（从 2 x 2 到 16 x 16）。
 
 对于每个标准模式大小，还会有一个修改后的版本。 它由 \_ 标准模式大小名称上的后缀 "M" 标识。 例如，标准 6 x 6 模式的定义名称为 HT \_ PATSIZE \_ 6x6，而修改后的 6 x 6 模式的名称为 ht \_ PATSIZE \_ 6x6 \_ M) 。 修改后的版本提供了更多的颜色分辨率，但可能会产生水平或垂直噪音的副作用。 此外，由于每种模式大小都与设备分辨率相关，因此适当的模式大小取决于特定的设备。
 
@@ -40,9 +39,9 @@ GDI 处理来自应用程序的颜色调整请求，并通过图形 DDI 将信�
 
 例如，允许 GDI 执行半色调，而不是 PostScript 打印机，以提供更快的所见即所得质量的输出。 PostScript 驱动程序的接口允许用户调整半色调，并提供一个复选框，以便在首选打印机内置半色调功能时关闭 GDI 半色调。
 
-[**DrvDitherColor**](/windows/win32/api/winddi/nf-winddi-drvdithercolor)函数可以返回 DCR \_ 半色调值，该值请求 GDI 使用现有设备 (半色调) 调色板来接近颜色。 \_仅当设备包含设备 (半色调) 调色板（如 VGA-16 适配器卡，因为它具有标准固定调色板）时，DCR 半色调才能与显示器驱动程序一起使用。 单色驱动程序（包括大多数光栅打印机）可以使用*DrvDitherColor*中的*iMode*参数来获取良好的灰度效果。
+[**DrvDitherColor**](/windows/win32/api/winddi/nf-winddi-drvdithercolor)函数可以返回 DCR \_ 半色调值，该值请求 GDI 使用现有设备 (半色调) 调色板来接近颜色。 \_仅当设备包含设备 (半色调) 调色板（如 VGA-16 适配器卡，因为它具有标准固定调色板）时，DCR 半色调才能与显示器驱动程序一起使用。 单色驱动程序（包括大多数光栅打印机）可以使用 *DrvDitherColor* 中的 *iMode* 参数来获取良好的灰度效果。
 
-**注意**   Windows 2000 和更高版本不支持24位 (或更高) 设备上的半色调。
+**注意**   Windows 2000 和更高版本不支持24位 (或更高) 设备上的半色调。
 
  
 

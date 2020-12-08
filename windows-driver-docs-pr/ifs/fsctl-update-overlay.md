@@ -1,7 +1,6 @@
 ---
 title: FSCTL_UPDATE_OVERLAY 控制代码
 description: FSCTL \_ UPDATE \_ 叠加控制代码为附加到卷的后备源更新新的数据源标识符。
-ms.assetid: 2A420AE7-68CA-4B6A-82D2-C4C39A892F16
 keywords:
 - FSCTL_UPDATE_OVERLAY 控制代码可安装的文件系统驱动程序
 topic_type:
@@ -14,36 +13,36 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 988572da6e11105cb039a6240a7d7a06c24a2ac8
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 2a10baeea29bbb6fc9f6a6f2a643ade72e3a376c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066932"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821495"
 ---
 # <a name="fsctl_update_overlay-control-code"></a>FSCTL \_ 更新 \_ 重叠控制代码
 
 
-**FSCTL \_ UPDATE \_ 叠加**控制代码为附加到卷的后备源更新新的数据源标识符。
+**FSCTL \_ UPDATE \_ 叠加** 控制代码为附加到卷的后备源更新新的数据源标识符。
 
 若要执行此操作，请调用具有以下参数的 [**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 或 [**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85)) 。
 
-**参数**
+**Parameters**
 
 <a href="" id="instance--in-"></a>*实例 \[\]*  
-仅[**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 。 调用方的不透明实例指针。 此参数是必需的，不能为 NULL。
+仅 [**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 。 调用方的不透明实例指针。 此参数是必需的，不能为 NULL。
 
 <a href="" id="fileobject--in-"></a>*FileObject \[ in\]*  
-仅[**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 。 覆盖已更新的卷的文件指针对象。 此参数是必需的，不能为 NULL。
+仅 [**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 。 覆盖已更新的卷的文件指针对象。 此参数是必需的，不能为 NULL。
 
 <a href="" id="filehandle--in-"></a>*FileHandle \[\]*  
-仅[**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85)) 。 覆盖更新的卷的句柄。 此参数是必需的，不能为 NULL。
+仅 [**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85)) 。 覆盖更新的卷的句柄。 此参数是必需的，不能为 NULL。
 
 <a href="" id="fscontrolcode--in-"></a>*FsControlCode \[\]*  
 操作的控制代码。 对于此操作，请使用 **FSCTL \_ 更新 \_ 覆盖** 区。
 
 <a href="" id="inputbuffer"></a>*InputBuffer*  
-指向输入缓冲区的指针，该缓冲区必须包含 [**WOF \_ 外部 \_ 信息**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_wof_external_info) 结构。 如果需要，其他提供程序特定的数据将立即包含在 **WOF \_ 外部 \_ 信息**之后。 如果提供程序是 WIM 文件，则在**WOF \_ 外部 \_ 信息**后将包含[**wim \_ 提供程序 \_ 更新 \_ 覆盖 \_ 输入**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_wim_provider_update_overlay_input)结构。
+指向输入缓冲区的指针，该缓冲区必须包含 [**WOF \_ 外部 \_ 信息**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_wof_external_info) 结构。 如果需要，其他提供程序特定的数据将立即包含在 **WOF \_ 外部 \_ 信息** 之后。 如果提供程序是 WIM 文件，则在 **WOF \_ 外部 \_ 信息** 后将包含 [**wim \_ 提供程序 \_ 更新 \_ 覆盖 \_ 输入**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_wim_provider_update_overlay_input)结构。
 
 <a href="" id="inputbufferlength--in-"></a>*InputBufferLength \[\]*  
 设置为 **sizeof** ([**WOF \_ 外部 \_ 信息**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_wof_external_info)) 以及任何其他提供程序输入数据的大小。
@@ -57,7 +56,7 @@ ms.locfileid: "89066932"
 <a name="status-block"></a>状态块
 ------------
 
-如果操作成功，则[**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)或[**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85))返回状态 \_ SUCCESS。 否则，相应的函数可能会返回以下 NTSTATUS 值之一。
+如果操作成功，则 [**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)或 [**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85))返回状态 \_ SUCCESS。 否则，相应的函数可能会返回以下 NTSTATUS 值之一。
 
 <table>
 <colgroup>
@@ -67,7 +66,7 @@ ms.locfileid: "89066932"
 <thead>
 <tr class="header">
 <th align="left">术语</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -95,7 +94,7 @@ ms.locfileid: "89066932"
 <a name="remarks"></a>备注
 -------
 
-当要更新的数据源是 (WIM) 文件的 Windows 映像格式时，输入缓冲区将包含 [**WOF \_ 外部 \_ 信息**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_wof_external_info) 结构，后跟 [**wim \_ 提供程序 \_ 更新 \_ 覆盖 \_ 输入**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_wim_provider_update_overlay_input) 结构。 在这种情况下， *InputBufferLength* 将为 **sizeof** (WOF \_ 外部 \_ 信息) + **sizeof** (**WIM \_ 提供程序 \_ 更新 \_ 覆盖 \_ 输入**) 。 **Wim \_ 提供程序 \_ 更新 \_ 覆盖 \_ 输入**中的**DataSourceId**值必须为以前添加到[**FSCTL \_ 添加 \_ 覆盖**](fsctl-add-overlay.md)请求中的 WIM 文件。
+当要更新的数据源是 (WIM) 文件的 Windows 映像格式时，输入缓冲区将包含 [**WOF \_ 外部 \_ 信息**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_wof_external_info) 结构，后跟 [**wim \_ 提供程序 \_ 更新 \_ 覆盖 \_ 输入**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_wim_provider_update_overlay_input) 结构。 在这种情况下， *InputBufferLength* 将为 **sizeof** (WOF \_ 外部 \_ 信息) + **sizeof** (**WIM \_ 提供程序 \_ 更新 \_ 覆盖 \_ 输入**) 。 **Wim \_ 提供程序 \_ 更新 \_ 覆盖 \_ 输入** 中的 **DataSourceId** 值必须为以前添加到 [**FSCTL \_ 添加 \_ 覆盖**](fsctl-add-overlay.md)请求中的 WIM 文件。
 
 其他支持提供商将定义自己的特定输入参数结构。
 

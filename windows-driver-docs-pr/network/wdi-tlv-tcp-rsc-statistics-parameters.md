@@ -1,17 +1,16 @@
 ---
 title: WDI_TLV_TCP_RSC_STATISTICS_PARAMETERS
 description: WDI_TLV_TCP_RSC_STATISTICS_PARAMETERS 是包含 OID_WDI_TCP_RSC_STATISTICS 的 TCP RSC 统计信息的 TLV。
-ms.assetid: C1459DF6-6492-4C1F-A22D-2BDC6492B29C
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_TCP_RSC_STATISTICS_PARAMETERS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: fbd8caf8d9ff8605e820fa53bd0365aac6b67827
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 39c45f1b42e6a7c1b85558d98a1cd231f2cd7091
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214987"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821961"
 ---
 # <a name="wdi_tlv_tcp_rsc_statistics_parameters"></a>WDI \_ TLV \_ TCP \_ RSC \_ STATISTICS \_ 参数
 
@@ -23,7 +22,7 @@ WDI \_ tlv \_ tcp \_ rsc \_ STATISTICS \_ 参数是一个 tlv，其中包含 [OI
 
 0xF3
 
-## <a name="length"></a>Length
+## <a name="length"></a>长度
 
 
 Sum (所有包含的元素的大小) 。
@@ -31,7 +30,7 @@ Sum (所有包含的元素的大小) 。
 ## <a name="values"></a>值
 
 
-| 类型   | 说明                                                                                                                                                                                                                               |
+| 类型   | 描述                                                                                                                                                                                                                               |
 |--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | UINT64 | 合并的数据包总数。                                                                                                                                                                                          |
 | UINT64 | 合并的总字节数。                                                                                                                                                                                            |
@@ -55,7 +54,7 @@ Sum (所有包含的元素的大小) 。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

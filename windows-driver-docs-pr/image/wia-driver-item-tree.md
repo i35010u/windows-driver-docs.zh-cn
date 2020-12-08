@@ -1,15 +1,14 @@
 ---
 title: WIA 驱动程序项树
 description: WIA 驱动程序项树
-ms.assetid: 67232179-4b9b-49a0-b8b0-5ed0914d4156
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f2de1679d9bdfc88e56ee26196ce1d8058362a5
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: cc8b0b3946d7d98e8a2ab81eaf75a85750f1bd89
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185019"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822331"
 ---
 # <a name="wia-driver-item-tree"></a>WIA 驱动程序项树
 

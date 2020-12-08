@@ -1,15 +1,14 @@
 ---
 title: GPIO 中断掩码
 description: 除了启用和禁用以外，配置为中断输入的常规用途 i/o (GPIO) pin。
-ms.assetid: FD6537DA-2AAA-4646-896D-D5BC834526B6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cb0eabcd4614aa757b20548536f3c70d60e60d76
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: cbefbf780da6775101fd3794c1a3547a918e8257
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064484"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821501"
 ---
 # <a name="gpio-interrupt-masks"></a>GPIO 中断掩码
 

@@ -1,17 +1,16 @@
 ---
 title: NDIS_STATUS_WWAN_IP_ADDRESS_STATE
 description: 微型端口驱动程序使用 NDIS_STATUS_WWAN_IP_ADDRESS_STATE 通知来通知 MB 服务有关 IP 配置的更改的额外 PDP 上下文。
-ms.assetid: 98E4028D-AD75-4F12-ADA4-41725253166F
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WWAN_IP_ADDRESS_STATE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 568fe0275517f5e1eae56325b0d630fe1ace0a4f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ae444a66511abbc9b45f8d19b67300fb2ecdfd35
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212845"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822915"
 ---
 # <a name="ndis_status_wwan_ip_address_state"></a>NDIS \_ 状态 \_ WWAN \_ IP \_ 地址 \_ 状态
 
@@ -47,7 +46,7 @@ ms.locfileid: "89212845"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ WWAN \_ IP \_ 地址 \_ 状态**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_ip_address_state)

@@ -1,7 +1,6 @@
 ---
 title: ColorEntry 元素
 description: 必需的 ColorEntry 元素描述扫描仪上的输入源支持的单个颜色处理模式。
-ms.assetid: a25c6da6-058e-4d10-895c-4507f0562ee8
 keywords:
 - ColorEntry 元素图像设备
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - Schema
 ms.date: 11/09/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 427cf1e9044aa5383123fd14a8e8bd1270ebc787
-ms.sourcegitcommit: ea3215e9d5afe073ed6d01fb6dddf31d95ef3b63
+ms.openlocfilehash: 1d36eee7dcb7282a4aa3dffb6eddc021b28e39c5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94673773"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823187"
 ---
 # <a name="colorentry-element"></a>ColorEntry 元素
 
@@ -39,7 +38,7 @@ ms.locfileid: "94673773"
 
 必需。 以下关键字之一：
 
-| 术语 | 说明 |
+| 术语 | 描述 |
 |--|--|
 | BlackAndWhite1 | 黑色和白色图像;1位/像素 (bpp) 和单个通道 |
 | Grayscale4 | 灰度图像;4 bpp 和单通道 |
@@ -62,7 +61,7 @@ ms.locfileid: "94673773"
 
 [**PlatenColor**](platencolor.md)
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 每个 value 关键字描述颜色数据类型和编码、位深度和每个通道的位数。 下表显示了值关键字如何映射到扫描仪的颜色处理属性。
 

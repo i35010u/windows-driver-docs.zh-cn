@@ -1,19 +1,18 @@
 ---
 title: SCSI 微型端口驱动程序的 HwScsiDisableInterruptsCallback 例程
 description: SCSI 微型端口驱动程序的 HwScsiDisableInterruptsCallback 例程
-ms.assetid: d6c668cc-cb8d-42f4-a6e0-74bbd8b1b27a
 keywords:
 - SCSI 微型端口驱动程序 WDK 存储，HwScsiDisableInterruptsCallback
 - HwScsiDisableInterruptsCallback
 - 中断 WDK SCSI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b36234f3c97806ace7637e43f955bb988ac6c634
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 503448343bc0c4dbe1e38a94ac210b4d35bd5a75
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89183851"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821827"
 ---
 # <a name="scsi-miniport-drivers-hwscsidisableinterruptscallback-routine"></a>SCSI 微型端口驱动程序的 HwScsiDisableInterruptsCallback 例程
 

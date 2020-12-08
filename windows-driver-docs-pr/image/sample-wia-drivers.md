@@ -1,15 +1,14 @@
 ---
 title: 示例 WIA 驱动程序
 description: 示例 WIA 驱动程序
-ms.assetid: 1d69602f-67d7-4000-b499-aa448fd50fef
 ms.date: 05/29/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 7161b8ce27d92b4ebc100d655a86d82db00ce9b2
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: c095867d0260f6b6933320cf12fd97a5dc53c7dd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187195"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822397"
 ---
 # <a name="sample-wia-drivers"></a>示例 WIA 驱动程序
 

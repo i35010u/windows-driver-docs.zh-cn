@@ -1,19 +1,18 @@
 ---
 title: 迁移到 Windows 显示驱动程序模型 (WDDM)
 description: 迁移到 Windows 显示驱动程序模型 (WDDM)
-ms.assetid: 7f926aa7-1698-4a4e-a1ce-54a316bdc0cd
 keywords:
 - 显示驱动程序模型 WDK Windows Vista，迁移
 - Windows Vista 显示器驱动程序模型 WDK，迁移
 - 迁移显示器驱动程序模型 WDK Windows Vista
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2eb8289c94555043813025314cc01fa5fa6438b0
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 76472f5c24ce0704e16ff94bf1586c87690302a1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717202"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822455"
 ---
 # <a name="migrating-to-the-windows-display-driver-model-wddm"></a>迁移到 Windows 显示驱动程序模型 (WDDM)
 
@@ -32,7 +31,7 @@ WDDM 支持根据 XDDM 编写的显示和视频微型端口驱动程序。 但�
 -   显示微型端口驱动程序动态加载相应的 DirectX 图形内核子系统。 显示微型端口驱动程序和 DirectX 图形内核子系统通过接口相互调用。
 
 -    (IOCTL) ，无需再处理显示微型端口驱动程序。 在 XDDM 中，内核模式显示驱动程序使用以下代码与视频微型端口驱动程序通信。 在 WDDM 中，用户模式显示驱动程序与 Direct3D 运行时通信;WDDM 图形内核子系统又与显示微型端口驱动程序通信。
-    **注意**   以下 IOCTLs 仍用于 WDDM，显示微型端口驱动程序必须处理它们： [**ioctl \_ 视频 \_ 查询 \_ 颜色 \_ 功能**](/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_query_color_capabilities) 
+    **注意**  以下 IOCTLs 仍用于 WDDM，显示微型端口驱动程序必须处理它们： [**ioctl \_ 视频 \_ 查询 \_ 颜色 \_ 功能**](/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_query_color_capabilities) 
      [**ioctl \_ 视频 \_ 句柄 \_ VIDEOPARAMETERS**](/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_handle_videoparameters)
 
      
@@ -44,7 +43,7 @@ WDDM 支持根据 XDDM 编写的显示和视频微型端口驱动程序。 但�
 -   用户模式显示驱动程序的 [**CreateResource**](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_createresource) 函数，以及显示微型端口驱动程序的 [**DxgkDdiCreateAllocation**](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_createallocation) 函数，替换 D3dCreateSurfaceEx 中的 [*DdCanCreateSurface*](/previous-versions/windows/hardware/drivers/ff549213(v=vs.85))、 [*DdCreateSurface*](/previous-versions/windows/hardware/drivers/ff549263(v=vs.85))和 [**XDDM**](/windows/win32/api/ddrawint/nc-ddrawint-pdd_createsurfaceex) 函数。
 
 -   大多数其余的用户模式显示驱动程序函数实现的功能与 XDDM 的内核模式显示驱动程序实现的功能相同：
-    -   [**D3dDrawPrimitives2**](/windows-hardware/drivers/ddi/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)函数和[**DP2**](/windows-hardware/drivers/ddi/d3dhal/ne-d3dhal-_d3dhal_dp2operation)操作代码
+    -   [**D3dDrawPrimitives2**](/windows-hardware/drivers/ddi/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)函数和 [**DP2**](/windows-hardware/drivers/ddi/d3dhal/ne-d3dhal-_d3dhal_dp2operation)操作代码
     -   [运动补偿回调函数](/windows-hardware/drivers/ddi/index)和[DirectX 视频加速结构](/windows-hardware/drivers/ddi/index)
 
  

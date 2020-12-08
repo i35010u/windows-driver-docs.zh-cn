@@ -1,16 +1,15 @@
 ---
 title: OID_PD_CLOSE_PROVIDER
 description: NDIS 协议或筛选器驱动程序将对象标识符 (OID) 方法 OID_PD_CLOSE_PROVIDER 请求发送到 PDPI 提供程序，以在 PDPI 提供程序对象中提供对 PD 功能的访问权限。
-ms.assetid: 8A504A81-6DC8-415C-9FDC-F03657A0EB87
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_PD_CLOSE_PROVIDER 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: beaed538a8d3bde9915542c7922102ceb6c0d9a8
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f1680b9bbe106a1a5965682e583e7f7b0228f345
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208645"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822129"
 ---
 # <a name="oid_pd_close_provider"></a>OID \_ PD \_ 关闭 \_ 提供程序
 
@@ -36,7 +35,7 @@ NDIS 协议或筛选器驱动程序向 PDPI 提供程序发送对象标识符 (O
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>
@@ -45,7 +44,7 @@ NDIS 协议或筛选器驱动程序向 PDPI 提供程序发送对象标识符 (O
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [*MiniportOidRequest*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)

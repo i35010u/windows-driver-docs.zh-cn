@@ -1,7 +1,6 @@
 ---
 title: GUID_AVC_CLASS
 description: GUID_AVC_CLASS
-ms.assetid: 1aa323d3-7d68-4c50-af68-01bda3792fec
 keywords:
 - GUID_AVC_CLASS 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 906d232f36fe05f66e950d56ab3f0c5da95c59b2
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: c2e50dc5238045e6f7b35a36515cdc3d49666e79
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095713"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822323"
 ---
 # <a name="guid_avc_class"></a>GUID_AVC_CLASS
 
@@ -54,7 +53,7 @@ GUID_AVC_CLASS [设备接口类](./overview-of-device-interface-classes.md) 是�
 <a name="remarks"></a>备注
 -------
 
-系统提供的 [AV/C 客户端驱动程序](../stream/av-c-client-drivers2.md) [Avc.sys](../stream/using-avc-sys.md) 注册 GUID_AVC_CLASS 的实例，以表示1394总线上的外部 AV/c 单元。
+系统提供的 [AV/C 客户端驱动程序](../stream/av-c-client-drivers2.md) [Avc.sys](../stream/using-avc-sys.md) 注册 GUID_AVC_CLASS 的实例，以表示1394总线上的外部 AV/c 单元。
 
 有关虚拟 AV/C 设备的设备接口类的信息，请参阅 [**GUID_VIRTUAL_AVC_CLASS**](guid-virtual-avc-class.md)。
 
@@ -78,7 +77,7 @@ GUID_AVC_CLASS [设备接口类](./overview-of-device-interface-classes.md) 是�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**GUID_VIRTUAL_AVC_CLASS**](guid-virtual-avc-class.md)

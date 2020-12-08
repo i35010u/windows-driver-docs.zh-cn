@@ -1,30 +1,29 @@
 ---
 title: C28604
-description: 警告 C28604 避免使用 SMTO_ABORTIFHUNG 调用 SendMessageTimeout 超时值为 0。
-ms.assetid: d9be9747-20f6-4a2b-a841-eaf3255f2f65
+description: 警告 C28604 避免使用超时值为0的 SMTO_ABORTIFHUNG 调用 SendMessageTimeout。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28604
-ms.openlocfilehash: 15a702c26f1f54b9ee7d8cff14e93136095f2c53
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5bf6711c0076f344e0500a1746c3d5ced74539e4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376773"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823401"
 ---
 # <a name="c28604"></a>C28604
 
 
-警告 C28604:避免使用 SMTO 调用 SendMessageTimeout\_ABORTIFHUNG 具有为 0 的超时值
+警告 C28604：避免使用 SMTO ABORTIFHUNG 调用 SendMessageTimeout， \_ 超时值为0
 
-代码分析工具将报告此警告，如果应用程序调用**SendMessageTimeout**与**SMTO\_ABORTIFHUNG**标志和超时期限为零。 使用**SendMessageTimeout**因为超时期限不起作用，并在调用被视为是阻塞调用，这种方式可能会产生问题。
+当应用程序调用带有 **SMTO \_ ABORTIFHUNG** 标志的 **SendMessageTimeout** 和超时期限为零时，代码分析工具将报告此警告。 以这种方式使用 **SendMessageTimeout** 可能会出现问题，因为超时期限不起作用，并且调用被视为阻止调用。
 
 指定超时期限的非零值。
 
 ### <a name="span-idexamplespanspan-idexamplespanexample"></a><span id="example"></span><span id="EXAMPLE"></span>示例
 
-以下函数调用可能会导致无限期地响应过程。
+以下函数调用可能会导致该进程不会无限期地做出响应。
 
 ```
 fNeedsCallbackEvent = (0 != SendMessageTimeout(
@@ -37,7 +36,7 @@ SMTO_ABORTIFHUNG,
 &dwResult)); 
 ```
 
-以下函数调用不存在此问题。
+以下函数调用没有此问题。
 
 ```
 fNeedsCallbackEvent = (0 != SendMessageTimeout(

@@ -1,7 +1,6 @@
 ---
 title: FsRtlExitFileSystem 函数
 description: FsRtlExitFileSystem 宏会重新启用正常内核模式 Apc，这是由前面对 FsRtlEnterFileSystem 的调用所禁用的。
-ms.assetid: 763ceb1c-f614-4268-a7fe-73de0c354c71
 keywords:
 - FsRtlExitFileSystem 函数可安装的文件系统驱动程序
 topic_type:
@@ -14,17 +13,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 59f7e7269c831f59a1a90fd37ebd206f99d98e74
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: ec8c514ebf070d1777b30f3998ac6c00132654d5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066922"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821479"
 ---
 # <a name="fsrtlexitfilesystem-function"></a>FsRtlExitFileSystem 函数
 
 
-**FsRtlExitFileSystem**宏会重新启用正常内核模式 apc，这是由前面对[**FsRtlEnterFileSystem**](fsrtlenterfilesystem.md)的调用所禁用的。
+**FsRtlExitFileSystem** 宏会重新启用正常内核模式 apc，这是由前面对 [**FsRtlEnterFileSystem**](fsrtlenterfilesystem.md)的调用所禁用的。
 
 <a name="syntax"></a>语法
 ------
@@ -51,7 +50,7 @@ None
 
 每个文件系统驱动程序入口点例程在获取执行文件 i/o 请求所需的资源之前，必须立即调用 [**FsRtlEnterFileSystem**](fsrtlenterfilesystem.md) ，并立即调用 **FsRtlExitFileSystem** 。 这可确保在运行时无法挂起例程，从而阻止其他文件 i/o 请求。
 
-必须通过对**FsRtlExitFileSystem**的后续调用来匹配每个对[**FsRtlEnterFileSystem**](fsrtlenterfilesystem.md)的成功调用。
+必须通过对 **FsRtlExitFileSystem** 的后续调用来匹配每个对 [**FsRtlEnterFileSystem**](fsrtlenterfilesystem.md)的成功调用。
 
 请注意，与本地文件系统和网络重定向程序不同的是，文件系统筛选器驱动程序绝不应通过调用 [**FsRtlEnterFileSystem**](fsrtlenterfilesystem.md) 或 [**KeEnterCriticalRegion**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keentercriticalregion) ，或者通过对 \_ [**IOCALLDRIVER**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)的调用来提高到 IRQL APC 级别) 来禁用正常内核 apc (。
 
@@ -70,7 +69,7 @@ None
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面型</td>
+<td align="left">台式机</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
@@ -83,7 +82,7 @@ None
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**ExAcquireFastMutex**](/previous-versions/windows/hardware/drivers/ff544337(v=vs.85))

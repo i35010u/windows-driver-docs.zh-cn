@@ -1,16 +1,15 @@
 ---
 title: OID_GEN_MAXIMUM_TOTAL_SIZE
 description: 作为查询，OID_GEN_MAXIMUM_TOTAL_SIZE OID 指定 NIC 支持的最大数据包总长度（以字节为单位）。
-ms.assetid: 4973b4bd-58a5-4242-b33f-1ff8c3a7ec4b
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_MAXIMUM_TOTAL_SIZE 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: e24e85e0b27a04187a7d7503113b3bab03e26f02
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 4b4796f8ddda3ab9146ca1642ba5eeb9c185245e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215452"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822895"
 ---
 # <a name="oid_gen_maximum_total_size"></a>OID \_ GEN \_ 最大 \_ 总 \_ 大小
 
@@ -57,7 +56,7 @@ ms.locfileid: "89215452"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NdisSendNetBufferLists**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndissendnetbufferlists)

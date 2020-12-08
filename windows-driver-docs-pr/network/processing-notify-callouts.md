@@ -1,7 +1,6 @@
 ---
 title: 处理通知标注
 description: 处理通知标注
-ms.assetid: d686989e-97f0-4095-b172-1c2ccf7a26e6
 keywords:
 - Windows 筛选平台标注驱动程序 WDK，通知标注
 - 标注驱动程序 WDK Windows 筛选平台，通知标注
@@ -11,12 +10,12 @@ keywords:
 - 标注驱动程序 WDK Windows 筛选平台，筛选添加和删除
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ce3855fa8d0585c274e848c997a16a29e29aade0
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 1e38be06f2666f6cd28c31274135bed2f63bad50
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215184"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822831"
 ---
 # <a name="processing-notify-callouts"></a>处理通知标注
 
@@ -35,7 +34,7 @@ ms.locfileid: "89215184"
 
 ### <a name="filter-deletion"></a><a href="" id="filter-deletion"></a> 筛选器删除
 
-如果从筛选器引擎中删除指定筛选器操作的标注的筛选器，则筛选器引擎将调用标注的[*notifyFn*](/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_callout_notify_fn0) callout 函数并 \_ \_ \_ 在 notifyType 参数中传递 FWPS callout 通知删除筛选器，并在 \_ *filterKey*参数中传递**NULL** 。 *notifyType* 对于指定筛选器操作的标注的筛选器引擎中，筛选器引擎为每个已删除的筛选器调用标注的 *notifyFn* 标注函数。 这包括标注驱动程序将标注注册到筛选器引擎之前添加到筛选器引擎的任何筛选器。 因此，对于未接收筛选器添加通知的筛选器，标注可能会收到筛选器删除通知。
+如果从筛选器引擎中删除指定筛选器操作的标注的筛选器，则筛选器引擎将调用标注的 [*notifyFn*](/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_callout_notify_fn0) callout 函数并 \_ \_ \_ 在 notifyType 参数中传递 FWPS callout 通知删除筛选器，并在 \_ *filterKey* 参数中传递 **NULL** 。 *notifyType* 对于指定筛选器操作的标注的筛选器引擎中，筛选器引擎为每个已删除的筛选器调用标注的 *notifyFn* 标注函数。 这包括标注驱动程序将标注注册到筛选器引擎之前添加到筛选器引擎的任何筛选器。 因此，对于未接收筛选器添加通知的筛选器，标注可能会收到筛选器删除通知。
 
 如果标注的 [*notifyFn*](/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_callout_notify_fn0) callout 函数无法识别在 *notifyType* 参数中传递的通知类型，它应忽略通知并返回状态 " \_ 成功"。
 

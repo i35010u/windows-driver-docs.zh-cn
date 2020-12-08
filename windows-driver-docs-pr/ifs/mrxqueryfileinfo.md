@@ -1,7 +1,6 @@
 ---
 title: MRxQueryFileInfo 例程
 description: TheMRxQueryFileInfo 例程由 RDBSS 调用，以请求在文件系统对象上进行网络微型重定向程序查询文件信息。
-ms.assetid: 201b749c-527b-4c02-a860-d2f54777dc32
 keywords:
 - MRxQueryFileInfo 例程可安装文件系统驱动程序
 - PMRX_CALLDOWN
@@ -15,17 +14,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 35a11a4ba5c5564e2ac04eba311f61f39734272c
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: c39e5a39edb2a734097dded47fbc7f5c7152eec2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066880"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823224"
 ---
 # <a name="mrxqueryfileinfo-routine"></a>MRxQueryFileInfo 例程
 
 
-[RDBSS](./the-rdbss-driver-and-library.md)调用*MRxQueryFileInfo*例程来请求一个有关文件系统对象的网络微重定向程序查询文件信息。
+[RDBSS](./the-rdbss-driver-and-library.md)调用 *MRxQueryFileInfo* 例程来请求一个有关文件系统对象的网络微重定向程序查询文件信息。
 
 <a name="syntax"></a>语法
 ------
@@ -34,12 +33,12 @@ ms.locfileid: "89066880"
 PMRX_CALLDOWN MRxQueryFileInfo;
 
 NTSTATUS MRxQueryFileInfo(
-  _Inout_ PRX_CONTEXT RxContext
+  _Inout_ PRX_CONTEXT RxContext
 )
 { ... }
 ```
 
-<a name="parameters"></a>parameters
+<a name="parameters"></a>参数
 ----------
 
 *RxContext* \[in、out\]  
@@ -103,25 +102,25 @@ NTSTATUS MRxQueryFileInfo(
 
 RDBSS 发出对 *MRxQueryFileInfo* 的调用，以响应接收 [**IRP \_ MJ \_ 查询 \_ 信息**](irp-mj-query-information.md) 请求。
 
-在调用 *MRxQueryFileInfo*之前，RDBSS 会修改 \_ *RXCONTEXT* 参数指向的 RX 上下文结构中的以下成员：
+在调用 *MRxQueryFileInfo* 之前，RDBSS 会修改 \_ *RXCONTEXT* 参数指向的 RX 上下文结构中的以下成员：
 
-**FileInformationClass**成员设置为**IrpSp- &gt; QueryFile。 FILEINFORMATIONCLASS**，请求的文件 \_ 信息 \_ 类值。
+**FileInformationClass** 成员设置为 **IrpSp- &gt; QueryFile。 FILEINFORMATIONCLASS**，请求的文件 \_ 信息 \_ 类值。
 
-**信息. buffer**成员设置为 i/o 请求数据包中的用户缓冲区。
+**信息. buffer** 成员设置为 i/o 请求数据包中的用户缓冲区。
 
-**LengthRemaining**成员设置为**IrpSp &gt; 参数. QueryFile**。
+**LengthRemaining** 成员设置为 **IrpSp &gt; 参数. QueryFile**。
 
-**QueryDirectory. FileIndex**成员设置为**IrpSp-QueryDirectory. &gt; FileIndex**。
+**QueryDirectory. FileIndex** 成员设置为 **IrpSp-QueryDirectory. &gt; FileIndex**。
 
-如果**IrpSp &gt; **设置了 SL RESTART 扫描位集，则设置**QueryDirectory RestartScan**成员 \_ \_ 。
+如果 **IrpSp &gt;** 设置了 SL RESTART 扫描位集，则设置 **QueryDirectory RestartScan** 成员 \_ \_ 。
 
-如果**QueryDirectory.ReturnSingleEntry** **IRPSP &gt; 标记**有 SL \_ 返回 \_ 单 \_ 项位集，则设置 ReturnSingleEntry 成员。
+如果 **QueryDirectory.ReturnSingleEntry** **IRPSP &gt; 标记** 有 SL \_ 返回 \_ 单 \_ 项位集，则设置 ReturnSingleEntry 成员。
 
-如果 Fobx 为**NULL** ，则设置** &gt; ** **QueryDirectory.InitialQuery**成员，并且**Fobx &gt; 标记**不会将 Fobx \_ 标志 \_ 与 \_ 所有位集匹配。
+如果 Fobx 为 **NULL** ，则设置 **&gt;** **QueryDirectory.InitialQuery** 成员，并且 **Fobx &gt; 标记** 不会将 Fobx \_ 标志 \_ 与 \_ 所有位集匹配。
 
-成功时，网络小型重定向程序应将 RX 上下文结构的 **LengthRemaining** 成员设置 \_ 为 **info。 length** 成员减去返回的文件信息的长度。 如果对*MRxQueryFileInfo*的调用成功，则 RDBSS 会将 IRP 的**IoStatus**成员设置为 IrpSp，而不是 RX 上下文的**QueryFile**成员。 ** &gt; ** \_
+成功时，网络小型重定向程序应将 RX 上下文结构的 **LengthRemaining** 成员设置 \_ 为 **info。 length** 成员减去返回的文件信息的长度。 如果对 *MRxQueryFileInfo* 的调用成功，则 RDBSS 会将 IRP 的 **IoStatus** 成员设置为 IrpSp，而不是 RX 上下文的 **QueryFile** 成员。 **&gt;** \_
 
-RDBSS 不支持具有 SL \_ 索引 \_ 指定位的 **IrpSp &gt; ** 集的请求。 网络小型重定向程序将不会接收到 *MRxQueryFileInfo* 的调用，其中 SL \_ 索引 \_ 指定的位为 **IrpSp &gt; ** 集。
+RDBSS 不支持具有 SL \_ 索引 \_ 指定位的 **IrpSp &gt;** 集的请求。 网络小型重定向程序将不会接收到 *MRxQueryFileInfo* 的调用，其中 SL \_ 索引 \_ 指定的位为 **IrpSp &gt;** 集。
 
 <a name="requirements"></a>要求
 ------------
@@ -134,7 +133,7 @@ RDBSS 不支持具有 SL \_ 索引 \_ 指定位的 **IrpSp &gt; ** 集的请求�
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面型</td>
+<td align="left">台式机</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
@@ -143,7 +142,7 @@ RDBSS 不支持具有 SL \_ 索引 \_ 指定位的 **IrpSp &gt; ** 集的请求�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**MRxIsValidDirectory**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkdir_calldown)

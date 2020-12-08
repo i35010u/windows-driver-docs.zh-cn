@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_DriverLogoLevel
 description: DEVPKEY_Device_DriverLogoLevel
-ms.assetid: 19843a2d-cc60-4e1e-b6b0-29c63b7f7d3f
 keywords:
 - DEVPKEY_Device_DriverLogoLevel 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 6a72a5577ebba4267d7b4444bd164c7f7bac0104
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: e31b6bb0d1462f12d4fbcaf20923a1de668f4fb0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717498"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823090"
 ---
 # <a name="devpkey_device_driverlogolevel"></a>DEVPKEY_Device_DriverLogoLevel
 

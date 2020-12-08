@@ -1,7 +1,6 @@
 ---
 title: 将安全关联添加到 NIC
 description: 将安全关联添加到 NIC
-ms.assetid: 524cc9f8-fe02-4192-85af-83813ae83d08
 keywords:
 - 安全关联 WDK IPsec 卸载
 - SAs WDK IPsec 卸载
@@ -9,12 +8,12 @@ keywords:
 - 受 AH 保护的数据包 WDK IPsec 卸载，安全关联
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 968888bfd30f3a67dc86d99c29f0545c3f548209
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 72e746a4fc46f841131f523b9d5245a9df541ac6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218177"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822231"
 ---
 # <a name="adding-a-security-association-to-a-nic"></a>将安全关联添加到 NIC
 

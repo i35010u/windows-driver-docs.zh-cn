@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_BITMAP_PATTERN_MASK
-description: WDI_TLV_BITMAP_PATTERN_MASK 是包含位图模式掩码 TLV。
-ms.assetid: 251B3496-04CE-419B-BE5E-C46265F50B7A
+description: WDI_TLV_BITMAP_PATTERN_MASK 是包含位图模式掩码的 TLV。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_BITMAP_PATTERN_MASK 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 87b79c86464e4cead65e6a7267b9a5dc5e76ce9d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 38fba24e4faef0b0dc0d15f94664d01ba00ddc54
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374545"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822003"
 ---
-# <a name="wditlvbitmappatternmask"></a>WDI\_TLV\_BITMAP\_PATTERN\_MASK
+# <a name="wdi_tlv_bitmap_pattern_mask"></a>WDI \_ TLV \_ 位图 \_ 模式 \_ 掩码
 
 
-WDI\_TLV\_位图\_模式\_掩码是包含位图模式掩码 TLV。
+WDI \_ tlv \_ 位图 \_ 模式 \_ 掩码是包含位图模式掩码的 tlv。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,14 +25,14 @@ WDI\_TLV\_位图\_模式\_掩码是包含位图模式掩码 TLV。
 ## <a name="length"></a>长度
 
 
-UINT8 元素的数组大小 （以字节为单位）。 该数组必须包含一个或多个元素。
+UINT8 元素数组的大小 (以字节为单位) 。 数组必须包含1个或多个元素。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入      | 描述                                                                                                                                                                              |
+| 类型      | 描述                                                                                                                                                                              |
 |-----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| UINT8\[\] | UINT8 元素数组，包含模式掩码的字节数组。 掩码必须具有每个模式字节的 1 位，因此掩码长度应等于 （模式长度 + 7） / 8。 |
+| UINT8\[\] | UINT8 元素的数组，其中包含模式掩码的字节数组。 掩码的每个模式字节必须有1位，因此掩码长度应等于 (模式长度 + 7) /8。 |
 
  
 
@@ -52,10 +51,10 @@ UINT8 元素的数组大小 （以字节为单位）。 该数组必须包含一
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

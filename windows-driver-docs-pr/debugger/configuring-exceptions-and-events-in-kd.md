@@ -1,24 +1,23 @@
 ---
 title: 在 KD 中配置异常和事件
-description: 你可以配置 KD 来以特定方式对指定的异常和事件做出反应。 对于每个异常，可以设置中断状态和处理状态。
-ms.assetid: 0F96E152-CA18-4945-A89D-5155F4B4F65F
+description: 可以将 KD 配置为以特定方式响应指定的异常和事件。 对于每个异常，可以设置中断状态和处理状态。
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 094e27eb1fbe3043d7d3d3f9fb4807d17adefad7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b8ff09d130fc957f5b180dbaf1a2d6b304a7acc0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375569"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821577"
 ---
 # <a name="configuring-exceptions-and-events-in-kd"></a>在 KD 中配置异常和事件
 
 
-你可以配置 KD 来以特定方式对指定的异常和事件做出反应。 对于每个异常，可以设置中断状态和处理状态。 对于每个事件，可以设置中断状态。
+可以将 KD 配置为以特定方式响应指定的异常和事件。 对于每个异常，可以设置中断状态和处理状态。 对于每个事件，可以设置中断状态。
 
-可以通过使用配置的中断状态或处理状态[ **SXE**](sx--sxd--sxe--sxi--sxn--sxr--sx---set-exceptions-.md)， **SXD**， **SXN**，或**SXI**命令。
+可以通过使用 [**SXE**](sx--sxd--sxe--sxi--sxn--sxr--sx---set-exceptions-.md)、 **SXD**、 **SXN** 或 **SXI** 命令来配置中断状态或处理状态。
 
-有关异常和事件的详细讨论，请参阅[控制异常和事件](controlling-exceptions-and-events.md)。
+有关异常和事件的详细讨论，请参阅 [控制异常和事件](controlling-exceptions-and-events.md)。
 
  
 

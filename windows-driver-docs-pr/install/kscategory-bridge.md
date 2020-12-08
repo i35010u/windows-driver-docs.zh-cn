@@ -1,7 +1,6 @@
 ---
 title: KSCATEGORY_BRIDGE
 description: KSCATEGORY_BRIDGE
-ms.assetid: 7973cac5-2b74-4af1-8912-370e922e5f4d
 keywords:
 - KSCATEGORY_BRIDGE 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: a226efdddf45335d0c2da862819755f562355845
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 16e72fa57e8978752d5ac2dfaaa661db3d7abb36
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097263"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823079"
 ---
 # <a name="kscategory_bridge"></a>KSCATEGORY_BRIDGE
 

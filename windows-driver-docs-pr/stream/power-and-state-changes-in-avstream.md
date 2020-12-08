@@ -1,19 +1,18 @@
 ---
 title: AVStream 中的电源和状态更改
 description: AVStream 中的电源和状态更改
-ms.assetid: f62f4306-97c0-40fe-89ec-d08eb18988c9
 keywords:
 - AVStream WDK，电源和状态更改
 - 电源更改 WDK，AVStream
 - 状态更改 WDK，AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5062c62e58dd1496f65607a8567e117fcd606ccd
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ae07b0ca61f714973b851609406bc4f9bc435c8f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187685"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822691"
 ---
 # <a name="power-and-state-changes-in-avstream"></a>AVStream 中的电源和状态更改
 
@@ -26,23 +25,23 @@ ms.locfileid: "89187685"
 
 因此，驱动程序 *必须准备好处理此类预期回拨顺序的反转*。
 
-当系统断电进入睡眠状态时，不会进行此冲销。 关闭电源后，这两个回调例程始终按预期顺序发生。 例如，在*AVStrMiniDeviceSetPower*之前始终调用*AVStrMiniPinSetDeviceState* 。
+当系统断电进入睡眠状态时，不会进行此冲销。 关闭电源后，这两个回调例程始终按预期顺序发生。 例如，在 *AVStrMiniDeviceSetPower* 之前始终调用 *AVStrMiniPinSetDeviceState* 。
 
 如果此冲销发生，则整个序列如下所示：
 
 首先，出现断电序列：
 
-1.  调用*AVStrMiniPinSetDeviceState*时，请求将设备状态从**KSSTATE \_ 运行**更改为 KSSTATE \_ PAUSE。
+1.  调用 *AVStrMiniPinSetDeviceState* 时，请求将设备状态从 **KSSTATE \_ 运行** 更改为 KSSTATE \_ PAUSE。
 
-2.  通过将电源状态从 D0 更改为 D2/D3 来调用*AVStrMiniDeviceSetPower* 。
+2.  通过将电源状态从 D0 更改为 D2/D3 来调用 *AVStrMiniDeviceSetPower* 。
 
 3.  此时，系统处于睡眠状态。
 
 4.  接下来，将出现开机序列：
 
-5.  通过将电源状态从 D2/D3 更改为 D0 来调用*AVStrMiniDeviceSetPower* 。
+5.  通过将电源状态从 D2/D3 更改为 D0 来调用 *AVStrMiniDeviceSetPower* 。
 
-6.  调用*AVStrMiniPinSetDeviceState*时，请求将设备状态从**KSSTATE \_ 暂停**更改为 KSSTATE \_ 运行。
+6.  调用 *AVStrMiniPinSetDeviceState* 时，请求将设备状态从 **KSSTATE \_ 暂停** 更改为 KSSTATE \_ 运行。
 
 在此方案中，步骤5和步骤6是按预期顺序反转的步骤。
 

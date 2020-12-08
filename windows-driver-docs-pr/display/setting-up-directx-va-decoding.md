@@ -1,7 +1,6 @@
 ---
 title: 设置 DirectX VA 解码
 description: 设置 DirectX VA 解码
-ms.assetid: 8841c366-df00-4e88-9f50-85345ba77e03
 keywords:
 - 视频解码 WDK DirectX VA，设置
 - 解码视频 WDK DirectX VA，设置
@@ -13,12 +12,12 @@ keywords:
 - 图片解码 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f26f142f48dab1b4f2ba8bc803fcc6fb7b5eb160
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: b4b40e035c8b26ce1803568c5f1461442612ee0b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063467"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822445"
 ---
 # <a name="setting-up-directx-va-decoding"></a>设置 DirectX VA 解码
 

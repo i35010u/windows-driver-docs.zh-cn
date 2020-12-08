@@ -1,15 +1,14 @@
 ---
 title: 转发扩展
 description: 转发扩展
-ms.assetid: 7ABBB3F3-66F5-4651-8A5A-94940F3FD82D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b6fd7c9d25d96b66ded17ba2c3bd628354a12d2
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 7f1adc821fb31b410e44738c468c5a6fae9b408b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206105"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822188"
 ---
 # <a name="forwarding-extensions"></a>转发扩展
 
@@ -18,17 +17,17 @@ ms.locfileid: "89206105"
 
 -   确定数据包的目标端口。
 
-    **注意**   如果数据包为 NVGRE 数据包，则可扩展交换机的 Hyper-v 网络虚拟化 (HNV) 组件决定目标端口并转发数据包。 有关详细信息，请参阅 [混合转发](hybrid-forwarding.md)。
+    **注意**  如果数据包为 NVGRE 数据包，则可扩展交换机的 Hyper-v 网络虚拟化 (HNV) 组件决定目标端口并转发数据包。 有关详细信息，请参阅 [混合转发](hybrid-forwarding.md)。
 
      
 
 -   通过强制实施标准端口策略来筛选数据包，如安全性、配置文件或虚拟 LAN (VLAN) 策略。
 
-    **注意**   可扩展交换机仍根据内置策略执行筛选。 这些策略包括 (Acl) 和服务质量 (QoS) 的访问控制列表。
+    **注意**  可扩展交换机仍根据内置策略执行筛选。 这些策略包括 (Acl) 和服务质量 (QoS) 的访问控制列表。
 
      
 
-**注意**   如果未在可扩展交换机中安装和启用转发扩展，则交换机会确定数据包的目标端口，并根据标准端口设置筛选数据包。
+**注意**  如果未在可扩展交换机中安装和启用转发扩展，则交换机会确定数据包的目标端口，并根据标准端口设置筛选数据包。
 
  
 
@@ -58,7 +57,7 @@ ms.locfileid: "89206105"
 
     有关如何将数据包传递到可扩展交换机端口的详细信息，请参阅 [排除数据包传递到可扩展交换机目标端口](excluding-packet-delivery-to-extensible-switch-destination-ports.md)。
 
-    **注意**   转发扩展在处理出口数据路径上的数据包时，只能排除数据包传送。 扩展只能在入口数据路径上添加或修改数据包的目标端口。
+    **注意**  转发扩展在处理出口数据路径上的数据包时，只能排除数据包传送。 扩展只能在入口数据路径上添加或修改数据包的目标端口。
 
      
 
@@ -80,7 +79,7 @@ ms.locfileid: "89206105"
 
 -   它通过返回 \_ \_ 适用的可扩展交换机 OID 的状态数据，可以拒绝创建可扩展交换机端口或网络适配器连接 \_ 。 例如， \_ \_ \_ 当驱动程序收到 [oid \_ 交换机 \_ 端口 \_ CREATE](./oid-switch-port-create.md)的 oid 设置请求时，转发扩展可以通过返回不被接受的状态数据来拒绝端口创建请求。
 
-    **注意**   转发扩展不会创建或删除端口或网络适配器连接。 可扩展交换机的协议边缘会发出 Oid，通知基础扩展有关创建或删除端口或网络适配器连接的信息。 有关详细信息，请参阅 [Hyper-v 可扩展交换机端口和网络适配器状态](hyper-v-extensible-switch-port-and-network-adapter-states.md)。
+    **注意**  转发扩展不会创建或删除端口或网络适配器连接。 可扩展交换机的协议边缘会发出 Oid，通知基础扩展有关创建或删除端口或网络适配器连接的信息。 有关详细信息，请参阅 [Hyper-v 可扩展交换机端口和网络适配器状态](hyper-v-extensible-switch-port-and-network-adapter-states.md)。
 
      
 
@@ -102,7 +101,7 @@ ms.locfileid: "89206105"
 
     有关修改筛选器驱动程序的 INF 要求的详细信息，请参阅 [配置修改筛选器驱动程序的 Inf 文件](configuring-an-inf-file-for-a-modifying-filter-driver.md)。
 
--   必须将扩展的 INF 文件中的 **FilterClass** 值设置为 **ms \_ 切换 \_ **。 有关详细信息，请参阅 [Hyper-v 可扩展交换机扩展的 INF 要求](inf-requirements-for-hyper-v-extensions.md)。
+-   必须将扩展的 INF 文件中的 **FilterClass** 值设置为 **ms \_ 切换 \_**。 有关详细信息，请参阅 [Hyper-v 可扩展交换机扩展的 INF 要求](inf-requirements-for-hyper-v-extensions.md)。
 
 -   对于可扩展交换机的每个实例，驱动程序堆栈中只能启用一个转发扩展。
 

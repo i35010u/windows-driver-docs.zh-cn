@@ -1,9 +1,8 @@
 ---
 title: ScalingRangeSupported 元素
-description: 所需的 ScalingRangeSupported 元素描述的值的扫描设备支持缩放输出文档的范围。
-ms.assetid: 0af5a00e-fdca-438f-b463-3150abf0f871
+description: 必需的 ScalingRangeSupported 元素描述扫描设备支持的、用于缩放输出文档的值的范围。
 keywords:
-- ScalingRangeSupported 元素成像设备
+- ScalingRangeSupported 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 31465775686eee8b349a4bb84e9f8079ea09a675
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 80462445310cdeef52917d582783bbf3858ddb35
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364393"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822371"
 ---
 # <a name="scalingrangesupported-element"></a>ScalingRangeSupported 元素
 
 
-所需**ScalingRangeSupported**元素描述的值的扫描设备支持缩放输出文档的范围。
+必需的 **ScalingRangeSupported** 元素描述扫描设备支持的、用于缩放输出文档的值的范围。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -82,7 +81,7 @@ ms.locfileid: "63364393"
 <a name="remarks"></a>备注
 -------
 
-[ **ScalingWidth** ](scalingwidth2.md)并[ **ScalingHeight** ](scalingheight2.md)元素分别指定的宽度和高度的图像的缩放范围。
+[**ScalingWidth**](scalingwidth2.md)和 [**ScalingHeight**](scalingheight2.md)元素分别指定图像宽度和高度的缩放范围。
 
 ## <a name="see-also"></a>请参阅
 

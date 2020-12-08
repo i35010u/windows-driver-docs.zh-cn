@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ MEDIASEEKING \_ STOPPOSITION
 description: KSPROPERTY \_ MEDIASEEKING \_ STOPPOSITION 属性检索筛选器上的停止媒体时间。
-ms.assetid: 5a2d6c47-8419-4f1d-a362-28bf17cbd0a5
 keywords:
 - KSPROPERTY_MEDIASEEKING_STOPPOSITION 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 80190a967027a1c59efde95c8526f7024d282b5d
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 5f20bfba41110642e2a5fbd0b14cffd4bba5ff43
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103042"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821777"
 ---
 # <a name="ksproperty_mediaseeking_stopposition"></a>KSPROPERTY \_ MEDIASEEKING \_ STOPPOSITION
 
@@ -82,7 +81,7 @@ KSPROPERTY \_ MEDIASEEKING \_ STOPPOSITION 属性检索筛选器上的停止媒�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [KSPROPSETID \_ MediaSeeking](kspropsetid-mediaseeking.md)

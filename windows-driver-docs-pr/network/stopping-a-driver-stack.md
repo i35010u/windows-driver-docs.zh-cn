@@ -1,18 +1,17 @@
 ---
 title: 停止驱动程序堆栈
 description: 停止驱动程序堆栈
-ms.assetid: 2ecc0ebb-89d8-4cd8-ac1c-f9f1da7d2ca8
 keywords:
 - 驱动程序堆栈 WDK 网络，停止
 - 停止驱动程序堆栈 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 237cc4add053803b305d221c9e10ececdd963822
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a673a447de4042dd312216f65adc863a1919bdad
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214328"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822821"
 ---
 # <a name="stopping-a-driver-stack"></a>停止驱动程序堆栈
 

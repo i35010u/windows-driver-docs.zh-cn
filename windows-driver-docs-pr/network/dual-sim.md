@@ -1,15 +1,14 @@
 ---
 title: SIM 双卡
 description: SIM 双卡
-ms.assetid: 18521fec-c9fb-48d0-9de2-d0482e4807d6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e504e2b06a4f4eb7d8d766197a2bccb20223069
-ms.sourcegitcommit: e2de6b9ffb5c7356deb864f9da879533f49b25bf
+ms.openlocfilehash: 92af291fdd2508614b16fa3fba69b0618d81e0d3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2020
-ms.locfileid: "91702658"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823025"
 ---
 # <a name="dual-sim"></a>SIM 双卡
 

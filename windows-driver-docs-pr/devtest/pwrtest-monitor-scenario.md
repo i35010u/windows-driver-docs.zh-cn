@@ -1,21 +1,20 @@
 ---
 title: PwrTest 监视方案
 description: PwrTest 监视器方案记录与监视器相关的用户空闲统计信息，或显示自动变暗和空白。
-ms.assetid: 8B45C85A-01E8-4256-82F3-097871CB9021
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a206b3fc8ad0948ead6525fe952be3dc831a5bc
-ms.sourcegitcommit: f2fbb6e54e085e9329288cee49860fe380be9c4c
+ms.openlocfilehash: c84573477750d65b760e51ab230ef57d7555922e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91778759"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823365"
 ---
 # <a name="pwrtest-monitor-scenario"></a>PwrTest 监视方案
 
 PwrTest 监视器方案记录与监视器相关的用户空闲统计信息，或显示自动变暗和空白。
 
-当你运行 PwrTest 监视器方案时，你可能还想要在另一个窗口中 (**/requests**) 方案中运行[PwrTest 请求方案](pwrtest-requests-scenario.md)。 即使用户的空闲时间足以使空闲计时器过期，PwrTest 请求方案也可能有助于了解监视器可能仍处于打开状态的原因或系统仍处于唤醒状态的原因。
+当你运行 PwrTest 监视器方案时，你可能还想要在另一个窗口中 (**/requests**) 方案中运行 [PwrTest 请求方案](pwrtest-requests-scenario.md)。 即使用户的空闲时间足以使空闲计时器过期，PwrTest 请求方案也可能有助于了解监视器可能仍处于打开状态的原因或系统仍处于唤醒状态的原因。
 
 如果运行这两种方案，请确保使用 **/ln：**<em>name</em> 参数，以便可以更改日志文件和 ETW 跟踪会话名称。 名称需要不同，以避免该工具的两个实例之间发生冲突。
 
@@ -97,7 +96,7 @@ pwrtest.exe /device /t:60
 <thead>
 <tr class="header">
 <th align="left">元素</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -190,7 +189,7 @@ pwrtest.exe /device /t:60
 <td align="left"><p>事件指示自适应 dim timeout 已更改。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><strong>&lt;Timeout&gt;</strong></td>
+<td align="left"><strong>&lt;超时&gt;</strong></td>
 <td align="left"><p>新超时值（秒）。</p></td>
 </tr>
 </tbody>

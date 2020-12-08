@@ -1,7 +1,6 @@
 ---
 title: 发送等待/唤醒 IRP
 description: 发送等待/唤醒 IRP
-ms.assetid: ed582644-af51-4841-be59-6a3deb6d9de5
 keywords:
 - 电源管理 WDK 内核，唤醒功能
 - 外部唤醒信号 WDK
@@ -13,12 +12,12 @@ keywords:
 - 正在发送等待/唤醒 Irp
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 33164b410fed940d7039f3f796cba6ae0baef641
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 482cb9aff28fc05b771627346d0c9c5df3f15c41
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184399"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822275"
 ---
 # <a name="sending-a-waitwake-irp"></a>发送等待/唤醒 IRP
 

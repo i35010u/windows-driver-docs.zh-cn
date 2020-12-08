@@ -1,62 +1,61 @@
 ---
 title: NET_ROOT 结构
 description: NET_ROOT 结构
-ms.assetid: f7846343-9af6-4b7f-9c8d-190abb524946
 keywords:
-- net 根结构 WDK RDBSS
+- 网络根结构 WDK RDBSS
 - 网络服务器共享连接数据 WDK RDBSS
 - NET_ROOT 结构
 - 服务器共享连接数据 WDK RDBSS
 - 根结构 WDK RDBSS
 - 数据结构 WDK 文件系统
-- RDBSS WDK 的文件系统、 连接和文件结构
-- 重定向驱动器缓冲子系统 WDK 的文件系统、 连接和文件结构
+- RDBSS WDK 文件系统、连接和文件结构
+- 重定向的驱动器缓冲子系统 WDK 文件系统、连接和文件结构
 - 连接结构 WDK RDBSS
 - 文件结构 WDK RDBSS
 - 结构 WDK RDBSS
-- WDK RDBSS 的连接信息
+- 连接信息 WDK RDBSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 982e668d07bc6965847a001cce73b72857c4648b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ce0565143f1a5506e67b77ca215ae7d6e74b95b6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380951"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822435"
 ---
-# <a name="the-netroot-structure"></a>NET_ROOT 结构
+# <a name="the-net_root-structure"></a>NET_ROOT 结构
 
 
 ## <span id="ddk_the_net_root_structure_if"></span><span id="DDK_THE_NET_ROOT_STRUCTURE_IF"></span>
 
 
-Net 根结构，NET_ROOT，包含每个特定的网络服务器信息\\共享连接维护的网络微型重定向。
+NET_ROOT 的网络根结构包含 \\ 由网络小型重定向程序维护的每个特定网络服务器共享连接的信息。
 
-NET_ROOT 为哪些 RDBSS 和网络微型重定向程序驱动程序想要处理的不能是服务器。 相应地，RDBSS 通常情况下创建和打开 NET_ROOT 结构并调用网络微型重定向程序驱动程序负责打开服务器。 网络微型重定向程序驱动程序需要填充相应字段中传递 NET_ROOT 结构中。
+NET_ROOT 是 RDBSS 和网络小型重定向程序驱动程序要处理的，而不是服务器。 相应地，RDBSS 通常会创建并打开 NET_ROOT 的结构，并调用负责打开服务器的网络微重定向器驱动程序。 网络微型重定向程序驱动程序应填充传入 NET_ROOT 结构中的相应字段。
 
-对于每个 SRV_CALL 情况下，由 RDBSS 维护 NET_ROOT 结构列表。 每个 NET_ROOT 结构具有几个常见的其他 RDBSS 结构，以及是唯一的 NET_ROOT 结构的元素的元素。 管理 NET_ROOT 结构 RDBSS 例程只能修改以下元素：
+NET_ROOT 结构的列表由每个 SRV_CALL 的 RDBSS 维护。 每个 NET_ROOT 结构都有几个与其他 RDBSS 结构共有的元素，以及对 NET_ROOT 结构唯一的元素。 管理 NET_ROOT 结构的 RDBSS 例程仅修改以下元素：
 
 -   签名和引用计数
 
 -   名称和关联的表信息
 
--   指向相关联的 SRV_CALL 结构的后
+-   指向关联的 SRV_CALL 结构的返回指针
 
 -   各种子结构的大小信息
 
--   查找表的关联 FCB 结构
+-   关联的 FCB 结构的查找表
 
--   任何额外的存储是由网络微型重定向 （或 NET_ROOT 数据结构的创建者） 请求
+-   任何其他存储由网络小型重定向器 (或 NET_ROOT 数据结构的创建者请求) 
 
-NET_ROOT 结构还包含一系列等待 NET_ROOT 转换完成后才继续 IRP 处理 RX_CONTEXT 结构。 这通常发生在并发请求定向到服务器。 这些请求之一启动而对其他请求进行排队。 保留以供网络微型重定向的额外空间开始已知 NET_ROOT 数据结构的末尾，以便网络微型重定向可以只是指从包含文件中使用上下文字段此额外空间。
+NET_ROOT 结构还包含 RX_CONTEXT 结构的列表，这些结构正在等待 NET_ROOT 转换完成，然后再恢复 IRP 处理。 当并发请求定向到服务器时，通常会发生这种情况。 在对其他请求进行排队时，将启动其中的一个请求。 保留给网络小型重定向程序使用的额外空间始于已知 NET_ROOT 数据结构的末尾，因此网络小型重定向程序只需使用包含文件中的上下文字段来引用此额外空间即可。
 
-NET_ROOT 结构进行收尾工作由两部分组成：
+NET_ROOT 结构的终止由两部分组成：
 
 1.  销毁与所有 V_NET_ROOTS 的关联
 
 2.  释放内存
 
-这两个操作之间可能存在延迟和 NET_ROOT 结构中的字段可防止第一步重复出现。
+这两个操作之间可能存在延迟，NET_ROOT 结构中的字段会阻止复制第一步。
 
  
 

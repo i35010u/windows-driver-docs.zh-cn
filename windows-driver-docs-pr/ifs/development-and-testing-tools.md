@@ -1,7 +1,6 @@
 ---
 title: 开发和测试工具
 description: 开发和测试工具
-ms.assetid: 6cc81509-27e1-4d5b-996c-6a7bbfd0ddcf
 keywords:
 - 筛选器管理器 WDK 文件系统微筛选器，工具
 - Fltmc.exe WDK 文件系统微筛选器
@@ -10,12 +9,12 @@ keywords:
 - 验证程序实用工具
 ms.date: 08/21/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 3896a8c941f7435c8924a1abead86039af54b716
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 4c833945152ebd89de3fc4b7c82c52cfed4330c5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065248"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823259"
 ---
 # <a name="development-and-testing-tools"></a>开发和测试工具
 
@@ -23,7 +22,7 @@ ms.locfileid: "89065248"
 
 ## <a name="fltmcexe-command"></a>Fltmc.exe 命令
 
-*Fltmc.exe*程序是系统提供的用于常见微筛选器驱动程序管理操作的命令行实用程序。 开发人员可以使用 *Fltmc.exe* 来加载和卸载微筛选器驱动程序、附加或分离微筛选器驱动程序和枚举微筛选器驱动程序、实例和卷。 在具有管理员权限的命令提示符下，键入 ```fltmc help``` 以查看完整的命令列表。
+*Fltmc.exe* 程序是系统提供的用于常见微筛选器驱动程序管理操作的命令行实用程序。 开发人员可以使用 *Fltmc.exe* 来加载和卸载微筛选器驱动程序、附加或分离微筛选器驱动程序和枚举微筛选器驱动程序、实例和卷。 在具有管理员权限的命令提示符下，键入 ```fltmc help``` 以查看完整的命令列表。
 
 ## <a name="fsutilexe-command"></a>Fsutil.exe 命令
 
@@ -33,7 +32,7 @@ ms.locfileid: "89065248"
 
 [Windows 调试](../debugger/index.md)工具中提供了！ fltkd 调试器扩展。 常用命令包括以下内容：
 
-| Command | 说明 |
+| 命令 | 描述 |
 | ------- | ----------- |
 | **!cbd** | 筛选器管理器等效于！ irp |
 | **！筛选器** | 列出有关指定筛选器的详细信息 |

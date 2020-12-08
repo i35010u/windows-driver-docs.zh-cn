@@ -1,19 +1,18 @@
 ---
 title: Windows 显示驱动程序模型 (WDDM) 64 位问题
 description: Windows 显示驱动程序模型 (WDDM) 64 位问题
-ms.assetid: ab391fca-bc98-4e98-9531-7a1d24ee173d
 keywords:
 - 64位 WDK 显示
 - 显示驱动程序模型 WDK Windows Vista，64位
 - Windows Vista 显示器驱动程序型号 WDK，64位
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e85b0fb4df5c12b218d72331e997624984e9805
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 0e927408be8d4556a9ce8c165faf6398c552c2f2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063532"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823273"
 ---
 # <a name="windows-display-driver-model-wddm-64-bit-issues"></a>Windows 显示驱动程序模型 (WDDM) 64 位问题
 
@@ -31,7 +30,7 @@ ms.locfileid: "89063532"
 
 INF 文件必须包含信息，以指示操作系统将32位用户模式显示驱动程序复制到系统的% systemroot% \\ SysWOW64 目录。 有关详细信息，请参阅 [**Inf CopyFiles 指令**](../install/inf-copyfiles-directive.md) 和 [**inf DestinationDirs 部分**](../install/inf-destinationdirs-section.md)。
 
-由于 WOW64 无法处理不透明或非类型化的数据结构，例如通过[**pfnAllocateCb**](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_allocatecb)函数传递的[**D3DDDICB \_ 分配**](/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddicb_allocate)结构，因此它无法执行从32位到64位的自动转换。 因此，要使 WOW64 正常工作，在将32位用户模式显示驱动程序写入到64位操作系统上运行时，必须考虑以下各项：
+由于 WOW64 无法处理不透明或非类型化的数据结构，例如通过 [**pfnAllocateCb**](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_allocatecb)函数传递的 [**D3DDDICB \_ 分配**](/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddicb_allocate)结构，因此它无法执行从32位到64位的自动转换。 因此，要使 WOW64 正常工作，在将32位用户模式显示驱动程序写入到64位操作系统上运行时，必须考虑以下各项：
 
 -   避免指向多个操作系统（如大小为 \_ T 或句柄）的敏感指针或数据类型。 除了设置整个结构变量的大小以外，这些可变宽度数据类型使各个成员的对齐和位置不同。 如果可变宽度成员是不可避免的，你可以添加另一个成员，以指示该数据结构源自32位用户模式显示驱动程序。 然后，64位显示微型端口驱动程序可以正确执行转换。
 

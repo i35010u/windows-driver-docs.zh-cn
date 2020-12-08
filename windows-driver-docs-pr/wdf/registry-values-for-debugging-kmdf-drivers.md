@@ -1,18 +1,17 @@
 ---
 title: 用于调试 WDF 驱动程序的注册表值
-description: 本主题介绍 Windows 驱动程序框架 (WDF) 驱动程序可以设置的注册表值。 它适用于内核模式驱动程序框架 (KMDF) 驱动程序和用户模式驱动程序框架 (UMDF) 驱动程序，从 UMDF 版本2开始。
-ms.assetid: d54bdc6c-b409-4973-9b29-16967a4d83fb
+description: 本主题介绍 Windows 驱动程序框架 (WDF) 驱动程序可以设置的注册表值。 它适用于 Kernel-Mode Driver Framework (KMDF) 驱动程序和 User-Mode 驱动程序框架 (UMDF) 从 UMDF 版本2开始的驱动程序。
 keywords:
 - 调试驱动程序 WDK KMDF，注册表值
 - 调试驱动程序的注册表值 WDK KMDF
 ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: dcf3e6b4c4f6d16f7b8ced83be40cabf27a65044
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 23eced67a86324624b12c3c20f7193343264fe12
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191207"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821735"
 ---
 # <a name="registry-values-for-debugging-wdf-drivers"></a>用于调试 WDF 驱动程序的注册表值
 
@@ -48,7 +47,7 @@ ms.locfileid: "89191207"
 
 *REG \_ DWORD，framework 版本1.11 及更高版本*
 
-从 Windows 8 开始，当 **VerifierOn** 和 **DbgBreakOnError** 设置为非零值时，驱动程序可以通过设置 **DbgWaitForSignalTimeoutInSec**更改用于中断到调试器的默认超时时间。
+从 Windows 8 开始，当 **VerifierOn** 和 **DbgBreakOnError** 设置为非零值时，驱动程序可以通过设置 **DbgWaitForSignalTimeoutInSec** 更改用于中断到调试器的默认超时时间。
 
 ## <a name="debugmodebinaries"></a>DebugModeBinaries
 
@@ -64,7 +63,7 @@ ms.locfileid: "89191207"
 
 此注册表值位于中 `HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\WUDF\DebugMode` 。
 
-|值|描述|
+|“值”|描述|
 |--- |--- |
 |0x01|启用调试模式。 此设置关闭在 [UMDF 驱动程序中使用设备池](using-device-pooling-in-umdf-drivers.md)中所述的自动重新启动功能。|
 |0x02|禁用设备池。 有关设备池的详细信息，请参阅 [在 UMDF 驱动程序中使用设备池](using-device-pooling-in-umdf-drivers.md)。|
@@ -102,14 +101,14 @@ ms.locfileid: "89191207"
 
 此注册表值位于中 `HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\WUDF` 。
 
-如果此值不为零，并且内核调试器连接到计算机，则在终止宿主进程之前，反射器将进入内核调试器。 默认情况下，在 Windows 7 和更早版本的操作系统中禁用**HostFailKdDebugBreak** 。 从 Windows 8 开始，默认情况下会启用 **HostFailKdDebugBreak** 。
+如果此值不为零，并且内核调试器连接到计算机，则在终止宿主进程之前，反射器将进入内核调试器。 默认情况下，在 Windows 7 和更早版本的操作系统中禁用 **HostFailKdDebugBreak** 。 从 Windows 8 开始，默认情况下会启用 **HostFailKdDebugBreak** 。
 
 如果主机进程意外终止，反射器还会中断内核调试器 (例如，通过非 UMDF 组件或由于未经处理的异常) 。 如果要终止的主机进程中有多个设备堆栈，则反射器会多次中断到调试器中，一次用于主机进程中加载的每个设备堆栈。
 
 
 ## <a name="hostprocessdbgbreakondriverload-driver-specific"></a>HostProcessDbgBreakOnDriverLoad (驱动程序特定的) 
 
-*REG \_DWORD*仅适用于 umdf，适用于在 [umdf 版本 2.31](umdf-version-history.md) 或更高版本的目标计算机上运行的任何 UMDF 1.x 驱动程序
+*REG \_DWORD* 仅适用于 umdf，适用于在 [umdf 版本 2.31](umdf-version-history.md) 或更高版本的目标计算机上运行的任何 UMDF 1.x 驱动程序
 
 此注册表值位于中 `HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\WUDF\Services\<service name>\Parameters\Wdf` 。
 
@@ -128,7 +127,7 @@ ms.locfileid: "89191207"
 
 此注册表值位于中 `HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\WUDF\Services\{193a1820-d9ac-4997-8c55-be817523f6aa}` 。 可以使用 [WDF 验证器工具](../devtest/global-wdf-settings-tab.md) 在 WDK 中 ( # A0) 进行设置。 此值会影响系统上的所有 UMDF 驱动程序。
 
-包含延迟值（以秒为单位）。 导致 WUDFHost 在加载驱动程序后延迟指定的秒数。 否则， **HostProcessDbgBreakOnDriverLoad** 的行为与为 **HostProcessDbgBreakOnStart**所述的行为相同。
+包含延迟值（以秒为单位）。 导致 WUDFHost 在加载驱动程序后延迟指定的秒数。 否则， **HostProcessDbgBreakOnDriverLoad** 的行为与为 **HostProcessDbgBreakOnStart** 所述的行为相同。
 
 指定 **HostProcessDbgBreakOnStart** 或 **HostProcessDbgBreakOnDriverLoad** 会导致框架禁用其他 UMDF 超时 (例如即插即用操作) 。 这意味着，如果你的驱动程序导致过多的超时，则使用这些值可能导致驱动程序导致目标出现严重故障。
 
@@ -141,7 +140,7 @@ ms.locfileid: "89191207"
 
 包含延迟值（以秒为单位）。 在指定的延迟期间，主机进程每秒查找用户模式调试器一次，并在连接的情况下中断。 如果在这段时间内未附加用户模式调试器，并且 **HostProcessDbgBreakOnStart** 中的高位设置 (0x80000000) ，则该框架将进行一次尝试进入内核模式调试器。 例如：
 
-|值|结果|
+|“值”|结果|
 |--- |--- |
 |0x00000004|框架每秒尝试连接到用户模式调试器一次，4秒。 框架从不尝试连接到内核模式调试器。|
 |0x80000000|该框架将创建一次尝试连接到用户模式调试器。 如果未附加用户模式调试器，框架将尝试连接到内核模式调试器。|
@@ -189,7 +188,7 @@ HKR, Parameters\Wdf, LogPages,   0x00010001, 3 ; KMDF IFR size
 
 *REG \_ DWORD*
 
-如果设置为值 *n*，并且如果设置了 **VerifierOn** ，则在第 *n* 个分配后，框架将无法每次尝试为驱动程序的对象分配内存。 此故障有助于测试驱动程序对内存不足情况的处理。 例如，如果将 **VerifierAllocateFailCount** 设置为2，则在第二次分配后的每个内存分配都将失败。 **VerifierAllocateFailCount**的默认值为0xffffffff。 设置 **VerifierAllocateFailCount**后，可以通过将其设置为 (DWORD) 或全部删除值来将其关闭。
+如果设置为值 *n*，并且如果设置了 **VerifierOn** ，则在第 *n* 个分配后，框架将无法每次尝试为驱动程序的对象分配内存。 此故障有助于测试驱动程序对内存不足情况的处理。 例如，如果将 **VerifierAllocateFailCount** 设置为2，则在第二次分配后的每个内存分配都将失败。 **VerifierAllocateFailCount** 的默认值为0xffffffff。 设置 **VerifierAllocateFailCount** 后，可以通过将其设置为 (DWORD) 或全部删除值来将其关闭。
 
 请注意，该验证器会计算驱动程序请求的分配数和框架代表驱动程序请求的分配数。 另请注意，可能会对驱动程序进行的分配数从框架的一个版本更改为下一个版本。
 

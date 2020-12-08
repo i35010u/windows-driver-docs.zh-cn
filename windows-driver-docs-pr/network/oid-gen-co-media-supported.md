@@ -1,17 +1,16 @@
 ---
 title: OID_GEN_CO_MEDIA_SUPPORTED
 description: 本主题介绍) OID_GEN_CO_MEDIA_SUPPORTED 对象标识符 (OID。
-ms.assetid: 688d5054-f92d-4054-bf6e-dcf43fcfeb06
 keywords:
 - OID_GEN_CO_MEDIA_SUPPORTED
 ms.date: 11/02/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 76afbb04a68b5306edf690de8fe464b4b0e988e6
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ed9c8e8c0feddd7b8e01fb12a80507689219f265
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215486"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822899"
 ---
 # <a name="oid_gen_co_media_supported"></a>OID_GEN_CO_MEDIA_SUPPORTED
 

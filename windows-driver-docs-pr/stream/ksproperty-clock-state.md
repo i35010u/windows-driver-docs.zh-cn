@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 时钟 \_ 状态
 description: 客户端使用 KSPROPERTY \_ 时钟 \_ 状态属性来确定 pin 的流状态。
-ms.assetid: c041b896-524b-4a7a-bb2c-9061c08f763c
 keywords:
 - KSPROPERTY_CLOCK_STATE 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 518c9e01ca52daa3445cbdc7519bd3735580a5c4
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: eb20d8ce0e3374d6dd3d43a47ef27b5a1bb79b84
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103291"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821789"
 ---
 # <a name="ksproperty_clock_state"></a>KSPROPERTY \_ 时钟 \_ 状态
 
@@ -82,7 +81,7 @@ ms.locfileid: "90103291"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSSTATE**](/windows-hardware/drivers/ddi/ks/ne-ks-ksstate)

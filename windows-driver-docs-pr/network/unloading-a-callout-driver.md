@@ -1,19 +1,18 @@
 ---
 title: 卸载标注驱动程序
 description: 卸载标注驱动程序
-ms.assetid: a8c1bb33-41f8-420c-a761-669864eb9444
 keywords:
 - Windows 筛选平台标注驱动程序 WDK，卸载
 - 标注驱动程序 WDK Windows 筛选平台，卸载
 - 卸载驱动程序 WDK Windows 筛选平台
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: baf0a2db3c0e6eb77da488e6ebd930aff0da7a3d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 9cd05fa9d4e2975de7db1c525669c08541fa023d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208545"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822779"
 ---
 # <a name="unloading-a-callout-driver"></a>卸载标注驱动程序
 

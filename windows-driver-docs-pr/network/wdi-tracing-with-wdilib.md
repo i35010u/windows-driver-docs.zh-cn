@@ -1,31 +1,30 @@
 ---
 title: 使用 WDILib 进行 WDI 跟踪
-description: WDILib 组件当前支持跟踪使用 WPP。 跟踪提供程序的 GUID 是 21ba7b61-05f8-41f1-9048-c09493dcfe38。 以下说明可以用于收集和查看跟踪。
-ms.assetid: 2F4FFF67-F88A-4CB0-9980-E3710D4F04EC
+description: WDILib 组件当前支持使用 WPP 进行跟踪。 跟踪提供程序的 GUID 为21ba7b61-05f8-41f1-9048-c09493dcfe38。 以下说明可用于收集和查看跟踪。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c467aa82abe582f3a25ef49c38211a12919aa4cd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6116f81ddf7267b9aa53606402cb54d7af5518c0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362315"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821909"
 ---
 # <a name="wdi-tracing-with-wdilib"></a>使用 WDILib 进行 WDI 跟踪
 
 
-WDILib 组件当前支持跟踪使用 WPP。 跟踪提供程序的 GUID 是 {21ba7b61-05f8-41f1-9048-c09493dcfe38}。 以下说明可以用于收集和查看跟踪。
+WDILib 组件当前支持使用 WPP 进行跟踪。 跟踪提供程序的 GUID 为 {21ba7b61-05f8-41f1-9048-c09493dcfe38}。 以下说明可用于收集和查看跟踪。
 
 ## <a name="start-tracing"></a>开始跟踪
 
 
-若要收集跟踪，请从管理员命令提示符运行以下命令行。
+若要收集跟踪，请在管理员命令提示符下运行以下命令行。
 
 ```PowerShell
 netsh trace start wireless_dbg provider={21ba7b61-05f8-41f1-9048-c09493dcfe38} level=0xff keywords=0xff
 ```
 
-可以创建包含 netsh 跟踪命令行的批次 cmd 文件。 这样，你可以展开以包括 IHV WPP 事件，如果所需的命令。
+你可以创建包含 netsh trace 命令行的 batch cmd 文件。 这样，你就可以根据需要扩展命令以包含 IHV WPP 事件。
 
 ```PowerShell
 @echo off
@@ -46,41 +45,41 @@ Rem
 netsh trace start wireless_dbg provider=%WDI_WPP_GUID% provider=%IHV_WPP_GUID% globallevel=0xff
 ```
 
-可以使用无线\_dbg 若要启用操作系统端跟踪的其余部分。 其他有用的选项是捕获 = yes' 若要启用数据包跟踪和永久性 = yes' 若要使跟踪保持启用在重新启动后，直到它已停止。 这意味着不需要记得重新启动后启用跟踪。
+您可以使用 "无线 \_ dbg" 来启用其余的操作系统跟踪。 其他有用的选项是 "capture = yes"，用于启用数据包跟踪，使用 "永久性 = yes" 使跟踪在重启后保持启用状态，直到停止。 这意味着无需记住在重启后启用跟踪。
 
-或者，跟踪提供程序 GUID 可以合并到用于收集 IHV 组件跟踪的跟踪命令。
+或者，可以将跟踪提供程序 GUID 合并到用于收集 IHV 组件跟踪的跟踪命令。
 
 ## <a name="stop-tracing"></a>停止跟踪
 
 
-一旦获得一份重现，跟踪已停止，使用以下命令保存跟踪。
+获取重现后，跟踪将停止，并使用以下命令保存跟踪。
 
 ```PowerShell
 netsh trace stop
 ```
 
-这将跟踪保存在 %TEMP%\\NetTraces\\NetTrace.etl。
+这会将跟踪保存在% TEMP% \\ NetTraces \\ NetTrace 中。
 
 ## <a name="convert-wpp-traces-to-text"></a>将 WPP 跟踪转换为文本
 
 
-跟踪使用任何文本转换工具 WPP 转换成文本。 一种方法是使用 Netsh。
+跟踪通过任何 WPP 转换为文本转换工具。 一种选择是使用 Netsh。
 
 ```PowerShell
 netsh trace convert NetTrace.etl tmfpath=C:\TMF
 ```
 
-在此示例中，c:\\TMF 包含 TMFs （从 wdiwifi 生成。通过运行 tracepdb.exe PDB)。 如果未生成 TMFs，转换后的跟踪不正确显示。
+在此示例中，C： \\ TMF 包含 wdiwifi 生成的 TMFs (。PDB，) 运行 tracepdb.exe。 如果未生成 TMFs，则不会正确显示转换后的跟踪。
 
 ## <a name="analyze-traces"></a>分析跟踪
 
 
-可以使用任何文本查看器查看已转换的文本文件 (NetTrace.txt)。 如果在查看器添加筛选器的功能，使用\[错误\]'，'\[Wdi，并\[MSG 筛选器可帮助作用域相关线下的跟踪。
+可以使用任何文本查看器查看已转换的文本文件 ( # A0) 。 如果查看器能够添加筛选器，则使用 " \[ ERROR \] "、" \[ Wdi" 和 " \[ MSG" 筛选器可帮助将跟踪范围缩小到有趣的行。
 
 ## <a name="tracing-on-phones"></a>在手机上跟踪
 
 
-若要跟踪在手机上，将以下文本保存 wdiguids.txt，包括你要跟踪的跟踪提供程序。
+若要在手机上跟踪，请将以下文本保存为 wdiguids.txt，包括要跟踪的跟踪提供程序。
 
 ```Text
 0C5A3172-2248-44FD-B9A6-8389CB1DC56A        wlansvc
@@ -131,7 +130,7 @@ CC3DF8E3-4111-48d0-9B21-7631021F7CA6        Dhcpv4 Client
 07a29c3d-26a4-41e2-856a-095b3eb8b6ef        Dhcpv6 Client
 ```
 
-使用 TShell，连接到设备、 文件复制，并开始跟踪。
+使用 TShell，连接到设备，复制文件，并开始跟踪。
 
 ```PowerShell
 open-device 127.0.0.1
@@ -141,7 +140,7 @@ cmdd tracelog.exe '-start wdiwpp -f \data\test\wlan\wdiwpp.etl -cir 256 -rt -ls 
 cmdd tracelog.exe '-enable wdiwpp -guid \data\test\wlan\wdiguids.txt -level 0x7fffffff -flag 0x7fffffff'
 ```
 
-运行你的方案。 若要停止跟踪并收集日志，请重新连接到 TShell （如果需要） 并运行以下命令。
+运行你的方案。 若要停止跟踪和收集日志，请重新连接到 TShell (如有必要) 并运行以下命令。
 
 ```PowerShell
 cmdd tracelog.exe '-flush wdiwpp'

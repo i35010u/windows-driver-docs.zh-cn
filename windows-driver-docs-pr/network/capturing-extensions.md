@@ -1,15 +1,14 @@
 ---
 title: 捕获扩展
 description: 捕获扩展
-ms.assetid: A8C2E550-4B1F-4DDB-B97F-1F7B6B74F5E7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ad4bbbe87b0415e99822f138954ed8813001b85e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 6ca031448ace9b89df9bafde498b9963e395269c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213991"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822228"
 ---
 # <a name="capturing-extensions"></a>捕获扩展
 
@@ -40,7 +39,7 @@ Hyper-v 可扩展交换机捕获扩展检查数据包流量、对象标识符 (O
 
     若要详细了解如何通过扩展来发起数据包，请参阅 [原始数据包流量](originating-packet-traffic.md)。
 
-    **注意**   与其他扩展一样，捕获扩展只能在可扩展交换机入口数据路径中产生数据包流量。
+    **注意**  与其他扩展一样，捕获扩展只能在可扩展交换机入口数据路径中产生数据包流量。
 
      
 

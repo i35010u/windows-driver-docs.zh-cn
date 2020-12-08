@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ VPCONFIG \_ GETCONNECTINFO
 description: KSPROPERTY \_ VPCONFIG \_ GETCONNECTINFO 属性检索所有可能的视频端口配置。
-ms.assetid: 30ac1f7d-0218-49ed-8f6d-e58f56aee70e
 keywords:
 - KSPROPERTY_VPCONFIG_GETCONNECTINFO 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d84507b216b5bdede62b3f4423df0051f965500b
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: cb38b248bd3fe1091bd7c3c647e211a9a8146180
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102684"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822693"
 ---
 # <a name="ksproperty_vpconfig_getconnectinfo"></a>KSPROPERTY \_ VPCONFIG \_ GETCONNECTINFO
 
@@ -79,7 +78,7 @@ KSPROPERTY \_ VPCONFIG \_ GETCONNECTINFO 属性检索所有可能的视频端口
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**DDVIDEOPORTCONNECT**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ddvideoportconnect)

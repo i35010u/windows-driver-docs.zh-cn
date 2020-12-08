@@ -1,7 +1,6 @@
 ---
 title: 'StorPortIrql 规则 (storport) '
 description: StorPortIrql 规则检查 StorPort 例程是否是以正确的 IRQL 级别调用的。
-ms.assetid: 6A3946AB-DFB6-4447-9EF3-F0A003DB58E9
 ms.date: 05/21/2018
 keywords:
 - 'StorPortIrql 规则 (storport) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4989ab69b422cd8fc3a4294c051e0439a6f3b0a4
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: d9f9ec64e058e101b4ff1e6e7c9d247b8867bad6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105904"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822555"
 ---
 # <a name="storportirql-rule-storport"></a>StorPortIrql 规则 (storport) 
 
 
-**StorPortIrql**规则检查 StorPort 例程是否是以正确的 IRQL 级别调用的。
+**StorPortIrql** 规则检查 StorPort 例程是否是以正确的 IRQL 级别调用的。
 
 **驱动程序模型： Storport**
 

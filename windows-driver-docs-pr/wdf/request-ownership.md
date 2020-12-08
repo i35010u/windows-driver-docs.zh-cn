@@ -1,29 +1,28 @@
 ---
 title: 请求所有权
 description: 请求所有权
-ms.assetid: 60494e97-0483-454f-aafc-7a69019c95f2
 keywords:
 - 请求对象 WDK KMDF，所有权
-- 所有权 WDK KMDF，I/O 请求
+- 所有权 WDK KMDF、i/o 请求
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 30885d929be0f951588069a7b951974eecce39ce
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 914a594d83c86c5e35b2855c36d128b98a9fb738
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569492"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821709"
 ---
 # <a name="request-ownership"></a>请求所有权
 
 
-当 I/O 管理器将 I/O 请求发送到基于 framework 的驱动程序时，框架将截获的请求，并创建一个框架请求对象。 框架"拥有"请求对象，因为仅 framework 可以访问请求，并针对对象执行操作。
+当 i/o 管理器将 i/o 请求发送到基于框架的驱动程序时，框架会截获请求并创建框架请求对象。 由于只有框架可以访问请求并对对象执行操作，因此框架 "拥有" 请求对象。
 
-框架将创建一个请求对象后，它会将一个驱动程序的 I/O 队列中的对象。 框架将继续拥有请求对象，直到将它从队列中移除该请求并将其传递给驱动程序。
+在框架创建请求对象后，它会将该对象置于某个驱动程序的 i/o 队列中。 框架将继续拥有请求对象，直到它从队列中删除该请求并将其传递给驱动程序。
 
-该驱动程序后[接收](receiving-i-o-requests.md)请求对象，它将拥有该请求。 该驱动程序可以通过一个句柄访问请求对象并执行对象上的操作。 该驱动程序拥有的请求对象时它可以[重新排队](requeuing-i-o-requests.md)，[完整](completing-i-o-requests.md)，[取消](canceling-i-o-requests.md)，或[向前](forwarding-i-o-requests.md)后它不能再请求拥有请求对象，并且不能访问它。
+驱动程序 [收到](receiving-i-o-requests.md) 请求对象后，它将拥有该请求。 驱动程序可以通过句柄访问请求对象，并对对象执行操作。 尽管驱动程序拥有请求对象，但它可以 [重新排队](requeuing-i-o-requests.md)、 [完成](completing-i-o-requests.md)、 [取消](canceling-i-o-requests.md)或 [转发](forwarding-i-o-requests.md) 请求，之后它不再拥有请求对象并且无法访问。
 
-驱动程序和框架之间传递请求对象的所有权，则不会更改对象句柄的值。 例如，如果驱动程序收到来自 I/O 队列的请求，请求到不同的队列，然后再次接收请求，该句柄的值不会更改。 同样，如果驱动程序将请求转发到 I/O 目标并在稍后接收 I/O 目标已完成请求的通知，驱动程序的通知回调函数接收相同驱动程序提供给 I/O 目标的句柄值。
+由于请求对象的所有权在驱动程序和框架之间传递，因此对象句柄的值不会更改。 例如，如果驱动程序收到来自 i/o 队列的请求，请将其会到不同的队列，然后再次收到请求，句柄的值将不会更改。 同样，如果驱动程序将请求转发到 i/o 目标，并在以后收到 i/o 目标完成请求的通知，则驱动程序的通知回调函数将接收驱动程序提供给 i/o 目标的相同句柄值。
 
  
 

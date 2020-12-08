@@ -1,16 +1,15 @@
 ---
 title: NDIS_STATUS_WWAN_SMS_SEND
 description: 微型端口驱动程序使用 NDIS_STATUS_WWAN_SMS_SEND 通知通过 OID_WWAN_SMS_SEND 通知 MB 服务完成以前的发送请求。
-ms.assetid: f750b09c-1a7c-40d8-8a4e-a7f9f3160248
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 NDIS_STATUS_WWAN_SMS_SEND 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 6560b76f0fd200fcd796fe5e5521b346253f23ab
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e005a0c6abce10b6edf1372babea66b7d4cad362
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213875"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822181"
 ---
 # <a name="ndis_status_wwan_sms_send"></a>NDIS \_ 状态 \_ WWAN \_ 短信 \_ 发送
 
@@ -44,7 +43,7 @@ ms.locfileid: "89213875"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [OID \_ WWAN \_ SMS \_ 发送](oid-wwan-sms-send.md)

@@ -1,7 +1,6 @@
 ---
 title: MRxQuerySdInfo 例程
 description: TheMRxQuerySdInfo 例程由 RDBSS 调用，请求网络小型重定向程序查询有关文件系统对象的安全描述符信息。
-ms.assetid: 5bab05f1-2a79-42c0-ba70-e1124f7b1528
 keywords:
 - MRxQuerySdInfo 例程可安装文件系统驱动程序
 - PMRX_CALLDOWN
@@ -15,17 +14,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3dc50b2c07c89d959ff959a9d763e6ff32730af1
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: cf8bfc6de473777c6acfdc61636fc9609c783559
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065534"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823230"
 ---
 # <a name="mrxquerysdinfo-routine"></a>MRxQuerySdInfo 例程
 
 
-*MRxQuerySdInfo*例程由[RDBSS](./the-rdbss-driver-and-library.md)调用，以请求网络小型重定向程序查询有关文件系统对象的安全描述符信息。
+*MRxQuerySdInfo* 例程由 [RDBSS](./the-rdbss-driver-and-library.md)调用，以请求网络小型重定向程序查询有关文件系统对象的安全描述符信息。
 
 <a name="syntax"></a>语法
 ------
@@ -34,12 +33,12 @@ ms.locfileid: "89065534"
 PMRX_CALLDOWN MRxQuerySdInfo;
 
 NTSTATUS MRxQuerySdInfo(
-  _Inout_ PRX_CONTEXT RxContext
+  _Inout_ PRX_CONTEXT RxContext
 )
 { ... }
 ```
 
-<a name="parameters"></a>parameters
+<a name="parameters"></a>参数
 ----------
 
 *RxContext* \[in、out\]  
@@ -118,13 +117,13 @@ NTSTATUS MRxQuerySdInfo(
 
 RDBSS 发出对 *MRxQuerySdInfo* 的调用，以响应接收 [**IRP \_ MJ \_ 查询 \_ 安全**](irp-mj-query-security.md) 请求。
 
-在调用 *MRxQuerySdInfo*之前，RDBSS 会修改 \_ *RXCONTEXT* 参数指向的 RX 上下文结构中的以下成员：
+在调用 *MRxQuerySdInfo* 之前，RDBSS 会修改 \_ *RXCONTEXT* 参数指向的 RX 上下文结构中的以下成员：
 
-**QuerySecurity. SecurityInformation**成员设置为**IrpSp-QuerySecurity. &gt; SecurityInformation**。
+**QuerySecurity. SecurityInformation** 成员设置为 **IrpSp-QuerySecurity. &gt; SecurityInformation**。
 
-**信息. Buffer**成员设置为 i/o 请求数据包中的用户缓冲区。 如果需要，此缓冲区已被 RDBSS 锁定。
+**信息. Buffer** 成员设置为 i/o 请求数据包中的用户缓冲区。 如果需要，此缓冲区已被 RDBSS 锁定。
 
-**LengthRemaining**成员设置为**IrpSp &gt; 参数. QuerySecurity**。
+**LengthRemaining** 成员设置为 **IrpSp &gt; 参数. QuerySecurity**。
 
 成功时，网络小型重定向程序应将 RX 上下文结构的 **InformationToReturn** 成员设置 \_ 为返回的安全信息的长度。 如果对 *MRxQuerySdInfo* 的调用成功，则 RDBSS 会将 IRP 的 **IoStatus** 成员设置为 RX 上下文的 **InformationToReturn** 成员 \_ 。
 
@@ -139,7 +138,7 @@ RDBSS 发出对 *MRxQuerySdInfo* 的调用，以响应接收 [**IRP \_ MJ \_ 查
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面型</td>
+<td align="left">台式机</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>

@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ MEDIASEEKING \_ 格式
 description: KSPROPERTY \_ MEDIASEEKING \_ FORMATS 属性检索筛选器支持的媒体时间格式。 此信息作为多项属性返回。
-ms.assetid: 6d01737e-baef-4a65-90c7-3838cb19b4c9
 keywords:
 - KSPROPERTY_MEDIASEEKING_FORMATS 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eccec5977dadef58d97287cd8606e72735820787
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 6a7e4b3f891dc2a9a575efa2530ef822b6000920
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102694"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821787"
 ---
 # <a name="ksproperty_mediaseeking_formats"></a>KSPROPERTY \_ MEDIASEEKING \_ 格式
 
@@ -82,7 +81,7 @@ KSPROPERTY \_ MEDIASEEKING \_ FORMATS 属性检索筛选器支持的媒体时间
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [KSPROPSETID \_ MediaSeeking](kspropsetid-mediaseeking.md)

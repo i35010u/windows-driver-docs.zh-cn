@@ -1,18 +1,17 @@
 ---
 title: 检查资源冲突
 description: 检查资源冲突
-ms.assetid: c994085c-8610-487f-88a5-f11b4a68ec4a
 keywords:
-- And 插即用 (PnP) 资源冲突
+- 即插即用 (PnP) ，资源冲突
 - 资源冲突
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a8453c2869b98e8bc5dd6a8324944d1dcf2782a1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4787f1ed1e751f899d71e36486e400de4dc71aa4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375159"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821613"
 ---
 # <a name="checking-for-resource-conflicts"></a>检查资源冲突
 
@@ -20,9 +19,9 @@ ms.locfileid: "63375159"
 ## <span id="ddk_checking_for_resource_conflicts_dbg"></span><span id="DDK_CHECKING_FOR_RESOURCE_CONFLICTS_DBG"></span>
 
 
-本部分讨论了可用于检测资源冲突的方法。
+本部分讨论可用于检测资源冲突的方法。
 
-第一种方法涉及到转储仲裁器数据。 下面的示例将检查 I/O 范围的仲裁器数据：
+第一种方法涉及转储仲裁数据。 下面的示例检查 i/o 范围的仲裁器数据：
 
 ```dbgcmd
 kd> !arbiter 1
@@ -84,16 +83,16 @@ DEVNODE ff0daf48
           < none >
 ```
 
-请注意，有两个仲裁器： 一个位于设备树的根目录中，一个在 PCI\_HAL。 另请注意 PCI 仲裁器声明和预分配时进行仲裁 （0xD000-0xffff 内，这更高版本的适用于其设备 PCI 仲裁器子） 的设备的范围。 所有者字段指示拥有该范围的设备对象。 所有者的零值指示的范围不是总线上。 对于一个 PCI 桥，例如，未通过的所有范围将都分配给**NULL**。
+请注意，有两个仲裁器：一个位于设备树的根目录中，另一个位于 PCI \_ HAL 中。 另请注意，PCI 仲裁器声明和预分配范围仲裁的设备 (0xD000-0xFFFF，后者稍后由 PCI 仲裁器 suballocated 其设备) 。 所有者字段指示拥有该范围的设备对象。 如果值为零，则表示该范围不在总线上。 例如，对于 PCI 桥，其未通过的所有范围都将分配给 **NULL**。
 
-在以下示例中，PCI 桥通过 I/O 0xD000 0xDFFFF，因此其仲裁器将包含以下两个范围：
+在以下示例中，PCI 桥传递 i/o 0xD000-0xDFFFF，使其仲裁器包含以下两个范围：
 
 ```text
 0-CFFFF            Owner 00000000
 E0000-FFFFFFFFFFFFFFFF   Owner 00000000
 ```
 
-FFFFFFFFFFFFFFFF 是因为所有仲裁的资源将被视为 64 位范围。
+FFFFFFFFFFFFFFFF 是因为所有仲裁资源均被视为64位范围。
 
 **示例：**
 
@@ -137,9 +136,9 @@ DevNode 0xff0bb808 for PDO 0xff0bb900 at level 0xffffffff
       Range starts at 0x0000000040800000 for 0x800000 bytes
 ```
 
-该示例中所示，此操作将检索拥有范围 3c 0 3cf 的旧视频卡。 同一个设备对象列出它拥有 (3de 3df 和 3 个 d 4-3dc) 附近其他范围。 使用相同的跟踪技术，3f8 3ff 范围确定为不使用的串行端口。
+如示例中所示，此操作检索到拥有范围 3c0-3cf 的旧视频卡。 相同的设备对象将在它所拥有的其他范围附近列出 (3de-3df 和 3d4-3dc) 。 使用相同的跟踪方法，将 3f8-3ff 的范围确定为串行端口所使用的范围。
 
-类似的技术需要转换中断：
+转换中断需要类似的技术：
 
 ```dbgcmd
 kd> !arbiter 4
@@ -158,9 +157,9 @@ DEVNODE ff0daf48
       < none >
 ```
 
-请注意，有一个单一的仲裁器的中断： 根仲裁器。
+请注意，存在用于中断的单个仲裁器：根仲裁器。
 
-例如，转换到 IRQ 中断 3F。 首先，转储设备对象，然后 devnode:
+例如，将中断3F 转换为 IRQ。 首先转储设备对象，然后将 devnode：
 
 ```dbgcmd
 kd> !devobj ff0cf030
@@ -225,7 +224,7 @@ DevNode 0xff0cfe88 for PDO 0xff0cf030 at level 0x3
         0xf - 0xf
 ```
 
-例如，尝试确定是否存在导致无法启动，此设备的资源冲突开头**devnode**:
+例如，尝试确定是否存在导致此设备无法启动的资源冲突，从 **devnode** 开始：
 
 ```dbgcmd
 kd> !devnode 0xff0d4bc8 6
@@ -269,7 +268,7 @@ ing (0)
         0x5 - 0x5
 ```
 
-首先，假设这是 I/O 冲突并转储仲裁器 （请参阅前面的示例中）。 结果显示范围 0x3EC 0x3EF 归 0xFF0D0B50，重叠串行设备的资源请求。 接下来，此范围的所有者转储设备对象和针对所有者转储 devnode:
+首先，请假定这是 i/o 冲突，并转储仲裁器 (参阅前面的示例) 。 结果显示，范围 0x3EC 0x3EF 属于0xFF0D0B50，这与串行设备的资源请求重叠。 接下来，为此范围的所有者转储设备对象，然后为所有者转储 devnode：
 
 ```dbgcmd
 kd> !devobj ff0d0b50
@@ -293,15 +292,15 @@ Duplicate PDO 0xff0d0e10  TargetDeviceNotify List - f 0xff0d0acc  b 0xff0d0acc
       Range starts at 0x3ec for 0x4 bytes
 ```
 
-这是"伪-devnode"对应于由其读取的数据端口的 ISAPNP 驱动程序分配的范围。
+这是一个 "devnode"，对应于 ISAPNP 驱动程序为其读取数据端口分配的范围。
 
-若要确定在它试图启动设备时，即插即用管理器将分配给特定设备的资源：
+若要确定 PnP 管理器尝试启动设备时分配给特定设备的资源，请执行以下操作：
 
-1.  放置一个断点上时，将调用的例程 IRP\_MN\_启动\_驱动程序收到设备请求。 （如果不知道其名称），还可以在驱动程序的调度例程上放置一个断点。 在这两种情况下，应加载该驱动程序和其符号。 这可能需要您设置初始断点。
+1.  将一个断点放置在 \_ \_ \_ 驱动程序收到 IRP MN START 设备请求时调用的例程上。 如果知道 (的名称) ，还可以在驱动程序的调度例程中放置一个断点。 在这两种情况下，应加载驱动程序及其符号。 这可能需要设置初始断点。
 
-    例如，对于 PCMCIA 您可以设置一个断点上**pcmcia ！ pcmciastartpccard**。 使用此特定例程的优点是其第二个参数是可以转储使用 CM 资源列表 **！ cmreslist** （消除第 3 步）。 请参阅下面的 PCMCIA 示例。
+    例如，对于 PCMCIA，可以在 **pcmcia！ pcmciastartpccard** 上设置断点。 使用此特定例程的优点是它的第二个参数是 CM 资源列表，你可以使用 **！ cmreslist** 将其转储， (消除步骤 3) 。 请参阅以下 PCMCIA 示例。
 
-2.  在确定感兴趣的是哪个设备，转储设备对象 （如果不这么做），并转储与 CM 资源列表 devnode。 检查哪些资源已分配给设备。 您还可以检查资源是否是 I/O 资源列表的子集。 然后键入**g**或 single 单步执行该过程，并确定设备是否已启动并分配了哪些资源。 如果设备已获得一系列资源，无法启动，但未能完成此操作，该驱动程序可能不正常 （例如，如果未正确声明，它可以使用一组不能实际使用的资源）。
+2.  确定要关注的设备后，如果尚未) ，请转储设备对象 (，然后使用 CM 资源列表转储 devnode。 检查分配给设备的资源。 您还可以检查资源是否为 i/o 资源列表的子集。 然后，在过程中键入 **g** 或单步，并确定设备是否已启动以及分配了哪些资源。 如果提供了一组资源来启动但未能这样做，驱动程序可能无法正常运行 (例如，如果未正确声明，则该驱动程序可以使用一组不能实际使用) 的资源。
 
 **示例：**
 

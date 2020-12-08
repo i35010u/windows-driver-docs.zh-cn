@@ -1,18 +1,17 @@
 ---
 title: 在系统 Set-Power IRP 响应中发送设备 Set-Power IRP
 description: 在系统 Set-Power IRP 响应中发送设备 Set-Power IRP
-ms.assetid: b2029292-d770-4095-8bd7-9358b282216c
 keywords:
 - 正在发送设置-电源 Irp
 - 设置电源 Irp WDK 电源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bf7e3a543ead34f72522a59c577689288f1ff169
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: e93684d73b2b645c0e7e69ca28005e42aa24afe5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184401"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822279"
 ---
 # <a name="sending-a-device-set-power-irp-in-response-to-a-system-set-power-irp"></a>在系统 Set-Power IRP 响应中发送设备 Set-Power IRP
 
@@ -32,9 +31,9 @@ ms.locfileid: "89184401"
 
 4.  调用 [**也**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iomarkirppending) ，将系统设置-power IRP 标记为挂起。
 
-5.  从 windows Server 2003、Windows XP 和 Windows 2000) 中的 Windows Vista) 或[**PoCallDriver**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver) (开始 (调用[**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver) ，将系统设置-power IRP 传递到下一个较低版本的驱动程序。
+5.  从 windows Server 2003、Windows XP 和 Windows 2000) 中的 Windows Vista) 或 [**PoCallDriver**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver) (开始 (调用 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver) ，将系统设置-power IRP 传递到下一个较低版本的驱动程序。
 
-6.  \_从其[*DispatchPower*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)例程返回的状态为 "挂起"。
+6.  \_从其 [*DispatchPower*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)例程返回的状态为 "挂起"。
 
 在 *IoCompletion* 例程 (参阅前面列表中的步骤 3) ，设备电源策略所有者将按如下所示发送设备集-电源 IRP：
 
@@ -42,7 +41,7 @@ ms.locfileid: "89184401"
 
 2.  调用 [**PoRequestPowerIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-porequestpowerirp) 为在步骤1中确定的设备电源状态发送 [**IRP \_ MN \_ 设置 \_ 电源**](./irp-mn-set-power.md) 。 电源策略所有者必须发送设备电源请求，即使设备已处于该状态也是如此。
 
-3.  在对**PoRequestPowerIrp**的调用中指定电源完成回调例程 (*CompletionFunction*) ，并在*上下文*缓冲区中传递系统设置-power IRP。
+3.  在对 **PoRequestPowerIrp** 的调用中指定电源完成回调例程 (*CompletionFunction*) ，并在 *上下文* 缓冲区中传递系统设置-power IRP。
 
 4.  返回状态 \_ \_ \_ *IoCompletion* 例程所需的更多处理，以便驱动程序可以完成对系统设置-power IRP 在电源完成回调例程中的处理。
 

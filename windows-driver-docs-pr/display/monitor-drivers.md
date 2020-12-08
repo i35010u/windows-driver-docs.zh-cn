@@ -1,19 +1,18 @@
 ---
 title: 监视驱动程序
 description: 监视驱动程序
-ms.assetid: 6352c3fd-1a5f-4137-b76e-35c5b82a56c7
 keywords:
 - 显示设备 WDK
-- 显示器驱动程序 WDK
-- 显示驱动程序 WDK，显示器驱动程序
+- 监视驱动程序 WDK
+- 显示驱动程序 WDK，监视驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 705354174107cf8550b689a286bc49246fcee3db
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a942cbdea41bc647ce642ec79e63491370e62001
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358383"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821515"
 ---
 # <a name="monitor-drivers"></a>监视驱动程序
 
@@ -21,11 +20,11 @@ ms.locfileid: "63358383"
 ## <span id="ddk_monitor_drivers_gg"></span><span id="DDK_MONITOR_DRIVERS_GG"></span>
 
 
-每个监视器有一个设备堆栈，包括 Microsoft 监视器类功能驱动程序和可能是供应商提供的筛选器驱动程序。 下面的主题介绍与监视器关联的函数和筛选器驱动程序：
+每个监视器都有一个设备堆栈，其中包含一个 Microsoft monitor 类函数驱动程序和一个供应商提供的筛选器驱动程序。 以下主题介绍与监视器关联的函数和筛选器驱动程序：
 
-[监视器类功能驱动程序](monitor-class-function-driver.md)
+[监视类函数驱动程序](monitor-class-function-driver.md)
 
-[监视器筛选器驱动程序](monitor-filter-drivers.md)
+[监视筛选器驱动程序](monitor-filter-drivers.md)
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ VPCONFIG \_ DECIMATIONCAPABILITY
 description: KSPROPERTY \_ VPCONFIG \_ DECIMATIONCAPABILITY 属性指示是否可通过硬件降低视频图像的大小。
-ms.assetid: a929b154-165e-4075-9295-d34fecc8e18d
 keywords:
 - KSPROPERTY_VPCONFIG_DECIMATIONCAPABILITY 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5071cca97b57ba721887bb3ef38cfb65df0ebe1e
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 300cb2a1f05d6e2dd93f45b9a39feb25750fb3a2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102690"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822695"
 ---
 # <a name="ksproperty_vpconfig_decimationcapability"></a>KSPROPERTY \_ VPCONFIG \_ DECIMATIONCAPABILITY
 
@@ -88,7 +87,7 @@ KSPROPERTY \_ VPCONFIG \_ DECIMATION \_ 功能属性请求返回状态 " \_ 成�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

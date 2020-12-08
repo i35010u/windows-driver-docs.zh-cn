@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_ADDITIONAL_BEACON_IES
-description: WDI_TLV_ADDITIONAL_BEACON_IES 是包含其他信号 IEs TLV。
-ms.assetid: 7B4D863A-1480-4283-A5E9-5F4F043B0CDE
+description: WDI_TLV_ADDITIONAL_BEACON_IES 是一种 TLV，其中包含附加的信号。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_ADDITIONAL_BEACON_IES 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 63f36e5cc676fd3a165a5efeb4c78868c1741db4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 43c14957245a02ce40afa84f6944725571d7dcc6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380563"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822037"
 ---
-# <a name="wditlvadditionalbeaconies"></a>WDI\_TLV\_其他\_信号\_导致浏览器
+# <a name="wdi_tlv_additional_beacon_ies"></a>WDI \_ TLV \_ 附加的 \_ 信标 \_
 
 
-WDI\_TLV\_其他\_发信号的\_导致浏览器是包含其他信号 IEs TLV。
+WDI \_ tlv \_ 附加的 \_ 信标 \_ 是包含其他信号的 tlv。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,14 +25,14 @@ WDI\_TLV\_其他\_发信号的\_导致浏览器是包含其他信号 IEs TLV。
 ## <a name="length"></a>长度
 
 
-UINT8 元素的数组大小 （以字节为单位）。 该数组必须包含一个或多个元素。
+UINT8 元素数组的大小 (以字节为单位) 。 数组必须包含1个或多个元素。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入      | 描述                                                                                                                                                                                                                |
+| 类型      | 描述                                                                                                                                                                                                                |
 |-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| UINT8\[\] | 信号而导致浏览器的数组。 Wi-Fi Direct 端口必须将这些附加导致浏览器添加到信号数据包时充当组所有者。 Wi-Fi Direct 端口在设备或客户端模式下操作时，将忽略这些。 |
+| UINT8\[\] | 信标的数组。 Wi-Fi 直接端口在作为组所有者时，必须将这些附加的添加到信号数据包中。 当 Wi-Fi 直接端口在设备或客户端模式下操作时，将忽略这些操作。 |
 
  
 
@@ -52,10 +51,10 @@ UINT8 元素的数组大小 （以字节为单位）。 该数组必须包含一
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

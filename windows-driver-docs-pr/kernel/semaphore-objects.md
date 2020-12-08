@@ -1,7 +1,6 @@
 ---
 title: 信号灯对象
 description: 信号灯对象
-ms.assetid: e6703c39-3b47-4d3b-86e7-bf2bf37af493
 keywords:
 - 内核调度程序对象 WDK，信号对象
 - 调度程序对象 WDK 内核，信号对象
@@ -14,12 +13,12 @@ keywords:
 - 等待状态 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a280e97ec4cfb04eaafc465c2eb2fac6faed87c8
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 642d38ce9afe452fb5781fefc23765292cdd965b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89402838"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822293"
 ---
 # <a name="semaphore-objects"></a>信号灯对象
 
@@ -37,7 +36,7 @@ ms.locfileid: "89402838"
 
 如上图所示，此类驱动程序必须为应驻留的信号灯对象提供存储。 驱动程序可以使用驱动程序创建的设备对象的 [设备扩展](device-extensions.md) ，如果控制器扩展使用 [控制器对象](./introduction-to-controller-objects.md)或由驱动程序分配的非分页池，则可以使用控制器扩展。
 
-当驱动程序的 [*AddDevice*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device) 例程调用 **KeInitializeSemaphore**时，它必须为信号灯对象传递指向驱动程序的驻留存储的指针。 此外，调用方必须指定信号量对象的 *计数* （如上图所示），以确定) 的初始状态 (非零值。
+当驱动程序的 [*AddDevice*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device) 例程调用 **KeInitializeSemaphore** 时，它必须为信号灯对象传递指向驱动程序的驻留存储的指针。 此外，调用方必须指定信号量对象的 *计数* （如上图所示），以确定) 的初始状态 (非零值。
 
 调用方还必须指定信号量的限制，可以为以下 *值* 之一：
 
@@ -51,7 +50,7 @@ ms.locfileid: "89402838"
 
     如果此信号灯设置为 "已终止" 状态，则一些等待信号灯对象设置为 "已终止" 状态的线程将变为符合执行的条件，并可访问受信号量保护的任何资源。
 
-    这种类型的信号量称为 *计数信号量* ，因为将信号量设置为 "已终止" 状态的例程还指定了多少个等待线程可以将其状态从 "等待" 状态更改为 "就绪"。 此类等待线程的数量可能是初始化信号量时设置的 *限制* ，或者是小于此预设 *限制*的某个数字。
+    这种类型的信号量称为 *计数信号量* ，因为将信号量设置为 "已终止" 状态的例程还指定了多少个等待线程可以将其状态从 "等待" 状态更改为 "就绪"。 此类等待线程的数量可能是初始化信号量时设置的 *限制* ，或者是小于此预设 *限制* 的某个数字。
 
 很少有设备或中间驱动程序具有单个驱动程序创建的线程;甚至更少的一组线程可能会等待获取或释放信号量。 系统提供的几个驱动程序使用信号量对象，而此类对象只使用二进制信号量。 尽管二进制信号量在功能上可能与 [互斥体对象](introduction-to-mutex-objects.md)相似，但二进制信号量不提供对在 SMP 计算机中运行的系统线程的死锁的内置保护。
 
@@ -67,11 +66,11 @@ ms.locfileid: "89402838"
 
     通过以这种方式使用计数信号量，此类驱动程序线程 "知道" 只要运行该线程，就会从联锁队列中删除 IRP。
 
-如果调用 [**KeReleaseSemaphore**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasesemaphore) 并将 *Wait* 参数设置为 **TRUE** ，则表示调用方应立即调用 **KeWait*Xxx*对象** () 支持从 **KeReleaseSemaphore**返回的例程。
+如果调用 [**KeReleaseSemaphore**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasesemaphore) 并将 *Wait* 参数设置为 **TRUE** ，则表示调用方应立即调用 **KeWait *Xxx* 对象** () 支持从 **KeReleaseSemaphore** 返回的例程。
 
 请考虑以下将 *Wait* 参数设置为 KeReleaseSemaphore 的准则：
 
-以 IRQL 被动级别运行的可分页线程或可分页驱动程序例程 \_ 不应调用 **KeReleaseSemaphore** ，并将 *Wait* 参数设置为 **TRUE**。 如果调用方在对 **KeReleaseSemaphore** 和 **KeWait*Xxx*对象** 的调用之间分页 () ，则这种调用将导致严重的页错误。
+以 IRQL 被动级别运行的可分页线程或可分页驱动程序例程 \_ 不应调用 **KeReleaseSemaphore** ，并将 *Wait* 参数设置为 **TRUE**。 如果调用方在对 **KeReleaseSemaphore** 和 **KeWait *Xxx* 对象** 的调用之间分页 () ，则这种调用将导致严重的页错误。
 
 以 IRQL 大于被动级别运行的任何标准驱动程序例程都 \_ 不会在不关闭系统的情况下等待任何调度程序对象上的非零间隔; 有关详细信息，请参阅 [内核调度程序对象](./introduction-to-kernel-dispatcher-objects.md) 。 但是，在小于或等于调度级别的 IRQL 下运行时，此类例程可以调用 **KeReleaseSemaphore** \_ 。
 

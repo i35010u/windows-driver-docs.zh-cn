@@ -1,15 +1,14 @@
 ---
 title: Windows 7 的 WFP 更改
 description: Windows 7 的 WFP 更改
-ms.assetid: c7b15182-592a-4cdb-98aa-5283ed2f51a0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 355e2993d432ebf824b64cd55e7d17d10541d079
-ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
+ms.openlocfilehash: f6a8002eaeda3b36a8427602a85c359ee63312a1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91423582"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821901"
 ---
 # <a name="wfp-changes-for-windows-7"></a>Windows 7 的 WFP 更改
 

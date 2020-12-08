@@ -1,9 +1,8 @@
 ---
 title: 缩放元素
-description: 可选的缩放元素指定宽度和高度的扫描的文档的缩放。
-ms.assetid: 43769ebf-f883-418a-a0b3-87d5b23601f9
+description: 可选缩放元素指定扫描文档的宽度和高度的缩放。
 keywords:
-- 缩放元素成像设备
+- 缩放元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b7791a9ab6be968766e2fa873c5ee233758809d9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 39e661dcfe9d757ffdb5afa159ca6c85f082e2c3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381547"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822395"
 ---
 # <a name="scaling-element"></a>缩放元素
 
 
-可选**缩放**元素指定宽度和高度的扫描的文档的缩放。
+可选 **缩放** 元素指定扫描文档的宽度和高度的缩放。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -46,9 +45,9 @@ ms.locfileid: "63381547"
 </colgroup>
 <thead>
 <tr class="header">
-<th>特性</th>
-<th>在任务栏的搜索框中键入</th>
-<th>必需</th>
+<th>属性</th>
+<th>类型</th>
+<th>必须</th>
 <th>描述</th>
 </tr>
 </thead>
@@ -58,7 +57,7 @@ ms.locfileid: "63381547"
 <td><p>xs:string</p></td>
 <td><p>否</p></td>
 <td><p></p>
-<p>可选。 一个布尔值，必须为 0，为 false，1 或 true。<strong>falsetrue</strong></p></td>
+<p>可选。 必须为0、false、1或 true 的布尔值。<strong>falsetrue</strong></p></td>
 </tr>
 </tbody>
 </table>
@@ -110,9 +109,9 @@ ms.locfileid: "63381547"
 <a name="remarks"></a>备注
 -------
 
-**缩放**元素必须同时包含[ **ScalingWidth** ](scalingwidth.md)并[ **ScalingHeight** ](scalingheight.md)元素。 **ScalingWidth**元素指定快速扫描方向的缩放和**ScalingHeight**元素指定在进行慢扫描方向的缩放。
+**缩放** 元素必须同时包含 [**ScalingWidth**](scalingwidth.md)和 [**ScalingHeight**](scalingheight.md)元素。 **ScalingWidth** 元素按快速扫描方向指定缩放， **ScalingHeight** 元素以慢速扫描方向指定缩放。
 
-客户端可以指定可选**MustHonor**属性时，才**缩放**元素包含在**CreateScanJobRequest**层次结构。 有关详细信息**MustHonor**及其使用情况，请参阅[ **CreateScanJobRequest**](createscanjobrequest.md)。
+仅当 **缩放** 元素包含在 **CreateScanJobRequest** 层次结构内时，客户端才能指定可选的 **MustHonor** 属性。 有关 **MustHonor** 及其用法的详细信息，请参阅 [**CreateScanJobRequest**](createscanjobrequest.md)。
 
 ## <a name="see-also"></a>请参阅
 

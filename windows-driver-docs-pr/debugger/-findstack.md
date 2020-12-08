@@ -1,7 +1,6 @@
 ---
 title: findstack
-description: Findstack 扩展查找所有包含指定的符号或模块的堆栈。
-ms.assetid: 68a696f1-81fb-401e-ad68-ebc616eaf41a
+description: Findstack 扩展查找包含指定符号或模块的所有堆栈。
 keywords:
 - findstack Windows 调试
 ms.date: 05/23/2017
@@ -12,45 +11,45 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 453e6f5ab71044f9499551de6cc5672c29f61d11
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c50c7cbfcdaf010fe5f56e4aea9b1bd106876887
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336676"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821677"
 ---
 # <a name="findstack"></a>!findstack
 
 
-**！ Findstack**扩展查找所有包含指定的符号或模块的堆栈。
+**！ Findstack** 扩展查找包含指定符号或模块的所有堆栈。
 
 ```dbgcmd
 !findstack Symbol [DisplayLevel]
 !findstack -?
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______Symbol______"></span><span id="_______symbol______"></span><span id="_______SYMBOL______"></span> *符号*   
+<span id="_______Symbol______"></span><span id="_______symbol______"></span><span id="_______SYMBOL______"></span>*符号*   
 指定符号或模块。
 
-<span id="_______DisplayLevel______"></span><span id="_______displaylevel______"></span><span id="_______DISPLAYLEVEL______"></span> *DisplayLevel*   
-指定显示应包含的内容。 这可以是以下值之一。 默认值为 1。
+<span id="_______DisplayLevel______"></span><span id="_______displaylevel______"></span><span id="_______DISPLAYLEVEL______"></span>*DisplayLevel*   
+指定显示内容应包含的内容。 这可以是以下值之一。 默认值为 1。
 
 <span id="0"></span>**0**  
-显示仅包含每个线程的线程 ID*符号*。
+只显示包含 *符号* 的每个线程的线程 ID。
 
 <span id="1"></span>**1**  
-显示线程 ID 和包含每个线程的帧*符号*。
+为每个包含 *符号* 的线程显示线程 ID 和帧。
 
-<span id="2"></span>**2**  
-将显示包含每个线程的整个线程堆栈*符号*。
+<span id="2"></span>**pps-2**  
+显示包含 *符号* 的每个线程的整个线程堆栈。
 
 <span id="_______-_______"></span> **-?**   
-在调试器命令窗口中显示此扩展的一些简要帮助文本。
+在调试器命令窗口中显示此扩展的一些简短帮助文本。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -71,16 +70,16 @@ ms.locfileid: "63336676"
 
 
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-堆栈跟踪的详细信息，请参阅[ **k、 kb、 kc、 kd、 kp、 kP，kv （显示堆栈回溯）** ](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)命令。
+有关堆栈跟踪的详细信息，请参阅 [**k、kb、glm-kc-qnw、kd、kp、kp、kv (显示 Stack Backtrace)**](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md) 命令。
 
 <a name="remarks"></a>备注
 -------
 
-[ **！ 堆栈**](-stacks.md)内核模式扩展还显示有关堆栈，包括每个线程的状态的简短摘要信息。
+[**！**](-stacks.md) Stack 内核模式扩展还显示有关堆栈的信息，包括每个线程的状态的简短摘要。
 
-此扩展的输出的一些示例如下：
+下面是此扩展的输出的一些示例：
 
 ```dbgcmd
 0:023> !uext.findstack wininet

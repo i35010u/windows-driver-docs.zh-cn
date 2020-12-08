@@ -1,28 +1,27 @@
 ---
 title: WdfTester 安装
 description: WdfTester 安装
-ms.assetid: 39645ca4-3f4e-4a1f-bf62-7b44856ce58e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ec2a443b5c2bc39cbd11d26157e92bad8f4008c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 54cbd5a3262ecf6759a5665bc783855573c63e15
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378583"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823305"
 ---
 # <a name="wdftester-installation"></a>WdfTester 安装
 
 
-可以在您的驱动程序运行 WdfTester 工具之前，必须首先将 WdfTester 文件复制到工作目录，并运行安装脚本。
+必须先将 WdfTester 文件复制到工作目录，并运行安装脚本，然后才能在驱动程序上运行 WdfTester 工具。
 
-**若要安装 WdfTester**
+**安装 WdfTester**
 
-1.  WDK 中复制以下文件列表 (*%wdkroot%*\\工具\\*&lt;平台&gt;*) 到本地文件夹，其中包含您的驱动程序的副本二进制文件。
-    Wdftester.sys Wdftester.inf Wdftester.ctl Wdftester.tmf WdftesterScript.wsf
-2.  打开命令提示符窗口 (务必**以管理员身份运行**Windows Vista 上)，然后键入以下命令： cscript WdfTesterScript.wsf 安装
+1.  将以下文件列表从 WDK (*% WDKRoot%* \\ tools \\ *&lt; &gt; 平台*) 复制到包含驱动程序二进制文件副本的本地文件夹。
+    Wdftester.sys Wdftester Wdftester Wdftester. tmf WdftesterScript. .wsf
+2.  打开 "命令提示符" 窗口 (确保在 Windows Vista 上以 **管理员身份运行**) ，然后键入以下命令： cscript WdfTesterScript. .wsf install
 
-    此命令将 Wdftester.sys 驱动程序安装并启动服务。
+    此命令安装 Wdftester.sys 驱动程序并启动服务。
 
 3.  按 Enter。
 

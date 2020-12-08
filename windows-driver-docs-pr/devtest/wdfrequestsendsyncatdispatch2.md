@@ -1,7 +1,6 @@
 ---
 title: 'WdfRequestSendSyncAtDispatch2 规则 (kmdf) '
 description: WdfRequestSendSyncAtDispatch2 规则验证 WdfRequestSend 函数是否以正确的 IRQL 优先级别发送。
-ms.assetid: 0C66BC01-9467-4A04-B1E5-A0EA248F8725
 ms.date: 05/21/2018
 keywords:
 - 'WdfRequestSendSyncAtDispatch2 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1728dae51fb78e28106f53970b0d2f55dbd0dc42
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 9dc99815b53b66954a937eadd7f7df8af5d21ddd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107532"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823310"
 ---
 # <a name="wdfrequestsendsyncatdispatch2-rule-kmdf"></a>WdfRequestSendSyncAtDispatch2 规则 (kmdf) 
 
 
-**WdfRequestSendSyncAtDispatch2**规则验证[**WdfRequestSend**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend)函数是否以正确的 IRQL 优先级别发送。
+**WdfRequestSendSyncAtDispatch2** 规则验证 [**WdfRequestSend**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend)函数是否以正确的 IRQL 优先级别发送。
 
 如果驱动程序设置 WDF \_ 请求 \_ 发送 \_ 选项 \_ 同步标志，则它必须在 IRQL = 被动级别调用 [**WdfRequestSend**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend) 函数 \_ 。 如果未设置此标志，则驱动程序必须在 IRQL = 调度级别调用 **WdfRequestSend** 函数 \_ 。
 

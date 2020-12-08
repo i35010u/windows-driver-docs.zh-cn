@@ -1,15 +1,14 @@
 ---
 title: MSiSCSI \_ LUNMAPPINGINFORMATION WMI 类
 description: MSiSCSI \_ LUNMAPPINGINFORMATION WMI 类
-ms.assetid: 646add52-f946-4169-9f6b-974253ec30af
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: bb12838d3c90357c9de3458b66dafff535bd1973
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 084cb9a3c6ac4154ad3e4d77759450fb49bc030d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188012"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821835"
 ---
 # <a name="msiscsi_lunmappinginformation-wmi-class"></a>MSiSCSI \_ LUNMAPPINGINFORMATION WMI 类
 
@@ -23,7 +22,7 @@ MSiSCSI \_ LUNMappingInformation 类公开操作系统分配给特定逻辑单�
 
 由于此类与特定 LUN 相关联，因此管理 HBA 的微型端口驱动程序必须使用 LUN 的 PDO 名称注册此类。
 
-MSiSCSI \_ LUNMappingInformation 类未发布，并在 *操作*中定义。
+MSiSCSI \_ LUNMappingInformation 类未发布，并在 *操作* 中定义。
 
 当 WMI 工具套件编译此类定义时，它会生成 [**MSiSCSI \_ LUNMappingInformation**](/windows-hardware/drivers/ddi/iscsiop/ns-iscsiop-_msiscsi_lunmappinginformation) 数据结构。
 

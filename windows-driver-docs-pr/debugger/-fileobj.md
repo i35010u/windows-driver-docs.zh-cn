@@ -1,7 +1,6 @@
 ---
 title: fileobj
 description: Fileobj 扩展显示 FILE_OBJECT 结构的详细信息。
-ms.assetid: ee9237e7-8a1f-473c-9e30-f2b0731a7519
 keywords:
 - FILE_OBJECT
 - fileobj Windows 调试
@@ -13,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ae3e9fa2b1f70d57d8ec0ca9b720dea726fa5bd
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: d1e75f1031c812b6608bee574ae76b866dafda96
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209435"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821699"
 ---
 # <a name="fileobj"></a>!fileobj
 
 
-**！ Fileobj**扩展显示有关文件对象结构的详细信息 \_ 。
+**！ Fileobj** 扩展显示有关文件对象结构的详细信息 \_ 。
 
 ```dbgcmd
 !fileobj FileObject
@@ -45,10 +44,10 @@ ms.locfileid: "89209435"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>Windows 2000</strong></p></td>
-<td align="left"><p>Unavailable</p></td>
+<td align="left"><p>不可用</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>Windows XP 及更高版本</strong></p></td>
+<td align="left"><p><strong>Windows XP 及更高版本</strong></p></td>
 <td align="left"><p>Kdexts.dll</p></td>
 </tr>
 </tbody>

@@ -1,20 +1,19 @@
 ---
 title: WDI USB 挂起序列
 description: 当 NDIS 检测到空闲时间超过选择性挂起空闲超时 (SSIdleTimeout) 时，NDIS 将调用 UE。
-ms.assetid: EEDA274F-AC7D-4515-BAAF-FBEDDF95D2DC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a2f2a2b7dc2e4d547ce1eac91360f29f156e0cc5
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 7ded4bd26646d44be095c5ccb1e620af3bcdf2b9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217499"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821915"
 ---
 # <a name="wdi-usb-suspend-sequence"></a>WDI USB 挂起序列
 
 
-当 NDIS 检测到空闲时间超过选择性挂起空闲超时 (*SSIdleTimeout*) 时，ndis 将调用 UE。 UE 可能会通过返回 NDIS 状态 "忙碌" 来否决空闲通知 \_ \_ 。 如果 UE 不拒绝空闲通知，则 UE 将通过 **LeIdleNotificationHander**调用 le，并且该 le 可能会被拒绝或接受。
+当 NDIS 检测到空闲时间超过选择性挂起空闲超时 (*SSIdleTimeout*) 时，ndis 将调用 UE。 UE 可能会通过返回 NDIS 状态 "忙碌" 来否决空闲通知 \_ \_ 。 如果 UE 不拒绝空闲通知，则 UE 将通过 **LeIdleNotificationHander** 调用 le，并且该 le 可能会被拒绝或接受。
 
 如果没有挂起的数据、命令或计时器（将数据或命令向下发送到 LE），则 UE 会接受空闲通知。
 

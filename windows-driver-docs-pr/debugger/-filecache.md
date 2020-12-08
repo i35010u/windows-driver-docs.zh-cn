@@ -1,7 +1,6 @@
 ---
 title: filecache
 description: Filecache 扩展显示有关系统文件缓存的内存和 PTE 使用情况的信息。
-ms.assetid: 38dbff14-5144-455c-a9b8-1ac6292f4200
 keywords:
 - 文件缓存
 - filecache Windows 调试
@@ -13,45 +12,45 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: eb47cb3021a3072143f8197125e9dd32403fb527
-ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
+ms.openlocfilehash: 6d79b8eadd37dcf26fcd858784db4d191acda95a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70025245"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821701"
 ---
 # <a name="filecache"></a>!filecache
 
 
-**! Filecache**扩展显示有关系统文件缓存的内存和 PTE 使用情况的信息。
+**！ Filecache** 扩展显示有关系统文件缓存的内存和 PTE 使用情况的信息。
 
 ```dbgcmd
 !filecache [Flags]
 ```
 
-## <a name="span-idddk__filelock_dbgspanspan-idddk__filelock_dbgspanparameters"></a><span id="ddk__filelock_dbg"></span><span id="DDK__FILELOCK_DBG"></span>Parameters
+## <a name="span-idddk__filelock_dbgspanspan-idddk__filelock_dbgspanparameters"></a><span id="ddk__filelock_dbg"></span><span id="DDK__FILELOCK_DBG"></span>参数
 
 
 <span id="_______Flags"></span><span id="_______flags"></span><span id="_______FLAGS"></span>*标志*  
-可选。 默认值为0x0。 将*标志*设置为0x1 以便按共享缓存映射对输出进行排序。 这样, 就可以查找给定控件区域的所有系统缓存视图。
+可选。 默认值为0x0。 将 *标志* 设置为0x1 以便按共享缓存映射对输出进行排序。 这样，就可以查找给定控件区域的所有系统缓存视图。
 
 ## <span id="ddk__filecache_dbg"></span><span id="DDK__FILECACHE_DBG"></span>
 
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
-Kdexts
+Kdexts.dll
 
 ### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关文件系统驱动程序的信息, 请参阅 Windows 驱动程序工具包 (WDK) 文档和*Microsoft Windows 内部*内容, 标记 Russinovich 和 David 所罗门群岛。
+有关文件系统驱动程序的信息，请参阅 Windows 驱动程序工具包 (WDK) 文档和 *Microsoft Windows 内部机制* ，Mark Russinovich 和 David 所罗门群岛。
 
 <a name="remarks"></a>备注
 -------
 
-此扩展的输出中的每一行都表示一个虚拟地址控制块 (VACB)。 命名文件被映射到 VACB 中时, 将显示这些文件的名称。 如果未指定 "文件的名称", 这意味着将使用此 VACB 来缓存元数据。
+此扩展的输出中的每一行都表示一个 (VACB) 的虚拟地址控制块。 命名文件被映射到 VACB 中时，将显示这些文件的名称。 如果未指定 "文件的名称"，这意味着将使用此 VACB 来缓存元数据。
 
-下面是来自 Windows XP 系统的此扩展的输出示例:
+下面是来自 Windows XP 系统的此扩展的输出示例：
 
 ```dbgcmd
 kd> !filecache

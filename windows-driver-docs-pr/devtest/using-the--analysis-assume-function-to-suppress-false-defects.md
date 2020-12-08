@@ -1,34 +1,33 @@
 ---
 title: 使用 _analysis_assume 函数抑制误判缺陷
 description: 使用 _analysis_assume 函数抑制误判缺陷
-ms.assetid: eb71a664-ada5-44e3-b75d-b1a7348b115f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 777c38be0601f82bc1f8a1bb0eb1fd2dd12b4007
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 580de0b62195cabb3f40114fcc2716eac26e01aa
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89381376"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822521"
 ---
 # <a name="using-the-_analysis_assume-function-to-suppress-false-defects"></a>使用 \_ 分析 \_ 假设函数禁止显示错误
 
 
 可以向静态驱动程序验证程序 (SDV) 提供有关驱动程序源代码的其他信息，以便在验证期间可以禁止显示错误错误的报告。 当 SDV 报告明显的规则冲突，但在驱动程序正常工作的情况下，会出现错误。
 
-若要为 SDV 提供此附加信息，请使用** \_ \_ 分析 \_ 假定**函数。 函数具有以下语法：
+若要为 SDV 提供此附加信息，请使用 **\_ \_ 分析 \_ 假定** 函数。 函数具有以下语法：
 
 ```
 __analysis_assume( expression ) 
 ```
 
-其中 *expression* 可以是计算结果为 **true**的任何表达式。
+其中 *expression* 可以是计算结果为 **true** 的任何表达式。
 
-使用此函数时，SDV 假定*表达式*表示的条件在** \_ \_ 分析 \_ 假设**函数显示的点处为**true** 。 ** \_ \_ 分析 \_ 假定**函数仅由静态分析工具使用。 编译器将忽略该函数。
+使用此函数时，SDV 假定 *表达式* 表示的条件在 **\_ \_ 分析 \_ 假设** 函数显示的点处为 **true** 。 **\_ \_ 分析 \_ 假定** 函数仅由静态分析工具使用。 编译器将忽略该函数。
 
-如果你使用** \_ \_ 分析 \_ 假设**，则一定要确定你所做的假设有效性，这一点至关重要。 如果事实证明您假设是 **假**的，无论是现在还是将来，您都可能会禁止真正的缺陷。 建议你始终向代码添加注释，说明使用** \_ \_ 分析 \_ 假定**函数的原因。 如果无法编写假设的原因，请不要取消该缺陷。
+如果你使用 **\_ \_ 分析 \_ 假设**，则一定要确定你所做的假设有效性，这一点至关重要。 如果事实证明您假设是 **假** 的，无论是现在还是将来，您都可能会禁止真正的缺陷。 建议你始终向代码添加注释，说明使用 **\_ \_ 分析 \_ 假定** 函数的原因。 如果无法编写假设的原因，请不要取消该缺陷。
 
-你应根据需要添加** \_ \_ 分析 \_ 假设**函数，只要你发现可以安全取消的错误。
+你应根据需要添加 **\_ \_ 分析 \_ 假设** 函数，只要你发现可以安全取消的错误。
 
 ### <a name="span-idexamplesspanspan-idexamplesspanexamples"></a><span id="examples"></span><span id="EXAMPLES"></span>示例
 
@@ -82,7 +81,7 @@ PortIOEvtIoDeviceControl(
 }
 ```
 
-若要安全地取消误报，请使用** \_ \_ analysis \_ 假设**函数指定*IoControlCode*保证为驱动程序定义的 IOCTLs 之一。
+若要安全地取消误报，请使用 **\_ \_ analysis \_ 假设** 函数指定 *IoControlCode* 保证为驱动程序定义的 IOCTLs 之一。
 
 ```
 VOID
@@ -141,7 +140,7 @@ There are only 6 possible IOCTLs for IoControlCode; each case is covered in the 
 }
 ```
 
-有关如何使用** \_ \_ 分析 \_ 假设**的另一个示例，请参阅[使用 \_ \_ sdv \_ save \_ 请求和 \_ \_ sdv \_ 检索 \_ 延迟过程调用的请求](using---sdv-save-request-and---sdv-retrieve-request-for-deferred-proce.md)中使用的代码示例。 该示例演示了如何使用** \_ \_ sdv \_ save \_ request**和** \_ \_ sdv \_ 检索 \_ ** () 上的 dpc 的请求。 ** \_ \_ 分析 \_ 假设**函数用于禁止显示可能导致的错误缺陷。
+有关如何使用 **\_ \_ 分析 \_ 假设** 的另一个示例，请参阅 [使用 \_ \_ sdv \_ save \_ 请求和 \_ \_ sdv \_ 检索 \_ 延迟过程调用的请求](using---sdv-save-request-and---sdv-retrieve-request-for-deferred-proce.md)中使用的代码示例。 该示例演示了如何使用 **\_ \_ sdv \_ save \_ request** 和 **\_ \_ sdv \_ 检索 \_** () 上的 dpc 的请求。 **\_ \_ 分析 \_ 假设** 函数用于禁止显示可能导致的错误缺陷。
 
  
 

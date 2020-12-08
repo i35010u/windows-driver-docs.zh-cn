@@ -1,19 +1,18 @@
 ---
 title: 禁止在 Preoperation 回调例程中使用快速 i/o 操作
 description: 禁止在 Preoperation 回调例程中使用快速 i/o 操作
-ms.assetid: 20797d8c-ffcf-46df-b870-839d5c02d2d4
 keywords:
 - preoperation 回调例程 WDK 文件系统微筛选器，不允许快速 i/o
 - 不允许快速 i/o 操作 WDK 文件系统微筛选器
 - 快速 i/o 不允许的 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fca37967d82fb38ccf017dcffcd1ff7e77a4f827
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: dd564732465258ddb0724401a16b4a4c38969566
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065322"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823221"
 ---
 # <a name="disallow-a-fast-io-operation-in-a-preoperation-callback-routine"></a>禁止在 Preoperation 回调例程中使用快速 i/o 操作
 

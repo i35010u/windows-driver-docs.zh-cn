@@ -1,15 +1,14 @@
 ---
 title: SoftwareInfo
 description: SoftwareInfo
-ms.assetid: 736040e9-76cd-4f59-b16a-1e8fc3b687fa
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7551540cfc1d51bf6b1499e7996b1ded43be178b
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: f43855876a960e71519097ed370a755d1866ac38
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403146"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823051"
 ---
 # <a name="softwareinfo"></a>SoftwareInfo
 
@@ -42,7 +41,7 @@ SoftwareInfo 元素是 [SOFTWAREINFO XML 架构](softwareinfo-xml-schema.md)的�
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

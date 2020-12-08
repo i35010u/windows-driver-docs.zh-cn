@@ -1,18 +1,17 @@
 ---
 title: WAN 微型端口驱动程序生成参数
 description: WAN 微型端口驱动程序生成参数
-ms.assetid: 8e494bd2-c499-48bf-8574-7e8df05be4c8
 keywords:
-- WAN 微型端口驱动程序 WDK 网络、 构建
-- WAN 的 CoNDIS 驱动程序 WDK 网络、 构建
+- WAN 微型端口驱动程序 WDK 网络，构建
+- CoNDIS WAN 驱动程序 WDK 网络，构建
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1994189dcdeda2bb602c3466418e16fccd510302
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d68eb6f233e9fd88fba0c38445b73bff55804772
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380573"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822781"
 ---
 # <a name="wan-miniport-driver-build-parameters"></a>WAN 微型端口驱动程序生成参数
 
@@ -20,29 +19,29 @@ ms.locfileid: "63380573"
 
 
 
-本主题提供了一些信息定义 NDIS 和 WAN 的 CoNDIS 微型端口驱动程序的生成参数。
+本主题提供了一些有关定义 NDIS 和 CoNDIS WAN 微型端口驱动程序的生成参数的信息。
 
-生成以标识您的驱动程序作为微型端口驱动程序之前将以下行添加到源文件。
+在生成之前，将以下行添加到源文件，以将你的驱动程序标识为微型端口驱动程序。
 
 ```Text
 C_DEFINES=/DNDIS_MINIPORT_DRIVER
 ```
 
-如果你正在编写的支持通过 TAPI 的连接的 NDIS WAN 的微型端口驱动程序，必须将以下行生成标识您的驱动程序支持的 TAPI 版本之前添加到源文件上。
+如果要编写支持通过 TAPI 连接的 NDIS WAN 微型端口驱动程序，则必须在生成之前将以下行添加到源文件中，以确定驱动程序支持的 TAPI 版本。
 
 ```Text
 C_DEFINES=-DNDIS_TAPI_CURRENT_VERSION=0x00010003
 ```
 
-如果你正在编写的 CoNDIS WAN 的微型端口驱动程序是集成的微型端口呼叫管理器 (MCM) 和支持的 CoNDIS 地址系列类型共同\_地址\_系列\_TAPI\_代理，必须添加以下生成来确定您的驱动程序支持的 TAPI 版本前将源文件的代码行。
+如果你正在编写一个 CoNDIS WAN 微型端口驱动程序，该驱动程序是集成的微型端口调用管理器 (MCM) 并且支持 CoNDIS address 系列类型的 CO \_ address \_ 系列 \_ TAPI \_ 代理，则必须在生成之前将以下行添加到源文件，以确定驱动程序支持的 TAPI 版本。
 
 ```Text
 C_DEFINES=-DNDIS_TAPI_CURRENT_VERSION=0x00030000
 ```
 
-对于 WAN 微型端口驱动程序，包括路径应包含 Ndiswan.h，以及 Ndis.h。
+对于 WAN 微型端口驱动程序，包含路径应包括 Ndiswan 以及 Ndis。
 
-如果 WAN 微型端口驱动程序支持通过 TAPI 建立的连接，该驱动程序还应包括 Ndistapi.h。
+如果 WAN 微型端口驱动程序支持通过 TAPI 的连接，则驱动程序还应包括 Ndistapi。
 
  
 

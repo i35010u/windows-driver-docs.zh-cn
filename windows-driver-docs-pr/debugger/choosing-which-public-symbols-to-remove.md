@@ -1,31 +1,30 @@
 ---
 title: 选择要删除的公共符号
 description: 选择要删除的公共符号
-ms.assetid: 0de89f65-ebb5-4186-a6f9-6676f86a75f1
 keywords:
-- PDBCopy，删除公共符号
-- 符号 AgeStore
+- Pdbcopy.exe，删除公共符号
+- 符号，AgeStore
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1037cf0da20c92921234a65836c71b57a7c262db
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1fe7be9c81ebeb4a35d23f91e88fac309f4a39c0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375101"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821603"
 ---
 # <a name="choosing-which-public-symbols-to-remove"></a>选择要删除的公共符号
 
 
-PDBCopy 提供-f 和-F 选项，以便您可以保留你的受众需要访问，以便执行其调试这些符号从去除的符号文件，删除任意一组公共符号。
+Pdbcopy.exe 提供了-f 和-F 选项，以便您可以从去除的符号文件中删除任意一组公共符号，只保留受众为了执行调试而需要访问的符号。
 
-PDBCopy 的一个常见用途是在其在线崩溃分析 (OCA) 程序中创建以供 Microsoft 符号文件的特殊版本。 OCA 可以指定某些函数作为*静态*，这意味着，如果该函数位于堆栈上跟踪它将被忽略。 函数通常会声明静态如果只是包装器或"直通"函数的执行没有显著的计算。 如果故障分析在堆栈上找到此类函数，则可以此函数本身不是在发生故障，并且会最多传递无效或损坏的数据从例程在堆栈上前面收到的假定。 通过忽略此类函数，OCA 可以更好地确定错误或损坏的实际原因。
+Pdbcopy.exe 的一个常见用途是创建一个特殊版本的符号文件，供 Microsoft 在其联机崩溃分析 (的 OCA) 计划中使用。 OCA 可以将某些函数指定为 *静态*，这意味着如果在堆栈跟踪中找到该函数，则将忽略该函数。 如果函数只是一个不执行重要计算的包装或 "传递" 函数，则通常会将该函数声明为静态。 如果在失败分析中的堆栈上发现此类函数，则假定此函数本身不是错误的，并且大多数情况下会将它传递到堆栈之前从例程收到的无效或损坏数据。 通过忽略此类函数，OCA 可以更好地确定错误或损坏的实际原因。
 
-正常情况下，你想要"静态"声明任何函数需要包含 OCA 所使用的符号文件的公共符号表中。 但是，这些不是只需包含在内，如以下示例所示的函数。
+当然，要声明 "静态" 的任何函数都需要包含在 OCA 使用的符号文件的公共符号表中。 但是，这并不是需要包括的唯一函数，如下面的示例所示。
 
-假设您编写的 Windows 驱动程序和 PDBCopy 用于删除从其符号文件，所有公共符号除外**FunctionOne**并**FunctionSix**，两个静态函数。 你的预期是，如果任一**FunctionOne**或**FunctionSix**位于堆栈上崩溃后 OCA 将忽略它们。 如果您的驱动程序的任何其他部分在堆栈上，Microsoft 将向您提供相应的内存地址，并可以使用该地址来调试您的驱动程序。
+假设您编写了一个 Windows 驱动程序，并且使用 Pdbcopy.exe 从其符号文件中删除了所有公共符号（ **FunctionOne** 和 **FunctionSix** 除外），这两个静态函数除外。 您的期望是，如果在发生故障后在堆栈上找到 **FunctionOne** 或 **FunctionSix** ，则将忽略该故障。 如果驱动程序的任何其他部分位于堆栈上，Microsoft 将为你提供相应的内存地址，你可以使用该地址调试驱动程序。
 
-但是，让我们假设您的驱动程序占用内存中的以下布局：
+不过，让我们假设你的驱动程序在以下布局中占用内存：
 
 <table>
 <colgroup>
@@ -35,7 +34,7 @@ PDBCopy 的一个常见用途是在其在线崩溃分析 (OCA) 程序中创建�
 <thead>
 <tr class="header">
 <th align="left">地址</th>
-<th align="left">内存中的内容</th>
+<th align="left">内存内容</th>
 </tr>
 </thead>
 <tbody>
@@ -45,36 +44,36 @@ PDBCopy 的一个常见用途是在其在线崩溃分析 (OCA) 程序中创建�
 </tr>
 <tr class="even">
 <td align="left"><p>0x2000</p></td>
-<td align="left"><p>开头<strong>FunctionOne</strong></p></td>
+<td align="left"><p><strong>FunctionOne</strong>的开头</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x203F</p></td>
-<td align="left"><p>结束的<strong>FunctionOne</strong></p></td>
+<td align="left"><p>结束 <strong>FunctionOne</strong></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x3000</p></td>
-<td align="left"><p>开头<strong>FunctionSix</strong></p></td>
+<td align="left"><p><strong>FunctionSix</strong>的开头</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x305F</p></td>
-<td align="left"><p>结束的<strong>FunctionSix</strong></p></td>
+<td align="left"><p>结束 <strong>FunctionSix</strong></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x7FFF</p></td>
-<td align="left"><p>在内存中模块的结尾</p></td>
+<td align="left"><p>内存中的模块结束</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-如果调试器在堆栈上找到一个地址，它将选择下一个较低地址的符号宽度。 由于公共符号表中包含的每个符号，但没有大小信息的地址，因此要知道是否地址实际上是任何特定符号的边界内的调试程序方法。
+如果调试器查找堆栈上的地址，则会选择下一个较低地址的符号。 由于公共符号表包含每个符号的地址，但没有大小信息，因此调试器无法知道某个地址是否确实位于任何特定符号的边界内。
 
-因此，如果出现故障，则在地址 0x2031，调试程序正常运行的 Microsoft OCA 标识将错误作为内位于**FunctionOne**。 由于这是一个静态函数，调试器会继续遍历堆栈以查找在发生崩溃的原因。
+因此，如果地址0x2031 发生错误，则 Microsoft OCA 运行的调试器会正确地将错误标识为 **FunctionOne** 内的状态。 因为这是一个静态函数，所以调试器会继续遍历堆栈以找出崩溃的原因。
 
-但是，如果错误发生在 0x2052，调试器仍会匹配到此地址**FunctionOne**，即使它位于实际 (0x203F) 此函数的末尾之外。
+但是，如果0x2052 发生错误，则调试器仍会将此地址与 **FunctionOne** 匹配，即使它超出了此函数的实际结尾 (0x203F) 。
 
-因此，您必须包括去除的符号文件中的函数希望公开，不仅还紧跟这些函数的符号。 在此示例中，你会想要公开**FunctionOne**， **FunctionTwo**， **FunctionSix**，以及**FunctionSeven**:
+因此，您还必须在您的去除符号文件中包含您要公开的函数，还必须包含这些函数后面的符号。 在此示例中，你想要公开 **FunctionOne**、 **FunctionTwo**、 **FunctionSix** 和 **FunctionSeven**：
 
 <table>
 <colgroup>
@@ -84,7 +83,7 @@ PDBCopy 的一个常见用途是在其在线崩溃分析 (OCA) 程序中创建�
 <thead>
 <tr class="header">
 <th align="left">地址</th>
-<th align="left">内存中的内容</th>
+<th align="left">内存内容</th>
 </tr>
 </thead>
 <tbody>
@@ -94,40 +93,40 @@ PDBCopy 的一个常见用途是在其在线崩溃分析 (OCA) 程序中创建�
 </tr>
 <tr class="even">
 <td align="left"><p>0x2000</p></td>
-<td align="left"><p>开头<strong>FunctionOne</strong></p></td>
+<td align="left"><p><strong>FunctionOne</strong>的开头</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x203F</p></td>
-<td align="left"><p>结束的<strong>FunctionOne</strong></p></td>
+<td align="left"><p>结束 <strong>FunctionOne</strong></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x2040</p></td>
-<td align="left"><p>开头<strong>FunctionTwo</strong></p></td>
+<td align="left"><p><strong>FunctionTwo</strong>的开头</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x3000</p></td>
-<td align="left"><p>开头<strong>FunctionSix</strong></p></td>
+<td align="left"><p><strong>FunctionSix</strong>的开头</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x305F</p></td>
-<td align="left"><p>结束的<strong>FunctionSix</strong></p></td>
+<td align="left"><p>结束 <strong>FunctionSix</strong></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x3060</p></td>
-<td align="left"><p>开头<strong>FunctionSeven</strong></p></td>
+<td align="left"><p><strong>FunctionSeven</strong>的开头</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x7FFF</p></td>
-<td align="left"><p>在内存中模块的结尾</p></td>
+<td align="left"><p>内存中的模块结束</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-如果在去除的符号文件中，包含这些函数的所有四个，则 Microsoft OCA 分析不会错误地将地址作为一部分 0x2052 **FunctionOne**。 在此示例中它将假定此地址是的一部分**FunctionTwo**，但该很不重要，因为你尚未注册**FunctionTwo**与 OCA 作为静态函数。 重要的一点是，地址 0x2052 识别为不属于静态函数和 OCA 因此会将此识别为您的驱动程序中的有意义错误并会告诉您该错误。
+如果在去除的符号文件中包含所有这四个函数，则 Microsoft OCA 分析不会错误地将地址0x2052 视为 **FunctionOne** 的一部分。 在此示例中，它将假定此地址是 **FunctionTwo** 的一部分，但这并不重要，因为尚未将 **FunctionTwo** 注册为静态函数。 重要的是，地址0x2052 被识别为不落在静态函数内，因此，OCA 会将其识别为驱动程序内有意义的错误，并且可以通知您此错误。
 
-如果不希望 publicize 以下每个静态函数的函数的名称，可以将并不重要的函数插入到代码，以便可以在公共符号文件中包含这些函数的名称遵循每个静态函数。 请务必验证这些添加的函数由于一些优化例程可能会更改，或甚至完全删除某些功能确实会按照你的二进制文件的地址空间中静态函数。
+如果你不希望在每个静态函数之后公布函数名称，则可以在每个静态函数后将不重要的函数插入到代码中，以便可以将这些函数的名称包含在公共符号文件中。 请确保在二进制文件的地址空间中，确保这些添加的函数确实沿用了静态函数，因为某些优化例程可能会改变这一点，甚至完全删除一些函数。
 
  
 

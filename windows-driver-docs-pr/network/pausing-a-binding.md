@@ -1,7 +1,6 @@
 ---
 title: 暂停绑定
 description: 暂停绑定
-ms.assetid: 7f693904-d995-4fcb-8b88-9343a567602e
 keywords:
 - 协议驱动程序 WDK 网络，绑定暂停
 - NDIS 协议驱动程序 WDK，绑定暂停
@@ -10,12 +9,12 @@ keywords:
 - 暂停协议驱动程序绑定
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4207de32cd07a9cc9dea5978cddb4ffc7e88b210
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: fbfe3e58e7fb4542983ad85b50a5cd24188a8619
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212107"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822869"
 ---
 # <a name="pausing-a-binding"></a>暂停绑定
 
@@ -25,7 +24,7 @@ ms.locfileid: "89212107"
 
 在 NDIS 发送协议驱动程序后即插即用 (PnP) 暂停事件通知以进行绑定，该绑定将进入暂停状态。
 
-为了通知 PnP 暂停事件的协议驱动程序，NDIS 将调用[*ProtocolNetPnPEvent*](/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_net_pnp_event)函数，并将[**NET \_ PnP \_ 事件 \_ 通知**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_pnp_event_notification)结构的**NetEvent**成员设置为**NetEventPause**。 该 **缓冲区** 成员包含 [**NDIS \_ 协议 \_ PAUSE \_ 参数**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_protocol_pause_parameters) 结构。
+为了通知 PnP 暂停事件的协议驱动程序，NDIS 将调用 [*ProtocolNetPnPEvent*](/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_net_pnp_event)函数，并将 [**NET \_ PnP \_ 事件 \_ 通知**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_pnp_event_notification)结构的 **NetEvent** 成员设置为 **NetEventPause**。 该 **缓冲区** 成员包含 [**NDIS \_ 协议 \_ PAUSE \_ 参数**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_protocol_pause_parameters) 结构。
 
 对于处于暂停状态的绑定，协议驱动程序：
 

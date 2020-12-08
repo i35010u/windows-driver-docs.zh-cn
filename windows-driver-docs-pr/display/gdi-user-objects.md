@@ -1,7 +1,6 @@
 ---
 title: GDI 用户对象
 description: GDI 用户对象
-ms.assetid: 25048f14-a46e-49bb-8890-699bf1324007
 keywords:
 - GDI WDK Windows 2000 显示，用户对象
 - 图形驱动程序 WDK Windows 2000 显示，用户对象
@@ -9,12 +8,12 @@ keywords:
 - 用户对象 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 47a8b67e030d2d226fb6b785dac47337386edc74
-ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
+ms.openlocfilehash: 8463b2a6688db169eae05b72e5ca18d612d64782
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91423972"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822513"
 ---
 # <a name="gdi-user-objects"></a>GDI 用户对象
 
@@ -22,7 +21,7 @@ ms.locfileid: "91423972"
 ## <span id="ddk_gdi_user_objects_gg"></span><span id="DDK_GDI_USER_OBJECTS_GG"></span>
 
 
-GDI 维护重要的内部数据结构，但通过将它们作为 *用户对象*向下传递来为驱动程序提供对这些结构的公共字段的访问权限。 用户对象是中间的数据结构，它们提供 GDI 数据结构与需要访问这些结构中信息的驱动程序之间的接口。 驱动程序可以将用户对象的指针传递回 GDI，以查询信息或要求提供各种服务。 具有公共字段的用户对象具有以下优点：
+GDI 维护重要的内部数据结构，但通过将它们作为 *用户对象* 向下传递来为驱动程序提供对这些结构的公共字段的访问权限。 用户对象是中间的数据结构，它们提供 GDI 数据结构与需要访问这些结构中信息的驱动程序之间的接口。 驱动程序可以将用户对象的指针传递回 GDI，以查询信息或要求提供各种服务。 具有公共字段的用户对象具有以下优点：
 
 -   它们消除了与直接访问内部 GDI 数据结构相关的问题。
 
@@ -37,8 +36,8 @@ GDI 维护重要的内部数据结构，但通过将它们作为 *用户对象*�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Object</th>
-<th align="left">说明</th>
+<th align="left">对象</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

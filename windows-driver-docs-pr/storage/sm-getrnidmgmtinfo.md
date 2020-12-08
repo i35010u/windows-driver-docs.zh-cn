@@ -1,7 +1,6 @@
 ---
 title: SM \_ GetRNIDMgmtInfo 函数
 description: SM \_ GETRNIDMGMTINFO WMI 方法检索与光纤通道适配器关联的 FC3 管理信息。
-ms.assetid: 0d414701-6e60-4d9d-85ae-f82b742ee907
 keywords:
 - SM_GetRNIDMgmtInfo 函数存储设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8f6f2a944c66b84880e9495330e1e61344a05c3a
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: a81f679d94f334d56211f70aaadbfa058b0a30d6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186409"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821828"
 ---
 # <a name="sm_getrnidmgmtinfo-function"></a>SM \_ GetRNIDMgmtInfo 函数
 
@@ -32,7 +31,7 @@ SM \_ GETRNIDMGMTINFO WMI 方法检索与光纤通道适配器关联的 FC3 管�
 ```ManagedCPlusPlus
 void SM_GetRNIDMgmtInfo(
    [out, HBA_STATUS_QUALIFIERS] HBA_STATUS HBAStatus,
-   [out] HBAFC3MgmtInfo                    MgmtInfo
+   [out] HBAFC3MgmtInfo                    MgmtInfo
 );
 ```
 
@@ -66,7 +65,7 @@ HBAFC3MgmtInfo 类型的结构，用于保存与光纤通道适配器关联的 F
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">“桌面”</td>
+<td align="left">台式机</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>

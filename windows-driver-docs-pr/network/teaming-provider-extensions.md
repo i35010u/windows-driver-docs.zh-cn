@@ -1,15 +1,14 @@
 ---
 title: 组合提供程序扩展
 description: 组合提供程序扩展
-ms.assetid: 94F73ECD-54D0-4218-B3C4-33DC3BD57ED0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a2a61dd2be0f3ae356b4f59cf4a7fbf455441e21
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 90495719e7e89a9a0ae1bb0ca9f8a5bd31137c94
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212731"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822133"
 ---
 # <a name="teaming-provider-extensions"></a>组合提供程序扩展
 
@@ -62,7 +61,7 @@ ms.locfileid: "89212731"
 
     有关详细信息，请参阅 [管理对物理网络适配器的 OID 请求](managing-oid-requests-to-physical-network-adapters.md)。
 
--   组合提供程序可以代表基础物理适配器发出 NDIS 状态指示。 要执行此操作，提供程序必须将指示封装到 [**NDIS \_ 交换机 \_ NIC \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_nic_status_indication) 结构内。 提供程序必须将 **SourceNicIndex** 成员设置为物理适配器连接的非零网络适配器索引值。 然后，提供程序发出 ndis 状态 [** \_ \_ 切换 \_ NIC \_ 状态**](./ndis-status-switch-nic-status.md) 的 ndis 状态指示，以将封装的状态指示传递到可扩展交换机驱动程序堆栈中的过量驱动程序。
+-   组合提供程序可以代表基础物理适配器发出 NDIS 状态指示。 要执行此操作，提供程序必须将指示封装到 [**NDIS \_ 交换机 \_ NIC \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_nic_status_indication) 结构内。 提供程序必须将 **SourceNicIndex** 成员设置为物理适配器连接的非零网络适配器索引值。 然后，提供程序发出 ndis 状态 [**\_ \_ 切换 \_ NIC \_ 状态**](./ndis-status-switch-nic-status.md) 的 ndis 状态指示，以将封装的状态指示传递到可扩展交换机驱动程序堆栈中的过量驱动程序。
 
     有关详细信息，请参阅 [从物理网络适配器管理 NDIS 状态指示](managing-ndis-status-indications-from-physical-network-adapters.md)。
 

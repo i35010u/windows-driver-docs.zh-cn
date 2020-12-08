@@ -1,7 +1,6 @@
 ---
 title: 'ReqCompletionRoutine 规则 (kmdf) '
 description: ReqCompletionRoutine 规则指定在向 i/o 目标发送请求之前必须设置完成例程。
-ms.assetid: 0ddf6980-0540-4224-9800-3cd534f03230
 ms.date: 05/21/2018
 keywords:
 - 'ReqCompletionRoutine 规则 (kmdf) '
@@ -12,19 +11,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e6479629f693cd87c4ef5c0218346d1a621f3254
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: f207cf73a5819d68a8dd6b6f88817b2075512ead
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104064"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823391"
 ---
 # <a name="reqcompletionroutine-rule-kmdf"></a>ReqCompletionRoutine 规则 (kmdf) 
 
 
-**ReqCompletionRoutine**规则指定在向 i/o 目标发送请求之前必须设置完成例程。
+**ReqCompletionRoutine** 规则指定在向 i/o 目标发送请求之前必须设置完成例程。
 
-如果请求不是同步发送的，或者不是以 "发送" 和 "忘记" 的形式发送的)  (，则该驱动程序应设置一个完成例程，以便在请求完成时，i/o 目标可以通知该驱动程序。 ** \_ \_ \_ \_ \_ \_ **
+如果请求不是同步发送的，或者不是以 "发送" 和 "忘记" 的形式发送的)  (，则该驱动程序应设置一个完成例程，以便在请求完成时，i/o 目标可以通知该驱动程序。 **\_ \_ \_ \_ \_ \_**
 
 **驱动程序模型： KMDF**
 

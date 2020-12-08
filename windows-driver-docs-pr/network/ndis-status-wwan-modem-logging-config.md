@@ -1,17 +1,16 @@
 ---
 title: NDIS_STATUS_WWAN_MODEM_LOGGING_CONFIG
 description: 微型端口驱动程序使用 NDIS_STATUS_WWAN_MODEM_LOGGING_CONFIG 通知来通知移动宽带 (MB) 服务与先前 OID_WWAN_MODEM_LOGGING_CONFIG 查询或设置请求的完成有关。
-ms.assetid: 0370C672-B7A7-4ECE-94F6-FC04407959E4
 ms.date: 04/11/2019
 keywords: -从 Windows Vista 开始 NDIS_STATUS_WWAN_MODEM_LOGGING_CONFIG 的网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 75b38091a336b244e67ef89174f1974ba645b3bf
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b76c2902259a21a6e0b69cfc24de2d11c912fec1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212827"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822909"
 ---
 # <a name="ndis_status_wwan_modem_logging_config"></a>NDIS_STATUS_WWAN_MODEM_LOGGING_CONFIG
 
@@ -25,7 +24,7 @@ ms.locfileid: "89212827"
 
 **版本**： Windows 10，版本 1903 **头**： Ntddndis (包括 Ndis .h) 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [使用 DSS 进行 MB 调制解调器日志记录](mb-modem-logging-with-dss.md)
 

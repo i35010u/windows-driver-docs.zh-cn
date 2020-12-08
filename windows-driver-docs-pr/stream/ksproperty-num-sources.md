@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ NUM \_ 源
 description: KSPROPERTY \_ NUM \_ 源属性指定选择器单元上的输入插针数目。
-ms.assetid: 94d0f926-0551-4fe2-aa7f-2898e04c4b36
 keywords:
 - KSPROPERTY_NUM_SOURCES 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 865678bc2b1d0464196e4e111ceb1ce8390122cc
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: a68f13b296c849839d85f51d46daec661a1b03cb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102832"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821773"
 ---
 # <a name="ksproperty_num_sources"></a>KSPROPERTY \_ NUM \_ 源
 

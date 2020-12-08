@@ -1,7 +1,6 @@
 ---
 title: 图面的 GDI 支持
 description: 图面的 GDI 支持
-ms.assetid: 78c1e09d-8c3e-4c5d-b670-2e4adf77814f
 keywords:
 - DrvEnableSurface
 - DrvDisableSurface
@@ -11,12 +10,12 @@ keywords:
 - surface 启用和禁用 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 28c563a3f3c35d21aafcce5088ae05372481a890
-ms.sourcegitcommit: 2aedb606f9f14e74687f0d3da60e14fc6ffffa7e
+ms.openlocfilehash: 715dbf7637ef9d514e215201927e1fdb3b3702aa
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91544378"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822514"
 ---
 # <a name="gdi-support-for-surfaces"></a>图面的 GDI 支持
 
@@ -34,7 +33,7 @@ ms.locfileid: "91544378"
 <thead>
 <tr class="header">
 <th align="left">函数名称</th>
-<th align="left">用途</th>
+<th align="left">目的</th>
 </tr>
 </thead>
 <tbody>

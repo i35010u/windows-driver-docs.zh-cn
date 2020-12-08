@@ -1,24 +1,23 @@
 ---
 title: eHS_NETWORK_STATE 枚举
 description: EHS_NETWORK_STATE 枚举指示网络是否是热点网络。
-ms.assetid: a833d226-e2cf-41f9-a926-5b1f6daa03af
 keywords:
 - 从 Windows Vista 开始 eHS_NETWORK_STATE 枚举网络驱动程序
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5477e08e77924d379d8886628605b3ae6d78de0c
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 526f8310adb8a6b345960dd2d785706a682ca10f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403542"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822994"
 ---
 # <a name="ehs_network_state-enumeration"></a>eHS \_ 网络 \_ 状态枚举
 
 [!include[Wi-Fi Hotspot Offloading deprecation](../includes/wi-fi-hotspot-offloading-deprecation.md)]
 
 
-**EHS \_ 网络 \_ 状态**枚举指示网络是否是热点网络。
+**EHS \_ 网络 \_ 状态** 枚举指示网络是否是热点网络。
 
 <a name="syntax"></a>语法
 ------
@@ -61,7 +60,7 @@ typedef enum _eHS_NETWORK_STATE {
 <td><p>Windows 10 移动版</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Hotspotoffloadplugin (包含 Hotspotoffloadplugin) </td>
 </tr>
 </tbody>

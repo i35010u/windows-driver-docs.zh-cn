@@ -1,7 +1,6 @@
 ---
 title: 镜像驱动程序
 description: 镜像驱动程序
-ms.assetid: 7231375a-969b-4c55-83d4-96ba5caade20
 keywords:
 - 显示驱动程序 WDK Windows 2000，镜像驱动程序
 - 镜像驱动程序 WDK Windows 2000 显示
@@ -13,12 +12,12 @@ keywords:
 - 辅助技术和镜像驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e0846ca1b545d852363d7f0e05c19d84ec21946c
-ms.sourcegitcommit: abe7fe9f3fbee8d12641433eeab623a4148ffed3
+ms.openlocfilehash: b607d0f780b7a13e66c982e048dcf102ea5ebe93
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92185217"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821530"
 ---
 # <a name="mirror-drivers"></a>镜像驱动程序
 
@@ -36,7 +35,7 @@ ms.locfileid: "92185217"
 
 ## <a name="mirror-driver-description"></a>镜像驱动程序描述
 
-*镜像驱动程序*是虚拟设备的显示驱动程序，该驱动程序对一个或多个附加物理显示设备的绘图操作进行镜像。 它的实现与任何其他显示驱动程序的行为非常相似;但是，与典型的微型端口驱动程序相比，其配对的视频微型端口驱动程序是最少的。 有关镜像系统中的微型端口驱动程序的详细信息，请参阅 [ (Windows 2000 型号的视频微型端口驱动程序中的镜像驱动程序支持) ](mirror-driver-support-in-video-miniport-drivers--windows-2000-model-.md) 。 Windows 驱动程序工具包 (WDK) 通过 Windows 7 edition (版本 7600) 包含包含在三个目录中的组件源文件的示例镜像驱动程序。
+*镜像驱动程序* 是虚拟设备的显示驱动程序，该驱动程序对一个或多个附加物理显示设备的绘图操作进行镜像。 它的实现与任何其他显示驱动程序的行为非常相似;但是，与典型的微型端口驱动程序相比，其配对的视频微型端口驱动程序是最少的。 有关镜像系统中的微型端口驱动程序的详细信息，请参阅 [ (Windows 2000 型号的视频微型端口驱动程序中的镜像驱动程序支持) ](mirror-driver-support-in-video-miniport-drivers--windows-2000-model-.md) 。 Windows 驱动程序工具包 (WDK) 通过 Windows 7 edition (版本 7600) 包含包含在三个目录中的组件源文件的示例镜像驱动程序。
 
 | Directory | 包含的源文件 |
 | --------- | ------------------------- |
@@ -54,11 +53,11 @@ GDI 支持 *虚拟桌面* ，并提供在镜像设备上复制部分虚拟桌面
 >
 > 在 Windows Vista 和更高版本中，当加载镜像驱动程序时，桌面 Windows 管理器 (DWM) 将关闭。
 
-*镜像*驱动程序代码示例说明了如何实现镜像驱动程序。 有关有助于了解示例的详细信息，请执行以下操作：
+*镜像* 驱动程序代码示例说明了如何实现镜像驱动程序。 有关有助于了解示例的详细信息，请执行以下操作：
 
 * 使用示例 INF 文件作为模板 *。* 有关详细信息，请参阅 [镜像驱动程序 INF 文件](mirror-driver-inf-file.md) 。
 * 请参阅 *mirror.exe* 应用程序，该应用程序演示镜像驱动程序如何附加到虚拟桌面。 有关详细信息，请参阅 [镜像驱动程序安装](mirror-driver-installation.md) 。
-* 有关使用 Win32 **EnumDisplayDevices** 函数的信息，请参阅 Windows SDK 文档。 使用此函数可确定** \\ \\ 。 \\显示 \# **与镜像显示设备关联的名称。 更改镜像设备的设置需要此数字。 对于多个实例， **\#** 每个实例都是不同的编号; 因此，必须通过循环访问可用的显示设备来确定此数字。
+* 有关使用 Win32 **EnumDisplayDevices** 函数的信息，请参阅 Windows SDK 文档。 使用此函数可确定 **\\ \\ 。 \\显示 \#** 与镜像显示设备关联的名称。 更改镜像设备的设置需要此数字。 对于多个实例， **\#** 每个实例都是不同的编号; 因此，必须通过循环访问可用的显示设备来确定此数字。
 
 ## <a name="attaching-the-mirrored-device-to-the-global-desktop"></a>将镜像设备附加到全局桌面
 
@@ -79,13 +78,13 @@ GDI 支持 *虚拟桌面* ，并提供在镜像设备上复制部分虚拟桌面
 
 * 镜像驱动程序不应支持 DirectDraw。
 
-* 镜像驱动程序必须在[**lnk-devinfo**](/windows/win32/api/winddi/ns-winddi-devinfo)结构的**flGraphicsCaps**成员中将 GCAPS_LAYERED 标志设置为**TRUE** 。
+* 镜像驱动程序必须在 [**lnk-devinfo**](/windows/win32/api/winddi/ns-winddi-devinfo)结构的 **flGraphicsCaps** 成员中将 GCAPS_LAYERED 标志设置为 **TRUE** 。
 
-* 辅助功能镜像驱动程序必须在[**lnk-devinfo**](/windows/win32/api/winddi/ns-winddi-devinfo)结构的**flGraphicsCaps2**成员中将 GCAPS2_EXCLUDELAYERED 和 GCAPS2_INCLUDEAPIBITMAPS 标志设置为**TRUE** 。
+* 辅助功能镜像驱动程序必须在 [**lnk-devinfo**](/windows/win32/api/winddi/ns-winddi-devinfo)结构的 **flGraphicsCaps2** 成员中将 GCAPS2_EXCLUDELAYERED 和 GCAPS2_INCLUDEAPIBITMAPS 标志设置为 **TRUE** 。
 
 * 镜像驱动程序可以通过实现 [**DrvRealizeBrush**](/windows/win32/api/winddi/nf-winddi-drvrealizebrush)（可选）支持画笔实现。
 
-GDI 允许在单个和多个监视器系统上同时运行同一驱动程序。 多监视器系统中的驱动程序只需跟踪其在全局桌面中的位置。 在发生 Win32 **ChangeDisplaySettings** 调用时，GDI 为驱动程序提供了此位置，例如，当用户使用控制面板中的 "显示" 程序动态更改监视器在桌面上的位置时。 当发生这种更改时，GDI 会相应地更新[**DEVMODEW**](/windows/win32/api/wingdi/ns-wingdi-devmodew)结构的**dmPosition**成员。 驱动程序可以通过实现 [**DrvNotify**](/windows/win32/api/winddi/nf-winddi-drvnotify)来接收此类更改的通知。 有关详细信息，请参阅 [镜像驱动程序安装](mirror-driver-installation.md) 。
+GDI 允许在单个和多个监视器系统上同时运行同一驱动程序。 多监视器系统中的驱动程序只需跟踪其在全局桌面中的位置。 在发生 Win32 **ChangeDisplaySettings** 调用时，GDI 为驱动程序提供了此位置，例如，当用户使用控制面板中的 "显示" 程序动态更改监视器在桌面上的位置时。 当发生这种更改时，GDI 会相应地更新 [**DEVMODEW**](/windows/win32/api/wingdi/ns-wingdi-devmodew)结构的 **dmPosition** 成员。 驱动程序可以通过实现 [**DrvNotify**](/windows/win32/api/winddi/nf-winddi-drvnotify)来接收此类更改的通知。 有关详细信息，请参阅 [镜像驱动程序安装](mirror-driver-installation.md) 。
 
 > [!NOTE]
 >

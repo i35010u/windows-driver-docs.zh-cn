@@ -1,28 +1,27 @@
 ---
 title: 提交桌面 COSA/APN 数据库更新
 description: 提交桌面 COSA/APN 数据库更新
-ms.assetid: 1ad1be32-74c9-4f84-b680-9124135a3b66
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e4cf888a4abc2778022132a3e7962ee2f0307144
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1babd49c11f3503992533d1befb2fc18391662c6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376634"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823039"
 ---
 # <a name="submitting-the-desktop-cosaapn-database-update"></a>提交桌面 COSA/APN 数据库更新
 
 >[!IMPORTANT]
-> 以下步骤以提交 APN 更新适用于 Windows 10，版本 1703年及更高版本，和 apndatabase.xml，用于 Windows 8、 Windows 8.1 和 Windows 10 版本 1703年之前使用这两个桌面 COSA。 如果你面向 Windows 10 版本 1703年或更高版本，Microsoft 会将转换到 COSA apndatabase.xml 提交。
+> 以下提交接入点更新的步骤适用于桌面 COSA （用于 Windows 10 版本1703及更高版本）和 apndatabase.xml，适用于1703之前的 windows 8、Windows 8.1 和版本。 如果你面向的是 Windows 10 1703 版或更高版本，则 Microsoft 会将 apndatabase.xml 提交转换为 COSA。
 
-现在，你已在测试 APN 条目，就现在可以按照本主题中的步骤将其提交到 Microsoft。
+现在，你已测试了 APN 条目，现在可以按照本主题中的步骤将其提交给 Microsoft。
 
 ## <a name="fill-out-the-apn-testing-questionnaire"></a>填写 APN 测试调查表
 
-测试你的 APN 值后, 必须填写以下调查表。 这将发送到您的 TAM 作为你的提交内容的一部分。
+测试接入点值后，必须填写以下调查表。 这会在你提交的过程中发送到 TAM。
 
-本问卷的目的是确保您已完成测试并帮助 microsoft 团队，了解如何全面测试传入 APNs。
+此调查表旨在确保你已完成测试并帮助 Microsoft 团队了解你测试传入 APNs 的程度。
 
 ```syntax
 Please describe what testing you have done on the APNs that you are submitting.
@@ -49,27 +48,27 @@ Provide your contact information:
    [phone 2]
 ```
 
-## <a name="submit-cosaapn-database-updates-to-microsoft"></a>提交给 Microsoft 的 COSA/APN 数据库更新
+## <a name="submit-cosaapn-database-updates-to-microsoft"></a>向 Microsoft 提交 COSA/APN 数据库更新
 
-使用以下过程将 COSA 或 APN 连接数据库更新提交到 Microsoft。 
+使用以下过程将 COSA 或 APN 连接数据库更新提交给 Microsoft。 
 
-1.  **联系 Microsoft 客户 TAM** -使用相同的 MS 求解用例中所述[测试你的桌面 COSA/APN 数据库提交](testing-your-desktop-cosa-apn-database-submission.md)，向您的 TAM 提供已完成的 APN 测试调查表来描述的测试级别这样做了。  
+1.  **请与 MICROSOFT TAM 联系** ，使用 [测试桌面 COSA/APN 数据库提交](testing-your-desktop-cosa-apn-database-submission.md)中所述的相同 MS 解决案例，为你的 tam 提供已完成的接入点测试调查表，以描述已完成的测试级别。  
 
-2.  **Microsoft 会审过程**-Microsoft 将审查你的提交内容，可能会与你联系如果检测到错误。 Microsoft 不会做任何移动网络上进行测试。 如果你的提交中检测不到任何错误，它将继续通过发布过程。
+2.  **Microsoft 会审过程** -microsoft 将查看你的提交内容，如果检测到错误，可能会与你联系。 Microsoft 不会对你的移动网络进行任何测试。 如果提交时未检测到任何错误，则会在发布过程中进行。
 
-3.  **运算符验证**-由于 Microsoft 无法测试的 APNs 移动网络提供，你将需要执行此操作后新 COSA 预配包或已生成 APN 数据库。 你将获得一份新 COSA.ppkg 文件或将使用适用于您的 Pc 并测试实际网络上的功能的 APN 数据库 XML 文件。 您将经历另一个测试通过，如中所述[测试您的桌面 COSA/APN 数据库提交](testing-your-desktop-cosa-apn-database-submission.md)。 Microsoft TAM 提供将 patch COSA 或已更新的数据库在 PC 上的 APN 数据库可安装文件。 将为您提供的特定时间段来测试新的 APN 数据库。 完成测试后，系统将要求要回复的签字认可的 Microsoft 联系人。 如果您发现问题或错误，可能有一个有限的机会来更正它。 如果不能及时纠正该问题，则会从 APN 数据库发布的下一步更新还原所做的更改。 你将需要重新提交你的 APN 连接数据库提交并等待，直到下一次计划更新。 
+3.  **操作员验证** --由于 Microsoft 无法测试为你的移动网络提供的 APNs，因此在生成新的 COSA 预配包或 APN 数据库后，将要求你执行此操作。 系统将提供 COSA 文件或 APN 数据库 XML 文件的新副本，你可以将其应用于电脑并在实际网络上测试该功能。 你将进行另一次测试，如 [测试桌面 COSA/APN 数据库提交](testing-your-desktop-cosa-apn-database-submission.md)中所述。 Microsoft TAM 将为你提供一个可安装文件，该文件将使用更新的数据库对电脑上的 COSA 或 APN 数据库进行修补。 系统会提供一个特定时间段来测试新的 APN 数据库。 完成测试后，将要求你使用你的注册回复你的 Microsoft 联系人。 如果遇到问题或错误，可能有有限的机会来更正此问题。 如果无法及时更正此问题，则将从 APN 数据库的下一个已发布更新中恢复你所做的更改。 需要重新提交 APN 连接数据库提交，并等待到下一个计划的更新。 
 
-4.  **发布更新**-一旦您已签名对新的 APN 数据库，它将经历发布过程的更新。 准备就绪后，它将出现在要安装用户的 Windows 更新。 将为您提供更详细的发布时间线完成你的 APN 数据库提交后。
+4.  **更新已发布** --在新的 APN 数据库上注销后，将完成更新发布过程。 准备就绪后，它将显示在 Windows 更新供用户安装。 完成 APN 数据库提交后，将提供更详细的发布时间线。
 
 > [!IMPORTANT]
-> 如果您做不注销分配的时间段内，则将从 APN 连接数据库发布的下一步更新还原所做的更改。 你将需要重新提交你的 APN 提交并等待，直到下一次计划更新。   
+> 如果在分配的时间段内未注销，你的更改将从 APN 连接数据库的下一次发布更新中恢复。 需要重新提交接入点提交，并等待下一个计划的更新。   
 
-### <a name="deleting-an-apn-database-entry"></a>正在删除 APN 数据库条目
+### <a name="deleting-an-apn-database-entry"></a>删除 APN 数据库条目
 
-删除 APN 条目被视为特殊处理操作。 如果要仅删除一个条目，您无需填写电子表格。 列出你想要通过回答以下调查表已删除的 APN 连接数据库中的条目。 完成此操作后，将其发送到您的 TAM。
+删除 APN 条目被视为一种特殊的操作。 如果仅删除某个条目，则无需填写电子表格。 通过回答以下调查表，列出要删除的 APN 连接数据库中的条目。 完成此操作后，将其发送到 TAM。
 
 > [!NOTE]
-> 删除操作发生时根据**运算符**并**国家/地区**组合。 
+> 删除 **操作根据操作员** 和 **国家/地区** 组合进行。 
 
 ```syntax
 Please describe which operator and region combination you wish to have removed from the APN database.

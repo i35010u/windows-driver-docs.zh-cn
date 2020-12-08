@@ -1,7 +1,6 @@
 ---
 title: 虚拟连接
 description: 虚拟连接
-ms.assetid: becb3acf-2a23-408a-8d1f-ff8a1e7ffe61
 keywords:
 - 面向连接的 NDIS WDK，虚拟连接
 - CoNDIS WDK 网络，虚拟连接
@@ -9,12 +8,12 @@ keywords:
 - 虚拟连接 WDK CoNDIS，关于虚拟连接
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 76c1152efb95646d4f0d93239aba9786bd1933f8
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 9941101617f4333d195257253b9065206d0edc3c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218304"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822101"
 ---
 # <a name="virtual-connections"></a>虚拟连接
 
@@ -22,7 +21,7 @@ ms.locfileid: "89218304"
 
 
 
-在本地计算机上， * (VC) 的虚拟连接 * 是一个终结点 (或关联) ，它可以在客户端、调用管理器、MCM 驱动程序和微型端口驱动程序之间托管单个调用。 在网络上，VC 指两个通信终结点之间的连接，例如两个面向连接的客户端。
+在本地计算机上， *(VC) 的虚拟连接* 是一个终结点 (或关联) ，它可以在客户端、调用管理器、MCM 驱动程序和微型端口驱动程序之间托管单个调用。 在网络上，VC 指两个通信终结点之间的连接，例如两个面向连接的客户端。
 
 许多 VCs 在 NIC 上可以同时处于活动状态，从而使 NIC 同时为多个调用服务。 每个连接可以连接到不同计算机上的不同终结点。
 

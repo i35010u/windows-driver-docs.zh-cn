@@ -1,7 +1,6 @@
 ---
 title: 监视类函数驱动程序
 description: 监视类函数驱动程序
-ms.assetid: d16c3dcc-2fbf-4579-8962-1b89e6e7b347
 keywords:
 - 多监视器 WDK
 - 监视类函数驱动程序 WDK
@@ -15,12 +14,12 @@ keywords:
 - 筛选 DOs WDK 监视器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 466bae5b6f447fd1baa6107e91266ab408261c98
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 45fd06bb2cb555bf51d202e74df32e3ee8429b5e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067324"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821518"
 ---
 # <a name="monitor-class-function-driver"></a>监视类函数驱动程序
 
@@ -55,7 +54,7 @@ ms.locfileid: "89067324"
 </tr>
 <tr class="even">
 <td align="left"><p>FDO</p></td>
-<td align="left"><p>必选</p></td>
+<td align="left"><p>必须</p></td>
 <td align="left"><p>监视类函数驱动程序 ( Microsoft 提供的 # A0) </p></td>
 </tr>
 <tr class="odd">
@@ -65,7 +64,7 @@ ms.locfileid: "89067324"
 </tr>
 <tr class="even">
 <td align="left"><p>PDO</p></td>
-<td align="left"><p>必选</p></td>
+<td align="left"><p>必须</p></td>
 <td align="left"><p>总线驱动程序 (显示显示适配器供应商提供) 微型端口/端口对</p></td>
 </tr>
 </tbody>
@@ -89,7 +88,7 @@ ms.locfileid: "89067324"
 
 -   增强的 EDID 标准 (E-EDID) 
 
-可以从 "*免费标准*" 部分的[vesa.org](https://vesa.org/vesa-standards/)下载这些标准。
+可以从 "*免费标准*" 部分的 [vesa.org](https://vesa.org/vesa-standards/)下载这些标准。
 
 有关 I i2c 总线的详细信息，请参阅由 Philips 半导体发布的 [i I2c 总线规范](https://www.i2c-bus.org/specification/) 。
 

@@ -1,16 +1,15 @@
 ---
 title: OID_GEN_RECEIVE_SCALE_PARAMETERS_V2
 description: 本主题介绍 OID_GEN_RECEIVE_SCALE_PARAMETERS_V2
-ms.assetid: 3897A898-2B00-45DF-AC05-7EC719EB7353
 keywords: OID_GEN_RECEIVE_SCALE_PARAMETERS_V2，OID_GEN_RECEIVE_SCALE_PARAMETERS_V2 RSSv2
 ms.date: 10/11/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fe1da83a05c9da632834373c5a1f4d6d2300c30
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: d0859b08369282080986ea8a825e74e1f0bfe1f1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218373"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822179"
 ---
 # <a name="oid_gen_receive_scale_parameters_v2"></a>OID_GEN_RECEIVE_SCALE_PARAMETERS_V2
 
@@ -52,14 +51,14 @@ OID_GEN_RECEIVE_SCALE_PARAMETERS_V2 OID 发送到支持 [RSSv2](receive-side-sca
 | --- | --- |
 | NDIS_STATUS_INVALID_LENGTH | OID 的格式不正确。 |
 | NDIS_STATUS_NO_QUEUES | 启用 RSS 时，将更改队列数量，但当前的间接寻址表引用的处理器比新数量的队列多。 |
-| NDIS_STATUS_INVALID_DATA | <ul><li>间接寻址表大小减小，但不包含两次幂的重复模式。</li><li>在将 RSS 状态转换 (为 *on* 或 *off*) 时，处于 *活动* 状态的方向盘参数的处理器不属于适配器的 RSS 处理器集。 请注意， *非活动* 控制参数只跟踪对处理器的写入，不会强制执行。 当参数变为 *活动*状态时，会在 RSS 状态转换期间发生强制执行。</li></ul> |
+| NDIS_STATUS_INVALID_DATA | <ul><li>间接寻址表大小减小，但不包含两次幂的重复模式。</li><li>在将 RSS 状态转换 (为 *on* 或 *off*) 时，处于 *活动* 状态的方向盘参数的处理器不属于适配器的 RSS 处理器集。 请注意， *非活动* 控制参数只跟踪对处理器的写入，不会强制执行。 当参数变为 *活动* 状态时，会在 RSS 状态转换期间发生强制执行。</li></ul> |
 | NDIS_STATUS_INVALID_PARAMETER | 标头或 OID 本身中的其他字段包含无效的值。 |
 
 ## <a name="requirements"></a>要求
 
 **版本**： Windows 10，版本 1709 **头**： Ntddndis (包括 Ndis .h) 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [接收端缩放版本 2 (RSSv2)](receive-side-scaling-version-2-rssv2-.md)
 - [OID_GEN_RECEIVE_SCALE_PARAMETERS](oid-gen-receive-scale-parameters.md)

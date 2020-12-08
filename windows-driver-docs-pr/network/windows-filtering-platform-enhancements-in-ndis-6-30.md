@@ -1,15 +1,14 @@
 ---
 title: NDIS 6.30 中的 Windows 筛选平台增强
 description: Windows 筛选平台 (WFP) 为 NDIS 6.30 和更高版本的驱动程序提供以下增强功能
-ms.assetid: 3317ECA8-78F9-425B-8689-B6C34BEECFDC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 672b5f33ce1ba70333ddd728b3bed16fc3ed33d2
-ms.sourcegitcommit: 93c924b8f409fc7f704cc67cc026d70b8ad25d30
+ms.openlocfilehash: 6b1882616d2bb7c0fba00830b583a92844afa63f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91739485"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821865"
 ---
 # <a name="windows-filtering-platform-enhancements-in-ndis-630"></a>NDIS 6.30 中的 Windows 筛选平台增强
 

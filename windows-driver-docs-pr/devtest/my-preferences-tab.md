@@ -1,15 +1,14 @@
 ---
 title: 我的首选项选项卡
 description: 本主题介绍 WDF 验证器的 "我的首选项" 页。 在此页上，您可以为某些 "控制面板" 功能设置首选项。
-ms.assetid: 6f37fd6b-c60c-4d59-94fb-0dc7d3ff6f0f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1bee25d8e404d78da27b50ba8ca7839e93e6f9e8
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 73c1c46d2db8b7d606428b7357607546a38dd84f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382893"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823405"
 ---
 # <a name="my-preferences-tab"></a>我的首选项选项卡
 
@@ -20,9 +19,9 @@ ms.locfileid: "89382893"
 
 !["我的首选项" 选项卡的屏幕截图](images/wdfverifier-tab5.png)
 
-此页上列出的调试器是 **适用于 Windows 的调试工具**的一部分。 若要下载此包，请在安装[Windows 8.1 的 Windows SDK](https://developer.microsoft.com/windows/downloads/sdk-archive/)时选择 "适用于**Windows 的调试工具**" 框。 或者，通过选择 " **使用自定义**"，选择自定义 (非 Microsoft) 调试器。
+此页上列出的调试器是 **适用于 Windows 的调试工具** 的一部分。 若要下载此包，请在安装 [Windows 8.1 的 Windows SDK](https://developer.microsoft.com/windows/downloads/sdk-archive/)时选择 "适用于 **Windows 的调试工具**" 框。 或者，通过选择 " **使用自定义**"，选择自定义 (非 Microsoft) 调试器。
 
-首先，单击 " **选择特定的调试器** " 按钮，然后浏览到要使用的用户模式调试器。 **Windows 的调试工具**默认安装到 C： \\ Program 文件 (x86) \\ Windows 工具包 \\ 8.1 \\ 调试器 \\ * &lt; x86 | x64 &gt; *。 如果 **调试器的路径** 未指定有效路径，则调试器列表将灰显。
+首先，单击 " **选择特定的调试器** " 按钮，然后浏览到要使用的用户模式调试器。 **Windows 的调试工具** 默认安装到 C： \\ Program 文件 (x86) \\ Windows 工具包 \\ 8.1 \\ 调试器 \\ *&lt; x86 | x64 &gt;*。 如果 **调试器的路径** 未指定有效路径，则调试器列表将灰显。
 
 调试器首选项在两种情况下使用：
 

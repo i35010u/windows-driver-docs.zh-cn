@@ -1,15 +1,14 @@
 ---
 title: 枚举 Hyper-V 可扩展交换机扩展
 description: 枚举 Hyper-V 可扩展交换机扩展
-ms.assetid: AC468A8F-5C48-419B-9E9E-D63925E1CE9D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ab7e003905b78d1f0ffcda2b657a63dc788150b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a71b2f007fb526f9aeb6352a068835395e33e601
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209747"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822947"
 ---
 # <a name="enumerating-hyper-v-extensible-switch-extensions"></a>枚举 Hyper-V 可扩展交换机扩展
 
@@ -51,7 +50,7 @@ SwitchName    : PrivateNetwork
 Enabled       : True
 ```
 
-**注意**   为了最大限度地减少信息量，示例通过筛选器命令 "fl" 管道返回的扩展对象。 这将导致显示与 **-property** 开关的特性匹配的部分信息。
+**注意**  为了最大限度地减少信息量，示例通过筛选器命令 "fl" 管道返回的扩展对象。 这将导致显示与 **-property** 开关的特性匹配的部分信息。
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ RAW \_ AVC \_ CMD
 description: KSPROPERTY \_ raw \_ AVC \_ CMD 属性发出原始 AV/C 命令。 仅 IEEE 1394 总线设备支持原始 AV/C 命令。
-ms.assetid: f3ff3815-0f4f-4fcb-89bd-e77d8002813c
 keywords:
 - KSPROPERTY_RAW_AVC_CMD 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 06/18/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 0fec56871365aba35981ac242c5b26366a97be36
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ec3f741b82d27a84579269b341ece015da895b78
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190875"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821769"
 ---
 # <a name="ksproperty_raw_avc_cmd"></a>KSPROPERTY \_ RAW \_ AVC \_ CMD
 
@@ -31,11 +30,11 @@ KSPROPERTY \_ raw \_ AVC \_ CMD 属性发出原始 AV/C 命令。 仅 IEEE 1394 
 |--|--|--|--|--|
 | 是 | 是 | 设备 | [**KSPROPERTY_EXTXPORT_S**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_extxport_s) | Embedded **RawAVC** 结构 |
 
- (操作数据) 的属性值是**RawAVC** \_ \_ 用于描述要运行的原始 AV/C 命令的 KSPROPERTY EXTXPORT S 结构的嵌入 RawAVC 成员。
+ (操作数据) 的属性值是 **RawAVC** \_ \_ 用于描述要运行的原始 AV/C 命令的 KSPROPERTY EXTXPORT S 结构的嵌入 RawAVC 成员。
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
-此属性仅可用于可支持 AV/C 命令的设备，以及[**KSPROPERTY \_ EXTDEVICE \_ 端口**](ksproperty-extdevice-port.md) \_ \_ 在[**KSPROPERTY \_ EXTDEVICE \_ S**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_extdevice_s)结构的**DevPort**成员中返回开发端口1394的设备。
+此属性仅可用于可支持 AV/C 命令的设备，以及 [**KSPROPERTY \_ EXTDEVICE \_ 端口**](ksproperty-extdevice-port.md) \_ \_ 在 [**KSPROPERTY \_ EXTDEVICE \_ S**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_extdevice_s)结构的 **DevPort** 成员中返回开发端口1394的设备。
 
 适用于 IEEE 1394 设备的驱动程序开发人员可以选择支持其驱动程序中的此属性，以便扩展标准接口不支持的设备传输控件， (例如用户模式 **IAMExtTransport** COM 接口方法 **put \_ 模式** 和 **get \_ 模式**) 。
 

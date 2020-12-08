@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_P2P_SERVICE_INFORMATION_DISCOVERY_ENTRY
-description: WDI_TLV_P2P_SERVICE_INFORMATION_DISCOVERY_ENTRY 是包含服务信息发现条目 TLV。
-ms.assetid: 344A1E76-26E0-4816-8BA5-24F4784B48A1
+description: WDI_TLV_P2P_SERVICE_INFORMATION_DISCOVERY_ENTRY 是包含服务信息发现条目的 TLV。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_P2P_SERVICE_INFORMATION_DISCOVERY_ENTRY 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: f37c5576c785f7680d0fd8e3892baade1464d774
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b30119a59e41ad7498e5262a72254b7dc97e3b61
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380865"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821999"
 ---
-# <a name="wditlvp2pserviceinformationdiscoveryentry"></a>WDI\_TLV\_P2P\_服务\_信息\_发现\_条目
+# <a name="wdi_tlv_p2p_service_information_discovery_entry"></a>WDI \_ TLV \_ P2P \_ 服务 \_ 信息 \_ 发现 \_ 条目
 
 
-WDI\_TLV\_P2P\_服务\_信息\_发现\_项是包含服务信息发现条目 TLV。
+WDI \_ tlv \_ P2P \_ 服务 \_ 信息 \_ 发现 \_ 条目是包含服务信息发现条目的 tlv。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,18 +25,18 @@ WDI\_TLV\_P2P\_服务\_信息\_发现\_项是包含服务信息发现条目 TLV�
 ## <a name="length"></a>长度
 
 
-所有的大小 （以字节为单位） 总和包含 TLVs。
+Sum (包含所有 TLVs 的大小的) 字节。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入                                                                                      | 允许多个 TLV 实例 | 可选 | 描述                                                                                                         |
+| 类型                                                                                      | 允许多个 TLV 实例 | 可选 | 说明                                                                                                         |
 |-------------------------------------------------------------------------------------------|--------------------------------|----------|---------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_TLV\_P2P\_SERVICE\_NAME**](wdi-tlv-p2p-service-name.md)                          |                                |          | 服务 (utf-8)，最多 255 个字节的名称。                                                                       |
-| [**WDI\_TLV\_P2P\_SERVICE\_NAME\_HASH**](wdi-tlv-p2p-service-name-hash.md)               |                                |          | 服务名称的哈希。                                                                                               |
-| [**WDI\_TLV\_P2P\_服务\_信息**](wdi-tlv-p2p-service-information.md)            |                                | X        | 要用于 ANQP 查询请求以下载此服务的服务信息的请求服务信息。 |
-| [**WDI\_TLV\_P2P\_SERVICE\_UPDATE\_INDICATOR**](wdi-tlv-p2p-service-update-indicator.md) |                                | X        | 要用于 ANQP 查询请求的服务更新指示器。                                                     |
-| [**WDI\_TLV\_P2P\_SERVICE\_TRANSACTION\_ID**](wdi-tlv-p2p-service-transaction-id.md)     |                                | X        | 要用于 ANQP 查询请求的服务事务 ID。                                                       |
+| [**WDI \_ TLV \_ P2P \_ 服务 \_ 名称**](wdi-tlv-p2p-service-name.md)                          |                                |          | 服务名称 (UTF-8) ，最大为255字节。                                                                       |
+| [**WDI \_ TLV \_ P2P \_ 服务 \_ 名称 \_ 哈希**](wdi-tlv-p2p-service-name-hash.md)               |                                |          | 服务名称哈希。                                                                                               |
+| [**WDI \_ TLV \_ P2P \_ 服务 \_ 信息**](wdi-tlv-p2p-service-information.md)            |                                | X        | 请求服务信息将用于 ANQP 查询请求，以下载此服务的服务信息。 |
+| [**WDI \_ TLV \_ P2P \_ 服务 \_ 更新 \_ 指示器**](wdi-tlv-p2p-service-update-indicator.md) |                                | X        | 要用于 ANQP 查询请求的服务更新指示器。                                                     |
+| [**WDI \_ TLV \_ P2P \_ 服务 \_ 事务 \_ ID**](wdi-tlv-p2p-service-transaction-id.md)     |                                | X        | 要用于 ANQP 查询请求的服务事务 ID。                                                       |
 
  
 
@@ -56,10 +55,10 @@ WDI\_TLV\_P2P\_服务\_信息\_发现\_项是包含服务信息发现条目 TLV�
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

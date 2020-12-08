@@ -1,26 +1,25 @@
 ---
 title: 用于获取函数实例对象的代码示例
 description: 用于获取函数实例对象的代码示例
-ms.assetid: d4e3c5e0-d904-4049-9bc2-6c21d2a6f905
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d128dc66ea205734f4e807ecedc9ce2e98c558d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 247c5d7fef109eb875c8aab3c7c8766d6deb486b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373211"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823223"
 ---
 # <a name="code-example-for-obtaining-a-function-instance-object"></a>用于获取函数实例对象的代码示例
 
 
-下面的代码示例包含示例类 (CWSDDevice)，包含与获取当前函数实例对象相关的两个类成员的声明：
+下面的代码示例包含示例类 (CWSDDevice) 的声明，其中包含与获取当前函数实例对象相关的两个类成员：
 
--   CWSDDevice::m\_pFunctionDiscovery
+-   CWSDDevice：： m \_ pFunctionDiscovery
 
--   CWSDDevice::m\_pFunctionInstance
+-   CWSDDevice：： m \_ pFunctionInstance
 
-代码示例还演示方法来初始化这些成员和方法来从当前函数实例属性存储中读取设备属性。 **CWSDDevice::InitializeConnection**方法说明中所述的过程[获取函数实例对象](obtaining-a-function-instance-object.md)若要获取表示当前函数实例对象当前的 web 服务扫描程序设备实例。
+此代码示例还演示了用于初始化这些成员和方法以从当前函数实例属性存储读取设备属性的方法。 **CWSDDevice：： InitializeConnection** 方法说明了 [获取函数实例对象](obtaining-a-function-instance-object.md)以获取表示当前 web 服务扫描程序设备实例的当前函数实例对象所描述的过程。
 
 ```cpp
 /**************************************************************************\

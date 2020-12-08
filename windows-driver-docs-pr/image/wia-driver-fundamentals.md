@@ -1,15 +1,14 @@
 ---
 title: WIA 驱动程序基础知识
 description: WIA 驱动程序基础知识
-ms.assetid: 374388eb-ca2e-47da-aa0a-d90fdd00c665
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3229f4da9a99fec046271e9d65262bac39f24ee7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 484e367fb7670a30b4795d4269dbe8ee3e3394da
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366863"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822329"
 ---
 # <a name="wia-driver-fundamentals"></a>WIA 驱动程序基础知识
 
@@ -17,7 +16,7 @@ ms.locfileid: "63366863"
 
 
 
-本部分介绍 WIA 驱动程序基础知识，以及在概念级别的 WIA 驱动程序体系结构。 本部分包含以下主题：
+本部分介绍了在概念级别上的 WIA 驱动程序基础知识和 WIA 驱动程序体系结构。 本节包含下列主题：
 
 [WIA 驱动程序组件](wia-driver-components.md)
 
@@ -31,13 +30,13 @@ ms.locfileid: "63366863"
 
 [命令处理和事件报告](command-processing-and-event-reporting.md)
 
-[有关上下文](about-contexts.md)
+[关于上下文](about-contexts.md)
 
 [WIA DDI 接口](wia-ddi-interfaces.md)
 
-[有关 WIA 属性](about-wia-properties.md)
+[关于 WIA 属性](about-wia-properties.md)
 
-[64 位和 WIA](64-bit-and-wia.md)
+[64位和 WIA](64-bit-and-wia.md)
 
 [WIA 兼容性层](wia-compatibility-layer.md)
 

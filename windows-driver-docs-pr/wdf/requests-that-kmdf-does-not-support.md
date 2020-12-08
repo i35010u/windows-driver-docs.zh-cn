@@ -1,22 +1,21 @@
 ---
 title: KMDF 不支持的请求
 description: KMDF 不支持的请求
-ms.assetid: 1C23BD32-FD55-4D35-B23D-0B320E3DEDF3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 85eac00bde769a2373ccf46d38e711209a94fe75
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 359ca295a314615dc517f63f9413e917fdf4c279
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188703"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821705"
 ---
 # <a name="requests-that-kmdf-does-not-support"></a>KMDF 不支持的请求
 
 
 \[仅适用于 KMDF\]
 
-内核模式驱动程序框架 (KMDF) 不支持具有以下主要 IRP 代码的 i/o 请求：
+Kernel-Mode Driver Framework (KMDF) 不支持具有以下主要 IRP 代码的 i/o 请求：
 
 -   IRP \_ MJ \_ CREATE \_ MAILSLOT
 

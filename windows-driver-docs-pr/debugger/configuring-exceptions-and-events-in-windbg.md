@@ -1,34 +1,33 @@
 ---
 title: 在 WinDbg 中配置异常和事件
-description: 你可以配置 WinDbg，以特定方式对指定的异常和事件做出反应。 对于每个异常，可以设置中断状态和处理状态。
-ms.assetid: B91DD7B6-5206-4BA6-8B49-8ECCA2FA730B
+description: 您可以将 WinDbg 配置为以特定方式响应指定的异常和事件。 对于每个异常，可以设置中断状态和处理状态。
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 10c50d9012bda84a5a02afacfccb8b6c2cfda45b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 056c0a971b68880b294b8a1e593f6d6ffbd45948
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375571"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821573"
 ---
 # <a name="configuring-exceptions-and-events-in-windbg"></a>在 WinDbg 中配置异常和事件
 
 
-你可以配置 WinDbg，以特定方式对指定的异常和事件做出反应。 对于每个异常，可以设置中断状态和处理状态。 对于每个事件，可以设置中断状态。
+您可以将 WinDbg 配置为以特定方式响应指定的异常和事件。 对于每个异常，可以设置中断状态和处理状态。 对于每个事件，可以设置中断状态。
 
-可以通过执行下列任一配置中断状态：
+可以通过执行下列操作之一来配置中断状态：
 
--   选择**事件筛选器**从**调试**菜单中，单击想要从列表中的事件**事件筛选器**对话框中，并选择**已启用**，**禁用**，**输出**，或**忽略**。
+-   从 "**调试**" 菜单中选择 "**事件筛选器**"，从 "**事件筛选器**" 对话框中的列表中单击所需的事件，然后选择 "**已启用**"、"**禁用**"、"**输出**" 或 "**忽略**"。
 
--   使用[ **SXE**](sx--sxd--sxe--sxi--sxn--sxr--sx---set-exceptions-.md)， **SXD**， **SXN**，或**SXI**命令。
+-   使用 [**SXE**](sx--sxd--sxe--sxi--sxn--sxr--sx---set-exceptions-.md)、 **SXD**、 **SXN** 或 **SXI** 命令。
 
-可以通过执行以下操作配置的处理状态：
+可以通过执行下列操作之一来配置处理状态：
 
--   选择**事件筛选器**从**调试**菜单中，单击想要从列表中的事件**事件筛选器**对话框中，并选择**已处理**或**未处理**。
+-   从 "**调试**" 菜单中选择 "**事件筛选器**"，从 "**事件筛选器**" 对话框中的列表中单击所需的事件，然后选择 "已 **处理**" 或 "**未处理**"。
 
--   使用[ **SXE**](sx--sxd--sxe--sxi--sxn--sxr--sx---set-exceptions-.md)， **SXD**， **SXN**，或**SXI**命令。
+-   使用 [**SXE**](sx--sxd--sxe--sxi--sxn--sxr--sx---set-exceptions-.md)、 **SXD**、 **SXN** 或 **SXI** 命令。
 
-有关异常和事件的详细讨论，请参阅[控制异常和事件](controlling-exceptions-and-events.md)。
+有关异常和事件的详细讨论，请参阅 [控制异常和事件](controlling-exceptions-and-events.md)。
 
  
 

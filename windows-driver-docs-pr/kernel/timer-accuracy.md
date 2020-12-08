@@ -1,15 +1,14 @@
 ---
 title: 计时器准确性
 description: 系统计时器例程通常允许调用方为计时器指定绝对过期时间或相对过期时间。
-ms.assetid: CA29DC02-1AEA-4A13-B2D6-8C8052E21EDB
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: aa928ff01878700ad160d6503ffc4f4db7e5b8a3
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: fd99561e9b67699a985ba85e105097c65780c3fd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186699"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822239"
 ---
 # <a name="timer-accuracy"></a>计时器准确性
 

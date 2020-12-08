@@ -1,32 +1,31 @@
 ---
 title: 用于 SCSI 微型端口调试的 Bug 检查
 description: 用于 SCSI 微型端口调试的 Bug 检查
-ms.assetid: 9a517096-f708-452b-83f6-e7d4f0d41ac3
 keywords:
-- 调试时，bug 检查 SCSI 微型端口
+- SCSI 微型端口调试，bug 检查
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 23de7d56bfd920a681e740b3808325461ed05e1c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d6da46243061447492f7669191c56f2c4a447ade
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374001"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821635"
 ---
 # <a name="bug-checks-for-scsi-miniport-debugging"></a>用于 SCSI 微型端口调试的 Bug 检查
 
 
-有两个主要在调试 SCSI 微型端口驱动程序的过程中出现的 bug 检查： bug 检查 0x77 (内核\_堆栈\_页内\_错误) 和 bug 检查 0x7A (内核\_数据\_页内\_错误）。 其参数的完整详细信息，请参阅[ **Bug 检查 0x77** ](bug-check-0x77--kernel-stack-inpage-error.md)并[ **Bug 检查 0x7A**](bug-check-0x7a--kernel-data-inpage-error.md)。
+在调试 SCSI 微型端口驱动程序的过程中，主要有两个 bug 检查： bug 检查 0x77 (内核 \_ 堆栈 \_ INPAGE \_ 错误) 和 bug 检查 0x7A (内核 \_ 数据 \_ INPAGE \_ 错误) 。 有关参数的完整详细信息，请参阅 [**Bug 检查 0x77**](bug-check-0x77--kernel-stack-inpage-error.md) 和 [**bug 检查 0x7A**](bug-check-0x7a--kernel-data-inpage-error.md)。
 
-每个这些 bug 检查指示发生分页错误。 有三个主要原因这些 bug 检查：
+其中每个 bug 检查都表明出现了分页错误。 这些错误检查的主要原因有三个：
 
--   由于特定设备上的超时或没有活动的适配器上重置的完整总线
+-   由于特定设备上的超时或适配器上无活动而发生了完全总线重置
 
--   所选内容超时
+-   选择超时
 
 -   控制器错误
 
-若要确定失败的确切原因，请首先使用[ **！ scsikd.classext** ](-scsikd-classext.md)扩展，它显示最近失败的请求，包括 SRB 状态、 SCSI 状态有关的信息和请求的检测数据。
+若要确定失败的确切原因，请首先使用 [**！ scsikd. classext**](-scsikd-classext.md) 扩展，其中显示了有关最近失败的请求的信息，包括请求的 SRB 状态、SCSI 状态和感知数据。
 
 ```dbgcmd
 kd> !scsikd.classext 816e96b0
@@ -47,9 +46,9 @@ dt classpnp!_CLASS_PRIVATE_FDO_DATA 817b4008 -
 ...
 ```
 
-在上一示例中，操作码 0x2A 表示一个写入操作，并 0x28 指示读取的操作。 在示例中的 SCSI 状态是 02，指示检查条件。 探测代码提供错误详细信息。
+在上面的示例中，opcode 0x2A 指明了写入操作，0x28 指示读取操作。 示例中的 SCSI 状态为02，这表示检查条件。 理解代码提供更多错误信息。
 
-与往常一样，微型端口驱动程序开发人员负责将从其硬件到 SRB 状态代码的错误代码相关联。 通常情况下，超时是 SRB 0x0A，选择超时值的代码与相关联。 SRB 0x0e 程序通常与完整总线重置，但它还可与控制器错误相关联。
+与往常一样，小型小型驱动程序开发人员负责将其硬件的错误代码关联到 SRB 状态代码。 通常，超时值与 SRB 0x0A （选择超时的代码）相关联。 SRB 0x0e 通常与完全总线重置相关联，但也可能与控制器错误相关联。
 
  
 

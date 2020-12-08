@@ -1,19 +1,18 @@
 ---
 title: GDI 实用工具服务
 description: GDI 实用工具服务
-ms.assetid: 4ceec90d-5be2-4b79-87b3-1fdb6b0aea6b
 keywords:
 - GDI WDK Windows 2000 显示，实用工具服务
 - 图形驱动程序 WDK Windows 2000 显示，实用工具服务
 - 绘制 WDK GDI，实用工具服务
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 528274ecdd29201d09fe2746167a4f28a61de594
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 65ae2875e2b26cb5a814471a54c683b488f46d8e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716466"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822511"
 ---
 # <a name="gdi-utility-services"></a>GDI 实用工具服务
 
@@ -31,7 +30,7 @@ ms.locfileid: "90716466"
 <thead>
 <tr class="header">
 <th align="left">函数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

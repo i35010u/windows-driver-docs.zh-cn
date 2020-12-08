@@ -1,15 +1,14 @@
 ---
 title: GpioClx DDI 中的驱动程序支持方法
 description: 从 Windows 8 开始，使用 GPIO framework 扩展 (GpioClx) 。
-ms.assetid: 179EFB06-6122-4EB0-B9F8-D5A3089D75EE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7788eeafa0c610061f928fd31390325332ca4851
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 5c2eb953dba943240ae467ad4b9bd37c063187e5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064508"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821505"
 ---
 # <a name="driver-support-methods-in-the-gpioclx-ddi"></a>GpioClx DDI 中的驱动程序支持方法
 
@@ -30,7 +29,7 @@ GPIO 控制器驱动程序调用 [**gpio \_ CLX \_ UnregisterClient**](/windows-
 ## <a name="device-object-initialization"></a>设备对象初始化
 
 
-若要初始化 GpioClx，GPIO 控制器驱动程序必须从其 [*EvtDriverDeviceAdd*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add) 回调函数调用两个 GpioClx 方法。 必须先调用第一个方法 [** \_ CLX \_ ProcessAddDevicePreDeviceCreate**](/windows-hardware/drivers/ddi/gpioclx/nf-gpioclx-gpio_clx_processadddevicepredevicecreate)，然后才能调用 [**WdfDeviceCreate**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate) 方法，这将创建设备对象。 第二种方法 [** \_ CLX \_ ProcessAddDevicePostDeviceCreate**](/windows-hardware/drivers/ddi/gpioclx/nf-gpioclx-gpio_clx_processadddevicepostdevicecreate)，必须在 **WdfDeviceCreate** 调用后调用。
+若要初始化 GpioClx，GPIO 控制器驱动程序必须从其 [*EvtDriverDeviceAdd*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add) 回调函数调用两个 GpioClx 方法。 必须先调用第一个方法 [**\_ CLX \_ ProcessAddDevicePreDeviceCreate**](/windows-hardware/drivers/ddi/gpioclx/nf-gpioclx-gpio_clx_processadddevicepredevicecreate)，然后才能调用 [**WdfDeviceCreate**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate) 方法，这将创建设备对象。 第二种方法 [**\_ CLX \_ ProcessAddDevicePostDeviceCreate**](/windows-hardware/drivers/ddi/gpioclx/nf-gpioclx-gpio_clx_processadddevicepostdevicecreate)，必须在 **WdfDeviceCreate** 调用后调用。
 
 ## <a name="interrupt-lock"></a>中断锁
 
@@ -45,7 +44,7 @@ GPIO 控制器驱动程序调用 [**gpio \_ CLX \_ UnregisterClient**](/windows-
 
 这些函数在 GpioClx 中的中断服务例程 (ISR) 中调用，后者在 DIRQL 或被动级别运行 \_ ，具体取决于 GPIO 控制器的硬件寄存器是否为内存映射。
 
-*客户端 \_ QueryControllerBasicInformation*函数以[**客户端 \_ 控制器 \_ 基本 \_ 信息**](/windows-hardware/drivers/ddi/gpioclx/ns-gpioclx-_client_controller_basic_information)结构的形式提供设备信息。 如果在此结构的**Flags**成员中设置了**MemoryMappedController**标志位，则 GPIOCLX ISR 会调用 DIRQL 上前面列表中的回调函数。 否则，ISR 在被动级别调用所有驱动程序实现的回调函数 \_ 。 有关此标志位的详细信息，请参阅 [与中断相关的回调](./interrupt-related-callbacks.md)。
+*客户端 \_ QueryControllerBasicInformation* 函数以 [**客户端 \_ 控制器 \_ 基本 \_ 信息**](/windows-hardware/drivers/ddi/gpioclx/ns-gpioclx-_client_controller_basic_information)结构的形式提供设备信息。 如果在此结构的 **Flags** 成员中设置了 **MemoryMappedController** 标志位，则 GPIOCLX ISR 会调用 DIRQL 上前面列表中的回调函数。 否则，ISR 在被动级别调用所有驱动程序实现的回调函数 \_ 。 有关此标志位的详细信息，请参阅 [与中断相关的回调](./interrupt-related-callbacks.md)。
 
 GpioClx 会自动同步对在被动 \_ 级别运行且不从 GPIOCLX ISR 调用的驱动程序实现的回调函数的调用。 因此，一次只能运行其中一项函数。 但是，GpioClx 不会自动将这些被动 \_ 级别回调与 GpioClx 从其 ISR 发出的回调同步。 如果需要，GPIO 控制器驱动程序必须显式提供此类同步。
 

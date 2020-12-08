@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x197 WIN32K_SECURITY_FAILURE
-description: WIN32K_SECURITY_FAILURE bug 检查具有 0x00000197 值。 这表示 win32k 中检测到此安全故障。
-ms.assetid: FBF81B3B-6F72-4624-84E8-FA9ED19F8198
+description: WIN32K_SECURITY_FAILURE bug 检查的值为0x00000197。 这表示在 win32k.sys 中检测到安全故障。
 keywords:
 - Bug 检查 0x197 WIN32K_SECURITY_FAILURE
 - WIN32K_SECURITY_FAILURE
@@ -13,23 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c1c38918a76a08b2c7ff0f989cd59e17267a41d
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: ec100878d6ec4ef13846fabba0d0bcfeac764b1d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519806"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822627"
 ---
-# <a name="bug-check-0x197-win32ksecurityfailure"></a>Bug 检查 0x197：WIN32K\_安全\_失败
+# <a name="bug-check-0x197-win32k_security_failure"></a>Bug 检查0x197： WIN32K.SYS \_ 安全 \_ 失败
 
 
-WIN32K\_安全\_故障错误检查的值为 0x00000197。 这表示 win32k 中检测到此安全故障。
+WIN32K.SYS \_ 安全 \_ 失败 bug 检查的值为0x00000197。 这表示在 win32k.sys 中检测到安全故障。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="win32ksecurityfailure-parameters"></a>WIN32K\_安全\_失败参数
+## <a name="win32k_security_failure-parameters"></a>WIN32K.SYS \_ 安全 \_ 失败参数
 
 
 <table>
@@ -47,20 +46,20 @@ WIN32K\_安全\_故障错误检查的值为 0x00000197。 这表示 win32k 中�
 <tr class="odd">
 <td align="left">1</td>
 <td align="left"><p>失败类型</p>
-<p>0x1:对象句柄条目未返回指向对象。</p>
-2-指向的对象类型 3 的指针的对象句柄项 4-预期对象</td>
+<p>0x1：对象句柄条目未指向对象。</p>
+2-指向对象类型3的指针-指向对象句柄项的指针 4-预期对象</td>
 </tr>
 <tr class="even">
 <td align="left">2</td>
-<td align="left">请参阅参数 1</td>
+<td align="left">请参阅参数1</td>
 </tr>
 <tr class="odd">
 <td align="left">3</td>
-<td align="left">请参阅参数 1</td>
+<td align="left">请参阅参数1</td>
 </tr>
 <tr class="even">
 <td align="left">4</td>
-<td align="left">请参阅参数 1</td>
+<td align="left">请参阅参数1</td>
 </tr>
 </tbody>
 </table>

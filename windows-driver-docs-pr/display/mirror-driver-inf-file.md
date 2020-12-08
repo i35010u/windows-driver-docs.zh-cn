@@ -1,19 +1,18 @@
 ---
 title: 镜像驱动程序 INF 文件
 description: 镜像驱动程序 INF 文件
-ms.assetid: ee42cb92-7630-4b5e-912c-88c12e54349b
 keywords:
 - 显示驱动程序 WDK Windows 2000，镜像驱动程序
 - 镜像驱动程序 WDK Windows 2000 显示
 - INF 文件 WDK Windows 2000 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8822313d13c2bf83d78f75b50cd53544c0b88d99
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 8420cc43469f3ff98a30892e33837153180ca27e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104896"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821529"
 ---
 # <a name="mirror-driver-inf-file"></a>镜像驱动程序 INF 文件
 

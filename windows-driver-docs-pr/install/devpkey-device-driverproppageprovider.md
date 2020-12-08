@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_DriverPropPageProvider
 description: DEVPKEY_Device_DriverPropPageProvider
-ms.assetid: 9dabdba0-e179-467b-b0ad-960033a7ab86
 keywords:
 - DEVPKEY_Device_DriverPropPageProvider 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 784745fc9d42f17410b94f0fcc87a9128db34715
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: d45d3c5a0a8beadb17d331adb4856d3cfaff2586
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717496"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823085"
 ---
 # <a name="devpkey_device_driverproppageprovider"></a>DEVPKEY_Device_DriverPropPageProvider
 

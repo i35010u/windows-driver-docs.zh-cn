@@ -1,18 +1,17 @@
 ---
 title: 设置启动类型值
 description: 设置启动类型值
-ms.assetid: dcc38a36-4755-472b-94c8-dfed892460ee
 keywords:
 - INF 文件，WDK 显示，开始类型值
 - 开始类型值 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5397a456c5f221497918cebc8563698ce2059235
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 1e2d10877cc984a0d44d5d244c0e251fdc09c7ef
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063812"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822449"
 ---
 # <a name="setting-the-start-type-value"></a>设置启动类型值
 

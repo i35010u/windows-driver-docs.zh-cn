@@ -1,18 +1,17 @@
 ---
 title: 生成 DbgEng 扩展
 description: 生成 DbgEng 扩展
-ms.assetid: e2cf8a01-2099-4ad7-98ac-1a20c76a2e0a
 keywords:
 - DbgEng 扩展，生成
 - '生成实用工具 ( # A0) ，生成 DbgEng 扩展'
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 44d6a22d3319d1f254efac6e701a96205d2fd66d
-ms.sourcegitcommit: 878a1cb0149dc18ccbd31774e12bad76084dfa24
+ms.openlocfilehash: 7128f3e73450aed00b2ec71ddcd1b4c0fdfe1ce5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94937755"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821623"
 ---
 # <a name="building-dbgeng-extensions"></a>生成 DbgEng 扩展
 

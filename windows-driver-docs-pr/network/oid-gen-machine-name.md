@@ -1,16 +1,15 @@
 ---
 title: OID_GEN_MACHINE_NAME
 description: OID_GEN_MACHINE_NAME OID 将本地计算机名称指定为微型端口驱动程序。
-ms.assetid: 771d21ff-e989-4717-8f3e-28f4b8afe274
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_MACHINE_NAME 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 888edd61b42f6412160b804513cc811d18ac1f2a
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 56e3659645095c3f79acb1f0e8fac3e92d6fc51b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210131"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822177"
 ---
 # <a name="oid_gen_machine_name"></a>OID \_ 生成 \_ 计算机 \_ 名称
 
@@ -37,7 +36,7 @@ ms.locfileid: "89210131"
 <a name="remarks"></a>备注
 -------
 
-传入此请求的信息缓冲区包含表示本地计算机名称的 Unicode 字符数组。 提供给[*MiniportOidRequest*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)函数的**InformationBufferLength**值指定此数组的长度（以字节为单位），不包括 NULL 终止符。
+传入此请求的信息缓冲区包含表示本地计算机名称的 Unicode 字符数组。 提供给 [*MiniportOidRequest*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)函数的 **InformationBufferLength** 值指定此数组的长度（以字节为单位），不包括 NULL 终止符。
 
 在 \_ \_ \_ 微型端口驱动程序完成初始化后，NDIS 仅设置 OID 生成计算机名称一次。 在 Windows XP 下，NDIS 不会动态通知小型端口驱动程序的计算机名称更改。 更改计算机名后，用户必须重新启动计算机，以便 NDIS 通知小型端口驱动程序的新计算机名。
 
@@ -57,7 +56,7 @@ ms.locfileid: "89210131"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [*MiniportOidRequest*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)

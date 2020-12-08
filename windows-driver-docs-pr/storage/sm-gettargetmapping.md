@@ -1,7 +1,6 @@
 ---
 title: SM \_ GetTargetMapping 函数
 description: SM \_ GETTARGETMAPPING WMI 方法检索唯一标识操作系统的一组逻辑单元的信息与光纤通道协议为这些逻辑单元 (FCP) 标识符之间的映射。
-ms.assetid: db18920c-327d-4349-8821-6d7fb68eccbd
 keywords:
 - SM_GetTargetMapping 函数存储设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f9ea42ac9231120c6c3e6aaf952e56c1ee24ed31
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 030c8211e19eff6466801ec7f12c7d62ef6fd6dc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186407"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821823"
 ---
 # <a name="sm_gettargetmapping-function"></a>SM \_ GetTargetMapping 函数
 
@@ -31,12 +30,12 @@ SM \_ GETTARGETMAPPING WMI 方法检索唯一标识操作系统的一组逻辑�
 
 ```ManagedCPlusPlus
 void SM_GetTargetMapping(
-   [in, HBAType("HBA_WWN")] uint8                       HbaPortWWN[8],
-   [in, HBAType("HBA_WWN")] uint8                       DomainPortWWN[8],
-   [in] uint32                                          InEntryCount,
-   [out, HBA_STATUS_QUALIFIERS] HBA_STATUS              HBAStatus,
-   [out] uint32                                         TotalEntryCount,
-   [out] uint32                                         OutEntryCount,
+   [in, HBAType("HBA_WWN")] uint8                       HbaPortWWN[8],
+   [in, HBAType("HBA_WWN")] uint8                       DomainPortWWN[8],
+   [in] uint32                                          InEntryCount,
+   [out, HBA_STATUS_QUALIFIERS] HBA_STATUS              HBAStatus,
+   [out] uint32                                         TotalEntryCount,
+   [out] uint32                                         OutEntryCount,
    [out, WmiSizeIs("OutEntryCount")] MS_SMHBA_SCSIENTRY Entry[]
 );
 ```
@@ -86,7 +85,7 @@ SM GetTargetMapping 方法检索到的映射总数 \_ 。 此值将小于或等�
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">“桌面”</td>
+<td align="left">台式机</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>

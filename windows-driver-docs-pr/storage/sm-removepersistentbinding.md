@@ -1,7 +1,6 @@
 ---
 title: SM \_ RemovePersistentBinding 函数
 description: SM \_ RemovePersistentBinding 方法删除指定适配器端口的指定 SCSI id 的一个或多个永久性绑定。
-ms.assetid: 475c2f5f-4a1c-48b4-9a43-81d03b1b737d
 keywords:
 - SM_RemovePersistentBinding 函数存储设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 071f61e08aa0570b2d7cc5653cffe347f952ed10
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: b8f77edbb95cd16527b15814452632ca40a0b7bd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186391"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821821"
 ---
 # <a name="sm_removepersistentbinding-function"></a>SM \_ RemovePersistentBinding 函数
 
@@ -31,11 +30,11 @@ SM \_ RemovePersistentBinding 方法删除指定适配器端口的指定 SCSI id
 
 ```ManagedCPlusPlus
 void SM_RemovePersistentBinding(
-   [in, HBAType("HBA_WWN")] uint8                      HbaPortWWN[8],
-   [in, HBAType("HBA_WWN")] uint8                      DomainPortWWN[8],
-   [in] uint32                                         EntryCount,
+   [in, HBAType("HBA_WWN")] uint8                      HbaPortWWN[8],
+   [in, HBAType("HBA_WWN")] uint8                      DomainPortWWN[8],
+   [in] uint32                                         EntryCount,
    [in, WmiSizeIs("EntryCount")] MS_SMHBA_BINDINGENTRY Entry[],
-   [out, HBA_STATUS_QUALIFIERS] HBA_STATUS             HBAStatus
+   [out, HBA_STATUS_QUALIFIERS] HBA_STATUS             HBAStatus
 );
 ```
 
@@ -62,7 +61,7 @@ WMI 提供程序可在 Entry 参数中报告的绑定项的数目。
 
 不适用于 WMI 方法。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 此 WMI 方法属于 MS \_ SM \_ TargetInformationMethods WMI 类。
@@ -81,7 +80,7 @@ WMI 提供程序可在 Entry 参数中报告的绑定项的数目。
 <td align="left">台式机</td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
+<td align="left"><p>标头</p></td>
 <td align="left">Hbapiwmi</td>
 </tr>
 </tbody>

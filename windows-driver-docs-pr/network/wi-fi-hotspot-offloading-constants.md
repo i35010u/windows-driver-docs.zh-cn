@@ -1,21 +1,20 @@
 ---
 title: Wi-Fi 热点卸载常量
-description: 本部分介绍为 Wi-fi 热点卸载框架定义的常量。
-ms.assetid: F09DCB81-C9FF-493B-AE8F-97DE441A4BC3
+description: 本节介绍为 Wi-Fi 热点卸载框架定义的常量。
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3412097b42b06faead002387b61a682b9b33e223
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 39ae841a8f8bbffa5233e8bd38e0b70a50c0117e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403428"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821879"
 ---
 # <a name="wi-fi-hotspot-offloading-constants"></a>Wi-Fi 热点卸载常量
 
 [!include[Wi-Fi Hotspot Offloading deprecation](../includes/wi-fi-hotspot-offloading-deprecation.md)]
 
-本部分介绍为 Wi-fi 热点卸载框架定义的常量。
+本节介绍为 Wi-Fi 热点卸载框架定义的常量。
 
 <a href="" id="hs-const-host-current-api-version"></a>**HS \_ CONST \_ HOST \_ 当前 \_ API \_ 版本**  
 1  
@@ -141,13 +140,13 @@ ms.locfileid: "89403428"
 <td><p>Windows 10 移动版</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Hotspotoffloadplugin (包含 Hotspotoffloadplugin) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [Wi-Fi 热点卸载参考](wi-fi-hotspot-offloading-reference.md)

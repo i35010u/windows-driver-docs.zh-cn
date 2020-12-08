@@ -1,15 +1,14 @@
 ---
 title: PwrTest 设备方案
 description: PwrTest 设备方案监视设备空闲统计信息。
-ms.assetid: 75C53B6E-3D1F-4E9D-A99E-3060A9CC37BC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 00ff5b9f180f870e791380269d7a8c16c40705b4
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: d47b69579a55b755cd5774688709ba03d1dd8e5f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101500"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823379"
 ---
 # <a name="pwrtest-device-scenario"></a>PwrTest 设备方案
 
@@ -78,7 +77,7 @@ pwrtest /device
 <thead>
 <tr class="header">
 <th align="left">元素</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -99,7 +98,7 @@ pwrtest /device
 <td align="left"><p>设备添加或删除事件。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><strong>&lt;说明&gt;</strong></td>
+<td align="left"><strong>&lt;描述&gt;</strong></td>
 <td align="left"><p>DeviceRemoved 或 DeviceDetected。</p></td>
 </tr>
 <tr class="even">
@@ -107,7 +106,7 @@ pwrtest /device
 <td align="left"><p>Device idle statistics 事件。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><strong>&lt;设备&gt;</strong></td>
+<td align="left"><strong>&lt;装置&gt;</strong></td>
 <td align="left"><p>功能设备对象。</p></td>
 </tr>
 <tr class="even">

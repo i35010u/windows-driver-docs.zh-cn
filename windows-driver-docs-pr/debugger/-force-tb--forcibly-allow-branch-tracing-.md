@@ -1,9 +1,8 @@
 ---
 title: .force_tb（强制允许分支跟踪）
-description: .Force_tb 命令会强制在启动过程中尽早跟踪分支到处理器。
-ms.assetid: ac4aabfa-6d00-4478-9c13-213bf89f613a
+description: .Force_tb 命令强制处理器在启动过程的初期跟踪分支。
 keywords:
-- .force_tb （强制允许分支跟踪） Windows 调试
+- .force_tb (强制允许分支跟踪) Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ec13cd9f4e87654e952746a81d5e4df6b3f282c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6862564f9051dac316704f00db3286e7d3dae045
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336710"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822649"
 ---
-# <a name="forcetb-forcibly-allow-branch-tracing"></a>.force\_tb （强制允许分支跟踪）
+# <a name="force_tb-forcibly-allow-branch-tracing"></a>。强制 \_ tb (强制允许分支跟踪) 
 
 
-**.Force\_tb**命令会强制在启动过程中尽早跟踪分支到处理器。
+**Force \_ tb** 命令强制处理器在启动过程的初期跟踪分支。
 
 ```dbgcmd
 .force_tb 
@@ -40,12 +39,12 @@ ms.locfileid: "63336710"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>用户模式下，内核模式</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>用户模式，内核模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>实时、 崩溃转储</p></td>
+<td align="left"><p>实时，故障转储</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>
@@ -59,9 +58,9 @@ ms.locfileid: "63336710"
 <a name="remarks"></a>备注
 -------
 
-通常情况下，调试器初始化处理器控制块 (PRCB) 后启用分支跟踪。 在启动过程中尽早将发生此初始化。
+通常，在调试器初始化处理器控制块 (PRCB) 后，会启用分支跟踪。 此初始化在启动过程初期发生。
 
-但是，如果您必须使用[ **tb （跟踪到下一个分支）** ](tb--trace-to-next-branch-.md)命令之前此初始化，可以使用 **.force\_tb**命令以启用分支跟踪前面。 请谨慎使用此命令，因为它可能会损坏处理器状态。
+但是，如果在此初始化之前必须使用 [**tb (跟踪到下一个分支)**](tb--trace-to-next-branch-.md) 命令，则可以使用 **. force \_ tb** 命令来启用之前的分支跟踪。 请小心使用此命令，因为它可能会损坏处理器状态。
 
  
 

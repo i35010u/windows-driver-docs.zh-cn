@@ -1,16 +1,15 @@
 ---
 title: WDI 文档更改历史记录
 description: 本部分列出 WDI 文档页的文档更改历史记录
-ms.assetid: 29268059-9C33-4768-8F80-195CB28B4663
 ms.date: 02/21/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 7753fa777847658a03895ed404cf4583125e2e21
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 6ed2d28a5fbd64453f45181c49b0937bccce7e61
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104382"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822772"
 ---
 # <a name="wdi-doc-change-history"></a>WDI 文档更改历史记录
 
@@ -18,7 +17,7 @@ ms.locfileid: "90104382"
 
 已更新到 WDI 版本1.1.8 的文档。
 
-| 主题 | 说明 |
+| 主题 | 描述 |
 | --- | --- |
 | [WDI_TLV_STATION_CAPABILITIES](wdi-tlv-station-capabilities.md) | 添加了对驱动程序的支持，以指示支持精细计时度量 (INTERNAL.H) 。 |
 | [OID_WDI_TASK_REQUEST_FTM](oid-wdi-task-request-ftm.md) | 新添加的任务 OID，使 WDI 能够请求适配器启动)  (RTT 获取往返时间和位置配置信息 (来自 BSS 目标的 LCI) 报告。 |
@@ -39,7 +38,7 @@ ms.locfileid: "90104382"
 | [**WDI_ASSOC_STATUS**](/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_assoc_status) | 添加了 **WDI_ASSOC_STATUS_ASSOCIATION_DISALLOWED** 状态。 |
 | [WPA3-SAE 身份验证](wpa3-sae-authentication.md) | 全新概述 WPA3-SAE (安全身份验证等于) authentication。 |
 | [WDI_TLV_INTERFACE_CAPABILITIES](wdi-tlv-interface-capabilities.md) | 增加了驱动程序的新功能，以指示支持 SAE authentication。 |
-| [**WDI_AUTH_ALGORITHM**](/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_auth_algorithm) | 添加了 **WDI_AUTH_ALGO_WPA3_SAE**的定义。 |
+| [**WDI_AUTH_ALGORITHM**](/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_auth_algorithm) | 添加了 **WDI_AUTH_ALGO_WPA3_SAE** 的定义。 |
 | [NDIS_STATUS_WDI_INDICATION_SAE_AUTH_PARAMS_NEEDED](ndis-status-wdi-indication-sae-auth-params-needed.md) | 驱动程序发送的新添加的状态指示，用于从 WDI 请求 SAE authentication 参数。 |
 | [WDI_TLV_SAE_INDICATION_TYPE](wdi-tlv-sae-indication-type.md) | 新添加的 TLV 用于 SAE authentication 参数请求。 |
 | [WDI_TLV_SAE_COMMIT_RESPONSE](wdi-tlv-sae-commit-response.md) | 新添加的 TLV 用于 SAE authentication 参数请求。 |
@@ -62,7 +61,7 @@ ms.locfileid: "90104382"
 
 已更新到 WDI 版本1.1.7 的文档。
 
-| 主题 | 说明 |
+| 主题 | 描述 |
 | --- | --- |
 | [**WDI_PHY_TYPE**](/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_phy_type) | 添加了对 802.11 ax PHY 的支持。 |
 | [**WDI_CONNECTION_QUALITY_HINT**](/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_connection_quality_hint) | 已将 **WDI_CONNECTION_QUALITY_HIGH_CHANNEL_AVAILABILITY** 值的名称更改为 **WDI_CONNECTION_QUALITY_HIGH_THROUGHPUT**。 不会更改此值的说明。 |
@@ -72,7 +71,7 @@ ms.locfileid: "90104382"
 
 已更新到 WDI 版本1.1.6 的文档。
 
-| 主题 | 说明 |
+| 主题 | 描述 |
 | --- | --- |
 | [**WDI_TLV_OS_POWER_MANAGEMENT_FEATURES**](wdi-tlv-os-power-management-features.md) | 已将此 TLV 添加到 [OID_WDI_GET_ADAPTER_CAPABILITIES](oid-wdi-get-adapter-capabilities.md) ，以指示驱动程序支持哪些操作系统电源管理 (PM) 功能。 |
 | [**WDI_TLV_PM_PROTOCOL_OFFLOAD_80211RSN_REKEY**](wdi-tlv-pm-protocol-offload-80211rsn-rekey.md) | 更新了此 TLV，以指定在 [OID_WDI_GET_PM_PROTOCOL_OFFLOAD](oid-wdi-get-pm-protocol-offload.md)中查询时，驱动程序现在必须返回 GTK/iGTK 密钥信息（如果已配置）。 |
@@ -83,13 +82,13 @@ ms.locfileid: "90104382"
 
 已更新到 WDI 版本1.1.5 的文档。
 
-| 主题 | 说明 |
+| 主题 | 描述 |
 | --- | --- |
 | [WDI_TLV_TCP_OFFLOAD_CAPABILITIES](wdi-tlv-tcp-offload-capabilities.md) | 添加了新的 [**WDI_TLV_OFFLOAD_SCOPE**](wdi-tlv-offload-scope.md) 参数，用于指示指定的或不应用于 STA 端口还是所有端口。 |
 | [NDIS_STATUS_WDI_INDICATION_SEND_AP_ASSOCIATION_RESPONSE_COMPLETE](ndis-status-wdi-indication-send-ap-association-response-complete.md) | 更改了 [**WDI \_ TLV \_ PHY \_ 类型 \_ 列表**](wdi-tlv-phy-type-list.md) 参数，使其成为必需。 |
 | [用户使用 IHV 跟踪日志记录发起的反馈](user-initiated-feedback-with-ihv-trace-logging.md) | 添加了介绍如何将 IHV 日志记录添加到用户启动的反馈方案的新部分。 |
 
-## <a name="windows10-version-1607"></a>Windows 10 版本1607
+## <a name="windows-10-version-1607"></a>Windows 10 版本 1607
 
 
 已更新到 WDI 版本1.0.21 的文档。
@@ -102,7 +101,7 @@ ms.locfileid: "90104382"
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -174,7 +173,7 @@ ms.locfileid: "90104382"
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -191,7 +190,7 @@ ms.locfileid: "90104382"
 
  
 
-## <a name="windows10-version-1511"></a>Windows 10 版本1511
+## <a name="windows-10-version-1511"></a>Windows 10 版本 1511
 
 
 已更新到 WDI 版本1.0.10 的文档。
@@ -204,7 +203,7 @@ ms.locfileid: "90104382"
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -238,7 +237,7 @@ ms.locfileid: "90104382"
 
  
 
-## <a name="windows10"></a>Windows 10
+## <a name="windows-10"></a>Windows 10
 
 
 初始版本。

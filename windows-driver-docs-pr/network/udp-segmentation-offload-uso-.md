@@ -1,7 +1,6 @@
 ---
 title: UDP 分段卸载 (USO)
 description: UDP 分段卸载 (USO)
-ms.assetid: 7B9E42DD-0DAD-478A-BF6B-B83A0A236E36
 keywords:
 - '网络驱动程序 WDK，UDP 分段卸载 (USO) '
 - UDP 分段卸载 (USO) WDK 网络
@@ -9,12 +8,12 @@ keywords:
 - '关于 UDP 分段卸载 (USO) '
 ms.date: 02/27/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a965fa6d07695c0bb609f4e67e6d5345ae1782d
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: eec6bb19e44fcc90390bc64a5f524215a371102a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714612"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822777"
 ---
 # <a name="udp-segmentation-offload-uso"></a>UDP 分段卸载 (USO)
 
@@ -34,7 +33,7 @@ Windows 10 版本2004及更高版本中支持的 UDP 分段卸载 (USO) ，这�
 TCP/IP 传输仅卸载满足以下条件的 UDP 数据包：
 
 - 数据包是 UDP 数据包。
-- 包长度必须大于最大段大小 ** (MSS) \* (MinSegmentCount) **。
+- 包长度必须大于最大段大小 **(MSS) \* (MinSegmentCount)**。
 - 如果微型端口驱动程序未设置 **SubMssFinalSegmentSupported** 功能，则传输卸载的每个大型 UDP 数据包的长度必须 **为% MSS = = 0**。 也就是说，较大的数据包可被分割为 **N** 个数据包，每个数据包段包含完全 **MSS** 用户字节。 如果微型端口驱动程序设置 **SubMssFinalSegmentSupported** 功能，则传输上的此数据包长度 divisibility 条件不适用。 换句话说，最后一段可以少于 **MSS**。
 - 数据包不是环回数据包。
 - 不会设置卸载 TCP/IP 传输的大型 UDP 数据包的 IP 标头中的 **MF** 位，并且 ip 标头中的 **片段偏移量** 将为零。
@@ -54,7 +53,7 @@ TCP/IP 传输提供的 pseudoheader 的补码 sum 使 NIC 在计算 NIC 从大�
 
 ## <a name="sending-packets-with-uso"></a>通过 USO 发送数据包
 
-在微型端口驱动程序获取[*MiniportSendNetBufferLists*](/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)回调函数中的[**NET_BUFFER_LIST**](/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)后，它可以使用**UdpSegmentationOffloadInfo**的 **_ID**调用[**NET_BUFFER_LIST_INFO**](/windows-hardware/drivers/ddi/content/ndis/nf-ndis-net_buffer_list_info)宏，以获取 MSS 值和 IP 协议。
+在微型端口驱动程序获取 [*MiniportSendNetBufferLists*](/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)回调函数中的 [**NET_BUFFER_LIST**](/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)后，它可以使用 **UdpSegmentationOffloadInfo** 的 **_ID** 调用 [**NET_BUFFER_LIST_INFO**](/windows-hardware/drivers/ddi/content/ndis/nf-ndis-net_buffer_list_info)宏，以获取 MSS 值和 IP 协议。
 
 微型端口驱动程序从第一个 [**NET_BUFFER**](/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer) 结构的长度获取大数据包的总长度，并使用 **MSS** 值将大型 udp 数据包分割为较小的 udp 数据包。 每个较小的数据包都包含 **MSS** 或更少的用户数据字节。 请注意，只有从分段大数据包创建的最后一个数据包应包含少于 **MSS** 用户数据字节。 通过分段数据包创建的所有其他数据包都必须包含 **MSS** 用户数据字节。 如果微型端口驱动程序不遵循此规则，UDP 数据报将会错误地传递。 如果微型端口驱动程序未设置 **SubMssFinalSegmentSupported** 功能，则数据包长度除以 **mss** ，每个分段的数据包都包含 **MSS** 用户字节。
 
@@ -77,10 +76,10 @@ TCP/IP 传输提供的 pseudoheader 的补码 sum 使 NIC 在计算 NIC 从大�
 - 同时支持 IPv4 和 IPv6。
 - 支持从 NIC 生成的每个分段数据包中的大型数据包复制 IPv4 选项。
 - 使用 [**NET_BUFFER_LIST**](/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list) 结构中的 IP 和 UDP 标头作为模板为每个分段数据包生成 UDP 和 IP 标头。
-- 在 **0x0000** 到 **0xffff**范围内，使用 IP ID (ip ID) 值。 例如，如果模板 IP 标头的标识字段值为 **0xFFFE**，则第一个 UDP 数据报包的值必须为 **0xFFFE**，后跟 **0xffff**、 **0x0000**、 **0x0001**等。
+- 在 **0x0000** 到 **0xffff** 范围内，使用 IP ID (ip ID) 值。 例如，如果模板 IP 标头的标识字段值为 **0xFFFE**，则第一个 UDP 数据报包的值必须为 **0xFFFE**，后跟 **0xffff**、 **0x0000**、 **0x0001** 等。
 - 如果大 UDP 数据包包含 IP 选项，则微型端口驱动程序会将这些选项更改后复制到从大型 UDP 数据包派生的每个数据包。
-- 使用[**NDIS_UDP_SEGMENTATION_OFFLOAD_NET_BUFFER_LIST_INFO**](/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_udp_segmentation_offload_net_buffer_list_info)的**UdpHeaderOffset**成员中的字节偏移量来确定 UDP 标头的位置（从数据包的第一个字节开始）。
-- 根据分段数据包递增传输统计信息。 例如，包括每个数据包段的以太网、IP 和 UDP 标头字节计数，而数据包计数则为 **MSS**大小段的数目，而不是 **1**。
+- 使用 [**NDIS_UDP_SEGMENTATION_OFFLOAD_NET_BUFFER_LIST_INFO**](/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_udp_segmentation_offload_net_buffer_list_info)的 **UdpHeaderOffset** 成员中的字节偏移量来确定 UDP 标头的位置（从数据包的第一个字节开始）。
+- 根据分段数据包递增传输统计信息。 例如，包括每个数据包段的以太网、IP 和 UDP 标头字节计数，而数据包计数则为 **MSS** 大小段的数目，而不是 **1**。
 - 基于每个分段的数据报大小设置 UDP 总长度和 IP 长度字段。
 
 ## <a name="ndis-interface-changes"></a>NDIS 接口更改
@@ -95,7 +94,7 @@ NDIS 和微型端口驱动程序执行以下操作：
 
 ### <a name="advertising-uso-capability"></a>广告 USO 功能
 
-微型端口驱动程序通过填写在[**NdisMSetMiniportAttributes**](/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)的参数中传递的[**NDIS_OFFLOAD**](/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_offload)结构的**UdpSegmentation**字段，播发 USO 功能。 **NDIS_OFFLOAD**结构中的**标头. 修订号**字段必须设置为**NDIS_OFFLOAD_REVISION_6**并且必须将 "**标头大小**" 字段设置为 " **NDIS_SIZEOF_NDIS_OFFLOAD_REVISION_6**"。
+微型端口驱动程序通过填写在 [**NdisMSetMiniportAttributes**](/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)的参数中传递的 [**NDIS_OFFLOAD**](/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_offload)结构的 **UdpSegmentation** 字段，播发 USO 功能。 **NDIS_OFFLOAD** 结构中的 **标头. 修订号** 字段必须设置为 **NDIS_OFFLOAD_REVISION_6** 并且必须将 "**标头大小**" 字段设置为 " **NDIS_SIZEOF_NDIS_OFFLOAD_REVISION_6**"。
 
 ### <a name="querying-uso-state"></a>正在查询 USO 状态
 
@@ -112,9 +111,9 @@ USO 枚举关键字如下所示：
 - **\*UsoIPv4**
 - **\*UsoIPv6**
 
-这些值描述了是为该特定 IP 协议启用还是禁用 USO。 USO 设置不依赖于 [**NDIS_TCP_IP_CHECKSUM_OFFLOAD**](/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload) 配置。 例如，禁用** \* UDPChecksumOffloadIPv4**不会隐式禁用** \* UsoIPv4**。
+这些值描述了是为该特定 IP 协议启用还是禁用 USO。 USO 设置不依赖于 [**NDIS_TCP_IP_CHECKSUM_OFFLOAD**](/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload) 配置。 例如，禁用 **\* UDPChecksumOffloadIPv4** 不会隐式禁用 **\* UsoIPv4**。
 
-| 子项名称 |  参数说明 | 值 | 枚举说明 |
+| 子项名称 | 参数说明 | “值” | 枚举说明 |
 | --- | --- | --- | --- |
 | **\*UsoIPv4** | UDP 分段卸载 (IPv4)  | 0 | 已禁用 |
 |   |   | 1 | 已启用 |

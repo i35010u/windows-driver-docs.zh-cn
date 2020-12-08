@@ -1,19 +1,18 @@
 ---
 title: 处理通知
 description: 处理通知
-ms.assetid: f3e97d23-b463-4c3b-822d-b911f6fbe00e
 keywords:
 - 通知对象 WDK 网络，处理通知
 - 网络通知对象 WDK，处理通知
 - 通知 WDK 网络，处理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 21db5ff7a1adc012970312d20fb50299ef485195
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 30ed2357893ec98a9433531cc332c16d12e807da
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215194"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822833"
 ---
 # <a name="processing-notifications"></a>处理通知
 
@@ -37,7 +36,7 @@ ms.locfileid: "89215194"
 
 3.  当网络配置子系统完成将通知发送到 notify 对象时，子系统将调用 notify 对象的 [**INetCfgComponentControl：： ApplyRegistryChanges**](/previous-versions/windows/hardware/network/ff547727(v=vs.85)) 方法来提交对系统注册表所做的更改。
 
-**注意**   上述序列中提到的通知还可以包括对 notify 对象的[**INetCfgComponentControl：： CancelChanges**](/previous-versions/windows/hardware/network/ff547728(v=vs.85))方法的调用，在这种情况下，notify 对象应恢复为原始网络配置。
+**注意**  上述序列中提到的通知还可以包括对 notify 对象的 [**INetCfgComponentControl：： CancelChanges**](/previous-versions/windows/hardware/network/ff547728(v=vs.85)) 方法的调用，在这种情况下，notify 对象应恢复为原始网络配置。
 在修改原始网络配置之前，notify 对象应创建两个配置副本。 Notify 对象可以修改一个副本以包含更改，并将另一个副本保留在原始状态。 当恢复到原始网络配置时，通知对象可以使用未修改的副本。
 
  

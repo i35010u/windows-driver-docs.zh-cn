@@ -1,18 +1,17 @@
 ---
 title: 创建 SAN 的服务提供程序
 description: 创建 SAN 的服务提供程序
-ms.assetid: 848b6fd5-64f8-4e62-9c54-c23bbc3d9ede
 keywords:
 - Windows 套接字直接 WDK，服务提供商
 - SAN 服务提供商 WDK，创建
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ddbfff1c940bcbb529b5b43fd0b4af3ef915351
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e6a51d7626f60ed8c251b8c9c884120867565823
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218446"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823037"
 ---
 # <a name="creating-a-service-provider-for-a-san"></a>创建 SAN 的服务提供程序
 

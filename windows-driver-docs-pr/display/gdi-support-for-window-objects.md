@@ -1,7 +1,6 @@
 ---
 title: 窗口对象的 GDI 支持
 description: 窗口对象的 GDI 支持
-ms.assetid: 288120e0-e43c-4733-8bba-0e310ed55aae
 keywords:
 - GDI WDK Windows 2000 显示，窗口对象
 - 图形驱动程序 WDK Windows 2000 显示，窗口对象
@@ -9,12 +8,12 @@ keywords:
 - 窗口对象 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5afff4c362e3c594bcbf3b56472bd49151129745
-ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
+ms.openlocfilehash: 07531ad36bfcd9110247fbc21dbd497086136460
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91423976"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822509"
 ---
 # <a name="gdi-support-for-window-objects"></a>窗口对象的 GDI 支持
 
@@ -32,7 +31,7 @@ GDI 为窗口创建和删除以及矩形的枚举提供支持。
 <thead>
 <tr class="header">
 <th align="left">函数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

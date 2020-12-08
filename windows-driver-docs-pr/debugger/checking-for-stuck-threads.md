@@ -1,17 +1,16 @@
 ---
 title: 检查线程阻塞问题
 description: 检查线程阻塞问题
-ms.assetid: ffb1ff13-fc4c-4aaf-a8fe-b473b51b9db0
 keywords:
-- RPC 调试，受阻的线程
+- RPC 调试，阻塞的线程
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 39db2ef7eb8143fd4d44a7ea384403bea7302eb6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f6626545fb8ee4c6f8ca74ab544abc40f74ff5fd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375109"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821611"
 ---
 # <a name="checking-for-stuck-threads"></a>检查线程阻塞问题
 
@@ -19,13 +18,13 @@ ms.locfileid: "63375109"
 ## <span id="ddk_checking_for_stuck_threads_dbg"></span><span id="DDK_CHECKING_FOR_STUCK_THREADS_DBG"></span>
 
 
-RPC 必须可用才能正常执行其工作线程。 一个常见问题是在同一进程中的某个组件将死锁时包含一个全局临界区 （例如，加载程序锁或锁定的堆）。 这将导致多个线程处于挂起状态-很可能包括一些 RPC 工作线程。
+RPC 需要其工作线程可用才能正常执行。 一个常见的问题是，同一进程中的某些组件会死锁，同时保存其中一个全局关键部分 (例如，加载程序锁或堆锁定) 。 这会导致很多线程挂起-很可能包括一些 RPC 工作线程。
 
-如果发生这种情况，不会向外界响应 RPC 服务器。 RPC 调用将返回 RPC\_S\_服务器\_不可用或 RPC\_S\_SERVER\_过\_忙。
+如果出现这种情况，RPC 服务器将不会响应外界。 RPC 对它的调用将返回 RPC \_ s \_ 服务器 \_ 不可用或 rpc \_ s \_ 服务器 \_ 过于 \_ 繁忙。
 
-如果发生故障的驱动程序，使 Irp 无法完成，并且达到 RPC 服务器可能会导致类似问题。
+如果出现故障的驱动程序阻止 Irp 完成并到达 RPC 服务器，则可能会产生类似的问题。
 
-如果你怀疑可能出现这些问题之一，使用与 DbgRpc **-t**切换 (或使用[ **！ rpcexts.getthreadinfo** ](-rpcexts-getthreadinfo.md)扩展)。 应作为参数使用的进程 ID。 在以下示例中，假定的进程 ID 是 0xC4:
+如果怀疑可能会出现这些问题之一，请将 DbgRpc 与 **-t** 开关一起使用 (或使用 [**！ rpcexts getthreadinfo**](-rpcexts-getthreadinfo.md) 扩展) 。 进程 ID 应用作参数。 在下面的示例中，假定进程 ID 为0xC4：
 
 ```dbgcmd
 D:\wmsg>dbgrpc -t -P c4
@@ -41,9 +40,9 @@ Searching for thread info ...
 00c4 0000.0034 03 00000388 007251e9
 ```
 
-TID 列给出每个线程的线程 ID。 LASTTIME 列包含每个线程的状态的最后一个更改的时间戳。
+TID 列提供每个线程的线程 ID。 LASTTIME 列包含每个线程的上次状态更改的时间戳。
 
-每当在服务器收到请求时，至少一个线程将更改状态，并将更新其时间戳。 因此，如果对服务器进行 RPC 请求和请求失败，但无时间戳更改，则表明该请求实际上达不到 RPC 运行时。 应调查的原因。
+每当服务器收到请求时，至少一个线程将更改状态，并且将更新其时间戳。 因此，如果对服务器发出 RPC 请求，但请求失败但没有时间戳发生更改，则表示该请求实际上不会到达 RPC 运行时。 应调查此问题的原因。
 
  
 

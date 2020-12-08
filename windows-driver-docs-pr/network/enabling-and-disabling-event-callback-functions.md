@@ -1,7 +1,6 @@
 ---
 title: 启用和禁用事件回调函数
 description: 启用和禁用事件回调函数
-ms.assetid: 52654788-31e2-47c1-8154-f40c42168708
 keywords:
 - WSK WDK 网络，事件
 - 事件 WDK Winsock 内核
@@ -11,12 +10,12 @@ keywords:
 - WSK_SET_STATIC_EVENT_CALLBACKS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ab0afd0f0a29b0cebf5bb1ee5c450565c2f17491
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 21bb072dd9f94a7c6cf0251b2b109cf6b0f04d41
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211781"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822993"
 ---
 # <a name="enabling-and-disabling-event-callback-functions"></a>启用和禁用事件回调函数
 

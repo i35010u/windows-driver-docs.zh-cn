@@ -1,7 +1,6 @@
 ---
 title: 'DriverAttributeChanged 规则 (kmdf) '
 description: DriverAttributeChanged 规则指定驱动程序不得更改 KMDF 驱动程序的执行级别或同步作用域。
-ms.assetid: 9a11e06b-d663-4b1b-89bc-b3631e9928ce
 ms.date: 05/21/2018
 keywords:
 - 'DriverAttributeChanged 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 91941899aee8e3a7062a32e54bfbf060d97fab1a
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: dc86fe4f91dd739d8e5476340ac95caea72da4be
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106310"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822557"
 ---
 # <a name="driverattributechanged-rule-kmdf"></a>DriverAttributeChanged 规则 (kmdf) 
 
 
-**DriverAttributeChanged**规则指定驱动程序不得更改 KMDF 驱动程序的执行级别或同步作用域。
+**DriverAttributeChanged** 规则指定驱动程序不得更改 KMDF 驱动程序的执行级别或同步作用域。
 
 **驱动程序模型： KMDF**
 

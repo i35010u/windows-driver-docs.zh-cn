@@ -1,28 +1,27 @@
 ---
-title: 选择性选择退出 POOL_NX_OPTOUT
-description: 可以全局启用一种不执行 (NX) 池参加机制的一套驱动程序源文件，然后，重写为一个或多个选定的源文件与 POOL_NX_OPTOUT 此选择机制。
-ms.assetid: 15AA7CFA-5BEC-4E45-B222-0DE2D620E099
+title: 选择性 Opt-Out POOL_NX_OPTOUT
+description: 你可以全局启用一组驱动程序源文件的 "不执行 (NX) 池" 选择机制，然后使用 POOL_NX_OPTOUT 为一个或多个选定的源文件重写此选择机制。
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 90f09acf6967dc08997ece19f0b37011f8195188
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a6097df8a7dec346eec0f694dea226a7ca834555
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342682"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822299"
 ---
-# <a name="selective-opt-out-poolnxoptout"></a>选择性禁用：池\_NX\_OPTOUT
+# <a name="selective-opt-out-pool_nx_optout"></a>选择性选择退出： POOL \_ NX \_ 选择
 
 
-可以全局启用的机制之一来不执行 (NX) 池参加驱动程序源文件，一组，然后，重写与池的一个或多个选定的源代码文件的此选择机制\_NX\_OPTOUT。 这样，所选的源代码文件，以继续使用可执行文件的非分页的内存。 可以使用池中\_NX\_OPTOUT 选择退出机制与每个池\_NX\_OPTIN 或池\_NX\_OPTIN\_自动选择机制。 有关详细信息，请参阅[NX 池选择的机制](nx-pool-opt-in-mechanisms.md)。
+你可以全局启用一组驱动程序源文件的 "不执行 (" NX) 池选择机制，然后使用 POOL NX 选择为一个或多个所选源文件重写此选择机制 \_ \_ 。 这允许选定的源文件继续使用可执行的非分页内存。 可以将 POOL \_ nx \_ 选择选择 out 机制与 pool \_ NX \_ OPTIN 或 pool \_ nx \_ OPTIN \_ 自动选择机制一起使用。 有关详细信息，请参阅 [NX 池 Opt-In 机制](nx-pool-opt-in-mechanisms.md)。
 
-若要使用的池\_NX\_输出选择退出机制，若要覆盖选定的源代码文件中选择的机制，请向此文件添加以下定义：
+若要使用 POOL \_ NX \_ 输出选择退出机制替代选定源文件中的选择机制，请将以下定义添加到此文件中：
 
 `#define POOL_NX_OPTOUT 1`
 
-此定义重写全局选择加入设置中所选文件，并阻止的实例**非分页池**从被替换的常量名称。 此定义插入的第一个实例之前的文件**非分页池**文件中。
+此定义将覆盖所选文件中的全局选择加入设置，并阻止替换 **非分页池** 常量名称的实例。 在文件中 **非分页池** 的第一个实例之前，将此定义插入到文件中。
 
-使用该池的替代方法\_NX\_OPTOUT 源文件中的选择退出机制是显式的每个实例替换为**非分页池**文件中带有**NonPagedPoolExecute**.
+\_ \_ 在源文件中使用 POOL NX 选择选择 out 机制的替代方法是：使用 NonPagedPoolExecute 将文件中的每个 **非分页池** 实例显式替换为 **NonPagedPoolExecute**。
 
  
 

@@ -1,17 +1,16 @@
 ---
 title: GUID_NDIS_GEN_STATISTICS
 description: 本主题描述了 NDIS WMI 接口的 GUID_NDIS_GEN_STATISTICS GUID。
-ms.assetid: 3751d4e7-7991-4329-9eb2-6a44ca1190d4
 keywords:
 - GUID_NDIS_GEN_STATISTICS，WDK GUID_NDIS_GEN_STATISTICS 网络驱动程序
 ms.date: 11/22/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b1d0e8e0e795d7f0fde612a8de4d5e9701f43c56
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: cee62aa146f3d4adbc166473facd15e0760f2fe4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218107"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822921"
 ---
 # <a name="guid_ndis_gen_statistics"></a>GUID_NDIS_GEN_STATISTICS
 

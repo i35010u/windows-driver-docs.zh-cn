@@ -1,17 +1,16 @@
 ---
 title: 调试分离调试对象
 description: 调试分离调试对象
-ms.assetid: 9b1c20ff-e675-4d28-bafc-9880ae7c21e3
 keywords:
 - 调试分离调试对象
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: daacbfdefa7f894b2775851b951e5a8404797ddd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5c71c171a60692eb107b820a7324f3f8a23989f8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374915"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823479"
 ---
 # <a name="debug--detach-debuggee"></a>调试 | 分离调试对象
 
@@ -19,17 +18,17 @@ ms.locfileid: "63374915"
 ## <span id="ddk_debug_detach_debuggee_dbg"></span><span id="DDK_DEBUG_DETACH_DEBUGGEE_DBG"></span>
 
 
-单击**分离调试对象**上**调试**菜单断开与目标应用程序并使其继续运行。
+单击 "**调试**" 菜单上的 "**分离调试对象**" 以从目标应用程序分离并使其运行。
 
-在下列情况之一，支持从目标中分离：
+在下列条件之一中，支持从目标分离：
 
--   调试正在运行的用户模式目标。
+-   正在调试正在运行的用户模式目标。
 
--   Noninvasively 调试用户模式下的目标。
+-   Noninvasively 调试用户模式目标。
 
-如果你正在调试在 Windows 2000 上的实时目标**分离调试对象**命令将不可用，因为此版本的 Windows 不支持从目标进程中分离。
+如果在 Windows 2000 上调试活动目标，则 " **分离调试对象** " 命令不可用，因为此版本的 Windows 不支持从目标进程分离。
 
-有关如何退出调试器或从目标中分离的详细信息，请参阅[结束调试会话在 WinDbg 中](ending-a-debugging-session-in-windbg.md)。
+有关如何退出调试器或从目标分离的详细信息，请参阅 [在 WinDbg 结束调试会话](ending-a-debugging-session-in-windbg.md)。
 
  
 

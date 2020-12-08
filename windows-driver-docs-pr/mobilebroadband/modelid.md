@@ -1,15 +1,14 @@
 ---
 title: ModelID
 description: ModelID
-ms.assetid: 6873f5b6-453e-4f8e-b534-0bc805865905
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 65493b5dc5d56d46ebe2e4e50b94ed65a7be8e84
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 2a400550534e9fe07ae1c22ef70288ee7cc1ac40
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403230"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823057"
 ---
 # <a name="modelid"></a>ModelID
 
@@ -17,7 +16,8 @@ ms.locfileid: "89403230"
 
 ModelID 元素指定物理设备的 GUID。
 
-**警告**   服务元数据包不支持[ModelIDList](modelidlist.md)和 ModelID 元素。 您必须改用 [HardwareIDList](hardwareidlist.md) 和 [HardwareID](hardwareid.md) 元素。
+**警告**  
+服务元数据包不支持 [ModelIDList](modelidlist.md) 和 ModelID 元素。 您必须改用 [HardwareIDList](hardwareidlist.md) 和 [HardwareID](hardwareid.md) 元素。
 
  
 
@@ -56,7 +56,7 @@ ModelID 元素指定物理设备的 GUID。
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -77,7 +77,8 @@ ModelID 元素指定物理设备的 GUID。
 
 ModelID 元素指定设备支持的硬件型号的模型 ID。 每个模型 ID 都通过 GUID 来指定。
 
-**警告**   服务元数据包不支持[ModelIDList](modelidlist.md)和 ModelID 元素。 您必须改用 [HardwareIDList](hardwareidlist.md) 和 [HardwareID](hardwareid.md) 元素。
+**警告**  
+服务元数据包不支持 [ModelIDList](modelidlist.md) 和 ModelID 元素。 您必须改用 [HardwareIDList](hardwareidlist.md) 和 [HardwareID](hardwareid.md) 元素。
 
  
 

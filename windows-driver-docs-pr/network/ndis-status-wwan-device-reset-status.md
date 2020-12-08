@@ -1,17 +1,16 @@
 ---
 title: NDIS_STATUS_WWAN_DEVICE_RESET_STATUS
 description: NDIS_STATUS_WWAN_DEVICE_RESET_STATUS
-ms.assetid: 3745E3A8-6807-4BAF-8074-90C661EAD15E
 keywords:
 - NDIS_STATUS_WWAN_DEVICE_RESET_STATUS、调制解调器重置状态通知、移动宽带调制解调器重置状态通知、MB 调制解调器重置状态通知
 ms.date: 08/18/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d8c500caaafb7162b76096c5081f353d6a409cf4
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c4f0bbbbe6f3993ab9c54765e6809e7b31f63387
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213453"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822187"
 ---
 # <a name="ndis_status_wwan_device_reset_status"></a>NDIS_STATUS_WWAN_DEVICE_RESET_STATUS
 
@@ -23,7 +22,7 @@ NDIS_STATUS_WWAN_DEVICE_RESET_STATUS 通知通过调制解调器微型驱动程�
 
 **版本**： Windows 10，版本 1709 **头**： Ndis。h
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [OID_WWAN_DEVICE_RESET](oid-wwan-device-reset.md)
 

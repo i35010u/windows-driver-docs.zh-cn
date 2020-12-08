@@ -1,21 +1,20 @@
 ---
 title: WDI_EXTENDED_TID
 description: 本主题介绍 WDI 微型端口驱动程序的 WDI_EXTENDED_TID 数据类型。
-ms.assetid: C7ECB1BD-CB4A-4FD7-8222-9C9E25C15910
 keywords:
 - WDI_EXTENDED_TID，WDK WDI_EXTENDED_TID 网络驱动程序
 ms.date: 11/27/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a58bca838aeb851ba899d933c8fa8899910bed9
-ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
+ms.openlocfilehash: a5d70d5d19d2513250978e2c62ee3bdeee138112
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85967888"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822765"
 ---
 # <a name="wdi_extended_tid"></a>WDI_EXTENDED_TID
 
-WDI_EXTENDED_TID 的数据类型是定义流量标识符（TID）的 UINT8 值。
+WDI_EXTENDED_TID 的数据类型是一个 UINT8 值，该值定义了 (TID) 的流量标识符。
 
 ```c++
 typedef UINT8 WDI_EXTENDED_TID;
@@ -25,13 +24,13 @@ typedef UINT8 WDI_EXTENDED_TID;
 
 可能的值如下：
 
-| Value | 说明 |
+| “值” | 描述 |
 | --- | --- |
 | 0-15 | 802.11 TIDs |
-| 16（WDI_EXT_TID_NON_QOS） | 非 QoS 数据 |
+| 16 (WDI_EXT_TID_NON_QOS)  | 非 QoS 数据 |
 | 17-24 | 保留以与 IHV 注入的帧一起使用。 在时间间隔17-24 中具有扩展 TID 的帧被视为比在相同间隔17-24 中具有较小扩展 TID 的帧的优先级高。 |
 | 25-30 | 未使用的值 |
-| 31（WDI_EXT_TID_UNKNOWN） | 未知/未指定 |
+| 31 (WDI_EXT_TID_UNKNOWN)  | 未知/未指定 |
 
 ## <a name="requirements"></a>要求
 

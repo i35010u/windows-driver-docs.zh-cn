@@ -1,7 +1,6 @@
 ---
 title: pnpevent
-description: Pnpevent 扩展显示插设备事件队列。
-ms.assetid: 5f70fbf8-1313-4238-a917-c3fba8c80927
+description: Pnpevent 扩展显示即插即用设备事件队列。
 keywords:
 - pnpevent Windows 调试
 ms.date: 05/23/2017
@@ -12,29 +11,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 19c66eea6a61217ce7d7ca7c8fd498b28c7caeae
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 25d4b3807c0feff4fa06ba6a4b1f0b08ff6a0ccb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334356"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822637"
 ---
 # <a name="pnpevent"></a>!pnpevent
 
 
-**！ Pnpevent**扩展显示插设备事件队列。
+**！ Pnpevent** 扩展显示即插即用设备事件队列。
 
 ```dbgcmd
 !pnpevent [DeviceEvent]
 ```
 
-## <a name="span-idddkpnpeventdbgspanspan-idddkpnpeventdbgspanparameters"></a><span id="ddk__pnpevent_dbg"></span><span id="DDK__PNPEVENT_DBG"></span>参数
+## <a name="span-idddk__pnpevent_dbgspanspan-idddk__pnpevent_dbgspanparameters"></a><span id="ddk__pnpevent_dbg"></span><span id="DDK__PNPEVENT_DBG"></span>参数
 
 
-<span id="_______DeviceEvent______"></span><span id="_______deviceevent______"></span><span id="_______DEVICEEVENT______"></span> *DeviceEvent*   
-指定要显示的设备事件的地址。 如果这是零或省略，将显示在队列中的所有设备事件的树。
+<span id="_______DeviceEvent______"></span><span id="_______deviceevent______"></span><span id="_______DEVICEEVENT______"></span>*DeviceEvent*   
+指定要显示的设备事件的地址。 如果此值为零或省略，则显示队列中所有设备事件的树。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -55,14 +54,14 @@ ms.locfileid: "63334356"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-请参阅[插调试](plug-and-play-debugging.md)对于此扩展命令的应用程序。 有关插驱动程序的信息，请参阅 Windows Driver Kit (WDK) 文档。
+请参阅 [即插即用调试](plug-and-play-debugging.md) 此扩展命令的应用程序。 有关即插即用驱动程序的信息，请参阅 Windows 驱动程序工具包 (WDK) 文档。
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[Plug and Play 和电源调试器命令](plug-and-play-and-power-debugger-commands.md)
+[即插即用和 Power 调试器命令](plug-and-play-and-power-debugger-commands.md)
 
  
 

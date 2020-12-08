@@ -2,21 +2,20 @@
 title: IRP_MJ_PNP
 description: 所有驱动程序都必须准备好在 DispatchPnP 例程中处理 IRP_MJ_PNP 请求。
 ms.date: 08/12/2017
-ms.assetid: db838761-b838-44fd-bc77-c9d55d2c4a41
 keywords:
-- IRP_MJ_PNP 内核模式驱动程序体系结构
+- IRP_MJ_PNP Kernel-Mode 驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: b4ea32fbe53b8ff1649150eb56496091f9724841
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 926af81d72fcfe0a7a310a1b3b939882e29d62e6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188265"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822320"
 ---
 # <a name="irp_mj_pnp"></a>IRP\_MJ\_PNP
 
 
-所有驱动程序必须准备好在[*DispatchPnP*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)例程中为**IRP \_ MJ \_ PNP**请求服务。
+所有驱动程序必须准备好在 [*DispatchPnP*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)例程中为 **IRP \_ MJ \_ PNP** 请求服务。
 
 <a name="when-sent"></a>发送时间
 ---------
@@ -48,7 +47,7 @@ PnP 管理器在枚举、资源重新平衡以及系统上即插即用活动发�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wdm.h（包括 Wdm.h、Ntddk.h 或 Ntifs.h）</td>
 </tr>
 </tbody>

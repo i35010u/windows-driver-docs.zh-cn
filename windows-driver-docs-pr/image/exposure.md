@@ -1,9 +1,8 @@
 ---
-title: 暴露元素
-description: 可选的曝光元素指定文档的曝光度设置。
-ms.assetid: 70e02507-106f-45a9-92b1-29707cbbcbab
+title: 公开元素
+description: 可选的公开元素指定文档的公开设置。
 keywords:
-- 暴露元素成像设备
+- 公开元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2794de0502c5c4ed40fbe04d79645ad6937b01d6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 014f3f1579530bd1610781a62fcacb2c2120b36e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382311"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822407"
 ---
-# <a name="exposure-element"></a>暴露元素
+# <a name="exposure-element"></a>公开元素
 
 
-可选**暴露**元素指定文档的曝光度设置。
+可选的 **公开** 元素指定文档的公开设置。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -46,9 +45,9 @@ ms.locfileid: "63382311"
 </colgroup>
 <thead>
 <tr class="header">
-<th>特性</th>
-<th>在任务栏的搜索框中键入</th>
-<th>必需</th>
+<th>属性</th>
+<th>类型</th>
+<th>必须</th>
 <th>描述</th>
 </tr>
 </thead>
@@ -58,7 +57,7 @@ ms.locfileid: "63382311"
 <td><p>xs:string</p></td>
 <td><p>否</p></td>
 <td><p></p>
-<p>可选。 一个布尔值，必须为 0，为 false，1 或 true。<strong>falsetrue</strong></p></td>
+<p>可选。 必须为0、false、1或 true 的布尔值。<strong>falsetrue</strong></p></td>
 </tr>
 </tbody>
 </table>
@@ -110,9 +109,9 @@ ms.locfileid: "63382311"
 <a name="remarks"></a>备注
 -------
 
-**暴露**元素可以包含[ **AutoExposure** ](autoexposure.md)或者[ **ExposureSettings** ](exposuresettings.md)元素，但不能同时。 **AutoExposure**指定设备应该会自动使用图像处理技术来减少文档的背景为白色图像。 **ExposureSettings**指定特定**暴露**WSD 扫描服务收购后应该应用到图像数据的调整值。
+**公开** 元素可以包含 [**AutoExposure**](autoexposure.md)或 [**ExposureSettings**](exposuresettings.md)元素，但不能同时包含两者。 **AutoExposure** 指定设备应自动使用图像处理技术将文档的背景减少到白色图像。 **ExposureSettings** 指定在获取后 WSD 扫描服务应应用于图像数据的特定 **曝光** 调整值。
 
-客户端可以指定可选**MustHonor**属性时，才**暴露**元素包含在**CreateScanJobRequest**层次结构。 有关详细信息**MustHonor**及其使用情况，请参阅[ **CreateScanJobRequest**](createscanjobrequest.md)。
+仅当 **曝露** 元素包含在 **CreateScanJobRequest** 层次结构内时，客户端才能指定可选的 **MustHonor** 属性。 有关 **MustHonor** 及其用法的详细信息，请参阅 [**CreateScanJobRequest**](createscanjobrequest.md)。
 
 ## <a name="see-also"></a>请参阅
 

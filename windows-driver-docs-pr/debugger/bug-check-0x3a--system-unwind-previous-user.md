@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x3A SYSTEM_UNWIND_PREVIOUS_USER
-description: SYSTEM_UNWIND_PREVIOUS_USER bug 检查的值为 0x0000003A.This bug 检查极少出现。
-ms.assetid: 13fb651f-f2a2-4591-9316-37bd9616c829
+description: SYSTEM_UNWIND_PREVIOUS_USER bug 检查的值为0x0000003A。此 bug 检查很少出现。
 keywords:
 - Bug 检查 0x3A SYSTEM_UNWIND_PREVIOUS_USER
 - SYSTEM_UNWIND_PREVIOUS_USER
@@ -13,22 +12,22 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f84ab9a0219af3735a97484c44dcb4a2d0b1d91
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: ec01251f1979c67e644c002cc33c68abff6c6e39
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519479"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822601"
 ---
-# <a name="bug-check-0x3a-systemunwindprevioususer"></a>Bug 检查 0x3A：系统\_展开\_上一步\_用户
+# <a name="bug-check-0x3a-system_unwind_previous_user"></a>Bug 检查0x3A：系统 \_ 展开 \_ 前一个 \_ 用户
 
 
-系统\_展开\_上一步\_用户 bug 检查的值为 0x0000003A。
+系统 \_ 展开 " \_ 之前的 \_ 用户 bug 检查" 的值为 "0x0000003A"。
 
-检查此错误极少出现。
+此 bug 检查很少出现。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
  

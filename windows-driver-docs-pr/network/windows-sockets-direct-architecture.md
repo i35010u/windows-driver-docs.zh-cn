@@ -1,19 +1,18 @@
 ---
 title: Windows Sockets Direct 体系结构
 description: Windows Sockets Direct 体系结构
-ms.assetid: 2f6ac4a7-76fe-45b4-8b5b-3a5f1d5c0553
 keywords:
 - Windows 套接字直接 WDK，体系结构
 - TCP/IP WDK San
 - NIC 组件 WDK San
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 586d869b50d8ba5e583cb7d2e6d0d24d02e9dec4
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 1e3864d81a66d4708d989eee985cb2415cd86da8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215391"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821863"
 ---
 # <a name="windows-sockets-direct-architecture"></a>Windows Sockets Direct 体系结构
 

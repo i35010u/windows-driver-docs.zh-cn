@@ -1,7 +1,6 @@
 ---
 title: 中间驱动程序中的动态绑定
 description: 中间驱动程序中的动态绑定
-ms.assetid: 0b825141-2a19-40c6-82cf-8e897a25b0aa
 keywords:
 - 中间驱动程序 WDK 网络，绑定
 - NDIS 中间驱动程序 WDK，绑定
@@ -9,12 +8,12 @@ keywords:
 - 绑定操作 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 422ad3281be564f90f86b61262733a1fcd177048
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 91cbd8887a18c3b624181a33f652322d2b58172b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212191"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822997"
 ---
 # <a name="dynamic-binding-in-an-intermediate-driver"></a>中间驱动程序中的动态绑定
 

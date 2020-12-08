@@ -1,15 +1,14 @@
 ---
 title: 自定义交换机功能状态
 description: 自定义交换机功能状态
-ms.assetid: 2362EE05-9CC9-451D-80D1-C18CC9274BAB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0fc257264de40b0346f79a4f396834a362a28811
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a2f9ba36560494e465321abe40e4b43a76f0f6b6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207605"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822191"
 ---
 # <a name="custom-switch-feature-status"></a>自定义交换机功能状态
 

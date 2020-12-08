@@ -2,21 +2,20 @@
 title: IRP_MJ_POWER
 description: 所有驱动程序都必须准备好在 DispatchPower 例程中处理 IRP_MJ_POWER 请求。
 ms.date: 08/12/2017
-ms.assetid: ca53ceef-2755-49d3-aab9-0d12a0e51e75
 keywords:
-- IRP_MJ_POWER 内核模式驱动程序体系结构
+- IRP_MJ_POWER Kernel-Mode 驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f516a809ff48355ea52f01c29dc3a74f167dae5
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 8becfa3f33e61c30084250da7ee63ee61f784ba9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188263"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822319"
 ---
 # <a name="irp_mj_power"></a>IRP\_MJ\_POWER
 
 
-所有驱动程序都必须准备好在[*DispatchPower*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)例程中为**IRP \_ MJ \_ POWER**请求服务。
+所有驱动程序都必须准备好在 [*DispatchPower*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)例程中为 **IRP \_ MJ \_ POWER** 请求服务。
 
 <a name="when-sent"></a>发送时间
 ---------
@@ -38,7 +37,7 @@ ms.locfileid: "89188263"
 
 除了控制对 Irp 的处理的常规规则外， **IRP \_ MJ \_ 电源** irp 还具有以下特殊要求：接收 power IRP 的驱动程序不得更改 IRP 中任何 i/o 堆栈位置的主要和次要函数代码，这些位置已由 POWER manager 或高级驱动程序设置。 在完成 IRP 之前，power manager 依赖于这些函数代码保持不变。 违反此规则会导致难以调试的问题。 例如，操作系统可能会停止响应或 "挂起"。
 
-有关**IRP \_ MJ \_ 电源**请求的详细信息，请参阅[电源管理次要 irp](power-management-minor-irps.md) 。
+有关 **IRP \_ MJ \_ 电源** 请求的详细信息，请参阅 [电源管理次要 irp](power-management-minor-irps.md) 。
 
 <a name="requirements"></a>要求
 ------------
@@ -56,7 +55,7 @@ ms.locfileid: "89188263"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [*DispatchPower*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)

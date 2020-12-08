@@ -1,7 +1,6 @@
 ---
 title: BCDEdit /ems
-description: BCDEdit/ems 选项启用或禁用指定操作系统启动条目 (EMS) 的紧急管理服务。
-ms.assetid: 28a28fa9-e359-4fd7-be4d-9b4129db8ac7
+description: BCDEdit /ems 选项可启用或禁用指定的操作系统启动项目的紧急管理服务 (EMS)。
 ms.date: 09/23/2020
 keywords:
 - BCDEdit/ems 驱动程序开发工具
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3cf3bdc86fc3a3db211f46b1d3a95460762d307e
-ms.sourcegitcommit: f2fbb6e54e085e9329288cee49860fe380be9c4c
+ms.openlocfilehash: 5e1c0dfa603f612990f946b8b196e303b3c91e38
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91778772"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822585"
 ---
 <a name="bcdedit-ems"></a>BCDEdit /ems
 ============
 
-**BCDEdit/ems**选项启用或禁用指定操作系统启动条目 (ems) 的紧急管理服务。
+**BCDEdit/ems** 选项启用或禁用指定操作系统启动条目 (ems) 的紧急管理服务。
 
 ``` syntax
 bcdedit /ems [{ID}] { on | off }
@@ -33,7 +32,7 @@ bcdedit /ems [{ID}] { on | off }
 
 ## <a name="parameters"></a>参数
 
- **{ID} **
+ **{ID}**
 
 {**ID**} 是与启动项关联的 GUID。 如果未指定 {**ID**}，则该命令将修改当前的操作系统启动项。 如果指定了启动目，则必须用大括号 { } 将与启动项关联的 GUID 括起来。
 

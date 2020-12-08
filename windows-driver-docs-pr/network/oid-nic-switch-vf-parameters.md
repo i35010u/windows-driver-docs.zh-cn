@@ -1,16 +1,15 @@
 ---
 title: OID_NIC_SWITCH_VF_PARAMETERS
 description: 覆盖驱动程序或用户模式应用程序发出对象标识符 (OID) 方法请求 OID_NIC_SWITCH_VF_PARAMETERS，以便在网络适配器上获取 PCI Express (PCIe) 虚拟函数 (虚拟函数的当前配置参数。
-ms.assetid: DF08B0BA-6D86-4C4F-AC38-8A401F097925
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_NIC_SWITCH_VF_PARAMETERS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: b7656e4bdb7ceb2eb75b016465f8fa02012f1dd9
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 29d4a5778be2451e6f5d59a68cbb44e7b44cd3f3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106014"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822139"
 ---
 # <a name="oid_nic_switch_vf_parameters"></a>OID \_ NIC \_ 开关 \_ VF \_ 参数
 
@@ -19,12 +18,12 @@ ms.locfileid: "90106014"
 
 NDIS \_ \_ \_ \_ 为微型端口驱动程序处理 oid NIC 交换机 VF 参数的 oid 方法请求。
 
-进行 OID 方法请求时， [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**NDIS \_ NIC \_ 开关 \_ VF \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)结构的指针。
+进行 OID 方法请求时， [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ NIC \_ 开关 \_ VF \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)结构的指针。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
-过量驱动程序或用户模式应用程序通过将[**NDIS \_ NIC \_ 开关 \_ VF \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)结构的**VFId**成员设置为 VF 的标识符来指定要查询的 VF。 过量驱动程序或应用程序通过以下方式之一获取 VF 标识符：
+过量驱动程序或用户模式应用程序通过将 [**NDIS \_ NIC \_ 开关 \_ VF \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)结构的 **VFId** 成员设置为 VF 的标识符来指定要查询的 VF。 过量驱动程序或应用程序通过以下方式之一获取 VF 标识符：
 
 -   通过发出 [oid \_ NIC \_ 交换机 \_ 枚举 \_ VFS](oid-nic-switch-enum-vfs.md)的 oid 方法请求。
 
@@ -32,13 +31,13 @@ NDIS \_ \_ \_ \_ 为微型端口驱动程序处理 oid NIC 交换机 VF 参数�
 
 -   通过发出 Oid NIC 交换机的 OID 方法请求 [ \_ \_ \_ 分配 \_ VF](oid-nic-switch-allocate-vf.md)。
 
-    如果此 OID 请求成功完成，则过量驱动程序会在返回的[**NDIS \_ NIC \_ 交换机 \_ VF \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)结构的**VFID**成员中接收新创建的 VF 的标识符。
+    如果此 OID 请求成功完成，则过量驱动程序会在返回的 [**NDIS \_ NIC \_ 交换机 \_ VF \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)结构的 **VFID** 成员中接收新创建的 VF 的标识符。
 
-    **注意**   只有过量驱动程序才能以这种方式获取 VF 标识符。
+    **注意**  只有过量驱动程序才能以这种方式获取 VF 标识符。
 
      
 
-成功从 OID 方法请求返回后， [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**NDIS \_ NIC \_ 交换机 \_ VF \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)结构的指针。 此结构包含指定的 VF 的配置参数。
+成功从 OID 方法请求返回后， [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ NIC \_ 交换机 \_ VF \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)结构的指针。 此结构包含指定的 VF 的配置参数。
 
 ### <a name="return-status-codes"></a>返回状态代码
 

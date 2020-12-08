@@ -1,15 +1,14 @@
 ---
 title: 'Scan Service (WS 扫描) '
 description: 'Scan Service (WS 扫描) '
-ms.assetid: b38b84b2-ae3d-433f-ba82-1123fd698df1
 ms.date: 05/17/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ac76f061e1d95f401275599df6df0c9a2f61eb70
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: bbc07f4dbaa2a6655b2a6e9ff3bd34b415f156ef
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189391"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822361"
 ---
 # <a name="scan-service-ws-scan"></a>Scan Service (WS 扫描) 
 

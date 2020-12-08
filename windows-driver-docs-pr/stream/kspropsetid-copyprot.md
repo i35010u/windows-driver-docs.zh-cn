@@ -1,45 +1,44 @@
 ---
-title: KSPROPSETID\_CopyProt
-description: KSPROPSETID\_CopyProt
-ms.assetid: f5596bed-e7be-4ad0-aaf7-cb34550e0726
+title: KSPROPSETID \_ CopyProt
+description: KSPROPSETID \_ CopyProt
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 560c5b19b5a85226b14cc58d694a95488f71f497
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fa0ef24caa520357c7dca5ed3245b6fc45c46d51
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323514"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821755"
 ---
-# <a name="kspropsetidcopyprot"></a>KSPROPSETID\_CopyProt
+# <a name="kspropsetid_copyprot"></a>KSPROPSETID \_ CopyProt
 
 
 ## <span id="ddk_kspropsetid_copyprot_ks"></span><span id="DDK_KSPROPSETID_COPYPROT_KS"></span>
 
 
-KSPROPSETID\_CopyProt 属性集定义属性，以指定 DVD 流的版权保护的级别。
+KSPROPSETID \_ CopyProt 属性集定义属性以指定 DVD 流的版权保护级别。
 
-KSPROPERTY\_中的 COPYPROT 枚举*Ksmedia.h*指定此集的属性。
+\_ *Ksmedia* 中的 KSPROPERTY COPYPROT 枚举指定此集的属性。
 
-DVD 解码器微型驱动程序必须实现支持以下属性：
+DVD 解码器微型驱动程序必须实现对以下属性的支持：
 
-[**KSPROPERTY\_DVDCOPY\_CHLG\_KEY**](ksproperty-dvdcopy-chlg-key.md)
+[**KSPROPERTY \_ DVDCOPY \_ CHLG \_ KEY**](ksproperty-dvdcopy-chlg-key.md)
 
-[**KSPROPERTY\_DVDCOPY\_DVD\_KEY1**](ksproperty-dvdcopy-dvd-key1.md)
+[**KSPROPERTY \_ DVDCOPY \_ DVD \_ KEY1**](ksproperty-dvdcopy-dvd-key1.md)
 
-[**KSPROPERTY\_DVDCOPY\_DEC\_KEY2**](ksproperty-dvdcopy-dec-key2.md)
+[**KSPROPERTY \_ DVDCOPY \_ DEC \_ KEY2**](ksproperty-dvdcopy-dec-key2.md)
 
-[**KSPROPERTY\_DVDCOPY\_TITLE\_KEY**](ksproperty-dvdcopy-title-key.md)
+[**KSPROPERTY \_ DVDCOPY \_ 标题 \_ 键**](ksproperty-dvdcopy-title-key.md)
 
-[**KSPROPERTY\_COPY\_MACROVISION**](ksproperty-copy-macrovision.md)
+[**KSPROPERTY \_ COPY \_ MACROVISION**](ksproperty-copy-macrovision.md)
 
-[**KSPROPERTY\_DVDCOPY\_区域**](ksproperty-dvdcopy-region.md)
+[**KSPROPERTY \_ DVDCOPY \_ 区域**](ksproperty-dvdcopy-region.md)
 
-[**KSPROPERTY\_DVDCOPY\_DISC\_KEY**](ksproperty-dvdcopy-disc-key.md)
+[**KSPROPERTY \_ DVDCOPY \_ 盘 \_ 密钥**](ksproperty-dvdcopy-disc-key.md)
 
-DVD 解码器微型驱动程序可以选择实现的以下属性：
+DVD 解码器微型驱动程序可以选择实现以下属性：
 
-[**KSPROPERTY\_DVDCOPY\_SET\_COPY\_STATE**](ksproperty-dvdcopy-set-copy-state.md)
+[**KSPROPERTY \_ DVDCOPY \_ 设置 \_ 复制 \_ 状态**](ksproperty-dvdcopy-set-copy-state.md)
 
  
 

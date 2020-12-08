@@ -1,7 +1,6 @@
 ---
 title: 转换到睡眠状态
 description: 转换到睡眠状态
-ms.assetid: cea326dd-7235-41a3-ad37-19549533a8dd
 keywords:
 - 网络接口卡 WDK 网络，过渡电源状态
 - Nic WDK 网络，过渡电源状态
@@ -12,12 +11,12 @@ keywords:
 - 转换电源状态 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a6ac4d6e9c4b1daf7ba9c62ffb07572feba092a0
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 228f1dca5445a74de39ffd96a8b32c754bc58a22
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215809"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822807"
 ---
 # <a name="transitioning-to-a-sleeping-state"></a>转换到睡眠状态
 
@@ -25,7 +24,7 @@ ms.locfileid: "89215809"
 
 
 
-如果微型端口驱动程序支持唤醒事件，NDIS 会向该驱动程序发送 [oid \_ pnp \_ ENABLE \_ 唤醒 \_ ](./oid-pnp-enable-wake-up.md) 请求，然后再发送 [OID \_ pnp \_ 设置 \_ 电源](./oid-pnp-set-power.md) 请求。 有关详细信息，请参阅 [启用唤醒事件](enabling-wake-up-events.md)。 微型端口驱动程序不得使 OID \_ PNP \_ 设置 \_ 电源请求失败。
+如果微型端口驱动程序支持唤醒事件，NDIS 会向该驱动程序发送 [oid \_ pnp \_ ENABLE \_ 唤醒 \_ ](./oid-pnp-enable-wake-up.md) 请求，然后再发送 [OID \_ pnp \_ 设置 \_ 电源](./oid-pnp-set-power.md) 请求。 有关详细信息，请参阅 [启用 Wake-Up 事件](enabling-wake-up-events.md)。 微型端口驱动程序不得使 OID \_ PNP \_ 设置 \_ 电源请求失败。
 
 在返回 NDIS \_ 状态 \_ "成功" 以响应 OID \_ PNP \_ 设置 \_ 电源请求之前，微型端口驱动程序必须：
 

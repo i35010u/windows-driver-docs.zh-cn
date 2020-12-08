@@ -1,7 +1,6 @@
 ---
 title: WIA \_ IP \_ 页面 \_ 大小
 description: "\"WIA \\_ ip \\_ 页面 \\_ 大小\" 属性包含当前选定要扫描的页面的大小。"
-ms.assetid: dcfad67e-31d5-41b8-b471-532626f571af
 keywords:
 - WIA_IPS_PAGE_SIZE 图像设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d1f17ff26c4845788e9e1d530a1d370371fc80a
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: f43b943e65176696fe9a8abd312a3a885caf0486
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185515"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823129"
 ---
 # <a name="wia_ips_page_size"></a>WIA \_ IP \_ 页面 \_ 大小
 
@@ -32,7 +31,7 @@ ms.locfileid: "89185515"
 
 访问权限：读/写
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 若要选择要扫描的页的维度，应用程序将设置 "WIA \_ ip \_ 页面大小" \_ 属性。 WIA 微型驱动程序创建并维护此属性。
@@ -90,7 +89,7 @@ ms.locfileid: "89185515"
 <td><p>在 Windows Vista 和更高版本的操作系统中可用。 对于 Windows XP，请改用 WIA_DPS_PAGE_SIZE 属性。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>

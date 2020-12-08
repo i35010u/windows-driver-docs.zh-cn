@@ -1,19 +1,18 @@
 ---
 title: Windows 筛选平台标注驱动程序主题
 description: Windows 筛选平台标注驱动程序主题
-ms.assetid: 494dd2be-ac1b-432b-8966-278534eca162
 keywords:
 - Windows 筛选平台标注驱动程序 WDK
 - 标注驱动程序 WDK Windows 筛选平台
 - WFP WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b304690519918a3fc90493c4108df03e2ad3053b
-ms.sourcegitcommit: 93c924b8f409fc7f704cc67cc026d70b8ad25d30
+ms.openlocfilehash: a9d441fcdad5e9af5775ae56123211222f74443f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91739487"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821867"
 ---
 # <a name="windows-filtering-platform-callout-driver-topics"></a>Windows 筛选平台标注驱动程序主题
 

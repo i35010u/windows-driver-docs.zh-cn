@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_ACTION_FRAME_BODY
-description: WDI_TLV_ACTION_FRAME_BODY 是包含操作帧的正文 TLV。
-ms.assetid: 272782A9-F92E-4F32-A92B-B18EBE7C1803
+description: WDI_TLV_ACTION_FRAME_BODY 是包含操作框正文的 TLV。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_ACTION_FRAME_BODY 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 561984937cf9fdda9f23d7368d4d25e744788a85
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 492c885d8182a43d245de0f1805451c7d54f8da7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356814"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822051"
 ---
-# <a name="wditlvactionframebody"></a>WDI\_TLV\_操作\_帧\_正文
+# <a name="wdi_tlv_action_frame_body"></a>WDI \_ TLV \_ 操作 \_ 框架 \_ 正文
 
 
-WDI\_TLV\_操作\_帧\_正文是包含操作帧的正文 TLV。
+WDI \_ tlv \_ 操作 \_ 框架 \_ 正文是包含操作帧正文的 tlv。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,14 +25,14 @@ WDI\_TLV\_操作\_帧\_正文是包含操作帧的正文 TLV。
 ## <a name="length"></a>长度
 
 
-UINT8 元素的数组大小 （以字节为单位）。 该数组必须包含一个或多个元素。
+UINT8 元素数组的大小 (以字节为单位) 。 数组必须包含1个或多个元素。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入      | 描述                                                           |
+| 类型      | 描述                                                           |
 |-----------|-----------------------------------------------------------------------|
-| UINT8\[\] | UINT8 元素数组，其中包含操作帧的正文。 |
+| UINT8\[\] | 包含操作框正文的 UINT8 元素的数组。 |
 
  
 
@@ -52,10 +51,10 @@ UINT8 元素的数组大小 （以字节为单位）。 该数组必须包含一
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

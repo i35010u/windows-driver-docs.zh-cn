@@ -1,18 +1,17 @@
 ---
 title: 镜像驱动程序安装
 description: 镜像驱动程序安装
-ms.assetid: 13b0ce22-f833-482c-815b-a596098ee6bc
 keywords:
 - 显示驱动程序 WDK Windows 2000，镜像驱动程序
 - 镜像驱动程序 WDK Windows 2000 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 10c913cfc6b19776438b6bab402cf96cdc2682ba
-ms.sourcegitcommit: abe7fe9f3fbee8d12641433eeab623a4148ffed3
+ms.openlocfilehash: 02315f3c3243ec9b446bbbb97c53c0eb86789de3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92185219"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821524"
 ---
 # <a name="mirror-driver-installation"></a>镜像驱动程序安装
 

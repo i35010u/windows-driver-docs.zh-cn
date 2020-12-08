@@ -1,17 +1,16 @@
 ---
-title: 调试内核连接周期的波特率
-description: 调试内核连接周期的波特率
-ms.assetid: 5d7f13ff-738d-498c-88cb-ad2d6fe596ac
+title: 调试内核连接循环波特率
+description: 调试内核连接循环波特率
 keywords:
-- 调试内核连接周期的波特率
+- 调试内核连接循环波特率
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f611063e3a6207db1cddb9017b08b2a3bf9a21d5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f64b9d33eb3a2751ba4629e27a87d176ed161d25
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374889"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823411"
 ---
 # <a name="debug--kernel-connection--cycle-baud-rate"></a>调试 | 内核连接 | 循环波特率
 
@@ -19,13 +18,13 @@ ms.locfileid: "63374889"
 ## <span id="ddk_debug_kernel_connection_cycle_baud_rate_dbg"></span><span id="DDK_DEBUG_KERNEL_CONNECTION_CYCLE_BAUD_RATE_DBG"></span>
 
 
-指向**内核连接**，然后单击**周期波特率**上**调试**菜单来更改在内核调试连接中使用的波特率。
+指向 "**内核连接**"，然后单击 "**调试**" 菜单上的 "**循环波特率**"，以更改内核调试连接中使用的波特率。
 
-此命令相当于按 CTRL + ALT + A。 （您可以还按 CTRL + A 中 KD。）
+此命令等效于按 CTRL + ALT + A。  (还可以在 KD 中按 CTRL + A ) 
 
-此命令进行循环的内核调试连接的所有可用波特率。 受支持的波特率有 19200、 38400、 57600 和 115200。 使用此命令中，每次选择下一步的波特率。 如果已经是 115200 波特率，则将其减少到 19200。
+此命令将遍历内核调试连接的所有可用波特率。 支持的波特速率为19200、38400、57600和115200。 每次使用此命令时，将选择下一个波特率。 如果波特率已经在115200，则将其缩减为19200。
 
-此命令不能用于更改在其中进行调试的波特率。 在主计算机和目标计算机的波特率必须匹配，并且不能无需重新启动计算机更改的目标计算机的波特率。 因此，两台计算机尝试以不同速率进行通信时，才必须更改的波特率。 在这种情况下，必须更改主计算机的波特率以匹配的目标计算机。
+不能使用此命令来更改调试时的波特率。 主计算机和目标计算机的波特率必须匹配，并且你无法在不重新启动计算机的情况下更改目标计算机的波特率。 因此，只有在两台计算机尝试以不同速率进行通信时，才必须更改波特率。 在这种情况下，必须更改主机计算机的波特率，使其与目标计算机的波特率匹配。
 
  
 

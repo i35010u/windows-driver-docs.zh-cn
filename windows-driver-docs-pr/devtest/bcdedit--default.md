@@ -1,7 +1,6 @@
 ---
 title: BCDEdit/默认27000
-description: '**BCDEdit/默认 27000**命令将设置启动管理器在超时过期时将使用的默认条目。'
-ms.assetid: f16c1c73-dc47-49bf-9b91-b8aabdd10a53
+description: '**BCDEdit/默认 27000** 命令将设置启动管理器在超时过期时将使用的默认条目。'
 ms.date: 09/23/2020
 keywords:
 - BCDEdit/默认27000驱动程序开发工具
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 61171516bf34a3bdd952c463307b0828018258b4
-ms.sourcegitcommit: f2fbb6e54e085e9329288cee49860fe380be9c4c
+ms.openlocfilehash: 73ae3ff18de911ea9b71d82780d20e62ffd42ee2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91778975"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822589"
 ---
 <a name="bcdedit-default"></a>BCDEdit/默认27000
 ============
 
-**BCDEdit/默认 27000**命令将设置启动管理器在超时过期时将使用的默认条目。
+**BCDEdit/默认 27000** 命令将设置启动管理器在超时过期时将使用的默认条目。
 
 ``` syntax
 bcdedit /default <id>

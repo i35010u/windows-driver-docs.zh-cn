@@ -1,15 +1,14 @@
 ---
 title: 增强的传输选择 (ETS) 算法
 description: 增强的传输选择 (ETS) 算法
-ms.assetid: 952ECB1E-96AD-4717-8E49-68558E7E9AD4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 29e4d4c5a16b5f408d12ebeda2f399c0e96c92cf
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 5d82da402f5b903f7c5cea4cbee21f1345a37a62
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207603"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822951"
 ---
 # <a name="enhanced-transmission-selection-ets-algorithm"></a>增强的传输选择 (ETS) 算法
 
@@ -22,7 +21,7 @@ ms.locfileid: "89207603"
 
 ) 流量类的 NDIS 服务质量 (QoS 通过 [oid \_ QoS \_ 参数](./oid-qos-parameters.md)的 oid 方法请求进行定义。 此 OID 请求包含一个 [**NDIS \_ QOS \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters) 结构，该结构指定以下流量类属性：
 
--   **NumTrafficClasses**成员指定的流量类的数目。
+-   **NumTrafficClasses** 成员指定的流量类的数目。
 
 -   流量类使用的 TSA。 这由 **TsaAssignmentTable** 成员指定。 如果流量类的 table 元素设置为 NDIS \_ QOS \_ TSA \_ ETS，则该流量类将使用 ETS TSA。
 

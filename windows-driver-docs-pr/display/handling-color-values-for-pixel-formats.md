@@ -1,18 +1,17 @@
 ---
 title: 处理像素格式的颜色值
 description: 处理像素格式的颜色值
-ms.assetid: 53ce6be1-14e1-4ee8-ba29-f198dcdacdaa
 keywords:
 - 用于像素格式的颜色值 WDK DirectX 9。0
 - 像素格式颜色值 WDK DirectX 9。0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d9133b41164c0da14ae172afe57e3259f81bce6
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 915d135525639daf1ac636b9e52d5394053edb8f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064128"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822503"
 ---
 # <a name="handling-color-values-for-pixel-formats"></a>处理像素格式的颜色值
 
@@ -24,7 +23,7 @@ ms.locfileid: "89064128"
 
 显示驱动程序必须转换颜色格式的 ARGB 和 YUV 类的输入颜色值，因为应用程序以统一的方式请求具有这些格式的图面上的颜色填充和清除操作。 但是，驱动程序必须直接从其他类格式使用颜色值。 例如，应用程序使用 A8R8G8B8 作为 alpha (的所有表面的统一颜色值：) ，红色 (R) ，绿色 (G) 和蓝色 () 组件;驱动程序必须通过复制具有最高重要性的位，将 A8R8G8B8 颜色转换为特定于实际 ARGB 格式的颜色值。
 
-显示驱动程序在处理 \_ 其 D3dDrawPrimitives2 函数中的 D3DDP2OP CLEAR 和 D3DDP2OP \_ COLORFILL 操作代码[**D3dDrawPrimitives2**](/windows-hardware/drivers/ddi/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)时接收颜色值。
+显示驱动程序在处理 \_ 其 D3dDrawPrimitives2 函数中的 D3DDP2OP CLEAR 和 D3DDP2OP \_ COLORFILL 操作代码 [**D3dDrawPrimitives2**](/windows-hardware/drivers/ddi/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)时接收颜色值。
 
 显示驱动程序可以使用以下代码来转换 ARGB 和 YUV 类格式的颜色值：
 

@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_RemovalPolicyOverride
 description: DEVPKEY_Device_RemovalPolicyOverride
-ms.assetid: 74b90422-9187-4bbb-9be6-cf2d11e29686
 keywords:
 - DEVPKEY_Device_RemovalPolicyOverride 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 233e5ab35f6d559296cc64175f63833c2ede4ef7
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 775f73c8d4322ddebb9bc4bfaac88077a024d757
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717418"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823083"
 ---
 # <a name="devpkey_device_removalpolicyoverride"></a>DEVPKEY_Device_RemovalPolicyOverride
 
@@ -66,7 +65,7 @@ DEVPKEY_Device_RemovalPolicyOverride 设备属性表示设备实例的删除策�
 <a name="remarks"></a>备注
 -------
 
-DEVPKEY_Device_RemovalPolicyOverride 的值是在 Cfgmgr32 中定义的 CM_REMOVAL_POLICY_*Xxx* 值之一。
+DEVPKEY_Device_RemovalPolicyOverride 的值是在 Cfgmgr32 中定义的 CM_REMOVAL_POLICY_ *Xxx* 值之一。
 
 可以通过调用 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 来检索 DEVPKEY_Device_RemovalPolicyOverride 的值，也可以通过调用 [**SetupDiSetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)来设置此值。
 

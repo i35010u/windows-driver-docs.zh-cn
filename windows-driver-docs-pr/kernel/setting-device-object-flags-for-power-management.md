@@ -1,7 +1,6 @@
 ---
 title: 为电源管理设置设备对象标志
 description: 为电源管理设置设备对象标志
-ms.assetid: 58d1a3a2-c8ea-446c-b1d6-ed00411d1d75
 keywords:
 - DO_POWER_PAGABLE
 - DO_POWER_INRUSH
@@ -10,12 +9,12 @@ keywords:
 - 标志 WDK 电源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 36074a5e8ce50b4ef5078e82a685c3841cf8a341
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 0131077342563cf6f3f346ad7a3ada27498defb1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189473"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822257"
 ---
 # <a name="setting-device-object-flags-for-power-management"></a>为电源管理设置设备对象标志
 
@@ -23,7 +22,7 @@ ms.locfileid: "89189473"
 
 
 
-在[*AddDevice*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)例程中，每个驱动程序都 (筛选器设备对象创建一个设备对象 (执行) 、功能设备对象 (FDO) 或物理设备对象 (PDO) # A7，并在 \_ 设备对象中设置 DO*XXX*标记，以描述设备属性和驱动程序配置。 以下设备对象标志与电源管理相关。
+在 [*AddDevice*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)例程中，每个驱动程序都 (筛选器设备对象创建一个设备对象 (执行) 、功能设备对象 (FDO) 或物理设备对象 (PDO) # A7，并在 \_ 设备对象中设置 DO *XXX* 标记，以描述设备属性和驱动程序配置。 以下设备对象标志与电源管理相关。
 
 | 标志               | 描述                                                                                                                                                                                                                                                                                                |
 |--------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

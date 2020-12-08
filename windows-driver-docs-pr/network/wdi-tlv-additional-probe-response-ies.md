@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_ADDITIONAL_PROBE_RESPONSE_IES
-description: WDI_TLV_ADDITIONAL_PROBE_RESPONSE_IES 是包含探测响应 IEs TLV。
-ms.assetid: BDEDAD4D-A35B-4AE9-BC90-184CD75002B2
+description: WDI_TLV_ADDITIONAL_PROBE_RESPONSE_IES 是包含探测响应的 TLV。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_ADDITIONAL_PROBE_RESPONSE_IES 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 0957337ce6c66e8cd9ab1bd86bc5329ff31b46d1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b4dc00ec07ebe5ad1dd5f4b7e06e9a815fcd5cf0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382180"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822015"
 ---
-# <a name="wditlvadditionalproberesponseies"></a>WDI\_TLV\_其他\_探测\_响应\_导致浏览器
+# <a name="wdi_tlv_additional_probe_response_ies"></a>WDI \_ TLV \_ 附加的 \_ 探测 \_ 响应 \_
 
 
-WDI\_TLV\_其他\_探测\_响应\_导致浏览器是包含探测响应 IEs TLV。
+WDI \_ tlv \_ 额外的 \_ 探测 \_ 响应 \_ 是包含探测响应的 tlv。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,14 +25,14 @@ WDI\_TLV\_其他\_探测\_响应\_导致浏览器是包含探测响应 IEs TLV�
 ## <a name="length"></a>长度
 
 
-UINT8 元素的数组大小 （以字节为单位）。 该数组必须包含一个或多个元素。
+UINT8 元素数组的大小 (以字节为单位) 。 数组必须包含1个或多个元素。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入      | 描述                                                                                                                                                                                                                                                  |
+| 类型      | 描述                                                                                                                                                                                                                                                  |
 |-----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| UINT8\[\] | 探测响应导致浏览器的数组。 Wi-Fi Direct 端口必须将这些附加导致浏览器添加到探测响应数据包时充当 Wi-Fi Direct 设备或组的所有者。 在客户端模式下运行的 Wi-Fi Direct 端口时，将忽略此成员。 |
+| UINT8\[\] | 发出的探测响应的数组。 Wi-Fi 直接端口在 Wi-Fi 充当直接设备或组所有者时，必须将这些附加包添加到探测响应数据包中。 当 Wi-Fi 直接端口在客户端模式下操作时，将忽略此成员。 |
 
  
 
@@ -52,10 +51,10 @@ UINT8 元素的数组大小 （以字节为单位）。 该数组必须包含一
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

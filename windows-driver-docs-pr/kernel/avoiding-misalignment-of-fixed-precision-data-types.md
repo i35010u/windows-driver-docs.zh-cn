@@ -1,7 +1,6 @@
 ---
 title: 避免固定精度数据类型不对齐
 description: 避免固定精度数据类型不对齐
-ms.assetid: 4e214bd8-b622-447a-b484-bd1d5d239de7
 keywords:
 - 文件系统控制代码 WDK 64 位
 - FSCTL WDK 64 位
@@ -13,12 +12,12 @@ keywords:
 - 固定精度数据类型未对齐
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d5ee7c4b65f72276fe977af236444ba310427c4c
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 57ca8ab429576c74fdf920e6ee0f6e1e3ec82b34
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185295"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823073"
 ---
 # <a name="avoiding-misalignment-of-fixed-precision-data-types"></a>避免固定精度数据类型不对齐
 
@@ -32,17 +31,17 @@ ms.locfileid: "89185295"
 
 此问题会影响自身结构的固定精度数据类型。 这是因为确定结构的对齐要求的规则是特定于平台的。
 
-例如， ** \_ \_ int64**、大 \_ 整数和 KFLOATING \_ 保存必须在 x86 平台上的4字节边界上对齐。 但在基于 Itanium 的计算机上，它们必须在8字节边界上对齐。
+例如， **\_ \_ int64**、大 \_ 整数和 KFLOATING \_ 保存必须在 x86 平台上的4字节边界上对齐。 但在基于 Itanium 的计算机上，它们必须在8字节边界上对齐。
 
 若要确定特定平台上给定数据类型的对齐要求，请使用该平台上的 **类型 \_ 对齐方式** 宏。
 
 ### <a name="how-to-fix-the-problem"></a>如何解决此问题
 
-在下面的示例中，IOCTL 是两种 \_ ioctl 都不是的，因此，将 ** &gt; UserBuffer** 指针从用户模式应用程序直接传递到内核模式驱动程序。 对于 IOCTLs 和 FSCTLs 中使用的缓冲区不执行任何验证。 因此，必须先调用 [**ProbeForRead**](/windows-hardware/drivers/ddi/wdm/nf-wdm-probeforread) 或 [**ProbeForWrite**](/windows-hardware/drivers/ddi/wdm/nf-wdm-probeforwrite) ，然后才能安全地取消引用缓冲区指针。
+在下面的示例中，IOCTL 是两种 \_ ioctl 都不是的，因此，将 **&gt; UserBuffer** 指针从用户模式应用程序直接传递到内核模式驱动程序。 对于 IOCTLs 和 FSCTLs 中使用的缓冲区不执行任何验证。 因此，必须先调用 [**ProbeForRead**](/windows-hardware/drivers/ddi/wdm/nf-wdm-probeforread) 或 [**ProbeForWrite**](/windows-hardware/drivers/ddi/wdm/nf-wdm-probeforwrite) ，然后才能安全地取消引用缓冲区指针。
 
-假设32位应用程序已为 **Irp &gt; UserBuffer**传递了有效值，则 \_ 由 **p- &gt; DeviceTime** 指向的大整数结构将按4个字节的边界对齐。 **ProbeForRead** 对照 *传递参数中* 传递的值（在本例中为)  (大整数的 **类型 \_ 对齐** 来检查此对齐方式 \_ 。 在 x86 平台上，此宏表达式返回4个 (字节) 。 但在基于 Itanium 的计算机上，它返回8，导致 **ProbeForRead** 引发状态 \_ 数据类型不 \_ 一致异常。
+假设32位应用程序已为 **Irp &gt; UserBuffer** 传递了有效值，则 \_ 由 **p- &gt; DeviceTime** 指向的大整数结构将按4个字节的边界对齐。 **ProbeForRead** 对照 *传递参数中* 传递的值（在本例中为)  (大整数的 **类型 \_ 对齐** 来检查此对齐方式 \_ 。 在 x86 平台上，此宏表达式返回4个 (字节) 。 但在基于 Itanium 的计算机上，它返回8，导致 **ProbeForRead** 引发状态 \_ 数据类型不 \_ 一致异常。
 
-**注意**   删除**ProbeForRead**调用并不能解决问题，但仅会使诊断变得更困难。
+**注意**   删除 **ProbeForRead** 调用并不能解决问题，但仅会使诊断变得更困难。
 
  
 
@@ -141,7 +140,7 @@ typedef struct _IOCTL_PARAMETERS3 {
 
 与 \_ 上面所述的 IOCTL 和 FSCTL 缓冲区指针一样，嵌入在缓冲 i/o 请求中的指针也直接从用户模式应用程序传递到内核模式驱动程序。 对这些指针不执行任何验证。 因此，在可以安全取消引用嵌入指针之前，必须先调用 [**ProbeForRead**](/windows-hardware/drivers/ddi/wdm/nf-wdm-probeforread) 或 [**ProbeForWrite**](/windows-hardware/drivers/ddi/wdm/nf-wdm-probeforwrite)（括在 **try/except** 块中）。
 
-如前面的示例所示，假设32位应用程序已为 **pDeviceCount**传递了有效值，则 \_ **pDeviceCount** 指向的大整数结构将在4字节边界上对齐。 **ProbeForRead** 和 **ProbeForWrite** 对照 *对齐* 参数的值（在本例中为 \_ (大整数) 的类型对齐）检查此对齐方式 \_ 。 在 x86 平台上，此宏表达式返回4个 (字节) 。 但在基于 Itanium 的计算机上，它返回8，导致 **ProbeForRead** 或 **ProbeForWrite** 引发状态 \_ 数据类型不 \_ 一致异常。
+如前面的示例所示，假设32位应用程序已为 **pDeviceCount** 传递了有效值，则 \_ **pDeviceCount** 指向的大整数结构将在4字节边界上对齐。 **ProbeForRead** 和 **ProbeForWrite** 对照 *对齐* 参数的值（在本例中为 \_ (大整数) 的类型对齐）检查此对齐方式 \_ 。 在 x86 平台上，此宏表达式返回4个 (字节) 。 但在基于 Itanium 的计算机上，它返回8，导致 **ProbeForRead** 或 **ProbeForWrite** 引发状态 \_ 数据类型不 \_ 一致异常。
 
 可以通过以下方式解决此问题：使大整数结构的正确对齐副本 \_ （如解决方案1中的副本）或使用未对齐的宏（如下所示）：
 

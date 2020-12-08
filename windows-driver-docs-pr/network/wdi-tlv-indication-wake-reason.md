@@ -1,17 +1,16 @@
 ---
 title: WDI_TLV_INDICATION_WAKE_REASON
 description: WDI_TLV_INDICATION_WAKE_REASON 是包含 NDIS_STATUS_WDI_INDICATION_WAKE_REASON 唤醒原因的 TLV。
-ms.assetid: 3D3F93EA-4733-44FC-9CB3-721F0552F3E2
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_INDICATION_WAKE_REASON 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 520b4199f4b65d1e66bbb1702329b379a0a1f445
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 97753ed54a830dae060e48364037b09f6655ea49
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214288"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822735"
 ---
 # <a name="wdi_tlv_indication_wake_reason"></a>WDI \_ TLV \_ 指示 \_ 唤醒 \_ 原因
 
@@ -23,7 +22,7 @@ WDI \_ tlv \_ 指示 \_ 唤醒 \_ 原因是一个 Tlv，其中包含 [NDIS \_ �
 
 0x9C
 
-## <a name="length"></a>Length
+## <a name="length"></a>长度
 
 
 UINT32) 的大小 (以字节为单位）。
@@ -31,7 +30,7 @@ UINT32) 的大小 (以字节为单位）。
 ## <a name="values"></a>值
 
 
-| 类型   | 说明                |
+| 类型   | 描述                |
 |--------|----------------------------|
 | UINT32 | 指定唤醒原因。 |
 
@@ -39,7 +38,7 @@ UINT32) 的大小 (以字节为单位）。
 
 有效的唤醒原因值为：
 
-| 唤醒原因                                       | 值  | 说明                                                                                                          |
+| 唤醒原因                                       | “值”  | 描述                                                                                                          |
 |---------------------------------------------------|--------|----------------------------------------------------------------------------------------------------------------------|
 | WDI \_ 唤醒 \_ 原因 \_ 代码 \_ 数据包                   | 0x0001 | 接收的数据包与唤醒模式匹配。                                                                          |
 | WDI \_ 唤醒 \_ 原因 \_ 代码 \_ 媒体 \_ 断开连接        | 0x0002 | 媒体断开连接。                                                                                                 |
@@ -70,7 +69,7 @@ UINT32) 的大小 (以字节为单位）。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

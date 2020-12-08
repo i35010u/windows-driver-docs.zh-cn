@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ MEDIASEEKING \_ DURATION
 description: KSPROPERTY \_ MEDIASEEKING \_ duration 属性检索筛选器上的媒体持续时间。
-ms.assetid: f84ff468-7cf6-4948-afee-a28ee365760d
 keywords:
 - KSPROPERTY_MEDIASEEKING_DURATION 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 69503d208badc800919c793e73b6a3b7eb145f9b
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 7efc46ec75645270a913423d978d678c1fea5ac9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107166"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821791"
 ---
 # <a name="ksproperty_mediaseeking_duration"></a>KSPROPERTY \_ MEDIASEEKING \_ DURATION
 
@@ -82,7 +81,7 @@ KSPROPERTY \_ MEDIASEEKING \_ duration 属性检索筛选器上的媒体持续�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [KSPROPSETID \_ MediaSeeking](kspropsetid-mediaseeking.md)

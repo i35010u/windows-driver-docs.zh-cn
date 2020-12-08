@@ -1,15 +1,14 @@
 ---
 title: Windows Vista SP1 和 Windows Server 2008 的 WFP 更改
 description: Windows Vista SP1 和 Windows Server 2008 的 WFP 更改
-ms.assetid: c901dbed-639d-473b-aaf0-8470e9c04009
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b7362eb9ca0d4013760c239a7061fe583f528b8b
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 1394040abd9d85ee70b420ad61d4054ad429b305
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732971"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821871"
 ---
 # <a name="wfp-changes-for-windows-vista-sp1-and-windows-server-2008"></a>Windows Vista SP1 和 Windows Server 2008 的 WFP 更改
 
@@ -18,7 +17,7 @@ ms.locfileid: "91732971"
 
 -   新函数： [**FwpsConstructIpHeaderForTransportPacket0**](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsconstructipheaderfortransportpacket0) 
      [**FwpsReassembleForwardFragmentGroup0**](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsreassembleforwardfragmentgroup0)
--   \_ \_ \_ \_ FwpsStreamInjectAsync0 中描述的新的 FWPS 流标志接收推送标志[ **FwpsStreamInjectAsync0**选项](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsstreaminjectasync0)
+-   \_ \_ \_ \_ FwpsStreamInjectAsync0 中描述的新的 FWPS 流标志接收推送标志 [ **FwpsStreamInjectAsync0** 选项](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsstreaminjectasync0)
 
 -   更新和重命名了筛选条件，[这些条件在每个筛选层提供的筛选条件](./filtering-conditions-available-at-each-filtering-layer.md)中列出
 

@@ -1,15 +1,14 @@
 ---
 title: 启用 Hyper-V 可扩展交换机扩展
 description: 启用 Hyper-V 可扩展交换机扩展
-ms.assetid: 13FD68CB-8F50-4BE3-8822-03464D8C118C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 212bdb40345ac4c11e9272b3b928603487106466
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 42209a2805adc1f4f9aef9663fce0f1010fb4463
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206463"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822953"
 ---
 # <a name="enabling-hyper-v-extensible-switch-extensions"></a>启用 Hyper-V 可扩展交换机扩展
 
@@ -30,7 +29,7 @@ Enable-VMSwitchExtension [-Name] <string[]> [-VMSwitch] <VMSwitch[]> [-ComputerN
 Enable-VMSwitchExtension [-VMSwitchExtension] <VMSwitchExtension[]> [-ComputerName <string[]>] [<CommonParameters>]
 ```
 
-下面演示了如何使用 VMSwitchExtension cmdlet 的示例。
+下面演示了如何使用 Enable-VMSwitchExtension cmdlet 的示例。
 
 ``` syntax
 PS C:\Windows\system32> Enable-VMSwitchExtension "Switch Extensibility Test Extension 1" PrivateNetwork
@@ -43,7 +42,7 @@ SwitchName    : PrivateNetwork
 Enabled       : True
 ```
 
-**注意**   默认情况下，每个可扩展交换机实例上都启用了 Windows 筛选平台 (WFP) 内置筛选扩展 ( # A0 ) 。
+**注意**  默认情况下，每个可扩展交换机实例上都启用了 Windows 筛选平台 (WFP) 内置筛选扩展 ( # A0 ) 。
 
  
 

@@ -1,17 +1,16 @@
 ---
 title: DirectX 8.0 DDI 最低支持要求
 description: DirectX 8.0 DDI 最低支持要求
-ms.assetid: 8758e25e-e54f-42e5-a23d-354af634bce9
 keywords:
 - DirectX 8.0 发行说明 WDK Windows 2000 显示，最小支持
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a58f863e008cc4c32244efe9cd9b639bdd0d84c2
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 47a56beb2d028c6c9e442a670e53d179ece49e3b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717198"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822472"
 ---
 # <a name="minimal-directx-80-ddi-support"></a>DirectX 8.0 DDI 最低支持要求
 
@@ -23,7 +22,7 @@ DirectX 8.0 通过 DirectX 7.0 级别驱动程序提供硬件加速。 但是，
 
 报告 DirectX 8.0 样式功能涉及以下步骤：
 
--   处理现有[**DdGetDriverInfo**](/windows/win32/api/ddrawint/nc-ddrawint-pdd_getdriverinfo)入口点的新**GetDriverInfo2**变体。
+-   处理现有 [**DdGetDriverInfo**](/windows/win32/api/ddrawint/nc-ddrawint-pdd_getdriverinfo)入口点的新 **GetDriverInfo2** 变体。
 
 -   在请求时返回包含设备功能的 D3DCAPS8 结构。
 

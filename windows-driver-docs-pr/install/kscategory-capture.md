@@ -1,7 +1,6 @@
 ---
 title: KSCATEGORY_CAPTURE
 description: KSCATEGORY_CAPTURE
-ms.assetid: b33e9a04-00f2-4cfa-911e-55461ce5aae7
 keywords:
 - KSCATEGORY_CAPTURE 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e0db0c0e42c57ff47f033d221ebf09bec4000558
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 6c23e21c8a46a5db65b2ed136d8320c22c002719
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732834"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823077"
 ---
 # <a name="kscategory_capture"></a>KSCATEGORY_CAPTURE
 
@@ -33,7 +32,7 @@ KSCATEGORY_CAPTURE [设备接口类](./overview-of-device-interface-classes.md) 
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">属性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>

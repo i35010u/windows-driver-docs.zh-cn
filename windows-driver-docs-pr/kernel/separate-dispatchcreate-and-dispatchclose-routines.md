@@ -1,7 +1,6 @@
 ---
 title: 独立的 DispatchCreate 和 DispatchClose 例程
 description: 独立的 DispatchCreate 和 DispatchClose 例程
-ms.assetid: b2e05555-c70d-4293-8622-51eea92091b1
 keywords:
 - 调度例程 WDK 内核，DispatchCreate 例程
 - 调度例程 WDK 内核，DispatchClose 例程
@@ -13,12 +12,12 @@ keywords:
 - 关闭调度例程 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6231a72436b33355f94b646dd3cd58ddee32d710
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: b9a7b2978d4edb1334e3067bc8a051abbea14d86
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185991"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822267"
 ---
 # <a name="separate-dispatchcreate-and-dispatchclose-routines"></a>独立的 DispatchCreate 和 DispatchClose 例程
 
@@ -26,9 +25,9 @@ ms.locfileid: "89185991"
 
 
 
-对于[**IRP \_ mj \_ CREATE**](./irp-mj-create.md)和[**irp \_ mj \_ 关闭**](./irp-mj-close.md)请求，驱动程序的*调度*例程只需完成输入 IRP，状态为 " \_ 成功"。 有关详细信息，请参阅 [完成 irp](completing-irps.md)。
+对于 [**IRP \_ mj \_ CREATE**](./irp-mj-create.md)和 [**irp \_ mj \_ 关闭**](./irp-mj-close.md)请求，驱动程序的 *调度* 例程只需完成输入 IRP，状态为 " \_ 成功"。 有关详细信息，请参阅 [完成 irp](completing-irps.md)。
 
-用于**IRP \_ mj \_ CREATE**和**irp \_ mj \_ 关闭**请求的另一个驱动程序*调度*例程可能会执行更多操作，具体取决于基础设备驱动程序或基础设备。 请考虑以下方案：
+用于 **IRP \_ mj \_ CREATE** 和 **irp \_ mj \_ 关闭** 请求的另一个驱动程序 *调度* 例程可能会执行更多操作，具体取决于基础设备驱动程序或基础设备。 请考虑以下方案：
 
 - 收到 create 请求后，类驱动程序可以初始化内部队列并将 [**IRP \_ MJ \_ 内部 \_ 设备 \_ 控制**](./irp-mj-internal-device-control.md) 请求发送到相应的端口驱动程序，该驱动程序请求设备配置信息或独占访问控制器端口。
 

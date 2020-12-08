@@ -1,16 +1,15 @@
 ---
 title: OID_NIC_SWITCH_FREE_VF
 description: 过量驱动程序会 (OID 发出对象标识符) 设置 OID_NIC_SWITCH_FREE_VF 请求，以释放网络适配器 PCI Express (PCIe) 虚拟函数 (VF) 的资源。过量驱动程序将此 OID 集请求颁发给网络适配器的 PCIe 物理功能 (PF) 的微型端口驱动程序。 对于支持单个根 i/o 虚拟化 (SR-IOV) 接口的 PF 小型端口驱动程序，需要此 OID 集请求。
-ms.assetid: B1A72D34-286A-4A70-8BE3-F21324B92187
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_NIC_SWITCH_FREE_VF 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: bb8a08558034650d7bc136c2ad63cccbb3b82fcb
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: c451aa2c13a646468cf12434dce1b2515b25bc2d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106020"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822143"
 ---
 # <a name="oid_nic_switch_free_vf"></a>OID \_ NIC \_ 交换机 \_ 免费 \_ VF
 
@@ -19,18 +18,18 @@ ms.locfileid: "90106020"
 
 过量驱动程序将此 OID 集请求颁发给网络适配器的 PCIe 物理功能 (PF) 的微型端口驱动程序。 对于支持单个根 i/o 虚拟化 (SR-IOV) 接口的 PF 小型端口驱动程序，需要此 OID 集请求。
 
-[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**NDIS \_ NIC \_ 交换机 \_ 自由 \_ VF \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_free_vf_parameters)结构的指针。
+[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ NIC \_ 交换机 \_ 自由 \_ VF \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_free_vf_parameters)结构的指针。
 
 过量驱动程序指定要通过此结构的 **VFId** 成员释放的 VF 的标识符。 驱动程序从 [oid \_ NIC \_ 交换机 \_ 分配 \_ VF](oid-nic-switch-allocate-vf.md)的早期 oid 方法请求中获取了此标识符。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 过量驱动程序发出 oid \_ NIC 交换机自由 vf 的 oid 设置请求 \_ \_ \_ ，以释放 vf 的资源。 以前通过 oid [ \_ NIC \_ 交换机 \_ 分配 \_ VF](oid-nic-switch-allocate-vf.md)的 oid 方法请求分配了这些资源。
 
 有关如何释放 VF 资源的详细信息，请参阅 [释放虚拟功能的资源](./freeing-resources-for-a-virtual-function.md)。
 
-**注意**   当过量驱动程序请求某个 VF 的资源分配后，该驱动程序就是可以请求为同一 VF 释放资源的唯一组件。 过量驱动程序必须发出 oid \_ NIC 交换机自由 vf 的 oid 设置请求 \_ \_ \_ ，以释放 vf 资源。 在停止过量驱动程序之前，必须释放由驱动程序的 [OID \_ NIC \_ 交换机 \_ 分配 \_ vf](oid-nic-switch-allocate-vf.md) 请求分配的每个 VF 的资源。
+**注意**  当过量驱动程序请求某个 VF 的资源分配后，该驱动程序就是可以请求为同一 VF 释放资源的唯一组件。 过量驱动程序必须发出 oid \_ NIC 交换机自由 vf 的 oid 设置请求 \_ \_ \_ ，以释放 vf 资源。 在停止过量驱动程序之前，必须释放由驱动程序的 [OID \_ NIC \_ 交换机 \_ 分配 \_ vf](oid-nic-switch-allocate-vf.md) 请求分配的每个 VF 的资源。
 
  
 
@@ -46,7 +45,7 @@ ms.locfileid: "90106020"
 <thead>
 <tr class="header">
 <th>术语</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -81,7 +80,7 @@ NDIS 为此请求返回以下状态代码之一：
 <thead>
 <tr class="header">
 <th>术语</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

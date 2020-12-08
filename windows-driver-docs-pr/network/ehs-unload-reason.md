@@ -1,24 +1,23 @@
 ---
 title: eHS_UNLOAD_REASON 枚举
 description: EHS_UNLOAD_REASON 枚举指示卸载插件的原因。
-ms.assetid: 1e658dd3-f66d-4803-ad3c-84bfa1890a86
 keywords:
 - 从 Windows Vista 开始 eHS_UNLOAD_REASON 枚举网络驱动程序
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f129de2852a9af4c196ee99984357badcfe829c
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 7a6f4ca2ce554f5919daf2eef6a918b88e1b3170
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403486"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822983"
 ---
 # <a name="ehs_unload_reason-enumeration"></a>eHS \_ 卸载 \_ 原因枚举
 
 [!include[Wi-Fi Hotspot Offloading deprecation](../includes/wi-fi-hotspot-offloading-deprecation.md)]
 
 
-**EHS \_ 卸载 \_ 原因**枚举指示卸载插件的原因。
+**EHS \_ 卸载 \_ 原因** 枚举指示卸载插件的原因。
 
 <a name="syntax"></a>语法
 ------
@@ -61,10 +60,10 @@ typedef enum _eHS_UNLOAD_REASON {
 正在卸载插件，因为该插件未能成功初始化。
 
 <a href="" id="hs-unload-reason-no-networks-supported"></a>**HS \_ 卸载 \_ 原因 \_ 不 \_ \_ 支持网络**  
-正在卸载插件，因为插件的 [**HS \_ 插件 \_ 配置文件**](hs-plugin-profile.md) 结构未指示 **dwNumNetworksSupported**的有效值。
+正在卸载插件，因为插件的 [**HS \_ 插件 \_ 配置文件**](hs-plugin-profile.md) 结构未指示 **dwNumNetworksSupported** 的有效值。
 
 <a href="" id="hs-unload-reason-no-provide-name-id"></a>**HS \_ 卸载 \_ 原因 \_ 无 \_ 提供 \_ 名称 \_ ID**  
-正在卸载插件，因为插件的 [**HS \_ 插件 \_ 配置文件**](hs-plugin-profile.md) 结构未指定 **dwProviderNameStringID**的字符串 ID。
+正在卸载插件，因为插件的 [**HS \_ 插件 \_ 配置文件**](hs-plugin-profile.md) 结构未指定 **dwProviderNameStringID** 的字符串 ID。
 
 <a href="" id="hs-unload-reason-zero-sim-count"></a>**HS \_ 卸载 \_ 原因 \_ 零 \_ SIM \_ 计数**  
 正在卸载插件，因为不存在 SIM 卡。
@@ -73,13 +72,13 @@ typedef enum _eHS_UNLOAD_REASON {
 正在卸载插件，因为插件的 [**HS \_ 插件 \_ 配置文件**](hs-plugin-profile.md) 结构需要使用 HTTP 或基于 EAP SIM 的身份验证，但未指定 dwSupportedSIMCount 的值 **。**
 
 <a href="" id="hs-unload-reason-custom-realm-flag-but-no-realm-string"></a>**HS \_ 卸载 \_ 原因 \_ 自定义 \_ 领域 \_ 标志， \_ 但 \_ 没有 \_ 领域 \_ 字符串**  
-正在卸载插件，因为插件的 [**HS \_ 插件 \_ 配置文件**](hs-plugin-profile.md) 结构指定了 **hs \_ 标志 \_ 功能 \_ 网络 \_ 自定义 \_ 领域** 功能，但未提供有效的 **szRealm**字符串。
+正在卸载插件，因为插件的 [**HS \_ 插件 \_ 配置文件**](hs-plugin-profile.md) 结构指定了 **hs \_ 标志 \_ 功能 \_ 网络 \_ 自定义 \_ 领域** 功能，但未提供有效的 **szRealm** 字符串。
 
 <a href="" id="hs-unload-reason-duplicate-plugin-loaded"></a>**HS \_ 卸载 \_ 原因 \_ 已 \_ 加载重复插件 \_**  
 正在卸载插件，因为另一个插件正在使用同一个 DLL。
 
 <a href="" id="hs-unload-reason-reload-requested-by-plugin"></a>**\_ \_ \_ \_ \_ 由于插件请求重载， \_ 卸载原因**  
-正在卸载插件，因为请求通过指定 **HS \_ 更新 \_ 结果 \_ 操作 \_ ** with [**eHS \_ update \_ result**](ehs-update-result.md) 枚举重新加载操作来卸载和重新加载插件。
+正在卸载插件，因为请求通过指定 **HS \_ 更新 \_ 结果 \_ 操作 \_** with [**eHS \_ update \_ result**](ehs-update-result.md) 枚举重新加载操作来卸载和重新加载插件。
 
 <a href="" id="hs-unload-reason-exception-during-plugin-call"></a>**\_ \_ \_ \_ 在 \_ 插件 \_ 调用期间出现 HS 卸载原因异常**  
 正在卸载插件，因为主机进程在调用插件时遇到异常。
@@ -94,7 +93,7 @@ typedef enum _eHS_UNLOAD_REASON {
 正在卸载插件，因为插件请求的任何身份验证功能均不可用。
 
 <a href="" id="hs-unload-reason-failed-to-load-provider-name-string"></a>**HS \_ 卸载 \_ 原因 \_ 导致 \_ 无法 \_ 加载 \_ 提供程序 \_ 名称 \_ 字符串**  
-正在卸载插件，因为热点服务无法将插件的[**HS \_ 插件 \_ 配置文件**](hs-plugin-profile.md)结构中提供的**dwProviderNameStringID**字符串 ID 映射到有效的字符串。
+正在卸载插件，因为热点服务无法将插件的 [**HS \_ 插件 \_ 配置文件**](hs-plugin-profile.md)结构中提供的 **dwProviderNameStringID** 字符串 ID 映射到有效的字符串。
 
 <a href="" id="hs-unload-reason-failed-to-load-advanced-page-string"></a>**HS \_ 卸载 \_ 原因 \_ 无法 \_ \_ 加载 \_ 高级 \_ 页 \_ 字符串**  
 正在卸载插件，因为插件的 [**HS \_ 插件 \_ 配置文件**](hs-plugin-profile.md) 结构指定了 (可选) **dwAdvancedPageStringID** 字符串 ID，但未映射到有效的字符串。
@@ -118,7 +117,7 @@ typedef enum _eHS_UNLOAD_REASON {
 正在卸载插件，因为 SIM 配置已更改，这需要卸载和重新加载插件。
 
 <a href="" id="hs-unload-reason-wifi-switched-off-in-os"></a>**HS \_ 卸载 \_ 原因 \_ \_ \_ \_ OS 中的 WIFI \_ 关闭**  
-正在卸载插件，因为 Wi-fi 功能已在 OS 中关闭。
+正在卸载插件，因为在操作系统中关闭了 Wi-Fi 功能。
 
 <a href="" id="hs-unload-reason-max"></a>**HS \_ 卸载 \_ 原因 \_ 最大值**  
 指示超出范围值。
@@ -137,13 +136,13 @@ typedef enum _eHS_UNLOAD_REASON {
 <td><p>Windows 10 移动版</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Hotspotoffloadplugin (包含 Hotspotoffloadplugin) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**HS \_ 插件 \_ 配置文件**](hs-plugin-profile.md)

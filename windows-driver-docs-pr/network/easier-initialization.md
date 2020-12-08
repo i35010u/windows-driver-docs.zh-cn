@@ -1,18 +1,17 @@
 ---
 title: 更轻松的初始化
 description: 更轻松的初始化
-ms.assetid: 34f939fd-2bcc-482b-b877-42cc57bdf59b
 keywords:
 - NDIS WDK，初始化驱动程序
 - 初始化驱动程序 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f7055e2d7f7523e622d0adf959dae8c670a4638d
-ms.sourcegitcommit: 366a15d68eb58d01a8ca6de7b982f62ac8b7deaf
+ms.openlocfilehash: 5564f38e67a85e94167e295c2cadb44e1ba5732b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/19/2020
-ms.locfileid: "90812016"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822998"
 ---
 # <a name="easier-initialization"></a>更轻松的初始化
 

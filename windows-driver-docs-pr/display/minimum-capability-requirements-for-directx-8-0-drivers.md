@@ -1,18 +1,17 @@
 ---
 title: DirectX 8.0 驱动程序的最低功能要求
 description: DirectX 8.0 驱动程序的最低功能要求
-ms.assetid: 8c939013-516c-4048-8de5-e95529891ac9
 keywords:
 - DirectX 8.0 发行说明 WDK Windows 2000 显示，报告功能
 - D3DCAPS8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b1dfe0d93476294db8f88644e84987cfac600da
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 1fa61b764405f7b21d552f2e1a9ebc9c64663f1a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717200"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822469"
 ---
 # <a name="minimum-capability-requirements-for-directx-80-drivers"></a>DirectX 8.0 驱动程序的最低功能要求
 

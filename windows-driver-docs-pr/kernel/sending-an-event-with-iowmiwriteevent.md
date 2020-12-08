@@ -1,7 +1,6 @@
 ---
 title: 使用 IoWMIWriteEvent 发送事件
 description: 使用 IoWMIWriteEvent 发送事件
-ms.assetid: 77c1041a-340c-4c59-a30a-e946adf60a95
 keywords:
 - WMI WDK 内核，事件跟踪
 - 事件 WDK WMI
@@ -13,12 +12,12 @@ keywords:
 - 动态实例名称 WDK WMI
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bdc23686ac6a69769cdb4d379078632084501838
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 173232672535fd67d8d3d96ae56fd5e3424dcf26
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190035"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822273"
 ---
 # <a name="sending-an-event-with-iowmiwriteevent"></a>使用 IoWMIWriteEvent 发送事件
 
@@ -62,11 +61,11 @@ ms.locfileid: "89190035"
 
    如果 **IoWMIWriteEvent** 成功完成，WMI 将释放该事件的驱动程序分配内存。
 
-[**IoWMIWriteEvent**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iowmiwriteevent)返回后，驱动程序将继续监视事件的触发器条件，并在每次发生其触发器条件时发送事件，直到 WMI 发送[**IRP \_ MN \_ disable \_ EVENTS**](./irp-mn-disable-events.md)请求来禁用该事件。
+[**IoWMIWriteEvent**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iowmiwriteevent)返回后，驱动程序将继续监视事件的触发器条件，并在每次发生其触发器条件时发送事件，直到 WMI 发送 [**IRP \_ MN \_ disable \_ EVENTS**](./irp-mn-disable-events.md)请求来禁用该事件。
 
-如果事件的大小超过注册表定义的最大值 1K)  (，则驱动程序应使用初始化的[**WNODE \_ 事件 \_ 引用**](/windows-hardware/drivers/ddi/wmistr/ns-wmistr-tagwnode_event_reference)（该引用指定事件的 GUID、其大小及其实例索引 (为动态实例名称) 或名称 (）调用**IoWmiWriteEvent** 。 WMI 将使用 **WNODE \_ 事件 \_ 引用** 中的信息来查询事件。
+如果事件的大小超过注册表定义的最大值 1K)  (，则驱动程序应使用初始化的 [**WNODE \_ 事件 \_ 引用**](/windows-hardware/drivers/ddi/wmistr/ns-wmistr-tagwnode_event_reference)（该引用指定事件的 GUID、其大小及其实例索引 (为动态实例名称) 或名称 (）调用 **IoWmiWriteEvent** 。 WMI 将使用 **WNODE \_ 事件 \_ 引用** 中的信息来查询事件。
 
-驱动程序可以通过调用 WMI 库例程 [**WmiFireEvent**](/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmifireevent)，发送不使用动态实例名称并由单个实例组成的事件。 驱动程序无需为**WmiFireEvent**调用分配和初始化**WNODE \_ * XXX*** 结构。 WMI 将驱动程序的事件数据打包到 [**WNODE \_ 单一 \_ 实例**](/windows-hardware/drivers/ddi/wmistr/ns-wmistr-tagwnode_single_instance) 中，并将其传递给数据使用者。 有关使用 **WmiFireEvent**发送事件的详细信息，请参阅 [使用 WmiFireEvent 发送事件](sending-an-event-with-wmifireevent.md)。
+驱动程序可以通过调用 WMI 库例程 [**WmiFireEvent**](/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmifireevent)，发送不使用动态实例名称并由单个实例组成的事件。 驱动程序无需为 **WmiFireEvent** 调用分配和初始化 **WNODE \_ * XXX*** 结构。 WMI 将驱动程序的事件数据打包到 [**WNODE \_ 单一 \_ 实例**](/windows-hardware/drivers/ddi/wmistr/ns-wmistr-tagwnode_single_instance) 中，并将其传递给数据使用者。 有关使用 **WmiFireEvent** 发送事件的详细信息，请参阅 [使用 WmiFireEvent 发送事件](sending-an-event-with-wmifireevent.md)。
 
  
 

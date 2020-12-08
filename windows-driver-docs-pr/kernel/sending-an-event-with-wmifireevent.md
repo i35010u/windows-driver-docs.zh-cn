@@ -1,7 +1,6 @@
 ---
 title: 使用 WmiFireEvent 发送事件
 description: 使用 WmiFireEvent 发送事件
-ms.assetid: f9cf8491-0f5a-4d83-849f-3edb77488092
 keywords:
 - WMI WDK 内核，事件跟踪
 - 事件 WDK WMI
@@ -13,12 +12,12 @@ keywords:
 - 动态实例名称 WDK WMI
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e3a06ddeec0927aa3128c578fee254f81fe3617
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 5fd71566d9e145eda2ab5d86ae2e1bf9cf04c2c3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192905"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822269"
 ---
 # <a name="sending-an-event-with-wmifireevent"></a>使用 WmiFireEvent 发送事件
 
@@ -46,9 +45,9 @@ ms.locfileid: "89192905"
 
     -   如果要随事件一起发送数据，则为指向包含数据的驱动程序分配的缓冲区的指针; 如果没有，则为 **NULL** 。
 
-    驱动程序必须分配从非分页池传递到 **WmiFireEvent**的所有参数，包括事件数据缓冲区。 WMI 释放驱动程序分配的内存，而不会因驱动程序而进一步介入。
+    驱动程序必须分配从非分页池传递到 **WmiFireEvent** 的所有参数，包括事件数据缓冲区。 WMI 释放驱动程序分配的内存，而不会因驱动程序而进一步介入。
 
-**WmiFireEvent**返回后，驱动程序将继续监视事件的触发条件，并在每次发生触发器条件时发送事件，直到 WMI 禁用该事件。
+**WmiFireEvent** 返回后，驱动程序将继续监视事件的触发条件，并在每次发生触发器条件时发送事件，直到 WMI 禁用该事件。
 
  
 

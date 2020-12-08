@@ -1,7 +1,6 @@
 ---
 title: 驱动程序注册和启动/停止控件
 description: 驱动程序注册和启动/停止控件
-ms.assetid: 66f44703-1277-49fe-a481-c8712172db0f
 keywords:
 - RDBSS WDK 文件系统，启动/停止控制
 - 重定向的驱动器缓冲子系统 WDK 文件系统、启动/停止控制
@@ -11,12 +10,12 @@ keywords:
 - 驱动程序注册 WDK RDBSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ce8aab270ee3d096cbb7578863e70c5c0bdff30
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 952a27b7f0806af6c374c2770f6951bfd26fd7ce
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107302"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823215"
 ---
 # <a name="driver-registration-and-startstop-control"></a>驱动程序注册和启动/停止控件
 
@@ -24,11 +23,11 @@ ms.locfileid: "90107302"
 ## <span id="ddk_driver_registration_and_start_stop_control_if"></span><span id="DDK_DRIVER_REGISTRATION_AND_START_STOP_CONTROL_IF"></span>
 
 
-当操作系统启动时，Windows 会根据注册表中的设置加载 RDBSS 和任何网络微型重定向程序驱动程序。 对于使用 rdbsslib 进行静态链接的单一网络小型重定向程序驱动程序，驱动程序必须从其[**DriverEntry**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)例程调用[**RxDriverEntry**](/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxdriverentry)例程，以初始化与网络驱动程序链接的 rdbsslib 库的副本。 在这种情况下，在调用和使用任何其他 RDBSS 例程之前，必须先调用 **RxDriverEntry** 例程。 对于非单一网络小型重定向程序驱动程序 (Microsoft SMB 重定向程序) ，在加载 rdbss.sys 设备驱动程序时，会在其自己的 **DriverEntry** 例程中进行初始化。
+当操作系统启动时，Windows 会根据注册表中的设置加载 RDBSS 和任何网络微型重定向程序驱动程序。 对于使用 rdbsslib 进行静态链接的单一网络小型重定向程序驱动程序，驱动程序必须从其 [**DriverEntry**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)例程调用 [**RxDriverEntry**](/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxdriverentry)例程，以初始化与网络驱动程序链接的 rdbsslib 库的副本。 在这种情况下，在调用和使用任何其他 RDBSS 例程之前，必须先调用 **RxDriverEntry** 例程。 对于非单一网络小型重定向程序驱动程序 (Microsoft SMB 重定向程序) ，在加载 rdbss.sys 设备驱动程序时，会在其自己的 **DriverEntry** 例程中进行初始化。
 
 当驱动程序由内核加载并在卸载驱动程序时使用 RDBSS 取消注册时，网络小型重定向器将注册到 RDBSS。 网络小型重定向程序通知 RDBSS，它已通过调用 [**RxRegisterMinirdr**](/windows-hardware/drivers/ddi/mrx/nf-mrx-rxregisterminirdr)（从 RDBSS 导出的注册例程）已加载。 作为此注册过程的一部分，网络小型重定向器会将参数传递给 **RxRegisterMinirdr** ，这是一个指向大型结构 MINIRDR 调度的指针 \_ 。 此结构包含网络小型重定向器的配置信息，以及指向由网络小型重定向程序内核驱动程序实现的回调例程的发送表。 RDBSS 通过此回调例程列表进行网络小型重定向器驱动程序的调用。
 
-[**RxRegisterMinirdr**](/windows-hardware/drivers/ddi/mrx/nf-mrx-rxregisterminirdr)例程将网络微型重定向程序驱动程序的所有驱动程序调度例程设置为指向顶级 RDBSS 调度例程[**RxFsdDispatch**](/windows-hardware/drivers/ddi/mrx/nf-mrx-rxfsddispatch)。 网络小型重定向程序可通过以下方式重写此行为：保存其自己的入口点，并在调用**RxRegisterMinirdr**后重写驱动程序调度，并使用其自己的入口点重写此**行为。**
+[**RxRegisterMinirdr**](/windows-hardware/drivers/ddi/mrx/nf-mrx-rxregisterminirdr)例程将网络微型重定向程序驱动程序的所有驱动程序调度例程设置为指向顶级 RDBSS 调度例程 [**RxFsdDispatch**](/windows-hardware/drivers/ddi/mrx/nf-mrx-rxfsddispatch)。 网络小型重定向程序可通过以下方式重写此行为：保存其自己的入口点，并在调用 **RxRegisterMinirdr** 后重写驱动程序调度，并使用其自己的入口点重写此 **行为。**
 
 网络微重定向程序驱动程序在收到对其 [**MRxStart**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_calldown_ctx) 例程的调用（在 MINIRDR 调度结构中传递的回调例程之一）之前，不会实际启动操作 \_ 。 如果网络小型重定向程序驱动程序希望接收操作的回调例程（除非网络小型重定向程序保留其自己的驱动程序调度入口点），则必须使用 **MrxStart** 回调例程。 否则，RDBSS 只允许将以下 i/o 请求数据包传递到驱动程序，直到 **MrxStart** 成功返回：
 
@@ -42,11 +41,11 @@ RDBSS 调度例程还将无法处理以下 i/o 请求数据包：
 
 -   IRP \_ MJ \_ 创建 \_ 命名 \_ 管道
 
-调用[**RxStartMinirdr**](/windows-hardware/drivers/ddi/mrx/nf-mrx-rxstartminirdr)例程时，由 RDBSS 调用由网络小型重定向程序实现的[**MrxStart**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_calldown_ctx)回调例程。 RDBSS **RxStartMinirdr** 例程通常作为文件系统控制代码 (FSCTL) 或 i/o 控制代码， (IOCTL) 请求从用户模式应用程序或服务启动网络小型重定向程序。 成功调用[**RxRegisterMinirdr**](/windows-hardware/drivers/ddi/mrx/nf-mrx-rxregisterminirdr)后，不能从网络小型重定向程序的[**DriverEntry**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)例程对**RxStartMinirdr**进行调用，因为某些启动处理要求完成驱动程序初始化。 接收到 **RxStartMinirdr** 调用后，RDBSS 将通过调用网络小型重定向器的 **MrxStart** 例程来完成启动过程。 如果对 **MrxStart** 的调用返回 success，则 RDBSS 会将 RDBSS 中的小型重定向器的内部状态设置为 "RDBSS \_ 已启动"。
+调用 [**RxStartMinirdr**](/windows-hardware/drivers/ddi/mrx/nf-mrx-rxstartminirdr)例程时，由 RDBSS 调用由网络小型重定向程序实现的 [**MrxStart**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_calldown_ctx)回调例程。 RDBSS **RxStartMinirdr** 例程通常作为文件系统控制代码 (FSCTL) 或 i/o 控制代码， (IOCTL) 请求从用户模式应用程序或服务启动网络小型重定向程序。 成功调用 [**RxRegisterMinirdr**](/windows-hardware/drivers/ddi/mrx/nf-mrx-rxregisterminirdr)后，不能从网络小型重定向程序的 [**DriverEntry**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)例程对 **RxStartMinirdr** 进行调用，因为某些启动处理要求完成驱动程序初始化。 接收到 **RxStartMinirdr** 调用后，RDBSS 将通过调用网络小型重定向器的 **MrxStart** 例程来完成启动过程。 如果对 **MrxStart** 的调用返回 success，则 RDBSS 会将 RDBSS 中的小型重定向器的内部状态设置为 "RDBSS \_ 已启动"。
 
 RDBSS 导出例程 [**RxSetDomainForMailslotBroadcast**](/windows-hardware/drivers/ddi/mrx/nf-mrx-rxsetdomainformailslotbroadcast)，为 mailslot 广播设置域。 如果网络小型重定向程序支持 mailslots，则在注册过程中将使用此例程。
 
-RDBSS 导出的便利例程[** \_ \_ RxFillAndInstallFastIoDispatch**](/windows-hardware/drivers/ddi/mrx/nf-mrx-__rxfillandinstallfastiodispatch)可用于将所有 IRP \_ MJ \_ XXX 驱动程序例程指针复制到可比较的快速 i/o 调度向量，但此例程仅适用于非单片驱动程序。
+RDBSS 导出的便利例程 [**\_ \_ RxFillAndInstallFastIoDispatch**](/windows-hardware/drivers/ddi/mrx/nf-mrx-__rxfillandinstallfastiodispatch)可用于将所有 IRP \_ MJ \_ XXX 驱动程序例程指针复制到可比较的快速 i/o 调度向量，但此例程仅适用于非单片驱动程序。
 
 RDBSS 还会导出例程，通知 RDBSS 网络微型重定向程序正在启动或停止。 如果网络小型重定向器包括可启动和停止重定向程序的用户模式管理服务或实用程序，则使用这些调用。 此用户模式服务或应用程序可将自定义的 FSCTL 或 IOCTL 请求发送到网络小型重定向程序驱动程序，以指示它应启动或停止。 重定向程序可调用 RDBSS [**RxStartMinirdr**](/windows-hardware/drivers/ddi/mrx/nf-mrx-rxstartminirdr) 或 [**RxStopMinirdr**](/windows-hardware/drivers/ddi/mrx/nf-mrx-rxstopminirdr) 例程，通知 RDBSS 启动或停止此网络微型重定向程序。
 
@@ -60,7 +59,7 @@ RDBSS 还会导出例程，通知 RDBSS 网络微型重定向程序正在启动�
 <thead>
 <tr class="header">
 <th align="left">例程所返回的值</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -102,7 +101,7 @@ RDBSS 还会导出例程，通知 RDBSS 网络微型重定向程序正在启动�
 
  
 
-以下宏在 mrx 头文件中定义，该文件调用这些例程之一。 通常使用此宏，而不是直接调用[** \_ \_ RxFillAndInstallFastIoDispatch**](/windows-hardware/drivers/ddi/mrx/nf-mrx-__rxfillandinstallfastiodispatch)例程。
+以下宏在 mrx 头文件中定义，该文件调用这些例程之一。 通常使用此宏，而不是直接调用 [**\_ \_ RxFillAndInstallFastIoDispatch**](/windows-hardware/drivers/ddi/mrx/nf-mrx-__rxfillandinstallfastiodispatch)例程。
 
 <table>
 <colgroup>

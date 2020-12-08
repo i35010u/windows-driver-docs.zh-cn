@@ -1,32 +1,31 @@
 ---
 title: eHS_AUTHENTICATION_RESULT 枚举
 description: EHS_AUTHENTICATION_RESULT 枚举指示 PostConnectAuth 请求之后的插件进行身份验证的结果。
-ms.assetid: a61ddc7c-8df8-410c-83df-9058e88bce51
 keywords:
 - 从 Windows Vista 开始 eHS_AUTHENTICATION_RESULT 枚举网络驱动程序
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 89afdf1fe01591b197954e8214dc36a7b2ffed0f
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: ade0b9d3e374ec1068d6f26852dc563af4c78da0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403548"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823002"
 ---
 # <a name="ehs_authentication_result-enumeration"></a>eHS \_ AUTHENTICATION \_ 结果枚举
 
 [!include[Wi-Fi Hotspot Offloading deprecation](../includes/wi-fi-hotspot-offloading-deprecation.md)]
 
 
-**EHS \_ authentication \_ 结果**枚举指示 PostConnectAuth 请求后的插件进行身份验证的结果。
+**EHS \_ authentication \_ 结果** 枚举指示 PostConnectAuth 请求后的插件进行身份验证的结果。
 
 <a name="syntax"></a>语法
 ------
 
 ```ManagedCPlusPlus
 typedef enum _eHS_AUTHENTICATION_RESULT { 
-  HS_AUTHENTICATION_RESULT_SUCCESS         = 0,
-  HS_AUTHENTICATION_RESULT_FAILED_TIMEOUT  = 100,
+  HS_AUTHENTICATION_RESULT_SUCCESS         = 0,
+  HS_AUTHENTICATION_RESULT_FAILED_TIMEOUT  = 100,
   HS_AUTHENTICATION_RESULT_FAILED_AUTH,
   HS_AUTHENTICATION_RESULT_FAILED_CONNECT,
   HS_AUTHENTICATION_RESULT_FAILED_OTHER,
@@ -58,7 +57,7 @@ typedef enum _eHS_AUTHENTICATION_RESULT {
 <a name="remarks"></a>备注
 -------
 
-此插件通过 [**HS \_ host \_ CONNECT authentication \_ \_ \_ 完成**](hs-host-post-connect-auth-completion.md) 函数将此枚举值传递到热点插件主机，该函数用于通知热点插件对对 HS 插件的调用结果的 [** \_ \_ 启动 \_ 后 \_ 连接 \_ 身份验证**](hs-plugin-start-post-connect-auth.md)。
+此插件通过 [**HS \_ host \_ CONNECT authentication \_ \_ \_ 完成**](hs-host-post-connect-auth-completion.md) 函数将此枚举值传递到热点插件主机，该函数用于通知热点插件对对 HS 插件的调用结果的 [**\_ \_ 启动 \_ 后 \_ 连接 \_ 身份验证**](hs-plugin-start-post-connect-auth.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -74,7 +73,7 @@ typedef enum _eHS_AUTHENTICATION_RESULT {
 <td><p>Windows 10 移动版</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Hotspotoffloadplugin (包含 Hotspotoffloadplugin) </td>
 </tr>
 </tbody>

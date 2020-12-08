@@ -1,24 +1,23 @@
 ---
 title: WDI 扩展通道切换通告 (ECSA)
 description: '本部分提供了建议的驱动程序/固件更改，用于实现扩展通道交换机公告 (ECSA) '
-ms.assetid: 9C59C8A2-335F-4BA4-8682-6DFFB82E1CAF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e08d3e36471d3dfefbac5bba26b8ec546a0d38f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 30f4804ef7f66d3cc89a22f638569f4d6574c2ae
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216526"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822767"
 ---
 # <a name="wdi-extended-channel-switch-announcement-ecsa"></a>WDI 扩展通道切换通告 (ECSA)
 
 
-为了最大限度地减少 Wi-fi Direct 端口导致系统在多通道模式下运行的情况，多通道用例不像单通道用例那样高性能。 建议 (驱动程序/固件) 设备实现 ECSA。 此功能应完全存在于 IHV 端。
+为了最大程度地降低 Wi-Fi 直接端口导致系统在多通道模式下运行的情况，多通道用例不像单通道用例那样高性能。 建议 (驱动程序/固件) 设备实现 ECSA。 此功能应完全存在于 IHV 端。
 
 下面是建议的驱动程序/固件更改。
 
--   支持对 Wi-fi Direct 端口进行双向 ECSA。
+-   支持 Wi-Fi 直接端口上的双向 ECSA。
 -   如果设备是组所有者，并且处于多通道模式下：
     -   驱动程序必须检测远程对等机是否支持 ECSA。
     -   如果远程对等机支持 ECSA，请使用 ECSA 将对等互连到产生单个通道的通道配置。

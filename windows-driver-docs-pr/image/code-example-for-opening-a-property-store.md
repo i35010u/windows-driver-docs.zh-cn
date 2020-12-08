@@ -1,20 +1,19 @@
 ---
 title: 演示如何打开属性存储的代码示例
 description: 演示如何打开属性存储的代码示例
-ms.assetid: 4d63ea52-f3f5-4af7-ad6f-0bbd57b76c52
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e8089fd1fb13593362c4cff35ddaa9427125ce3b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4a7b9649feb907e1c3930799f744c1568d07ff18
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373233"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823191"
 ---
 # <a name="code-example-for-opening-a-property-store"></a>演示如何打开属性存储的代码示例
 
 
-下面的代码示例显示如何打开当前函数实例对象的属性存储区。 获取当前函数实例对象的过程所述[获取函数实例对象](obtaining-a-function-instance-object.md)。
+下面的代码示例演示如何为当前函数实例对象打开属性存储。 获取 [函数实例对象](obtaining-a-function-instance-object.md)中介绍了获取当前函数实例对象的过程。
 
 ```cpp
 /**************************************************************************\

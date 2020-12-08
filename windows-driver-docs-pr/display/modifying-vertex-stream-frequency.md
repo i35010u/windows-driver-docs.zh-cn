@@ -1,17 +1,16 @@
 ---
 title: 修改顶点流频率
 description: 修改顶点流频率
-ms.assetid: 81bbced4-7331-4e54-9617-1ef29b02f162
 keywords:
 - 顶点流 9.0 frequency
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c89fd706ed0ce5506adc4950e3c6e808ef70655e
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: d5dfd4523405a5f6db7229e4de384efc44f4d7db
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067326"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821516"
 ---
 # <a name="modifying-vertex-stream-frequency"></a>修改顶点流频率
 
@@ -31,7 +30,7 @@ ms.locfileid: "89067326"
 VertexOffset = VertexIndex / Divider * StreamStride + StreamOffset 
 ```
 
-对于使用的每个顶点流，如果驱动程序在使用 D3DDP2OP DRAWPRIMITIVE 操作代码调用驱动程序的 *D3dDrawPrimitives2* 函数时接收一个起始顶点的值 \_ ，则驱动程序还会将此起始顶点的值除以 frequency，并在公式中使用结果。 此起始顶点值在[**D3DHAL \_ DP2DRAWPRIMITIVE**](/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_d3dhal_dp2drawprimitive)结构的**VStart**成员中提供。 起始顶点值中的以下公式系数：
+对于使用的每个顶点流，如果驱动程序在使用 D3DDP2OP DRAWPRIMITIVE 操作代码调用驱动程序的 *D3dDrawPrimitives2* 函数时接收一个起始顶点的值 \_ ，则驱动程序还会将此起始顶点的值除以 frequency，并在公式中使用结果。 此起始顶点值在 [**D3DHAL \_ DP2DRAWPRIMITIVE**](/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_d3dhal_dp2drawprimitive)结构的 **VStart** 成员中提供。 起始顶点值中的以下公式系数：
 
 ```cpp
 VertexOffset = StartVertex / Divider + 
@@ -44,7 +43,7 @@ VertexOffset = StartVertex / Divider +
 
 如果驱动程序仅支持版本 (3.0 之前的顶点着色器模型（包括固定函数) ），则驱动程序将忽略流的频率为约数的设置。
 
-有关 **IDirect3DDevice*xxx*：： SetStreamSourceFreq** 和 **IDirect3DDevice*Xxx*：： CreateStateBlock**的详细信息，请参阅最新的 DirectX SDK 文档。
+有关 **IDirect3DDevice *xxx*：： SetStreamSourceFreq** 和 **IDirect3DDevice *Xxx*：： CreateStateBlock** 的详细信息，请参阅最新的 DirectX SDK 文档。
 
  
 

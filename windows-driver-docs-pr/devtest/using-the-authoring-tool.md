@@ -1,17 +1,16 @@
 ---
 title: 使用设备元数据创作向导
 description: 使用设备元数据创作向导
-ms.assetid: 77809258-C14C-481F-AE6C-07580294EBD8
 keywords:
 - 使用设备元数据创作向导
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ee0fd7d2bc441ac391e9525b501c1e30fd652945
-ms.sourcegitcommit: e2de6b9ffb5c7356deb864f9da879533f49b25bf
+ms.openlocfilehash: e504ea155f239f06a647be983f4c7b350291e1f9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2020
-ms.locfileid: "91702664"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822519"
 ---
 # <a name="using-the-device-metadata-authoring-wizard"></a>使用设备元数据创作向导
 

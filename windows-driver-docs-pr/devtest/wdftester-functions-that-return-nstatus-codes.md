@@ -1,20 +1,19 @@
 ---
 title: 返回 NSTATUS 代码的 KMDF 函数
 description: 返回 NSTATUS 代码的 KMDF 函数
-ms.assetid: 0edd35c0-2357-4502-8c59-36b16cf7f294
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: df14fede11fdf33d609439c4479f42dd0eef8b26
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0420b2fac4e298321f92bdacf444580b24d86b14
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378589"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823309"
 ---
 # <a name="kmdf-functions-that-return-nstatus-codes"></a>返回 NSTATUS 代码的 KMDF 函数
 
 
-下面是返回 NTSTATUS 代码 KMDF DDIs 的列表。 任何这些 DDIs 无法除以下两个失败：**WdfRequestReuse**并**WdfWaitLockAcquire**。
+下面是返回 NTSTATUS 代码的 KMDF DDIs 的列表。 其中的任何 DDIs 可能会失败，但以下两种情况除外： **WdfRequestReuse** 和 **WdfWaitLockAcquire**。
 
 **WdfChildListAddOrUpdateChildDescriptionAsPresent**
 

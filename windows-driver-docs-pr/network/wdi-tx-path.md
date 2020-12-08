@@ -1,15 +1,14 @@
 ---
 title: WDI TX 路径
 description: 本部分介绍 WDI TX 路径
-ms.assetid: 8DF3E82E-761E-4A90-A789-1CB8EE8F0377
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f3605cefcf61e00604ba3052c9f3aa13a7234d8
-ms.sourcegitcommit: 74a8dc9ef1da03857dec5cab8d304e2869ba54a7
+ms.openlocfilehash: 7bab36545f2021f56424a5d03a01cf2f7e4899e5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90759768"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821919"
 ---
 # <a name="wdi-tx-path"></a>WDI TX 路径
 
