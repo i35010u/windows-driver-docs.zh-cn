@@ -1,7 +1,6 @@
 ---
 title: DXGKCB \_ 存在 \_ DISPLAYONLY \_ 进度回调函数
 description: 了解 DXGKCB 存在的 \_ \_ DISPLAYONLY \_ 进度回调函数，该函数保留供系统使用。 不要在您的驱动程序中使用它。
-ms.assetid: 8970246b-b46f-464f-93b2-973cc351ed07
 keywords:
 - pfnPresentDisplayOnlyProgress 回调函数显示设备
 - DXGKCB_PRESENT_DISPLAYONLY_PROGRESS
@@ -15,12 +14,12 @@ api_type:
 - UserDefined
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 2bf3a3ad0e0acb51b36f74580b7c4b78a1d90537
-ms.sourcegitcommit: fc94eb0d5a41ef81c1b3ab91ad725386db0be0c2
+ms.openlocfilehash: d8e2abef230fbe411d3f44b167225055c249a7e5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91603565"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808941"
 ---
 # <a name="dxgkcb_present_displayonly_progress-callback-function"></a>DXGKCB \_ 存在 \_ DISPLAYONLY \_ 进度回调函数
 
@@ -34,13 +33,13 @@ ms.locfileid: "91603565"
 DXGKCB_PRESENT_DISPLAYONLY_PROGRESS pfnPresentDisplayOnlyProgress;
 
 void APIENTRY CALLBACK* pfnPresentDisplayOnlyProgress(
-  _In_ const HANDLE                                 hAdapter,
-  _In_ const DXGKARGCB_PRESENT_DISPLAYONLY_PROGRESS *pProgress
+  _In_ const HANDLE                                 hAdapter,
+  _In_ const DXGKARGCB_PRESENT_DISPLAYONLY_PROGRESS *pProgress
 )
 { ... }
 ```
 
-<a name="parameters"></a>parameters
+<a name="parameters"></a>参数
 ----------
 
 *hAdapter* \[中\]
@@ -71,7 +70,7 @@ void APIENTRY CALLBACK* pfnPresentDisplayOnlyProgress(
 </tr>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面型</td>
+<td align="left">台式机</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>

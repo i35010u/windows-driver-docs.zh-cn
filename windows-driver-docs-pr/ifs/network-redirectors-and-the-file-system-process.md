@@ -1,7 +1,6 @@
 ---
 title: 网络重定向程序和文件系统进程
 description: 网络重定向程序和文件系统进程
-ms.assetid: 01bdd0d4-d03e-4b3c-ab34-1d5909cde284
 keywords:
 - 内核网络重定向程序 WDK，文件系统进程
 - 异步请求 WDK 网络重定向器
@@ -11,12 +10,12 @@ keywords:
 - 缓冲 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b80f9e8e089af4f8399456b4c8e82d41b68db044
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 8ba19d11f8a9fc147edb7ec2763245239497d362
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064982"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808815"
 ---
 # <a name="network-redirectors-and-the-file-system-process"></a>网络重定向程序和文件系统进程
 
@@ -27,13 +26,13 @@ ms.locfileid: "89064982"
 
 若要执行异步 IRP \_ MJ \_ 写入请求，RDBSS 或网络微型重定向程序需要获取文件对象的 FCB 资源 (用于更改文件对象) 的同步对象。 当 FCB 资源已由另一个线程控制，或网络微型重定向程序尝试在用户的线程 (上下文) 中获取 FCB 资源时，将阻止此操作。 不应阻止对文件系统的异步请求。 对于 (IRP \_ MJ 写入请求的异步请求 \_ ，例如) ，文件系统驱动程序将首先检查是否 (网络小型重定向程序的 FCB 资源提供所需的资源，例如) 。 如果资源不可用，则文件系统驱动程序会将请求发送到工作队列，以供以后由 (FSP) 的系统工作线程完成，并且文件系统返回 \_ FSD 线程的挂起状态。 对于用户应用程序，FSD 将立即返回状态 " \_ 挂起"，而实际工作会由 FSP 中的系统工作线程处理。
 
-在文件系统驱动程序将工作发送到 FSP 之前，必须完成几个任务。 文件系统驱动程序需要从 FSD 中用户的线程捕获安全上下文，因为工作线程将完成工作。 RDBSS 会自动在 [**RxFsdPostRequest**](/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxfsdpostrequest) 例程中为网络小型重定向程序执行此功能。 每当网络微重定向器 \_ 使用 RX 上下文结构的 **PostRequest** 成员 \_ 将设置为 **TRUE**时，RDBSS 就会调用此例程。 如果将工作发送到工作队列，则文件系统驱动程序还必须确保用户缓冲区可供系统工作线程以后使用。 可以通过两种方法来完成此任务：
+在文件系统驱动程序将工作发送到 FSP 之前，必须完成几个任务。 文件系统驱动程序需要从 FSD 中用户的线程捕获安全上下文，因为工作线程将完成工作。 RDBSS 会自动在 [**RxFsdPostRequest**](/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxfsdpostrequest) 例程中为网络小型重定向程序执行此功能。 每当网络微重定向器 \_ 使用 RX 上下文结构的 **PostRequest** 成员 \_ 将设置为 **TRUE** 时，RDBSS 就会调用此例程。 如果将工作发送到工作队列，则文件系统驱动程序还必须确保用户缓冲区可供系统工作线程以后使用。 可以通过两种方法来完成此任务：
 
 1.  文件系统驱动程序可以将用户缓冲区映射到内核内存空间，然后再将其发布到 FSP，以便 (FSP) 的系统工作线程可以访问这些缓冲区。 文件系统驱动程序通常使用的方法是在 FSP 中锁定用户缓冲区，因为在以后可以通过系统工作线程映射内存页。
 
 2.  文件系统可以从 FSP 保存调用进程的线程，并且系统工作线程可以在 FSP 中附加到此调用进程。 使用 [**KeStackAttachProcess**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-kestackattachprocess)，系统工作线程会附加到用户的调用进程，并访问用户缓冲区，然后在完成工作时使用 [**KeUnstackDetachProcess**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-keunstackdetachprocess) 从用户的调用进程中分离。
 
-只要 rx 上下文[**RxFsdPostRequest**](/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxfsdpostrequest) \_ \_ 标志 \_ 无 \_ PREPOSTING \_ 所需位未在 rx 上下文结构的**Flags**成员中设置 \_ ，RDBSS 就会使用 RxFsdPostRequest 例程中的方法1自动锁定用户缓冲区。 将为以下请求锁定用户缓冲区：
+只要 rx 上下文 [**RxFsdPostRequest**](/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxfsdpostrequest) \_ \_ 标志 \_ 无 \_ PREPOSTING \_ 所需位未在 rx 上下文结构的 **Flags** 成员中设置 \_ ，RDBSS 就会使用 RxFsdPostRequest 例程中的方法1自动锁定用户缓冲区。 将为以下请求锁定用户缓冲区：
 
 -   Irp \_ MJ \_ 目录 \_ 控件，其中包含 IRP \_ MN \_ QUERY \_ DIRECTORY 的次要功能
 

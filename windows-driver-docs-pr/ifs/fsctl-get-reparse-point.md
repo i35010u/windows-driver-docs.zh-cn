@@ -1,7 +1,6 @@
 ---
 title: FSCTL_GET_REPARSE_POINT 控制代码
 description: FSCTL \_ 获取重新 \_ 分析 \_ 点控制代码检索与指定的文件或目录关联的重新分析点数据。
-ms.assetid: 8d56a4c5-46c3-42b7-a532-eaf0d792b519
 keywords:
 - FSCTL_GET_REPARSE_POINT 控制代码可安装的文件系统驱动程序
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ce35ad1004afe63accfc99aadb8fa0a1b02dbdc
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 9f4c4dab80cbc79c1efec538a499ba4821272bc7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103784"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808379"
 ---
 # <a name="fsctl_get_reparse_point-control-code"></a>FSCTL \_ 获取重新 \_ 分析 \_ 点控制代码
 
@@ -30,16 +29,16 @@ FSCTL \_ 获取重新 \_ 分析 \_ 点控制代码检索与指定的文件或目
 
 有关重新分析点和 FSCTL \_ 获取重新 \_ 分析点控制代码的详细信息 \_ ，请参阅 Microsoft Windows SDK 文档。
 
-**参数**
+**Parameters**
 
 <a href="" id="fileobject"></a>*FileObject*  
-仅[**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 。 要从中检索重新分析点数据的文件或目录的文件对象指针。 此参数是必需的，不能为 **NULL**。
+仅 [**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 。 要从中检索重新分析点数据的文件或目录的文件对象指针。 此参数是必需的，不能为 **NULL**。
 
 <a href="" id="filehandle"></a>*FileHandle*  
-仅[**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85)) 。 从中检索重新分析点数据的文件或目录的文件句柄。 此参数是必需的，不能为 **NULL**。
+仅 [**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85)) 。 从中检索重新分析点数据的文件或目录的文件句柄。 此参数是必需的，不能为 **NULL**。
 
 <a href="" id="fscontrolcode"></a>*FsControlCode*  
-操作的控制代码。 使用 FSCTL 获取此操作的重新 ** \_ \_ 分析 \_ 点** 。
+操作的控制代码。 使用 FSCTL 获取此操作的重新 **\_ \_ 分析 \_ 点** 。
 
 <a href="" id="inputbuffer"></a>*InputBuffer*  
 不与此操作一起使用;设置为 **NULL**。
@@ -51,7 +50,7 @@ FSCTL \_ 获取重新 \_ 分析 \_ 点控制代码检索与指定的文件或目
 一个指针，它指向接收了重新分析点数据的调用方分配的重新 [**分析 \_ GUID \_ 数据 \_ 缓冲区**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_reparse_guid_data_buffer) 或重新 [**分析 \_ 数据 \_ 缓冲区**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_reparse_data_buffer) 结构。
 
 <a href="" id="outputbufferlength"></a>*OutputBufferLength*  
-*OutputBuffer*参数指向的缓冲区的大小（以字节为单位）。 对于重新分析 \_ guid \_ 数据 \_ 缓冲区结构，此值必须至少为重新分析 \_ guid \_ 数据 \_ 缓冲区 \_ 标头 \_ 大小，加上所需的用户定义数据的大小，并且必须小于或等于最大重新 \_ 分析 \_ 数据 \_ 缓冲区 \_ 大小。 对于重新分析 \_ 数据 \_ 缓冲区结构，此值必须至少是重新分析 \_ 数据 \_ 缓冲区 \_ 标头 \_ 大小，加上所需的用户定义数据的大小，并且必须小于或等于最大重新 \_ 分析 \_ 数据 \_ 缓冲区 \_ 大小。
+*OutputBuffer* 参数指向的缓冲区的大小（以字节为单位）。 对于重新分析 \_ guid \_ 数据 \_ 缓冲区结构，此值必须至少为重新分析 \_ guid \_ 数据 \_ 缓冲区 \_ 标头 \_ 大小，加上所需的用户定义数据的大小，并且必须小于或等于最大重新 \_ 分析 \_ 数据 \_ 缓冲区 \_ 大小。 对于重新分析 \_ 数据 \_ 缓冲区结构，此值必须至少是重新分析 \_ 数据 \_ 缓冲区 \_ 标头 \_ 大小，加上所需的用户定义数据的大小，并且必须小于或等于最大重新 \_ 分析 \_ 数据 \_ 缓冲区 \_ 大小。
 
 <a name="status-block"></a>状态块
 ------------
@@ -66,7 +65,7 @@ FSCTL \_ 获取重新 \_ 分析 \_ 点控制代码检索与指定的文件或目
 <thead>
 <tr class="header">
 <th align="left">术语</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -107,7 +106,7 @@ FSCTL \_ 获取重新 \_ 分析 \_ 点控制代码检索与指定的文件或目
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**FLT \_ 回调 \_ 数据**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)

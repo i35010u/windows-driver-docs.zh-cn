@@ -1,7 +1,6 @@
 ---
 title: FSCTL_OPLOCK_BREAK_NOTIFY 控制代码
 description: FSCTL \_ oplock \_ 中断 \_ 通知控制代码允许调用应用程序等待机会锁的完成， (OPLOCK) 中断。
-ms.assetid: 80fe4e5f-fb6f-4c11-8574-97d7f0e7cc6b
 keywords:
 - FSCTL_OPLOCK_BREAK_NOTIFY 控制代码可安装的文件系统驱动程序
 topic_type:
@@ -14,17 +13,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b5d59b958e16b3680625449d63efbfbfc0d5e9dc
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: e2c048eadfd3cc2e4a5c20704f620717e9772ee9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063404"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808309"
 ---
 # <a name="fsctl_oplock_break_notify-control-code"></a>FSCTL \_ OPLOCK \_ 中断 \_ 通知控制代码
 
 
-**FSCTL \_ oplock \_ 中断 \_ 通知**控制代码允许调用应用程序等待机会锁的完成， (OPLOCK) 中断。
+**FSCTL \_ oplock \_ 中断 \_ 通知** 控制代码允许调用应用程序等待机会锁的完成， (OPLOCK) 中断。
 
 此操作仅适用于打开调用方句柄时已启动的 oplock 中断。 如果 OPLOCKED，则必须已使用文件完成打开句柄 \_ \_ \_ 。 如果当前持有 oplock 并且 oplock 中断尚未开始，则此操作无意义。
 
@@ -32,16 +31,16 @@ ms.locfileid: "89063404"
 
 有关机会锁定和 **FSCTL \_ OPLOCK \_ 中断 \_ 通知** 控制代码的详细信息，请参阅 Microsoft Windows SDK 文档。
 
-**参数**
+**Parameters**
 
 <a href="" id="oplock"></a>*机会*  
 文件的不透明 oplock 对象指针。
 
 <a href="" id="callbackdata"></a>*CallbackData*  
-仅[**FltOplockFsctrl**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltoplockfsctrl) 。 为 IRP MJ [** \_ \_ **](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data) \_ \_ 文件 \_ 系统 \_ 控制 FSCTL 请求 (FLT 回调数据) 结构的回叫数据。 操作的 *FsControlCode* 参数必须是 FSCTL \_ OPLOCK \_ 中断 \_ 通知。
+仅 [**FltOplockFsctrl**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltoplockfsctrl) 。 为 IRP MJ [**\_ \_**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data) \_ \_ 文件 \_ 系统 \_ 控制 FSCTL 请求 (FLT 回调数据) 结构的回叫数据。 操作的 *FsControlCode* 参数必须是 FSCTL \_ OPLOCK \_ 中断 \_ 通知。
 
 <a href="" id="irp"></a>*Irp*  
-仅[**FsRtlOplockFsctrl**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtloplockfsctrl) 。 Irp \_ MJ \_ 文件 \_ 系统 \_ 控件 FSCTL 请求。 操作的 *FsControlCode* 参数必须是 FSCTL \_ OPLOCK \_ 中断 \_ 通知。
+仅 [**FsRtlOplockFsctrl**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtloplockfsctrl) 。 Irp \_ MJ \_ 文件 \_ 系统 \_ 控件 FSCTL 请求。 操作的 *FsControlCode* 参数必须是 FSCTL \_ OPLOCK \_ 中断 \_ 通知。
 
 <a href="" id="opencount"></a>*OpenCount*  
 不与此操作一起使用;设置为零。
@@ -61,7 +60,7 @@ ms.locfileid: "89063404"
 <thead>
 <tr class="header">
 <th align="left">术语</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

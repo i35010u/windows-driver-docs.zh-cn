@@ -1,9 +1,8 @@
 ---
 title: 僵停
-description: 僵停扩展显示的所有死信 （"僵尸"） 的进程或线程。
-ms.assetid: f7fbce79-456a-4643-ad31-8cb2e6449ecf
+description: 僵尸扩展显示所有死 ( "傀儡" ) 进程或线程。
 keywords:
-- 僵停 Windows 调试
+- 僵尸 Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,38 +11,38 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8643e04580b7c5077bf5457c47d4b6f6ac8af6ed
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c5244b96b277d6583bb73d94ab183f368cc12eeb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351502"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808527"
 ---
 # <a name="zombies"></a>!zombies
 
 
-**！ 僵停**扩展显示的所有死信 （"僵尸"） 的进程或线程。
+**！僵尸** 扩展显示所有死 ( "傀儡" ) 进程或线程。
 
 ```dbgcmd
 !zombies [Flags [RestartAddress]]
 ```
 
-## <a name="span-idddkzombiesdbgspanspan-idddkzombiesdbgspanparameters"></a><span id="ddk__zombies_dbg"></span><span id="DDK__ZOMBIES_DBG"></span>参数
+## <a name="span-idddk__zombies_dbgspanspan-idddk__zombies_dbgspanparameters"></a><span id="ddk__zombies_dbg"></span><span id="DDK__ZOMBIES_DBG"></span>参数
 
 
-<span id="_______Flags______"></span><span id="_______flags______"></span><span id="_______FLAGS______"></span> *标志*   
-指定将显示的内容。 可能值的包括：
+<span id="_______Flags______"></span><span id="_______flags______"></span><span id="_______FLAGS______"></span>*标志*   
+指定将显示的内容。 可能的值包括：
 
 <span id="1"></span>1  
-显示所有僵停进程。 （这是默认值）。
+显示所有僵停进程。  (这是默认值。 ) 
 
 <span id="2"></span>2  
-显示僵停的所有线程。
+显示所有僵停的线程。
 
-<span id="_______RestartAddress______"></span><span id="_______restartaddress______"></span><span id="_______RESTARTADDRESS______"></span> *RestartAddress*   
-指定要开始搜索的十六进制地址。 这是上一次搜索已过早终止的情况下很有用。 默认值为 0。
+<span id="_______RestartAddress______"></span><span id="_______restartaddress______"></span><span id="_______RESTARTADDRESS______"></span>*RestartAddress*   
+指定从其开始搜索的十六进制地址。 如果以前的搜索提前终止，这会很有用。 默认值为零。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -64,18 +63,18 @@ ms.locfileid: "63351502"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-若要查看所有进程和线程的列表，请使用[ **！ 过程**](-process.md)扩展。
+若要查看所有进程和线程的列表，请使用 [**！进程**](-process.md) 扩展。
 
-关于进程和线程在内核模式下的常规信息，请参阅[更改上下文](changing-contexts.md)。 有关分析进程和线程的详细信息，请参阅*Microsoft Windows Internals*、 Mark Russinovich 和 David solomon 合著的。 
+有关内核模式下的进程和线程的一般信息，请参阅 [更改上下文](changing-contexts.md)。 有关分析进程和线程的详细信息，请参阅 Russinovich 和 David 所罗门群岛的 *Microsoft Windows 内部机制*。 
 
 <a name="remarks"></a>备注
 -------
 
-僵停进程是死的进程，未卸下从进程列表。 僵停线程是类似的。
+僵停进程是尚未从进程列表中删除的停滞进程。 僵停线程类似。
 
-此扩展是仅适用于 Windows 2000。
+此扩展仅适用于 Windows 2000。
 
  
 

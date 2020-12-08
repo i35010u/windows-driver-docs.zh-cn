@@ -1,17 +1,16 @@
 ---
 title: OpenPrinter
 description: OpenPrinter
-ms.assetid: 8bbb46a8-2bba-4d15-a2e2-4770b52d2505
 keywords:
 - OpenPrinter
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b8173e7001e4bd4d5bb77c0f5e7d152043056907
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 4ff58f67ffd61837c41c8df16274d8e4dad27395
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207735"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807753"
 ---
 # <a name="openprinter"></a>OpenPrinter
 

@@ -1,7 +1,6 @@
 ---
 title: FSCTL_OPBATCH_ACK_CLOSE_PENDING 控制代码
 description: FSCTL \_ OPBATCH \_ ACK \_ CLOSE \_ 挂起控制代码响应了某个文件上的独占 (级别1、批处理或筛选器) 机会锁定 () oplock 锁定的通知已中断。
-ms.assetid: 310cd778-5a1c-46e2-8c05-127fc754ecfe
 keywords:
 - FSCTL_OPBATCH_ACK_CLOSE_PENDING 控制代码可安装的文件系统驱动程序
 topic_type:
@@ -14,17 +13,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: feeaf162a86f819d261e9d0c4406a695f2d2bc0a
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: c39439f9ad378aeaf79fd42a5ff438e91d79a0e4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066974"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808325"
 ---
 # <a name="fsctl_opbatch_ack_close_pending-control-code"></a>FSCTL \_ OPBATCH \_ ACK \_ CLOSE \_ 挂起控制代码
 
 
-**FSCTL \_ OPBATCH \_ ACK \_ CLOSE \_ 挂起**控制代码响应了某个文件上的独占 (级别1、批处理或筛选器) 机会锁定 () oplock 锁定的通知已中断。 客户端应用程序发送此控制代码以指示它会确认 oplock 中断，并即将关闭文件句柄。
+**FSCTL \_ OPBATCH \_ ACK \_ CLOSE \_ 挂起** 控制代码响应了某个文件上的独占 (级别1、批处理或筛选器) 机会锁定 () oplock 锁定的通知已中断。 客户端应用程序发送此控制代码以指示它会确认 oplock 中断，并即将关闭文件句柄。
 
 对于批处理或筛选器 oplock 中断，调用方必须在发送此控制代码后关闭其文件句柄。 否则，系统将阻止等待文件句柄关闭。
 
@@ -36,16 +35,16 @@ ms.locfileid: "89066974"
 
 有关机会锁定以及 FSCTL \_ OPBATCH \_ ACK \_ CLOSE \_ 挂起控制代码的详细信息，请参阅 Microsoft Windows SDK 文档。
 
-**参数**
+**Parameters**
 
 <a href="" id="oplock"></a>*机会*  
 文件的不透明 oplock 对象指针。
 
 <a href="" id="callbackdata"></a>*CallbackData*  
-仅[**FltOplockFsctrl**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltoplockfsctrl) 。 为 IRP MJ [** \_ \_ **](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data) \_ \_ 文件 \_ 系统 \_ 控制 FSCTL 请求 (FLT 回调数据) 结构的回叫数据。 操作的 *FsControlCode* 参数必须是 FSCTL \_ OPBATCH \_ ACK \_ CLOSE \_ PENDING。
+仅 [**FltOplockFsctrl**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltoplockfsctrl) 。 为 IRP MJ [**\_ \_**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data) \_ \_ 文件 \_ 系统 \_ 控制 FSCTL 请求 (FLT 回调数据) 结构的回叫数据。 操作的 *FsControlCode* 参数必须是 FSCTL \_ OPBATCH \_ ACK \_ CLOSE \_ PENDING。
 
 <a href="" id="irp"></a>*Irp*  
-仅[**FsRtlOplockFsctrl**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtloplockfsctrl) 。 Irp \_ MJ \_ 文件 \_ 系统 \_ 控件 FSCTL 请求。 操作的 *FsControlCode* 参数必须是 FSCTL \_ OPBATCH \_ ACK \_ CLOSE \_ PENDING。
+仅 [**FsRtlOplockFsctrl**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtloplockfsctrl) 。 Irp \_ MJ \_ 文件 \_ 系统 \_ 控件 FSCTL 请求。 操作的 *FsControlCode* 参数必须是 FSCTL \_ OPBATCH \_ ACK \_ CLOSE \_ PENDING。
 
 <a href="" id="opencount"></a>*OpenCount*  
 不与此操作一起使用;设置为零。
@@ -65,7 +64,7 @@ ms.locfileid: "89066974"
 <thead>
 <tr class="header">
 <th align="left">术语</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -98,7 +97,7 @@ ms.locfileid: "89066974"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**FLT \_ 回调 \_ 数据**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)

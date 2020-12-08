@@ -1,15 +1,14 @@
 ---
 title: IWiaDrvItem COM 接口
 description: IWiaDrvItem COM 接口
-ms.assetid: 1be2265b-7ae8-4935-9559-588b885526d4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3efea0539644f736cc514a3f4a077687a1217594
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: afe02bf0ab6c699bcbf4a87b512b2b6df7274856
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103226"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808759"
 ---
 # <a name="iwiadrvitem-com-interface"></a>IWiaDrvItem COM 接口
 
@@ -17,7 +16,7 @@ ms.locfileid: "90103226"
 
 
 
-[IWiaDrvItem 接口](/windows-hardware/drivers/ddi/wiamindr_lh/nn-wiamindr_lh-iwiadrvitem)提供了 WIA 微型驱动程序用于管理**IWiaDrvItem**项树的方法。 这些方法允许 WIA 微型驱动程序操作 **IWiaDrvItem** 对象。 **IWiaDrvItem**接口提供以下方法。
+[IWiaDrvItem 接口](/windows-hardware/drivers/ddi/wiamindr_lh/nn-wiamindr_lh-iwiadrvitem)提供了 WIA 微型驱动程序用于管理 **IWiaDrvItem** 项树的方法。 这些方法允许 WIA 微型驱动程序操作 **IWiaDrvItem** 对象。 **IWiaDrvItem** 接口提供以下方法。
 
 <table>
 <colgroup>
@@ -27,7 +26,7 @@ ms.locfileid: "90103226"
 <thead>
 <tr class="header">
 <th>方法</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

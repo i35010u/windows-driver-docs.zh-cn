@@ -1,7 +1,6 @@
 ---
 title: GUID_DEVINTERFACE_WPD
 description: GUID_DEVINTERFACE_WPD
-ms.assetid: 611d1866-2530-4acb-8c83-77c29bdd128c
 keywords:
 - GUID_DEVINTERFACE_WPD 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f86bbdd0723f04b191edae32f0d299f87a45ab5a
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 028ba8d892247c19e6a75c387b4a4ace07374627
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733511"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808161"
 ---
 # <a name="guid_devinterface_wpd"></a>GUID_DEVINTERFACE_WPD
 
@@ -33,7 +32,7 @@ GUID_DEVINTERFACE_WPD [设备接口类](./overview-of-device-interface-classes.m
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">属性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -84,7 +83,7 @@ WPD 类扩展组件为使用 WPD 类扩展的 WPD 驱动程序注册此设备接
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**GUID_DEVINTERFACE_WPD_PRIVATE**](guid-devinterface-wpd-private.md)

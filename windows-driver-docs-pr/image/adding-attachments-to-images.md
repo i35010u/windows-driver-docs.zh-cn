@@ -1,15 +1,14 @@
 ---
 title: 将附件添加到图像
 description: 将附件添加到图像
-ms.assetid: 704f541b-b98c-44a8-bb19-5d5d0d1eab78
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8946c0775106ea6b0436b767a4cdcc0acf629b31
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9c16b9ff596c08d8f8cb7a11990a11a803c1a672
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367117"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808293"
 ---
 # <a name="adding-attachments-to-images"></a>将附件添加到图像
 
@@ -17,15 +16,15 @@ ms.locfileid: "63367117"
 
 
 
-当某项将标有**WiaItemTypeHasAttachments**，这意味着在于项具有关联的附件，它们将存储为子项目。 这不是相同类型的项**WiaItemTypeFolder**。 主要差异有：
+当项用 **WiaItemTypeHasAttachments** 标记时，这意味着该项具有关联的附件，它们存储为子项。 这不同于 **WiaItemTypeFolder** 类型的项。 它们的主要区别包括：
 
--   类型的项**WiaItemTypeHasAttachments**具有只有一个级别的子级。 类型的项**WiaItemTypeFolder**可以有任意数量的级别的子级。
+-   类型为 **WiaItemTypeHasAttachments** 的项只有一级子级。 **WiaItemTypeFolder** 类型的项可以有任意数量的子级。
 
--   类型的项的所有子级**WiaItemTypeHasAttachments**与该项相关。 例如，如果某一图像项具有关联的音频数据，将作为图像项的子存储音频数据和图像项会标记有**WiaItemTypeHasAttachments**。
+-   类型为 **WiaItemTypeHasAttachments** 的项的所有子级都与该项相关。 例如，如果图像项具有关联的音频数据，则音频数据将存储为图像项的子元素，并且图像项将标记为 **WiaItemTypeHasAttachments**。
 
-项不能为这两个类型**WiaItemTypeHasAttachments**并键入**WiaItemTypeFolder**。 但是，项可以为类型**WiaItemTypeHasAttachments**并键入**WiaItemTypeFile**。 这是因为类型的项**WiaItemTypeHasAttachments**从概念上讲视为单个实体。 下图演示了带有附件的 WIA 照相机项树。
+项不能同时为类型 **WiaItemTypeHasAttachments** 和类型 **WiaItemTypeFolder**。 但是，项可以是类型 **WiaItemTypeHasAttachments** ，类型 **WiaItemTypeFile**。 这是因为类型为 **WiaItemTypeHasAttachments** 的项在概念上被视为单个实体。 下图说明了包含附件的 WIA 相机项树。
 
-![说明带有附件的 wia 照相机项树的关系图](images/camera-tree-attachments.png)
+![阐释带有附件的 wia 相机项树的关系图](images/camera-tree-attachments.png)
 
  
 

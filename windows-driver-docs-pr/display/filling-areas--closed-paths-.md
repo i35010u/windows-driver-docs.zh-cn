@@ -1,22 +1,21 @@
 ---
 title: 填充区域（封闭路径）
 description: 填充区域（封闭路径）
-ms.assetid: 9dda1f0f-90e7-480b-aaeb-cb7781a1fe6c
 keywords:
-- GDI WDK Windows 2000 显示路径关闭
-- 显示的图形驱动程序 WDK Windows 2000，路径，关闭
-- 绘制 WDK GDI，路径，关闭
-- 填充路径 WDK GDI，关闭
-- 路径 WDK GDI 关闭
-- 闭合的路径 WDK GDI
+- GDI WDK Windows 2000 显示、路径、闭合
+- 图形驱动程序 WDK Windows 2000 显示、路径、闭合
+- 绘制 WDK GDI，路径，闭合
+- 填充路径 WDK GDI，已关闭
+- 路径 WDK GDI，已关闭
+- 闭合路径 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eeda151274b9a402f70d2263f5d106ead8c52805
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c21cf2c9ec4aa7c8e892f604595c308c0dcde15e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360683"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808887"
 ---
 # <a name="filling-areas-closed-paths"></a>填充区域（封闭路径）
 
@@ -24,13 +23,13 @@ ms.locfileid: "63360683"
 ## <span id="ddk_filling_areas__28_closed_paths_29_gg"></span><span id="DDK_FILLING_AREAS__28_CLOSED_PATHS_29_GG"></span>
 
 
-如线条图形中所示填充的像素被视为处于整数坐标。 在左侧和右侧的路径段界定一个区域中的每个扫描行。 左和右边框之间的像素被视为内部的填充区域。 完全位于左边框的像素为单位还有内，但是右边框上完全排除。 如果完全水平上边框，完全上边框的任何像素都位于内时不完全上的下边框的像素。
+与在线条绘图中一样，用于填充的像素被视为位于整数坐标。 区域中的每个扫描行都在左侧和右侧用路径的段向右界定。 在 "填充" 区域中，将在左边框和右边框之间的像素被视为。 完全位于左边框上的像素也在内，但会排除完全在右边框上的像素。 如果上边框是水平的，则边框上完全相同的任何像素均在内，而与下边框完全相同的像素则被排除。
 
-下图显示了如何将包含在填充区域的像素确定相对于左侧和右侧的区域的边框。 从数学上所述，在区域被视为"关闭"的左侧和顶部，并使"打开"的右侧和底部。
+下图显示了如何根据区域的左右边框确定填充区域中包含的像素。 从数学上说，区域被认为是左侧和顶部的 "关闭"，右侧和底部的 "打开"。
 
-![说明确定包含填充区域的像素的关系图](images/fillbdy.png)
+![阐释如何确定填充区域中包含的像素的关系图](images/fillbdy.png)
 
-上面所述的填充区域的 x 轴的约定也适用于 y 轴，只需替换与上边框和右边框与下边框的左边的框。
+上面所述的用于填充区域 x 轴的约定也适用于 y 轴，方法是将左边框替换为上边框，将右边框替换为下边框。
 
  
 

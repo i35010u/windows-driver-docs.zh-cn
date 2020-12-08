@@ -1,7 +1,6 @@
 ---
 title: 连接引擎管理
 description: 连接引擎管理
-ms.assetid: 00ac74c5-2a69-493f-ad9b-6fa2f9082ac1
 keywords:
 - RDBSS WDK 文件系统，连接引擎管理
 - 重定向驱动器缓冲子系统 WDK 文件系统、连接引擎管理
@@ -9,12 +8,12 @@ keywords:
 - TDI 驱动程序 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ad9ed9cdba67fcc55c9367f97927860a9f01341c
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: ac46728d57464ba30d3d28ead920f180adf245ea
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102940"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808433"
 ---
 # <a name="connection-engine-management"></a>连接引擎管理
 
@@ -62,7 +61,7 @@ RDBSS 提供了可由网络微型重定向程序驱动程序使用的以下连�
 <thead>
 <tr class="header">
 <th align="left">例程所返回的值</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -146,7 +145,7 @@ RDBSS 提供了可由网络微型重定向程序驱动程序使用的以下连�
 
  
 
-**注意**   Windows Vista 之后的 Microsoft Windows 版本不支持 TDI。 请改用 [Windows 筛选平台](../network/windows-filtering-platform-callout-drivers2.md) 或 [Winsock 内核](/windows-hardware/drivers/ddi/_netvista/) 。
+**注意**   Windows Vista 之后的 Microsoft Windows 版本不支持 TDI。 请改用 [Windows 筛选平台](../network/windows-filtering-platform-callout-drivers2.md) 或 [Winsock 内核](/windows-hardware/drivers/ddi/_netvista/) 。
 
  
 

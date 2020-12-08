@@ -1,7 +1,6 @@
 ---
 title: 筛选器模块 PnP 事件通知
 description: 筛选器模块 PnP 事件通知
-ms.assetid: ca1e250a-aaa8-4fbc-abe5-c30c8913a67a
 keywords:
 - 筛选器模块 WDK 网络，PnP 事件通知
 - 筛选器驱动程序 WDK 网络，PnP 事件通知
@@ -10,12 +9,12 @@ keywords:
 - 即插即用 WDK 网络，筛选器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c6cdd270a19c77efdb3b6de105596a64e93f813
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e53deb525ca94442e481e0759eac42096843d846
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217076"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808073"
 ---
 # <a name="filter-module-pnp-event-notifications"></a>筛选器模块 PnP 事件通知
 

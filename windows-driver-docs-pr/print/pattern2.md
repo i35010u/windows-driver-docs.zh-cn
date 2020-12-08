@@ -1,38 +1,37 @@
 ---
 title: 模式
 description: 模式
-ms.assetid: 4c9067dc-03b2-4bee-ad30-df395de357d9
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 21597e9d7184af64d83e18feae814721cb82e692
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cafed00911798af6d3bb3b6bba77975e91342580
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380681"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807629"
 ---
 # <a name="pattern"></a>模式
 
 
-架构路径：\\Printer.Finishing.HolePunch.Pattern
+架构路径： \\ HolePunch. 模式
 
-节点类型： 属性
+节点类型：属性
 
-说明： 此属性包含与漏洞可以打孔输出页中的模式相关的所有值项。
+说明：此属性包含与可以在输出页中打孔的模式相关的所有值项。
 
-Pattern 属性包含两个对子值：**CurrentValue**并**支持**。
+Pattern 属性包含两个子值： **CurrentValue** 和 **受支持**。
 
 ### <a name="span-idcurrentvaluespanspan-idcurrentvaluespancurrentvalue"></a><span id="currentvalue"></span><span id="CURRENTVALUE"></span>CurrentValue
 
-架构路径：\\Printer.Finishing.HolePunch.Pattern:CurrentValue
+架构路径： \\ HolePunch： CurrentValue
 
-节点类型： 值
+节点类型：值
 
-数据类型： BIDI\_字符串
+数据类型：双向 \_ 字符串
 
-说明： 当前的 （默认值） 漏洞打孔模式将应用于输出页面。
+说明：当前 (默认) 打孔模式应用于输出页。
 
-允许使用以下值：
+允许以下值：
 
 TwoHoleUSTop
 
@@ -64,17 +63,17 @@ Metric26Hole
 
 Metric30Hole
 
-unknown
+未知
 
-### <a name="span-idsupportedspanspan-idsupportedspansupported"></a><span id="supported"></span><span id="SUPPORTED"></span>支持
+### <a name="span-idsupportedspanspan-idsupportedspansupported"></a><span id="supported"></span><span id="SUPPORTED"></span>受支持
 
-架构路径：\\Printer.Finishing.HolePunch.Pattern:Supported
+架构路径： \\ HolePunch：支持
 
-节点类型： 值
+节点类型：值
 
-数据类型： BIDI\_字符串
+数据类型：双向 \_ 字符串
 
-说明： 一个以逗号分隔的列表的打孔模式支持的所有值。
+说明：打孔模式支持的所有值的逗号分隔列表。
 
  
 

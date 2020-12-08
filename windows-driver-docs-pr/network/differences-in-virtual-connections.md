@@ -1,18 +1,17 @@
 ---
 title: 虚拟连接的差异
 description: 虚拟连接的差异
-ms.assetid: 6e705f31-eec7-4b9c-a46f-ff7641d224c2
 keywords:
 - 虚拟连接 WDK CoNDIS、MCM 驱动程序与呼叫管理器
 - 通知 VCs WDK CoNDIS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 52f4be1aa1e038855ffbdafcd2b0e4e13e3748b1
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c807c6716e8f3f8837a4da2f02f003b7236d021b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217658"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808637"
 ---
 # <a name="differences-in-virtual-connections"></a>虚拟连接的差异
 
@@ -26,7 +25,7 @@ ms.locfileid: "89217658"
 
 -   当客户端请求创建或删除 VC 时，MCM 驱动程序的 [**ProtocolCoCreateVc**](/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_co_create_vc) 和 [**ProtocolCoDeleteVc**](/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_co_delete_vc) 函数。
 
--   当 MCM 驱动程序创建或删除 VC 时， [**NdisMCmCreateVc**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmcreatevc)和[**NdisMCmDeleteVc**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmdeletevc) 。
+-   当 MCM 驱动程序创建或删除 VC 时， [**NdisMCmCreateVc**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmcreatevc)和 [**NdisMCmDeleteVc**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmdeletevc) 。
 
 -   [**NdisMCmActivateVc**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmactivatevc) 和 [**NdisCmDeactivateVc**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscmdeactivatevc) 在 MCM 驱动程序激活或停用 VC 时使用。
 

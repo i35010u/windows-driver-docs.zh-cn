@@ -1,7 +1,6 @@
 ---
 title: 显示微型端口驱动程序函数的 DriverEntry
 description: DriverEntry 函数提供 Microsoft DirectX 图形内核子系统，其中包含一组指向由显示微型端口驱动程序实现的函数的指针。
-ms.assetid: 64b4e9d5-eb6e-48ab-95bf-a237ec32a54b
 keywords:
 - DriverEntry 函数显示设备
 topic_type:
@@ -14,25 +13,25 @@ api_type:
 - DllExport
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 35be829c4289c80fd38a5a6560d5ccd621d28556
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 64055152ac8fdd922ac2612d9e19760dc0bd972e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733579"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809123"
 ---
 # <a name="driverentry-of-display-miniport-driver-function"></a>显示微型端口驱动程序函数的 DriverEntry
 
 
-**DriverEntry**函数提供 Microsoft DirectX 图形内核子系统，其中包含一组指向由显示微型端口驱动程序实现的函数的指针。
+**DriverEntry** 函数提供 Microsoft DirectX 图形内核子系统，其中包含一组指向由显示微型端口驱动程序实现的函数的指针。
 
 <a name="syntax"></a>语法
 ------
 
 ```ManagedCPlusPlus
 NTSTATUS DriverEntry(
-  _In_ PDRIVER_OBJECT  DriverObject,
-  _In_ PUNICODE_STRING RegistryPath
+  _In_ PDRIVER_OBJECT  DriverObject,
+  _In_ PUNICODE_STRING RegistryPath
 );
 ```
 
@@ -46,7 +45,7 @@ NTSTATUS DriverEntry(
 <a name="return-value"></a>返回值
 ------------
 
-**DriverEntry** 调用 [**DxgkInitialize**](/windows-hardware/drivers/ddi/dispmprt/nf-dispmprt-dxgkinitialize) ，并且必须返回 **DxgkInitialize**返回的值。
+**DriverEntry** 调用 [**DxgkInitialize**](/windows-hardware/drivers/ddi/dispmprt/nf-dispmprt-dxgkinitialize) ，并且必须返回 **DxgkInitialize** 返回的值。
 
 <a name="remarks"></a>备注
 -------
@@ -137,11 +136,11 @@ NTSTATUS DriverEntry(
     -   [*DxgkDdiUpdateOverlay*](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_updateoverlay)
 
 
-3.  将 *DriverObject*、 *RegistryPath*和填充的 [**驱动程序 \_ 初始化 \_ 数据**](/windows-hardware/drivers/ddi/dispmprt/ns-dispmprt-_driver_initialization_data) 结构传递到 [**DxgkInitialize**](/windows-hardware/drivers/ddi/dispmprt/nf-dispmprt-dxgkinitialize)。
+3.  将 *DriverObject*、 *RegistryPath* 和填充的 [**驱动程序 \_ 初始化 \_ 数据**](/windows-hardware/drivers/ddi/dispmprt/ns-dispmprt-_driver_initialization_data) 结构传递到 [**DxgkInitialize**](/windows-hardware/drivers/ddi/dispmprt/nf-dispmprt-dxgkinitialize)。
 
 4.  返回 [**DxgkInitialize**](/windows-hardware/drivers/ddi/dispmprt/nf-dispmprt-dxgkinitialize)返回的值。
 
-**DriverEntry**返回后，[**驱动程序 \_ 初始化 \_ 数据**](/windows-hardware/drivers/ddi/dispmprt/ns-dispmprt-_driver_initialization_data)结构不需要保留在内存中。
+**DriverEntry** 返回后，[**驱动程序 \_ 初始化 \_ 数据**](/windows-hardware/drivers/ddi/dispmprt/ns-dispmprt-_driver_initialization_data)结构不需要保留在内存中。
 
 **DriverEntry** 应进行分页。
 

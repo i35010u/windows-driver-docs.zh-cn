@@ -1,7 +1,6 @@
 ---
 title: DXGK \_ POWER \_ P \_ 状态结构
 description: 了解 DXGK \_ POWER \_ P \_ 状态结构，它保留供系统使用。 不要在您的驱动程序中使用它。
-ms.assetid: F4612284-36C8-49C4-914D-43C32489EABD
 keywords:
 - DXGK_POWER_P_STATE 结构显示设备
 - PDXGK_POWER_P_STATE 结构指针显示设备
@@ -15,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ed3a16941eb8dd324c7597edb854ad774fe92ec
-ms.sourcegitcommit: fc94eb0d5a41ef81c1b3ab91ad725386db0be0c2
+ms.openlocfilehash: d580faca866dde5a903e9f61053ba24d5d9fb1fb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91603694"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809021"
 ---
 # <a name="dxgk_power_p_state-structure"></a>DXGK \_ POWER \_ P \_ 状态结构
 
@@ -32,8 +31,8 @@ ms.locfileid: "91603694"
 
 ```ManagedCPlusPlus
 typedef struct _DXGK_POWER_P_STATE {
-  ULONG     NominalPower;
-  ULONG     OperatingFrequency;
+  ULONG     NominalPower;
+  ULONG     OperatingFrequency;
   ULONGLONG TransitionLatencies[DXGK_MAX_P_STATES];
   ULONGLONG ResidencyRequirement;
 } DXGK_POWER_P_STATE, *PDXGK_POWER_P_STATE;
@@ -61,7 +60,7 @@ typedef struct _DXGK_POWER_P_STATE {
 <tbody>
 <tr class="odd">
 <td align="left"><p>最低受支持的客户端</p></td>
-<td align="left"><p>Windows 8.1</p></td>
+<td align="left"><p>Windows 8.1</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>最低受支持的服务器</p></td>

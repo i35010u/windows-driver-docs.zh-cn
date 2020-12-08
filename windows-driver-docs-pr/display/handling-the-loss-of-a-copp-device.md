@@ -1,7 +1,6 @@
 ---
 title: 处理 COPP 设备丢失
 description: 处理 COPP 设备丢失
-ms.assetid: 7e74b249-34be-44cc-a022-ba6574f2f841
 keywords:
 - 复制保护 WDK COPP，设备丢失
 - 视频复制保护 WDK COPP，设备丢失
@@ -10,12 +9,12 @@ keywords:
 - 丢失的 COPP 设备 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f570330c78a5a298009088d96163e3ed9be9715
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 09abe4c09d248a5947deac03c3cdf2e813ec136f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714742"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808449"
 ---
 # <a name="handling-the-loss-of-a-copp-device"></a>处理 COPP 设备丢失
 

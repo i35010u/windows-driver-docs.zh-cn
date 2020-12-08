@@ -1,7 +1,6 @@
 ---
 title: GetScannerElementsRequest 元素
 description: 必需的 GetScannerElementsRequest 元素使客户端能够请求有关扫描仪的信息。
-ms.assetid: 9b5baed9-0950-4fbd-9e5b-4ad58dedb87e
 keywords:
 - GetScannerElementsRequest 元素图像设备
 topic_type:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a1ec8fe032a4ce2a8501204491e9d11715787b3c
-ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
+ms.openlocfilehash: 3a30c43ea30a273494ed3b4c38b62c32569caf0b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75652969"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808795"
 ---
 # <a name="getscannerelementsrequest-element"></a>GetScannerElementsRequest 元素
 
 
-必需的**GetScannerElementsRequest**元素使客户端能够请求有关扫描仪的信息。
+必需的 **GetScannerElementsRequest** 元素使客户端能够请求有关扫描仪的信息。
 
-<a name="usage"></a>Usage
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -33,7 +32,7 @@ ms.locfileid: "75652969"
 </wscn:GetScannerElementsRequest>
 ```
 
-<a name="attributes"></a>属性
+<a name="attributes"></a>特性
 ----------
 
 没有特性。
@@ -65,18 +64,18 @@ ms.locfileid: "75652969"
 <a name="remarks"></a>备注
 -------
 
-WSD 扫描服务必须支持**GetScannerElementsRequest**操作。
+WSD 扫描服务必须支持 **GetScannerElementsRequest** 操作。
 
-客户端可以调用**GetScannerElementsRequest**来发现扫描服务架构的标准和供应商扩展元素。 可供客户端使用的信息包括可在设备根级别访问的扫描程序数据的任何部分。 此信息包括说明、配置、状态、默认扫描票证和扫描服务的任何供应商扩展。
+客户端可以调用 **GetScannerElementsRequest** 来发现扫描服务架构的标准和供应商扩展元素。 可供客户端使用的信息包括可在设备根级别访问的扫描程序数据的任何部分。 此信息包括说明、配置、状态、默认扫描票证和扫描服务的任何供应商扩展。
 
-如果扫描服务成功处理**GetScannerElementsRequest**，它将返回包含所请求信息的[**GetScannerElementsResponse**](getscannerelementsresponse.md)操作。 否则，扫描服务应返回相应的错误代码。
+如果扫描服务成功处理 **GetScannerElementsRequest**，它将返回包含所请求信息的 [**GetScannerElementsResponse**](getscannerelementsresponse.md) 操作。 否则，扫描服务应返回相应的错误代码。
 
-此操作可以返回所有常见的[**WSD 扫描服务操作错误代码**](common-wsd-scan-service-operation-error-codes.md)。 有关如何报告错误的详细信息，请参阅[WSD 扫描服务操作错误报告](wsd-scan-service-operation-error-reporting.md)。
+此操作可以返回所有常见的 [**WSD 扫描服务操作错误代码**](common-wsd-scan-service-operation-error-codes.md)。 有关如何报告错误的详细信息，请参阅 [WSD 扫描服务操作错误报告](wsd-scan-service-operation-error-reporting.md)。
 
 <a name="examples"></a>示例
 --------
 
-在下面的代码示例中，客户端指定一个 QName 值（wscn： ScannerDescription）来查询扫描程序的说明。
+在下面的代码示例中，客户端指定了一个 QName 值 (wscn： ScannerDescription) 查询扫描程序的说明。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -162,7 +161,7 @@ WSD 扫描服务必须支持**GetScannerElementsRequest**操作。
 </soap:Envelope>
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**GetScannerElementsResponse**](getscannerelementsresponse.md)

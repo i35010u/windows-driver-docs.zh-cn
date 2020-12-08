@@ -1,7 +1,6 @@
 ---
 title: 显示驱动程序（Windows 2000 模型）
 description: 显示驱动程序（Windows 2000 模型）
-ms.assetid: 9d49f4e7-5153-417e-8f15-42b3dcdf3fa6
 keywords:
 - 显示驱动程序模型 WDK Windows 2000，显示驱动程序
 - Windows 2000 显示器驱动程序模型 WDK，显示驱动程序
@@ -9,12 +8,12 @@ keywords:
 - 显示驱动程序 WDK Windows 2000，关于显示器驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 65149fa7a75db00bbaa2b3367bb295bb9577602a
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 7c9b07b363c3a69053d13d4714ddeea5799f8c06
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065644"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809255"
 ---
 # <a name="display-drivers-windows-2000-model"></a>显示驱动程序（Windows 2000 模型）
 

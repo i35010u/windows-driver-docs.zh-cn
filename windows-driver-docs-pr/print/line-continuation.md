@@ -1,20 +1,19 @@
 ---
 title: 续行符
 description: 续行符
-ms.assetid: ee4dbb3d-ba9d-45bb-82dd-ecee4682ae63
 keywords:
-- GPD 文件条目 WDK Unidrv，行继续符
-- 行继续符 WDK GPD 文件
-- 连续的行 WDK GPD 文件
+- GPD 文件条目 WDK Unidrv，行继续
+- 行延续 WDK GPD 文件
+- 续行 WDK GPD 文件
 - 继续符 WDK GPD 文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: facfa623fa383c257d7e505e4df6c97975ace68e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 36590d9c609c17710970f92155227f80dd332e34
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388093"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807945"
 ---
 # <a name="line-continuation"></a>续行符
 
@@ -22,7 +21,7 @@ ms.locfileid: "63388093"
 
 
 
-[GPD 文件条目](gpd-file-entries.md)是太长而无法容纳到一个单一行可以继续后续行上。 若要继续一个条目，第一个之后的每一行必须加一个加号 （+）。 正号必须在行中，而无需上述的空白区域的第一个字符，如下面的示例中所示：
+对于太长而无法放入单个行的[GPD 文件项](gpd-file-entries.md)，可以继续在后续行上。 若要继续某个条目，则第一个条目的前面必须加上一个加号 (+) 。 加号必须是行中的第一个字符，而不是前面的空格，如下面的示例中所示：
 
 ```cpp
 *DeviceFonts:
@@ -39,11 +38,11 @@ ms.locfileid: "63388093"
 +        =RC_FONT_Wingdings)
 ```
 
-不需要使用以下行开头的行继续符：
+不需要在以下行的开头使用行继续符：
 
 -   以星号开头的行。
 
--   左大括号开始的行。
+-   以左大括号开头的行。
 
  
 

@@ -1,7 +1,6 @@
 ---
-title: '\_DXGK\_PDE 结构'
-description: DXGK\_PDE 结构保留供系统使用。 不要使用它在您的驱动程序中。
-ms.assetid: e2cd4541-beda-4c61-bdba-a86ae3888501
+title: '\_DXGK \_ PDE 结构'
+description: DXGK \_ PDE 结构保留供系统使用。 不要在您的驱动程序中使用它。
 keywords:
 - _DXGK_PDE 结构显示设备
 - DXGK_PDE 结构显示设备
@@ -15,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b78cf2ade71e885665748cedbf9cd69e6ad8101
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ecb3ea3ac16def8e9c8abb534c152303fb4c71f0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392037"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809029"
 ---
-# <a name="dxgkpde-structure"></a>\_DXGK\_PDE 结构
+# <a name="_dxgk_pde-structure"></a>\_DXGK \_ PDE 结构
 
 
-DXGK\_PDE 结构保留供系统使用。 不要使用它在您的驱动程序中。
+DXGK \_ PDE 结构保留供系统使用。 不要在您的驱动程序中使用它。
 
 <a name="syntax"></a>语法
 ------
@@ -48,17 +47,17 @@ typedef struct _DXGK_PDE {
 <a name="members"></a>成员
 -------
 
-**有效**保留供系统使用。
+**有效** 保留供系统使用。
 
-**段**保留供系统使用。
+**段** 保留供系统使用。
 
-**保留**保留供系统使用。
+**保留** 保留供系统使用。
 
-**PageTableAddress**保留供系统使用。
+**PageTableAddress** 保留供系统使用。
 
-**值**保留供系统使用。
+**值** 保留供系统使用。
 
-**PageTableSizeInPages**保留供系统使用。
+**PageTableSizeInPages** 保留供系统使用。
 
 <a name="requirements"></a>要求
 ------------
@@ -70,12 +69,12 @@ typedef struct _DXGK_PDE {
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Version</p></td>
-<td align="left"><p>在 Windows 7 和更高版本的 Windows 操作系统中可用。</p></td>
+<td align="left"><p>版本</p></td>
+<td align="left"><p>在 windows 7 和更高版本的 Windows 操作系统中可用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">D3dkmddi.h （包括 D3dkmddi.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">D3dkmddi (包含 D3dkmddi) </td>
 </tr>
 </tbody>
 </table>

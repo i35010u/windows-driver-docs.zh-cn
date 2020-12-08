@@ -1,22 +1,21 @@
 ---
 title: 驱动程序保护
 description: 除了每个虚拟地址，视频内存管理器还允许独立的硬件供应商 (Ihv) 来定义驱动程序/特定于硬件的保护 (即
-ms.assetid: 3D636BD1-683D-49B4-A7E5-176853EA11EE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 836c1656f3752845a643eb40232f0a1e36761753
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 56be034b5366cabef7e551f7e09112f3b3333134
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067438"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809157"
 ---
 # <a name="driver-protection"></a>驱动程序保护
 
 
 除了每个虚拟地址，视频内存管理器还允许独立的硬件供应商 (Ihv) 来定义特定于该虚拟地址的特定于驱动程序/硬件的保护 (即页面表条目编码) 。 将驱动程序保护看作是视频内存管理器不知道的页表条目中的额外位，但驱动程序必须控制以使图形处理单元 (GPU) 以最佳方式访问内存。
 
-**注意**   驱动程序保护是可选的，可以在任何不需要此功能的平台上将其留空。
+**注意**  驱动程序保护是可选的，可以在任何不需要此功能的平台上将其留空。
 
  
 
@@ -43,7 +42,7 @@ ms.locfileid: "89067438"
 
 使用不唯一的驱动程序保护值映射的分配范围可以与任何保护值重新映射。
 
-当逐出虚拟地址范围被设置为 *unique*的驱动程序保护的分配时，视频内存管理器将使用适当的驱动程序保护值（不明确）设置用于这些范围的分页过程映射。
+当逐出虚拟地址范围被设置为 *unique* 的驱动程序保护的分配时，视频内存管理器将使用适当的驱动程序保护值（不明确）设置用于这些范围的分页过程映射。
 
 下图显示了具有不同的驱动程序保护值的分配的 VA 映射。
 

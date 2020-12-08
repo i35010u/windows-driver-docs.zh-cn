@@ -1,19 +1,18 @@
 ---
 title: 中间驱动程序重置操作
 description: 中间驱动程序重置操作
-ms.assetid: 473dce77-4636-40da-ac38-cda1676eba3f
 keywords:
 - 中间驱动程序 WDK 网络，重置操作
 - NDIS 中间驱动程序 WDK，重置操作
 - 重置中间驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 407851d0c0583123d5fe1803c8391949b0d6bcf2
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: d939965ba31d8df35b2ddcab753d2de858ade541
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215620"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808621"
 ---
 # <a name="intermediate-driver-reset-operations"></a>中间驱动程序重置操作
 

@@ -1,7 +1,6 @@
 ---
 title: 用于支持 Direct3D 的驱动程序函数
 description: 用于支持 Direct3D 的驱动程序函数
-ms.assetid: 949551c3-2172-454c-b398-eba468b90705
 keywords:
 - Direct3D WDK Windows 2000 显示，功能
 - 功能 WDK Direct3D
@@ -10,12 +9,12 @@ keywords:
 - D3DHAL_MYFUNCTIONDATA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 961243fd4b5c178cbc2c20dfd349b7d2fcddc23e
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: f216896930b4442d9a3d4090124749c6d2a163f0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716510"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809167"
 ---
 # <a name="driver-functions-to-support-direct3d"></a>用于支持 Direct3D 的驱动程序函数
 
@@ -31,10 +30,10 @@ typedef DWORD (APIENTRY *LPD3DHAL_MYFUNCTIONCB) (LPD3DHAL_MYFUNCTIONDATA);
 
 在前面的语法中：
 
--   LPD3DHAL \_ MYFUNCTIONCB 指向可被称为 *MyFunction*的驱动程序实现的回调。 所有回叫名称由显示驱动程序编写器 pseudonames 决定。
+-   LPD3DHAL \_ MYFUNCTIONCB 指向可被称为 *MyFunction* 的驱动程序实现的回调。 所有回叫名称由显示驱动程序编写器 pseudonames 决定。
 
 -   LPD3DHAL \_ MYFUNCTIONDATA 是指向 \_ 传递到回调的 D3DHAL MYFUNCTIONDATA 结构的指针。 回调参数结构的特征如下：
-    -   每个结构 **dwhContext**的第一个成员都是上下文句柄，用于描述回调应在其中运行的三维上下文。 此规则的唯一例外是 D3DHAL \_ CONTEXTCREATEDATA 结构。
+    -   每个结构 **dwhContext** 的第一个成员都是上下文句柄，用于描述回调应在其中运行的三维上下文。 此规则的唯一例外是 D3DHAL \_ CONTEXTCREATEDATA 结构。
     -   每个结构的最后一个成员是 **ddrval**。 此成员用于将回调的返回值传递回 Direct3D，以便可以将其返回给调用应用程序。
 
 若要确定如何初始化 Direct3D 回叫函数，请参阅 [Direct3d 驱动程序初始化](direct3d-driver-initialization.md)。
@@ -49,7 +48,7 @@ typedef DWORD (APIENTRY *LPD3DHAL_MYFUNCTIONCB) (LPD3DHAL_MYFUNCTIONDATA);
 <thead>
 <tr class="header">
 <th align="left">函数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -96,7 +95,7 @@ typedef DWORD (APIENTRY *LPD3DHAL_MYFUNCTIONCB) (LPD3DHAL_MYFUNCTIONDATA);
 <thead>
 <tr class="header">
 <th align="left">函数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

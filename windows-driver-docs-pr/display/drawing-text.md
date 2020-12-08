@@ -1,7 +1,6 @@
 ---
 title: 绘制文本
 description: 绘制文本
-ms.assetid: e5bf4673-93c4-4cc5-b74d-e0e3a487ec3d
 keywords:
 - GDI WDK Windows 2000 显示，文本输出
 - 图形驱动程序 WDK Windows 2000 显示，文本输出
@@ -14,12 +13,12 @@ keywords:
 - 绘制文本 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 85635699270c4988105a1050b15dfd990b7e9758
-ms.sourcegitcommit: abe7fe9f3fbee8d12641433eeab623a4148ffed3
+ms.openlocfilehash: 70ed73346f86b3e4db5e2f6c1308f787be18342c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92185160"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809177"
 ---
 # <a name="drawing-text"></a>绘制文本
 
@@ -28,15 +27,15 @@ ms.locfileid: "92185160"
 * [**DrvTextOut**](/windows/win32/api/winddi/nf-winddi-drvtextout)
 * [**DrvGetGlyphMode**](/windows/win32/api/winddi/nf-winddi-drvgetglyphmode)
 
-GDI 调用 **DrvTextOut** 来呈现文本输出的指定位置的一组标志符号的像素。 许多**DrvTextOut**功能都是使用[**DrvEnablePDEV**](/windows/win32/api/winddi/nf-winddi-drvenablepdev)函数返回的[**lnk-devinfo**](/windows/win32/api/winddi/ns-winddi-devinfo)结构的 GCAPS 位来定义的。
+GDI 调用 **DrvTextOut** 来呈现文本输出的指定位置的一组标志符号的像素。 许多 **DrvTextOut** 功能都是使用 [**DrvEnablePDEV**](/windows/win32/api/winddi/nf-winddi-drvenablepdev)函数返回的 [**lnk-devinfo**](/windows/win32/api/winddi/ns-winddi-devinfo)结构的 GCAPS 位来定义的。
 
-**DrvTextOut**的输入参数定义了两组像素：*前景*和不*透明*。 驱动程序呈现图面以提供以下结果：
+**DrvTextOut** 的输入参数定义了两组像素：*前景* 和不 *透明*。 驱动程序呈现图面以提供以下结果：
 
 1. 不透明像素首先呈现，不透明画笔。
 
 2. 然后，将用前景画笔呈现前景像素。
 
-其中每个渲染操作都在 *剪辑区域*中执行。 剪辑区域外的像素不会受到影响。
+其中每个渲染操作都在 *剪辑区域* 中执行。 剪辑区域外的像素不会受到影响。
 
 驱动程序必须呈现图面，以便在表面上首先使用不透明画笔计算并绘制不透明像素。 然后，使用前台画笔来计算和渲染前景像素。 其中每个操作都受剪辑限制。
 

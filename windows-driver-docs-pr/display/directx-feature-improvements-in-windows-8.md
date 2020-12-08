@@ -1,15 +1,14 @@
 ---
 title: Windows 8 中的 DirectX 功能改进
 description: Windows 8 包含 Microsoft DirectX 功能改进，可让开发人员、最终用户和系统制造商受益。
-ms.assetid: 0622DA0D-41ED-4B47-B090-8D5B85E10EB3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c562cdb8faea8de134821a4b189180be94d606b7
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 87f833fa2b6c3570bd31159f31eb2beabe60ba71
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732881"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809345"
 ---
 # <a name="directx-feature-improvements-in-windows-8"></a>Windows 8 中的 DirectX 功能改进
 
@@ -43,21 +42,21 @@ Windows 8 包含 Microsoft DirectX 功能改进，可让开发人员、最终用
 
 | 功能                       | 功能级别 9 \_ x                                      | 功能级别10。0                                             | 功能级别10。1                        | 功能级别 11 +                         |
 |----------------------------------|---------------------------------------------------------|----------------------------------------------------------------|-------------------------------------------|-------------------------------------------|
-| 类型化缓冲区                     | 否                                                      | 必选                                                       | 必选                                  | 必需                                  |
+| 类型化缓冲区                     | 否                                                      | 必需                                                       | 必选                                  | 必选                                  |
 | 输入汇编程序顶点缓冲区    | 否                                                      | 可选                                                       | 可选                                  | 可选                                  |
-| Texture1D                        | 否                                                      | 必选                                                       | 必选                                  | 必需                                  |
-| Texture2D                        | 必选                                                | 必选                                                       | 必选                                  | 必需                                  |
-| Texture3D                        | 否                                                      | 必选                                                       | 必选                                  | 必需                                  |
-| TextureCube                      | 必选                                                | 必选                                                       | 必选                                  | 必需                                  |
-| 着色器 ld\*                      | 否                                                      | 必选                                                       | 必选                                  | 必需                                  |
-| \*带有筛选) 的着色器示例 ( | 必选                                                | 必选                                                       | 必选                                  | 必需                                  |
-| 着色器 gather4                   | 否                                                      | 否                                                             | 否                                        | 必须                                  |
-| Mipmap                           | 必选                                                | 必选                                                       | 必选                                  | 必需                                  |
+| Texture1D                        | 否                                                      | 必需                                                       | 必选                                  | 必选                                  |
+| Texture2D                        | 必选                                                | 必选                                                       | 必选                                  | 必选                                  |
+| Texture3D                        | 否                                                      | 必需                                                       | 必选                                  | 必选                                  |
+| TextureCube                      | 必选                                                | 必选                                                       | 必选                                  | 必选                                  |
+| 着色器 ld\*                      | 否                                                      | 必需                                                       | 必选                                  | 必选                                  |
+| \*带有筛选) 的着色器示例 ( | 必选                                                | 必选                                                       | 必选                                  | 必选                                  |
+| 着色器 gather4                   | 否                                                      | 否                                                             | 否                                        | 必需                                  |
+| Mipmap                           | 必选                                                | 必选                                                       | 必选                                  | 必选                                  |
 | Mipmap 自动生成           | 对于565是必需的，对于4444，为可选，5551               | 对于565是必需的，对于4444，为可选，5551                      | 对于565是必需的，对于4444，为可选，5551 | 对于565是必需的，对于4444，为可选，5551 |
 | RenderTarget                     | 对于565是必需的，对于4444，则不是，5551                     | 对于565是必需的，对于4444，为可选，5551                      | 对于565是必需的，对于4444，为可选，5551 | 对于565是必需的，对于4444，为可选，5551 |
 | Blendable RenderTarget           | 对于565是必需的，对于4444，则不是，5551                     | 对于565是必需的，对于4444，为可选，5551                      | 对于565是必需的，对于4444，为可选，5551 | 对于565是必需的，对于4444，为可选，5551 |
 | UAV 类型存储                  | 否                                                      | 否                                                             | 否                                        | 可选                                  |
-| CPU 锁定                     | 必选                                                | 必选                                                       | 必选                                  | 必需                                  |
+| CPU 锁定                     | 必选                                                | 必选                                                       | 必选                                  | 必选                                  |
 | 4x MSAA                          | 可选                                                | 可选                                                       | 对于565是必需的，对于4444，为可选，5551 | 对于565是必需的，对于4444，为可选，5551 |
 | 8x MSAA                          | 可选                                                | 可选                                                       | 可选                                  | 对于565是必需的，对于4444，为可选，5551 |
 | 其他 MSAA 示例计数          | 可选                                                | 可选                                                       | 可选                                  | 可选                                  |
@@ -77,7 +76,8 @@ Windows 8 包含 Microsoft DirectX 功能改进，可让开发人员、最终用
 
 由于运行时可以将这些指令直接传递给驱动程序，因此实现可以优化其性能，或将其作为专用于硬件的单个说明来实现。
 
-**注意**   若要使用这些功能，开发人员必须确保在 \_ \_ \_ \_ WDDM 1.2 或更高版本的驱动程序上，开发人员的功能级别11或更高版本的功能级别为11或更高 (D3D11 功能双精度) 。
+**注意**  
+若要使用这些功能，开发人员必须确保在 \_ \_ \_ \_ WDDM 1.2 或更高版本的驱动程序上，开发人员的功能级别11或更高版本的功能级别为11或更高 (D3D11 功能双精度) 。
 
  
 
@@ -85,7 +85,8 @@ Windows 8 包含 Microsoft DirectX 功能改进，可让开发人员、最终用
 
 映像处理是新式设备中的一个关键应用程序。 常见操作是模式匹配或搜索。 视频编码操作通常会搜索匹配的正方形磁贴 (通常为8x8 或 16x16) ，而图像识别算法搜索由位掩码标识的更一般的形状。 为了提高这些方案的性能，在所有着色器阶段中，已将新的内部函数添加到了着色器模型 5.0 (HLSL) 的 Microsoft 高级着色器语言。 此内部 msad4 ( # A1 对应于并生成一组在着色器 IL 中 (MSAD) 说明的绝对差异的掩码。 所有 WDDM 1.2 和更高版本的驱动程序都必须直接在硬件中或作为一组其他说明 (模拟) 来支持此指令。
 
-**注意**   理想情况下，应实现 MSAD 指令，使溢出导致饱和度，而不是换行行为。 请注意，溢出行为是不确定的。
+**注意**  
+理想情况下，应实现 MSAD 指令，使溢出导致饱和度，而不是换行行为。 请注意，溢出行为是不确定的。
 
 开发人员必须检查以确保在 \_ \_ WDDM 1.2 或更高版本的驱动程序上运行的功能级别为11或更高版本，才能使用此功能。 开发人员不得依赖于溢出的累积值的结果准确性 (也就是说，请在 65535) 之前。
 
@@ -100,7 +101,7 @@ Windows 8 包含 Microsoft DirectX 功能改进，可让开发人员、最终用
 
 Direct3D 10.0-Direct3D 11.0 硬件 (和功能级别 10 \_ 0-11 \_ 0) 支持将 ForcedSampleCount 设置为 1 (和呈现目标视图) 的任何样本计数，以及所述的限制 (例如，无深度/模具) 。
 
-对于 10 \_ 0、10 \_ 1 和 11 \_ 0 硬件， [**D3D11 \_ 1 \_ DDI \_ 光栅 \_ **](/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d11_1_ddi_rasterizer_desc)化程序 DESC。**ForcedSampleCount** 设置为1，因此，不能将行呈示配置为2三角形 (四边形) 的模式 (也就是说， **MultisampleEnable** 状态不能设置为 true) 。 此限制不适用于11个 \_ 硬件。 请注意， **MultisampleEnable** 状态的命名会产生误导，因为它不再有任何内容可用于启用多级多级操作;相反，它现在是一个控件和 **AntialiasedLineEnable** 的控件，用于选择线条呈现模式。
+对于 10 \_ 0、10 \_ 1 和 11 \_ 0 硬件， [**D3D11 \_ 1 \_ DDI \_ 光栅 \_**](/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d11_1_ddi_rasterizer_desc)化程序 DESC。**ForcedSampleCount** 设置为1，因此，不能将行呈示配置为2三角形 (四边形) 的模式 (也就是说， **MultisampleEnable** 状态不能设置为 true) 。 此限制不适用于11个 \_ 硬件。 请注意， **MultisampleEnable** 状态的命名会产生误导，因为它不再有任何内容可用于启用多级多级操作;相反，它现在是一个控件和 **AntialiasedLineEnable** 的控件，用于选择线条呈现模式。
 
 这种与目标无关的光栅光栅化形式（ **ForcedSampleCount** = 1）与 direct3d 10.0 中提供的模式密切匹配，但对于 direct3d 10.1 和 direct3d (和功能级别为 10 \_ 1 和 11 \_ 0) ，因为 API 发生了更改。 在 Direct3D 10.0 中，此模式是中心取样的渲染，甚至是在 **MultisampleEnable** 设置为 false (时可用 (MSAA) 图面上，可以通过切换 **MultisampleEnable**) 来切换。 在 Direct3D 10.1 + 中， **MultisampleEnable** 不会再影响多级 (（尽管名称) ），并且仅控制行呈现行为。
 
@@ -113,7 +114,7 @@ Direct3D 11.1 中的呈现目标现在可以通过使用一组新的资源 Api �
 
 ### <a name="span-idupdating_resources_on_a_tbdr_architecturespanspan-idupdating_resources_on_a_tbdr_architecturespanspan-idupdating_resources_on_a_tbdr_architecturespanupdating-resources-on-a-tbdr-architecture"></a><span id="Updating_resources_on_a_TBDR_architecture"></span><span id="updating_resources_on_a_tbdr_architecture"></span><span id="UPDATING_RESOURCES_ON_A_TBDR_ARCHITECTURE"></span>在 TBDR 体系结构上更新资源
 
-由于 TBDR 体系结构在相同的命令缓冲区上完成多次传递，因此，在上一次绘图调用过程中未修改子资源的一部分时，必须特别小心通知驱动程序。 \_在 Direct3D**UpdateSubResource**函数上进行 "无覆盖" 使用有助于驱动程序管理未对纹理区域进行上一次绘图调用的资源。 这只要求你将应用程序的意图通知驱动程序放弃现有数据，或防止其被覆盖。 这可以在 TBDR 体系结构上实现更高效的呈现，并在传统桌面硬件上运行时不会产生处罚。
+由于 TBDR 体系结构在相同的命令缓冲区上完成多次传递，因此，在上一次绘图调用过程中未修改子资源的一部分时，必须特别小心通知驱动程序。 \_在 Direct3D **UpdateSubResource** 函数上进行 "无覆盖" 使用有助于驱动程序管理未对纹理区域进行上一次绘图调用的资源。 这只要求你将应用程序的意图通知驱动程序放弃现有数据，或防止其被覆盖。 这可以在 TBDR 体系结构上实现更高效的呈现，并在传统桌面硬件上运行时不会产生处罚。
 
 Direct3D 11 UpdateSubresource ( # A1 和 CopySubresourceRegions Api 的新变体，它们都更新了 GPU 图面的一部分，提供了不能在其中 \_ 指定覆盖或放弃的 "添加标志" 字段。
 
@@ -139,7 +140,7 @@ Direct3D 11 UpdateSubresource ( # A1 和 CopySubresourceRegions Api 的新变体
 
 DirectX 10 (或更高) 功能的图形硬件必须支持纹理阵列的跨进程共享。 此功能提供启用 Stereoscopic 3-d 的基础。 WDDM 1.2 Direct3D DDIs 需要支持遍布缓冲区，因为呈现目标独立于硬件功能级别。
 
-此要求可确保立体声应用程序不会在 mono 模式下出现故障。 例如：即使对于系统上未启用立体声的情况，应用程序也应该能够创建立体声交换链或遍布缓冲器作为渲染目标，然后调用 " **现有**"。 在这种情况下，只 (中显示左视图，或者如果设置了*首选*的   Microsoft DirectX 图形基础结构 (DXGI) 存在标志，则只) 右视图。
+此要求可确保立体声应用程序不会在 mono 模式下出现故障。 例如：即使对于系统上未启用立体声的情况，应用程序也应该能够创建立体声交换链或遍布缓冲器作为渲染目标，然后调用 " **现有**"。 在这种情况下，只 (中显示左视图，或者如果设置了 *首选* 的 Microsoft DirectX 图形基础结构 (DXGI) 存在标志，则只) 右视图。
 
 因此，WDDM 1.2 驱动程序 (完整的图形 & 呈现设备) 必须支持 Direct3D 11 Api，方法是为纹理数组添加跨进程共享支持。 在早期版本中，跨进程共享资源只能是单层图面。 在 Windows 8 中，共享阵列的最大大小是 (的两个元素，这些元素对于立体声) 来说已经足够了。 有关此要求的详细信息，请参阅 **¦ Stereoscopic3DArraySupport** In [Windows 硬件认证要求](/previous-versions/windows/hardware/cert-program/)。 其他相关的 Microsoft WindowsWindowsWindows HCK 要求是 **¦ ProcessingStereoscopicVideoContent** 和 **Stereoscopic3DModes**。
 
@@ -175,19 +176,20 @@ UAV-现在可以通过将 ForcedSampleCount 状态合在一起，在光栅化程
 
 对于包含 Direct3D 11.1 驱动程序的所有 Direct3D 10 + 硬件，必须支持此功能。 对于开发人员来说，这会在 DirectX 9 硬件上模拟，使其适用于所有功能级别。
 
-**注意**   你必须指定 "不 \_ 覆盖" 或 "丢弃" 标志。
+**注意**  
+你必须指定 "不 \_ 覆盖" 或 "丢弃" 标志。
 
  
 
 ### <a name="span-idoffsetting_constant_buffer_updatesspanspan-idoffsetting_constant_buffer_updatesspanspan-idoffsetting_constant_buffer_updatesspanoffsetting-constant-buffer-updates"></a><span id="Offsetting_constant_buffer_updates"></span><span id="offsetting_constant_buffer_updates"></span><span id="OFFSETTING_CONSTANT_BUFFER_UPDATES"></span>偏移常量缓冲区更新
 
-高性能游戏引擎的一个常见要求是，收集大量恒定的常量缓冲区更新，使其能够通过单独的**Draw \\ *** 调用进行引用，每个常量都需要自己的常量，同时全部都是。 这可以通过以下方式来实现：允许应用程序创建一个较大的缓冲区，然后将各个着色器指向其内部的区域 (类似于视图，但不需要创建整个对象来描述视图) 。
+高性能游戏引擎的一个常见要求是，收集大量恒定的常量缓冲区更新，以供单独的 "**绘图 \\**" 和 "调用" 引用，每个调用都需要自己的常量，同时全部都需要。 这可以通过以下方式来实现：允许应用程序创建一个较大的缓冲区，然后将各个着色器指向其内部的区域 (类似于视图，但不需要创建整个对象来描述视图) 。
 
 现在可以创建大容量缓冲区，其大小大于单个着色器可寻址的最大常量缓冲区大小 (最多 4096 16 个字节的元素-65kB，其中每个元素均为 1 4-分量着色器常量) 。 现在，常量缓冲区资源大小仅受系统能够处理的内存分配的大小限制。
 
-当使用** \* SetShaderConstants**Api （如**VSSetShaderConstants**）将大于4096的常量缓冲区绑定到管道时，它将显示在着色器中，就像它只是大小为4096个元素一样。
+当使用 _ * SetShaderConstants * * Api （例如 VSSetShaderConstants）将大于4096的常量缓冲区绑定到管道时 \* ， **VSSetShaderConstants** 它将显示在着色器中，就像它只是大小为4096个元素一样。
 
-** \* SetShaderConstants**api （ ** \* SetShaderConstants1**）的变体允许将 "FirstConstant" 和 "ConstantCount" 与绑定一起指定。 当着色器以这种方式访问绑定的常量缓冲区时，它看起来就像是以指定的 "FirstConstant" 偏移量开头 (其中，1表示16个字节) 并且大小由 ConstantCount (数量的16字节常量) 定义。 这基本上是较大的常量缓冲区区域的轻型 "视图"。 FirstConstant 和 ConstantCount (都必须是 16) 的倍数。
+**\* SetShaderConstants** api （ **\* SetShaderConstants1**）的变体允许将 "FirstConstant" 和 "ConstantCount" 与绑定一起指定。 当着色器以这种方式访问绑定的常量缓冲区时，它看起来就像是以指定的 "FirstConstant" 偏移量开头 (其中，1表示16个字节) 并且大小由 ConstantCount (数量的16字节常量) 定义。 这基本上是较大的常量缓冲区区域的轻型 "视图"。 FirstConstant 和 ConstantCount (都必须是 16) 的倍数。
 
 Direct3D 10 + 硬件的所有 WDDM 1.2 驱动程序必须支持此功能。 Direct3D 11 运行时为功能级别 9 x 模拟适当的行为 \_ 。
 
@@ -212,11 +214,11 @@ Tileable copy 操作允许应用程序通知实现：图像源和目标是像素
 这些函数和结构是适用于 Windows 8 的新功能或更新的：
 
 -   [*AssignDebugBinary*](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_assigndebugbinary)
--   [*CalcPrivateBlendStateSize (D3D11 \_ 1) *](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_calcprivateblendstatesize)
+-   [*CalcPrivateBlendStateSize (D3D11 \_ 1)*](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_calcprivateblendstatesize)
 -   [*ClearView*](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_clearview)
--   [*DefaultConstantBufferUpdateSubresourceUP (D3D11 \_ 1) *](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_resourceupdatesubresourceup)
--   [*ResourceUpdateSubresourceUP (D3D11 \_ 1) *](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_resourceupdatesubresourceup)
--   [*VsSetConstantBuffers (D3D11 \_ 1) *](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_setconstantbuffers)
+-   [*DefaultConstantBufferUpdateSubresourceUP (D3D11 \_ 1)*](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_resourceupdatesubresourceup)
+-   [*ResourceUpdateSubresourceUP (D3D11 \_ 1)*](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_resourceupdatesubresourceup)
+-   [*VsSetConstantBuffers (D3D11 \_ 1)*](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_setconstantbuffers)
 -   [**D3D11 \_ 1DDI \_ D3D11 \_ OPTIONS \_ 数据**](/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d11_1ddi_d3d11_options_data)
 -   [**D3DDDI \_ BLTFLAGS**](/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddi_bltflags)
 -   [**D3DDDI \_ 复制 \_ 标志**](/windows-hardware/drivers/ddi/d3dumddi/ne-d3dumddi-d3dddi_copy_flags)

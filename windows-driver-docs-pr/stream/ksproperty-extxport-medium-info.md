@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ EXTXPORT \_ 中型 \_ 信息
 description: KSPROPERTY \_ EXTXPORT \_ MEDIUM \_ INFO 属性检索有关外部设备介质的信息。
-ms.assetid: 04b98c50-ebb0-4224-b476-d261b7c5dd79
 keywords:
 - KSPROPERTY_EXTXPORT_MEDIUM_INFO 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e590eec68634ab44ecdf700857b1ec6c19703f5d
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 4c588f5318831a793bdb6a57f4c0baf028ffb798
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104044"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808561"
 ---
 # <a name="ksproperty_extxport_medium_info"></a>KSPROPERTY \_ EXTXPORT \_ 中型 \_ 信息
 
@@ -84,7 +83,7 @@ KSPROPERTY **MediumInfo** \_ EXTXPORT S 结构的 MediumInfo 成员 \_ 指定信
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

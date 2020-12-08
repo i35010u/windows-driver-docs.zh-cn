@@ -1,7 +1,6 @@
 ---
 title: 驱动程序堆栈管理
 description: 驱动程序堆栈管理
-ms.assetid: 61d17e92-a1bf-42d9-b241-400b43b0ec0a
 keywords:
 - 驱动程序堆栈 WDK 网络，管理
 - 微型端口适配器 WDK 网络，驱动程序堆栈
@@ -11,12 +10,12 @@ keywords:
 - 协议驱动程序 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f7d89476a272dd94ceb54cc5224e6ba3a32eff50
-ms.sourcegitcommit: 366a15d68eb58d01a8ca6de7b982f62ac8b7deaf
+ms.openlocfilehash: 5fbe2cd8fc75d43b43bf360cab8eee1fdb087a3a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/19/2020
-ms.locfileid: "90811912"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808627"
 ---
 # <a name="driver-stack-management"></a>驱动程序堆栈管理
 
@@ -31,13 +30,13 @@ NDIS 6.0 还引入了 NDIS 筛选器驱动程序。 筛选器驱动程序可以�
 驱动程序堆栈包含以下逻辑元素：
 
 <a href="" id="miniport-adapter"></a>微型端口适配器  
-*微型端口适配器*是 NDIS 微型端口驱动程序或中间驱动程序的适配器实例。 中间驱动程序的虚拟小型端口是一个微型端口适配器。 在设备可用之后，NDIS 会通过微型端口适配器配置驱动程序堆栈的其他元素。
+*微型端口适配器* 是 NDIS 微型端口驱动程序或中间驱动程序的适配器实例。 中间驱动程序的虚拟小型端口是一个微型端口适配器。 在设备可用之后，NDIS 会通过微型端口适配器配置驱动程序堆栈的其他元素。
 
 <a href="" id="protocol-binding"></a>协议绑定  
-*协议绑定*是协议驱动程序的绑定实例。 协议绑定将 NDIS 协议驱动程序绑定到微型端口适配器。 多个协议驱动程序可以绑定到微型端口适配器。
+*协议绑定* 是协议驱动程序的绑定实例。 协议绑定将 NDIS 协议驱动程序绑定到微型端口适配器。 多个协议驱动程序可以绑定到微型端口适配器。
 
 <a href="" id="filter-module"></a>筛选器模块  
-*筛选器模块*是筛选器驱动程序的实例。 NDIS 可以暂停驱动程序堆栈以插入、删除或重新配置筛选器模块。 筛选器模块可以监视和修改微型端口适配器的行为。
+*筛选器模块* 是筛选器驱动程序的实例。 NDIS 可以暂停驱动程序堆栈以插入、删除或重新配置筛选器模块。 筛选器模块可以监视和修改微型端口适配器的行为。
 
 以下主题提供有关驱动程序堆栈、驱动程序状态和驱动程序堆栈操作的详细信息：
 

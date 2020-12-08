@@ -1,7 +1,6 @@
 ---
 title: 配置可选的微型端口驱动程序服务
 description: 配置可选的微型端口驱动程序服务
-ms.assetid: 42fe3863-ded0-4a02-9216-86fa4c167a49
 keywords:
 - 微型端口驱动程序 WDK 网络，可选服务
 - NDIS 微型端口驱动程序 WDK，可选服务
@@ -9,12 +8,12 @@ keywords:
 - 特征结构 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 709279d522296bde90f27acf90832cd49ae3ffcb
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 308ca95ac66dba4e76f6fb7dd0fb12105839170d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215254"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808071"
 ---
 # <a name="configuring-optional-miniport-driver-services"></a>配置可选的微型端口驱动程序服务
 
@@ -22,7 +21,7 @@ ms.locfileid: "89215254"
 
 
 
-NDIS 调用微型端口驱动程序的 [*MiniportSetOptions*](/windows-hardware/drivers/ddi/ndis/nc-ndis-set_options) 函数，以允许该驱动程序配置可选服务。 NDIS 在微型端口驱动程序调用[**NdisMRegisterMiniportDriver**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismregisterminiportdriver)函数的上下文中调用*MiniportSetOptions* 。
+NDIS 调用微型端口驱动程序的 [*MiniportSetOptions*](/windows-hardware/drivers/ddi/ndis/nc-ndis-set_options) 函数，以允许该驱动程序配置可选服务。 NDIS 在微型端口驱动程序调用 [**NdisMRegisterMiniportDriver**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismregisterminiportdriver)函数的上下文中调用 *MiniportSetOptions* 。
 
 *MiniportSetOptions* 注册可选 *MiniportXxx* 函数的默认入口点，并可分配其他驱动程序资源。 若要注册可选的 *MiniportXxx* 函数，微型端口驱动程序将调用 [**NdisSetOptionalHandlers**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndissetoptionalhandlers) 函数并在 *OptionalHandlers* 参数传递特征结构。
 

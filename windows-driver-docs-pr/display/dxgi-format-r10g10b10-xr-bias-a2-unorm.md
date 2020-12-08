@@ -1,19 +1,18 @@
 ---
 title: DXGI_FORMAT_R10G10B10_XR_BIAS_A2_UNORM
 description: DXGI_FORMAT_R10G10B10_XR_BIAS_A2_UNORM
-ms.assetid: 2aef590f-2328-4175-ab60-c72b1fd83db7
 keywords:
 - Direct3D 版本 10.1 WDK Windows 7 显示，DXGI_FORMAT_R10G10B10_XR_BIAS_A2_UNORM
 - 扩展格式 WDK Windows 7 显示，DXGI_FORMAT_R10G10B10_XR_BIAS_A2_UNORM
 - DXGI_FORMAT_R10G10B10_XR_BIAS_A2_UNORM WDK Windows 7 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bf86af5461020f6fd97b65508a8d5c501d1b5884
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: a6b8f4941ea6bc7b79a31784c75252699d9c5962
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065468"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809077"
 ---
 # <a name="dxgi_format_r10g10b10_xr_bias_a2_unorm"></a>DXGI \_ FORMAT \_ R10G10B10 \_ XR \_ 偏向 \_ A2 \_ UNORM
 

@@ -1,7 +1,6 @@
 ---
 title: HID 客户端概述
 description: HID 客户端是使用 HID API 进行通信的驱动程序、服务或应用程序，通常表示特定类型的设备 (例如传感器、键盘或鼠标) 。
-ms.assetid: C97E1F63-0CA5-42F3-A139-48E830F2E2B7
 keywords:
 - HID 客户端
 - 驱动程序
@@ -10,12 +9,12 @@ keywords:
 - HID 集合
 ms.date: 02/26/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 7026d44710b8bb7844473479a5d09a080b0ae32d
-ms.sourcegitcommit: 9145bffd4cc3b990a9ebff43b588db6ef2001f5d
+ms.openlocfilehash: 85392170e9c0ae8179ef6d95f1c09ac3cd66c427
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89592433"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808851"
 ---
 # <a name="hid-clients-overview"></a>HID 客户端概述
 

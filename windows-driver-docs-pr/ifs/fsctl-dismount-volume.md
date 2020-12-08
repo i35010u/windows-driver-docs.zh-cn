@@ -1,7 +1,6 @@
 ---
 title: FSCTL_DISMOUNT_VOLUME 控制代码
 description: '\_ \_ 无论卷是否正在使用中，FSCTL 卸载卷控制代码都将尝试卸除卷。'
-ms.assetid: edfff768-3bb3-4b8a-b982-80797ac116fd
 keywords:
 - FSCTL_DISMOUNT_VOLUME 控制代码可安装的文件系统驱动程序
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c7c3e316d158e2d65a4a268d93d29308525eab4c
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 36c43949240c9ce529176b9dc1a290affa3549dc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716800"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808413"
 ---
 # <a name="fsctl_dismount_volume-control-code"></a>FSCTL \_ 卸除 \_ 音量控制代码
 
@@ -28,16 +27,16 @@ ms.locfileid: "90716800"
 
 若要执行此操作，请调用具有以下参数的 [**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 或 [**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85)) 。
 
-**参数**
+**Parameters**
 
 <a href="" id="instance"></a>*实例*  
-仅[**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 。 调用方的不透明实例指针。 此参数是必需的，不能为 **NULL**。
+仅 [**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 。 调用方的不透明实例指针。 此参数是必需的，不能为 **NULL**。
 
 <a href="" id="fileobject"></a>*FileObject*  
-仅[**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 。 文件指针对象，指定要卸除的卷。 此参数是必需的，不能为 **NULL**。
+仅 [**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 。 文件指针对象，指定要卸除的卷。 此参数是必需的，不能为 **NULL**。
 
 <a href="" id="filehandle--in-"></a>*FileHandle \[\]*  
-仅[**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85)) 。 要卸除的卷的文件句柄。 此参数是必需的，不能为 **NULL**。
+仅 [**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85)) 。 要卸除的卷的文件句柄。 此参数是必需的，不能为 **NULL**。
 
 <a href="" id="fscontrolcode--in-"></a>*FsControlCode \[\]*  
 操作的控制代码。 将 **FSCTL \_ 卸除 \_ 卷** 用于此操作。
@@ -66,7 +65,7 @@ ms.locfileid: "90716800"
 
 操作系统不检测未装入的卷。 如果尝试访问未装入的卷，则操作系统将尝试装入该卷。 例如，对 [**GetLogicalDrives**](/windows/win32/api/fileapi/nf-fileapi-getlogicaldrives) 的调用会触发操作系统来装入未装入的卷。
 
-传递给[**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85))的*FileHandle*句柄必须是为直接访问而打开的卷的句柄。 若要检索卷句柄，请调用[**ZwCreateFile**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntcreatefile) ，并将*ObjectAttributes*参数设置为以下形式的*ObjectName* ： * \\ \\ 。 \\X：* 其中*x*是卷、软盘驱动器或 cd-rom 驱动器的驱动器号。 应用程序还必须 \_ \_ \_ \_ 在**ZwCreateFile**的*ShareAccess*参数中指定文件共享读取和文件共享写入标志。
+传递给 [**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85))的 *FileHandle* 句柄必须是为直接访问而打开的卷的句柄。 若要检索卷句柄，请调用 [**ZwCreateFile**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntcreatefile) ，并将 *ObjectAttributes* 参数设置为以下形式的 *ObjectName* ： *\\ \\ 。 \\X：* 其中 *x* 是卷、软盘驱动器或 cd-rom 驱动器的驱动器号。 应用程序还必须 \_ \_ \_ \_ 在 **ZwCreateFile** 的 *ShareAccess* 参数中指定文件共享读取和文件共享写入标志。
 
 如果指定的卷是系统卷或包含页面文件，则操作将失败。
 

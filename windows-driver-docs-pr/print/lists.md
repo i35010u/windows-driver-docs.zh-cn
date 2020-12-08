@@ -1,19 +1,18 @@
 ---
 title: 列表
 description: 列表
-ms.assetid: 69b928fa-8348-437a-ac4d-677f272615dd
 keywords:
 - GPD 文件条目 WDK Unidrv，列表
 - 列出属性 WDK GPD 文件
-- 列表关键字
+- LIST 关键字
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b6c21fc24a8c9c36a0c97f74496a7ea1dfec64a6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7155ce107f85a1835ee980c67d8ce565006990da
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388080"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807939"
 ---
 # <a name="lists"></a>列表
 
@@ -21,11 +20,11 @@ ms.locfileid: "63388080"
 
 
 
-若要将一组值分配到属性，请使用列表关键字。 格式为：
+若要将一组值分配给某个属性，请使用 LIST 关键字。 格式为：
 
-**列表**( *Value1* ， *Value2* ， *Value3* ，...， *ValueN*)
+**LIST** ( *Value1* ， *Value2* ， *Value3* ，...， *ValueN*) 
 
-其中*Value1*， *Value2*， *Value3*，...， *ValueN*表示一组的一个或多个值，所有指定的属性的类型。 例如，可以按以下方式指定应发送打印机的颜色平面数据的顺序：
+其中 *Value1*， *Value2*， *Value3*，...， *ValueN* 表示一个或多个值的集合，这些值均为该属性指定的类型。 例如，可以按如下所示指定打印机的颜色平面数据的发送顺序：
 
 ```cpp
 *ColorPlaneOrder: LIST(YELLOW, MAGENTA, CYAN, BLACK)

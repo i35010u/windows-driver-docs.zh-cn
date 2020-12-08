@@ -1,7 +1,6 @@
 ---
 title: 端口监视器
 description: 端口监视器
-ms.assetid: 4758ebda-f93e-49fb-8605-17cf43194afc
 keywords:
 - 打印监视器 WDK，端口监视器
 - 端口监视 WDK 打印
@@ -10,12 +9,12 @@ keywords:
 - 打印队列 WDK，端口监视器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 945ca8f68e7d6e21d54cd00664eed6f8a0d68d9b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: baea8cdbe9f670250ee5518c841a2784abdbe519
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207715"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807547"
 ---
 # <a name="port-monitors"></a>端口监视器
 
@@ -23,13 +22,13 @@ ms.locfileid: "89207715"
 
 
 
-端口监视器由用户模式 Dll 组成。 它们负责提供用户模式打印后台处理程序与访问 i/o 端口硬件的内核模式端口驱动程序之间的通信路径。 端口监视器通常使用 Microsoft Windows SDK 文档中所述的 [**CreateFile**](/windows/win32/api/fileapi/nf-fileapi-createfilea)、 **WriteFile**、 **ReadFile**和 **DeviceIOControl** 函数来与内核模式端口驱动程序通信。 端口监视器还负责管理和配置服务器的打印机端口，如 [管理端口](managing-a-port.md)中所述。
+端口监视器由用户模式 Dll 组成。 它们负责提供用户模式打印后台处理程序与访问 i/o 端口硬件的内核模式端口驱动程序之间的通信路径。 端口监视器通常使用 Microsoft Windows SDK 文档中所述的 [**CreateFile**](/windows/win32/api/fileapi/nf-fileapi-createfilea)、 **WriteFile**、 **ReadFile** 和 **DeviceIOControl** 函数来与内核模式端口驱动程序通信。 端口监视器还负责管理和配置服务器的打印机端口，如 [管理端口](managing-a-port.md)中所述。
 
 "打印机" 的基于 NT 的操作系统用户视图实际上是一个打印队列，可以将一个或多个物理打印机设备连接到该队列。 端口是打印队列和单个打印机设备之间的物理连接。 每个端口监视器支持一个或多个类型的端口的一个或多个实例。 例如 Localmon.dll， [示例端口监视器](sample-port-monitor.md)可支持服务器的所有本地 COM 和 LPT 端口。  (打印文件夹，可通过调用 Windows SDK 文档的 **interactivesession.addprinter** 函数将端口分配给端口监视器。 ) 
 
 对于表示多个打印机设备的打印队列 (通过多个端口) ，后台处理程序将每个打印作业发送到第一个可用端口。 如果端口监视器指示指定的端口正忙或遇到错误，则后台处理程序会将作业重新提交到队列，同时指定端口监视器支持的其他端口。
 
-除了 Localmon.dll 之外，Windows 2000 和更高版本的操作系统版本还提供多个其他端口监视器。 *Windows 2000 服务器资源工具包*介绍了其中的每个端口监视器。  (此资源可能在某些语言和国家/地区不可用。 ) 
+除了 Localmon.dll 之外，Windows 2000 和更高版本的操作系统版本还提供多个其他端口监视器。 *Windows 2000 服务器资源工具包* 介绍了其中的每个端口监视器。  (此资源可能在某些语言和国家/地区不可用。 ) 
 
 可以编写自定义端口监视器以支持其他类型的 i/o 端口硬件。
 

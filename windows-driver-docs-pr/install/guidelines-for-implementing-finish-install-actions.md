@@ -1,15 +1,14 @@
 ---
 title: 实施 Finish-Install 操作的指南
 description: 实施 Finish-Install 操作的指南
-ms.assetid: 455d520a-ccd7-470b-ab5f-5786ee90b91d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e27153756f89027660b9aa2f4a30f9db0b2e9f9d
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: afa6b12bdc49889bb561c324007f119f36989f06
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095325"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808133"
 ---
 # <a name="guidelines-for-implementing-finish-install-actions"></a>实施 Finish-Install 操作的指南
 
@@ -42,7 +41,7 @@ ms.locfileid: "89095325"
 
     虽然此标志仍是为设备设置的，但 Windows 会运行新的完成安装过程。
 
-    有关详细信息，请参阅 [运行完成-安装操作](running-finish-install-actions.md)。
+    有关详细信息，请参阅 [运行 Finish-Install 操作](running-finish-install-actions.md)。
 
 -   安装程序应处理 "完成-安装" 操作失败且不应再次尝试的情况。
 
@@ -52,11 +51,11 @@ ms.locfileid: "89095325"
 
     例如，请考虑一个设备共同安装程序，其中 "完成-安装" 操作将安装设备正常运行所需的应用程序。 例如，Microsoft 键盘的 "完成-安装" 操作可能会安装 IntelliType 应用程序。 如果此类共同安装程序处理 [**DIF_NEWDEVICEWIZARD_FINISHINSTALL**](./dif-newdevicewizard-finishinstall.md) 的 DIF 代码，则应检查是否已安装该应用程序。 如果已安装应用程序，则没有要执行的完成安装操作，因此不应设置 DI_FLAGSEX_FINISHINSTALL_ACTION 标志。 在这种情况下，如果联合安装程序错误地设置了 DI_FLAGSEX_FINISHINSTALL_ACTION 标志，则用户将获取不需要的用户帐户控制 (UAC) 即使完成安装操作没有任何要执行的操作也是如此。
 
-    **注意**   从 Windows 7 开始，如果 UAC 设置为默认设置 " (" 当程序尝试对我的计算机进行更改时通知我 ") 或较低的设置时，操作系统将不会在处理完成安装操作时显示具有管理权限的用户的提示。
+    **注意**  从 Windows 7 开始，如果 UAC 设置为默认设置 " (" 当程序尝试对我的计算机进行更改时通知我 ") 或较低的设置时，操作系统将不会在处理完成安装操作时显示具有管理权限的用户的提示。
 
      
 
--   在注册实现完成安装操作的安装程序之前，必须在设备的[INF 文件](overview-of-inf-files.md)的[**CopyFiles 指令**](inf-copyfiles-directive.md)中包括并安装运行 "完成安装" 操作所需的所有文件。 这是必需的，以便在安装过程中将文件放置在安装程序可访问的位置。
+-   在注册实现完成安装操作的安装程序之前，必须在设备的 [INF 文件](overview-of-inf-files.md)的 [**CopyFiles 指令**](inf-copyfiles-directive.md)中包括并安装运行 "完成安装" 操作所需的所有文件。 这是必需的，以便在安装过程中将文件放置在安装程序可访问的位置。
 
     有关设备或类共同安装程序的注册要求的详细信息，请参阅 [注册类共同安装程序](registering-a-class-co-installer.md)。
 

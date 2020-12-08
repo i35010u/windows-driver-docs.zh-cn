@@ -1,7 +1,6 @@
 ---
 title: 使用 DdGetDriverInfo 的 DirectDraw 和 D3D 回调支持
 description: 显示驱动程序可以实现 DdGetDriverInfo 函数，以指示各种 DirectDraw 和 Direct3D 回调支持。
-ms.assetid: 7054564e-4520-4900-946a-95c92908667c
 keywords:
 - DirectDraw 驱动程序初始化 WDK Windows 2000 显示，Windows 2000
 - 回调函数 WDK DirectDraw
@@ -12,16 +11,16 @@ keywords:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: 681add3f7f4dff432728a22a44cd4b31eb431ae2
-ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
+ms.openlocfilehash: 15802cb6e15f4a7b0a1b3ce2e8632d8069852097
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91423740"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809409"
 ---
 # <a name="directdraw-and-direct3d-callback-support-using-ddgetdriverinfo"></a>使用 DdGetDriverInfo 的 DirectDraw 和 Direct3D 回调支持
 
-显示驱动程序可以实现 [**DdGetDriverInfo**](/windows/win32/api/ddrawint/nc-ddrawint-pdd_getdriverinfo) 函数，以指示各种 DirectDraw 和 Direct3D 回调支持。 回调支持是由驱动程序在[**DD \_ GETDRIVERINFODATA**](/windows/win32/api/ddrawint/ns-ddrawint-dd_getdriverinfodata)结构的**guidInfo**成员中接收到的、 *lpGetDriverInfo*参数指向的 guid。 驱动程序返回指向 **lpvData** 成员中的结构的指针，该结构指定 DirectDraw 或 Direct3D 回叫支持。
+显示驱动程序可以实现 [**DdGetDriverInfo**](/windows/win32/api/ddrawint/nc-ddrawint-pdd_getdriverinfo) 函数，以指示各种 DirectDraw 和 Direct3D 回调支持。 回调支持是由驱动程序在 [**DD \_ GETDRIVERINFODATA**](/windows/win32/api/ddrawint/ns-ddrawint-dd_getdriverinfodata)结构的 **guidInfo** 成员中接收到的、 *lpGetDriverInfo* 参数指向的 guid。 驱动程序返回指向 **lpvData** 成员中的结构的指针，该结构指定 DirectDraw 或 Direct3D 回叫支持。
 
 - 如果驱动程序收到 GUID \_ COLORCONTROLCALLBACKS guid，则返回指向 [**DD \_ ColorControlCallbacks**](/windows/win32/api/ddrawint/ns-ddrawint-dd_colorcontrolcallbacks) 结构的指针。 如果支持 [颜色控制](color-control-initialization.md)，驱动程序将填充 DD COLORCONTROLCALLBACKS 的 **ColorControl** 成员， \_ 以指定其 [*DdControlColor*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_colorcb_colorcontrol) 回调函数。
 
@@ -37,7 +36,7 @@ ms.locfileid: "91423740"
   <thead>
   <tr class="header">
   <th align="left">回调函数</th>
-  <th align="left">说明</th>
+  <th align="left">描述</th>
   </tr>
   </thead>
   <tbody>
@@ -66,7 +65,7 @@ ms.locfileid: "91423740"
   <thead>
   <tr class="header">
   <th align="left">回调函数</th>
-  <th align="left">说明</th>
+  <th align="left">描述</th>
   </tr>
   </thead>
   <tbody>

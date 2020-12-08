@@ -1,7 +1,6 @@
 ---
 title: 页面创建回调
 description: 页面创建回调
-ms.assetid: ec514d17-415e-417b-bb29-b37be43c3cf6
 keywords:
 - 回调函数 WDK CPSUI
 - 公共属性表用户界面 WDK 打印，回调
@@ -11,12 +10,12 @@ keywords:
 - CommonPropertySheetUI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b482ee4347545df558235e0426d4c0cd408edb75
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: d481fb6814645b492fddaf22deb8a2b0385381c6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218199"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807667"
 ---
 # <a name="page-creation-callbacks"></a>页面创建回调
 

@@ -1,15 +1,14 @@
 ---
 title: 所有功能的选项属性
 description: 所有功能的选项属性
-ms.assetid: 0d269fdf-f4a1-431a-9f07-044289b9f0fa
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ccfe00f02eb596112e76a69419947905d2283d7
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: d277869df3104cec5e6bae7943301a811a5d8bf0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107132"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807745"
 ---
 # <a name="option-attributes-for-all-features"></a>所有功能的选项属性
 

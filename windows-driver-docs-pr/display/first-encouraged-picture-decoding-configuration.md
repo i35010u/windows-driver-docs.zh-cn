@@ -1,18 +1,17 @@
 ---
 title: 第一个建议的图片解码配置
 description: 第一个建议的图片解码配置
-ms.assetid: ad1c20a6-e070-4df0-91cd-6c2bd728e311
 keywords:
-- 压缩解码集 WDK DirectX VA 的图片
+- 压缩的图片解码设置 WDK DirectX VA
 - 图片解码设置 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 76e181226cec6a2ace87fd2038a7da468c54b4ce
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4f35fd29af6347097169dd1d067de41caf81a5da
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327931"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808457"
 ---
 # <a name="first-encouraged-picture-decoding-configuration"></a>第一个建议的图片解码配置
 
@@ -20,9 +19,9 @@ ms.locfileid: "63327931"
 ## <span id="ddk_first_encouraged_picture_decoding_configuration_gg"></span><span id="DDK_FIRST_ENCOURAGED_PICTURE_DECODING_CONFIGURATION_GG"></span>
 
 
-第一个建议的配置适用于非主机位流处理加速的改进了的支持。
+第一种建议的配置是为了改进对脱离主机位流处理加速度的支持。
 
-此配置定义一样[解码配置的第一张图](first-picture-decoding-configuration.md)有以下例外。
+此配置的定义方式与 [第一个图片解码配置](first-picture-decoding-configuration.md) 相同，但有以下例外情况。
 
 <table>
 <colgroup>
@@ -32,7 +31,7 @@ ms.locfileid: "63327931"
 <thead>
 <tr class="header">
 <th align="left">成员</th>
-<th align="left">ReplTest1</th>
+<th align="left">“值”</th>
 </tr>
 </thead>
 <tbody>

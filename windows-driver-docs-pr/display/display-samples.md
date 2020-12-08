@@ -1,15 +1,14 @@
 ---
 title: 显示示例
 description: 显示示例
-ms.assetid: 4595369c-20fa-4c8d-ad1d-aada97ab9fc2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f534a79962b19b16dd72761a0b0e7d8b5edaa5dd
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: b42984fccbbe2f7da7cde9d520b005d39f5eec1a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105894"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809245"
 ---
 # <a name="display-samples"></a>显示示例
 
@@ -70,7 +69,7 @@ Windows 7 Windows Server 2008 Windows Vista Windows Server 2003 Windows XP Windo
 <td align="left"><p>是</p></td>
 <td align="left"><p>演示执行 <a href="mirror-drivers.md" data-raw-source="[video mirroring](mirror-drivers.md)">视频镜像</a>的驱动程序。</p>
 <div class="alert">
-<strong>注意</strong>   从 Windows 8 开始，镜像驱动程序将不会安装在系统上。
+<strong>注意</strong>  从 Windows 8 开始，镜像驱动程序将不会安装在系统上。
 </div>
 <div>
  

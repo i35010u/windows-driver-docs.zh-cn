@@ -1,7 +1,6 @@
 ---
 title: 页面事件回调
 description: 页面事件回调
-ms.assetid: 891f62ec-d009-42c8-8143-73bfe737a946
 keywords:
 - 回调函数 WDK CPSUI
 - 公共属性表用户界面 WDK 打印，回调
@@ -11,12 +10,12 @@ keywords:
 - 事件回调 WDK CPSUI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 97b0b797aeee98ec79aa05b73706c32ebb55edc2
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 515b5f2954e381d29820b1972a91595b4d89ac46
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218195"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807657"
 ---
 # <a name="page-event-callbacks"></a>页面事件回调
 

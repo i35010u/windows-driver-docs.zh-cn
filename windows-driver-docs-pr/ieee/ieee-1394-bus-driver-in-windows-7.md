@@ -1,15 +1,14 @@
 ---
 title: Windows 7 中的 IEEE 1394 总线驱动程序
 description: Windows 7 包括 1394ohci.sys，这是一种新的 IEEE 1394 总线驱动程序，它支持以 IEEE-1394b 规范中定义的速度更快、更备用的媒体。
-ms.assetid: 3744C1D5-E411-4E47-9154-40E15626250D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 158507c488b4319d317d7932fe8d8801109b7c1f
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 5a6cf8e8693ea2cc246db2258f0e5af5da16c276
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382231"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808827"
 ---
 # <a name="ieee-1394-bus-driver-in-windows-7"></a>Windows 7 中的 IEEE 1394 总线驱动程序
 
@@ -44,7 +43,7 @@ Windows 7 包括 1394ohci.sys，这是一种新的 IEEE 1394 总线驱动程序�
 
 ## <a name="node_device_extension-structure-usage"></a>节点 \_ 设备 \_ 扩展结构使用情况
 
-客户端驱动程序可以引用与客户端驱动程序所控制设备 (PDO) 相关联的1394总线驱动程序中的设备扩展。 此设备扩展由 **节点 \_ 设备 \_ 扩展** 结构描述。 在 1394ohci.sys 中，此结构保持在与旧版1394总线驱动程序相同的位置，但结构的非静态成员可能无效。 当客户端驱动程序使用新的1394总线驱动程序时，必须确保 **节点 \_ 设备 \_ 扩展** 中的访问数据有效。 包含有效数据的 **节点 \_ 设备 \_ 扩展** 的静态成员为 **Tag**、 **DeviceObject**和 **PortDeviceObject**。 所有其他成员 **节点 \_ 设备 \_ 扩展** 都是非静态的，客户端驱动程序不得引用此扩展。
+客户端驱动程序可以引用与客户端驱动程序所控制设备 (PDO) 相关联的1394总线驱动程序中的设备扩展。 此设备扩展由 **节点 \_ 设备 \_ 扩展** 结构描述。 在 1394ohci.sys 中，此结构保持在与旧版1394总线驱动程序相同的位置，但结构的非静态成员可能无效。 当客户端驱动程序使用新的1394总线驱动程序时，必须确保 **节点 \_ 设备 \_ 扩展** 中的访问数据有效。 包含有效数据的 **节点 \_ 设备 \_ 扩展** 的静态成员为 **Tag**、 **DeviceObject** 和 **PortDeviceObject**。 所有其他成员 **节点 \_ 设备 \_ 扩展** 都是非静态的，客户端驱动程序不得引用此扩展。
 
 ## <a name="gap-count-optimization"></a>差距计数优化
 

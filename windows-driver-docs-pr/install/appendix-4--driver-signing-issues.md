@@ -1,15 +1,14 @@
 ---
 title: 附录4驱动程序签名问题
 description: 下面介绍了两个已知的驱动程序签名问题。
-ms.assetid: EC244022-A02B-4AAD-93EE-B9AE3E72A674
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 61fbd5f9f715af0e19de2778d6daf295f057f3ba
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 83e9b5b80cfde5903c497db067eb5304c6366387
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096263"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808171"
 ---
 # <a name="appendix-4-driver-signing-issues"></a>附录 4：驱动程序签名问题
 
@@ -38,7 +37,7 @@ Signtool sign /fd sha256 /ac C:\MyCrossCert\Crosscert.cer /s my /n “MyCompany 
 
 其中 XX .。。XX 是用于辅助签名的证书哈希。 将/tr 添加到时间戳签名。
 
-**注意**   请查看 Microsoft 安全公告 ([2880823](/security-updates/SecurityAdvisories/2016/2880823)) "弃用适用于 Microsoft 根证书计划的 Sha-1 哈希算法"，其中描述了在年1月 1 2016 日之后，Microsoft 将不再允许根证书颁发机构使用 sha-1 哈希算法颁发 x.509 证书的策略更改。
+**注意**  请查看 Microsoft 安全公告 ([2880823](/security-updates/SecurityAdvisories/2016/2880823)) "弃用适用于 Microsoft 根证书计划的 Sha-1 哈希算法"，其中描述了在年1月 1 2016 日之后，Microsoft 将不再允许根证书颁发机构使用 sha-1 哈希算法颁发 x.509 证书的策略更改。
 
  
 

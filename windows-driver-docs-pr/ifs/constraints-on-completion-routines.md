@@ -1,17 +1,16 @@
 ---
 title: 完成例程的约束
 description: 完成例程的约束
-ms.assetid: 3873fd27-cfa8-414d-9437-c0789b20ff27
 keywords:
 - IRP 完成例程 WDK 文件系统，约束
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e47e1c43430d83c827b1006d1ea1a7eae33525f
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 0a65ed444ea7196e4d4c3150db58afb362927e56
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065118"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808431"
 ---
 # <a name="constraints-on-completion-routines"></a>完成例程的约束
 

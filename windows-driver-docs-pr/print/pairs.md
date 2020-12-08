@@ -1,18 +1,17 @@
 ---
 title: 对
 description: 对
-ms.assetid: 156e6b10-74c2-4702-b0be-b9d209c02070
 keywords:
 - GPD 文件条目 WDK Unidrv，对
-- 对 WDK GPD 文件
+- 对 WDK GPD 文件进行配对
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c80ae18b440eb713937ee6096f0eaf4ea0e94bd4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 58d5d62076fcfa7f9017eb5f589b713b6d4e3400
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345275"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807635"
 ---
 # <a name="pairs"></a>对
 
@@ -20,11 +19,11 @@ ms.locfileid: "63345275"
 
 
 
-若要将一对值分配到属性，请使用对关键字。 格式为：
+若要为属性分配一对值，请使用对关键字。 格式为：
 
-**PAIR** ( *Value1* , *Value2* )
+**配对** ( *Value1* ， *Value2* ) 
 
-其中*Value1*并*Value2*是[数值](numeric-values.md)。 例如，按指定的游标原点位置[掌握单位](master-units.md)，如下所示：
+其中 *Value1* 和 *Value2* 为 [数值](numeric-values.md)。 例如，可以按如下所示在 [主单元](master-units.md) 中指定游标原点位置：
 
 ```cpp
 *CursorOrigin: PAIR(120, 100)

@@ -1,15 +1,14 @@
 ---
 title: WDDM 2.0 中的驱动程序驻留
 description: 本部分提供有关 Windows 显示驱动程序模型的驱动程序驻留更改的详细信息 (WDDM) 2.0。 从 Windows 10 开始可以使用所述功能。
-ms.assetid: 9BD0138A-E957-4675-8E08-2750825A5C87
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aa94901a52e03f5880be906625b90eebd2975411
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 1d710fe45c12b863da66bd0a4b167a0832b5d878
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103790"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809145"
 ---
 # <a name="driver-residency-in-wddm-20"></a>WDDM 2.0 中的驱动程序驻留
 
@@ -27,7 +26,7 @@ ms.locfileid: "90103790"
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

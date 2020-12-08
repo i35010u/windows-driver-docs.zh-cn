@@ -1,20 +1,19 @@
 ---
 title: 驱动程序\服务启动类型指令
-description: "\"Driver\\services\"启动类型指令是服务安装设置必需的所有显示器驱动程序。 Windows 显示器驱动程序模型 (WDDM) 驱动程序是插即用 (PnP)，因此必须按需启动，其中 StartType = 3。"
-ms.assetid: 1B34DC18-EA81-44DB-B60A-D05B685E9321
+description: "\"Driver\\services\" 启动类型指令是所有显示驱动程序的服务安装设置要求。 Windows 显示驱动程序模型 (WDDM) 驱动程序即插即用 (PnP) ，因此必须先开始，其中 StartType = 3。"
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 45e44b96055fcb0dad24a65f9db00f56182138be
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e6ad51149bee47a6ea676dda813d650adb483598
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358441"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809131"
 ---
-# <a name="driverservices-start-type-directive"></a>驱动程序\\服务启动类型指令
+# <a name="driverservices-start-type-directive"></a>驱动程序 \\ 服务启动类型指令
 
 
-*驱动程序\\services*开始 type 指令是服务安装设置必需的所有显示器驱动程序。 Windows 显示器驱动程序模型 (WDDM) 驱动程序是插即用 (PnP)，因此必须按需启动，其中*StartType* = 3。
+*驱动程序 \\ 服务* 启动类型指令是所有显示驱动程序的服务安装设置要求。 Windows 显示驱动程序模型 (WDDM) 驱动程序即插即用 (PnP) ，因此必须先开始，其中 *StartType* = 3。
 
 例如：
 

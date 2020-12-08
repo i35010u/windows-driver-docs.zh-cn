@@ -1,7 +1,6 @@
 ---
 title: 使用驱动程序定义的接口
 description: 使用驱动程序定义的接口
-ms.assetid: ad96add6-c982-429b-b815-d7adf6fed8cc
 keywords:
 - 驱动程序定义的接口 WDK KMDF
 - 接口 WDK KMDF
@@ -13,12 +12,12 @@ keywords:
 - 无 op 函数 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 40228dff9f6e1d2483cb4a6b1549875fa2e96895
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 06b573b41f54a4dbe919c13d7d5f580382a489c5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184541"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808539"
 ---
 # <a name="using-driver-defined-interfaces"></a>使用驱动程序定义的接口
 
@@ -56,13 +55,13 @@ ms.locfileid: "89184541"
     -   存储有关接口的信息，如其 GUID、版本号和结构大小，以便框架可以识别其他驱动程序的接口请求。
     -   注册一个可选的 [*EvtDeviceProcessQueryInterfaceRequest*](/windows-hardware/drivers/ddi/wdfqueryinterface/nc-wdfqueryinterface-evt_wdf_device_process_query_interface_request) 事件回调函数，当另一个驱动程序请求该函数时，框架将调用该函数。
 
-驱动程序定义接口的每个实例都与单个设备相关联，因此，驱动程序通常从[*EvtDriverDeviceAdd*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)或[*EvtChildListCreateDevice*](/windows-hardware/drivers/ddi/wdfchildlist/nc-wdfchildlist-evt_wdf_child_list_create_device)回调函数中调用[**WdfDeviceAddQueryInterface**](/windows-hardware/drivers/ddi/wdfqueryinterface/nf-wdfqueryinterface-wdfdeviceaddqueryinterface) 。
+驱动程序定义接口的每个实例都与单个设备相关联，因此，驱动程序通常从 [*EvtDriverDeviceAdd*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)或 [*EvtChildListCreateDevice*](/windows-hardware/drivers/ddi/wdfchildlist/nc-wdfchildlist-evt_wdf_child_list_create_device)回调函数中调用 [**WdfDeviceAddQueryInterface**](/windows-hardware/drivers/ddi/wdfqueryinterface/nf-wdfqueryinterface-wdfdeviceaddqueryinterface) 。
 
 ### <a name="accessing-an-interface"></a>访问接口
 
 如果驱动程序定义了接口，则另一个基于框架的驱动程序可以通过调用 [**WdfFdoQueryForInterface**](/windows-hardware/drivers/ddi/wdffdo/nf-wdffdo-wdffdoqueryforinterface) 并传递 GUID、版本号、指向结构的指针和结构大小来请求对接口的访问。 框架创建 i/o 请求并将其发送到驱动程序堆栈的顶部。
 
-驱动程序通常从[*EvtDriverDeviceAdd*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)回调函数中调用[**WdfFdoQueryForInterface**](/windows-hardware/drivers/ddi/wdffdo/nf-wdffdo-wdffdoqueryforinterface) 。 或者，如果驱动程序必须在设备处于工作状态时释放接口，则驱动程序可以从[*EvtDevicePrepareHardware*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)回调函数中调用**WdfFdoQueryForInterface** ，并从[*EvtDeviceReleaseHardware*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)回调函数内调用接口的取消引用例程。
+驱动程序通常从 [*EvtDriverDeviceAdd*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)回调函数中调用 [**WdfFdoQueryForInterface**](/windows-hardware/drivers/ddi/wdffdo/nf-wdffdo-wdffdoqueryforinterface) 。 或者，如果驱动程序必须在设备处于工作状态时释放接口，则驱动程序可以从 [*EvtDevicePrepareHardware*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)回调函数中调用 **WdfFdoQueryForInterface** ，并从 [*EvtDeviceReleaseHardware*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)回调函数内调用接口的取消引用例程。
 
 如果驱动程序 A 为驱动程序 B 定义的接口请求驱动程序 b，则框架将处理驱动程序 B 的请求。该框架验证 GUID 和版本是否表示支持的接口，以及驱动程序 A 提供的结构大小是否足以容纳该接口。
 
@@ -70,9 +69,9 @@ ms.locfileid: "89184541"
 
 如果驱动程序 A 需要访问驱动程序 B 的接口，并且驱动程序 B 是远程 i/o 目标 (也就是说，位于不同驱动程序堆栈) 中的驱动程序必须调用 [**WdfIoTargetQueryForInterface**](/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetqueryforinterface) 而不是 [**WdfFdoQueryForInterface**](/windows-hardware/drivers/ddi/wdffdo/nf-wdffdo-wdffdoqueryforinterface)。
 
-### <a name="using-one-way-or-two-way-communication"></a>使用单向或双向通信
+### <a name="using-one-way-or-two-way-communication"></a>使用 One-Way 或 Two-Way 通信
 
-你可以定义提供单向通信的接口，也可以定义一个提供双向通信的接口。 若要指定双向通信，驱动程序会将其[**WDF \_ 查询 \_ 接口 \_ 配置**](/windows-hardware/drivers/ddi/wdfqueryinterface/ns-wdfqueryinterface-_wdf_query_interface_config)结构的**ImportInterface**成员设置为**TRUE**。
+你可以定义提供单向通信的接口，也可以定义一个提供双向通信的接口。 若要指定双向通信，驱动程序会将其 [**WDF \_ 查询 \_ 接口 \_ 配置**](/windows-hardware/drivers/ddi/wdfqueryinterface/ns-wdfqueryinterface-_wdf_query_interface_config)结构的 **ImportInterface** 成员设置为 **TRUE**。
 
 如果接口提供单向通信，并且驱动程序 A 请求驱动程序 B 的接口，则接口数据仅流向驱动程序 B 的驱动程序 A。当框架收到驱动程序 A 对支持单向通信的接口的请求时，框架会将驱动程序定义的接口值复制到驱动程序 A 的接口结构。 然后，它调用驱动程序 B 的 [*EvtDeviceProcessQueryInterfaceRequest*](/windows-hardware/drivers/ddi/wdfqueryinterface/nc-wdfqueryinterface-evt_wdf_device_process_query_interface_request) 回调函数（如果存在），以便它可以检查并可能修改接口值。
 
@@ -90,7 +89,7 @@ ms.locfileid: "89184541"
 
 如果设计的驱动程序 B 定义了接口，则必须决定是否从其他驱动程序堆栈访问驱动程序的接口。  (驱动程序 B 无法确定其接口的请求是来自本地驱动程序堆栈还是来自远程堆栈的请求 ) 。如果您的驱动程序将支持来自远程堆栈的接口请求，则驱动程序必须实现引用计数。
 
-如果正在设计驱动程序 A，在远程 i/o 目标上访问接口时，驱动程序必须提供一个[*EvtIoTargetQueryRemove*](/windows-hardware/drivers/ddi/wdfiotarget/nc-wdfiotarget-evt_wdf_io_target_query_remove)回调函数，该函数可在要删除驱动程序 b 的设备时释放接口，EvtIoTargetRemoveComplete 回调函数（当驱动程序 b 的设备被意外删除时，释放接口的[*EvtIoTargetRemoveComplete*](/windows-hardware/drivers/ddi/wdfiotarget/nc-wdfiotarget-evt_wdf_io_target_remove_complete)回调函数）和一个[*EvtIoTargetRemoveCanceled*](/windows-hardware/drivers/ddi/wdfiotarget/nc-wdfiotarget-evt_wdf_io_target_remove_canceled)回调函数（如果删除该设备的尝试被取消）。
+如果正在设计驱动程序 A，在远程 i/o 目标上访问接口时，驱动程序必须提供一个 [*EvtIoTargetQueryRemove*](/windows-hardware/drivers/ddi/wdfiotarget/nc-wdfiotarget-evt_wdf_io_target_query_remove)回调函数，该函数可在要删除驱动程序 b 的设备时释放接口，EvtIoTargetRemoveComplete 回调函数（当驱动程序 b 的设备被意外删除时，释放接口的 [*EvtIoTargetRemoveComplete*](/windows-hardware/drivers/ddi/wdfiotarget/nc-wdfiotarget-evt_wdf_io_target_remove_complete)回调函数）和一个 [*EvtIoTargetRemoveCanceled*](/windows-hardware/drivers/ddi/wdfiotarget/nc-wdfiotarget-evt_wdf_io_target_remove_canceled)回调函数（如果删除该设备的尝试被取消）。
 
  
 

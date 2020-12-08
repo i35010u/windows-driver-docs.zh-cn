@@ -1,15 +1,14 @@
 ---
 title: 添加图像格式支持
 description: 添加图像格式支持
-ms.assetid: 1ffa7c0d-23ec-402a-a0b5-fb5596a851bf
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c469de781902c44d86882ea3a1332fd69148dfb
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: fc45f5835a0107b113c73b425ef6d02f876897da
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191973"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808275"
 ---
 # <a name="adding-image-format-support"></a>添加图像格式支持
 

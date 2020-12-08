@@ -1,9 +1,8 @@
 ---
 title: FilmScanModeValue 元素
-description: 所需的 FilmScanModeValue 元素标识电影扫描选项支持的特定电影公开类型。
-ms.assetid: 62d72190-f1c5-4b2f-af6a-a3c530cc51ed
+description: 必需的 FilmScanModeValue 元素标识胶卷扫描选项支持的特定胶片曝光类型。
 keywords:
-- FilmScanModeValue 元素成像设备
+- FilmScanModeValue 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b9435d1dc06ef9147e22444d4479dfc9c4d110fa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1f5639ea333acb3ee1807ea6e9291e5eb37f1b96
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358040"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808265"
 ---
 # <a name="filmscanmodevalue-element"></a>FilmScanModeValue 元素
 
 
-所需**FilmScanModeValue**元素标识电影扫描选项支持的特定电影公开类型。
+必需的 **FilmScanModeValue** 元素标识胶卷扫描选项支持的特定胶片曝光类型。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -57,19 +56,19 @@ ms.locfileid: "63358040"
 <tbody>
 <tr class="odd">
 <td><p><span id="NotApplicable"></span><span id="notapplicable"></span><span id="NOTAPPLICABLE"></span>NotApplicable</p></td>
-<td><p>默认扫描输入的源不再是电影胶片选项;因此，FilmScanModeValue 不再是 DefaultScanTicket 元素适用的值。 NotApplicable 是仅在 DefaultScanTicket 元素中有效。</p></td>
+<td><p>默认扫描输入源不再是胶片选项;因此，FilmScanModeValue 不再是适用于 DefaultScanTicket 元素的值。 NotApplicable 仅在 DefaultScanTicket 元素中有效。</p></td>
 </tr>
 <tr class="even">
 <td><p><span id="ColorSlideFilm"></span><span id="colorslidefilm"></span><span id="COLORSLIDEFILM"></span>ColorSlideFilm</p></td>
-<td><p>电影映像是普通的颜色空间中。</p></td>
+<td><p>胶片图像处于正常颜色空间。</p></td>
 </tr>
 <tr class="odd">
 <td><p><span id="ColorNegativeFilm"></span><span id="colornegativefilm"></span><span id="COLORNEGATIVEFILM"></span>ColorNegativeFilm</p></td>
-<td><p>电影胶片图像是假负的正常颜色空间。</p></td>
+<td><p>胶片图像是正常颜色空间的负片。</p></td>
 </tr>
 <tr class="even">
 <td><p><span id="BlackandWhiteNegativeFilm"></span><span id="blackandwhitenegativefilm"></span><span id="BLACKANDWHITENEGATIVEFILM"></span>BlackandWhiteNegativeFilm</p></td>
-<td><p>电影胶片图像是黑白假负的捕获的映像。</p></td>
+<td><p>胶片图像是捕获的映像的黑色和白色负片。</p></td>
 </tr>
 </tbody>
 </table>
@@ -79,7 +78,7 @@ ms.locfileid: "63358040"
 ## <a name="child-elements"></a>子元素
 
 
-没有子元素。
+没有任何子元素。
 
 ## <a name="parent-elements"></a>父元素
 
@@ -103,7 +102,7 @@ ms.locfileid: "63358040"
 <a name="remarks"></a>备注
 -------
 
-您都可以扩展和子集的允许的值为此元素。
+可以扩展和子集化此元素的允许值。
 
 ## <a name="see-also"></a>请参阅
 

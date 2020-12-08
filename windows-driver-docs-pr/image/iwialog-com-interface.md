@@ -1,15 +1,14 @@
 ---
 title: IWiaLog COM 接口
 description: IWiaLog COM 接口
-ms.assetid: e5d42b5d-796f-42f3-9c01-4234b8765ca6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0eecf92db364b108fc2024c68b528c747389e2b1
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 29b11f10049965f7a56b7ebc8d821f5b3ccdb698
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103160"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808757"
 ---
 # <a name="iwialog-com-interface"></a>IWiaLog COM 接口
 
@@ -19,7 +18,7 @@ ms.locfileid: "90103160"
 
 [**IWiaLog 接口**](/windows-hardware/drivers/ddi/wia_lh/nn-wia_lh-iwialog)在 MICROSOFT Windows XP 和更高版本中已过时，不再受支持。 请改用 WIA 诊断日志宏。
 
-提供它只是为了实现向后兼容性。 此接口中的方法允许微型驱动程序将错误、跟踪和警告消息写入日志。 **IWiaLog**接口提供以下方法。
+提供它只是为了实现向后兼容性。 此接口中的方法允许微型驱动程序将错误、跟踪和警告消息写入日志。 **IWiaLog** 接口提供以下方法。
 
 <table>
 <colgroup>
@@ -29,7 +28,7 @@ ms.locfileid: "90103160"
 <thead>
 <tr class="header">
 <th>方法</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

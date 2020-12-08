@@ -1,7 +1,6 @@
 ---
 title: FSCTL_ENUM_OVERLAY 控制代码
 description: FSCTL \_ 枚举 \_ 覆盖控制代码枚举指定卷的后备提供程序中的所有数据源。
-ms.assetid: 146A7D77-034F-4C06-99B8-8EBA6E7F0A40
 keywords:
 - FSCTL_ENUM_OVERLAY 控制代码可安装的文件系统驱动程序
 topic_type:
@@ -14,30 +13,30 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f1774fa8a00d188e3e5ab0368355c93093358e21
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 6001988e198b7a1c33950e074ba6734bf8392c12
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065598"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808399"
 ---
 # <a name="fsctl_enum_overlay-control-code"></a>FSCTL \_ 枚举 \_ 重叠控制代码
 
 
-**FSCTL \_ 枚举 \_ 覆盖**控制代码枚举指定卷的后备提供程序中的所有数据源。
+**FSCTL \_ 枚举 \_ 覆盖** 控制代码枚举指定卷的后备提供程序中的所有数据源。
 
 若要执行此操作，请调用具有以下参数的 [**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 或 [**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85)) 。
 
-**参数**
+**Parameters**
 
 <a href="" id="instance--in-"></a>*实例 \[\]*  
-仅[**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 。 调用方的不透明实例指针。 此参数是必需的，不能为 **NULL**。
+仅 [**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 。 调用方的不透明实例指针。 此参数是必需的，不能为 **NULL**。
 
 <a href="" id="fileobject--in-"></a>*FileObject \[ in\]*  
-仅[**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 。 文件指针对象，指定要卸除的卷。 此参数是必需的，不能为 **NULL**。
+仅 [**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 。 文件指针对象，指定要卸除的卷。 此参数是必需的，不能为 **NULL**。
 
 <a href="" id="filehandle--in-"></a>*FileHandle \[\]*  
-仅[**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85)) 。 要卸除的卷的文件句柄。 此参数是必需的，不能为 **NULL**。
+仅 [**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85)) 。 要卸除的卷的文件句柄。 此参数是必需的，不能为 **NULL**。
 
 <a href="" id="fscontrolcode--in-"></a>*FsControlCode \[\]*  
 操作的控制代码。 对于此操作，请使用 **FSCTL \_ 删除 \_ 覆盖** 区。
@@ -52,7 +51,7 @@ ms.locfileid: "89065598"
 指向输出缓冲区的指针，该缓冲区将为支持卷的数据源接收一个或多个 [**WIM \_ 提供程序 \_ 覆盖 \_ 条目**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_wim_provider_update_overlay_input) 结构。
 
 <a href="" id="outputbufferlength--out-"></a>*OutputBufferLength \[\]*  
-*OutputBuffer*所指向的缓冲区大小（以字节为单位）。
+*OutputBuffer* 所指向的缓冲区大小（以字节为单位）。
 
 <a href="" id="lengthreturned--out-"></a>*LengthReturned \[\]*  
 指定成功完成后写入到 *OutputBuffer* 中的字节数。
@@ -60,7 +59,7 @@ ms.locfileid: "89065598"
 <a name="status-block"></a>状态块
 ------------
 
-如果操作成功，则[**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)或[**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85))返回状态 \_ SUCCESS。 否则，相应的函数可能会返回以下 NTSTATUS 值之一。
+如果操作成功，则 [**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)或 [**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85))返回状态 \_ SUCCESS。 否则，相应的函数可能会返回以下 NTSTATUS 值之一。
 
 <table>
 <colgroup>
@@ -70,7 +69,7 @@ ms.locfileid: "89065598"
 <thead>
 <tr class="header">
 <th align="left">术语</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -122,7 +121,7 @@ ms.locfileid: "89065598"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)

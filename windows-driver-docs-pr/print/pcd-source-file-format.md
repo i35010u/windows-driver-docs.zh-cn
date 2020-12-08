@@ -1,7 +1,6 @@
 ---
 title: PCD 源文件格式
 description: PCD 源文件格式
-ms.assetid: 8651d6ca-7cd7-4c07-aa66-2766dd2222e0
 keywords:
 - 绘图仪驱动程序 WDK 打印，微型驱动程序
 - MSPlot WDK 打印，微型驱动程序
@@ -11,12 +10,12 @@ keywords:
 - 关键字 WDK MSPlot
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 608fe699476c062e7a825ae1ef58463290f3cf52
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: ed8852d426c8fa254c9369db3d75ba5869d7c512
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107084"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807625"
 ---
 # <a name="pcd-source-file-format"></a>PCD 源文件格式
 

@@ -1,7 +1,6 @@
 ---
 title: FSCTL_GET_BOOT_AREA_INFO 控制代码
 description: FSCTL \_ 获取 \_ 启动 \_ 区域 \_ 信息控制代码检索卷的启动扇区的位置。
-ms.assetid: 0e842609-65f9-4a61-ab7f-f525650dfd14
 keywords:
 - FSCTL_GET_BOOT_AREA_INFO 控制代码可安装的文件系统驱动程序
 topic_type:
@@ -14,27 +13,27 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 787b187451ffcce5425121d35308d65f18471828
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 481bedc7467556a40338d4142ee84be4fb0ba599
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716428"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808383"
 ---
 # <a name="fsctl_get_boot_area_info-control-code"></a>FSCTL \_ 获取 \_ 启动 \_ 区域 \_ 信息控制代码
 
 
-**FSCTL \_ 获取 \_ 启动 \_ 区域 \_ 信息**控制代码检索卷的启动扇区的位置。
+**FSCTL \_ 获取 \_ 启动 \_ 区域 \_ 信息** 控制代码检索卷的启动扇区的位置。
 
 若要执行此操作，请调用具有以下参数的 [**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 函数或 [**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85)) 函数。
 
-**参数**
+**Parameters**
 
 <a href="" id="fileobject"></a>*FileObject*  
-仅[**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 。 **FSCTL \_ 获取 \_ 启动 \_ 区域 \_ 信息**的卷的文件对象指针将检索启动信息。 此参数是必需的，不能为 **NULL**。
+仅 [**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 。 **FSCTL \_ 获取 \_ 启动 \_ 区域 \_ 信息** 的卷的文件对象指针将检索启动信息。 此参数是必需的，不能为 **NULL**。
 
 <a href="" id="filehandle"></a>*FileHandle*  
-仅[**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85)) 。 卷的文件句柄， **FSCTL \_ 获取 \_ 启动 \_ 区域 \_ 信息** 将检索启动信息。 此参数是必需的，不能为 **NULL**。
+仅 [**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85)) 。 卷的文件句柄， **FSCTL \_ 获取 \_ 启动 \_ 区域 \_ 信息** 将检索启动信息。 此参数是必需的，不能为 **NULL**。
 
 必须使用 SE \_ 管理 \_ 卷 \_ 名访问权限打开此句柄。 有关详细信息，请参阅 [文件安全性和访问权限](/windows/desktop/FileIO/file-security-and-access-rights)。
 
@@ -66,7 +65,7 @@ ms.locfileid: "90716428"
 <thead>
 <tr class="header">
 <th align="left">术语</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

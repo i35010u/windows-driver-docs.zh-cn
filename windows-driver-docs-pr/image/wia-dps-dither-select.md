@@ -1,9 +1,8 @@
 ---
-title: WIA\_DPS\_抖动\_选择
-description: WIA\_DPS\_抖动\_选择属性保留供将来使用由 Microsoft 和未实现这一次。
-ms.assetid: a7153d11-2c1e-495c-aa2a-af66df6c80c8
+title: WIA \_ DPS \_ 仿色 \_ 选择
+description: WIA \_ DPS \_ 抖动 \_ 选择属性由 Microsoft 保留以供将来使用，此时不会实现。
 keywords:
-- WIA_DPS_DITHER_SELECT 成像设备
+- WIA_DPS_DITHER_SELECT 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,24 +13,24 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 76644dfcf000279e117094912ab59e660c042a8c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e2ee305610c421603e712502cb3f58c63d284025
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382284"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808198"
 ---
-# <a name="wiadpsditherselect"></a>WIA\_DPS\_抖动\_选择
+# <a name="wia_dps_dither_select"></a>WIA \_ DPS \_ 仿色 \_ 选择
 
 
-WIA\_DPS\_抖动\_选择属性保留供将来使用由 Microsoft 和未实现这一次。
+WIA \_ DPS \_ 抖动 \_ 选择属性由 Microsoft 保留以供将来使用，此时不会实现。
 
 ## <span id="ddk_wia_dps_dither_select_si"></span><span id="DDK_WIA_DPS_DITHER_SELECT_SI"></span>
 
 
-属性类型：VT\_I4
+属性类型： VT \_ I4
 
-有效值：WIA\_PROP\_NONE
+有效值： WIA " \_ \_ 无"
 
 访问权限：只读
 
@@ -45,8 +44,8 @@ WIA\_DPS\_抖动\_选择属性保留供将来使用由 Microsoft 和未实现这
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>

@@ -1,18 +1,17 @@
 ---
 title: 除块筛选器命令
 description: 除块筛选器命令
-ms.assetid: 9f20c6fa-c515-43b8-a947-f6290d15bd35
 keywords:
 - macroblocks WDK DirectX VA，deblocking 筛选器命令
 - deblocking 筛选器命令 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 857ef0b0a3c8324a340b3b347e78eafc13f22e9e
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 60d6f57bfab85b7638d367eeb75e236c1b1e6107
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066496"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808461"
 ---
 # <a name="deblocking-filter-commands"></a>除块筛选器命令
 
@@ -24,7 +23,7 @@ ms.locfileid: "89066496"
 
 下面是两种不同类型的 deblocking 筛选器命令缓冲区：
 
--   如果[**DXVA \_ PictureParameters**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)结构的**bPicDeblockConfined**成员为零) ，则需要访问和修改当前 deblocking 筛选器命令缓冲区 (以外的 macroblocks 的值。
+-   如果 [**DXVA \_ PictureParameters**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)结构的 **bPicDeblockConfined** 成员为零) ，则需要访问和修改当前 deblocking 筛选器命令缓冲区 (以外的 macroblocks 的值。
 
 -   当 **bPicDeblockConfined** 为 1) 时，不需要访问和修改当前 deblocking 筛选器命令缓冲区 (以外的 macroblocks 的值。
 
@@ -38,7 +37,7 @@ ms.locfileid: "89066496"
 
 -   使用残留差异数据缓冲区以协调方式处理 deblocking 命令缓冲区。 在这种情况下，将在向目标图片图面写入重构的输出值之前处理 deblocking 命令缓冲区。
 
-**注意**   Deblocked 图片的目标图片表面可能不同于在 deblocking 之前重建图片的位置。 然后，这将支持 "在循环外" deblocking 作为 postdecoding 进程，该进程不影响用于预测下一个图片的示例值。
+**注意**   Deblocked 图片的目标图片表面可能不同于在 deblocking 之前重建图片的位置。 然后，这将支持 "在循环外" deblocking 作为 postdecoding 进程，该进程不影响用于预测下一个图片的示例值。
 
  
 

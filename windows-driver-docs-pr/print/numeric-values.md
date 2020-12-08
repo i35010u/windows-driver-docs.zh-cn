@@ -1,32 +1,31 @@
 ---
-title: 数字值
-description: 数字值
-ms.assetid: 4f1f4145-aeda-4770-9a49-d8fe701763c8
+title: 数值
+description: 数值
 keywords:
-- GPD 文件条目 WDK Unidrv，数字值
+- GPD 文件条目 WDK Unidrv，数值
 - 数值 WDK GPD 文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ee8c4d49d9725af550b0d72a03d1c1843b5da1d2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: caccfa29f297edf5e82898ecdfe6c3020fcc9b35
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339909"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807749"
 ---
-# <a name="numeric-values"></a>数字值
+# <a name="numeric-values"></a>数值
 
 
 
 
 
-所有的数字值，指定为条目的值或 GPD 文件中的参数值必须是整数。 不允许小数点，除了文本字符串内。
+指定为 GPD 文件中的入口值或参数值的所有数值都必须是整数。 不允许使用小数点，但文本字符串中除外。
 
-数字值假定为正数，除非前面有减号。
+除非前面有一个减号，否则数值将被假定为正值。
 
-数字值假定为十进制，除非前面有 0x，在这种情况下它们是无符号十六进制值。
+数值被假定为十进制值，除非前面有0x，在这种情况下，它们是无符号的十六进制值。
 
-星号字符 (\*) 可以用于指示无限值或"不关心"值，如果特定 GPD 文件条目的上下文中适用。
+\*如果适用于特定 GPD 文件条目的上下文，则可以使用星号字符 () 来指示无限值或 "不在意" 值。
 
  
 

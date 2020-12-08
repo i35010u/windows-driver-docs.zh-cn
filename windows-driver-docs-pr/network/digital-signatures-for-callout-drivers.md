@@ -1,7 +1,6 @@
 ---
 title: 标注驱动程序的数字签名
 description: 标注驱动程序的数字签名
-ms.assetid: 5741b2f5-20e9-437c-a466-6f372b2e8ab4
 keywords:
 - Windows 筛选平台标注驱动程序 WDK，安装
 - 标注驱动程序 WDK Windows 筛选平台，安装
@@ -11,12 +10,12 @@ keywords:
 - 对驱动程序进行签名 WDK，标注驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bf40a1bb489c99ca76aebe540cd319a45cc2a6bb
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e0074c4ea89e3f91dde9b34c3f0c32fa0a24c82c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217660"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808635"
 ---
 # <a name="digital-signatures-for-callout-drivers"></a>标注驱动程序的数字签名
 

@@ -1,7 +1,6 @@
 ---
 title: IAMVideoAccelerator API 中的 DXVA 和运动补偿 DDI
 description: DirectX VA 与 IAMVideoAccelerator API 和运动补偿 DDI 之间的关系
-ms.assetid: 8bfa198f-b29f-491f-8133-a1f3b41e0cbe
 keywords:
 - DirectX 视频加速 WDK Windows 2000 显示，IAMVideoAccelerator
 - 视频加速 WDK DirectX，IAMVideoAccelerator
@@ -15,12 +14,12 @@ keywords:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: 4645c2118402e7df8356a9352c7c3ed0c01c746e
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 877bcee87fc9065a93af50c3b1b02fd1ee086578
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716518"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809330"
 ---
 # <a name="directx-va-relationship-to-iamvideoaccelerator-api-and-motion-compensation-ddi"></a>DirectX VA 与 IAMVideoAccelerator API 和运动补偿 DDI 之间的关系
 
@@ -28,9 +27,9 @@ DirectX VA 使用 Microsoft Windows SDK) 中所述的 **IAMVideoAcceleratorNotif
 
 ![阐释 directx va 数据流的图示](images/iamvideo.png)
 
-**IAMVideoAcceleratorNotify**接口检索或设置给定视频加速器 GUID 的解压缩缓冲区信息。
+**IAMVideoAcceleratorNotify** 接口检索或设置给定视频加速器 GUID 的解压缩缓冲区信息。
 
-**IAMVideoAccelerator**接口允许视频解码器筛选器访问视频加速器的功能，并使用视频混合呈现器 (VMR) 或覆盖混音器 (OVM) 提供视频呈现。
+**IAMVideoAccelerator** 接口允许视频解码器筛选器访问视频加速器的功能，并使用视频混合呈现器 (VMR) 或覆盖混音器 (OVM) 提供视频呈现。
 
 运动补偿 DDI 建立了一个公共接口，用于访问硬件加速功能，并允许在用户模式软件应用程序和加速功能之间实现跨供应商的兼容性。 当使用视频加速对象时，DDI 会通知解码器，启动和停止帧缓冲区解码，指示硬件支持的未压缩图片格式，并通知需要呈现的 macroblocks 的显示驱动程序。 运动补偿 DDI 通过 [**DD \_ MOTIONCOMPCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks) 结构访问。
 

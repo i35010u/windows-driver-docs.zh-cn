@@ -1,18 +1,17 @@
 ---
 title: 适用于 Windows Vista 的仅限根级别的新 GPD 属性
 description: 适用于 Windows Vista 的仅限根级别的新 GPD 属性
-ms.assetid: 09f38459-6062-4d2a-9aee-929aa60193cf
 keywords:
 - 仅限根级别的属性 WDK Unidrv
 - 常规打印机属性 WDK Unidrv，仅限根级别
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a706e39a1f776c9232eb7c0f85d5c4ed0d14b701
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 2a66190a5a3a4a333e4f053b7589ff3b617f5263
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209531"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807801"
 ---
 # <a name="new-root-level-only-gpd-attributes-for-windows-vista"></a>适用于 Windows Vista 的仅限根级别的新 GPD 属性
 
@@ -25,7 +24,7 @@ ms.locfileid: "89209531"
 
 ### <a name="printprocduplexoptions"></a>PrintProcDuplexOptions
 
-**PrintProcDuplexOptions**属性控制打印处理器中的各种双工选项。 此属性可以具有以下值之一：
+**PrintProcDuplexOptions** 属性控制打印处理器中的各种双工选项。 此属性可以具有以下值之一：
 
 1：反向双工页
 
@@ -67,7 +66,7 @@ ms.locfileid: "89209531"
 
 -   如果页面上的 Hewlett Packard DeskJet) 打印机中的页面的 (一半，则用户可能会尝试将其拉出，同时打印机会尝试将其取回。 这种情况可能导致硬件问题。
 
-可以通过 \* 在 GPD 文件中指定**PrintProcDuplexOptions**：2来避免上述问题。
+可以通过 \* 在 GPD 文件中指定 *_PrintProcDuplexOptions_*：2来避免上述问题。
 
 请注意，即使设置了此属性，仅在以下有限情况下才会执行空白页面优化：
 
@@ -100,7 +99,7 @@ ms.locfileid: "89209531"
 
 ### <a name="preanalysisoptions"></a>PreAnalysisOptions
 
-**PreAnalysisOptions**属性可以具有以下值之一：
+**PreAnalysisOptions** 属性可以具有以下值之一：
 
 0：禁用所有预分析模式。
 
@@ -116,37 +115,37 @@ ms.locfileid: "89209531"
 
 ### <a name="usebmpfontcompression"></a>UseBMPFontCompression?
 
-**UseBMPFontCompression？** 属性控制在将字体作为位图下载时，Unidrv 是否应压缩数据。 **UseBMPFontCompression？** 的默认值为**FALSE**，这意味着如果 GPD 文件中不存在此属性，则 Unidrv 不会进行压缩。 此默认值与不具有位图字体压缩功能的较旧版本的 Unidrv 保持兼容。 仅当打印机支持位图字体 compressionThe 压缩位图字符数据采用压缩的运行时间长度的行重复格式时，才应将此属性设置为 **TRUE** 。
+**UseBMPFontCompression？** 属性控制在将字体作为位图下载时，Unidrv 是否应压缩数据。 **UseBMPFontCompression？** 的默认值为 **FALSE**，这意味着如果 GPD 文件中不存在此属性，则 Unidrv 不会进行压缩。 此默认值与不具有位图字体压缩功能的较旧版本的 Unidrv 保持兼容。 仅当打印机支持位图字体 compressionThe 压缩位图字符数据采用压缩的运行时间长度的行重复格式时，才应将此属性设置为 **TRUE** 。
 
 ### <a name="usemode5compression"></a>UseMode5Compression?
 
-**UseMode5Compression？** 属性控制 UniDrv 是否应使用模式5压缩。 模式 5 (或方法 5) 压缩是自适应压缩，它允许结合使用多种其他压缩 (方法，如未编码、TIFF 或增量行) 。 **UseMode5Compression？** 的默认值为**FALSE**，这意味着如果 GPD 中不存在此属性，则 Unidrv 不会执行自适应压缩。 此默认值将保持与较旧版本的 Unidrv 的兼容性，这些版本没有自适应压缩功能。 仅当打印机支持自适应压缩时，才应将此属性设置为 **TRUE** 。
+**UseMode5Compression？** 属性控制 UniDrv 是否应使用模式5压缩。 模式 5 (或方法 5) 压缩是自适应压缩，它允许结合使用多种其他压缩 (方法，如未编码、TIFF 或增量行) 。 **UseMode5Compression？** 的默认值为 **FALSE**，这意味着如果 GPD 中不存在此属性，则 Unidrv 不会执行自适应压缩。 此默认值将保持与较旧版本的 Unidrv 的兼容性，这些版本没有自适应压缩功能。 仅当打印机支持自适应压缩时，才应将此属性设置为 **TRUE** 。
 
 ### <a name="usehpglpolylineencoding"></a>UseHPGLPolylineEncoding?
 
 **UseHPGLPolylineEncoding？** 属性控制 Unidrv 是否应使用折线编码。 HP-GL/2 支持笔向上/向下/向下/向下绘制/绘制相对于绘图向量的相对命令。  (PE) 命令编码的折线是表示向量的更高效方法。
 
-**UseHPGLPolylineEncoding**的默认值为**FALSE**，这意味着如果 GPD 中不存在此属性，UNIDRV 将不使用 PE 命令。 此默认值保持与早期版本的 Unidrv 的兼容性，这些版本不支持 PE 命令。 仅当打印机支持折线编码时，才应将此值设置为 **TRUE** 。
+**UseHPGLPolylineEncoding** 的默认值为 **FALSE**，这意味着如果 GPD 中不存在此属性，UNIDRV 将不使用 PE 命令。 此默认值保持与早期版本的 Unidrv 的兼容性，这些版本不支持 PE 命令。 仅当打印机支持折线编码时，才应将此值设置为 **TRUE** 。
 
 ### <a name="printschemaprivatenamespaceuri"></a>PrintSchemaPrivateNamespaceURI
 
-**PrintSchemaPrivateNamespaceURI**特性定义核心驱动程序用于公开 PrintTicket 或 PrintCapabilities 中的私有 PPD 功能或选项的专用命名空间 URI。 该属性必须出现在 GPD 文档的根目录中，并包含将用于定义 Printticket 和 PrintCapabilities 文档中的命名空间的 URI 的 ASCII 表示形式。 该 URI 反过来会与不具有到公共架构的显式映射的所有功能和选项关联，或者核心驱动程序无法识别。
+**PrintSchemaPrivateNamespaceURI** 特性定义核心驱动程序用于公开 PrintTicket 或 PrintCapabilities 中的私有 PPD 功能或选项的专用命名空间 URI。 该属性必须出现在 GPD 文档的根目录中，并包含将用于定义 Printticket 和 PrintCapabilities 文档中的命名空间的 URI 的 ASCII 表示形式。 该 URI 反过来会与不具有到公共架构的显式映射的所有功能和选项关联，或者核心驱动程序无法识别。
 
 ### <a name="printschemakeywordmap"></a>PrintSchemaKeywordMap
 
-**PrintSchemaKeywordMap**属性显示在 GPD 文件中的功能和选项构造下。 此属性指示应在打印机定义的功能中使用的公共打印架构名称。 您可以通过使用 **PrintSchemaKeywordMap** 属性，重命名在 PrintTicket 中指定的任何选项（在 GPD 文件中除外和 Collate 除外）。
+**PrintSchemaKeywordMap** 属性显示在 GPD 文件中的功能和选项构造下。 此属性指示应在打印机定义的功能中使用的公共打印架构名称。 您可以通过使用 **PrintSchemaKeywordMap** 属性，重命名在 PrintTicket 中指定的任何选项（在 GPD 文件中除外和 Collate 除外）。
 
-**注意**   对于显式识别的功能（包括页面大小和颜色），GPD 分析器将忽略此属性。
+**注意**   对于显式识别的功能（包括页面大小和颜色），GPD 分析器将忽略此属性。
 
  
 
 所有值都应该用引号引起来。 它们将使用 GPD 中指定的代码页（如果有）转换为 Unicode。 任何属性的重复定义的解析方式与其他 GPD 属性相同：将优先处理读取的最后一个定义。
 
-**重要提示**   如果将功能映射到已在 GPD 文件中使用的 Print Schema 关键字，则相应的 PrintCapabilities 文档可能会多次列出该功能。 多次出现可能会造成混淆，因此不应将功能映射到 GPD 文件中使用的打印架构关键字。
+**重要提示**  如果将功能映射到已在 GPD 文件中使用的 Print Schema 关键字，则相应的 PrintCapabilities 文档可能会多次列出该功能。 多次出现可能会造成混淆，因此不应将功能映射到 GPD 文件中使用的打印架构关键字。
 
  
 
-**注意**   GPD 分析器会自动生成 InputBin 功能的 FORMSOURCE 选项，并将其映射到打印架构中的 "自动选择" 关键字。 如果 GPD 文件包含 InputBin 选项，该选项使用 **PrintSchemaKeywordMap** 属性将选项映射到 print schema 关键字，则打印架构中的功能将在设备命名空间中包含 FORMSOURCE 选项。 "自动选择" 将显示在 PrintCapabilities 文档中，并引用 GPD 文件的 **PrintSchemaKeywordMap** 属性中指定的选项。
+**注意**  GPD 分析器会自动生成 InputBin 功能的 FORMSOURCE 选项，并将其映射到打印架构中的 "自动选择" 关键字。 如果 GPD 文件包含 InputBin 选项，该选项使用 **PrintSchemaKeywordMap** 属性将选项映射到 print schema 关键字，则打印架构中的功能将在设备命名空间中包含 FORMSOURCE 选项。 "自动选择" 将显示在 PrintCapabilities 文档中，并引用 GPD 文件的 **PrintSchemaKeywordMap** 属性中指定的选项。
 
  
 
@@ -175,7 +174,7 @@ ms.locfileid: "89209531"
 
 ### <a name="isxpsdriver"></a>IsXPSDriver
 
-**IsXPSDriver**属性使用以下 GPD 语法。
+**IsXPSDriver** 属性使用以下 GPD 语法。
 
 ```cpp
 *IsXPSDriver?: TRUE | FALSE
@@ -215,9 +214,9 @@ ms.locfileid: "89209531"
 *Endif: WINNT_60 
 ```
 
-**ReverseBandOrder**的值为**TRUE**或**FALSE** ，指示是否启用了反向条带。 此属性会导致按相反的顺序进行分级。 例如，对于纵向页面，将从下到上（而不是从上到下）进行分级。
+**ReverseBandOrder** 的值为 **TRUE** 或 **FALSE** ，指示是否启用了反向条带。 此属性会导致按相反的顺序进行分级。 例如，对于纵向页面，将从下到上（而不是从上到下）进行分级。
 
-此属性实质上与 ReverseBandOrderForEvenPages？相同，不同之处在于即使双工不 (处于活动状态，也会考虑使用 **ReverseBandOrder？** 仅当双工在) **上时才有效，** 并且它适用于所有页 (**ReverseBandOrderForEvenPages？** 仅在) 的偶数页上工作。 有关如何使用**ReverseBandOrder？** 和其他相关信息的详细信息，请参阅 \* **ReverseBandOrderForEvenPages？**。 特别要注意的是，插件必须反转扫描行和扫描行中的位。
+此属性实质上与 ReverseBandOrderForEvenPages？相同，不同之处在于即使双工不 (处于活动状态，也会考虑使用 **ReverseBandOrder？** 仅当双工在) **上时才有效，** 并且它适用于所有页 (**ReverseBandOrderForEvenPages？** 仅在) 的偶数页上工作。 有关如何使用 **ReverseBandOrder？** 和其他相关信息的详细信息，请参阅 \* *_ReverseBandOrderForEvenPages？_*。 特别要注意的是，插件必须反转扫描行和扫描行中的位。
 
 可以结合使用 \* ReverseBandOrderForEvenPages？和 \* **ReverseBandOrder？**。
 
@@ -233,7 +232,7 @@ ms.locfileid: "89209531"
 
 ### <a name="bidiqueryfile"></a>BidiQueryFile
 
-**BidiQueryFile**属性使用以下 GPD 语法。
+**BidiQueryFile** 属性使用以下 GPD 语法。
 
 ```cpp
 *BidiQueryFile: <GPD or GDL file name>

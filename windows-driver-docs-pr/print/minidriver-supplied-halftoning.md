@@ -1,18 +1,17 @@
 ---
 title: 微型驱动程序提供的半色调
 description: 微型驱动程序提供的半色调
-ms.assetid: 15af499a-c541-4d61-ace3-5a211574674c
 keywords:
 - 微型驱动程序提供的半色调 WDK Unidrv
 - 自定义半色调 WDK Unidrv
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 25d95a1b7cd0daea8d4fba43b370d51ac88c6b0a
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 183fb03f55c6aabd52fc6da2d58b38c1cf271c03
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209535"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807845"
 ---
 # <a name="minidriver-supplied-halftoning"></a>微型驱动程序提供的半色调
 
@@ -24,7 +23,7 @@ ms.locfileid: "89209535"
 
 若要提供自定义的半色调功能，必须执行以下操作：
 
--   提供实现[**IPrintOemUni：： ImageProcessing**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-imageprocessing)方法的[呈现插件](rendering-plug-ins.md)。
+-   提供实现 [**IPrintOemUni：： ImageProcessing**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-imageprocessing)方法的 [呈现插件](rendering-plug-ins.md)。
 
 -   \*在 GPD 文件中包含半色调功能项，对于每个自定义的半色调方法，都包含一个 \* 描述半色调方法的选项项。  (不使用 [半色调功能的任何选项属性](option-attributes-for-the-halftone-feature.md)。 ) 
 
@@ -77,7 +76,7 @@ ms.locfileid: "89209535"
 }
 ```
 
-在此示例中，"ColorFormat1" 和 "ColorFormat2" ColorMode 选项都表示 Unidrv 可处理的颜色格式，如 [处理颜色格式](handling-color-formats.md)中所述。 对于 ColorFormat2，指定了 \* **IPCallbackID**属性。 如果打印机用户选择 ColorFormat2 作为颜色格式，则 Unidrv 将调用打印机的 [**IPrintOemUni：： ImageProcessing**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-imageprocessing) COM 方法来处理半色调。 此方法的一个参数是一个指针，指向表示当前选定的半色调方法的字符串名称。
+在此示例中，"ColorFormat1" 和 "ColorFormat2" ColorMode 选项都表示 Unidrv 可处理的颜色格式，如 [处理颜色格式](handling-color-formats.md)中所述。 对于 ColorFormat2，指定了 \* **IPCallbackID** 属性。 如果打印机用户选择 ColorFormat2 作为颜色格式，则 Unidrv 将调用打印机的 [**IPrintOemUni：： ImageProcessing**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-imageprocessing) COM 方法来处理半色调。 此方法的一个参数是一个指针，指向表示当前选定的半色调方法的字符串名称。
 
 有关半色调的详细信息，请参阅 [自定义半色调](customized-halftoning.md)。
 

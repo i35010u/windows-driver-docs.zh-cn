@@ -1,56 +1,55 @@
 ---
-title: Orientation
-description: Orientation
-ms.assetid: a3bd9d67-200f-4739-ad0e-ff7fd2eb20a3
+title: 方向
+description: 方向
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c288d783764876a8c0f1e1fb72af312f9eec7fd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1c049457bd79b5530fc143c90f610c4eb4f03a55
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362749"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807677"
 ---
-# <a name="orientation"></a>Orientation
+# <a name="orientation"></a>方向
 
 
-架构路径：\\Printer.Layout.Orientation
+架构路径： \\ 打印机的布局。
 
-节点类型： 属性
+节点类型：属性
 
-说明： 与页面方向关联的属性。 值项的子级的此属性是当前的页面方向和一系列设备支持的页面方向。
+说明：与页面方向相关的属性。 作为此属性的子级的值项是当前页面方向和设备支持的页面方向列表。
 
-方向属性包含两个对子值：**CurrentValue**并**支持**。
+"方向" 属性包含两个子值： **CurrentValue** 和 **受支持**。
 
 ### <a name="span-idcurrentvaluespanspan-idcurrentvaluespan-currentvalue"></a><span id="currentvalue"></span><span id="CURRENTVALUE"></span> CurrentValue
 
-架构路径：\\Printer.Layout.Orientation:CurrentValue
+架构路径： \\ Printer. Layout： CurrentValue
 
-节点类型： 值
+节点类型：值
 
-数据类型： BIDI\_字符串
+数据类型：双向 \_ 字符串
 
-说明： 将在其中打印页的当前 （默认值） 方向。
+说明：当前 (默认) 打印页面的方向。
 
-必须是以下值之一。
+必须是下列值之一。
 
-Portrait
+纵向
 
-Landscape
+横向
 
 ReversePortrait
 
 ReverseLandscape
 
-### <a name="span-idsupportedspanspan-idsupportedspan-supported"></a><span id="supported"></span><span id="SUPPORTED"></span> 支持
+### <a name="span-idsupportedspanspan-idsupportedspan-supported"></a><span id="supported"></span><span id="SUPPORTED"></span> 受
 
-架构路径：\\Printer.Layout.Orientation:Supported
+架构路径： \\ Printer. Layout：支持
 
-节点类型： 值
+节点类型：值
 
-数据类型： BIDI\_字符串
+数据类型：双向 \_ 字符串
 
-说明： 一个以逗号分隔列表的所有方向的支持的值。
+说明：以逗号分隔的列表，其中列出了支持的所有值。
 
  
 

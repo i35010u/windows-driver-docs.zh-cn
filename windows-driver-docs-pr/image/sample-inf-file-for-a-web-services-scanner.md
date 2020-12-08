@@ -1,22 +1,21 @@
 ---
 title: Web 服务扫描仪的示例 INF 文件
 description: Web 服务扫描仪的示例 INF 文件
-ms.assetid: 1e65739f-9216-4962-9108-60ba291ff052
 ms.date: 05/29/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ca82dc9b5a05d711d63bfbec57c43071921cf63
-ms.sourcegitcommit: a16fd2876383265b4ad336dea624e4b13fc13a1b
+ms.openlocfilehash: 4e7bbba1d5310e5a77828bb4b6af71a6f6910d31
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88643999"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808751"
 ---
 # <a name="sample-inf-file-for-a-web-services-scanner"></a>Web 服务扫描仪的示例 INF 文件
 
-以下 INF 文件 *Sti*演示如何安装 WIA 驱动程序。 突出显示 *WSDScan.sys* 所需的项。
+以下 INF 文件 *Sti* 演示如何安装 WIA 驱动程序。 突出显示 *WSDScan.sys* 所需的项。
 
 > [!NOTE]
-> [ (DOC 下载) ](https://go.microsoft.com/fwlink/p/?linkid=242570)中介绍了在以下 INF 示例中引用的设备硬件 Id 和**PKEY \_ 设备 \_ HardwareIds**属性的要求。
+> [ (DOC 下载)](https://go.microsoft.com/fwlink/p/?linkid=242570)中介绍了在以下 INF 示例中引用的设备硬件 Id 和 **PKEY \_ 设备 \_ HardwareIds** 属性的要求。
 
 ```inf
 ;

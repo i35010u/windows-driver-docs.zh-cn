@@ -1,7 +1,6 @@
 ---
 title: 绘制和填充路径
 description: 绘制和填充路径
-ms.assetid: bc31aeba-d1f1-4e38-a8df-19e8d7e178c7
 keywords:
 - GDI WDK Windows 2000 显示，路径
 - 图形驱动程序 WDK Windows 2000 显示，路径
@@ -10,12 +9,12 @@ keywords:
 - 路径 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b72af355ff4661ba69fd0d7c9f7136874cdabe24
-ms.sourcegitcommit: abe7fe9f3fbee8d12641433eeab623a4148ffed3
+ms.openlocfilehash: 2bc63036e104bed69ea3ea175c980373122557c1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92185162"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809195"
 ---
 # <a name="drawing-and-filling-paths"></a>绘制和填充路径
 
@@ -25,4 +24,4 @@ GDI 可以调用 [**DrvFillPath**](/windows/win32/api/winddi/nf-winddi-drvfillpa
 
 驱动程序还可以支持可选的 [**DrvStrokeAndFillPath**](/windows/win32/api/winddi/nf-winddi-drvstrokeandfillpath) 函数，以满足对路径填充的请求。 此函数同时填充和笔划路径。 许多 GDI 基元都需要此功能。 如果将宽线用于描边，则必须减小填充区域，以弥补边界路径增加的宽度。
 
-当驱动程序从[**DrvFillPath**](/windows/win32/api/winddi/nf-winddi-drvfillpath)或[**DrvStrokeAndFillPath**](/windows/win32/api/winddi/nf-winddi-drvstrokeandfillpath)函数返回**FALSE**时，GDI 会将填充路径请求转换为一组更简单的操作并再次调用驱动程序函数。 如果在第二次调用**DrvFillPath**时设备再次返回**FALSE** ，则 GDI 将路径转换为剪辑对象，然后调用[**EngFillPath**](/windows/win32/api/winddi/nf-winddi-engfillpath)。 对于**DrvStrokeAndFillPath**回调时的**FALSE**返回，GDI 可以将调用转换为单独调用[**DrvStrokePath**](/windows/win32/api/winddi/nf-winddi-drvstrokepath)和**DrvFillPath**。
+当驱动程序从 [**DrvFillPath**](/windows/win32/api/winddi/nf-winddi-drvfillpath)或 [**DrvStrokeAndFillPath**](/windows/win32/api/winddi/nf-winddi-drvstrokeandfillpath)函数返回 **FALSE** 时，GDI 会将填充路径请求转换为一组更简单的操作并再次调用驱动程序函数。 如果在第二次调用 **DrvFillPath** 时设备再次返回 **FALSE** ，则 GDI 将路径转换为剪辑对象，然后调用 [**EngFillPath**](/windows/win32/api/winddi/nf-winddi-engfillpath)。 对于 **DrvStrokeAndFillPath** 回调时的 **FALSE** 返回，GDI 可以将调用转换为单独调用 [**DrvStrokePath**](/windows/win32/api/winddi/nf-winddi-drvstrokepath)和 **DrvFillPath**。

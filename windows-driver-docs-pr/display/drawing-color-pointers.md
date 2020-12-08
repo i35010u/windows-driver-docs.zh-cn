@@ -1,20 +1,19 @@
 ---
 title: 绘制彩色指针
 description: 绘制彩色指针
-ms.assetid: f2791ccc-3d9e-46f0-bc70-051ac298c1ee
 keywords:
-- 显示绘图指针 WDK Windows 2000
-- 显示驱动程序 WDK Windows 2000 中，指针
-- 显示指针 WDK Windows 2000
-- 显示颜色指针 WDK Windows 2000
+- 绘图指针 WDK Windows 2000 显示
+- 显示驱动程序 WDK Windows 2000，指针
+- 指针 WDK Windows 2000 显示
+- 颜色指针 WDK Windows 2000 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 49424ca9fd9b40b375da98debfb79bdb3bfb98a3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 23d102d92a7e88fc23d461fb34a7eec2bac67a04
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377693"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809191"
 ---
 # <a name="drawing-color-pointers"></a>绘制彩色指针
 
@@ -22,15 +21,15 @@ ms.locfileid: "63377693"
 ## <span id="ddk_drawing_color_pointers_gg"></span><span id="DDK_DRAWING_COLOR_POINTERS_GG"></span>
 
 
-单色指针相同的方式定义的颜色指针 (也就是说，作为包括 AND 部分和 XOR 部分-一个位图，请参阅[指针绘制](pointer-drawing.md)并[绘图单色指针](drawing-monochrome-pointers.md)) 还支持透明度和反转。
+以与单色指针相同的方式定义颜色指针 (即，作为包含 AND 部分和 XOR 部分的位图--请参阅 [指针绘图](pointer-drawing.md) 和 [绘制单色指针](drawing-monochrome-pointers.md)) 还支持透明和反转。
 
--   如果颜色位图为黑色 （索引 0） 和 AND 掩码值为 1，则结果为透明度。
+-   如果颜色位图为黑色 (索引 0) 并且和掩码值为1，则结果为 "透明"。
 
--   如果颜色位图为白色，AND 掩码值为 1，则结果将是反转。
+-   如果颜色位图为白色并且和掩码值为1，则结果为反转。
 
--   如果设备不能显示颜色，然后一个指针，可以绘制为黑色和白色。
+-   如果设备无法显示颜色，则可以将指针绘制为黑色和白色。
 
-这些约定允许应用程序使用单个指针定义的颜色和单色显示。
+这些约定允许应用程序使用单色和单色显示的单个指针定义。
 
  
 

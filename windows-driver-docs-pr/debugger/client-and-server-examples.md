@@ -1,17 +1,16 @@
 ---
 title: 客户端和服务器示例
 description: 客户端和服务器示例
-ms.assetid: 78dea1c0-6e94-4980-8042-375f11386d53
 keywords:
 - 通过调试器进行远程调试，示例
 ms.date: 06/08/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 6246d982f58faf8c55da9f10c9562a474ff3225d
-ms.sourcegitcommit: 8097a09d2f989a9b3dca250c4e2ffd4cec2172e3
+ms.openlocfilehash: 22ac6d1e26d13f7d5c4bddf30eaa138ba04eab8b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84563167"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808499"
 ---
 # <a name="client-and-server-examples"></a>客户端和服务器示例
 
@@ -19,9 +18,9 @@ ms.locfileid: "84563167"
 ## <span id="ddk_client_and_server_examples_dbg"></span><span id="DDK_CLIENT_AND_SERVER_EXAMPLES_DBG"></span>
 
 
-假设一个人在名为* \\ \\ BOX17*的计算机上运行应用程序。 此应用程序存在问题，但调试技术人员在不同的站点上。
+假设一个人在名为 *\\ \\ BOX17* 的计算机上运行应用程序。 此应用程序存在问题，但调试技术人员在不同的站点上。
 
-第一名用户在* \\ \\ BOX17*上使用 CDB 设置调试服务器。 目标应用程序的进程 ID 为122。 选择 TCP 协议，套接字端口号为1025。 通过在提升的命令提示符窗口（以管理员身份运行）中输入以下命令来启动服务器：
+第一名用户在 *\\ \\ BOX17* 上使用 CDB 设置调试服务器。 目标应用程序的进程 ID 为122。 选择 TCP 协议，套接字端口号为1025。 通过在提升的命令提示符窗口中输入以下命令来启动服务器， (以管理员身份运行) ：
 
 ```console
 E:\Debugging Tools for Windows> cdb -server tcp:port=1025 -p 122
@@ -33,7 +32,7 @@ E:\Debugging Tools for Windows> cdb -server tcp:port=1025 -p 122
 G:\Debugging Tools> windbg -remote tcp:server=BOX17,port=1025
 ```
 
-以下是另一个示例。 在这种情况下，将选择 NPIPE 协议，并使用 CDB 而不是 WinDbg。 第一个用户选择一个管道名称。 这可以是任何字母数字字符串，在此示例中为 "MainPipe"。 第一个用户打开提升的命令提示符窗口（以管理员身份运行），并通过输入以下命令启动调试服务器：
+以下是另一个示例。 在这种情况下，将选择 NPIPE 协议，并使用 CDB 而不是 WinDbg。 第一个用户选择一个管道名称。 这可以是任何字母数字字符串，在此示例中为 "MainPipe"。 第一个用户打开提升的命令提示符窗口 (以管理员身份运行) 并通过输入以下命令启动调试服务器：
 
 ```console
 E:\Debugging Tools for Windows> cdb -server npipe:pipe=MainPipe -v winmine.exe 
@@ -56,7 +55,7 @@ Debugger Server - npipe:Pipe=MainPipe
 Remote Process Server - npipe:Pipe=AnotherPipe
 ```
 
-显示两个管道。 但只有一个调试服务器，另一个是进程服务器，我们对此不感兴趣。 因此， **MainPipe**必须是正确的名称。 技术人员使用以下命令来启动调试客户端：
+显示两个管道。 但只有一个调试服务器，另一个是进程服务器，我们对此不感兴趣。 因此， **MainPipe** 必须是正确的名称。 技术人员使用以下命令来启动调试客户端：
 
 ```console
 G:\Debugging Tools> cdb -remote npipe:server=BOX17,pipe=MyPipe 

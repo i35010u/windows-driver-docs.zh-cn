@@ -1,23 +1,22 @@
 ---
 title: OID_PM_PARAMETERS
 description: 作为查询，协议驱动程序可以使用 OID_PM_PARAMETERS OID 来查询当前启用的网络适配器的电源管理硬件功能。
-ms.assetid: c3431724-1b5f-4634-8b1e-27fed9031f01
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_PM_PARAMETERS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: cd9cf89e086ae1dcefecde84c8b32c3312bff5d5
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 82790eb872aae3a72a70fdd5b9929e344fedc48c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208631"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808597"
 ---
 # <a name="oid_pm_parameters"></a>OID \_ PM \_ 参数
 
 
-作为查询，协议驱动程序可以使用 OID \_ PM \_ 参数 OID 来查询当前启用的网络适配器的电源管理硬件功能。 成功从 OID 查询请求返回后， [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**NDIS \_ PM \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_parameters)结构的指针。
+作为查询，协议驱动程序可以使用 OID \_ PM \_ 参数 OID 来查询当前启用的网络适配器的电源管理硬件功能。 成功从 OID 查询请求返回后， [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ PM \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_parameters)结构的指针。
 
-作为一个集，协议驱动程序可以使用 OID \_ PM \_ 参数 OID 来启用或禁用网络适配器的当前硬件功能。 协议驱动程序在[**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员中提供了一个指向[**ndis \_ PM \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_parameters)结构的指针。
+作为一个集，协议驱动程序可以使用 OID \_ PM \_ 参数 OID 来启用或禁用网络适配器的当前硬件功能。 协议驱动程序在 [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员中提供了一个指向 [**ndis \_ PM \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_parameters)结构的指针。
 
 <a name="remarks"></a>备注
 -------
@@ -28,7 +27,7 @@ ms.locfileid: "89208631"
 
 当前启用的功能可以是硬件支持的功能的子集。 有关硬件支持的功能的详细信息，请参阅 [OID \_ PM \_ 硬件 \_ 功能](oid-pm-hardware-capabilities.md)。
 
-**注意**   如果 NDIS \_ \_ \_ \_ 在[**Ndis \_ pm \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_parameters)结构的**WakeUpFlags**成员中设置 ndis pm 选择性挂起已启用标志，则它会 \_ \_ 直接向微型端口驱动程序发出 oid pm 参数的 oid 设置请求。 这允许 NDIS 通过网络驱动程序堆栈中的筛选器驱动程序绕过处理。
+**注意** 如果 NDIS \_ \_ \_ \_ 在 [**Ndis \_ pm \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_parameters)结构的 **WakeUpFlags** 成员中设置 ndis pm 选择性挂起已启用标志，则它会 \_ \_ 直接向微型端口驱动程序发出 oid pm 参数的 oid 设置请求。 这允许 NDIS 通过网络驱动程序堆栈中的筛选器驱动程序绕过处理。
 
  
 
@@ -69,7 +68,7 @@ NDIS 或微型端口驱动程序为请求返回以下状态代码之一：
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)

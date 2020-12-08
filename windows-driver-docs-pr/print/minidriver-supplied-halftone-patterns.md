@@ -1,18 +1,17 @@
 ---
 title: 微型驱动程序提供的半色调模式
 description: 微型驱动程序提供的半色调模式
-ms.assetid: db2e1c5c-f337-4875-980d-a75a54a4cece
 keywords:
 - GDI 提供的半色调 WDK Unidrv
 - 微型驱动程序提供的半色调 WDK Unidrv
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a636022a739b08489dff86cad3d2d47669c639b1
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 94c607b2e53f927c650afb4574c99574dfad4406
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209537"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807847"
 ---
 # <a name="minidriver-supplied-halftone-patterns"></a>微型驱动程序提供的半色调模式
 
@@ -36,7 +35,7 @@ ms.locfileid: "89209537"
 
     其中半色调. bin 是包含半色调模式的文件。
 
--   \*HTCallbackID 特性使你可以指示要在[呈现插件](rendering-plug-ins.md)中实现[**IPrintOemUni：： HalftonePattern**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-halftonepattern)方法。 \*必须为**IPrintOemUni：： HalftonePattern**方法支持的每个模式提供唯一的**HTCallbackID**值。
+-   \*HTCallbackID 特性使你可以指示要在 [呈现插件](rendering-plug-ins.md)中实现 [**IPrintOemUni：： HalftonePattern**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-halftonepattern)方法。 \*必须为 **IPrintOemUni：： HalftonePattern** 方法支持的每个模式提供唯一的 *_HTCallbackID_* 值。
 
 可以提供半色调模式资源和/或 **IPrintOemUni：： HalftonePattern** 方法，如下所示：
 

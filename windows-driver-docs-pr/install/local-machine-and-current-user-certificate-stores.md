@@ -1,15 +1,14 @@
 ---
 title: 本地计算机和当前用户证书存储
 description: 本地计算机和当前用户证书存储
-ms.assetid: b7362f2e-c8ff-42e4-9edc-df4b9967df29
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 62e9024541b99c8a4a94102d85888cc6a6aa1af4
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 42168999dcc339df0a77983dd3bcb668e0cdce27
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097233"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808699"
 ---
 # <a name="local-machine-and-current-user-certificate-stores"></a>本地计算机和当前用户证书存储
 

@@ -1,9 +1,8 @@
 ---
 title: ImageInformation 元素
-description: 所需的 ImageInformation 元素包含有关从与当前正在验证 ScanTicket 元素进行扫描生成的图像数据的信息。
-ms.assetid: 58a5dc09-07fa-4e31-93f1-7370dace3263
+description: 必需的 ImageInformation 元素包含有关通过使用当前正在验证的 ScanTicket 元素进行的扫描所产生的图像数据的信息。
 keywords:
-- ImageInformation 元素成像设备
+- ImageInformation 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2629817079e25d5787f9be7ac64098b88f93aeed
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6c6aa35b9baa4c2c7ba664469eb18320664d9b00
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327877"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808205"
 ---
 # <a name="imageinformation-element"></a>ImageInformation 元素
 
 
-所需**ImageInformation**元素包含有关生成的图像数据的使用进行扫描的信息[ **ScanTicket** ](scanticket.md)当前正在元素验证。
+必需的 **ImageInformation** 元素包含有关通过使用当前正在验证的 [**ScanTicket**](scanticket.md) 元素进行的扫描所产生的图像数据的信息。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -85,7 +84,7 @@ ms.locfileid: "63327877"
 <a name="remarks"></a>备注
 -------
 
-WSD 扫描服务将返回**ImageInformation**通过元素[ **CreateScanJobResponse** ](createscanjobresponse.md)操作元素。 扫描应用程序可以使用中指定的数据**ImageInformation**进行解码的图像文件中的图像。
+WSD 扫描服务通过 [**CreateScanJobResponse**](createscanjobresponse.md)操作元素返回 **ImageInformation** 元素。 扫描应用程序可以使用 **ImageInformation** 中指定的数据对图像文件中的图像进行解码。
 
 ## <a name="see-also"></a>请参阅
 

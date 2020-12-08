@@ -1,25 +1,24 @@
 ---
-title: Microsoft Universal Printer Driver
-description: 本部分演示如何将微型驱动程序添加到 Unidrv 以支持不同的打印机型号。
-ms.assetid: 1f5d68a1-3552-44a9-a0c5-b3ec5fe22a22
+title: Microsoft 通用打印机驱动程序
+description: 本部分介绍如何将微型驱动程序添加到 Unidrv 以支持不同的打印机型号。
 keywords:
-- 打印机驱动程序 WDK Unidrv
+- 打印机驱动程序 WDK，Unidrv
 - Unidrv WDK 打印
-- 通用打印机驱动程序 WDK 请参阅 Unidrv
+- 通用打印机驱动程序 WDK，请参阅 Unidrv
 - 微型驱动程序 WDK Unidrv
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 158b1a54dc1c18e2ed2b0650b1049dace4dba95e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 518c2bc47944ebe148ae0b2b37668ddf3037a3fc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544574"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807849"
 ---
-# <a name="microsoft-universal-printer-driver"></a>Microsoft Universal Printer Driver
+# <a name="microsoft-universal-printer-driver"></a>Microsoft 通用打印机驱动程序
 
 
-Microsoft 通用打印驱动程序 (Unidrv) 也称为 v3 打印驱动程序。 在本部分中的主题说明如何将微型驱动程序添加到 Unidrv 以支持不同的打印机型号。
+Microsoft 通用打印驱动程序 (Unidrv) 也称为 v3 打印驱动程序。 本节中的主题介绍如何将微型驱动程序添加到 Unidrv 以支持不同的打印机型号。
 
 
 
@@ -40,13 +39,13 @@ Microsoft 通用打印驱动程序 (Unidrv) 也称为 v3 打印驱动程序。 �
 
 [条件语句](conditional-statements.md)
 
-[光栅数据进行压缩](compressing-raster-data.md)
+[压缩光栅数据](compressing-raster-data.md)
 
 [筛选光栅数据](filtering-raster-data.md)
 
 [处理颜色格式](handling-color-formats.md)
 
-[使用 Unidrv 半色调](halftoning-with-unidrv.md)
+[使用 Unidrv 设置半色调](halftoning-with-unidrv.md)
 
 [控制图像质量](controlling-image-quality.md)
 
@@ -66,7 +65,7 @@ Microsoft 通用打印驱动程序 (Unidrv) 也称为 v3 打印驱动程序。 �
 
 [Unidrv 打印机微型驱动程序版本控制](unidrv-printer-minidriver-versioning.md)
 
-[将窗体添加到窗体数据库](adding-forms-to-the-forms-database.md)
+[将表单添加到表单数据库](adding-forms-to-the-forms-database.md)
 
  
 

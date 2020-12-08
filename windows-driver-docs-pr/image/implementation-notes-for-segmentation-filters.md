@@ -1,15 +1,14 @@
 ---
 title: 分段筛选器的实现说明
 description: 分段筛选器的实现说明
-ms.assetid: c4caf8dd-8108-4bc7-b02f-1e180fedb95f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cf16aa98cdf822a039ed993a532bae23a9ef181d
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: a03f29da6e37697a12dc7fd4efe669e8d61fb54e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191905"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808789"
 ---
 # <a name="implementation-notes-for-segmentation-filters"></a>分段筛选器的实现说明
 

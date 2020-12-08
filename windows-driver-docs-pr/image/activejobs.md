@@ -1,9 +1,8 @@
 ---
 title: ActiveJobs 元素
-description: 所需的 ActiveJobs 元素包含所有当前处于活动状态的扫描作业的列表。
-ms.assetid: 90acd196-60d3-43e5-9346-a8514bcf0bb8
+description: 必需的 ActiveJobs 元素包含当前活动扫描作业的列表。
 keywords:
-- ActiveJobs 元素成像设备
+- ActiveJobs 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 699d78e8a7223a1bb6c1d3bd5c52b3045430ccbc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 16f5e0ab27951b9ea2b400da7e78fae5aa2ac208
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367101"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808287"
 ---
 # <a name="activejobs-element"></a>ActiveJobs 元素
 
 
-所需**ActiveJobs**元素包含所有当前处于活动状态的扫描作业的列表。
+必需的 **ActiveJobs** 元素包含当前活动扫描作业的列表。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -52,7 +51,7 @@ ms.locfileid: "63367101"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="job.md" data-raw-source="[&lt;strong&gt;Job&lt;/strong&gt;](job.md)"><strong>Job</strong></a></p></td>
+<td><p><a href="job.md" data-raw-source="[&lt;strong&gt;Job&lt;/strong&gt;](job.md)"><strong>作业</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p><a href="jobsummary.md" data-raw-source="[&lt;strong&gt;JobSummary&lt;/strong&gt;](jobsummary.md)"><strong>JobSummary</strong></a></p></td>
@@ -85,9 +84,9 @@ ms.locfileid: "63367101"
 <a name="remarks"></a>备注
 -------
 
-**ActiveJobs**元素包含尚未完成处理的所有作业。 无法扫描活动作业的状态、 挂起，或已停止。 **ActiveJobs**时没有当前处于活动状态的作业，为空。
+**ActiveJobs** 元素包含尚未完成处理的所有作业。 活动作业的状态可能为 "正在扫描"、"挂起" 或 "已停止"。 当前没有活动的作业时， **ActiveJobs** 为空。
 
-客户端可以询问有关的活动作业通过列表[ **GetActiveJobsRequest** ](getactivejobsrequest.md)操作。 WSD 扫描服务返回的列表中[ **GetActiveJobsResponse** ](getactivejobsresponse.md)操作元素。
+客户端可以通过 [**GetActiveJobsRequest**](getactivejobsrequest.md) 操作请求活动作业的列表。 WSD 扫描服务返回 [**GetActiveJobsResponse**](getactivejobsresponse.md) 操作元素中的列表。
 
 ## <a name="see-also"></a>请参阅
 
@@ -96,7 +95,7 @@ ms.locfileid: "63367101"
 
 [**GetActiveJobsResponse**](getactivejobsresponse.md)
 
-[**Job**](job.md)
+[**作业**](job.md)
 
 [**JobSummary**](jobsummary.md)
 

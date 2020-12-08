@@ -1,15 +1,14 @@
 ---
 title: MB 微型端口驱动程序开发路线图
 description: MB 微型端口驱动程序开发路线图
-ms.assetid: 3ef6e899-22dc-4293-80cc-d786b03c6b29
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c16b72da812e12751f38f080d9788362b52be14
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 8fe3ff53644f8481012177699de8b60e39c0aea2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734226"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808579"
 ---
 # <a name="roadmap-to-develop-mb-miniport-drivers"></a>MB 微型端口驱动程序开发路线图
 
@@ -26,7 +25,7 @@ ms.locfileid: "91734226"
 
 -   **步骤 3**：确定其他 Windows 驱动程序设计决策。
 
-    有关如何进行其他 Windows 设计决策的信息，请参阅 [创建可靠的内核模式驱动程序](../kernel/creating-reliable-kernel-mode-drivers.md)、 [64 位驱动程序的编程问题](../kernel/porting-your-driver-to-64-bit-windows.md)以及 [创建国际 INF 文件](../install/creating-international-inf-files.md)。
+    有关如何进行其他 Windows 设计决策的信息，请参阅 [创建可靠 Kernel-Mode 驱动程序](../kernel/creating-reliable-kernel-mode-drivers.md)、 [64 位驱动程序的编程问题](../kernel/porting-your-driver-to-64-bit-windows.md)以及 [创建国际 INF 文件](../install/creating-international-inf-files.md)。
 
 -   **步骤 4**：了解 Windows 驱动程序的生成、测试和调试过程和工具。
 

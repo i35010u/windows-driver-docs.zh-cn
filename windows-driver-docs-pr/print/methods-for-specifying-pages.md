@@ -1,7 +1,6 @@
 ---
 title: 用于指定页面的方法
 description: 用于指定页面的方法
-ms.assetid: 76006a2b-37b9-4490-913e-dcfc01812d43
 keywords:
 - 公共属性表用户界面 WDK 打印，指定页面
 - CPSUI WDK 打印，指定页面
@@ -10,12 +9,12 @@ keywords:
 - PROPSHEETPAGE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f663dd653fe016f24e44c5b07fc5018cc4d41c0
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: 050630a2dc3dfb75996e3b537631e2655f7869ce
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361485"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807877"
 ---
 # <a name="methods-for-specifying-pages"></a>用于指定页面的方法
 

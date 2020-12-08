@@ -1,21 +1,20 @@
 ---
 title: NetAdapterCx 客户端驱动程序的关闭顺序
 description: NetAdapterCx 客户端驱动程序的关闭顺序
-ms.assetid: 9E16172C-9E45-4ED7-B6D2-7539DF4718B5
 keywords:
 - NetAdapterCx 客户端驱动程序的关闭顺序
 ms.date: 08/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5aa3117c75c03162bb715a0538f164600412434e
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.openlocfilehash: 4df228783143b7cc33830b0a1d5d799cd11ee5d1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75209011"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808101"
 ---
 # <a name="power-down-sequence-for-a-netadaptercx-client-driver"></a>NetAdapterCx 客户端驱动程序的关闭顺序
 
-下图显示了在关闭和删除设备时，NetAdapterCx 调用客户端驱动程序的事件回调函数的顺序。 序列从图形顶部开始，其操作设备处于工作电源状态（D0）：
+下图显示了在关闭和删除设备时，NetAdapterCx 调用客户端驱动程序的事件回调函数的顺序。 序列从图形顶部开始，其操作设备处于工作电源状态 (D0) ：
 
 <img src="images/netadaptercx-powerdown.png" alt="Device enumeration and power-down sequence for NetAdapterCx client driver" title="NetAdapterCx 客户端驱动程序的设备枚举和关机顺序" style="width: 600px;"/>
 

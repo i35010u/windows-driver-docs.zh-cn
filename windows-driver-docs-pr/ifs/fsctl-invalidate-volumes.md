@@ -1,7 +1,6 @@
 ---
 title: FSCTL_INVALIDATE_VOLUMES 控制代码
 description: FSCTL \_ 使 \_ 卷控制代码无效查找并删除设备上装入的所有卷（由指定的文件对象或句柄表示）。
-ms.assetid: 26B7EBA2-F3A9-4E5A-961C-C1857AA4FF33
 keywords:
 - FSCTL_INVALIDATE_VOLUMES 控制代码可安装的文件系统驱动程序
 topic_type:
@@ -14,21 +13,21 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c8d99fb0f69c8b6fba6cb6a8e60cdec68a5d64df
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 6af05a13c573c5b8d1ef8e90f06b461169e4dca5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717446"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808361"
 ---
 # <a name="fsctl_invalidate_volumes-control-code"></a>FSCTL \_ 使 \_ 卷控制代码无效
 
 
-**FSCTL \_ 使 \_ 卷**控制代码无效查找并删除设备上装入的所有卷（由指定的文件对象或句柄表示）。
+**FSCTL \_ 使 \_ 卷** 控制代码无效查找并删除设备上装入的所有卷（由指定的文件对象或句柄表示）。
 
-要执行此操作，微筛选器驱动程序使用以下[**参数调用**](/previous-versions/ff566462(v=vs.85)) [**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)、文件系统、重定向程序和旧式文件系统筛选器驱动程序。
+要执行此操作，微筛选器驱动程序使用以下 [**参数调用**](/previous-versions/ff566462(v=vs.85)) [**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)、文件系统、重定向程序和旧式文件系统筛选器驱动程序。
 
-**参数**
+**Parameters**
 
 <a href="" id="fileobject"></a>*FileObject*  
 设备的句柄。 若要获取设备句柄，请调用 [**CreateFile**](/windows/win32/api/fileapi/nf-fileapi-createfilea) 函数。
@@ -54,7 +53,7 @@ ms.locfileid: "90717446"
 <a name="status-block"></a>状态块
 ------------
 
-如果操作成功，则[**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)和[**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85))返回状态 \_ SUCCESS，否则返回相应的 NTSTATUS 值。
+如果操作成功，则 [**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)和 [**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85))返回状态 \_ SUCCESS，否则返回相应的 NTSTATUS 值。
 
 <a name="remarks"></a>备注
 -------

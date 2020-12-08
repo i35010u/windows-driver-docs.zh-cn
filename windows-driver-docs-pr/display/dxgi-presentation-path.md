@@ -1,15 +1,14 @@
 ---
 title: DXGI 呈现路径
 description: DXGI 呈现路径
-ms.assetid: 3519172d-261c-4b33-b1e7-c4abf33b15f3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e6ac00fd3f56f98f0977885a8c57783ded55adcd
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: efa07f12beaa589c2c5aa43a25eb8fd6ae92708f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064818"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809073"
 ---
 # <a name="dxgi-presentation-path"></a>DXGI 呈现路径
 
@@ -20,11 +19,11 @@ DXGI 为应用程序提供了 "只工作" 的演示方法。 例如，应用程�
 
 ### <a name="span-idwindowed_mode_with_dwm_onspanspan-idwindowed_mode_with_dwm_onspanwindowed-mode-with-dwm-on"></a><span id="windowed_mode_with_dwm_on"></span><span id="WINDOWED_MODE_WITH_DWM_ON"></span>具有 DWM 的窗口模式
 
-在带有桌面 Windows 管理器的窗口模式下 (DWM) 的情况下，DXGI 与 DWM 通信，并打开一个共享资源视图，该共享资源是 DXGI 制造者的呈现目标和 DWM 纹理。 除应用程序创建的任何后台缓冲区外，还存在此共享资源。 DXGI 调用驱动程序的 [**BltDXGI**](/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions) 函数，以将数据从任何后台缓冲区移动到共享表面。 此操作可能需要拉伸、颜色转换和 MSAA 解析。 但是，此操作永远不需要源和目标子矩形。 事实上，无法在对 *BltDXGI*的调用中表达这些子矩形。 此位块传输 (bitblt) 始终在*pBltData*参数指向的[**DXGI \_ DDI \_ ARG \_ BLT**](/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_arg_blt)结构的**Flags**成员中设置了**显示**标志。 设置 **当前** 标志指示驱动程序应以原子方式执行操作。 该驱动程序以原子方式执行 bitblt 操作，以最大程度地减少在 DWM 读取用于撰写的共享资源时的撕裂情况。
+在带有桌面 Windows 管理器的窗口模式下 (DWM) 的情况下，DXGI 与 DWM 通信，并打开一个共享资源视图，该共享资源是 DXGI 制造者的呈现目标和 DWM 纹理。 除应用程序创建的任何后台缓冲区外，还存在此共享资源。 DXGI 调用驱动程序的 [**BltDXGI**](/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions) 函数，以将数据从任何后台缓冲区移动到共享表面。 此操作可能需要拉伸、颜色转换和 MSAA 解析。 但是，此操作永远不需要源和目标子矩形。 事实上，无法在对 *BltDXGI* 的调用中表达这些子矩形。 此位块传输 (bitblt) 始终在 *pBltData* 参数指向的 [**DXGI \_ DDI \_ ARG \_ BLT**](/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_arg_blt)结构的 **Flags** 成员中设置了 **显示** 标志。 设置 **当前** 标志指示驱动程序应以原子方式执行操作。 该驱动程序以原子方式执行 bitblt 操作，以最大程度地减少在 DWM 读取用于撰写的共享资源时的撕裂情况。
 
 ### <a name="span-idwindowed_mode_with_dwm_offspanspan-idwindowed_mode_with_dwm_offspanwindowed-mode-with-dwm-off"></a><span id="windowed_mode_with_dwm_off"></span><span id="WINDOWED_MODE_WITH_DWM_OFF"></span>具有 DWM 关闭的窗口模式
 
-在具有 DWM 关闭大小写功能的开窗模式下，DXGI 会调用驱动程序的[**PresentDXGI**](/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions)函数，并在*pPresentData*参数指向的[**DXGI \_ DDI \_ ARG \_ 现有**](/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_arg_present)结构的**Flags**成员中设置**Blt**标志。 在此*PresentDXGI*调用中，dxgi 可以在**hSurfaceToPresent**和 SrcSubResourceIndex 成员的**SrcSubResourceIndex**成员中指定任何应用程序创建的后台 \_ 缓冲区 \_ \_ 。 没有其他共享图面。
+在具有 DWM 关闭大小写功能的开窗模式下，DXGI 会调用驱动程序的 [**PresentDXGI**](/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions)函数，并在 *pPresentData* 参数指向的 [**DXGI \_ DDI \_ ARG \_ 现有**](/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_arg_present)结构的 **Flags** 成员中设置 **Blt** 标志。 在此 *PresentDXGI* 调用中，dxgi 可以在 **hSurfaceToPresent** 和 SrcSubResourceIndex 成员的 **SrcSubResourceIndex** 成员中指定任何应用程序创建的后台 \_ 缓冲区 \_ \_ 。 没有其他共享图面。
 
 ### <a name="span-idfull_screen_modespanspan-idfull_screen_modespanfull-screen-mode"></a><span id="full_screen_mode"></span><span id="FULL_SCREEN_MODE"></span>全屏模式
 
@@ -38,17 +37,17 @@ DXGI 为应用程序提供了 "只工作" 的演示方法。 例如，应用程�
 
 -   应用程序指定它不能接受 Direct3D 运行时丢弃后台缓冲区的内容，并且只请求一个缓冲区 (链中) 总数。  (在这种情况下，DXGI 分配一个后表面和一个主表面;但是，DXGI 使用驱动程序的 *PresentDXGI* 函数，并设置 **Blt** 标志。 ) 
 
-如果出现上述某个情况，则会阻止执行翻转操作，并且对驱动程序的[**PresentDXGI**](/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions)函数的调用**Blt**标志集也不是合适的 (因为后台缓冲区与前台缓冲区完全相同) *proxy surface* 此代理图面与前台缓冲区匹配。 因此，可以在代理表面和前台缓冲区之间进行切换。 如果存在代理表面，DXGI 将使用驱动程序的 [**BltDXGI**](/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions) 函数，并清除 (0) 的 **现有** 标志，将应用程序的后台缓冲区复制到代理图面。 在此 *BltDXGI* 调用中，DXGI 可能会请求转换、拉伸和解析。 然后，DXGI 会调用驱动程序的*PresentDXGI*函数，并在[**DXGI \_ DDI \_ ARG \_ 现有**](/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_arg_present)结构的**Flags**成员中设置**翻转**标志，以将代理图面位移动到 scan out。
+如果出现上述某个情况，则会阻止执行翻转操作，并且对驱动程序的 [**PresentDXGI**](/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions)函数的调用 **Blt** 标志集也不是合适的 (因为后台缓冲区与前台缓冲区完全相同) *proxy surface* 此代理图面与前台缓冲区匹配。 因此，可以在代理表面和前台缓冲区之间进行切换。 如果存在代理表面，DXGI 将使用驱动程序的 [**BltDXGI**](/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions) 函数，并清除 (0) 的 **现有** 标志，将应用程序的后台缓冲区复制到代理图面。 在此 *BltDXGI* 调用中，DXGI 可能会请求转换、拉伸和解析。 然后，DXGI 会调用驱动程序的 *PresentDXGI* 函数，并在 [**DXGI \_ DDI \_ ARG \_ 现有**](/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_arg_present)结构的 **Flags** 成员中设置 **翻转** 标志，以将代理图面位移动到 scan out。
 
 为了通知用户模式显示驱动程序，驱动程序可以退出扫描，驱动程序将接收对可选的和非可选的扫描表面类的资源创建调用。 可选的扫描表面由 DXGI \_ DDI \_ 主要 \_ 可选标志指定。 非可选的扫描表面未 \_ 设置 DXGI DDI \_ 主要 \_ 可选标志。 有关这些类型的资源创建调用的详细信息，请参阅 [在资源创建时传递 DXGI 信息](passing-dxgi-information-at-resource-creation-time.md)。
 
 DXGI 设置 DXGI \_ DDI \_ 主要 \_ 可选标志，用于创建所有后台缓冲区图面 (即) 的可选表面，并不设置任何前台缓冲或代理图面的标志 (即，非可选曲面) 。
 
-如果为 \_ \_ \_ 后台缓冲区设置了 dxgi ddi primary OPTIONAL，则驱动程序可以设置 dxgi \_ ddi \_ 主 \_ 驱动程序 \_ 标志 \_ NO \_ SCANOUT 标志。 有关设置此标志的详细信息，请参阅 [在资源创建时传递 DXGI 信息](passing-dxgi-information-at-resource-creation-time.md)。 如果驱动程序 \_ 为可选缓冲区设置了 DXGI DDI \_ 主 \_ 驱动程序 \_ 标志 \_ no \_ SCANOUT，则除了之外，还将导致 DXGI 使用**Blt**标志（而不是设置**翻转**标志）调用驱动程序的[**PresentDXGI**](/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions)函数。
+如果为 \_ \_ \_ 后台缓冲区设置了 dxgi ddi primary OPTIONAL，则驱动程序可以设置 dxgi \_ ddi \_ 主 \_ 驱动程序 \_ 标志 \_ NO \_ SCANOUT 标志。 有关设置此标志的详细信息，请参阅 [在资源创建时传递 DXGI 信息](passing-dxgi-information-at-resource-creation-time.md)。 如果驱动程序 \_ 为可选缓冲区设置了 DXGI DDI \_ 主 \_ 驱动程序 \_ 标志 \_ no \_ SCANOUT，则除了之外，还将导致 DXGI 使用 **Blt** 标志（而不是设置 **翻转** 标志）调用驱动程序的 [**PresentDXGI**](/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions)函数。
 
 如果 \_ \_ \_ 没有为前台缓冲区或代理图面设置 DXGI DDI PRIMARY OPTIONAL，则驱动程序仍可以通过使资源创建调用失败并出现错误代码 DXGI ddi ERR 来退出扫描， \_ \_ \_ 并设置 DXGI \_ ddi \_ 主 \_ 驱动程序 \_ 标志 \_ NO \_ SCANOUT。
 
-**注意**   无法在未设置 DXGI \_ DDI \_ 主 \_ 驱动程序标志的情况下创建调用 \_ ，因此 \_ 不 \_ 会为真正的故障情况（如内存不足）保留 SCANOUT。
+**注意**   无法在未设置 DXGI \_ DDI \_ 主 \_ 驱动程序标志的情况下创建调用 \_ ，因此 \_ 不 \_ 会为真正的故障情况（如内存不足）保留 SCANOUT。
 
  
 

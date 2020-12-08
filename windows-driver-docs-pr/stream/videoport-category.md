@@ -1,7 +1,6 @@
 ---
 title: 视频端口类别
 description: 视频端口类别
-ms.assetid: c11a407f-4ff0-4337-b989-e3ec42418ec3
 keywords:
 - 流类别 WDK 视频捕获，videoport
 - videoport 类别 WDK 视频捕获
@@ -9,12 +8,12 @@ keywords:
 - PINNAME_VIDEO_VIDEOPORT
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4da9e1f529365ccdfca7fa8b886605ce40c25375
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: b3c70b8d42b60c6e7f802e9e9f2207a9d3293573
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104808"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808543"
 ---
 # <a name="videoport-category"></a>视频端口类别
 

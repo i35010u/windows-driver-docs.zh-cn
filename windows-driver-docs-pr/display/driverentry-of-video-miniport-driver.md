@@ -1,7 +1,6 @@
 ---
 title: 视频微型端口驱动程序函数的 DriverEntry
 description: DriverEntry 是视频微型端口驱动程序的初始入口点。
-ms.assetid: b927dd2c-19e1-49bc-b30b-530efe2ba13b
 keywords:
 - DriverEntry 函数显示设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - DllExport
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e0ff4dde8e05098f40d0e68e822327e4689295e5
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 2d831906a9f6ee3718c87be0a078ddbaa950068a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103788"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809121"
 ---
 # <a name="driverentry-of-video-miniport-driver-function"></a>视频微型端口驱动程序函数的 DriverEntry
 
@@ -31,8 +30,8 @@ ms.locfileid: "90103788"
 
 ```cpp
 ULONG DriverEntry(
-  _In_ PVOID Context1,
-  _In_ PVOID Context2
+  _In_ PVOID Context1,
+  _In_ PVOID Context2
 );
 ```
 
@@ -48,7 +47,7 @@ ULONG DriverEntry(
 
 **DriverEntry** 返回 [**VideoPortInitialize**](/windows-hardware/drivers/ddi/video/nf-video-videoportinitialize)返回的值。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 每个微型端口驱动程序必须具有显式命名为 **DriverEntry** 的函数才能加载。 **DriverEntry** 是由 i/o 系统直接调用的。
@@ -75,10 +74,10 @@ ULONG DriverEntry(
 
     [*HwVidSetPowerState*](/windows-hardware/drivers/ddi/video/nc-video-pvideo_hw_power_set)
 
--   如果驱动程序的硬件支持旧版资源，则驱动程序必须对其进行报告。 如果资源列表在驱动程序编译时是已知的，则**DriverEntry**应执行以下操作：
+-   如果驱动程序的硬件支持旧版资源，则驱动程序必须对其进行报告。 如果资源列表在驱动程序编译时是已知的，则 **DriverEntry** 应执行以下操作：
 
-    -   在[**视频 \_ HW \_ 初始化 \_ 数据**](/windows-hardware/drivers/ddi/video/ns-video-_video_hw_initialization_data)结构的**HwLegacyResourceList**和**HwLegacyResourceCount**成员中声明和报告所有此类资源。 旧资源是指未列出在设备 PCI 配置空间中的资源，但被设备解码。
-    -   为微型端口驱动程序中定义的每个[**视频 \_ 访问 \_ 范围**](/windows-hardware/drivers/ddi/video/ns-video-_video_access_range)结构填写 " **RangePassive** " 字段。
+    -   在 [**视频 \_ HW \_ 初始化 \_ 数据**](/windows-hardware/drivers/ddi/video/ns-video-_video_hw_initialization_data)结构的 **HwLegacyResourceList** 和 **HwLegacyResourceCount** 成员中声明和报告所有此类资源。 旧资源是指未列出在设备 PCI 配置空间中的资源，但被设备解码。
+    -   为微型端口驱动程序中定义的每个 [**视频 \_ 访问 \_ 范围**](/windows-hardware/drivers/ddi/video/ns-video-_video_access_range)结构填写 " **RangePassive** " 字段。
 
     如果在运行时之前无法确定旧资源列表，则驱动程序应改为实现 [*HwVidLegacyResources*](/windows-hardware/drivers/ddi/video/nc-video-pvideo_hw_legacyresources) 函数来报告它们。
 
@@ -86,9 +85,9 @@ ULONG DriverEntry(
 
 **DriverEntry** 应将 [**VideoPortInitialize**](/windows-hardware/drivers/ddi/video/nf-video-videoportinitialize) 返回的值传播回调用方。
 
-如果 **DriverEntry** 确实声明资源，则它应仅包含硬件解码但不是 PCI 声明的那些资源。 小型端口驱动程序可以在后续 (调用中再次 "回收" 这些旧资源) [**VideoPortVerifyAccessRanges**](/windows-hardware/drivers/ddi/video/nf-video-videoportverifyaccessranges);但是，视频端口驱动程序将忽略对以前声明的任何资源的请求。 如果微型端口驱动程序尝试在**VideoPortVerifyAccessRanges**中声明以前未在**DriverEntry** (或[*HwVidLegacyResources*](/windows-hardware/drivers/ddi/video/nc-video-pvideo_hw_legacyresources)中**声明的旧**访问范围（如果实现了) ），则将在系统中禁用电源管理和停靠。 [** \_ \_ \_ **](/windows-hardware/drivers/ddi/video/ns-video-_video_hw_initialization_data)
+如果 **DriverEntry** 确实声明资源，则它应仅包含硬件解码但不是 PCI 声明的那些资源。 小型端口驱动程序可以在后续 (调用中再次 "回收" 这些旧资源) [**VideoPortVerifyAccessRanges**](/windows-hardware/drivers/ddi/video/nf-video-videoportverifyaccessranges);但是，视频端口驱动程序将忽略对以前声明的任何资源的请求。 如果微型端口驱动程序尝试在 **VideoPortVerifyAccessRanges** 中声明以前未在 **DriverEntry** (或 [*HwVidLegacyResources*](/windows-hardware/drivers/ddi/video/nc-video-pvideo_hw_legacyresources)中 **声明的旧** 访问范围（如果实现了) ），则将在系统中禁用电源管理和停靠。 [**\_ \_ \_**](/windows-hardware/drivers/ddi/video/ns-video-_video_hw_initialization_data)
 
-对于还支持运行 Windows NT 4.0 的计算机的 Microsoft Windows 2000 及更高版本的驱动程序，硬件配置常量在 *video*中定义。 下表描述了这些常量。
+对于还支持运行 Windows NT 4.0 的计算机的 Microsoft Windows 2000 及更高版本的驱动程序，硬件配置常量在 *video* 中定义。 下表描述了这些常量。
 
 <table>
 <colgroup>
@@ -140,7 +139,7 @@ ULONG DriverEntry(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面型</td>
+<td align="left">台式机</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>

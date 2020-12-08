@@ -1,7 +1,6 @@
 ---
 title: 通知回调
 description: 通知回调
-ms.assetid: cf884097-45a4-4ef3-8ebb-64c006838235
 keywords:
 - 后台处理程序通知 WDK 打印，回拨
 - 打印后台处理程序通知 WDK，回调
@@ -10,12 +9,12 @@ keywords:
 - 回调 WDK 后台处理程序通知
 ms.date: 06/08/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e3b6544998d0d849c7df66b3081976a6987d6e8
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 2d11801c4bab6b550cad95bd08c58666d8bbdd03
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209529"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807785"
 ---
 # <a name="notification-callback"></a>通知回调
 

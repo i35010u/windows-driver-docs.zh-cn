@@ -1,18 +1,17 @@
 ---
 title: Unidrv 和 PScript5 打印驱动程序中的打印功能
 description: Unidrv 和 PScript5 打印驱动程序中的打印功能
-ms.assetid: 70f8b846-3e05-4345-baad-a3db6b8df620
 keywords:
 - 打印功能 WDK，Unidrv
 - 打印功能 WDK，PScript5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8574303fbef773330d41e088f76100ecff174f9c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 16bce207bf84cbde69b82ba945a1aef34555f4cd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214218"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807499"
 ---
 # <a name="print-capabilities-in-unidrv-and-pscript5-print-drivers"></a>Unidrv 和 PScript5 打印驱动程序中的打印功能
 

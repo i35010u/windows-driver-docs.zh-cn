@@ -1,17 +1,16 @@
 ---
 title: WDI_TLV_CONNECT_BSS_ENTRY
 description: WDI_TLV_CONNECT_BSS_ENTRY 是包含候选连接 BSS 条目列表的 TLV。
-ms.assetid: 0D74B2DE-9224-4FDF-8EA8-B22CEC0B5F26
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_CONNECT_BSS_ENTRY 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 7efcc84fc81b3213e36e587082b9dfaeb2f4c726
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 732837acc76a97c07ee39669670d2c918b3ad58a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212721"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807983"
 ---
 # <a name="wdi_tlv_connect_bss_entry"></a>WDI \_ TLV \_ 连接 \_ BSS \_ 条目
 
@@ -23,7 +22,7 @@ WDI \_ tlv \_ 连接 \_ bss \_ 项是一个 TLV，其中包含候选连接 BSS �
 
 0x34
 
-## <a name="length"></a>Length
+## <a name="length"></a>长度
 
 
 Sum (包含所有 TLVs 的大小的) 字节。
@@ -43,7 +42,7 @@ Sum (包含所有 TLVs 的大小的) 字节。
 | [**WDI \_ TLV \_ 额外 \_ 关联 \_ 请求 \_**](wdi-tlv-extra-association-request-ies.md) |                                | X        | 要包含在 (中的 IE) 此 BSSID 的关联请求框架。 如果存在，则除了常见的 IE 外，还应包括此项。                  |
 | [**WDI \_ TLV \_ FT \_ 初始 \_ ASSOC \_ 参数**](wdi-tlv-ft-initial-assoc-parameters.md)     |                                | X        | 初始移动域关联参数。                                                                                                           |
 | [**WDI \_ TLV \_ FT \_ REASSOC \_ 参数**](wdi-tlv-ft-reassoc-parameters.md)                  |                                | X        | Fast 转换参数 (MDIE，R0KH，PMKR0Name，SNonce) 。 这仅适用于快速转换 (在初始移动域关联) 期间。 |
-| [**WDI \_ TLV \_ TLV \_ 选择 \_ 参数**](wdi-tlv-bss-selection-parameters.md)            |                                | X        | [**WDI \_提供 \_ \_ **](/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_bss_selection_flags) 主机用于 BSS 选择的信息的 BSS 选择标志。                               |
+| [**WDI \_ TLV \_ TLV \_ 选择 \_ 参数**](wdi-tlv-bss-selection-parameters.md)            |                                | X        | [**WDI \_提供 \_ \_**](/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_bss_selection_flags) 主机用于 BSS 选择的信息的 BSS 选择标志。                               |
 
  
 
@@ -62,7 +61,7 @@ Sum (包含所有 TLVs 的大小的) 字节。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

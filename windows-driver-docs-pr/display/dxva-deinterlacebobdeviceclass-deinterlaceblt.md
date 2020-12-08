@@ -1,7 +1,6 @@
 ---
 title: DXVA_DeinterlaceBobDeviceClass DeinterlaceBlt 方法
 description: 示例 DeinterlaceBlt 函数通过将输出写入目标图面来执行取消隔行转换或帧速率转换。
-ms.assetid: 0aa68d0c-8c2b-41fe-9e46-a41b157fbd98
 keywords:
 - DeinterlaceBlt 方法显示设备
 - DeinterlaceBlt 方法显示设备，DXVA_DeinterlaceBobDeviceClass 接口
@@ -14,12 +13,12 @@ api_type:
 - COM
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 21955835acc2a1e1a558bbadb848fff50a5a1f0f
-ms.sourcegitcommit: abe7fe9f3fbee8d12641433eeab623a4148ffed3
+ms.openlocfilehash: ac656079f877e0cdda67b63d47ecf72a76bfc0ed
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92185156"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808897"
 ---
 # <a name="dxva_deinterlacebobdeviceclassdeinterlaceblt-method"></a>DXVA_DeinterlaceBobDeviceClass：:D einterlaceBlt 方法
 
@@ -31,17 +30,17 @@ ms.locfileid: "92185156"
 
 ```ManagedCPlusPlus
 HRESULT DeinterlaceBlt(
-  [in] REFERENCE_TIME     rtTargetFrame,
-  [in] LPRECT             lprcDstRect,
-  [in] LPDDSURFACE        lpDDSDstSurface,
-  [in] LPRECT             lprcSrcRect,
-  [in] LPDXVA_VideoSample lpDDSrcSurfaces,
-  [in] DWORD              dwNumSurfaces,
-  [in] FLOAT              fAlpha
+  [in] REFERENCE_TIME     rtTargetFrame,
+  [in] LPRECT             lprcDstRect,
+  [in] LPDDSURFACE        lpDDSDstSurface,
+  [in] LPRECT             lprcSrcRect,
+  [in] LPDXVA_VideoSample lpDDSrcSurfaces,
+  [in] DWORD              dwNumSurfaces,
+  [in] FLOAT              fAlpha
 );
 ```
 
-<a name="parameters"></a>parameters
+<a name="parameters"></a>参数
 ----------
 
 *rtTargetFrame* \[中的 \] 标识输入帧序列内的输出帧的位置。 如果只执行了取消隔行扫描，则目标时间应与参考样本的开始显示时间一致，如 [**DXVA_VideoSample**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_videosample) 结构中所定义，或开始显示时间与结束显示时间之间的中点。 有关详细信息，请参阅 [**DXVA_DeinterlaceBlt**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_deinterlaceblt) 结构。
@@ -65,12 +64,12 @@ HRESULT DeinterlaceBlt(
 <a name="return-value"></a>返回值
 ------------
 
-如果成功，则返回零 (S_OK 或 DD_OK) ;否则，将返回错误代码。 有关错误代码的完整列表，请参阅*ddraw。*
+如果成功，则返回零 (S_OK 或 DD_OK) ;否则，将返回错误代码。 有关错误代码的完整列表，请参阅 *ddraw。*
 
 <a name="remarks"></a>备注
 -------
 
-*DeinterlaceBlt*函数直接映射到对[**DD_MOTIONCOMPCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构的**RenderMoComp**成员的调用。 **RenderMoComp**成员指向显示驱动程序提供的、引用[**DD_RENDERMOCOMPDATA**](/windows/win32/api/ddrawint/ns-ddrawint-dd_rendermocompdata)结构的函数。 按如下所示填充 DD_RENDERMOCOMPDATA 结构。
+*DeinterlaceBlt* 函数直接映射到对 [**DD_MOTIONCOMPCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构的 **RenderMoComp** 成员的调用。 **RenderMoComp** 成员指向显示驱动程序提供的、引用 [**DD_RENDERMOCOMPDATA**](/windows/win32/api/ddrawint/ns-ddrawint-dd_rendermocompdata)结构的函数。 按如下所示填充 DD_RENDERMOCOMPDATA 结构。
 
 <table>
 <colgroup>
@@ -107,9 +106,9 @@ HRESULT DeinterlaceBlt(
 </tbody>
 </table>
 
-对于用于取消隔行扫描的 DirectX VA 设备，将在不调用显示器驱动程序提供的**BeginMoCompFrame**或**EndMoCompFrame**函数的情况下调用由**RenderMoComp**指向的驱动程序提供的回调。
+对于用于取消隔行扫描的 DirectX VA 设备，将在不调用显示器驱动程序提供的 **BeginMoCompFrame** 或 **EndMoCompFrame** 函数的情况下调用由 **RenderMoComp** 指向的驱动程序提供的回调。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [**DD_MOTIONCOMPCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)
 

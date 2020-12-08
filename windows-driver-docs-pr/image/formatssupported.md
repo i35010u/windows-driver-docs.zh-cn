@@ -1,7 +1,6 @@
 ---
 title: FormatsSupported 元素
 description: 必需的 FormatsSupported 元素是一个元素集合，其中列出了扫描程序支持的文档文件格式。
-ms.assetid: bb4b6630-f865-4ec7-b7d1-8be424eea345
 keywords:
 - FormatsSupported 元素图像设备
 topic_type:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2bad45d7596eaa74b301cac0ee71f9cde250329a
-ms.sourcegitcommit: dff3834724bd5204c4a47204540fe8125dd37b20
+ms.openlocfilehash: c646f00acc98dcc47144f6e8a0753ec8fb9bcee6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70750044"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808241"
 ---
 # <a name="formatssupported-element"></a>FormatsSupported 元素
 
 
-必需的**FormatsSupported**元素是一个元素集合，其中列出了扫描程序支持的文档文件格式。
+必需的 **FormatsSupported** 元素是一个元素集合，其中列出了扫描程序支持的文档文件格式。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -79,7 +78,7 @@ ms.locfileid: "70750044"
 <a name="remarks"></a>备注
 -------
 
-每个[**FormatValue**](formatvalue.md)元素指定一种文件格式，用于描述文件类型和压缩类型。
+每个 [**FormatValue**](formatvalue.md) 元素指定一种文件格式，用于描述文件类型和压缩类型。
 
 ## <a name="see-also"></a>请参阅
 

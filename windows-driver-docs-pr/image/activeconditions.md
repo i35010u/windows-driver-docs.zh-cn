@@ -1,9 +1,8 @@
 ---
 title: ActiveConditions 元素
-description: 所需的 ActiveConditions 元素是所有的当前处于活动状态的条件或扫描设备上的错误的集合。
-ms.assetid: e66196af-d794-4ffe-99e5-c0f8ea4ffe74
+description: 必需的 ActiveConditions 元素是扫描设备上所有当前活动的条件或错误的集合。
 keywords:
-- ActiveConditions 元素成像设备
+- ActiveConditions 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b556ffc0fa4b75b6b2e7639433e5a62af4d573c6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f087f339b252ff0d3fb5ab7c0759100f4c88c723
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367108"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808291"
 ---
 # <a name="activeconditions-element"></a>ActiveConditions 元素
 
 
-所需**ActiveConditions**元素是所有的当前处于活动状态的条件或扫描设备上的错误的集合。
+必需的 **ActiveConditions** 元素是扫描设备上所有当前活动的条件或错误的集合。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -79,7 +78,7 @@ ms.locfileid: "63367108"
 <a name="remarks"></a>备注
 -------
 
-**ActiveConditions**元素是一系列[ **DeviceCondition** ](devicecondition.md)描述的所有当前处于活动状态的条件或设备中的错误的元素。 设备条件而异中从信息性严重程度上为严重。
+**ActiveConditions** 元素是描述设备中所有当前活动的条件或错误的 [**DeviceCondition**](devicecondition.md)元素列表。 设备条件在严重性上可能因严重性而异。
 
 ## <a name="see-also"></a>请参阅
 

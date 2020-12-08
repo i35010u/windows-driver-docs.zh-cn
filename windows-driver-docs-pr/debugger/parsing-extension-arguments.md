@@ -1,17 +1,16 @@
 ---
 title: 分析扩展参数
 description: 分析扩展参数
-ms.assetid: 3c75fb75-50d0-48e4-abf4-e4dba9a080f9
 keywords:
 - EngExtCpp 扩展，分析参数
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1736a9869033b3e46c497a0306929725ed55dc0e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 44a9676cc2908bbb5275307243e20336477d4a3b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217882"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808485"
 ---
 # <a name="parsing-extension-arguments"></a>分析扩展参数
 
@@ -76,7 +75,7 @@ EngExtCpp 扩展框架提供了帮助分析传递到扩展的命令行参数的�
 参数的名称。 这是在命令和按名称提取参数的方法中使用的名称。 此名称是可选的。 如果它存在，则该参数将成为 "命名参数";它可以出现在命令行中的任何位置，并被名称引用。 如果此参数不存在，则该参数将成为 "未命名参数";它在命令行上的位置很重要，它是由其相对于其他未命名参数的位置引用的。
 
 <span id="type"></span><span id="TYPE"></span>*类别*  
-自变量类型。 这会影响参数的分析方式和检索方法。 *类型*参数可以具有下列值之一：
+自变量类型。 这会影响参数的分析方式和检索方法。 *类型* 参数可以具有下列值之一：
 
 <span id="b"></span><span id="B"></span>b  
 布尔类型。 参数存在或不存在。 可以使用 [**HasArg**](/previous-versions/windows/hardware/previsioning-framework/ff549721(v=vs.85))检索命名的布尔参数。
@@ -91,16 +90,16 @@ EngExtCpp 扩展框架提供了帮助分析传递到扩展的命令行参数的�
 表达式的值已签名。 否则，表达式的值为无符号。
 
 <span id="bits"></span><span id="BITS"></span>带宽  
-参数值中的位数。 *位数*的最大值为64。
+参数值中的位数。 *位数* 的最大值为64。
 
 <span id="s"></span><span id="S"></span>些  
 String 类型。 字符串仅限于下一个空格字符。 可以使用 [**GetArgStr**](/previous-versions/windows/hardware/previsioning-framework/ff545586(v=vs.85)) 检索命名的字符串参数，并使用 [**GetUnnamedArgStr**](/previous-versions/windows/hardware/previsioning-framework/ff549464(v=vs.85))检索未命名的字符串参数。
 
-<span id="x"></span><span id="X"></span>x  
-String 类型。 参数是命令行的其余部分。 使用 **GetArgStr** 或 **GetUnnamedArgStr**检索参数，与 s 字符串类型相同。
+<span id="x"></span><span id="X"></span>x-blade  
+String 类型。 参数是命令行的其余部分。 使用 **GetArgStr** 或 **GetUnnamedArgStr** 检索参数，与 s 字符串类型相同。
 
 <span id="flags"></span><span id="FLAGS"></span>*随意*  
-参数标志。 它们确定分析器将如何处理参数。 *Flags*参数可以具有下列值之一：
+参数标志。 它们确定分析器将如何处理参数。 *Flags* 参数可以具有下列值之一：
 
 <span id="d_expr"></span><span id="D_EXPR"></span>d = expr  
 参数的默认值。 如果命令行中不存在参数，则将参数设置为 *expr*。 默认值是根据参数类型分析的字符串。

@@ -1,18 +1,17 @@
 ---
 title: 确定当前的连接卸载设置
 description: 确定当前的连接卸载设置
-ms.assetid: aca377ae-c56b-4f84-8165-4b084bfa9938
 keywords:
 - 连接卸载 WDK TCP/IP 传输，当前设置
 - 当前连接卸载设置 WDK TCP/IP 卸载
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bc015bd0900bfea28b4471f18f2e59a3f989db1d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 98a721d79927c4206f7e881c8bff4f2259300c8e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212935"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808667"
 ---
 # <a name="determining-the-current-connection-offload-settings"></a>确定当前的连接卸载设置
 

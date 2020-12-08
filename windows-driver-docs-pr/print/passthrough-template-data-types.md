@@ -1,36 +1,35 @@
 ---
 title: 直通模板数据类型
 description: 直通模板数据类型
-ms.assetid: 9e5e6a12-5847-45fe-bee5-68944cd546d7
 keywords:
 - 模板 WDK GDL，数据类型
 - 数据类型 WDK GDL，基元
 - 传递数据类型 WDK GDL
-- 架构 WDK GDL，验证传递的数据类型
+- 架构 WDK GDL，验证 PASSTHROUGH 数据类型
 - ArrayLabel 指令 WDK GDL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 603633367691a26812f00800d17d7960169feb05
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 57e9e068807dcae8f08f7240fcd417fd37a8f316
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380687"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807631"
 ---
 # <a name="passthrough-template-data-types"></a>直通模板数据类型
 
 
-\***数据类型**:**传递**定义了一个模板来表示未处理的数据类型。 构成 GDL 值的字符作为元素内容的 XML 元素表示 GDL 属性插入。
+\***DataType**： **PASSTHROUGH** 定义用于表示未处理的数据类型的模板。 构成 GDL 值的字符作为 XML 元素的元素内容插入，表示 GDL 属性。
 
-在定义传递数据类型的模板中识别以下指令：
+以下指令在定义 PASSTHROUGH 数据类型的模板中被识别：
 
--   \*ArrayLabel。 如果指定此指令，则分析器筛选器需要要用括号括起来的值，并且前面加上指定的数组标签。 此指令是可选的。
+-   \*ArrayLabel. 如果指定了此指令，则分析器筛选器会将值括在括号内，并将其放在指定的数组标签之前。 此指令是可选的。
 
-值的语法必须遵守的可以包含字符数据、 子元素等 XML 元素内容定义的语法。 此外请注意 GDL 分析器将不会转义特殊 XML 字符的左或右括号等 (&lt;或&gt;) 或与号 (&)。 值的创建者负责符合元素内容的 XML 语法的值。
+值的语法必须遵循为 XML 元素内容定义的语法，该语法可包含字符数据、子元素等。 另请注意，GDL 分析器不会转义特殊的 XML 字符（如左括号或右括号） (&lt; 或 &gt;) 或 ( # A0) 。 值的创建者负责将值与元素内容的 XML 语法进行一致。
 
-如果 XML 语法与基本 GDL 语法规则冲突，整个值 （或只是冲突的部分） 必须括起&lt;Begin/EndValue:&gt;构造。 XML 值与此类不兼容的语法，或其语法不兼容的语法由复合数据类型，不能显示为复合数据类型的成员，但必须显示直接为 GDL 属性的值。
+如果 XML 语法与基本 GDL 语法规则冲突，则整个值 (或只包含冲突部分) 必须在 &lt; Begin/EndValue：构造内包含 &gt; 。 具有这种不兼容语法的 XML 值或其语法与复合数据类型使用的语法不兼容，不能作为复合数据类型的成员显示，但必须直接显示为 GDL 属性的值。
 
-例如，考虑下面的示例模板。
+例如，请看下面的示例模板。
 
 ```cpp
 *Template:  ELEMENT_CONTENT
@@ -40,7 +39,7 @@ ms.locfileid: "63380687"
 }
 ```
 
-与前面的模板，分析器筛选器不会创建传递数据的 XSD 架构数据类型声明。
+使用上述模板，分析器筛选器不会为传递数据创建 XSD 架构数据类型声明。
 
 请考虑以下 GDL 条目。
 
@@ -54,7 +53,7 @@ ms.locfileid: "63380687"
 <EndValue:XML>
 ```
 
-如果上一项解释使用前面的示例模板，会发生以下 XML 输出。
+如果使用前面的示例模板解释前面的条目，则将发生以下 XML 输出。
 
 ```cpp
 <GDL_ATTRIBUTE Name="*InLineXML"  >
@@ -66,7 +65,7 @@ ms.locfileid: "63380687"
 </GDL_ATTRIBUTE>
 ```
 
-如果你想要使用 XML 架构验证传递实例，则应使用[XSD\_定义数据类型](xsd-template-data-types.md)而不是传递，因为 XSD\_定义数据类型允许要进行的 XSD 架构显式模板中定义并由分析器集成到架构的输出。
+如果要使用 XML 架构验证传递实例，则应使用 [xsd \_ 定义的数据类型](xsd-template-data-types.md) 而不是 PASSTHROUGH，因为 xsd \_ 定义的数据类型允许在模板中显式定义 xsd 架构，并将其集成到分析器的架构输出中。
 
  
 

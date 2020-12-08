@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_ASSOCIATION_REQUEST_DEVICE_CONTEXT
-description: WDI_TLV_ASSOCIATION_REQUEST_DEVICE_CONTEXT 是包含特定于供应商的信息传递到端口如果主机决定发送对传入的关联请求的响应 TLV。
-ms.assetid: 5C684769-77A0-446D-81F6-A90E54806A1F
+description: WDI_TLV_ASSOCIATION_REQUEST_DEVICE_CONTEXT 是一种 TLV，其中包含特定于供应商的信息，当主机决定向传入关联请求发送响应时，这些信息将向下传递到端口。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_ASSOCIATION_REQUEST_DEVICE_CONTEXT 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 7938af034d1300c284ad7ae0f3320866a9aec07e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 66a92f6b78fb463772bcf3da75d1abd933b24d78
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362841"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808571"
 ---
-# <a name="wditlvassociationrequestdevicecontext"></a>WDI\_TLV\_ASSOCIATION\_REQUEST\_DEVICE\_CONTEXT
+# <a name="wdi_tlv_association_request_device_context"></a>WDI \_ TLV \_ 关联 \_ 请求 \_ 设备 \_ 上下文
 
 
-WDI\_TLV\_关联\_请求\_设备\_上下文是包含特定于供应商的信息传递到端口如果主机决定将响应发送到传入 TLV关联的请求。
+WDI \_ tlv \_ 关联 \_ 请求 \_ 设备 \_ 上下文是一个 TLV，其中包含特定于供应商的信息，当主机决定向传入关联请求发送响应时向下传递到该端口。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,14 +25,14 @@ WDI\_TLV\_关联\_请求\_设备\_上下文是包含特定于供应商的信息�
 ## <a name="length"></a>长度
 
 
-UINT8 元素的数组大小 （以字节为单位）。 该数组必须包含一个或多个元素。
+UINT8 元素数组的大小 (以字节为单位) 。 数组必须包含1个或多个元素。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入      | 描述                                                                                                                           |
+| 类型      | 描述                                                                                                                           |
 |-----------|---------------------------------------------------------------------------------------------------------------------------------------|
-| UINT8\[\] | 向下传递如果主机决定将传入的关联请求响应发送端口的特定于供应商的信息。 |
+| UINT8\[\] | 当主机决定向传入关联请求发送响应时，向下传递到端口的供应商特定信息。 |
 
  
 
@@ -52,10 +51,10 @@ UINT8 元素的数组大小 （以字节为单位）。 该数组必须包含一
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

@@ -1,31 +1,30 @@
 ---
 title: WDI 微型端口驱动程序设计指南
 description: " (WDI 的 WLAN 设备驱动程序接口) 是适用于桌面版的 Windows 10 （家庭版、专业版、企业版和) 教育 (版）以及 Windows 10 移动版的新 WLAN 通用 Windows 驱动程序模型。"
-ms.assetid: E1666D5E-1932-4378-B4F6-61F28716183E
 keywords:
 - wi-fi 驱动程序，wi-fi 驱动程序 Windows 10，无线驱动程序，无线驱动程序 windows 10，wlan 驱动程序，wlan 驱动程序 windows 10，wlan 驱动程序接口，WDI 驱动程序，WDI 网络驱动程序，WDI Windows 10
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b633b03af22c64f0f5949560b23a9e5e01d2cfb6
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e460376318aadee781eb170b644545fd792e20d0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103056"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808001"
 ---
 # <a name="wdi-miniport-driver-design-guide"></a>WDI 微型端口驱动程序设计指南
 
 
-WLAN 设备驱动程序接口 (WDI) 是适用于 Windows 10 的 Wi-fi 驱动程序的新通用 Windows 驱动程序模型，适用于桌面版的 Windows 10 (家庭版、专业版、企业版和教育版) 以及 Windows 10 移动版。 WLAN 设备制造商编写了 WDI 微型端口驱动程序，以便使用 Windows 10 OS 实现。 WDI 使设备制造商可以编写比以前的本机 WLAN 驱动程序模型更少的代码。 Windows 10 中引入的所有新 WLAN 功能均需要基于 WDI 的驱动程序。
+WLAN 设备驱动程序接口 (WDI) 是适用于 Wi-Fi 驱动程序的新的通用 Windows 驱动程序模型，适用于适用于桌面版的 Windows 10 (家庭版、专业版、企业版和教育版) 以及 Windows 10 移动版。 WLAN 设备制造商编写了 WDI 微型端口驱动程序，以便使用 Windows 10 OS 实现。 WDI 使设备制造商可以编写比以前的本机 WLAN 驱动程序模型更少的代码。 Windows 10 中引入的所有新 WLAN 功能均需要基于 WDI 的驱动程序。
 
-供应商提供的本机 WLAN 驱动程序继续在 Windows 10 中运行，但功能仅限于开发它们时所针对的 Windows 版本。
+供应商提供的本机 WLAN 驱动程序继续在 Windows 10 中运行，但功能仅限于开发它们所用于的 Windows 版本。
 
 此设计指南中记录了 WDI 要求和接口规范。 新模型的主要目标是：
 
 -   提高 Windows WLAN 驱动程序的质量和可靠性。
 -   降低当前驱动程序模型的复杂性，进而降低 IHV 驱动程序的复杂性并降低 IHV 驱动程序开发的总体成本。
 
-本文档的重点是在 Windows 和 IHV 驱动程序组件之间指定 Wi-fi 操作的流和行为。 它不涵盖软件接口签名 (例如，设备驱动程序接口模型) 以及有关如何在 Windows 中加载 IHV 组件的详细信息。
+本文档的重点是指定 Windows 和 IHV 驱动程序组件之间 Wi-Fi 操作的流和行为。 它不涵盖软件接口签名 (例如，设备驱动程序接口模型) 以及有关如何在 Windows 中加载 IHV 组件的详细信息。
 
 ## <a name="design-principles"></a>设计原理
 
@@ -33,7 +32,7 @@ WLAN 设备驱动程序接口 (WDI) 是适用于 Windows 10 的 Wi-fi 驱动程�
 以下原则指导了此协议的整体模型和设计。
 
 1.  最大程度地减少主机组件与 IHV 组件/设备之间的流量交互成本。 这对于在本质上很繁琐的总线（如 SDIO）上的实现尤其重要。
-2.  Wi-fi 功能 (特别是必须使用低延迟执行的功能) 应由设备处理。
+2.  Wi-Fi 功能 (特别是必须以低延迟时间执行的功能) 应由设备处理。
 3.  所有规章相关功能都驻留在 IHV 组件中，由 IHV 控制。
 4.  Windows 体验由主机组件和 Windows 操作系统控制。
 5.  Windows 能够恢复挂起的设备。 它的状态足以使 IHV 组件重新编程，并在10秒内恢复。
@@ -50,25 +49,25 @@ WLAN 设备驱动程序接口 (WDI) 是适用于 Windows 10 的 Wi-fi 驱动程�
 <thead>
 <tr class="header">
 <th align="left">术语</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>设备</p></td>
-<td align="left"><p>连接到总线的整个硬件。 设备中可能有多个收音机 (特别是 Wi-fi 和蓝牙) 。</p></td>
+<td align="left"><p>连接到总线的整个硬件。 设备中可能有多个收音机 (特别 Wi-Fi 和蓝牙) 。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Wi-fi 适配器</p></td>
-<td align="left"><p>实现 Wi-fi 功能的设备的特定部分，如本规范中所述。</p></td>
+<td align="left"><p>Wi-Fi 适配器</p></td>
+<td align="left"><p>实现本规范中所述 Wi-Fi 功能的设备的特定部分。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Port</p></td>
+<td align="left"><p>端口</p></td>
 <td align="left"><p>一个对象，该对象表示特定连接的 MAC 和 PHY 状态。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>IHV 组件</p></td>
-<td align="left"><p>IHV 开发的软件组件，它将 Wi-fi 适配器/设备表示到主机。</p></td>
+<td align="left"><p>IHV 开发的软件组件，它表示到主机的 Wi-Fi 适配器/设备。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>主机</p></td>
@@ -76,7 +75,7 @@ WLAN 设备驱动程序接口 (WDI) 是适用于 Windows 10 的 Wi-fi 驱动程�
 </tr>
 <tr class="even">
 <td align="left"><p> (UE) 的上部边缘驱动程序</p></td>
-<td align="left"><p>UE 指的是 WdiWiFi 驱动程序（在本文档中名为 WDI）。 将 (LE) IHV 驱动程序结合到一个完整的 NDIS 微型端口驱动程序中。 UE 实现核心 Wi-fi 逻辑。</p></td>
+<td align="left"><p>UE 指的是 WdiWiFi 驱动程序（在本文档中名为 WDI）。 将 (LE) IHV 驱动程序结合到一个完整的 NDIS 微型端口驱动程序中。 UE 实现核心 Wi-Fi 逻辑。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>下边缘驱动程序 (LE) </p></td>
@@ -88,14 +87,14 @@ WLAN 设备驱动程序接口 (WDI) 是适用于 Windows 10 的 Wi-fi 驱动程�
 </tr>
 <tr class="odd">
 <td align="left"><p>平台级别重置 (PLR) </p></td>
-<td align="left"><p>平台级别重置。 此 reset 方法会影响设备上的所有功能。 在设备上构建多种功能非常受欢迎，可降低成本和占用空间。 例如，蓝牙通常是使用 Wi-fi 在芯片上构建的。 但是，这种重置方法将重置设备上的所有功能单元。</p></td>
+<td align="left"><p>平台级别重置。 此 reset 方法会影响设备上的所有功能。 在设备上构建多种功能非常受欢迎，可降低成本和占用空间。 例如，蓝牙通常是使用芯片 Wi-Fi 构建的。 但是，这种重置方法将重置设备上的所有功能单元。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>重置恢复 (RR) </p></td>
 <td align="left"><p>RR 指重置和恢复事件的顺序。</p>
 <p>对于 FLR，这包括：</p>
 <ul>
-<li>向 NDIS 发出的请求，该请求将请求转发到总线以重置 Wi-fi 函数。</li>
+<li>向 NDIS 发出的请求，该请求将请求转发到总线以重置 Wi-Fi 函数。</li>
 <li>驱动程序恢复固件上下文。</li>
 <li>如果在重置之前已连接到访问点，则重新连接到该访问点。</li>
 </ul>
@@ -104,7 +103,7 @@ WLAN 设备驱动程序接口 (WDI) 是适用于 Windows 10 的 Wi-fi 驱动程�
 <li>向 NDIS 发出请求的请求，该请求将请求转发到总线。 总线与 PnP 交互以意外删除设备。</li>
 <li>重新枚举设备。</li>
 <li>重新建立设备堆栈。</li>
-<li>Wi-fi 重新启动并重新连接。</li>
+<li>Wi-Fi 重新启动并重新连接。</li>
 </ul></td>
 </tr>
 <tr class="odd">
@@ -113,7 +112,7 @@ WLAN 设备驱动程序接口 (WDI) 是适用于 Windows 10 的 Wi-fi 驱动程�
 </tr>
 <tr class="even">
 <td align="left"><p>MAC 地址随机化</p></td>
-<td align="left"><p>为了提高 Windows 10 用户的隐私性，在某些情况下（例如，在连接到特定的 Wi-fi 网络之前，或在特定条件下启动扫描时），会使用配置的 Wi-fi MAC 地址。 这仅适用于工作站端口。 系统确保正确使用随机化，因此重要的连接方案不会中断。 系统通过在发出 scan 或 connect 命令之前发出 <a href="/windows-hardware/drivers/network/oid-wdi-task-dot11-reset" data-raw-source="[OID_WDI_TASK_DOT11_RESET](./oid-wdi-task-dot11-reset.md)">OID_WDI_TASK_DOT11_RESET</a> 命令来管理地址的更改。 Reset 命令参数包含可选的 MAC 地址参数。 如果参数存在，则将 MAC 地址重置为指定的值。 如果它不存在，则将 MAC 地址留给当前值。 配置随机 MAC 地址时，操作系统使用为 IEEE802 地址定义的 "本地管理" 格式。</p></td>
+<td align="left"><p>为了提高 Windows 10 用户的隐私性，在某些情况下将使用配置 Wi-Fi MAC 地址，例如在连接到特定 Wi-Fi 网络之前，或在特定条件下启动扫描。 这仅适用于工作站端口。 系统确保正确使用随机化，因此重要的连接方案不会中断。 系统通过在发出 scan 或 connect 命令之前发出 <a href="/windows-hardware/drivers/network/oid-wdi-task-dot11-reset" data-raw-source="[OID_WDI_TASK_DOT11_RESET](./oid-wdi-task-dot11-reset.md)">OID_WDI_TASK_DOT11_RESET</a> 命令来管理地址的更改。 Reset 命令参数包含可选的 MAC 地址参数。 如果参数存在，则将 MAC 地址重置为指定的值。 如果它不存在，则将 MAC 地址留给当前值。 配置随机 MAC 地址时，操作系统使用为 IEEE802 地址定义的 "本地管理" 格式。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>ECSA</p></td>

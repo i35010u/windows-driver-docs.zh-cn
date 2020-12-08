@@ -1,7 +1,6 @@
 ---
 title: DXGKMT \_ MULTIPLANE \_ 叠加 \_ 立体声 \_ 翻转 \_ 模式枚举
 description: 了解 DXGKMT \_ MULTIPLANE \_ 叠加 \_ 立体声 \_ 翻转 \_ 模式枚举，它是为系统使用而保留的。 不要在您的驱动程序中使用它。
-ms.assetid: 17d77f4f-e1ad-45d6-9cba-1dfcaea2577b
 keywords:
 - DXGKMT_MULTIPLANE_OVERLAY_STEREO_FLIP_MODE 枚举显示设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cbe20f6f09227161738b2ab5c6714167235a81f
-ms.sourcegitcommit: fc94eb0d5a41ef81c1b3ab91ad725386db0be0c2
+ms.openlocfilehash: 39fb13383071f71505fd7557cc20fa7335097c89
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91603641"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808901"
 ---
 # <a name="dxgkmt_multiplane_overlay_stereo_flip_mode-enumeration"></a>DXGKMT \_ MULTIPLANE \_ 叠加 \_ 立体声 \_ 翻转 \_ 模式枚举
 
@@ -31,9 +30,9 @@ ms.locfileid: "91603641"
 
 ```ManagedCPlusPlus
 typedef enum _DXGKMT_MULTIPLANE_OVERLAY_STEREO_FLIP_MODE {
-  DXGKMT_MULTIPLANE_OVERLAY_STEREO_FLIP_NONE    = 0,
-  DXGKMT_MULTIPLANE_OVERLAY_STEREO_FLIP_FRAME0  = 1,
-  DXGKMT_MULTIPLANE_OVERLAY_STEREO_FLIP_FRAME1  = 2
+  DXGKMT_MULTIPLANE_OVERLAY_STEREO_FLIP_NONE    = 0,
+  DXGKMT_MULTIPLANE_OVERLAY_STEREO_FLIP_FRAME0  = 1,
+  DXGKMT_MULTIPLANE_OVERLAY_STEREO_FLIP_FRAME1  = 2
 } DXGKMT_MULTIPLANE_OVERLAY_STEREO_FLIP_MODE;
 ```
 

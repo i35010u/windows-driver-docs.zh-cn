@@ -1,15 +1,14 @@
 ---
 title: 平板扫描仪微型驱动程序示例
 description: 平板扫描仪微型驱动程序示例
-ms.assetid: 8c1ad90a-cff9-45a0-b2d9-e2605436f128
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f87a4e80ceb6be62e781990a80d06286b57a028
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ea99c1f1b58848fe8a39b3cac2082751980c58ff
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378403"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808243"
 ---
 # <a name="flatbed-scanner-minidriver-sample"></a>平板扫描仪微型驱动程序示例
 
@@ -17,19 +16,19 @@ ms.locfileid: "63378403"
 
 
 
-*Wiascanr* Windows DDK 中的目录包含具有文档送纸器平板扫描仪示例 WIA 微型驱动程序。
+Windows DDK 中的 *wiascanr* 目录包含带有文档送纸器的平板扫描仪的示例 WIA 微型驱动程序。
 
-此示例演示如何编写适用于扫描仪 WIA 用户模式下微型驱动程序。 模拟扫描生成的测试模式映像。 此示例驱动程序可作为起始点进行开发，但您的驱动程序应通过提供与 Windows 的内核模式驱动程序之一访问扫描仪硬件。 首选的内核模式驱动程序*usbscan.sys*并*scsiscan.sys*。
+此示例演示如何为扫描仪编写 WIA 用户模式微型驱动程序。 它通过生成测试模式映像来模拟扫描。 此示例驱动程序可用作开发的起点，但驱动程序应通过 Windows 提供的一个内核模式驱动程序来访问扫描程序硬件。 首选的内核模式驱动程序 *usbscan.sys* 和 *scsiscan.sys*。
 
 ### <a name="sample-features"></a>示例功能
 
 -   自动文档送纸器功能
 
-    此示例演示一个示例，用于与自动文档送纸器 (ADF) 平板扫描仪和滚动馈送扫描程序 （送纸器不能确定页面长度）。
+    此示例显示了带有自动文档送纸器的平板扫描仪的示例 (ADF) ，以及一个滚动送入扫描器 (无法确定页面长度) 的送纸器。
 
--   扫描、 复制和传真按钮支持 （仅中断事件）
+-   "扫描"、"复制" 和 "传真" 按钮仅支持 (中断事件) 
 
-    运行小型应用程序， *Scanpanl.exe* （这提供与 Windows DDK） 来模拟按钮按。
+    运行小型应用程序， *Scanpanl.exe* 随 Windows DDK) 提供 (，以模拟按钮按下。
 
  
 

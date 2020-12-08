@@ -1,7 +1,6 @@
 ---
 title: FSCTL_FIND_FILES_BY_SID 控制代码
 description: FSCTL \_ \_ \_ 按 \_ SID 控制代码查找文件在目录中搜索其创建者和所有者 matche 指定 SID 的文件。
-ms.assetid: fe0953d3-a009-431b-b03b-5d827dc732a1
 keywords:
 - FSCTL_FIND_FILES_BY_SID 控制代码可安装的文件系统驱动程序
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ee07ea4edbb81bd330bc77fc0ead4807eb023065
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: ed04511886769941116d5cc5dfd9a0cba9fdfe2c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065594"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808391"
 ---
 # <a name="fsctl_find_files_by_sid-control-code"></a>FSCTL \_ \_ \_ 按 \_ SID 控制代码查找文件
 
@@ -26,13 +25,13 @@ FSCTL \_ \_ \_ 按 \_ SID 控制代码查找文件在目录中搜索其创建者
 
 要执行此操作，微筛选器驱动程序将调用 [**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 与以下参数、文件系统、重定向程序和旧文件系统筛选器驱动程序调用 [**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85)) ，并提供以下参数。
 
-**参数**
+**Parameters**
 
 <a href="" id="fileobject"></a>*FileObject*  
-仅[**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 。 要搜索的目录的文件对象指针。 此参数是必需的，不能为 **NULL**。
+仅 [**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 。 要搜索的目录的文件对象指针。 此参数是必需的，不能为 **NULL**。
 
 <a href="" id="filehandle"></a>*FileHandle*  
-仅[**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85)) 。 要搜索的目录的文件句柄。 此参数是必需的，不能为 **NULL**。
+仅 [**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85)) 。 要搜索的目录的文件句柄。 此参数是必需的，不能为 **NULL**。
 
 <a href="" id="fscontrolcode"></a>*FsControlCode*  
 操作的控制代码。 使用 FSCTL \_ \_ \_ 按 SID 查找 \_ 此操作的文件。
@@ -56,7 +55,7 @@ typedef struct {
 指定创建者和所有者的 [**SID**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_sid) 类型的结构。
 
 <a href="" id="inputbufferlength"></a>*InputBufferLength*  
-*InputBuffer*缓冲区的长度（以字节为单位）。
+*InputBuffer* 缓冲区的长度（以字节为单位）。
 
 <a href="" id="outputbuffer"></a>*OutputBuffer*  
 一个指针， \_ 它指向由 \_ SID \_ 输出结构（接收每个文件的完全限定的路径名称）的、由 " \_ 按 SID 查找" \_ \_ 输出结构的定义如下所示：
@@ -85,14 +84,14 @@ typedef struct _FIND_BY_SID_OUTPUT {
 一个以 null 结尾的字符串，它指定文件名。
 
 <a href="" id="outputbufferlength"></a>*OutputBufferLength*  
-*OutputBuffer*参数指向的缓冲区中返回的数据的大小（以字节为单位）。
+*OutputBuffer* 参数指向的缓冲区中返回的数据的大小（以字节为单位）。
 
 <a name="remarks"></a>备注
 -------
 
 当 [**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 和 [**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85)) 处理 **FSCTL \_ \_ \_ 按 \_ SID 控制代码查找文件** 时，这些例程会检查卷上的每个文件和目录。 如果卷上有多个文件，即使要搜索的目录非常小，此操作的速度可能会很慢。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)

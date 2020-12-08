@@ -1,15 +1,14 @@
 ---
 title: 第三方筛选器驱动程序
-ms.assetid: 2EAFE726-2266-4E40-AC51-0025BF6069B6
 description: " (WDK) 的 Microsoft Windows 驱动程序工具包中的示例筛选器驱动程序。"
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f0396a928381d1a7b2b7c0a40c8ba9a85ab9a51c
-ms.sourcegitcommit: 9145bffd4cc3b990a9ebff43b588db6ef2001f5d
+ms.openlocfilehash: 9d1a58b651284a761785541c813eec76cc73a1d2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89592441"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808859"
 ---
 # <a name="3rd-party-filter-drivers"></a>第三方筛选器驱动程序
 
@@ -22,7 +21,7 @@ ms.locfileid: "89592441"
 
 Kbfiltr 和 Moufiltr 演示了如何筛选 i/o 请求并添加回调例程，用于修改类服务和 I8042prt 操作的操作。
 
-**注意**   适用于 Windows 2000 和更高版本的终端服务器的设计不支持使用示例键盘和鼠标筛选器驱动程序来筛选远程客户端上物理安装的设备的输入。 安装在终端服务器上的筛选器驱动程序只能用于筛选终端服务器上物理安装的设备中的输入。 这是终端服务器 TermDD.sys 驱动程序处理来自远程客户端的输入的方式的结果。
+**注意**   适用于 Windows 2000 和更高版本的终端服务器的设计不支持使用示例键盘和鼠标筛选器驱动程序来筛选远程客户端上物理安装的设备的输入。 安装在终端服务器上的筛选器驱动程序只能用于筛选终端服务器上物理安装的设备中的输入。 这是终端服务器 TermDD.sys 驱动程序处理来自远程客户端的输入的方式的结果。
 
  
 
@@ -104,7 +103,7 @@ I8042prt 支持上层设备筛选器驱动程序可在其 ISR 回调中使用的
 设备的写入端口回拨将写入设备 ISR 的 i8042 端口。
 
 <a href="" id="pi8042-queue-packet"></a>[**PI8042 \_ 队列 \_ 数据包**](/windows-hardware/drivers/ddi/ntdd8042/nc-ntdd8042-pi8042_queue_packet)  
-设备的队列数据包回叫将输入数据包的队列排队，以便由设备的 ISR *DPC*进行处理。
+设备的队列数据包回叫将输入数据包的队列排队，以便由设备的 ISR *DPC* 进行处理。
 
 <a href="" id="pi8042-synch-read-port"></a>[**PI8042 \_ 同步 \_ 读取 \_ 端口**](/windows-hardware/drivers/ddi/ntdd8042/nc-ntdd8042-pi8042_synch_read_port)  
 此回调可用于 [**PI8042 \_ 键盘 \_ 初始化 \_ 例程**](/windows-hardware/drivers/ddi/ntdd8042/nc-ntdd8042-pi8042_keyboard_initialization_routine) 回调。 I8042prt 指定 *ReadPort* 参数中用于 I8042prt 输入到键盘初始化例程的读取端口回调。
@@ -112,7 +111,7 @@ I8042prt 支持上层设备筛选器驱动程序可在其 ISR 回调中使用的
 <a href="" id="pi8042-synch-write-port"></a>[**PI8042 \_ 同步 \_ 写入 \_ 端口**](/windows-hardware/drivers/ddi/ntdd8042/nc-ntdd8042-pi8042_synch_write_port)  
 此回调可用于 [**PI8042 \_ 键盘 \_ 初始化 \_ 例程**](/windows-hardware/drivers/ddi/ntdd8042/nc-ntdd8042-pi8042_keyboard_initialization_routine) 回调。 I8042prt 指定 *WritePort* 参数中用于 I8042prt 输入到键盘初始化例程的写入端口回调。
 
-I8042prt 将指针传递到在 I8042prt 用于通过[**IOCTL \_ 内部 \_ I8042 \_ 挂钩 \_ 键盘**](/windows-hardware/drivers/ddi/ntdd8042/ni-ntdd8042-ioctl_internal_i8042_hook_keyboard)请求输入信息的[**内部 \_ I8042 \_ 挂钩 \_ 键盘**](/windows-hardware/drivers/ddi/ntdd8042/ns-ntdd8042-_internal_i8042_hook_keyboard)结构中的键盘设备回调。
+I8042prt 将指针传递到在 I8042prt 用于通过 [**IOCTL \_ 内部 \_ I8042 \_ 挂钩 \_ 键盘**](/windows-hardware/drivers/ddi/ntdd8042/ni-ntdd8042-ioctl_internal_i8042_hook_keyboard)请求输入信息的 [**内部 \_ I8042 \_ 挂钩 \_ 键盘**](/windows-hardware/drivers/ddi/ntdd8042/ns-ntdd8042-_internal_i8042_hook_keyboard)结构中的键盘设备回调。
 
 I8042prt 在 [**内部 \_ I8042 \_ 挂钩 \_ 鼠标**](/windows-hardware/drivers/ddi/ntdd8042/ns-ntdd8042-_internal_i8042_hook_mouse) 结构中传递指向鼠标设备回调的指针，I8042prt 使用该指针通过 [**IOCTL \_ 内部 \_ I8042 \_ 挂钩 \_ 键盘**](/windows-hardware/drivers/ddi/ntdd8042/ni-ntdd8042-ioctl_internal_i8042_hook_keyboard) 请求输入信息。
 

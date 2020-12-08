@@ -1,7 +1,6 @@
 ---
 title: DirectX 视频加速 2.0
 description: DirectX 视频加速 2.0
-ms.assetid: b13b5e3d-fb30-4503-ad3a-5a56411ace85
 keywords:
 - 用户模式显示驱动程序 WDK Windows Vista，DirectX 视频加速
 - DirectX 视频加速 WDK 显示，版本2
@@ -10,16 +9,16 @@ keywords:
 - DirectX 视频加速 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e9c1e9f8834b42477e056b27e301dabb751a786
-ms.sourcegitcommit: df50dc10210c124f2c7fb173d6e4fb796f56e5bd
+ms.openlocfilehash: 9af1bd3e7294faefd0bad23ef87d52506befcbdc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86949689"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809317"
 ---
 # <a name="directx-video-acceleration-20"></a>DirectX 视频加速 2.0
 
-以下主题讨论 Microsoft DirectX 视频加速（VA）版本2.0：
+以下主题讨论 Microsoft DirectX 视频加速 (VA) 版本2.0：
 
 [DirectX VA 2.0 的视频解码加速](video-decode-acceleration-for-directx-va-2-0.md)
 
@@ -29,7 +28,7 @@ ms.locfileid: "86949689"
 
 ## <a name="directx-video-acceleration-20-structures-and-enumerations"></a>DirectX 视频加速2.0 结构和枚举
 
-DirectX 视频加速（VA）2.0 用户模式显示驱动程序函数使用以下结构和枚举类型。
+DirectX 视频加速 (VA) 2.0 用户模式显示驱动程序函数使用以下结构和枚举类型。
 
 * DXVADDI_AYUVSAMPLE16
 * DXVADDI_AYUVSAMPLE8

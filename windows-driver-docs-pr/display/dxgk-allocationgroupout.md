@@ -1,7 +1,6 @@
 ---
-title: '\_DXGK\_ALLOCATIONGROUPOUT 结构'
-description: DXGK\_ALLOCATIONGROUPOUT 结构保留供系统使用。 不要使用它在您的驱动程序中。
-ms.assetid: 4aafe036-09a5-4e2d-a2ea-b81d0ba05ec1
+title: '\_DXGK \_ ALLOCATIONGROUPOUT 结构'
+description: DXGK \_ ALLOCATIONGROUPOUT 结构保留供系统使用。 不要在您的驱动程序中使用它。
 keywords:
 - _DXGK_ALLOCATIONGROUPOUT 结构显示设备
 - DXGK_ALLOCATIONGROUPOUT 结构显示设备
@@ -15,24 +14,24 @@ api_type:
 - HeaderDef
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: fcad8a968f450ff2ee47812606936f15529e7db5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9a5006f6dd3b01683eb52f308a2b50b23bbadd78
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389993"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809065"
 ---
-# <a name="dxgkallocationgroupout-structure"></a>\_DXGK\_ALLOCATIONGROUPOUT 结构
+# <a name="_dxgk_allocationgroupout-structure"></a>\_DXGK \_ ALLOCATIONGROUPOUT 结构
 
 
-DXGK\_ALLOCATIONGROUPOUT 结构保留供系统使用。 不要使用它在您的驱动程序中。
+DXGK \_ ALLOCATIONGROUPOUT 结构保留供系统使用。 不要在您的驱动程序中使用它。
 
 <a name="syntax"></a>语法
 ------
 
 ```ManagedCPlusPlus
 typedef struct _DXGK_ALLOCATIONGROUPOUT {
-  UINT                           NbAllocationGroup;
+  UINT                           NbAllocationGroup;
   DXGK_ALLOCATIONGROUPDESCRIPTOR *pAllocationGroupDescriptor;
 } DXGK_ALLOCATIONGROUPOUT;
 ```
@@ -40,9 +39,9 @@ typedef struct _DXGK_ALLOCATIONGROUPOUT {
 <a name="members"></a>成员
 -------
 
-**NbAllocationGroup**保留供系统使用。
+**NbAllocationGroup** 保留供系统使用。
 
-**pAllocationGroupDescriptor**保留供系统使用。
+**pAllocationGroupDescriptor** 保留供系统使用。
 
 <a name="requirements"></a>要求
 ------------
@@ -54,12 +53,12 @@ typedef struct _DXGK_ALLOCATIONGROUPOUT {
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Version</p></td>
-<td align="left"><p>在 Windows 7 和更高版本的 Windows 操作系统中可用。</p></td>
+<td align="left"><p>版本</p></td>
+<td align="left"><p>在 windows 7 和更高版本的 Windows 操作系统中可用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">D3dkmddi.h （包括 D3dkmddi.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">D3dkmddi (包含 D3dkmddi) </td>
 </tr>
 </tbody>
 </table>

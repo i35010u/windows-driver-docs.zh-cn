@@ -1,18 +1,17 @@
 ---
 title: 显示驱动程序初始化
 description: 显示驱动程序初始化
-ms.assetid: a4cc7780-b6fb-486a-b54b-96c90d4fe1f5
 keywords:
 - 显示驱动程序 WDK Windows 2000，初始化
 - 初始化显示驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e8910304758ebcd4f5bbbd1c24b5abc6343c152
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: 482ecbdd24089591728cd48ffb36c163c79411c2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361581"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809281"
 ---
 # <a name="display-driver-initialization"></a>显示驱动程序初始化
 
@@ -24,7 +23,7 @@ ms.locfileid: "94361581"
 
 ![显示驱动程序初始化说明的示意图](images/202-01.png)
 
-1. 在调用 GDI 以便为视频硬件创建第一个设备上下文 ( *DC* ) 时，gdi 将调用显示驱动程序函数 [**DrvEnableDriver**](/windows/win32/api/winddi/nf-winddi-drvenabledriver)。 返回时， **DrvEnableDriver** 提供了一个 [**DRVENABLEDATA**](/windows/win32/api/winddi/ns-winddi-drvenabledata) 结构的 GDI，该结构保存驱动程序的图形 ddi 版本号和驱动 (程序实现的所有可调用图形 ddi 函数的入口点，而不是 **DrvEnableDriver** ) 。
+1. 在调用 GDI 以便为视频硬件创建第一个设备上下文 (*DC*) 时，gdi 将调用显示驱动程序函数 [**DrvEnableDriver**](/windows/win32/api/winddi/nf-winddi-drvenabledriver)。 返回时， **DrvEnableDriver** 提供了一个 [**DRVENABLEDATA**](/windows/win32/api/winddi/ns-winddi-drvenabledata) 结构的 GDI，该结构保存驱动程序的图形 ddi 版本号和驱动 (程序实现的所有可调用图形 ddi 函数的入口点，而不是 **DrvEnableDriver**) 。
 
 2. 然后，GDI 将调用驱动程序的 [**DrvEnablePDEV**](/windows/win32/api/winddi/nf-winddi-drvenablepdev) 函数来请求驱动程序的物理设备特征的说明。 在调用中，GDI 会传入 [**DEVMODEW**](/windows/win32/api/wingdi/ns-wingdi-devmodew) 结构，该结构标识 gdi 要设置的模式。 如果 GDI 请求显示或基础微型端口驱动程序不支持的模式，则显示驱动程序必须无法通过此调用。
 

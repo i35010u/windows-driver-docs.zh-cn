@@ -1,7 +1,6 @@
 ---
 title: IEEE 1394 硬件仿真驱动程序
 description: IEEE 1394 硬件仿真驱动程序
-ms.assetid: 44141072-e425-4983-9234-3ad79daa2017
 keywords:
 - IEEE 1394 WDK 总线，仿真驱动程序
 - 1394 WDK 总线，仿真驱动程序
@@ -11,12 +10,12 @@ keywords:
 - virtual PDOs WDK IEEE 1394 总线
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b80fe11277e66071e2f5483d11b2480ef6cc958
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 173e7c0bf73f5ce0c33d987e42a70d573df0375a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382219"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808825"
 ---
 # <a name="ieee-1394-hardware-emulation-drivers"></a>IEEE 1394 硬件仿真驱动程序
 

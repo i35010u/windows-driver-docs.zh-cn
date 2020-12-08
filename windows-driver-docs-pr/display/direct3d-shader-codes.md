@@ -1,15 +1,14 @@
 ---
 title: Direct3D 着色器代码
 description: Direct3D 着色器代码
-ms.assetid: 30d14bbe-10fe-46fc-99b3-ab2f989abb29
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ecd00c84dc74236f46e414fa4b44023854e3daa
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: ce435a920fb0c2e70aa660e57e6ae9fb6066537f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065910"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809457"
 ---
 # <a name="direct3d-shader-codes"></a>Direct3D 着色器代码
 

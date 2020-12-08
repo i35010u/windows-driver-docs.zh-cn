@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_ANQP_QUERY_STATUS
 description: WDI_TLV_ANQP_QUERY_STATUS 是未使用的 TLV。
-ms.assetid: C1843AC2-C12E-4F11-B36C-66D75CAA12CD
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_ANQP_QUERY_STATUS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b8a32f742829b721454f70127d35741cf202565
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 04a816a2f56946946710f276eff84fc0e1f8ef9d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383169"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807987"
 ---
-# <a name="wditlvanqpquerystatus"></a>WDI\_TLV\_ANQP\_查询\_状态
+# <a name="wdi_tlv_anqp_query_status"></a>WDI \_ TLV \_ ANQP \_ 查询 \_ 状态
 
 
-WDI\_TLV\_ANQP\_查询\_状态是未使用的 TLV。
+WDI \_ tlv \_ ANQP \_ 查询 \_ 状态为未使用的 tlv。
 
 <a name="requirements"></a>要求
 ------------
@@ -33,10 +32,10 @@ WDI\_TLV\_ANQP\_查询\_状态是未使用的 TLV。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

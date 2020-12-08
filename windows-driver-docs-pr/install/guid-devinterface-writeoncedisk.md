@@ -1,7 +1,6 @@
 ---
 title: GUID_DEVINTERFACE_WRITEONCEDISK
 description: GUID_DEVINTERFACE_WRITEONCEDISK
-ms.assetid: 8b1660e1-0868-40aa-ba47-dfcb6cf58aaf
 keywords:
 - GUID_DEVINTERFACE_WRITEONCEDISK 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 4fd75f590ca933d8df9c9f30150163ec4b7f4e71
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 3e32155bfed90d14aec4fd3b252d8da1dd1cd09f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096869"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808163"
 ---
 # <a name="guid_devinterface_writeoncedisk"></a>GUID_DEVINTERFACE_WRITEONCEDISK
 
@@ -78,7 +77,7 @@ ms.locfileid: "89096869"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**WriteOnceDiskClassGuid**](writeoncediskclassguid.md)

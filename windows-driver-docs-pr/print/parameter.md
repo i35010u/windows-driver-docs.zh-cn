@@ -1,7 +1,6 @@
 ---
 title: 参数元素
 description: 可选的 parameter 元素指定一个文本字符串，该字符串将替换为事件通知消息文本中 ( ) 字符的百分比。
-ms.assetid: 6a43af7d-da00-4038-b1a8-a076d07c4c1a
 keywords:
 - 参数元素打印设备
 topic_type:
@@ -12,18 +11,18 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0666b7fd0275bf56ce100d9fef029d2233d3aa2e
-ms.sourcegitcommit: b3e38d06762246c77cedd8e82d740ebea104c538
+ms.openlocfilehash: ad5b9be6607fc269432762921a5e046ad37cd15f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91662377"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807633"
 ---
 # <a name="parameter-element"></a>参数元素
 
 可选的 **parameter** 元素指定一个文本字符串，该字符串用来替换事件通知消息文本中 (% ) 字符的百分比。
 
-**Parameter**元素在*asyncui*命名空间中的此 URI 上定义：
+**Parameter** 元素在 *asyncui* 命名空间中的此 URI 上定义：
 
 ```xml
 https://schemas.microsoft.com/2003/print/asyncui/v1/request
@@ -53,8 +52,8 @@ https://schemas.microsoft.com/2003/print/asyncui/v1/request
 <tr class="header">
 <th>属性</th>
 <th>类型</th>
-<th>必需</th>
-<th>说明</th>
+<th>必须</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -96,7 +95,7 @@ https://schemas.microsoft.com/2003/print/asyncui/v1/request
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -106,7 +105,7 @@ https://schemas.microsoft.com/2003/print/asyncui/v1/request
 <p>一个必需的元素，它提供在事件通知消息中显示的文本。 此文本应提供有关打印机事件的用户特定详细信息。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="title.md" data-raw-source="[&lt;strong&gt;title&lt;/strong&gt;](title.md)"><strong>词首</strong></a></p></td>
+<td><p><a href="title.md" data-raw-source="[&lt;strong&gt;title&lt;/strong&gt;](title.md)"><strong>title</strong></a></p></td>
 <td><p></p>
 <p>Required title 元素提供在事件通知消息标题中显示的文本。</p></td>
 </tr>

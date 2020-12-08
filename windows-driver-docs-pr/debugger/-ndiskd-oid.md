@@ -1,7 +1,6 @@
 ---
 title: ndiskd
 description: Ndiskd 扩展显示有关 NDIS OID 请求的信息。
-ms.assetid: FCDE2F78-98C0-4437-999A-4566FEB5D7BB
 keywords:
 - ndiskd Windows 调试
 ms.date: 06/26/2020
@@ -12,16 +11,16 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 230c0cf5623f1ae6f8c2778c269f15980977ccf3
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 609ce942c0e87374aa6d47e896caf4e8de0055d1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211259"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808529"
 ---
 # <a name="ndiskdoid"></a>!ndiskd.oid
 
-**！ Ndiskd**扩展显示有关 NDIS oid 请求的信息。 如果运行不带参数的此扩展，！ ndiskd 将显示所有微型端口和筛选器上所有挂起的 OID 请求的列表。 每个微型端口或筛选器最多有一个挂起的 OID 请求和任意数量的排队 OID 请求。
+**！ Ndiskd** 扩展显示有关 NDIS oid 请求的信息。 如果运行不带参数的此扩展，！ ndiskd 将显示所有微型端口和筛选器上所有挂起的 OID 请求的列表。 每个微型端口或筛选器最多有一个挂起的 OID 请求和任意数量的排队 OID 请求。
 
 请注意，筛选器通常会克隆 OID 请求并将克隆向下传递。 这意味着，即使某个协议发出单个 OID 请求，也可能存在多个克隆请求的实例：每个筛选器中有一个，另一个在小型端口中。 **！ ndiskd** 将单独显示每个克隆，因此你可能会看到比实际发出的协议更多的挂起 oid。
 
@@ -119,7 +118,7 @@ ALL PENDING OIDs
 
 在此示例中，OID 搁置是 [oid \_ 生成 \_ 统计信息](../network/oid-gen-statistics.md)。 查看！ ndiskd 的结果时，请记住，筛选克隆 OID 请求并沿堆栈向下传递这些请求，Oid 通常会从筛选器传递到筛选器以筛选到小型端口。 因此，虽然在此示例中可能有三个具有相同名称的单独 OID 请求，但实际上有一个逻辑操作发生在物理上跨3个 Oid 和3个驱动程序。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [网络驱动程序设计指南](../network/index.md)
 
@@ -127,7 +126,7 @@ ALL PENDING OIDs
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展 ( # A0) **](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 ( # A0)**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 

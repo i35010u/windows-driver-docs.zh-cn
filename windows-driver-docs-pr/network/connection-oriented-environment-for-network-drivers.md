@@ -1,21 +1,20 @@
 ---
 title: 网络驱动程序的面向连接的环境
 description: 网络驱动程序的面向连接的环境
-ms.assetid: 71c7961c-3db6-4ef8-aa77-93a629219de0
 keywords:
 - 面向连接的环境 WDK 网络
 - 面向连接的驱动程序 WDK 网络
-- 调用管理器 WDK 网络、 面向连接的环境
-- 微型端口调用管理器 WDK 网络、 面向连接的环境
-- MCMs WDK 网络、 面向连接的环境
+- 呼叫经理 WDK 网络，面向连接的环境
+- 微型端口呼叫管理器 WDK 网络，面向连接的环境
+- MCMs WDK 网络，面向连接的环境
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ee0d4ae466769123b4bc2f5ef1896ab3b69375e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e1f2523c8ad90deabab079eb42356af6cb1abb88
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357457"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808063"
 ---
 # <a name="connection-oriented-environment-for-network-drivers"></a>网络驱动程序的面向连接的环境
 
@@ -23,9 +22,9 @@ ms.locfileid: "63357457"
 
 
 
-面向连接的驱动程序支持的[Connection-Oriented NDIS (CoNDIS)](connection-oriented-ndis.md)接口。
+面向连接的 [NDIS (CoNDIS) ](connection-oriented-ndis.md) 接口支持面向连接的驱动程序。
 
-有关的 CoNDIS 体系结构的详细信息，请参阅[Connection-Oriented 环境](connection-oriented-environment.md)
+有关 CoNDIS 体系结构的详细信息，请参阅 [面向连接的环境](connection-oriented-environment.md)
 
  
 

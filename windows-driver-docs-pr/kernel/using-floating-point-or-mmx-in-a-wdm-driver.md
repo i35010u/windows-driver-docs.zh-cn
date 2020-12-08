@@ -1,7 +1,6 @@
 ---
 title: 在 WDM 驱动程序中使用浮点数
 description: 使用浮点运算时，适用于 Windows 的内核模式 WDM 驱动程序必须遵循特定的准则。 它们在 x86 和 x64 系统之间存在差异。 默认情况下，Windows 会关闭这两个系统的算术异常。
-ms.assetid: 73414084-4054-466a-b64c-5c81b224be92
 keywords:
 - 浮点 WDK 内核
 - 浮点单元
@@ -12,12 +11,12 @@ keywords:
 - MMX WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a9d56adc937b17fe1cceac2d6aa3fcc8a4d1941
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: b13acfcda14c845d054c61a15bd730c9650cf461
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184973"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808677"
 ---
 # <a name="using-floating-point-in-a-wdm-driver"></a>在 WDM 驱动程序中使用浮点数
 

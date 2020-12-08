@@ -1,7 +1,6 @@
 ---
 title: ndiskd.nwadapter
 description: Ndiskd. nwadapter 扩展显示有关一个或多个 nwifi 改编结构的信息。 如果运行不带任何参数的此扩展，ndiskd 将显示所有 nwifi 改编结构的列表。
-ms.assetid: 6CDB8F35-B686-45FD-A940-A770D4D62E51
 keywords:
 - ndiskd nwadapter Windows 调试
 ms.date: 05/23/2017
@@ -12,16 +11,16 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9af3c888d23c71cda5cded562a23f2318bc4d938
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 5bf90e2336bfdcfc46019aa61c7d43951923a616
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211261"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808553"
 ---
 # <a name="ndiskdnwadapter"></a>!ndiskd.nwadapter
 
-**！ Ndiskd nwadapter**扩展显示有关一个或多个 nwifi 的信息！调整结构。 如果运行不带参数的扩展，！ ndiskd 将显示所有 nwifi 的列表！调整结构。
+**！ Ndiskd nwadapter** 扩展显示有关一个或多个 nwifi 的信息！调整结构。 如果运行不带参数的扩展，！ ndiskd 将显示所有 nwifi 的列表！调整结构。
 
 ```console
 !ndiskd.nwadapter [-handle <x>]
@@ -44,6 +43,6 @@ Ndiskd.dll
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展 ( # A0) **](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 ( # A0)**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)

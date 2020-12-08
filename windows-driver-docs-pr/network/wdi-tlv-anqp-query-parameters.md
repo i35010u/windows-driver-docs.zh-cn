@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_ANQP_QUERY_PARAMETERS
 description: WDI_TLV_ANQP_QUERY_PARAMETERS 是未使用的 TLV。
-ms.assetid: 9A6C4033-ABE7-439D-B745-0E1E413D9318
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_ANQP_QUERY_PARAMETERS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 2cea52a06388023e638c64acbb31f85017249f7a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8f02b1c2915b8557c315bcc164f1d96a74d3a98b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383165"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807985"
 ---
-# <a name="wditlvanqpqueryparameters"></a>WDI\_TLV\_ANQP\_QUERY\_PARAMETERS
+# <a name="wdi_tlv_anqp_query_parameters"></a>WDI \_ TLV \_ ANQP \_ 查询 \_ 参数
 
 
-WDI\_TLV\_ANQP\_查询\_参数是未使用的 TLV。
+WDI \_ tlv \_ ANQP \_ 查询 \_ 参数是未使用的 tlv。
 
 <a name="requirements"></a>要求
 ------------
@@ -33,10 +32,10 @@ WDI\_TLV\_ANQP\_查询\_参数是未使用的 TLV。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

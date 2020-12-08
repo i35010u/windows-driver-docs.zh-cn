@@ -1,20 +1,19 @@
 ---
 title: 必需的 Direct3D 9 功能
-ms.assetid: AE8ED273-2329-4E53-9FCD-5A8E863AED83
 description: 用户模式驱动程序访问 Direct3D 9 功能所需的功能。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e2763c79c2274658f469ecc3bcc9286187fdb8fb
-ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
+ms.openlocfilehash: 2ecea65341363536543cdbbe20f7902a68010ec0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91423900"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808867"
 ---
 # <a name="required-direct3d-9-capabilities"></a>必需的 Direct3D 9 功能
 
 
-若要使应用程序完全访问 Microsoft Direct3D 版本 9 \_ 1、9 \_ 2 和 9 3 的功能 \_ ，用户模式驱动程序必须公开某些硬件功能。 这些功能用用户模式驱动程序的[*GetCaps*](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_getcaps)函数返回的[**D3DCAPS9**](/windows/win32/api/d3d9caps/ns-d3d9caps-d3dcaps9)结构来表示。 若要指示对功能的支持，驱动程序必须将 **D3DCAPS9** 的这些成员设置为所有各自标志值的按位或。
+若要使应用程序完全访问 Microsoft Direct3D 版本 9 \_ 1、9 \_ 2 和 9 3 的功能 \_ ，用户模式驱动程序必须公开某些硬件功能。 这些功能用用户模式驱动程序的 [*GetCaps*](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_getcaps)函数返回的 [**D3DCAPS9**](/windows/win32/api/d3d9caps/ns-d3d9caps-d3dcaps9)结构来表示。 若要指示对功能的支持，驱动程序必须将 **D3DCAPS9** 的这些成员设置为所有各自标志值的按位或。
 
 ## <a name="span-idminimum_capabilities_for_direct3d_level_9_1spanspan-idminimum_capabilities_for_direct3d_level_9_1spanspan-idminimum_capabilities_for_direct3d_level_9_1spanminimum-capabilities-for-direct3d-level-9_1"></a><span id="Minimum_capabilities_for_Direct3D_level_9_1"></span><span id="minimum_capabilities_for_direct3d_level_9_1"></span><span id="MINIMUM_CAPABILITIES_FOR_DIRECT3D_LEVEL_9_1"></span>Direct3D level 9 1 的最小功能 \_
 
@@ -249,7 +248,7 @@ ms.locfileid: "91423900"
  
 
 **注意**  此要求也适用：
--   当驱动程序响应 *z*测试查询时，其中 [**D3DDDIARG \_ servicecontext.createquery**](/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddiarg_createquery)。**QueryType** 是 D3DDDIQUERYTYPE \_ 封闭，在响应时，必须始终将查询的 **UINT** 值设置为非零值。 请参阅 [*servicecontext.createquery*](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_createquery) 和 **D3DDDIARG \_ servicecontext.createquery**。
+-   当驱动程序响应 *z* 测试查询时，其中 [**D3DDDIARG \_ servicecontext.createquery**](/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddiarg_createquery)。**QueryType** 是 D3DDDIQUERYTYPE \_ 封闭，在响应时，必须始终将查询的 **UINT** 值设置为非零值。 请参阅 [*servicecontext.createquery*](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_createquery) 和 **D3DDDIARG \_ servicecontext.createquery**。
 
  
 

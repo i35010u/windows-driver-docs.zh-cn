@@ -1,15 +1,14 @@
 ---
 title: 图像处理
 description: 图像处理
-ms.assetid: 84e10fcc-3998-434c-922a-65b42dccbdaf
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c2e7a95b973a97bc44c3149209188e4d25216072
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 80761caf2d529d97e5ce230a73447c42dc146865
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335444"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808209"
 ---
 # <a name="image-processing"></a>图像处理
 
@@ -17,19 +16,19 @@ ms.locfileid: "63335444"
 
 
 
-某些微型驱动程序中特定的扫描程序微型驱动程序，需要图像处理层。 此层是从静态图像设备获取的数据需要一些操作，然后再传递到应用程序，才必需的。
+某些微型驱动程序（特定于 scanner 微型驱动程序）需要图像处理层。 仅当从静止图像设备获取的数据需要在将其传递到应用程序之前进行某种操作时，此层才是必需的。
 
-如果从设备获取的原始数据需要不做进一步处理，可以省略图像处理层。
+如果从设备获取的原始数据需要进一步处理，则可以省略图像处理层。
 
-如果任何图像操作是必需的 Microsoft 建议使用 GDI + 中 WIA 微型驱动程序。
+如果需要任何图像操作，Microsoft 建议在 WIA 微型驱动程序中使用 GDI +。
 
-### <a name="using-gdi-in-a-wia-driver"></a>使用 GDI + 中 WIA 驱动程序
+### <a name="using-gdi-in-a-wia-driver"></a>在 WIA 驱动程序中使用 GDI +
 
-GDI + 是一个库，提供二维图像操作例程。 库提供了用于修改图像特性以及旋转和调整大小的机制。
+GDI + 是提供二维图像操作例程的库。 库提供了修改图像属性以及旋转和调整大小的机制。
 
-若要使用 GDI + 中 WIA 微型驱动程序，请确保 GDI + 正确初始化。 GDI + WIA 微型驱动程序将创建并加载时可以进行初始化。 此外，请确保 WIA 驱动程序，包括*Gdiplus.h*以及指向*Gdiplus.lib*库。
+若要在 WIA 微型驱动程序中使用 GDI +，请确保已正确初始化 GDI +。 当创建并加载 WIA 微型驱动程序时，可以初始化 GDI +。 此外，请确保 WIA 驱动程序包含 *Gdiplus* 和 *Gdiplus* 库的链接。
 
-关于 GDI + 的详细信息，请参阅 Microsoft Windows SDK 文档。
+有关 GDI + 的详细信息，请参阅 Microsoft Windows SDK 文档。
 
  
 

@@ -1,20 +1,19 @@
 ---
 title: 即插即用总线枚举器
 description: 即插即用总线枚举器
-ms.assetid: 6cfab5a2-7d5c-42c2-86d7-5585e5853a1f
 keywords:
 - 即插即用总线枚举 WDK 打印
 - 总线枚举 WDK 打印
 - 枚举 WDK 打印
-- WDK，插的打印机端口
+- 端口 WDK，打印机即插即用
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b85b3d090146cb54bf6295e8fc190550decb439
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 609af1dc2add93b90b3955d10a391f757cd34835
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361735"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807579"
 ---
 # <a name="plug-and-play-bus-enumerators"></a>即插即用总线枚举器
 
@@ -22,13 +21,13 @@ ms.locfileid: "63361735"
 
 
 
-以下各节提供有关插总线枚举信息在每个以下类型的端口上：
+以下各节提供了有关以下每种类型的端口的即插即用总线枚举的信息：
 
-[打印机连接到 LPT 端口](printer-connected-to-an-lpt-port.md)
+[连接到 LPT 端口的打印机](printer-connected-to-an-lpt-port.md)
 
-[打印机连接到 USB 端口](printer-connected-to-a-usb-port.md)
+[连接到 USB 端口的打印机](printer-connected-to-a-usb-port.md)
 
-[红外端口上连接的打印机](printer-connected-to-an-infrared-port.md)
+[连接到红外端口的打印机](printer-connected-to-an-infrared-port.md)
 
  
 

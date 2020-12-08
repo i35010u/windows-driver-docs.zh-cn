@@ -1,7 +1,6 @@
 ---
 title: GetJobElementsResponse 元素
 description: 必需的 GetJobElementsResponse 元素返回客户端请求的与作业相关的信息。
-ms.assetid: b27c1aba-eb5f-4446-ab34-c03a969e954f
 keywords:
 - GetJobElementsResponse 元素图像设备
 topic_type:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2db1cd742c000d209ad6f82f86d389970e01d44a
-ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
+ms.openlocfilehash: 837d1c9c4bc6dad6b96eec0d4bcbe605d3c3fea8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75652975"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808807"
 ---
 # <a name="getjobelementsresponse-element"></a>GetJobElementsResponse 元素
 
 
-必需的**GetJobElementsResponse**元素返回客户端请求的与作业相关的信息。
+必需的 **GetJobElementsResponse** 元素返回客户端请求的与作业相关的信息。
 
-<a name="usage"></a>Usage
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -33,7 +32,7 @@ ms.locfileid: "75652975"
 </wscn:GetJobElementsResponse>
 ```
 
-<a name="attributes"></a>属性
+<a name="attributes"></a>特性
 ----------
 
 没有特性。
@@ -65,9 +64,9 @@ ms.locfileid: "75652975"
 <a name="remarks"></a>备注
 -------
 
-WSD 扫描服务必须支持**GetJobElementsResponse**操作。
+WSD 扫描服务必须支持 **GetJobElementsResponse** 操作。
 
-客户端调用**GetJobElementsRequest**来确定[**JobId**](jobid.md)标识的作业的与作业相关的元素的值。 WSD 扫描服务必须通过包含所需信息的**GetJobElementsResponse**元素来做出响应。 扫描服务返回的信息必须完全符合与扫描作业相关的架构部分。
+客户端调用 **GetJobElementsRequest** 来确定 [**JobId**](jobid.md) 标识的作业的与作业相关的元素的值。 WSD 扫描服务必须通过包含所需信息的 **GetJobElementsResponse** 元素来做出响应。 扫描服务返回的信息必须完全符合与扫描作业相关的架构部分。
 
 <a name="examples"></a>示例
 --------
@@ -112,7 +111,7 @@ WSD 扫描服务必须支持**GetJobElementsResponse**操作。
 </soap:Envelope>
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**GetJobElementsRequest**](getjobelementsrequest.md)

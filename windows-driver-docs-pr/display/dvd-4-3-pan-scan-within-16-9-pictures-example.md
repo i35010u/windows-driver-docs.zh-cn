@@ -1,7 +1,6 @@
 ---
-title: 4 3 16 9 图片示例中的 DVD 平移扫描
-description: 4 3 16 9 图片示例中的 DVD 平移扫描
-ms.assetid: f00489e7-809d-4a5b-87c8-b2421bd6ca93
+title: 16 9 图片示例中的 DVD 4 3 Pan-Scan
+description: 16 9 图片示例中的 DVD 4 3 Pan-Scan
 keywords:
 - alpha-blend 组合 WDK DirectX VA，DVD 4 3 平移扫描示例
 - 混合图片 WDK DirectX VA，DVD 4 3 平移扫描示例
@@ -9,12 +8,12 @@ keywords:
 - 4 3 平移扫描示例 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b26620975f0b0177a9ac74761fa1dc0848fa0945
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: a7efb1cf431e9d71a8573551fd718a7defeb83bc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064824"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809109"
 ---
 # <a name="dvd-43-pan-scan-within-169-pictures-example"></a>16:9 画面中的 DVD 4:3 平移扫描示例
 
@@ -32,7 +31,7 @@ ms.locfileid: "89064824"
 <thead>
 <tr class="header">
 <th align="left">MPEG-2 变量</th>
-<th align="left">值</th>
+<th align="left">“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -66,7 +65,7 @@ ms.locfileid: "89064824"
 
  
 
-然后，在这种情况下，可以直接应用 [Mpeg-2 平移扫描示例](mpeg-2-pan-scan-example.md) 中所述的表述。
+在这种情况下，可以直接应用 [mpeg-2 Pan-Scan 示例](mpeg-2-pan-scan-example.md) 中所述的表述。
 
  
 

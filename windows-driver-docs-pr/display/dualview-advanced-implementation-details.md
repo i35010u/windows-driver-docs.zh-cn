@@ -1,7 +1,6 @@
 ---
 title: DualView 高级实施详细信息
 description: DualView 高级实施详细信息
-ms.assetid: 07fb7640-d723-4dc0-9403-9f70a75518f1
 keywords:
 - 双屏显示 WDK 视频微型端口
 - SingleView WDK 视频微型端口
@@ -11,12 +10,12 @@ keywords:
 - 内存 WDK 双屏
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 302e24b26230b26f7f0d403312b085b215231768
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 9a3e78d0305f72abd165411a59f75fd54fca30cd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064848"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809125"
 ---
 # <a name="dualview-advanced-implementation-details"></a>DualView 高级实施详细信息
 
@@ -50,7 +49,7 @@ ms.locfileid: "89064848"
 
 ![说明 singleview 模式的关系图](images/childfig1.png)
 
-但在双屏模式下，每个子对象都可以分配给不同的视图;问题在于哪个视图与哪个子级关联。 可以通过两种方式描述视图与设备之间的关系：在 *物理子关系* 和 *逻辑子关系*方面。
+但在双屏模式下，每个子对象都可以分配给不同的视图;问题在于哪个视图与哪个子级关联。 可以通过两种方式描述视图与设备之间的关系：在 *物理子关系* 和 *逻辑子关系* 方面。
 
 *物理子关系* 反映了适配器的视频芯片及其显示设备之间的关系。 系统启动后，视频芯片与显示设备之间的物理关系永远不会改变。 在上图和下图中，视频芯片拥有 LCD、CRT 和电视显示设备;因此，所有三个显示设备都是视频芯片的物理子级。
 

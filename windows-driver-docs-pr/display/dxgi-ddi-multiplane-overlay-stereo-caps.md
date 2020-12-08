@@ -1,7 +1,6 @@
 ---
 title: DXGI \_ DDI \_ MULTIPLANE \_ 叠加 \_ 立体声 \_ cap 枚举
 description: 了解 DXGI \_ DDI \_ MULTIPLANE \_ 叠加 \_ 立体声 \_ cap 枚举，它保留供系统使用。 不要在您的驱动程序中使用它。
-ms.assetid: 28017595-06d5-48ff-91d7-0e084d1e92de
 keywords:
 - DXGI_DDI_MULTIPLANE_OVERLAY_STEREO_CAPS 枚举显示设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 481f6174840f868e4e7e1705ad40fa16603ce029
-ms.sourcegitcommit: fc94eb0d5a41ef81c1b3ab91ad725386db0be0c2
+ms.openlocfilehash: f60d71197c1c229b8f1ffe355a73866deb9831a5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91603673"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809079"
 ---
 # <a name="dxgi_ddi_multiplane_overlay_stereo_caps-enumeration"></a>DXGI \_ DDI \_ MULTIPLANE \_ 叠加 \_ 立体声 \_ cap 枚举
 
@@ -31,11 +30,11 @@ ms.locfileid: "91603673"
 
 ```ManagedCPlusPlus
 typedef enum DXGI_DDI_MULTIPLANE_OVERLAY_STEREO_CAPS {
-  DXGI_DDI_MULTIPLANE_OVERLAY_STEREO_CAPS_SEPARATE            = 0x1,
-  DXGI_DDI_MULTIPLANE_OVERLAY_STEREO_CAPS_ROW_INTERLEAVED     = 0x4,
-  DXGI_DDI_MULTIPLANE_OVERLAY_STEREO_CAPS_COLUMN_INTERLEAVED  = 0x8,
-  DXGI_DDI_MULTIPLANE_OVERLAY_STEREO_CAPS_CHECKERBOARD        = 0x10,
-  DXGI_DDI_MULTIPLANE_OVERLAY_STEREO_CAPS_FLIP_MODE           = 0x20
+  DXGI_DDI_MULTIPLANE_OVERLAY_STEREO_CAPS_SEPARATE            = 0x1,
+  DXGI_DDI_MULTIPLANE_OVERLAY_STEREO_CAPS_ROW_INTERLEAVED     = 0x4,
+  DXGI_DDI_MULTIPLANE_OVERLAY_STEREO_CAPS_COLUMN_INTERLEAVED  = 0x8,
+  DXGI_DDI_MULTIPLANE_OVERLAY_STEREO_CAPS_CHECKERBOARD        = 0x10,
+  DXGI_DDI_MULTIPLANE_OVERLAY_STEREO_CAPS_FLIP_MODE           = 0x20
 } DXGI_DDI_MULTIPLANE_OVERLAY_STEREO_CAPS;
 ```
 

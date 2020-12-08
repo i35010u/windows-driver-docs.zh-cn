@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_CIPHER_KEY_GCMP_KEY
 description: WDI_TLV_CIPHER_KEY_GCMP_KEY (0x12F) 是未使用的 TLV。
-ms.assetid: 5F857D71-10B0-48B9-861F-382228E9B7AD
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_CIPHER_KEY_GCMP_KEY 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: f56320145b5c9d88151ba773aa233158e8968bfc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b05ba8cb7afdb76c77f6f4f373e6ab81d9388900
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391014"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807989"
 ---
-# <a name="wditlvcipherkeygcmpkey"></a>WDI\_TLV\_CIPHER\_KEY\_GCMP\_KEY
+# <a name="wdi_tlv_cipher_key_gcmp_key"></a>WDI \_ TLV \_ 密码 \_ 密钥 \_ GCMP \_ 密钥
 
 
-WDI\_TLV\_密码\_密钥\_GCMP\_键 (0x12F) 是未使用的 TLV。
+WDI \_ tlv \_ 密码 \_ 密钥 \_ GCMP \_ 密钥 (0x12F) 是未使用的 TLV。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -38,10 +37,10 @@ WDI\_TLV\_密码\_密钥\_GCMP\_键 (0x12F) 是未使用的 TLV。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

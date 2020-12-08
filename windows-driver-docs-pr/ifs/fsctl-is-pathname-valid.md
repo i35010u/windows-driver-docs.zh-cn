@@ -1,7 +1,6 @@
 ---
 title: FSCTL_IS_PATHNAME_VALID 控制代码
 description: FSCTL \_ 为 \_ pathname \_ 有效控制代码对提供的路径名执行静态分析，并返回状态值，指示路径名格式是否正确 (例如，没有非法字符、可接受的路径长度，等等) 。
-ms.assetid: 3f95ae2c-a376-4c68-9e84-dde22aa7e315
 keywords:
 - FSCTL_IS_PATHNAME_VALID 控制代码可安装的文件系统驱动程序
 topic_type:
@@ -14,29 +13,29 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a2932f913d9197203a1105d9e1fdcf5ebbd62df
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 90a48bce69eff49a03cc8899644aa48dd8156a88
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064422"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808355"
 ---
 # <a name="fsctl_is_pathname_valid-control-code"></a>FSCTL \_ 为 \_ PATHNAME \_ 有效控制代码
 
 
-**FSCTL \_ 为 \_ pathname \_ 有效**控制代码对提供的路径名执行静态分析，并返回状态值，指示路径名格式是否正确 (例如，没有非法字符、可接受的路径长度，等等) 。 由于此分析不考虑卷的内容，因此有时会提供 "误报"。 换句话说，分析可能指示路径名的格式正确，即使它不是也是如此。 负的结果更可靠，但不保证是正确的。
+**FSCTL \_ 为 \_ pathname \_ 有效** 控制代码对提供的路径名执行静态分析，并返回状态值，指示路径名格式是否正确 (例如，没有非法字符、可接受的路径长度，等等) 。 由于此分析不考虑卷的内容，因此有时会提供 "误报"。 换句话说，分析可能指示路径名的格式正确，即使它不是也是如此。 负的结果更可靠，但不保证是正确的。
 
 Fast FAT 文件系统不支持此控制代码，它在 NTFS 或 UDF 中不是有意义的操作。 NTFS 和 UDF 支持多种不同的代码集，任何字符串都可能是有效的路径名。
 
 若要执行此操作，请调用具有以下参数的 [**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 或 [**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85)) 。
 
-**参数**
+**Parameters**
 
 <a href="" id="fileobject"></a>*FileObject*  
-仅[**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 。 未使用。
+仅 [**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 。 未使用。
 
 <a href="" id="filehandle"></a>*FileHandle*  
-仅[**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 。 未使用。
+仅 [**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 。 未使用。
 
 <a href="" id="fscontrolcode"></a>*FsControlCode*  
 操作的控制代码。 使用 FSCTL \_ \_ \_ 对于此操作有效。
@@ -56,7 +55,7 @@ Fast FAT 文件系统不支持此控制代码，它在 NTFS 或 UDF 中不是有
 <a name="status-block"></a>状态块
 ------------
 
-如果路径名格式正确， [**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)或[**ZWFSCONTROLFILE**](/previous-versions/ff566462(v=vs.85))将返回状态 \_ SUCCESS。 否则，使用的例程将返回相应的 NTSTATUS 错误代码。
+如果路径名格式正确， [**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)或 [**ZWFSCONTROLFILE**](/previous-versions/ff566462(v=vs.85))将返回状态 \_ SUCCESS。 否则，使用的例程将返回相应的 NTSTATUS 错误代码。
 
 <a name="requirements"></a>要求
 ------------

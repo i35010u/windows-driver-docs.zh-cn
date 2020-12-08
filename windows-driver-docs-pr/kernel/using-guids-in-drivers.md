@@ -1,7 +1,6 @@
 ---
 title: 在驱动程序中使用 GUID
 description: 在驱动程序中使用 GUID
-ms.assetid: b70a2f64-dd7b-4d76-a4cf-dcb60ce0585c
 keywords:
 - 全局唯一标识符 WDK 内核
 - Guid WDK 内核
@@ -10,12 +9,12 @@ keywords:
 - 内核模式驱动程序 WDK，Guid
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 442f0cc2afc80e910b6d96e3895245576cbb913a
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 42f6c915108554cdee57f0e25143a3839bb4cc66
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184971"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808671"
 ---
 # <a name="using-guids-in-drivers"></a>在驱动程序中使用 GUID
 

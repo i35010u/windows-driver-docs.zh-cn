@@ -1,17 +1,16 @@
 ---
 title: 半色调功能的选项属性
 description: 半色调功能的选项属性
-ms.assetid: a188908a-ddf7-4b4d-a46d-e3550ffb0418
 keywords:
 - 半色调功能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fad1849f04b356197130e6e618c2229f1e687cf1
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: ea20a021edd4c02ec372c8d2463347215668cccd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107128"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807725"
 ---
 # <a name="option-attributes-for-the-halftone-feature"></a>半色调功能的选项属性
 

@@ -1,15 +1,14 @@
 ---
 title: 为 Windows Me 和 Windows XP 添加文档送纸器支持
 description: 为 Windows Me 和 Windows XP 添加文档送纸器支持
-ms.assetid: f3be94fa-6fb7-45de-a3ce-f3d173e802cf
 ms.date: 07/06/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 12a3af1d680d8dd0468485a724083c7aa2c0c058
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: eb2b4d7b4c410da0007652d92da0819bcec56f0f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191974"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808285"
 ---
 # <a name="adding-document-feeder-support"></a>添加文档送纸器支持
 

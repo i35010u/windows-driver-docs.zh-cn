@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_CIPHER_KEY_TKIP_MIC
-description: WDI_TLV_CIPHER_KEY_TKIP_MIC 是包含 TKIP MIC 材料 TLV。
-ms.assetid: 5F1AE81C-6AB4-468C-9DEE-D1BB16A2EC4D
+description: WDI_TLV_CIPHER_KEY_TKIP_MIC 是包含 TKIP MIC 材料的 TLV。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_CIPHER_KEY_TKIP_MIC 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: cace5ddd168aa7799677bfe59e3a474e8ebe382d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5215eb10d17b2730d219a32eb28a0b90d55bcff6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380559"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807981"
 ---
-# <a name="wditlvcipherkeytkipmic"></a>WDI\_TLV\_CIPHER\_KEY\_TKIP\_MIC
+# <a name="wdi_tlv_cipher_key_tkip_mic"></a>WDI \_ TLV \_ 密码 \_ 密钥 \_ TKIP \_ MIC
 
 
-WDI\_TLV\_密码\_密钥\_TKIP\_MIC 是包含 TKIP MIC 材料 TLV。
+WDI \_ tlv \_ 密码 \_ 密钥 \_ TKIP \_ mic 是包含 TKIP mic 材料的 tlv。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,14 +25,14 @@ WDI\_TLV\_密码\_密钥\_TKIP\_MIC 是包含 TKIP MIC 材料 TLV。
 ## <a name="length"></a>长度
 
 
-UINT8 元素的数组大小 （以字节为单位）。 该数组必须包含一个或多个元素。
+UINT8 元素数组的大小 (以字节为单位) 。 数组必须包含1个或多个元素。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入      | 描述                                                      |
+| 类型      | 描述                                                      |
 |-----------|------------------------------------------------------------------|
-| UINT8\[\] | 指定 TKIP MIC 材料 UINT8 元素的数组。 |
+| UINT8\[\] | 指定 TKIP MIC 材料的 UINT8 元素的数组。 |
 
  
 
@@ -52,10 +51,10 @@ UINT8 元素的数组大小 （以字节为单位）。 该数组必须包含一
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

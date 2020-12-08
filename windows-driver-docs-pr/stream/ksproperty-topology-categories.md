@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 拓扑 \_ 类别
 description: KSPROPERTY \_ 拓扑 \_ 类别属性用于查询驱动程序支持的功能类别的数组。
-ms.assetid: 35a293a1-f8fe-44da-a50b-a4429e369567
 keywords:
 - KSPROPERTY_TOPOLOGY_CATEGORIES 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f2eb742463ab12a8419c46c9a34ae53e6e60d09
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: c723e0a2dd2f7df3f42d7c724476fea9574ff7e1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104370"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808557"
 ---
 # <a name="ksproperty_topology_categories"></a>KSPROPERTY \_ 拓扑 \_ 类别
 
@@ -64,7 +63,7 @@ KSPROPERTY \_ 拓扑 \_ 类别属性用于查询驱动程序支持的功能类�
 <a name="remarks"></a>备注
 -------
 
-此属性返回一个 [**KSMULTIPLE \_ 项**](/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item) 结构，后跟一个 guid 序列，该序列表示 KS 筛选器支持的可能功能类别。 Microsoft 在 *ks* 和 *ksmedia*中提供了标准类别。 下面列出了非特定于技术的功能类别：
+此属性返回一个 [**KSMULTIPLE \_ 项**](/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item) 结构，后跟一个 guid 序列，该序列表示 KS 筛选器支持的可能功能类别。 Microsoft 在 *ks* 和 *ksmedia* 中提供了标准类别。 下面列出了非特定于技术的功能类别：
 
 <table>
 <colgroup>
@@ -74,7 +73,7 @@ KSPROPERTY \_ 拓扑 \_ 类别属性用于查询驱动程序支持的功能类�
 <thead>
 <tr class="header">
 <th>功能类别</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -150,7 +149,7 @@ KSCATEGORY_ COMMUNICATIONSTRANSFORM</td>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSTOPOLOGY**](/windows-hardware/drivers/ddi/ks/ns-ks-kstopology)

@@ -1,7 +1,6 @@
 ---
 title: AllSigningEqual 组策略
 description: AllSigningEqual 组策略
-ms.assetid: b23eed87-76ce-4447-86d2-2be370ee57c5
 keywords:
 - 驱动程序选择 WDK 设备安装，AllSigningEqual 组策略
 - 查找设备安装 WDK 设备安装的驱动程序，AllSigningEqual 组策略
@@ -9,12 +8,12 @@ keywords:
 - AllSigningEq
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a6a9690da38be7bf4db85917eb768f6fea2d5431
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 904c1a84905e331b9b88f87b7c5cc0ebec21b509
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096249"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808717"
 ---
 # <a name="allsigningequal-group-policy"></a>AllSigningEqual 组策略
 
@@ -39,7 +38,7 @@ ms.locfileid: "89096249"
 
 网络管理员可以通过启用 **AllSigningEqual** 组策略来更改此行为。 这会将 Windows 配置为在选择与设备最匹配的驱动程序时，将所有 Microsoft 签名类型和 Authenticode 签名视为相等，并按级别进行排序。
 
-**注意**   从 Windows 7 开始，默认情况下启用**AllSigningEqual**组策略。
+**注意**  从 Windows 7 开始，默认情况下启用 **AllSigningEqual** 组策略。
 
  
 
@@ -75,7 +74,7 @@ ms.locfileid: "89096249"
 
 若要确保在目标系统上更新设置，请执行以下操作：
 
-1.  创建 *Cmd.exe*的桌面快捷方式，右键单击 *Cmd.exe* 快捷方式，然后选择 "以 **管理员身份运行**"。
+1.  创建 *Cmd.exe* 的桌面快捷方式，右键单击 *Cmd.exe* 快捷方式，然后选择 "以 **管理员身份运行**"。
 
 2.  在命令提示符窗口中，运行组策略更新实用工具， *GPUpdate.exe*。
 

@@ -1,7 +1,6 @@
 ---
 title: 等待/唤醒操作概述
 description: 等待/唤醒操作概述
-ms.assetid: 63453f7e-f656-4efc-bb44-9e2cb0232270
 keywords:
 - 电源管理 WDK 内核，唤醒功能
 - 外部唤醒信号 WDK
@@ -12,12 +11,12 @@ keywords:
 - 等待/唤醒 Irp WDK 电源管理，关于等待/唤醒 Irp
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c117dda2031c68cb93801c442158e56157e0c7c
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 72d9012883e6913f6fea13abd0148e6549aa187b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189303"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808687"
 ---
 # <a name="overview-of-waitwake-operation"></a>等待/唤醒操作概述
 
@@ -45,7 +44,7 @@ ms.locfileid: "89189303"
 
 8.  当 i/o 管理器请求 IRP 时，它将调用策略所有者设置的回调例程。
 
-**IRP \_ MN \_ WAIT \_ 唤醒**请求不会更改设备或系统的电源状态。 它只是在设备上启用唤醒，以便以后在设备进入适当睡眠状态时，外部信号会导致设备 (，并且可能会) 系统唤醒。
+**IRP \_ MN \_ WAIT \_ 唤醒** 请求不会更改设备或系统的电源状态。 它只是在设备上启用唤醒，以便以后在设备进入适当睡眠状态时，外部信号会导致设备 (，并且可能会) 系统唤醒。
 
 唤醒信号到达时，无论设备是唤醒系统还是仅唤醒系统，驱动程序的行为都是相同的。 如果为设备启用了唤醒，并且系统处于休眠状态，则设备可以将其唤醒，设备会唤醒系统。 如果设备启用了唤醒，并且系统处于工作状态，则只有设备会唤醒。
 

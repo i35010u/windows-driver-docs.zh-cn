@@ -1,7 +1,6 @@
 ---
 title: 网络适配器的设备电源状态
 description: 网络适配器的设备电源状态
-ms.assetid: 969aadc9-e797-4a07-9714-8c2c5a6357da
 keywords:
 - Nic WDK 网络，电源状态
 - 网络接口卡 WDK 网络，电源状态
@@ -11,12 +10,12 @@ keywords:
 - 转换电源状态 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a64975d079d516e3e1070388aa04c0fbd39efe53
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 27520d6a079679b192bd9ac523ac1963b523e9e6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217666"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808651"
 ---
 # <a name="device-power-states-for-network-adapters"></a>网络适配器的设备电源状态
 
@@ -37,7 +36,7 @@ ms.locfileid: "89217666"
 * [设备低功耗状态](../kernel/device-sleeping-states.md)
 * [设备电源状态所需的支持](../kernel/required-support-for-device-power-states.md)
 
-**注意**   NDIS 处理电源管理 Irp，而 NDIS 驱动程序则不处理。
+**注意**  NDIS 处理电源管理 Irp，而 NDIS 驱动程序则不处理。
 
  
 
@@ -61,7 +60,7 @@ ms.locfileid: "89217666"
 
 ### <a name="device-power-state-d1"></a><a href="" id="d1"></a>设备电源状态 D1
 
-对于 [设备低能耗状态下](../kernel/device-sleeping-states.md)的所有设备，都描述了此电源状态。 对于网络适配器和微型端口驱动程序：
+对于 [设备 Low-Power 状态](../kernel/device-sleeping-states.md)中的所有设备，都描述了此电源状态。 对于网络适配器和微型端口驱动程序：
 
 <a href="" id="power-consumption"></a>功率消耗  
 此状态是最高的休眠状态。 功率消耗小于 D0 状态中大于或等于 D2 状态的。
@@ -81,7 +80,7 @@ ms.locfileid: "89217666"
 
 ### <a name="device-power-state-d2"></a><a href="" id="d2"></a>设备电源状态 D2
 
-对于 [设备低能耗状态下](../kernel/device-sleeping-states.md)的所有设备，都描述了此电源状态。 对于网络适配器和微型端口驱动程序：
+对于 [设备 Low-Power 状态](../kernel/device-sleeping-states.md)中的所有设备，都描述了此电源状态。 对于网络适配器和微型端口驱动程序：
 
 <a href="" id="power-consumption"></a>功率消耗  
 中间睡眠状态。 功率消耗小于 D1 状态中大于或等于 D3 状态的。
@@ -97,10 +96,10 @@ ms.locfileid: "89217666"
 
 ### <a name="device-power-state-d3"></a><a href="" id="d3"></a>设备电源状态 D3
 
-对于 [设备低能耗状态下](../kernel/device-sleeping-states.md)的所有设备，都描述了此电源状态。 对于网络适配器和微型端口驱动程序：
+对于 [设备 Low-Power 状态](../kernel/device-sleeping-states.md)中的所有设备，都描述了此电源状态。 对于网络适配器和微型端口驱动程序：
 
 <a href="" id="power-consumption"></a>功率消耗  
-电量最少的睡眠状态。 电源量不能为非零值 (D3hot) ，也可以是 (D3cold) 的完全相同的值。 有关 D3hot 和 D3cold 的详细信息，请参阅 [设备低功耗状态](../kernel/device-sleeping-states.md)。
+电量最少的睡眠状态。 电源量不能为非零值 (D3hot) ，也可以是 (D3cold) 的完全相同的值。 有关 D3hot 和 D3cold 的详细信息，请参阅 [设备 Low-Power 状态](../kernel/device-sleeping-states.md)。
 
 <a href="" id="device-context"></a>设备上下文  
 与 D1 相同。

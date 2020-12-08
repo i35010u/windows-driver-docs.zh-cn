@@ -1,7 +1,6 @@
 ---
 title: 电源管理
 description: 电源管理
-ms.assetid: b47ed463-2292-419a-af16-196382dbd3f1
 keywords:
 - 电源管理 WDK 打印机
 - 关键关闭 WDK 打印机
@@ -10,12 +9,12 @@ keywords:
 - 休眠测试 WDK 打印机
 ms.date: 06/11/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e426ce47a47220090f69053e4efb6fc44c82002b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 9afa17ad4cae9855e303c9d5ce54445b16afe97d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209515"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807529"
 ---
 # <a name="power-management"></a>电源管理
 
@@ -33,13 +32,13 @@ ms.locfileid: "89209515"
 
 有关详细信息，请参阅 [系统电源状态](../kernel/system-power-states.md)。
 
-## <a name="testing-port-connected-devices-across-various-power-states"></a>跨各种电源状态测试端口连接的设备
+## <a name="testing-port-connected-devices-across-various-power-states"></a>跨各种电源状态测试 Port-Connected 设备
 
 若要在各种电源状态之前和之后开始测试设备，请先验证设备的基线 [即插即用](../kernel/introduction-to-plug-and-play.md) (PnP) 功能。 接下来，验证你的测试环境是否可以进入并唤醒所有电源状态。
 
 如果已正确连接并安装了一台设备，请按如下方式在每个电源状态 S0 到 S5 之前和之后测试其行为：
 
-- **备用测试 (S1-S3) **
+- **备用测试 (S1-S3)**
 
     1. 进入并从备用状态中唤醒，并连接设备且不会有作业正在进行。 系统应正常输入每个睡眠和唤醒状态。
 
@@ -53,7 +52,7 @@ ms.locfileid: "89209515"
 
     1. 将设备置于 [设备错误状态](device-error-states.md)中所述的每个错误状态。 验证作业是否可以取消、恢复，并在进入待机状态并从待机状态中唤醒时重新启动。
 
-- **休眠测试 (S4) **
+- **休眠测试 (S4)**
 
     1. 进入 "休眠" 状态并从 "休眠" 状态唤醒，并且设备已连接，没有作业正在进行中。 系统应正常输入每个睡眠和唤醒状态。
 
@@ -65,7 +64,7 @@ ms.locfileid: "89209515"
 
     1. 将设备置于 [设备错误状态](device-error-states.md)中所述的每个错误状态。 验证作业是否可以取消、恢复或从休眠状态中唤醒之后重新启动。
 
-- **关闭/重新启动 (S5) **
+- **关闭/重新启动 (S5)**
 
     1. 在设备已连接并且没有作业正在进行时关闭系统。 系统应正常关闭。
 

@@ -1,18 +1,17 @@
 ---
 title: 查找 ICC 配置文件
 description: 查找 ICC 配置文件
-ms.assetid: 828b53cd-452a-4c4d-bfbb-45ea674ef49a
 keywords:
 - 颜色管理 WDK 打印，查找 ICC 配置文件
 - ICC 配置文件 WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f479cf6d3464217d933b06c2981b9828f0cfca77
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ebe12f96c305108d22b9681fa979bbf58ea32ece
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208415"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807927"
 ---
 # <a name="locating-icc-profiles"></a>查找 ICC 配置文件
 

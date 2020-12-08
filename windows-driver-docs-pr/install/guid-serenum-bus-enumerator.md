@@ -1,7 +1,6 @@
 ---
 title: GUID_SERENUM_BUS_ENUMERATOR
 description: GUID_SERENUM_BUS_ENUMERATOR
-ms.assetid: 85d72641-e86c-4611-9509-aea4a3344950
 keywords:
 - GUID_SERENUM_BUS_ENUMERATOR 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 02351943d7fa55a32cf644a325102f127dbd1172
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 6c58437f0189a6ee92036ac0be1157c458c89eef
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095335"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808135"
 ---
 # <a name="guid_serenum_bus_enumerator"></a>GUID_SERENUM_BUS_ENUMERATOR
 
@@ -51,7 +50,7 @@ WDK 包括 ([*serenum*](/previous-versions/ff546505(v=vs.85))) 的串行枚举�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**GUID_DEVINTERFACE_SERENUM_BUS_ENUMERATOR**](guid-devinterface-serenum-bus-enumerator.md)

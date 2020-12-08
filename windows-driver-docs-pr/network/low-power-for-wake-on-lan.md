@@ -1,15 +1,14 @@
 ---
 title: 在 LAN 上唤醒时离开低功耗状态
 description: 在 LAN 上唤醒时离开低功耗状态
-ms.assetid: 9ab8fa19-e75a-4266-accf-4e8b2964f82e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b1a504ac3136c22e157f00e796b8204d8443de5f
-ms.sourcegitcommit: 29c2e6dd8a3de3c11822d990adf1edd774f8a136
+ms.openlocfilehash: 87791e695a8a6cbf05c71dcab28034fdd9b5a09d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91230015"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808633"
 ---
 # <a name="low-power-for-wake-on-lan"></a>在 LAN 上唤醒时离开低功耗状态
 
@@ -29,11 +28,11 @@ LAN 唤醒 (WOL) 功能在网络适配器检测到 WOL 事件时从低功耗状�
 
 当 NDIS 将网络适配器置于低功耗状态时，将发生以下序列：
 
-1.  NDIS 使用 [OID \_ PM \_ 参数](./oid-pm-parameters.md) 启用 LAN 唤醒并禁用媒体连接唤醒。 \_ \_ \_ \_ \_ \_ 已在**WAKEUPFLAGS**成员中清除 "已启用 NDIS PM 唤醒链接更改"。
+1.  NDIS 使用 [OID \_ PM \_ 参数](./oid-pm-parameters.md) 启用 LAN 唤醒并禁用媒体连接唤醒。 \_ \_ \_ \_ \_ \_ 已在 **WAKEUPFLAGS** 成员中清除 "已启用 NDIS PM 唤醒链接更改"。
 
 2.  NDIS 使用 [OID \_ PNP \_ 设置 \_ 电源](./oid-pnp-set-power.md) 将新电源状态 (D3) 的微型端口驱动程序通知。
 
-3.  微型端口驱动程序可以使用 [**NDIS \_ 状态 \_ 链接 \_ 状态**](./ndis-status-link-state.md) 状态指示指示未知的媒体连接状态。 **MediaConnectStateUnknown**值是在[**NDIS \_ 链接 \_ 状态**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_link_state)结构的**MediaConnectState**成员中设置的。 有关详细信息，请参阅 [**NDIS \_ 状态 \_ 链接 \_ 状态**](./ndis-status-link-state.md) 文档。
+3.  微型端口驱动程序可以使用 [**NDIS \_ 状态 \_ 链接 \_ 状态**](./ndis-status-link-state.md) 状态指示指示未知的媒体连接状态。 **MediaConnectStateUnknown** 值是在 [**NDIS \_ 链接 \_ 状态**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_link_state)结构的 **MediaConnectState** 成员中设置的。 有关详细信息，请参阅 [**NDIS \_ 状态 \_ 链接 \_ 状态**](./ndis-status-link-state.md) 文档。
 
 4.  NDIS 将 (PCIe) 总线发送到一个 [**IRP \_ MN \_ 等待 \_ 唤醒**](../kernel/irp-mn-wait-wake.md) IRP，以等待 WOL 事件。
 
@@ -53,7 +52,7 @@ LAN 唤醒 (WOL) 功能在网络适配器检测到 WOL 事件时从低功耗状�
 
 4.  NDIS 通知微型端口驱动程序网络适配器处于完全供电状态 (D0) 并且 oid 设置了 [oid \_ PNP \_ 集 \_ 功能](./oid-pnp-set-power.md)的请求。
 
-5.  网络适配器使用 [**ndis \_ 状态 \_ 链接 \_ 状态**](./ndis-status-link-state.md) 状态指示向 ndis 通知一个 media connect 事件。 **MediaConnectStateConnected**值是在[**NDIS \_ 链接 \_ 状态**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_link_state)结构的**MediaConnectState**成员中设置的。
+5.  网络适配器使用 [**ndis \_ 状态 \_ 链接 \_ 状态**](./ndis-status-link-state.md) 状态指示向 ndis 通知一个 media connect 事件。 **MediaConnectStateConnected** 值是在 [**NDIS \_ 链接 \_ 状态**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_link_state)结构的 **MediaConnectState** 成员中设置的。
 
 从 NDIS 6.30 开始，如果微型端口驱动程序支持 [**NDIS \_ 状态 \_ PM \_ 唤醒 \_ 原因**](./ndis-status-pm-wake-reason.md) 状态指示，则如果网络适配器唤醒系统，则必须发出此状态通知。 驱动程序在处理 oid [ \_ PNP \_ 设置 \_ ](./oid-pnp-set-power.md) 的 oid 设置请求时发出此状态通知，以将转换为全功耗 (D0) 状态。
 

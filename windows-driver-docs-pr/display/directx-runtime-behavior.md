@@ -1,28 +1,27 @@
 ---
 title: DirectX 运行时行为
 description: DirectX 运行时行为
-ms.assetid: 98cfb09c-74ed-4329-b663-5f813a84debe
 keywords:
 - DirectX 运行时旋转 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 372583ec4dba115e3a086f43a8d259ecc442cca0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3cf49d52fc7f92905fac01a66406ee93dcfff363
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327937"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809333"
 ---
 # <a name="directx-runtime-behavior"></a>DirectX 运行时行为
 
 
-各种版本的 Microsoft DirectX 运行时处理以下旋转代表该驱动程序的情况下：
+各种版本的 Microsoft DirectX 运行时代表驱动程序处理下列循环情况：
 
--   Microsoft DirectDraw 运行时将自动失败时将显示旋转显示覆盖层的任何尝试。
+-   Microsoft DirectDraw 运行时自动失败在显示旋转时任何显示覆盖的尝试。
 
--   所有版本的 DirectX 运行时都调整主图面，以便扫描行值涵盖整个范围最多的解决方法的高度旋转时返回的扫描行值。 否则，尝试自己想追踪的应用程序可能停止响应等待扫描行值的最大的显示宽度，并在应用程序将否则永远不会在纵向模式下。
+-   所有版本的 DirectX 运行时都将调整主图面旋转时返回的扫描行值，以便扫描行值覆盖整个范围，直至达到分辨率的高度。 否则，如果尝试无线处理的应用程序等待的扫描行值大于显示器的宽度，而该应用程序在纵向模式下却从不接收，则该应用程序可能会停止响应。
 
--   所有版本的 DirectX 运行时都处理到旋转主面上的所有访问都是通过使用各种形式的仿真窗口模式设备来建立。
+-   所有版本的 DirectX 运行时都将处理对使用各种仿真模式的开窗模式设备发出的旋转的主表面的所有访问。
 
  
 

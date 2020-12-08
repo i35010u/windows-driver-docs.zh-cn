@@ -1,19 +1,18 @@
 ---
 title: 用于创建自定义属性的示例代码
 description: 用于创建自定义属性的示例代码
-ms.assetid: cf3e5e5b-8853-43a3-857f-87945cea2aa7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 62f4cfc2dfd3abbfd07bd3f30d9893fce99efe66
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7732f81900941f765b639f6324eb0ca5d7f5c5cf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381564"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808753"
 ---
 # <a name="sample-code-to-create-custom-properties"></a>用于创建自定义属性的示例代码
 
-若要创建自定义属性，您 WIA 的驱动程序可能看起来类似于下面的代码：
+若要创建自定义属性，WIA 驱动程序的代码可能如下所示：
 
 ```cpp
   //

@@ -1,7 +1,6 @@
 ---
 title: 暂停筛选器模块
 description: 暂停筛选器模块
-ms.assetid: da75b92d-b662-416a-b350-e5384b870b7f
 keywords:
 - 筛选器模块 WDK 网络，暂停
 - 暂停筛选器模块
@@ -9,12 +8,12 @@ keywords:
 - NDIS 筛选器驱动程序 WDK，暂停筛选器模块
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ef4115767c14ba6003418a2e2635413ae19e01f3
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e7453aceb4545a848e826baff6c7af8be2f6c02e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207819"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808029"
 ---
 # <a name="pausing-a-filter-module"></a>暂停筛选器模块
 
@@ -22,7 +21,7 @@ ms.locfileid: "89207819"
 
 
 
-为了暂停正在运行的筛选器模块，NDIS 调用筛选器驱动程序的 [*FilterPause*](/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_pause) 函数。 在*FilterPause*函数中，筛选器模块将进入执行开始时的*暂停*状态。
+为了暂停正在运行的筛选器模块，NDIS 调用筛选器驱动程序的 [*FilterPause*](/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_pause) 函数。 在 *FilterPause* 函数中，筛选器模块将进入执行开始时的 *暂停* 状态。
 
 NDIS 暂停筛选器模块，作为即插即用操作的一部分，用于暂停驱动程序堆栈。 有关暂停驱动程序堆栈的概述，请参阅 [暂停驱动程序堆栈](pausing-a-driver-stack.md)。
 
@@ -38,7 +37,7 @@ NDIS 暂停筛选器模块，作为即插即用操作的一部分，用于暂停
 
 -   应通过调用 **NdisFReturnNetBufferLists** 函数，返回基础驱动程序立即产生的新接收指示。 如有必要，驱动程序可以复制接收指示，并在返回它们之前对它们进行排队。
 
-    **注意**  [**NdisFReturnNetBufferLists**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreturnnetbufferlists)不应为 \_ \_ \_ 在相应[*FilterReceiveNetBufferLists*](/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_receive_net_buffer_lists)调用中设置的 NDIS 接收标志资源标志指定的 nbl 调用 NdisFReturnNetBufferLists。 此类 Nbl 通过从 *FilterReceiveNetBufferLists* 例程返回来同步返回到 NDIS。
+    **注意**[**NdisFReturnNetBufferLists**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreturnnetbufferlists)不应为 \_ \_ \_ 在相应 [*FilterReceiveNetBufferLists*](/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_receive_net_buffer_lists)调用中设置的 NDIS 接收标志资源标志指定的 nbl 调用 NdisFReturnNetBufferLists。   此类 Nbl 通过从 *FilterReceiveNetBufferLists* 例程返回来同步返回到 NDIS。
 
      
 
@@ -46,7 +45,7 @@ NDIS 暂停筛选器模块，作为即插即用操作的一部分，用于暂停
 
 -   如果存在筛选器驱动程序生成的发送操作，并且 NDIS 尚未完成，则筛选器驱动程序必须等待 NDIS 完成此类操作。 在 NDIS 为所有此类未完成的发送请求调用 [*FilterSendNetBufferListsComplete*](/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_send_net_buffer_lists_complete) 函数之前，暂停操作不会完成。
 
--   应通过调用[**NdisFSendNetBufferListsComplete**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfsendnetbufferlistscomplete)函数立即返回对其[*FilterSendNetBufferLists*](/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_send_net_buffer_lists)函数发出的所有新发送请求。 筛选器驱动程序应将每个网络缓冲区列表结构中的 **状态** 成员设置 \_ 为已 \_ \_ 暂停 NDIS 状态 \_ 。
+-   应通过调用 [**NdisFSendNetBufferListsComplete**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfsendnetbufferlistscomplete)函数立即返回对其 [*FilterSendNetBufferLists*](/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_send_net_buffer_lists)函数发出的所有新发送请求。 筛选器驱动程序应将每个网络缓冲区列表结构中的 **状态** 成员设置 \_ 为已 \_ \_ 暂停 NDIS 状态 \_ 。
 
 -   可以通过 [**NdisFIndicateStatus**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfindicatestatus) 函数提供状态指示。
 
@@ -78,7 +77,7 @@ NDIS 暂停筛选器模块，作为即插即用操作的一部分，用于暂停
 
 -   不应产生新的发送请求。
 
--   应通过调用[**NdisFSendNetBufferListsComplete**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfsendnetbufferlistscomplete)函数立即返回对其[*FilterSendNetBufferLists*](/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_send_net_buffer_lists)函数发出的所有新发送请求。 筛选器驱动程序应将每个网络缓冲区列表结构中的 **状态** 成员设置 \_ 为已 \_ \_ 暂停 NDIS 状态 \_ 。
+-   应通过调用 [**NdisFSendNetBufferListsComplete**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfsendnetbufferlistscomplete)函数立即返回对其 [*FilterSendNetBufferLists*](/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_send_net_buffer_lists)函数发出的所有新发送请求。 筛选器驱动程序应将每个网络缓冲区列表结构中的 **状态** 成员设置 \_ 为已 \_ \_ 暂停 NDIS 状态 \_ 。
 
 -   可以通过 [**NdisFIndicateStatus**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfindicatestatus) 函数提供状态指示。
 

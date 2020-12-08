@@ -1,7 +1,6 @@
 ---
 title: MRU 源列表函数
 description: MRU 源列表函数
-ms.assetid: 62c6b144-5883-45cf-a114-7b82453f275f
 keywords:
 - Setupapi.log 函数 WDK，最近使用的源列表
 - 最近使用的源列表 WDK Setupapi.log
@@ -9,12 +8,12 @@ keywords:
 - 源列出 WDK MRU
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 72e6f9f36404131e059b035c577a7be6a2678547
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 6c6a7c4a47ef1b9ee4c29854be9885282b2c90d8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716350"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808685"
 ---
 # <a name="mru-source-list-functions"></a>MRU 源列表函数
 
@@ -36,7 +35,7 @@ ms.locfileid: "90716350"
 <thead>
 <tr class="header">
 <th align="left">函数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

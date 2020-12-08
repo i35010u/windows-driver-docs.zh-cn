@@ -1,7 +1,6 @@
 ---
 title: DXGKMDT \_ OPM \_ 连接器 \_ 类型枚举
 description: 了解 DXGKMDT \_ OPM \_ 连接器 \_ 类型枚举，该枚举是保留供系统使用的。 请勿在您的驱动程序中使用。
-ms.assetid: 57A2F351-99F1-425A-99E3-1167CEFF9FDD
 keywords:
 - DXGKMDT_OPM_CONNECTOR_TYPE 枚举显示设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f3ca4c921f5269f7d70d9639cb834e483302223
-ms.sourcegitcommit: fc94eb0d5a41ef81c1b3ab91ad725386db0be0c2
+ms.openlocfilehash: 735e86229c506e47b9121dcbcf8b88aa10e07026
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91603657"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808905"
 ---
 # <a name="dxgkmdt_opm_connector_type-enumeration"></a>DXGKMDT \_ OPM \_ 连接器 \_ 类型枚举
 
@@ -31,23 +30,23 @@ ms.locfileid: "91603657"
 
 ```ManagedCPlusPlus
 typedef enum _DXGKMDT_OPM_CONNECTOR_TYPE {
-  DXGKMDT_OPM_CONNECTOR_TYPE_OTHER                     = -1,
-  DXGKMDT_OPM_CONNECTOR_TYPE_HD15                      = 0,
-  DXGKMDT_OPM_CONNECTOR_TYPE_SVIDEO                    = 1,
-  DXGKMDT_OPM_CONNECTOR_TYPE_COMPOSITE_VIDEO           = 2,
-  DXGKMDT_OPM_CONNECTOR_TYPE_COMPONENT_VIDEO           = 3,
-  DXGKMDT_OPM_CONNECTOR_TYPE_DVI                       = 4,
-  DXGKMDT_OPM_CONNECTOR_TYPE_HDMI                      = 5,
-  DXGKMDT_OPM_CONNECTOR_TYPE_LVDS                      = 6,
-  DXGKMDT_OPM_CONNECTOR_TYPE_D_JPN                     = 8,
-  DXGKMDT_OPM_CONNECTOR_TYPE_SDI                       = 9,
-  DXGKMDT_OPM_CONNECTOR_TYPE_DISPLAYPORT_EXTERNAL      = 10,
-  DXGKMDT_OPM_CONNECTOR_TYPE_DISPLAYPORT_EMBEDDED      = 11,
-  DXGKMDT_OPM_CONNECTOR_TYPE_UDI_EXTERNAL              = 12,
-  DXGKMDT_OPM_CONNECTOR_TYPE_UDI_EMBEDDED              = 13,
-  DXGKMDT_OPM_CONNECTOR_TYPE_RESERVED                  = 14,
-  DXGKMDT_OPM_CONNECTOR_TYPE_MIRACAST                  = 15,
-  DXGKMDT_OPM_COPP_COMPATIBLE_CONNECTOR_TYPE_INTERNAL  = 0x80000000
+  DXGKMDT_OPM_CONNECTOR_TYPE_OTHER                     = -1,
+  DXGKMDT_OPM_CONNECTOR_TYPE_HD15                      = 0,
+  DXGKMDT_OPM_CONNECTOR_TYPE_SVIDEO                    = 1,
+  DXGKMDT_OPM_CONNECTOR_TYPE_COMPOSITE_VIDEO           = 2,
+  DXGKMDT_OPM_CONNECTOR_TYPE_COMPONENT_VIDEO           = 3,
+  DXGKMDT_OPM_CONNECTOR_TYPE_DVI                       = 4,
+  DXGKMDT_OPM_CONNECTOR_TYPE_HDMI                      = 5,
+  DXGKMDT_OPM_CONNECTOR_TYPE_LVDS                      = 6,
+  DXGKMDT_OPM_CONNECTOR_TYPE_D_JPN                     = 8,
+  DXGKMDT_OPM_CONNECTOR_TYPE_SDI                       = 9,
+  DXGKMDT_OPM_CONNECTOR_TYPE_DISPLAYPORT_EXTERNAL      = 10,
+  DXGKMDT_OPM_CONNECTOR_TYPE_DISPLAYPORT_EMBEDDED      = 11,
+  DXGKMDT_OPM_CONNECTOR_TYPE_UDI_EXTERNAL              = 12,
+  DXGKMDT_OPM_CONNECTOR_TYPE_UDI_EMBEDDED              = 13,
+  DXGKMDT_OPM_CONNECTOR_TYPE_RESERVED                  = 14,
+  DXGKMDT_OPM_CONNECTOR_TYPE_MIRACAST                  = 15,
+  DXGKMDT_OPM_COPP_COMPATIBLE_CONNECTOR_TYPE_INTERNAL  = 0x80000000
 } DXGKMDT_OPM_CONNECTOR_TYPE;
 ```
 
@@ -99,7 +98,7 @@ typedef enum _DXGKMDT_OPM_CONNECTOR_TYPE {
 <tbody>
 <tr class="odd">
 <td align="left"><p>最低受支持的客户端</p></td>
-<td align="left"><p>Windows 8.1</p></td>
+<td align="left"><p>Windows 8.1</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>最低受支持的服务器</p></td>

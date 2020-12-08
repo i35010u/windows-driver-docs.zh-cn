@@ -1,15 +1,14 @@
 ---
 title: ServiceInfo XML 示例
 description: ServiceInfo XML 示例
-ms.assetid: b2114044-ca4b-4c1e-ab2e-73f4f56142b5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: df4226e9f040a0a0858cd259e8d6157be5ff4f69
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: eca261b1cc75ee82f0d005b540eab96669beb0df
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403440"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808679"
 ---
 # <a name="serviceinfo-xml-example"></a>ServiceInfo XML 示例
 

@@ -1,26 +1,25 @@
 ---
-title: 用户模式显示驱动程序调用的 D3D 运行时函数
+title: User-Mode 显示驱动程序调用的 D3D 运行时函数
 description: 本主题引用了 Microsoft Direct3D runtime 向用户模式显示驱动程序提供的函数。
-ms.assetid: CB6A0314-E410-4865-8833-801BDB24AA25
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: 9e7e3f4654f3c160d62bb05daf3a1a229242e3a8
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: a54bd7ffc4cf1368f4e0d18e2aeee2001d366599
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065908"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809459"
 ---
-# <a name="direct3d-runtime-functions-called-by-user-mode-display-drivers"></a>用户模式显示驱动程序调用的 Direct3D 运行时函数
+# <a name="direct3d-runtime-functions-called-by-user-mode-display-drivers"></a>User-Mode 显示驱动程序调用的 Direct3D 运行时函数
 
 本主题列出了 Microsoft Direct3D runtime 向用户模式显示驱动程序提供的函数。 这些功能包括 Direct3D 运行时内核服务访问函数和 Direct3D 运行时版本10和11函数。 这些函数是操作系统通过 Direct3D 运行时实现的用户模式 Direct3D 显示驱动程序接口的一部分。
 
-## <a name="direct3d-runtime-kernel-services-accessing-functions"></a>Direct3D 运行时内核-服务访问函数
+## <a name="direct3d-runtime-kernel-services-accessing-functions"></a>Direct3D 运行时 Kernel-Services 访问函数
 
-**Microsoft Direct3D 版本 9**运行时[D3DDDI_ADAPTERCALLBACKS](/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddi_adaptercallbacks)通过调用用户模式显示驱动程序的[OpenAdapter](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_openadapter)函数，提供指向*特定于适配器*的回调函数的指针。 运行时通过调用用户模式显示驱动程序的[CreateDevice](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_createdevice)函数，提供用于在[D3DDDI_DEVICECALLBACKS](/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddi_devicecallbacks)结构的成员中显示*特定于设备*的回调函数的指针。
+**Microsoft Direct3D 版本 9** 运行时 [D3DDDI_ADAPTERCALLBACKS](/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddi_adaptercallbacks)通过调用用户模式显示驱动程序的 [OpenAdapter](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_openadapter)函数，提供指向 *特定于适配器* 的回调函数的指针。 运行时通过调用用户模式显示驱动程序的 [CreateDevice](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_createdevice)函数，提供用于在 [D3DDDI_DEVICECALLBACKS](/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddi_devicecallbacks)结构的成员中显示 *特定于设备* 的回调函数的指针。
 
-**Microsoft Direct3D 版本 10**或更高版本的运行时**D3DDDI_ADAPTERCALLBACKS**通过调用用户模式显示驱动程序的[OpenAdapter10](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)或 OpenAdapter10_2 函数，提供指向特定于适配器的回调函数的指针。 运行时通过调用用户模式显示驱动程序的[CreateDevice (D3D10) ](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createdevice)函数，来提供用于在**D3DDDI_DEVICECALLBACKS**结构的成员中显示特定于设备的回调函数的指针。
+**Microsoft Direct3D 版本 10** 或更高版本的运行时 **D3DDDI_ADAPTERCALLBACKS** 通过调用用户模式显示驱动程序的 [OpenAdapter10](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)或 OpenAdapter10_2 函数，提供指向特定于适配器的回调函数的指针。 运行时通过调用用户模式显示驱动程序的 [CreateDevice (D3D10)](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createdevice)函数，来提供用于在 **D3DDDI_DEVICECALLBACKS** 结构的成员中显示特定于设备的回调函数的指针。
 
 * [PFND3DDDI_ALLOCATECB](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_allocatecb)
 * [PFND3DDDI_CREATECONTEXTVIRTUALCB](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_createcontextvirtualcb)
@@ -151,7 +150,7 @@ Direct3D 运行时内核服务访问函数使用以下结构。 用户模式显�
 * [PFND3D10DDI_DISABLE_DEFERRED_STAGING_RESOURCE_DESTRUCTION_CB](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_disable_deferred_staging_resource_destruction_cb)
 * [PFND3D10DDI_SETERROR_CB](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_seterror_cb)
 
-### <a name="direct3d-runtime-version-10-state-refresh-callback-functions"></a>Direct3D 运行时版本10状态-刷新回调函数
+### <a name="direct3d-runtime-version-10-state-refresh-callback-functions"></a>Direct3D 运行时版本 10 State-Refresh 回调函数
 
 下面列出了 Microsoft Direct3D 10 运行时通过 D3D10DDI_CORELAYER_DEVICECALLBACKS 结构提供给用户模式显示驱动程序的状态刷新回调函数。
 
@@ -184,7 +183,7 @@ Direct3D 运行时内核服务访问函数使用以下结构。 用户模式显�
 * [PFND3D10DDI_STATE_VS_SHADER_CB](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_state_vs_shader_cb)
 * [PFND3D10DDI_STATE_VS_SRV_CB](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_state_vs_srv_cb)
 
-## <a name="direct3d-runtime-version-10-kernel-services-accessing-functions"></a>Direct3D 运行时版本10内核服务访问函数
+## <a name="direct3d-runtime-version-10-kernel-services-accessing-functions"></a>Direct3D Runtime 版本 10 Kernel-Services 访问函数
 
 本部分列出了一些核心服务访问函数，DirectX 图形基础结构 (向用户模式显示驱动程序提供的 Microsoft Direct3D 10 运行时) 组件。 DXGI 在对用户模式显示驱动程序的[CreateDevice (D3D10) ](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createdevice)函数的调用中，向内核服务提供通过[DXGI_DDI_BASE_CALLBACKS](/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_base_callbacks)结构的成员访问函数的指针。
 
@@ -204,7 +203,7 @@ Direct3D 运行时内核服务访问函数使用以下结构。 用户模式显�
 
 * [PFND3D11DDI_PERFORM_AMORTIZED_PROCESSING_CB](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_perform_amortized_processing_cb)
 
-### <a name="direct3d-runtime-version-11-state-refresh-callback-functions"></a>Direct3D 运行时版本11状态-刷新回调函数
+### <a name="direct3d-runtime-version-11-state-refresh-callback-functions"></a>Direct3D 运行时版本 11 State-Refresh 回调函数
 
 本部分列出了 Microsoft Direct3D 版本11及更高版本运行时提供给用户模式显示驱动程序的附加状态刷新回调函数。
 
@@ -311,7 +310,7 @@ Microsoft Direct3D 12 和更高版本运行时向用户模式显示驱动程序�
 * PFND3DWDDM2_2DDI_SHADERCACHE_GET_VALUE
 * [PFND3DWDDM2_2DDI_SHADERCACHE_STORE_VALUE](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_2ddi_shadercache_store_value_cb)
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [支持 DXGI DDI](supporting-the-dxgi-ddi.md)
 

@@ -1,15 +1,14 @@
 ---
 title: Direct3D 呈现性能改进
 description: Windows 显示器驱动程序模型 (WDDM) 1.3 及更高版本的驱动程序可以支持 Microsoft Direct3D 渲染性能改进，使 Direct3D 9 硬件可以更好地使用硬件命令缓冲区和计数器，并将系统内存的有效副本子资源。 这些功能镜像了 Direct3D 版本10硬件可用的一些功能，是从 Windows 8.1 开始的新功能。
-ms.assetid: F9AAE489-EC45-4EE6-875E-E084BB3054EE
 ms.date: 10/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d3985922ecd1f86e9821cd84748f3b57068c518
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 047bb2ed0cdf681581e6da2bbb396739dcc407ac
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716302"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809463"
 ---
 # <a name="direct3d-rendering-performance-improvements"></a>Direct3D 呈现性能改进
 
@@ -42,12 +41,12 @@ Windows 显示器驱动程序模型 (WDDM) 1.3 及更高版本的驱动程序可
 -   [**D3DDDIARG \_计数器 \_ 信息**](/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-d3dddiarg_counter_info) (新的) 
 -   [**D3DDDIARG \_UPDATESUBRESOURCEUP**](/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-d3dddiarg_updatesubresourceup) (new) 
 -   [**D3DDDICAPS \_简单的 \_ 实例化 \_ 支持**](/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-d3dddicaps_simple_instancing_support) (新的) 
--   如果) 将**CaptureBuffer**标志值设置为，则[*CreateResource2*](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_createresource2) (WDDM 1.3 及更高版本的 Direct3D Level 9 驱动程序必须返回**E \_ INVALIDARG**错误代码。
+-   如果) 将 **CaptureBuffer** 标志值设置为，则 [*CreateResource2*](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_createresource2) (WDDM 1.3 及更高版本的 Direct3D Level 9 驱动程序必须返回 **E \_ INVALIDARG** 错误代码。
 -   [**D3D11 \_ 1 \_ DDI \_ FLUSH \_ 标记**](/windows-hardware/drivers/ddi/d3d10umddi/ne-d3d10umddi-d3d11_1_ddi_flush_flags) (**D3DWDDM1 \_ 3DDI \_ 剪裁 \_ 内存** 常量添加) 
--   [**D3DDDI \_**](/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddi_devicefuncs)添加了 DEVICEFUNCS (**pfnFlush1**、 **pfnCheckCounterInfo**、 **pfnCheckCounter**、 **pfnUpdateSubresourceUP**成员) 
--   [**D3DDDI \_**](/windows-hardware/drivers/ddi/d3dukmdt/ne-d3dukmdt-_d3dddi_pool)添加的池 (**D3DDDIPOOL \_ STAGINGMEM**常量) 
+-   [**D3DDDI \_**](/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddi_devicefuncs)添加了 DEVICEFUNCS (**pfnFlush1**、 **pfnCheckCounterInfo**、 **pfnCheckCounter**、 **pfnUpdateSubresourceUP** 成员) 
+-   [**D3DDDI \_**](/windows-hardware/drivers/ddi/d3dukmdt/ne-d3dukmdt-_d3dddi_pool)添加的池 (**D3DDDIPOOL \_ STAGINGMEM** 常量) 
 -   [**D3DDDICAPS \_输入**](/windows-hardware/drivers/ddi/d3dumddi/ne-d3dumddi-_d3dddicaps_type) (**D3DDDICAPS \_ 获取 \_ 简单的 \_ 实例 \_ 支持** 常数) 
--   备注中的[*GetCaps*](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_getcaps) (新信息) 
+-   备注中的 [*GetCaps*](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_getcaps) (新信息) 
 
 ## <a name="span-idddi_implementation_requirements_starting_with_wddm_13spanspan-idddi_implementation_requirements_starting_with_wddm_13spanddi-implementation-requirements-starting-with-wddm-13"></a><span id="ddi_implementation_requirements_starting_with_wddm_1.3"></span><span id="DDI_IMPLEMENTATION_REQUIREMENTS_STARTING_WITH_WDDM_1.3"></span>从 WDDM 1.3 开始的 DDI 实现要求
 
@@ -125,7 +124,7 @@ Windows 显示器驱动程序模型 (WDDM) 1.3 及更高版本的驱动程序可
 
 对于由 WDDM 1.3 和更高版本的驱动程序实现的这些函数，Direct3D 运行时为映射的默认方案提供一组有限的输入值。 这些限制值仅适用于支持功能级别11.1 和更高版本的驱动程序。
 
-[***CreateResource (D3D11) ***](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createresource) **函数**-
+[ * **CreateResource (D3D11)** _](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createresource) _ * 函数 * *-
 
 以下输入 [**D3D11DDIARG \_ CREATERESOURCE**](/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d11ddiarg_createresource) 结构成员受到限制：
 
@@ -137,7 +136,7 @@ Windows 显示器驱动程序模型 (WDDM) 1.3 及更高版本的驱动程序可
 <thead>
 <tr class="header">
 <th align="left">成员</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -182,7 +181,7 @@ Windows 显示器驱动程序模型 (WDDM) 1.3 及更高版本的驱动程序可
 
  
 
-[***Windows.applicationmodel.resources.core.resourcemap***](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_resourcemap) **函数**-
+[ * *_Windows.applicationmodel.resources.core.resourcemap_* _](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_resourcemap) _ * 函数 * *-
 
 [*Windows.applicationmodel.resources.core.resourcemap*](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_resourcemap)的这些输入参数受到限制：
 
@@ -194,7 +193,7 @@ Windows 显示器驱动程序模型 (WDDM) 1.3 及更高版本的驱动程序可
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -227,7 +226,7 @@ Windows 显示器驱动程序模型 (WDDM) 1.3 及更高版本的驱动程序可
 
  
 
-[***ResourceUnmap***](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_resourceunmap) **函数**-
+[ * **ResourceUnmap** _](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_resourceunmap) _ * 函数 * *-
 
 [*ResourceUnmap*](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_resourceunmap)的这些输入参数受到限制：
 
@@ -239,7 +238,7 @@ Windows 显示器驱动程序模型 (WDDM) 1.3 及更高版本的驱动程序可
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

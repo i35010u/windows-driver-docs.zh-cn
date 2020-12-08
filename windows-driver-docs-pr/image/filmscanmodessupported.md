@@ -1,9 +1,8 @@
 ---
 title: FilmScanModesSupported 元素
-description: 所需的 FilmScanModesSupported 元素包含电影胶片扫描选项支持的公开类型的列表。
-ms.assetid: bcc1335f-4465-4bc1-a804-b6e8729ec616
+description: 必需的 FilmScanModesSupported 元素包含电影扫描选项支持的电影曝光类型的列表。
 keywords:
-- FilmScanModesSupported 元素成像设备
+- FilmScanModesSupported 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bf2472a14dbbe96338899781382c13924754b89e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: daff766ec39dac2d3a90b22464ea4c1c85e4f237
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358049"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808271"
 ---
 # <a name="filmscanmodessupported-element"></a>FilmScanModesSupported 元素
 
 
-所需**FilmScanModesSupported**元素包含电影胶片扫描选项支持的公开类型的列表。
+必需的 **FilmScanModesSupported** 元素包含电影扫描选项支持的电影曝光类型的列表。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -71,7 +70,7 @@ ms.locfileid: "63358049"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="film.md" data-raw-source="[&lt;strong&gt;Film&lt;/strong&gt;](film.md)"><strong>Film</strong></a></p></td>
+<td><p><a href="film.md" data-raw-source="[&lt;strong&gt;Film&lt;/strong&gt;](film.md)"><strong>胶片</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -79,12 +78,12 @@ ms.locfileid: "63358049"
 <a name="remarks"></a>备注
 -------
 
-**FilmScanModesSupported**元素包含一个或多个[ **FilmScanModeValue** ](filmscanmodevalue.md)子元素。 每个**FilmScanModeValue**元素标识电影扫描选项支持的电影胶片公开类型。
+**FilmScanModesSupported** 元素包含一个或多个 [**FilmScanModeValue**](filmscanmodevalue.md)子元素。 每个 **FilmScanModeValue** 元素标识胶卷扫描选项支持的电影曝光类型。
 
 ## <a name="see-also"></a>请参阅
 
 
-[**Film**](film.md)
+[**胶片**](film.md)
 
 [**FilmScanModeValue**](filmscanmodevalue.md)
 

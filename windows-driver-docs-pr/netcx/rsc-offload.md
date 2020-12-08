@@ -1,22 +1,21 @@
 ---
 title: 接收段合并卸载
 description: 接收段合并 (RSC) 卸载使用情况、规则和 NetAdapterCx 中的示例。
-ms.assetid: ''
 keywords:
 - WDF 网络适配器类扩展卸载，NetAdapterCx 硬件卸载，NetAdapterCx 卸载，Get-netadapter 卸载，接收段合并卸载，RSC
 ms.date: 10/13/2020
 ms.custom: Fe
-ms.openlocfilehash: 077167e4acd23286369ed0cf55a81a89e6b8b3dc
-ms.sourcegitcommit: 5587af31b12cf96c1a31d42f7b40e8f72e3d739c
+ms.openlocfilehash: cc1abd0e815adb5026ce3e038892db3c04fcb5fb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94572488"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808091"
 ---
-# <a name="receive-segment-coalescing-rsc-offload"></a> (RSC) 卸载接收段合并
+# <a name="receive-segment-coalescing-rsc-offload"></a>接收段合并 (RSC) 卸载
 
 > [!WARNING]
-> 本主题中的一些信息与预发布的产品相关，该产品在商业发布之前可能会进行重大修改。 Microsoft 对此处提供的信息不提供任何明示或暗示的保证。
+> 本主题中的一些信息与预发布的产品相关，该产品在商业发布之前可能会进行重大修改。 Microsoft 不对此处提供的信息作任何明示或默示的担保。
 >
 > NetAdapterCx 仅在 Windows 10 版本2004中处于预览阶段。
 >

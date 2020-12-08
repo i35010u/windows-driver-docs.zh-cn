@@ -1,15 +1,14 @@
 ---
 title: 附录2用 Visual Studio 为驱动程序签名
 description: 描述如何使用 Microsoft Visual Studio 对 Windows 设备驱动程序进行签名。
-ms.assetid: 4021543C-A3F3-421D-A6C2-087DA350B21D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b21ebdbc9bb6d146fdbf2fb7bbb9fb9e3f9844e
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: daf8526cb43c546914fd6916b1677d55d864d4b1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096245"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808179"
 ---
 # <a name="appendix-2-signing-drivers-with-visual-studio"></a>附录 2：使用 Visual Studio 签署驱动程序
 

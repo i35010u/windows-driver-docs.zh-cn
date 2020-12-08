@@ -1,15 +1,14 @@
 ---
 title: 平板扫描仪体系结构
 description: 平板扫描仪体系结构
-ms.assetid: 04f7df17-d289-44a1-8c2d-7d0fa618cc97
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ac30781b6003eb3ab3d431f2fa55210c00173b6
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: dd5f770cb72a9546737eed66990f6d092d69dd65
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188110"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808253"
 ---
 # <a name="flatbed-scanner-architecture"></a>平板扫描仪体系结构
 

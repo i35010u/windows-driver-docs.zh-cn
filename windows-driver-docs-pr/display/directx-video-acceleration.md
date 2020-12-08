@@ -1,7 +1,6 @@
 ---
 title: DirectX 视频加速
 description: DirectX 视频加速
-ms.assetid: e25407a3-be5c-4509-a3e7-d9688958e3d4
 keywords:
 - DirectX 视频加速 WDK Windows 2000 显示
 - 视频加速 WDK DirectX
@@ -12,12 +11,12 @@ keywords:
 - Windows 2000 显示器驱动程序模型 WDK，DirectX 视频加速
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ff58bc409f489104868682be32511d771172826c
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: eb7cb9a0c243b68905d26b0c76dd6fb5c27302ef
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067444"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809299"
 ---
 # <a name="directx-video-acceleration"></a>DirectX 视频加速
 

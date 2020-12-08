@@ -1,40 +1,39 @@
 ---
 title: OID_SWITCH_PROPERTY_ENUM
 description: Hyper-v 可扩展交换机扩展发出对象标识符 (OID) 方法请求 OID_SWITCH_PROPERTY_ENUM 获取数组。
-ms.assetid: 45277355-4486-4CE0-ACBF-68D6BC6B79E7
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_SWITCH_PROPERTY_ENUM 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 3410432aefc8696c2746c6fc55b3d76fe442b752
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: b60e83db5475209b805efa35df560575851d8984
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104274"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808053"
 ---
 # <a name="oid_switch_property_enum"></a>OID \_ 开关 \_ 属性 \_ 枚举
 
 
 Hyper-v 可扩展交换机扩展会发出对象标识符 (OID) 方法请求， \_ \_ \_ 以获取数组。 此数组包含与指定条件匹配的预配交换机策略。 数组中的每个元素指定可扩展交换机策略的属性。
 
-[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向缓冲区的指针。 此缓冲区包含以下数据：
+[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向缓冲区的指针。 此缓冲区包含以下数据：
 
 -   用于指定可扩展交换机策略枚举参数的 [**NDIS \_ 交换机 \_ 属性 \_ 枚举 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_enum_parameters) 结构。
 
 -   [**NDIS \_ 开关 \_ 属性 \_ 枚举 \_ 信息**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_enum_info)结构的数组。 其中每个结构都包含有关可扩展交换机策略的信息。
 
-    **注意**   如果尚未为扩展预配指定的可扩展交换机策略的实例，扩展会将[**ndis \_ 交换机 \_ 属性 \_ 枚举 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_enum_parameters)结构的**NumProperties**成员设置为零，且不会返回[**ndis \_ 交换机 \_ 属性 \_ 枚举 \_ 信息**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_enum_info)结构。
+    **注意** 如果尚未为扩展预配指定的可扩展交换机策略的实例，扩展会将 [**ndis \_ 交换机 \_ 属性 \_ 枚举 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_enum_parameters)结构的 **NumProperties** 成员设置为零，且不会返回 [**ndis \_ 交换机 \_ 属性 \_ 枚举 \_ 信息**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_enum_info)结构。
 
      
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 \_ \_ \_ 仅当 hyper-v 可扩展交换机完成激活时才必须发出 oid 开关属性 ENUM。 有关更多详细信息，请参阅 [查询 Hyper-v 可扩展交换机配置](./querying-the-hyper-v-extensible-switch-configuration.md) 。
 
-与 oid [ \_ 交换机 \_ 端口 \_ 属性 \_ 枚举](oid-switch-port-property-enum.md)的 oid 查询请求不同，扩展在向下发出 oid 开关*ReferenceSwitchXxx* *DereferenceSwitchXxx* \_ \_ 属性枚举请求时，无需调用任何 ReferenceSwitchXxx 或 DereferenceSwitchXxx 函数 \_ 。
+与 oid [ \_ 交换机 \_ 端口 \_ 属性 \_ 枚举](oid-switch-port-property-enum.md)的 oid 查询请求不同，扩展在向下发出 oid 开关 *ReferenceSwitchXxx* *DereferenceSwitchXxx* \_ \_ 属性枚举请求时，无需调用任何 ReferenceSwitchXxx 或 DereferenceSwitchXxx 函数 \_ 。
 
-**注意**   如果扩展插件收到 oid \_ 开关属性枚举的 oid 方法 \_ 请求 \_ ，则它不能完成 oid 请求。 相反，它必须调用 [**NdisFOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequest) 将 OID 请求向下转发到可扩展交换机驱动程序堆栈。
+**注意**  如果扩展插件收到 oid \_ 开关属性枚举的 oid 方法 \_ 请求 \_ ，则它不能完成 oid 请求。 相反，它必须调用 [**NdisFOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequest) 将 OID 请求向下转发到可扩展交换机驱动程序堆栈。
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: 打开和关闭端口
 description: 打开和关闭端口
-ms.assetid: 8bfdb3af-51d4-4252-ae1c-7910f973f5f6
 keywords:
 - 打印监视器 WDK，端口管理
 - 端口管理 WDK 打印，打开端口
@@ -15,12 +14,12 @@ keywords:
 - 打印后台处理程序打开和关闭端口 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b6eaa0f72b8f575a9255ec0b91f0a6ced2ad3f7d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 1f7e6401c94619e6f2127a1ef6c8dcb068bdb8da
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213649"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807747"
 ---
 # <a name="opening-and-closing-a-port"></a>打开和关闭端口
 
@@ -30,7 +29,7 @@ ms.locfileid: "89213649"
 
 添加端口后，如 [添加端口](adding-a-port.md)中所述，后台处理程序可以通过调用相应的语言监视器的 [**OpenPortEx**](/previous-versions/ff559596(v=vs.85)) 函数来打开该端口。
 
-语言监视器使用 **OpenPortEx** 函数来创建和返回端口句柄。 通常，语言监视器调用其关联的端口监视器的 [**OpenPort**](/windows-hardware/drivers/ddi/winsplp/nf-winsplp-openport) 函数，而 language 监视器只返回从端口监视器的 **OpenPort**获取的句柄。
+语言监视器使用 **OpenPortEx** 函数来创建和返回端口句柄。 通常，语言监视器调用其关联的端口监视器的 [**OpenPort**](/windows-hardware/drivers/ddi/winsplp/nf-winsplp-openport) 函数，而 language 监视器只返回从端口监视器的 **OpenPort** 获取的句柄。
 
 如果没有与某个端口关联的语言监视器，则后台处理程序会直接调用端口监视器的 **OpenPort** 函数。
 

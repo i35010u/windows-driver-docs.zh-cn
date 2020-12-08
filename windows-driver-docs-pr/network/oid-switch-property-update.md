@@ -1,29 +1,28 @@
 ---
 title: OID_SWITCH_PROPERTY_UPDATE
 description: Hyper-v 可扩展交换机的协议边缘 (OID 发出对象标识符) 设置 OID_SWITCH_PROPERTY_UPDATE 请求，以通知可扩展交换机扩展有关可扩展交换机策略属性的参数更新。
-ms.assetid: AEC32AD8-B353-4D58-9111-D70C2FFA9F66
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_SWITCH_PROPERTY_UPDATE 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: f78665bec3e9907fd39f1c5fa50eb357be2c48b1
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 641731a9985e60736dbfc9e619d179b523d9e9ad
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213815"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808049"
 ---
 # <a name="oid_switch_property_update"></a>OID \_ 开关 \_ 属性 \_ 更新
 
 
 Hyper-v 可扩展交换机的协议边缘 (OID 发出对象标识符) 设置 OID \_ 开关 \_ 属性 update 的请求 \_ ，以通知可扩展交换机扩展关于可扩展交换机策略属性的参数更新。
 
-[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向缓冲区的指针。 此缓冲区包含以下数据：
+[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向缓冲区的指针。 此缓冲区包含以下数据：
 
 -   [**NDIS \_ 交换机 \_ 属性 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_parameters)结构，指定可扩展交换机策略的标识和类型。
 
--   包含可扩展交换机策略参数的属性缓冲区。 属性缓冲区包含一个结构，该结构基于[**NDIS \_ 开关 \_ 属性 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_parameters)结构的**PropertyType**成员。
+-   包含可扩展交换机策略参数的属性缓冲区。 属性缓冲区包含一个结构，该结构基于 [**NDIS \_ 开关 \_ 属性 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_parameters)结构的 **PropertyType** 成员。
 
-    **注意**   从 Windows Server 2012 开始， **PropertyType**成员必须设置为**NdisSwitchPropertyTypeCustom** ，并且属性缓冲区必须包含[**NDIS \_ 开关 \_ 属性 \_ 自定义**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_custom)结构。
+    **注意**  从 Windows Server 2012 开始， **PropertyType** 成员必须设置为 **NdisSwitchPropertyTypeCustom** ，并且属性缓冲区必须包含 [**NDIS \_ 开关 \_ 属性 \_ 自定义**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_custom) 结构。
 
      
 
@@ -34,7 +33,7 @@ Hyper-v 可扩展交换机的协议边缘 (OID 发出对象标识符) 设置 OID
 
 此扩展可以通过返回 \_ \_ \_ OID 请求未接受的 NDIS 状态数据来拒绝更新 switch 属性 \_ 。 例如，如果扩展无法分配资源来在交换机上强制实施其更新的策略，则它应否决更新请求。
 
-**注意**   如果扩展返回其他 NDIS \_ 状态 \_ *Xxx*错误状态代码，则创建通知也被否决。 然而，为暂时性方案返回状态代码（例如返回 NDIS \_ 状态 \_ 资源）可能会导致创建通知重试。
+**注意** 如果扩展返回其他 NDIS \_ 状态 \_ *Xxx* 错误状态代码，则创建通知也被否决。 然而，为暂时性方案返回状态代码（例如返回 NDIS \_ 状态 \_ 资源）可能会导致创建通知重试。
 
  
 
@@ -114,7 +113,7 @@ Hyper-v 可扩展交换机的协议边缘 (OID 发出对象标识符) 设置 OID
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 ****

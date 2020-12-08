@@ -1,7 +1,6 @@
 ---
 title: 控制台和远程 IDD 的 IddCx 1.4 更新
 description: 适用于控制台和远程间接显示驱动程序的 IddCx 版本1.4 更新
-ms.assetid: 4823bb0a-3631-4232-93b4-ceb3c01b0b85
 ms.date: 09/28/2020
 keywords:
 - 控制台和远程间接显示驱动程序，IddCx 版本1.4 及更高版本
@@ -11,12 +10,12 @@ keywords:
 - 远程间接显示驱动程序
 - 远程 IDD
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b98fb55e38ca0f4248e23a1de2526c0071ecbfd
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: aa090da09e06298656368b3ac48362789f2420d5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732553"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808445"
 ---
 # <a name="iddcx-14-updates-for-console-and-remote-idds"></a>控制台和远程 IDD 的 IddCx 1.4 更新
 
@@ -38,11 +37,11 @@ Windows 的 "设置" 应用程序中还提供了 "图形设置" 页，该页面�
 
 | IDD 的 GPU pref\* | 用户/OS pref\*\* | DWM 的枚举\+ | 应用的枚举\+\+ | Intel 路径 ~ | Nvidia 路径 ~ ~ | 存在 GPU ^ |
 | ----------------- | ------ | ------ | ------ | -------------------- | -------------------- | ------ |
-| **无或 Intel** | System | Intel  | Intel  | 同一适配器         | 混合跨适配器 | Intel  |
-| **无或 Intel** | 电源  | Intel  | Intel  | 同一适配器         | 混合跨适配器 | Intel  |
+| **无或 Intel** | 系统 | Intel  | Intel  | 同一适配器         | 混合跨适配器 | Intel  |
+| **无或 Intel** | 强力  | Intel  | Intel  | 同一适配器         | 混合跨适配器 | Intel  |
 | **无或 Intel** | 性能   | Intel  | Nvidia | 同一适配器         | 混合跨适配器 | Intel  |
-| **Nvidia**        | System | Nvidia | Nvidia | 混合跨适配器 | 同一适配器         | Nvidia |
-| **Nvidia**        | 电源  | Nvidia | Intel  | 混合跨适配器 | 同一适配器         | Nvidia |
+| **Nvidia**        | 系统 | Nvidia | Nvidia | 混合跨适配器 | 同一适配器         | Nvidia |
+| **Nvidia**        | 强力  | Nvidia | Intel  | 混合跨适配器 | 同一适配器         | Nvidia |
 | **Nvidia**        | 性能   | Nvidia | Nvidia | 混合跨适配器 | 同一适配器         | Nvidia |
 
 其中：
@@ -57,7 +56,7 @@ Windows 的 "设置" 应用程序中还提供了 "图形设置" 页，该页面�
 
 ## <a name="update-evtiddcxmonitorassignswapchain-error-handling-for-windows-10-version-1903-and-later"></a>更新 Windows 10 版本1903及更高版本的 EvtIddCxMonitorAssignSwapChain 错误处理
 
-从 Windows 10 开始，版本1903，针对所有驱动程序版本的 [**EvtIddCxMonitorAssignSwapChain**](/windows-hardware/drivers/ddi/iddcx/nc-iddcx-evt_idd_cx_monitor_assign_swapchain) 回调的 IddCx 错误处理已更改，并引入了新的状态代码。 有关详细信息，请参阅[ **EvtIdCxMonitorAssignSwapChain**错误处理](idd-evtiddcxmonitorassignswapchain-error-handling.md)。
+从 Windows 10 开始，版本1903，针对所有驱动程序版本的 [**EvtIddCxMonitorAssignSwapChain**](/windows-hardware/drivers/ddi/iddcx/nc-iddcx-evt_idd_cx_monitor_assign_swapchain) 回调的 IddCx 错误处理已更改，并引入了新的状态代码。 有关详细信息，请参阅 [ **EvtIdCxMonitorAssignSwapChain** 错误处理](idd-evtiddcxmonitorassignswapchain-error-handling.md)。
 
 ## <a name="for-edid-less-scenarios-add-evt_idd_cx_monitor_get_physical_size-to-provide-the-physical-width-and-height-of-the-monitor"></a>对于无 EDID 方案，请添加 EVT_IDD_CX_MONITOR_GET_PHYSICAL_SIZE 以提供监视器的物理宽度和高度
 

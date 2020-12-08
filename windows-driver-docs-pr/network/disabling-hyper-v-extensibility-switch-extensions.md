@@ -1,15 +1,14 @@
 ---
 title: 禁用 Hyper-V 可扩展交换机扩展
 description: 禁用 Hyper-V 可扩展交换机扩展
-ms.assetid: 3BE5A53E-3F74-4B99-B504-5D7F090343E5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 127545ed7e06c7ade1c4eaa635c7136f25ec71e8
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a5adcabe177e1caeca211bb773d1f18d2b8f649c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217638"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808631"
 ---
 # <a name="disabling-hyper-v-extensible-switch-extensions"></a>禁用 Hyper-V 可扩展交换机扩展
 

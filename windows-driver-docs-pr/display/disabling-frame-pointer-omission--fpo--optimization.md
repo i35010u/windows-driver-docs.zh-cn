@@ -1,15 +1,14 @@
 ---
 title: 禁用帧指针省略 (FPO) 优化
 description: 在 Windows 7 中，Windows 显示驱动程序模型 (WDDM) 1.1 内核模式驱动程序需要禁用帧指针省略 (FPO) 优化，以提高诊断性能问题的能力。
-ms.assetid: ABA1A097-D9AA-41F4-90D4-B2FBB9B08534
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 92423a8c59bb6c5affc38a70b1dfb0fb421f638d
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: a0cbfbcc2aa540b5293c495ba7483930c8f083ec
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067440"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809289"
 ---
 # <a name="disabling-frame-pointer-omission-fpo-optimization"></a>禁用帧指针省略 (FPO) 优化
 
@@ -22,7 +21,7 @@ ms.locfileid: "89067440"
 
 **驱动程序实现：完整图形、仅呈现和显示**：必需
 
-** [WHCK](/windows-hardware/test/hlk/windows-hardware-lab-kit)要求和测试**：[内核视频驱动程序的 WHQL FPO 优化检查](/windows-hardware/test/hlk/testref/2ad364ea-73db-47b6-a627-dea13e7c17d2)
+**[WHCK](/windows-hardware/test/hlk/windows-hardware-lab-kit)要求和测试**：[内核视频驱动程序的 WHQL FPO 优化检查](/windows-hardware/test/hlk/testref/2ad364ea-73db-47b6-a627-dea13e7c17d2)
 
 
  

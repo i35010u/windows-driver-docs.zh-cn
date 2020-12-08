@@ -1,15 +1,14 @@
 ---
 title: IStiUSD COM 接口
 description: IStiUSD COM 接口
-ms.assetid: 2f805955-8c66-4c9e-839e-c8a98c6637a8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b1d3cd7e998ef0c761936826b580db47ddb500a
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: da38eb42a7dcbfce02ed2878562b4d924dc5e4a5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186465"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808779"
 ---
 # <a name="istiusd-com-interface"></a>IStiUSD COM 接口
 
@@ -17,11 +16,11 @@ ms.locfileid: "89186465"
 
 
 
-**IStiUSD** com 接口是[IStiDevice com 接口](istidevice-com-interface.md)与静态图像设备通信的方式。 **IStiUSD**接口的方法由供应商提供的每个[用户模式静止图像微型驱动程序](overview-of-sti-components.md#ddk-user-mode-still-image-minidrivers-si)实现。
+**IStiUSD** com 接口是 [IStiDevice com 接口](istidevice-com-interface.md)与静态图像设备通信的方式。 **IStiUSD** 接口的方法由供应商提供的每个 [用户模式静止图像微型驱动程序](overview-of-sti-components.md#ddk-user-mode-still-image-minidrivers-si)实现。
 
 通常， **IStiUSD** 接口方法由 **IStiDevice** 接口定义的名称类似的方法调用。 静止图像微型驱动程序通常通过调用相应的内核模式驱动程序来实现 **IStiUSD** 接口方法。 每个微型驱动程序都必须定义所有接口方法，但如果不需要方法，它可以返回 \_ 不支持的 STIERR。
 
-**IStiUSD**接口定义的方法包括：
+**IStiUSD** 接口定义的方法包括：
 
 <a href="" id="istiusd--devicereset"></a>[**IStiUSD：:D eviceReset**](/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istiusd-devicereset)  
 将静止图像设备重置为已知的初始化状态。

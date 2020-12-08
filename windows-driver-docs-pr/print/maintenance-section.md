@@ -1,20 +1,19 @@
 ---
 title: Maintenance 节
 description: Maintenance 节
-ms.assetid: 65b94b61-83aa-403d-98a1-67f82bf48e86
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ab3f496198b96d1845555dc07933f52e54170e09
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 979cbe384538fe72f40198b771aa1a52122ad720
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388075"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807911"
 ---
 # <a name="maintenance-section"></a>Maintenance 节
 
 
-维护一节包含维护属性和两个提供有关维护打印设备的信息的子值。
+维护部分包含维护属性和两个子值，其中提供了有关维护打印设备的信息。
 
 ```cpp
 Printer

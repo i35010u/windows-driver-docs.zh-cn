@@ -1,18 +1,17 @@
 ---
 title: 设备安装应用程序编写指南
 description: 设备安装应用程序编写指南
-ms.assetid: 7f364b95-98ca-479a-8cdb-5e5e77c70cfa
 keywords:
 - 安装应用程序 WDK，指导原则
 - 设备安装应用程序 WDK，指导原则
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e0a40881d6e41539b024ab22d425621c6fe98559
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: d47725a39ef30e2158af79ab79a9be563463b8aa
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361347"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808119"
 ---
 # <a name="guidelines-for-writing-device-installation-applications"></a>设备安装应用程序编写指南
 
@@ -43,13 +42,13 @@ ms.locfileid: "94361347"
 
 设备安装应用程序 *不能* 执行以下操作：
 
--   指示用户复制或覆盖任何文件，尤其是。 *inf* 和。 *sys* 文件。
+-   指示用户复制或覆盖任何文件，尤其是。*inf* 和。*sys* 文件。
 
 -   在卸载操作期间从系统中删除已安装的驱动程序文件，即使删除了硬件也是如此。
 
 -   强制任何不必要的系统重新启动。 安装 PnP 设备或软件应用程序通常不需要重新启动。 [**UpdateDriverForPlugAndPlayDevices**](/windows/win32/api/newdev/nf-newdev-updatedriverforplugandplaydevicesa)函数的 *bRebootRequired* 参数表示需要重新启动。
 
--   使用 RunOnce 注册表项启动 *设备安装应用程序* ，因为这需要重新启动系统。
+-   使用 RunOnce 注册表项启动 *设备安装应用程序*，因为这需要重新启动系统。
 
 -   使用设备或类共同安装程序或类安装程序来启动设备安装应用程序，因为在设备安装过程中系统的状态无法保证在安装软件应用程序时是安全的。 具体而言，如果设备安装应用程序在服务器端安装过程中运行，系统将停止响应。
 
@@ -57,7 +56,7 @@ ms.locfileid: "94361347"
 
     有关共同安装程序的详细信息，请参阅 [编写共同安装程序](writing-a-co-installer.md)。
 
--   使用 "启动" 组启动 *设备安装应用程序* 。
+-   使用 "启动" 组启动 *设备安装应用程序*。
 
 -   使用 *win.ini* 条目开始设备安装应用程序。
 

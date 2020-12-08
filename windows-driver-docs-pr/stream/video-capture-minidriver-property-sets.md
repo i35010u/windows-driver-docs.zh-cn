@@ -1,15 +1,14 @@
 ---
 title: 视频捕获微型驱动程序属性集
 description: 视频捕获微型驱动程序属性集
-ms.assetid: adbf62c4-1c66-46e9-ae8e-867a88bb107c
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c18f715de86868aed3a84e6592103b8c4e6e75d
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 54a9fd8c9fb51bb6f1a2d27398b0908b1c8708aa
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184365"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808551"
 ---
 # <a name="video-capture-minidriver-property-sets"></a>视频捕获微型驱动程序属性集
 

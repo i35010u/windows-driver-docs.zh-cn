@@ -1,15 +1,14 @@
 ---
 title: 常规 WIA 实用程序函数
 description: 常规 WIA 实用程序函数
-ms.assetid: 235c07a1-4903-4df6-b29f-0ecc342782b4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2159e2dfff5b36c19ec1a8d621a40fb265d13a34
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: a913fa78698a2881a958acbecacf4949d069a798
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104290"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808233"
 ---
 # <a name="general-wia-utility-functions"></a>常规 WIA 实用程序函数
 
@@ -27,7 +26,7 @@ ms.locfileid: "90104290"
 <thead>
 <tr class="header">
 <th>函数</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

@@ -1,20 +1,19 @@
 ---
 title: 用于在横屏设备上显示应用的代码示例
-description: 下面是可用于使应用程序纵向设备上正确显示的代码。
-ms.assetid: 5653E920-A068-4EBA-869E-0E2D65118B33
+description: 下面是可以用来使应用程序在纵向设备上正确显示的代码。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d5ddaf7c41200581035754daa68b5c5d877491d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 232e51b69d74e0c8a961cf30eeaab7e8dff84044
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323781"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809217"
 ---
 # <a name="example-code-for-displaying-an-app-on-a-portrait-device"></a>用于在横屏设备上显示应用的代码示例
 
 
-下面是可用于使应用程序纵向设备上正确显示的代码。
+下面是可以用来使应用程序在纵向设备上正确显示的代码。
 
 ```cpp
 //

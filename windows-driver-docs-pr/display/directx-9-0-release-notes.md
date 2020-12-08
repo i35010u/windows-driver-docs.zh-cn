@@ -1,17 +1,16 @@
 ---
 title: DirectX 9.0 发行说明
 description: DirectX 9.0 发行说明
-ms.assetid: b5a35a59-762e-42df-9599-fa1175928810
 keywords:
 - DirectX 9.0 发行说明 WDK Windows 2000 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ab860bed121849362e65fcd27e75bf96054e68d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: da2b9220d2c0542d0716b32758ddfb05a1fed627
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327963"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809357"
 ---
 # <a name="directx-90-release-notes"></a>DirectX 9.0 发行说明
 
@@ -19,7 +18,7 @@ ms.locfileid: "63327963"
 ## <span id="ddk_directx_9_0_release_notes_gg"></span><span id="DDK_DIRECTX_9_0_RELEASE_NOTES_GG"></span>
 
 
-以下各节包含 DirectX 9.0，专注于 DDI 被修改或扩展的 DirectX 9.0 的那些区域的更新信息：
+以下各节包含 DirectX 9.0 的更新信息，并将重点放在已针对 DirectX 9.0 进行了修改或扩展的 DDI 区域：
 
 [DirectX 9.0 驱动程序的标头文件](header-files-for-directx-9-0-drivers.md)
 
@@ -27,13 +26,13 @@ ms.locfileid: "63327963"
 
 [建议的 DirectX 9.0 驱动程序支持](recommended-directx-9-0-driver-support.md)
 
-[可选 DirectX 9.0 驱动程序支持](optional-directx-9-0-driver-support.md)
+[可选的 DirectX 9.0 驱动程序支持](optional-directx-9-0-driver-support.md)
 
-请注意 DirectX 9.0 运行时仅提供以任何形式的硬件加速，如果显示驱动程序是 DirectX 7.0 或更高版本的驱动程序 （即，该驱动程序支持至少会 DirectX 7.0 DDI）。
+请注意，仅当显示驱动程序为 DirectX 7.0 或更高版本的驱动程序时，DirectX 9.0 运行时才会以任何形式提供硬件加速 (即，驱动程序至少支持 DirectX 7.0 DDI) 。
 
-[更新为 Windows DDK](updates-for-windows-ddk.md)部分包含有关特定版本的 Microsoft Windows 驱动程序开发工具包 (DDK) 装有 DirectX 9.0 DDK 更新信息。
+[WINDOWS DDK 的更新](updates-for-windows-ddk.md)部分包含 (DDK) 的 Microsoft Windows 驱动程序开发工具包的特定版本的更新信息，其中安装了 DIRECTX 9.0 DDK。
 
-[对于 DirectX DDK 的旧版更新](updates-for-earlier-directx-ddk-versions.md)部分包含适用于版本 9.0 以及有关以前版本的更新信息。
+[较早的 DIRECTX DDK 版本的更新](updates-for-earlier-directx-ddk-versions.md)部分包含适用于版本9.0 及更早版本的更新信息。
 
  
 

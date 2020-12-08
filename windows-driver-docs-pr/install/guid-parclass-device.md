@@ -1,7 +1,6 @@
 ---
 title: GUID_PARCLASS_DEVICE
 description: GUID_PARCLASS_DEVICE
-ms.assetid: ce2c312f-4af3-464b-995f-e5907830a7dc
 keywords:
 - GUID_PARCLASS_DEVICE 设备和驱动程序安装
 topic_type:
@@ -14,17 +13,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 9ffbfb3dd1449ee8e6419afe3d99a17e6fd4145d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 637e6e208897b396332fa7987223983b433b2ace
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369979"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808145"
 ---
-# <a name="guidparclassdevice"></a>GUID_PARCLASS_DEVICE
+# <a name="guid_parclass_device"></a>GUID_PARCLASS_DEVICE
 
 
-GUID_PARCLASS_DEVICE 是附加到并行端口设备的设备接口类的已过时标识符。 对于此类的新实例，使用[ **GUID_DEVINTERFACE_PARCLASS** ](guid-devinterface-parclass.md)类标识符。
+GUID_PARCLASS_DEVICE 是附加到并行端口的设备的设备接口类的过时标识符。 对于此类的新实例，请改用 [**GUID_DEVINTERFACE_PARCLASS**](guid-devinterface-parclass.md) 类标识符。
 
 <a name="requirements"></a>要求
 ------------
@@ -36,12 +35,12 @@ GUID_PARCLASS_DEVICE 是附加到并行端口设备的设备接口类的已过�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Version</p></td>
+<td align="left"><p>版本</p></td>
 <td align="left"><p>在 Microsoft Windows 2000 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Ntddpar.h （包括 Ntddpar.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Ntddpar (包含 Ntddpar) </td>
 </tr>
 </tbody>
 </table>

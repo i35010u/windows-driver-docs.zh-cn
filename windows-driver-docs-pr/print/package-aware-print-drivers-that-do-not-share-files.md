@@ -1,22 +1,21 @@
 ---
 title: 不共享文件的包感知打印驱动程序
 description: 不共享文件的包感知打印驱动程序
-ms.assetid: cd114766-37f4-43b5-8e2a-d85f95c973ab
 keywords:
-- 识别包的打印驱动程序 WDK
+- 包感知打印驱动程序 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b76f1947ae78a9c321fe66068bf870900002489
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f7b958b03ec3215f7868d19ef1c362926509f4ba
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362842"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807665"
 ---
 # <a name="package-aware-print-drivers-that-do-not-share-files"></a>不共享文件的包感知打印驱动程序
 
 
-如果驱动程序包中的文件有唯一的名称，不会以任何其他驱动程序包将 PrinterPackageInstallation 部分添加到 INF 文件。 在该部分中，添加**PackageAware**= TRUE 关键字，如下面的示例的第 23 行中所示：
+当驱动程序包中的文件是唯一命名的，并且不会出现在任何其他驱动程序包中时，请将 PrinterPackageInstallation 节添加到 INF 文件中。 在该部分中，添加 " **PackageAware**= TRUE" 关键字，如以下示例第23行中所示：
 
 ```cpp
 [Version]

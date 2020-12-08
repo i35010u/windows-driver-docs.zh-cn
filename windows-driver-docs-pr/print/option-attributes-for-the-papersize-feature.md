@@ -1,17 +1,16 @@
 ---
 title: 纸张大小功能的选项属性
 description: 纸张大小功能的选项属性
-ms.assetid: cfd82bc5-b89b-41c2-b542-28cb5905e37a
 keywords:
 - PaperSize 功能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0358299ed31d7f114da95cc7c0b56609ee3c5178
-ms.sourcegitcommit: 89b8a43480246dd726e3632aab2db9cf2eb7505d
+ms.openlocfilehash: ad5a5df7ec1a610c0c27f561e9cd5a20a74bf45b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92254054"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807711"
 ---
 # <a name="option-attributes-for-the-papersize-feature"></a>纸张大小功能的选项属性
 
@@ -21,7 +20,7 @@ ms.locfileid: "92254054"
 
 下表列出了与 PaperSize 功能相关的属性。 有关 PaperSize 功能的详细信息，请参阅 [标准功能](standard-features.md)。
 
-**注意**   以下属性的所有纸张大小规范都必须相对于纵向表示，即使这些属性用于描述不同的方向（如横向）也是如此。
+**注意**   以下属性的所有纸张大小规范都必须相对于纵向表示，即使这些属性用于描述不同的方向（如横向）也是如此。
 
  
 

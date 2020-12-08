@@ -1,7 +1,6 @@
 ---
-title: '\_DXGK\_ALLOCATIONINFOFLAGS2 结构'
-description: DXGK\_ALLOCATIONINFOFLAGS2 结构保留供系统使用。 不要在您的驱动程序中使用。
-ms.assetid: 67c27f53-29f0-4639-a360-0dbf7f3b3849
+title: '\_DXGK \_ ALLOCATIONINFOFLAGS2 结构'
+description: DXGK \_ ALLOCATIONINFOFLAGS2 结构保留供系统使用。 请勿在您的驱动程序中使用。
 keywords:
 - _DXGK_ALLOCATIONINFOFLAGS2 结构显示设备
 - DXGK_ALLOCATIONINFOFLAGS2 结构显示设备
@@ -15,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e868b54ec7dec952c338f98cdcc02b35e69c258f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7a63d58eeaf1c242bfa9e81e6ed238cf3fbd5afa
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389989"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809059"
 ---
-# <a name="dxgkallocationinfoflags2-structure"></a>\_DXGK\_ALLOCATIONINFOFLAGS2 结构
+# <a name="_dxgk_allocationinfoflags2-structure"></a>\_DXGK \_ ALLOCATIONINFOFLAGS2 结构
 
 
-DXGK\_ALLOCATIONINFOFLAGS2 结构保留供系统使用。 不要在您的驱动程序中使用。
+DXGK \_ ALLOCATIONINFOFLAGS2 结构保留供系统使用。 请勿在您的驱动程序中使用。
 
 <a name="syntax"></a>语法
 ------
@@ -79,7 +78,7 @@ typedef struct _DXGK_ALLOCATIONINFOFLAGS2 {
 
 **PermanentSysMem**
 
-**缓存**
+**Cached（缓存的请求）**
 
 **ExistingSysMem**
 
@@ -87,9 +86,9 @@ typedef struct _DXGK_ALLOCATIONINFOFLAGS2 {
 
 **Swizzled**
 
-**Overlay**
+**叠加**
 
-**Capture**
+**捕获**
 
 **SynchronousPaging**
 
@@ -99,41 +98,41 @@ typedef struct _DXGK_ALLOCATIONINFOFLAGS2 {
 
 **HistoryBuffer**
 
-**保留**
+Reserved 
 
-**DXGK\_ALLOC\_RESERVED16**
+**DXGK \_ 分配 \_ RESERVED16**
 
-**DXGK\_ALLOC\_RESERVED15**
+**DXGK \_ 分配 \_ RESERVED15**
 
-**DXGK\_ALLOC\_RESERVED14**
+**DXGK \_ 分配 \_ RESERVED14**
 
-**DXGK\_ALLOC\_RESERVED13**
+**DXGK \_ 分配 \_ RESERVED13**
 
-**DXGK\_ALLOC\_RESERVED12**
+**DXGK \_ 分配 \_ RESERVED12**
 
-**DXGK\_ALLOC\_RESERVED11**
+**DXGK \_ 分配 \_ RESERVED11**
 
-**DXGK\_ALLOC\_RESERVED9**
+**DXGK \_ 分配 \_ RESERVED9**
 
-**DXGK\_ALLOC\_RESERVED8**
+**DXGK \_ 分配 \_ RESERVED8**
 
-**DXGK\_ALLOC\_RESERVED7**
+**DXGK \_ 分配 \_ RESERVED7**
 
-**DXGK\_ALLOC\_RESERVED6**
+**DXGK \_ 分配 \_ RESERVED6**
 
-**DXGK\_ALLOC\_RESERVED5**
+**DXGK \_ 分配 \_ RESERVED5**
 
-**DXGK\_ALLOC\_RESERVED4**
+**DXGK \_ 分配 \_ RESERVED4**
 
-**DXGK\_ALLOC\_RESERVED3**
+**DXGK \_ 分配 \_ RESERVED3**
 
-**DXGK\_ALLOC\_RESERVED2**
+**DXGK \_ 分配 \_ RESERVED2**
 
-**DXGK\_ALLOC\_RESERVED1**
+**DXGK \_ 分配 \_ RESERVED1**
 
-**DXGK\_ALLOC\_RESERVED0**
+**DXGK \_ 分配 \_ RESERVED0**
 
-**值**
+值
 
 <a name="requirements"></a>要求
 ------------
@@ -145,12 +144,12 @@ typedef struct _DXGK_ALLOCATIONINFOFLAGS2 {
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Version</p></td>
-<td align="left"><p>在 Windows 7 和更高版本的 Windows 操作系统中可用。 在 Windows 8.1 中更新。</p></td>
+<td align="left"><p>版本</p></td>
+<td align="left"><p>在 windows 7 和更高版本的 Windows 操作系统中可用。 已在 Windows 8.1 中更新。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">D3dkmddi.h （包括 D3dkmddi.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">D3dkmddi (包含 D3dkmddi) </td>
 </tr>
 </tbody>
 </table>

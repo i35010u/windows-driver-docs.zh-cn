@@ -1,18 +1,17 @@
 ---
 title: 文件日志函数
 description: 文件日志函数
-ms.assetid: 7d9fe4c9-834f-4dcc-a216-dc6a98ee2fd3
 keywords:
 - Setupapi.log 函数 WDK，日志文件
 - 日志文件 WDK Setupapi.log
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c4aad36ddd0d60d11785a8d391317cccea51c0fc
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 47094a0a4e245e30c97333a6572e57fa7b5c27d4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717396"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808705"
 ---
 # <a name="file-log-functions"></a>文件日志函数
 
@@ -32,7 +31,7 @@ ms.locfileid: "90717396"
 <thead>
 <tr class="header">
 <th align="left">函数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

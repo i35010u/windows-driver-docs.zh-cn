@@ -1,15 +1,14 @@
 ---
 title: IStream 传输驱动程序示例
 description: IStream 传输驱动程序示例
-ms.assetid: fb830522-f95e-4dd7-8c1b-de092a6c5a51
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b84a47e6dadd1566c8da020a69e5b509d0a7eb4a
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 6b8def4515d475d95d89725160bfcef5f7cf2719
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184123"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808765"
 ---
 # <a name="istream-transfer-driver-example"></a>IStream 传输驱动程序示例
 

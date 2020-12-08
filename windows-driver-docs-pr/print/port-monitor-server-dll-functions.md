@@ -1,18 +1,17 @@
 ---
 title: 端口监视器服务器 DLL 函数
 description: 端口监视器服务器 DLL 函数
-ms.assetid: ffbcaaaa-7f9d-4b29-b939-189e10174074
 keywords:
 - 端口监视 WDK 打印、功能
 - 服务器 DLL 端口监视器函数 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e7d6655183e5ebd894a9d4facce89b5acc6d53df
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: bd7ec930d384cf3f8f732248bb8b528224138f2a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106998"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807549"
 ---
 # <a name="port-monitor-server-dll-functions"></a>端口监视器服务器 DLL 函数
 

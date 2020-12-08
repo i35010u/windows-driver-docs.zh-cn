@@ -1,16 +1,15 @@
 ---
 title: NDIS_STATUS_WWAN_CONTEXT_STATE
 description: 小型端口驱动程序使用 NDIS_STATUS_WWAN_CONTEXT_STATE 通知在特定上下文的激活状态发生更改时发送事件通知。
-ms.assetid: 6713f6a3-d1b7-49d0-83e1-50a33e9fff32
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 NDIS_STATUS_WWAN_CONTEXT_STATE 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ef8383d11b6b6799725135fd6dae8720bb334de
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: edc3c169bb19e204fca4067e30b3ea6f57a59fd8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211721"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808059"
 ---
 # <a name="ndis_status_wwan_context_state"></a>NDIS \_ 状态 \_ WWAN \_ 上下文 \_ 状态
 
@@ -56,7 +55,7 @@ ms.locfileid: "89211721"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ WWAN \_ 上下文 \_ 状态**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_context_state)

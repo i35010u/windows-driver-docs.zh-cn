@@ -1,7 +1,6 @@
 ---
 title: DeinterlaceOpenStream 方法
 description: 示例 DXVA_DeinterlaceBobDeviceClass：:D einterlaceOpenStream 函数创建并打开一个隔行扫描流对象。
-ms.assetid: 975d5f6a-8d92-4da5-846c-1637fca58eb1
 keywords:
 - DeinterlaceOpenStream 方法显示设备
 - DeinterlaceOpenStream 方法显示设备，DXVA_DeinterlaceBobDeviceClass 接口
@@ -15,12 +14,12 @@ api_type:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: 4c25fb66d89e8983afbd44e8ebdffcf1f2dfee74
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: fa49e710ccff414260dabff8121941589209f688
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361286"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808889"
 ---
 # <a name="dxva_deinterlacebobdeviceclassdeinterlaceopenstream-method"></a>DXVA \_ DeinterlaceBobDeviceClass：:D einterlaceopenstream 方法
 

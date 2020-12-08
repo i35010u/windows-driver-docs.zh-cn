@@ -1,7 +1,6 @@
 ---
 title: C28176
 description: 警告 C28176 结构成员不应由驱动程序修改。
-ms.assetid: 837b2dcd-0682-460f-a3ae-ebd82bcc451b
 keywords:
 - 列出用于驱动程序的 WDK PREfast 的警告
 - 为驱动程序列出的 WDK PREfast 的错误
@@ -9,12 +8,12 @@ ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28176
-ms.openlocfilehash: 70ce5d75cec762301cb8db1eaa9f61aa03dde297
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 67754ef9c5fc03b3274b29059a1f1c9bc7ea43cd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384585"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808497"
 ---
 # <a name="c28176"></a>C28176
 

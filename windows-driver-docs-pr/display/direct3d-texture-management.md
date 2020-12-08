@@ -1,19 +1,18 @@
 ---
 title: Direct3D 纹理管理
 description: Direct3D 纹理管理
-ms.assetid: d67ce56b-ed76-413f-b09f-e25400f1ac6d
 keywords:
 - 纹理管理 WDK Direct3D
 - Direct3D WDK Windows 2000 显示，纹理管理
 - 纹理管理 WDK Direct3D，关于纹理管理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d60379f9a2fd3b478e253c21ec89c7b44bb336f
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: a8dec95b3f4ab053c568566e1719f8e136450e5a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065904"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809433"
 ---
 # <a name="direct3d-texture-management"></a>Direct3D 纹理管理
 

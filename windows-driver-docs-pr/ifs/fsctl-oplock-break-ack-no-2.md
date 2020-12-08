@@ -1,7 +1,6 @@
 ---
 title: FSCTL_OPLOCK_BREAK_ACK_NO_2 控制代码
 description: FSCTL \_ OPLOCK \_ 中断 \_ ACK \_ NO \_ 2 控制代码响应，指出文件上的独占 (级别1、批处理或筛选器) 机会锁定 () OPLOCK 锁定已中断。
-ms.assetid: f76c98ba-e0bf-4b86-bda4-92f233ea5839
 keywords:
 - FSCTL_OPLOCK_BREAK_ACK_NO_2 控制代码可安装的文件系统驱动程序
 topic_type:
@@ -14,17 +13,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 81d636cf9d51e8a3889acbe6d567826fa24201d6
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: d9d70017b63602c7af1f76d3d014baa6908f12a4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067414"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808323"
 ---
 # <a name="fsctl_oplock_break_ack_no_2-control-code"></a>FSCTL \_ OPLOCK \_ 中断 \_ ACK \_ NO \_ 2 控制代码
 
 
-**FSCTL \_ OPLOCK \_ 中断 \_ ACK \_ NO \_ 2**控制代码响应，指出文件上的独占 (级别1、批处理或筛选器) 机会锁定 () OPLOCK 锁定已中断。
+**FSCTL \_ OPLOCK \_ 中断 \_ ACK \_ NO \_ 2** 控制代码响应，指出文件上的独占 (级别1、批处理或筛选器) 机会锁定 () OPLOCK 锁定已中断。
 
 客户端应用程序发送此控制代码以指示它将确认 oplock 中断，并且如果 oplock 是已分解为级别2的第1级 oplock，则不需要2级 oplock。
 
@@ -32,16 +31,16 @@ ms.locfileid: "89067414"
 
 有关机会锁定的详细信息，以及关于 FSCTL \_ OPLOCK \_ 中断 \_ ACK \_ NO \_ 2 控制代码的详细信息，请参阅 Microsoft Windows SDK 文档。
 
-**参数**
+**Parameters**
 
 <a href="" id="oplock"></a>*机会*  
 文件的不透明 oplock 对象指针。
 
 <a href="" id="callbackdata"></a>*CallbackData*  
-仅[**FltOplockFsctrl**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltoplockfsctrl) 。 为 IRP MJ [** \_ \_ **](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data) \_ \_ 文件 \_ 系统 \_ 控制 FSCTL 请求 (FLT 回调数据) 结构的回叫数据。 操作的 *FsControlCode* 参数必须是 FSCTL \_ OPLOCK \_ 中断 \_ ACK \_ NO \_ 2。
+仅 [**FltOplockFsctrl**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltoplockfsctrl) 。 为 IRP MJ [**\_ \_**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data) \_ \_ 文件 \_ 系统 \_ 控制 FSCTL 请求 (FLT 回调数据) 结构的回叫数据。 操作的 *FsControlCode* 参数必须是 FSCTL \_ OPLOCK \_ 中断 \_ ACK \_ NO \_ 2。
 
 <a href="" id="irp"></a>*Irp*  
-仅[**FsRtlOplockFsctrl**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtloplockfsctrl) 。 Irp \_ MJ \_ 文件 \_ 系统 \_ 控件 FSCTL 请求。 操作的 *FsControlCode* 参数必须是 FSCTL \_ OPLOCK \_ 中断 \_ ACK \_ NO \_ 2。
+仅 [**FsRtlOplockFsctrl**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtloplockfsctrl) 。 Irp \_ MJ \_ 文件 \_ 系统 \_ 控件 FSCTL 请求。 操作的 *FsControlCode* 参数必须是 FSCTL \_ OPLOCK \_ 中断 \_ ACK \_ NO \_ 2。
 
 <a href="" id="opencount"></a>*OpenCount*  
 不与此操作一起使用;设置为零。
@@ -61,7 +60,7 @@ ms.locfileid: "89067414"
 <thead>
 <tr class="header">
 <th align="left">术语</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -94,7 +93,7 @@ ms.locfileid: "89067414"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**FLT \_ 回调 \_ 数据**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)

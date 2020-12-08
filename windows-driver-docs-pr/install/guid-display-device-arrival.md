@@ -1,7 +1,6 @@
 ---
 title: GUID_DISPLAY_DEVICE_ARRIVAL
 description: GUID_DISPLAY_DEVICE_ARRIVAL
-ms.assetid: 4915c6b0-b9a7-4602-ae43-032e20353719
 keywords:
 - GUID_DISPLAY_DEVICE_ARRIVAL 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f2d4dd9e5bbd9e6e38ca0bf954672e8f083cc0c5
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 24875c3a44cd09b52d621abb49b9e6f19426bf8d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096855"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808157"
 ---
 # <a name="guid_display_device_arrival"></a>GUID_DISPLAY_DEVICE_ARRIVAL
 
@@ -78,7 +77,7 @@ ms.locfileid: "89096855"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**GUID_DEVINTERFACE_DISPLAY_ADAPTER**](guid-devinterface-display-adapter.md)

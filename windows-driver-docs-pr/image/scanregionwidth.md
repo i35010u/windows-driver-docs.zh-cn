@@ -1,9 +1,8 @@
 ---
 title: ScanRegionWidth 元素
-description: 所需的 ScanRegionWidth 元素中的快速扫描方向指定扫描区域的宽度。
-ms.assetid: 3fe1933c-f086-453d-a8bd-84903929ed28
+description: 必需的 ScanRegionWidth 元素按快速扫描方向指定扫描区域的宽度。
 keywords:
-- ScanRegionWidth 元素成像设备
+- ScanRegionWidth 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bdf72c017619145ae19e7396b16c1cf25f2442e6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9830f8eb028adc50eee30bc7877261623b62e9d8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356230"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808203"
 ---
 # <a name="scanregionwidth-element"></a>ScanRegionWidth 元素
 
 
-所需**ScanRegionWidth**元素中的快速扫描方向指定扫描区域的宽度。
+必需的 **ScanRegionWidth** 元素按快速扫描方向指定扫描区域的宽度。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -48,9 +47,9 @@ ms.locfileid: "63356230"
 </colgroup>
 <thead>
 <tr class="header">
-<th>特性</th>
-<th>在任务栏的搜索框中键入</th>
-<th>必需</th>
+<th>属性</th>
+<th>类型</th>
+<th>必须</th>
 <th>描述</th>
 </tr>
 </thead>
@@ -60,21 +59,21 @@ ms.locfileid: "63356230"
 <td><p>xs:string</p></td>
 <td><p>否</p></td>
 <td><p></p>
-<p>可选。 一个布尔值，必须为 0，为 false，1 或 true。<strong>falsetrue</strong></p></td>
+<p>可选。 必须为0、false、1或 true 的布尔值。<strong>falsetrue</strong></p></td>
 </tr>
 <tr class="even">
-<td><p><strong><strong>Override</strong></strong></p></td>
+<td><p><strong><strong>忽略</strong></strong></p></td>
 <td><p>xs:string</p></td>
 <td><p>否</p></td>
 <td><p></p>
-<p>可选。 一个布尔值，必须为 0，为 false，1 或 true。<strong>falsetrue</strong></p></td>
+<p>可选。 必须为0、false、1或 true 的布尔值。<strong>falsetrue</strong></p></td>
 </tr>
 <tr class="odd">
 <td><p><strong><strong>UsedDefault</strong></strong></p></td>
 <td><p>xs:string</p></td>
 <td><p>否</p></td>
 <td><p></p>
-<p>可选。 一个布尔值，必须为 0，为 false，1 或 true。<strong>falsetrue</strong></p></td>
+<p>可选。 必须为0、false、1或 true 的布尔值。<strong>falsetrue</strong></p></td>
 </tr>
 </tbody>
 </table>
@@ -82,12 +81,12 @@ ms.locfileid: "63356230"
 <a name="text-value"></a>文本值
 ----------
 
-必需。 一个介于 1 到 InputMediaSize 高度。[ **InputMediaSize**](inputmediasize.md)
+必需。 从1到 InputMediaSize 高度的整数。[ **InputMediaSize**](inputmediasize.md)
 
 ## <a name="child-elements"></a>子元素
 
 
-没有子元素。
+没有任何子元素。
 
 ## <a name="parent-elements"></a>父元素
 
@@ -111,11 +110,11 @@ ms.locfileid: "63356230"
 <a name="remarks"></a>备注
 -------
 
-有关扫描区域参数的详细信息，请参阅[ **ScanRegion**](scanregion.md)。
+有关扫描区域参数的详细信息，请参阅 [**ScanRegion**](scanregion.md)。
 
-客户端可以指定可选**MustHonor**属性时，才**ScanRegionWidth**元素包含在**CreateScanJobRequest**层次结构。 有关详细信息**MustHonor**及其使用情况，请参阅[ **CreateScanJobRequest**](createscanjobrequest.md)。
+仅当 **ScanRegionWidth** 元素包含在 **CreateScanJobRequest** 层次结构内时，客户端才能指定可选的 **MustHonor** 属性。 有关 **MustHonor** 及其用法的详细信息，请参阅 [**CreateScanJobRequest**](createscanjobrequest.md)。
 
-WSD 扫描服务可以指定可选**重写**并**UsedDefault**属性时，才**ScanRegionWidth**元素包含在**DocumentFinalParameters**层次结构。 有关详细信息**重写**并**UsedDefault**及其使用情况，请参阅[ **DocumentFinalParameters**](documentfinalparameters.md)。
+仅当 **ScanRegionWidth** 元素包含在 **DocumentFinalParameters** 层次结构中时，WSD 扫描服务才能指定可选 **Override** 和 **UsedDefault** 属性。 有关 **Override** 和 **UsedDefault** 及其用法的详细信息，请参阅 [**DocumentFinalParameters**](documentfinalparameters.md)。
 
 ## <a name="see-also"></a>请参阅
 

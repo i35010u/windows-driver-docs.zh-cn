@@ -1,7 +1,6 @@
 ---
 title: '\_DXGK \_ MULTIPLANE \_ 覆盖 \_ 筛选器结构'
-description: 预留给系统使用。 不要在您的驱动程序中使用它。请注意，此结构仅在随 Windows 8 随附的 Windows 驱动程序工具包（WDK）版本8随附的 D3dkmddi 标头中可用。 它已从标头的更高版本中删除。.
-ms.assetid: db369274-df58-40b0-8f2c-c1963dfa3607
+description: 预留给系统使用。 不要在您的驱动程序中使用它。请注意，此结构仅在随 windows 8 随附的 Windows 驱动程序工具包 (WDK) 版本8中提供。 它已从标头的更高版本中删除。 .
 keywords:
 - _DXGK_MULTIPLANE_OVERLAY_FILTER 结构显示设备
 - DXGK_MULTIPLANE_OVERLAY_FILTER 结构显示设备
@@ -15,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 93b6148246a304670f97ef5df6886637535a9d91
-ms.sourcegitcommit: 2f37e8de9759164804a3b1c7f5c9e497a607539b
+ms.openlocfilehash: 0bab5887986b1bdf21699f964748aaacd96fc344
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83851732"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809035"
 ---
 # <a name="_dxgk_multiplane_overlay_filter-structure"></a>\_DXGK \_ MULTIPLANE \_ 覆盖 \_ 筛选器结构
 
@@ -28,7 +27,7 @@ ms.locfileid: "83851732"
 预留给系统使用。 不要在您的驱动程序中使用它。
 
 > [!NOTE]
->  此结构仅在随 Windows 8 随附的 Windows 驱动程序工具包（WDK）版本8随附的 D3dkmddi 标头中可用。 它已从标头的更高版本中删除。
+>  此结构仅在随 windows 8) 版本8随附的 Windows 驱动程序工具包 (的 D3dkmddi 标头中提供。 它已从标头的更高版本中删除。
 
  
 
@@ -38,8 +37,8 @@ ms.locfileid: "83851732"
 ```ManagedCPlusPlus
 typedef struct _DXGK_MULITPLANE_OVERLAY_FILTER {
   DXGK_MULTIPLANE_OVERLAY_FILTER_TYPE FilterType;
-  BOOL                                Enabled;
-  INT                                 Value;
+  BOOL                                Enabled;
+  INT                                 Value;
 } DXGK_MULTIPLANE_OVERLAY_FILTER;
 ```
 
@@ -48,9 +47,9 @@ typedef struct _DXGK_MULITPLANE_OVERLAY_FILTER {
 
 **FilterType**
 
-**Enabled**
+**已启用**
 
-**值**
+值
 
 <a name="requirements"></a>要求
 ------------
@@ -70,7 +69,7 @@ typedef struct _DXGK_MULITPLANE_OVERLAY_FILTER {
 <td align="left"><p>Windows Server 2012</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
+<td align="left"><p>标头</p></td>
 <td align="left">D3dkmddi</td>
 </tr>
 </tbody>

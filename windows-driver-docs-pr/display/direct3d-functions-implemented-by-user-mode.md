@@ -1,15 +1,14 @@
 ---
 title: 用户模式显示驱动程序实现的 Direct3D 函数
 description: 本主题介绍用户模式显示驱动程序实现和提供的、可由操作系统调用的函数。
-ms.assetid: 6A9D0944-261D-4CAD-AD1B-601369D2FD68
 ms.date: 07/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: d407c425796a2328eb46281f7a9b4d1e55eb061d
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 7ebff17b9dc60b04dc81e2ba60b621117ff167f8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063928"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809465"
 ---
 # <a name="direct3d-functions-implemented-by-user-mode-display-drivers"></a>用户模式显示驱动程序实现的 Direct3D 函数
 
@@ -21,7 +20,7 @@ ms.locfileid: "89063928"
 
 当运行时调用 OpenAdapter 时，用户模式显示驱动程序 DLL 将导出 [OpenAdapter](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_openadapter) 函数，并通过 [D3DDDI_ADAPTERFUNCS](/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddi_adapterfuncs) 结构的成员向适配器特定函数提供指针。
 
-Direct3D 运行时从**D3DDDI_ADAPTERFUNCS**的*pfnCreateDevice*成员中调用[CreateDevice](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_createdevice)函数，以创建用于处理渲染状态集合的显示设备。 当运行时调用 CreateDevice 时，用户模式显示驱动程序 DLL 通过 [D3DDDI_DEVICEFUNCS](/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddi_devicefuncs) 结构的成员提供指向其所有特定于显示设备的函数的指针。
+Direct3D 运行时从 **D3DDDI_ADAPTERFUNCS** 的 *pfnCreateDevice* 成员中调用 [CreateDevice](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_createdevice)函数，以创建用于处理渲染状态集合的显示设备。 当运行时调用 CreateDevice 时，用户模式显示驱动程序 DLL 通过 [D3DDDI_DEVICEFUNCS](/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddi_devicefuncs) 结构的成员提供指向其所有特定于显示设备的函数的指针。
 
 以下 D3D 版本9函数包含在 [d3dumddi](/windows-hardware/drivers/ddi/d3dumddi/)中：
 
@@ -1056,7 +1055,7 @@ Direct3D 运行时从**D3DDDI_ADAPTERFUNCS**的*pfnCreateDevice*成员中调用[
 * D3DWDDM2_2DDI_SHADERCACHE_HASH
 * D3DWDDM2_2DDI_SWIZZLE_PATTERN_DESC
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [支持 DXGI DDI](supporting-the-dxgi-ddi.md)
 

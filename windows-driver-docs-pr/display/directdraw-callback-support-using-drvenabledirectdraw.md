@@ -1,7 +1,6 @@
 ---
 title: 使用 DrvEnableDirectDraw 的 DirectDraw 回调支持
 description: 使用 DrvEnableDirectDraw 的 DirectDraw 回调支持
-ms.assetid: 74caab2b-6976-411a-97af-7c94b0c12fa0
 keywords:
 - DirectDraw 驱动程序初始化 WDK Windows 2000 显示，Windows 2000
 - 回调函数 WDK DirectDraw
@@ -9,12 +8,12 @@ keywords:
 - DirectDraw 驱动程序初始化 WDK Windows 2000 显示，回调函数
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c7ace4397b8ea8cfdd10972b7301d89317abb8a0
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 7b00f32d795b8f91ccc79c5e11a29faab13df73c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715472"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809385"
 ---
 # <a name="directdraw-callback-support-using-drvenabledirectdraw"></a>使用 DrvEnableDirectDraw 的 DirectDraw 回调支持
 
@@ -22,7 +21,7 @@ ms.locfileid: "90715472"
 ## <span id="ddk_directdraw_callback_support_using_drvenabledirectdraw_gg"></span><span id="DDK_DIRECTDRAW_CALLBACK_SUPPORT_USING_DRVENABLEDIRECTDRAW_GG"></span>
 
 
-显示驱动程序可以实现 [**DrvEnableDirectDraw**](/windows/win32/api/winddi/nf-winddi-drvenabledirectdraw) 函数以指示各种 DirectDraw 回调支持。 为了指示支持，驱动程序将在*pCallBacks*、 *pSurfaceCallBacks*和*PPaletteCallBacks*参数中返回指向[**dd \_ 回调**](/windows/win32/api/ddrawint/ns-ddrawint-dd_callbacks)、 [**dd \_ SURFACECALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_surfacecallbacks)和[**dd \_ PALETTECALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_palettecallbacks)结构的指针。
+显示驱动程序可以实现 [**DrvEnableDirectDraw**](/windows/win32/api/winddi/nf-winddi-drvenabledirectdraw) 函数以指示各种 DirectDraw 回调支持。 为了指示支持，驱动程序将在 *pCallBacks*、 *pSurfaceCallBacks* 和 *PPaletteCallBacks* 参数中返回指向 [**dd \_ 回调**](/windows/win32/api/ddrawint/ns-ddrawint-dd_callbacks)、 [**dd \_ SURFACECALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_surfacecallbacks)和 [**dd \_ PALETTECALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_palettecallbacks)结构的指针。
 
 驱动程序将填充 [**DD \_ 回调**](/windows/win32/api/ddrawint/ns-ddrawint-dd_callbacks) 结构的成员，以指示它支持以下回调函数。
 
@@ -34,7 +33,7 @@ ms.locfileid: "90715472"
 <thead>
 <tr class="header">
 <th align="left">回调函数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -77,7 +76,7 @@ ms.locfileid: "90715472"
 <thead>
 <tr class="header">
 <th align="left">回调函数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -144,7 +143,7 @@ ms.locfileid: "90715472"
 <thead>
 <tr class="header">
 <th align="left">回调函数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

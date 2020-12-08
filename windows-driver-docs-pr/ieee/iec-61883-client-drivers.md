@@ -1,7 +1,6 @@
 ---
 title: IEC-61883 客户端驱动程序
 description: IEC-61883 客户端驱动程序
-ms.assetid: 2a3f62d0-c1f2-4978-8f89-3ed800d697f4
 keywords:
 - IEC-61883 客户端驱动程序 WDK IEEE 1394 总线
 - 61883 WDK IEEE 1394 总线
@@ -10,12 +9,12 @@ keywords:
 - 协议 WDK 总线
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d710bac093a9eb7cdad19039e2023a0cc6ac253
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 15ef80935ea3dc8bbb1223579957daba0d246406
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382239"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808841"
 ---
 # <a name="iec-61883-client-drivers"></a>IEC-61883 客户端驱动程序
 

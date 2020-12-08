@@ -1,7 +1,6 @@
 ---
 title: Direct3D DDI
 description: Direct3D DDI
-ms.assetid: 5b6f7c06-7f54-4fc4-9b94-5fb425b5b3c8
 keywords:
 - Direct3D WDK Windows 2000 显示
 - Direct3D WDK Windows 2000 显示，关于 Direct3D
@@ -13,12 +12,12 @@ keywords:
 - Windows 2000 显示器驱动程序模型 WDK，Direct3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 64dd9f0eb0f45b32a94f1aac16c0a78c9080e341
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 6eab520248e77843c656e204a20fafe213cebda3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065898"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809417"
 ---
 # <a name="direct3d-ddi"></a>Direct3D DDI
 
@@ -35,7 +34,7 @@ ms.locfileid: "89065898"
 正在为 Microsoft Windows 2000 和更高版本创建 Microsoft Direct3D 驱动程序的驱动程序编写器应使用以下头文件：
 
 <span id="D3DNTHAL.H"></span>*d3dnthal*  
-包含由驱动程序和驱动程序级别的结构的定义实现的回调的原型。 [**D3DHAL \_ DP2OPERATION**](/windows-hardware/drivers/ddi/d3dhal/ne-d3dhal-_d3dhal_dp2operation)枚举类型是在此文件中定义的。 此标头包含在 *winddi*中，此标头必须包含在所有 Windows 2000 和更高版本的驱动程序中。
+包含由驱动程序和驱动程序级别的结构的定义实现的回调的原型。 [**D3DHAL \_ DP2OPERATION**](/windows-hardware/drivers/ddi/d3dhal/ne-d3dhal-_d3dhal_dp2operation)枚举类型是在此文件中定义的。 此标头包含在 *winddi* 中，此标头必须包含在所有 Windows 2000 和更高版本的驱动程序中。
 
 <span id="D3DTYPES.H"></span>*d3dtypes*  
 包含应用程序和驱动程序使用的 Direct3D 类型定义。 除了 D3DHAL \_ DP2OPERATION，所有其他 Direct3D 枚举类型都在此标头中定义。
@@ -47,11 +46,11 @@ ms.locfileid: "89065898"
 允许驱动程序开发人员编写可在 Windows 2000 和更高版本以及 Windows 98/Me 之间移植的驱动程序代码。
 
 <span id="DDRAWINT.H"></span>*ddrawint*  
-此标头文件包含在 *winddi*中，是开发显示驱动程序的 Microsoft DirectDraw 部分所必需的。
+此标头文件包含在 *winddi* 中，是开发显示驱动程序的 Microsoft DirectDraw 部分所必需的。
 
 所有这些头文件随 Windows 驱动程序工具包一起提供 (WDK) 。 以前的驱动程序开发工具包 (Ddk) 也提供 *Perm3* 视频显示目录中 Direct3D 驱动程序的示例代码。
 
-**注意**   Microsoft Windows 驱动程序工具包 (WDK) 不包含 3Dlabs Permedia2 (*3dlabs.htm*) 和 3Dlabs *Permedia3 (Perm3.htm) 示例*显示驱动程序。 你可以从 Windows Server 2003 SP1 DDK 获取这些示例驱动程序，你可以从 WDHC 网站的 "DDK-Windows 驱动程序开发工具包" 页下载该驱动程序。
+**注意**   Microsoft Windows 驱动程序工具包 (WDK) 不包含 3Dlabs Permedia2 (*3dlabs.htm*) 和 3Dlabs *Permedia3 (Perm3.htm) 示例* 显示驱动程序。 你可以从 Windows Server 2003 SP1 DDK 获取这些示例驱动程序，你可以从 WDHC 网站的 "DDK-Windows 驱动程序开发工具包" 页下载该驱动程序。
 
  
 

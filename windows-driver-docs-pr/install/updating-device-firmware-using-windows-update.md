@@ -1,15 +1,14 @@
 ---
 title: 使用 Windows 更新更新设备固件
 description: 本主题介绍如何使用 Windows 更新 (WU) 服务来更新设备的固件。
-ms.assetid: 778c5ab5-572f-43b9-8e9a-9dd608de17a9
 ms.date: 08/24/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a3f9be0109536bcd0d6b2d7f744f26a405ecc3a1
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: a39a301bfe6b42077bd9a3e13d7ad231c972093b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733677"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808111"
 ---
 # <a name="updating-device-firmware-using-windows-update"></a>使用 Windows 更新更新设备固件
 

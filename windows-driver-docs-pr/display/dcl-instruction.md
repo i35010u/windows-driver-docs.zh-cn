@@ -1,15 +1,14 @@
 ---
 title: DCL 指令格式
 description: DCL 指令格式
-ms.assetid: 2833fe6a-f430-4a34-936f-04e997063671
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 360f494529c09821668183fc6ea2809c13fd62b8
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 2bcaa1350e8ee6e779dc0609e1be5d0fae0f9639
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065654"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808463"
 ---
 # <a name="dcl-instruction-format"></a>DCL 指令格式
 
@@ -32,11 +31,11 @@ DWORD 标记
 
 具有以下位格式：
 
-** \[ 26:0 \] **已保留。 设置为0x0。
+**\[ 26:0 \]** 已保留。 设置为0x0。
 
-** \[ 30:27 \] **设置为 \_ \_ 2d、cube 等的 D3DSAMPLER 纹理类型。
+**\[ 30:27 \]** 设置为 \_ \_ 2d、cube 等的 D3DSAMPLER 纹理类型。
 
-** \[ 31 \] **设置为0x1。
+**\[ 31 \]** 设置为0x1。
 
 [目标参数标记](destination-parameter-token.md)
 
@@ -51,9 +50,9 @@ DWORD 标记
 
 具有以下位格式：
 
-** \[ 30:0 \] **已保留。 设置为0x0。
+**\[ 30:0 \]** 已保留。 设置为0x0。
 
-** \[ 31 \] **设置为0x1。
+**\[ 31 \]** 设置为0x1。
 
 [目标参数标记](destination-parameter-token.md)
 
@@ -70,15 +69,15 @@ DWORD 标记
 
 具有以下位格式：
 
-** \[ 4:0 \] ** D3DDECLUSAGE 值 (即 D3DDECLUSAGE \_ TEXCOORD、D3DDECLUSAGE \_ NORMAL 等) 。
+**\[ 4:0 \]** D3DDECLUSAGE 值 (即 D3DDECLUSAGE \_ TEXCOORD、D3DDECLUSAGE \_ NORMAL 等) 。
 
-** \[ 15:5 \] **已保留。 设置为0x0。
+**\[ 15:5 \]** 已保留。 设置为0x0。
 
-** \[ 19:16 \] **使用情况索引值。
+**\[ 19:16 \]** 使用情况索引值。
 
-** \[ 30:20 \] **已保留。 设置为0x0。
+**\[ 30:20 \]** 已保留。 设置为0x0。
 
-** \[ 31 \] **设置为0x1。
+**\[ 31 \]** 设置为0x1。
 
 [目标参数标记](destination-parameter-token.md)
 
@@ -95,15 +94,15 @@ DWORD 标记
 
 具有以下位格式：
 
-** \[ 4:0 \] ** D3DDECLUSAGE 值 (必须是 D3DDECLUSAGE \_ TEXCOORD 或 D3DDECLUSAGE \_ COLOR) 。
+**\[ 4:0 \]** D3DDECLUSAGE 值 (必须是 D3DDECLUSAGE \_ TEXCOORD 或 D3DDECLUSAGE \_ COLOR) 。
 
-** \[ 15:5 \] **已保留。 设置为0x0。
+**\[ 15:5 \]** 已保留。 设置为0x0。
 
-** \[ 19:16 \] **使用情况索引值。 对于 D3DDECLUSAGE \_ TEXCOORD，必须为0-7。 对于 D3DDECLUSAGE \_ 颜色，必须为0。
+**\[ 19:16 \]** 使用情况索引值。 对于 D3DDECLUSAGE \_ TEXCOORD，必须为0-7。 对于 D3DDECLUSAGE \_ 颜色，必须为0。
 
-** \[ 30:20 \] **已保留。 设置为0x0。
+**\[ 30:20 \]** 已保留。 设置为0x0。
 
-** \[ 31 \] **设置为0x1。
+**\[ 31 \]** 设置为0x1。
 
 [目标参数标记](destination-parameter-token.md)
 
@@ -118,9 +117,9 @@ DWORD 标记
 
 具有以下位格式：
 
-** \[ 30:0 \] **已保留。 设置为0x0。
+**\[ 30:0 \]** 已保留。 设置为0x0。
 
-** \[ 31 \] **设置为0x1。
+**\[ 31 \]** 设置为0x1。
 
 [目标参数标记](destination-parameter-token.md)
 
@@ -135,9 +134,9 @@ DWORD 标记
 
 具有以下位格式：
 
-** \[ 30:0 \] **已保留。 设置为0x0。
+**\[ 30:0 \]** 已保留。 设置为0x0。
 
-** \[ 31 \] **设置为0x1。
+**\[ 31 \]** 设置为0x1。
 
 [目标参数标记](destination-parameter-token.md)
 
@@ -154,15 +153,15 @@ DWORD 标记
 
 具有以下位格式：
 
-** \[ 4:0 \] ** D3DDECLUSAGE 值 (即 D3DDECLUSAGE \_ TEXCOORD、D3DDECLUSAGE \_ NORMAL 等) 。
+**\[ 4:0 \]** D3DDECLUSAGE 值 (即 D3DDECLUSAGE \_ TEXCOORD、D3DDECLUSAGE \_ NORMAL 等) 。
 
-** \[ 15:5 \] **已保留。 设置为0x0。
+**\[ 15:5 \]** 已保留。 设置为0x0。
 
-** \[ 19:16 \] **使用情况索引值。
+**\[ 19:16 \]** 使用情况索引值。
 
-** \[ 30:20 \] **已保留。 设置为0x0。
+**\[ 30:20 \]** 已保留。 设置为0x0。
 
-** \[ 31 \] **设置为0x1。
+**\[ 31 \]** 设置为0x1。
 
 [目标参数标记](destination-parameter-token.md)
 

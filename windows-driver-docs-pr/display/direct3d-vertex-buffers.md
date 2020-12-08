@@ -1,18 +1,17 @@
 ---
 title: Direct3D 顶点缓冲区
 description: Direct3D 顶点缓冲区
-ms.assetid: b93278fc-c05f-40d4-aec1-7a90aed18ff4
 keywords:
 - 顶点缓冲 WDK Direct3D
 - 缓冲 WDK Direct3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f0846ca8304feda23b70a383ae88af52c8f4574
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: b8a9beebd801bf901866c23e03dac4fb1df0ce5b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065900"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809415"
 ---
 # <a name="direct3d-vertex-buffers"></a>Direct3D 顶点缓冲区
 
@@ -32,7 +31,7 @@ ms.locfileid: "89065900"
 
 驱动程序必须提供 FVF 支持。
 
-实际顶点和处理顺序的顺序取决于 \_ 刚从命令缓冲区分析的 D3DDP2OP*Xxx*基元命令。 有关详细信息，请参阅单独的 D3DHAL \_ DP2*Xxx* 结构参考页。
+实际顶点和处理顺序的顺序取决于 \_ 刚从命令缓冲区分析的 D3DDP2OP *Xxx* 基元命令。 有关详细信息，请参阅单独的 D3DHAL \_ DP2 *Xxx* 结构参考页。
 
  
 

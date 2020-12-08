@@ -1,7 +1,6 @@
 ---
 title: DXGKARG \_ 系统 \_ 显示 \_ 启用 \_ 标志结构
 description: 了解 DXGKARG \_ 系统 \_ 显示 \_ 启用 \_ 标志结构，该结构保留供系统使用。 不要在您的驱动程序中使用它。
-ms.assetid: f23d6692-4c9d-48eb-8d7f-ef70334494b1
 keywords:
 - DXGKARG_SYSTEM_DISPLAY_ENABLE_FLAGS 结构显示设备
 - PDXGKARG_SYSTEM_DISPLAY_ENABLE_FLAGS 结构指针显示设备
@@ -15,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0903217ee3a269c738ab0ec44b128d56e561ecf8
-ms.sourcegitcommit: fc94eb0d5a41ef81c1b3ab91ad725386db0be0c2
+ms.openlocfilehash: e8a4ff0ad850a91ed46b1ca636567cbcf7ad028d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91603691"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808967"
 ---
 # <a name="dxgkarg_system_display_enable_flags-structure"></a>DXGKARG \_ 系统 \_ 显示 \_ 启用 \_ 标志结构
 
@@ -36,7 +35,7 @@ typedef struct _DXGKARG_SYSTEM_DISPLAY_ENABLE_FLAGS {
     struct {
       UINT Reserved  :32;
     };
-    UINT   Value;
+    UINT   Value;
   };
 } DXGKARG_SYSTEM_DISPLAY_ENABLE_FLAGS, *PDXGKARG_SYSTEM_DISPLAY_ENABLE_FLAGS;
 ```

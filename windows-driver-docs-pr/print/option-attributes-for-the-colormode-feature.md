@@ -1,17 +1,16 @@
 ---
 title: 色彩模式功能的选项属性
 description: 色彩模式功能的选项属性
-ms.assetid: e6f68a50-f044-406e-b92c-8449d126bceb
 keywords:
 - ColorMode 功能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c0598113b28bf8cdeddb4e66a7e217eef9e1f733
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 40b9d81e6b542c85fcce98a93868c14b7fa729d8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107130"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807737"
 ---
 # <a name="option-attributes-for-the-colormode-feature"></a>色彩模式功能的选项属性
 

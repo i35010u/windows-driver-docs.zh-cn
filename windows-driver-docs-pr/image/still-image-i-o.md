@@ -1,15 +1,14 @@
 ---
 title: 静态图像 I/O
 description: 静态图像 I/O
-ms.assetid: 1dd23545-e13a-4a69-b9bc-e2305e4c2163
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 771432954ed606acc18ebac5be0b85450cf61fbe
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dc015ec3598a8f51aac24f9e626abd203156132e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63322185"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808743"
 ---
 # <a name="still-image-io"></a>静态图像 I/O
 
@@ -17,15 +16,15 @@ ms.locfileid: "63322185"
 
 
 
-仍映像设备可以在 SCSI 和 USB 总线上使用 Microsoft 提供基于 WDM 的内核模式驱动程序。 需要提供 Microsoft 驱动程序不支持的总线的总线驱动程序。
+静止图像设备可以在 SCSI 和 USB 总线上使用 Microsoft 提供的基于 WDM 的内核模式驱动程序。 需要为 Microsoft 驱动程序不支持的总线提供总线驱动程序。
 
-有关使用 SCSI 和 USB 总线的详细信息请参阅具有静止图像设备驱动程序：[访问内核模式驱动程序适用于静止图像设备](accessing-kernel-mode-drivers-for-still-image-devices.md)。
+有关将 SCSI 和 USB 总线驱动程序与静止图像设备配合使用的详细信息，请参阅： [访问 Kernel-Mode 驱动程序的静止图像设备](accessing-kernel-mode-drivers-for-still-image-devices.md)。
 
-本部分包含有关 SCSI 和 USB I/O 控制代码和与这些控制代码相关联的结构的其他信息。
+本部分包含有关 SCSI 和 USB i/o 控制代码以及与这些控制代码关联的结构的其他信息。
 
-[静止图像 SCSI I/O](still-image-scsi-i-o.md)
+[静态图像 SCSI I/O](still-image-scsi-i-o.md)
 
-[静止图像 USB I/O](still-image-usb-i-o.md)
+[静态图像 USB I/O](still-image-usb-i-o.md)
 
  
 

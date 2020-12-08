@@ -1,7 +1,6 @@
 ---
 title: FSCTL_GET_RETRIEVAL_POINTER_BASE 控制代码
 description: FSCTL \_ 获取 \_ 检索 \_ 指针 \_ 基准返回相对于卷开头的文件系统 (LCN) 的第一个逻辑群集号的扇区偏移量。
-ms.assetid: 2c342e58-ef9a-487a-beb9-4353dcbc8115
 keywords:
 - FSCTL_GET_RETRIEVAL_POINTER_BASE 控制代码可安装的文件系统驱动程序
 topic_type:
@@ -14,27 +13,27 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6df6abd80112c974349871f1a6cbd48d31519861
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 93a02407f12bf7d7645af622a02c83ca4dd8867a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065570"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808373"
 ---
 # <a name="fsctl_get_retrieval_pointer_base-control-code"></a>FSCTL \_ 获取 \_ 检索 \_ 指针 \_ 基控制代码
 
 
-**FSCTL \_ 获取 \_ 检索 \_ 指针 \_ 基准**返回相对于卷开头的文件系统 (LCN) 的第一个逻辑群集号的扇区偏移量。
+**FSCTL \_ 获取 \_ 检索 \_ 指针 \_ 基准** 返回相对于卷开头的文件系统 (LCN) 的第一个逻辑群集号的扇区偏移量。
 
 若要执行此操作，请调用具有以下参数的 [**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 函数或 [**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85)) 函数。
 
-**参数**
+**Parameters**
 
 <a href="" id="fileobject--in-"></a>*FileObject \[ in\]*  
-仅[**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 。 **FSCTL \_ 获取 \_ 检索 \_ 指针 \_ 基**的卷的文件对象指针。 此参数是必需的，不能为 **NULL**。
+仅 [**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 。 **FSCTL \_ 获取 \_ 检索 \_ 指针 \_ 基** 的卷的文件对象指针。 此参数是必需的，不能为 **NULL**。
 
 <a href="" id="filehandle"></a>*FileHandle*  
-仅[**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85)) 。 **FSCTL \_ 获取 \_ 检索 \_ 指针 \_ 基**的卷的文件句柄。 此参数是必需的，不能为 **NULL**。
+仅 [**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85)) 。 **FSCTL \_ 获取 \_ 检索 \_ 指针 \_ 基** 的卷的文件句柄。 此参数是必需的，不能为 **NULL**。
 
 必须使用 SE \_ 管理 \_ 卷 \_ 名访问权限打开此句柄。 有关详细信息，请参阅 [文件安全性和访问权限](/windows/desktop/FileIO/file-security-and-access-rights)。
 
@@ -66,7 +65,7 @@ ms.locfileid: "89065570"
 <thead>
 <tr class="header">
 <th align="left">术语</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -118,7 +117,7 @@ ms.locfileid: "89065570"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)

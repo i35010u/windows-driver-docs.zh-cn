@@ -1,7 +1,6 @@
 ---
 title: GetJobElementsRequest 元素
 description: 必需的 GetJobElementsRequest 元素请求与 JobId 元素标识的作业相关的信息。
-ms.assetid: ba8260f4-300f-447e-ad62-d2e4fa2811ef
 keywords:
 - GetJobElementsRequest 元素图像设备
 topic_type:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c8e4f663869f2da91fcfe46d0bba0c1f42854eb9
-ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
+ms.openlocfilehash: 7ef9ca2eb4958e447831b410d0c9053552d82eb8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75652995"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808813"
 ---
 # <a name="getjobelementsrequest-element"></a>GetJobElementsRequest 元素
 
 
-必需的**GetJobElementsRequest**元素请求与[**JobId**](jobid.md)元素标识的作业相关的信息。
+必需的 **GetJobElementsRequest** 元素请求与 [**JobId**](jobid.md) 元素标识的作业相关的信息。
 
-<a name="usage"></a>Usage
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -33,7 +32,7 @@ ms.locfileid: "75652995"
 </wscn:GetJobElementsRequest>
 ```
 
-<a name="attributes"></a>属性
+<a name="attributes"></a>特性
 ----------
 
 没有特性。
@@ -68,13 +67,13 @@ ms.locfileid: "75652995"
 <a name="remarks"></a>备注
 -------
 
-WSD 扫描服务必须支持**GetJobElementsRequest**操作。
+WSD 扫描服务必须支持 **GetJobElementsRequest** 操作。
 
-客户端可以调用**GetJobElementsRequest**来确定[**JobId**](jobid.md)标识的作业相关元素的值。 WSD 扫描服务必须使用**GetJobElementsResponse**进行响应。 扫描服务返回的信息必须完全符合与扫描作业相关的架构部分。
+客户端可以调用 **GetJobElementsRequest** 来确定 [**JobId**](jobid.md) 标识的作业相关元素的值。 WSD 扫描服务必须使用 **GetJobElementsResponse** 进行响应。 扫描服务返回的信息必须完全符合与扫描作业相关的架构部分。
 
-此操作可以返回所有常见的[**WSD 扫描服务操作错误代码**](common-wsd-scan-service-operation-error-codes.md)。 有关如何报告错误的详细信息，请参阅[WSD 扫描服务操作错误报告](wsd-scan-service-operation-error-reporting.md)。
+此操作可以返回所有常见的 [**WSD 扫描服务操作错误代码**](common-wsd-scan-service-operation-error-codes.md)。 有关如何报告错误的详细信息，请参阅 [WSD 扫描服务操作错误报告](wsd-scan-service-operation-error-reporting.md)。
 
-**GetJobElementsRequest**可能还会返回以下错误。
+**GetJobElementsRequest** 可能还会返回以下错误。
 
 -   **ClientErrorJobIdNotFound**
 
@@ -82,10 +81,10 @@ WSD 扫描服务必须支持**GetJobElementsRequest**操作。
 
     | 错误属性 | 定义                         |
     |----------------|------------------------------------|
-    | 代码\[\]       | soap：发送方                        |
+    | \[代码\]       | soap：发送方                        |
     | \[子代码\]    | wscn:ClientErrorJobIdNotFound      |
     | \[原因\]     | 找不到指定的 JobId。 |
-    | \[详细信息\]     | JobId： JobId 不正确             |
+    | Detail\[\]     | JobId： JobId 不正确             |
 
      
 
@@ -121,7 +120,7 @@ WSD 扫描服务必须支持**GetJobElementsRequest**操作。
 </soap:Envelope>
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**GetJobElementsResponse**](getjobelementsresponse.md)

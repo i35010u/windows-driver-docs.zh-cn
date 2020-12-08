@@ -1,24 +1,23 @@
 ---
 title: 禁用 OpenGL 互操作性
 description: 禁用 OpenGL 互操作性
-ms.assetid: 2b684cda-2137-4395-b2ee-beee8614e4c1
 keywords:
-- INF 文件 WDK 显示、 互操作性
+- INF 文件，WDK 显示，互操作性
 - 互操作性 WDK 显示
 - OpenGL WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: df93c9bd39b6f7d8ee413b9528ae7453ed4510c5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1835c616d943df5233de531a5c74784334e328d5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63393044"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809287"
 ---
 # <a name="disabling-interoperability-with-opengl"></a>禁用 OpenGL 互操作性
 
 
-若要确保没有 Microsoft Direct3D 显示器驱动程序将面临 OpenGL 可安装的客户端驱动程序 (ICDs) 的互操作性问题，必须 INF 添加注册表部分中设置以下条目：
+若要确保不会向具有 OpenGL 可安装客户端驱动程序的互操作性问题公开 Microsoft Direct3D 显示驱动程序 (ICDs) ，必须在 INF 的 "添加注册表" 部分中设置以下项：
 
 ```inf
 [Xxx_SoftwareDeviceSettings]

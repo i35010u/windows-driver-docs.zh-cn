@@ -1,7 +1,6 @@
 ---
 title: GetJobHistoryResponse 元素
 description: 必需的 GetJobHistoryResponse 元素返回已完成作业的摘要。
-ms.assetid: 85c9edb4-fe6c-49a7-899a-71ce65e38852
 keywords:
 - GetJobHistoryResponse 元素图像设备
 topic_type:
@@ -12,15 +11,16 @@ api_type:
 - Schema
 ms.date: 07/06/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: fb0423ff4198ead5198f18f8274e680ca67f224a
-ms.sourcegitcommit: 40d7d538756767d26bbda636589f614f85a6fab3
+ms.openlocfilehash: d4583959591e2c294ad32a05700ffd811cbac3be
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "86020068"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808793"
 ---
 # <a name="getjobhistoryresponse-element"></a>GetJobHistoryResponse 元素
 
-必需的**GetJobHistoryResponse**元素返回已完成作业的摘要。
+必需的 **GetJobHistoryResponse** 元素返回已完成作业的摘要。
 
 ## <a name="usage"></a>使用情况
 
@@ -30,7 +30,7 @@ ms.locfileid: "86020068"
 </wscn:GetJobHistoryResponse>
 ```
 
-## <a name="attributes"></a>属性
+## <a name="attributes"></a>特性
 
 没有特性。
 
@@ -44,11 +44,11 @@ ms.locfileid: "86020068"
 
 没有父元素。
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
-WSD 扫描服务必须支持**GetJobHistoryResponse**操作元素。
+WSD 扫描服务必须支持 **GetJobHistoryResponse** 操作元素。
 
-客户端可以调用[**GetJobHistoryRequest**](getjobhistoryrequest.md)来确定先前完成的作业的与作业相关的变量的值。 WSD 扫描服务必须使用包含客户端请求的信息的**GetJobHistoryResponse**操作元素或适当的错误代码进行响应。
+客户端可以调用 [**GetJobHistoryRequest**](getjobhistoryrequest.md) 来确定先前完成的作业的与作业相关的变量的值。 WSD 扫描服务必须使用包含客户端请求的信息的 **GetJobHistoryResponse** 操作元素或适当的错误代码进行响应。
 
 WSD 扫描服务维护的作业历史记录量是特定于实现的。
 
@@ -133,7 +133,7 @@ WSD 扫描服务维护的作业历史记录量是特定于实现的。
 </soap:Envelope>
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [**GetJobHistoryRequest**](getjobhistoryrequest.md)
 

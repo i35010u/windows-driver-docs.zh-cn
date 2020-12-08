@@ -1,15 +1,14 @@
 ---
 title: IStillImage COM 接口
 description: IStillImage COM 接口
-ms.assetid: eb60a3fd-e7e2-4d3c-973e-af8cb3c3c511
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6efef2d50b4d18209d3ab742380196b876ca0d02
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 4292b79bc8c7fff7333102a1236da892cf80661d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103232"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808783"
 ---
 # <a name="istillimage-com-interface"></a>IStillImage COM 接口
 
@@ -17,7 +16,7 @@ ms.locfileid: "90103232"
 
 
 
-**IStillImage** COM 接口提供对[静止图像事件监视器](overview-of-sti-components.md#ddk-still-image-event-monitor-si)的访问，因此应用程序可将其自身注册为 "推送模型感知"。 应用程序可以使用此接口来获取有关系统的静止图像设备的信息。
+**IStillImage** COM 接口提供对 [静止图像事件监视器](overview-of-sti-components.md#ddk-still-image-event-monitor-si)的访问，因此应用程序可将其自身注册为 "推送模型感知"。 应用程序可以使用此接口来获取有关系统的静止图像设备的信息。
 
 接口提供一些应用程序管理功能，例如启用事件通知和启动应用程序，以供自定义的应用程序控制软件使用。
 
@@ -34,7 +33,7 @@ ms.locfileid: "90103232"
 <thead>
 <tr class="header">
 <th>方法</th>
-<th>说明</th>
+<th>描述</th>
 <th>典型调用方</th>
 </tr>
 </thead>

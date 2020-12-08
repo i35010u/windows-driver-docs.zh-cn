@@ -1,7 +1,6 @@
 ---
 title: 特定于 PPD 的接口
 description: 特定于 PPD 的接口
-ms.assetid: 12d5baa2-4fd4-4eca-84c7-1ee168ee8259
 keywords:
 - PostScript 打印机驱动程序 WDK 打印，特定于 PPD 的接口
 - Pscript WDK 打印，特定于 PPD 的接口
@@ -10,12 +9,12 @@ keywords:
 - PPD 特定于 PPD 的接口 WDK Pscript
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d7e9ea45cb449e61d77a55f23ebbf00fbf13c1a
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: 285a7bcae4e57ac6f4ad93a01d75b038f010fb0e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361311"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807527"
 ---
 # <a name="ppd-specific-interface"></a>特定于 PPD 的接口
 
@@ -59,7 +58,7 @@ ms.locfileid: "94361311"
 
 [**IPrintCorePS2::GetOptionAttribute**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintcoreps2-getoptionattribute)
 
-在本节中，对作为这两个接口的成员的任何方法的引用都适用于这两种方法。 例如，对 **GetOptions** 的引用适用于 **IPrintCoreUI2：： GetOptions** 和 **IPrintCorePS2：： GetOptions** 。
+在本节中，对作为这两个接口的成员的任何方法的引用都适用于这两种方法。 例如，对 **GetOptions** 的引用适用于 **IPrintCoreUI2：： GetOptions** 和 **IPrintCorePS2：： GetOptions**。
 
 ### <a name="ppd-feature-availability"></a>PPD 功能可用性
 

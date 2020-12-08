@@ -1,7 +1,6 @@
 ---
 title: 修改驱动程序提供的属性表页
 description: 修改驱动程序提供的属性表页
-ms.assetid: 98338017-96a0-414c-9b80-bcb98eff61e5
 keywords:
 - 用户界面插件 WDK 打印，属性表页面
 - UI 插件 WDK 打印，属性表单页面
@@ -10,12 +9,12 @@ keywords:
 - 自定义选项项 WDK UI 插件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 37bc52aec39324e4df4ca8a47b84d908875359b2
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 98fe8473ac7b1eb20858807180a90f06271893b1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210001"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807837"
 ---
 # <a name="modifying-a-driver-supplied-property-sheet-page"></a>修改驱动程序提供的属性表页
 
@@ -35,7 +34,7 @@ UI 插件使用 **IPrintOemUI：： CommonUIProp** 方法来指定一组选项�
 
 ### <a name="removing-option-items"></a><a href="" id="ddk-removing-option-items-gg"></a>删除选项项
 
-若要从 Unidrv 或 Pscript5 提供的属性表页中删除选项，UI 插件的[**IPrintOemUI：： CommonUIProp**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemui-commonuiprop)方法可以遍历[**OPTITEM**](/windows-hardware/drivers/ddi/printoem/ns-printoem-_oemcuipparam)结构指向的[**OEMCUIPPARAM**](/windows-hardware/drivers/ddi/compstui/ns-compstui-_optitem)结构的数组。 对于想要从属性表中删除的每个选项，可以设置 OPTITEM 结构的 OPTIF \_ 隐藏标志。  (请注意，这实际上不会删除该选项;它将从用户中隐藏选项，使用户无法更改其默认值。 ) 
+若要从 Unidrv 或 Pscript5 提供的属性表页中删除选项，UI 插件的 [**IPrintOemUI：： CommonUIProp**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemui-commonuiprop)方法可以遍历 [**OPTITEM**](/windows-hardware/drivers/ddi/printoem/ns-printoem-_oemcuipparam)结构指向的 [**OEMCUIPPARAM**](/windows-hardware/drivers/ddi/compstui/ns-compstui-_optitem)结构的数组。 对于想要从属性表中删除的每个选项，可以设置 OPTITEM 结构的 OPTIF \_ 隐藏标志。  (请注意，这实际上不会删除该选项;它将从用户中隐藏选项，使用户无法更改其默认值。 ) 
 
 ### <a name="replacing-option-items"></a><a href="" id="ddk-replacing-option-items-gg"></a>替换选项项
 
@@ -47,7 +46,7 @@ UI 插件使用 **IPrintOemUI：： CommonUIProp** 方法来指定一组选项�
 
 通过将回调函数的地址放置在 [**OEMCUIPPARAM**](/windows-hardware/drivers/ddi/printoem/ns-printoem-_oemcuipparam) 结构中来指定该函数。 UI 插件接收此结构的地址作为其 [**IPrintOemUI：： CommonUIProp**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemui-commonuiprop) 方法的输入。
 
-当用户打开打印机属性表或文档属性表并修改选项时， [CPSUI](common-property-sheet-user-interface.md) 将调用打印机驱动程序的打印机接口 DLL。 此 DLL 处理其自身 [**OPTITEM**](/windows-hardware/drivers/ddi/compstui/ns-compstui-_optitem) 结构中包含的选项值。 然后，对于每个 UI 插件，打印机接口 DLL 将调用先前由 **IPrintOemUI：： CommonUIProp**指定的 OEMCUIPCALLBACK 类型的回调函数。
+当用户打开打印机属性表或文档属性表并修改选项时， [CPSUI](common-property-sheet-user-interface.md) 将调用打印机驱动程序的打印机接口 DLL。 此 DLL 处理其自身 [**OPTITEM**](/windows-hardware/drivers/ddi/compstui/ns-compstui-_optitem) 结构中包含的选项值。 然后，对于每个 UI 插件，打印机接口 DLL 将调用先前由 **IPrintOemUI：： CommonUIProp** 指定的 OEMCUIPCALLBACK 类型的回调函数。
 
  
 

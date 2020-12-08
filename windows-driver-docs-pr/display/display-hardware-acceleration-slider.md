@@ -1,7 +1,6 @@
 ---
 title: 显示硬件加速滑块
 description: 显示硬件加速滑块
-ms.assetid: af3daa64-196a-4163-872d-713bc4cf0335
 keywords:
 - 显示驱动程序 WDK Windows 2000，调试
 - 调试驱动程序 WDK Windows 2000 显示
@@ -9,12 +8,12 @@ keywords:
 - 加速滑块 WDK Windows 2000 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e8f7a296f68113f4a86e3ec70908f7c359c8089
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 5ea15bd65ef5da17c5869a487248f7ee98037ed9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715342"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809251"
 ---
 # <a name="display-hardware-acceleration-slider"></a>显示硬件加速滑块
 

@@ -1,20 +1,19 @@
 ---
 title: 通过共同安装程序启动设备安装应用程序
 description: 通过辅助安装程序启动设备安装应用程序的指南
-ms.assetid: 94b21eef-5660-4d05-8eb5-da6589c85e65
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2617f618eb8d1dd6e7de18670e7237911cfc55ca
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: b4a6b02950c382d9dabce34c4d259a44aeb5c76a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361351"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808127"
 ---
 # <a name="guidelines-for-starting-device-installation-applications-through-co-installers"></a>通过辅助安装程序启动设备安装应用程序的指南
 
 
-对于将 (Windows Vista 和更高版本的 Windows) 提供完成安装操作的共同安装程序，必须遵循以下准则，以启动 *设备安装应用程序* ：
+对于将 (Windows Vista 和更高版本的 Windows) 提供完成安装操作的共同安装程序，必须遵循以下准则，以启动 *设备安装应用程序*：
 
 -   在设备安装应用程序完成之前，共同安装程序不得退出其 "完成安装" 页或 "完成-安装" 操作。 如果共同安装程序早退出，而另一个驱动程序需要重新启动，则 Windows 可能会在应用程序完成之前重新启动计算机。
 

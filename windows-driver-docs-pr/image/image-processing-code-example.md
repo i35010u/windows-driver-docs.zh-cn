@@ -1,15 +1,14 @@
 ---
 title: 图像处理代码示例
 description: 图像处理代码示例
-ms.assetid: fe5ac3db-46e0-4162-9add-c3b0ae736926
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5007b5edd26d1f2eae9db4f9f9d4e09f2c866d65
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e304bd9c668575737db1d5617baa1575c54cf9e1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364979"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808217"
 ---
 # <a name="image-processing-code-example"></a>图像处理代码示例
 
@@ -17,9 +16,9 @@ ms.locfileid: "63364979"
 
 
 
-下面的代码示例演示如何实现简单的映像处理筛选器。 此图像处理筛选器支持亮度和对比度，以及可选的反扭曲和旋转属性。
+下面的代码示例演示如何实现简单的图像处理筛选器。 此图像处理筛选器支持亮度和对比度，以及可选的反扭曲和旋转属性。
 
-**请注意**  为简洁起见，下面的示例中省略的代码部分。
+**注意**   为了简洁起见，以下示例中省略了部分代码。
 
  
 

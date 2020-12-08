@@ -1,7 +1,6 @@
 ---
 title: FSCTL_DELETE_REPARSE_POINT 控制代码
 description: FSCTL \_ DELETE 重新 \_ 分析 \_ 点控制代码从指定的文件或目录中删除重新分析点。 使用 FSCTL \_ 删除重新 \_ 分析 \_ 点不会删除文件或目录。
-ms.assetid: c8a06477-457b-47e5-b5c5-48d798fe08b3
 keywords:
 - FSCTL_DELETE_REPARSE_POINT 控制代码可安装的文件系统驱动程序
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 04aaaae46f2caee099a742019c217d2451d23435
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: b7e66a0ea127200775d5d693716873ccfbd765f1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066188"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808417"
 ---
 # <a name="fsctl_delete_reparse_point-control-code"></a>FSCTL \_ 删除重新 \_ 分析 \_ 点控制代码
 
@@ -32,7 +31,7 @@ Minifilters 应使用 [**FltUntagFile**](/windows-hardware/drivers/ddi/fltkernel
 
 有关重新分析点和 FSCTL \_ 删除重新 \_ 分析点控制代码的详细信息 \_ ，请参阅 Microsoft Windows SDK 文档。
 
-**参数**
+**Parameters**
 
 <a href="" id="filehandle"></a>*FileHandle*  
 要从中删除重新分析点的文件或目录的文件句柄。 调用方必须对文件或目录具有写入访问权限。 此参数是必需的，不能为 **NULL**。
@@ -44,7 +43,7 @@ Minifilters 应使用 [**FltUntagFile**](/windows-hardware/drivers/ddi/fltkernel
 指向重新 [**分析 \_ GUID \_ 数据 \_ 缓冲区**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_reparse_guid_data_buffer) 或重新 [**分析 \_ 数据 \_ 缓冲区**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_reparse_data_buffer) 结构的指针。 此结构的 **ReparseTag** 成员中指定的标记必须匹配要删除的重新分析点的标记，并且 **ReparseDataLength** 成员必须为零。 此外，如果重新分析点为第三方 (非 Microsoft) 重新分析点，则在重新分析 GUID 数据缓冲区结构的 **ReparseGuid** 成员中指定的 guid \_ \_ \_ 必须与要删除的重新分析点的 guid 匹配。
 
 <a href="" id="inputbufferlength"></a>*InputBufferLength*  
-**InputBuffer**参数指向的缓冲区的大小（以字节为单位）。 对于重新分析 \_ guid \_ 数据 \_ 缓冲区结构，此值必须是完全重新分析 \_ guid \_ 数据 \_ 缓冲区 \_ 标头 \_ 大小。 对于重新分析 \_ 数据 \_ 缓冲区结构，此值必须是完全重新分析 \_ 数据 \_ 缓冲区 \_ 标头 \_ 大小。
+**InputBuffer** 参数指向的缓冲区的大小（以字节为单位）。 对于重新分析 \_ guid \_ 数据 \_ 缓冲区结构，此值必须是完全重新分析 \_ guid \_ 数据 \_ 缓冲区 \_ 标头 \_ 大小。 对于重新分析 \_ 数据 \_ 缓冲区结构，此值必须是完全重新分析 \_ 数据 \_ 缓冲区 \_ 标头 \_ 大小。
 
 <a href="" id="outputbuffer"></a>*OutputBuffer*  
 不与此操作一起使用;设置为 **NULL**。
@@ -85,7 +84,7 @@ Minifilters 应使用 [**FltUntagFile**](/windows-hardware/drivers/ddi/fltkernel
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**\_IRP \_ MJ \_ 文件 \_ 系统 \_ 控件的 FLT 参数**](flt-parameters-for-irp-mj-file-system-control.md)

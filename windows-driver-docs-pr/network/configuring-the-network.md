@@ -1,7 +1,6 @@
 ---
 title: 配置网络
 description: 配置网络
-ms.assetid: 9529467b-353d-41c3-9d4e-bb5df5c43665
 keywords:
 - 通知对象 WDK 网络，网络配置
 - 网络通知对象 WDK，网络配置
@@ -9,12 +8,12 @@ keywords:
 - 网络配置 WDK 通知 ofbject
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e4c22b9a84685413a23825d069fb6d1a45a56a42
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 1d9ce6d69b5f4dac74c0b8bb07e2fd6dc75b30be
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207613"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96808069"
 ---
 # <a name="configuring-the-network"></a>配置网络
 

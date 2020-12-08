@@ -1,26 +1,25 @@
 ---
 title: NumberUp
 description: NumberUp
-ms.assetid: d3c29bbc-2c6e-4e5b-b596-04eec939eb5b
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 16a788cc08dc8d60d7583ce88302de5023eae2e5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5c2e15bb68d647b8ef7ce8f94742e3c5a9700efd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339877"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96807757"
 ---
 # <a name="numberup"></a>NumberUp
 
 
-架构路径：\\Printer.Layout.NumberUp
+架构路径： \\ NumberUp
 
-节点类型： 属性
+节点类型：属性
 
-说明： 如何应在媒体上面向逻辑页还提供有关多少逻辑页应放置在单个的媒体，页面的信息。
+描述：提供有关应放置在单个介质页面上的逻辑页面数，以及如何在介质上定向逻辑页面的信息。
 
-NumberUp 属性是父[PagesPerSheet](pagespersheet2.md)并[方向](direction2.md)属性。
+NumberUp 属性是 [PagesPerSheet](pagespersheet2.md) 和 [Direction](direction2.md) 属性的父项。
 
  
 

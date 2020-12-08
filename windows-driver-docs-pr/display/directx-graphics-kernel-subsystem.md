@@ -1,15 +1,14 @@
 ---
 title: DirectX 图形内核子系统
 description: 'Microsoft DirectX 图形内核子系统 ( # A0) 实现了显示微型端口驱动程序调用的函数。'
-ms.assetid: 7601c761-bdab-4d18-8a84-7d69a71ec41c
 ms.date: 10/30/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: cc2c5af36e3b8e7bfb5db11f99c66d35f98809ed
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 6d6d7b5e6cb1be5b39f2d726da888bc96c3ae2b6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063122"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96809335"
 ---
 # <a name="directx-graphics-kernel-subsystem-dxgkrnlsys"></a>DirectX 图形内核子系统 ( # A0) 
 
@@ -23,7 +22,7 @@ ms.locfileid: "89063122"
 
 [获取其他监视目标模式](obtaining-additional-monitor-target-modes.md)
 
-有关显示微型端口驱动程序实现的函数的说明，请参阅显示微型端口驱动程序实现的内核模式接口。
+有关显示微型端口驱动程序实现的函数的说明，请参阅显示微型端口驱动程序实现 Kernel-Mode 接口。
 
 ## <a name="dxgkrnl-interface"></a>Dxgkrnl 接口
 
@@ -81,7 +80,7 @@ DirectX 图形内核子系统 (*Dxgkrnl.sys*) 通过将 [DXGKRNL_INTERFACE](/win
 
 ## <a name="agp-interface"></a>AGP 接口
 
-以下函数由操作系统实现并由显示微型端口驱动程序调用以支持 AGP (加速图形端口) 。 显示微型端口驱动程序通过将 DxgkServicesAgp 值从 DXGK_SERVICES 枚举类型传递到[DxgkCbQueryServices](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkcb_query_services)函数的*ServicesType*参数，获取指向这些函数的指针。
+以下函数由操作系统实现并由显示微型端口驱动程序调用以支持 AGP (加速图形端口) 。 显示微型端口驱动程序通过将 DxgkServicesAgp 值从 DXGK_SERVICES 枚举类型传递到 [DxgkCbQueryServices](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkcb_query_services)函数的 *ServicesType* 参数，获取指向这些函数的指针。
 
 * [AgpAllocatePool](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkcb_agp_allocate_pool)
 * [AgpFreePool](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkcb_agp_free_pool)
@@ -91,7 +90,7 @@ DirectX 图形内核子系统 (*Dxgkrnl.sys*) 通过将 [DXGKRNL_INTERFACE](/win
 ## <a name="debug-report-interface"></a>调试报表接口
 
 
-显示微型端口驱动程序通过将*DxgkServicesDebugReport*值从 DXGK_SERVICES 枚举类型传递到[DxgkCbQueryServices](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkcb_query_services)函数的*ServicesType*参数，获取指向以下函数的指针。 这些函数通过 [_DXGK_DEBUG_REPORT_INTERFACE](/windows-hardware/drivers/ddi/dispmprt/ns-dispmprt-_dxgk_debug_report_interface) 结构进行访问。
+显示微型端口驱动程序通过将 *DxgkServicesDebugReport* 值从 DXGK_SERVICES 枚举类型传递到 [DxgkCbQueryServices](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkcb_query_services)函数的 *ServicesType* 参数，获取指向以下函数的指针。 这些函数通过 [_DXGK_DEBUG_REPORT_INTERFACE](/windows-hardware/drivers/ddi/dispmprt/ns-dispmprt-_dxgk_debug_report_interface) 结构进行访问。
 
 * DbgReportComplete
 * DbgReportCreate
@@ -99,13 +98,13 @@ DirectX 图形内核子系统 (*Dxgkrnl.sys*) 通过将 [DXGKRNL_INTERFACE](/win
 
 ## <a name="timed-operation-interface"></a>计时操作接口
 
-显示微型端口驱动程序通过将*DxgkServicesTimedOperation*值从 DXGK_SERVICES 枚举类型传递到[DxgkCbQueryServices](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkcb_query_services)函数的*ServicesType*参数，获取指向以下函数的指针。 DxgkCbQueryServices 返回指向 [DXGK_TIMED_OPERATION_INTERFACE](/windows-hardware/drivers/ddi/dispmprt/ns-dispmprt-_dxgk_timed_operation_interface) 结构成员的前一列表中的函数的指针;显示微型端口驱动程序提供了一个指向 DxgkCbQueryServices 的 *INTERFACE* 参数 DXGK_TIMED_OPERATION_INTERFACE 的指针。
+显示微型端口驱动程序通过将 *DxgkServicesTimedOperation* 值从 DXGK_SERVICES 枚举类型传递到 [DxgkCbQueryServices](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkcb_query_services)函数的 *ServicesType* 参数，获取指向以下函数的指针。 DxgkCbQueryServices 返回指向 [DXGK_TIMED_OPERATION_INTERFACE](/windows-hardware/drivers/ddi/dispmprt/ns-dispmprt-_dxgk_timed_operation_interface) 结构成员的前一列表中的函数的指针;显示微型端口驱动程序提供了一个指向 DxgkCbQueryServices 的 *INTERFACE* 参数 DXGK_TIMED_OPERATION_INTERFACE 的指针。
 
 * TimedOperationStart
 * TimedOperationDelay
 * TimedOperationWaitForSingleObject
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [Windows 显示驱动程序模型 (WDDM) 体系结构](windows-vista-and-later-display-driver-model-architecture.md)
 
