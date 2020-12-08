@@ -1,17 +1,16 @@
 ---
 title: MB 调制解调器重置操作
 description: MB 调制解调器重置操作
-ms.assetid: E33073B5-53D5-4F6F-85EC-5B46FDE9EA4D
 keywords:
 - MB 调制解调器重置，移动宽带调制解调器重置，移动宽带微型端口驱动程序调制解调器重置
 ms.date: 08/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d516123e8cfd70b1be0f82ce7f8dcd2e63922f69
-ms.sourcegitcommit: 74a8dc9ef1da03857dec5cab8d304e2869ba54a7
+ms.openlocfilehash: db2c74c4b717ada7017c0b748a9122136d9a7f3b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90759780"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817115"
 ---
 # <a name="mb-modem-reset-operations"></a>MB 调制解调器重置操作
 
@@ -25,13 +24,13 @@ ms.locfileid: "90759780"
 | --- | --- | --- |
 | Microsoft 基本 IP 连接扩展插件 | UUID_BASIC_CONNECT_EXTENSIONS | 3d01dcc5-fef5-4d05-0d3a-bef7058e9aaf |
 
-| CID | 命令代码 | Set | 查询 | 通知 |
+| CID | 命令代码 | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- | --- |
 | MBIM_CID_MS_DEVICE_RESET | 10 | Y | N | N |
 
 ### <a name="parameters"></a>参数
 
-|  类型 | Set | 查询 | 通知 |
+|  类型 | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
 | 命令 | 空 | 不适用 | 不适用 |
 | 响应 | 空 | 不适用 | 不适用 |
@@ -40,7 +39,7 @@ ms.locfileid: "90759780"
 
 不适用。
 
-### <a name="set"></a>Set
+### <a name="set"></a>设置
 
 InformationBuffer 应为 NULL，而 *InformationBufferLength* 应为零。
 

@@ -1,7 +1,6 @@
 ---
 title: 框架 I/O 请求对象
 description: 框架 I/O 请求对象
-ms.assetid: e48437ee-597d-45b1-9093-8d5921356af5
 keywords:
 - UMDF 对象 WDK，i/o 请求对象
 - framework 对象 WDK UMDF，i/o 请求对象
@@ -9,12 +8,12 @@ keywords:
 - IWDFIoRequest
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 304563c6b35281115b4bac5f743555503f1d70f0
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: bc96965f70aad70c7ea4fc87fb300e042cae7c15
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715514"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815701"
 ---
 # <a name="framework-io-request-object"></a>框架 I/O 请求对象
 

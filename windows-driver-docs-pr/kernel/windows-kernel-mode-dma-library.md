@@ -1,15 +1,14 @@
 ---
 title: Windows 内核模式 DMA 库
 description: Windows 内核模式 DMA 库
-ms.assetid: db6cc33a-474b-44a2-bd55-769ff31abae7
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f5b3907be82bacb7950482b7ba43036fa0ab2892
-ms.sourcegitcommit: 6f9087dab3bf214c287b179829e6a59d74db0591
+ms.openlocfilehash: 331f0f745dd6426a2859afc9fb08f7a233adfd8f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89471906"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816611"
 ---
 # <a name="windows-kernel-mode-dma-library"></a>Windows 内核模式 DMA 库
 

@@ -1,7 +1,6 @@
 ---
 title: 在适用于总线主控 DMA 设备的 KMDF 驱动程序中处理 I/O 请求
-description: 本部分中的主题介绍了如何使用 KMDF 驱动程序来处理 i/o 请求。 如果要编写实现系统模式 DMA 的 KMDF 驱动程序，请参阅支持系统模式 DMA。
-ms.assetid: c94819c5-212d-404f-a7c7-b736e0832282
+description: 本部分中的主题介绍了如何使用 KMDF 驱动程序来处理 i/o 请求。 如果要编写实现系统模式 DMA 的 KMDF 驱动程序，请参阅支持 System-Mode DMA。
 keywords:
 - DMA 操作 WDK KMDF、i/o 请求
 - 总线主控 DMA WDK KMDF、i/o 请求
@@ -9,19 +8,19 @@ keywords:
 - 请求处理 WDK KMDF，DMA 设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c4c06e2afb229b861c058c1c309b68fc27717b57
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: a30b645e1ccb85d0bfe6280406bb1bf4e2e9d458
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187232"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815631"
 ---
 # <a name="handling-io-requests-in-a-kmdf-driver-for-a-bus-master-dma-device"></a>在适用于总线主控 DMA 设备的 KMDF 驱动程序中处理 I/O 请求
 
 
 \[仅适用于 KMDF\]
 
-本部分中的主题介绍了如何使用 KMDF 驱动程序来处理 i/o 请求。 如果要编写实现系统模式 DMA 的 KMDF 驱动程序，请参阅 [支持系统模式 dma](supporting-system-mode-dma.md)。
+本部分中的主题介绍了如何使用 KMDF 驱动程序来处理 i/o 请求。 如果要编写实现系统模式 DMA 的 KMDF 驱动程序，请参阅 [支持 System-Mode DMA](supporting-system-mode-dma.md)。
 
 
 

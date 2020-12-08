@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 流 \_ 质量
 description: "\"KSPROPERTY \\_ 流 \\_ 质量\" 属性是一个可选属性，如果 Pin 生成质量管理投诉，应实现该属性。"
-ms.assetid: ed4d9baa-967a-41b3-b8b9-910b86230254
 keywords:
 - KSPROPERTY_STREAM_QUALITY 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e643583a29c6f915f50455918e4740df1aa3199
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 3c1ae15c5e48ef0856028fdb40bb523ee8c65474
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105712"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815811"
 ---
 # <a name="ksproperty_stream_quality"></a>KSPROPERTY \_ 流 \_ 质量
 
@@ -61,7 +60,7 @@ ms.locfileid: "90105712"
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 发出此请求时，pin 连接反过来会通过使用给定的上下文参数提供 [**KSQUALITY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksquality) 结构来通知质量管理器。
@@ -86,7 +85,7 @@ ms.locfileid: "90105712"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

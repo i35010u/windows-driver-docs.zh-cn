@@ -1,7 +1,6 @@
 ---
 title: 清除和清理控件
 description: 清除和清理控件
-ms.assetid: 103b05e6-333a-441a-a4f8-784ae43df59e
 keywords:
 - RDBSS WDK 文件系统，清除和清理结构
 - 重定向的驱动器缓冲子系统 WDK 文件系统、清除和清理结构
@@ -11,12 +10,12 @@ keywords:
 - 清理 FOBX 结构 WDK 网络重定向器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 45fa94fedba5c997d9bc300d54bf178d5f288368
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 9cb45ed15909f598c5030b7a5e97f28f21fc4d58
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106752"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816763"
 ---
 # <a name="purging-and-scavenging-control"></a>清除和清理控件
 
@@ -42,7 +41,7 @@ RDBSS 清除和清理例程包括：
 <thead>
 <tr class="header">
 <th align="left">例程所返回的值</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

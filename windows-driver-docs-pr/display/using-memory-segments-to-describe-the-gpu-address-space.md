@@ -1,19 +1,18 @@
 ---
 title: 使用内存段描述 GPU 地址空间
 description: 使用内存段描述 GPU 地址空间
-ms.assetid: 5ff23d53-0860-44fa-8ce1-c34aa22b8730
 keywords:
 - 内存段 WDK 显示，关于内存段
 - 隐藏的视频内存 WDK 显示
 - 视频内存管理器 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 60f9961d731220ac9f22ecbec85ce0214af0b061
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 5e36b1d2623ffe4a432030f8195db15007739f5d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067094"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816307"
 ---
 # <a name="using-memory-segments-to-describe-the-gpu-address-space"></a>使用内存段描述 GPU 地址空间
 
@@ -35,7 +34,7 @@ ms.locfileid: "89067094"
 
 ![说明如何将 gpu 地址空间划分为段的关系图](images/memseg.png)
 
-**注意**   不能将从视频内存管理器隐藏的视频内存映射到用户空间，也不能以独占方式用于任何特定进程。 为此，需要中断系统上运行的所有进程都可以访问所有内存的基本规则。
+**注意**   不能将从视频内存管理器隐藏的视频内存映射到用户空间，也不能以独占方式用于任何特定进程。 为此，需要中断系统上运行的所有进程都可以访问所有内存的基本规则。
 
  
 

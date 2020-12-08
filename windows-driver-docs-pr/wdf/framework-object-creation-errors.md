@@ -1,19 +1,18 @@
 ---
 title: 框架对象创建错误
 description: 框架对象创建错误
-ms.assetid: f5345c88-1c3a-4b32-9c93-c252713f7641
 keywords:
 - framework 对象 WDK KMDF，创建错误
 - 错误 WDK KMDF
 - 错误 WDK KMDF，框架对象创建
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a76e0cc02cadb74f67872e6c4061c6f8c5fccd66
-ms.sourcegitcommit: 9b4760aae390b36dbdf9e0dd729a4a643c3f7831
+ms.openlocfilehash: 3a31eb2068084d1c94dc29c3b0c50dd89dd56864
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90565269"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815673"
 ---
 # <a name="framework-object-creation-errors"></a>框架对象创建错误
 
@@ -27,7 +26,7 @@ ms.locfileid: "90565269"
 
 驱动程序指定了上下文大小替代值，但未提供 [**WDF \_ 对象 \_ 上下文 \_ 类型 \_ 信息**](/windows-hardware/drivers/ddi/wdfobject/ns-wdfobject-_wdf_object_context_type_info) 结构。
 
-驱动程序在 WDF 对象特性中指定了**ContextSizeOverride**值 \_ \_ ，该对象小于**ContextSize** wdf \_ 对象 \_ 上下文 \_ 类型 \_ 信息结构的 ContextSize 成员。
+驱动程序在 WDF 对象特性中指定了 **ContextSizeOverride** 值 \_ \_ ，该对象小于 **ContextSize** wdf \_ 对象 \_ 上下文 \_ 类型 \_ 信息结构的 ContextSize 成员。
 
 驱动程序在 WDF 对象属性中指定的 **ExecutionLevel** 值 \_ 不在 \_ 有效的值范围内。
 

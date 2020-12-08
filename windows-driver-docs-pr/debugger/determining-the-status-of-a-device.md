@@ -1,20 +1,19 @@
 ---
 title: 确定设备的状态
 description: 确定设备的状态
-ms.assetid: d250643e-13cb-4657-9235-5fdeb1eab89a
 keywords:
-- Plug and Play (PnP) 设备状态
-- Plug and Play (PnP) 设备树
+- 即插即用 (PnP) ，设备状态
+- 即插即用 (PnP) ，设备树
 - 设备状态
 - 设备树
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f0ea19c5aa6debf255e44106cf2d7b3b6c74f1e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0faba95953d20836fa60f006f9e700630b32ab2c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346297"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816383"
 ---
 # <a name="determining-the-status-of-a-device"></a>确定设备的状态
 
@@ -22,19 +21,19 @@ ms.locfileid: "63346297"
 ## <span id="ddk_determining_the_status_of_a_device_dbg"></span><span id="DDK_DETERMINING_THE_STATUS_OF_A_DEVICE_DBG"></span>
 
 
-若要显示整个设备树中，启动与根域，使用 **！ devnode 0 1**:
+若要显示整个设备树，请从根开始，使用 **！ devnode 0 1**：
 
 ```dbgcmd
 kd> !devnode 0 1 
 ```
 
-标识，而要搜索，可以通过检查驱动程序，或者显示它的总线 devnode。
+确定要搜索的 devnode，方法是检查驱动程序或公开它的总线。
 
-Devnode 状态标志描述设备的状态。 有关详细信息，请参阅[设备节点状态标志](device-node-status-flags.md)。
+Devnode 状态标志描述设备的状态。 有关详细信息，请参阅 [设备节点状态标志](device-node-status-flags.md)。
 
-在示例中为 **！ devnode**命令，在[调试插件和驱动程序的扩展](extensions-for-debugging-plug-and-play-drivers.md)部分中，swenum 设备已通过即插即用管理器中，因此 DNF\_MADEUP (0x00000001)设置标志。
+在用于 [调试即插即用的扩展](extensions-for-debugging-plug-and-play-drivers.md)中的 **！ devnode** 命令的示例中，Swenum 设备是由 PnP 管理器创建的，因此 DNF \_ MADEUP (0x00000001) 标志。
 
-下面的示例显示了已通过 PCI 总线的设备。 此设备不具有 DNF\_MADEUP 标志设置。
+以下示例显示了 PCI 总线创建的设备。 此设备未 \_ 设置 DNF MADEUP 标志。
 
 ```dbgcmd
 0: kd> !devnode 0xfffffa8004483490
@@ -58,7 +57,7 @@ DevNode 0xfffffa8004483490 for PDO 0xfffffa800448d060
 
 **示例**
 
-1. 具有足够的资源的设备 devnode:
+1. 资源不足的设备的 devnode：
 
 ```dbgcmd
 kd> !devnode 0xff0d06e8 6
@@ -88,9 +87,9 @@ DevNode 0xff0d06e8 for PDO 0xff0d07d0 at level 0x3
         0x3 - 0x3
 ```
 
-请注意，devnode 没有 CM 资源列表中，因为它未启动，并且未使用的资源，尽管它请求的资源。
+请注意，devnode 没有 CM 资源列表，因为它未启动，并且没有使用资源，但却请求了资源。
 
-2. 请注意没有存储在此 devnode 旧驱动程序中的资源。
+2. 请注意，对于旧的驱动程序，此 devnode 中没有存储任何资源。
 
 ```dbgcmd
 kd> !devnode 0xff0d1648 6
@@ -107,7 +106,7 @@ DevNode 0xff0d1648 for PDO 0xff0d22d0 at level 0x2
                       Unknown flags 0x40000000
 ```
 
-您可以检索以下类型的设备的驱动程序的设备对象列表：
+可以为以下设备类型的驱动程序检索设备对象列表：
 
 ```dbgcmd
 kd> !drvobj mga_mil
@@ -120,7 +119,7 @@ Device Object list:
 ff0bb900
 ```
 
-然后可以转储此设备对象的数据：
+然后，你可以为此设备对象转储数据：
 
 ```dbgcmd
 kd> !devobj ff0bb900
@@ -132,7 +131,7 @@ DevExt ff0bb9b8 DevNode ff0bb808
 Device queue is not busy.
 ```
 
-最后，您可以转储 devnode 引用的设备对象。 此 devnode 设备树中未链接。 它表示"伪-devnode"用于声明为旧设备的资源。 请注意 DNF\_资源\_报告标志，指示设备是报告检测到的设备。
+最后，可以转储设备对象引用的 devnode。 设备树中未链接此 devnode。 它表示用于为旧设备声明资源的 "devnode"。 请注意 DNF \_ 资源 \_ 报告的标志，该标志指示设备是已报告检测到的设备。
 
 ```dbgcmd
 kd> !devnode ff0bb808 6

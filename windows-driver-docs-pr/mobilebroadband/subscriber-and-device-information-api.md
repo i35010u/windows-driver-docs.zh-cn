@@ -1,15 +1,14 @@
 ---
 title: 订阅服务器和设备信息 API
 description: 订阅服务器和设备信息 API
-ms.assetid: 45d6c053-b64b-4768-8e79-a090dcdf346e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a0bfd87c36348ee55be9acf55881d70d45b02c4a
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e6ad184da6eed36b2a9810f7c860838a560aba28
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215286"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816603"
 ---
 # <a name="subscriber-and-device-information-api"></a>订阅服务器和设备信息 API
 

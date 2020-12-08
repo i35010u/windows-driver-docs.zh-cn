@@ -1,19 +1,18 @@
 ---
 title: WDM 下边缘的实施提示和要求
 description: WDM 下边缘的实施提示和要求
-ms.assetid: 760c62ec-eeca-4b62-97ec-7cda5ee353a8
 keywords:
 - NDIS-WDM 微型端口驱动程序 WDK 网络，实现提示
 - NDIS 微型端口驱动程序的下边缘 WDK 网络，驱动程序实现
 - WDM 低边缘 WDK 网络，驱动程序实现
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b9f7a108401aac5181dd129d370c6738a4de3a49
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ef06b526ae4d2a7251a3bf568b54680fd2ec7fbc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210739"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817125"
 ---
 # <a name="implementation-tips-and-requirements-for-wdm-lower-edge"></a>WDM 下边缘的实施提示和要求
 

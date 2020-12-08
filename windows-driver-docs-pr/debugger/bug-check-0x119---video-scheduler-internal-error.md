@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x119 VIDEO_SCHEDULER_INTERNAL_ERROR
 description: VIDEO_SCHEDULER_INTERNAL_ERROR bug 检查的值为0x00000119。 这表示视频计划程序检测到严重冲突。
-ms.assetid: dfffdd70-c519-4e39-a604-a0ba2217093b
 keywords:
 - Bug 检查 0x119 VIDEO_SCHEDULER_INTERNAL_ERROR
 - VIDEO_SCHEDULER_INTERNAL_ERROR
@@ -13,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d9fc3bb3a4c4f1bfd5ff305832d611332cc510e3
-ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
+ms.openlocfilehash: 6d7de1c03334521b643303763243bb3247e4320f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91754862"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816979"
 ---
 # <a name="bug-check-0x119-video_scheduler_internal_error"></a>Bug 检查0x119：视频 \_ 计划程序 \_ 内部 \_ 错误
 

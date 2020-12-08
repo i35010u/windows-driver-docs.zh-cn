@@ -1,18 +1,17 @@
 ---
 title: Windows 2000 的 GDI 事件服务
 description: Windows 2000 的 GDI 事件服务
-ms.assetid: bf7f2127-cd3e-430c-99fd-62c824394a57
 keywords:
 - DirectX 8.0 发行说明 WDK Windows 2000 显示，GDI 事件服务
 - GDI WDK Windows 2000 显示，事件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 09756a7476b6e55ed303c915d4ae53e3c648c65b
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 6d6c902b258433b7900fef97180e5d24815aff37
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716478"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817357"
 ---
 # <a name="gdi-event-services-in-windows-2000"></a>Windows 2000 的 GDI 事件服务
 
@@ -29,12 +28,12 @@ Windows 2000 中提供的与事件相关的函数在 Windows 2000 中的行为�
 
 -   等待成功。 也就是说，指定的事件对象已设置为终止状态。 调用 **EngWaitForSingleObject** 的线程可以继续处理。
 
--   调用线程将无效的事件对象指针传递到**EngWaitForSingleObject**的*pEvent*参数。
+-   调用线程将无效的事件对象指针传递到 **EngWaitForSingleObject** 的 *pEvent* 参数。
 
 <span id="Any_nonzero_value"></span><span id="any_nonzero_value"></span><span id="ANY_NONZERO_VALUE"></span>任何非零值  
 此值是一个 NTSTATUS 状态值，指示特定的错误条件。 例如，状态 \_ 超时指示发生了超时。
 
-**注意**   [**EngClearEvent**](/windows/win32/api/winddi/nf-winddi-engclearevent)和[**EngReadStateEvent**](/windows/win32/api/winddi/nf-winddi-engreadstateevent)函数在 Windows 2000 中不可用。
+**注意**  [**EngClearEvent**](/windows/win32/api/winddi/nf-winddi-engclearevent) 和 [**EngReadStateEvent**](/windows/win32/api/winddi/nf-winddi-engreadstateevent) 函数在 Windows 2000 中不可用。
 
  
 

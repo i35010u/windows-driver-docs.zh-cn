@@ -1,7 +1,6 @@
 ---
 title: 图形驱动程序函数中的浮点运算
 description: 图形驱动程序函数中的浮点运算
-ms.assetid: 5f85dc0b-27c1-4fee-9a0a-cb52d5f2dae7
 keywords:
 - GDI WDK Windows 2000 显示，浮点操作
 - 图形驱动程序 WDK Windows 2000 显示，浮点操作
@@ -10,12 +9,12 @@ keywords:
 - FPU WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 42c521810125b56498fdd1a87f775c976c3db1c9
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 95d9c084403eb965554671187057ade1464af089
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717348"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817381"
 ---
 # <a name="floating-point-operations-in-graphics-driver-functions"></a>图形驱动程序函数中的浮点运算
 
@@ -81,7 +80,7 @@ BOOL DrvAlphaBlend(...)
 
 执行浮点运算的大多数 DirectDraw 和 Direct3D 回调函数也应保存并还原浮点状态。 有关详细信息，请参阅 [在 DirectDraw 中执行浮点运算](performing-floating-point-operations-in-directdraw.md) 和 [在 Direct3D 中执行浮点运算](performing-floating-point-operations-in-direct3d.md)。
 
-有关 GDI 提供的浮点服务的信息，请参阅 [Gdi 浮点服务](gdi-floating-point-services.md)。
+有关 GDI 提供的浮点服务的信息，请参阅 [gdi Floating-Point services](gdi-floating-point-services.md)。
 
  
 

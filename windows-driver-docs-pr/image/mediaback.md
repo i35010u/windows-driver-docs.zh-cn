@@ -1,9 +1,8 @@
 ---
 title: MediaBack 元素
-description: 可选 MediaBack 元素包含特定于物理介质的后端的扫描的所有参数。
-ms.assetid: d736c76f-7ea7-49ca-9ad9-df35924fc7b4
+description: 可选的 MediaBack 元素包含特定于扫描物理媒体背面的所有参数。
 keywords:
-- MediaBack 元素成像设备
+- MediaBack 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e149509b47163193ad9e2f3bd10d08eb69f78b2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 96d86e5b84f1ed46bd76e051b457f92881f21512
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380354"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816207"
 ---
 # <a name="mediaback-element"></a>MediaBack 元素
 
 
-可选**MediaBack**元素不包含特定于物理介质的后端的扫描的所有参数。
+可选的 **MediaBack** 元素包含特定于扫描物理媒体背面的所有参数。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -85,11 +84,11 @@ ms.locfileid: "63380354"
 <a name="remarks"></a>备注
 -------
 
-**MediaBack**元素是有效的扫描程序仅从时支持双工扫描和当前中定义的输入的源[ **InputSource** ](inputsource.md)元素，是**ADFDuplex**。
+仅当扫描程序支持双工扫描，并且在 [**InputSource**](inputsource.md)元素中定义的当前输入源为 **ADFDuplex** 时， **MediaBack** 元素才有效。
 
-如果**MediaBack**元素不包含[ **ScanRegion** ](scanregion.md)元素，WSD 扫描服务应使用 0，作为偏移量的宽度和高度[**InputMediaSize**](inputmediasize.md)，如果给定。 如果**ScanRegion**缺少和**InputMediaSize**未指定或不能由扫描设备，你可以确定实现。
+如果 **MediaBack** 元素不包含 [**ScanRegion**](scanregion.md) 元素，则 WSD 扫描服务应使用0作为偏移量，并使用 [**InputMediaSize**](inputmediasize.md)的宽度和高度（如果给定）。 如果缺少 **ScanRegion** ，但未指定 **InputMediaSize** 或扫描设备无法确定，可以确定实现。
 
-如果输入的源**ADFDuplex**并**MediaBack**缺少元素，在中指定的所有参数[ **MediaFront** ](mediafront.md)将适用于扫描以及在后端。
+如果输入源为 **ADFDuplex** ，但缺少 **MediaBack** 元素，则 [**MediaFront**](mediafront.md) 中指定的所有参数也适用于后端扫描。
 
 ## <a name="see-also"></a>请参阅
 

@@ -1,27 +1,26 @@
 ---
 title: 调试包含 JScript 帧的堆栈跟踪
-description: JScript 堆栈转储创建和使用功能工作原理是收集 JScript 帧和拼接它们针对调试器物理帧。
-ms.assetid: A470809F-55AA-4A49-B181-EC8D22C84F31
+description: JScript 堆栈转储的创建和使用功能的工作原理是收集 JScript 帧并将其与调试器物理帧一起使用。
 keywords:
 - JScript
 - jscript9diagdump.dll
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9bdcca140685e6173392cd5fecc5ba0e60fd7621
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8590412c6c75d14a4f4da85f3ed5fc07dcfc93a9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324555"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816389"
 ---
 # <a name="debugging-a-stack-trace-that-has-jscript-frames"></a>调试包含 JScript 帧的堆栈跟踪
 
 
-JScript 堆栈转储创建和使用功能工作原理是收集 JScript 帧和拼接它们针对调试器物理帧。 有时在 x86 平台、 堆栈跟踪不正确的调试器构造。
+JScript 堆栈转储的创建和使用功能的工作原理是收集 JScript 帧并将其与调试器物理帧一起使用。 有时，在 x86 平台上，调试器不会正确地构造堆栈跟踪。
 
-如果您的堆栈中包含您认为可能会不正确的 JScript 帧，则在调试器中输入以下命令。
+如果堆栈包含你认为可能不正确的 JScript 帧，请在调试器中输入以下命令。
 
-**.stkwalk\_force\_frame\_pointer 1**
+**。 stkwalk \_ 强制 \_ 帧 \_ 指针1**
 
  
 

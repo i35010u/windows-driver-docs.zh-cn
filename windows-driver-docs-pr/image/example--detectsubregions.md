@@ -1,23 +1,22 @@
 ---
 title: 示例 DetectSubregions
 description: 示例 DetectSubregions
-ms.assetid: 8fd5271a-587a-4b29-82a4-b84f70f5478f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 05f11c9839bcf220de89b863794e555e34d6cfde
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cc33fcb5fb7c30143d121c63ab80bbf5fca150e9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373111"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816721"
 ---
-# <a name="example-detectsubregions"></a>例如：DetectSubregions
+# <a name="example-detectsubregions"></a>示例： DetectSubregions
 
 
 
 
 
-分段的筛选器在流上执行区域检测 (*pImageStream*) 传递到**DetectSubregions**方法。 有关的信息**CreateSegmentationFilter**函数，此示例中使用，请参阅**IWiaItem2::GetExtension** Microsoft Windows SDK 文档中的方法。
+分段筛选器 *)  (传递* 到 **DetectSubregions** 方法中的流执行区域检测。 有关此示例中使用的 **CreateSegmentationFilter** 函数的信息，请参阅 Microsoft Windows SDK 文档中的 **IWiaItem2：： path.getextension 对** 方法。
 
 ```cpp
 HRESULT

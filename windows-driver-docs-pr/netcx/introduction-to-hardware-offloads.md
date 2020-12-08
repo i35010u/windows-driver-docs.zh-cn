@@ -1,22 +1,21 @@
 ---
 title: NetAdapterCx 硬件卸载
 description: NetAdapterCx 中的硬件卸载概述
-ms.assetid: ''
 keywords:
 - WDF 网络适配器类扩展卸载，NetAdapterCx 硬件卸载，NetAdapterCx 卸载，Get-netadapter 卸载
 ms.date: 10/09/2020
 ms.custom: Fe
-ms.openlocfilehash: d2e36d67821510251b244b3216eb7b64e51eafea
-ms.sourcegitcommit: 5587af31b12cf96c1a31d42f7b40e8f72e3d739c
+ms.openlocfilehash: 03d3baaafda81fdaad1957d1fdf5dcc750623d84
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94572486"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817153"
 ---
 # <a name="introduction-to-netadaptercx-hardware-offloads"></a>NetAdapterCx 硬件卸载简介
 
 > [!WARNING]
-> 本主题中的一些信息与预发布的产品相关，该产品在商业发布之前可能会进行重大修改。 Microsoft 对此处提供的信息不提供任何明示或暗示的保证。
+> 本主题中的一些信息与预发布的产品相关，该产品在商业发布之前可能会进行重大修改。 Microsoft 不对此处提供的信息作任何明示或默示的担保。
 >
 > NetAdapterCx 仅在 Windows 10 版本2004中处于预览阶段。
 >
@@ -43,9 +42,9 @@ NetAdapterCx 重点介绍减轻卸载功能的配置和管理。 客户端驱动
 
 NetAdapterCx 和 Windows TCP/IP 堆栈支持以下卸载：
 
-| 卸载名称 | 说明 |
+| 卸载名称 | 描述 |
 | --- | --- |
-| [检验](checksum-offload.md) | 将 IP 和 TCP 校验和的计算和验证卸载到 NIC。 |
+| [校验和](checksum-offload.md) | 将 IP 和 TCP 校验和的计算和验证卸载到 NIC。 |
 | [通用发送卸载 (GSO) ](gso-offload.md) | 为 IPv4 和 IPv6 卸载大型 TCP/UDP 数据包的分段。 |
 | [接受段合并 (RSC)](rsc-offload.md) | 为 IPv4 和 IPv6 卸载接收的 TCP 段序列的合并。 |
 

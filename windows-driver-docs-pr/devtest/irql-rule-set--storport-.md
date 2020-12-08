@@ -1,15 +1,14 @@
 ---
 title: Irql 规则集 (Storport)
 description: 使用这些规则验证你的驱动程序是否在所需的 IRQL 上进行 DDI 调用。不遵循 IRQL 规则的驱动程序可能会导致在操作过程中出现严重问题，从而导致死锁情况或计算机崩溃。
-ms.assetid: 3322200A-2073-4568-B1FC-481B216D8F61
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e120b3bea09a3cdf3183bf542e7c395b8498c892
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 16f67c5f9f824f7d483841063ce9dafc0acba195
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383929"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817471"
 ---
 # <a name="irql-rule-set-storport"></a>Irql 规则集 (Storport)
 
@@ -29,7 +28,7 @@ ms.locfileid: "89383929"
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

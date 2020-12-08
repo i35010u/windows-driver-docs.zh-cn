@@ -1,7 +1,6 @@
 ---
 title: WIA \_ IPA \_ 项 \_ 类别
 description: WIA \_ IPA \_ ITEM \_ CATEGORY 属性包含 wia 项的分组类别。
-ms.assetid: 0dde5e1c-ac30-4129-96fb-89ce1950c29b
 keywords:
 - WIA_IPA_ITEM_CATEGORY 图像设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c4e484708b883ac9fa32ea9c090a7066c421d80
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 200b2f183600f5eb67dd85fd3464e154a66cce25
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103162"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817293"
 ---
 # <a name="wia_ipa_item_category"></a>WIA \_ IPA \_ 项 \_ 类别
 
@@ -324,7 +323,7 @@ WIA 定义以下类别：
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**WIA \_ IPA \_ 项 \_ 标志**](wia-ipa-item-flags.md)

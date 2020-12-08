@@ -1,7 +1,6 @@
 ---
 title: reg
-description: Reg 扩展显示，搜索整个注册表数据。
-ms.assetid: 97944c84-da2e-4859-bf99-75d05413314d
+description: Reg 扩展显示和搜索注册表数据。
 keywords:
 - reg Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 516c16fd216e3e39759848a6138a49e53bdf3d7d
-ms.sourcegitcommit: 16cd0355b36a6bf61d9b6685c4ea62acb98ed70d
+ms.openlocfilehash: 8e6add1d5556afef74e1ef38d7450021c6f7c877
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67406178"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815489"
 ---
 # <a name="reg"></a>!reg
 
 
-**！ Reg**扩展显示，搜索整个注册表数据。
+**！ Reg** 扩展显示和搜索注册表数据。
 
 ```dbgcmd
 !reg {querykey|q} FullKeyPath
@@ -56,109 +55,109 @@ ms.locfileid: "67406178"
 !reg dumppool [s|r]
 ```
 
-## <a name="span-idddkregdbgspanspan-idddkregdbgspanparameters"></a><span id="ddk__reg_dbg"></span><span id="DDK__REG_DBG"></span>参数
+## <a name="span-idddk__reg_dbgspanspan-idddk__reg_dbgspanparameters"></a><span id="ddk__reg_dbg"></span><span id="DDK__REG_DBG"></span>参数
 
 
-<span id="_______querykeyq_FullKeyPath______"></span><span id="_______querykeyq_fullkeypath______"></span><span id="_______QUERYKEYQ_FULLKEYPATH______"></span> {**querykey**|**q**} **** *FullKeyPath*   
-如果缓存键，显示子项和值的键。 *FullKeyPath*指定完整的密钥路径。
+<span id="_______querykeyq_FullKeyPath______"></span><span id="_______querykeyq_fullkeypath______"></span><span id="_______QUERYKEYQ_FULLKEYPATH______"></span>{**查询密钥** |**q**} * * * * * * *FullKeyPath*   
+如果已缓存密钥，则显示密钥的子项和值。 *FullKeyPath* 指定完整的密钥路径。
 
-<span id="_____________keyinfo_HiveAddress_KeyNodeAddress"></span><span id="_____________keyinfo_hiveaddress_keynodeaddress"></span><span id="_____________KEYINFO_HIVEADDRESS_KEYNODEADDRESS"></span> **keyinfo** *HiveAddress* **** *KeyNodeAddress*  
-显示子项和值的关键的节点。 *HiveAddress*指定 hive 的地址。 *KeyNodeAddress*指定关键的节点的地址。
+<span id="_____________keyinfo_HiveAddress_KeyNodeAddress"></span><span id="_____________keyinfo_hiveaddress_keynodeaddress"></span><span id="_____________KEYINFO_HIVEADDRESS_KEYNODEADDRESS"></span>**keyinfo** *HiveAddress*  ****  *KeyNodeAddress*  
+显示密钥节点的子项和值。 *HiveAddress* 指定 hive 的地址。 *KeyNodeAddress* 指定密钥节点的地址。
 
-<span id="_______kcb_______Address______"></span><span id="_______kcb_______address______"></span><span id="_______KCB_______ADDRESS______"></span> **kcb** **** *Address*   
-显示注册表键控制块。 *地址*指定密钥的控制块的地址。
+<span id="_______kcb_______Address______"></span><span id="_______kcb_______address______"></span><span id="_______KCB_______ADDRESS______"></span>**kcb**  **** *地址*   
+显示注册表项控制块。 *Address* 指定密钥控制块的地址。
 
-<span id="_______knode_______Address______"></span><span id="_______knode_______address______"></span><span id="_______KNODE_______ADDRESS______"></span> **knode** **** *地址*   
-显示注册表关键的节点结构。 *地址*指定关键的节点的地址。
+<span id="_______knode_______Address______"></span><span id="_______knode_______address______"></span><span id="_______KNODE_______ADDRESS______"></span>**knode**  **** *地址*   
+显示注册表项节点结构。 *Address* 指定密钥节点的地址。
 
-<span id="_______kbody_______Address______"></span><span id="_______kbody_______address______"></span><span id="_______KBODY_______ADDRESS______"></span> **kbody** **** *Address*   
-显示注册表键正文结构。 *地址*指定密钥的主体的地址。 （注册表键正文是与句柄关联的实际对象。）
+<span id="_______kbody_______Address______"></span><span id="_______kbody_______address______"></span><span id="_______KBODY_______ADDRESS______"></span>**kbody**  **** *地址*   
+显示注册表项正文结构。 *Address* 指定密钥正文的地址。  (注册表项体是与句柄关联的实际对象。 ) 
 
-<span id="_______kvalue_______Address______"></span><span id="_______kvalue_______address______"></span><span id="_______KVALUE_______ADDRESS______"></span> **kvalue** **** *Address*   
-显示注册表项值结构。 *地址*指定值的地址。
+<span id="_______kvalue_______Address______"></span><span id="_______kvalue_______address______"></span><span id="_______KVALUE_______ADDRESS______"></span>**kvalue**  **** *地址*   
+显示注册表项的值结构。 *Address* 指定值的地址。
 
-<span id="_______valuelist_______HiveAddress_KeyNodeAddress______"></span><span id="_______valuelist_______hiveaddress_keynodeaddress______"></span><span id="_______VALUELIST_______HIVEADDRESS_KEYNODEADDRESS______"></span> **valuelist** **** *HiveAddress* **** *KeyNodeAddress*   
-指定关键的节点中显示的值的列表。 *HiveAddress*指定 hive 的地址。 *KeyNodeAddress*指定关键的节点的地址。
+<span id="_______valuelist_______HiveAddress_KeyNodeAddress______"></span><span id="_______valuelist_______hiveaddress_keynodeaddress______"></span><span id="_______VALUELIST_______HIVEADDRESS_KEYNODEADDRESS______"></span>**valuelist**  **** *HiveAddress*  **** *KeyNodeAddress*   
+显示指定键节点中的值的列表。 *HiveAddress* 指定 hive 的地址。 *KeyNodeAddress* 指定密钥节点的地址。
 
-<span id="subkeylist_______HiveAddress_KeyNodeAddress______"></span><span id="subkeylist_______hiveaddress_keynodeaddress______"></span><span id="SUBKEYLIST_______HIVEADDRESS_KEYNODEADDRESS______"></span>**subkeylist** **** *HiveAddress* **** *KeyNodeAddress*   
-显示指定关键的节点的子项的列表。 *HiveAddress*指定 hive 的地址。 *KeyNodeAddress*指定关键的节点的地址。
+<span id="subkeylist_______HiveAddress_KeyNodeAddress______"></span><span id="subkeylist_______hiveaddress_keynodeaddress______"></span><span id="SUBKEYLIST_______HIVEADDRESS_KEYNODEADDRESS______"></span>**subkeylist**  **** *HiveAddress*  **** *KeyNodeAddress*   
+显示指定键节点的子项列表。 *HiveAddress* 指定 hive 的地址。 *KeyNodeAddress* 指定密钥节点的地址。
 
-<span id="_______baseblock_______HiveAddress______"></span><span id="_______baseblock_______hiveaddress______"></span><span id="_______BASEBLOCK_______HIVEADDRESS______"></span> **baseblock** **** *HiveAddress*   
-显示用于配置单元的基块 (也称为*hive 标头*)。 *HiveAddress*指定 hive 的地址。
+<span id="_______baseblock_______HiveAddress______"></span><span id="_______baseblock_______hiveaddress______"></span><span id="_______BASEBLOCK_______HIVEADDRESS______"></span>**baseblock**  **** *HiveAddress*   
+显示 hive (的基块，也称为 *hive 标头*) 。 *HiveAddress* 指定 hive 的地址。
 
-<span id="_______seccache_______HiveAddress______"></span><span id="_______seccache_______hiveaddress______"></span><span id="_______SECCACHE_______HIVEADDRESS______"></span> **seccache** **** *HiveAddress*   
-显示配置单元的安全缓存。 *HiveAddress*指定 hive 的地址。
+<span id="_______seccache_______HiveAddress______"></span><span id="_______seccache_______hiveaddress______"></span><span id="_______SECCACHE_______HIVEADDRESS______"></span>**seccache**  **** *HiveAddress*   
+显示 hive 的安全性缓存。 *HiveAddress* 指定 hive 的地址。
 
-<span id="_______hashindex_______HiveAddress_HashKey______"></span><span id="_______hashindex_______hiveaddress_hashkey______"></span><span id="_______HASHINDEX_______HIVEADDRESS_HASHKEY______"></span> **hashindex** **** \[*HiveAddress*\] **** *HashKey*   
-计算哈希键的哈希索引条目。 *HiveAddress*指定 hive 的地址。 *HashKey*指定的键。
+<span id="_______hashindex_______HiveAddress_HashKey______"></span><span id="_______hashindex_______hiveaddress_hashkey______"></span><span id="_______HASHINDEX_______HIVEADDRESS_HASHKEY______"></span>**hashindex**  ****  hashindex \[*HiveAddress* \] HiveAddress  **** *HashKey*   
+计算哈希键的哈希索引条目。 *HiveAddress* 指定 hive 的地址。 *HashKey* 指定密钥。
 
-**请注意** *HiveAddress*是必需的如果目标计算机正在运行 Windows 7 或更高版本。
+**请注意**，如果目标计算机运行的是 Windows 7 或更高版本，则 *HiveAddress* 是必需的。
 
 
 
-<span id="_______openkeys_HiveAddress0_"></span><span id="_______openkeys_hiveaddress0_"></span><span id="_______OPENKEYS_HIVEADDRESS0_"></span> **openkeys** {*HiveAddress*|**0**}   
-在配置单元中显示所有打开的密钥。 *HiveAddress*指定 hive 的地址。 如果改为使用零，将显示整个注册表哈希表;此表包含在注册表中的所有打开密钥。
+<span id="_______openkeys_HiveAddress0_"></span><span id="_______openkeys_hiveaddress0_"></span><span id="_______OPENKEYS_HIVEADDRESS0_"></span>**sys.openkeys** {*HiveAddress* | **0**}   
+显示 hive 中的所有打开的键。 *HiveAddress* 指定 hive 的地址。 如果改为使用零，则显示整个注册表哈希表;此表包含注册表中的所有打开的项。
 
-<span id="_______findkcb_______FullKeyPath______"></span><span id="_______findkcb_______fullkeypath______"></span><span id="_______FINDKCB_______FULLKEYPATH______"></span> **findkcb** **** *FullKeyPath*   
-显示对应的注册表路径的注册表密钥控制块。 *FullKeyPath*指定完整的密钥路径; 此路径必须存在哈希表中。
+<span id="_______findkcb_______FullKeyPath______"></span><span id="_______findkcb_______fullkeypath______"></span><span id="_______FINDKCB_______FULLKEYPATH______"></span>**findkcb**  **** *FullKeyPath*   
+显示与注册表路径对应的注册表项控制块。 *FullKeyPath* 指定完整的密钥路径;此路径必须存在于哈希表中。
 
-<span id="_______hivelist______"></span><span id="_______HIVELIST______"></span> **hivelist**   
-在系统中，并提供有关每个 hive 的详细信息中显示所有配置单元的列表。
+<span id="_______hivelist______"></span><span id="_______HIVELIST______"></span>**hivelist**   
+显示系统中所有配置单元的列表，以及有关每个配置单元的详细信息。
 
-<span id="_______viewlist_______HiveAddress______"></span><span id="_______viewlist_______hiveaddress______"></span><span id="_______VIEWLIST_______HIVEADDRESS______"></span> **viewlist** **** *HiveAddress*   
-显示所有固定和映射的每个视图的详细信息适用于 hive 视图。 *HiveAddress*指定 hive 的地址。
+<span id="_______viewlist_______HiveAddress______"></span><span id="_______viewlist_______hiveaddress______"></span><span id="_______VIEWLIST_______HIVEADDRESS______"></span>**viewlist**  **** *HiveAddress*   
+显示 hive 的所有固定和映射视图，以及每个视图的详细信息。 *HiveAddress* 指定 hive 的地址。
 
-<span id="_______freebins_______HiveAddress______"></span><span id="_______freebins_______hiveaddress______"></span><span id="_______FREEBINS_______HIVEADDRESS______"></span> **freebins** **** *HiveAddress*   
-显示所有可用的详细信息的每个箱 hive 箱。 *HiveAddress*指定 hive 的地址。
+<span id="_______freebins_______HiveAddress______"></span><span id="_______freebins_______hiveaddress______"></span><span id="_______FREEBINS_______HIVEADDRESS______"></span>**freebins**  **** *HiveAddress*   
+显示 hive 的所有可用箱，其中包含每个储箱的详细信息。 *HiveAddress* 指定 hive 的地址。
 
-<span id="_______freecells_______BinAddress______"></span><span id="_______freecells_______binaddress______"></span><span id="_______FREECELLS_______BINADDRESS______"></span> **freecells** **** *BinAddress*   
-循环 bin 并显示其内部的所有可用单元格。 *BinAddress*指定 bin 的地址。
+<span id="_______freecells_______BinAddress______"></span><span id="_______freecells_______binaddress______"></span><span id="_______FREECELLS_______BINADDRESS______"></span>**freecells**  **** *BinAddress*   
+循环访问一个 bin 并显示其中所有可用的单元格。 *BinAddress* 指定 bin 的地址。
 
-<span id="_______dirtyvector_______HiveAddress______"></span><span id="_______dirtyvector_______hiveaddress______"></span><span id="_______DIRTYVECTOR_______HIVEADDRESS______"></span> **dirtyvector** **** *HiveAddress*   
-显示适用于 hive 的脏向量。 *HiveAddress*指定 hive 的地址。
+<span id="_______dirtyvector_______HiveAddress______"></span><span id="_______dirtyvector_______hiveaddress______"></span><span id="_______DIRTYVECTOR_______HIVEADDRESS______"></span>**dirtyvector**  **** *HiveAddress*   
+显示 hive 的脏向量。 *HiveAddress* 指定 hive 的地址。
 
-<span id="_______cellindex_______HiveAddress_Index______"></span><span id="_______cellindex_______hiveaddress_index______"></span><span id="_______CELLINDEX_______HIVEADDRESS_INDEX______"></span> **cellindex** **** *HiveAddress* **** *Index*   
-在 hive 中显示的单元格的虚拟地址。 *HiveAddress*指定 hive 的地址。 *索引*指定的单元索引。
+<span id="_______cellindex_______HiveAddress_Index______"></span><span id="_______cellindex_______hiveaddress_index______"></span><span id="_______CELLINDEX_______HIVEADDRESS_INDEX______"></span>**cellindex**  **** *HiveAddress*  **** *索引*   
+显示 hive 中单元格的虚拟地址。 *HiveAddress* 指定 hive 的地址。 *Index* 指定单元格索引。
 
-<span id="_____________freehints_HiveAddress_Storage_Display"></span><span id="_____________freehints_hiveaddress_storage_display"></span><span id="_____________FREEHINTS_HIVEADDRESS_STORAGE_DISPLAY"></span> **freehints** *HiveAddress* **** *Storage* **** *Display*  
-显示可用的提示信息。
+<span id="_____________freehints_HiveAddress_Storage_Display"></span><span id="_____________freehints_hiveaddress_storage_display"></span><span id="_____________FREEHINTS_HIVEADDRESS_STORAGE_DISPLAY"></span>**freehints** *HiveAddress*  ****  *存储*  ****  *显示*  
+显示免费提示信息。
 
-<span id="_____________translist_RmAddress0"></span><span id="_____________translist_rmaddress0"></span><span id="_____________TRANSLIST_RMADDRESS0"></span> **translist** {*RmAddress*|**0**}  
-显示 RM 中的活动事务的列表 *RmAddress*指定的地址的 RM
+<span id="_____________translist_RmAddress0"></span><span id="_____________translist_rmaddress0"></span><span id="_____________TRANSLIST_RMADDRESS0"></span>**translist** {*RmAddress* | **0**}  
+显示 RM 中活动事务的列表。 *RmAddress* 指定 RM 的地址。
 
-<span id="_____________uowlist_TransactionAddress"></span><span id="_____________uowlist_transactionaddress"></span><span id="_____________UOWLIST_TRANSACTIONADDRESS"></span> **uowlist** *TransactionAddress*  
-显示 UoWs 附加到事务的列表。 *TransactionAddress*指定事务的地址。
+<span id="_____________uowlist_TransactionAddress"></span><span id="_____________uowlist_transactionaddress"></span><span id="_____________UOWLIST_TRANSACTIONADDRESS"></span>**uowlist** *TransactionAddress*  
+显示附加到事务的 UoWs 的列表。 *TransactionAddress* 指定事务的地址。
 
-<span id="_____________locktable_KcbAddress_ThreadAddress"></span><span id="_____________locktable_kcbaddress_threadaddress"></span><span id="_____________LOCKTABLE_KCBADDRESS_THREADADDRESS"></span> **locktable** *KcbAddress* *ThreadAddress*  
-显示相关锁表内容。
+<span id="_____________locktable_KcbAddress_ThreadAddress"></span><span id="_____________locktable_kcbaddress_threadaddress"></span><span id="_____________LOCKTABLE_KCBADDRESS_THREADADDRESS"></span>**locktable** *KcbAddress* *ThreadAddress*  
+显示相关的锁定表内容。
 
-<span id="_____________convkey_KeyPath"></span><span id="_____________convkey_keypath"></span><span id="_____________CONVKEY_KEYPATH"></span> **convkey** *KeyPath*  
-密钥路径的显示哈希键。
+<span id="_____________convkey_KeyPath"></span><span id="_____________convkey_keypath"></span><span id="_____________CONVKEY_KEYPATH"></span>**convkey** *KeyPath*  
+显示密钥路径的哈希键。
 
-<span id="_____________postblocklist"></span><span id="_____________POSTBLOCKLIST"></span> **postblocklist**  
-显示已发布的 postblocks 的线程的列表。
+<span id="_____________postblocklist"></span><span id="_____________POSTBLOCKLIST"></span>**postblocklist**  
+显示已 postblocks 发布的线程的列表。
 
-<span id="_____________notifylist"></span><span id="_____________NOTIFYLIST"></span> **notifylist**  
-显示系统中的块，通知的列表。
+<span id="_____________notifylist"></span><span id="_____________NOTIFYLIST"></span>**notifylist**  
+显示系统中的通知块的列表。
 
-<span id="_____________ixlock_LockAddress"></span><span id="_____________ixlock_lockaddress"></span><span id="_____________IXLOCK_LOCKADDRESS"></span> **ixlock** *LockAddress*  
-显示意向锁的所有权。 *LockAddress*指定锁的地址。
+<span id="_____________ixlock_LockAddress"></span><span id="_____________ixlock_lockaddress"></span><span id="_____________IXLOCK_LOCKADDRESS"></span>**ixlock** *LockAddress*  
+显示意向锁的所有权。 *LockAddress* 指定锁的地址。
 
-<span id="_______dumppool_sr"></span><span id="_______DUMPPOOL_SR"></span> **dumppool** \[**s**|**r**\]  
-显示注册表分配页面缓冲池。 如果**s**注册表页的列表保存到临时文件的指定。 如果**r**从以前保存的临时文件中还原注册表页列表的指定。
+<span id="_______dumppool_sr"></span><span id="_______DUMPPOOL_SR"></span>**dumppool** \[**s** |**r**\]  
+显示注册表分配的分页池。 如果 **指定了，** 则会将注册表页的列表保存到临时文件中。 如果指定 **r** ，则从以前保存的临时文件还原注册表页列表。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 Kdexts.dll
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关注册表及如何及其组件的信息，请参阅*Microsoft Windows Internals*由 Mark Russinovich 和 David solomon 合著。 
+有关注册表及其组件的信息，请参阅 *Microsoft Windows 内部机制* （标记 Russinovich 和 David）。 
 
 <a name="remarks"></a>备注
 -------
 
-下面是一个示例。 首先，使用 **！ reg hivelist**若要获取的 hive 地址列表。
+示例如下。 首先使用 **！ reg hivelist** 获取 hive 地址的列表。
 
 ```dbgcmd
 00: kd> !reg hivelist
@@ -183,7 +182,7 @@ Kdexts.dll
 ## | fffff8a0022dc010 |     175000  | fffff8a0022dc0b0 |          0    |  0000000000000000  |     0| fffff8a0022dd000  | \AppCompat\Programs\Amcache.hve
 ```
 
-在上面的输出 (fffff8a00004f010) 的第三个 hive 地址用作的参数 **！ reg openkeys**。
+在前面的输出中使用第三个 hive 地址 (fffff8a00004f010) 作为 **！ reg sys.openkeys** 的参数。
 
 ```dbgcmd
 0: kd> !reg openkeys fffff8a00004f010
@@ -198,7 +197,7 @@ Index 160:   96d26a30 kcb=fffff8a00007e6f8 cell=00000020 f=002c0000 \REGISTRY\MA
 # 0x4 keys found
 ```
 
-在上面的输出中使用的第一个完整的密钥路径 (\\注册表\\MACHINE\\硬件\\说明\\系统) 作为参数 **！ reg 查询密钥**。
+使用前面输出中的第一个完整密钥路径 (\\ 注册表 \\ 计算机 \\ 硬件 \\ 描述 \\ 系统) 作为 **！ reg 查询密钥** 的参数。
 
 ```dbgcmd
 0: kd> !reg querykey \REGISTRY\MACHINE\HARDWARE\DESCRIPTION\SYSTEM
@@ -229,7 +228,7 @@ REG_SZ              VideoBiosDate                 03/23/20
 REG_MULTI_SZ        VideoBiosVersion              Hardware Version 0.0\0\0
 ```
 
-下面是另一个示例：
+以下是另一个示例：
 
 ```dbgcmd
 kd> !reg hivelist
@@ -261,7 +260,7 @@ Index 68:  7bab7683 kcb=e13314f8 cell=00000740 f=00200004 \REGISTRY\USER\S-1-5-2
 Index 7a1:  48a30288 kcb=e13a3738 cell=00000020 f=002c0004 \REGISTRY\USER\S-1-5-21-1715567821-413027322-527237240-500_Classes
 ```
 
-若要显示带格式的注册表项信息，请使用[ **！ dreg** ](-dreg.md)扩展相反。
+若要显示格式化的注册表项信息，请改用 [**！ dreg**](-dreg.md) 扩展。
 
 
 

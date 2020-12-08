@@ -1,7 +1,6 @@
 ---
 title: ScannerStatusConditionEvent 元素
 description: 必需的 ScannerStatusConditionEvent 元素为客户端提供有关扫描设备中单个状态更改的详细信息。
-ms.assetid: 0a61fe67-ea1e-4143-afb8-edcdf50ee7c4
 keywords:
 - ScannerStatusConditionEvent 元素图像设备
 topic_type:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a2cdfc945ab0b909affd44dc71ab407becbc0da
-ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
+ms.openlocfilehash: 2de595a6ea5df725ec591d647af1f440d80600bf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75653005"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816195"
 ---
 # <a name="scannerstatusconditionevent-element"></a>ScannerStatusConditionEvent 元素
 
 
-必需的**ScannerStatusConditionEvent**元素为客户端提供有关扫描设备中单个状态更改的详细信息。
+必需的 **ScannerStatusConditionEvent** 元素为客户端提供有关扫描设备中单个状态更改的详细信息。
 
-<a name="usage"></a>Usage
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -33,7 +32,7 @@ ms.locfileid: "75653005"
 </wscn:ScannerStatusConditionEvent>
 ```
 
-<a name="attributes"></a>属性
+<a name="attributes"></a>特性
 ----------
 
 没有特性。
@@ -65,9 +64,9 @@ ms.locfileid: "75653005"
 <a name="remarks"></a>备注
 -------
 
-当在[**ActiveConditions**](activeconditions.md)元素表中添加或更改[**DeviceCondition**](devicecondition.md)元素时，WSD 扫描服务会向客户端发送一个**ScannerStatusConditionEvent**元素。 **ScannerStatusConditionEvent**的主体包含新的或已更改的**DeviceCondition**元素。
+当在 [**ActiveConditions**](activeconditions.md)元素表中添加或更改 [**DeviceCondition**](devicecondition.md)元素时，WSD 扫描服务会向客户端发送一个 **ScannerStatusConditionEvent** 元素。 **ScannerStatusConditionEvent** 的主体包含新的或已更改的 **DeviceCondition** 元素。
 
-清除报告的**DeviceCondition**时，WSD 扫描服务应将[**ScannerStatusConditionClearedEvent**](scannerstatusconditionclearedevent.md)元素发送到客户端。
+清除报告的 **DeviceCondition** 时，WSD 扫描服务应将 [**ScannerStatusConditionClearedEvent**](scannerstatusconditionclearedevent.md)元素发送到客户端。
 
 <a name="examples"></a>示例
 --------
@@ -103,7 +102,7 @@ ms.locfileid: "75653005"
 </soap:Envelope>
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [**ActiveConditions**](activeconditions.md)
 

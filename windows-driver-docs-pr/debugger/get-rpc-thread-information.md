@@ -1,17 +1,16 @@
 ---
 title: 获取 RPC 线程信息
 description: 获取 RPC 线程信息
-ms.assetid: 4cb8d11f-5b0a-4526-9f64-ee69fd15d1ba
 keywords:
 - RPC 线程信息
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cbee1913f1dd40f0d4a27809e611f781a2d1bde7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 54107526dfd32b5742ba4f04a2489cd0584028a7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380791"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816337"
 ---
 # <a name="get-rpc-thread-information"></a>获取 RPC 线程信息
 
@@ -19,11 +18,11 @@ ms.locfileid: "63380791"
 ## <span id="ddk_get_rpc_thread_information_dbg"></span><span id="DDK_GET_RPC_THREAD_INFORMATION_DBG"></span>
 
 
-通过显示线程信息 **！ rpcexts.getthreadinfo**扩展，或通过 DbgRpc 时 **-t**使用开关。
+当使用 **-t** 开关时，线程信息由 **！ rpcexts; Getthreadinfo** 扩展或 DbgRpc 显示。
 
-必须指定进程的 PID。 你可以指定该进程也内的线程。 如果省略该线程，则将显示该进程内的所有线程。
+必须指定进程的 PID。 您也可以在该过程中指定一个线程。 如果省略该线程，则将显示该进程中的所有线程。
 
-在以下示例中，进程 ID 是 0x278，省略的线程 ID:
+在下面的示例中，进程 ID 为0x278 并且省略了线程 ID：
 
 ```console
 D:\wmsg>dbgrpc -t -P 278
@@ -34,9 +33,9 @@ Searching for thread info ...
 0278 0000.0005 03 0000031c 00072bf5
 ```
 
-可选参数的详细信息，请参阅[ **DbgRpc 命令行选项**](dbgrpc-command-line-options.md)。
+有关可选参数的详细信息，请参阅 [**DbgRpc Command-Line Options**](dbgrpc-command-line-options.md)。
 
-有关使用 RPC 的类似示例调试器扩展，请参阅[ **！ rpcexts.getthreadinfo**](-rpcexts-getthreadinfo.md)。
+有关使用 RPC 调试器扩展的类似示例，请参阅 [**！ rpcexts. getthreadinfo**](-rpcexts-getthreadinfo.md)。
 
  
 

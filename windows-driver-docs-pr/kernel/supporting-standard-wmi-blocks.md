@@ -1,22 +1,21 @@
 ---
 title: 支持标准 WMI 块
 description: 支持标准 WMI 块
-ms.assetid: ddec3afb-8274-4eff-93ef-b0a07fd7c13a
 keywords:
 - WMI WDK 内核，事件块
-- 事件阻止 WDK WMI
-- 数据将阻止 WDK WMI
+- 事件块 WDK WMI
+- 数据块 WDK WMI
 - WMI WDK 内核，数据块
-- 块 WDK WMI
+- 阻止 WDK WMI
 - 标准块 WDK WMI
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ee18351c104f7d79c262528f9153d066004d663d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 32587faff1295e3495a22472f3e8ea5de2c477a6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378002"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816625"
 ---
 # <a name="supporting-standard-wmi-blocks"></a>支持标准 WMI 块
 
@@ -24,17 +23,17 @@ ms.locfileid: "63378002"
 
 
 
-每个驱动程序应支持任何*标准块*定义其类型的驱动程序。 标准块向给定的类型，而不考虑供应商的所有设备的 WMI 客户端提供一致的数据。
+每个驱动程序都应支持为其类型的驱动程序定义的任何 *标准块* 。 标准块为 WMI 客户端提供了给定类型的所有设备的一致数据，而不考虑供应商。
 
-若要支持的标准块，驱动程序：
+若要支持标准块，请执行以下操作：
 
--   注册 WMI，以及支持的驱动程序，如中所述的其他标准和自定义块块[注册为 WMI 数据提供程序](registering-as-a-wmi-data-provider.md)。
+-   向 WMI 注册块，以及驱动程序支持的其他标准和自定义块，如 [注册为 WMI 数据提供程序](registering-as-a-wmi-data-provider.md)中所述。
 
--   处理指定驱动程序的设备对象指针上的所有 WMI 请求**Parameters.WMI.ProviderId**和处的标准块 GUID **Parameters.WMI.DataPath**中所述，[处理 WMI 请求](handling-wmi-requests.md)。
+-   处理所有 WMI 请求，这些请求在 **参数.** 数据路径中指定驱动程序的设备对象指针，并处理 **参数. wmi**[中的](handling-wmi-requests.md)标准块的 GUID。
 
-在系统提供的 MOF 文件中发布的标准块 MOF 类。 驱动程序必须不重新定义其自己的 MOF 文件中的标准块，因为这样做会复制 WMI 数据库中的块。
+标准块的 MOF 类在系统提供的 MOF 文件中发布。 驱动程序不得在其自己的 MOF 文件中重新定义标准块，因为这样做会在 WMI 数据库中重复该程序块。
 
-目前，文件 wmicore.mof，后者包含在 Windows Driver Kit (WDK) 中发布的标准块的类定义。
+目前，标准块的类定义发布在文件 wmicore 中，该文件包含在 Windows 驱动程序工具包 (WDK) 中。
 
  
 

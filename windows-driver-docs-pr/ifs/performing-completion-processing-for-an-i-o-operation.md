@@ -1,18 +1,17 @@
 ---
 title: 执行 I/O 操作的完成处理
 description: 执行 I/O 操作的完成处理
-ms.assetid: 7e65c21c-d38f-4804-8c07-6cd89f6a6dd6
 keywords:
 - postoperation 回调例程 WDK 文件系统微筛选器，完成处理
 - 完成 i/o 请求 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e606880851e458e9ced10497ed7078aa7975822
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 2cb08e1faf262586a597781da74507f9cb97096b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063278"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816249"
 ---
 # <a name="performing-completion-processing-for-an-io-operation"></a>执行 I/O 操作的完成处理
 

@@ -1,17 +1,16 @@
 ---
 title: IPsec 卸载版本 2 简介
 description: IPsec 卸载版本 2 简介
-ms.assetid: d8fd0bf8-f7b6-44ad-a3dc-f10bb20ce651
 keywords:
 - IPsecOV2 WDK TCP/IP 传输，关于 IPsecOV2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d7c5e2963969d7877ca046389f63260c2e771ee3
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: f0eb978d489bfae4594baef8331a40dc451a0a67
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715044"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815973"
 ---
 # <a name="introduction-to-ipsec-offload-version-2"></a>IPsec 卸载版本 2 简介
 
@@ -32,13 +31,13 @@ NDIS 在 [**ndis \_ 绑定 \_ 参数**](/windows-hardware/drivers/ddi/ndis/ns-nd
 
 在初始化期间报告硬件功能时，微型端口驱动程序必须从注册表读取标准化关键字。 有关 IPsecOV2 卸载功能的详细信息，请参阅 [报告 NIC 的 IPsec 卸载第2版功能](reporting-a-nic-s-ipsec-offload-version-2-capabilities.md)。
 
-**注意**   NDIS 为 NDIS 6.1 和更高版本的驱动程序提供直接 OID 请求接口。 [直接 OID 请求路径](/windows-hardware/drivers/ddi/_netvista/)支持经常查询或设置的 OID 请求。
+**注意**  NDIS 为 NDIS 6.1 和更高版本的驱动程序提供直接 OID 请求接口。 [直接 OID 请求路径](/windows-hardware/drivers/ddi/_netvista/)支持经常查询或设置的 OID 请求。
 
  
 
 IPsecOV2 提供 [OID \_ tcp \_ 任务 \_ ipsec \_ 卸载 \_ v2 \_ 添加 \_ SA](./oid-tcp-task-ipsec-offload-v2-add-sa.md)、 [oid \_ tcp \_ 任务 ipsec 卸载 \_ \_ \_ v2 \_ 更新 \_ sa](./oid-tcp-task-ipsec-offload-v2-update-sa.md)和 [oid \_ tcp \_ 任务 \_ ipsec \_ 卸载 \_ v2 \_ 删除 \_ SA](./oid-tcp-task-ipsec-offload-v2-delete-sa.md) 直接 OID 请求，以启用协议驱动程序以添加、更新和删除 (SAs) 的安全关联。 有关 SAs 的详细信息，请参阅 [在 IPsec 卸载版本2中管理安全关联](managing-security-associations-in-ipsec-offload-version-2.md)。
 
-NIC 可以在发送和接收路径上执行 IPsec 卸载任务。 NDIS 驱动程序使用 [**ndis \_ ipsec \_ 卸载 \_ v2 \_ 网络 \_ 缓冲区 \_ 列表 \_ 信息**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_ipsec_offload_v2_net_buffer_list_info)， [**ndis \_ ipsec 卸载 v2 \_ \_ \_ 标头 \_ 网络 \_ 缓冲区 \_ \_ **](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_ipsec_offload_v2_header_net_buffer_list_info)列表信息， [**ndis \_ ipsec \_ 卸载 \_ v2 \_ 隧道 \_ 网络 \_ 缓冲区 \_ 列表 \_ 信息**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_ipsec_offload_v2_tunnel_net_buffer_list_info) 结构，用于访问 IPSEC 带外 (OOB) 信息。
+NIC 可以在发送和接收路径上执行 IPsec 卸载任务。 NDIS 驱动程序使用 [**ndis \_ ipsec \_ 卸载 \_ v2 \_ 网络 \_ 缓冲区 \_ 列表 \_ 信息**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_ipsec_offload_v2_net_buffer_list_info)， [**ndis \_ ipsec 卸载 v2 \_ \_ \_ 标头 \_ 网络 \_ 缓冲区 \_ \_**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_ipsec_offload_v2_header_net_buffer_list_info)列表信息， [**ndis \_ ipsec \_ 卸载 \_ v2 \_ 隧道 \_ 网络 \_ 缓冲区 \_ 列表 \_ 信息**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_ipsec_offload_v2_tunnel_net_buffer_list_info) 结构，用于访问 IPSEC 带外 (OOB) 信息。
 
 在发送路径上，过量驱动程序将句柄设置为 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构中 OOB 信息中的出站 SA 和 IPsec 标头信息，以指定 NIC 应该执行 IPsecOV2 卸载任务。
 

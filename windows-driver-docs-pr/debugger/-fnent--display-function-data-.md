@@ -1,10 +1,9 @@
 ---
 title: .fnent（显示函数数据）
-description: .Fnent 命令显示有关指定的函数的函数表项的信息。
-ms.assetid: 914caf55-2fbf-4f30-af6e-e666dc47c7da
+description: Fnent 命令显示有关指定函数的函数表项的信息。
 keywords:
-- 显示函数的数据 (.fnent) 命令
-- .fnent （显示函数的数据） Windows 调试
+- " () 命令显示函数数据"
+- fnent (显示) Windows 调试的函数数据
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -13,26 +12,26 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 22385219eaa6914c6561e6ce3acf0d6186d8075b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b0301d56f81e99397e05f4ad7068d49fd7517da1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336651"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815531"
 ---
 # <a name="fnent-display-function-data"></a>.fnent（显示函数数据）
 
 
-**.Fnent**命令显示有关指定的函数的函数表项的信息。
+**Fnent** 命令显示有关指定函数的函数表项的信息。
 
 ```dbgcmd
 .fnent Address
 ```
 
-## <a name="span-idddkmetadisplayfunctiondatadbgspanspan-idddkmetadisplayfunctiondatadbgspanparameters"></a><span id="ddk_meta_display_function_data_dbg"></span><span id="DDK_META_DISPLAY_FUNCTION_DATA_DBG"></span>参数
+## <a name="span-idddk_meta_display_function_data_dbgspanspan-idddk_meta_display_function_data_dbgspanparameters"></a><span id="ddk_meta_display_function_data_dbg"></span><span id="DDK_META_DISPLAY_FUNCTION_DATA_DBG"></span>参数
 
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *Address*   
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*地址*   
 指定函数的地址。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>环境
@@ -44,12 +43,12 @@ ms.locfileid: "63336651"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>用户模式下，内核模式</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>用户模式，内核模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>实时、 崩溃转储</p></td>
+<td align="left"><p>实时，故障转储</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>
@@ -63,11 +62,11 @@ ms.locfileid: "63336651"
 <a name="remarks"></a>备注
 -------
 
-符号搜索算法 **.fnent**命令是与相同[ **ln （列表最接近符号）** ](ln--list-nearest-symbols-.md)命令。 屏幕将首先显示最接近的符号。 然后，调试器将显示这些符号的第一个函数入口。
+**. Fnent** 命令的符号搜索算法与 [**Ln (列出最接近符号)**](ln--list-nearest-symbols-.md)命令相同。 首先显示最近的符号。 然后，调试器将显示其中第一个符号的函数条目。
 
-如果最近的符号不是函数表中，将不显示任何信息。
+如果函数表中不存在最近的符号，则不会显示任何信息。
 
-下面的示例显示了可能的显示。
+下面的示例演示了可能的显示。
 
 ```dbgcmd
 0:001> .fnent 77f9f9e7

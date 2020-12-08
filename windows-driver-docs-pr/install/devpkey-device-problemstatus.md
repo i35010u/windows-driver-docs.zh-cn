@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_ProblemStatus
 description: DEVPKEY_Device_ProblemStatus
-ms.assetid: 477f835c-6094-4fba-80af-f6032bca7f85
 keywords:
 - DEVPKEY_Device_ProblemStatus 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 02/28/2020
-ms.openlocfilehash: a4c95f8789062ea0b6890a49da85c7d104f2e9b6
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: ce91a9cf6e9107a2729527802ae93ce9b858af98
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716762"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816165"
 ---
 # <a name="devpkey_device_problemstatus"></a>DEVPKEY_Device_ProblemStatus
 

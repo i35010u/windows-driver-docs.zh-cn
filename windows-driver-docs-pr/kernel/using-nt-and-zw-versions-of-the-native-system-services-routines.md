@@ -1,22 +1,21 @@
 ---
 title: 使用本机系统服务例程的 Nt 和 Zw 版本
 description: 使用本机系统服务例程的 Nt 和 Zw 版本
-ms.assetid: 89627ddb-621d-4d27-acd6-16308689165d
 keywords:
 - 本机系统服务 API WDK
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d90bccaba7e90ee8f0ae605eee64ae472779bf62
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: f87b9c490d35ed0568b31b58545891502d5171d4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733409"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816067"
 ---
 # <a name="using-nt-and-zw-versions-of-the-native-system-services-routines"></a>使用本机系统服务例程的 Nt 和 Zw 版本
 
 
-Windows native 操作系统服务 API 实现为在内核模式下运行的一组例程。 这些例程的名称以前缀 **Nt** 或 **Zw**开头。 内核模式驱动程序可以直接调用这些例程。 用户模式应用程序可以通过使用系统调用来访问这些例程。
+Windows native 操作系统服务 API 实现为在内核模式下运行的一组例程。 这些例程的名称以前缀 **Nt** 或 **Zw** 开头。 内核模式驱动程序可以直接调用这些例程。 用户模式应用程序可以通过使用系统调用来访问这些例程。
 
 除了几个例外，每个本机系统服务例程有两个略有不同的版本，但前缀不同。 例如，对 [NtCreateFile](/windows/win32/api/winternl/nf-winternl-ntcreatefile) 和 [**ZwCreateFile**](/windows-hardware/drivers/ddi/wdm/nf-wdm-zwcreatefile) 的调用执行类似的操作，事实上，它是由相同的内核模式系统例程提供服务的。 对于用户模式下的系统调用，例程的 **Nt** 版本和 **Zw** 版本的行为相同。 对于来自内核模式驱动程序的调用，例程的 **Nt** 和 **Zw** 版本不同于它们处理调用方传递到例程的参数值的方式。
 

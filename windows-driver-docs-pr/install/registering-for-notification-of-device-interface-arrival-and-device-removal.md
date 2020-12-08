@@ -1,15 +1,14 @@
 ---
 title: 注册以获取设备接口到达和删除通知
 description: 本主题介绍用户模式应用程序或驱动程序如何注册设备接口到达和设备删除的通知。
-ms.assetid: 665E7881-F49C-4FC1-971C-1762B7D0C26E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f56326f3e46b5e8229b6b595368b5f4470aac447
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: ddffe262796f7e3a5ccd1dd7591f356de707cc58
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715770"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816679"
 ---
 # <a name="registering-for-notification-of-device-interface-arrival-and-device-removal"></a>注册获取设备接口到达和设备删除通知
 
@@ -20,14 +19,14 @@ ms.locfileid: "90715770"
 
 **注册获取设备接口到达和设备删除通知**
 
-1. 通过**CM_NOTIFY_FILTER_TYPE_DEVICEINTERFACE**调用[**CM_Register_Notification**](/windows/win32/api/cfgmgr32/nf-cfgmgr32-cm_register_notification) ，注册设备接口到达通知。 当指定类中的未来接口到达时，系统将通知你的组件。
+1. 通过 **CM_NOTIFY_FILTER_TYPE_DEVICEINTERFACE** 调用 [**CM_Register_Notification**](/windows/win32/api/cfgmgr32/nf-cfgmgr32-cm_register_notification) ，注册设备接口到达通知。 当指定类中的未来接口到达时，系统将通知你的组件。
 2. 由于你想要向其发送 i/o 的接口可能已经存在于系统上，因此调用 [**CM_Get_Device_Interface_List**](/windows/win32/api/cfgmgr32/nf-cfgmgr32-cm_get_device_interface_lista) 或 [**SetupDiGetClassDevs**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclassdevsw) 以检索现有接口的列表。
    **注意**  如果接口到达步骤1和步骤2之间，接口将列出两次，从步骤1中的注册和步骤2中的接口列表。
 
      
 
 3. 找到所需的接口后，调用 [**CreateFile**](/windows/win32/api/fileapi/nf-fileapi-createfilea) 打开设备的句柄。
-4. 在步骤3中成功创建设备句柄之后，再次调用 [**CM_Register_Notification**](/windows/win32/api/cfgmgr32/nf-cfgmgr32-cm_register_notification) 。 这一次，注册 **CM_NOTIFY_FILTER_TYPE_DEVICEHANDLE**类型的通知，并提供新设备句柄作为接收通知的句柄。 当接口表示的设备接收查询删除请求时，系统会通知你的组件。
+4. 在步骤3中成功创建设备句柄之后，再次调用 [**CM_Register_Notification**](/windows/win32/api/cfgmgr32/nf-cfgmgr32-cm_register_notification) 。 这一次，注册 **CM_NOTIFY_FILTER_TYPE_DEVICEHANDLE** 类型的通知，并提供新设备句柄作为接收通知的句柄。 当接口表示的设备接收查询删除请求时，系统会通知你的组件。
 
 5. 实现设备句柄通知回调时，请使用此表。
 

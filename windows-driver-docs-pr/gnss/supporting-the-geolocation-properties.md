@@ -1,24 +1,23 @@
 ---
 title: 支持地理位置属性
-description: 源文件、 geolocation.cpp，包含有三个用于定义支持模拟的传感器的属性的 PROPERTYKEY 结构数组。
-ms.assetid: 0D25D58F-1023-4470-9F7D-E62544B87A42
+description: 源文件（即 node.js）包含三个 PROPERTYKEY 结构数组，它们定义了模拟传感器支持的属性。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ad9b294e3e67228b98d2022019ba8194c89e7145
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4bdda2ad6dbdc9f27c1ae358c97209869c43e898
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63326181"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816791"
 ---
 # <a name="supporting-the-geolocation-properties"></a>支持地理位置属性
 
 > [!IMPORTANT] 
-> 已弃用此文档和 Windows 8.1 的地理位置驱动程序示例。
+> 此文档和 Windows 8.1 的地理位置驱动程序示例已弃用。
 
-源文件、 geolocation.cpp，包含有三个用于定义支持模拟的传感器的属性的 PROPERTYKEY 结构数组。
+源文件（即 node.js）包含三个 PROPERTYKEY 结构数组，它们定义了模拟传感器支持的属性。
 
-第一个数组定义支持模拟的传感器的只读和读 / 写属性。
+第一个数组定义模拟传感器支持的只读和读写属性。
 
 ```cpp
 const PROPERTYKEY g_SupportedGeolocationProperties[] =
@@ -40,9 +39,9 @@ const PROPERTYKEY g_SupportedGeolocationProperties[] =
 };
 ```
 
-示例驱动程序使用整个这些值检索一个属性 （或属性） 时，以响应应用程序请求。 检索属性值的方法是**CGeolocation::GetPropertyValuesForGeolocationObject**。
+示例驱动程序在检索属性时使用这些值 (或) 响应应用程序请求。 检索属性值的方法是 **CGeolocation：： GetPropertyValuesForGeolocationObject**。
 
-第二个数组定义可选属性。
+第二个数组定义了可选属性。
 
 ```cpp
 const PROPERTYKEY g_OptionalSupportedGeolocationProperties[] =
@@ -54,7 +53,7 @@ const PROPERTYKEY g_OptionalSupportedGeolocationProperties[] =
 };
 ```
 
-第三个数组定义由伪传感器支持的可写，或可设置属性。
+第三个阵列定义了伪传感器支持的可写属性或可设置的属性。
 
 ```cpp
 const PROPERTYKEY g_SettableGeolocationProperties[] =
@@ -65,7 +64,7 @@ const PROPERTYKEY g_SettableGeolocationProperties[] =
 };
 ```
 
-更新可写属性 （或属性） 时，示例驱动程序还使用这些值。 更新属性值的方法是**CGeolocation::UpdateGeolocationPropertyValues**。
+ (或属性) 更新可写属性时，示例驱动程序也使用这些值。 更新属性值的方法是 **CGeolocation：： UpdateGeolocationPropertyValues**。
 
 ## <a name="related-topics"></a>相关主题
 [传感器地理位置驱动程序示例](sensors-geolocation-driver-sample.md)  

@@ -1,20 +1,19 @@
 ---
 title: 处理同时处于活动状态的中断
 description: 处理同时处于活动状态的中断
-ms.assetid: CFA205B1-FDDD-4E27-8CF9-106C8D1CC4EF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 41a5a2658fa980fba1cbcc64652b35e758833583
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 5c4126b66a94a8bfb47382ddcd64e9bf0db6d441
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191019"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815641"
 ---
 # <a name="handling-active-both-interrupts"></a>处理同时处于活动状态的中断
 
 
-**注意**   本主题仅适用于 KMDF) 版本1.13 及更早版本的内核模式驱动程序框架 (。
+**注意**  本主题仅适用于 Kernel-Mode Driver Framework (KMDF) 1.13 版及更早版本。
 
  
 
@@ -28,11 +27,11 @@ ms.locfileid: "89191019"
 
 若要区分低到高和低到低转换，驱动程序必须跟踪每个中断的状态。 若要执行此操作，驱动程序可能会保留一个布尔中断状态值，该值在中断线路状态为 low 时为 **FALSE** ，当行状态为高时为 TRUE，则为 **TRUE** 。
 
-假设在系统启动时，线路状态默认为 low。 驱动程序在其[*EvtDevicePrepareHardware*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)回调函数中将状态值初始化为**FALSE** 。 然后，每次调用驱动程序的 ISR 时，向状态的更改发出信号，驱动程序将反转其 ISR 中的状态值。
+假设在系统启动时，线路状态默认为 low。 驱动程序在其 [*EvtDevicePrepareHardware*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)回调函数中将状态值初始化为 **FALSE** 。 然后，每次调用驱动程序的 ISR 时，向状态的更改发出信号，驱动程序将反转其 ISR 中的状态值。
 
 如果在系统启动时线路状态很高，则中断在启用后立即触发。 由于驱动程序直接调用 [**IoConnectInterruptEx**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioconnectinterruptex) 例程，而不是调用 [**WdfInterruptCreate**](/windows-hardware/drivers/ddi/wdfinterrupt/nf-wdfinterrupt-wdfinterruptcreate)，因此可以确保接收可能的即时中断。
 
-此解决方案要求 GPIO 控制器支持在硬件中的主动中断，或 GPIO 控制器的驱动程序在软件中模拟活动-两个中断。 有关模拟活动-两个中断的信息，请参阅[**控制器 \_ 属性 \_ 标志**](/windows-hardware/drivers/ddi/gpioclx/ns-gpioclx-_controller_attribute_flags)结构的**EmulateActiveBoth**成员的说明。
+此解决方案要求 GPIO 控制器支持在硬件中的主动中断，或 GPIO 控制器的驱动程序在软件中模拟活动-两个中断。 有关模拟活动-两个中断的信息，请参阅 [**控制器 \_ 属性 \_ 标志**](/windows-hardware/drivers/ddi/gpioclx/ns-gpioclx-_controller_attribute_flags)结构的 **EmulateActiveBoth** 成员的说明。
 
 下面的代码示例演示如何使用 KMDF 驱动程序来跟踪中断极性。
 

@@ -1,48 +1,47 @@
 ---
 title: 生成扩展单元示例控件
 description: 生成扩展单元示例控件
-ms.assetid: 57dd0bc3-2aab-42a2-b0c5-7f6ecaefd300
 keywords:
 - 扩展单元控制 WDK USB 视频类
-- 控件 WDK USB 视频类
+- 控制 WDK USB 视频类
 ms.date: 01/30/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 522a9e5a433ec8c079212207954c9e45454f52ce
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1036dfce58d836df18f1ae4b5e938c267958684e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370382"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816502"
 ---
 # <a name="building-the-extension-unit-sample-control"></a>生成扩展单元示例控件
 
-您可以编译此部分创建 UVC 扩展单元示例控件中的代码。 生成此项目时，您创建可以使用与相应的应用程序来获取和设置属性扩展单元上的 Microsoft ActiveX 控件。
+您可以编译此部分中的代码以创建 UVC Extension Unit 示例控件。 生成此项目时，将创建一个 Microsoft ActiveX 控件，该控件可用于相应的应用程序以获取和设置扩展单元的属性。
 
-若要使用该控件，您需要实现特定的扩展单元功能的硬件。 或者，可以使用一个 USB 仿真程序。
+若要使用该控件，需要实现特定扩展单元功能的硬件。 或者，可以使用 USB 模拟器。
 
-使用以下步骤来生成控件：
+使用以下步骤生成控件：
 
 1. 安装以下包：
 
-    - Microsoft Windows Server 2003 Service Pack 1 (SP1) 驱动程序开发工具包 (DDK)
-    - Microsoft DirectX 9.0 SDK 更新 (2005 年 2 月)
-    - Microsoft DirectX 9.0 2005 年 2 月 SDK 其他功能
+    - Microsoft Windows Server 2003 Service Pack 1 (SP1) 驱动程序开发工具包 (DDK) 
+    - Microsoft DirectX 9.0 SDK Update (2 月 2005) 
+    - Microsoft DirectX 9.0 2 2005 月版 SDK 额外版
 
-2. 将从以下主题的示例代码复制到单独的文件。
+2. 将以下主题中的示例代码复制到各个文件中。
 
-    [UVC 扩展单位的示例接口](sample-interface-for-uvc-extension-units.md)
+    [UVC 扩展单元的示例接口](sample-interface-for-uvc-extension-units.md)
 
     [示例扩展单元插件 DLL](sample-extension-unit-plug-in-dll.md)
 
-    [UVC 扩展单位的示例注册表项](sample-registry-entry-for-uvc-extension-units.md)
+    [UVC 扩展单元的示例注册表项](sample-registry-entry-for-uvc-extension-units.md)
 
-    [UVC 扩展单位的示例应用程序](sample-application-for-uvc-extension-units.md)
+    [UVC 扩展单元的示例应用程序](sample-application-for-uvc-extension-units.md)
 
-    [支持扩展单位的自动更新事件](supporting-autoupdate-events-with-extension-units.md)
+    [支持扩展单元的自动更新事件](supporting-autoupdate-events-with-extension-units.md)
 
     [提供 UVC INF 文件](providing-a-uvc-inf-file.md)
 
-3. 创建*源*文件，如下所示：
+3. 创建源文件 *，* 如下所示：
 
     ```cpp
     TARGETNAME= uvcxuplgn
@@ -79,7 +78,7 @@ ms.locfileid: "63370382"
             $(SDK_LIB_PATH)\comctl32.lib
     ```
 
-4. 创建*生成文件*文件，如下所示：
+4. 按如下所示创建 *生成* 文件文件：
 
     ```cpp
     #############################################################################
@@ -102,13 +101,13 @@ ms.locfileid: "63370382"
     !endif
     ```
 
-5. 使用*Guidgen.exe*工具 （Microsoft Windows SDK 中包含） 创建三个 Guid:
+5. 使用 Microsoft Windows SDK) 中包含的 *Guidgen.exe* 工具 (创建三个 guid：
 
-    - 第一个 GUID 用作扩展单元的属性组 ID。 基于 x 的 GUID 占位符替换为在新的 GUID *Xuproxy.h、 Xusample.rgs,Xuplgin.inf，* 和你在硬件级别的扩展单元描述符中。
-    - 用作 IID 的第二个 GUID 扩展单元。 Y 基于 GUID 占位符替换为在新的 GUID *Interface.idl*并*Xuplgin.inf*。
-    - 第三个 GUID 用作扩展单元的类 GUID (clsid)。 Z 基于 GUID 占位符替换为在新的 GUID *Xuplgin.inf、 Xuproxy.h*，和*Xusample.rgs。*
+    - 使用第一个 GUID 作为扩展单元的属性集 ID。 将基于 x 的 GUID 占位符替换为 *Xuproxy、Xusample、Xuplgin* 中的新 guid 和硬件级别的扩展单元描述符。
+    - 使用第二个 GUID 作为扩展单元的 IID。 将基于 y 的 GUID 占位符替换为 *.idl* 和 *Xuplgin* 中的新 GUID。
+    - 使用第三个 GUID 作为扩展单元 (clsid) 的类 GUID。 将基于 z 的 GUID 占位符替换为 *Xuplgin、Xuproxy* 和 Xusample 中的新 GUID *。*
 
-6. 复制*Extend.def*从 WIA 扩展示例和对其进行编辑。 *Uvcxuplugn.def*应包含：
+6. 从 WIA 扩展示例复制 *扩展。* *Uvcxuplugn* 应包含：
 
     ```cpp
     LIBRARY uvcxuplgn
@@ -120,7 +119,7 @@ ms.locfileid: "63370382"
         DllUnregisterServer PRIVATE
     ```
 
-7. 创建*Uvcxuplgn.cpp* ，如下所示：
+7. 按如下所示创建 *Uvcxuplgn* ：
 
     ```cpp
     #include "stdafx.h"
@@ -176,7 +175,7 @@ ms.locfileid: "63370382"
     }
     ```
 
-8. 创建*Stdafx.h* ，如下所示：
+8. 按如下所示创建 *stdafx.h* ：
 
     ```cpp
     // stdafx.h : include file for standard system include files,
@@ -209,7 +208,7 @@ ms.locfileid: "63370382"
     #endif // !defined(AFX_STDAFX_H__722DC775_FE6F_42FB_BED5_E1E299976D17__INCLUDED)
     ```
 
-9. 创建*Stdafx.cpp* ，如下所示：
+9. 按如下所示创建 *stdafx.h* ：
 
     ```cpp
     // stdafx.cpp : source file that includes just the standard includes
@@ -226,4 +225,4 @@ ms.locfileid: "63370382"
     #include <atlimpl.cpp>
     ```
 
-10. 通过调用生成 cZg WDK 构建环境中生成该示例。
+10. 通过在 WDK 生成环境中调用 cZg 生成该示例。

@@ -1,16 +1,15 @@
 ---
 title: KSPROPERTYSETID \_ ExtendedCameraControl
 description: KSPROPERTYSETID \_ ExtendedCameraControl 属性集控制扩展照相机设备设置。 它提供的其他控件允许对照相机照片进行排序。
-ms.assetid: 37475847-D678-4977-8524-82FA80D6A7EF
 ms.date: 04/03/2019
 ms.localizationpriority: medium
 ms.custom: rs5, 19H1
-ms.openlocfilehash: d2f795962bf2858db2a7d70c54ec084c66d5edc9
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: afef26f1dc002f4e18e6fb29e2177a0c4b3e3feb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89193141"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815805"
 ---
 # <a name="kspropertysetid_extendedcameracontrol"></a>KSPROPERTYSETID \_ ExtendedCameraControl
 

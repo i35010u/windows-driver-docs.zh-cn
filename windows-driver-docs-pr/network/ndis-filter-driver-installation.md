@@ -1,19 +1,18 @@
 ---
 title: NDIS 筛选器驱动程序安装
 description: NDIS 筛选器驱动程序安装
-ms.assetid: 8e0c47bf-6b63-4be5-98b7-7a99e9efe283
 keywords:
 - 筛选器驱动程序 WDK 网络，安装
 - NDIS 筛选器驱动程序 WDK，安装
 - 安装 NDIS 筛选器驱动程序 WDK 网络
 ms.date: 01/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: d26b4a9be24da160fc7da9fd1417c2690b16755c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 23a24c79ebad412fb816c95c3ef1520b254790eb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211771"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815937"
 ---
 # <a name="ndis-filter-driver-installation"></a>NDIS 筛选器驱动程序安装
 

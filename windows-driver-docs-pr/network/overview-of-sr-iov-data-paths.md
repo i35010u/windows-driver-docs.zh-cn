@@ -1,45 +1,44 @@
 ---
 title: SR-IOV 数据路径概述
 description: SR-IOV 数据路径概述
-ms.assetid: C82AEB00-E699-40AB-85E8-064B841B83F4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cb10aeafe3855b9c9288c2158f921e622d0d348b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7f28ef402bc37a20e890457a547ccf779c0413d0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381328"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815929"
 ---
 # <a name="overview-of-sr-iov-data-paths"></a>SR-IOV 数据路径概述
 
 
-当启动 HYPER-V 子分区，并且运行来宾操作系统时，虚拟化堆栈启动网络虚拟服务客户端 (NetVSC)。 NetVSC 通过提供到来宾操作系统中运行的协议堆栈的一个微型端口驱动程序边缘公开虚拟机 (VM) 网络适配器。 此外，NetVSC 还提供了一个协议驱动程序边缘，从而可以将绑定到基础微型端口驱动程序。
+当 Hyper-v 子分区启动并且来宾操作系统正在运行时，虚拟化堆栈会将 (Netvsc.sys) 启动网络虚拟服务客户端。 Netvsc.sys 通过向在来宾操作系统中运行的协议堆栈提供微型端口驱动程序边缘，来公开虚拟机 (VM) 网络适配器。 此外，Netvsc.sys 还提供了一个协议驱动程序边缘，使其可以绑定到基础微型端口驱动程序。
 
-NetVSC 也与在 HYPER-V 父分区的管理操作系统中运行的 HYPER-V 可扩展交换机进行通信。 可扩展交换机组件用作网络虚拟服务提供商 (NetVSP)。 NetVSC 和 NetVSP 之间的接口提供的软件数据路径可以称为*综合数据路径*。 有关此数据路径的详细信息，请参阅[SR-IOV 综合数据路径](sr-iov-synthetic-data-path.md)。
+Netvsc.sys 还与 hyper-v 父分区的管理操作系统中运行的 Hyper-v 可扩展交换机通信。 可扩展交换机组件作为网络虚拟服务提供商 (NetVSP) 运行。 Netvsc.sys 和 NetVSP 之间的接口提供了一个称为 *合成数据路径* 的软件数据路径。 有关此数据路径的详细信息，请参阅 [Sr-iov 合成数据路径](sr-iov-synthetic-data-path.md)。
 
-如果物理网络适配器支持单根 I/O 虚拟化 (SR-IOV) 接口，它可以启用一个或多个 PCI Express (PCIe) 虚函数 (VFs)。 每个 VF 可以附加到 HYPER-V 子分区。 在此情况下，虚拟化堆栈将执行以下步骤：
+如果物理网络适配器支持 (SR-IOV) 接口的单个根 i/o 虚拟化，则它可以启用一个或多个 PCI Express (PCIe) 虚拟函数 (VFs) 。 每个 VF 都可以附加到 Hyper-v 子分区。 发生这种情况时，虚拟化堆栈会执行以下步骤：
 
-1.  虚拟化堆栈的来宾操作系统中 VF 公开的网络适配器。 这将导致在启动 VF 微型端口驱动程序的来宾操作系统中运行的 PCI 驱动程序。 此驱动程序由独立硬件供应商 (IHV) 提供的 SR-IOV 网络适配器。
+1.  虚拟化堆栈为来宾操作系统中的 VF 公开了一个网络适配器。 这会导致在来宾操作系统中运行的 PCI 驱动程序启动 VF 微型端口驱动程序。 此驱动程序由独立硬件供应商为 SR-IOV 网络适配器 (IHV) 提供。
 
-2.  加载和初始化 VF 微型端口驱动程序后，NDIS 将 NetVSC 协议边缘来宾操作系统中绑定到该驱动程序。
+2.  加载并初始化 VF 微型端口驱动程序后，NDIS 会将来宾操作系统中 Netvsc.sys 的协议边缘绑定到该驱动程序。
 
-    **请注意**NetVSC 只绑定到 VF 微型端口驱动程序。 来宾操作系统中的任何其他协议堆栈可以不绑定到 VF 微型端口驱动程序。
+    **注意**  Netvsc.sys 仅绑定到 VF 微型端口驱动程序。 来宾操作系统中没有其他协议堆栈可以绑定到 VF 微型端口驱动程序。
 
-通过 NetVSC 已成功将绑定到该驱动程序后，进行来宾操作系统中的网络流量*VF 数据路径*。 发送或通过基础 VF 而不是综合数据路径的网络适配器的接收数据包。
+Netvsc.sys 成功绑定到驱动程序后，来宾操作系统中的网络流量将通过 *VF 数据路径* 进行。 数据包是通过网络适配器的底层 VF 而不是合成数据路径发送或接收的。
 
-有关 VF 数据路径的详细信息，请参阅[SR-IOV VF 数据路径](sr-iov-vf-data-path.md)。
+有关 VF 数据路径的详细信息，请参阅 [SR-IOV VF 数据路径](sr-iov-vf-data-path.md)。
 
-下图显示了支持 SR-IOV 网络适配器上的各种数据路径。
+下图显示了通过 SR-IOV 网络适配器支持的各种数据路径。
 
-![显示与管理父分区的 sr-iov 适配器，并包含来宾操作系统的两个子分区的堆栈关系图](images/sriovdatapaths.png)
+![显示具有管理父分区和包含来宾操作系统的两个子分区的 sr-iov 适配器的堆栈关系图](images/sriovdatapaths.png)
 
-启动 HYPER-V 子分区并 VF 数据前建立路径后，网络流量将通过综合数据路径。 VF 数据路径建立后，网络流量可以还原到的综合数据路径，是否满足以下条件：
+在启动 Hyper-v 子分区并建立 VF 数据路径之前，网络流量将流经合成数据路径。 建立 VF 数据路径后，如果满足以下条件，网络流量可以恢复为合成数据路径：
 
--   VF 变为未连接到 HYPER-V 子分区。 例如，虚拟化堆栈无法分离 VF 从一个子分区并将其附加到另一个子分区。 这可能不是基础的 SR-IOV 网络适配器上有 VF 资源运行的更多的 HYPER-V 子分区时。
+-   VF 将与 Hyper-v 子分区无关。 例如，虚拟化堆栈可以将 VF 与一个子分区分离，并将其附加到另一个子分区。 如果正在运行的 Hyper-v 子分区比基础 SR-IOV 网络适配器上的 VF 资源多，则可能会发生这种情况。
 
-    故障转移到的综合数据路径 VF 数据路径中的过程被称为*VF 故障转移*。
+    从 VF 数据路径故障转移到综合数据路径的过程称为 " *vf 故障转移*"。
 
--   HYPER-V 子分区的实时迁移到另一台主机。
+-   Hyper-v 子分区正在实时迁移到另一台主机。
 
-有关 VF 故障转移和实时迁移的详细信息，请参阅[SR-IOV VF 故障转移和实时迁移](sr-iov-vf-failover-and-live-migration-support.md)。
+有关 VF 故障转移和实时迁移的详细信息，请参阅 [SR-IOV VF 故障转移和实时迁移](sr-iov-vf-failover-and-live-migration-support.md)。

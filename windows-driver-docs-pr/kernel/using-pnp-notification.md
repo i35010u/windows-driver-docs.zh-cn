@@ -1,17 +1,16 @@
 ---
 title: 使用 PnP 通知
 description: 使用 PnP 通知
-ms.assetid: cc6c9106-37b3-473c-bbd2-89701d698fdf
 keywords:
-- WDK 即插即用通知
+- 通知 WDK PnP
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 93a866b086294e479ca227688f5ca751119950aa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e7afe78c7645795d3de019d4bf1ad9506288d364
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391067"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816025"
 ---
 # <a name="using-pnp-notification"></a>使用 PnP 通知
 
@@ -19,9 +18,9 @@ ms.locfileid: "63391067"
 
 
 
-即插即用的环境中，在驱动程序和应用程序需要在计算机上对设备的配置中的更改做出反应。 例如，应用程序需要知道时已添加到计算机所需的设备和驱动程序需要知道特定设备上发生更改时。
+在 PnP 环境中，驱动程序和应用程序需要对计算机上设备配置的更改做出反应。 例如，应用程序需要知道感兴趣的设备何时添加到计算机，驱动程序需要知道何时在特定设备上进行更改。
 
-PnP 管理器提供了一种机制，用于驱动程序和应用程序特定的即插即用事件发生时接收通知。 本部分介绍如何在内核模式代码中使用即插即用通知。 用户模式应用程序的编写器应看到的信息的 Microsoft Windows SDK 文档**RegisterDeviceNotification**函数和相关的函数。
+PnP 管理器提供了一种机制，用于在发生特定 PnP 事件时通知驱动程序和应用程序。 本部分介绍如何在内核模式代码中使用 PnP 通知。 用户模式应用程序的编写器应查看 Microsoft Windows SDK 文档，以获取有关 **RegisterDeviceNotification** 函数和相关函数的信息。
 
  
 

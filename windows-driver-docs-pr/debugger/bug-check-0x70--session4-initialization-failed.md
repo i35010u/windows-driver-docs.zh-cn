@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x70 SESSION4_INITIALIZATION_FAILED
-description: SESSION4_INITIALIZATION_FAILED bug 检查具有 0x00000070 值。 此 bug 检查指示 Microsoft Windows 操作系统的初始化失败。
-ms.assetid: 05de773c-19eb-44dd-b6ef-3efa43d703ef
+description: SESSION4_INITIALIZATION_FAILED bug 检查的值为0x00000070。 此 bug 检查表明 Microsoft Windows 操作系统的初始化失败。
 keywords:
 - Bug 检查 0x70 SESSION4_INITIALIZATION_FAILED
 - SESSION4_INITIALIZATION_FAILED
@@ -13,23 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e3037d3d6003d6072fd2eaa3219ffab9c0d9de4
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 0c743369591acd6acccf837c0179e002827d21b4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519236"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816957"
 ---
-# <a name="bug-check-0x70-session4initializationfailed"></a>Bug 检查 0x70：SESSION4\_初始化\_失败
+# <a name="bug-check-0x70-session4_initialization_failed"></a>Bug 检查0x70： SESSION4 \_ 初始化 \_ 失败
 
 
-SESSION4\_初始化\_失败错误检查的值为 0x00000070。 此 bug 检查指示 Microsoft Windows 操作系统的初始化失败。
+SESSION4 \_ 初始化 \_ 失败 bug 检查的值为0x00000070。 此 bug 检查表明 Microsoft Windows 操作系统的初始化失败。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="session4initializationfailed-parameters"></a>SESSION4\_初始化\_失败参数
+## <a name="session4_initialization_failed-parameters"></a>SESSION4 \_ 初始化 \_ 失败参数
 
 
 <table>
@@ -46,7 +45,7 @@ SESSION4\_初始化\_失败错误检查的值为 0x00000070。 此 bug 检查指
 <tbody>
 <tr class="odd">
 <td align="left"><p>1</p></td>
-<td align="left"><p>导致要结束该初始化失败的 Windows 操作系统的 NT 状态代码</p></td>
+<td align="left"><p>导致 Windows 操作系统结束初始化失败的 NT 状态代码</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>

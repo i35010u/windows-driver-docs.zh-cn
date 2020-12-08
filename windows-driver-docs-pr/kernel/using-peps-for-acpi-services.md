@@ -1,15 +1,14 @@
 ---
 title: 对 ACPI 服务使用 PEP
 description: 本主题提供有关使用适用于 ACPI 服务 (PEPs) 的平台扩展插件的信息。
-ms.assetid: 80ED3B80-A1FF-4A41-BA88-EC1C832C4639
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8029ff2658a232f51516cc112a8b4f1db516f947
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 2b6b7f102b42650878f7bce4db975ce39f190c88
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184245"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816053"
 ---
 # <a name="using-peps-for-acpi-services"></a>对 ACPI 服务使用 PEP
 
@@ -32,7 +31,7 @@ PEPs 会非常提前加载，以便其服务可用于设备驱动程序。 此�
 
 为了简化使用 ACPI 资源的过程，电源管理框架 (PoFx) 提供了 PEP \_ 请求 \_ 常见 \_ acpi \_ 转换 \_ 为 \_ bios \_ 资源帮助程序例程，以将 ACPI 资源转换为 bios 资源。
 
-PEPs 负责计划无法同步执行的工作，以响应来自 PoFx 的 ACPI 通知，但使用的方法由 PEP 开发人员确定。 通常，PEP 会将工作排队，并在需要时启动工作线程。 还可能需要等待某些外部事件 (例如，设备中断) ，并将在该事件的上下文中处理。 完成工作后，pep 可以通过调用[**pep \_ 内核 \_ 信息 \_ 结构 \_ V3**](/windows-hardware/drivers/ddi/pepfx/ns-pepfx-_pep_kernel_information_struct_v3) - &gt; [*RequestWorker*](/windows-hardware/drivers/ddi/pepfx/nc-pepfx-pofxcallbackrequestworker) ( # A1，来请求 PoFx 查询工作。 作为响应，PoFx 将为实现 DPM 通知处理程序的 PEPs 发送 [**PEP \_ dpm \_ 工作通知**](/windows-hardware/drivers/ddi/index) ，该通知 ([*AcceptDeviceNotification*](/windows-hardware/drivers/ddi/pepfx/nc-pepfx-pepcallbacknotifydpm)) 或 [**PEP \_ 通知 \_ acpi \_ 工作通知**](/windows-hardware/drivers/ddi/index) ，以实现仅支持 ACPI 的通知处理程序 ([*AcceptAcpiNotification*](/windows-hardware/drivers/ddi/pepfx/nc-pepfx-pepcallbacknotifyacpi)) 。
+PEPs 负责计划无法同步执行的工作，以响应来自 PoFx 的 ACPI 通知，但使用的方法由 PEP 开发人员确定。 通常，PEP 会将工作排队，并在需要时启动工作线程。 还可能需要等待某些外部事件 (例如，设备中断) ，并将在该事件的上下文中处理。 完成工作后，pep 可以通过调用 [**pep \_ 内核 \_ 信息 \_ 结构 \_ V3**](/windows-hardware/drivers/ddi/pepfx/ns-pepfx-_pep_kernel_information_struct_v3) - &gt; [*RequestWorker*](/windows-hardware/drivers/ddi/pepfx/nc-pepfx-pofxcallbackrequestworker) ( # A1，来请求 PoFx 查询工作。 作为响应，PoFx 将为实现 DPM 通知处理程序的 PEPs 发送 [**PEP \_ dpm \_ 工作通知**](/windows-hardware/drivers/ddi/index) ，该通知 ([*AcceptDeviceNotification*](/windows-hardware/drivers/ddi/pepfx/nc-pepfx-pepcallbacknotifydpm)) 或 [**PEP \_ 通知 \_ acpi \_ 工作通知**](/windows-hardware/drivers/ddi/index) ，以实现仅支持 ACPI 的通知处理程序 ([*AcceptAcpiNotification*](/windows-hardware/drivers/ddi/pepfx/nc-pepfx-pepcallbacknotifyacpi)) 。
 
 ## <a name="related-topics"></a>相关主题
 [ACPI 系统说明表](../bringup/acpi-system-description-tables.md)  

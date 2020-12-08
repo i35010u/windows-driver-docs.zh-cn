@@ -1,7 +1,6 @@
 ---
 title: findxmldata
-description: Findxmldata 扩展从 CAB 文件包含一个内核模式小内存转储文件中检索 XML 数据。
-ms.assetid: 6d0b5294-b086-4b33-ac0d-0428521a3489
+description: Findxmldata 扩展从包含内核模式小内存转储文件的 CAB 文件中检索 XML 数据。
 keywords:
 - CAB 文件中的 XML 数据
 - sysdata.xml
@@ -14,17 +13,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: be71b499f13e007b1948fb46d191f13b77c22cbe
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 04cf887e0356a47cc82f59cc0a9e735160898398
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336707"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815539"
 ---
 # <a name="findxmldata"></a>!findxmldata
 
 
-**！ Findxmldata**扩展从 CAB 文件包含一个内核模式小内存转储文件中检索 XML 数据。
+**！ Findxmldata** extension 从包含内核模式小内存转储文件的 CAB 文件中检索 XML 数据。
 
 ```dbgcmd
 !findxmldata [ -d DeviceName | -h HwId ] 
@@ -33,28 +32,28 @@ ms.locfileid: "63336707"
 !findxmldata -v 
 ```
 
-## <a name="span-idddkfindxmldatadbgspanspan-idddkfindxmldatadbgspanparameters"></a><span id="ddk__findxmldata_dbg"></span><span id="DDK__FINDXMLDATA_DBG"></span>参数
+## <a name="span-idddk__findxmldata_dbgspanspan-idddk__findxmldata_dbgspanparameters"></a><span id="ddk__findxmldata_dbg"></span><span id="DDK__FINDXMLDATA_DBG"></span>参数
 
 
-<span id="_______-d_______DeviceName______"></span><span id="_______-d_______devicename______"></span><span id="_______-D_______DEVICENAME______"></span> **-d** *DeviceName*   
-显示设备名称包含字符串的所有设备的*DeviceName*指定。
+<span id="_______-d_______DeviceName______"></span><span id="_______-d_______devicename______"></span><span id="_______-D_______DEVICENAME______"></span>**-d** *DeviceName*   
+显示其设备名称包含 *DeviceName* 指定的字符串的所有设备。
 
-<span id="_______-h_______HwId______"></span><span id="_______-h_______hwid______"></span><span id="_______-H_______HWID______"></span> **-h** *HwId*   
-显示所有设备的硬件 Id 包含字符串的*HwId*指定。 如果同时使用这两者 **-d**并 **-h**，调试器将显示满足这两个匹配项的那些设备。
+<span id="_______-h_______HwId______"></span><span id="_______-h_______hwid______"></span><span id="_______-H_______HWID______"></span>**-h** *HwId*   
+显示其硬件 Id 包含 *HwId* 指定的字符串的所有设备。 如果同时使用 **-d** 和 **-h**，则调试器只显示满足这两个匹配项的那些设备。
 
-<span id="_______-r_______Driver______"></span><span id="_______-r_______driver______"></span><span id="_______-R_______DRIVER______"></span> **-r** *Driver*   
-显示有关驱动程序的信息的*驱动程序*参数指定，包括使用此驱动程序的所有设备。
+<span id="_______-r_______Driver______"></span><span id="_______-r_______driver______"></span><span id="_______-R_______DRIVER______"></span>**-r** *驱动程序*   
+显示有关 *driver* 参数指定的驱动程序的信息，包括使用此驱动程序的所有设备。
 
-<span id="_______-chksum______"></span><span id="_______-CHKSUM______"></span> **-chksum**   
+<span id="_______-chksum______"></span><span id="_______-CHKSUM______"></span>**-chksum**   
 显示 XML 文件的校验和。
 
-<span id="_______-z_______CabFile______"></span><span id="_______-z_______cabfile______"></span><span id="_______-Z_______CABFILE______"></span> **-z** *CabFile*   
-使您能够对 CabFile 参数指定，该 CAB 文件执行校验和而不是默认 Sysdata.xml 文件上。
+<span id="_______-z_______CabFile______"></span><span id="_______-z_______cabfile______"></span><span id="_______-Z_______CABFILE______"></span>**-z** *CabFile*   
+使你能够对 CabFile 参数指定的 CAB 文件执行校验和，而不是在默认 Sysdata.xml 文件上执行。
 
-<span id="_______-v______"></span><span id="_______-V______"></span> **-v**   
-显示系统的版本信息。
+<span id="_______-v______"></span><span id="_______-V______"></span>**-v**   
+显示系统版本信息。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -75,20 +74,20 @@ ms.locfileid: "63336707"
 
  
 
-**！ Findxmldata**扩展仅在 CAB 文件中存储的内核模式小内存转储文件上的作用。
+**！ Findxmldata** extension 仅适用于存储在 CAB 文件中的内核模式小内存转储文件。
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关如何将转储文件放到 CAB 文件的详细信息，请参阅[ **.dumpcab (创建转储文件 CAB)**](-dumpcab--create-dump-file-cab-.md)。 了解有关如何调试内核模式转储文件，包括在 CAB 文件内存储的转储文件的详细信息请参阅[分析内核模式转储文件](analyzing-a-kernel-mode-dump-file.md)。
+有关如何将转储文件放入 CAB 文件的详细信息，请参阅 [**。 dumpcab (创建转储文件 CAB)**](-dumpcab--create-dump-file-cab-.md)。 有关如何调试内核模式转储文件的详细信息（包括 CAB 文件中存储的转储文件），请参阅 [分析 Kernel-Mode 转储文件](analyzing-a-kernel-mode-dump-file.md)。
 
 <a name="remarks"></a>备注
 -------
 
-**！ Findxmldata**扩展从 Sysdata.xml 文件存储在包含内核模式的 CAB 文件中检索数据[小内存转储](small-memory-dump.md)文件。
+**！ Findxmldata** extension 从存储在包含内核模式 [小内存转储](small-memory-dump.md)文件的 CAB 文件中的 Sysdata.xml 文件中检索数据。
 
-当不使用任何选项时，该扩展将显示所有设备。
+如果不使用任何选项，则扩展将显示所有设备。
 
-下面的示例显示如何使用 **！ findxmldata**。
+下面的示例演示如何使用 **！ findxmldata**。
 
 ```dbgcmd
 kd> !findxmldata -v

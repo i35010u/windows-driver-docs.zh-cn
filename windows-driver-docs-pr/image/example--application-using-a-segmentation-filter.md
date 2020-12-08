@@ -1,23 +1,22 @@
 ---
-title: 示例应用程序使用分段的筛选器
-description: 示例应用程序使用分段的筛选器
-ms.assetid: 3f7de6a2-5684-4c37-97bc-47f4727114ab
+title: 使用分段筛选器的示例应用程序
+description: 使用分段筛选器的示例应用程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c706b9d7ee8ff3d33cdc5d60e765643586b4bb03
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bd99639a337682f48a4578c6074c559bc50300a9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373113"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816725"
 ---
-# <a name="example-application-using-a-segmentation-filter"></a>例如：使用分段筛选器的应用程序
+# <a name="example-application-using-a-segmentation-filter"></a>示例：使用分段筛选器的应用程序
 
 
 
 
 
-下面的代码示例显示了一个简单的应用程序可以如何使用分段的筛选器。 为清楚起见，错误检查已省略代码，以及发布和免费的接口指针和内存的代码。
+下面的代码示例演示了一个简单的应用程序如何使用分段筛选器。 为清楚起见，已省略错误检查代码，以及释放和释放接口指针和内存的代码。
 
 ```cpp
 IWiaSegmentationFilter *pWiaSegmentationFilter = NULL;

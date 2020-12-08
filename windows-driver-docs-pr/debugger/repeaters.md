@@ -1,21 +1,20 @@
 ---
 title: 中继器
 description: 中继器
-ms.assetid: 10f4f033-f6c1-4b4f-a35f-eadb4e15686d
 keywords:
-- 远程调试通过 repeater
+- 通过中继器进行远程调试
 - repeater
-- repeater 概述
+- 中继器，概述
 - DbEngPrx
-- DbEngPrx 概述
+- DbEngPrx，概述
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f8f49369db782d1995d3e2cf92b3a077827add8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 74cb9cd01cdfe2914e4aa23a3ebe1194e086128a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382078"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816935"
 ---
 # <a name="repeaters"></a>中继器
 
@@ -23,19 +22,19 @@ ms.locfileid: "63382078"
 ## <span id="ddk_repeaters_dbg"></span><span id="DDK_REPEATERS_DBG"></span>
 
 
-一个*repeater*是轻型代理服务器的计算机上运行并中继两台其他计算机之间的数据。 Repeater 不处理任何方式中的数据。 两台计算机几乎不能注意到 repeater;从其角度来看看起来是像直接连接到对方。
+*中继器* 是在计算机上运行并在其他两台计算机之间中继数据的轻型代理服务器。 中继器不会以任何方式处理数据。 其他两台计算机几乎会注意到中继器;从其角度看，这似乎是直接连接到对方。
 
-这两台其他计算机上运行的进程称为*服务器*并*客户端*。 没有任何从 repeater 的角度来看，它们之间的根本区别，但在大多数情况下在服务器启动第一个，则 repeater，和最后的客户端。
+在这两台计算机上运行的进程称为 *服务器* 和 *客户端*。 它们与中继器的观点之间没有任何根本区别，只不过在大多数情况下，服务器首先启动，然后是中继器，最后是客户端。
 
-有关 Windows 调试工具包中包含名为 DbEngPrx (dbengprx.exe) repeater。
+适用于 Windows 的调试工具包中包含一个名为 DbEngPrx 的中继器 ( # A0) 。
 
-本部分包括：
+本节包括：
 
-[**激活 Repeater**](activating-a-repeater.md)
+[**激活中继器**](activating-a-repeater.md)
 
-[使用 Repeater](using-a-repeater.md)
+[使用中继器](using-a-repeater.md)
 
-[Repeater 示例](repeater-examples.md)
+[中继器示例](repeater-examples.md)
 
  
 

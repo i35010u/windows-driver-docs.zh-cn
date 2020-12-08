@@ -1,7 +1,6 @@
 ---
 title: C28133
 description: 警告 C28133 IoInitializeTimer 最适用于 AddDevice。
-ms.assetid: c832cf67-1fc2-491b-a9e3-d35c5d9f6b73
 keywords:
 - 列出用于驱动程序的 WDK PREfast 的警告
 - 为驱动程序列出的 WDK PREfast 的错误
@@ -9,12 +8,12 @@ ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28133
-ms.openlocfilehash: 264fb468691f7a040299a1ac9ca82793f877f4d1
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 4cac7bfe0ee68eb48a5aa29eafed65b139caeefe
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382597"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816931"
 ---
 # <a name="c28133"></a>C28133
 

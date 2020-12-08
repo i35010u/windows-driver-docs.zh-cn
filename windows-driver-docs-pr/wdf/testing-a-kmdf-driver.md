@@ -1,7 +1,6 @@
 ---
 title: 测试 WDF 驱动程序（KMDF 或 UMDF）
 description: 本主题介绍了有关测试 Kernel-Mode Driver Framework (KMDF) 或 User-Mode Driver Framework (UMDF) 版本2驱动程序的建议。
-ms.assetid: 05545488-0114-49f5-bf8a-006a868911e8
 keywords:
 - 内核模式驱动程序 WDK KMDF、测试
 - KMDF WDK，测试驱动程序
@@ -11,12 +10,12 @@ keywords:
 - VerifierOn 注册表值 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 176e5eeee1fafc1cf8579831b1e915e52843a3b6
-ms.sourcegitcommit: 3464f10ffa0727e38fbe225cfab52bb8c2bb1747
+ms.openlocfilehash: f4099c0a7b17bb3757b334fd42cc02f8a4df8acd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93352977"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815545"
 ---
 # <a name="testing-a-wdf-driver-kmdf-or-umdf"></a>测试 WDF 驱动程序（KMDF 或 UMDF）
 

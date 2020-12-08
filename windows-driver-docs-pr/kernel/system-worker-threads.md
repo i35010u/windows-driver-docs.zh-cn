@@ -1,7 +1,6 @@
 ---
 title: 系统工作线程
 description: 系统工作线程
-ms.assetid: 01ae1c1b-0cb0-4b9b-bd74-341b7c289fd4
 keywords:
 - executive 工作线程 WDK 内核
 - 工作项 WDK 内核
@@ -13,12 +12,12 @@ keywords:
 - 回调例程 WDK 工作线程
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c4306cb638931714fe3d7f63cf81d20ce741bd66
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 02dce521b3c4907bc4a59a790271b2b2c2bebb46
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185917"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817157"
 ---
 # <a name="system-worker-threads"></a>系统工作线程
 
@@ -44,7 +43,7 @@ ms.locfileid: "89185917"
 
 3.  不再需要该工作项后，请将其释放。
 
-    **IoAllocateWorkItem**分配的工作项应由[**IoFreeWorkItem**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iofreeworkitem)释放。 **IoInitializeWorkItem**初始化的工作项必须先由[**IoUninitializeWorkItem**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iouninitializeworkitem)取消初始化，然后才能释放。
+    **IoAllocateWorkItem** 分配的工作项应由 [**IoFreeWorkItem**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iofreeworkitem)释放。 **IoInitializeWorkItem** 初始化的工作项必须先由 [**IoUninitializeWorkItem**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iouninitializeworkitem)取消初始化，然后才能释放。
 
     仅当工作项当前未排队时，才能取消初始化或释放工作项。 在调用工作项的回调例程之前，系统会取消排队工作项，因此可以从回调内调用 **IoFreeWorkItem** 和 **IoUninitializeWorkItem** 。
 

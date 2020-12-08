@@ -1,19 +1,18 @@
 ---
 title: 转发 I/O 请求
 description: 转发 I/O 请求
-ms.assetid: 75e007e3-1b97-44db-ac86-56aab78222a6
 keywords:
 - 转发 i/o 请求 WDK KMDF
 - I/o 请求 WDK KMDF，转发
 - 请求处理 WDK KMDF、转发 i/o 请求
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 22a14d3b4f1f3c261a4f541e2cc347eedfea40a8
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 1eea9d5ec9a83896276dae85c6cb5b1d1e146760
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189167"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815721"
 ---
 # <a name="forwarding-io-requests"></a>转发 I/O 请求
 
@@ -41,11 +40,11 @@ ms.locfileid: "89189167"
 
     框架的 i/o 目标对象定义了用于将 i/o 请求发送到其他驱动程序的几种方法。 例如，驱动程序可以调用 [**WdfIoTargetFormatRequestForRead**](/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetformatrequestforread)，然后调用 [**WdfRequestSend**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend)来向 i/o 目标发送读取请求。 有关 i/o 目标的详细信息，请参阅 [使用 I/o 目标](using-i-o-targets.md)。
 
-    通常，驱动程序编写器可能需要在向 i/o 目标发送请求之前指定请求的基础 WDM [i/o 堆栈位置](../kernel/i-o-stack-locations.md) 的内容。 对于这些情况，驱动程序可以在调用[**WdfRequestSend**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend)之前调用[**WdfRequestWdmFormatUsingStackLocation**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestwdmformatusingstacklocation) 。
+    通常，驱动程序编写器可能需要在向 i/o 目标发送请求之前指定请求的基础 WDM [i/o 堆栈位置](../kernel/i-o-stack-locations.md) 的内容。 对于这些情况，驱动程序可以在调用 [**WdfRequestSend**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend)之前调用 [**WdfRequestWdmFormatUsingStackLocation**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestwdmformatusingstacklocation) 。
 
 有时，驱动程序必须向多个 i/o 目标发送相同的请求，通常是因为驱动程序必须将单个命令发送到其所有设备。 在向 i/o 目标发送请求之前，驱动程序可以调用 [**WdfRequestChangeTarget**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestchangetarget) 来验证 i/o 目标是否可访问。
 
-驱动程序最终必须[完成](completing-i-o-requests.md)转发到 i/o 目标的每个请求，除非它在调用[**WdfRequestSend**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend)时设置[**WDF \_ 请求 \_ 发送 \_ 选项 \_ 发送 \_ 和 \_ 忘记**](/windows-hardware/drivers/ddi/wdfrequest/ne-wdfrequest-_wdf_request_send_options_flags)标志。
+驱动程序最终必须 [完成](completing-i-o-requests.md)转发到 i/o 目标的每个请求，除非它在调用 [**WdfRequestSend**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend)时设置 [**WDF \_ 请求 \_ 发送 \_ 选项 \_ 发送 \_ 和 \_ 忘记**](/windows-hardware/drivers/ddi/wdfrequest/ne-wdfrequest-_wdf_request_send_options_flags)标志。
 
 请注意，当驱动程序转发请求时，框架不会将 framework 请求对象从发送驱动程序传输到接收驱动程序。 而是在接收请求的驱动程序中创建新的请求对象。 只有请求的基础 i/o 请求数据包 ([**IRP**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp)) 会从一个驱动程序传输到另一个驱动程序。
 

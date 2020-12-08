@@ -1,18 +1,17 @@
 ---
 title: 安装 Windows Sockets 交换机
 description: 安装 Windows Sockets 交换机
-ms.assetid: 69cdec9f-8ed7-48d7-ae6d-a9a9916e3c58
 keywords:
 - Windows Socket Direct WDK，安装组件
 - 分层服务提供商 WDK San
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e73bfdd0701e0ed4b894e4220212ef87447b247
-ms.sourcegitcommit: 409dd20db50c58b817ef985048fb7aab952cb0ad
+ms.openlocfilehash: b8faf00800772d89fcfdc640eb6acb68f43b2d6b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93244856"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815977"
 ---
 # <a name="installing-the-windows-sockets-switch"></a>安装 Windows Sockets 交换机
 

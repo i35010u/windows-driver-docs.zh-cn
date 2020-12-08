@@ -1,18 +1,17 @@
 ---
 title: 报告、启用和禁用 NIC 分析 UDP ESP 数据包的能力
 description: 报告、启用和禁用 NIC 分析 UDP ESP 数据包的能力
-ms.assetid: 3a75c5b2-2d94-428e-9b2a-d760e14df552
 keywords:
 - UDP 封装的 ESP 数据包 WDK IPsec 卸载，分析功能
 - 分析功能 WDK IPsec 卸载
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 990150de9225e497916f24da6fa00df78fd4cd2a
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0f45447483ed26ae718d8e342fe5bb90237ccecc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206249"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815907"
 ---
 # <a name="reporting-enabling-and-disabling-a-nics-ability-to-parse-udp-esp-packets"></a>报告、启用和禁用 NIC 分析 UDP ESP 数据包的能力
 

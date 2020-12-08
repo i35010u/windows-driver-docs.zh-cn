@@ -1,7 +1,6 @@
 ---
 title: 调试设备节点和设备堆栈
-description: 用于调试设备节点和设备堆栈，可以使用以下命令。
-ms.assetid: 5CD48647-2DDD-4592-B8AD-D5508A6C11C6
+description: 可以使用以下命令调试设备节点和设备堆栈。
 keywords:
 - 设备节点
 - 设备堆栈
@@ -10,17 +9,17 @@ keywords:
 - 驱动程序对象
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1037da76cd06b3d969ec0d794738405e24e9ae8b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e01f966063cadf825b845980e7053d866d957532
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360792"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816373"
 ---
 # <a name="debugging-device-nodes-and-device-stacks"></a>调试设备节点和设备堆栈
 
 
-用于调试设备节点和设备堆栈，可以使用以下命令。
+可以使用以下命令调试设备节点和设备堆栈。
 
 -   [**!devnode**](-devnode.md)
 -   [**!devstack**](-devstack.md)

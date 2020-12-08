@@ -1,18 +1,17 @@
 ---
 title: 按微筛选器驱动程序实例堆栈向下传递 i/o 操作
 description: 沿微筛选器驱动程序实例堆栈向下传递 I/O 操作
-ms.assetid: b2661e1e-2190-4def-be6c-27057c631304
 keywords:
 - preoperation 回调例程 WDK 文件系统微筛选器，并向下传递驱动程序实例堆栈
 - 将 i/o 操作按下微筛选器驱动程序堆栈 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2bf0b53410a0952c09e47c20ab7e385499930f24
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: a4fd477cd32ca6af56af298b608e57ce058d7861
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065524"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816275"
 ---
 # <a name="passing-io-operations-down-the-minifilter-driver-instance-stack"></a>按微筛选器驱动程序实例堆栈向下传递 i/o 操作
 
@@ -30,11 +29,11 @@ ms.locfileid: "89065524"
 
 -   FLT \_ PREOP \_ 仅同步 (基于 IRP 的 i/o 操作) 
 
-**注意**   尽管 \_ \_ 仅应为基于 IRP 的 i/o 操作返回 FLT PREOP 同步，但你可以为其他操作类型返回此状态值。 如果为不是基于 IRP 的 i/o 操作的 i/o 操作返回，则筛选器管理器会将此返回值视为 FLT \_ PREOP \_ SUCCESS 是否成功 \_ \_ 。
+**注意**   尽管 \_ \_ 仅应为基于 IRP 的 i/o 操作返回 FLT PREOP 同步，但你可以为其他操作类型返回此状态值。 如果为不是基于 IRP 的 i/o 操作的 i/o 操作返回，则筛选器管理器会将此返回值视为 FLT \_ PREOP \_ SUCCESS 是否成功 \_ \_ 。
 
  
 
-或者，在 preoperation 回调例程中挂起的操作的工作例程会在调用[**FltCompletePendedPreOperation**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcompletependedpreoperation)以恢复处理挂起的 i/o 操作时，通过在*CallbackStatus*参数中传递上述状态值之一来返回对筛选器管理器的 i/o 操作。
+或者，在 preoperation 回调例程中挂起的操作的工作例程会在调用 [**FltCompletePendedPreOperation**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcompletependedpreoperation)以恢复处理挂起的 i/o 操作时，通过在 *CallbackStatus* 参数中传递上述状态值之一来返回对筛选器管理器的 i/o 操作。
 
 本节包括：
 

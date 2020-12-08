@@ -1,7 +1,6 @@
 ---
 title: 使用 KTM
 description: 使用 KTM
-ms.assetid: 79a3ec0b-7a88-43ae-843f-10c7df92def4
 keywords:
 - 内核事务管理器 WDK，创建事务处理系统
 - KTM WDK，创建事务处理系统
@@ -9,12 +8,12 @@ keywords:
 - TPS WDK KTM，创建 TPSs
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a80983f2a532a8e151457b11c5ef48a64d6f05a
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 33a4fc9dc67697f2b07961a628470e932f01fdc4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403502"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816617"
 ---
 # <a name="using-ktm"></a>使用 KTM
 
@@ -37,7 +36,7 @@ ms.locfileid: "89403502"
 
 [使用虚拟时钟值](using-virtual-clock-values.md)
 
-[使用 Tm*Xxx* 例程](using-tmxxx-routines.md)
+[使用 Tm *Xxx* 例程](using-tmxxx-routines.md)
 
  
 

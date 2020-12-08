@@ -1,9 +1,8 @@
 ---
 title: storagekd.storsrb
-description: Storagekd.storsrb 扩展显示有关指定的存储 （或 SCSI） 的信息请求块 (SRB)。
-ms.assetid: E2AB3BE2-0EE1-4FB5-9F62-02169B22B00B
+description: Storagekd. storsrb 扩展显示有关指定存储 (或 SCSI) 请求块 (SRB) 的信息。
 keywords:
-- storagekd.storsrb Windows 调试
+- storagekd storsrb Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,29 +11,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 67a04170a375b54f772a584566f6ad815cea4fd0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d6024b7c2c4cda7e95c8c09897e3fbe0d410e728
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338786"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817009"
 ---
 # <a name="storagekdstorsrb"></a>!storagekd.storsrb
 
 
-**！ Storagekd.storsrb**扩展显示有关指定的存储 （或 SCSI） 的信息请求块 (SRB)。
+**！ Storagekd; storsrb** 扩展显示有关指定的存储 (或 SCSI) 请求块 (SRB) 的信息。
 
 ```dbgcmd
 !storagekd.storsrb Address 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______Address"></span><span id="_______address"></span><span id="_______ADDRESS"></span> *Address*  
+<span id="_______Address"></span><span id="_______address"></span><span id="_______ADDRESS"></span>*地址*  
 指定 SRB 的地址。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -43,7 +42,7 @@ ms.locfileid: "63338786"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>Windows 8 及更高版本</strong></p></td>
+<td align="left"><p><strong>Windows 8 及更高版本</strong></p></td>
 <td align="left"><p>Storagekd.dll</p></td>
 </tr>
 </tbody>
@@ -54,9 +53,9 @@ ms.locfileid: "63338786"
 <a name="remarks"></a>备注
 -------
 
-下面是举例 **！ storagekd.storsrb**显示：
+下面是 **！ storsrb** 显示的示例 storagekd：
 
-**0: kd&gt; !storagekd.storsrb ffffe00111fe25b0**
+**0： kd &gt; ！ storagekd. storsrb ffffe00111fe25b0**
 
 ```dbgcmd
     SRB is a STORAGE request block (SRB_EX)

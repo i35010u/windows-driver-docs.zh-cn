@@ -1,9 +1,8 @@
 ---
-title: WIA\_IPC\_缩略图\_高度
-description: WIA\_IPC\_缩略图\_高度属性包含的当前高度，以像素为单位存储在设备的缩略图。 WIA 微型驱动程序创建并维护此属性。
-ms.assetid: 84fcaba8-f3db-46bf-812d-bb3daa8d1f37
+title: WIA \_ IPC \_ 缩略图 \_ 高度
+description: "\"WIA \\_ IPC \\_ 缩略图 \\_ 高度\" 属性包含设备上存储的缩略图的当前高度（以像素为单位）。 WIA 微型驱动程序创建并维护此属性。"
 keywords:
-- WIA_IPC_THUMBNAIL_HEIGHT 成像设备
+- WIA_IPC_THUMBNAIL_HEIGHT 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,24 +13,24 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8254627c816ec07e5272df6b611c1c6b2cbc7918
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 1aa6edb93d51e4c4a8f5cdd8d33933014292178c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563155"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817199"
 ---
-# <a name="wiaipcthumbnailheight"></a>WIA\_IPC\_缩略图\_高度
+# <a name="wia_ipc_thumbnail_height"></a>WIA \_ IPC \_ 缩略图 \_ 高度
 
 
-WIA\_IPC\_缩略图\_高度属性包含的当前高度，以像素为单位存储在设备的缩略图。 WIA 微型驱动程序创建并维护此属性。
+"WIA \_ IPC \_ 缩略图 \_ 高度" 属性包含设备上存储的缩略图的当前高度（以像素为单位）。 WIA 微型驱动程序创建并维护此属性。
 
 ## <span id="ddk_wia_ipc_thumbnail_height_si"></span><span id="DDK_WIA_IPC_THUMBNAIL_HEIGHT_SI"></span>
 
 
-属性类型：VT\_I4
+属性类型： VT \_ I4
 
-有效值：WIA\_PROP\_NONE
+有效值： WIA " \_ \_ 无"
 
 访问权限：只读
 
@@ -46,11 +45,11 @@ WIA\_IPC\_缩略图\_高度属性包含的当前高度，以像素为单位存�
 <tbody>
 <tr class="odd">
 <td><p>版本</p></td>
-<td><p>在 Windows Vista 和更高版本操作系统中已过时，并应不再使用。 但是，此属性仍定义 Windows Vista 中与应用程序和用于 Windows Server 2003、 Windows XP 和早期版本的 Windows 设备的兼容性。</p></td>
+<td><p>在 Windows Vista 和更高版本的操作系统中已过时，不应再使用。 但是，在 Windows Vista 中仍定义此属性，以与为 Windows Server 2003、Windows XP 和 windows 的早期版本设计的应用程序和设备兼容。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>

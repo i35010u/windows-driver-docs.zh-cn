@@ -1,15 +1,14 @@
 ---
 title: IStiDeviceControl COM 接口
 description: IStiDeviceControl COM 接口
-ms.assetid: 6d98f5d7-c471-4abb-8e69-dbac3d336c2f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e556dbf25b5375b11b4af7b8e46162560b1d6a6
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 000e6027a999cfe845890b6241c81f3ee49a71b4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186483"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816715"
 ---
 # <a name="istidevicecontrol-com-interface"></a>IStiDeviceControl COM 接口
 
@@ -17,9 +16,9 @@ ms.locfileid: "89186483"
 
 
 
-**IStiDeviceControl** COM 接口为[用户模式静止图像微型驱动程序](overview-of-sti-components.md#ddk-user-mode-still-image-minidrivers-si)提供对存储在[静止图像事件监视器](overview-of-sti-components.md#ddk-still-image-event-monitor-si)中的信息的访问权限。 它还允许微型驱动程序将信息写入仍图像错误日志。
+**IStiDeviceControl** COM 接口为 [用户模式静止图像微型驱动程序](overview-of-sti-components.md#ddk-user-mode-still-image-minidrivers-si)提供对存储在 [静止图像事件监视器](overview-of-sti-components.md#ddk-still-image-event-monitor-si)中的信息的访问权限。 它还允许微型驱动程序将信息写入仍图像错误日志。
 
-**IStiDeviceControl**接口定义的方法包括：
+**IStiDeviceControl** 接口定义的方法包括：
 
 <a href="" id="istidevicecontrol--addref"></a>[**IStiDeviceControl：： AddRef**](/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istidevicecontrol-addref)  
 递增 **IStiDeviceControl** 接口的引用计数。

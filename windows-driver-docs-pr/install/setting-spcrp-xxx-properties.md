@@ -1,24 +1,23 @@
 ---
 title: 设置 SPCRP_Xxx 属性
 description: 设置 SPCRP_Xxx 属性
-ms.assetid: efb0d02e-ec4c-4c1b-900b-c81f504d2919
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 20d7984bf352a6be53fc4173c7408d71f9870eb6
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: f77f379dc8a507f4da5ca6fb385c45934d9ee969
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733669"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816669"
 ---
 # <a name="setting-spcrp_xxx-properties"></a>设置 SPCRP_Xxx 属性
 
 
-在 Windows Vista 和更高版本的 Windows 中，[统一设备属性模型](unified-device-property-model--windows-vista-and-later-.md)支持与*setupapi.log*中定义的 SPCRP_Xxx 标识符对应的[设备安装程序类属性](/previous-versions/ff542239(v=vs.85))。 这些属性描述设备安装程序类的特征。 统一设备属性模型使用 [属性键](property-keys.md) 来表示这些属性。
+在 Windows Vista 和更高版本的 Windows 中，[统一设备属性模型](unified-device-property-model--windows-vista-and-later-.md)支持与 *setupapi.log* 中定义的 SPCRP_Xxx 标识符对应的 [设备安装程序类属性](/previous-versions/ff542239(v=vs.85))。 这些属性描述设备安装程序类的特征。 统一设备属性模型使用 [属性键](property-keys.md) 来表示这些属性。
 
-Windows Server 2003、Windows XP 和 Windows 2000 还支持其中的大多数设备安装程序类属性。 但是，这些早期版本的 Windows 不支持统一设备属性模型的属性键。 相反，这些版本的 Windows 使用 SPCRP_*Xxx* 标识符来表示设备安装程序类属性。 为了保持与早期版本的 Windows 的兼容性，Windows Vista 及更高版本还支持使用 SPCRP_*Xxx* 标识符来访问设备安装程序类属性。 但是，你应该使用统一设备属性模型的属性键来访问设备安装程序类属性。
+Windows Server 2003、Windows XP 和 Windows 2000 还支持其中的大多数设备安装程序类属性。 但是，这些早期版本的 Windows 不支持统一设备属性模型的属性键。 相反，这些版本的 Windows 使用 SPCRP_ *Xxx* 标识符来表示设备安装程序类属性。 为了保持与早期版本的 Windows 的兼容性，Windows Vista 及更高版本还支持使用 SPCRP_ *Xxx* 标识符来访问设备安装程序类属性。 但是，你应该使用统一设备属性模型的属性键来访问设备安装程序类属性。
 
-有关系统定义的设备安装程序类属性的列表，请参阅 [与 SPCRP_Xxx 标识符对应的设备安装程序类属性](/previous-versions/ff542245(v=vs.85))。 设备安装程序类属性由用于访问 Windows Vista 和更高版本中的属性的属性键标识符列出。 使用属性键提供的信息还包括相应的 SPCRP_*Xxx* 标识符，可用于访问 windows Server 2003、windows XP 和 windows 2000 上的属性。
+有关系统定义的设备安装程序类属性的列表，请参阅 [与 SPCRP_Xxx 标识符对应的设备安装程序类属性](/previous-versions/ff542245(v=vs.85))。 设备安装程序类属性由用于访问 Windows Vista 和更高版本中的属性的属性键标识符列出。 使用属性键提供的信息还包括相应的 SPCRP_ *Xxx* 标识符，可用于访问 windows Server 2003、windows XP 和 windows 2000 上的属性。
 
 有关如何使用属性键访问 Windows Vista 和更高版本中的设备安装程序类属性的信息，请参阅 [访问设备类属性 (Windows vista 和更高版本) ](accessing-device-class-properties--windows-vista-and-later-.md)。
 

@@ -1,7 +1,6 @@
 ---
 title: PnP 管理器重新分发系统资源
 description: 了解 PnP 管理器如何重新分配系统资源。 当用户添加的设备需要在其他位置分配资源时，会发生这种情况。
-ms.assetid: fc88ae0a-5b78-4292-a101-29d2fc383555
 keywords:
 - PnP WDK KMDF，重新分发资源
 - 即插即用 WDK KMDF，重新分发资源
@@ -11,12 +10,12 @@ keywords:
 - 开机序列 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eddebcbbe6fa8b39d22e23665fe55b1e6bdadbaf
-ms.sourcegitcommit: cccf9ba62af357aad1016addbbf6c42c7f564412
+ms.openlocfilehash: 782b0af7d4f344f115d2db734e577533c25d5355
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91606449"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815541"
 ---
 # <a name="the-pnp-manager-redistributes-system-resources"></a>PnP 管理器重新分发系统资源
 
@@ -33,7 +32,7 @@ ms.locfileid: "91606449"
 
 -   提供了一个 [*EvtDeviceQueryStop*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_query_stop) 回调函数，并且回调函数否决了重新分配。
 
-### <a name="power-down-sequence"></a>关机顺序
+### <a name="power-down-sequence"></a>Power-Down 序列
 
 对于支持正在停止的设备的每个函数和筛选器驱动程序，框架按顺序执行以下操作，一次一个驱动程序，从驱动程序堆栈最高的驱动程序开始：
 
@@ -49,9 +48,9 @@ ms.locfileid: "91606449"
 
 6.  如果) 该驱动程序已分配给该设备的硬件资源列表，则框架将调用该驱动程序的 [*EvtDeviceReleaseHardware*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware) 回调函数 (。
 
-总线驱动程序是堆栈中最底层的驱动程序，最后调用。 当框架调用总线驱动程序的[*EvtDeviceD0Exit*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_exit)回调函数时，它会将句柄传递给表示设备 PDO 的框架设备对象和**WdfPowerDeviceD3Final**的*TargetState*值。 总线驱动程序可以通过调用[**WdfDeviceInitSetReleaseHardwareOrderOnFailure**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetreleasehardwareorderonfailure)来控制框架调用其[*EvtDeviceReleaseHardware*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)回调函数的时间。
+总线驱动程序是堆栈中最底层的驱动程序，最后调用。 当框架调用总线驱动程序的 [*EvtDeviceD0Exit*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_exit)回调函数时，它会将句柄传递给表示设备 PDO 的框架设备对象和 **WdfPowerDeviceD3Final** 的 *TargetState* 值。 总线驱动程序可以通过调用 [**WdfDeviceInitSetReleaseHardwareOrderOnFailure**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetreleasehardwareorderonfailure)来控制框架调用其 [*EvtDeviceReleaseHardware*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)回调函数的时间。
 
-### <a name="power-up-sequence"></a>通电顺序
+### <a name="power-up-sequence"></a>Power-Up 序列
 
 第一个名为的驱动程序是总线驱动程序。 当框架调用总线驱动程序的 [*EvtDeviceD0Entry*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry) 回调函数时，回调函数会将该设备 (总线的子设备恢复) 其工作 (D0) 状态。
 

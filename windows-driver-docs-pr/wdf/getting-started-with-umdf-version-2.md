@@ -1,22 +1,21 @@
 ---
 title: UMDF 入门
-description: 本部分介绍用户模式驱动程序框架 (UMDF) ，并详细介绍了 UMDF 版本1和2之间的差异。
-ms.assetid: 2C4DAFA4-783C-4739-8D27-A417AC63B447
+description: 本部分介绍 User-Mode Driver Framework (UMDF) ，并详细说明了 UMDF 版本1和2之间的差异。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eb197b001183a991d9f7d12409df3e87ba3b3971
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 5b2919a56a4049b6dcaf855ac9d2a13e788aef47
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190349"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815643"
 ---
 # <a name="getting-started-with-umdf"></a>UMDF 入门
 
 
-本部分介绍用户模式驱动程序框架 (UMDF) ，并详细介绍了 UMDF 版本1和2之间的差异。 它还提供有关 UMDF 的高级体系结构信息。 使用此部分来确定 UMDF 驱动程序是否适合你的需求，并决定要使用哪个 UMDF 版本。
+本部分介绍 User-Mode Driver Framework (UMDF) ，并详细说明了 UMDF 版本1和2之间的差异。 它还提供有关 UMDF 的高级体系结构信息。 使用此部分来确定 UMDF 驱动程序是否适合你的需求，并决定要使用哪个 UMDF 版本。
 
-Windows 驱动程序框架 (WDF) 包含 UMDF，这是一个用于创建用户模式驱动程序的框架。 与内核模式驱动程序框架一样 (KMDF) ，UMDF 提供了一个来自 WDM 的抽象层，处理大部分即插即用 (PnP) 和电源管理功能，并允许该驱动程序选择启用特定功能和事件处理。
+Windows 驱动程序框架 (WDF) 包含 UMDF，这是一个用于创建用户模式驱动程序的框架。 与 Kernel-Mode Driver Framework (KMDF) 一样，UMDF 提供了一个来自 WDM 的抽象层，处理大部分即插即用 (PnP) 和电源管理功能，并允许该驱动程序选择加入特定功能和事件处理。
 
 在 Windows 8.1 的版本中，有两个主要版本的 UMDF：版本1和2。 UMDF 版本 1.11 (一个点十一) 是最新版本的 UMDF 版本1，是 UMDF 2 出现之前的最终版本。 有关显示完整版本信息和操作系统相关性的表，请参阅 [UMDF 版本历史记录](umdf-version-history.md)。
 

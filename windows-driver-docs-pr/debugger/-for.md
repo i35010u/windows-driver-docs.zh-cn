@@ -1,7 +1,6 @@
 ---
 title: .for
 description: 的. for 标记的行为类似于 C 中的 for 关键字，只不过多个增量命令必须用分号（而不是逗号）分隔。
-ms.assetid: 35f54c4c-e7f5-42a9-b579-1e4958b7286b
 keywords:
 - 。对于 Windows 调试
 ms.date: 05/23/2017
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b67c7ca9013df7856d5278757b2a407b1cf42d0b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3d13bbc7ba940159b556d8d0303e8ddc515d18e2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210263"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815499"
 ---
 # <a name="for"></a>.for
 
@@ -58,7 +57,7 @@ ms.locfileid: "89210263"
 0:000> .for (r eax=0; @eax < 7; r eax=@eax+1; r ebx=@ebx+1) { .... }
 ```
 
-[**Break**](https://support.microsoft.com/help/833721/available-switch-options-for-the-windows-xp-and-the-windows-server-200)和[**. continue**](-continue.md)标记可用于退出或重新启动*命令*块。
+[**Break**](https://support.microsoft.com/help/833721/available-switch-options-for-the-windows-xp-and-the-windows-server-200)和 [**. continue**](-continue.md)标记可用于退出或重新启动 *命令* 块。
 
  
 

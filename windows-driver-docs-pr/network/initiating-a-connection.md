@@ -1,7 +1,6 @@
 ---
 title: 发起连接
 description: 发起连接
-ms.assetid: 5e5ab033-b01a-45e2-acd4-7ea8931a621d
 keywords:
 - SAN 连接设置 WDK，启动连接
 - 启动 SAN 连接
@@ -11,12 +10,12 @@ keywords:
 - SAN 套接字 WDK，启动连接
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 69d7179039a520a692f108a06fd975a88659a8af
-ms.sourcegitcommit: 409dd20db50c58b817ef985048fb7aab952cb0ad
+ms.openlocfilehash: e8feabf8b589d10cc18fea6e0a432a150586a19c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93244861"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815985"
 ---
 # <a name="initiating-a-connection"></a>发起连接
 

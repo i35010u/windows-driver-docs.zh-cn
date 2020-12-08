@@ -1,7 +1,6 @@
 ---
 title: AVStream 中的筛选器控件互斥
 description: AVStream 中的筛选器控件互斥
-ms.assetid: 402795a0-e567-4e7e-a7d8-b2ce29ffb8fd
 keywords:
 - 筛选器控件 mutex WDK AVStream
 - AVStream mutex WDK
@@ -10,12 +9,12 @@ keywords:
 - 状态转换 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 495583419fbcaa2523c75e66b4f2afa7e9f02f28
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 10e01859337a99a3229189919be7e6328f4c438d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190261"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816497"
 ---
 # <a name="filter-control-mutex-in-avstream"></a>AVStream 中的筛选器控件互斥
 
@@ -25,7 +24,7 @@ ms.locfileid: "89190261"
 
 每个 AVStream 筛选器实例都有一个关联的筛选器控件互斥体。 此 mutex 用于同步从筛选器向下到各个 pin 的对象层次结构的访问。 创建和销毁筛选器和 pin 将与此 mutex 同步。
 
-在持有筛选器控件互斥体时，对象层次结构保证 *只* 从特定筛选器实例稳定。 因此，微型驱动程序必须先获取筛选器控件互斥体，然后再使用 **Ks***xxx***GetFirstChild ** * * Xxx 和 **ks***xxx***GetNextSibling * **
+在持有筛选器控件互斥体时，对象层次结构保证 *只* 从特定筛选器实例稳定。 因此，微型驱动程序必须先获取筛选器控件互斥体，然后再使用 **Ks**_xxx_*_GetFirstChild_*_xxx_ 和 **ks**_xxx_*_GetNextSibling_*_xxx_ 函数遍历该筛选器级别下面的对象层次结构。
 
 筛选器控件 mutex 还用于同步状态转换。
 

@@ -1,7 +1,6 @@
 ---
 title: ScannerStatusConditionClearedEvent 元素
 description: 必需的 ScannerStatusConditionClearedEvent 元素通知客户端在扫描程序中清除了之前报告的 DeviceCondition 条件。
-ms.assetid: c849caba-d77b-441b-a5e1-94f9285cef3f
 keywords:
 - ScannerStatusConditionClearedEvent 元素图像设备
 topic_type:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 84e2d28c03d35c8f81c245dc1a8fbe584fec0cc7
-ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
+ms.openlocfilehash: c1257569063e33d05b800f1fff45402b2e4ae7a8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75653009"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816197"
 ---
 # <a name="scannerstatusconditionclearedevent-element"></a>ScannerStatusConditionClearedEvent 元素
 
 
-必需的**ScannerStatusConditionClearedEvent**元素通知客户端在扫描程序中清除了之前报告的[**DeviceCondition**](devicecondition.md)条件。
+必需的 **ScannerStatusConditionClearedEvent** 元素通知客户端在扫描程序中清除了之前报告的 [**DeviceCondition**](devicecondition.md) 条件。
 
-<a name="usage"></a>Usage
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -33,7 +32,7 @@ ms.locfileid: "75653009"
 </wscn:ScannerStatusConditionClearedEvent>
 ```
 
-<a name="attributes"></a>属性
+<a name="attributes"></a>特性
 ----------
 
 没有特性。
@@ -65,7 +64,7 @@ ms.locfileid: "75653009"
 <a name="remarks"></a>备注
 -------
 
-当[**ScannerStatusConditionEvent**](scannerstatusconditionevent.md)中标识的设备条件已清除时，WSD 扫描服务将发送**ScannerStatusConditionClearedEvent**元素。 **ScannerStatusConditionClearedEvent**包含一个[**DeviceConditionCleared**](deviceconditioncleared.md)元素，该元素包含清除的条件和清除它的时间。
+当 [**ScannerStatusConditionEvent**](scannerstatusconditionevent.md)中标识的设备条件已清除时，WSD 扫描服务将发送 **ScannerStatusConditionClearedEvent** 元素。 **ScannerStatusConditionClearedEvent** 包含一个 [**DeviceConditionCleared**](deviceconditioncleared.md) 元素，该元素包含清除的条件和清除它的时间。
 
 <a name="examples"></a>示例
 --------
@@ -101,7 +100,7 @@ ms.locfileid: "75653009"
 </soap:Envelope>
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [**ConditionId**](conditionid.md)
 

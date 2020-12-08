@@ -1,7 +1,6 @@
 ---
 title: 在驱动程序中创建 IOCTL 请求
 description: 在驱动程序中创建 IOCTL 请求
-ms.assetid: 155e2577-0e9a-4c0b-a25a-8516ce3de631
 keywords:
 - I/o 控制代码 WDK 内核，创建请求
 - 控制代码 WDK IOCTLs，创建请求
@@ -10,12 +9,12 @@ keywords:
 - 嵌入指针 WDK IOCTLs
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d66fb183be9b01bdb39aa9044ea64659bc5586c1
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 12bbde711a0259e8a26d87557e48f00a5b95cb1d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716148"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816091"
 ---
 # <a name="creating-ioctl-requests-in-drivers"></a>在驱动程序中创建 IOCTL 请求
 
@@ -25,9 +24,9 @@ ms.locfileid: "90716148"
 
 类驱动程序或其他较高级别的驱动程序可以为 i/o 控制请求分配 Irp，并将其发送到下一个较低的驱动程序，如下所示：
 
-1.  使用主要的函数代码[**IRP \_ mj \_ 设备 \_ 控制**](./irp-mj-device-control.md)或[**IRP \_ mj \_ 内部 \_ 设备 \_ 控制**](./irp-mj-internal-device-control.md)分配或重复使用 i/o 请求数据包 ([**IRP**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp)) 。 可以使用 [**IoBuildDeviceIoControlRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuilddeviceiocontrolrequest) 例程专门分配 IOCTL IRP。 你还可以使用常规用途 IRP 创建和初始化例程，如 [**IoAllocateIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateirp)、 [**IoReuseIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreuseirp)或 [**IoInitializeIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioinitializeirp)。 有关 IRP 分配的详细信息，请参阅 [为低级驱动程序创建 irp](creating-irps-for-lower-level-drivers.md)。
+1.  使用主要的函数代码 [**IRP \_ mj \_ 设备 \_ 控制**](./irp-mj-device-control.md)或 [**IRP \_ mj \_ 内部 \_ 设备 \_ 控制**](./irp-mj-internal-device-control.md)分配或重复使用 i/o 请求数据包 ([**IRP**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp)) 。 可以使用 [**IoBuildDeviceIoControlRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuilddeviceiocontrolrequest) 例程专门分配 IOCTL IRP。 你还可以使用常规用途 IRP 创建和初始化例程，如 [**IoAllocateIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateirp)、 [**IoReuseIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreuseirp)或 [**IoInitializeIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioinitializeirp)。 有关 IRP 分配的详细信息，请参阅 [为 Lower-Level 驱动程序创建 irp](creating-irps-for-lower-level-drivers.md)。
 
-2.  为 IRP 设置低级驱动程序的 i/o 堆栈位置，其中包含 IOCTL \_ *XXX*代码和相应的参数。
+2.  为 IRP 设置低级驱动程序的 i/o 堆栈位置，其中包含 IOCTL \_ *XXX* 代码和相应的参数。
 
 3.  如果要异步完成 IOCTL 请求，请调用 [**KeInitializeEvent**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keinitializeevent) 例程，以将事件对象初始化为通知事件。 驱动程序使用此事件等待 i/o 操作完成。
 
@@ -53,7 +52,7 @@ ms.locfileid: "90716148"
 
 
 
-为避免出现同步问题和可能的访问冲突，i/o 控制代码的参数很少包括嵌入指针。 除了某些 SCSI 请求之外，AssociatedIrp*的缓冲区* - &gt; **AssociatedIrp**。**SystemBuffer**，位于*Irp* - &gt; **MdlAddress**，and at**参数**。**DeviceIoControl**。驱动程序的 i/o 堆栈位置中的**Type3InputBuffer**不包含指向其他数据缓冲区的指针，也不包含包含系统定义的 i/o 控制代码的指针的结构。 有关如何将数据缓冲区与包含 i/o 控制代码的 Irp 一起使用的详细信息，请参阅 [I/o 控制代码的缓冲区说明](buffer-descriptions-for-i-o-control-codes.md)。
+为避免出现同步问题和可能的访问冲突，i/o 控制代码的参数很少包括嵌入指针。 除了某些 SCSI 请求之外，AssociatedIrp *的缓冲区* - &gt; **AssociatedIrp**。**SystemBuffer**，位于 *Irp* - &gt; **MdlAddress**，and at **参数**。**DeviceIoControl**。驱动程序的 i/o 堆栈位置中的 **Type3InputBuffer** 不包含指向其他数据缓冲区的指针，也不包含包含系统定义的 i/o 控制代码的指针的结构。 有关如何将数据缓冲区与包含 i/o 控制代码的 Irp 一起使用的详细信息，请参阅 [I/o 控制代码的缓冲区说明](buffer-descriptions-for-i-o-control-codes.md)。
 
 尽管如此，定义内部 i/o 控制代码的一对类/端口驱动程序可以将嵌入式指针传递到从较高级别的驱动程序分配给驱动程序的内存。 这样一对类/端口驱动程序负责确保满足以下条件：
 

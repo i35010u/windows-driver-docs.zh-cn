@@ -1,7 +1,6 @@
 ---
 title: usbkd.doesdumphaveusbdata
 description: Usbkd. doesdumphaveusbdata 命令将检查哪些类型的 USB 数据在崩溃转储文件中，该文件是由 Bug 检查0xFE 生成的。
-ms.assetid: 5E475E9F-BC8E-4185-9F63-5BAD49A83904
 keywords:
 - usbkd doesdumphaveusbdata Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8fad2ff002ee15a8564b8d463b914048dd28ef99
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b6fc6fe633d51424f81ba5d2882868e2bc2033cc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213580"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816989"
 ---
 # <a name="usbkddoesdumphaveusbdata"></a>!usbkd.doesdumphaveusbdata
 
 
-**！ Usbkd doesdumphaveusbdata**命令将检查哪些类型的 USB 数据在崩溃转储文件中，该文件是在[**错误检查 0xFE**](bug-check-0xfe--bugcode-usb-driver.md)的结果中生成的。
+**！ Usbkd doesdumphaveusbdata** 命令将检查哪些类型的 USB 数据在崩溃转储文件中，该文件是在 [**错误检查 0xFE**](bug-check-0xfe--bugcode-usb-driver.md)的结果中生成的。
 
 ```dbgcmd
 !usbkd.doesdumphaveusbdata
@@ -41,7 +40,7 @@ Usbkd.dll
 <a name="examples"></a>示例
 --------
 
-下面是 **！ doesdumphaveusbdata**的输出示例
+下面是 **！ doesdumphaveusbdata** 的输出示例
 
 ```dbgcmd
 1: kd> !analyze -v

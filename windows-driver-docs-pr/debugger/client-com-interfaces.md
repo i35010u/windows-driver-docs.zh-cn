@@ -1,17 +1,16 @@
 ---
 title: 调试引擎接口
 description: 调试引擎接口
-ms.assetid: 42ff2423-9bca-402d-8836-8679cff1f445
 keywords:
 - 客户端 COM 接口
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c31c81591149b81a06824de809e5a7e9c3203a88
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 08132c98b0a411f5694b9019bad10ccaf2fce81b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209378"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816955"
 ---
 # <a name="debug-engine-interfaces"></a>调试引擎接口
 

@@ -1,18 +1,17 @@
 ---
 title: 通过面向连接的套接字发送数据
 description: 通过面向连接的套接字发送数据
-ms.assetid: 290f3a8a-6bdc-4dd9-a9bf-4eede37bf1e5
 keywords:
 - 面向连接的套接字 WDK Winsock 内核
 - WskSend
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 75b700c9d7c8fb0983cb8ef61f25f844c317acab
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: cf397cbbaa939b3659192b539c9ff83682906f5d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208563"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815875"
 ---
 # <a name="sending-data-over-a-connection-oriented-socket"></a>通过面向连接的套接字发送数据
 

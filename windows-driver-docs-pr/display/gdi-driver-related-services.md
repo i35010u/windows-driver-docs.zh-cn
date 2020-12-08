@@ -1,19 +1,18 @@
 ---
 title: GDI 驱动程序相关服务
 description: GDI 驱动程序相关服务
-ms.assetid: bb46ae7a-9ade-4e23-b9fe-489f83445ff3
 keywords:
 - GDI WDK Windows 2000 显示器、驱动程序相关服务
 - 图形驱动程序 WDK Windows 2000 显示器、驱动程序相关服务
 - 绘制 WDK GDI、驱动程序相关服务
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 267b707a90d420efcb593ae148c4995169b5b080
-ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
+ms.openlocfilehash: 6e0a183d2d359e155572b3c96c2d3af311a2662a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91423652"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817363"
 ---
 # <a name="gdi-driver-related-services"></a>GDI 驱动程序相关服务
 
@@ -31,7 +30,7 @@ ms.locfileid: "91423652"
 <thead>
 <tr class="header">
 <th align="left">函数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

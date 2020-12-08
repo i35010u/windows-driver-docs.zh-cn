@@ -1,9 +1,8 @@
 ---
-title: MaxValue 元素
-description: 所需的 MaxValue 元素指定扫描设备支持需要的值范围的扫描程序配置元素的最大值。
-ms.assetid: a01833ff-06cd-47d3-9f54-2f1cf01cc1e6
+title: 无法进行元素
+description: 所需的一个（或多个）元素指定扫描设备对需要一系列值的扫描程序配置元素所支持的最大值。
 keywords:
-- MaxValue 元素成像设备
+- 无法处理的元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c858baf02a7c3920bb98213ac9575ff97bb20e3e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 558646f9e79d0f6bc3141e35e20194860778bf3a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380357"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816215"
 ---
-# <a name="maxvalue-element"></a>MaxValue 元素
+# <a name="maxvalue-element"></a>无法进行元素
 
 
-所需**MaxValue**元素指定扫描设备支持需要的值范围的扫描程序配置元素的最大值。
+所需 **的** 一个（或多个）元素指定扫描设备对需要一系列值的扫描程序配置元素所支持的最大值。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -46,7 +45,7 @@ ms.locfileid: "63380357"
 ## <a name="child-elements"></a>子元素
 
 
-没有子元素。
+没有任何子元素。
 
 ## <a name="parent-elements"></a>父元素
 
@@ -76,7 +75,7 @@ ms.locfileid: "63380357"
 <a name="remarks"></a>备注
 -------
 
-值**MaxValue**元素取决于其父元素。 有关可能的值，请参阅合适的父元素。
+**该节点的值** 取决于其父元素。 有关可能的值，请参阅相应的父元素。
 
 ## <a name="see-also"></a>请参阅
 

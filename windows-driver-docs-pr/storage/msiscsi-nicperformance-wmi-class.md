@@ -1,15 +1,14 @@
 ---
 title: MSiSCSI \_ NICPERFORMANCE WMI 类
 description: MSiSCSI \_ NICPERFORMANCE WMI 类
-ms.assetid: e5894b20-8ea7-46ec-9960-3d9891b06ac4
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: faf3baa96208163d747fae1f186517a95eaaed17
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d45b555acbe34a55ec899e9b44ea24ecfaba2671
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190409"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815869"
 ---
 # <a name="msiscsi_nicperformance-wmi-class"></a>MSiSCSI \_ NICPERFORMANCE WMI 类
 
@@ -21,7 +20,7 @@ MSiSCSI \_ NICPERFORMANCE WMI 类 (NIC) 端口公开网络接口卡的性能统�
 
 发起方应 \_ 为适配器上的每个以太网端口实现一个 MSiSCSI NICPerformance 类的实例，并为该端口注册该类的每个实例 (PDO) 的特定物理设备对象的名称。
 
-MSiSCSI \_ NICPerformance 类是在 *Iscsiprf*中定义的。
+MSiSCSI \_ NICPerformance 类是在 *Iscsiprf* 中定义的。
 
 ```cpp
 class MSiSCSI_NICPerformance : Win32_PerfRawData {

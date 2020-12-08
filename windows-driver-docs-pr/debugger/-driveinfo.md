@@ -1,9 +1,8 @@
 ---
-title: driveinfo
-description: Driveinfo 扩展显示指定的驱动器的卷信息。
-ms.assetid: cc63c07a-4556-4b79-9dff-c0ac09371651
+title: system.io.driveinfo
+description: System.io.driveinfo 扩展显示指定驱动器的卷信息。
 keywords:
-- driveinfo Windows 调试
+- system.io.driveinfo Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4afb289eb59a9d19e631b73563279187eae1e277
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 77dc89600b8a6068c2706e3e9046e65aeb09df05
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334536"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816451"
 ---
 # <a name="driveinfo"></a>!driveinfo
 
 
-**！ Driveinfo**扩展显示指定的驱动器的卷信息。
+**！ System.io.driveinfo** 扩展显示指定驱动器的卷信息。
 
 ```dbgcmd
 !driveinfo Drive[:] 

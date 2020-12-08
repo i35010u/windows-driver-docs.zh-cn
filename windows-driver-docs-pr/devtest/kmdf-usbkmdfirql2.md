@@ -1,7 +1,6 @@
 ---
 title: 'UsbKmdfIrql2 规则 (kmdf) '
 description: UsbKmdfIrql2 规则指定 KMDF 驱动程序不应在错误的 IRQL 级别调用特定于 USB 的 DDIs。
-ms.assetid: D514B902-8F29-4D77-A26F-57DA43A045E8
 ms.date: 05/21/2018
 keywords:
 - 'UsbKmdfIrql2 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4624bf31c3591c4760e21f558aac27881cc103eb
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e81f4fe90b406c36ac54f926b9d002e593003940
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105386"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817443"
 ---
 # <a name="usbkmdfirql2-rule-kmdf"></a>UsbKmdfIrql2 规则 (kmdf) 
 
 
-**UsbKmdfIrql2**规则指定 KMDF 驱动程序不应在错误的 IRQL 级别调用特定于 USB 的 DDIs。
+**UsbKmdfIrql2** 规则指定 KMDF 驱动程序不应在错误的 IRQL 级别调用特定于 USB 的 DDIs。
 
 **驱动程序模型： KMDF**
 

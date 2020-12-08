@@ -1,9 +1,8 @@
 ---
 title: MediaBackImageInfo 元素
-description: 可选 MediaBackImageInfo 元素包含在后端的 ADF 双工扫描的映像信息。
-ms.assetid: 42f0151a-6677-41a6-bbf5-0485bd288bb1
+description: 可选的 MediaBackImageInfo 元素包含 ADF 双工扫描背面的图像信息。
 keywords:
-- MediaBackImageInfo 元素成像设备
+- MediaBackImageInfo 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 03777d791c4c9680cefcb5ded5b08ef9292f5624
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2b23bf3288d706177eb4abe296b3697d94f818d8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380345"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816209"
 ---
 # <a name="mediabackimageinfo-element"></a>MediaBackImageInfo 元素
 
 
-可选**MediaBackImageInfo**元素包含在后端的 ADF 双工扫描的映像信息。
+可选的 **MediaBackImageInfo** 元素包含 ADF 双工扫描背面的图像信息。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml

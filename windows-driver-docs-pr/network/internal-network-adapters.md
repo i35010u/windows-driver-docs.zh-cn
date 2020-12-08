@@ -1,15 +1,14 @@
 ---
 title: 内部网络适配器
 description: 内部网络适配器
-ms.assetid: 4E4B0EC9-8E4C-47FC-B608-EC6D18367A79
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f81f4e87ff7ad69f38e435575ae258b0ca8a775d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ee873de7eafa232fc7b4a623842ee838f4cbf484
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206755"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817121"
 ---
 # <a name="internal-network-adapters"></a>内部网络适配器
 

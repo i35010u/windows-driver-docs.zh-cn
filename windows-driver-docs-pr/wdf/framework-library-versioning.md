@@ -1,28 +1,27 @@
 ---
 title: 框架库版本控制
-description: 在本主题中，你将了解内核模式驱动程序框架的文件名的命名约定 (KMDF) 库和用户模式驱动程序框架 (UMDF) 库。
-ms.assetid: 51db6f3c-45cb-46a7-9dd4-2bab67893fea
+description: 在本主题中，你将了解 Kernel-Mode Driver Framework (KMDF) 库和 User-Mode 驱动程序框架 (UMDF) 库的文件名的命名约定。
 keywords:
 - 内核模式驱动程序 WDK KMDF，库版本
 - KMDF WDK，库版本
-- 内核模式驱动程序框架 WDK，库版本
+- Kernel-Mode Driver Framework WDK，库版本
 - 库 WDK KMDF
 - 版本号 WDK KMDF
 - 主要版本号 WDK KMDF
 - 次版本号 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 94fac2b0e73deecd592b4173f21accf84f1b5f0c
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 6c3431cf429416ab24a5cd205b8010a56a1dcaba
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187223"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815683"
 ---
 # <a name="framework-library-versioning"></a>框架库版本控制
 
 
-在本主题中，你将了解内核模式驱动程序框架的文件名的命名约定 (KMDF) 库和用户模式驱动程序框架 (UMDF) 库。
+在本主题中，你将了解 Kernel-Mode Driver Framework (KMDF) 库和 User-Mode 驱动程序框架 (UMDF) 库的文件名的命名约定。
 
 ## <a name="kmdf"></a>KMDF
 
@@ -50,8 +49,8 @@ WDF 允许使用不同于运行驱动程序的 Windows 版本来构建驱动程�
 
 与 KMDF 一样，UMDF 库的主版本号使用两个字符。 但是，主版本号仅出现在 UMDF 库文件名称中，从版本2.0 开始。
 
-对于 UMDF 版本2.0，将 *Wudfx02000.dll*umdf 库的文件名。
+对于 UMDF 版本2.0，将 *Wudfx02000.dll* umdf 库的文件名。
 
-适用于 UMDF 版本1。*x*，将 *Wudfx.dll*UMDF 库的文件名。
+适用于 UMDF 版本1。*x*，将 *Wudfx.dll* UMDF 库的文件名。
 
 有关 KMDF 库的版本历史记录的信息，请参阅 [UMDF 版本历史记录](umdf-version-history.md)。

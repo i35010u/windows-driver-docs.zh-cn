@@ -1,19 +1,18 @@
 ---
 title: GDI 绘图和相关服务
 description: GDI 绘图和相关服务
-ms.assetid: b5df84ae-05cf-49dc-aa49-79f912ecd029
 keywords:
 - GDI WDK Windows 2000 显示，绘图服务
 - 图形驱动程序 WDK Windows 2000 显示，绘图服务
 - 绘制 WDK GDI，支持的绘图服务
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d0737cdcf8d8d3d5444630acb77ba71df462471
-ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
+ms.openlocfilehash: 42fc55af6d6d50ebe92e88c9cab33a1854a73009
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91423654"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817369"
 ---
 # <a name="gdi-drawing-and-related-services"></a>GDI 绘图和相关服务
 
@@ -31,7 +30,7 @@ ms.locfileid: "91423654"
 <thead>
 <tr class="header">
 <th align="left">GDI 绘图服务函数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

@@ -1,15 +1,14 @@
 ---
 title: 地理位置示例驱动程序文件列表
 description: 地理位置驱动程序示例的源文件包括以下类别的文件。
-ms.assetid: 8A9A1102-921B-40FF-94F2-FA9E3C1CE662
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 73e7f8ccac5fe92c1f0a0d3b5f24ade5c3c2a59c
-ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
+ms.openlocfilehash: 92409b3a8f5fc159333d57c5beabd20a8fb3f509
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85968258"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816301"
 ---
 # <a name="geolocation-sample-driver-file-list"></a>地理位置示例驱动程序文件列表
 
@@ -25,14 +24,14 @@ ms.locfileid: "85968258"
 
 | 文件名                          | 目录                                                                                                                                                                                                                   |
 |------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 设备 .cpp                         | 包含 CMyDevice 成员函数的实现。 这包括创建和初始化传感器类扩展的**OnPrepareHardware**方法。                                                     |
+| 设备 .cpp                         | 包含 CMyDevice 成员函数的实现。 这包括创建和初始化传感器类扩展的 **OnPrepareHardware** 方法。                                                     |
 | 设备。h                           | 包含 CMyDevice 类的定义。                                                                                                                                                                             |
-| Dllsup .cpp                         | 包含驱动程序 DLL 的入口点（DLLMain）。                                                                                                                                                                           |
-| 驱动程序 .cpp                         | 包含 CMyDriver 成员函数的实现。 这包括创建 CMyDevice 类的实例的**OnDeviceAdd**方法（请参阅设备的说明）。                                    |
+| Dllsup .cpp                         | 包含驱动程序 DLL 的入口点 (DLLMain) 。                                                                                                                                                                           |
+| 驱动程序 .cpp                         | 包含 CMyDriver 成员函数的实现。 这包括创建 CMyDevice 类的实例的 **OnDeviceAdd** 方法 (参阅) 的设备说明。                                    |
 | 驱动程序。h                           | 包含 CMyDriver 类的定义。                                                                                                                                                                              |
 | Internal。h                         | 包含示例驱动程序的本地类型定义。                                                                                                                                                                     |
 | Makefile                       | 需要生成。INF 文件。                                                                                                                                                                                            |
-| Queue                          | 包含 CMyQueue 成员函数的实现。 这包括**CreateInstance**方法，该方法为设备创建 i/o 队列的实例。                                                       |
+| Queue                          | 包含 CMyQueue 成员函数的实现。 这包括 **CreateInstance** 方法，该方法为设备创建 i/o 队列的实例。                                                       |
 | Queue。h                            | 包含 CMyQueue 类的定义。                                                                                                                                                                               |
 | Resource.h                         | 包含 SensorsGeolocationSample 使用的定义。                                                                                                                                                               |
 | 传感器 .cpp                         | 包含 CSensor 成员函数的实现。 这包括返回支持的属性和数据字段的列表以及设置可写属性和数据字段的方法的方法。              |

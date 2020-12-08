@@ -1,19 +1,18 @@
 ---
 title: 使用 PnP 目标设备更改通知
 description: 使用 PnP 目标设备更改通知
-ms.assetid: a56bda5c-e398-442d-bc90-2e63f8f7e6bf
 keywords:
 - 通知 WDK PnP，目标设备更改
 - 目标设备更改通知 WDK PnP
 - EventCategoryTargetDeviceChange 通知
 ms.date: 10/30/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 65469d49ff534c95ac26f052b2fdc42cac8a99b9
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: e83cb74cf5d2ae2b158bfba314fdcceeb394e9f0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89183993"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816023"
 ---
 # <a name="using-pnp-target-device-change-notification"></a>使用 PnP 目标设备更改通知
 

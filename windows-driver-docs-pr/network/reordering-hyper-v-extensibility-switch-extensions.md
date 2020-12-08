@@ -1,22 +1,21 @@
 ---
 title: 重新排列 Hyper-V 可扩展交换机扩展的顺序
 description: 重新排列 Hyper-V 可扩展交换机扩展的顺序
-ms.assetid: DAB7FAE0-1632-4FD1-8697-48553A51BD20
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d25a246b1aa22b1d38d5416c2b1e77e39a762bf7
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0c72efd4784d54c13bd59554374ca5662cc94d4b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216588"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815909"
 ---
 # <a name="reordering-hyper-v-extensible-switch-extensions"></a>重新排列 Hyper-V 可扩展交换机扩展的顺序
 
 
 可以在可扩展交换机的每个实例中启用多个 Hyper-v 可扩展交换机捕获或筛选扩展。
 
-**注意**   在可扩展交换机的每个实例中只能启用一个转发扩展。
+**注意**  在可扩展交换机的每个实例中只能启用一个转发扩展。
 
  
 

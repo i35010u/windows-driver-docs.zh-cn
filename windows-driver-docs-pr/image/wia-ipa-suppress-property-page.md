@@ -1,9 +1,8 @@
 ---
-title: WIA\_IPA\_SUPPRESS\_PROPERTY\_PAGE
-description: WIA\_IPA\_禁止\_属性\_页属性指定是否禁止在设备上的项的常规属性页。
-ms.assetid: cce8f6f9-ec35-4d07-89b0-08c437eb689c
+title: WIA \_ IPA \_ 禁止显示 \_ 属性 \_ 页
+description: WIA \_ IPA \_ 禁止 \_ 属性 \_ 页属性指定是否取消设备上项的常规属性页。
 keywords:
-- WIA_IPA_SUPPRESS_PROPERTY_PAGE 成像设备
+- WIA_IPA_SUPPRESS_PROPERTY_PAGE 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,31 +13,31 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c9181c36ddabf0555ca9d0dd2b869784a2cccd41
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d0185be0a7513a8733d6365170921a6a4fb01b9d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370645"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817229"
 ---
-# <a name="wiaipasuppresspropertypage"></a>WIA\_IPA\_SUPPRESS\_PROPERTY\_PAGE
+# <a name="wia_ipa_suppress_property_page"></a>WIA \_ IPA \_ 禁止显示 \_ 属性 \_ 页
 
 
-WIA\_IPA\_禁止\_属性\_页属性指定是否禁止在设备上的项的常规属性页。
+WIA \_ IPA \_ 禁止 \_ 属性 \_ 页属性指定是否取消设备上项的常规属性页。
 
 ## <span id="ddk_wia_ipa_suppress_property_page_si"></span><span id="DDK_WIA_IPA_SUPPRESS_PROPERTY_PAGE_SI"></span>
 
 
-属性类型：VT\_I4
+属性类型： VT \_ I4
 
-有效值：WIA\_PROP\_NONE
+有效值： WIA " \_ \_ 无"
 
 访问权限：只读
 
 <a name="remarks"></a>备注
 -------
 
-下表描述了有效使用 WIA 的常量\_IPA\_禁止\_属性\_页属性。
+下表描述了对 WIA \_ IPA \_ 禁止 \_ 属性 \_ 页属性有效的常量。
 
 <table>
 <colgroup>
@@ -54,11 +53,11 @@ WIA\_IPA\_禁止\_属性\_页属性指定是否禁止在设备上的项的常规
 <tbody>
 <tr class="odd">
 <td><p>WIA_PROPPAGE_CAMERA_ITEM_GENERAL</p></td>
-<td><p>隐藏照相机的常规项目属性页。</p></td>
+<td><p>取消照相机的 "常规项目" 属性页。</p></td>
 </tr>
 <tr class="even">
 <td><p>WIA_PROPPAGE_SCANNER_ITEM_GENERAL</p></td>
-<td><p>隐藏扫描程序的常规项目属性页。</p></td>
+<td><p>禁止使用扫描仪的 "常规项目" 属性页。</p></td>
 </tr>
 </tbody>
 </table>
@@ -75,12 +74,12 @@ WIA\_IPA\_禁止\_属性\_页属性指定是否禁止在设备上的项的常规
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>在 Microsoft Windows XP 和更高版本操作系统上可用。</p></td>
+<td><p>版本</p></td>
+<td><p>在 Microsoft Windows XP 和更高版本的操作系统上可用。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>

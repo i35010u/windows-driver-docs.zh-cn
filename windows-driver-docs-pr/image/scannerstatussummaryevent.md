@@ -1,7 +1,6 @@
 ---
 title: ScannerStatusSummaryEvent 元素
 description: 必需的 ScannerStatusSummaryEvent 元素通知客户端扫描设备的状态已更改。
-ms.assetid: a1297e25-1136-49ef-8b8e-e7c8c62bec13
 keywords:
 - ScannerStatusSummaryEvent 元素图像设备
 topic_type:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 89df739aaf5cd6b3d5800b0848984f1733444f7f
-ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
+ms.openlocfilehash: cf16248fc97df4346335f6148f8ab29faf79b354
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75653003"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816187"
 ---
 # <a name="scannerstatussummaryevent-element"></a>ScannerStatusSummaryEvent 元素
 
 
-必需的**ScannerStatusSummaryEvent**元素通知客户端扫描设备的状态已更改。
+必需的 **ScannerStatusSummaryEvent** 元素通知客户端扫描设备的状态已更改。
 
-<a name="usage"></a>Usage
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -33,7 +32,7 @@ ms.locfileid: "75653003"
 </wscn:ScannerStatusSummaryEvent>
 ```
 
-<a name="attributes"></a>属性
+<a name="attributes"></a>特性
 ----------
 
 没有特性。
@@ -65,9 +64,9 @@ ms.locfileid: "75653003"
 <a name="remarks"></a>备注
 -------
 
-当扫描设备的状态发生更改时，WSD 扫描服务应将**ScannerStatusSummaryEvent**元素发送到客户端。
+当扫描设备的状态发生更改时，WSD 扫描服务应将 **ScannerStatusSummaryEvent** 元素发送到客户端。
 
-**ScannerStatusSummaryEvent**的主体必须包含一个[**StatusSummary**](statussummary.md)元素，该元素描述对扫描程序状态的更改。
+**ScannerStatusSummaryEvent** 的主体必须包含一个 [**StatusSummary**](statussummary.md)元素，该元素描述对扫描程序状态的更改。
 
 <a name="examples"></a>示例
 --------
@@ -103,7 +102,7 @@ ms.locfileid: "75653003"
 </soap:Envelope>
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**StatusSummary**](statussummary.md)

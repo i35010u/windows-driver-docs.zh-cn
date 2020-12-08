@@ -1,47 +1,46 @@
 ---
 title: 附加用户模式调试程序
 description: 附加用户模式调试程序
-ms.assetid: ba8eeabd-946d-46fa-b9ed-b9a674315bd4
 keywords:
-- 将用户模式下附加调试器 WDK UMDF
-- 多个设备调试器附件 WDK UMDF
-- 单个设备调试器附件 WDK UMDF
-- 用户模式驱动程序框架 WDK，用户模式下调试程序
-- UMDF WDK，用户模式下调试程序
-- 用户模式下调试程序 WDK UMDF
-- 用户模式下调试程序 WDK UMDF，附加
+- 附加用户模式调试器 WDK UMDF
+- 多设备调试器附件 WDK UMDF
+- 单设备调试器附件 WDK UMDF
+- User-Mode Driver Framework WDK，用户模式调试器
+- UMDF WDK，用户模式调试器
+- 用户模式调试器 WDK UMDF
+- 用户模式调试器 WDK UMDF，附加
 - 用户模式驱动程序 WDK UMDF，调试
-- 调试驱动程序 WDK UMDF，将用户模式调试器附加
-- 驱动程序调试 WDK UMDF，将用户模式调试器附加
+- 调试驱动程序 WDK UMDF，附加用户模式调试器
+- 驱动程序调试 WDK UMDF，附加用户模式调试器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f712d2f24d038920b70f6a4c8439bef03bdc0e08
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 166da51532976b4cbc3a43fef4dd9c2348aa1067
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330871"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815789"
 ---
 # <a name="attaching-a-user-mode-debugger"></a>附加用户模式调试程序
 
 
-驱动程序管理器启动设备的驱动程序主机进程后，可以将附加用户模式下调试程序。 如何将调试器附加取决于多少台设备连接到计算机：
+驱动程序管理器启动设备的驱动程序主机进程后，可以附加用户模式调试器。 如何附加调试器取决于连接到计算机的设备数：
 
--   如果连接了单个设备，运行以下命令：
+-   如果已附加单个设备，请运行以下命令：
 
     ```cpp
     windbg -pn WUDFHost.exe
     ```
 
-    反复运行此命令，直到发现要调试主机进程。
+    重复运行此命令，直到发现调试的主机进程。
 
--   如果连接了多个设备，确定特定主机的进程标识符 (PID)，并运行以下命令：
+-   如果附加了多个设备，请确定特定主机的进程标识符 (PID) ，并运行以下命令：
 
     ```cpp
     windbg -p PID
     ```
 
-    可以使用操作系统提供 Tasklist.exe 以确定主机进程的 PID。 （Tasklist.exe 是为用户提供了一系列操作系统运行的进程的命令行应用程序。）
+    您可以使用操作系统提供的 Tasklist.exe 确定主机进程的 PID。  ( # A0 是一个命令行应用程序，该应用程序向用户提供在操作系统上运行的进程的列表。 ) 
 
  
 

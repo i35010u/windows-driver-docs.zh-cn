@@ -1,19 +1,18 @@
 ---
 title: NDIS 6.0 简介
 description: NDIS 6.0 简介
-ms.assetid: cb5040be-ddd0-46c9-a3e4-f3ca88cd4c95
 keywords:
 - 网络驱动程序 WDK，NDIS
 - NDIS WDK，关于 NDIS
 - 网络驱动程序接口规范 WDK
 ms.date: 01/09/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 89b9925a03be1acc66ea55263e2e30567ce36c1a
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: bdffc6d36458df0f4591c40bfa4071f92d9c9a7a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218075"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815971"
 ---
 # <a name="introduction-to-ndis-60"></a>NDIS 6.0 简介
 

@@ -1,15 +1,14 @@
 ---
 title: 编译 NDIS 6.40 驱动程序
 description: 本部分介绍如何编译 NDIS 6.40 驱动程序
-ms.assetid: AF027939-06C7-435C-90D9-82272CED6A84
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f910d61a99bd70a00320f825b66f3be5ab0d88f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 60a4be8b4d71cea486eda7e9ff6f3f31be245f13
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208703"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817151"
 ---
 # <a name="compiling-an-ndis-640-driver"></a>编译 NDIS 6.40 驱动程序
 

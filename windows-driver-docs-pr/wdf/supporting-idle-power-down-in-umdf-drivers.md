@@ -1,18 +1,17 @@
 ---
 title: 在 UMDF 驱动程序中支持空闲时关闭电源
 description: 在 UMDF 驱动程序中支持空闲时关闭电源
-ms.assetid: 128f009e-1847-493e-90e3-2fe8c141b158
 keywords:
 - 电源管理 WDK UMDF，空闲关机
 - 空闲的关闭 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fd64365bbe16d720fbcd73507fb056d25f535318
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 58b298e18ab46c2f6026f1db94a38623f71b6ac4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190801"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815593"
 ---
 # <a name="supporting-idle-power-down-in-umdf-drivers"></a>在 UMDF 驱动程序中支持空闲时关闭电源
 
@@ -50,7 +49,7 @@ ms.locfileid: "89190801"
 -   如果驱动程序之前调用 [**IWDFDevice2：： StopIdle**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice2-stopidle)，则驱动程序随后称为 [**IWDFDevice2：： ResumeIdle**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice2-resumeidle)。
 -   如果电源策略所有者是总线驱动程序，则总线驱动程序的任何子设备都不是 D0。
 
-如果你的驱动程序 (或用户) 为你的设备启用了空闲电源，则可能必须使用 [**IWDFDevice2：： StopIdle**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice2-stopidle) 方法。 如果设备处于工作状态 (D0) 状态，则此方法会阻止设备置于空闲状态，直到驱动程序调用 [**IWDFDevice2：： ResumeIdle**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice2-resumeidle)。 如果当驱动程序调用 **IWDFDevice2：： StopIdle**时，设备处于低功耗状态，并且如果系统处于工作状态 (S0) 状态，则框架将请求总线驱动程序将设备还原到其工作 (D0) 状态。 有关驱动程序何时需要调用 **IWDFDevice2：： StopIdle**的详细信息，请参阅该方法的参考页。
+如果你的驱动程序 (或用户) 为你的设备启用了空闲电源，则可能必须使用 [**IWDFDevice2：： StopIdle**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice2-stopidle) 方法。 如果设备处于工作状态 (D0) 状态，则此方法会阻止设备置于空闲状态，直到驱动程序调用 [**IWDFDevice2：： ResumeIdle**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice2-resumeidle)。 如果当驱动程序调用 **IWDFDevice2：： StopIdle** 时，设备处于低功耗状态，并且如果系统处于工作状态 (S0) 状态，则框架将请求总线驱动程序将设备还原到其工作 (D0) 状态。 有关驱动程序何时需要调用 **IWDFDevice2：： StopIdle** 的详细信息，请参阅该方法的参考页。
 
 如果设备可以从低功耗状态唤醒，则设备总线的驱动程序将参与唤醒设备。 内核模式总线驱动程序在总线适配器上执行任何必要的功能，以启用和禁用设备从低功耗状态唤醒的能力。
 

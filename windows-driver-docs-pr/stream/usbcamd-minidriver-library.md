@@ -1,7 +1,6 @@
 ---
 title: USBCAMD 微型驱动程序库
 description: USBCAMD 微型驱动程序库
-ms.assetid: 4447bf3d-5eaa-4de7-96bb-22dae68b44eb
 keywords:
 - Windows 2000 内核流式处理模型 WDK，USBCAMD2 微型驱动程序库
 - 流式处理模型 WDK Windows 2000 内核，USBCAMD2 微型驱动程序库
@@ -11,12 +10,12 @@ keywords:
 - 照相机 WDK USBCAMD2
 ms.date: 06/19/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: d574182dbd31322fac10505d756939fbad953fa2
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 4161c7839f8b93eabdbf540425a1b7d839ccdd86
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192131"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815801"
 ---
 # <a name="usbcamd-minidriver-library"></a>USBCAMD 微型驱动程序库
 
@@ -36,7 +35,7 @@ Microsoft 发布了包含 Microsoft Windows 98 驱动程序开发工具包 (DDK)
 
 - 从流中提取视频帧，并在视频帧返回到相机微型驱动程序的 [*CamProcessRawVideoFrameEx*](/windows-hardware/drivers/ddi/usbcamdi/nc-usbcamdi-pcam_process_raw_frame_routine_ex) 回调函数中的调用应用程序之前对其执行处理。
 
-*usbcamd.sys*上的 windows 98 支持原始的 USBCAMD 微型驱动程序库，但在 windows 2000 上不受支持。 USBCAMD2 在 Windows 2000 和更高版本以及 Windows Millennium Edition 和更高版本上受支持，同时作为 *usbcamd.sys和 usbcamd2.sys*。 64位平台上不支持原始 USBCAMD 微型驱动程序库和 USBCAMD2。
+*usbcamd.sys* 上的 windows 98 支持原始的 USBCAMD 微型驱动程序库，但在 windows 2000 上不受支持。 USBCAMD2 在 Windows 2000 和更高版本以及 Windows Millennium Edition 和更高版本上受支持，同时作为 *usbcamd.sys和 usbcamd2.sys*。 64位平台上不支持原始 USBCAMD 微型驱动程序库和 USBCAMD2。
 
 对于 Windows 2000 和更高版本以及 Windows Millennium Edition 及更高版本的操作系统，照相机供应商应该使用 USBCAMD2 微型驱动程序库而不是原始库来开发相机微型驱动程序。
 

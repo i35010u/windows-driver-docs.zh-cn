@@ -1,10 +1,9 @@
 ---
 title: .record_branches（启用分支记录）
-description: .Record_branches 命令启用目标的代码执行的分支的记录。
-ms.assetid: 522eeba5-b6c5-473c-9c8e-8ef4c941079f
+description: .Record_branches 命令启用目标代码执行的分支记录。
 keywords:
-- 启用分支录制 (.record_branches) 命令
-- .record_branches （启用分支录制） Windows 调试
+- " ( .record_branches) 命令启用分支记录"
+- .record_branches (在 Windows 调试) 启用分支记录
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -13,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f06ce24825ac7170f226347d2477d55af9aa6720
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2057fdd6910dc932f84db152cd0872178fa01598
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334298"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815491"
 ---
-# <a name="recordbranches-enable-branch-recording"></a>.record\_分支 （启用分支录制）
+# <a name="record_branches-enable-branch-recording"></a>。记录 \_ 分支 (启用分支记录) 
 
 
-**.Record\_分支**命令启用目标的代码执行的分支的记录。
+" **记录 \_ 分支** " 命令启用目标代码执行的分支记录。
 
 ```dbgcmd
 .record_branches {1|0} 
@@ -42,16 +41,16 @@ ms.locfileid: "63334298"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>用户模式下，内核模式</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>用户模式，内核模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>仅实时调试</p></td>
+<td align="left"><p>仅限实时调试</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>
-<td align="left"><p>基于 x64 的仅</p></td>
+<td align="left"><p>仅基于 x64</p></td>
 </tr>
 </tbody>
 </table>
@@ -61,9 +60,9 @@ ms.locfileid: "63334298"
 <a name="remarks"></a>备注
 -------
 
-**.Record\_分支 1**命令启用目标的代码中的分支的记录。 **.Record\_分支 0**命令将禁用此记录。
+通过 " **记录 \_ 分支 1** " 命令，可以在目标的代码中记录分支。 " **记录 \_ 分支 0** " 命令禁用此记录。
 
-不带参数， **.record\_分支**显示此设置的当前状态。
+如果没有参数，则 **。记录 \_ 分支** 显示此设置的当前状态。
 
  
 

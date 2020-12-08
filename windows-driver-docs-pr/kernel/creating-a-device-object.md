@@ -1,18 +1,17 @@
 ---
 title: 创建设备对象
 description: 了解如何为 WDM 函数和筛选器驱动程序、WDM 总线驱动程序和非 WDM 驱动程序创建设备对象。
-ms.assetid: 3eda8eb2-8a83-4753-a099-2531bfb9aeeb
 keywords:
 - 设备对象 WDK 内核，创建
 - 非 WDM 驱动程序设备对象 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f19f6f4faaded355b5de0520ae6335d80c1c326c
-ms.sourcegitcommit: f1d6c2d0cdbecdc69ba65ed3b530755fc73c8e5e
+ms.openlocfilehash: 7cb1d2f5c76523784bbebbeb92ca0f527524e748
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91590399"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816119"
 ---
 # <a name="creating-a-device-object"></a>创建设备对象
 
@@ -32,9 +31,9 @@ ms.locfileid: "91590399"
 
 [为非 WDM 驱动程序创建设备对象](#creating-device-objects-for-non-wdm-drivers)
 
-当驱动程序创建设备对象时，它会向 **IoCreateDevice** 或 **IoCreateDeviceSecure**提供以下信息：
+当驱动程序创建设备对象时，它会向 **IoCreateDevice** 或 **IoCreateDeviceSecure** 提供以下信息：
 
--   设备的 *设备扩展*的大小。 设备扩展是系统分配的存储区域，驱动程序可将其用于特定于设备的存储。 有关详细信息，请参阅 [设备扩展](device-extensions.md)。
+-   设备的 *设备扩展* 的大小。 设备扩展是系统分配的存储区域，驱动程序可将其用于特定于设备的存储。 有关详细信息，请参阅 [设备扩展](device-extensions.md)。
 
 -   系统定义的常量，指示由设备对象表示的 **DeviceType** 。 有关详细信息，请参阅 [指定设备类型](specifying-device-types.md)。
 
@@ -56,13 +55,13 @@ ms.locfileid: "91590399"
 
 ### <a name="creating-device-objects-for-wdm-bus-drivers"></a>为 WDM 总线驱动程序创建设备对象
 
-当关系类型为**BusRelations**时，WDM 总线驱动程序将创建一个 PDO，以响应[**IRP \_ MN \_ 查询 \_ 设备 \_ 关系**](./irp-mn-query-device-relations.md)请求。
+当关系类型为 **BusRelations** 时，WDM 总线驱动程序将创建一个 PDO，以响应 [**IRP \_ MN \_ 查询 \_ 设备 \_ 关系**](./irp-mn-query-device-relations.md)请求。
 
 以下规则确定总线驱动程序是否调用 **IoCreateDevice** 或 **IoCreateDeviceSecure** 来创建设备对象：
 
 -   如果设备可用于 *raw 模式*，则必须调用 **IoCreateDeviceSecure**。
 
--   如果设备不支持 raw 模式，则总线驱动程序可以使用 **IoCreateDevice** 或 **IoCreateDeviceSecure**。 当总线上设备的默认系统安全充足时，可以使用**IoCreateDevice** ;**IoCreateDeviceSecure**可用于指定更严格的安全描述符。 有关详细信息，请参阅 [控制设备访问](controlling-device-access.md)。
+-   如果设备不支持 raw 模式，则总线驱动程序可以使用 **IoCreateDevice** 或 **IoCreateDeviceSecure**。 当总线上设备的默认系统安全充足时，可以使用 **IoCreateDevice** ;**IoCreateDeviceSecure** 可用于指定更严格的安全描述符。 有关详细信息，请参阅 [控制设备访问](controlling-device-access.md)。
 
 ### <a name="creating-device-objects-for-non-wdm-drivers"></a>为非 WDM 驱动程序创建设备对象
 

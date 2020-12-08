@@ -1,7 +1,6 @@
 ---
 title: lmi
-description: Lmi 扩展显示有关模块的详细的信息。
-ms.assetid: 00438edf-618a-401e-818f-24add7861487
+description: Lmi 扩展显示有关模块的详细信息。
 keywords:
 - lmi Windows 调试
 ms.date: 05/23/2017
@@ -12,29 +11,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 53e387a16ef145a63b919fc367629643747f96de
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1506647246291b67f5611010a83c0950fa3d5d02
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336216"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815496"
 ---
 # <a name="lmi"></a>!lmi
 
 
-**！ Lmi**扩展显示有关模块的详细的信息。
+**！ Lmi** 扩展显示有关模块的详细信息。
 
 ```dbgcmd
 !lmi Module
 ```
 
-## <a name="span-idddklmidbgspanspan-idddklmidbgspanparameters"></a><span id="ddk__lmi_dbg"></span><span id="DDK__LMI_DBG"></span>参数
+## <a name="span-idddk__lmi_dbgspanspan-idddk__lmi_dbgspanparameters"></a><span id="ddk__lmi_dbg"></span><span id="DDK__LMI_DBG"></span>参数
 
 
-<span id="_______Module______"></span><span id="_______module______"></span><span id="_______MODULE______"></span> *模块*   
-指定加载的模块，按名称或基址。
+<span id="_______Module______"></span><span id="_______module______"></span><span id="_______MODULE______"></span>*模块*   
+按名称或按基址指定已加载的模块。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -58,21 +57,21 @@ ms.locfileid: "63336216"
 <a name="remarks"></a>备注
 -------
 
-可以使用确定模块地址[ **lm （列表加载模块）** ](lm--list-loaded-modules-.md)命令。
+可以通过使用 " [**lm (List 已加载模块)**](lm--list-loaded-modules-.md) 命令确定模块地址。
 
-**！ Lmi**扩展分析模块标头，其中显示带格式的信息的摘要。 如果模块标头都分页出来，显示一条错误消息。 若要查看以显示更广泛的标头信息，请使用[ **！ dh** ](-dh.md)扩展命令。
+**！ Lmi** extension 分析模块标头，并显示其中所含信息的格式化摘要。 如果模块标头已分页，则显示一条错误消息。 若要查看更广泛的标头信息显示，请使用 [**！ dh**](-dh.md) 扩展命令。
 
-此命令显示多个字段，每个都有不同的标题。 这些标题的一些具有特定含义：
+此命令会显示多个字段，每个字段都有不同的标题。 其中一些标题具有特定的含义：
 
--   **映像名称**字段显示的可执行文件，包括扩展的名称。 通常情况下，完整路径是包含在用户模式下，但不是在内核模式下。
+-   " **映像名称** " 字段显示可执行文件的名称（包括扩展名）。 通常，完整路径包含在用户模式下，而不是在内核模式下。
 
--   **模块**字段显示*模块名称*。 这通常是只是不带扩展名的文件名称。 在少数情况下，模块名称明显不同于的文件的名称。
+-   " **模块** " 字段显示 *模块名称*。 这通常只是不带扩展名的文件名。 在少数情况下，模块名称与文件名明显不同。
 
--   **符号类型**字段显示了有关调试器的尝试加载此模块的符号信息。 有关各种状态的值的说明，请参阅[符号状态缩写](symbol-status-abbreviations.md)。 如果已加载符号，符号文件名称应遵循此。
+-   " **符号类型** " 字段显示有关调试器尝试加载此模块的符号的信息。 有关各个状态值的说明，请参阅 [符号状态缩写](symbol-status-abbreviations.md)。 如果已加载符号，则符号文件名称将在此之后。
 
--   模块中的第一个地址所示**基址**。 模块的大小所示**大小**。 因此，如果**基址**是"faab4000"和**大小**是"2000"模块从 0xFAAB4000 延伸到 0xFAAB5FFF，非独占。
+-   模块中的第一个地址显示为 " **基址**"。 模块的大小显示为 **大小**。 因此，如果 **基址** 为 "faab4000" 并且 **大小** 为 "2000"，则该模块将从0xFAAB4000 扩展到0xFAAB5FFF （含）。
 
-下面是一个示例：
+以下是示例：
 
 ```dbgcmd
 0:000> lm 
@@ -97,7 +96,7 @@ Debug Data Dirs: Type Size     VA  Pointer
     Load Report: export symbols
 ```
 
-有关在所示的缩写的说明**特征**行的此示例中，请参阅[符号状态缩写](symbol-status-abbreviations.md)。
+有关此示例的 " **特性** " 行上显示的缩写的说明，请参阅 [符号状态缩写](symbol-status-abbreviations.md)。
 
  
 

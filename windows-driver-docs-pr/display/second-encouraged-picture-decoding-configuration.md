@@ -1,18 +1,17 @@
 ---
 title: 第二个建议的图片解码配置
 description: 第二个建议的图片解码配置
-ms.assetid: 9e259768-4588-4a5b-b01b-fca0021cd966
 keywords:
-- 压缩解码集 WDK DirectX VA 的图片
+- 压缩的图片解码设置 WDK DirectX VA
 - 图片解码设置 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c8941d02cbc311a0a801df7f972143d610e954e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e9ef75cb9943fb4382ae9fe24484ea24c515dd09
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390492"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816825"
 ---
 # <a name="second-encouraged-picture-decoding-configuration"></a>第二个建议的图片解码配置
 
@@ -20,9 +19,9 @@ ms.locfileid: "63390492"
 ## <span id="ddk_second_encouraged_picture_decoding_configuration_gg"></span><span id="DDK_SECOND_ENCOURAGED_PICTURE_DECODING_CONFIGURATION_GG"></span>
 
 
-第二个建议的配置提供了改进了的支持的非主机 IDCT 加速。 在此集中实现的第一个配置的加速器应支持第二个。 实现支持这两个配置提供了可以使用其加速功能的方式的灵活性。
+建议的第二个配置提供对脱离主机 IDCT 加速的改进支持。 实现此集内第一个配置的加速器应支持第二个配置。 实现对这两种配置的支持可灵活地使用其加速功能。
 
-此配置定义一样[解码配置的第一张图](first-picture-decoding-configuration.md)有以下例外。
+此配置的定义方式与 [第一个图片解码配置](first-picture-decoding-configuration.md) 相同，但有以下例外情况。
 
 <table>
 <colgroup>
@@ -32,7 +31,7 @@ ms.locfileid: "63390492"
 <thead>
 <tr class="header">
 <th align="left">成员</th>
-<th align="left">ReplTest1</th>
+<th align="left">“值”</th>
 </tr>
 </thead>
 <tbody>

@@ -1,7 +1,6 @@
 ---
 title: 向驱动程序堆栈的下层传递 IRP
 description: 向驱动程序堆栈的下层传递 IRP
-ms.assetid: 69d912c5-83cf-4651-b379-de6baea8ddd0
 keywords:
 - Irp WDK 内核，向下传递堆栈
 - 将 Irp 向下传递驱动程序堆栈 WDK
@@ -10,12 +9,12 @@ keywords:
 - 堆栈位置 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 62611aad7993f2d02b603ed31a3d49c5cc6ebc05
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: fe0dc25cf008851efdc43993338e0e44d258000e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191847"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817173"
 ---
 # <a name="passing-irps-down-the-driver-stack"></a>向驱动程序堆栈的下层传递 IRP
 
@@ -33,7 +32,7 @@ ms.locfileid: "89191847"
 
 1.  如果驱动程序将输入 IRP 传递到下一个较低级别的驱动程序，则调度例程应调用 [**IoSkipCurrentIrpStackLocation**](./mm-bad-pointer.md) 或 [**IoCopyCurrentIrpStackLocationToNext**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocopycurrentirpstacklocationtonext) 来设置下一个较低驱动程序的 i/o 堆栈位置。
 
-    如果驱动程序调用 [**IoAllocateIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateirp) 为较低的驱动程序分配一个或多个附加的 irp，则调度例程必须按照 [处理中间级别驱动程序中的 irp](processing-irps-in-an-intermediate-level-driver.md)中所述的步骤来初始化下一个较低的驱动程序 i/o 堆栈位置。
+    如果驱动程序调用 [**IoAllocateIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateirp) 为更低的驱动程序分配一个或多个附加的 irp，则调度例程必须按照 [处理 Intermediate-Level 驱动程序中的 irp](processing-irps-in-an-intermediate-level-driver.md)中所述的步骤，初始化下一个较低的驱动程序的 i/o 堆栈位置。
 
     调度例程可以修改下一个较低驱动程序的 i/o 堆栈位置中某些请求的一些参数。 例如，当基础设备具有已知的传输容量限制时，较高级别的驱动程序可能会修改大型传输请求的参数，并重复使用 IRP 将部分传输请求发送到基础设备驱动程序。
 
@@ -50,11 +49,11 @@ ms.locfileid: "89191847"
 4.  返回相应的 NTSTATUS 值，例如：
     -   状态已 \_ 挂起
 
-        \_如果输入 irp 是异步请求（如[**IRP \_ Mj \_ 读取**](./irp-mj-read.md)或[**irp \_ mj \_ 写入**](./irp-mj-write.md)），则驱动程序通常会返回 "挂起" 状态。
+        \_如果输入 irp 是异步请求（如 [**IRP \_ Mj \_ 读取**](./irp-mj-read.md)或 [**irp \_ mj \_ 写入**](./irp-mj-write.md)），则驱动程序通常会返回 "挂起" 状态。
 
-    -   调用**IoCallDriver**的结果
+    -   调用 **IoCallDriver** 的结果
 
-        如果输入 IRP 为同步请求（如[**IRP \_ MJ \_ CREATE**](./irp-mj-create.md)），则驱动程序会频繁返回对**IoCallDriver**的调用结果。
+        如果输入 IRP 为同步请求（如 [**IRP \_ MJ \_ CREATE**](./irp-mj-create.md)），则驱动程序会频繁返回对 **IoCallDriver** 的调用结果。
 
 ### <a name="a-lowest-level-device-driver-passes-any-irp-that-it-cannot-complete-in-its-dispatch-routine-on-to-other-driver-routines-as-follows"></a>最低级别的设备驱动程序将它无法在其调度例程中完成的任何 IRP 传递到其他驱动程序例程，如下所示：
 

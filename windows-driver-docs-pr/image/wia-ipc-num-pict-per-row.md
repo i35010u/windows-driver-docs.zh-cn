@@ -1,9 +1,8 @@
 ---
-title: WIA\_IPC\_NUM\_PICT\_每\_行
-description: WIA\_IPC\_NUM\_PICT\_每\_行属性保留供将来使用由 Microsoft 和未实现这一次。
-ms.assetid: 56cce580-ea96-4354-8972-d41b93c511fc
+title: WIA \_ \_ \_ \_ 每行的 PICT \_ 数量
+description: '\_ \_ MICROSOFT 保留 WIA IPC \_ NUM \_ PER \_ ROW 属性以供将来使用，目前不会实现。'
 keywords:
-- WIA_IPC_NUM_PICT_PER_ROW 成像设备
+- WIA_IPC_NUM_PICT_PER_ROW 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,24 +13,24 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2dc5af8aa2fb60bb6674ceb0e046a234d6fbba5f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 2863f2d7e440a3c32660b864a61ff098a9f25eb6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545222"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817201"
 ---
-# <a name="wiaipcnumpictperrow"></a>WIA\_IPC\_NUM\_PICT\_每\_行
+# <a name="wia_ipc_num_pict_per_row"></a>WIA \_ \_ \_ \_ 每行的 PICT \_ 数量
 
 
-WIA\_IPC\_NUM\_PICT\_每\_行属性保留供将来使用由 Microsoft 和未实现这一次。
+\_ \_ MICROSOFT 保留 WIA IPC \_ NUM \_ PER \_ ROW 属性以供将来使用，目前不会实现。
 
 ## <span id="ddk_wia_ipc_num_pict_per_row_si"></span><span id="DDK_WIA_IPC_NUM_PICT_PER_ROW_SI"></span>
 
 
-属性类型：VT\_I4
+属性类型： VT \_ I4
 
-有效值：WIA\_PROP\_NONE
+有效值： WIA " \_ \_ 无"
 
 访问权限：只读
 
@@ -46,11 +45,11 @@ WIA\_IPC\_NUM\_PICT\_每\_行属性保留供将来使用由 Microsoft 和未实�
 <tbody>
 <tr class="odd">
 <td><p>版本</p></td>
-<td><p>在 Windows Vista 和更高版本操作系统中已过时，并应不再使用。 但是，此属性仍定义 Windows Vista 中与应用程序和用于 Windows Server 2003、 Windows XP 和早期版本的 Windows 设备的兼容性。</p></td>
+<td><p>在 Windows Vista 和更高版本的操作系统中已过时，不应再使用。 但是，在 Windows Vista 中仍定义此属性，以与为 Windows Server 2003、Windows XP 和 windows 的早期版本设计的应用程序和设备兼容。</p></td>
 </tr>
 <tr class="even">
 <td><p>标头</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>

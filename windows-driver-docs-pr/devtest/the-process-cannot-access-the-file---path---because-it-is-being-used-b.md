@@ -1,20 +1,19 @@
 ---
-title: 进程无法访问文件路径，因为它正由另一个进程
-description: 进程无法访问的文件路径，因为它正由另一个进程。
-ms.assetid: 3fd89733-e520-4736-a882-b16e0ecfef95
+title: 进程无法访问文件路径，因为另一个进程正在使用该文件
+description: 进程无法访问文件路径，因为另一个进程正在使用该文件路径。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b76689d89ff340aa4bfa8676b9e808f95cd9c942
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ce80d41aa6d408aaf27dbaa9e820523652d5b527
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391299"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817421"
 ---
-# <a name="the-process-cannot-access-the-file-ltpathgt-because-it-is-being-used-by-another-process"></a>进程无法访问文件"&lt;路径&gt;"因为另一个进程正在使用
+# <a name="the-process-cannot-access-the-file-ltpathgt-because-it-is-being-used-by-another-process"></a>进程无法访问文件 " &lt; 路径 &gt; "，因为另一个进程正在使用该文件
 
 
-SDV 尝试删除响应中的文件时显示此消息**staticdv /clean**， **staticdv / 清理 /force**，或**staticdv /cleanalllibs**命令，但它不能正在被另一个应用程序，从而对文件的访问。 若要解决此问题，关闭可能使用的文件并重新提交该命令的任何应用程序。
+当 SDV 尝试删除文件以响应 **staticdv/clean**、 **staticdv/clean/force** 或 **staticdv/cleanalllibs** 命令时，将显示此消息，但它无法访问文件，因为其他应用程序正在访问这些文件。 若要解决此问题，请关闭可能使用文件的所有应用程序，然后重新提交命令。
 
  
 

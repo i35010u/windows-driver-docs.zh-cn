@@ -1,7 +1,6 @@
 ---
 title: idt
 description: Idt 扩展显示)  (的中断服务例程 (IDT) 的指定中断调度表。
-ms.assetid: 6b289fde-85a3-4a40-8354-db6861ca8cb2
 keywords:
 - 'ISR (中断服务例程) '
 - 'IDT (中断调度表) '
@@ -14,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 69afcb7baf46c911eeddcbac8930a505f1050397
-ms.sourcegitcommit: bb3b62a57ba3aea4a0adeefd2d81993367b7b334
+ms.openlocfilehash: 23551d34358b70a9ba984624ae579988dd4c1a80
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88148458"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817019"
 ---
 # <a name="idt"></a>!idt
 
@@ -54,10 +53,10 @@ ms.locfileid: "88148458"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>Windows 2000</strong></p></td>
-<td align="left"><p>Unavailable</p></td>
+<td align="left"><p>不可用</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>Windows XP 及更高版本</strong></p></td>
+<td align="left"><p><strong>Windows XP 及更高版本</strong></p></td>
 <td align="left"><p>Kdexts.dll</p></td>
 </tr>
 </tbody>

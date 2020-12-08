@@ -1,7 +1,6 @@
 ---
 title: 功能拓扑
 description: 功能拓扑
-ms.assetid: f25b3581-5561-4668-8549-65506b03815d
 keywords:
 - 功能拓扑 WDK BDA
 - 控制节点 WDK BDA
@@ -17,12 +16,12 @@ keywords:
 - BDA WDK AVStream，控制节点
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 668f8ae70e9499478c4a2abe7966f61af515b01a
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ae7ab5f4485e99294345b54f293fd34054f1ed56
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186356"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815837"
 ---
 # <a name="functional-topology"></a>功能拓扑
 
@@ -30,7 +29,7 @@ ms.locfileid: "89186356"
 
 
 
-为了能够以一种适用于所有类型的网络类型以及硬件和软件实现的方式（例如，调谐器和解码器）来构建广播接收器筛选器图形，广播体系结构采用了来自 DirectShow 的筛选器图的熟悉概念，并在 *功能拓扑*的概念中对其进行了抽象。 功能拓扑（例如筛选器图）描述了传入信号发生的一系列转换。 但是，与筛选器关系图不同的是，功能拓扑不描述任何实际筛选器或软件模块;或如何在软件或硬件中实现操作。 相反，它描述了抽象 *控制节点*的配置，其中每个节点都表示一个常见的离散操作。
+为了能够以一种适用于所有类型的网络类型以及硬件和软件实现的方式（例如，调谐器和解码器）来构建广播接收器筛选器图形，广播体系结构采用了来自 DirectShow 的筛选器图的熟悉概念，并在 *功能拓扑* 的概念中对其进行了抽象。 功能拓扑（例如筛选器图）描述了传入信号发生的一系列转换。 但是，与筛选器关系图不同的是，功能拓扑不描述任何实际筛选器或软件模块;或如何在软件或硬件中实现操作。 相反，它描述了抽象 *控制节点* 的配置，其中每个节点都表示一个常见的离散操作。
 
 根据计算机上安装的硬件和软件组件的类型，相同的功能拓扑可能会导致不同的筛选器图形配置或 *实际拓扑*。 例如，如果硬件供应商选择在同一张卡上实现一个调谐器和一个解调器，则 [内核流式处理 (KS) 代理模块](/windows-hardware/drivers/ddi/_stream/index) 将筛选器图中的此硬件设备表示为一个具有两个内部控制节点的筛选器。 BDA 设备筛选器可将自身与传统的 DirectShow 过滤器区分开来，因为单个 BDA 设备过滤器可以封装任意多个硬件功能 (控制节点实现) 内置于单个功能模块 (例如，电路卡或芯片) 。
 

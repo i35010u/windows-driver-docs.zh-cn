@@ -1,18 +1,17 @@
 ---
 title: 报告 NIC 的校验和功能
 description: 报告 NIC 的校验和功能
-ms.assetid: a90f8d01-8318-44de-acf0-7903ef7e85e0
 keywords:
 - 任务卸载 WDK TCP/IP 传输，校验和任务
 - 校验和任务 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d17df6edf9790082b36333355deea6d9116878f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 12247f9adbb758f7da747bf182232ef243a5da70
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206245"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815905"
 ---
 # <a name="reporting-a-nics-checksum-capabilities"></a>报告 NIC 的校验和功能
 
@@ -20,11 +19,11 @@ ms.locfileid: "89206245"
 
 
 
-NDIS 微型端口驱动程序报告 NIC 当前是否配置为在 [**NDIS \_ TCP \_ IP \_ 校验和 \_ 卸载**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload) 结构中计算和验证 IP、TCP 和 UDP 校验和。 微型端口驱动程序必须在 [**NDIS \_ 微型端口 \_ 适配器 \_ 卸载 \_ 特性**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_offload_attributes) 结构中包含当前校验和卸载配置。 微型端口驱动程序从[*MiniportInitializeEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)函数调用[**NdisMSetMiniportAttributes**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)函数，并传入 NDIS \_ 微型端口 \_ 适配器 \_ 卸载特性中的信息 \_ 。
+NDIS 微型端口驱动程序报告 NIC 当前是否配置为在 [**NDIS \_ TCP \_ IP \_ 校验和 \_ 卸载**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload) 结构中计算和验证 IP、TCP 和 UDP 校验和。 微型端口驱动程序必须在 [**NDIS \_ 微型端口 \_ 适配器 \_ 卸载 \_ 特性**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_offload_attributes) 结构中包含当前校验和卸载配置。 微型端口驱动程序从 [*MiniportInitializeEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)函数调用 [**NdisMSetMiniportAttributes**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)函数，并传入 NDIS \_ 微型端口 \_ 适配器 \_ 卸载特性中的信息 \_ 。
 
 微型端口驱动程序必须在 [**NDIS \_ 状态 \_ 任务 " \_ 卸载 \_ 当前 \_ 配置**](./ndis-status-task-offload-current-config.md) 状态指示" 中报告当前校验和卸载配置中的更改（如果有）。
 
-为了响应[OID \_ tcp \_ 卸载的 \_ 当前 \_ 配置](./oid-tcp-offload-current-config.md)查询，ndis 在 ndis \_ OID 请求结构的 InformationBuffer 成员中包含 ndis tcp \_ IP \_ 校验和 \_ 卸载结构。 [** \_ **](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload) [** \_ \_ **](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request) **InformationBuffer** NDIS 使用微型端口驱动程序提供的信息。
+为了响应 [OID \_ tcp \_ 卸载的 \_ 当前 \_ 配置](./oid-tcp-offload-current-config.md)查询，ndis 在 ndis \_ OID 请求结构的 InformationBuffer 成员中包含 ndis tcp \_ IP \_ 校验和 \_ 卸载结构。 [**\_**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload) [**\_ \_**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request) **InformationBuffer** NDIS 使用微型端口驱动程序提供的信息。
 
 微型端口驱动程序指示 IPv4 和 IPv6 发送和接收数据包的以下校验和信息：
 

@@ -1,19 +1,18 @@
 ---
 title: 在 AVStream 编解码器中处理数据类型协商
 description: 在 AVStream 编解码器中处理数据类型协商
-ms.assetid: b5212429-dbc8-4e9a-b5a9-2431f8a1eb2a
 keywords:
 - 硬件编解码器支持 WDK AVStream，数据类型协商
 - 数据类型协商 WDK AVStream
 - AVStream 硬件编解码器支持 WDK，处理数据类型协商
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fa0db4919e8af21ec6a6c97aaf1a4cbdb17b0f13
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 4e54322e7c5e9a52eecb4311724b55e5cc59b436
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190591"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815829"
 ---
 # <a name="handling-data-type-negotiation-in-avstream-codecs"></a>在 AVStream 编解码器中处理数据类型协商
 
@@ -35,7 +34,7 @@ ms.locfileid: "89190591"
 
 若要启用成功的数据类型协商，微型驱动程序必须执行以下步骤：
 
-1. 为硬件编解码器筛选器中包含的每个公开的 pin，在[**KSPIN \_ 描述符**](/windows-hardware/drivers/ddi/ks/ns-ks-kspin_descriptor)的**DataRanges**成员中提供受支持的数据范围列表。 例如：
+1. 为硬件编解码器筛选器中包含的每个公开的 pin，在 [**KSPIN \_ 描述符**](/windows-hardware/drivers/ddi/ks/ns-ks-kspin_descriptor)的 **DataRanges** 成员中提供受支持的数据范围列表。 例如：
 
     ```cpp
     const PKSDATARANGE VideoDecoderInputPinDataRanges[8] = {
@@ -60,7 +59,7 @@ ms.locfileid: "89190591"
 
 1. 驱动程序应允许在 KSSTATE \_ STOP/KSSTATE 运行时在 pin 上设置媒体类型 \_ 。 除了之外，不需要执行任何操作，以确保该驱动程序不会禁止此操作。
 
-1. 驱动程序应在 KSPIN 描述符中提供交集处理程序， [** \_ \_ 如**](/windows-hardware/drivers/ddi/ks/ns-ks-_kspin_descriptor_ex)**IntersectHandler**每个 pin 的 IntersectHandler。
+1. 驱动程序应在 KSPIN 描述符中提供交集处理程序， [**\_ \_ 如**](/windows-hardware/drivers/ddi/ks/ns-ks-_kspin_descriptor_ex)**IntersectHandler** 每个 pin 的 IntersectHandler。
 
 1. 微型驱动程序应提供 [**KSPROPERTY \_ 连接 \_ PROPOSEDATAFORMAT**](./ksproperty-connection-proposedataformat.md) 属性的处理程序。
 
@@ -82,6 +81,6 @@ ms.locfileid: "89190591"
 
 1. 解码器的预期输入是基本流。 预期输出为未压缩的源流的未缩放版本 NV12。
 
-1. AVStream 驱动程序的 pin 应具有相互独立的状态。 这意味着，在输出 pin 仍处于**KSSTATE \_ 停止**状态时，输入插针可以从**KSSTATE \_ 停止**切换到**KSSTATE \_ 运行**。
+1. AVStream 驱动程序的 pin 应具有相互独立的状态。 这意味着，在输出 pin 仍处于 **KSSTATE \_ 停止** 状态时，输入插针可以从 **KSSTATE \_ 停止** 切换到 **KSSTATE \_ 运行**。
 
 1. 当微型驱动程序接收到带有可变数据缓冲区大小的属性 GET 请求时，微型驱动程序应将 **NULL** 缓冲区解释为所需缓冲区大小的查询。 在这种情况下，驱动程序应在 IoStatus 字段中指定所需的长度 &gt; 并返回状态 \_ 缓冲区 \_ 溢出。 此外，微型驱动程序应将返回代码设置为警告而不是错误。 例如，对数据交集处理程序遵循此指南。

@@ -6,15 +6,14 @@ keywords:
 - Hyper-v 交换机 Oid
 - WDK Hyper-v 可扩展交换机 Oid
 - Hyper-v 可扩展交换机对象标识符
-ms.assetid: A97C5BF0-7319-4BEE-ABF7-12B11CEAF3DB"
 ms.date: 04/24/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 227f6799d2574984f419d5c698ff3fc034356ecf
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 346ecd181fdba37aec5b2899c9db47ba04743179
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211045"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816015"
 ---
 # <a name="hyper-v-extensible-switch-oids"></a>Hyper-V 可扩展交换机 OID
 
@@ -33,7 +32,7 @@ OID 请求由可扩展交换机的协议边缘发出。 扩展可以检查 OID �
 - E  
 OID 请求由扩展发出。
 
-| 名称                                                                                                 | Q | S | M | P | E |
+| “属性”                                                                                                 | Q | S | M | P | E |
 |---                                                                                                   |---|---|---|---|---|
 | [OID_SWITCH_FEATURE_STATUS_QUERY](./oid-switch-feature-status-query.md)      |   |   | X | X |   | 
 | [OID_SWITCH_NIC_ARRAY](./oid-switch-nic-array.md)                 | X |   |   |   | X | 

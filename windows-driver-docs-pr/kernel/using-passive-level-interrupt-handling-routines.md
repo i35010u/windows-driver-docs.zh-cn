@@ -1,33 +1,32 @@
 ---
 title: 使用被动级别中断服务例程
 description: 从 Windows 8 开始，驱动程序可以使用 IoConnectInterruptEx 例程来)  (ISR 注册被动级 InterruptService 例程。
-ms.assetid: 122BDE14-1552-4F7B-88D3-030423713E00
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 0e71fe587b312f5b2290940a31513128b5ef803b
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: f58aaeaab745c1247c909ef139cd005b01267874
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187047"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816055"
 ---
 # <a name="using-passive-level-interrupt-service-routines"></a>使用被动级别中断服务例程
 
 
 从 Windows 8 开始，驱动程序可以使用 [**IoConnectInterruptEx**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioconnectinterruptex) 例程来)  (ISR 注册被动级 [*InterruptService*](/windows-hardware/drivers/ddi/wdm/nc-wdm-kservice_routine) 例程。 发生关联的中断时，内核的中断陷阱处理程序会将此例程计划为在 IRQL = 被动 \_ 级别运行。 如果 ISR 只能通过 i/o 请求访问设备的硬件寄存器，则它可能需要在被动级别运行。 被动级别 ISR 可以 synchrononously 将 i/o 请求发送到设备，并在请求完成前阻止。
 
-## <a name="registering-a-passive-level-isr"></a>注册被动级 ISR
+## <a name="registering-a-passive-level-isr"></a>注册 Passive-Level ISR
 
 
-**IoConnectInterruptEx**的输入参数是指向[**IO \_ CONNECT \_ 中断 \_ 参数**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_connect_interrupt_parameters)结构的指针。 若要注册被动级 ISR，请将此结构的 **版本** 成员设置为 "连接 \_ 完全 \_ 指定的" 或 "连接" \_ \_ 。 如果 **Version** = CONNECT \_ 完全 \_ 指定，请将 **Irql** 成员设置为被动 \_ 级别，将 **SynchronizeIrql** 成员设置为被动 \_ 级别，并将 **旋转锁** 成员设置为 **NULL**。 如果**Version** = CONNECT \_ LINE \_ ，请设置**SynchronizeIrql** = 被动 \_ 级别，并将**旋转锁**设置  =  **为 NULL**。
+**IoConnectInterruptEx** 的输入参数是指向 [**IO \_ CONNECT \_ 中断 \_ 参数**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_connect_interrupt_parameters)结构的指针。 若要注册被动级 ISR，请将此结构的 **版本** 成员设置为 "连接 \_ 完全 \_ 指定的" 或 "连接" \_ \_ 。 如果 **Version** = CONNECT \_ 完全 \_ 指定，请将 **Irql** 成员设置为被动 \_ 级别，将 **SynchronizeIrql** 成员设置为被动 \_ 级别，并将 **旋转锁** 成员设置为 **NULL**。 如果 **Version** = CONNECT \_ LINE \_ ，请设置 **SynchronizeIrql** = 被动 \_ 级别，并将 **旋转锁** 设置  =  **为 NULL**。
 
 如果中断对象指定被动级 ISR， [**KeSynchronizeExecution**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kesynchronizeexecution) 例程将使用内核同步事件对象而不是自旋锁来将 [*SynchCritSection*](/windows-hardware/drivers/ddi/wdm/nc-wdm-ksynchronize_routine) 例程的执行与 ISR 同步。
 
-此事件对象由注册被动级 ISR 的调用中的 **IoConnectInterruptEx** 例程分配。 调用方不能在此调用中提供自旋锁。  (也就是说，如果 ISR 要在被动级别运行，则调用方必须将**IO \_ CONNECT \_ 中断 \_ 参数**结构的**旋转锁**成员设置为 NULL ) 。否则， **IOCONNECTINTERRUPTEX**将失败，并返回错误状态状态 " \_ 无效参数" \_ 。
+此事件对象由注册被动级 ISR 的调用中的 **IoConnectInterruptEx** 例程分配。 调用方不能在此调用中提供自旋锁。  (也就是说，如果 ISR 要在被动级别运行，则调用方必须将 **IO \_ CONNECT \_ 中断 \_ 参数** 结构的 **旋转锁** 成员设置为 NULL ) 。否则， **IOCONNECTINTERRUPTEX** 将失败，并返回错误状态状态 " \_ 无效参数" \_ 。
 
 如果所提供中断对象的 ISR 在 IRQL = 被动级别运行，则 [**KeAcquireInterruptSpinLock**](/previous-versions/windows/hardware/drivers/ff551914(v=vs.85)) 和 [**KeReleaseInterruptSpinLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleaseinterruptspinlock) 例程会导致 bug 检查 \_ 。
 
-## <a name="devices-that-require-passive-level-interrupt-handling"></a>需要被动级别中断处理的设备
+## <a name="devices-that-require-passive-level-interrupt-handling"></a>需要 Passive-Level 中断处理的设备
 
 
 对于表明级别触发的中断请求的内存映射设备，设备的 ISR 通常在 DIRQL 中从内核的中断陷阱处理程序中调用。 ISR 操作设备中的硬件寄存器，以关闭中断。
@@ -56,11 +55,11 @@ ms.locfileid: "89187047"
 ## <a name="worker-routines"></a>辅助例程
 
 
-在对 **IoConnectInterruptEx**的调用中，驱动程序可以选择在被动级别 ISR 和辅助例程之间拆分中断的处理。 通常情况下，ISR 应执行中断的初始处理 (例如，将级别触发的中断静音) ，并将额外的处理延迟为辅助角色。 尽管 ISR 和 worker 在被动级别运行，但 ISR 以相对较高的优先级运行，并且可能会延迟其他高优先级任务。 这些任务可能包括用于新中断的被动级别的 Isr。
+在对 **IoConnectInterruptEx** 的调用中，驱动程序可以选择在被动级别 ISR 和辅助例程之间拆分中断的处理。 通常情况下，ISR 应执行中断的初始处理 (例如，将级别触发的中断静音) ，并将额外的处理延迟为辅助角色。 尽管 ISR 和 worker 在被动级别运行，但 ISR 以相对较高的优先级运行，并且可能会延迟其他高优先级任务。 这些任务可能包括用于新中断的被动级别的 Isr。
 
 在极少数情况下，中断可能需要很少的处理，那就是被动级 ISR 可以为中断执行所有处理，并且不需要任何工作例程。
 
-有关在 KMDF 驱动程序中使用被动级 Isr 的信息，请参阅 [支持被动级别中断](../wdf/supporting-passive-level-interrupts.md)。
+有关在 KMDF 驱动程序中使用被动级别 Isr 的信息，请参阅 [支持 Passive-Level 中断](../wdf/supporting-passive-level-interrupts.md)。
 
  
 

@@ -2,16 +2,15 @@
 title: IRP_MN_QUERY_INTERFACE
 description: 通过 IRP_MN_QUERY_INTERFACE 请求，驱动程序可以将直接调用接口导出到其他驱动程序。导出接口的总线驱动程序必须 (子 PDOs) 为其子设备处理此请求。
 ms.date: 08/12/2017
-ms.assetid: ae1dab46-c387-4e5f-9368-451e625ddbc1
 keywords:
-- IRP_MN_QUERY_INTERFACE 内核模式驱动程序体系结构
+- IRP_MN_QUERY_INTERFACE Kernel-Mode 驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: d2ab6d31db33ee491a05202055c9c6cb463da058
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 8a12f0939d57aefe9539d698307c09077ec6264a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103136"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816081"
 ---
 # <a name="irp_mn_query_interface"></a>IRP \_ MN \_ 查询 \_ 接口
 
@@ -47,7 +46,7 @@ ms.locfileid: "90103136"
 ## <a name="input-parameters"></a>输入参数
 
 
-[**IO \_ 堆栈 \_ 位置**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)结构的**参数. QueryInterface**成员本身是一个结构，它描述所请求的接口。 此结构包含以下信息：
+[**IO \_ 堆栈 \_ 位置**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)结构的 **参数. QueryInterface** 成员本身是一个结构，它描述所请求的接口。 此结构包含以下信息：
 
 ```cpp
 CONST GUID *InterfaceType;
@@ -63,7 +62,7 @@ PVOID InterfaceSpecificData
 指向标识所请求的接口的 GUID。 GUID 可以是系统定义的接口，如 GUID \_ 总线 \_ 接口 \_ 标准或自定义接口。 系统定义的接口的 Guid 列在 Wdmguid 中。 应通过 Uuidgen.exe 生成自定义接口的 Guid。
 
 <a href="" id="size"></a>**规格**  
-指定所请求的接口的大小。 处理此 IRP 的驱动程序不能返回大于**大小**字节的[**接口**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_interface)结构。
+指定所请求的接口的大小。 处理此 IRP 的驱动程序不能返回大于 **大小** 字节的 [**接口**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_interface)结构。
 
 <a href="" id="version"></a>**版本**  
 指定所请求的接口的版本。
@@ -94,16 +93,16 @@ PVOID InterfaceSpecificData
 
 如果成功，则总线驱动程序将 **Irp- &gt; IoStatus** 设置为零。
 
-如果函数或筛选器驱动程序不处理此 IRP，它将调用 [**IoSkipCurrentIrpStackLocation**](./mm-bad-pointer.md) 并将 IRP 向下传递到下一个驱动程序。 此类驱动程序不得修改 ** &gt; IoStatus 状态** ，并且不能完成 irp。
+如果函数或筛选器驱动程序不处理此 IRP，它将调用 [**IoSkipCurrentIrpStackLocation**](./mm-bad-pointer.md) 并将 IRP 向下传递到下一个驱动程序。 此类驱动程序不得修改 **&gt; IoStatus 状态** ，并且不能完成 irp。
 
-如果总线驱动程序不会导出请求的接口，因此不会为子 PDO 处理此 IRP，则总线驱动程序会保留 ** &gt; IoStatus** ，并完成 irp。
+如果总线驱动程序不会导出请求的接口，因此不会为子 PDO 处理此 IRP，则总线驱动程序会保留 **&gt; IoStatus** ，并完成 irp。
 
 <a name="operation"></a>操作
 ---------
 
 如果参数指定了驱动程序支持的接口，则驱动程序将处理此 IRP。
 
-如果 IRP 请求驱动程序不支持的接口，则驱动程序不得将此 IRP 排队。 驱动程序必须检查其[**IO \_ 堆栈 \_ 位置**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)结构中的**InterfaceType** 。 如果接口不是驱动程序支持的接口，则驱动程序必须将 IRP 传递到设备堆栈中的下一个较低的驱动程序，而不会受到阻止。
+如果 IRP 请求驱动程序不支持的接口，则驱动程序不得将此 IRP 排队。 驱动程序必须检查其 [**IO \_ 堆栈 \_ 位置**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)结构中的 **InterfaceType** 。 如果接口不是驱动程序支持的接口，则驱动程序必须将 IRP 传递到设备堆栈中的下一个较低的驱动程序，而不会受到阻止。
 
 每个接口都必须提供 **InterfaceReference** 和 **InterfaceDereference** 例程，并且导出接口的驱动程序必须在 [**接口**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_interface) 结构中提供这些例程的地址。 在驱动程序返回接口以响应 IRP 之前，它必须通过调用其 **InterfaceReference** 例程来递增接口的引用计数。 当请求接口的驱动程序使用完该驱动程序时，该驱动程序必须通过调用接口的 **InterfaceDereference** 例程来减小引用计数。
 
@@ -115,7 +114,7 @@ PVOID InterfaceSpecificData
 
 请参阅 [即插即用](./introduction-to-plug-and-play.md) ，了解用于处理 [即插即用次要 irp](plug-and-play-minor-irps.md)的一般规则。
 
-此 IRP 专用于在设备的分层内核模式驱动程序之间传递例程入口点。 不要将此 IRP 公开的接口与 *设备接口*混淆。 设备接口主要用于公开设备的路径，供用户模式组件或其他内核组件使用。 有关设备接口的详细信息，请参阅 [设备接口类](../install/overview-of-device-interface-classes.md)。
+此 IRP 专用于在设备的分层内核模式驱动程序之间传递例程入口点。 不要将此 IRP 公开的接口与 *设备接口* 混淆。 设备接口主要用于公开设备的路径，供用户模式组件或其他内核组件使用。 有关设备接口的详细信息，请参阅 [设备接口类](../install/overview-of-device-interface-classes.md)。
 
 **正在发送此 IRP**
 
@@ -123,7 +122,7 @@ PVOID InterfaceSpecificData
 
 -   从分页池分配 [**接口**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_interface) 结构，并将其初始化为零。 如果 &gt; 根据接口协定，将在 IRQL = 调度 \_ 级别调用接口，则调用方可以将内容复制到从非分页池分配的内存。
 
--   在 IRP 的下一个 i/o 堆栈位置设置值：将**MajorFunction**设置为[**irp \_ MJ \_ PNP**](irp-mj-pnp.md)，将**MinorFunction**设置为**irp \_ MN \_ 查询 \_ 接口**，并在参数中设置相应的值 **。**
+-   在 IRP 的下一个 i/o 堆栈位置设置值：将 **MajorFunction** 设置为 [**irp \_ MJ \_ PNP**](irp-mj-pnp.md)，将 **MinorFunction** 设置为 **irp \_ MN \_ 查询 \_ 接口**，并在参数中设置相应的值 **。**
 
 -   将 **IoStatus** 初始化为 \_ 不 \_ 受支持的状态。
 
@@ -133,7 +132,7 @@ PVOID InterfaceSpecificData
 
 -   当不再需要接口时，使用 [*InterfaceDereference*](/windows-hardware/drivers/ddi/wdm/nc-wdm-pinterface_dereference) 例程递减引用计数。 取消引用接口后，不要调用任何接口例程。
 
-驱动程序通常将此 IRP 发送到连接驱动程序的设备堆栈的顶部。 如果驱动程序将此 IRP 发送到不同的设备堆栈，则驱动程序必须在另一台设备上注册目标设备通知（如果其他设备不是驱动程序所服务的设备的祖先）。 此类驱动程序使用**EventCategoryTargetDeviceChange**的*EventCategory*调用[**IoRegisterPlugPlayNotification**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterplugplaynotification) 。 当驱动程序接收到类型 GUID \_ 目标 \_ 设备查询删除的通知时 \_ \_ ，驱动程序必须取消对接口的引用。 如果接口收到后续的 GUID \_ 目标 \_ 设备 \_ 删除已取消的 \_ 通知，则该驱动程序可以重新查询该驱动程序。
+驱动程序通常将此 IRP 发送到连接驱动程序的设备堆栈的顶部。 如果驱动程序将此 IRP 发送到不同的设备堆栈，则驱动程序必须在另一台设备上注册目标设备通知（如果其他设备不是驱动程序所服务的设备的祖先）。 此类驱动程序使用 **EventCategoryTargetDeviceChange** 的 *EventCategory* 调用 [**IoRegisterPlugPlayNotification**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterplugplaynotification) 。 当驱动程序接收到类型 GUID \_ 目标 \_ 设备查询删除的通知时 \_ \_ ，驱动程序必须取消对接口的引用。 如果接口收到后续的 GUID \_ 目标 \_ 设备 \_ 删除已取消的 \_ 通知，则该驱动程序可以重新查询该驱动程序。
 
 <a name="requirements"></a>要求
 ------------
@@ -151,7 +150,7 @@ PVOID InterfaceSpecificData
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**总线 \_ 接口 \_ 标准**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_bus_interface_standard)

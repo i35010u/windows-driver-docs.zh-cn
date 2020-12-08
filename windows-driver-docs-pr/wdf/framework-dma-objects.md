@@ -1,7 +1,6 @@
 ---
 title: 框架 DMA 对象
 description: 框架 DMA 对象
-ms.assetid: a5073bb0-a8c9-49fc-b280-e781f9f9c256
 keywords:
 - DMA 操作 WDK KMDF，对象
 - 总线主控 DMA WDK KMDF，对象
@@ -13,12 +12,12 @@ keywords:
 - 事务对象 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 639a304265bac147a21804d1239b655c02922076
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ac5d241101d1e9181e83e68200e9d57ad8b03692
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184047"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815709"
 ---
 # <a name="framework-dma-objects"></a>框架 DMA 对象
 

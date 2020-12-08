@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x11F INVALID_DRIVER_HANDLE
-description: INVALID_DRIVER_HANDLE bug 检查具有 0x0000011F 值。 这表示有人关闭了之间插入驱动程序对象和引用了句柄的驱动程序的初始句柄。
-ms.assetid: A669256B-737D-4215-8E0E-5500D7704F4E
+description: INVALID_DRIVER_HANDLE bug 检查的值为0x0000011F。 这表明有人在插入驱动程序对象和引用句柄之间关闭了驱动程序的初始句柄。
 keywords:
 - Bug 检查 0x11F INVALID_DRIVER_HANDLE
 - INVALID_DRIVER_HANDLE
@@ -13,31 +12,31 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 876be74283188178d45152b7c86588ece60c1111
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 0e3dd4d54d0c364d75bd6bec8a832350b079fc7c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67520860"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816969"
 ---
-# <a name="bug-check-0x11f-invaliddriverhandle"></a>Bug 检查 0x11F：无效\_驱动程序\_处理
+# <a name="bug-check-0x11f-invalid_driver_handle"></a>Bug 检查0x11F： \_ 驱动程序 \_ 句柄无效
 
 
-无效\_驱动程序\_句柄 bug 检查的值为 0x0000011F。 这表示有人关闭了之间插入驱动程序对象和引用了句柄的驱动程序的初始句柄。
+无效 \_ 驱动程序 \_ 句柄 bug 检查的值为0x0000011F。 这表明有人在插入驱动程序对象和引用句柄之间关闭了驱动程序的初始句柄。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="invaliddriverhandle-parameters"></a>无效\_驱动程序\_句柄参数
+## <a name="invalid_driver_handle-parameters"></a>\_驱动程序 \_ 句柄参数无效
 
 
 | 参数 | 描述                                         |
 |-----------|-----------------------------------------------------|
 | 1         | 驱动程序对象的句柄值。             |
-| 2         | 尝试引用该对象返回的状态。 |
-| 3         | PDRIVER 地址\_对象。                 |
-| 4         | 保留                                            |
+| 2         | 尝试引用对象时返回的状态。 |
+| 3         | PDRIVER 对象的地址 \_ 。                 |
+| 4         | 预留                                            |
 
  
 

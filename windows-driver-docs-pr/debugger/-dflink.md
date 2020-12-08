@@ -1,7 +1,6 @@
 ---
 title: dflink
-description: Dflink 扩展显示链接的列表中向前定位。
-ms.assetid: b75a01f6-557c-4602-83fa-629e16ba8c5d
+description: Dflink 扩展在正方向上按链接列表显示。
 keywords:
 - dflink Windows 调试
 ms.date: 05/23/2017
@@ -12,35 +11,35 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 74ebe7ae760ea6e1d35bddd08a80c5321dd2ebfa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1cb4d2ef253daf4643774129551815dd2d17a558
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334588"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815542"
 ---
 # <a name="dflink"></a>!dflink
 
 
-**！ Dflink**扩展插件都会显示在正向链接的列表。
+**！ Dflink** extension 按向前方向显示链接列表。
 
 ```dbgcmd
 !dflink Address [Count] [Bias]  
 ```
 
-## <a name="span-idddkdflinkdbgspanspan-idddkdflinkdbgspanparameters"></a><span id="ddk__dflink_dbg"></span><span id="DDK__DFLINK_DBG"></span>参数
+## <a name="span-idddk__dflink_dbgspanspan-idddk__dflink_dbgspanparameters"></a><span id="ddk__dflink_dbg"></span><span id="DDK__DFLINK_DBG"></span>参数
 
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *Address*   
-指定的地址列表\_条目结构。 与此节点将开始显示。
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*地址*   
+指定列表条目结构的地址 \_ 。 显示将从该节点开始。
 
-<span id="_______Count______"></span><span id="_______count______"></span><span id="_______COUNT______"></span> *Count*   
-指定要显示的列表项的最大数目。 如果省略，默认值为 32。
+<span id="_______Count______"></span><span id="_______count______"></span><span id="_______COUNT______"></span>*计数*   
+指定要显示的列表条目的最大数量。 如果省略此值，则默认值为32。
 
-<span id="_______Bias______"></span><span id="_______bias______"></span><span id="_______BIAS______"></span> *偏差*   
-指定要在每个指针中忽略位数的掩码。 每个**Flink**地址将它与 (不*偏差*) 之前遵循下一位置。 默认值为零 （即，不应忽略的任何位）。
+<span id="_______Bias______"></span><span id="_______bias______"></span><span id="_______BIAS______"></span>*偏向*   
+指定每个指针中要忽略的位掩码。 每个 **Flink** 地址都是 And，在将其跟在下一位置之前， (不会) *偏移* 。 默认值为零 (换言之，不要忽略任何位) 。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -64,9 +63,9 @@ ms.locfileid: "63334588"
 <a name="remarks"></a>备注
 -------
 
-**！ Dflink**扩展遍历**Flink**字段列表的\_条目结构，并显示最多四个 ULONGs 在每个地址。 若要进入另一个方向，使用[ **！ dblink**](-dblink.md)。
+**！ Dflink** EXTENSION 遍历列表条目结构的 **Flink** 字段 \_ ，并在每个地址最多显示四个 ULONGs。 若要继续，请使用 [**！ dblink**](-dblink.md)。
 
-[ **Dl （显示链接列表）** ](dl--display-linked-list-.md)命令是功能更多[ **！ dblink** ](-dblink.md)并 **！ dflink**。
+[**Dl (显示链接列表)**](dl--display-linked-list-.md)命令比 [**！ dblink**](-dblink.md)和 **！ dflink** 更通用。
 
  
 

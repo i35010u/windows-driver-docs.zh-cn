@@ -1,7 +1,6 @@
 ---
 title: 框架基对象
 description: 框架基对象
-ms.assetid: 9d400192-faf0-4d8f-849b-6b955105e21a
 keywords:
 - UMDF 对象 WDK，基本对象
 - 框架对象 WDK UMDF，基本对象
@@ -9,12 +8,12 @@ keywords:
 - IWDFObject
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 560755d29c04ef1cf09cb5f35cd34db6370d31e8
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: bd82c447b71c35d354f5b9daf0f72575e041a065
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189185"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815719"
 ---
 # <a name="framework-base-object"></a>框架基对象
 

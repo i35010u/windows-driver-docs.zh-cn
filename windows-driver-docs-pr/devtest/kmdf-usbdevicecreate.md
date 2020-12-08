@@ -1,7 +1,6 @@
 ---
 title: 'UsbDeviceCreate 规则 (kmdf) '
 description: UsbDeviceCreate 规则指定不在 EvtDevicePrepareHardware 事件回调函数之外调用 WdfUsbTargetDeviceCreate 和 WdfUsbTargetDeviceCreateWithParameters 方法。
-ms.assetid: 70178dad-149b-4f87-a885-28feed906a5f
 ms.date: 05/21/2018
 keywords:
 - 'UsbDeviceCreate 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d17c044dfc3009d444269bfd8422e6cf7ffc5a6
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 5e2ac374167eaf59e9fa1b065d3a0d133c1d1231
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104746"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817449"
 ---
 # <a name="usbdevicecreate-rule-kmdf"></a>UsbDeviceCreate 规则 (kmdf) 
 
 
-**UsbDeviceCreate**规则指定不在[*EvtDevicePrepareHardware*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)事件回调函数之外调用[**WdfUsbTargetDeviceCreate**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicecreate)和[**WdfUsbTargetDeviceCreateWithParameters**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicecreatewithparameters)方法。
+**UsbDeviceCreate** 规则指定不在 [*EvtDevicePrepareHardware*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)事件回调函数之外调用 [**WdfUsbTargetDeviceCreate**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicecreate)和 [**WdfUsbTargetDeviceCreateWithParameters**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicecreatewithparameters)方法。
 
 **驱动程序模型： KMDF**
 

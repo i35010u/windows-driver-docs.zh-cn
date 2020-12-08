@@ -1,17 +1,16 @@
 ---
 title: 确定是否存在泄漏
 description: 确定是否存在泄漏
-ms.assetid: a29db56e-6507-48f4-ad30-eb0a849f8673
 keywords:
 - 内存泄漏，检测
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a663125e0ce43b774769e1745ae83b58456f066e
-ms.sourcegitcommit: eefc6ae6d9621d0735b3c63e718ee5838d57a6bc
+ms.openlocfilehash: 95c3ba4d34641538bfe534948caf8e0bc8aeeb28
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92886068"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816387"
 ---
 # <a name="determining-whether-a-leak-exists"></a>确定是否存在泄漏
 

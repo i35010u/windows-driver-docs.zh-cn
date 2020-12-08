@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 流 \_ RATECAPABILITY
 description: 使用 KSPROPERTY \_ STREAM \_ RATECAPABILITY 属性，图形管理器可以查询特定流的流中涉及的所有连接点， (通过 KSPROPERTY PIN DATAROUTING) 获取该流， \_ \_ 以便在将请求速率调整为名义速率时获得相应的功能。
-ms.assetid: 73e3bf4e-2815-4890-ba12-77fbe7a7c589
 keywords:
 - KSPROPERTY_STREAM_RATECAPABILITY 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b7cb8ccb72f0240fbded73020f94b052aa69f6e
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: d131d4eb1667fa9901a731b06d74fb4499cbef64
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106992"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817043"
 ---
 # <a name="ksproperty_stream_ratecapability"></a>KSPROPERTY \_ 流 \_ RATECAPABILITY
 
@@ -92,7 +91,7 @@ Pin 必须能够接受具有类似拓扑的任何 pin 所使用的接口标识�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSRATE**](/windows-hardware/drivers/ddi/ks/ns-ks-ksrate)

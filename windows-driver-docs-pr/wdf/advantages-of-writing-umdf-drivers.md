@@ -1,44 +1,43 @@
 ---
 title: 编写 UMDF 驱动程序的优点
-description: 本主题介绍编写而不是内核模式驱动程序的用户模式驱动程序框架 (UMDF) 驱动程序的优点。
-ms.assetid: 28db2121-a5d4-4375-8081-52709416efb0
+description: 本主题介绍编写 User-Mode Driver Framework (UMDF) 驱动程序而不是内核模式驱动程序的优点。
 keywords:
-- 用户模式驱动程序框架 WDK 优点
-- UMDF WDK 优点
+- User-Mode Driver Framework WDK，优点
+- UMDF WDK，优点
 - 用户模式驱动程序 WDK UMDF，优点
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 355d215fb633b51e6e629833ab7fb8699963b0bb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 423ac9f9a75de511b73149064c3ac4c4ccbc715d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350726"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815791"
 ---
 # <a name="advantages-of-writing-umdf-drivers"></a>编写 UMDF 驱动程序的优点
 
 
-本主题介绍编写而不是内核模式驱动程序的用户模式驱动程序框架 (UMDF) 驱动程序的优点。
+本主题介绍编写 User-Mode Driver Framework (UMDF) 驱动程序而不是内核模式驱动程序的优点。
 
-在编写 UMDF 驱动程序时，将从以下受益：
+写入 UMDF 驱动程序时，将从以下内容受益：
 
--   UMDF 驱动程序导致更高版本操作系统的稳定性，因为它们具有访问权限仅对其运行进程的地址空间。
--   因为 UMDF 驱动程序下运行**LocalService**帐户，具有有限的访问用户的数据或系统文件。
--   用户模式驱动程序运行在更简单环境比内核模式驱动程序中。 例如，内核模式驱动程序必须考虑到帐户的 IRQL、 页面错误和线程上下文。 在用户模式下，但是，这些问题不存在。 用户模式驱动程序始终在请求过程中的不同线程中运行，并始终采用页面错误。
+-   UMDF 驱动程序会导致更高的操作系统稳定性，因为它们只能访问运行它们的进程的地址空间。
+-   因为 UMDF 驱动程序在 **LocalService** 帐户下运行，所以它们对用户的数据或系统文件具有有限的访问权限。
+-   用户模式驱动程序在比内核模式驱动程序更简单的环境中运行。 例如，内核模式驱动程序必须考虑到 IRQL、页面错误和线程上下文。 但在用户模式下，这些问题并不存在。 用户模式驱动程序始终在来自请求进程的不同线程中运行，并且始终可以获取页面错误。
 
--   UMDF 版本 2 提供了 KMDF 大多数区域中的功能奇偶一致性。 有关完整比较，请参阅[比较 UMDF 2 功能提供给 KMDF](comparing-umdf-2-0-functionality-to-kmdf.md)。
--   UMDF 版本 2 便于 KMDF 和 UMDF 之间进行转换。 请参阅[如何将 KMDF 驱动程序转换为 UMDF 2 驱动程序 （和进行相反转换）](how-to-generate-a-umdf-driver-from-a-kmdf-driver.md)。
--   可以通过使用用户模式下调试器，或从 UMDF 版本 2，内核模式调试程序调试 UMDF 驱动程序。
+-   UMDF 版本2在大多数区域中提供 KMDF 的功能奇偶校验。 有关完整比较，请参阅 [将 UMDF 2 功能与 KMDF 进行比较](comparing-umdf-2-0-functionality-to-kmdf.md)。
+-   UMDF 版本2有助于在 KMDF 和 UMDF 之间转换。 请参阅 [如何 (将 KMDF 驱动程序转换为 UMDF 2 驱动程序，反之亦然) ](how-to-generate-a-umdf-driver-from-a-kmdf-driver.md)。
+-   您可以通过使用用户模式调试器，或从 UMDF 版本2（内核模式调试程序）开始调试 UMDF 驱动程序。
 
--   使用 KMDF 和 UMDF 版本 2 开始，可以使用 Wdfkd.dll 调试器扩展命令。 有关详细信息，请参阅[调试器扩展](debugger-extensions-for-kmdf-drivers.md)。
+-   可以通过 KMDF 使用 Wdfkd.dll 调试程序扩展命令，并从 UMDF 版本2开始。 有关详细信息，请参阅 [调试器扩展](debugger-extensions-for-kmdf-drivers.md)。
 
-总体 WDF 模型的重要目标是提供智能默认值，以便可以专注于你设备的硬件和编写代码来执行任务所共有的大多数驱动程序。
+总体 WDF 模型的基本目标是提供智能默认值，以便您可以专注于设备硬件，并避免编写代码来执行大多数驱动程序所共有的任务。
 
-若要实现此目标，框架设计用于处理一次"参加"，按照上的驱动程序。 当您编写 UMDF 驱动程序时，只会影响你的设备的事件提供回调例程。 例如，某些设备需要干预，立即在开启之后，只需之前关闭了。 此类设备的驱动程序可以实现在这些时间框架将调用的回调函数。
+为了实现此目标，该框架旨在与 "选择加入" 的驱动程序一起使用。 写入 UMDF 驱动程序时，仅为影响设备的事件提供回调例程。 例如，某些设备在开机后以及在关闭之前都需要立即进行干预。 此类设备的驱动程序可以实现框架在这些时间调用的回调函数。
 
-该驱动程序包含用于处理其设备为其需要特定于设备的支持这些事件的代码。 由框架的默认值，可以处理所有其他事件。
+驱动程序包括仅处理其设备需要特定于设备的支持的事件的代码。 所有其他事件都可以通过框架默认值进行处理。
 
-此外，驱动程序可以配置其 I/O 请求队列，以便在 framework 停止当设备在低功耗状态并恢复调度后设备返回到操作状态时，将请求发送。 同样，如果设备处于低功耗状态时，I/O 请求到达时，框架可以自动打开设备。
+此外，驱动程序可以配置其 i/o 请求队列，以便在设备处于低功耗状态时停止调度请求，并在设备恢复到操作状态后恢复调度。 同样，如果 i/o 请求在设备处于低功耗状态时到达，则框架可以自动打开设备。
 
  
 

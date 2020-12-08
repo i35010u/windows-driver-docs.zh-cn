@@ -1,7 +1,6 @@
 ---
 title: I/O 队列的示例使用
 description: I/O 队列的示例使用
-ms.assetid: 13b09254-ce0a-4c7d-bdb1-d28ec094a266
 keywords:
 - I/o 队列 WDK KMDF，示例
 - 请求处理程序 WDK KMDF
@@ -23,12 +22,12 @@ keywords:
 - WdfIoQueueDispatchManual
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f365ee9a938cf9da1dd7065c0c4c537f40232ea
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d1f67c941a1cf10f80f49df21d8f6ef652dd9c86
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191559"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815747"
 ---
 # <a name="example-uses-of-io-queues"></a>I/O 队列的示例使用
 
@@ -60,7 +59,7 @@ ms.locfileid: "89191559"
 
 如果要为每次只提供一次读取和写入请求的磁盘驱动器编写函数驱动程序，则函数驱动程序每个设备只需要一个 i/o 队列。
 
-驱动程序可以使用当驱动程序调用[**WdfIoQueueCreate**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuecreate)时框架创建的默认 i/o 队列，并在队列的[**WDF \_ IO \_ 队列 \_ 配置**](/windows-hardware/drivers/ddi/wdfio/ns-wdfio-_wdf_io_queue_config)结构中将**DefaultQueue**设置为**TRUE** 。 在 WDF \_ IO \_ 队列 \_ 配置结构中，驱动程序还应指定：
+驱动程序可以使用当驱动程序调用 [**WdfIoQueueCreate**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuecreate)时框架创建的默认 i/o 队列，并在队列的 [**WDF \_ IO \_ 队列 \_ 配置**](/windows-hardware/drivers/ddi/wdfio/ns-wdfio-_wdf_io_queue_config)结构中将 **DefaultQueue** 设置为 **TRUE** 。 在 WDF \_ IO \_ 队列 \_ 配置结构中，驱动程序还应指定：
 
 -   **WdfIoQueueDispatchSequential** 作为调度方法，因此默认 i/o 队列将同步向驱动程序提供 i/o 请求。
 
@@ -82,7 +81,7 @@ ms.locfileid: "89191559"
 
 -   **WdfIoQueueDispatchSequential** 作为每个队列的调度方法，以便框架能够同步地向驱动程序提供 i/o 请求。
 
--   每个队列 ([*EvtIoDefault*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_default)、 [*EvtIoRead*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_read)和[*EvtIoWrite*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_write)) 的不同[请求处理程序](request-handlers.md)，这将接收队列的 i/o 请求。
+-   每个队列 ([*EvtIoDefault*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_default)、 [*EvtIoRead*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_read)和 [*EvtIoWrite*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_write)) 的不同 [请求处理程序](request-handlers.md)，这将接收队列的 i/o 请求。
 
 在调用 [**WdfIoQueueCreate**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuecreate)之后，驱动程序可以调用 [**WdfDeviceConfigureRequestDispatching**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceconfigurerequestdispatching) 两次，以便将所有读取请求转发到其中一个额外队列和所有写入请求。
 

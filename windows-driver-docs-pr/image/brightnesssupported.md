@@ -1,9 +1,8 @@
 ---
 title: BrightnessSupported 元素
-description: 所需的 BrightnessSupported 元素指定扫描设备是否支持扫描亮度设置的用户控件。
-ms.assetid: aa0eb627-694f-45a1-a923-07fc04b0612b
+description: 必需的 BrightnessSupported 元素指定扫描设备是否支持用户控制扫描亮度设置。
 keywords:
-- BrightnessSupported 元素成像设备
+- BrightnessSupported 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 100c4d35c4eb69b1ecb30014d309ef306e24bb36
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: db3e677c9332ddfbb74ea64afee67a33c923abde
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373338"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816239"
 ---
 # <a name="brightnesssupported-element"></a>BrightnessSupported 元素
 
 
-所需**BrightnessSupported**元素指定扫描设备是否支持扫描亮度设置的用户控件。
+必需的 **BrightnessSupported** 元素指定扫描设备是否支持用户控制扫描亮度设置。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -41,12 +40,12 @@ ms.locfileid: "63373338"
 <a name="text-value"></a>文本值
 ----------
 
-必需。 一个布尔值，必须为 0，1，为 false，或，则返回 true。**falsetrue**
+必需。 必须为0、1、false 或 true 的布尔值。**falsetrue**
 
 ## <a name="child-elements"></a>子元素
 
 
-没有子元素。
+没有任何子元素。
 
 ## <a name="parent-elements"></a>父元素
 
@@ -70,9 +69,9 @@ ms.locfileid: "63373338"
 <a name="remarks"></a>备注
 -------
 
-如果扫描设备允许用户控制的扫描亮度设置，WSD 扫描服务应返回 1 (**，则返回 true**); 否则为它应返回 0 (**false**)。
+如果扫描设备允许用户控制扫描亮度设置，则 WSD 扫描服务应返回 1 (**true**) ;否则，它应返回 0 (**false**) 。
 
-不能扩展此元素允许的值。
+不能扩展此元素的允许值。
 
 ## <a name="see-also"></a>请参阅
 

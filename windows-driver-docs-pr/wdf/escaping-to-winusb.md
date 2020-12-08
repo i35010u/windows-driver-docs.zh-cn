@@ -1,19 +1,18 @@
 ---
 title: 从 UMDF 调用 WinUSB
 description: 从 UMDF 调用 WinUSB
-ms.assetid: 33455d61-0eb3-47ef-998a-6e1b5d7db24e
 keywords:
 - WinUSB WDK UMDF
 - WinUSB WDK UMDF，转义 WinUSB
 - 用户模式驱动程序 WDK UMDF，转义给 WinUSB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 73adde18d0a88a20a3a7a21d9818560d2e5cf38e
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 9a5b2f43edea998eb0f372cd7179296c3146717e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185061"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815751"
 ---
 # <a name="calling-winusb-from-umdf"></a>从 UMDF 调用 WinUSB
 

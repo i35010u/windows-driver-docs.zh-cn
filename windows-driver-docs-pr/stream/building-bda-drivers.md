@@ -1,7 +1,6 @@
 ---
 title: 生成 BDA 驱动程序
 description: 生成 BDA 驱动程序
-ms.assetid: 2272fa18-5102-443e-8728-f256444ab044
 keywords:
 - 广播驱动程序体系结构 WDK AVStream，构建驱动程序
 - BDA WDK AVStream，构建驱动程序
@@ -10,12 +9,12 @@ keywords:
 - 宏 WDK BDA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 486f2e4d8617ff99e2c711bf6b1ba300e94a9b35
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 9b96214afd3a829570d43923f288018df9efe630
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186387"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816515"
 ---
 # <a name="building-bda-drivers"></a>生成 BDA 驱动程序
 
@@ -23,7 +22,7 @@ ms.locfileid: "89186387"
 
 
 
-**注意**   从 Windows 8 开始，WDK 构建环境不再使用 Build.exe。 请参阅 [WDK 和 Visual Studio 生成环境](../devtest/wdk-and-visual-studio-build-environment.md)。 以下讨论仅适用于使用 WDK Windows 7 版本或更早版本构建驱动程序的情况。
+**注意**  从 Windows 8 开始，WDK 构建环境不再使用 Build.exe。 请参阅 [WDK 和 Visual Studio 生成环境](../devtest/wdk-and-visual-studio-build-environment.md)。 以下讨论仅适用于使用 WDK Windows 7 版本或更早版本构建驱动程序的情况。
 
  
 
@@ -93,7 +92,7 @@ DRIVERTYPE=WDM
 ```
 
 <a href="" id="--------use-mapsym-------"></a> 使用 \_ MAPSYM   
-除了 *.pdb*符号文件外，还会生成*符号*符号文件。 这些文件将名称映射到地址。 需要设置此宏才能在 Windows 98/Me 平台上进行调试。 设置此宏，如下面的示例中所示：
+除了 *.pdb* 符号文件外，还会生成 *符号* 符号文件。 这些文件将名称映射到地址。 需要设置此宏才能在 Windows 98/Me 平台上进行调试。 设置此宏，如下面的示例中所示：
 
 ```make
 USE_MAPSYM=1

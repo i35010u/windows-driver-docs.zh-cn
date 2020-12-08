@@ -1,18 +1,17 @@
 ---
 title: 创建事务客户端
 description: 创建事务客户端
-ms.assetid: 75d4758b-dfba-431b-9bfa-9dcb98c2a7cc
 keywords:
 - 事务性客户端 WDK KTM
 - 事务性客户端 WDK KTM，创建事务性客户端
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 803e0fca9ab73b8c481c2a12f42c9ffaf95f0af3
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ae9a789463b4e05f69d3d50eb2ca6adb3f684511
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190075"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816111"
 ---
 # <a name="creating-a-transactional-client"></a>创建事务客户端
 
@@ -33,7 +32,7 @@ ms.locfileid: "89190075"
 
 3.  将事务对象的标识符传递给资源管理器。
 
-    客户端通常会调用资源管理器的导出接口，以打开资源管理器的通信路径并将路径与事务相关联。 例如，资源管理器可能会提供类似于 "[理解 TPS 组件](understanding-tps-components.md)" 主题所描述的*CreateDataObject*例程。
+    客户端通常会调用资源管理器的导出接口，以打开资源管理器的通信路径并将路径与事务相关联。 例如，资源管理器可能会提供类似于 "[理解 TPS 组件](understanding-tps-components.md)" 主题所描述的 *CreateDataObject* 例程。
 
 4.  执行要包含在事务中的操作。
 

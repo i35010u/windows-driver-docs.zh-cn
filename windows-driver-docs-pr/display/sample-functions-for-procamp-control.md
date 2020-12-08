@@ -1,19 +1,18 @@
 ---
 title: ProcAmp 控制的示例函数
 description: ProcAmp 控制的示例函数
-ms.assetid: d158216e-9a34-48a4-adca-e3c20b5e4487
 keywords:
 - ProcAmp WDK DirectX VA，示例函数
 - 范围 WDK ProcAmp
 - 属性 WDK ProcAmp
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 469c5c81dd063fd1613bc3a2fc103d6c175d8109
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 37981ff7936a8f5a7d392a2a1250fbf935a9ed78
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715122"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816845"
 ---
 # <a name="sample-functions-for-procamp-control"></a>ProcAmp 控制的示例函数
 
@@ -21,7 +20,7 @@ ms.locfileid: "90715122"
 ## <span id="ddk_sample_functions_for_procamp_control_gg"></span><span id="DDK_SAMPLE_FUNCTIONS_FOR_PROCAMP_CONTROL_GG"></span>
 
 
-本部分中的示例 ProcAmp 函数演示如何实现 ProcAmp 控件功能。 这些示例函数映射到[**DD \_ MOTIONCOMPCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构中定义的[运动补偿回调函数](motion-compensation-callbacks.md)。 您可以实现每个示例函数，然后使用运动补偿代码模板来完成实现。 有关详细信息，请参阅 [DIRECTX VA 设备的示例代码](example-code-for-directx-va-devices.md)。
+本部分中的示例 ProcAmp 函数演示如何实现 ProcAmp 控件功能。 这些示例函数映射到 [**DD \_ MOTIONCOMPCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构中定义的 [运动补偿回调函数](motion-compensation-callbacks.md)。 您可以实现每个示例函数，然后使用运动补偿代码模板来完成实现。 有关详细信息，请参阅 [DIRECTX VA 设备的示例代码](example-code-for-directx-va-devices.md)。
 
 ### <a name="span-iddeinterlace_container_device_class_sample_functionsspanspan-iddeinterlace_container_device_class_sample_functionsspanspan-iddeinterlace_container_device_class_sample_functionsspandeinterlace-container-device-class-sample-functions"></a><span id="Deinterlace_Container_Device_Class_Sample_Functions"></span><span id="deinterlace_container_device_class_sample_functions"></span><span id="DEINTERLACE_CONTAINER_DEVICE_CLASS_SAMPLE_FUNCTIONS"></span>隔行扫描容器设备类示例函数
 
@@ -35,7 +34,7 @@ ms.locfileid: "90715122"
 <thead>
 <tr class="header">
 <th align="left">成员函数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -64,7 +63,7 @@ ms.locfileid: "90715122"
 <thead>
 <tr class="header">
 <th align="left">成员函数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

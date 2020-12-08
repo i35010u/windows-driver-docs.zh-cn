@@ -1,9 +1,8 @@
 ---
-title: Bug Check 0xE0 ACPI_BIOS_FATAL_ERROR
-description: ACPI_BIOS_FATAL_ERROR bug 检查具有 0x000000E0 值。 这表示您的计算机的组件之一是发生故障。
-ms.assetid: 4cc4c96e-6e0e-4bf1-8e72-4e6f39848914
+title: Bug 检查 0xE0 ACPI_BIOS_FATAL_ERROR
+description: ACPI_BIOS_FATAL_ERROR bug 检查的值为0x000000E0。 这表明某个计算机组件有问题。
 keywords:
-- Bug Check 0xE0 ACPI_BIOS_FATAL_ERROR
+- Bug 检查 0xE0 ACPI_BIOS_FATAL_ERROR
 - ACPI_BIOS_FATAL_ERROR
 ms.date: 05/23/2017
 topic_type:
@@ -13,40 +12,40 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1795d69d5f74a6dd25797d6f32b419661381d759
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: cdccd2dd5da84b04e09ec560dcdb3f831e25e66b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67518825"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816413"
 ---
-# <a name="bug-check-0xe0-acpibiosfatalerror"></a>Bug 检查 0xE0：ACPI\_BIOS\_FATAL\_ERROR
+# <a name="bug-check-0xe0-acpi_bios_fatal_error"></a>Bug 检查0xE0： ACPI \_ BIOS \_ \_ 错误
 
 
-ACPI\_BIOS\_致命错误\_错误 bug 检查的值为 0x000000E0。 这表示您的计算机的组件之一是发生故障。
+ACPI \_ BIOS \_ \_ 错误错误检查的值为0x000000E0。 这表明某个计算机组件有问题。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="acpibiosfatalerror-parameters"></a>ACPI\_BIOS\_致命错误\_错误参数
+## <a name="acpi_bios_fatal_error-parameters"></a>ACPI \_ BIOS \_ \_ 错误参数
 
 
-由 BIOS 不是由 Windows 颁发此 bug 检查的参数。 它们仅可由硬件供应商理解。
+此 bug 检查的参数由 BIOS （而不是 Windows）发出。 它们只能由硬件供应商来解释。
 
 <a name="cause"></a>原因
 -----
 
-计算机的 BIOS 已报告系统中的一个组件是那么故障没有 Windows 进行操作的方法。 BIOS 指示没有任何替代，但若要发出的 bug 检查。
+计算机的 BIOS 报告系统中的某个组件出现故障，因此 Windows 无法进行操作。 BIOS 指示没有替代方法，但要发出 bug 检查。
 
-<a name="resolution"></a>分辨率
+<a name="resolution"></a>解决方法
 ----------
 
-您可以确定哪个组件发生故障诊断磁盘或者已包括在内，与您的计算机的工具，通过运行。
+您可以通过运行您的计算机附带的诊断磁盘或工具来确定哪个组件发生了故障。
 
-如果您不具备此工具，必须与系统供应商联系并报告此错误消息到它们。 他们将能够帮助你更正此硬件问题。 这样，Windows 运行时。
+如果你没有此工具，则必须与系统供应商联系，并向其报告此错误消息。 他们将能够帮助您更正此硬件问题。 这使 Windows 能够正常运行。
 
-Microsoft 不能解决此错误。 仅硬件供应商受到限定，以对其进行分析。
+Microsoft 无法处理此错误。 只有硬件供应商有资格对其进行分析。
 
  
 

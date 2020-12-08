@@ -1,7 +1,6 @@
 ---
 title: 框架对象属性
 description: 框架对象属性
-ms.assetid: d95a7f51-fe22-4cd6-8c46-6d571f7d9169
 keywords:
 - framework 对象 WDK KMDF，属性
 - 属性 WDK KMDF
@@ -9,12 +8,12 @@ keywords:
 - set 方法 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d22c5edd1beb54642cf2730a0470ca47952625df
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: e626d98a6f4882057d06c0fb127ab2ce7cb60ac8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186735"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815661"
 ---
 # <a name="framework-object-properties"></a>框架对象属性
 

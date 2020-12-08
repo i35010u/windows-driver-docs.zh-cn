@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0xE3 RESOURCE_NOT_OWNED
-description: RESOURCE_NOT_OWNED bug 检查具有 0x000000E3 值。 这表示一个线程尝试释放未拥有的资源。
-ms.assetid: f0f47af6-cba0-42a0-912b-562f069d5b3e
+description: RESOURCE_NOT_OWNED bug 检查的值为0x000000E3。 这表示线程尝试释放它不拥有的资源。
 keywords:
 - Bug 检查 0xE3 RESOURCE_NOT_OWNED
 - RESOURCE_NOT_OWNED
@@ -13,23 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fa5cd04d7c83ec572a7876a9c993fb5b2a85a9f
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 66df5ae7b28baf3cf1461f4b171a2fb3868cae36
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67518817"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816399"
 ---
-# <a name="bug-check-0xe3-resourcenotowned"></a>Bug 检查 0xE3：资源\_不\_拥有的
+# <a name="bug-check-0xe3-resource_not_owned"></a>Bug 检查0xE3：资源 \_ 未 \_ 拥有
 
 
-资源\_不\_拥有的 bug 检查的值为 0x000000E3。 这表示一个线程尝试释放未拥有的资源。
+资源 \_ 未 \_ 拥有 bug 检查的值为0x000000E3。 这表示线程尝试释放它不拥有的资源。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="resourcenotowned-parameters"></a>资源\_不\_拥有的参数
+## <a name="resource_not_owned-parameters"></a>资源 \_ 非 \_ 拥有参数
 
 
 <table>
@@ -46,7 +45,7 @@ ms.locfileid: "67518817"
 <tbody>
 <tr class="odd">
 <td align="left"><p>1</p></td>
-<td align="left"><p>资源的地址</p></td>
+<td align="left"><p>资源地址</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
@@ -54,11 +53,11 @@ ms.locfileid: "67518817"
 </tr>
 <tr class="odd">
 <td align="left"><p>3</p></td>
-<td align="left"><p>所有者表 （如果存在） 的地址</p></td>
+<td align="left"><p>所有者表 (的地址（如果存在）) </p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>4</p></td>
-<td align="left"><p>保留</p></td>
+<td align="left"><p>预留</p></td>
 </tr>
 </tbody>
 </table>

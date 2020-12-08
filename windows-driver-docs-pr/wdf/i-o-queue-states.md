@@ -1,7 +1,6 @@
 ---
 title: I/O 队列状态
 description: I/O 队列状态
-ms.assetid: 99519d1c-20e5-4a32-8462-19ec9f907506
 keywords:
 - I/o 队列 WDK KMDF，状态
 - 状态 WDK i/o 队列
@@ -13,12 +12,12 @@ keywords:
 - 已清除 i/o 队列状态 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fe1e3155da1a789765ca37a9cbd7fddb7b8b5cba
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 4a6a7d53e4147e9cfae82970118c69150eb46a69
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189915"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815605"
 ---
 # <a name="io-queue-states"></a>I/O 队列状态
 

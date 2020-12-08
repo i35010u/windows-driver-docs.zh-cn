@@ -1,9 +1,8 @@
 ---
 title: ScannerStateReasons 元素
-description: 所需的 ScannerStateReasons 元素是描述所有扫描程序是在其当前状态的原因 ScannerStateReason 元素的列表。
-ms.assetid: 1b4e6537-4175-4bed-9af3-7887a2737784
+description: 必需的 ScannerStateReasons 元素是一个 ScannerStateReason 元素列表，其中描述了扫描程序处于其当前状态的所有原因。
 keywords:
-- ScannerStateReasons 元素成像设备
+- ScannerStateReasons 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ff69c1bf009a1dd31f474d949589aa7ef16ffed
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ff6d72ec2b19889ac32e607390aab423a29f774c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357527"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816203"
 ---
 # <a name="scannerstatereasons-element"></a>ScannerStateReasons 元素
 
 
-所需**ScannerStateReasons**元素是一系列[ **ScannerStateReason** ](scannerstatereason.md)元素描述所有扫描程序是在其当前状态的原因。
+必需的 **ScannerStateReasons** 元素是一个 [**ScannerStateReason**](scannerstatereason.md) 元素列表，其中描述了扫描程序处于其当前状态的所有原因。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -87,9 +86,9 @@ ms.locfileid: "63357527"
 <a name="remarks"></a>备注
 -------
 
-**ScannerStateReasons**元素是一系列**ScannerStateReason**元素，其中每个描述扫描程序处于其当前状态的原因。
+**ScannerStateReasons** 元素是 **ScannerStateReason** 元素的列表，其中每个元素都描述了扫描程序处于其当前状态的原因。
 
-WSD 扫描服务将通过发送有关扫描程序的状态更改通知客户端[ **ScannerStatusSummaryEvent** ](scannerstatussummaryevent.md)事件。 客户端可以直接查询扫描程序的状态，通过调用[ **GetScannerElementsRequest** ](getscannerelementsrequest.md)操作。
+WSD 扫描服务通过发送 [**ScannerStatusSummaryEvent**](scannerstatussummaryevent.md) 事件向客户端通知扫描程序状态的更改。 客户端可以通过调用 [**GetScannerElementsRequest**](getscannerelementsrequest.md) 操作直接查询扫描程序的状态。
 
 ## <a name="see-also"></a>请参阅
 

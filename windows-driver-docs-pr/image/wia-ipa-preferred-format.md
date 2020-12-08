@@ -1,9 +1,8 @@
 ---
-title: WIA\_IPA\_首选\_格式
-description: WIA\_IPA\_首选\_格式属性包含的映像的 WIA 微型驱动程序将传输的首选的格式。 微型驱动程序创建并维护此属性。
-ms.assetid: a9291395-6c9b-4288-abcf-53638deca82e
+title: WIA \_ IPA \_ 首选 \_ 格式
+description: WIA \_ IPA \_ 首选 \_ 格式属性包含 wia 微型驱动程序传输的图像的首选格式。 微型驱动程序创建并维护此属性。
 keywords:
-- WIA_IPA_PREFERRED_FORMAT 成像设备
+- WIA_IPA_PREFERRED_FORMAT 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,24 +13,24 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b28f3f41dca1c31d61fc86d341c16b97c39ba80b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8883ef01ec5ca633e32f57046ce22c87784bf6df
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372671"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817245"
 ---
-# <a name="wiaipapreferredformat"></a>WIA\_IPA\_首选\_格式
+# <a name="wia_ipa_preferred_format"></a>WIA \_ IPA \_ 首选 \_ 格式
 
 
-WIA\_IPA\_首选\_格式属性包含的映像的 WIA 微型驱动程序将传输的首选的格式。 微型驱动程序创建并维护此属性。
+WIA \_ IPA \_ 首选 \_ 格式属性包含 wia 微型驱动程序传输的图像的首选格式。 微型驱动程序创建并维护此属性。
 
 ## <span id="ddk_wia_ipa_preferred_format_si"></span><span id="DDK_WIA_IPA_PREFERRED_FORMAT_SI"></span>
 
 
-属性类型：VT\_CLSID
+属性类型： VT \_ CLSID
 
-有效值：WIA\_PROP\_NONE
+有效值： WIA " \_ \_ 无"
 
 访问权限：只读
 
@@ -45,8 +44,8 @@ WIA\_IPA\_首选\_格式属性包含的映像的 WIA 微型驱动程序将传输
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>

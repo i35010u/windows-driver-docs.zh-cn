@@ -1,7 +1,6 @@
 ---
 title: 处理流请求块
 description: 处理流请求块
-ms.assetid: fb4fda0d-54e9-4f1b-a78c-276e770189d5
 keywords:
 - Stream.sys 类驱动程序 WDK Windows 2000 内核，SRBs
 - 流式处理微型驱动程序 WDK Windows 2000 内核，SRBs
@@ -10,12 +9,12 @@ keywords:
 - 流请求块，请参阅 SRB 或 SRBs
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 59cfe52b92ef98579655a8c3e0f543d8bdfaf96f
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 77135221979b18bcb5cd5ec5a14efce2031311ab
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102410"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815823"
 ---
 # <a name="handling-stream-request-blocks"></a>处理流请求块
 
@@ -63,13 +62,13 @@ ms.locfileid: "90102410"
 
  
 
-当类驱动程序调用 **StrMiniReceive*XXX*数据包**时，它会将流请求块移交给微型驱动程序。 微型驱动程序的例程具有对流请求块的唯一访问权限，直到它向类驱动程序发出请求。
+当类驱动程序调用 **StrMiniReceive *XXX* 数据包** 时，它会将流请求块移交给微型驱动程序。 微型驱动程序的例程具有对流请求块的唯一访问权限，直到它向类驱动程序发出请求。
 
 当微型驱动程序处理完请求后，它应按照以下方式向类驱动程序发出请求：
 
 1.  微型驱动程序应在流请求块的 " **状态** " 字段中设置请求的状态。
 
-2.  微型驱动程序应通过调用 [**StreamClassDeviceNotification**](/windows-hardware/drivers/ddi/strmini/nf-strmini-streamclassdevicenotification) 或 [**StreamClassStreamNotification**](/windows-hardware/drivers/ddi/strmini/nf-strmini-streamclassstreamnotification)通知其已完成请求。 若要完成设备请求，微型驱动程序将使用*NotificationType*参数**StreamClassDeviceNotification**调用 DeviceRequestComplete。 若要完成流请求，微型驱动程序将使用 StreamRequestComplete 的*NotificationType*参数调用**StreamClassStreamNotification** 。
+2.  微型驱动程序应通过调用 [**StreamClassDeviceNotification**](/windows-hardware/drivers/ddi/strmini/nf-strmini-streamclassdevicenotification) 或 [**StreamClassStreamNotification**](/windows-hardware/drivers/ddi/strmini/nf-strmini-streamclassstreamnotification)通知其已完成请求。 若要完成设备请求，微型驱动程序将使用 *NotificationType* 参数 **StreamClassDeviceNotification** 调用 DeviceRequestComplete。 若要完成流请求，微型驱动程序将使用 StreamRequestComplete 的 *NotificationType* 参数调用 **StreamClassStreamNotification** 。
 
 3.  如果类驱动程序正在处理同步，并且微型驱动程序尚未向类驱动程序发出通知，指示它已准备好用于该队列中的其他请求，现在应执行此操作。
 

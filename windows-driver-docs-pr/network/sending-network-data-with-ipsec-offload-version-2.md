@@ -1,18 +1,17 @@
 ---
 title: 使用 IPsec 卸载版本 2 发送网络数据
 description: 使用 IPsec 卸载版本 2 发送网络数据
-ms.assetid: d3580313-a98b-4150-b344-e3e395ce68e9
 keywords:
 - IPsecOV2 WDK TCP/IP 传输，发送数据
 - 发送数据 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 18df3282726b931586079b8ff851a7fc73260a6d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: addee3b221d361304705f9f8ae66b19a8197aa0d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206723"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815871"
 ---
 # <a name="sending-network-data-with-ipsec-offload-version-2"></a>使用 IPsec 卸载版本 2 发送网络数据
 
@@ -21,9 +20,9 @@ ms.locfileid: "89206723"
 
 
 
-TCP/IP 传输提供 IPsec 卸载版本 2 (IPsecOV2，其中包含 [OID \_ TCP \_ 任务 \_ ipsec \_ 卸载 \_ V2 \_ 添加 \_ SA](./oid-tcp-task-ipsec-offload-v2-add-sa.md) OID 的一个或多个 SAs 的) 信息。 在微型端口驱动程序为 OID \_ TCP \_ 任务 \_ IPSEC \_ 卸载 V2 添加 SA 返回成功结果之前 \_ \_ \_ ，微型端口驱动程序将初始化卸载句柄。 TCP/IP 传输请求微型端口驱动程序通过在[**ndis \_ ipsec \_ 卸载 \_ v2 \_ 网络 \_ 缓冲区 \_ 列表 \_ 信息**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_ipsec_offload_v2_net_buffer_list_info)中指定 IPsecOV2 信息，并通过[**ndis \_ ipsec \_ 卸载 \_ v2 \_ 标头 \_ 网络 \_ 缓冲区 \_ 列表 \_ 信息**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_ipsec_offload_v2_header_net_buffer_list_info)结构（这是**网络 \_ 缓冲区 \_ 列表**带外 (OOB) 信息中的一部分）来卸载[**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构的处理。
+TCP/IP 传输提供 IPsec 卸载版本 2 (IPsecOV2，其中包含 [OID \_ TCP \_ 任务 \_ ipsec \_ 卸载 \_ V2 \_ 添加 \_ SA](./oid-tcp-task-ipsec-offload-v2-add-sa.md) OID 的一个或多个 SAs 的) 信息。 在微型端口驱动程序为 OID \_ TCP \_ 任务 \_ IPSEC \_ 卸载 V2 添加 SA 返回成功结果之前 \_ \_ \_ ，微型端口驱动程序将初始化卸载句柄。 TCP/IP 传输请求微型端口驱动程序通过在 [**ndis \_ ipsec \_ 卸载 \_ v2 \_ 网络 \_ 缓冲区 \_ 列表 \_ 信息**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_ipsec_offload_v2_net_buffer_list_info)中指定 IPsecOV2 信息，并通过 [**ndis \_ ipsec \_ 卸载 \_ v2 \_ 标头 \_ 网络 \_ 缓冲区 \_ 列表 \_ 信息**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_ipsec_offload_v2_header_net_buffer_list_info)结构（这是 **网络 \_ 缓冲区 \_ 列表** 带外 (OOB) 信息中的一部分）来卸载 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构的处理。
 
-TCP/IP 传输在[**NDIS \_ IPSEC \_ 卸载 \_ V2 \_ 网络 \_ 缓冲区 \_ 列表 \_ 信息**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_ipsec_offload_v2_net_buffer_list_info)的**OffloadHandle**成员中提供了一个卸载句柄，该句柄指定了与发送数据包) 部分传输 (端到端连接 (SA) 的出站安全关联的句柄。
+TCP/IP 传输在 [**NDIS \_ IPSEC \_ 卸载 \_ V2 \_ 网络 \_ 缓冲区 \_ 列表 \_ 信息**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_ipsec_offload_v2_net_buffer_list_info)的 **OffloadHandle** 成员中提供了一个卸载句柄，该句柄指定了与发送数据包) 部分传输 (端到端连接 (SA) 的出站安全关联的句柄。
 
 TCP/IP 传输在 [**NDIS \_ IPSEC \_ 卸载 \_ V2 \_ 标头 \_ 网络 \_ 缓冲区 \_ 列表 \_ 信息**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_ipsec_offload_v2_header_net_buffer_list_info) 结构中提供以下标头信息：
 
@@ -45,7 +44,7 @@ TCP/IP 传输在 [**NDIS \_ IPSEC \_ 卸载 \_ V2 \_ 标头 \_ 网络 \_ 缓冲�
 
 -   验证 [**NDIS \_ TCP \_ 大规模 \_ 发送 \_ 卸载 \_ 网络 \_ 缓冲区 \_ 列表 \_ 信息**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_large_send_offload_net_buffer_list_info) 结构中的句柄，以确定是否应为 [**NET \_ BUFFER \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)执行分段卸载。
 
--   完成 [**NET \_ BUFFER \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)中所有发送数据包的所需 AH 和 ESP 处理。 当 NIC 对发送数据包执行 IPsec 处理时，将对数据包数据执行加密操作。 TCP/IP 传输已将数据包括起来，并在必要时对其进行填充 (如有必要) ，并为其分配一个 (SPI) 的序列号和安全参数索引。 对于合并的 LSO 和 IPsec 卸载， [**NET \_ 缓冲区**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer) 可能会有填充，在 NIC 将大数据包分段时，将丢弃这些填充。 填充量是在[**NDIS \_ IPSEC \_ 卸载 \_ V2 \_ 标头 \_ 网络 \_ 缓冲区 \_ 列表 \_ 信息**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_ipsec_offload_v2_header_net_buffer_list_info)结构的**PadLength**成员中指定的。 分段数据包可能需要填充以支持 IPsec 操作。
+-   完成 [**NET \_ BUFFER \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)中所有发送数据包的所需 AH 和 ESP 处理。 当 NIC 对发送数据包执行 IPsec 处理时，将对数据包数据执行加密操作。 TCP/IP 传输已将数据包括起来，并在必要时对其进行填充 (如有必要) ，并为其分配一个 (SPI) 的序列号和安全参数索引。 对于合并的 LSO 和 IPsec 卸载， [**NET \_ 缓冲区**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer) 可能会有填充，在 NIC 将大数据包分段时，将丢弃这些填充。 填充量是在 [**NDIS \_ IPSEC \_ 卸载 \_ V2 \_ 标头 \_ 网络 \_ 缓冲区 \_ 列表 \_ 信息**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_ipsec_offload_v2_header_net_buffer_list_info)结构的 **PadLength** 成员中指定的。 分段数据包可能需要填充以支持 IPsec 操作。
 
 当协议驱动程序传输同时请求 LSO 和 IPsecOV2 的数据包时，它将不会成为 ESP 尾端的帧。 这是因为 ESP 尾端中的信息（例如填充长度）对于 NIC 生成的最后一段将不准确。
 

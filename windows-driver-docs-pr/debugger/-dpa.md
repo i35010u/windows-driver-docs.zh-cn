@@ -1,7 +1,6 @@
 ---
 title: dpa
 description: Dpa 扩展显示池分配信息。
-ms.assetid: 1eb31741-bc50-4188-823d-b6324d2dfdf1
 keywords:
 - 池分配
 - dpa Windows 调试
@@ -13,51 +12,51 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: fe33605cd5d0e161f5c6cac46a8c3c982c5e6121
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a1d6aa098011bc2304ae0eb3cb33b741058b6a2a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334556"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816455"
 ---
 # <a name="dpa"></a>!dpa
 
 
-**！ Dpa**扩展显示池分配信息。
+**！ Dpa** 扩展显示池分配信息。
 
 ```dbgcmd
 !dpa Options 
 !dpa -?
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______Options______"></span><span id="_______options______"></span><span id="_______OPTIONS______"></span> *选项*   
-必须有且仅以下选项之一：
+<span id="_______Options______"></span><span id="_______options______"></span><span id="_______OPTIONS______"></span>*选项*   
+必须是以下选项之一：
 
 <span id="-c"></span><span id="-C"></span>**-c**  
-显示当前的池分配统计信息。
+显示当前池分配统计信息。
 
 <span id="-v"></span><span id="-V"></span>**-v**  
-显示所有当前的池分配。
+显示所有当前池分配。
 
 <span id="-vs"></span><span id="-VS"></span>**-vs**  
-将导致显示以包括堆栈跟踪。
+使显示包括堆栈跟踪。
 
 <span id="-f"></span><span id="-F"></span>**-f**  
 显示失败的池分配。
 
 <span id="-r"></span><span id="-R"></span>**-r**  
-显示可用池分配。
+显示免费池分配。
 
-<span id="-p_Ptr"></span><span id="-p_ptr"></span><span id="-P_PTR"></span>**-p** **** *Ptr*  
-显示包含指针的所有池分配*Ptr*。
+<span id="-p_Ptr"></span><span id="-p_ptr"></span><span id="-P_PTR"></span>**-p**  **** *Ptr*  
+显示包含指针 *Ptr* 的所有池分配。
 
 <span id="_______-_______"></span> **-?**   
-在调试器命令窗口中显示此扩展的一些简要帮助文本。
+在调试器命令窗口中显示此扩展的一些简短帮助文本。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -81,7 +80,7 @@ ms.locfileid: "63334556"
 <a name="remarks"></a>备注
 -------
 
-若要运行此扩展的顺序，必须在 Win32k.sys 中启用池检测。
+若要运行此扩展，必须在 Win32k.sys 中启用池检测。
 
  
 

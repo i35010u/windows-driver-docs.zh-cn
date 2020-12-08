@@ -1,7 +1,6 @@
 ---
 title: 创建导出驱动程序
 description: 创建导出驱动程序
-ms.assetid: 60ce7d0d-0eab-4af6-890a-45ab206816aa
 keywords:
 - 导出驱动程序 WDK 内核
 - 正在加载导出驱动程序 WDK 内核
@@ -12,12 +11,12 @@ keywords:
 - 内核模式驱动程序 WDK，导出驱动程序
 ms.date: 10/14/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: bd379d36ac0b4697c8016afe582e1c518a4be02d
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: c9cbc5e3a7b371bdc2635d7582de05c41a334573
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190063"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816101"
 ---
 # <a name="creating-export-drivers"></a>创建导出驱动程序
 
@@ -42,8 +41,8 @@ Windows 包含多个导出驱动程序。 例如，SCSI 端口驱动程序、磁
 若要在 Visual Studio 中创建导出驱动程序，请使用以下过程：
 
 1. 通过模板创建新项目，例如 **空的 WDM 驱动程序**。
-2. 在 "项目设置" 中，将 **> 配置类型** 设置为 " **动态库 () **"。
-3. 设置 **链接器-> 高级-> 无入口点** 到 **是 (/noentry) **。
+2. 在 "项目设置" 中，将 **> 配置类型** 设置为 " **动态库 ()**"。
+3. 设置 **链接器-> 高级-> 无入口点** 到 **是 (/NOENTRY)**。
 4. 将模块定义文件添加到项目，例如：
   ```
   LIBRARY mydriver
@@ -61,7 +60,7 @@ NTSTATUS DllInitialize(
   _In_ PUNICODE_STRING RegistryPath
 );
 ```
-RegistryPath 是一个指向指定了 DLL 的注册表项路径（ **HKEY_LOCAL_MACHINE \currentcontrolset\services\dllname**）的计数 Unicode 字符串的指针。 DLL 例程可以使用此密钥来存储特定于 DLL 的信息。 **DllInitialize**退出后，RegistryPath 所指向的缓冲区将被释放。 因此，如果 DLL 使用该密钥，则 **DllInitialize** 必须复制该密钥名称。 
+RegistryPath 是一个指向指定了 DLL 的注册表项路径的计数 Unicode 字符串的指针， **HKEY_LOCAL_MACHINE\CurrentControlSet\Services\DllName**。 DLL 例程可以使用此密钥来存储特定于 DLL 的信息。 **DllInitialize** 退出后，RegistryPath 所指向的缓冲区将被释放。 因此，如果 DLL 使用该密钥，则 **DllInitialize** 必须复制该密钥名称。 
 
 
 生成过程将生成一个扩展名为 .lib 的导出库，并生成一个扩展名为 .sys 的导出驱动程序。
@@ -74,9 +73,9 @@ RegistryPath 是一个指向指定了 DLL 的注册表项路径（ **HKEY_LOCAL_
 DECLSPEC_IMPORT int LoadPrinterDriver (int arg1); 
 ```
 
-此宏可在必要时解析到这些平台上的** \_ \_ declspec** (dllimport) 存储类声明，无需在这些平台上进行任何操作。
+此宏可在必要时解析到这些平台上的 **\_ \_ declspec** (dllimport) 存储类声明，无需在这些平台上进行任何操作。
 
-在导出驱动程序中，应通过 DECLSPEC 导出宏声明要导出的函数 \_ 。 此宏可在必要时解析为** \_ \_ declspec** (dllexport) 存储类声明，无需在这些平台上进行任何操作。 如果导出驱动程序为标准驱动程序提供了调度例程，则不需要导出该例程。
+在导出驱动程序中，应通过 DECLSPEC 导出宏声明要导出的函数 \_ 。 此宏可在必要时解析为 **\_ \_ declspec** (dllexport) 存储类声明，无需在这些平台上进行任何操作。 如果导出驱动程序为标准驱动程序提供了调度例程，则不需要导出该例程。
 
 ### <a name="loading-and-unloading-an-export-driver"></a>加载和卸载导出驱动程序
 

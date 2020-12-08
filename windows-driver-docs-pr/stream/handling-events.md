@@ -1,7 +1,6 @@
 ---
 title: 处理事件
 description: 处理事件
-ms.assetid: 2cd7ccf3-12f5-4ad0-a7c9-a0f437b72445
 keywords:
 - Stream.sys 类驱动程序 WDK Windows 2000 内核，事件
 - 流式处理微型驱动程序 WDK Windows 2000 内核，事件
@@ -10,12 +9,12 @@ keywords:
 - 事件集 WDK 流式处理微型驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e0bcbef41fa5379eeded75746430a3dfa5800982
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 5a4140916543c0c6e3f871ce36c522357fb64da4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190573"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815833"
 ---
 # <a name="handling-events"></a>处理事件
 
@@ -25,7 +24,7 @@ ms.locfileid: "89190573"
 
 微型驱动程序可以支持事件集。 同时，整个设备和单个流都可以接收启用或禁用事件的请求。 类驱动程序处理事件 enable 和 disable 请求。 它将每个启用的事件排队，并为每个流和设备提供单独的队列。 如果某个事件处于禁用状态，则该类驱动程序会将其从队列中删除。 请注意，类驱动程序将每个启用的事件排队，无论微型驱动程序是否执行其自己的同步。
 
-微型驱动程序在[**HW \_ 流 \_ 标头**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_header)结构的**DeviceEventsArray**成员中提供它支持的事件集。 每个流在该流的[**HW \_ 流 \_ 信息**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_information)结构的**StreamEventsArray**中提供它支持的事件集。
+微型驱动程序在 [**HW \_ 流 \_ 标头**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_header)结构的 **DeviceEventsArray** 成员中提供它支持的事件集。 每个流在该流的 [**HW \_ 流 \_ 信息**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_information)结构的 **StreamEventsArray** 中提供它支持的事件集。
 
 微型驱动程序定义了一个通过 [**KSEVENT \_ 集**](/windows-hardware/drivers/ddi/ks/ns-ks-ksevent_set) 数据结构处理的事件集，该结构依次指向 [**KSEVENT \_ 项**](/windows-hardware/drivers/ddi/ks/ns-ks-ksevent_item) 结构的数组，事件集中的每个事件都有一个。
 

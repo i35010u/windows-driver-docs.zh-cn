@@ -1,7 +1,6 @@
 ---
 title: 报告硬件状态
 description: 报告硬件状态
-ms.assetid: d4572c6f-dc09-41c4-af5b-69482b458bef
 keywords:
 - WMI WDK 网络，报告硬件状态
 - 微型端口驱动程序 WDK 网络，硬件状态
@@ -10,12 +9,12 @@ keywords:
 - 状态信息 WDK NDIS 微型端口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a591804054870f5835ec34baa647597825de8399
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 5c18075e50a6c5a6117046468f8a2652d92b7000
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217489"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815899"
 ---
 # <a name="reporting-hardware-status"></a>报告硬件状态
 
@@ -29,7 +28,7 @@ ms.locfileid: "89217489"
 
 微型端口驱动程序可以进行一个或多个此类调用。 但是，与 NDIS 的早期版本不同，微型端口驱动程序并不表示它已完成发送状态。 协议驱动程序或配置管理器可以根据需要记录状态或采取纠正措施。
 
-[**NdisMCoIndicateStatusEx**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcoindicatestatusex)采用任意有效 \_ 的 NDIS 状态 \_ *Xxx*值。
+[**NdisMCoIndicateStatusEx**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcoindicatestatusex)采用任意有效 \_ 的 NDIS 状态 \_ *Xxx* 值。
 
 微型端口驱动程序负责指示对协议或更高级别的驱动程序有意义的状态代码。 协议驱动程序将忽略它不感兴趣的任何状态值，或者在其操作上下文中没有意义的状态值。
 

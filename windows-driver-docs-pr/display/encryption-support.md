@@ -1,7 +1,6 @@
 ---
 title: 加密支持
 description: 加密支持
-ms.assetid: d5ce9c02-7126-4775-bb87-dae45b93b652
 keywords:
 - 视频解码 WDK DirectX VA，加密
 - 解码视频 WDK DirectX VA，加密
@@ -10,12 +9,12 @@ keywords:
 - 加密 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 52da6e77b5e2c7c7149d669a8136389cd0fdd230
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 1d132f0a2b403b9c1ce146c05bec6ba9de1bf7d1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065464"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816861"
 ---
 # <a name="encryption-support"></a>加密支持
 
@@ -33,7 +32,7 @@ ms.locfileid: "89065464"
 
 为了使主机解码器使用加密，必须确定加速器支持的加密类型。 有关加速器支持的加密类型的信息包含在作为视频加速器格式 Guid 提供给主机的加密类型 Guid 列表中。 有关视频加速器格式 Guid 的详细信息，请参阅 Microsoft Windows SDK 文档。
 
-**注意**   所有 DirectX VA 加速器都必须能够在不使用加密的情况下运行。 支持不加密，因此不需要声明，也不能 \_ 在视频加速器格式 guid 列表中发送 DXVA NoEncrypt "no encryption" guid。
+**注意**   所有 DirectX VA 加速器都必须能够在不使用加密的情况下运行。 支持不加密，因此不需要声明，也不能 \_ 在视频加速器格式 guid 列表中发送 DXVA NoEncrypt "no encryption" guid。
 
  
 

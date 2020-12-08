@@ -1,9 +1,8 @@
 ---
 title: pmc
-description: Pmc 扩展显示指定地址处的性能监视器计数器 (PMC) 注册。
-ms.assetid: ff9a03af-f0e9-4aef-b583-c3092eb5f89c
+description: Pmc 扩展显示 (PMC) 在指定地址注册的性能监视器计数器。
 keywords:
-- 性能监视器计数器 (PMC)
+- '性能监视器计数器 (PMC) '
 - pmc Windows 调试
 ms.date: 05/23/2017
 topic_type:
@@ -13,60 +12,60 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f2145f09a4554d72e778d79fa9e31a0ff10959ea
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 75f73cc8c0269fe971868ec28da88bed1b0ad161
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334383"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817017"
 ---
 # <a name="pmc"></a>!pmc
 
 
-**！ Pmc**扩展指定地址处显示的性能监视器计数器 (PMC) 寄存器。
+**！ Pmc** 扩展显示 (pmc) 在指定地址注册的性能监视器计数器。
 
-只能在基于 Itanium 的目标计算机上支持此扩展。
+此扩展仅在基于 Itanium 的目标计算机上受支持。
 
 ```dbgcmd
 !pmc [- Option] Expression [DisplayLevel]
 ```
 
-**重要**  此命令已被 Windows 调试器版本 10.0.14257 中不推荐使用和更高版本，并不再可用。
+**重要提示**  此命令在 Windows 调试器版本10.0.14257 和更高版本中已弃用，不再可用。
 
  
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______Option______"></span><span id="_______option______"></span><span id="_______OPTION______"></span> *选项*   
+<span id="_______Option______"></span><span id="_______option______"></span><span id="_______OPTION______"></span>*选项*   
 可以是以下值之一：
 
-<span id="gen"></span><span id="GEN"></span>**gen**  
-显示为泛型的 PMC 注册的注册。
+<span id="gen"></span><span id="GEN"></span>**常规**  
+显示 register 作为一般 PMC 注册。
 
 <span id="btb"></span><span id="BTB"></span>**btb**  
-显示注册为分支跟踪缓冲区 (BTB) PMC 寄存器。
+显示 register 作为分支跟踪缓冲区 (BTB) PMC register。
 
-<span id="_______Expression______"></span><span id="_______expression______"></span><span id="_______EXPRESSION______"></span> *表达式*   
-指定 PMC 的十六进制地址。 表达式<strong>@kpfcgen</strong>并<strong>@kpfcbtb</strong>可以用作此参数的值。
+<span id="_______Expression______"></span><span id="_______expression______"></span><span id="_______EXPRESSION______"></span>*表达式*   
+指定 PMC 的十六进制地址。 表达式 <strong>@kpfcgen</strong> 和 <strong>@kpfcbtb</strong> 可用作此参数的值。
 
-如果*表达式*是<strong>@kpfcgen</strong>，调试器将显示当前处理器 PMC 注册为泛型 PMC 寄存器。 您还可以显示当前处理器 PMC 通过设置注册为泛型 PMC 寄存器*选项*到**常规**并使用<strong>@kpfc4</strong>，  <strong>@kpfc5</strong>， <strong>@kpfc6</strong>，或<strong>@kpfc7</strong>对于*表达式*值。
+如果 *Expression* 为 <strong>@kpfcgen</strong> ，则调试器会显示当前处理器 PMC REGISTER 作为一般 PMC 寄存器。 还可以通过将 *选项* 设置为 "生成" **，并对** <strong>@kpfc4</strong> <strong>@kpfc5</strong> <strong>@kpfc6</strong> <strong>@kpfc7</strong> *表达式* 值使用、、或，将当前处理器 PMC 注册显示为通用 PMC 寄存器。
 
-如果*表达式*是<strong>@kpfcbtb</strong>，调试器将显示当前处理器 PMC 注册为 BTB PMC 注册。 您还可以显示当前处理器 PMC 通过设置注册为 BTB PMC 寄存器*选项*到**btb**并使用@kpfc12有关*表达式*值。
+如果 *Expression* 为 <strong>@kpfcbtb</strong> ，则调试器会将当前处理器 PMC REGISTER 显示为 BTB PMC register。 还可以通过将 *选项* 设置为 **BTB** ，并使用 @kpfc12 作为 *表达式* 值，来显示当前处理器 PMC register 作为 BTB PMC register。
 
-<span id="_______DisplayLevel______"></span><span id="_______displaylevel______"></span><span id="_______DISPLAYLEVEL______"></span> *DisplayLevel*   
+<span id="_______DisplayLevel______"></span><span id="_______displaylevel______"></span><span id="_______DISPLAYLEVEL______"></span>*DisplayLevel*   
 可以是以下值之一：
 
 <span id="0"></span>**0**  
-显示每个 PMC 值寄存器字段。 这是默认设置。
+仅显示每个 PMC 注册字段的值。 这是默认值。
 
 <span id="1"></span>**1**  
-有关 PMC 的显示详细的信息注册不是保留还是忽略的字段。
+显示有关非保留或忽略的 PMC 寄存器字段的详细信息。
 
-<span id="2"></span>**2**  
-显示有关所有 PMC 的详细的信息注册字段，包括那些忽略或保留。
+<span id="2"></span>**pps-2**  
+显示有关所有 PMC 注册字段的详细信息，包括已忽略或保留的字段。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>

@@ -1,9 +1,8 @@
 ---
-title: WIA\_IPA\_格式
-description: WIA\_IPA\_格式属性包含要传送的图像的当前格式。 WIA 微型驱动程序创建并维护此属性。
-ms.assetid: 5b60b45f-16ad-45c4-97f0-d92099f698b9
+title: WIA \_ IPA \_ 格式
+description: WIA \_ IPA \_ format 属性包含即将传输的图像的当前格式。 WIA 微型驱动程序创建并维护此属性。
 keywords:
-- WIA_IPA_FORMAT 成像设备
+- WIA_IPA_FORMAT 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,61 +13,61 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2339edf101df144529d99b534d231159c4c950af
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b5f699d5a68bf4ca9ed05d6f14ae7df059bb72de
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369553"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817307"
 ---
-# <a name="wiaipaformat"></a>WIA\_IPA\_格式
+# <a name="wia_ipa_format"></a>WIA \_ IPA \_ 格式
 
 
-WIA\_IPA\_格式属性包含要传送的图像的当前格式。 WIA 微型驱动程序创建并维护此属性。
+WIA \_ IPA \_ format 属性包含即将传输的图像的当前格式。 WIA 微型驱动程序创建并维护此属性。
 
 ## <span id="ddk_wia_ipa_format_si"></span><span id="DDK_WIA_IPA_FORMAT_SI"></span>
 
 
-属性类型：VT\_CLSID
+属性类型： VT \_ CLSID
 
-有效值：WIA\_PROP\_列表
+有效值： WIA 内容 \_ \_ 列表
 
-访问权限：读取/写入
+访问权限：读/写
 
 <a name="remarks"></a>备注
 -------
 
-如果可以将设备设置一个值，创建 WIA\_PROP\_列表类型，并将有效的值放入其中。
+如果可以将设备设置为仅使用单个值，请创建一个 "WIA" \_ \_ 类型的 "类型"，并在其中放置有效值。
 
-对于 Windows 8 和更高版本的 Windows 中，已添加 WIA 的以下值\_IPA\_格式属性：
+对于 Windows 8 及更高版本的 Windows，为 WIA \_ IPA FORMAT 属性添加了以下值 \_ ：
 
--   WiaImgFmt\_CSV
+-   WiaImgFmt \_ CSV
 
--   WiaImgFmt\_JBIG2
+-   WiaImgFmt \_ JBIG2
 
--   WiaImgFmt\_RawBar
+-   WiaImgFmt \_ RawBar
 
--   WiaImgFmt\_RawMic
+-   WiaImgFmt \_ RawMic
 
--   WiaImgFmt\_RawPat
+-   WiaImgFmt \_ RawPat
 
--   WiaImgFmt\_XmlBar
+-   WiaImgFmt \_ XmlBar
 
--   WiaImgFmt\_XmlMic
+-   WiaImgFmt \_ XmlMic
 
--   WiaImgFmt\_XmlPat
+-   WiaImgFmt \_ XmlPat
 
-从 Windows Vista 和更高版本的 Windows 开始，以下值添加为 WIA\_IPA\_格式属性：
+从 Windows Vista 和更高版本的 Windows 开始，为 WIA \_ IPA FORMAT 属性添加了以下值 \_ ：
 
--   WiaImgFmt\_PDFA
+-   WiaImgFmt \_ PDFA
 
--   WiaImgFmt\_JBIG
+-   WiaImgFmt \_ JBIG
 
--   WiaImgFmt\_XPS
+-   WiaImgFmt \_ XPS
 
-有关这两个 WiaImgFmt\_PDFA 和 WiaImgFmt\_XPS 格式，驱动程序应支持任何[ **WIA\_IPA\_压缩**](wia-ipa-compression.md)值。 对于这些两个设置的格式，默认 WIA\_IPA\_压缩值，WIA\_压缩\_NONE，表示"未定义。" 扫描程序 （或驱动程序，其中生成的 PDF/A 或 XPS 文件） 必须选择用于图像数据的内部压缩模式。
+对于 WiaImgFmt \_ PDFA 和 WiaImgFmt \_ XPS 格式，驱动程序应支持任何 [**WIA \_ IPA \_ 压缩**](wia-ipa-compression.md) 值。 对于这两种格式，默认的 WIA \_ IPA \_ 压缩值 "wia \_ 压缩无" \_ 表示 "未定义"。 扫描仪 (或驱动程序（在其中生成 PDF/A 或 XPS 文件）) 必须选择用于图像数据的内部压缩模式。
 
-下表描述了有效使用 WIA 的常量\_IPA\_格式。
+下表描述了对 WIA IPA 格式有效的常量 \_ \_ 。
 
 <table>
 <colgroup>
@@ -84,7 +83,7 @@ WIA\_IPA\_格式属性包含要传送的图像的当前格式。 WIA 微型驱�
 <tbody>
 <tr class="odd">
 <td><p>WiaAudFmt_AIFF</p></td>
-<td><p>AIFF 音频格式</p></td>
+<td><p>.AIFF 音频格式</p></td>
 </tr>
 <tr class="even">
 <td><p>WiaAudFmt_MP3</p></td>
@@ -108,15 +107,15 @@ WIA\_IPA\_格式属性包含要传送的图像的当前格式。 WIA 微型驱�
 </tr>
 <tr class="odd">
 <td><p>WiaImgFmt_BMP</p></td>
-<td><p>Windows 设备无关位图 (DIB) 文件</p></td>
+<td><p>与 Windows 设备无关的位图 (DIB) 文件</p></td>
 </tr>
 <tr class="even">
 <td><p>WiaImgFmt_CIFF</p></td>
-<td><p>照相机图像文件格式</p></td>
+<td><p>相机图像文件格式</p></td>
 </tr>
 <tr class="odd">
 <td><p>WiaImgFmt_CSV<strong></p></td>
-<td><p>逗号分隔的文件</p></td>
+<td><p>逗号分隔文件</p></td>
 </tr>
 <tr class="even">
 <td><p>WiaImgFmt_DPOF</p></td>
@@ -151,28 +150,28 @@ WIA\_IPA\_格式属性包含要传送的图像的当前格式。 WIA 微型驱�
 <td><p>Windows 图标文件格式</p></td>
 </tr>
 <tr class="even">
-<td><p>WiaImgFmt_JBIG*</p></td>
-<td><p>联合的二值图像专家组格式</p></td>
+<td><p>WiaImgFmt_JBIG *</p></td>
+<td><p>联合 Bi 级别映像专家组格式</p></td>
 </tr>
 <tr class="odd">
 <td><p>WiaImgFmt_JBIG2</strong></p></td>
-<td><p>联合二值图像专家组格式 （第 2 版）</p></td>
+<td><p>联合 Bi 级别映像专家组格式 (版本 2) </p></td>
 </tr>
 <tr class="even">
 <td><p>WiaImgFmt_JPEG</p></td>
-<td><p>JPEG 压缩的格式</p></td>
+<td><p>JPEG 压缩格式</p></td>
 </tr>
 <tr class="odd">
 <td><p>WiaImgFmt_JPEG2K</p></td>
-<td><p>JPEG 2000 压缩的格式</p></td>
+<td><p>JPEG 2000 压缩格式</p></td>
 </tr>
 <tr class="even">
 <td><p>WiaImgFmt_JPEG2KX</p></td>
-<td><p>JPEG 2000 压缩的格式</p></td>
+<td><p>JPEG 2000 压缩格式</p></td>
 </tr>
 <tr class="odd">
 <td><p>WiaImgFmt_MEMORYBMP</p></td>
-<td><p>Windows 位图不带标头文件</p></td>
+<td><p>不带标头文件的 Windows 位图</p></td>
 </tr>
 <tr class="even">
 <td><p>WiaImgFmt_MPG</p></td>
@@ -180,7 +179,7 @@ WIA\_IPA\_格式属性包含要传送的图像的当前格式。 WIA 微型驱�
 </tr>
 <tr class="odd">
 <td><p>WiaImgFmt_PHOTOCD</p></td>
-<td><p>· Kodak 文件格式</p></td>
+<td><p>Eastman Kodak 文件格式</p></td>
 </tr>
 <tr class="even">
 <td><p>WiaImgFmt_PDFA<em></p></td>
@@ -196,19 +195,19 @@ WIA\_IPA\_格式属性包含要传送的图像的当前格式。 WIA 微型驱�
 </tr>
 <tr class="odd">
 <td><p>WiaImgFmt_RAW</p></td>
-<td><p>仅数据传输的 WIA 原始图像文件格式</p></td>
+<td><p>WIA Raw 映像文件格式仅用于数据传输</p></td>
 </tr>
 <tr class="even">
 <td><p>WiaImgFmt_RawBar</em><em></p></td>
-<td><p>WIA 条形码元数据的原始格式</p></td>
+<td><p>WIA 条码元数据原始格式</p></td>
 </tr>
 <tr class="odd">
 <td><p>WiaImgFmt_RawMic</em><em></p></td>
-<td><p>WIA MICR 元数据的原始格式</p></td>
+<td><p>WIA 磁墨元数据原始格式</p></td>
 </tr>
 <tr class="even">
 <td><p>WiaImgFmt_RawPat</em><em></p></td>
-<td><p>WIA 修补程序代码的元数据的原始格式</p></td>
+<td><p>WIA 修补程序代码元数据原始格式</p></td>
 </tr>
 <tr class="odd">
 <td><p>WiaImgFmt_RAWRGB</p></td>
@@ -216,7 +215,7 @@ WIA\_IPA\_格式属性包含要传送的图像的当前格式。 WIA 微型驱�
 </tr>
 <tr class="even">
 <td><p>WiaImgFmt_RTF</p></td>
-<td><p>丰富的文本文件格式</p></td>
+<td><p>Rtf 文件格式</p></td>
 </tr>
 <tr class="odd">
 <td><p>WiaImgFmt_SCRIPT</p></td>
@@ -244,15 +243,15 @@ WIA\_IPA\_格式属性包含要传送的图像的当前格式。 WIA 微型驱�
 </tr>
 <tr class="odd">
 <td><p>WiaImgFmt_XmlBar</em><em></p></td>
-<td><p>其内容是符合 WIA 条形码元数据架构的 XML 文件</p></td>
+<td><p>其内容符合 WIA 条码元数据架构的 XML 文件</p></td>
 </tr>
 <tr class="even">
 <td><p>WiaImgFmt_XmlMic</em><em></p></td>
-<td><p>其内容是符合 WIA MICR 元数据架构的 XML 文件</p></td>
+<td><p>其内容符合 WIA 磁墨元数据架构的 XML 文件</p></td>
 </tr>
 <tr class="odd">
 <td><p>WiaImgFmt_XmlPat</em><em></p></td>
-<td><p>其内容是符合 WIA 修补程序代码的元数据架构的 XML 文件</p></td>
+<td><p>其内容符合 WIA 修补程序代码元数据架构的 XML 文件</p></td>
 </tr>
 <tr class="even">
 <td><p>WiaImgFmt_XPS</em></p></td>
@@ -263,11 +262,11 @@ WIA\_IPA\_格式属性包含要传送的图像的当前格式。 WIA 微型驱�
 
  
 
-标有星号的格式 (\*) 适用于 Windows Vista 和更高版本的 Windows。
+用星号标记 () 的格式 \* 仅适用于 Windows Vista 和更高版本的 windows。
 
-使用两个星号标记的格式 (\*\*) 适用于 Windows 8 和更高版本的 Windows。
+\* \* 仅适用于 windows 8 和更高版本的 windows () 用两个星号标记的格式。
 
-所有 WIA 2.0 微型驱动程序必须将此属性的初始值都设置为其默认值，即 WiaImgFmt\_BMP。
+所有 WIA 2.0 微型驱动程序都必须将此属性的初始值设置为其默认值（即 WiaImgFmt） \_ 。
 
 <a name="requirements"></a>要求
 ------------
@@ -279,8 +278,8 @@ WIA\_IPA\_格式属性包含要传送的图像的当前格式。 WIA 微型驱�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>
@@ -288,9 +287,9 @@ WIA\_IPA\_格式属性包含要传送的图像的当前格式。 WIA 微型驱�
 ## <a name="see-also"></a>请参阅
 
 
-[**WIA\_IPA\_压缩**](wia-ipa-compression.md)
+[**WIA \_ IPA \_ 压缩**](wia-ipa-compression.md)
 
-[**WIA\_IPA\_FULL\_ITEM\_NAME**](wia-ipa-full-item-name.md)
+[**WIA \_ IPA \_ 完整 \_ 项 \_ 名称**](wia-ipa-full-item-name.md)
 
  
 

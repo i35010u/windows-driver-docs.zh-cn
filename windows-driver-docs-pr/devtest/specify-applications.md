@@ -1,17 +1,16 @@
 ---
 title: 在设备元数据创作向导中指定应用程序
 description: 在设备元数据创作向导中指定应用程序
-ms.assetid: B3ECEBF3-FBC6-45E7-9FF5-439F1CDF351F
 keywords:
 - 在设备元数据创作向导中指定应用程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c56e81e495ae96da2645ec5b80417eb6da74ff0b
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: d8551267f1b5b94a8c8ed33e9d86db4e43c6325c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384317"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816929"
 ---
 # <a name="specify-applications-in-the-device-metadata-authoring-wizard"></a>在设备元数据创作向导中指定应用程序
 
@@ -21,14 +20,14 @@ ms.locfileid: "89384317"
 
 ## <a name="to-specify-the-microsoft-store-device-app"></a>指定 Microsoft Store 设备应用
 
-1. 单击“应用程序”**** 选项卡。
+1. 单击“应用程序”选项卡。
 2. 填写以下字段：
    1. **包名称**。 在应用程序清单的 Package 元素中的 Identity 元素中输入 Name 属性的值。 在将应用程序提交到 Microsoft Store 后，应获取包名称，因为 Microsoft Store 提交过程会更改包名称。 若要详细了解如何将应用与 Microsoft Store 相关联，并将更新的值复制到应用程序清单中，请参阅 [生成 UWP 设备应用](../devapps/the-workflow.md) 。
    2. **发布者**。 在应用程序清单的 Package 元素中的 Identity 元素中输入 "发布服务器" 属性的值。 发布者名称应与用于对包进行签名的开发人员证书和元数据的名称相同。
    3. **应用 ID**。 在应用程序清单的应用程序元素中输入 ID 属性的值。
    4. **通知处理程序**。 有关通知处理程序的信息，请参阅 [设备元数据架构参考](/previous-versions/windows/hardware/metadata/ff541452(v=vs.85))。
 
-**包名称**、**发布者**和**应用 ID**必须与应用包 appxmanifest.xml 中的信息匹配。
+**包名称**、**发布者** 和 **应用 ID** 必须与应用包 appxmanifest.xml 中的信息匹配。
 
 下面是应用程序清单的示例：
 
@@ -64,9 +63,9 @@ ms.locfileid: "89384317"
 
 ## <a name="privileged-applications"></a>特权应用程序
 
-要使 Microsoft Store 设备应用能够访问特权设备接口，必须在 **特权应用程序**下指定应用。
+要使 Microsoft Store 设备应用能够访问特权设备接口，必须在 **特权应用程序** 下指定应用。
 
-若要指定特权应用程序，请在 **特权应用程序**下填写以下字段：
+若要指定特权应用程序，请在 **特权应用程序** 下填写以下字段：
 
 >[!NOTE]
 >有关特权设备接口属性键的详细信息，请参阅 [DEVPKEY \_ DeviceInterface \_ 限制](../install/devpkey-deviceinterface-restricted.md)。

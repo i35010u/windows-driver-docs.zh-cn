@@ -1,18 +1,17 @@
 ---
 title: 将 IRP 向下传递到较低级别的驱动程序
 description: 将 IRP 向下传递到较低级别的驱动程序
-ms.assetid: 9a8e72fb-b0a8-4026-8606-57fa03344146
 keywords:
 - IRP 调度例程 WDK 文件系统，并将 IRP 向下传递
 - 将 Irp 向下传递设备堆栈 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e178730199d5216f180c3129b7d0295f88986a94
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: a3578ea1cb67e9b0c6f61a78b4bf2554f81027e9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063019"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816271"
 ---
 # <a name="passing-the-irp-down-to-lower-level-drivers"></a>将 IRP 向下传递到较低级别的驱动程序
 

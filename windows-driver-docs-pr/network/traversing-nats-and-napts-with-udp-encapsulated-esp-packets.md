@@ -1,19 +1,18 @@
 ---
 title: 使用 UDP 封装的 ESP 数据包遍历 NAT 和 NAPT
 description: 使用 UDP 封装的 ESP 数据包遍历 NAT 和 NAPT
-ms.assetid: 9bfd6a7c-2c24-419e-b82d-ef6ef8fe1fa5
 keywords:
 - UDP 封装的 ESP 数据包 WDK IPsec 卸载，transversing Nat 和 NAPTs
 - 网络地址转换器 WDK IPsec 卸载
 - 网络地址端口转换器 WDK IPsec 卸载
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c693348f9c27edb7ecf801998178a10fc6140759
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f589b133e382b6afeace782a6dff8118392c4be0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215789"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815857"
 ---
 # <a name="traversing-nats-and-napts-with-udp-encapsulated-esp-packets"></a>使用 UDP 封装的 ESP 数据包遍历 NAT 和 NAPT
 
@@ -28,7 +27,7 @@ ms.locfileid: "89215789"
 
 UDP 封装解决了此问题。 实际上，UDP 封装仅用于 ESP 数据包。 NAT 或 NAPT 可以修改 UDP 封装的 ESP 包的未加密的 IP 和 UDP 标头，而不会中断 ESP 身份验证，也不会通过 ESP 加密来 stymied。 有关 ESP 数据包的 UDP 封装的详细说明，请参阅 [Udp 封装的 IPsec OVER NAT 理由](https://go.microsoft.com/fwlink/p/?linkid=9856)。
 
-Microsoft 支持端口4500上的 ESP 数据包的 UDP 封装。 IKE 对等节点在端口500上启动协商后，检测对 NAT 遍历的支持，并按路径检测 NAT 或 NAPT，它们可以协商到端口4500的 "float" IKE 和 UDP-ESP 流量。 有关此协商的详细信息，请参阅 [IKE 中的 NAT 遍历协商](https://go.microsoft.com/fwlink/p/?linkid=9857)。
+Microsoft 支持端口4500上的 ESP 数据包的 UDP 封装。 IKE 对等节点在端口500上启动协商后，检测对 NAT 遍历的支持，并按路径检测 NAT 或 NAPT，它们可以协商到端口4500的 "float" IKE 和 UDP-ESP 流量。 有关此协商的详细信息，请参阅 [IKE 中 NAT-Traversal 的协商](https://go.microsoft.com/fwlink/p/?linkid=9857)。
 
 为 NAT 遍历浮动到端口4500具有以下优势：
 

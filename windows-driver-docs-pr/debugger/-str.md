@@ -1,7 +1,6 @@
 ---
 title: str
 description: Str 扩展显示 ANSI_STRING 或 OEM_STRING 结构。
-ms.assetid: 5ebb29d4-5d77-475b-ace5-8bc8a4299320
 keywords:
 - 字符串
 - ANSI_STRING 结构
@@ -14,29 +13,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1840a0ec00d167fdf87d9d02031152738417176c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6824426988f54467e060751143f93414589b1783
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334223"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817003"
 ---
 # <a name="str"></a>!str
 
 
-**！ Str**扩展插件都会显示 ANSI\_字符串或 OEM\_字符串结构。
+**！ Str** 扩展显示 ANSI \_ 字符串或 OEM \_ 字符串结构。
 
 ```dbgcmd
 !str Address
 ```
 
-## <a name="span-idddkstrdbgspanspan-idddkstrdbgspanparameters"></a><span id="ddk__str_dbg"></span><span id="DDK__STR_DBG"></span>参数
+## <a name="span-idddk__str_dbgspanspan-idddk__str_dbgspanparameters"></a><span id="ddk__str_dbg"></span><span id="DDK__STR_DBG"></span>参数
 
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *Address*   
-指定 ANSI 的十六进制地址\_字符串或 OEM\_字符串结构。
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*地址*   
+指定 ANSI \_ 字符串或 OEM 字符串结构的十六进制地址 \_ 。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -57,14 +56,14 @@ ms.locfileid: "63334223"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关 ANSI\_字符串结构，请参阅 Microsoft Windows SDK 文档。
+有关 ANSI 字符串结构的详细信息 \_ ，请参阅 Microsoft Windows SDK 文档。
 
 <a name="remarks"></a>备注
 -------
 
-ANSI 字符串被计算在内 8 位字符字符串，如以下结构中定义：
+ANSI 字符串按以下结构中的定义，按8位字符字符串计数：
 
 ```cpp
 typedef struct _STRING {
@@ -76,7 +75,7 @@ typedef STRING ANSI_STRING;
 typedef STRING OEM_STRING;
 ```
 
-如果字符串以 null 结尾**长度**不包括尾随的 null。
+如果字符串以 null 结尾，则 **长度** 不包含尾随 null。
 
  
 

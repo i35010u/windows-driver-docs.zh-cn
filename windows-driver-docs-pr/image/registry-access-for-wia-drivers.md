@@ -1,15 +1,14 @@
 ---
 title: WIA 驱动程序的注册表访问权限
 description: WIA 驱动程序的注册表访问权限
-ms.assetid: 0e0b7493-858b-4add-9e1d-fd71bae21b6e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 65a730f644105a82fea55e7460b8da3d87962f8e
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 1f2b993fdcb7c9a39fc0b52ad30c78c57c8a9f96
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186227"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817335"
 ---
 # <a name="registry-access-for-wia-drivers"></a>WIA 驱动程序的注册表访问权限
 
@@ -21,7 +20,7 @@ ms.locfileid: "89186227"
 
 虽然在 Windows XP 中可以写入到其他注册表项，但由于 WIA 服务在高特权 **LocalSystem** 帐户下运行，因此在 Microsoft Windows Server 2003 和更高版本中，这种情况下，不可能在低特权 **LocalService** 帐户下运行。
 
-驱动程序通常需要对其注册表项（ **IStiUSD：： Initialize**之外）的写入访问权限。 由于大多数驱动程序将数据存储在 **DeviceData** 子项中，因此可以轻松地打开 **DeviceData** 子项，并将句柄存储到打开的密钥，以备稍后使用。 仅当驱动程序不再需要此注册表项时，才应将其关闭。
+驱动程序通常需要对其注册表项（ **IStiUSD：： Initialize** 之外）的写入访问权限。 由于大多数驱动程序将数据存储在 **DeviceData** 子项中，因此可以轻松地打开 **DeviceData** 子项，并将句柄存储到打开的密钥，以备稍后使用。 仅当驱动程序不再需要此注册表项时，才应将其关闭。
 
 下面的代码示例演示如何使用 **DeviceData** 注册表子项。
 
@@ -130,9 +129,9 @@ CWIADevice::~CWIADevice(void)
 }
 ```
 
-**DeviceData**注册表子项在 windows Me、windows XP 和更高版本上可用于对驱动程序进行读/写访问。 设备密钥本身 (例如，对 **DeviceData**) 的父注册表项可能会打开，也可能不打开，这取决于操作系统版本。
+**DeviceData** 注册表子项在 windows Me、windows XP 和更高版本上可用于对驱动程序进行读/写访问。 设备密钥本身 (例如，对 **DeviceData**) 的父注册表项可能会打开，也可能不打开，这取决于操作系统版本。
 
-**注意**   当不再需要驱动程序时，该驱动程序*必须*关闭它打开的任何注册表项，并且必须在卸载之前关闭所有注册表项。
+**注意**   当不再需要驱动程序时，该驱动程序 *必须* 关闭它打开的任何注册表项，并且必须在卸载之前关闭所有注册表项。
 
  
 

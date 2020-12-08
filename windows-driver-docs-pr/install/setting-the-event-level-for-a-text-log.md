@@ -1,19 +1,18 @@
 ---
 title: 设置文本日志的事件级别
 description: 设置文本日志的事件级别
-ms.assetid: 3dfd2df3-179e-434c-97fb-fd8329198f8a
 keywords:
 - 事件级别 WDK Setupapi.log 日志记录
 - 文本日志 WDK Setupapi.log，事件级别
 - LogLevel
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e781956223b97670ce8345914ba8f30fbf378b8
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 3a9c353e4631a46b67986cefe7ba0b26ea634950
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097121"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816651"
 ---
 # <a name="setting-the-event-level-for-a-text-log"></a>设置文本日志的事件级别
 
@@ -116,15 +115,15 @@ ms.locfileid: "89097121"
 
 有关这些文本日志文件的详细信息，请参阅 [Setupapi.log 文本日志](setupapi-text-logs.md)。
 
-**LogLevel**注册表值的格式为 0x*UUUUGHVW，* 其中：
+**LogLevel** 注册表值的格式为 0x *UUUUGHVW，* 其中：
 
--   由掩码 0x000000*VW*表示的低序位8位指定是否为应用程序安装日志启用日志记录，并指定应用程序日志的事件级别。
+-   由掩码 0x000000 *VW* 表示的低序位8位指定是否为应用程序安装日志启用日志记录，并指定应用程序日志的事件级别。
 
--   下一个最高八位（由掩码 0x0000*GH*00 表示）指定是否为设备安装文本日志启用日志记录，并指定设备安装文本日志的事件级别。
+-   下一个最高八位（由掩码 0x0000 *GH* 00 表示）指定是否为设备安装文本日志启用日志记录，并指定设备安装文本日志的事件级别。
 
--   不使用掩码 0x*UUUU*0000 表示的最高级别的位。
+-   不使用掩码 0x *UUUU* 0000 表示的最高级别的位。
 
-0x*VW* bits 的值控制应用程序安装日志的日志记录，如下表所示。
+0x *VW* bits 的值控制应用程序安装日志的日志记录，如下表所示。
 
 <table>
 <colgroup>
@@ -134,7 +133,7 @@ ms.locfileid: "89097121"
 <thead>
 <tr class="header">
 <th align="left"><em>0xVW</em> 值</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -155,7 +154,7 @@ ms.locfileid: "89097121"
 
  
 
-0x*GH* bits 的值控制设备安装文本日志的日志记录，如下表所示。
+0x *GH* bits 的值控制设备安装文本日志的日志记录，如下表所示。
 
 <table>
 <colgroup>
@@ -165,7 +164,7 @@ ms.locfileid: "89097121"
 <thead>
 <tr class="header">
 <th align="left"><em>0xGH</em> 值</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

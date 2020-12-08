@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x8F PP0_INITIALIZATION_FAILED
-description: PP0_INITIALIZATION_FAILED bug 检查具有 0x0000008F 值。 此 bug 检查指示插即用 (PnP) 管理器无法初始化。
-ms.assetid: 2e369d1a-51b1-4f65-8afb-b362ad48b703
+description: PP0_INITIALIZATION_FAILED bug 检查的值为0x0000008F。 此 bug 检查指示即插即用 (PnP) 管理器无法初始化。
 keywords:
 - Bug 检查 0x8F PP0_INITIALIZATION_FAILED
 - PP0_INITIALIZATION_FAILED
@@ -13,23 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 47da5ab19096dc15f7e50ac0601191a7ed9e3541
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 28e57354204474c2e55de1176b8b025dad86b386
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519145"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816425"
 ---
-# <a name="bug-check-0x8f-pp0initializationfailed"></a>Bug 检查 0x8F：PP0\_初始化\_失败
+# <a name="bug-check-0x8f-pp0_initialization_failed"></a>Bug 检查0x8F： PP0 \_ 初始化 \_ 失败
 
 
-PP0\_初始化\_失败错误检查的值为 0x0000008F。 此 bug 检查指示插即用 (PnP) 管理器无法初始化。
+PP0 \_ 初始化 \_ 失败 bug 检查的值为0x0000008F。 此 bug 检查指示即插即用 (PnP) 管理器无法初始化。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="pp0initializationfailed-parameters"></a>PP0\_初始化\_失败参数
+## <a name="pp0_initialization_failed-parameters"></a>PP0 \_ 初始化 \_ 失败参数
 
 
 无
@@ -37,7 +36,7 @@ PP0\_初始化\_失败错误检查的值为 0x0000008F。 此 bug 检查指示�
 <a name="cause"></a>原因
 -----
 
-阶段 0 的内核模式即插即用管理器初始化期间出错。
+内核模式 PnP 管理器的阶段0初始化期间出错。
 
  
 

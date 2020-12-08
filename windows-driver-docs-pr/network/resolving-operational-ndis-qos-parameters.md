@@ -1,20 +1,19 @@
 ---
 title: 解析 NDIS QoS 操作参数
 description: 解析 NDIS QoS 操作参数
-ms.assetid: F6C486B4-ABD5-413A-9E2D-283D83802C2B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b226adcdd2d1a292219ab13b031feb4d48091f0
-ms.sourcegitcommit: db9d058a9e592d4c47c67fc14f04f0ddc3aa92af
+ms.openlocfilehash: c886233681ac69c1e128140907dfa3f5814cdcab
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91989849"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817083"
 ---
 # <a name="resolving-operational-ndis-qos-parameters"></a>解析 NDIS QoS 操作参数
 
 
-操作 NDIS 服务质量 (QoS) 参数是小型端口驱动程序用于通过数据链路连接到远程对等方的流量优先级的参数。 微型端口驱动程序从以下其中一项派生或 *解析*其操作的 NDIS QoS 参数：
+操作 NDIS 服务质量 (QoS) 参数是小型端口驱动程序用于通过数据链路连接到远程对等方的流量优先级的参数。 微型端口驱动程序从以下其中一项派生或 *解析* 其操作的 NDIS QoS 参数：
 
 -   在小型端口驱动程序上本地管理的本地 NDIS QoS 参数。 有关微型端口驱动程序如何获取其本地 QoS 参数的详细信息，请参阅 [设置本地 NDIS Qos 参数](setting-local-ndis-qos-parameters.md)。
 
@@ -22,7 +21,7 @@ ms.locfileid: "91989849"
 
 本地、远程和操作 NDIS QoS 参数由以下类型的数据组成：
 
--   优先级别和流控制设置。 这些设置定义 IEEE 802.1 p 优先级以及用于传输或 *传出*流量的可选流控制算法。
+-   优先级别和流控制设置。 这些设置定义 IEEE 802.1 p 优先级以及用于传输或 *传出* 流量的可选流控制算法。
 
     有关详细信息，请参阅 [优先级别和流控制](ieee-802-1p-priority-levels.md)。
 
@@ -34,7 +33,7 @@ ms.locfileid: "91989849"
 
 -   指定为包含与分类条件匹配的数据（如 EtherType 或目标 TCP 端口）的数据包指定 IEEE 802.1 p 优先级别分配的流量分类。 有关详细信息，请参阅 [NDIS QoS 流量分类](ndis-qos-traffic-classifications.md)。
 
-    **注意**   流量分类也称为 IEEE 802.1 规范中的 "应用程序优先级"。
+    **注意**  流量分类也称为 IEEE 802.1 规范中的 "应用程序优先级"。
 
      
 

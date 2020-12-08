@@ -1,19 +1,18 @@
 ---
 title: 在 WDDM 1.2 和更高版本中提供无缝状态转换
 description: 有多种功能有助于最大程度地减少启动过程中的屏幕闪烁、从较低的电源状态转换和转换回操作系统控制。
-ms.assetid: CD2208AA-62B6-4BAD-BE7C-0791B13D1E96
 keywords:
 - 状态转换 WDK 显示
 - 从休眠 WDK 显示恢复
 - 显示驱动程序中的固件模式 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 62802fcde59a0a73312d6c63b6cc807e23ff2341
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 9c31c6df2ec1fa293843c085fdda389923c36374
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104716"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816827"
 ---
 # <a name="providing-seamless-state-transitions-in-wddm-12-and-later"></a>在 WDDM 1.2 和更高版本中提供无缝状态转换
 
@@ -56,12 +55,12 @@ ms.locfileid: "90104716"
 
 **硬件认证要求**
 
-有关硬件设备实现此功能时必须满足的要求的信息，请参阅 WHCK**上的**相关[文档](/windows-hardware/test/hlk/windows-hardware-lab-kit)。
+有关硬件设备实现此功能时必须满足的要求的信息，请参阅 WHCK **上的** 相关 [文档](/windows-hardware/test/hlk/windows-hardware-lab-kit)。
 
 ## <a name="span-idtransition_from_operating_system_to_driverspanspan-idtransition_from_operating_system_to_driverspanspan-idtransition_from_operating_system_to_driverspantransition-from-operating-system-to-driver"></a><span id="Transition_from_operating_system_to_driver"></span><span id="transition_from_operating_system_to_driver"></span><span id="TRANSITION_FROM_OPERATING_SYSTEM_TO_DRIVER"></span>从操作系统转换为驱动程序
 
 
-在启动后，当操作系统将显示的所有权移交给 WDDM 驱动程序时，它会通过调用 [*DxgkDdiStartDevice*](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_start_device) 函数启动即插即用 (PnP) 设备的启动。 或者，在从休眠状态恢复后，操作系统将调用 [*DxgkDdiSetPowerState*](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_set_power_state) 函数来启动设备，并将 *DeviceUid* 参数设置为显示 (在) 中定义的 ** \_ 适配器 \_ HW \_ ID** 。 此时，在 WDDM 图形驱动程序控制的同时， (呈现为黑色) ，这通常会遮蔽屏幕。
+在启动后，当操作系统将显示的所有权移交给 WDDM 驱动程序时，它会通过调用 [*DxgkDdiStartDevice*](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_start_device) 函数启动即插即用 (PnP) 设备的启动。 或者，在从休眠状态恢复后，操作系统将调用 [*DxgkDdiSetPowerState*](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_set_power_state) 函数来启动设备，并将 *DeviceUid* 参数设置为显示 (在) 中定义的 **\_ 适配器 \_ HW \_ ID** 。 此时，在 WDDM 图形驱动程序控制的同时， (呈现为黑色) ，这通常会遮蔽屏幕。
 
 驱动程序可以从 Windows 8) 中启动 (调用 [**DxgkCbAcquirePostDisplayOwnership**](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkcb_acquire_post_display_ownership) 函数，以便在操作系统中查询当前帧缓冲区的确切状态以及固件和启动加载程序设置的显示模式。 通过此函数检索到的 [**DXGK \_ 显示 \_ 信息**](/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_dxgk_display_information) 结构中的信息，驱动程序可以使显示控制器保持活动状态，而不会导致监视器重新同步。 由于驱动程序还包含有关帧缓冲区的详细信息，因此可以执行更平稳的转换。
 
@@ -87,7 +86,7 @@ ms.locfileid: "90104716"
 
 有关硬件设备实现此功能时必须满足的要求的信息，请参阅相关 [WHCK 文档](/windows-hardware/test/hlk/windows-hardware-lab-kit) **DisplayOutputControl**。
 
-## <a name="span-idwindows_8_firmware_mode_changesspanspan-idwindows_8_firmware_mode_changesspanspan-idwindows_8_firmware_mode_changesspanwindows8-firmware-mode-changes"></a><span id="Windows_8_firmware_mode_changes"></span><span id="windows_8_firmware_mode_changes"></span><span id="WINDOWS_8_FIRMWARE_MODE_CHANGES"></span>Windows 8 固件模式更改
+## <a name="span-idwindows_8_firmware_mode_changesspanspan-idwindows_8_firmware_mode_changesspanspan-idwindows_8_firmware_mode_changesspanwindows-8-firmware-mode-changes"></a><span id="Windows_8_firmware_mode_changes"></span><span id="windows_8_firmware_mode_changes"></span><span id="WINDOWS_8_FIRMWARE_MODE_CHANGES"></span>Windows 8 固件模式更改
 
 
 在固件向操作系统移交控制权之前，会更改固件的显示模式：
@@ -95,14 +94,14 @@ ms.locfileid: "90104716"
 <span id="_1.2_and_later_drivers__dxgkddi_interface_version____dxgkddi_interface_version_win8_"></span><span id="_1.2_AND_LATER_DRIVERS__DXGKDDI_INTERFACE_VERSION____DXGKDDI_INTERFACE_VERSION_WIN8_"></span>WDDM 1.2 和更高版本的驱动程序 (**DXGKDDI \_ 接口 \_ 版本** &gt; =  **DXGKDDI \_ 接口 \_ 版本 \_ WIN8**)   
 为了进一步消除显示闪烁，从 Windows 8 开始，不会在 WDDM 1.2 和更高版本驱动程序的固件上调用 Int10 模式更改请求。
 
-此外，如果在关闭监视器后发生模式更改，操作系统只调用[*DxgkDdiCommitVidPn*](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_commitvidpn)函数一次，并将*pCommitVidPnArg*参数设置为它在监视器已打开时的值，并将*pCommitVidPnArg*标志的**PathPoweredOff**成员 - &gt; **Flags**设置为**TRUE**。
+此外，如果在关闭监视器后发生模式更改，操作系统只调用 [*DxgkDdiCommitVidPn*](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_commitvidpn)函数一次，并将 *pCommitVidPnArg* 参数设置为它在监视器已打开时的值，并将 *pCommitVidPnArg* 标志的 **PathPoweredOff** 成员 - &gt; **Flags** 设置为 **TRUE**。
 
 <span id="_1.0_and_1.1_drivers__DXGKDDI_INTERFACE_VERSION___DXGKDDI_INTERFACE_VERSION_WIN8_"></span><span id="_1.0_and_1.1_drivers__dxgkddi_interface_version___dxgkddi_interface_version_win8_"></span><span id="_1.0_AND_1.1_DRIVERS__DXGKDDI_INTERFACE_VERSION___DXGKDDI_INTERFACE_VERSION_WIN8_"></span>WDDM 1.0 和1.1 驱动程序 (**DXGKDDI \_ 接口 \_ 版本** &lt; **DXGKDDI \_ 接口 \_ 版本 \_ WIN8**)   
 对于在 Windows 8 上运行的 WDDM 版本1.0 和1.1 驱动程序，在启动过程中或从休眠中恢复时，会将调入 Int10 VGA 模式，使其将显示分辨率设置为监视器的本机高分辨率。 在 Windows 8 之前，Int10 VGA mode 0x12 调用将显示分辨率设置为 640 x 480 像素，每像素16位，无闪烁光标，以显示操作系统初始屏幕图像。
 
 但是，对于指示它们不支持高分辨率模式的 WDDM 版本1.0 和1.1 驱动程序，从 Windows 8 启动到 VGA 模式0x12 将显示分辨率设置为 640 x 480 像素，每像素16位，无闪烁的光标。 当系统从休眠恢复时，显示分辨率仍将设置为监视器的本机高分辨率。
 
-此外，如果在关闭监视器后发生模式更改，则操作系统会按上述针对 WDDM 1.2 驱动程序的[*DxgkDdiCommitVidPn*](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_commitvidpn)函数进行调用，另外，它会*再次*调用*DxgkDdiCommitVidPn* *pCommitVidPnArg*hFunctionalVidPn 中的空视频 (VidPN) - &gt; **hFunctionalVidPn** ，而不是*pCommitVidPnArg*标志中设置的任何标志值 - &gt; **Flags**。
+此外，如果在关闭监视器后发生模式更改，则操作系统会按上述针对 WDDM 1.2 驱动程序的 [*DxgkDdiCommitVidPn*](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_commitvidpn)函数进行调用，另外，它会 *再次* 调用 *DxgkDdiCommitVidPn* *pCommitVidPnArg* hFunctionalVidPn 中的空视频 (VidPN) - &gt; **hFunctionalVidPn** ，而不是 *pCommitVidPnArg* 标志中设置的任何标志值 - &gt; **Flags**。
 
 如果在休眠后恢复系统，并且监视同步生成仍处于启用状态，则也会发生这两个部分的调用序列。 在这种情况下，当驱动程序收到第二次调用 [*DxgkDdiCommitVidPn*](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_commitvidpn)时，该驱动程序应不执行任何操作。
 

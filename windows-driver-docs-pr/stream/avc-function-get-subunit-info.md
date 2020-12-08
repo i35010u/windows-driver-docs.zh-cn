@@ -1,7 +1,6 @@
 ---
 title: AVC \_ 函数 \_ 获取子单位 \_ \_ 信息
 description: AVC \_ 函数 \_ 获取子单位 \_ \_ 信息
-ms.assetid: 1793df9d-b186-425f-a3dd-3054cb9b74bf
 keywords:
 - AVC_FUNCTION_GET_SUBUNIT_INFO 流媒体设备
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b1cda334480b6e35ef729d00364e6ed4496ce1a8
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: f1d50d98ac94274df602ad610cf2a52428dc92b5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187493"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816511"
 ---
 # <a name="avc_function_get_subunit_info"></a>AVC \_ 函数 \_ 获取子单位 \_ \_ 信息
 
@@ -25,13 +24,13 @@ ms.locfileid: "89187493"
 ## <span id="ddk_avc_function_get_subunit_info_ks"></span><span id="DDK_AVC_FUNCTION_GET_SUBUNIT_INFO_KS"></span>
 
 
-**AVC 函数获取子单位 \_ \_ \_ \_ 信息**函数代码获取目标设备的子单位信息。
+**AVC 函数获取子单位 \_ \_ \_ \_ 信息** 函数代码获取目标设备的子单位信息。
 
 ### <a name="io-status-block"></a>I/o 状态块
 
 此函数始终将 **Irp- &gt; IoStatus** 设置为状态 " \_ 成功"。
 
-### <a name="comments"></a>说明
+### <a name="comments"></a>注释
 
 此函数使用 AVC **Subunits** \_ MULTIFUNC IRB 结构的子单元连接成员 \_ ，如下所示。
 
@@ -49,7 +48,7 @@ typedef struct _AVC_MULTIFUNC_IRB {
 
 ### <a name="requirements"></a>要求
 
-**标头：** 在 *avc*中声明。 包括 *avc*。
+**标头：** 在 *avc* 中声明。 包括 *avc*。
 
 ### <a name="avc_multifunc_irb-input"></a>AVC \_ MULTIFUNC \_ IRB 输入
 

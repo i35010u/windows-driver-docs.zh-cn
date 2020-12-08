@@ -1,7 +1,6 @@
 ---
 title: 系统区域网络简介
 description: 系统区域网络简介
-ms.assetid: 28d92bb5-8c3c-4f46-b908-63e3a3efff37
 keywords:
 - 系统区域网络 WDK，关于系统区域网络
 - SAN WDK，关于系统区域网络
@@ -10,12 +9,12 @@ keywords:
 - SAN NIC WDK San
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e69f2d02619cd78f0640ca0272affab52cbdd3e
-ms.sourcegitcommit: 3464f10ffa0727e38fbe225cfab52bb8c2bb1747
+ms.openlocfilehash: 0762103a3626156543e657987016a2f65df4f410
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93352938"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815953"
 ---
 # <a name="introduction-to-system-area-networks"></a>系统区域网络简介
 

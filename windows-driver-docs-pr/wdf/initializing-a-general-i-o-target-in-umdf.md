@@ -1,18 +1,17 @@
 ---
 title: 初始化 UMDF 中的常规 I/O 目标
 description: 初始化 UMDF 中的常规 I/O 目标
-ms.assetid: cf1b39c3-4c82-411b-8eef-117ac0fe793e
 keywords:
 - 一般 i/o 目标是 WDK UMDF，初始化
 - 初始化常规 i/o 目标 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 76acdbcdd0ea6f7d8c0a132c4cfce89a4020d8cf
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 81401ecee489d3dcdf0febca34a81e0fd944a11b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716652"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815595"
 ---
 # <a name="initializing-a-general-io-target-in-umdf"></a>初始化 UMDF 中的常规 I/O 目标
 
@@ -31,9 +30,9 @@ ms.locfileid: "90716652"
 
 如果 UMDF 驱动程序必须将 i/o 请求发送到基于句柄的接口，例如网络套接字接口，则驱动程序必须创建基于文件句柄的 i/o 目标对象。 若要创建基于文件句柄的 i/o 目标对象，驱动程序必须执行以下操作：
 
-1.  调用设备的[IWDFDevice](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfdevice)接口的**QueryInterface**方法，检索指向[IWDFFileHandleTargetFactory](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdffilehandletargetfactory)接口的指针。
+1.  调用设备的 [IWDFDevice](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfdevice)接口的 **QueryInterface** 方法，检索指向 [IWDFFileHandleTargetFactory](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdffilehandletargetfactory)接口的指针。
 
-2.  通过调用 Win32 [**CreateFile**](/windows/win32/api/fileapi/nf-fileapi-createfilea)、 **CreateNamedPipe**或 **socket** 函数获取文件、命名管道或套接字的 win32 句柄。
+2.  通过调用 Win32 [**CreateFile**](/windows/win32/api/fileapi/nf-fileapi-createfilea)、 **CreateNamedPipe** 或 **socket** 函数获取文件、命名管道或套接字的 win32 句柄。
 
 3.  调用 [**IWDFFileHandleTargetFactory：： CreateFileHandleTarget**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdffilehandletargetfactory-createfilehandletarget) 方法为文件、管道或套接字创建基于文件句柄的 i/o 目标对象。
 
@@ -47,7 +46,7 @@ ms.locfileid: "90716652"
 
 1.  调用 [**IWDFDevice2：： CreateRemoteTarget**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice2-createremotetarget) 以创建远程目标对象。
 
-2.  为 "[设备) 接口](using-device-interfaces-in-umdf-drivers.md)") 或[**IWDFRemoteTarget：： OpenRemoteInterface**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfremotetarget-openremoteinterface) (调用[**IWDFRemoteTarget：： OpenFileByName**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfremotetarget-openfilebyname) (，以打开 i/o 操作的目标。
+2.  为 "[设备) 接口](using-device-interfaces-in-umdf-drivers.md)") 或 [**IWDFRemoteTarget：： OpenRemoteInterface**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfremotetarget-openremoteinterface) (调用 [**IWDFRemoteTarget：： OpenFileByName**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfremotetarget-openfilebyname) (，以打开 i/o 操作的目标。
 
  
 

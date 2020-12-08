@@ -1,7 +1,6 @@
 ---
 title: 'SyncReqSend 规则 (kmdf) '
 description: SyncReqSend 规则指定所有同步发送请求都是使用特定于同步的 KMDF 设备驱动程序接口方法来完成的，并且这些方法的超时值设置为非零值。
-ms.assetid: 74d6536e-b5b9-4773-9059-b2cb2e7b474d
 ms.date: 05/21/2018
 keywords:
 - 'SyncReqSend 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b11f7186fea1ecfa633abfe3dd08bf407000e47a
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 016d22c3977b0369740eba9b525a5a07aa07add2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101622"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817459"
 ---
 # <a name="syncreqsend-rule-kmdf"></a>SyncReqSend 规则 (kmdf) 
 
 
-**SyncReqSend**规则指定所有同步发送请求都是使用特定于同步的 KMDF 设备驱动程序接口方法来完成的，并且这些方法的超时值设置为非零值。
+**SyncReqSend** 规则指定所有同步发送请求都是使用特定于同步的 KMDF 设备驱动程序接口方法来完成的，并且这些方法的超时值设置为非零值。
 
 如果驱动程序在不设置有效超时的情况下调用 *WDFxxxSendXXXSynchronously* 方法，则如果硬件未及时响应，则线程可能会停止。
 

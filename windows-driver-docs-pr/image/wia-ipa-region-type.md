@@ -1,9 +1,8 @@
 ---
-title: WIA\_IPA\_区域\_类型
-description: WIA\_IPA\_区域\_类型属性保留供将来使用由 Microsoft 和未实现这一次。
-ms.assetid: 134f89c0-aefa-4643-8a19-ce3ae54caf19
+title: WIA \_ IPA \_ 区域 \_ 类型
+description: WIA \_ IPA \_ 区域 \_ 类型属性由 Microsoft 保留以供将来使用，此时不会实现。
 keywords:
-- WIA_IPA_REGION_TYPE 成像设备
+- WIA_IPA_REGION_TYPE 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,24 +13,24 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ff632855346f4f8b6aa574e8a1c2d1df27642e0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 0d22cf9609d59364c1d26d18a67d0af159703f51
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541389"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817233"
 ---
-# <a name="wiaiparegiontype"></a>WIA\_IPA\_区域\_类型
+# <a name="wia_ipa_region_type"></a>WIA \_ IPA \_ 区域 \_ 类型
 
 
-WIA\_IPA\_区域\_类型属性保留供将来使用由 Microsoft 和未实现这一次。
+WIA \_ IPA \_ 区域 \_ 类型属性由 Microsoft 保留以供将来使用，此时不会实现。
 
 ## <span id="ddk_wia_ipa_region_type_si"></span><span id="DDK_WIA_IPA_REGION_TYPE_SI"></span>
 
 
-属性类型：VT\_I4
+属性类型： VT \_ I4
 
-有效值：WIA\_PROP\_NONE
+有效值： WIA " \_ \_ 无"
 
 访问权限：只读
 
@@ -46,7 +45,7 @@ WIA\_IPA\_区域\_类型属性保留供将来使用由 Microsoft 和未实现这
 <tbody>
 <tr class="odd">
 <td><p>标头</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>

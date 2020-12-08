@@ -1,17 +1,16 @@
 ---
 title: 反交错的示例函数
 description: 反交错的示例函数
-ms.assetid: a91c0267-7a3e-4206-8680-6e87778a329d
 keywords:
 - 取消隔行扫描 WDK DirectX VA，示例函数
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 033ee7984ef026c69cd08d38c5dffdf73d8128dc
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: d04e97a30e878caeee72854c58f422a6285cec30
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715126"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816853"
 ---
 # <a name="sample-functions-for-deinterlacing"></a>反交错的示例函数
 
@@ -19,7 +18,7 @@ ms.locfileid: "90715126"
 ## <span id="ddk_sample_functions_for_deinterlacing_gg"></span><span id="DDK_SAMPLE_FUNCTIONS_FOR_DEINTERLACING_GG"></span>
 
 
-本部分中的示例取消隔行扫描函数说明了如何实现取消隔行扫描和帧速率转换功能。 示例函数映射到[**DD \_ MOTIONCOMPCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构中定义的[运动补偿回调函数](motion-compensation-callbacks.md)。 您可以实现每个示例函数，然后使用 "运动补偿代码" 模板来完成实现。 有关详细信息，请参阅 [DIRECTX VA 设备的示例代码](example-code-for-directx-va-devices.md)。
+本部分中的示例取消隔行扫描函数说明了如何实现取消隔行扫描和帧速率转换功能。 示例函数映射到 [**DD \_ MOTIONCOMPCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构中定义的 [运动补偿回调函数](motion-compensation-callbacks.md)。 您可以实现每个示例函数，然后使用 "运动补偿代码" 模板来完成实现。 有关详细信息，请参阅 [DIRECTX VA 设备的示例代码](example-code-for-directx-va-devices.md)。
 
 ### <a name="span-iddeinterlace_container_device_class_sample_functionsspanspan-iddeinterlace_container_device_class_sample_functionsspanspan-iddeinterlace_container_device_class_sample_functionsspandeinterlace-container-device-class-sample-functions"></a><span id="Deinterlace_Container_Device_Class_Sample_Functions"></span><span id="deinterlace_container_device_class_sample_functions"></span><span id="DEINTERLACE_CONTAINER_DEVICE_CLASS_SAMPLE_FUNCTIONS"></span>隔行扫描容器设备类示例函数
 
@@ -33,7 +32,7 @@ ms.locfileid: "90715126"
 <thead>
 <tr class="header">
 <th align="left">成员函数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -62,7 +61,7 @@ ms.locfileid: "90715126"
 <thead>
 <tr class="header">
 <th align="left">成员函数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

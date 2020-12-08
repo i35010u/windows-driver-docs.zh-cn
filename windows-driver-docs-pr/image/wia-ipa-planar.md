@@ -1,9 +1,8 @@
 ---
-title: WIA\_IPA\_平面数据
-description: WIA\_IPA\_平面属性包含图像数据打包选项。 WIA 微型驱动程序创建并维护此属性。
-ms.assetid: df4013db-8f9e-428a-83dd-c344f7998034
+title: WIA \_ IPA \_ 平面
+description: WIA \_ IPA \_ 平面属性包含图像数据打包选项。 WIA 微型驱动程序创建并维护此属性。
 keywords:
-- WIA_IPA_PLANAR 成像设备
+- WIA_IPA_PLANAR 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,33 +13,33 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e3708de0cb31754ea19340cbc5a05cbf1a83f27
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 7f9ef9a3ecb4ccc4755e57366a6a387081b94fa2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520221"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817255"
 ---
-# <a name="wiaipaplanar"></a>WIA\_IPA\_平面数据
+# <a name="wia_ipa_planar"></a>WIA \_ IPA \_ 平面
 
 
-WIA\_IPA\_平面属性包含图像数据打包选项。 WIA 微型驱动程序创建并维护此属性。
+WIA \_ IPA \_ 平面属性包含图像数据打包选项。 WIA 微型驱动程序创建并维护此属性。
 
 ## <span id="ddk_wia_ipa_planar_si"></span><span id="DDK_WIA_IPA_PLANAR_SI"></span>
 
 
-属性类型：VT\_I4
+属性类型： VT \_ I4
 
-有效值：WIA\_PROP\_列表或 WIA\_PROP\_NONE
+有效值： WIA 内容 \_ \_ 列表或 wia " \_ \_ 无"
 
-访问权限：读/写或只读的
+访问权限：读/写或只读
 
 <a name="remarks"></a>备注
 -------
 
-应用程序读取 WIA\_IPA\_平面数据以确定映像打包选项或设置当前图像打包选项。
+应用程序读取 WIA \_ IPA \_ 平面来确定图像打包选项，或设置当前图像打包选项。
 
-下表描述了有效使用 WIA 的常量\_IPA\_平面数据。
+下表介绍了 WIA IPA 平面的有效常量 \_ \_ 。
 
 <table>
 <colgroup>
@@ -56,18 +55,18 @@ WIA\_IPA\_平面属性包含图像数据打包选项。 WIA 微型驱动程序�
 <tbody>
 <tr class="odd">
 <td><p>WIA_PACKED_PIXEL</p></td>
-<td><p>图像数据的格式打包像素。</p></td>
+<td><p>图像数据采用打包像素格式。</p></td>
 </tr>
 <tr class="even">
 <td><p>WIA_PLANAR</p></td>
-<td><p>图像数据的平面格式。</p></td>
+<td><p>图像数据采用平面格式。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-如果设备可以设置为单个值，则可以实现 WIA\_IPA\_平面属性作为 WIA\_PROP\_NONE 和只读的。
+如果设备只能设置为单个值，则可以实现 wia \_ IPA \_ 平面属性为 wia 属性 \_ \_ NONE 和只读。
 
 <a name="requirements"></a>要求
 ------------
@@ -80,11 +79,11 @@ WIA\_IPA\_平面属性包含图像数据打包选项。 WIA 微型驱动程序�
 <tbody>
 <tr class="odd">
 <td><p>版本</p></td>
-<td><p>在 Windows Vista 和更高版本操作系统中已过时。</p></td>
+<td><p>在 Windows Vista 和更高版本的操作系统中已过时。</p></td>
 </tr>
 <tr class="even">
 <td><p>标头</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>

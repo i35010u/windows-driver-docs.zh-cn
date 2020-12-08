@@ -1,9 +1,8 @@
 ---
-title: WIA\_IPC\_TIMEDELAY
-description: WIA\_IPC\_TIMEDELAY 属性保留供将来使用由 Microsoft 和未实现这一次。
-ms.assetid: 3166b2b8-eb90-4474-a9ea-beb752985201
+title: WIA \_ IPC \_ TIMEDELAY
+description: WIA \_ IPC \_ TIMEDELAY 属性已由 Microsoft 保留以供将来使用，此时不会实现。
 keywords:
-- WIA_IPC_TIMEDELAY 成像设备
+- WIA_IPC_TIMEDELAY 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,24 +13,24 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 67f3bce90faa41953f5b1d032c0828eb7824ca51
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 045d41054fc56023e8508b86ff20e3dcdc493e2e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378387"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817191"
 ---
-# <a name="wiaipctimedelay"></a>WIA\_IPC\_TIMEDELAY
+# <a name="wia_ipc_timedelay"></a>WIA \_ IPC \_ TIMEDELAY
 
 
-WIA\_IPC\_TIMEDELAY 属性保留供将来使用由 Microsoft 和未实现这一次。
+WIA \_ IPC \_ TIMEDELAY 属性已由 Microsoft 保留以供将来使用，此时不会实现。
 
 ## <span id="ddk_wia_ipc_timedelay_si"></span><span id="DDK_WIA_IPC_TIMEDELAY_SI"></span>
 
 
-属性类型：VT\_I4
+属性类型： VT \_ I4
 
-有效值：WIA\_PROP\_NONE
+有效值： WIA " \_ \_ 无"
 
 访问权限：只读
 
@@ -45,12 +44,12 @@ WIA\_IPC\_TIMEDELAY 属性保留供将来使用由 Microsoft 和未实现这一�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>在 Windows Vista 和更高版本操作系统中已过时，并应不再使用。 但是，此属性仍定义 Windows Vista 中与应用程序和用于 Windows Server 2003、 Windows XP 和早期版本的 Windows 设备的兼容性。</p></td>
+<td><p>版本</p></td>
+<td><p>在 Windows Vista 和更高版本的操作系统中已过时，不应再使用。 但是，在 Windows Vista 中仍定义此属性，以与为 Windows Server 2003、Windows XP 和 windows 的早期版本设计的应用程序和设备兼容。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>

@@ -1,9 +1,8 @@
 ---
-title: WIA\_IPC\_AUDIO\_DATA\_FORMAT
-description: WIA\_IPC\_音频\_数据\_格式属性已过时，不应使用。
-ms.assetid: 8b7ec009-ac27-4087-ac88-1efadcd6bdd8
+title: WIA \_ IPC \_ 音频 \_ 数据 \_ 格式
+description: WIA \_ IPC \_ 音频 \_ 数据 \_ 格式属性已过时，不应使用。
 keywords:
-- WIA_IPC_AUDIO_DATA_FORMAT 成像设备
+- WIA_IPC_AUDIO_DATA_FORMAT 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,21 +13,21 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b3c7ddccc86f17a2480ff1b0cb3cc00ec45e493
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 771516b22670cba16814886a7366e5533ce93768
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366834"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817217"
 ---
-# <a name="wiaipcaudiodataformat"></a>WIA\_IPC\_AUDIO\_DATA\_FORMAT
+# <a name="wia_ipc_audio_data_format"></a>WIA \_ IPC \_ 音频 \_ 数据 \_ 格式
 
 
-WIA\_IPC\_音频\_数据\_格式属性已过时，不应使用。
+WIA \_ IPC \_ 音频 \_ 数据 \_ 格式属性已过时，不应使用。
 
-属性类型：VT\_I4
+属性类型： VT \_ I4
 
-有效值：WIA\_PROP\_NONE
+有效值： WIA " \_ \_ 无"
 
 访问权限：只读
 
@@ -42,8 +41,8 @@ WIA\_IPC\_音频\_数据\_格式属性已过时，不应使用。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>

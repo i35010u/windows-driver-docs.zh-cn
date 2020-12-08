@@ -1,7 +1,6 @@
 ---
 title: 缩放桌面图像
 description: 缩放桌面图像
-ms.assetid: e27c7510-45b0-46e6-878f-b901cdd1cd57
 keywords:
 - 连接显示 WDK Windows 7 显示、CCD 概念、缩放桌面映像
 - 连接显示 WDK Windows Server 2008 R2 显示、CCD 的概念、缩放桌面映像
@@ -13,12 +12,12 @@ keywords:
 - 缩放桌面映像 WDK Windows Server 2008 R2 显示器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2628e1d0e830756d7f0daf1293066bd332a1ffa9
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 8172158b8e6038e2b5d4e2db1fcf39fadfce0b0c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714998"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816843"
 ---
 # <a name="scaling-the-desktop-image"></a>缩放桌面图像
 
@@ -38,11 +37,11 @@ ms.locfileid: "90714998"
 ![演示拉伸缩放的图](images/ccd-stretch-scale.png)
 
 <span id="Aspect-Ratio-Preserving_Stretched"></span><span id="aspect-ratio-preserving_stretched"></span><span id="ASPECT-RATIO-PRESERVING_STRETCHED"></span>**纵横比-保留延伸**  
-纵横比-保留延伸缩放是一种模式，在该模式下，桌面会在保持纵横比的同时水平和垂直拉伸。 当 [**SetDisplayConfig**](/windows/win32/api/winuser/nf-winuser-setdisplayconfig) 应用纵横比保留延伸缩放时，黑色带区可能会显示在桌面的 *上方和下方* 或 *左侧或右侧* 。 但是，黑色带区不能同时*显示在桌面的**上方和下方*。 由于用户需要使用这种类型的缩放，因此 **SetDisplayConfig** 会将此类型的缩放作为默认值应用。 下图显示了纵横比，其中保留了延伸缩放。
+纵横比-保留延伸缩放是一种模式，在该模式下，桌面会在保持纵横比的同时水平和垂直拉伸。 当 [**SetDisplayConfig**](/windows/win32/api/winuser/nf-winuser-setdisplayconfig) 应用纵横比保留延伸缩放时，黑色带区可能会显示在桌面的 *上方和下方* 或 *左侧或右侧* 。 但是，黑色带区不能同时 *显示在桌面的**上方和下方*。 由于用户需要使用这种类型的缩放，因此 **SetDisplayConfig** 会将此类型的缩放作为默认值应用。 下图显示了纵横比，其中保留了延伸缩放。
 
 ![图说明了纵横比-保留延伸比例](images/ccd-arpstretch-scale.png)
 
-缩放取决于用于路径的源和目标模式。 此外，调用方可以调用 [**SetDisplayConfig**](/windows/win32/api/winuser/nf-winuser-setdisplayconfig) 而无需指定目标模式信息 (即，将 *modeInfoArray* 参数设置为可选，并且可以将其设置为 **NULL**) 。 因此，调用方通常无法预测 **SetDisplayConfig** 是否必须执行任何缩放。 此外，不存在 API 来获取图形适配器支持的缩放类型的完整列表。 Windows SDK) 文档中所述的[**EnumDisplaySettings**](/windows/win32/api/winuser/nf-winuser-enumdisplaysettingsa) Win32 函数 (在 \_ 调用方请求新的 Windows 7 缩放**DEVMODE**类型时*lpDevMode*参数指向的**dmDisplayFixedOutput**成员中返回 DMDFO 默认值。
+缩放取决于用于路径的源和目标模式。 此外，调用方可以调用 [**SetDisplayConfig**](/windows/win32/api/winuser/nf-winuser-setdisplayconfig) 而无需指定目标模式信息 (即，将 *modeInfoArray* 参数设置为可选，并且可以将其设置为 **NULL**) 。 因此，调用方通常无法预测 **SetDisplayConfig** 是否必须执行任何缩放。 此外，不存在 API 来获取图形适配器支持的缩放类型的完整列表。 Windows SDK) 文档中所述的 [**EnumDisplaySettings**](/windows/win32/api/winuser/nf-winuser-enumdisplaysettingsa) Win32 函数 (在 \_ 调用方请求新的 Windows 7 缩放 **DEVMODE** 类型时 *lpDevMode* 参数指向的 **dmDisplayFixedOutput** 成员中返回 DMDFO 默认值。
 
 调用方传递给 [**SetDisplayConfig**](/windows/win32/api/winuser/nf-winuser-setdisplayconfig) 的缩放是缩放意向，而不是显式请求来执行缩放操作。 如果需要缩放 (例如，源和目标解析) 不同， **SetDisplayConfig** 将使用调用方提供的缩放。 如果不支持所提供的缩放， **SetDisplayConfig** 将使用图形适配器的默认缩放。 当调用方传递给 **SetDisplayConfig** 的源和目标解析相同时， **SetDisplayConfig** 始终设置标识缩放。
 
@@ -102,11 +101,11 @@ ms.locfileid: "90714998"
 
 传递给 SetDisplayConfig 的缩放标志生成的源模式和目标模式具有相同的分辨率。结果源模式和目标模式具有不同的分辨率 **集**
 
-**Store**
+**应用商店**
 
 **设置**
 
-**Store**
+**应用商店**
 
 DC \_ 标识当前未在 Db 中的配置
 
@@ -224,11 +223,11 @@ DatabaseValue
 
 传递给 ChangeDisplaySettingsEx 的缩放标志生成的源模式和目标模式具有相同的分辨率。结果源模式和目标模式具有不同的分辨率 **集**
 
-**Store**
+**应用商店**
 
 **设置**
 
-**Store**
+**应用商店**
 
 DMDFO \_ 默认值与当前配置不在 CCD 数据库中
 
@@ -337,7 +336,7 @@ DatabaseValue
 
 ### <a name="span-iddirectx_games_and_scalingspanspan-iddirectx_games_and_scalingspandirectx-games-and-scaling"></a><span id="directx_games_and_scaling"></span><span id="DIRECTX_GAMES_AND_SCALING"></span>DirectX 游戏和缩放
 
-Microsoft DirectX 9L 和更早的运行时要求应用程序始终调用[**ChangeDisplaySettingsEx**](/windows/win32/api/winuser/nf-winuser-changedisplaysettingsexa)函数，而不是 \_ 在*LPDEVMODE*参数指向的 DEVMODE 结构的**dmFields**成员中设置 DM DISPLAYFIXEDOUTPUT。 DirectX 10 和更高版本的运行时允许应用程序选择这些应用程序传递给 **ChangeDisplaySettingsEx**的缩放。 下表显示了将缩放值映射到传递给 **ChangeDisplaySettingsEx**的缩放标志。
+Microsoft DirectX 9L 和更早的运行时要求应用程序始终调用 [**ChangeDisplaySettingsEx**](/windows/win32/api/winuser/nf-winuser-changedisplaysettingsexa)函数，而不是 \_ 在 *LPDEVMODE* 参数指向的 DEVMODE 结构的 **dmFields** 成员中设置 DM DISPLAYFIXEDOUTPUT。 DirectX 10 和更高版本的运行时允许应用程序选择这些应用程序传递给 **ChangeDisplaySettingsEx** 的缩放。 下表显示了将缩放值映射到传递给 **ChangeDisplaySettingsEx** 的缩放标志。
 
 <table>
 <colgroup>

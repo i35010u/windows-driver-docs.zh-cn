@@ -1,7 +1,6 @@
 ---
 title: 框架 I/O 目标对象
 description: 框架 I/O 目标对象
-ms.assetid: 355a1818-88c9-4989-9141-8445f511f501
 keywords:
 - UMDF 对象 WDK，i/o 目标对象
 - framework 对象 WDK UMDF，i/o 目标对象
@@ -10,12 +9,12 @@ keywords:
 - 目标 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 83b51229bb1709bf9aaa759ee0c9332b98d7fc47
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 18281920e26e95d307c88e0d4d37620d07954008
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192761"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815685"
 ---
 # <a name="framework-io-target-object"></a>框架 I/O 目标对象
 

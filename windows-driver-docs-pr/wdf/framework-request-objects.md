@@ -1,7 +1,6 @@
 ---
 title: 框架请求对象
 description: 框架请求对象
-ms.assetid: 564f3600-4784-4a37-ac13-38338c38a9d2
 keywords:
 - I/o 请求 WDK KMDF，请求对象
 - 请求对象 WDK KMDF
@@ -10,12 +9,12 @@ keywords:
 - 请求对象 WDK KMDF，关于请求对象
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c60b09f56ece71a8a8a88c0ef132d1eb8052c468
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 5395677e6136448bd01b79bacfe8cd7ed81da2f0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184617"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815647"
 ---
 # <a name="framework-request-objects"></a>框架请求对象
 
@@ -27,7 +26,7 @@ Framework 请求对象表示 i/o 管理器发送到驱动程序的 i/o 请求。
 
 每个 i/o 请求都包含一个 WDM *i/o 请求数据包* ([**IRP**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp) 结构) ，但基于框架的驱动程序通常不需要访问 IRP 结构。
 
-## <a name="in-this-section"></a>本节内容
+## <a name="in-this-section"></a>在本节中
 
 
 -   [创建框架请求对象](creating-framework-request-objects.md)

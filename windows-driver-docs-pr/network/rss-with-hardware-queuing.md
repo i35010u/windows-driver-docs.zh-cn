@@ -1,7 +1,6 @@
 ---
 title: 使用硬件队列的 RSS
 description: 使用硬件队列的 RSS
-ms.assetid: f37caef9-6d22-4d17-8628-0c3f93de470e
 keywords:
 - 接收方缩放 WDK 网络，硬件队列
 - RSS WDK 网络，硬件队列
@@ -9,12 +8,12 @@ keywords:
 - 接收队列 WDK RSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c5ee2dcf0025914af9f574708f1e6b95a1ab9ad3
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 1b11abcd31c5486d46139f04db9b59a73a2e203f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209271"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815895"
 ---
 # <a name="rss-with-hardware-queuing"></a>使用硬件队列的 RSS
 

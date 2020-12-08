@@ -1,19 +1,18 @@
 ---
 title: 模拟
 description: 模拟
-ms.assetid: 368c6741-b51a-4629-8ae6-a7848c07c0fc
 keywords:
 - 安全 WDK 文件系统，添加安全检查
 - 安全检查 WDK 文件系统，模拟
 - 模拟 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 013416a8a04af053e38ba084046d2012a8214968
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 741b5ffcdcf9a2f42aea940d5304cd86018552f1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065944"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816777"
 ---
 # <a name="impersonation"></a>模拟
 
@@ -25,7 +24,7 @@ ms.locfileid: "89065944"
 
 模拟所需的关键例程包括：
 
--   [**PsImpersonateClient**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-psimpersonateclient) [**SeImpersonateClientEx**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-seimpersonateclientex)--启动模拟。 除非指示特定的线程，否则将在当前线程上下文中执行模拟。
+-   [**PsImpersonateClient**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-psimpersonateclient) [**SeImpersonateClientEx**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-seimpersonateclientex)--启动模拟。 除非指示特定的线程，否则将在当前线程上下文中执行模拟。
 
 -   **PsRevertToSelf**--在当前线程上下文中终止模拟。
 

@@ -1,9 +1,8 @@
 ---
 title: storagekd.storunit
-description: Storagekd.storunit 扩展显示有关指定 Storport 逻辑单元的信息。
-ms.assetid: 73A2632C-962E-4075-97B9-5D7D843E9D0F
+description: Storagekd. storunit 扩展显示指定的 Storport 逻辑单元的相关信息。
 keywords:
-- storagekd.storunit Windows 调试
+- storagekd storunit Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,29 +11,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3cc7d844b0cae7c1ebaa2dc2cd3c1c6280722495
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dd35e946480d651c5a6f22084a9d71e5c4eedf72
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338779"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817005"
 ---
 # <a name="storagekdstorunit"></a>!storagekd.storunit
 
 
-**！ Storagekd.storunit**扩展显示有关指定 Storport 逻辑单元的信息。
+**！ Storagekd. storunit** 扩展显示指定的 Storport 逻辑单元的相关信息。
 
 ```dbgcmd
 !storagekd.storunit [Address] 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______Address"></span><span id="_______address"></span><span id="_______ADDRESS"></span> *Address*  
-指定 Storport 单位设备对象的地址。 如果*地址*是省略，此时会显示所有 Storport 单元的列表。
+<span id="_______Address"></span><span id="_______address"></span><span id="_______ADDRESS"></span>*地址*  
+指定 Storport 单元设备对象的地址。 如果省略 *Address* ，则显示所有 Storport 单元的列表。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -43,7 +42,7 @@ ms.locfileid: "63338779"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>Windows 8 及更高版本</strong></p></td>
+<td align="left"><p><strong>Windows 8 及更高版本</strong></p></td>
 <td align="left"><p>Storagekd.dll</p></td>
 </tr>
 </tbody>
@@ -54,9 +53,9 @@ ms.locfileid: "63338779"
 <a name="remarks"></a>备注
 -------
 
-下面是举例 **！ storagekd.storunit**显示：
+下面是 **！ storunit** 显示的示例 storagekd：
 
-**0: kd&gt; !storagekd.storunit**
+**0： kd &gt; ！ storagekd. storunit**
 
 ```dbgcmd
 # STORPORT Units:
@@ -66,7 +65,7 @@ ms.locfileid: "63338779"
 Msft       Virtual Di   0  0  1  fffffa800658a060  fffffa800658a1b0    0   0  0  Working
 ```
 
-**0: kd&gt; !storagekd.storunit fffffa800658a060**
+**0： kd &gt; ！ storagekd. storunit fffffa800658a060**
 
 ```dbgcmd
    DO fffffa800658a060   Ext fffffa800658a1b0   Adapter fffffa800649a1a0   Working

@@ -1,15 +1,14 @@
 ---
 title: WIA 体系结构概述
 description: WIA 体系结构概述
-ms.assetid: 47f44042-f22b-4ee0-88c5-fc977bf13791
 ms.date: 07/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e5948c1cfb5c2ec7eaab1a4c8591899d8fd44012
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: ae7cb287283bff5382f9bdfc0fd6deee6f03b6ab
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716210"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816713"
 ---
 # <a name="wia-architecture-overview"></a>WIA 体系结构概述
 
@@ -51,11 +50,11 @@ WIA 驱动程序服务库是系统提供的组件，它为 WIA 微型驱动程�
 
 或者，微型驱动程序可以执行此类任务本身。 利用帮助程序函数，你可以减少开发时间和 WIA 微型驱动程序的大小，同时仍然可以灵活地开发单个解决方案。
 
-### <a name="wia-user-mode-minidrivers"></a>WIA 用户模式微型驱动程序
+### <a name="wia-user-mode-minidrivers"></a>WIA User-Mode 微型驱动程序
 
 WIA 微型驱动程序是由供应商提供的用户模式组件，可将 WIA 属性更改和命令定向到图像设备。 微型驱动程序实现 WIA DDI，WIA 服务调用它来与微型驱动程序进行通信。
 
-WIA 微型驱动程序实现了标准的 WIA 微型驱动程序接口。 微型驱动程序通过标准 Microsoft Windows 内核模式驱动程序（如 USB 驱动程序）与图像设备进行通信。 微型驱动程序通过调用 [**CreateFile**](/windows/win32/api/fileapi/nf-fileapi-createfilea)、 **ReadFile**、 **WriteFile**和 **DeviceIoControl** Win32 函数与内核模式驱动程序通信， (Microsoft Windows SDK 文档) 中所述。
+WIA 微型驱动程序实现了标准的 WIA 微型驱动程序接口。 微型驱动程序通过标准 Microsoft Windows 内核模式驱动程序（如 USB 驱动程序）与图像设备进行通信。 微型驱动程序通过调用 [**CreateFile**](/windows/win32/api/fileapi/nf-fileapi-createfilea)、 **ReadFile**、 **WriteFile** 和 **DeviceIoControl** Win32 函数与内核模式驱动程序通信， (Microsoft Windows SDK 文档) 中所述。
 
 图像应用程序无法直接调用 WIA 微型驱动程序。 仅允许 WIA 服务直接调用该驱动程序。
 
@@ -63,7 +62,7 @@ WIA 微型驱动程序实现了标准的 WIA 微型驱动程序接口。 微型�
 
 内核模式的静止映像驱动程序是系统提供的或由 IHV 提供的组件，可向静止图像设备发送数据。 内核模式的静止映像驱动程序是特定于总线的。
 
-Microsoft 为 USB、SCSI 和 IEEE 1394 总线提供基于 WDM 的内核模式静止映像驱动程序。 有关详细信息，请参阅 [访问静止图像设备的内核模式驱动程序](accessing-kernel-mode-drivers-for-still-image-devices.md) 。
+Microsoft 为 USB、SCSI 和 IEEE 1394 总线提供基于 WDM 的内核模式静止映像驱动程序。 有关详细信息，请参阅 [访问静止图像设备 Kernel-Mode 驱动程序](accessing-kernel-mode-drivers-for-still-image-devices.md) 。
 
 仅当供应商的图像处理设备与 Microsoft 提供的内核模式 i/o 驱动程序不兼容时，供应商 *才* 必须提供该驱动程序的内核模式。
 

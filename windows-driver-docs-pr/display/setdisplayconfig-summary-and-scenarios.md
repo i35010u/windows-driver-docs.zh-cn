@@ -1,7 +1,6 @@
 ---
 title: SetDisplayConfig 摘要和方案
 description: SetDisplayConfig 摘要和方案
-ms.assetid: f9bce5d4-b511-475c-8e0a-eb60765a3326
 keywords:
 - 连接显示 WDK Windows 7 显示、CCD Api、SetDisplayConfig
 - 连接显示 WDK Windows Server 2008 R2 display、CCD Api、SetDisplayConfig
@@ -13,19 +12,19 @@ keywords:
 - SetDisplayConfig WDK Windows Server 2008 R2 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a09ad978650eab1ec6f5abc3e8696385e891dad0
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 1f18566b74476e4893a52230cc49ad3f4282dcc4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714748"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816809"
 ---
 # <a name="setdisplayconfig-summary-and-scenarios"></a>SetDisplayConfig 摘要和方案
 
 
 本部分仅适用于 Windows 7 和更高版本，以及 windows Server 2008 R2 及更高版本的 Windows 操作系统。
 
-以下部分概述了调用方如何使用 [**SetDisplayConfig**](/windows/win32/api/winuser/nf-winuser-setdisplayconfig) CCD 函数并提供使用 **SetDisplayConfig**的方案。
+以下部分概述了调用方如何使用 [**SetDisplayConfig**](/windows/win32/api/winuser/nf-winuser-setdisplayconfig) CCD 函数并提供使用 **SetDisplayConfig** 的方案。
 
 ### <a name="span-idsetdisplayconfig_summaryspanspan-idsetdisplayconfig_summaryspansetdisplayconfig-summary"></a><span id="setdisplayconfig_summary"></span><span id="SETDISPLAYCONFIG_SUMMARY"></span>SetDisplayConfig 摘要
 
@@ -47,7 +46,7 @@ ms.locfileid: "90714748"
 
 ### <a name="span-idsetdisplayconfig_scenariosspanspan-idsetdisplayconfig_scenariosspansetdisplayconfig-scenarios"></a><span id="setdisplayconfig_scenarios"></span><span id="SETDISPLAYCONFIG_SCENARIOS"></span>SetDisplayConfig 方案
 
-在以下情况下，将调用[**SetDisplayConfig**](/windows/win32/api/winuser/nf-winuser-setdisplayconfig) ：
+在以下情况下，将调用 [**SetDisplayConfig**](/windows/win32/api/winuser/nf-winuser-setdisplayconfig) ：
 
 -   显示控制面板小程序调用 [**SetDisplayConfig**](/windows/win32/api/winuser/nf-winuser-setdisplayconfig) 来测试所有可能的选项，以填充 " **multimon** " 下拉框。
 

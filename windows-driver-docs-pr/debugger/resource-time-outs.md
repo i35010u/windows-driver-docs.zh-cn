@@ -1,17 +1,16 @@
 ---
 title: 资源超时
 description: 资源超时
-ms.assetid: ea5b61e0-cb51-4da2-9596-ab85f7b01bed
 keywords:
 - 资源超时
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ab61291da721af538538f7dbc75e9c7b68f3692b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 29520469c3d7fd1331ba9b4b9771e674bd46cbef
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382068"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816933"
 ---
 # <a name="resource-time-outs"></a>资源超时
 
@@ -19,7 +18,7 @@ ms.locfileid: "63382068"
 ## <span id="ddk_resource_time_outs_dbg"></span><span id="DDK_RESOURCE_TIME_OUTS_DBG"></span>
 
 
-在资源超时期间等待资源的线程将分解为一条消息的内核调试器中类似于下面：
+在资源超时时，等待资源的线程将中断内核调试器，其中包含类似于以下内容的消息：
 
 ```console
 Resource @ 800e99c0
@@ -34,11 +33,11 @@ NT!DbgBreakPoint+0x4:
 800cee04: 000000ad callkd 
 ```
 
-持有锁的线程为列出的第一个线程 （或多个线程，如果它是一个共享的锁）。 若要检查该线程，使用 **！ 线程**线程 ID 上的扩展 (809cd2f0 上, 一示例中的)。 这将为拥有资源的线程堆栈。 如果还正在等待资源变为可用状态，要么**ExpWaitForResourceExclusive**函数或**ExpWaitForResourceShared**函数将是该线程的堆栈上。
+持有锁的线程是 (或多个线程中列出的第一个线程（如果它是共享锁) ）。 若要检查该线程，请在前面的示例 **中的线程** ID (809cd2f0，) 。 这会为拥有该资源的线程提供一个堆栈。 如果它也在等待资源变为可用，则 **ExpWaitForResourceExclusive** 函数或 **ExpWaitForResourceShared** 函数将在该线程的堆栈上。
 
-第一个参数**ExpWaitForResource * Xxx*** 是正在等待的锁。 若要了解有关该资源，请使用 **！ 锁&lt;*资源 id* &gt;** 扩展，它将为您提供另一个线程来检查。
+**ExpWaitForResource * Xxx*** 的第一个参数是正在等待的锁。 若要了解该资源，请使用 **！锁 &lt; *资源 id* &gt;** 扩展，这将为你提供另一个线程来进行检查。
 
-如果您不会等待另一个资源的线程访问，该线程可能是问题根源。 对于所有持有锁的列表，请使用 **！ 锁**在没有参数的扩展**kd&gt;** 提示符。
+如果到达不等待其他资源的线程，则该线程可能是问题的根源。 有关所有持有锁的列表，请在 **&gt; kd** 提示符处使用不带参数的 **！锁** 扩展。
 
 ### <a name="span-idexamplespanspan-idexamplespanexample"></a><span id="example"></span><span id="EXAMPLE"></span>示例
 

@@ -1,7 +1,6 @@
 ---
 title: 强制的目标与连接的目标
 description: 强制的目标与连接的目标
-ms.assetid: 690e585b-3c90-4373-844d-42afe033b59b
 keywords:
 - 连接显示 WDK Windows 7 显示、CCD 概念、强制与连接的目标
 - 正在连接显示 WDK Windows Server 2008 R2 显示、CCD 的概念、强制与连接的目标
@@ -15,12 +14,12 @@ keywords:
 - 连接与强制目标 WDK Windows Server 2008 R2 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: db9795ed25f4471bf64d8164b3eb7a6dad05ee3b
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 2fae3e0ebbb381b6d698a850f5ca2b1a9cd7c07d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717228"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817371"
 ---
 # <a name="forced-versus-connected-targets"></a>强制的目标与连接的目标
 

@@ -1,19 +1,18 @@
 ---
 title: 调用 FilterUnloadCallback 例程时
 description: 调用 FilterUnloadCallback 例程时
-ms.assetid: 22a3a73e-28be-4483-a7a6-73525e74503d
 keywords:
 - FilterUnloadCallback
 - 非强制卸载 WDK 文件系统微筛选器
 - 强制卸载 WDK 文件系统微筛选器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 04f5a10aab105d42100447e43d60fc34346a421a
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 72d38097650d95ab563a5d8222c49d10bd261905
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714952"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816757"
 ---
 # <a name="when-the-filterunloadcallback-routine-is-called"></a>调用 FilterUnloadCallback 例程时
 
@@ -31,7 +30,7 @@ ms.locfileid: "90714952"
 
 对于必需的卸载，筛选器管理器会在调用微筛选器驱动程序的 *FilterUnloadCallback* 例程后卸载微筛选器驱动程序，即使 *FilterUnloadCallback* 例程返回错误或警告 NTSTATUS 值（如 STATUS FLT 不 \_ 分离） \_ \_ \_ 。
 
-若要禁用微筛选器驱动程序的强制卸载，微筛选器驱动程序 \_ \_ \_ 会 \_ \_ \_ 在[**FLT \_ 注册**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_registration)结构的**Flags**成员中设置 FLTFL 注册，不支持服务停止标志。 [**FltRegisterFilter**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltregisterfilter) **DriverEntry** 设置此标志后，筛选器管理器通常会处理非强制卸载请求。 但是，必需的 unload 请求将会失败。 筛选器管理器不会为失败的卸载请求调用微筛选器驱动程序的 *FilterUnloadCallback* 例程。
+若要禁用微筛选器驱动程序的强制卸载，微筛选器驱动程序 \_ \_ \_ 会 \_ \_ \_ 在 [**FLT \_ 注册**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_registration)结构的 **Flags** 成员中设置 FLTFL 注册，不支持服务停止标志。 [**FltRegisterFilter**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltregisterfilter) **DriverEntry** 设置此标志后，筛选器管理器通常会处理非强制卸载请求。 但是，必需的 unload 请求将会失败。 筛选器管理器不会为失败的卸载请求调用微筛选器驱动程序的 *FilterUnloadCallback* 例程。
 
 请注意，如果微筛选器驱动程序的 **DriverEntry** 例程返回一个警告或错误 NTSTATUS 值，则不会调用 *FilterUnloadCallback* 例程;筛选器管理器只需卸载微筛选器驱动程序。
 

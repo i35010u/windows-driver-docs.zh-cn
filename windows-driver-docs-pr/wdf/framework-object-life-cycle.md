@@ -1,7 +1,6 @@
 ---
 title: 框架对象生命周期
 description: 框架对象生命周期
-ms.assetid: 33efc3a8-ac46-4626-ba0f-beb1eaa9ee47
 keywords:
 - framework 对象 WDK KMDF、生命周期
 - 生命周期 WDK KMDF
@@ -10,12 +9,12 @@ keywords:
 - framework 对象 WDK KMDF，删除
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f14d3ef10661119b55b3e09ae8d317c5389c6ed2
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 06e9c2fe26cbeb7c9eee320945a85815e385001d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186737"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815665"
 ---
 # <a name="framework-object-life-cycle"></a>框架对象生命周期
 
@@ -37,7 +36,7 @@ ms.locfileid: "89186737"
 
 框架维护每个对象的引用计数。 创建对象时，框架会将其引用计数设置为1。 如果引用计数变为零，则框架将删除该对象。
 
-驱动程序可以通过调用 [**WdfObjectReference**](./wdfobjectreference.md) 以递增引用计数或 [**WdfObjectDereference**](./wdfobjectdereference.md) 来修改对象的引用计数，从而减少引用计数。  (仅当驱动程序之前调用**WdfObjectReference**时，才能调用**WdfObjectDereference** 。 ) 
+驱动程序可以通过调用 [**WdfObjectReference**](./wdfobjectreference.md) 以递增引用计数或 [**WdfObjectDereference**](./wdfobjectdereference.md) 来修改对象的引用计数，从而减少引用计数。  (仅当驱动程序之前调用 **WdfObjectReference** 时，才能调用 **WdfObjectDereference** 。 ) 
 
 在大多数情况下，驱动程序不需要增加或减少对象的引用计数。 框架在将对象的句柄传递给驱动程序之前递增计数，并在驱动程序不再需要该对象时递减计数。
 

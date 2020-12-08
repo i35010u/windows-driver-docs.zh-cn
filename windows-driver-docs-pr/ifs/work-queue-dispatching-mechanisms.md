@@ -1,7 +1,6 @@
 ---
 title: 工作队列调度机制
 description: 工作队列调度机制
-ms.assetid: d4ce929f-2d84-4194-9afa-e00629594c36
 keywords:
 - RDBSS WDK 文件系统，工作队列调度
 - 重定向驱动器缓冲子系统 WDK 文件系统，工作队列调度
@@ -17,12 +16,12 @@ keywords:
 - 状态 WDK RDBSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c12b5c9a6d4138cd0b0f8ca93141c8dae168283
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 5cd27436499de522276d431077b2c35f803f4c20
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105154"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816755"
 ---
 # <a name="work-queue-dispatching-mechanisms"></a>工作队列调度机制
 
@@ -64,7 +63,7 @@ RDBSS 中的工作队列实现是围绕 KQUEUE 实现构建的。 其他支持�
 
 当线程已关闭时，工作队列的断开操作不会完成。 必须先确保线程终止，然后才能关闭数据结构。 RDBSS 中的工作队列实现遵循一个协议，其中每个要旋转的线程都在断开上下文中保存对线程对象的引用。 不属于工作队列 (的 "断开颁发" 线程) 等待在分解数据结构之前已停止的所有线程完成。
 
-**RxDispatchToWorkerThread**和**RxPostToWorkerThread**队列的当前实现工作于发出调用的同一处理器上。
+**RxDispatchToWorkerThread** 和 **RxPostToWorkerThread** 队列的当前实现工作于发出调用的同一处理器上。
 
 适用于工作队列调度的以下 RDBSS 例程包括。
 
@@ -76,7 +75,7 @@ RDBSS 中的工作队列实现是围绕 KQUEUE 实现构建的。 其他支持�
 <thead>
 <tr class="header">
 <th align="left">例程所返回的值</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

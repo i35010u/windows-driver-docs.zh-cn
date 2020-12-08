@@ -1,15 +1,14 @@
 ---
 title: ESC_TWAIN_CAPABILITY 转义码
 description: ESC_TWAIN_CAPABILITY 转义码
-ms.assetid: 3fd3f03b-ea72-4151-a19c-3e71cf3193fa
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c78ebc3005e78a7381f61907bc98a405ce55225a
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 64185ca39e99dc383f6f519375ea27c07ba51813
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192283"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816751"
 ---
 # <a name="esc_twain_capability-escape-code"></a>ESC \_ TWAIN \_ 功能转义码
 

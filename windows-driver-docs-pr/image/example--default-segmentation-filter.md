@@ -1,20 +1,19 @@
 ---
-title: 示例默认分段的筛选器
-description: 示例默认分段的筛选器
-ms.assetid: 96c74ca6-0162-4991-b3f9-86c17c92ffc3
+title: 示例默认分段筛选器
+description: 示例默认分段筛选器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eef65e94113e23644d31215a52f96f4d61e1e0f0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fe6ce1cff1faf4311a3b4de82c9b4571cdd50fbe
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373087"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816723"
 ---
-# <a name="example-default-segmentation-filter"></a>例如：默认分段筛选器
+# <a name="example-default-segmentation-filter"></a>示例：默认分段筛选器
 
 
-驱动程序不需要有自己分段的筛选器，以便充分利用 Microsoft 分段的筛选器，只要它实现了 WIA\_IP\_分段属性。 另一种可能性是 IHV 提供自己分段的筛选器，这在某些情况下调用到 Microsoft 默认 WIA 分段筛选。 例如，IHV 可能想要提供多区域检测期间扫描的电影胶片的非常特定于设备分段筛选器，并使用从平板扫描期间由 Microsoft 提供的分段筛选器。 若要执行此操作，IHV WIA 分段筛选器只需创建*CLSID\_WiaDefaultSegFilter*，它实现*IWiaSegmentationFilter;* 分段筛选器随后就可以调用*DetectRegions*。 下面的代码示例演示如何执行此操作。
+驱动程序无需具有其自己的分段筛选器即可利用 Microsoft 分段筛选器，前提是它实现了 "WIA \_ ip \_ 分段" 属性。 一种可能的情况是 IHV 提供自己的分段筛选器，在某些情况下，它会调用 Microsoft 默认的 WIA 分段筛选器。 例如，在胶片扫描期间，IHV 可能需要为多区域检测提供一种非常特定于设备的分段筛选器，并使用由 Microsoft 提供的分段筛选器在平台中进行扫描。 为此，IHV WIA 分段筛选器只需创建用于实现 IWiaSegmentationFilter 的 *CLSID \_ WiaDefaultSegFilter* *;* 然后，分段筛选器将调用 *DetectRegions*。 下面的代码示例演示如何执行此操作。
 
 ```cpp
 STDMETHODIMP

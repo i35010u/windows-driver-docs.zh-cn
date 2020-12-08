@@ -1,24 +1,23 @@
 ---
 title: AV/C 子单元插头连接和格式管理
 description: AV/C 子单元插头连接和格式管理
-ms.assetid: c80641d5-3108-4dbc-91b9-7ed295434b97
 keywords:
-- 插入连接 WDK AV/C
-- 子单元支持 WDK AV/C
-- AV/C WDK，即插即用连接
-- 对等子单元驱动程序堆栈 WDK AV/C
-- KS 固定连接 WDK AV/C
-- 将固定连接 WDK AV/C
-- 格式 WDK AV/C
+- 插头连接 WDK AV/C
+- 子次级支持 WDK AV/C
+- AV/C WDK，插头连接
+- 对等子单位驱动程序堆栈 WDK AV/C
+- KS pin 连接 WDK AV/C
+- 固定连接 WDK AV/C
+- 格式化 WDK AV/C
 - pin 格式 WDK AV/C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a0fe524c888c92de7457044f484bd68f570ca6fe
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ff78759f92420adbf549d729ac2dca3c05a14154
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334050"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817047"
 ---
 # <a name="avc-subunit-plug-connection-and-format-management"></a>AV/C 子单元插头连接和格式管理
 
@@ -26,19 +25,19 @@ ms.locfileid: "63334050"
 
 
 
-AV/C 对等子单元驱动程序堆栈提供了用于 IEEE 1394 和 AV/C 子单元函数插入连接和格式管理。 内核流式处理 (KS) pin 格式协商和 pin 连接机制转换为插入通过建立的连接*Avc.sys*。 此体系结构的一些关键方面包括：
+AV/C 对等互连驱动程序堆栈为 IEEE 1394 和 AV/C 子单位插入连接和格式管理提供函数。 内核流式传输 (KS) pin 格式协商和 pin 连接机制会转换为通过 *Avc.sys* 的插入连接。 此体系结构的一些关键方面包括：
 
--   IEEE 1394 和 AV/C 子单元即插即用连接表示为 KS pin DirectShow 筛选器关系图中的新连接。
+-   IEEE 1394 和 AV/C 子单位的插头连接在 DirectShow 筛选器-图形中表示为 KS pin 连接。
 
--   因为只有在没有任何内部的子单元时 KS pin 插入连接功能直接表示 IEEE 1394 串行总线插入 （输入和输出插头）。 当发生这种情况时，没有 IEEE 1394 串行总线即插即用每一个 pin。
+-   IEEE 1394 串行总线插入 (输入和输出插头) 仅当没有内部子源插头连接功能时，才会直接表示为 KS pin。 出现这种情况时，每个 IEEE 1394 串行总线插头有一个 pin。
 
--   中的全局唯一标识符 (GUID) 表示 IEEE 1394 串行总线连接。 有关中的 Guid 的详细信息，请参阅[介质和类别](mediums-and-categories.md)。
+-   中型全局唯一标识符 (GUID) 表示 IEEE 1394 串行总线连接。 有关中型 Guid 的详细信息，请参阅 [媒体和类别](mediums-and-categories.md)。
 
--   中等 Guid 永久内部 AV/C 单元和子单元连接合成从设备唯一标识符，然后插入地址。
+-   用于永久内部 AV/C 单元和子单位连接的中等 Guid 是从设备唯一标识符和插入地址合成的。
 
--   有新的 KSDATARANGE 和 KSDATAFORMAT 扩展，以用于 C AV/连接。
+-   有新的 KSDATARANGE 和 KSDATAFORMAT 扩展可用于 AV/C 连接。
 
-媒体和格式结合使用可以帮助确定是否 KS pin 连接表示数据与计算机通过 IEEE 1394 串行总线或设备的内部。
+媒体和格式一起有助于确定 KS pin 连接是由 IEEE 1394 串行总线上的计算机还是从内部设备到设备的内部数据。
 
  
 

@@ -1,9 +1,8 @@
 ---
-title: WIA\_IPC\_AUDIO\_AVAILABLE
-description: WIA\_IPC\_音频\_可用的属性已过时，不应使用。
-ms.assetid: 7dfff74c-f853-4152-adb4-bdac682dc076
+title: WIA \_ IPC \_ 音频 \_ 可用
+description: WIA \_ IPC \_ 音频 \_ 可用属性已过时，不应使用。
 keywords:
-- WIA_IPC_AUDIO_AVAILABLE 成像设备
+- WIA_IPC_AUDIO_AVAILABLE 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,21 +13,21 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e6727ca817aa5d064f95ad0207dfeb53b2a823fe
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: be88f54b6fd69f71bcc10602997b1a8f51ed5e44
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366867"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817223"
 ---
-# <a name="wiaipcaudioavailable"></a>WIA\_IPC\_AUDIO\_AVAILABLE
+# <a name="wia_ipc_audio_available"></a>WIA \_ IPC \_ 音频 \_ 可用
 
 
-WIA\_IPC\_音频\_可用的属性已过时，不应使用。
+WIA \_ IPC \_ 音频 \_ 可用属性已过时，不应使用。
 
-属性类型：VT\_I4
+属性类型： VT \_ I4
 
-有效值：WIA\_PROP\_NONE
+有效值： WIA " \_ \_ 无"
 
 访问权限：只读
 
@@ -42,8 +41,8 @@ WIA\_IPC\_音频\_可用的属性已过时，不应使用。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>

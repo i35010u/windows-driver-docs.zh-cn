@@ -1,19 +1,18 @@
 ---
 title: 框架对象事件
 description: 框架对象事件
-ms.assetid: 1bccdd47-8ad6-4607-947f-18c5d2e03038
 keywords:
 - framework 对象 WDK KMDF，事件
 - 事件 WDK KMDF
 - 事件 WDK KMDF，框架对象
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fc908c3cdb4c091f654a8ca7519c1d912cfb4494
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 1a9a7c57e1e8597440c5d3e850fb451851b99219
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192313"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815663"
 ---
 # <a name="framework-object-events"></a>框架对象事件
 

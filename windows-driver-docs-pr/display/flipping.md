@@ -1,27 +1,26 @@
 ---
 title: 交替
 description: 交替
-ms.assetid: e577b73f-7664-4c87-8d43-c3cf04705081
 keywords:
-- 消除 WDK DirectDraw
-- 绘图页上有关翻转翻转 WDK DirectDraw
-- DirectDraw 翻转 WDK Windows 2000 显示，有关翻转
-- 页翻转 WDK DirectDraw，有关翻转
-- 有关翻转翻转 WDK DirectDraw
-- 翻转 WDK DirectDraw 绘图页面
-- DirectDraw 翻转 WDK Windows 2000 显示
-- 页翻转 WDK DirectDraw
+- 泪水 WDK DirectDraw
+- 绘图页翻转 WDK DirectDraw，关于翻转
+- DirectDraw 翻转 WDK Windows 2000 显示，关于翻转
+- 翻转 WDK DirectDraw 页面，关于翻转
+- 翻转 WDK DirectDraw，关于翻转
+- 绘图页反向 WDK DirectDraw
+- DirectDraw 翻转 WDK Windows 2000 显示器
+- 页面翻转 WDK DirectDraw
 - 翻转 WDK DirectDraw
-- 主图面 WDK DirectDraw
-- 显示 WDK DirectDraw 翻转
+- 主要面
+- surface DirectDraw，翻转
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 51eb8efb73a02b29987bab0afeed9b12b2234297
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 62aa80e6d040a26f16209e7fb75da6411489d2e8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338662"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817401"
 ---
 # <a name="flipping"></a>交替
 
@@ -29,23 +28,23 @@ ms.locfileid: "63338662"
 ## <span id="ddk_flipping_gg"></span><span id="DDK_FLIPPING_GG"></span>
 
 
-使用与前台缓冲区可以翻转的后台缓冲区是充分利用 DirectDraw 的最佳方式。 翻页，对于在游戏和视频播放平滑、 免拆解动画至关重要。
+使用可通过前台缓冲区翻转的后台缓冲区是充分利用 DirectDraw 的最佳方式。 页面翻转对于游戏和视频播放中的平滑和自由自由动画非常重要。
 
-*主表面*是从硬盘读出绘制当前显示在屏幕的内存的区域。 如果主面有一个或多个附加的后台缓冲区，则*flippable*图面。
+*主要表面* 是要从中进行读取的内存区域，以绘制当前显示的屏幕。 如果主要表面有一个或多个附加缓冲区，则它是一个 *flippable* 图面。
 
-DirectDraw 中翻页用于翻转的结构。 从概念上讲，它们可以认为的链接列表的图面进行。 前台缓冲区是"可见"缓冲区。 后台缓冲区和所有附加 flippable 图面必须是前台缓冲区相同的大小和像素深度。 大多数新式图形卡高分辨率模式中有足够内存用于 flippable 前端和后台缓冲区。
+翻转结构用于 DirectDraw 中的翻页。 从概念上讲，可以将它们视为表面的链接列表。 前台缓冲区为 "visible" 缓冲区。 后台缓冲区和所有附加的 flippable 表面必须与前台缓冲区大小和像素深度相同。 大多数新式显卡都有足够的内存，可用于在高分辨率模式下 flippable 前端和后台缓冲区。
 
-可以在 DirectDraw; 翻转所有类型的图面页翻转是常见的特殊情况。 例如，翻转并不局限于支持覆盖，卡上的主图面或 3d 能够显示具有纹理内存卡。 在这些情况下，可以在主面，相同的驱动程序的入口点的方式相同翻转叠加和纹理。
+所有类型的图面可以在 DirectDraw 中翻转;页面翻转是常见的特殊情况。 例如，翻转并不局限于支持叠加的卡片上的主表面，或具有纹理内存的支持3D 的显示卡。 在这些情况下，可以用相同的驱动程序入口点按照与主表面相同的方式翻转叠加和纹理。
 
-不用于翻转的图面可以有任何维度，并且可存储 nonflippable 对象，例如图像数据。 此外可以将图像数据存储在系统内存中，但在这种情况下 DirectDraw 可能使用硬件仿真层 (HEL)，因为硬件 blitters 通常无法访问到位块的图像数据的系统内存。 某些卡允许硬件 blitters 个直接内存访问 (DMA) 到系统内存，因此 DirectDraw DMA 时进行检查。
+不用于翻转的图面可以有任何尺寸，并可存储 nonflippable 对象（如图像数据）。 图像数据还可以存储在系统内存中，但在这种情况下，DirectDraw 可能会使用硬件仿真层 (HEL) ，因为硬件 blitters 通常无法访问系统内存来 array.blit 映像数据。 某些卡允许硬件 blitters 将 DMA)  (DMA 到系统内存，因此 DirectDraw 会检查 DMA。
 
-下图说明了两个 flippable 图面之间的关系。
+下图说明两个 flippable 图面之间的关系。
 
-![阐释翻转关系图](images/ddfig7.png)
+![说明翻转的关系图](images/ddfig7.png)
 
-如果前台缓冲区有一个或多个附加的后台缓冲区，它是 flippable 的图面上，在上图中所示。 后台缓冲区和所有附加 flippable 图面必须是前台缓冲区相同的大小和像素深度。 后台缓冲区面将成为使用翻转在主图面。 翻转只需更改一个指针，使其指向不同的 flippable 图面，从而显示新的图面。 前台缓冲区 （这不再是主图面） 然后变得可以访问，并可以有新数据写入到它。
+如果前台缓冲区附加了一个或多个后台缓冲区，则它是一个 flippable 图面，如上图中所示。 后台缓冲区和所有附加的 flippable 表面必须与前台缓冲区大小和像素深度相同。 后台缓冲区表面使用翻转成为主要表面。 翻转只是更改指针，使其指向不同的 flippable 图面，从而显示新表面。 前台缓冲区 (不再是主表面) 随后可访问，并可向其写入新数据。
 
-翻转解决了大多数屏幕闪烁问题。 不显示图面上呈现的能力使玩游戏和视频播放流畅、 无拆解的动画。
+翻转解决了大多数屏幕闪烁问题。 呈现到未显示的表面的功能，这种功能可用于玩游戏和视频播放。
 
  
 

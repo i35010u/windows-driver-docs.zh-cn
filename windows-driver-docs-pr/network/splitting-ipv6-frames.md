@@ -1,18 +1,17 @@
 ---
 title: 拆分 IPv6 帧
 description: 拆分 IPv6 帧
-ms.assetid: fe18ccfb-29d0-4b57-9308-a9d4a9c6777a
 keywords:
 - 通过以太网帧拆分 WDK 网络，IPv6 帧
 - IPv6 帧 WDK 标头-数据拆分
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ead55b02885483252f9cfcef85a3a9cb1eac3d9
-ms.sourcegitcommit: e2de6b9ffb5c7356deb864f9da879533f49b25bf
+ms.openlocfilehash: 11863a2c112f5dc7d8830f7b337107f324afc9d9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2020
-ms.locfileid: "91702656"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815863"
 ---
 # <a name="splitting-ipv6-frames"></a>拆分 IPv6 帧
 
@@ -26,7 +25,7 @@ ms.locfileid: "91702656"
 
 NIC 还可以支持分段 IPv6 帧的标头数据拆分。 有关分段 IPv4 帧的详细信息，请参阅 [拆分分段的 IP 帧](splitting-fragmented-ip-frames.md)。
 
-**注意**   出于标头数据要求的目的，支持 IPv4 选项、IPv6 扩展标头或 TCP 选项，这意味着 NIC 识别元素的能力，确定元素的长度，将其包含在标头 MDL 中，并找到其端和帧中下一个元素的开头。
+**注意**  出于标头数据要求的目的，支持 IPv4 选项、IPv6 扩展标头或 TCP 选项，这意味着 NIC 识别元素的能力，确定元素的长度，将其包含在标头 MDL 中，并找到其端和帧中下一个元素的开头。
 
  
 

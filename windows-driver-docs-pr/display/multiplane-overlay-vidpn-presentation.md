@@ -1,15 +1,14 @@
 ---
 title: 多平面覆盖 VidPN 呈现
-ms.assetid: BAD7FD48-905D-4547-8C69-133240B39FA3
 description: 适用于用于在多个图面上呈现的函数的要求。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cd2d38c3d6173351b554a3fbb263479fcccba567
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 5cf0bd4a29ee5666f90d199b4d2a774119b5e0d3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063872"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816321"
 ---
 # <a name="multiplane-overlay-vidpn-presentation"></a>多平面覆盖 VidPN 呈现
 
@@ -23,7 +22,7 @@ ms.locfileid: "89063872"
 -   传递的数据应在用户模式下由受信任的源进行验证。 但是，显示微型端口驱动程序仍应检查数据，以确保它不会导致问题。 如果数据不正确，则驱动程序可以使用 **状态 " \_ 无效 \_ 参数** " 错误代码来使调用失败，但这种失败可能不会正常处理，而是指操作系统或用户模式驱动程序中的 bug。
 
 <span id="DxgkDdiSetVidPnSourceVisibility"></span><span id="dxgkddisetvidpnsourcevisibility"></span><span id="DXGKDDISETVIDPNSOURCEVISIBILITY"></span>[*DxgkDdiSetVidPnSourceVisibility*](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_setvidpnsourcevisibility)  
-[**DXGKARG \_ SETVIDPNSOURCEVISIBILITY**](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgkarg_setvidpnsourcevisibility)。**Visible**在对此函数的调用中，在给定源上，"可见" 设置为 " **FALSE** "，则必须禁用所有硬件平面，其中包括用于主表面的层。 如果 " **可见** " 设置为 " **TRUE**"，则只需启用用于主表面的平面，所有其他平面都必须保持禁用状态。
+[**DXGKARG \_ SETVIDPNSOURCEVISIBILITY**](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgkarg_setvidpnsourcevisibility)。**Visible** 在对此函数的调用中，在给定源上，"可见" 设置为 " **FALSE** "，则必须禁用所有硬件平面，其中包括用于主表面的层。 如果 " **可见** " 设置为 " **TRUE**"，则只需启用用于主表面的平面，所有其他平面都必须保持禁用状态。
 
 <span id="DxgkDdiSetVidPnSourceAddress"></span><span id="dxgkddisetvidpnsourceaddress"></span><span id="DXGKDDISETVIDPNSOURCEADDRESS"></span>[*DxgkDdiSetVidPnSourceAddress*](/previous-versions/windows/hardware/drivers/ff560767(v=vs.85))  
 调用此函数时，驱动程序应禁用所有非主要覆盖面。 在 multiplane 叠加模式下，将使用 [*DxgkDdiSetVidPnSourceAddressWithMultiPlaneOverlay*](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_setvidpnsourceaddresswithmultiplaneoverlay) 翻转主图面。

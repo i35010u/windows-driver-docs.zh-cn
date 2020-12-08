@@ -1,18 +1,17 @@
 ---
 title: 获取 RPC 调用信息
 description: 获取 RPC 调用信息
-ms.assetid: bb883bb1-3ab8-4702-896d-4ff8076bad68
 keywords:
 - RPC 调用信息
-- SCALL （服务器调用）
+- 'SCALL (服务器调用) '
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b6098fec13506a66fc975d15a0e6912082ca495
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 220c6288a163252bfa80a0ca5fd7a679aae0c931
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347090"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816353"
 ---
 # <a name="get-rpc-call-information"></a>获取 RPC 调用信息
 
@@ -20,11 +19,11 @@ ms.locfileid: "63347090"
 ## <span id="ddk_get_rpc_call_information_dbg"></span><span id="DDK_GET_RPC_CALL_INFORMATION_DBG"></span>
 
 
-通过显示服务器端调用 (SCALL) 信息 **！ rpcexts.getcallinfo**扩展，或通过 DbgRpc 时 **-c**使用开关。
+当使用 **-c** 开关时，服务器端调用 (SCALL) 信息由 **！ Getcallinfo** 扩展或 DbgRpc 显示。
 
-允许使用四个可选参数。 这三个- *CallID*， *IfStart*，并*ProcNum* -确定使用的 RPC 来跟踪其调用信息。 第四个参数， *ProcessID*，是拥有该调用的服务器进程的 PID。 应提供您知道要缩小搜索任何参数。
+允许使用四个可选参数。 其中三个-- *CallID*、 *IfStart* 和 *ProcNum* --标识 RPC 用于跟踪其调用的信息。 第四个参数 *ProcessID* 是拥有调用的服务器进程的 PID。 你应提供知道的任何参数以缩小搜索范围。
 
-如果未不提供任何参数，将显示在系统中的所有已知的 SCALLs。 下面是此长显示的示例：
+如果未提供任何参数，则将显示系统中的所有已知 SCALLs。 下面是此长时间显示的示例：
 
 ```console
 D:\wmsg>dbgrpc -c
@@ -77,9 +76,9 @@ Searching for call info ...
 0278 0000.0004 02 000 19bb5061 0000.0002 00000001 00000001 00072c09 0000.0003
 ```
 
-可选参数的详细信息，请参阅[ **DbgRpc 命令行选项**](dbgrpc-command-line-options.md)。
+有关可选参数的详细信息，请参阅 [**DbgRpc Command-Line Options**](dbgrpc-command-line-options.md)。
 
-有关使用 RPC 的类似示例调试器扩展，请参阅[ **！ rpcexts.getcallinfo**](-rpcexts-getcallinfo.md)。
+有关使用 RPC 调试器扩展的类似示例，请参阅 [**！ rpcexts. getcallinfo**](-rpcexts-getcallinfo.md)。
 
  
 

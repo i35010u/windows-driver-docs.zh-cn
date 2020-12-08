@@ -1,7 +1,6 @@
 ---
 title: 转换为 SAN 本机地址
 description: 转换为 SAN 本机地址
-ms.assetid: 959c66f2-4801-47d5-9e80-f18f17057e23
 keywords:
 - 代理驱动程序 WDK San，本机地址转换
 - SAN 代理驱动程序 WDK，本机地址转换
@@ -10,12 +9,12 @@ keywords:
 - AF_INET 解决 WDK San
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 87b8085327a53a3df78571296c2333de0ee6dc2c
-ms.sourcegitcommit: 409dd20db50c58b817ef985048fb7aab952cb0ad
+ms.openlocfilehash: 88c1e6e07eb66c58d82f0981956136241f29a805
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93244849"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815861"
 ---
 # <a name="translating-to-a-san-native-address"></a>转换为 SAN 本机地址
 

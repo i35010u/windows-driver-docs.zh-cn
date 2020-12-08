@@ -5,15 +5,14 @@ keywords:
 - 本机 802.11 IVH 扩展性函数
 - 本机 802.11 IHV 扩展 DLL 扩展性函数
 - WDK 本机 802.11 IVH 扩展性函数
-ms.assetid: 0E7CC153-5434-459D-9773-8CCAFBACD016
 ms.date: 04/27/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: efb49fc5236b8ea395148b8bcd465b5e20c96918
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 195d51253a706b2c7ac9bb8485f97c75e6c3a011
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217030"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816569"
 ---
 # <a name="native-80211-ihv-extensibility-functions"></a>本机 802.11 IHV 扩展性函数
 

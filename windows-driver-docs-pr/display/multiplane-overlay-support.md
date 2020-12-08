@@ -1,15 +1,14 @@
 ---
 title: 多平面覆盖支持
 description: " (WDDM) 1.3 及更高版本的驱动程序，Windows 显示驱动程序模型可支持 Multiplane 覆盖。 此功能是从 Windows 8.1 开始的新功能。"
-ms.assetid: 8B2F5497-554D-4D4A-B44E-985A9F89143D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d0018c191f7a61d3d7ac25593970e099cbe799d
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: e1d2c7f0a28cf1d0bec00167d16782485d5899f2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063874"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816329"
 ---
 # <a name="multiplane-overlay-support"></a>多平面覆盖支持
 
@@ -22,7 +21,7 @@ ms.locfileid: "89063874"
 
 操作系统实现的所有用户模式 multiplane 覆盖函数。
 
-| 函数 | 说明 |
+| 函数 | 描述 |
 |:--|:--|
 |[pfnPresentMultiPlaneOverlayCb (D3D) ](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_presentmultiplaneoverlaycb)|将源 multiplane 覆盖分配中的内容复制到目标分配。 可以通过 Windows 显示驱动程序模型 (WDDM) 1.3 或更高版本的用户模式显示驱动程序调用。|
 |[pfnPresentMultiPlaneOverlayCb (DXGI) ](/windows-hardware/drivers/ddi/dxgiddi/nc-dxgiddi-pfnddxgiddi_present_multiplane_overlaycb)|将源 multiplane 覆盖分配中的内容复制到目标分配。 可由 WDDM 1.3 或更高版本的用户模式显示驱动程序调用。|
@@ -37,7 +36,7 @@ ms.locfileid: "89063874"
 
 为了支持 multiplane 覆盖，用户模式驱动程序必须实现的所有函数。
 
-| 函数 | 说明 |
+| 函数 | 描述 |
 |:--|:--|
 |[pfnCheckMultiPlaneOverlaySupport (D3D) ](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_checkmultiplaneoverlaysupport)| 由 Direct3D 运行时调用，用于检查有关 multiplane 叠加硬件支持的详细信息。|
 |[pfnCheckMultiPlaneOverlaySupport (DXGI) ](/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi1_2_ddi_base_functions)| 由 Microsoft DirectX 图形基础结构调用 (DXGI) 运行时，以检查有关硬件支持的详细信息，以 multiplane 覆盖。|
@@ -50,7 +49,7 @@ ms.locfileid: "89063874"
 
 与 multiplane 覆盖设备驱动程序接口一起使用的所有用户模式结构和枚举 (DDIs) 。
 
-| DDI | 说明 |
+| DDI | 描述 |
 |:--|:--|
 |[D3DDDI_MULTIPLANE_ALLOCATION_INFO](/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-d3dddi_multiplane_overlay_allocation_info)|指定有关 multiplane 覆盖分配的信息。|
 |[D3DDDI_MULTIPLANE_OVERLAY_ATTRIBUTES](/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddi_multiplane_overlay_attributes)| 由用户模式显示驱动程序用来指定覆盖面属性。|
@@ -72,7 +71,7 @@ ms.locfileid: "89063874"
 
 显示微型端口驱动程序实现的所有 multiplane 覆盖功能。
 
-|函数|说明|
+|函数|描述|
 |:--|:--|
 |[DXGKDDI_CHECKMULTIPLANEOVERLAYSUPPORT](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_checkmultiplaneoverlaysupport)| 由 Microsoft DirectX 图形内核子系统调用，用于检查 multiplane 重叠硬件支持的详细信息。|
 |[DXGKDDI_CHECKMULTIPLANEOVERLAYSUPPORT3](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_checkmultiplaneoverlaysupport3)| 调用以下新函数来确定是否支持特定的多平面覆盖配置。|
@@ -87,7 +86,7 @@ ms.locfileid: "89063874"
 
 显示微型端口驱动程序使用的所有结构。
 
-|结构|说明|
+|结构|描述|
 |:--|:--|
 |[DXGK_CHECK_MULTIPLANE_OVERLAY_SUPPORT_PLANE](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_check_multiplane_overlay_support_plane)| 指定硬件为 multiplane 叠加提供的支持属性。|
 |[DXGK_CHECK_MULTIPLANE_OVERLAY_SUPPORT_RETURN_INFO](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-dxgk_check_multiplane_overlay_support_return_info)| 指定对 multiplane 叠加硬件支持的限制。|

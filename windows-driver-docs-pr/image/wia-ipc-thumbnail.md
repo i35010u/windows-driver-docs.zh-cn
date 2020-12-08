@@ -1,9 +1,8 @@
 ---
-title: WIA\_IPC\_缩略图
-description: WIA\_IPC\_缩略图属性包含的每像素 24 位缩略图的数据位。 WIA 微型驱动程序创建并维护此属性。
-ms.assetid: 748443a7-cc7f-4291-b987-21462af97c3c
+title: WIA \_ IPC \_ 缩略图
+description: WIA \_ IPC \_ 缩略图属性包含24位每像素缩略图数据位。 WIA 微型驱动程序创建并维护此属性。
 keywords:
-- WIA_IPC_THUMBNAIL 成像设备
+- WIA_IPC_THUMBNAIL 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,33 +13,33 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 22e04d69180a1924b879a6ed87a0ba2958613274
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4ebb4bb81ce95af5e0bd04be27e742c7fc9f7c63
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378397"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817193"
 ---
-# <a name="wiaipcthumbnail"></a>WIA\_IPC\_缩略图
+# <a name="wia_ipc_thumbnail"></a>WIA \_ IPC \_ 缩略图
 
 
-WIA\_IPC\_缩略图属性包含的每像素 24 位缩略图的数据位。 WIA 微型驱动程序创建并维护此属性。
+WIA \_ IPC \_ 缩略图属性包含24位每像素缩略图数据位。 WIA 微型驱动程序创建并维护此属性。
 
 ## <span id="ddk_wia_ipc_thumbnail_si"></span><span id="DDK_WIA_IPC_THUMBNAIL_SI"></span>
 
 
-属性类型：VT\_UI1 | VT\_VECTOR
+属性类型： VT \_ UI1 |VT \_ 矢量
 
-有效值：WIA\_PROP\_NONE
+有效值： WIA " \_ \_ 无"
 
 访问权限：只读
 
 <a name="remarks"></a>备注
 -------
 
-缩略图的数据的 WIA\_IPC\_缩略图属性包含必须处于未压缩的位图数据和 32 位边界上对齐。 应用程序读取的值[ **WIA\_IPC\_缩略图\_宽度**](wia-ipc-thumbnail-width.md)并[ **WIA\_IPC\_缩略图\_高度**](wia-ipc-thumbnail-height.md)属性，并创建一个 BITMAPINFOHEADER 结构 （它 Microsoft Windows SDK 文档中所述）。 应用程序应该能够读取 WIA\_IPC\_缩略图属性 （用于表示实际的缩略图图像数据） 并使用此属性将数据直接写入新创建的位图创建缩略图。
+WIA \_ IPC \_ 缩略图属性包含的缩略图数据必须处于未压缩的位图数据，并在32位边界上对齐。 应用程序将读取 " [**wia \_ ipc \_ 缩略图 \_ 宽度**](wia-ipc-thumbnail-width.md) " 和 " [**wia \_ ipc \_ 缩略图 \_ 高度**](wia-ipc-thumbnail-height.md) " 属性的值，并创建一个 BITMAPINFOHEADER 结构 (在 Microsoft Windows SDK 文档) 中进行了介绍。 应用程序应该能够读取 \_ \_ 表示实际缩略图图像数据的 WIA IPC 缩略图属性 () 并使用此属性将数据直接写入新创建的位图以创建缩略图图像。
 
-WIA\_IPC\_WIA 微型驱动程序和 Microsoft Windows XP、 Windows Me，和更高版本的操作系统运行的应用程序使用缩略图。
+Wia \_ IPC \_ 缩略图由 wia 微型驱动程序和在 MICROSOFT Windows XP、Windows Me 和更高版本的操作系统上运行的应用程序使用。
 
 <a name="requirements"></a>要求
 ------------
@@ -52,12 +51,12 @@ WIA\_IPC\_WIA 微型驱动程序和 Microsoft Windows XP、 Windows Me，和更�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>在 Windows Vista 和更高版本操作系统中已过时，并应不再使用。 但是，此属性仍定义 Windows Vista 中与应用程序和用于 Windows Server 2003、 Windows XP 和早期版本的 Windows 设备的兼容性。</p></td>
+<td><p>版本</p></td>
+<td><p>在 Windows Vista 和更高版本的操作系统中已过时，不应再使用。 但是，在 Windows Vista 中仍定义此属性，以与为 Windows Server 2003、Windows XP 和 windows 的早期版本设计的应用程序和设备兼容。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>
@@ -65,9 +64,9 @@ WIA\_IPC\_WIA 微型驱动程序和 Microsoft Windows XP、 Windows Me，和更�
 ## <a name="see-also"></a>请参阅
 
 
-[**WIA\_IPC\_THUMBNAIL\_HEIGHT**](wia-ipc-thumbnail-height.md)
+[**WIA \_ IPC \_ 缩略图 \_ 高度**](wia-ipc-thumbnail-height.md)
 
-[**WIA\_IPC\_THUMBNAIL\_WIDTH**](wia-ipc-thumbnail-width.md)
+[**WIA \_ IPC \_ 缩略图 \_ 宽度**](wia-ipc-thumbnail-width.md)
 
  
 

@@ -1,9 +1,8 @@
 ---
 title: ScannerState 元素
-description: 所需的 ScannerState 元素标识扫描设备的扫描部分的当前状态。
-ms.assetid: 64cd5319-a52d-4ff3-976c-060886381d11
+description: 必需的 ScannerState 元素标识扫描设备扫描部分的当前状态。
 keywords:
-- ScannerState 元素成像设备
+- ScannerState 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e5a7268352d44d6b2f012dcaaa5d41020aa57d32
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 94cd0eb9ba6d26a799dcdb4fc9f21b8b1284aa87
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370048"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816205"
 ---
 # <a name="scannerstate-element"></a>ScannerState 元素
 
 
-所需**ScannerState**元素标识扫描设备的扫描部分的当前状态。
+必需的 **ScannerState** 元素标识扫描设备扫描部分的当前状态。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -43,18 +42,18 @@ ms.locfileid: "63370048"
 
 必需。 以下字符串值之一。
 
-| ReplTest1      | 描述                                                  |
+| “值”      | 描述                                                  |
 |------------|--------------------------------------------------------------|
-| 空闲       | 扫描程序可用，可以开始处理新作业。 |
-| 正在处理 | 扫描程序当前正在处理作业。                    |
-| 已停止    | 没有作业可以处理，并且需要干预。         |
+| 闲置       | 扫描仪可用，可以开始处理新作业。 |
+| 处理 | 扫描仪当前正在处理作业。                    |
+| 已停止    | 不能处理作业并且不需要进行干预。         |
 
  
 
 ## <a name="child-elements"></a>子元素
 
 
-没有子元素。
+没有任何子元素。
 
 ## <a name="parent-elements"></a>父元素
 
@@ -83,9 +82,9 @@ ms.locfileid: "63370048"
 
 [**GetScannerElementsRequest**](getscannerelementsrequest.md)
 
-WSD 扫描服务将通过发送有关扫描程序的状态更改通知客户端[ **ScannerStatusSummaryEvent** ](scannerstatussummaryevent.md)事件。 客户端可以直接查询扫描程序的状态，通过调用[ **GetScannerElementsRequest** ](getscannerelementsrequest.md)操作。
+WSD 扫描服务通过发送 [**ScannerStatusSummaryEvent**](scannerstatussummaryevent.md) 事件向客户端通知扫描程序状态的更改。 客户端可以通过调用 [**GetScannerElementsRequest**](getscannerelementsrequest.md) 操作直接查询扫描程序的状态。
 
-您都可以扩展和子集的允许的值为此元素。
+可以扩展和子集化此元素的允许值。
 
 ## <a name="see-also"></a>请参阅
 

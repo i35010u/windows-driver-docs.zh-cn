@@ -1,7 +1,6 @@
 ---
 title: 使用 PnP 自定义通知
 description: 使用 PnP 自定义通知
-ms.assetid: de5562f8-07a8-4f4e-ac49-58c789bd9fde
 keywords:
 - 通知 WDK PnP，自定义
 - 自定义通知 WDK PnP
@@ -10,12 +9,12 @@ keywords:
 - EventCategoryTargetDeviceChange 通知
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fa7f442bcd57240dba0c9250317d745348f3b11
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d03de41583e12c57b942a1c7e5978843119141b1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188951"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816051"
 ---
 # <a name="using-pnp-custom-notification"></a>使用 PnP 自定义通知
 
@@ -41,7 +40,7 @@ ms.locfileid: "89188951"
 
     在内核模式下，驱动程序调用 [**IoRegisterPlugPlayNotification**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterplugplaynotification) 并注册设备上的 **EventCategoryTargetDeviceChange** 。
 
-    在用户模式下，应用程序使用 **RegisterDeviceNotification**注册。 有关详细信息，请参阅 Windows SDK。
+    在用户模式下，应用程序使用 **RegisterDeviceNotification** 注册。 有关详细信息，请参阅 Windows SDK。
 
 2.  内核模式组件触发自定义事件。
 

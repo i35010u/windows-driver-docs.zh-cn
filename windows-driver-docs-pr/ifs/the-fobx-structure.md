@@ -1,7 +1,6 @@
 ---
 title: FOBX 结构
 description: FOBX 结构
-ms.assetid: 95177b38-4ca5-49ed-9f9d-bafedd156044
 keywords:
 - 引用计数 WDK RDBSS
 - FOBX 结构
@@ -17,12 +16,12 @@ keywords:
 - 连接信息 WDK RDBSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 614f2cbe04e9ca3217c56e093b3fdf289c53277a
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 840ba2097216a865ae8e102ed8b6a4cee2b9bcac
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063220"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817337"
 ---
 # <a name="the-fobx-structure"></a>FOBX 结构
 

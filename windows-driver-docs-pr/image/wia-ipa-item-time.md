@@ -1,9 +1,8 @@
 ---
-title: WIA\_IPA\_ITEM\_TIME
-description: WIA\_IPA\_项\_时间属性包含最初捕获映像的时间。
-ms.assetid: 30e29169-7a1a-412e-858a-a467d6f1b44e
+title: WIA \_ IPA \_ 项 \_ 时间
+description: WIA \_ IPA \_ ITEM \_ TIME 属性包含最初捕获图像的时间。
 keywords:
-- WIA_IPA_ITEM_TIME 成像设备
+- WIA_IPA_ITEM_TIME 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,31 +13,31 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 51c7ccc26e7194a9ecae08e7cb40172f5a53ac6f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0b00ae080fb83137080ba0514b23fde496bce0cf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388780"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817271"
 ---
-# <a name="wiaipaitemtime"></a>WIA\_IPA\_ITEM\_TIME
+# <a name="wia_ipa_item_time"></a>WIA \_ IPA \_ 项 \_ 时间
 
 
-WIA\_IPA\_项\_时间属性包含最初捕获映像的时间。
+WIA \_ IPA \_ ITEM \_ TIME 属性包含最初捕获图像的时间。
 
 ## <span id="ddk_wia_ipa_item_time_si"></span><span id="DDK_WIA_IPA_ITEM_TIME_SI"></span>
 
 
-属性类型：VT\_UI2 | VT\_VECTOR
+属性类型： VT \_ UI2 |VT \_ 矢量
 
-有效值：WIA\_PROP\_NONE
+有效值： WIA " \_ \_ 无"
 
-访问权限：读/写或只读的
+访问权限：读/写或只读
 
 <a name="remarks"></a>备注
 -------
 
-WIA 微型驱动程序创建和维护 WIA\_IPA\_项\_时间属性。 此属性应报告为 SYSTEMTIME 结构 （它 Microsoft Windows SDK 文档中所述） 的窗体中的八个 WORD 值的向量。
+WIA 微型驱动程序创建并维护 WIA \_ IPA \_ 项 \_ 时间属性。 应将此属性报告为 SYSTEMTIME 结构形式的8个单词值的向量 (这将在 Microsoft Windows SDK 文档) 中介绍。
 
 <a name="requirements"></a>要求
 ------------
@@ -50,8 +49,8 @@ WIA 微型驱动程序创建和维护 WIA\_IPA\_项\_时间属性。 此属性�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>

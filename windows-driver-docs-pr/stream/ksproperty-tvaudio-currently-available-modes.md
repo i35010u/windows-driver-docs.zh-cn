@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ TVAUDIO \_ 当前 \_ 可用 \_ 模式
 description: "\"KSPROPERTY \\_ TVAUDIO \\_ 当前 \\_ 可用 \\_ 模式\" 属性检索设备可用的电视音频模式。 必须实现此属性。"
-ms.assetid: 9c98771a-7a41-469d-a441-da5c1ac5a697
 keywords:
 - KSPROPERTY_TVAUDIO_CURRENTLY_AVAILABLE_MODES 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: de7657620e022a563f26ccf9a0184f898ddf4753
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: bd3fa5b051b38b1c514b438e385dc2223d5e8402
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105964"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815809"
 ---
 # <a name="ksproperty_tvaudio_currently_available_modes"></a>KSPROPERTY \_ TVAUDIO \_ 当前 \_ 可用 \_ 模式
 
@@ -84,7 +83,7 @@ KSPROPERTY **Mode** \_ TVAUDIO S 结构的 Mode 成员 \_ 指定音频模式。 
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

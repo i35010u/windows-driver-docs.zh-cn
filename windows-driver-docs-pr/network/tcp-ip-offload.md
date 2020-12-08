@@ -1,7 +1,6 @@
 ---
 title: TCP/IP 卸载概述
 description: TCP/IP 卸载概述
-ms.assetid: 1f074ce5-2614-47a5-9ee0-a5e43f05273d
 keywords:
 - 网络驱动程序 WDK，TCP/IP 卸载
 - TCP/IP 卸载 WDK 网络
@@ -13,12 +12,12 @@ keywords:
 - 包 WDK 网络，TCP/IP 卸载
 ms.date: 06/21/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: ce84dfbc845e0ff513a002c5b0a2b82338bf7e3e
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 88dc923c201f3d3b91d9332af5404dac8b479dd9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717520"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816525"
 ---
 # <a name="tcpip-offload-overview"></a>TCP/IP 卸载概述
 

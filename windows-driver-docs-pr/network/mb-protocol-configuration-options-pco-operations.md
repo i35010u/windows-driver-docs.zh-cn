@@ -1,17 +1,16 @@
 ---
 title: MB 协议配置选项 (PCO) 操作
 description: MB 协议配置选项 (PCO) 操作
-ms.assetid: 682C507C-5B2C-45E3-99D2-EEC68F8FC715
 keywords:
 - MB PCO 选项，移动宽带 PCO 选项，MB 协议配置选项，移动宽带协议配置选项，WDK 网络驱动程序，MBB 微型端口驱动程序
 ms.date: 09/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e79d414f0c4b75cfb298466a7b6d6e56bfa8fbda
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: beaa611fe42a7ce196221233558aa683a26deb79
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218046"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816607"
 ---
 # <a name="mb-protocol-configuration-options-pco-operations"></a>MB 协议配置选项 (PCO) 操作
 
@@ -78,7 +77,7 @@ ms.locfileid: "89218046"
 
 #### <a name="query"></a>查询
 
-InformationBuffer 包含唯一相关字段为*SessionId*的**MBIM_PCO_VALUE** 。 *SessionId* 保留供将来使用，并且在 Windows 10 版本1709中将始终为0。 查询中的 *SessionId* 指示函数将返回哪个 IP 数据流的 PCO 值。
+InformationBuffer 包含唯一相关字段为 *SessionId* 的 **MBIM_PCO_VALUE** 。 *SessionId* 保留供将来使用，并且在 Windows 10 版本1709中将始终为0。 查询中的 *SessionId* 指示函数将返回哪个 IP 数据流的 PCO 值。
 
 #### <a name="set"></a>设置
 
@@ -99,14 +98,14 @@ InformationBuffer 包含唯一相关字段为*SessionId*的**MBIM_PCO_VALUE** �
 
 ##### <a name="mbim_pco_type"></a>MBIM_PCO_TYPE
 
-| 类型 | 值 | 说明 |
+| 类型 | 值 | 描述 |
 | --- | --- | --- |
 | MBIMPcoTypeComplete | 0 | 指定完整的 PCO 结构将在从网络接收的情况下传递，而标头实际反映在 3GPP TS 24.008 规范中定义的 PCO 结构的八进制3中的协议。 |
 | MBIMPcoTypePartial | 1 | 指定该调制解调器将只传递从网络接收的 PCO 结构的一个子集。 标头与 3GPP TS 24.008 规范中定义的 PCO 结构相匹配，但八进制3的 "配置协议" 可能无效。 |
 
 ##### <a name="mbim-pco-type"></a>MBIM-PCO-TYPE
 
-| Offset | 大小 | 字段 | 类型 | 说明 |
+| Offset | 大小 | 字段 | 类型 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | SessionId | UINT32 | 查询中的 SessionId 指示函数将返回哪个 IP 数据流的 PCO 值。 |
 | 4 | 4 | PcoDataSize | UINT32 | PcoData 的长度（从0到256）。 在查询中，此值将为0。 |

@@ -1,19 +1,18 @@
 ---
 title: 初始化 NMR 数据结构
 description: 初始化 NMR 数据结构
-ms.assetid: 84241ff4-f6ae-4c71-a9e3-1a6615e41293
 keywords:
 - 网络模块注册器 WDK Winsock 内核
 - NMR WDK Winsock 内核
 - 初始化 NMR 数据结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 53a4110983addd5e5a61d5e5f13ed9904722cb52
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e052219957e2a050a3123c3ba78017ff508fcf4a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211043"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815987"
 ---
 # <a name="initializing-nmr-data-structures"></a>初始化 NMR 数据结构
 
@@ -120,7 +119,7 @@ NTSTATUS
 }
 ```
 
-WSK 应用程序不需要从其**DriverEntry**函数内调用**NmrRegisterClient** 。 例如，如果 WSK 应用程序是复杂驱动程序的子组件，则仅当激活 WSK 应用程序子组件时，应用程序的注册才可能发生。
+WSK 应用程序不需要从其 **DriverEntry** 函数内调用 **NmrRegisterClient** 。 例如，如果 WSK 应用程序是复杂驱动程序的子组件，则仅当激活 WSK 应用程序子组件时，应用程序的注册才可能发生。
 
  
 

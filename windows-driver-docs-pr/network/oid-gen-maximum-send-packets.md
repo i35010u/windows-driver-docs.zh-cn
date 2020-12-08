@@ -1,16 +1,15 @@
 ---
 title: OID_GEN_MAXIMUM_SEND_PACKETS
 description: 作为查询，OID_GEN_MAXIMUM_SEND_PACKETS OID 指定微型端口驱动程序的 MiniportSendPackets 函数可接受的发送数据包描述符的最大数目。
-ms.assetid: 7e87285f-26c5-4b7d-99a8-bc0f30c643dc
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_MAXIMUM_SEND_PACKETS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: ed7782e13269f413b38738ad3dc5100101286823
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 8ad9e7d1a6cdee5e3a7313e9a146c3100667b9ba
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210125"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816543"
 ---
 # <a name="oid_gen_maximum_send_packets"></a>OID \_ 代 \_ 最大 \_ 发送 \_ 数据包
 
@@ -55,7 +54,7 @@ NDIS 将忽略反序列化的驱动程序返回的任何值，以响应 OID \_ �
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [*MiniportSendPackets*](/previous-versions/windows/hardware/network/ff550524(v=vs.85))

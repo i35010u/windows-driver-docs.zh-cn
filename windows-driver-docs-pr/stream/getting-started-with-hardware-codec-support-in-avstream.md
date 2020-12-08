@@ -1,17 +1,16 @@
 ---
 title: AVStream 中的硬件编解码器支持入门
 description: AVStream 中的硬件编解码器支持入门
-ms.assetid: f8335285-e74f-4600-aee9-7e2881cb0764
 keywords:
 - 硬件编解码器支持 WDK AVStream，使用
 ms.date: 06/18/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 714b7d663fdddf7fa8fab7aaa66dc888a686108f
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 7d3aff21fcea95926ce427cdc37f781728ed305a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190603"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815831"
 ---
 # <a name="getting-started-with-hardware-codec-support-in-avstream"></a>AVStream 中的硬件编解码器支持入门
 

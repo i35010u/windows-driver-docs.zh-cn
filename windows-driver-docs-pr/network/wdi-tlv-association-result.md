@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_ASSOCIATION_RESULT
-description: WDI_TLV_ASSOCIATION_RESULT 是 TLV，其中包含关联的结果。
-ms.assetid: E0059A7A-0D20-403E-9A46-9633396A87C4
+description: WDI_TLV_ASSOCIATION_RESULT 是包含关联结果的 TLV。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_ASSOCIATION_RESULT 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: d556abb4211f97a067c2013035cddbd46df70d9a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fc3e6494ce3ed329a9b775154fc216175dc13541
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376242"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817071"
 ---
-# <a name="wditlvassociationresult"></a>WDI\_TLV\_关联\_结果
+# <a name="wdi_tlv_association_result"></a>WDI \_ TLV \_ 关联 \_ 结果
 
 
-WDI\_TLV\_关联\_结果是包含结果的关联 TLV。
+WDI \_ tlv \_ 关联 \_ 结果是包含关联结果的 tlv。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,21 +25,21 @@ WDI\_TLV\_关联\_结果是包含结果的关联 TLV。
 ## <a name="length"></a>长度
 
 
-所有的大小 （以字节为单位） 总和包含 TLVs。
+Sum (包含所有 TLVs 的大小的) 字节。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入                                                                                       | 允许多个 TLV 实例 | 可选 | 描述                                                                                                                                                                                                 |
+| 类型                                                                                       | 允许多个 TLV 实例 | 可选 | 说明                                                                                                                                                                                                 |
 |--------------------------------------------------------------------------------------------|--------------------------------|----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_TLV\_BSSID**](wdi-tlv-bssid.md)                                                   |                                |          | BSS BSSID。                                                                                                                                                                                       |
-| [**WDI\_TLV\_关联\_结果\_参数**](wdi-tlv-association-result-parameters.md) |                                |          | 关联结果参数。                                                                                                                                                                          |
-| [**WDI\_TLV\_ASSOCIATION\_REQUEST\_FRAME**](wdi-tlv-association-request-frame.md)         |                                | X        | 关联请求所用的关联。 这不包括 802.11 MAC 报头。                                                                                                         |
-| [**WDI\_TLV\_关联\_响应\_帧**](wdi-tlv-association-response-frame.md)       |                                | X        | 收到关联响应。 这不包括 802.11 MAC 报头。                                                                                                                    |
-| [**WDI\_TLV\_身份验证\_响应\_帧**](wdi-tlv-authentication-response-frame.md) |                                | X        | 失败代码收到身份验证响应。 这不包括 802.11 MAC 报头。 如果连接尝试失败，在身份验证交换期间，它应只能包含。 |
-| [**WDI\_TLV\_信号\_探测\_响应**](wdi-tlv-beacon-probe-response.md)                 |                                | X        | 最新信号或探测端口接收的响应帧。 这不包括 802.11 MAC 报头。                                                                                                |
-| [**WDI\_TLV\_ETHERTYPE\_ENCAP\_TABLE**](wdi-tlv-ethertype-encap-table.md)                 |                                | X        | 关联 Ethertype 封装。                                                                                                                                                           |
-| [**WDI\_TLV\_PHY\_TYPE\_LIST**](wdi-tlv-phy-type-list.md)                                 |                                | X        | 802.11 工作站使用来发送或接收数据包的 BSS 网络连接上的物理标识符的列表。                                                                                          |
+| [**WDI \_ TLV \_ BSSID**](wdi-tlv-bssid.md)                                                   |                                |          | BSS 的 BSSID。                                                                                                                                                                                       |
+| [**WDI \_ TLV \_ 关联 \_ 结果 \_ 参数**](wdi-tlv-association-result-parameters.md) |                                |          | 关联结果参数。                                                                                                                                                                          |
+| [**WDI \_ TLV \_ 关联 \_ 请求 \_ 帧**](wdi-tlv-association-request-frame.md)         |                                | X        | 用于关联的关联请求。 这不包括 802.11 MAC 标头。                                                                                                         |
+| [**WDI \_ TLV \_ 关联 \_ 响应 \_ 帧**](wdi-tlv-association-response-frame.md)       |                                | X        | 收到的关联响应。 这不包括 802.11 MAC 标头。                                                                                                                    |
+| [**WDI \_ TLV \_ 身份验证 \_ 响应 \_ 帧**](wdi-tlv-authentication-response-frame.md) |                                | X        | 收到的身份验证响应，出现故障代码。 这不包括 802.11 MAC 标头。 仅当在身份验证交换期间连接尝试失败时，才应包括此方法。 |
+| [**WDI \_ TLV \_ 信标 \_ 探测 \_ 响应**](wdi-tlv-beacon-probe-response.md)                 |                                | X        | 端口接收到的最新信标或探测响应帧。 这不包括 802.11 MAC 标头。                                                                                                |
+| [**WDI \_ TLV \_ ETHERTYPE \_ ENCAP \_ 表**](wdi-tlv-ethertype-encap-table.md)                 |                                | X        | 关联的 Ethertype 封装。                                                                                                                                                           |
+| [**WDI \_ TLV \_ PHY \_ 类型 \_ 列表**](wdi-tlv-phy-type-list.md)                                 |                                | X        | 在 BSS 网络连接上，802.11 工作站用于发送或接收数据包的 PHY 标识符的列表。                                                                                          |
 
  
 
@@ -59,10 +58,10 @@ WDI\_TLV\_关联\_结果是包含结果的关联 TLV。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

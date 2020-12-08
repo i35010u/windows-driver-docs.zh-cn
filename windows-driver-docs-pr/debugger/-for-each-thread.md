@@ -1,7 +1,6 @@
 ---
 title: for_each_thread
-description: For_each_thread 扩展执行将在目标中指定的调试器命令一次为每个线程。
-ms.assetid: 4ca8e1bd-1a1b-4fef-a2d9-42c26f9b746b
+description: 对于目标中的每个线程，for_each_thread 扩展将执行一次指定的调试器命令。
 keywords:
 - for_each_thread Windows 调试
 ms.date: 05/23/2017
@@ -12,35 +11,35 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 27874f8e518ebe33cd20de0cda693f63b90f3478
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 64aa2d08e9fa5550d08c1359eea0e91f7db6b8b9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336642"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815505"
 ---
-# <a name="foreachthread"></a>!for\_each\_thread
+# <a name="for_each_thread"></a>！对于 \_ 每个 \_ 线程
 
 
-**！ 有关\_每个\_线程**扩展执行将在目标中指定的调试器命令一次为每个线程。
+**对于 \_ 每个 \_ 线程** 扩展，将为目标中的每个线程执行指定的调试器命令。
 
 ```dbgcmd
 !for_each_thread ["CommandString"] 
 !for_each_thread -? 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______CommandString______"></span><span id="_______commandstring______"></span><span id="_______COMMANDSTRING______"></span> *CommandString*   
-指定要为每个线程执行的调试器命令。 如果*CommandString*包括多个命令，请使用分号 （;） 分隔并将括*CommandString*用引号 （"）。 如果*CommandString*括在引号中的单个命令*CommandString*不能包含引号引起来。 内*CommandString*，  **@\#线程**线程地址将替换为。
+<span id="_______CommandString______"></span><span id="_______commandstring______"></span><span id="_______COMMANDSTRING______"></span>*Command.commandstring*   
+指定要为每个线程执行的调试器命令。 如果 *command.commandstring* 包含多个命令，请用分号分隔它们 (; ) 并将 *command.commandstring* 括在引号中 ( ") 。 如果 *command.commandstring* 括在引号中，则 *command.commandstring* 中的各个命令不能包含引号。 在 *command.commandstring* 中， **@ \# 线程** 被替换为线程地址。
 
 <span id="_______-_______"></span> **-?**   
-显示此扩展在调试器命令窗口中的帮助。
+在调试器中显示此扩展的帮助命令窗口。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
-此扩展仅在内核模式下，有效，即使它驻留在 Ext.dll 也是如此。
+此扩展仅适用于内核模式，即使它驻留在 Ext.dll 中。
 
 <table>
 <colgroup>
@@ -61,16 +60,16 @@ ms.locfileid: "63336642"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关线程的更多常规信息，请参阅[线程和进程](controlling-threads-and-processes.md)。 有关操作或获取有关线程的信息的详细信息，请参阅[控制进程和线程](controlling-processes-and-threads.md)。
+有关线程的更多常规信息，请参阅 [线程和进程](controlling-threads-and-processes.md)。 有关操作或获取有关线程的信息的详细信息，请参阅 [控制进程和线程](controlling-processes-and-threads.md)。
 
 <a name="remarks"></a>备注
 -------
 
-如果未不提供任何参数，则调试器将显示所有线程的列表，以及线程等待状态。 这相当于输入[ **！ 线程\#线程 2** ](-process.md)作为*CommandString*值。
+如果未提供任何参数，则调试器将显示所有线程的列表以及线程等待状态。 这等效于输入 [**！ thread @ \# thread 2**](-process.md) 作为 *command.commandstring* 值。
 
-可以通过按 CTRL + BREAK （在 WinDbg) 或 CTRL + C （中 KD) 终止的任何点处的执行。
+可以通过在 WinDbg) 中按 CTRL + BREAK (或在 KD) 中按 CTRL + C (，随时终止执行。
 
  
 

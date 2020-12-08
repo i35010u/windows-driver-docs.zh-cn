@@ -1,7 +1,6 @@
 ---
 title: 取消 IRP 时要考虑的要点
 description: 取消 IRP 时要考虑的要点
-ms.assetid: 16a47033-7147-43a2-a9f8-a215f7e90ff1
 keywords:
 - 取消 Irp，指导原则
 - 取消例程，指导原则
@@ -9,12 +8,12 @@ keywords:
 - 当前状态 WDK Irp
 ms.date: 05/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 542233a2eba9408454af4ffef4d0e8f77a8d3445
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: d3b8b90f71027b1175bd819b4d709437a2ad2c87
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89402856"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816635"
 ---
 # <a name="points-to-consider-when-canceling-irps"></a>取消 IRP 时要考虑的要点
 
@@ -22,7 +21,7 @@ ms.locfileid: "89402856"
 
 
 
-本部分介绍了实现取消例程并处理可 *取消* 的 irp 的准则。 有关处理可取消的 Irp 的详细信息，请参阅 [取消安全 Irp 队列的控制流](https://go.microsoft.com/fwlink/p/?linkid=57844)。
+本部分介绍了实现取消例程并处理可 *取消* 的 irp 的准则。 有关处理可取消的 Irp 的详细信息，请参阅 [Cancel-Safe IRP 队列的控制流](https://go.microsoft.com/fwlink/p/?linkid=57844)。
 
 ### <a name="general-guidelines-for-all-cancel-routines"></a>所有取消例程的一般准则
 
@@ -30,19 +29,19 @@ ms.locfileid: "89402856"
 
 -   在返回 control 之前调用 [**IoReleaseCancelSpinLock**](/previous-versions/windows/hardware/drivers/ff549550(v=vs.85)) 。
 
--   除非首先调用**IoReleaseCancelSpinLock** ，否则不会调用[**IoAcquireCancelSpinLock**](/previous-versions/windows/hardware/drivers/ff548196(v=vs.85)) 。
+-   除非首先调用 **IoReleaseCancelSpinLock** ，否则不会调用 [**IoAcquireCancelSpinLock**](/previous-versions/windows/hardware/drivers/ff548196(v=vs.85)) 。
 
--   对 **IoReleaseCancelSpinLock** 发出的每个调用进行对 **IoAcquireCancelSpinLock**的反向调用。
+-   对 **IoReleaseCancelSpinLock** 发出的每个调用进行对 **IoAcquireCancelSpinLock** 的反向调用。
 
-当 *Cancel* 例程每次调用 **IoReleaseCancelSpinLock**时，都必须将最新调用返回的 IRQL 传递到 **IoAcquireCancelSpinLock**。 当释放由 i/o 管理器获取的旋转锁时 (并在) *取消* 例程调用时保持该锁，则 *cancel* 例程必须通过 **Irp- &gt; irp->cancelirql**。
+当 *Cancel* 例程每次调用 **IoReleaseCancelSpinLock** 时，都必须将最新调用返回的 IRQL 传递到 **IoAcquireCancelSpinLock**。 当释放由 i/o 管理器获取的旋转锁时 (并在) *取消* 例程调用时保持该锁，则 *cancel* 例程必须通过 **Irp- &gt; irp->cancelirql**。
 
-驱动程序不得在持有自旋锁的情况下调用 IoCompleteRequest 以外的例程 (如**IoCompleteRequest**) ，因为可能会导致死锁。
+驱动程序不得在持有自旋锁的情况下调用 IoCompleteRequest 以外的例程 (如 **IoCompleteRequest**) ，因为可能会导致死锁。
 
 ### <a name="using-the-queue-defined-by-the-io-manager"></a><a href="" id="using-the-queue-defined-by-the-i-o-manager-"></a>使用由 i/o 管理器定义的队列
 
 除非驱动程序管理自己的 Irp 的内部队列，否则会使用传入的 IRP 调用其 *取消* 例程，此操作可能是以下两种情况之一：
 
--   输入目标设备对象中的**CurrentIrp**
+-   输入目标设备对象中的 **CurrentIrp**
 
 -   设备队列中与目标设备对象相关联的条目
 
@@ -54,7 +53,7 @@ ms.locfileid: "89402856"
 
 如果输入 IRP 的当前状态为 "挂起"，则 " *取消* " 例程必须执行以下操作：
 
-1.  设置状态为 "已取消" 的输入 IRP 的 i/o 状态块 \_ ，并为 "零" 获取**信息**。 **Status**
+1.  设置状态为 "已取消" 的输入 IRP 的 i/o 状态块 \_ ，并为 "零" 获取 **信息**。 **Status**
 
 2.  释放它所持有的所有旋转锁，包括系统取消旋转锁。
 
@@ -62,13 +61,13 @@ ms.locfileid: "89402856"
 
 ### <a name="holding-irps-in-a-cancelable-state"></a>将 Irp 置于可取消状态
 
-保存 IRP 处于可取消状态的任何驱动程序例程都必须调用 [**也**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iomarkirppending) ，并且必须调用 [**IOSETCANCELROUTINE**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcancelroutine) 来为 IRP 中的 *Cancel* 例程设置其入口点。 只有这样，该驱动程序例程才能调用其他支持例程，如 **IoStartPacket**、 **IoAllocateController**或 **ExInterlockedInsert。列出** 例程。
+保存 IRP 处于可取消状态的任何驱动程序例程都必须调用 [**也**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iomarkirppending) ，并且必须调用 [**IOSETCANCELROUTINE**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcancelroutine) 来为 IRP 中的 *Cancel* 例程设置其入口点。 只有这样，该驱动程序例程才能调用其他支持例程，如 **IoStartPacket**、 **IoAllocateController** 或 **ExInterlockedInsert。列出** 例程。
 
 以后处理可取消的 Irp 的任何驱动程序例程必须检查 IRP 是否已被取消，然后才能开始操作来满足请求。 例程必须调用 **IoSetCancelRoutine** ，以便将 *取消* 例程的入口点重置为 IRP 中的 **NULL** 。 只有这样，例程才能开始对输入 IRP 进行 i/o 处理。
 
 如果某个例程还需要为 IRP 中的 " *取消* " 例程重置入口点，则它也可能会传递 irp 以供其他驱动程序例程进一步处理，并且这些 irp 可能会处于可取消状态。
 
-在将 IRP 传递到下一个带**IoCallDriver**的驱动程序之前，任何以可取消状态保存 irp 的高级驱动程序都必须将其*取消*入口点重置为**NULL** 。
+在将 IRP 传递到下一个带 **IoCallDriver** 的驱动程序之前，任何以可取消状态保存 irp 的高级驱动程序都必须将其 *取消* 入口点重置为 **NULL** 。
 
 ### <a name="canceling-an-irp"></a>取消 IRP
 

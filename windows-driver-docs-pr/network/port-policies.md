@@ -1,20 +1,19 @@
 ---
 title: 端口策略
 description: 端口策略
-ms.assetid: F23B4A2F-4E33-4A8F-AF57-E4805DE48C15
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 118764141b119e89ab1325bf1423000901fff1e8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 967bed498df6ee4d1c8233e924072b10c2f6b671
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358825"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817087"
 ---
 # <a name="port-policies"></a>端口策略
 
 
-本节包含介绍 HYPER-V 可扩展交换机端口策略的自定义属性的以下主题：
+本部分包括以下主题，这些主题描述了 Hyper-v 可扩展交换机端口策略的自定义属性：
 
 [端口策略概述](overview-of-port-policies.md)
 

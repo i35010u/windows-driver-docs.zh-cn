@@ -1,20 +1,19 @@
 ---
 title: 处理 UMDF 驱动程序中的客户端模拟
-description: 本主题介绍用户模式驱动程序框架 (UMDF) 驱动程序如何访问受保护的资源，从 UMDF 版本2开始。
-ms.assetid: 02EA93CE-3C4D-4F6F-8E58-DD78EBDB19DE
+description: 本主题介绍 User-Mode Driver Framework (UMDF) 驱动程序如何访问受保护的资源（从 UMDF 版本2开始）。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: da00ec2e6fae179d70b635e9b63f192524eb9942
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 2c952c05bcc07e19e5139b103907c04469f63489
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187221"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815629"
 ---
 # <a name="handling-client-impersonation-in-umdf-drivers"></a>处理 UMDF 驱动程序中的客户端模拟
 
 
-本主题介绍用户模式驱动程序框架 (UMDF) 驱动程序如何访问受保护的资源，从 UMDF 版本2开始。
+本主题介绍 User-Mode Driver Framework (UMDF) 驱动程序如何访问受保护的资源（从 UMDF 版本2开始）。
 
 UMDF 驱动程序通常在 LocalService 帐户下运行，并且无法访问需要用户凭据的文件或资源，如受保护的文件或其他受保护的资源。 UMDF 驱动程序通常对在客户端应用程序和设备之间流动的命令和数据进行操作。 因此，大多数 UMDF 驱动程序不会访问受保护的资源。
 
@@ -28,7 +27,7 @@ UMDF 驱动程序的安装包和客户端应用程序必须启用框架的模拟
 
 -   UMDF 驱动程序的安装包的 INF 文件必须包含 **UmdfImpersonationLevel** 指令并设置允许的最大模拟级别。 仅当 INF 文件包含 **UmdfImpersonationLevel** 指令时，才启用模拟。 有关设置模拟级别的详细信息，请参阅 [在 INF 文件中指定 WDF 指令](specifying-wdf-directives-in-inf-files.md)。
 
--   客户端应用程序必须为每个文件句柄设置允许的模拟级别。 应用程序使用 Microsoft Win32 **CreateFile** 函数中的服务质量 (QoS) 设置来设置允许的模拟级别。 有关这些设置的详细信息，请参阅 Windows SDK 文档中的**CreateFile**的*dwFlagsAndAttributes*参数。
+-   客户端应用程序必须为每个文件句柄设置允许的模拟级别。 应用程序使用 Microsoft Win32 **CreateFile** 函数中的服务质量 (QoS) 设置来设置允许的模拟级别。 有关这些设置的详细信息，请参阅 Windows SDK 文档中的 **CreateFile** 的 *dwFlagsAndAttributes* 参数。
 
 ### <a name="handling-impersonation-for-an-io-request"></a>处理 i/o 请求的模拟
 
@@ -42,7 +41,7 @@ UMDF 驱动程序和框架按以下顺序处理 i/o 请求的模拟：
 
 框架不允许驱动程序的 [*EvtRequestImpersonate*](/windows-hardware/drivers/ddi/wdfrequest/nc-wdfrequest-evt_wdf_request_impersonate) 回调函数调用框架的任何对象方法。 这可确保驱动程序不会向其他驱动程序回调函数或其他驱动程序公开模拟级别。
 
-最佳做法是，在为该请求调用[**WdfRequestImpersonate**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestimpersonate)之前，驱动程序不应启用对 i/o 请求的[取消](canceling-i-o-requests.md)。
+最佳做法是，在为该请求调用 [**WdfRequestImpersonate**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestimpersonate)之前，驱动程序不应启用对 i/o 请求的 [取消](canceling-i-o-requests.md)。
 
 [**WdfRequestImpersonate**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestimpersonate)方法仅授予驱动程序请求的模拟级别。
 
@@ -50,7 +49,7 @@ UMDF 驱动程序和框架按以下顺序处理 i/o 请求的模拟：
 
 当你的驱动程序收到 [**WdfRequestTypeCreate**](/windows-hardware/drivers/ddi/wdfrequest/ne-wdfrequest-_wdf_request_type)类型的 i/o 请求时，驱动程序可能会将该驱动程序堆栈向下移动 i/o 请求。 内核模式驱动程序没有 [**WdfRequestImpersonate**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestimpersonate) 提供给 UMDF 驱动程序的模拟功能。
 
-因此，如果你希望内核模式驱动程序接收客户端的用户凭据 (而不是[驱动程序主机进程](umdf-driver-host-process.md)的凭据) ，则在调用[**WdfRequestSend**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend)将 create 请求发送到 i/o 目标时，驱动程序必须设置[**WDF \_ 请求 \_ 发送 \_ 选项 \_ 模拟 \_ 客户端**](/windows-hardware/drivers/ddi/wdfrequest/ne-wdfrequest-_wdf_request_send_options_flags)标志。 如果模拟尝试失败， **Send** 方法将返回错误代码，除非驱动程序还设置 **WDF \_ 请求 \_ 发送选项 " \_ \_ 模拟 \_ 忽略 \_ 失败** 标志"。
+因此，如果你希望内核模式驱动程序接收客户端的用户凭据 (而不是 [驱动程序主机进程](umdf-driver-host-process.md)的凭据) ，则在调用 [**WdfRequestSend**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend)将 create 请求发送到 i/o 目标时，驱动程序必须设置 [**WDF \_ 请求 \_ 发送 \_ 选项 \_ 模拟 \_ 客户端**](/windows-hardware/drivers/ddi/wdfrequest/ne-wdfrequest-_wdf_request_send_options_flags)标志。 如果模拟尝试失败， **Send** 方法将返回错误代码，除非驱动程序还设置 **WDF \_ 请求 \_ 发送选项 " \_ \_ 模拟 \_ 忽略 \_ 失败** 标志"。
 
 下面的示例演示了 UMDF 驱动程序如何使用 **WDF \_ 请求 \_ 发送 \_ 选项 \_ 模拟 \_ 客户端** 标志向 i/o 目标发送文件创建请求。 驱动程序的 INF 文件还必须包含如上所述的 **UmdfImpersonationLevel** 指令。
 

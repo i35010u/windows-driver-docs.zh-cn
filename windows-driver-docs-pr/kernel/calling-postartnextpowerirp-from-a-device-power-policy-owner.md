@@ -1,19 +1,18 @@
 ---
 title: 从设备电源策略所有者调用 PoStartNextPowerIrp
 description: 从设备电源策略所有者调用 PoStartNextPowerIrp
-ms.assetid: 58576ff8-638e-4928-9a2d-337ac3f4d2d8
 keywords:
 - power Irp WDK 内核，PoStartNextPowerIrp
 - PoStartNextPowerIrp
 - 设备电源策略 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e18883f1c1ad1958f3477b7d483be2a277beec25
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 7c2e243b8f3d5b3f3c871c37d853403ffd4ec792
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107546"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816147"
 ---
 # <a name="calling-postartnextpowerirp-from-a-device-power-policy-owner"></a>从设备电源策略所有者调用 PoStartNextPowerIrp
 
@@ -21,7 +20,7 @@ ms.locfileid: "90107546"
 
 
 
-从 Windows Vista 开始，调用 [**PoStartNextPowerIrp**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-postartnextpowerirp) 不是必需的，并且调用此例程不会执行任何电源管理操作。 但是，在 Windows Server 2003、Windows XP 和 Windows 2000 中，拥有设备电源策略的函数驱动程序必须针对每个[**IRP \_ MN \_ 查询 \_ 能力**](./irp-mn-query-power.md)或[**irp \_ MN \_ 设置 \_ **](./irp-mn-set-power.md)驱动程序收到的 power request 调用**PoStartNextPowerIrp**一次。 调用发生时，将取决于请求的类型以及该驱动程序是失败还是成功请求，如下表所示。
+从 Windows Vista 开始，调用 [**PoStartNextPowerIrp**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-postartnextpowerirp) 不是必需的，并且调用此例程不会执行任何电源管理操作。 但是，在 Windows Server 2003、Windows XP 和 Windows 2000 中，拥有设备电源策略的函数驱动程序必须针对每个 [**IRP \_ MN \_ 查询 \_ 能力**](./irp-mn-query-power.md)或 [**irp \_ MN \_ 设置 \_**](./irp-mn-set-power.md)驱动程序收到的 power request 调用 **PoStartNextPowerIrp** 一次。 调用发生时，将取决于请求的类型以及该驱动程序是失败还是成功请求，如下表所示。
 
 <table>
 <colgroup>

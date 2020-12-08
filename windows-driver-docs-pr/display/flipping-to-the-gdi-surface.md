@@ -1,7 +1,6 @@
 ---
 title: 交替到 GDI 图面
 description: 交替到 GDI 图面
-ms.assetid: e74e108d-f88c-4e42-9136-ef087378807a
 keywords:
 - 绘图页反向 WDK DirectDraw，GDI surface
 - DirectDraw 翻转 WDK Windows 2000 显示，GDI 图面
@@ -11,12 +10,12 @@ keywords:
 - surface DirectDraw，翻转
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7aa860b3883fdb193822c63bc13c0a3b4f5d79ab
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 7531ed27655912f1c8a45ce52ce92e0e68ef7305
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716036"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817399"
 ---
 # <a name="flipping-to-the-gdi-surface"></a>交替到 GDI 图面
 

@@ -1,7 +1,6 @@
 ---
 title: 响应 OID_CO_TAPI_LINE_CAPS 查询
 description: 响应 OID_CO_TAPI_LINE_CAPS 查询
-ms.assetid: b1ca65c6-ecce-4d2c-b7ca-03b6a334f97b
 keywords:
 - 语音流 WDK 网络，支持规范
 - OID_CO_TAPI_LINE_CAPS
@@ -11,12 +10,12 @@ keywords:
 - UlMonitorDigitModes
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b425434fd1face3ac6b585598d2697941db8bb49
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 99cf7b79ad47fbbc3be7172278c51efea2868108
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215031"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817079"
 ---
 # <a name="responding-to-an-oid_co_tapi_line_caps-query"></a>响应 OID \_ CO \_ TAPI \_ LINE \_ cap 查询
 

@@ -1,15 +1,14 @@
 ---
 title: 系统性资源不足模拟
 description: 系统低资源模拟选项注入内核模式驱动程序中的资源故障。
-ms.assetid: A8351715-8407-4FEF-9050-2F1F2E7FC2FD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d4cb0335ee4a9656e7a4b72604a40c5b92422cd
-ms.sourcegitcommit: c8e2e10f99c015ea98a6cb8f2028638298af1e4f
+ms.openlocfilehash: 4a1d51f55811942cd5e8e0068239f0f7e3fe2cbd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90843478"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817433"
 ---
 # <a name="systematic-low-resources-simulation"></a>系统性资源不足模拟
 
@@ -18,11 +17,11 @@ ms.locfileid: "90843478"
 
 为了帮助您确定错误的根本原因，提供了一个调试器扩展，它可以准确地告诉您哪些失败已注入并按何种顺序排列。
 
-**警告**   当验证计算机上的所有 (或大量) 驱动程序时，不应使用此选项。 仅当对单独驱动程序或其附加的筛选器驱动程序进行目标测试时，才应使用此选项。 同时对大量驱动程序使用此选项可能会导致不可预知的结果，并会在与你测试)  (的驱动程序无关的组件中强制崩溃。
+**警告**  当验证计算机上的所有 (或大量) 驱动程序时，不应使用此选项。 仅当对单独驱动程序或其附加的筛选器驱动程序进行目标测试时，才应使用此选项。 同时对大量驱动程序使用此选项可能会导致不可预知的结果，并会在与你测试)  (的驱动程序无关的组件中强制崩溃。
 
  
 
-**注意**   对于 Windows 8.1，在 WDK 8 中提供的[基于堆栈的故障注入](stack-based-failure-injection.md)功能已集成到驱动程序验证程序中。 在运行 Windows 8.1 的计算机上，使用 "系统低资源" 模拟选项。
+**注意**  对于 Windows 8.1，在 WDK 8 中提供的 [基于堆栈的故障注入](stack-based-failure-injection.md) 功能已集成到驱动程序验证程序中。 在运行 Windows 8.1 的计算机上，使用 "系统低资源" 模拟选项。
 
  
 
@@ -53,7 +52,7 @@ ms.locfileid: "90843478"
     <thead>
     <tr class="header">
     <th align="left">OPTION</th>
-    <th align="left">说明</th>
+    <th align="left">描述</th>
     </tr>
     </thead>
     <tbody>
@@ -113,10 +112,10 @@ ms.locfileid: "90843478"
 -   **使用驱动程序验证器管理器**
 
     1.  启动驱动程序验证器管理器。 在命令提示符窗口中键入 **Verifier** 。
-    2.  选择 " **为代码开发人员 (创建自定义设置") ** ，然后单击 " **下一步**"。
+    2.  选择 " **为代码开发人员 (创建自定义设置")** ，然后单击 " **下一步**"。
     3.  选择 " **从完整列表中选择单个设置**"。
     4.  选择 (检查) **系统低资源模拟**。
-    5.  重启计算机。
+    5.  重新启动计算机。
 
 ## <a name="span-iddebugging_bug_checks_caused_by_systematic_low_resources_simulationspanspan-iddebugging_bug_checks_caused_by_systematic_low_resources_simulationspanspan-iddebugging_bug_checks_caused_by_systematic_low_resources_simulationspandebugging-bug-checks-caused-by-systematic-low-resources-simulation"></a><span id="Debugging_bug_checks_caused_by_Systematic_low_resources_simulation"></span><span id="debugging_bug_checks_caused_by_systematic_low_resources_simulation"></span><span id="DEBUGGING_BUG_CHECKS_CAUSED_BY_SYSTEMATIC_LOW_RESOURCES_SIMULATION"></span>调试由系统低资源模拟引起的 bug 检查
 

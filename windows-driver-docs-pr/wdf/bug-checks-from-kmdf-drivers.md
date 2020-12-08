@@ -1,7 +1,6 @@
 ---
 title: 从 KMDF 驱动程序进行 Bug 检查
 description: 从 KMDF 驱动程序进行 Bug 检查
-ms.assetid: 4fde9586-3455-4692-8eeb-bbf64c0a437e
 keywords:
 - 调试驱动程序 WDK KMDF，bug 检查
 - bug 检查 WDK KMDF
@@ -10,12 +9,12 @@ keywords:
 - WDF_VIOLATION
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 36c5b3701e67fdb2a5df082d2d9450c5b10c01fd
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d48ff9eebc898a2341c8268c244659ff257c715c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184049"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815783"
 ---
 # <a name="bug-checks-from-kmdf-drivers"></a>从 KMDF 驱动程序进行 Bug 检查
 

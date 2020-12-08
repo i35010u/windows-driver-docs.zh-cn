@@ -1,18 +1,17 @@
 ---
 title: ACE
 description: ACE
-ms.assetid: efdf43ae-d4d4-4950-9435-e10bf5b75cf2
 keywords:
 - 访问控制入口 WDK 文件系统
 - ACE WDK 文件系统
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ac0a605808e07a4c20fa941484182c448e05cc1
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 334a5e207ea003a5943de327429b27012e69112c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066226"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816281"
 ---
 # <a name="ace"></a>ACE
 
@@ -32,7 +31,7 @@ ACE 是访问控制列表中 (ACE) 的访问控制项 (ACL) 。
 <thead>
 <tr class="header">
 <th align="left">Attribute</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

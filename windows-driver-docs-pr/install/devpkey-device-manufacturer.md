@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_Manufacturer
 description: DEVPKEY_Device_Manufacturer
-ms.assetid: 28da7262-bdb6-40da-a2f8-30dcbd4f5e6c
 keywords:
 - DEVPKEY_Device_Manufacturer 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 01463f654bb6ad5031a454b32b3ef17e91e0aaed
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 32e3b465b047c2794c3247a02ddc232ad276c04a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716772"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816167"
 ---
 # <a name="devpkey_device_manufacturer"></a>DEVPKEY_Device_Manufacturer
 
@@ -66,7 +65,7 @@ DEVPKEY_DEVICE_Manufacturer 设备属性表示设备实例的制造商的名称�
 <a name="remarks"></a>备注
 -------
 
-DEVPKEY_DEVICE_Manufacturer 的值由安装设备的 INF 文件的 " [**Inf 制造商" 部分**](./inf-manufacturer-section.md)提供的设备的*制造商标识符*输入值设置。
+DEVPKEY_DEVICE_Manufacturer 的值由安装设备的 INF 文件的 " [**Inf 制造商" 部分**](./inf-manufacturer-section.md)提供的设备的 *制造商标识符* 输入值设置。
 
 可以调用 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 来检索 DEVPKEY_DEVICE_Manufacturer 的值。
 

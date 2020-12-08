@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x11B DRIVER_RETURNED_HOLDING_CANCEL_LOCK
-description: DRIVER_RETURNED_HOLDING_CANCEL_LOCK bug 检查具有 0x0000011B 值。
-ms.assetid: 8728dc74-cf21-490f-b3b0-1513d2310461
+description: DRIVER_RETURNED_HOLDING_CANCEL_LOCK bug 检查的值为0x0000011B。
 keywords:
 - Bug 检查 0x11B DRIVER_RETURNED_HOLDING_CANCEL_LOCK
 - DRIVER_RETURNED_HOLDING_CANCEL_LOCK
@@ -13,23 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: dfb7c4a82ff7a1a2159d11c5f3efeee006ae425e
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 3449a739b44335fdb751cf5061233ea23ce1f225
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67521040"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816973"
 ---
-# <a name="bug-check-0x11b-driverreturnedholdingcancellock"></a>Bug 检查 0x11B：驱动程序\_退回\_持有\_取消\_锁
+# <a name="bug-check-0x11b-driver_returned_holding_cancel_lock"></a>Bug 检查0x11B：驱动程序 \_ 返回了 \_ 保留 \_ 取消 \_ 锁定
 
 
-该驱动程序\_退回\_持有\_取消\_锁错误检查的值为 0x0000011B。 此 bug 检查指示驱动程序已经从返回*取消*例程包含全局取消锁定。 这会导致所有更高版本的取消调用失败，并且结果中任意一种死锁或其他 bug 检查。
+驱动程序 \_ 返回 \_ 保存 \_ 取消 \_ 锁定 bug 检查的值为0x0000011B。 此 bug 检查表明驱动程序已从保存全局取消锁定的 *cancel* 例程中返回。 这会导致以后的所有取消调用失败，并导致死锁或其他 bug 检查。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="driverreturnedholdingcancellock-parameters"></a>驱动程序\_退回\_持有\_取消\_锁参数
+## <a name="driver_returned_holding_cancel_lock-parameters"></a>驱动程序 \_ 返回了 \_ 包含 \_ 取消 \_ 锁定参数
 
 
 <table>
@@ -46,11 +45,11 @@ ms.locfileid: "67521040"
 <tbody>
 <tr class="odd">
 <td align="left"><p>1</p></td>
-<td align="left"><p>已取消 IRP 的地址 （可能不是有效）。</p></td>
+<td align="left"><p> (取消的 IRP 的地址在) 中可能无效。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
-<td align="left"><p>地址<em>取消</em>例程。</p></td>
+<td align="left"><p><em>取消</em>例程的地址。</p></td>
 </tr>
 </tbody>
 </table>
@@ -60,9 +59,9 @@ ms.locfileid: "67521040"
 <a name="remarks"></a>备注
 -------
 
-取消自旋锁应通过释放*取消*例程。
+取消旋转锁定应已由 *取消* 例程释放。
 
-该驱动程序调用 IoCancelIrpIoCancelIrp 函数来取消单个的 I/O 请求数据包 (IRP)。 此函数获取取消自旋锁、 IRP 中的取消标志设置，然后调用*取消*指定 IRP 中的相应字段，如果指定了一个例程的例程。 *取消*例程应释放取消自旋锁。 如果没有任何*取消*取消自旋锁释放的例程。
+驱动程序调用 IoCancelIrpIoCancelIrp 函数来取消单个 i/o 请求数据包 (IRP) 。 此函数获取 cancel 自旋锁，在 IRP 中设置 cancel 标志，然后，如果指定了例程，则调用 IRP 中相应字段指定的 *取消* 例程。 需要 *取消* 例程才能释放取消自旋锁。 如果没有 *取消* 例程，则释放 "取消旋转" 锁。
 
  
 

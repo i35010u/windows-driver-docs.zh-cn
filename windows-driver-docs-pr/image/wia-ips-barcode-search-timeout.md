@@ -1,9 +1,8 @@
 ---
-title: WIA\_IPS\_条形码\_搜索\_超时
-description: WIA\_IPS\_条形码\_搜索\_超时属性描述要搜索的文档页上的条形码时遇到的最长时间。
-ms.assetid: 3EE6C492-722E-439A-8BB5-03496DAC78D2
+title: WIA \_ IP \_ 条形码 \_ 搜索 \_ 超时
+description: "\"WIA \\_ ip \\_ 条形码 \\_ 搜索 \\_ 超时值\" 属性描述在文档页面上搜索条形码的最长时间。"
 keywords:
-- WIA_IPS_BARCODE_SEARCH_TIMEOUT 成像设备
+- WIA_IPS_BARCODE_SEARCH_TIMEOUT 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,31 +13,31 @@ api_type:
 - HeaderDef
 ms.date: 05/22/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: df86fce0ce3ceeebd250349b52365058ba270d8f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: da1a9bf7cbaad87cb93275a018abab6e16e98356
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370635"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817189"
 ---
-# <a name="wiaipsbarcodesearchtimeout"></a>WIA\_IPS\_条形码\_搜索\_超时
+# <a name="wia_ips_barcode_search_timeout"></a>WIA \_ IP \_ 条形码 \_ 搜索 \_ 超时
 
 
-**WIA\_IPS\_条形码\_搜索\_超时**属性描述要搜索的文档页上的条形码时遇到的最长时间。
+" **WIA \_ ip \_ 条形码 \_ 搜索 \_ 超时值** " 属性描述在文档页面上搜索条形码的最长时间。
 
 
-属性类型：VT\_UI4
+属性类型： VT \_ UI4
 
-有效值：WIA\_PROP\_RANGE
+有效值： WIA 内容 \_ \_ 范围
 
 访问权限：读/写
 
 <a name="remarks"></a>备注
 -------
 
-未指定时间单位 （它可以是毫秒或秒的十分之几例如），但应用程序可以选择值中最小值-最大范围内报告的 WIA 微型驱动程序。
+未指定时间单位 (它可以是毫秒或十分之一秒，例如) ，但是应用程序可以选择由 WIA 微型驱动程序报告的最小–最大范围内的值。
 
-此属性是必需的所有条码读取器项。 可以实现属性支持包含一个 （这意味着应用程序不能更改此超时值） 的单个值的范围。
+所有条形码读取器项都需要此属性。 可以实现属性以支持包含一个值的范围 (意味着应用程序无法将此超时值更改) 。
 
 <a name="requirements"></a>要求
 ------------
@@ -50,8 +49,8 @@ ms.locfileid: "63370635"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>

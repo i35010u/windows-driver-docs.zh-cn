@@ -1,18 +1,17 @@
 ---
 title: 框架对象
 description: 框架对象
-ms.assetid: bd9ec812-205d-4f9a-b85b-4e3a2f7556bd
 keywords:
 - UMDF 对象 WDK，已列出
 - framework 对象 WDK UMDF，已列出
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 40ef35f171f18882edfe32ec7215c799255c4c59
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 05a53f333825d6a0b008fe5d5bfff39fdbcef904
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106908"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815671"
 ---
 # <a name="framework-objects"></a>框架对象
 

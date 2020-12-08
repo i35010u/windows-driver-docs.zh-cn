@@ -1,18 +1,17 @@
 ---
 title: GDI/驱动程序的工作划分
 description: GDI/驱动程序的工作划分
-ms.assetid: 280addc6-3fc2-4763-ba87-5e9c5e83d22e
 keywords:
-- GDI WDK Windows 2000 显示、 驱动程序的工作划分
-- 显示图形驱动程序 WDK Windows 2000，驱动程序的工作划分
+- GDI WDK Windows 2000 显示屏，驱动程序划分
+- 图形驱动程序 WDK Windows 2000 显示、人工的驱动程序划分
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a145a618f69ff4649bdabea2760d5548341401e8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e3ea407202b058f8aefecb044287dfcfe1d3b389
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389097"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817367"
 ---
 # <a name="gdidriver-division-of-labor"></a>GDI/驱动程序的工作划分
 
@@ -20,7 +19,7 @@ ms.locfileid: "63389097"
 ## <span id="ddk_gdi_2f_driver_division_of_labor_gg"></span><span id="DDK_GDI_2F_DRIVER_DIVISION_OF_LABOR_GG"></span>
 
 
-若要了解图形驱动程序设计，务必了解的 GDI 和驱动程序，以及它们如何协商的角色。 GDI，其增强功能，可以处理许多以前需要图形驱动程序的操作。 GDI 还有负责管理数据结构的关键图形操作，如图面，尽管每个图形驱动程序必须具有对其进行访问。
+若要理解图形驱动程序设计，必须了解 GDI 和驱动程序的角色及其协商方式。 GDI 具有增强功能，可以处理以前需要图形驱动程序的许多操作。 GDI 还负责管理对图形操作（如表面）至关重要的数据结构，尽管每个图形驱动程序都必须有权访问它们。
 
  
 

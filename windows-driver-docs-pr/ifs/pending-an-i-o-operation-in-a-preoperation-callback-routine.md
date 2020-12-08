@@ -1,18 +1,17 @@
 ---
 title: 在预操作回调例程中挂起 I/O 操作
 description: 在预操作回调例程中挂起 I/O 操作
-ms.assetid: 39b04911-c0d9-42ec-b93e-b440b12f9e41
 keywords:
 - preoperation 回调例程 WDK 文件系统微筛选器，挂起的操作
 - 回调例程中挂起的 i/o 操作 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5353ad93603ca682962317b33400238c6a1664b7
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: d595e8c6ddfcac8139338a97e2e71fe4fd45ed83
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063282"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816253"
 ---
 # <a name="pending-an-io-operation-in-a-preoperation-callback-routine"></a>在预操作回调例程中挂起 I/O 操作
 
@@ -40,7 +39,7 @@ ms.locfileid: "89063282"
 
 -   I/o 操作的目标实例被破坏。
 
-如果微筛选器驱动程序的 preoperation 回调例程返回 FLT \_ PREOP \_ PENDING，则它必须在*CompletionContext* Output 参数中返回**NULL** 。
+如果微筛选器驱动程序的 preoperation 回调例程返回 FLT \_ PREOP \_ PENDING，则它必须在 *CompletionContext* Output 参数中返回 **NULL** 。
 
 微筛选器驱动程序只能 \_ \_ 为基于 IRP 的 i/o 操作返回 FLT PREOP PENDING。 若要确定某个操作是否为基于 IRP 的 i/o 操作，请使用 [**FLT \_ 为 \_ irp \_ 操作**](/previous-versions/ff544654(v=vs.85)) 宏。
 

@@ -1,17 +1,16 @@
 ---
 title: 使用 Windows 驱动程序中扩展的处理器功能
 description: 使用扩展处理器功能的 x86 和 x64 系统的 Windows 驱动程序必须在对 KeSaveExtendedProcessorState 和 KeRestoreExtendedProcessorState 的调用之间换行计算，以避免可能使用寄存器的并发应用程序中出现错误。
-ms.assetid: a42e86cf-47a2-44ed-8bf1-7407633af8b7
 keywords:
 - 浮点 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5843823c4aa62cbdb14419ae45501e228fd9b3c5
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 4fb0d0412dc83fb303fedf09ff5a2520ca0b8880
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191667"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816639"
 ---
 # <a name="using-extended-processor-features-in-windows-drivers"></a>使用 Windows 驱动程序中扩展的处理器功能
 
@@ -30,7 +29,7 @@ ms.locfileid: "89191667"
 ## <a name="sse-registers"></a>SSE 注册
 
 
-这些寄存器对应于 XSTATE \_ 掩码 \_ 旧版 \_ SSE 标志，并且由 x64 编译器用于浮点运算。 使用这些寄存器的 x86 系统的驱动程序必须在使用之前保存它们，方法 \_ 是 \_ 在 KeSaveExtendedProcessorState 调用中传递 XSTATE 掩码 LEGACY 或 XSTATE \_ 掩码 \_ 旧版 \_ SSE 标志，并在完成后使用[**KeRestoreExtendedProcessorState**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kerestoreextendedprocessorstate)还原它们。 [**KeSaveExtendedProcessorState**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kesaveextendedprocessorstate) 在 x64 系统上不需要这样做，但这不是有害的。 有关这些寄存器的详细信息，请参阅 [在 WDM 驱动程序中使用浮点](using-floating-point-or-mmx-in-a-wdm-driver.md)。
+这些寄存器对应于 XSTATE \_ 掩码 \_ 旧版 \_ SSE 标志，并且由 x64 编译器用于浮点运算。 使用这些寄存器的 x86 系统的驱动程序必须在使用之前保存它们，方法 \_ 是 \_ 在 KeSaveExtendedProcessorState 调用中传递 XSTATE 掩码 LEGACY 或 XSTATE \_ 掩码 \_ 旧版 \_ SSE 标志，并在完成后使用 [**KeRestoreExtendedProcessorState**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kerestoreextendedprocessorstate)还原它们。 [**KeSaveExtendedProcessorState**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kesaveextendedprocessorstate) 在 x64 系统上不需要这样做，但这不是有害的。 有关这些寄存器的详细信息，请参阅 [在 WDM 驱动程序中使用浮点](using-floating-point-or-mmx-in-a-wdm-driver.md)。
 
 ## <a name="avx-registers"></a>AVX 寄存器
 

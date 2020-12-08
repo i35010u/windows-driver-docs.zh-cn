@@ -1,7 +1,6 @@
 ---
 title: 创建资源管理器
 description: 创建资源管理器
-ms.assetid: b2841d56-650a-487c-a002-2521cd1b461b
 keywords:
 - 资源管理器 WDK KTM，创建资源管理器
 - 登记 WDK KTM，只读登记
@@ -13,12 +12,12 @@ keywords:
 - TPS WDK KTM，添加资源管理器
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b3fc3804373b872646e13071239eb3788598b1c1
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: b440c257c6ba5dbba40cfeeb526da2d8018b2c55
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403240"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816117"
 ---
 # <a name="creating-a-resource-manager"></a>创建资源管理器
 
@@ -51,7 +50,7 @@ ms.locfileid: "89403240"
 
 6.  接收来自客户端的事务。
 
-    通常，客户端会创建一个事务对象，并使用资源管理器的客户端接口将该事务对象的 GUID 传递到 resource manager。 例如，资源管理器可能会提供类似于 "[理解 TPS 组件](understanding-tps-components.md)" 主题所描述的*CreateDataObject*例程。
+    通常，客户端会创建一个事务对象，并使用资源管理器的客户端接口将该事务对象的 GUID 传递到 resource manager。 例如，资源管理器可能会提供类似于 "[理解 TPS 组件](understanding-tps-components.md)" 主题所描述的 *CreateDataObject* 例程。
 
 7.  在每个事务中登记。
 
@@ -87,14 +86,14 @@ ms.locfileid: "89403240"
 
 步骤12必须在资源管理器的最终清理代码（如内核模式驱动程序的 [*卸载*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_unload) 例程）中执行。
 
-## <a name="creating-a-read-only-enlistment"></a><a href="" id="kernel-creating-a-read-only-enlistment"></a> 创建只读登记
+## <a name="creating-a-read-only-enlistment"></a><a href="" id="kernel-creating-a-read-only-enlistment"></a> 创建 Read-Only 登记
 
 
-*只读登记*是不接收来自 KTM 的任何通知的登记。 资源管理器可以通过调用 [**ZwReadOnlyEnlistment**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ntreadonlyenlistment)使任何登记成为只读的。 此调用会导致 KTM 停止向资源管理器发送通知。
+*只读登记* 是不接收来自 KTM 的任何通知的登记。 资源管理器可以通过调用 [**ZwReadOnlyEnlistment**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ntreadonlyenlistment)使任何登记成为只读的。 此调用会导致 KTM 停止向资源管理器发送通知。
 
 资源管理器调用 [**ZwCreateEnlistment**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcreateenlistment)后，就可以在任何时候调用 **ZwReadOnlyEnlistment** ，直到通常调用 [**ZwPrepareComplete**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ntpreparecomplete)。
 
-你可能希望资源管理器调用 **ZwReadOnlyEnlistment**的原因有两个。
+你可能希望资源管理器调用 **ZwReadOnlyEnlistment** 的原因有两个。
 
 -   资源管理器已参与事务，并且在收到事务通知提交通知之前的某个时间点 \_ \_ ，资源管理器确定不再需要参与事务的提交操作。
 
@@ -102,16 +101,16 @@ ms.locfileid: "89403240"
 
 -   资源管理器从不参与任何事务的提交操作。
 
-    例如，资源管理器可能会监视客户端发送的数据，而不修改任何存储的数据库。 在这种情况下，资源管理器可能会在调用**ZwCreateEnlistment**后立即调用**ZwReadOnlyEnlistment** 。 此外，你可以选择使此类资源管理器 *可变*，如本主题的下一部分中所述。
+    例如，资源管理器可能会监视客户端发送的数据，而不修改任何存储的数据库。 在这种情况下，资源管理器可能会在调用 **ZwCreateEnlistment** 后立即调用 **ZwReadOnlyEnlistment** 。 此外，你可以选择使此类资源管理器 *可变*，如本主题的下一部分中所述。
 
-资源管理器调用 **ZwReadOnlyEnlistment**后，可以调用 [**ZwClose**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntclose) 来关闭登记句柄。
+资源管理器调用 **ZwReadOnlyEnlistment** 后，可以调用 [**ZwClose**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntclose) 来关闭登记句柄。
 
-## <a name="creating-a-volatile-resource-manager"></a><a href="" id="kernel-creating-a-volatile-resource-manager"></a> 创建可变资源管理器
+## <a name="creating-a-volatile-resource-manager"></a><a href="" id="kernel-creating-a-volatile-resource-manager"></a> 创建 Volatile-Resource 管理器
 
 
-*可变资源管理器*是不维护持久数据的资源管理器。 例如，如果资源管理器未修改持久存储的数据库，则可以创建一个可变资源管理器来监视客户端发送的数据。 可变资源管理器通常不记录事务活动，因此不能执行恢复或回滚操作。
+*可变资源管理器* 是不维护持久数据的资源管理器。 例如，如果资源管理器未修改持久存储的数据库，则可以创建一个可变资源管理器来监视客户端发送的数据。 可变资源管理器通常不记录事务活动，因此不能执行恢复或回滚操作。
 
-可变资源管理器 \_ 在调用 ZwCreateResourceManager 时必须设置资源管理器 \_ 可变标志[**ZwCreateResourceManager**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcreateresourcemanager)。 如果设置此标志，则 KTM 不会记录有关关联的事务管理器对象的日志流中的资源管理器的任何信息。
+可变资源管理器 \_ 在调用 ZwCreateResourceManager 时必须设置资源管理器 \_ 可变标志 [**ZwCreateResourceManager**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcreateresourcemanager)。 如果设置此标志，则 KTM 不会记录有关关联的事务管理器对象的日志流中的资源管理器的任何信息。
 
 在调用 ZwCreateTransactionManager 时，资源管理器还可以设置事务 \_ 管理器 \_ 可变标志。 [**ZwCreateTransactionManager**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcreatetransactionmanager) 如果设置了此标志，则 KTM 不会为事务管理器对象创建日志流。 此外，连接到事务管理器对象的任何其他资源管理器也必须是可变的，并设置资源 \_ 管理器 \_ 可变标志。
 

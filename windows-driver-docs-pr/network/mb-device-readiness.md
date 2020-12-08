@@ -1,15 +1,14 @@
 ---
 title: MB 设备就绪状态
 description: MB 设备就绪状态
-ms.assetid: 67a67ff7-dcff-4aec-bea9-7b1be9593649
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e38f2388989dfacbaccc18109da42f36ccabcc55
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a5e0c56d5228416658b72c7ea71ae8eadf62a02d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207520"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815949"
 ---
 # <a name="mb-device-readiness"></a>MB 设备就绪状态
 
@@ -42,7 +41,7 @@ MB 服务假定微型端口驱动程序在系统加载它后，自动初始化�
 
 ### <a name="emergency-mode-support"></a>紧急模式支持
 
-如果微型端口驱动程序指示它支持在处理[OID \_ WWAN \_ 可用 \_ 信息](./oid-wwan-ready-info.md)时进行紧急呼叫服务，微型端口驱动程序必须将 " [**WWAN \_ 就绪 \_ 信息**](/windows-hardware/drivers/ddi/wwan/ns-wwan-_wwan_ready_info)结构" 的**EmergencyMode**成员设置为 " **WwanEmergencyModeOn**"。 在这种情况下，微型端口驱动程序应继续将注册通知发送到 MB 服务，但该服务不会调用任何自动配置相关的功能。
+如果微型端口驱动程序指示它支持在处理 [OID \_ WWAN \_ 可用 \_ 信息](./oid-wwan-ready-info.md)时进行紧急呼叫服务，微型端口驱动程序必须将 " [**WWAN \_ 就绪 \_ 信息**](/windows-hardware/drivers/ddi/wwan/ns-wwan-_wwan_ready_info)结构" 的 **EmergencyMode** 成员设置为 " **WwanEmergencyModeOn**"。 在这种情况下，微型端口驱动程序应继续将注册通知发送到 MB 服务，但该服务不会调用任何自动配置相关的功能。
 
 微型端口驱动程序可以指定它们支持紧急呼叫服务，即使在检测到 SIM 失效的情况下也是如此，原因可能是订阅未付款，或服务已被停用，因为设备已被报告为被盗。
 

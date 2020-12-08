@@ -1,7 +1,6 @@
 ---
 title: WIA \_ IPA \_ 项 \_ 标志
 description: WIA \_ IPA \_ item \_ FLAGS 属性包含 WIA 项的描述性标志。
-ms.assetid: ee25fb38-eafa-49a9-83ab-4f99bc25f4e9
 keywords:
 - WIA_IPA_ITEM_FLAGS 图像设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d8e63fcab6530628c8b24bdae5075fb344e040f
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 5dd93e9c0c36a79a640ac029f218efad0dc7ba09
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89193251"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817289"
 ---
 # <a name="wia_ipa_item_flags"></a>WIA \_ IPA \_ 项 \_ 标志
 
@@ -35,10 +34,10 @@ WIA \_ IPA \_ item \_ FLAGS 属性包含 WIA 项的描述性标志。
 
 访问权限：只读
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
-WIA 项标志与[**wiasCreateDrvItem**](/windows-hardware/drivers/ddi/wiamdef/nf-wiamdef-wiascreatedrvitem)服务实用工具函数的*lObjectFlags*参数中的标志相同。 WIA 服务创建并维护 WIA \_ IPA \_ ITEM \_ FLAGS 属性。
+WIA 项标志与 [**wiasCreateDrvItem**](/windows-hardware/drivers/ddi/wiamdef/nf-wiamdef-wiascreatedrvitem)服务实用工具函数的 *lObjectFlags* 参数中的标志相同。 WIA 服务创建并维护 WIA \_ IPA \_ ITEM \_ FLAGS 属性。
 
 应用程序读取 WIA \_ IPA \_ item \_ 标志来确定 wia 项的描述性标志值。
 
@@ -210,7 +209,7 @@ WIA 项标志与[**wiasCreateDrvItem**](/windows-hardware/drivers/ddi/wiamdef/nf
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>

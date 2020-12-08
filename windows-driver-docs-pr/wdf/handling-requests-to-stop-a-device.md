@@ -1,7 +1,6 @@
 ---
 title: 处理停止设备的请求
 description: 处理停止设备的请求
-ms.assetid: 4c8f37b3-7961-4c78-a88b-3eec58155e66
 keywords:
 - PnP WDK KMDF，停止设备
 - 即插即用 WDK KMDF，停止设备
@@ -14,12 +13,12 @@ keywords:
 - 临时设备停止 WDK KMDF，PnP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c6bdea29bcabd13bf4830a6c9ba23bd581edf170
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: c229329f00ab1b88c8c7bba72e81ab62aa90ca6b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187213"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815617"
 ---
 # <a name="handling-requests-to-stop-a-device"></a>处理停止设备的请求
 
@@ -54,9 +53,9 @@ ms.locfileid: "89187213"
 
 用户可以删除或禁用某些设备。 例如：
 
--   如果你的驱动程序设置了**可移动**成员 (而不是设备的[**WDF \_ 设备 \_ PNP \_ 功能**](/windows-hardware/drivers/ddi/wdfdevice/ns-wdfdevice-_wdf_device_pnp_capabilities)结构的**SurpriseRemovalOK**成员) ，则用户可以运行拔出或弹出硬件程序，然后拔出或弹出设备。
+-   如果你的驱动程序设置了 **可移动** 成员 (而不是设备的 [**WDF \_ 设备 \_ PNP \_ 功能**](/windows-hardware/drivers/ddi/wdfdevice/ns-wdfdevice-_wdf_device_pnp_capabilities)结构的 **SurpriseRemovalOK** 成员) ，则用户可以运行拔出或弹出硬件程序，然后拔出或弹出设备。
 
--   如果你的驱动程序未设置设备的[**WDF \_ 设备 \_ 状态**](/windows-hardware/drivers/ddi/wdfdevice/ns-wdfdevice-_wdf_device_state)结构的**NotDisableable**成员，则用户可以使用设备管理器禁用该设备。
+-   如果你的驱动程序未设置设备的 [**WDF \_ 设备 \_ 状态**](/windows-hardware/drivers/ddi/wdfdevice/ns-wdfdevice-_wdf_device_state)结构的 **NotDisableable** 成员，则用户可以使用设备管理器禁用该设备。
 
 在这种情况下，PnP 管理器会先尝试停止设备，然后再将其删除。
 

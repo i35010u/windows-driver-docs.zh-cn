@@ -1,7 +1,6 @@
 ---
 title: 框架对象集合
 description: 框架对象集合
-ms.assetid: e3f29be6-ee4c-487a-8c85-18be8b6a5cdc
 keywords:
 - framework 对象 WDK KMDF、集合
 - 集合 WDK KMDF
@@ -9,12 +8,12 @@ keywords:
 - 对象集合 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c92354b4f1df8207c3dcaa97eac03f78e2bf176
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 6271816625f8b60ccb89bf1f1b522a5ae9cf1054
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192321"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815679"
 ---
 # <a name="framework-object-collections"></a>框架对象集合
 
@@ -22,7 +21,7 @@ ms.locfileid: "89192321"
 
 
 
-驱动程序可以将框架对象分组到由 *框架集合对象*表示的集合中。
+驱动程序可以将框架对象分组到由 *框架集合对象* 表示的集合中。
 
 例如，如果驱动程序收到一个表示大型 i/o 请求的 framework 请求对象，则驱动程序可能需要将大型请求拆分为可发送到 [i/o 目标](using-i-o-targets.md)的小型请求。 若要将大请求拆分为较小的请求，驱动程序必须创建一组表示较小请求的请求对象。 为了跟踪这些驱动程序创建的请求对象，驱动程序可能会创建集合对象并将其添加到集合中。
 
@@ -56,9 +55,9 @@ ms.locfileid: "89192321"
 
 -   锁定集合。
 
-    驱动程序可以调用 [**WdfWaitLockAcquire**](/previous-versions/ff551168(v=vs.85)) 来同步对某个集合的访问，以 IRQL = 被动 \_ 级别，也可以调用 [**WdfSpinLockAcquire**](/previous-versions/windows/hardware/drivers/ff550040(v=vs.85)) 同步 ACCESS，以 irql = 调度 \_ 级别。 驱动程序获取锁定后，也将调用 **WdfWaitLockAcquire** 或 **WdfSpinLockAcquire**的驱动程序中的其他代码不能访问该集合。 完成对集合的操作之后，驱动程序必须调用 [**WdfWaitLockRelease**](/windows-hardware/drivers/ddi/wdfsync/nf-wdfsync-wdfwaitlockrelease)。
+    驱动程序可以调用 [**WdfWaitLockAcquire**](/previous-versions/ff551168(v=vs.85)) 来同步对某个集合的访问，以 IRQL = 被动 \_ 级别，也可以调用 [**WdfSpinLockAcquire**](/previous-versions/windows/hardware/drivers/ff550040(v=vs.85)) 同步 ACCESS，以 irql = 调度 \_ 级别。 驱动程序获取锁定后，也将调用 **WdfWaitLockAcquire** 或 **WdfSpinLockAcquire** 的驱动程序中的其他代码不能访问该集合。 完成对集合的操作之后，驱动程序必须调用 [**WdfWaitLockRelease**](/windows-hardware/drivers/ddi/wdfsync/nf-wdfsync-wdfwaitlockrelease)。
 
-    如果其他代码还没有调用**WdfWaitLockAcquire**或**WdfSpinLockAcquire**，则调用[**WdfWaitLockAcquire**](/previous-versions/ff551168(v=vs.85))或[**WdfSpinLockAcquire**](/previous-versions/windows/hardware/drivers/ff550040(v=vs.85))不会阻止驱动程序中的其他代码同时访问该集合。
+    如果其他代码还没有调用 **WdfWaitLockAcquire** 或 **WdfSpinLockAcquire**，则调用 [**WdfWaitLockAcquire**](/previous-versions/ff551168(v=vs.85))或 [**WdfSpinLockAcquire**](/previous-versions/windows/hardware/drivers/ff550040(v=vs.85))不会阻止驱动程序中的其他代码同时访问该集合。
 
 -   删除集合。
 

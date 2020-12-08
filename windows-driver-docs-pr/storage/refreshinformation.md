@@ -1,7 +1,6 @@
 ---
 title: RefreshInformation 函数
-description: RefreshInformation WMI 方法更新 HBA，它对应于调用实例对象的所有表。
-ms.assetid: da78db30-0498-4d44-b5bc-76d08dc15938
+description: RefreshInformation WMI 方法更新与调用实例对象对应的 HBA 的所有表。
 keywords:
 - RefreshInformation 函数存储设备
 topic_type:
@@ -12,17 +11,17 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: bcf4080e89dd4e018cb4db99ed21e9d7fb78818d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6d894b409c93eafe5f7fa430349c4b1d74d9e54f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366357"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815847"
 ---
 # <a name="refreshinformation-function"></a>RefreshInformation 函数
 
 
-**RefreshInformation** WMI 方法与调用实例对象相对应的 hba 更新所有表。
+**RefreshInformation** WMI 方法更新与调用实例对象对应的 HBA 的所有表。
 
 <a name="syntax"></a>语法
 ------
@@ -31,10 +30,10 @@ ms.locfileid: "63366357"
 void RefreshInformation(void);
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
-此函数没有任何参数。
+此函数没有参数。
 
 <a name="return-value"></a>返回值
 ------------
@@ -44,7 +43,7 @@ void RefreshInformation(void);
 <a name="remarks"></a>备注
 -------
 
-**RefreshInformation** WMI 方法刷新由以下 WMI 方法检索到的端口属性数据：
+**RefreshInformation** wmi 方法刷新由以下 WMI 方法检索的端口属性数据：
 
 [**GetDiscoveredPortAttributes**](getdiscoveredportattributes.md)
 
@@ -56,9 +55,9 @@ void RefreshInformation(void);
 
 [**GetPortAttributesByWWN**](getportattributesbywwn.md)
 
-此 WMI 方法属于[MSFC\_HBAAdapterMethods WMI 类](msfc-hbaadaptermethods-wmi-class.md)。
+此 WMI 方法属于 [MSFC \_ HBAAdapterMethods WMI 类](msfc-hbaadaptermethods-wmi-class.md)。
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [**GetDiscoveredPortAttributes**](getdiscoveredportattributes.md)

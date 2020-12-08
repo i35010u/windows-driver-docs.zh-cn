@@ -1,15 +1,14 @@
 ---
 title: MB 发射功率状态操作
 description: MB 发射功率状态操作
-ms.assetid: 9b745ff3-c00b-4a43-9bf3-52f9bf61e062
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 98635698eba41fbdef721d7f0a1b5e9920fcea47
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 157a3f318ca4c2a672de11e00e2df4fc258eb153
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207287"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816581"
 ---
 # <a name="mb-radio-power-state-operations"></a>MB 发射功率状态操作
 

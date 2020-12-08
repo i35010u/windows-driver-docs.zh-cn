@@ -1,19 +1,18 @@
 ---
 title: AGP 的视频端口驱动程序支持
 description: AGP 的视频端口驱动程序支持
-ms.assetid: 445dbe4a-7f7b-4dcc-9891-17fd8fb03a6c
 keywords:
 - 视频微型端口驱动程序 WDK Windows 2000，AGP
 - AGP WDK 视频微型端口
 - 内存 WDK 视频微型端口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 84b443c917877872a63ce6f93629487d90d75cd7
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 9a3f2a21141d2cf30994930e90bcf345f22707fc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063708"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816297"
 ---
 # <a name="video-port-driver-support-for-agp"></a>AGP 的视频端口驱动程序支持
 
@@ -51,11 +50,11 @@ ms.locfileid: "89063708"
 
 然后，若要使应用程序能够在系统内存中查看和使用已提交的页面，视频微型端口驱动程序将执行以下步骤：
 
-1.  调用 [**AgpReserveVirtual**](/windows-hardware/drivers/ddi/videoagp/nc-videoagp-pagp_reserve_virtual) ，以在应用程序的地址空间中保留一系列虚拟地址。 视频微型端口驱动程序必须将 *AgpReserveVirtual* 传递给 *AgpReservePhysical*之前返回的句柄，以便保留的虚拟地址范围可与 *AgpReservePhysical*创建的物理地址范围相关联。
+1.  调用 [**AgpReserveVirtual**](/windows-hardware/drivers/ddi/videoagp/nc-videoagp-pagp_reserve_virtual) ，以在应用程序的地址空间中保留一系列虚拟地址。 视频微型端口驱动程序必须将 *AgpReserveVirtual* 传递给 *AgpReservePhysical* 之前返回的句柄，以便保留的虚拟地址范围可与 *AgpReservePhysical* 创建的物理地址范围相关联。
 
-2.  调用 [**AgpCommitVirtual**](/windows-hardware/drivers/ddi/videoagp/nc-videoagp-pagp_commit_virtual) ，将 *AgpReserveVirtual* 返回的部分虚拟地址范围映射到系统内存中的页面。 *AgpCommitVirtual*映射的页面之前必须通过调用*AgpCommitPhysical*进行映射。 此外，由 *AgpCommitPhysical* 建立的映射仍必须是最新的;也就是说，不能通过调用 [**AgpFreePhysical**](/windows-hardware/drivers/ddi/videoagp/nc-videoagp-pagp_free_physical)释放这些页。
+2.  调用 [**AgpCommitVirtual**](/windows-hardware/drivers/ddi/videoagp/nc-videoagp-pagp_commit_virtual) ，将 *AgpReserveVirtual* 返回的部分虚拟地址范围映射到系统内存中的页面。 *AgpCommitVirtual* 映射的页面之前必须通过调用 *AgpCommitPhysical* 进行映射。 此外，由 *AgpCommitPhysical* 建立的映射仍必须是最新的;也就是说，不能通过调用 [**AgpFreePhysical**](/windows-hardware/drivers/ddi/videoagp/nc-videoagp-pagp_free_physical)释放这些页。
 
-**注意**   无论何时使用 AGP 函数提交或保留 (物理或虚拟) 的地址范围，该范围的大小必须是 64 kb 的倍数。
+**注意**   无论何时使用 AGP 函数提交或保留 (物理或虚拟) 的地址范围，该范围的大小必须是 64 kb 的倍数。
 
  
 

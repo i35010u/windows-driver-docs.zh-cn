@@ -1,7 +1,6 @@
 ---
 title: 查询写缓存属性
 description: 查询写缓存属性
-ms.assetid: 80b7c366-3b54-4dae-8ac7-63caaa1767f9
 keywords:
 - 存储驱动程序 WDK，写入缓存
 - 写入缓存 WDK 存储
@@ -14,12 +13,12 @@ keywords:
 - 写入请求 WDK 存储
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 102b08d75535511f6014a2196cbec21a3e89dfda
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d4e845c33c4672233b958271f9d270df3255374f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185099"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815849"
 ---
 # <a name="querying-for-the-write-cache-property"></a>查询写缓存属性
 
@@ -32,13 +31,13 @@ ms.locfileid: "89185099"
 
 但是，并不是所有具有写入缓存的存储设备都支持写入请求或同步缓存;某些设备不需要将缓存的数据作为一种预防措施，因为它们具有电池备份系统，可防止在电源故障期间发生数据损坏。 应用程序和驱动程序必须具有有关设备的写缓存属性的信息，才能有效地使用它。
 
-在 Windows Vista 中，可以使用具有**StorageDeviceWriteCacheProperty**属性标识符的[**IOCTL \_ 存储 \_ 查询 \_ 属性**](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_query_property)请求来查询用于指定设备写入缓存特性的写入缓存属性的存储类驱动程序。 写入缓存属性包含有关设备的缓存功能的下列信息：
+在 Windows Vista 中，可以使用具有 **StorageDeviceWriteCacheProperty** 属性标识符的 [**IOCTL \_ 存储 \_ 查询 \_ 属性**](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_query_property)请求来查询用于指定设备写入缓存特性的写入缓存属性的存储类驱动程序。 写入缓存属性包含有关设备的缓存功能的下列信息：
 
 -   *存在写入缓存*。 写入缓存属性指定设备是否具有写入缓存。
 
 -   *写入缓存的类型*。 写入缓存有两种主要类型： *写回* 和 *写入*。 使用回写缓存，在绝对必要的情况下，设备不会将缓存数据复制到非易失性介质。 此操作改善了写入操作的性能。 使用写入缓存，设备将数据并行写入缓存和媒体。 这不会提高写入性能，但可以更快地执行后续读取操作。
 
-    不要将写入 *缓存* 与写入 *请求*混淆。 如果设备支持写入请求，则可以将写入请求用于任何类型的缓存，包括回写缓存。 例如，假设目标是带有回写缓存的 SCSI 设备。 如果设备支持写入请求，则发起程序可以绕过写入缓存，方法是在命令描述符块中设置 (FUA) 位，并 (CDB) 写入命令。
+    不要将写入 *缓存* 与写入 *请求* 混淆。 如果设备支持写入请求，则可以将写入请求用于任何类型的缓存，包括回写缓存。 例如，假设目标是带有回写缓存的 SCSI 设备。 如果设备支持写入请求，则发起程序可以绕过写入缓存，方法是在命令描述符块中设置 (FUA) 位，并 (CDB) 写入命令。
 
 -   *同步缓存支持*。 写入缓存属性指示设备是否支持 SCSI 同步缓存命令，或其他总线上的等效命令。
 

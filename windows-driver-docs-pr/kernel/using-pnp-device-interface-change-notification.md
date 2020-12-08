@@ -1,19 +1,18 @@
 ---
 title: 使用 PnP 设备接口更改通知
 description: 使用 PnP 设备接口更改通知
-ms.assetid: 2ed3518a-601f-4e9b-b375-a9fb62c937a9
 keywords:
 - 通知 WDK PnP，设备接口更改
 - EventCategoryDeviceInterfaceChange 通知
 - 设备接口更改通知 WDK PnP
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c09c0b650c51d23de5e298895a253ce8914137d
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d135d3cf5b9f3493e6c111292a67954ddd1d174b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185779"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816043"
 ---
 # <a name="using-pnp-device-interface-change-notification"></a>使用 PnP 设备接口更改通知
 

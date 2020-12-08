@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0xE1 WORKER_THREAD_RETURNED_AT_BAD_IRQL
-description: WORKER_THREAD_RETURNED_AT_BAD_IRQL bug 检查具有 0x000000E1 值。 这表示一个工作线程完成并返回与 IRQL DISPATCH_LEVEL。
-ms.assetid: c02b98e9-e3a4-473a-bd9f-3130b7e58c1d
+description: WORKER_THREAD_RETURNED_AT_BAD_IRQL bug 检查的值为0x000000E1。 这表明工作线程已完成并返回，并 DISPATCH_LEVEL IRQL。
 keywords:
 - Bug 检查 0xE1 WORKER_THREAD_RETURNED_AT_BAD_IRQL
 - WORKER_THREAD_RETURNED_AT_BAD_IRQL
@@ -13,23 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4387f2f6b83f8af8c97330e0860a0e1b6a3b067b
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 65021101e634b6a12f68b18f201e2bbf8bfeedd2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67518821"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816407"
 ---
-# <a name="bug-check-0xe1-workerthreadreturnedatbadirql"></a>Bug 检查 0xE1：辅助角色\_线程\_返回\_处\_错误\_IRQL
+# <a name="bug-check-0xe1-worker_thread_returned_at_bad_irql"></a>Bug 检查0xE1： \_ \_ \_ \_ 错误的 IRQL 返回的 \_ 工作线程
 
 
-辅助角色\_线程\_返回\_处\_错误\_IRQL bug 检查的值为 0x000000E1。 这表示一个工作线程完成并返回与 IRQL &gt;= 调度\_级别。
+错误的 \_ \_ \_ IRQL bug 检查返回的工作线程的 \_ \_ 值为0x000000E1。 这表明工作线程已完成并返回，其 IRQL &gt; = 调度 \_ 级别。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="workerthreadreturnedatbadirql-parameters"></a>辅助角色\_线程\_返回\_处\_错误\_IRQL 参数
+## <a name="worker_thread_returned_at_bad_irql-parameters"></a>工作 \_ 线程 \_ \_ 在 \_ 错误的 \_ IRQL 参数上返回
 
 
 <table>
@@ -46,19 +45,19 @@ ms.locfileid: "67518821"
 <tbody>
 <tr class="odd">
 <td align="left"><p>1</p></td>
-<td align="left"><p>工作线程例程的地址</p></td>
+<td align="left"><p>辅助角色例程的地址</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
-<td align="left"><p>在返回工作线程的 IRQL</p></td>
+<td align="left"><p>工作线程返回的 IRQL</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>3</p></td>
-<td align="left"><p>工作项的参数</p></td>
+<td align="left"><p>工作项参数</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>4</p></td>
-<td align="left"><p>工作项的地址</p></td>
+<td align="left"><p>工作项地址</p></td>
 </tr>
 </tbody>
 </table>
@@ -68,18 +67,18 @@ ms.locfileid: "67518821"
 <a name="cause"></a>原因
 -----
 
-一个工作线程完成并返回与 IRQL &gt;= 调度\_级别。
+工作线程已完成并返回，其 IRQL &gt; = 调度 \_ 级别。
 
-<a name="resolution"></a>分辨率
+<a name="resolution"></a>解决方法
 ----------
 
-若要查找驱动程序导致了错误，请使用[ **ln （列表最接近符号）** ](ln--list-nearest-symbols-.md)调试器命令：
+若要查找导致错误的驱动程序，请使用 [**ln (列出最接近)**](ln--list-nearest-symbols-.md) 调试器命令的符号：
 
 ```dbgcmd
 kd> ln address
 ```
 
-其中*地址*是参数 1 中给定的辅助角色例程地址。
+其中 *address* 是在参数1中给定的辅助进程例程地址。
 
  
 

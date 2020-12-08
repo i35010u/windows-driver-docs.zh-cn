@@ -1,15 +1,14 @@
 ---
 title: TAEF 错误代码
 description: TAEF 错误代码
-ms.assetid: E42AF880-12DA-42b7-AB6D-90011BD7E548
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2dd80111d054a2383f5da1c594a76330a04cdcdb
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 4a6dcb96eac4644701e946e627a8c8e0db39e35e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403516"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816481"
 ---
 # <a name="taef-error-codes"></a>TAEF 错误代码
 
@@ -21,7 +20,7 @@ TAEF 可能会出于各种原因（例如无法连接到计算机来执行跨计
 
 在添加 TAEF 的自定义 HRESULT 值后，将在下表中记录这些值。 目前，只有一个特定于 TAEF 的 HRESULT 值。
 
-| HRESULT                             | 值      | 说明                                                                                                                                                                                                                                    |
+| HRESULT                             | “值”      | 描述                                                                                                                                                                                                                                    |
 |-------------------------------------|------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | TAEF \_ E \_ 无效的 \_ 测试 \_ 环境 | 0x81A40001 | TAEF 测试通过其元数据请求了无效的测试环境。 影响测试环境的元数据的示例包括 [RunAs](runas.md)、 [ThreadingModel](threading-models.md)和 [ActivationContext](activation-context.md)。 |
 

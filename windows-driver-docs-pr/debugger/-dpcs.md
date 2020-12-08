@@ -1,9 +1,8 @@
 ---
 title: 指
-description: Dpc 扩展为指定的处理器显示延迟的过程调用 (DPC) 队列。
-ms.assetid: b5f71fb5-6fc7-4e8f-a439-1edb188e9876
+description: Dpc 扩展显示指定处理器 (DPC) 队列的延迟过程调用。
 keywords:
-- DPC (延迟过程调用)
+- 'DPC (延迟的过程调用) '
 - dpc Windows 调试
 ms.date: 05/23/2017
 topic_type:
@@ -13,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 79833c0723cf1c7a30ad8c0a03a1b8595e3031d8
-ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
+ms.openlocfilehash: f07d6f60913d92e6e700aee641ae7d938d01ede0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70025269"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816447"
 ---
 # <a name="dpcs"></a>!dpcs
 
 
-**! Dpc** extension 为指定的处理器显示延迟的过程调用 (DPC) 队列。
+**！ Dpc** 扩展显示指定处理器 (DPC) 队列的延迟过程调用。
 
 ```dbgcmd
 !dpcs [Processor]
@@ -33,7 +32,7 @@ ms.locfileid: "70025269"
 
 
 <span id="_______Processor______"></span><span id="_______processor______"></span><span id="_______PROCESSOR______"></span>*处理器*   
-指定处理器。 如果省略了*Processor* , 则显示所有处理器的 DPC 队列。
+指定处理器。 如果省略了 *Processor* ，则显示所有处理器的 DPC 队列。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
@@ -53,7 +52,7 @@ ms.locfileid: "70025269"
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>Windows Server 2003 及更高版本</strong></p></td>
-<td align="left"><p>Kdexts</p></td>
+<td align="left"><p>Kdexts.dll</p></td>
 </tr>
 </tbody>
 </table>
@@ -62,7 +61,7 @@ ms.locfileid: "70025269"
 
 ### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关 Dpc 的信息, 请参阅 Windows 驱动程序工具包 (WDK) 文档和*Microsoft Windows 内部*Russinovich, 并将其标记为 "" 和 "David"。
+有关 Dpc 的信息，请参阅 Windows 驱动程序工具包 (WDK) 文档和 *Microsoft Windows 内部机制* ，Mark Russinovich 和 David 所罗门群岛。
 
  
 

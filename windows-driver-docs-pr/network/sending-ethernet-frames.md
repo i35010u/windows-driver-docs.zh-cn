@@ -1,7 +1,6 @@
 ---
 title: 发送以太网帧
 description: 发送以太网帧
-ms.assetid: 9d1037b9-ef5c-4ed8-9204-5729eff2cea3
 keywords:
 - 以太网 WDK 网络
 - 帧 WDK 网络
@@ -9,12 +8,12 @@ keywords:
 - 发送以太网帧
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 64d86f664c0092a3df31d5ee496a53a1123f5443
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: bcfa9e17d26339d169f408caed92732c758fc464
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208559"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815873"
 ---
 # <a name="sending-ethernet-frames"></a>发送以太网帧
 
@@ -24,7 +23,7 @@ ms.locfileid: "89208559"
 
 Windows TCP/IP 传输支持一组用于发送以太网帧的要求。 任何驱动程序 (例如，发出发送请求或修改过量驱动程序的发送请求的 MUX 中间驱动程序或筛选器驱动程序) 都必须支持 TCP/IP 传输实现的要求。
 
-**注意**   如果驱动程序堆栈中的任何驱动程序未遵循这些要求，则基础微型端口驱动程序、MUX 中间驱动程序和筛选器驱动程序的行为可能无法预测。
+**注意**  如果驱动程序堆栈中的任何驱动程序未遵循这些要求，则基础微型端口驱动程序、MUX 中间驱动程序和筛选器驱动程序的行为可能无法预测。
 
  
 
@@ -39,7 +38,7 @@ Windows TCP/IP 传输支持一组用于发送以太网帧的要求。 任何驱�
 -   \_与网络缓冲区列表结构关联的所有网络缓冲区结构都 \_ \_ 必须具有相同的源和目标 MAC 地址。
 
 -   如果驱动程序正在发送 TCP 或 UDP 帧，则 \_ 与网络缓冲区列表结构关联的所有网络缓冲区结构 \_ 都 \_ 必须与相同的 TCP 或 UDP 连接关联。
-    **注意**   根据以下要求，可以拆分传输的以太网帧。 也就是说，多个内存描述符列表 (MDLs) 可以与 \_ 发送请求中的网络缓冲区结构相关联。
+    **注意**  根据以下要求，可以拆分传输的以太网帧。 也就是说，多个内存描述符列表 (MDLs) 可以与 \_ 发送请求中的网络缓冲区结构相关联。
 
      
 

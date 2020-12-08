@@ -2,14 +2,13 @@
 description: '复合 USB 设备上的接口可以分组到集合中。 USB 泛型父驱动程序 ( # A0) 可以通过四种方式枚举接口集合。'
 title: 枚举 USB 复合设备上的接口集合的概述
 ms.date: 01/07/2019
-ms.assetid: aa68a774-d5b2-4fd8-aee9-9b72b1e4ad4f
 ms.localizationpriority: medium
-ms.openlocfilehash: b47601a82beceefbfc3ed070fdb0f478d324c46d
-ms.sourcegitcommit: 3464f10ffa0727e38fbe225cfab52bb8c2bb1747
+ms.openlocfilehash: 425c7f6b8bd262710ee54b89fbd8146dc87a81ec
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93352982"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816463"
 ---
 # <a name="overview-of-enumeration-of-interface-collections-on-usb-composite-devices"></a>枚举 USB 复合设备上的接口集合的概述
 
@@ -41,8 +40,8 @@ ms.locfileid: "93352982"
 
 为了使通用父驱动程序定义自定义接口集合，复合设备的供应商必须：
 
-1.   ( [**USBC \_ 启动 \_ 设备 \_ 回调**](/windows-hardware/drivers/ddi/usbbusif/nc-usbbusif-usbc_start_device_callback)) 实现枚举回调例程。
-2.  提供一个指针，该指针指向 *USB 设备配置界面* 中的回调例程 ( [**USBC \_ 设备 \_ 配置 \_ 接口 \_ V1**](/windows-hardware/drivers/ddi/usbbusif/ns-usbbusif-_usbc_device_configuration_interface_v1)) 的 **StartDeviceCallback** 成员。
+1.   ([**USBC \_ 启动 \_ 设备 \_ 回调**](/windows-hardware/drivers/ddi/usbbusif/nc-usbbusif-usbc_start_device_callback)) 实现枚举回调例程。
+2.  提供一个指针，该指针指向 *USB 设备配置界面* 中的回调例程 ([**USBC \_ 设备 \_ 配置 \_ 接口 \_ V1**](/windows-hardware/drivers/ddi/usbbusif/ns-usbbusif-_usbc_device_configuration_interface_v1)) 的 **StartDeviceCallback** 成员。
 3.  提供一个 INF 文件，使其与复合设备的设备 ID 相匹配，并显式加载 USB 泛型父驱动程序和筛选器驱动程序。
 
 ### <a name="implementation-considerations"></a>实现注意事项
@@ -52,7 +51,7 @@ ms.locfileid: "93352982"
 
 收到 [**IRP \_ MN \_ 查询 \_ 接口**](../kernel/irp-mn-query-interface.md) 请求后，筛选器驱动程序必须检查请求的 **InterfaceType** 成员中的 GUID 类型，以验证所请求的接口的类型是否为 USB \_ 总线 \_ 接口 \_ USBC \_ 配置 \_ GUID。 如果是，筛选器驱动程序将返回指向 IRP 的 **接口** 成员中的接口的指针。
 
-枚举回调例程必须返回一个指针，该指针指向一个 *函数描述符* 数组， ( [**USBC \_ 函数 \_ 描述符**](/windows-hardware/drivers/ddi/usbbusif/ns-usbbusif-_usbc_function_descriptor)) 描述接口集合。 每个函数说明符都包含一个接口说明符数组， (用于描述接口集合的 [**USB \_ 接口 \_ 描述符**](/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_interface_descriptor)) 。 回调例程必须从非分页池分配函数描述符和接口描述符。 通用父驱动程序释放此内存。 回调例程必须确保每个 **USB \_ 接口 \_ 描述符** 的 **NumberOfInterfaces** 成员准确地报告接口集合中的接口数。
+枚举回调例程必须返回一个指针，该指针指向一个 *函数描述符* 数组， ([**USBC \_ 函数 \_ 描述符**](/windows-hardware/drivers/ddi/usbbusif/ns-usbbusif-_usbc_function_descriptor)) 描述接口集合。 每个函数说明符都包含一个接口说明符数组， (用于描述接口集合的 [**USB \_ 接口 \_ 描述符**](/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_interface_descriptor)) 。 回调例程必须从非分页池分配函数描述符和接口描述符。 通用父驱动程序释放此内存。 回调例程必须确保每个 **USB \_ 接口 \_ 描述符** 的 **NumberOfInterfaces** 成员准确地报告接口集合中的接口数。
 
 通用父驱动程序为每个函数描述符 (PDO) 创建物理设备对象。
 
@@ -110,11 +109,11 @@ HKR,,EnumeratorClass, 0x00000001,02,00,00
 
 USB 无线移动通信设备类 (WMCDC) 是 (CDC) 的 USB 通信设备类的子类。 WMCDC 规范可扩展，但不会对定义接口集合的 CDC 准则进行重大更改。 特别是，WMCDC 设备必须遵守定义接口集合的 CDC 准则。
 
-CDC 接口集合包含一个 ( [**USB \_ 接口 \_ 描述符**](/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_interface_descriptor)) 的主接口，该接口属于通信接口类 (`bInterfaceClass = 0x02`) 或数据接口类 (`bInterfaceClass = 0x0A`) 。 如果主接口属于通信接口类 (这是) 的典型情况，则主接口 ( **bInterfaceSubClass** ) 的子类指定 CDC *控制模型* 。 控件模型指示接口集合中包含的接口类型。 有关 USB 实现者论坛定义的控制模型的说明，请参阅 CDC 规范和 WMCDC 规范。
+CDC 接口集合包含一个 ([**USB \_ 接口 \_ 描述符**](/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_interface_descriptor)) 的主接口，该接口属于通信接口类 (`bInterfaceClass = 0x02`) 或数据接口类 (`bInterfaceClass = 0x0A`) 。 如果主接口属于通信接口类 (这是) 的典型情况，则主接口 (**bInterfaceSubClass**) 的子类指定 CDC *控制模型*。 控件模型指示接口集合中包含的接口类型。 有关 USB 实现者论坛定义的控制模型的说明，请参阅 CDC 规范和 WMCDC 规范。
 
 接口集合的主接口后跟一组必需的特定于类的函数描述符，其中包括联合功能描述符 (UFD) 。 UFD 会列出属于该集合的接口数。 UFD 的 **bMasterInterface** 字段包含主接口的编号。 零个或多个 **bSubordinateInterface** 字段包含集合中其他 (从属) 接口的编号。
 
-对于大多数类型的控件模型， [USB 泛型父驱动程序 ( # A0) ](usb-common-class-generic-parent-driver.md) 为每个 UFD (PDO) 创建一个物理设备对象。 但有些控制模型包含一个音频接口，该接口是泛型父驱动程序与音频接口所属的接口集合分开枚举的。 音频接口显示在接口集合的 " **bSubordinateInterface** ) 的从属接口列表中 ("，但通用父驱动程序为音频接口创建单独的 PDO。 音频接口的 PDO 和音频接口所属接口集合的 PDO 直接位于功能设备对象的正上方 (设备对象树中父复合设备的 FDO) 。 音频接口的 PDO 不是接口集合的子接口。
+对于大多数类型的控件模型， [USB 泛型父驱动程序 ( # A0) ](usb-common-class-generic-parent-driver.md) 为每个 UFD (PDO) 创建一个物理设备对象。 但有些控制模型包含一个音频接口，该接口是泛型父驱动程序与音频接口所属的接口集合分开枚举的。 音频接口显示在接口集合的 " **bSubordinateInterface**) 的从属接口列表中 ("，但通用父驱动程序为音频接口创建单独的 PDO。 音频接口的 PDO 和音频接口所属接口集合的 PDO 直接位于功能设备对象的正上方 (设备对象树中父复合设备的 FDO) 。 音频接口的 PDO 不是接口集合的子接口。
 
 在注册表中，有两种可配置枚举特性的控件模型：无线话筒控制模型 (WHCM) ，用于定义逻辑耳机， (OBEX) 控制模型。 若要配置这两个控件模型的枚举特征，您必须提供一个 INF 文件，该文件加载 Usbccgp.sys 的实例，并在该实例的 Usbccgp.sys 的软件密钥中设置 **CdcFlags** 的值。 下表描述了 **CdcFlags** 的配置选项。
 
@@ -173,7 +172,7 @@ HKR, , CdcFlags, 0x00010001, 0x00000001
 
 ![说明 cdcflags = 0x00000000 的设备对象映射的接口集合的关系图](images/cdcflags.png)
 
-上图中 (WHCM) 接口集合的无线话筒控制模型包含三个从属接口集合 ( **bSubordinateInterface** ) ：两个 OBEX 集合和一个调制解调器集合。 **CdcFlags** 的位0为0，因此 USB 通用父驱动程序不会为 WHCM 接口集合创建 PDO。 **CdcFlags** 的第1位为0，因此 USB 通用父驱动程序为每个 OBEX 接口集合生成单独的 PDO。
+上图中 (WHCM) 接口集合的无线话筒控制模型包含三个从属接口集合 (**bSubordinateInterface**) ：两个 OBEX 集合和一个调制解调器集合。 **CdcFlags** 的位0为0，因此 USB 通用父驱动程序不会为 WHCM 接口集合创建 PDO。 **CdcFlags** 的第1位为0，因此 USB 通用父驱动程序为每个 OBEX 接口集合生成单独的 PDO。
 
 下图说明了设置 **CdcFlags** 的位0和第1位时的 PDO 配置。
 
@@ -254,7 +253,7 @@ Windows 支持的大多数接口集合对应于属于通信设备类 (CDC) 和�
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>properties</th>
 <th>说明</th>
 </tr>
 </thead>
@@ -264,7 +263,7 @@ Windows 支持的大多数接口集合对应于属于通信设备类 (CDC) 和�
 <td><p><em>音频设备的通用串行总线设备类定义</em>，版本1.0。</p></td>
 </tr>
 <tr class="even">
-<td><p>实例</p></td>
+<td><p>类</p></td>
 <td><p>接口集合中的所有接口都必须属于音频设备类 (0x01) 。</p></td>
 </tr>
 <tr class="odd">
@@ -315,7 +314,7 @@ USB\Class_01</code></pre>
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>properties</th>
 <th>说明</th>
 </tr>
 </thead>
@@ -376,7 +375,7 @@ USB CDC ATM 网络控制模型 (ANCM) 接口集合具有以下属性。
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>properties</th>
 <th>说明</th>
 </tr>
 </thead>
@@ -438,7 +437,7 @@ USB\Class_02</code></pre></td>
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>properties</th>
 <th>说明</th>
 </tr>
 </thead>
@@ -497,7 +496,7 @@ USB CDC 直接线路控制模型 (DLCM) 接口集合具有以下属性。
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>properties</th>
 <th>说明</th>
 </tr>
 </thead>
@@ -558,7 +557,7 @@ USB CDC 以太网网络控制模型 (ENCM) 接口集合具有以下属性。
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>properties</th>
 <th>说明</th>
 </tr>
 </thead>
@@ -619,7 +618,7 @@ USB CDC 多通道 ISDN 控制模型 (MCCM) 接口集合具有以下属性。
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>properties</th>
 <th>说明</th>
 </tr>
 </thead>
@@ -681,7 +680,7 @@ USB\Class_02</code></pre></td>
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>properties</th>
 <th>说明</th>
 </tr>
 </thead>
@@ -744,7 +743,7 @@ USB\Class_02</code></pre></td>
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>properties</th>
 <th>说明</th>
 </tr>
 </thead>
@@ -754,7 +753,7 @@ USB\Class_02</code></pre></td>
 <td><p>移动计算促销协会 (MCPC) GL-004 规范</p></td>
 </tr>
 <tr class="even">
-<td><p>实例</p></td>
+<td><p>类</p></td>
 <td><p>CDC (0x02) </p></td>
 </tr>
 <tr class="odd">
@@ -805,7 +804,7 @@ USB\Class_02</code></pre></td>
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>properties</th>
 <th>说明</th>
 </tr>
 </thead>
@@ -815,7 +814,7 @@ USB\Class_02</code></pre></td>
 <td><p><em>视频设备的通用串行总线设备类定义</em>，版本1.0。</p></td>
 </tr>
 <tr class="even">
-<td><p>实例</p></td>
+<td><p>类</p></td>
 <td><p>视频 (0x0E) 。</p></td>
 </tr>
 <tr class="odd">
@@ -868,7 +867,7 @@ USB\Class_0E</code></pre></td>
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>properties</th>
 <th>说明</th>
 </tr>
 </thead>
@@ -931,7 +930,7 @@ USB WMCDC 设备管理模型 (CALL CENTER.DMM) 接口集合具有以下属性。
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>properties</th>
 <th>说明</th>
 </tr>
 </thead>
@@ -992,7 +991,7 @@ USB WMCDC Mobile 直接线路型号 (MDLM) 接口集合具有以下属性：
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>properties</th>
 <th>说明</th>
 </tr>
 </thead>
@@ -1011,7 +1010,7 @@ USB WMCDC Mobile 直接线路型号 (MDLM) 接口集合具有以下属性：
 </tr>
 <tr class="even">
 <td><p>协议</p></td>
-<td><p>Any</p></td>
+<td><p>任意</p></td>
 </tr>
 <tr class="odd">
 <td><p>Enumerated</p></td>
@@ -1055,7 +1054,7 @@ USB\Class_02</code></pre></td>
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>properties</th>
 <th>说明</th>
 </tr>
 </thead>
@@ -1118,7 +1117,7 @@ USB\Class_02</code></pre></td>
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>properties</th>
 <th>说明</th>
 </tr>
 </thead>
@@ -1180,7 +1179,7 @@ USB 泛型父驱动程序并不总是枚举无线耳机控制模型 (WHCM) 接�
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>properties</th>
 <th>说明</th>
 </tr>
 </thead>
@@ -1274,7 +1273,7 @@ USB\Class_02</code></pre></td>
 
 `USB\Class_c(2)`
 
-在这些兼容的 Id 中，c (2) ，s (2) ，p (2) 包含 **bFunctionClass** 、 **bFunctionSubClass** 和 **bFunctionProtocol** 字段中分别采用的值。
+在这些兼容的 Id 中，c (2) ，s (2) ，p (2) 包含 **bFunctionClass**、 **bFunctionSubClass** 和 **bFunctionProtocol** 字段中分别采用的值。
 
 不能以递归方式使用 IADs 来绑定函数的函数。 特别是，如果设备在其固件中具有 IAD 的描述符，则一般父驱动程序将不会按音频设备类对接口分组，如 [USB 复合设备上的接口集合枚举](support-for-interface-collections.md)中所述。
 

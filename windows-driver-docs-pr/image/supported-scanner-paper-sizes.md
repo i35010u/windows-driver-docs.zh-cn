@@ -1,15 +1,14 @@
 ---
 title: 支持的扫描仪纸张大小
 description: 支持的扫描仪纸张大小
-ms.assetid: c4437c38-b43a-433c-913a-d3de9bf74284
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 026bd09af83f5f147128dd7e68cce0def86571c0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d2b52097018ebcf28f010433720b13c23121d3bd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63322277"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816185"
 ---
 # <a name="supported-scanner-paper-sizes"></a>支持的扫描仪纸张大小
 
@@ -17,17 +16,17 @@ ms.locfileid: "63322277"
 
 
 
-尽管两个 WIA 用户界面组件能够向用户显示页面大小的列表，但没有 WIA 驱动程序以了解扫描仪支持的页大小的简单的方法。
+尽管两个 WIA 用户界面组件能够向用户显示一系列页面大小，但无法通过 WIA 驱动程序来了解扫描仪支持的页面大小。
 
 ### <a name="page-size-in-wia-applications"></a>WIA 应用程序中的页面大小
 
-允许为支持报表页大小的 WIA 驱动程序没有 WIA 属性或允许直接指定页大小的应用程序。 若要进行通信到驱动程序的页面大小设置，应用程序必须计算所需的大小，以每英寸点数 (dpi) 并调整扫描以符合设备的注册要求的来源。
+没有 WIA 属性允许 WIA 驱动程序报告受支持的页面大小或允许应用程序直接指定页面大小。 若要将页面大小设置传达给驱动程序，应用程序必须以每英寸点数 (dpi) 来计算所需大小，并调整扫描的源以符合设备的注册要求。
 
-### <a href="" id="page-size-in-the-common-scanner-dialog-and-in-the-scanner-and-camera-w"></a>页面大小和扫描仪和照相机向导中常见的扫描程序对话框
+### <a name="page-size-in-the-common-scanner-dialog-and-in-the-scanner-and-camera-wizard"></a><a href="" id="page-size-in-the-common-scanner-dialog-and-in-the-scanner-and-camera-w"></a>常见扫描器对话框和扫描仪和照相机向导中的页面大小
 
-常见的扫描程序对话框和扫描仪和照相机向导具有一个静态表中的每个页大小所述按水平宽度和垂直高度，增量为 0.001 英寸都受支持的页大小。 仅当扫描程序是在文档送纸器模式下时，当前会显示这些页大小。
+常见的 "扫描仪" 对话框和 "扫描仪和照相机向导" 都有一个受支持页面大小的静态表，其中每个页面大小都按其水平宽度和垂直高度（以0.001 英寸为增量）进行描述。 仅当扫描程序处于文档送纸器模式时，才会显示这些页面大小。
 
-由平台最大大小，最大页大小 （按区域） 驱动程序支持在页面源模式下，被视为默认页面大小。 不适合在送纸器或设备的平台上的纸张大小不会提供给用户。
+按区域 (的最大页面大小) ，驱动程序在页面进纸模式下支持的页面大小（由最大床大小确定）被视为默认页面大小。 不适合进纸器或设备平台上的纸张大小不会提供给用户。
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: USBCAMD2 相机配置
 description: USBCAMD2 相机配置
-ms.assetid: 9a0dd6f9-aefb-4134-8bd5-31420a16db4a
 keywords:
 - Windows 2000 内核流式处理模型 WDK，USBCAMD2 微型驱动程序库
 - 流式处理模型 WDK Windows 2000 内核，USBCAMD2 微型驱动程序库
@@ -11,12 +10,12 @@ keywords:
 - 照相机 WDK USBCAMD2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b1f69636c6be12a3a9035a4e5b249d8d229c1bd
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: c27e2ba2b8e527ad7b5197e9cc7e6b417c5fc729
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187659"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815799"
 ---
 # <a name="usbcamd2-camera-configurations"></a>USBCAMD2 相机配置
 
@@ -45,11 +44,11 @@ USBCAMD2 库支持使用同步管道 (s) 、大容量 i/o 管道 () 和/或中�
 
 -   两个批量 i/o 管道和一个可选中断管道。 一个批量管道流视频和其他大容量管道传输仍为图像。 可选的中断管道向已注册的应用程序发出外部触发器事件的通知。
 
-**注意**   USBCAMD2 支持具有多个备用设置的单个 USB 接口的相机。 所有备用设置必须具有相同的管道类型和数量。 在初始化和配置照相机时传递到[*CamConfigureEx*](/windows-hardware/drivers/ddi/usbcamdi/nc-usbcamdi-pcam_configure_routine_ex)的[**USBCAMD \_ 管道 \_ 配置 \_ 描述符**](/windows-hardware/drivers/ddi/usbcamdi/ns-usbcamdi-_pipe_config_descriptor)类型的数组中指定此信息。
+**注意**   USBCAMD2 支持具有多个备用设置的单个 USB 接口的相机。 所有备用设置必须具有相同的管道类型和数量。 在初始化和配置照相机时传递到 [*CamConfigureEx*](/windows-hardware/drivers/ddi/usbcamdi/nc-usbcamdi-pcam_configure_routine_ex)的 [**USBCAMD \_ 管道 \_ 配置 \_ 描述符**](/windows-hardware/drivers/ddi/usbcamdi/ns-usbcamdi-_pipe_config_descriptor)类型的数组中指定此信息。
 
  
 
-尽管 USB 1.1 设备可以连接到 USB 2.0 总线，但 USBCAMD2 仅支持 USB 1.1 相机设备，因此限制为 USB 1.1 总线 (的最大吞吐量，例如，以 *全速*模式) 的同步数据传输。 对于同步数据传输，USBCAMD2 不支持 USB 2.0 *高速*模式。 但是，如果照相机仅实现批量管道，则它可以从连接到 USB 2.0 总线（其中有更多可用的大容量传输带宽）中受益。
+尽管 USB 1.1 设备可以连接到 USB 2.0 总线，但 USBCAMD2 仅支持 USB 1.1 相机设备，因此限制为 USB 1.1 总线 (的最大吞吐量，例如，以 *全速* 模式) 的同步数据传输。 对于同步数据传输，USBCAMD2 不支持 USB 2.0 *高速* 模式。 但是，如果照相机仅实现批量管道，则它可以从连接到 USB 2.0 总线（其中有更多可用的大容量传输带宽）中受益。
 
  
 

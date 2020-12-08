@@ -1,7 +1,6 @@
 ---
 title: 同步取消和完成代码
 description: 同步取消和完成代码
-ms.assetid: 4c302fc5-cb14-46e5-80c8-8dbf62486905
 keywords:
 - 请求处理 WDK KMDF，取消请求
 - I/o 请求 WDK KMDF，取消
@@ -11,12 +10,12 @@ keywords:
 - I/o 请求 WDK KMDF，同步
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a3292c7f65144013565cd3661277eb14130e680
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ddc601122c4c08dfe439274e30fac2d99a2cc9d4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190747"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815559"
 ---
 # <a name="synchronizing-cancel-and-completion-code"></a>同步取消和完成代码
 
@@ -43,7 +42,7 @@ if( Status != STATUS_CANCELLED ) {
 
 此代码可确保当驱动程序已调用 [**WdfRequestComplete**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete) 来取消请求时，驱动程序不会调用来完成请求。
 
-有关当驱动程序调用 **WdfRequestUnmarkCancelable**时必须遵循的规则的详细信息，请参阅 [**WdfRequestUnmarkCancelable**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestunmarkcancelable)。
+有关当驱动程序调用 **WdfRequestUnmarkCancelable** 时必须遵循的规则的详细信息，请参阅 [**WdfRequestUnmarkCancelable**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestunmarkcancelable)。
 
  
 

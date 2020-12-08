@@ -1,22 +1,21 @@
 ---
 title: 网络驱动程序的安全问题
 description: 本部分介绍特定于网络驱动程序的安全问题
-ms.assetid: 04400213-9bd4-4dbe-b302-24917450829f
 keywords:
 - 网络驱动程序 WDK，安全性
 - 安全 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 80ffeaaede84dba628eb5f54c9a971dc4edd8605
-ms.sourcegitcommit: 366a15d68eb58d01a8ca6de7b982f62ac8b7deaf
+ms.openlocfilehash: 526006e1cbda79b4a44fa3c0e375e8b6ccd4732e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/19/2020
-ms.locfileid: "90811906"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815887"
 ---
 # <a name="security-issues-for-network-drivers"></a>网络驱动程序的安全问题
 
-有关编写安全驱动程序的一般讨论，请参阅 [创建可靠的内核模式驱动程序](../kernel/creating-reliable-kernel-mode-drivers.md)。
+有关编写安全驱动程序的一般讨论，请参阅 [创建可靠 Kernel-Mode 驱动程序](../kernel/creating-reliable-kernel-mode-drivers.md)。
 
 除了遵循安全的编码实践和常规设备驱动程序指南之外，网络驱动程序还应执行以下操作以增强安全性：
 
@@ -158,4 +157,4 @@ ms.locfileid: "90811906"
 
 - 大多数 NDIS 微型端口驱动程序不应涉及分析数据包有效负载。 但在某些情况下，可能需要这样做。 如果是这样，则应仔细审核此代码，因为驱动程序正在分析来自不受信任的源的数据。
 
-- 与分配内核模式内存时的标准一样，NDIS 驱动程序应使用适当 [的 NX 池选择机制](../kernel/nx-pool-opt-in-mechanisms.md)。 在 WDK 8 及更高版本中， `NdisAllocate*` 已正确选择了这些功能系列。
+- 在分配内核模式内存时，NDIS 驱动程序应使用适当的 [NX 池 Opt-In 机制](../kernel/nx-pool-opt-in-mechanisms.md)。 在 WDK 8 及更高版本中， `NdisAllocate*` 已正确选择了这些功能系列。

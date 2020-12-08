@@ -1,7 +1,6 @@
 ---
 title: COPP 的示例函数
 description: COPP 的示例函数
-ms.assetid: 73c9cf1c-c20d-456c-8029-5316fd8979d5
 keywords:
 - 复制保护 WDK COPP，示例函数
 - 视频复制保护 WDK COPP，示例函数
@@ -9,12 +8,12 @@ keywords:
 - 受保护的视频 WDK COPP，示例函数
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ed72f264941a4fd4936c178c352cd16f8cf7f73
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: b58364bec1669b7c287069db7bfd37a891857593
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716246"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816857"
 ---
 # <a name="sample-functions-for-copp"></a>COPP 的示例函数
 
@@ -24,7 +23,7 @@ ms.locfileid: "90716246"
 
 **本部分仅适用于 Windows Server 2003 SP1 及更高版本以及 Windows XP SP2 及更高版本。**
 
-示例 COPP 函数演示如何实现 COPP 处理功能。 这些示例函数映射到[**DD \_ MOTIONCOMPCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构中定义的[运动补偿回调函数](motion-compensation-callbacks.md)。 可以 (IOCTL) 请求实现每个示例函数和相应的 COPP i/o 控制，然后使用运动补偿代码模板和视频微型端口驱动程序模板来完成实现。 有关详细信息，请参阅 [DIRECTX VA 设备的示例代码](example-code-for-directx-va-devices.md)。
+示例 COPP 函数演示如何实现 COPP 处理功能。 这些示例函数映射到 [**DD \_ MOTIONCOMPCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构中定义的 [运动补偿回调函数](motion-compensation-callbacks.md)。 可以 (IOCTL) 请求实现每个示例函数和相应的 COPP i/o 控制，然后使用运动补偿代码模板和视频微型端口驱动程序模板来完成实现。 有关详细信息，请参阅 [DIRECTX VA 设备的示例代码](example-code-for-directx-va-devices.md)。
 
 ### <a name="span-idcopp_sample_functionsspanspan-idcopp_sample_functionsspanspan-idcopp_sample_functionsspancopp-sample-functions"></a><span id="COPP_Sample_Functions"></span><span id="copp_sample_functions"></span><span id="COPP_SAMPLE_FUNCTIONS"></span>COPP 示例函数
 
@@ -38,7 +37,7 @@ ms.locfileid: "90716246"
 <thead>
 <tr class="header">
 <th align="left">成员函数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

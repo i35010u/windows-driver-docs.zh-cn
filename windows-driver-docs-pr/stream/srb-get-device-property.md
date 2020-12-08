@@ -1,7 +1,6 @@
 ---
 title: SRB \_ 获取 \_ 设备 \_ 属性
 description: SRB \_ 获取 \_ 设备 \_ 属性
-ms.assetid: 2a0a3b8a-7252-4ba5-a1a5-ffef0f0f5715
 keywords:
 - SRB_GET_DEVICE_PROPERTY 流媒体设备
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: baa27814dc2212ca4dbec9c03dee7ea48d29a62d
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 194c90b1551089e24872385be4f0feb1df445b36
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190361"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815803"
 ---
 # <a name="srb_get_device_property"></a>SRB \_ 获取 \_ 设备 \_ 属性
 
@@ -42,11 +41,11 @@ ms.locfileid: "89190361"
 
 ### <a name="comments"></a>注释
 
-类驱动程序将操作的参数传递到*pSrb* - &gt; **CommandData. PropertyInfo**缓冲区中，这是窗体[**流 \_ 属性 \_ 描述符**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_stream_property_descriptor)的结构。 *PSrb*指针指向[**HW \_ 流 \_ 请求 \_ 块**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_request_block)结构。 流属性描述符的 **属性** 成员描述了有 \_ \_ 问题的属性，而 **PropertyInfo** 成员指定了要将属性数据复制到的缓冲区。 如果缓冲区太小，微型驱动程序应将*pSrb*的**status**成员设置为状态 \_ 缓冲区 \_ 溢出。
+类驱动程序将操作的参数传递到 *pSrb* - &gt; **CommandData. PropertyInfo** 缓冲区中，这是窗体 [**流 \_ 属性 \_ 描述符**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_stream_property_descriptor)的结构。 *PSrb* 指针指向 [**HW \_ 流 \_ 请求 \_ 块**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_request_block)结构。 流属性描述符的 **属性** 成员描述了有 \_ \_ 问题的属性，而 **PropertyInfo** 成员指定了要将属性数据复制到的缓冲区。 如果缓冲区太小，微型驱动程序应将 *pSrb* 的 **status** 成员设置为状态 \_ 缓冲区 \_ 溢出。
 
 有关属性集的详细信息，请参阅 [KS 属性](./ks-properties.md)。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**流 \_ 属性 \_ 描述符**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_stream_property_descriptor)

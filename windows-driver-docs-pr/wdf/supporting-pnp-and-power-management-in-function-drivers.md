@@ -1,7 +1,6 @@
 ---
 title: 支持在功能驱动程序中进行 PnP 和电源管理
 description: 支持在功能驱动程序中进行 PnP 和电源管理
-ms.assetid: 487d4a69-a8a8-406c-8572-688388deabe3
 keywords:
 - PnP WDK KMDF、function 驱动程序
 - 即插即用 WDK KMDF，函数驱动程序
@@ -10,12 +9,12 @@ keywords:
 - 电源策略 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a0305004824b45f11da641ab47b5a6a99059b6f6
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 50d2d09cb6541b83237bef7cfa2b704f7ab9239e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190781"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815579"
 ---
 # <a name="supporting-pnp-and-power-management-in-function-drivers"></a>支持在功能驱动程序中进行 PnP 和电源管理
 

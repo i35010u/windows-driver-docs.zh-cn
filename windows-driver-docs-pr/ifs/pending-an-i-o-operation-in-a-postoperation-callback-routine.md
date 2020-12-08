@@ -1,18 +1,17 @@
 ---
 title: 在后操作回调例程中挂起 I/O 操作
 description: 在后操作回调例程中挂起 I/O 操作
-ms.assetid: 126e13fb-51f6-4dcc-aa13-850921b3c752
 keywords:
 - postoperation 回调例程 WDK 文件系统微筛选器，挂起的操作
 - 回调例程中挂起的 i/o 操作 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bcf2fac52bc9a9f77184db001a84fc5ba92b0d30
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 1ec31bafa39b1cd7d33df15feb0d5117a6dc4ab5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067376"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816251"
 ---
 # <a name="pending-an-io-operation-in-a-postoperation-callback-routine"></a>在后操作回调例程中挂起 I/O 操作
 

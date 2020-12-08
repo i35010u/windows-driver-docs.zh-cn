@@ -1,7 +1,6 @@
 ---
 title: 处理应用程序通知
 description: 处理应用程序通知
-ms.assetid: 475d8e37-5d31-4989-92ce-3c4a7c09d292
 keywords:
 - 动态硬件分区 WDK，应用程序通知
 - 硬件分区 WDK 动态，应用程序通知
@@ -12,12 +11,12 @@ keywords:
 - 处理应用程序通知 WDK 动态硬件分区
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d5cf9c88f1dd7ccfbef031bdf914e35ecdacc50
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 401227c9e6a670eb117c7deba126f5d6e926a59b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733483"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816079"
 ---
 # <a name="processing-an-application-notification"></a>处理应用程序通知
 
@@ -26,7 +25,7 @@ ms.locfileid: "91733483"
 
 ### <a name="win32-applications"></a>Win32 应用程序
 
-基于 Win32 的应用程序通过实现 *窗口过程*来处理发送到应用程序窗口的消息 (s) 。 有关窗口过程的详细信息，请参阅 Microsoft Windows SDK 文档中的 " [窗口过程](/windows/win32/winmsg/window-procedures) " 主题。
+基于 Win32 的应用程序通过实现 *窗口过程* 来处理发送到应用程序窗口的消息 (s) 。 有关窗口过程的详细信息，请参阅 Microsoft Windows SDK 文档中的 " [窗口过程](/windows/win32/winmsg/window-procedures) " 主题。
 
 下面的代码示例演示如何 \_ 在基于 Win32 的应用程序中处理 WM DEVICECHANGE 消息：
 

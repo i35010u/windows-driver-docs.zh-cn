@@ -1,7 +1,6 @@
 ---
 title: 'UsbContReader 规则 (kmdf) '
 description: UsbContReader 规则指定在驱动程序的 EvtDevicePrepareHardware 事件回调函数中正确配置了连续读取器，在该函数中，驱动程序调用 WdfUsbTargetPipeConfigContinuousReader 方法。
-ms.assetid: f9bb885e-2da0-4f4d-ad62-6d450d9a64dd
 ms.date: 05/21/2018
 keywords:
 - 'UsbContReader 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f31b72dc564d9832470eccbcb5d509fcf9149785
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 3efce34e16fd9df424171358278de41375ce2e44
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101614"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817461"
 ---
 # <a name="usbcontreader-rule-kmdf"></a>UsbContReader 规则 (kmdf) 
 
 
-**UsbContReader**规则指定在驱动程序的[*EvtDevicePrepareHardware*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)事件回调函数中正确配置了连续读取器，在该函数中，驱动程序调用[**WdfUsbTargetPipeConfigContinuousReader**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipeconfigcontinuousreader)方法。
+**UsbContReader** 规则指定在驱动程序的 [*EvtDevicePrepareHardware*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)事件回调函数中正确配置了连续读取器，在该函数中，驱动程序调用 [**WdfUsbTargetPipeConfigContinuousReader**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipeconfigcontinuousreader)方法。
 
 **驱动程序模型： KMDF**
 

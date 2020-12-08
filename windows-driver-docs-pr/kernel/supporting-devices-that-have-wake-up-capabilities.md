@@ -1,7 +1,6 @@
 ---
 title: 支持具有唤醒功能的设备
 description: 支持具有唤醒功能的设备
-ms.assetid: 70b9d0af-c3d7-44dc-b11a-3274391508c5
 keywords:
 - 电源管理 WDK 内核，唤醒功能
 - 外部唤醒信号 WDK
@@ -15,12 +14,12 @@ keywords:
 - I/o 请求数据包 WDK 电源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c98c7ac93569cc6dbbe49a17912d84387e1f9d5
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: c230e473bf104358b37fa46ce2f0cf5de1ae8b9b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185973"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816633"
 ---
 # <a name="supporting-devices-that-have-wake-up-capabilities"></a>支持具有唤醒功能的设备
 

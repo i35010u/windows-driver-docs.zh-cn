@@ -1,7 +1,6 @@
 ---
 title: 'UsbDeviceCreateTarget 规则 (kmdf) '
 description: UsbDeviceCreateTarget 规则指定在设备上下文中当前存在的 WDFUSBDEVICE 对象)  (s 时，不会创建多个 WDFUSBDEVICE 对象。
-ms.assetid: c2617c2b-553e-44fa-abd5-6bfe6d545612
 ms.date: 05/21/2018
 keywords:
 - 'UsbDeviceCreateTarget 规则 (kmdf) '
@@ -12,19 +11,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6352ec3dd42cee852a851794e531340fad48333a
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: c1ef8cd6454b63d31dec9e19fe989970b7e9fb05
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107080"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817447"
 ---
 # <a name="usbdevicecreatetarget-rule-kmdf"></a>UsbDeviceCreateTarget 规则 (kmdf) 
 
 
-**UsbDeviceCreateTarget**规则指定在设备上下文中当前存在的 WDFUSBDEVICE 对象)  (s 时，不会创建多个 WDFUSBDEVICE 对象。
+**UsbDeviceCreateTarget** 规则指定在设备上下文中当前存在的 WDFUSBDEVICE 对象)  (s 时，不会创建多个 WDFUSBDEVICE 对象。
 
-例如，当系统尝试管理资源并且需要为驱动程序分配不同的内存块时，可以多次调用 [*EvtDevicePrepareHardware*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware) 事件回调函数。 在这种情况下，在框架最初调用*EvtDevicePrepareHardware*后，将调用[*EvtDeviceReleaseHardware*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)事件回调函数以取消映射内存资源。 然后再次调用 *EvtDevicePrepareHardware* 来映射资源，以便驱动程序可以访问分配给设备的内存。 此规则检查驱动程序首先确认目标 WDFUSBDEVICE 为 **NULL** ，并且不只是创建新设备并替换上一个句柄。
+例如，当系统尝试管理资源并且需要为驱动程序分配不同的内存块时，可以多次调用 [*EvtDevicePrepareHardware*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware) 事件回调函数。 在这种情况下，在框架最初调用 *EvtDevicePrepareHardware* 后，将调用 [*EvtDeviceReleaseHardware*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)事件回调函数以取消映射内存资源。 然后再次调用 *EvtDevicePrepareHardware* 来映射资源，以便驱动程序可以访问分配给设备的内存。 此规则检查驱动程序首先确认目标 WDFUSBDEVICE 为 **NULL** ，并且不只是创建新设备并替换上一个句柄。
 
 **驱动程序模型： KMDF**
 

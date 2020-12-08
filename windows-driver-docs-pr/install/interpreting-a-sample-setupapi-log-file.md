@@ -1,17 +1,16 @@
 ---
 title: 解释示例 SetupAPI 日志文件
 description: 解释示例 SetupAPI 日志文件
-ms.assetid: 86bef34e-1ff3-4777-9b7c-0f08645ff89f
 keywords:
-- 示例记录 WDK SetupAPI
+- 示例日志 WDK Setupapi.log
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d6d89cbecd42799219a9ac3ac2ac702eaebb80de
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fbecf10001790cc2ad7f1be8083dcd1d69ef9f66
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353791"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816685"
 ---
 # <a name="interpreting-a-sample-setupapi-log-file"></a>解释示例 SetupAPI 日志文件
 
@@ -19,13 +18,13 @@ ms.locfileid: "63353791"
 
 
 
-下面的示例日志说明了 SetupAPI 日志文件中包含的信息。
+下面的示例日志说明了 Setupapi.log 日志文件中包含的信息。
 
-一般情况下，安装的所有部分一起都出现在日志文件。 在日志中的安装部分开头的条目的格式\[*年/月/日时间进程 id.instance 描述*\]其中*实例*是一个数字，以确保在同一进程的相同时间实例化的两个部分是唯一的。
+通常，安装的所有部分都显示在日志文件中。 日志中的 "安装" 部分以 " \[ *年/月/日*" 格式的条目开始。实例说明， \] 其中 *实例* 是一个数字，可确保为同一进程同时实例化的两个部分都是唯一的。
 
-### <a href="" id="ddk-sample-windows-xp-setupapi-log-file-dg"></a>示例 Windows XP SetupAPI 日志文件
+### <a name="sample-windows-xp-setupapi-log-file"></a><a href="" id="ddk-sample-windows-xp-setupapi-log-file-dg"></a>示例 Windows XP Setupapi.log 日志文件
 
-对于 Windows XP 中，每个日志条目包括消息标识符包含的字母或短划线 （-） 后接一个数字。 下表介绍用于消息标识符的格式。
+对于 Windows XP，每个日志条目都包含一个消息标识符，其中包含一个字母或短划线 ( ) 后跟一个数字。 下表描述了消息标识符的格式。
 
 <table>
 <colgroup>
@@ -68,7 +67,7 @@ ms.locfileid: "63353791"
 
  
 
-从 Windows XP 错误日志中包括以下段：
+以下是来自 Windows XP 错误日志的段：
 
 ```cpp
 [2001/02/27 20:14:30 1148.173]

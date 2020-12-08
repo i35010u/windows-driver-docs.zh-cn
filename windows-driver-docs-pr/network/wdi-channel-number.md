@@ -1,17 +1,16 @@
 ---
 title: WDI_CHANNEL_NUMBER
 description: 本主题介绍 WDI 微型端口驱动程序的 WDI_CHANNEL_NUMBER 数据类型。
-ms.assetid: 546820D6-F7F6-4ED8-B2D4-60DDEB5AEC43
 keywords:
 - WDI_CHANNEL_NUMBER，WDK WDI_CHANNEL_NUMBER 网络驱动程序
 ms.date: 11/27/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bd96a71921526c3abbdec9d427e5c5772039c39d
-ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
+ms.openlocfilehash: 496300aa8f65d03741326c067aaec70c36a39f9d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85968126"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817077"
 ---
 # <a name="wdi_channel_number"></a>WDI_CHANNEL_NUMBER
 

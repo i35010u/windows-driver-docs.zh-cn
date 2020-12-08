@@ -1,7 +1,6 @@
 ---
 title: 在 INF 文件中指定反射器
 description: 在 INF 文件中指定反射器
-ms.assetid: 3676c99d-4e13-4385-910a-251232b00d4c
 keywords:
 - 发送程序 WDK UMDF
 - AddService
@@ -11,17 +10,17 @@ keywords:
 - 加载发送程序 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 20033afc5d0f26ae88bfd3238e43e4cab857787e
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 3a0ecf2acef7dd5bbb95e10011b115b363bf3884
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191231"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815793"
 ---
 # <a name="specifying-the-reflector-in-an-inf-file"></a>在 INF 文件中指定反射器
 
 
-要向内核模式设备堆栈添加反射器 ( # A0) ，UMDF 驱动程序的 INF 文件必须在[**Inf DDInstall 部分**](../install/inf-ddinstall-services-section.md)中包含[**AddService 指令**](../install/inf-addservice-directive.md)。 反射器可以是上限、下限或设备的服务，具体取决于用户模式堆栈的配置。
+要向内核模式设备堆栈添加反射器 ( # A0) ，UMDF 驱动程序的 INF 文件必须在 [**Inf DDInstall 部分**](../install/inf-ddinstall-services-section.md)中包含 [**AddService 指令**](../install/inf-addservice-directive.md)。 反射器可以是上限、下限或设备的服务，具体取决于用户模式堆栈的配置。
 
 下面的代码示例演示如何使用 UMDF 函数驱动程序的 INF 文件来添加反射器。
 
@@ -32,7 +31,7 @@ AddService=WUDFRd,0x000001fa,WUDFRD_ServiceInstall
 
 在此示例中，驱动程序将 0x2 (SPSVCINST \_ ASSOCSERVICE) 标志 (运算指定为上述 *flags* 参数，) 将该反射器指定为内核模式设备堆栈中的函数驱动程序。
 
-**AddService**指令还会设置0x000001f8 标志，以防止覆盖服务的任何预先存在的配置。 有关这些标志的详细信息，请参阅[**AddService 指令**](../install/inf-addservice-directive.md)的*flags*参数。
+**AddService** 指令还会设置0x000001f8 标志，以防止覆盖服务的任何预先存在的配置。 有关这些标志的详细信息，请参阅 [**AddService 指令**](../install/inf-addservice-directive.md)的 *flags* 参数。
 
 下面的代码示例摘自 WUDFVhidmini 示例，它显示了用于 UMDF 筛选器驱动程序的 **AddService** 指令。
 
@@ -50,7 +49,7 @@ HKR,,"LowerFilters",0x00010008,"WUDFRd" ; FLG_ADDREG_TYPE_MULTI_SZ | FLG_ADDREG_
 ## <a name="providing-a-service-install-section"></a>提供服务安装部分
 
 
-**AddService**指令引用类似于下面的代码示例的服务安装部分。 **ServiceType**条目指定1或0x00000001，这表示 INF 安装了对一个或多个设备的支持。 **StartType**条目指定启动驱动程序的时间。 **ErrorControl**项指定驱动程序提供的错误控制级别。 **ServiceBinary**项指定服务的反射器) 的二进制 (路径。
+**AddService** 指令引用类似于下面的代码示例的服务安装部分。 **ServiceType** 条目指定1或0x00000001，这表示 INF 安装了对一个或多个设备的支持。 **StartType** 条目指定启动驱动程序的时间。 **ErrorControl** 项指定驱动程序提供的错误控制级别。 **ServiceBinary** 项指定服务的反射器) 的二进制 (路径。
 
 ```cpp
 [WUDFRD_ServiceInstall]

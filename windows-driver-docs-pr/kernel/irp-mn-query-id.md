@@ -2,27 +2,26 @@
 title: IRP_MN_QUERY_ID
 description: 总线驱动程序必须处理 (子 PDOs) 子设备的 BusQueryDeviceID 请求。 总线驱动程序可以为其子设备处理 BusQueryHardwareIDs、BusQueryCompatibleIDs 和 BusQueryInstanceID 的请求。
 ms.date: 08/12/2017
-ms.assetid: 3135cb30-a696-4201-8dfc-cdc1a29fe52b
 keywords:
-- IRP_MN_QUERY_ID 内核模式驱动程序体系结构
+- IRP_MN_QUERY_ID Kernel-Mode 驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 9446f562058fed642aa1e95ceb70ec00a0fb5365
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 8e547707aaec7a4d759ee0c3b11786220f848de8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103148"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816083"
 ---
 # <a name="irp_mn_query_id"></a>IRP \_ MN \_ 查询 \_ ID
 
 
-总线驱动程序必须处理 (子 PDOs) 子设备的 **BusQueryDeviceID** 请求。 总线驱动程序可以为其子设备处理 **BusQueryHardwareIDs**、 **BusQueryCompatibleIDs**和 **BusQueryInstanceID** 的请求。
+总线驱动程序必须处理 (子 PDOs) 子设备的 **BusQueryDeviceID** 请求。 总线驱动程序可以为其子设备处理 **BusQueryHardwareIDs**、 **BusQueryCompatibleIDs** 和 **BusQueryInstanceID** 的请求。
 
 从 Windows 7 开始，总线驱动程序还必须处理其子 PDOs 的 BusQueryContainerID 请求。
 
 有关这些标识符 (Id) 的详细信息，请参阅 [设备标识字符串](../install/device-identification-strings.md)。
 
-**注意**   函数驱动程序和筛选器驱动程序不处理此 IRP。
+**注意**  函数驱动程序和筛选器驱动程序不处理此 IRP。
 
  ## <a name="value"></a>“值”
 
@@ -44,7 +43,7 @@ PnP 管理器和驱动程序将此 IRP 以 IRQL 被动级别发送到 \_ 任意�
 ## <a name="input-parameters"></a>输入参数
 
 
-[**IO \_ 堆栈 \_ 位置**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)结构的**QueryId. IdType**成员指定 () 请求的 ID 类型。 可能的值包括 BusQueryDeviceID、BusQueryHardwareIDs、BusQueryCompatibleIDs、BusQueryInstanceID 和 BusQueryContainerID。 保留以下 ID 类型： BusQueryDeviceSerialNumber。
+[**IO \_ 堆栈 \_ 位置**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)结构的 **QueryId. IdType** 成员指定 () 请求的 ID 类型。 可能的值包括 BusQueryDeviceID、BusQueryHardwareIDs、BusQueryCompatibleIDs、BusQueryInstanceID 和 BusQueryContainerID。 保留以下 ID 类型： BusQueryDeviceSerialNumber。
 
 ## <a name="output-parameters"></a>输出参数
 
@@ -56,7 +55,7 @@ PnP 管理器和驱动程序将此 IRP 以 IRQL 被动级别发送到 \_ 任意�
 
 驱动程序将 **Irp- &gt; IoStatus** 设置为状态 " \_ 成功" 或相应的 "错误" 状态。
 
-成功时，驱动程序将 ** &gt; IoStatus** 设置为指向所请求信息的 WCHAR 指针。 出现错误时，驱动程序将 **Irp- &gt; IoStatus** 设置为零。
+成功时，驱动程序将 **&gt; IoStatus** 设置为指向所请求信息的 WCHAR 指针。 出现错误时，驱动程序将 **Irp- &gt; IoStatus** 设置为零。
 
 <a name="operation"></a>操作
 ---------
@@ -97,9 +96,9 @@ PnP 管理器和驱动程序将此 IRP 以 IRQL 被动级别发送到 \_ 任意�
 
 对于 BusQueryInstanceID，总线驱动程序应提供包含设备 *实例 ID* 的字符串。 安装程序和总线驱动程序使用实例 ID 和其他信息来区分计算机上两个相同的设备。 实例 ID 在整个计算机中是唯一的，或者只在设备的父总线上是唯一的。
 
-如果实例 ID 只在总线上是唯一的，则总线驱动程序会为 BusQueryInstanceID 指定该字符串，同时为响应对设备的[**IRP \_ MN \_ 查询 \_ 功能**](irp-mn-query-capabilities.md)请求指定**UniqueID**值**FALSE** 。 如果 **UniqueID** 为 **FALSE**，则 PnP 管理器会通过添加有关设备父节点的信息来增强实例 ID，从而使 id 在计算机上是唯一的。 在这种情况下，总线驱动程序不应执行额外的步骤来使其设备的实例 Id 全局唯一;只需返回相应的功能信息，操作系统就会对其进行处理。
+如果实例 ID 只在总线上是唯一的，则总线驱动程序会为 BusQueryInstanceID 指定该字符串，同时为响应对设备的 [**IRP \_ MN \_ 查询 \_ 功能**](irp-mn-query-capabilities.md)请求指定 **UniqueID** 值 **FALSE** 。 如果 **UniqueID** 为 **FALSE**，则 PnP 管理器会通过添加有关设备父节点的信息来增强实例 ID，从而使 id 在计算机上是唯一的。 在这种情况下，总线驱动程序不应执行额外的步骤来使其设备的实例 Id 全局唯一;只需返回相应的功能信息，操作系统就会对其进行处理。
 
-如果总线驱动程序可以为每个子设备提供全局唯一 ID （如序列号），则总线驱动程序会为 BusQueryInstanceID 指定这些字符串，并为响应每个设备的[**IRP \_ MN \_ 查询 \_ 功能**](irp-mn-query-capabilities.md)请求指定**UniqueID**值**TRUE** 。
+如果总线驱动程序可以为每个子设备提供全局唯一 ID （如序列号），则总线驱动程序会为 BusQueryInstanceID 指定这些字符串，并为响应每个设备的 [**IRP \_ MN \_ 查询 \_ 功能**](irp-mn-query-capabilities.md)请求指定 **UniqueID** 值 **TRUE** 。
 
 **指定 BusQueryHardwareIDs 和 BusQueryCompatibleIDs**
 
@@ -107,7 +106,7 @@ PnP 管理器和驱动程序将此 IRP 以 IRQL 被动级别发送到 \_ 任意�
 
 总线驱动程序使用用于描述设备的注册表 Id 的 REG \_ 多 SZ 列表来响应每个请求 \_ 。 Id 列表的最大长度（以字符为单位），其中包括终止列表的两个 NULL 字符，最大值为 REGSTR \_ \_ \_ \_ 。
 
-返回多个 *硬件 id* 和/或多个 *兼容 ID*时，总线驱动程序应按照从最具体到最常见的顺序列出 id，以便为设备选择最佳的驱动程序匹配项。 硬件 Id 列表中的第一项是设备的最特定说明，因此，它通常与设备 ID 完全相同。
+返回多个 *硬件 id* 和/或多个 *兼容 ID* 时，总线驱动程序应按照从最具体到最常见的顺序列出 id，以便为设备选择最佳的驱动程序匹配项。 硬件 Id 列表中的第一项是设备的最特定说明，因此，它通常与设备 ID 完全相同。
 
 安装程序将根据 INF 文件中列出的 Id 检查 Id 以查找可能的匹配项。 安装程序首先扫描硬件 Id 列表，然后扫描兼容 Id 列表。 更早的条目被视为更具体的设备描述，更高的条目作为更常规的 (，因此与设备的最佳) 匹配更少。 如果在硬件 Id 列表中找不到匹配项，则安装程序可能会提示用户安装媒体，然后再转到兼容 Id 列表。
 
@@ -117,7 +116,7 @@ PnP 管理器和驱动程序将此 IRP 以 IRQL 被动级别发送到 \_ 任意�
 
 从 Windows 7 开始，总线驱动程序应为包含设备 [容器 ID](../install/container-ids.md) 的 BusQueryContainerID 提供一个字符串。 容器 ID 允许操作系统将所有功能设备从一个可移动物理设备进行分组。 例如，从可移动多功能设备获得的所有功能设备具有相同的容器 ID。 有关在特殊情况下报告容器 Id 的详细信息，例如可能跨多个容器中多个磁盘但不属于任何容器的卷设备，请参阅 [容器 Id 概述](../install/overview-of-container-ids.md)。
 
-可移动的物理设备被定义为一个子设备，该设备的总线驱动程序为响应[**IRP \_ MN \_ 查询 \_ 功能**](irp-mn-query-capabilities.md)请求而指定了**TRUE**的**可移动**功能。 有关 **可移动** 值的详细信息，请参阅 [**设备 \_ 功能**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities)。
+可移动的物理设备被定义为一个子设备，该设备的总线驱动程序为响应 [**IRP \_ MN \_ 查询 \_ 功能**](irp-mn-query-capabilities.md)请求而指定了 **TRUE** 的 **可移动** 功能。 有关 **可移动** 值的详细信息，请参阅 [**设备 \_ 功能**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities)。
 
 总线驱动程序根据设备提供的特定于总线的唯一 ID 创建容器 ID。 有关详细信息，请参阅 [如何生成容器 id](../install/how-container-ids-are-generated.md)。
 
@@ -125,7 +124,7 @@ PnP 管理器和驱动程序将此 IRP 以 IRQL 被动级别发送到 \_ 任意�
 
 -   设备不支持总线驱动程序可用于生成容器 ID 的特定于总线的唯一 ID。
 
--   总线驱动程序以前指定了**FALSE**的**可移动**功能，以响应对设备的[**IRP \_ MN \_ 查询 \_ 功能**](irp-mn-query-capabilities.md)请求。
+-   总线驱动程序以前指定了 **FALSE** 的 **可移动** 功能，以响应对设备的 [**IRP \_ MN \_ 查询 \_ 功能**](irp-mn-query-capabilities.md)请求。
 
 **正在发送此 IRP**
 
@@ -161,7 +160,7 @@ IRP 完成并且驱动程序已使用 ID 完成后，驱动程序必须释放由
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [设备标识字符串](../install/device-identification-strings.md)

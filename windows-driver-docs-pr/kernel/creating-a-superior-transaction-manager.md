@@ -1,7 +1,6 @@
 ---
 title: 创建高级事务管理器
 description: 创建高级事务管理器
-ms.assetid: 6f6bf61a-fe53-47b5-9559-f76334969af8
 keywords:
 - 事务管理器 WDK KTM
 - 高级事务管理器 WDK KTM
@@ -11,17 +10,17 @@ keywords:
 - 从属登记 WDK KTM
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e30ca0a8117646a76a86de7c6fe54d7abdb7866
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: b88df4af2f92e1ce381f6f341c738eadf0fec84a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190081"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816113"
 ---
 # <a name="creating-a-superior-transaction-manager"></a>创建高级事务管理器
 
 
-在 KTM 中， *上级事务管理* 器是一个资源管理器，它为它所参与的事务创建高级的登记。 *上级登记*是一种登记，它向资源管理器授予协调登记的事务的[提交操作](handling-commit-operations.md)的能力。 换句话说，事务客户端或上级事务管理器可以启动事务的预准备/准备/提交序列。
+在 KTM 中， *上级事务管理* 器是一个资源管理器，它为它所参与的事务创建高级的登记。 *上级登记* 是一种登记，它向资源管理器授予协调登记的事务的 [提交操作](handling-commit-operations.md)的能力。 换句话说，事务客户端或上级事务管理器可以启动事务的预准备/准备/提交序列。
 
 资源管理器为事务创建了上级登记后，KTM 拒绝对 [**ZwCommitTransaction**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcommittransaction) 的所有调用。 因此，事务客户端无法提交此类事务。 创建上级登记的资源管理器必须调用 [**ZwPrePrepareEnlistment**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ntpreprepareenlistment)、 [**ZwPrepareEnlistment**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ntprepareenlistment)和 [**ZwCommitEnlistment**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcommitenlistment)。
 

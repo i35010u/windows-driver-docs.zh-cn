@@ -1,24 +1,23 @@
 ---
 title: 访问用户缓冲区
 description: 访问用户缓冲区
-ms.assetid: 5ab32074-0949-4cdc-8a95-1bded0085ce1
 keywords:
 - 筛选器管理器 WDK 文件系统微筛选器，用户缓冲区
 - 缓冲 WDK 文件系统微筛选器
 - 用户缓冲区 WDK 文件系统微筛选器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c4a625a76d92135ea93bf910f71307e75c5df2a3
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 4255ccf71b16411c00e49fcf4a58146225d30e57
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066228"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816289"
 ---
 # <a name="accessing-user-buffers"></a>访问用户缓冲区
 
 
-特定于给定 i/o 操作的所有参数（包括缓冲区和内存描述符列表 (MDLs) ）在 [**FLT \_ 参数**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters) 联合中定义。 此联合包含在[**FLT \_ IO \_ 参数 \_ 块**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构中，该结构通过表示 I/o 操作的[**FLT \_ 回调 \_ 数据**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)结构的**Iopb**成员访问。 筛选器管理器和微筛选器驱动程序都使用 **FLT \_ 回调 \_ 数据** 结构来启动和处理 i/o 操作。
+特定于给定 i/o 操作的所有参数（包括缓冲区和内存描述符列表 (MDLs) ）在 [**FLT \_ 参数**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters) 联合中定义。 此联合包含在 [**FLT \_ IO \_ 参数 \_ 块**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构中，该结构通过表示 I/o 操作的 [**FLT \_ 回调 \_ 数据**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)结构的 **Iopb** 成员访问。 筛选器管理器和微筛选器驱动程序都使用 **FLT \_ 回调 \_ 数据** 结构来启动和处理 i/o 操作。
 
 [**FLT \_ 参数**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters)联合还包含基于 IRP 的操作的任何参数定义，这些操作特定于用于该操作的缓冲方法 (缓冲、直接 i/o，或者既非缓冲的，也不是直接 i/o) 。 它还包含基于非 IRP 操作的参数定义 (fast i/o 和 FsFilter 回调例程) 。
 

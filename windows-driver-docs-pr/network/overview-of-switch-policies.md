@@ -1,15 +1,14 @@
 ---
 title: 交换机策略概述
 description: 交换机策略概述
-ms.assetid: DB9368CE-96D4-48C9-AE18-601EE4A09001
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 86daa25e01d2cd7852b675ea431e9e4051c9c2a7
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ffa5712f3092e4076f528ac5a7c92315d1c08a8f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207855"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815923"
 ---
 # <a name="overview-of-switch-policies"></a>交换机策略概述
 
@@ -28,9 +27,9 @@ ISV 定义自定义交换机属性的格式。 自定义交换机属性的格式
 
 自定义开关属性是通过 (MOF) 类定义的托管对象格式定义的。 MOF 文件注册到 WMI 管理层后，会将基础扩展设置为自定义交换机策略。
 
-自定义开关属性由**NdisSwitchPropertyTypeCustom**的[**NDIS \_ 开关 \_ 属性 \_ 类型**](/windows-hardware/drivers/ddi/ntddndis/ne-ntddndis-_ndis_switch_property_type)枚举值指定。 每个自定义开关属性都通过 GUID 值进行唯一定义。 该扩展插件管理已为其配置了属性 GUID 值的自定义交换机属性。
+自定义开关属性由 **NdisSwitchPropertyTypeCustom** 的 [**NDIS \_ 开关 \_ 属性 \_ 类型**](/windows-hardware/drivers/ddi/ntddndis/ne-ntddndis-_ndis_switch_property_type)枚举值指定。 每个自定义开关属性都通过 GUID 值进行唯一定义。 该扩展插件管理已为其配置了属性 GUID 值的自定义交换机属性。
 
-**注意**   使用属性的 GUID 值配置扩展的方法对于 ISV 是专有的。
+**注意**  使用属性的 GUID 值配置扩展的方法对于 ISV 是专有的。
 
  
 
@@ -44,7 +43,7 @@ ISV 定义自定义交换机属性的格式。 自定义交换机属性的格式
 
 转发扩展可以通过 vetoing OID 请求来阻止预配新的或已更新的交换机策略。 此扩展通过完成 OID 请求来实现此功能，但状态 \_ 数据 \_ 不 \_ 被接受。 如果扩展不否决 OID 请求，则必须调用 [**NdisFOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequest) 将 oid 请求向下转发到可扩展的交换机控制路径。
 
-**注意**   如果扩展不否决 OID 请求，则会在请求完成时监视状态。 此扩展将执行此操作，以确定可扩展交换机控制路径中的基础扩展或可扩展交换机接口是否否决了 OID 请求。
+**注意**  如果扩展不否决 OID 请求，则会在请求完成时监视状态。 此扩展将执行此操作，以确定可扩展交换机控制路径中的基础扩展或可扩展交换机接口是否否决了 OID 请求。
 
  
 

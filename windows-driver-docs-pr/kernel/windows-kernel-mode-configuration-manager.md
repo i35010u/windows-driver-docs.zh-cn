@@ -1,15 +1,14 @@
 ---
 title: Windows 内核模式配置管理器
 description: Windows 内核模式配置管理器
-ms.assetid: 0499121b-6f0b-464f-b422-610122fb7d3b
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: a29de2af3845f738ee3ed69dd3f17f273dee0c36
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 2224033faf7d80ddbb27df79dce207fcf9ac5775
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187043"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816017"
 ---
 # <a name="windows-kernel-mode-configuration-manager"></a>Windows 内核模式配置管理器
 

@@ -1,9 +1,8 @@
 ---
-title: WIA\_IPA\_PIXELS\_PER\_LINE
-description: WIA\_IPA\_像素\_每\_行属性包含的图像 （即，图像，以像素为单位的宽度） 的每个行中的像素数。 WIA 微型驱动程序创建并维护此属性。
-ms.assetid: ec845e34-d883-4960-a1cd-39b99e2f5941
+title: WIA \_ \_ \_ 每行 IPA 像素 \_
+description: WIA \_ IPA \_ 象素（ \_ 每 \_ 行）属性包含 (图像的每一行中的像素数，即图像的宽度（以像素为单位）) 。 WIA 微型驱动程序创建并维护此属性。
 keywords:
-- WIA_IPA_PIXELS_PER_LINE 成像设备
+- WIA_IPA_PIXELS_PER_LINE 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,35 +13,35 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d45ebcc5ee4cb8889881843afe37c095e88c8d0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9314c6e3a29f61c7a52399423349183f27988593
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384650"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817251"
 ---
-# <a name="wiaipapixelsperline"></a>WIA\_IPA\_PIXELS\_PER\_LINE
+# <a name="wia_ipa_pixels_per_line"></a>WIA \_ \_ \_ 每行 IPA 像素 \_
 
 
-WIA\_IPA\_像素\_每\_行属性包含的图像 （即，图像，以像素为单位的宽度） 的每个行中的像素数。 WIA 微型驱动程序创建并维护此属性。
+WIA \_ IPA \_ 象素（ \_ 每 \_ 行）属性包含 (图像的每一行中的像素数，即图像的宽度（以像素为单位）) 。 WIA 微型驱动程序创建并维护此属性。
 
 ## <span id="ddk_wia_ipa_pixels_per_line_si"></span><span id="DDK_WIA_IPA_PIXELS_PER_LINE_SI"></span>
 
 
-属性类型：VT\_I4
+属性类型： VT \_ I4
 
-有效值：WIA\_PROP\_NONE
+有效值： WIA " \_ \_ 无"
 
 访问权限：只读
 
 <a name="remarks"></a>备注
 -------
 
-WIA\_IPA\_像素\_每\_行属性是可选的 Windows Vista 驱动程序的所有已启用传输的项。 如果 WIA\_IPA\_像素\_每\_行， [ **WIA\_IPA\_字节\_每\_行**](wia-ipa-bytes-per-line.md)，并[ **WIA\_IPA\_号\_OF\_行**](wia-ipa-number-of-lines.md)实现的对于 Windows Server 2003，编写的应用程序Windows XP 和早期 Windows 版本可以估计每个行中，所需的每个扫描行中，字节数和在图像中的扫描线总数的像素的数。 这些值不准确，因为图像处理筛选器可能会更改实际值的 WIA\_IPA\_像素\_每\_行，WIA\_IPA\_字节\_每个\_线条和 WIA\_IPA\_数量\_OF\_行表示。
+\_ \_ \_ \_ 对于所有启用了传输的项，Windows VISTA 驱动程序的 WIA IPA 像素属性是可选的。 如果 WIA \_ IPA \_ 像素 \_ / \_ 行、 [**wia \_ IPA \_ 字节 \_ / \_ 行**](wia-ipa-bytes-per-line.md)和 [**WIA \_ IPA \_ \_ \_**](wia-ipa-number-of-lines.md) 实现，则为 Windows Server 2003、windows XP 和以前的 windows 版本编写的应用程序可以估计每行的像素数、每个扫描行所需的字节数，以及图像中的扫描行总数。 这些值是不准确的，因为图像处理筛选器可能会修改实际值，这些值 \_ \_ 为 \_ 每行 IPA 像素 \_ ，wia \_ IPA \_ BYTES \_ per \_ line，wia \_ IPA \_ \_ 行数 \_ 表示。
 
-如果 Windows Vista 驱动程序不提供这些属性，WIA 服务中的兼容性层将添加这些属性。 当 WIA 服务将添加这些属性时，它们将更新通过使用[ **WIA\_IPA\_深度**](wia-ipa-depth.md)， [ **WIA\_IP\_大 XEXTENT**](wia-ips-xextent.md)，并[ **WIA\_IP\_YEXTENT** ](wia-ips-yextent.md)属性。
+如果 Windows Vista 驱动程序未提供这些属性，则 WIA 服务中的兼容性层将添加这些属性。 当 WIA 服务添加这些属性时，将使用 [**wia \_ IPA \_ DEPTH**](wia-ipa-depth.md)、 [**wia \_ ips \_ XEXTENT**](wia-ips-xextent.md)和 [**wia \_ ip \_ YEXTENT**](wia-ips-yextent.md) 属性来更新这些属性。
 
-Windows Vista 应用程序应始终会解析映像标头数据，以获取有关可从之前的属性的信息更准确的图像的信息。
+Windows Vista 应用程序应始终分析映像标头数据，以获取与之前属性中提供的信息更精确的映像的相关信息。
 
 <a name="requirements"></a>要求
 ------------
@@ -54,12 +53,12 @@ Windows Vista 应用程序应始终会解析映像标头数据，以获取有关
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>对于 Windows Vista 驱动程序的所有传输启用项可选。</p></td>
+<td><p>版本</p></td>
+<td><p>对于所有启用了传输的项，Windows Vista 驱动程序都可选。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>
@@ -67,15 +66,15 @@ Windows Vista 应用程序应始终会解析映像标头数据，以获取有关
 ## <a name="see-also"></a>请参阅
 
 
-[**WIA\_IPA\_BYTES\_PER\_LINE**](wia-ipa-bytes-per-line.md)
+[**WIA \_ IPA \_ 字节 \_ / \_ 行**](wia-ipa-bytes-per-line.md)
 
-[**WIA\_IPA\_DEPTH**](wia-ipa-depth.md)
+[**WIA \_ IPA \_ 深度**](wia-ipa-depth.md)
 
-[**WIA\_IPA\_数\_OF\_行**](wia-ipa-number-of-lines.md)
+[**WIA \_ IPA \_ \_ 行数 \_**](wia-ipa-number-of-lines.md)
 
-[**WIA\_IPS\_XEXTENT**](wia-ips-xextent.md)
+[**WIA \_ IP \_ XEXTENT**](wia-ips-xextent.md)
 
-[**WIA\_IPS\_YEXTENT**](wia-ips-yextent.md)
+[**WIA \_ IP \_ YEXTENT**](wia-ips-yextent.md)
 
  
 

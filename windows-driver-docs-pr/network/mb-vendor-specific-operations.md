@@ -1,15 +1,14 @@
 ---
 title: MB 供应商特定的操作
 description: MB 供应商特定的操作
-ms.assetid: 92ec8913-4d0b-45d8-91d1-7ce8140d2ef7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 52b555966f952e92ee487c7c8157b46c9c4fdf00
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b58a0ee1a74c1b2b04dd6facdb4427d02e7c00a2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207249"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815941"
 ---
 # <a name="mb-vendor-specific-operations"></a>MB 供应商特定的操作
 

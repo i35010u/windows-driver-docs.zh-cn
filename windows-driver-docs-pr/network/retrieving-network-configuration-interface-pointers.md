@@ -1,7 +1,6 @@
 ---
 title: 检索网络配置接口指针
 description: 检索网络配置接口指针
-ms.assetid: ac3638a1-d039-478e-baec-c73d4d1b6751
 keywords:
 - 通知对象 WDK 网络，接口指针
 - 网络通知对象 WDK，接口指针
@@ -10,12 +9,12 @@ keywords:
 - 指针 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 677b7b375f30cbe1cc64507f38905e694cc18628
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0d7fc1919c30c057851cd28dd566903ce1a696c9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213750"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817081"
 ---
 # <a name="retrieving-network-configuration-interface-pointers"></a>检索网络配置接口指针
 

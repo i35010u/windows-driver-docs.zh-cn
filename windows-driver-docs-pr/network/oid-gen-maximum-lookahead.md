@@ -1,21 +1,20 @@
 ---
 title: OID_GEN_MAXIMUM_LOOKAHEAD
-description: 为查询，OID_GEN_MAXIMUM_LOOKAHEAD OID 指定最大 NIC 可以提供作为预测先行数据的字节数。
-ms.assetid: 086581f7-c0a5-4355-82fe-22f53201b540
+description: 作为查询，OID_GEN_MAXIMUM_LOOKAHEAD OID 指定 NIC 可提供的最大字节数，作为预测先行数据。
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_GEN_MAXIMUM_LOOKAHEAD 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_GEN_MAXIMUM_LOOKAHEAD 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: f73390c6a8ec9289b122865a914ea898c20e1e22
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6bdd1c615eaca89c1f44e64ed67e6ca8dadc29a6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358863"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816547"
 ---
-# <a name="oidgenmaximumlookahead"></a>OID\_GEN\_最大\_预测先行
+# <a name="oid_gen_maximum_lookahead"></a>OID \_ 生成 \_ 最大 \_ 预测先行
 
 
-为查询，OID\_GEN\_最大\_预测先行 OID 作为预测先行数据指定最大 NIC 可以提供的字节数。 此规范不包括标头。
+作为查询，OID \_ GEN \_ 最大 \_ 预测先行 OID 指定 NIC 可提供的最大字节数，作为预测先行数据。 此规范不包含标头。
 
 **版本信息**
 
@@ -37,11 +36,11 @@ ms.locfileid: "63358863"
 <a name="remarks"></a>备注
 -------
 
-NDIS 6.0 和更高版本的微型端口驱动程序不会收到此 OID 请求。 NDIS 处理此 OID 微型端口驱动程序在初始化过程中提供的缓存值。
+NDIS 6.0 和更高版本的微型端口驱动程序不会收到此 OID 请求。 NDIS 使用小型端口驱动程序在初始化期间提供的缓存值处理此 OID。
 
-上层驱动程序检查预测先行数据以确定是否与预期数据关联的数据包适用于一个或多个其客户端。
+上层驱动程序检查预测先行数据，以确定与预测先行数据关联的数据包是否适用于其一个或多个客户端。
 
-如果基础驱动程序支持 multipacket 接收迹象，绑定的协议驱动程序提供每个指示完整网络数据包。 因此，此值等同于返回[OID\_代\_接收\_阻止\_大小](oid-gen-receive-block-size.md)。
+如果基础驱动程序支持 multipacket 接收指示，则会在每次指示时为绑定协议驱动程序提供完整的网络数据包。 因此，此值与为 [OID 生成 \_ \_ 接收 \_ 块 \_ 大小](oid-gen-receive-block-size.md)返回的值相同。
 
 <a name="requirements"></a>要求
 ------------
@@ -53,8 +52,8 @@ NDIS 6.0 和更高版本的微型端口驱动程序不会收到此 OID 请求。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Ntddndis.h （包括 Ndis.h）</td>
+<td><p>标头</p></td>
+<td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
 </table>
@@ -62,7 +61,7 @@ NDIS 6.0 和更高版本的微型端口驱动程序不会收到此 OID 请求。
 ## <a name="see-also"></a>请参阅
 
 
-[OID\_GEN\_RECEIVE\_BLOCK\_SIZE](oid-gen-receive-block-size.md)
+[OID \_ 生成 \_ 接收 \_ 块 \_ 大小](oid-gen-receive-block-size.md)
 
  
 

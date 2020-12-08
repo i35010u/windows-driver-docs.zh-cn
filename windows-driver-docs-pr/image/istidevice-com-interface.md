@@ -1,15 +1,14 @@
 ---
 title: IStiDevice COM 接口
 description: IStiDevice COM 接口
-ms.assetid: b026fb74-9ce6-4d4e-8a5b-402731904064
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 09fb783742fdd282f1a216d8bc1f35520b627df6
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 2dbf1a1186391a3b9b3c59da2a4d33bf78bd54d0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104921"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96816719"
 ---
 # <a name="istidevice-com-interface"></a>IStiDevice COM 接口
 
@@ -19,7 +18,7 @@ ms.locfileid: "90104921"
 
 **IStiDevice** COM 接口使应用程序能够与静态图像设备进行通信。 接口方法允许应用程序发送和接收数据和命令，运行诊断测试，接收 [静止图像设备事件](still-image-device-events.md)的通知，以及获取设备功能和状态信息。
 
-可以通过调用[ISTILLIMAGE COM 接口](istillimage-com-interface.md)的**CreateDevice**方法获取对**IStiDevice**接口的访问。 许多 **IStiDevice** 接口的方法通过调用 [IStiUSD COM 接口](istiusd-com-interface.md)定义的命名方法来实现。
+可以通过调用 [ISTILLIMAGE COM 接口](istillimage-com-interface.md)的 **CreateDevice** 方法获取对 **IStiDevice** 接口的访问。 许多 **IStiDevice** 接口的方法通过调用 [IStiUSD COM 接口](istiusd-com-interface.md)定义的命名方法来实现。
 
 下表列出并描述了 **IStiDevice** 接口提供的所有方法。 该表指示通常必须调用每个方法的客户端的类型。
 
@@ -32,7 +31,7 @@ ms.locfileid: "90104921"
 <thead>
 <tr class="header">
 <th>方法</th>
-<th>说明</th>
+<th>描述</th>
 <th>典型调用方</th>
 </tr>
 </thead>
