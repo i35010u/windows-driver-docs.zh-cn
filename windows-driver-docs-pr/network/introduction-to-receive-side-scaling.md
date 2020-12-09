@@ -7,13 +7,13 @@ keywords:
 - CPU 确定 WDK RSS
 ms.date: 09/04/2020
 ms.localizationpriority: medium
-ms.custom: contperfq1
-ms.openlocfilehash: 1d499ddc8090d4f3640032114e6840ce5524254d
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.custom: contperf-fy21q1
+ms.openlocfilehash: 45b188d1e15160df6e35d10e988c69f509c82cc7
+ms.sourcegitcommit: 66043df62672b79a8f9fcb0bc2deb26b8f182fb6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96803689"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96912477"
 ---
 # <a name="introduction-to-receive-side-scaling"></a>接收端缩放简介
 

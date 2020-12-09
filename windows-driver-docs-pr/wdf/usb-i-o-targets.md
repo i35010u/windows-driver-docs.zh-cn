@@ -9,12 +9,12 @@ keywords:
 - USB i/o 目标 WDK KMDF，关于 USB i/o 目标
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7dc2ea4dd25637555f4ebca6113499f2c8873282
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 21d309ae2280c59b1bb446d870507aa6ce209e50
+ms.sourcegitcommit: 66043df62672b79a8f9fcb0bc2deb26b8f182fb6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96824839"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96912431"
 ---
 # <a name="usb-io-targets"></a>USB I/O 目标
 
@@ -28,7 +28,7 @@ ms.locfileid: "96824839"
 
 此框架通过发送 USB 请求块 ([**URBs**](/windows-hardware/drivers/ddi/usb/ns-usb-_urb)) ，与 usb 设备的 i/o 目标通信。 该框架提供了对象方法，这些方法可隐藏驱动程序中的 URBs，以便驱动程序无需生成并发送自身。 如果希望驱动程序生成 URBs，KMDF 驱动程序可以使用一组额外的对象方法来生成和发送 URBs。
 
-有关如何确定 USB 设备所需的驱动程序类型的信息，请参阅 [选择用于开发 usb 客户端驱动](/windows-hardware/drivers/ddi/index)程序的驱动程序模型。
+有关如何确定 USB 设备所需的驱动程序类型的信息，请参阅 [选择用于开发 usb 客户端驱动](/windows-hardware/drivers/usbcon/winusb-considerations)程序的驱动程序模型。
 
 本节包括：
 

@@ -3,13 +3,13 @@ title: 为供应商提供的系统定义的设备安装程序类
 description: 为供应商提供的系统定义的设备安装程序类
 ms.date: 11/20/2020
 ms.localizationpriority: medium
-ms.custom: contperfq1
-ms.openlocfilehash: 7896a06e6abd263b174efad456e0b288d45907d2
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.custom: contperf-fy21q1
+ms.openlocfilehash: da31a282ab91d37662d6c29199b92999a07a2b46
+ms.sourcegitcommit: 66043df62672b79a8f9fcb0bc2deb26b8f182fb6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96829565"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96912469"
 ---
 # <a name="system-defined-device-setup-classes-available-to-vendors"></a>为供应商提供的系统定义的设备安装程序类  
 

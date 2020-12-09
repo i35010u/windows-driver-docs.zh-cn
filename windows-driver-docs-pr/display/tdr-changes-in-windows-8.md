@@ -5,13 +5,13 @@ keywords:
 - TDR (超时检测和恢复) WDK 显示，Windows 8 中的更改
 ms.date: 10/06/2020
 ms.localizationpriority: medium
-ms.custom: contperfq2
-ms.openlocfilehash: c0e5d80368f5daa29958403fecfce5bdb5bd93e6
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.custom: contperf-fy21q2
+ms.openlocfilehash: ef39a992e148cb675d790590905a741d8ce908c3
+ms.sourcegitcommit: 66043df62672b79a8f9fcb0bc2deb26b8f182fb6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96839569"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96912437"
 ---
 # <a name="tdr-in-windows-8-and-later"></a>Windows 8 及更高版本中的 TDR
 

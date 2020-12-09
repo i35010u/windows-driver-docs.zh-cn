@@ -2,14 +2,14 @@
 title: 构建基本 v4 打印机驱动程序
 description: 使用 Microsoft Visual Studio 2019 中的驱动程序开发向导来生成一个基本 v4 打印机驱动程序，以选择创建功能打印机驱动程序的最小功能集。
 ms.date: 09/24/2020
-ms.custom: contperfq1
+ms.custom: contperf-fy21q1
 ms.localizationpriority: medium
-ms.openlocfilehash: abecc1ccf395be4e8d10ae242e07e85bffe4c3fc
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: b2ff76e53e0ed90f85f6e7b7e4f614e904505349
+ms.sourcegitcommit: 66043df62672b79a8f9fcb0bc2deb26b8f182fb6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96797761"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96912473"
 ---
 # <a name="build-a-basic-v4-printer-driver"></a>构建基本 v4 打印机驱动程序
 
@@ -21,7 +21,7 @@ ms.locfileid: "96797761"
 
 有关打印机驱动程序选项的详细信息，请参阅 [浏览向导中的驱动程序选项](exploring-the-driver-options-in-the-wizard.md)。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 1. 按照[ (WDK 下载 Windows 驱动程序工具包](../download-the-wdk.md)中的指南进行操作) 
 
@@ -254,7 +254,7 @@ DiskName="MyV4PrintDriver Installation Disk"
 
     - 选择 MyV4PrintDriverRenderFilter-PipelineConfig.xml 文件，然后按 " **打开**"。
 
-    - 选择“确定”。
+    - 选择“确定”  。
 
 ## <a name="add-a-reference-to-the-render-filter-to-the-driver-package"></a>将对呈现筛选器的引用添加到驱动程序包
 
@@ -280,7 +280,7 @@ DiskName="MyV4PrintDriver Installation Disk"
 
     - 在 " **可选参数** " 字段中键入驱动程序的名称 (名称) 附近没有任何引号。
 
-    - 选择“确定”。
+    - 选择“确定”  。
 
 ## <a name="configure-driver-signing"></a>配置驱动程序签名
 
@@ -296,7 +296,7 @@ DiskName="MyV4PrintDriver Installation Disk"
 
 1. 选择 " **TimeStampServer**"，然后从下拉框中选择 "Verisign"。
 
-1. 选择“确定”。
+1. 选择“确定”  。
 
 ## <a name="build-and-deploy-the-driver"></a>生成和部署驱动程序
 

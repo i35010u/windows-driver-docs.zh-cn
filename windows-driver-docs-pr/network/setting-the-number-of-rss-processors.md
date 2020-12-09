@@ -6,13 +6,13 @@ keywords:
 - CPU 配置 WDK RSS
 ms.date: 09/21/2020
 ms.localizationpriority: medium
-ms.custom: contperfq1
-ms.openlocfilehash: 90a69c79a0df7c9cfc81da17473d62c0d8768ef1
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.custom: contperf-fy21q1
+ms.openlocfilehash: 1a3e51775455d4540663da6ca992e906535918d8
+ms.sourcegitcommit: 66043df62672b79a8f9fcb0bc2deb26b8f182fb6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96803499"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96912467"
 ---
 # <a name="setting-the-number-of-rss-processors"></a>设置 RSS 处理器数目
 

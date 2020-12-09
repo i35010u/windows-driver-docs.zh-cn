@@ -8,13 +8,13 @@ keywords:
 - 任务卸载 WDK TCP/IP 传输，禁用服务
 ms.date: 10/30/2020
 ms.localizationpriority: medium
-ms.custom: contperfq2
-ms.openlocfilehash: d661c1edce72e9205af0196dc2d5db24f5176eee
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.custom: contperf-fy21q2
+ms.openlocfilehash: 0934cacf85f89b9e847a15f619daa47291e84ce8
+ms.sourcegitcommit: 66043df62672b79a8f9fcb0bc2deb26b8f182fb6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96839415"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96912433"
 ---
 # <a name="using-registry-values-to-enable-and-disable-task-offloading"></a>使用注册表值启用和禁用任务卸载
 
@@ -30,7 +30,7 @@ ms.locfileid: "96839415"
 
 精细关键字定义如下：
 
-|关键字|描述|
+|关键字|说明|
 |--- |--- |
 |**\*IPChecksumOffloadIPv4**|描述设备是启用还是禁用了 IPv4 校验和的计算。|
 |**\*TCPChecksumOffloadIPv4**|描述设备是启用还是禁用了对 IPv4 数据包的 TCP 校验和的计算。|
@@ -46,7 +46,7 @@ ms.locfileid: "96839415"
 
 下表描述了可用于配置卸载服务的精细关键字。
 
-|SubkeyName|ParamDesc|“值”|EnumDesc|
+|SubkeyName|ParamDesc|值|EnumDesc|
 |--- |--- |--- |--- |
 |**_IPChecksumOffloadIPv4_**|IPv4 校验和卸载|0|已禁用|
 |||1|已启用 Tx|
@@ -96,7 +96,7 @@ ms.locfileid: "96839415"
 
 按如下所示定义分组关键字：
 
-|关键字|描述|
+|关键字|说明|
 |--- |--- |
 |**\*TCPUDPChecksumOffloadIPv4**|描述设备是启用还是禁用通过 IPv4 计算 IP、TCP 和 UDP 校验和。|
 |**\*TCPUDPChecksumOffloadIPv6**|描述设备是启用还是禁用了对 IPv6 的 TCP 和 UDP 校验和的计算。|
@@ -104,7 +104,7 @@ ms.locfileid: "96839415"
 
 下表描述了可用于配置卸载服务的分组关键字。
 
-|SubkeyName|ParamDesc|“值”|EnumDesc|
+|SubkeyName|ParamDesc|值|EnumDesc|
 |--- |--- |--- |--- |
 |**_TCPUDPChecksumOffloadIPv4_**|TCP/UDP 校验和卸载 (IPv4) |0|已禁用|
 |||1|已启用 Tx|

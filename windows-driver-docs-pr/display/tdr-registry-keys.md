@@ -13,13 +13,13 @@ keywords:
 - TDR 测试，Windows 硬件实验室工具包
 ms.date: 10/06/2020
 ms.localizationpriority: medium
-ms.custom: contperfq2
-ms.openlocfilehash: e789d313bc53fd66a82015fe6236814464438aa2
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.custom: contperf-fy21q2
+ms.openlocfilehash: 0f76136ffe44e6e588e313771f4204bcb89a5554
+ms.sourcegitcommit: 66043df62672b79a8f9fcb0bc2deb26b8f182fb6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96838943"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96912465"
 ---
 # <a name="testing-and-debugging-tdr"></a>测试和调试 TDR
 
@@ -46,7 +46,7 @@ ValueData : TdrLevelXxx (see the following table)
 ```
 
 其中，TdrLevel *Xxx* 可以是以下值之一：
-| “值” | 含义 |
+| 值 | 含义 |
 | ----- | ------- |
 | TdrLevelOff (0)  | 已禁用检测 |
 | TdrLevelBugcheck (1)  | 检测到超时时检查 Bug例如，无恢复。 |
@@ -86,7 +86,7 @@ ValueType : REG_DWORD
 ValueData : TDR_DEBUG_MODE_XXX (see the following table)
 ```
 
-| “值” | 含义 |
+| 值 | 含义 |
 | ----- | ------- |
 | TDR_DEBUG_MODE_OFF (0)  | 在恢复之前中断内核调试器，以允许调查超时。 |
 | TDR_DEBUG_MODE_IGNORE_TIMEOUT (1)  | 忽略任何超时。 |

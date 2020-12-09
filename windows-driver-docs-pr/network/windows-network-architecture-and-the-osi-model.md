@@ -10,13 +10,13 @@ keywords:
 - Windows 网络体系结构 WDK
 ms.date: 09/04/2020
 ms.localizationpriority: medium
-ms.custom: contperfq1
-ms.openlocfilehash: 00fad4b7cc1ab827b3844f922a88e2af8ddc154c
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.custom: contperf-fy21q1
+ms.openlocfilehash: 1ca9215cc3d846e1b07927593d62b6bde48da8f0
+ms.sourcegitcommit: 66043df62672b79a8f9fcb0bc2deb26b8f182fb6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96834059"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96912441"
 ---
 # <a name="windows-network-architecture-and-the-osi-model"></a>Windows 网络体系结构和 OSI 模型
 

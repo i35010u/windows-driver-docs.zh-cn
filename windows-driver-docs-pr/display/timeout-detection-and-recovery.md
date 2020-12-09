@@ -6,13 +6,13 @@ keywords:
 - TDR (超时检测和恢复) WDK 图形
 ms.date: 10/06/2020
 ms.localizationpriority: medium
-ms.custom: contperfq2
-ms.openlocfilehash: 90a4e0581a1cd6f527bf9bfad4df792b0344035f
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.custom: contperf-fy21q2
+ms.openlocfilehash: 5de92cce67280022f62dfd48fa42c5a17fcda5b2
+ms.sourcegitcommit: 66043df62672b79a8f9fcb0bc2deb26b8f182fb6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96821513"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96912439"
 ---
 # <a name="timeout-detection-and-recovery-tdr"></a>超时检测和恢复 (TDR)
 
