@@ -3,12 +3,12 @@ title: 微型驱动程序和 HID 类驱动程序
 description: HID 类驱动程序的操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9910c1d77549b1182594432f9e29437a884590f7
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 04ace595a19e6fc40d77050d7fc95d8f9de33729
+ms.sourcegitcommit: 4f8a40cf186776a983d92cd84a25d02eaab9cbbd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96805609"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96926694"
 ---
 # <a name="minidrivers-and-the-hid-class-driver"></a>微型驱动程序和 HID 类驱动程序
 
@@ -29,7 +29,7 @@ HID 类驱动程序执行以下操作：
 
     HID 类驱动程序以透明方式管理并路由上层驱动程序和应用程序与支持 HID 集合的基础输入设备之间的所有通信。 它管理不同的输入设备和输入队列使用的不同数据协议，这些数据协议支持同一 HID 集合上的多个打开的文件。
 
-    HID 类的上层接口包含 [hid 类驱动程序 IOCTLs](/windows-hardware/drivers/ddi/index)、 [HIDClass 支持例程](/windows-hardware/drivers/ddi/index)和 [HIDClass 结构](/windows-hardware/drivers/ddi/index)。
+    HID 类的上层接口包含 [hid 类驱动程序 IOCTLs](/windows-hardware/drivers/ddi/_hid/#hid-class-driver-ioctls)、 [HIDClass 支持例程](/windows-hardware/drivers/ddi/_hid/#hidclass-support-routines)和 [HIDClass 结构](/windows-hardware/drivers/ddi/_hid/#structures)。
 
 -   通过调用微型驱动程序的标准驱动程序例程与 HID 微型驱动程序通信。
 
