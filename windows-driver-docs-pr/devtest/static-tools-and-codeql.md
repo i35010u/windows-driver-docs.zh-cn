@@ -4,14 +4,14 @@ description: 在 Windows 驱动程序源代码中使用静态工具和 CodeQL �
 keywords:
 - 动态验证工具 WDK
 - 静态验证工具 WDK
-ms.date: 12/03/2020
+ms.date: 12/09/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 7716d243dd735d5b7548634c31005fd34617a89c
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 3205d728344a60315f9fe5270f503db9203c89ac
+ms.sourcegitcommit: 11a82f18ee7874537597792cb77f749d5ce6eee5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96819673"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "96999150"
 ---
 # <a name="codeql-and-the-static-tools-logo-test"></a>CodeQL 和静态工具徽标测试
 
@@ -97,7 +97,7 @@ C:\codeql-home\>git clone https://github.com/github/codeql.git
 
 > [!NOTE]
 > 使用 CodeQL 进行 WHCP 测试的目的是在 **[硬件实验室工具包下接受 ()](/windows-hardware/test/hlk/) 最终用户许可协议**。
-> 在不久的将来会更新上面说明中的步骤3，以指定包含仅包含驱动程序相关查询的查询套件的存储库
+> 在不久的将来，将更新上述说明中的步骤2，以指定包含仅包含驱动程序相关查询的查询套件的存储库。
 
 此页假定为 Windows 开发环境，并且存储库将安装在 *C:\codeql-home* 下。
 

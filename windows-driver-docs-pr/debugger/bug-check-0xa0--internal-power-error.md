@@ -4,7 +4,7 @@ description: INTERNAL_POWER_ERROR bug 检查的值为0x000000A0。 此 bug 检�
 keywords:
 - Bug 检查 0xA0 INTERNAL_POWER_ERROR
 - INTERNAL_POWER_ERROR
-ms.date: 12/27/2018
+ms.date: 12/09/2020
 topic_type:
 - apiref
 api_name:
@@ -12,21 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f31f8917f705d434c7e0af5d837a180439f6ead
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 855ec5eecd3f4be5438c628bc0defaa48ff12046
+ms.sourcegitcommit: 11a82f18ee7874537597792cb77f749d5ce6eee5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96819267"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "96999155"
 ---
 # <a name="bug-check-0xa0-internal_power_error"></a>Bug 检查0xA0：内部 \_ 电源 \_ 错误
-
 
 内部 \_ 电源 \_ 错误 bug 检查的值为0x000000A0。 此 bug 检查表明电源策略管理器遇到错误。
 
 > [!IMPORTANT]
 > 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
-
 
 ## <a name="internal_power_error-parameters"></a>内部 \_ 电源 \_ 错误参数
 
@@ -128,11 +126,12 @@ ms.locfileid: "96819267"
 <td align="left"><p>空间不足之前的休眠进度</p>
 <p><strong>0：</strong> HIBERFILE_PROGRESS_FREE_MAP</p>
 <p><strong>1：</strong> HIBERFILE_PROGRESS_RESUME_CONTEXT</p>
-<p><strong>2：</strong> HIBERFILE_PROGRESS_PROCESSOR_STATEE</p>
-<p><strong>3：</strong> HIBERFILE_PROGRESS_MEMORY_RANGES</p>
-<p><strong>4：</strong> HIBERFILE_PROGRESS_TABLE_PAGES</p>
-<p><strong>5：</strong> HIBERFILE_PROGRESS_MEMORY_IMAGE</p></td>
-<td align="left"><p>剩余内存范围的大小。</p></td>
+<p><strong>2：</strong> HIBERFILE_PROGRESS_PROCESSOR_STATE</p>
+<p><strong>3：</strong> HIBERFILE_PROGRESS_SECURE_RANGES</p>
+<p><strong>4：</strong> HIBERFILE_PROGRESS_MEMORY_RANGES</p>
+<p><strong>5：</strong> HIBERFILE_PROGRESS_TABLE_PAGES</p>
+<p><strong>6：</strong> HIBERFILE_PROGRESS_MEMORY_IMAGE</p></td>
+<td align="left"><p>当 param 2 为4时，为剩余内存范围的大小。</p></td>
 <td align="left"><p>休眠文件太小。</p></td>
 </tr>
 <tr class="odd">
@@ -141,6 +140,34 @@ ms.locfileid: "96819267"
 <td align="left"><p>转储堆栈上下文</p></td>
 <td align="left"><p>预留</p></td>
 <td align="left"><p>转储堆栈初始化失败。</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>0xD</p></td>
+<td align="left"><p>转换中的系统电源状态。</p></td>
+<td align="left"><p>最近到达的睡眠检查点。</p></td>
+<td align="left"><p>指向 POP_POWER_ACTION 结构的指针。</p></td>
+<td align="left"><p>系统无法及时完成电源转换。</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>0xF</p></td>
+<td align="left"><p>转换中的系统电源状态。 </p></td>
+<td align="left"><p>最近到达的睡眠检查点。</p></td>
+<td align="left"><p>指向当前正在处理请求的线程的指针。</p></td>
+<td align="left"><p>系统无法及时完成电源转换。</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>0xF0</p></td>
+<td align="left"><p>转换中的系统电源状态。</p></td>
+<td align="left"><p>最近到达的睡眠检查点。</p></td>
+<td align="left"><p>指向当前正在处理请求的线程的指针。</p></td>
+<td align="left"><p>系统无法完成 (挂起) 一种及时的电源转换。 </p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>0xF1</p></td>
+<td align="left"><p>转换中的系统电源状态。</p></td>
+<td align="left"><p>最近到达的睡眠检查点。</p></td>
+<td align="left"><p>指向当前正在处理请求的线程的指针。</p></td>
+<td align="left"><p>系统无法完成 (恢复) 一种及时的电源转换。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x101</p></td>
@@ -209,7 +236,7 @@ ms.locfileid: "96819267"
 <td align="left"><p>0x10A</p></td>
 <td align="left"><p>预留</p></td>
 <td align="left"><p>POP_HIBER_CONTEXT</p></td>
-<td align="left"><p>NTSTATUS</p></td>
+<td align="left"><p>NTSTATUS 故障代码</p></td>
 <td align="left"><p>磁盘子系统无法正确读取或写入部分休眠文件。</p></td>
 </tr>
 <tr class="even">
@@ -225,6 +252,45 @@ ms.locfileid: "96819267"
 <td align="left"><p>提供给 API 的标志</p></td>
 <td align="left"><p>要标记的长度</p></td>
 <td align="left"><p>调用 PoSetHiberRange API 时参数无效。</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>0x10D</p></td>
+<td align="left"><p>预留</p></td>
+<td align="left"><p>POP_HIBER_CONTEXT</p></td>
+<td align="left"><p>NTSTATUS 故障代码</p></td>
+<td align="left"><p>安全内核子系统在为恢复提供数据时失败。</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>0x10E</p></td>
+<td align="left"><p>预留</p></td>
+<td align="left"><p>校验和不正确</p></td>
+<td align="left"><p>上一次磁盘读取的校验和</p></td>
+<td align="left"><p>在从休眠文件读取数据时，磁盘子系统返回了损坏的数据。</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>0x10F</p></td>
+<td align="left"><p>当前系统睡眠检查点。</p></td>
+<td align="left"><p>内部错误的类型。</p>
+<p>0：分页已禁用，但在对所有处理器禁用了采购订单之前，已写入检查点。</p>
+<p>1：0以外的 CPU 尝试在系统睡眠的中断禁用阶段写入检查点。</p>
+<p>2：系统中的另一段代码正在执行 EFI 运行时服务。</p>
+</td>
+<td align="left"><p>预留</p></td>
+<td align="left"><p>检查系统睡眠进度的检查点时出现内部错误。</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>0x110</p></td>
+<td align="left"><p>预留</p></td>
+<td align="left"><p>预留</p></td>
+<td align="left"><p>预留</p></td>
+<td align="left"><p>系统无法禁用系统睡眠状态，但必须这样做才能确保数据的完整性。</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>0x111</p></td>
+<td align="left"><p>预留</p></td>
+<td align="left"><p>预留</p></td>
+<td align="left"><p>预留</p></td>
+<td align="left"><p>驱动程序指示存在用户，并且用户已启用调试选项来捕获调用堆栈。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x200</p></td>
@@ -417,6 +483,93 @@ ms.locfileid: "96819267"
 <td align="left"><p>Power Engine 插件已非法请求组件空闲状态转换。</p></td>
 </tr>
 <tr class="odd">
+<td align="left"><p>0x617</p></td>
+<td align="left"><p>POP_FX_PLUGIN PowerEnginePlugin</p></td>
+<td align="left"><p>UNICODE_STRING DeviceId</p></td>
+<td align="left"><p>PEP_DEVICE_REGISTER PEP 注册</p></td>
+<td align="left"><p>当处理设备注册通知时，Power Engine 插件返回了无效的接受类型。</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>0x618</p></td>
+<td align="left"><p>POP_FX_WORK_ORDER_WATCHDOG_INFO WorkOrder</p></td>
+<td align="left"><p>预留</p></td>
+<td align="left"><p>预留</p></td>
+<td align="left"><p>已阻止运行时电源工作线程的时间太长。</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>0x619</p></td>
+<td align="left"><p>POP_FX_DEVICE 设备</p></td>
+<td align="left"><p>组件索引</p></td>
+<td align="left"><p>实际负责的子设备为空或 DEVICE_NODE</p></td>
+<td align="left"><p>设备阻止进入最深运行时空闲电源状态的时间太长。</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>0x61A</p></td>
+<td align="left"><p>POP_FX_PLUGIN 电源引擎插件</p></td>
+<td align="left"><p>POP_FX_DEVICE 设备</p></td>
+<td align="left"><p>预留</p></td>
+<td align="left"><p>Power Engine 插件提供了有关组件性能状态信息的无效信息。</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>0x61B</p></td>
+<td align="left"><p>POP_FX_DEVICE 设备</p></td>
+<td align="left"><p>组件索引</p></td>
+<td align="left"><p>预留</p></td>
+<td align="left"><p>在注册设备性能状态之前，驱动程序已发出 perf 状态请求。 </p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>0x61C</p></td>
+<td align="left"><p>POP_FX_DEVICE 设备</p></td>
+<td align="left"><p>组件索引</p></td>
+<td align="left"><p>参数无效</p>
+<p>分隔</p>
+<p>  0： PerfChangesCount 超出为此组件注册的性能状态集的数目</p></td>
+<td align="left"><p> 驱动程序发出了包含无效参数的 perf 状态请求。
+</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>0x61D</p></td>
+<td align="left"><p>POP_FX_DEVICE 设备</p></td>
+<td align="left"><p>组件索引</p></td>
+<td align="left"><p>未完成的请求上下文</p></td>
+<td align="left"><p>在上一个请求未完成时，驱动程序已发出 perf 状态请求。</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>0x61E</p></td>
+<td align="left"><p>预留</p></td>
+<td align="left"><p>预留</p></td>
+<td align="left"><p>预留</p></td>
+<td align="left"><p> 启用自动转换时，Power Engine 插件尝试在调试器设备上执行关键转换。</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>0x61F</p></td>
+<td align="left"><p>POP_FX_DEVICE 设备</p></td>
+<td align="left"><p>协调式空闲状态索引</p></td>
+<td align="left"><p>预留</p></td>
+<td align="left"><p>Power Engine 插件尝试为不是整个平台的状态的协调式空闲状态启用自动调试器转换。</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>0x620</p></td>
+<td align="left"><p>POP_FX_DEVICE 设备</p></td>
+<td align="left"><p> 协调式空闲状态索引</p></td>
+<td align="left"><p>预留</p></td>
+<td align="left"><p> Power Engine 插件尝试为不是整个平台的状态的协调式空闲状态注册 D 状态依赖关系。</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>0x621</p></td>
+<td align="left"><p>POP_FX_DEVICE 设备</p></td>
+<td align="left"><p>组件索引</p></td>
+<td align="left"><p>协调式空闲状态索引</p></td>
+<td align="left"><p> Power Engine 插件尝试为不是整个平台的状态的协调式空闲状态注册 F 状态依赖关系。</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>0x622</p></td>
+<td align="left"><p>父 POP_FX_COMPONENT</p></td>
+<td align="left"><p>子 POP_FX_COMPONENT</p></td>
+<td align="left"><p>预留</p></td>
+<td align="left"><p>驱动程序已尝试从 PoFx 的未处理依赖项中注销。</p></td>
+</tr>
+<tr class="odd">
 <td align="left"><p>0x666</p></td>
 <td align="left"><p>PPOP_PEP_ACTIVITY</p></td>
 <td align="left"><p>新活动类型</p>
@@ -449,6 +602,27 @@ ms.locfileid: "96819267"
 <td align="left"><p>默认电源引擎插件试图完成未在运行的活动。</p></td>
 </tr>
 <tr class="odd">
+<td align="left"><p>0x668</p></td>
+<td align="left"><p>正在更新其引用计数的 PPPM_COORDINATED_STATE。</p></td>
+<td align="left"><p>此函数观察到的引用计数值无效。</p></td>
+<td align="left"><p>正在更新的平台空闲状态的掩码。</p></td>
+<td align="left"><p> 默认电源引擎插件已尝试删除之前未被约束的平台空闲状态约束。</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>0x669</p></td>
+<td align="left"><p>正在更新其引用计数的 PPPM_COORDINATED_STATE。</p></td>
+<td align="left"><p>此函数观察到的引用计数值无效。</p></td>
+<td align="left"><p>预留</p></td>
+<td align="left"><p>当尝试独占通知 PoFx 有关平台空闲状态的可用性时，默认 Power Engine 插件遇到了内部一致性错误。</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>0x680</p></td>
+<td align="left"><p>NTSTATUS 故障代码。</p></td>
+<td align="left"><p>预留</p></td>
+<td align="left"><p>预留</p></td>
+<td align="left"><p>由于运行时 power framework 缺少或格式不正确，无法分析所需的 ACPI 表。 这通常是由于 BIOS 错误引起的。</p></td>
+</tr>
+<tr class="odd">
 <td align="left"><p>0x700</p></td>
 <td align="left"><p>PEPHANDLE</p></td>
 <td align="left"><p>PEP_PPM_IDLE_SELECT</p></td>
@@ -469,12 +643,92 @@ ms.locfileid: "96819267"
 <td align="left"><p>挂起的处理器的 PRCB 地址</p></td>
 <td align="left"><p>在没有操作系统的情况下，通过使用必要的 PPM 空闲同步) 使用必要的 PPM 空闲同步启动显式唤醒 (，处理器从不可中断状态唤醒。</p></td>
 </tr>
+<tr class="even">
+<td align="left"><p>0x703</p></td>
+<td align="left"><p>PEPHANDLE</p></td>
+<td align="left"><p>PEP_PPM_QUERY_PLATFORM_STATE</p></td>
+<td align="left"><p>预留</p></td>
+<td align="left"><p>在查询平台状态通知期间，Power Engine 插件指定了无效的处理器空闲依赖关系。</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>0x704</p></td>
+<td align="left"><p>预留</p></td>
+<td align="left"><p>预留</p></td>
+<td align="left"><p>预留</p></td>
+<td align="left"><p>协调式空闲状态过渡未能及时完成。</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>0x705</p></td>
+<td align="left"><p>PEPHANDLE</p></td>
+<td align="left"><p>通知</p></td>
+<td align="left"><p>标识非法篡改字段的四个字符的标记。 使用：. formats 标记的内核调试器中的解码标记，其中标记包含在 < > 中。 </p></td>
+<td align="left"><p>Power Engine 插件已更改传入通知的缓冲区中的只读字段。 </p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>0x706</p></td>
+<td align="left"><p>通知</p></td>
+<td align="left"><p>标识包含非法值的字段的四字符标记。 使用：. formats 标记的内核调试器中的解码标记，其中标记包含在 < > 中。 </p></td>
+<td align="left"><p>对于存在非法值的数组，值或索引非法</p></td>
+<td align="left"><p>Power Engine 插件在传入通知的缓冲区的某个字段中返回了非法值。</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>0x800</p></td>
+<td align="left"><p>当前 CS 状态</p></td>
+<td align="left"><p>预留</p></td>
+<td align="left"><p>预留</p></td>
+<td align="left"><p>系统处于连接待机状态时，监视器意外开启。
+</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>0x801</p></td>
+<td align="left"><p>显示状态更改原因</p></td>
+<td align="left"><p>更新显示状态的会话 ID</p></td>
+<td align="left"><p>预留</p></td>
+<td align="left"><p>发生了无效的显示状态转换。</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>0x802</p></td>
+<td align="left"><p>导致显示关闭的 POWER_MONITOR_REQUEST_REASON</p></td>
+<td align="left"><p>如果启用电源事件处理器，则为 1; 否则为0。</p></td>
+<td align="left"><p>指向 POP_PDC_IDLE_PHASE_WATCHDOG_CONTEXT 全局的指针。</p></td>
+<td align="left"><p>PDC 系统空闲阶段 (NoCsPhase) 已阻止转换到新式备用时间比预期时间长。</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>0x900</p></td>
+<td align="left"><p>指向负责的电源设置回调的指针</p></td>
+<td align="left"><p>在调用电源设置回调之前</p></td>
+<td align="left"><p>从电源设置回调返回后的 IRQL</p></td>
+<td align="left"><p> 使用修改后的 IRQL 返回的已注册的电源设置回调。 这表明回调更改了 IRQL，但没有在返回前还原原始 IRQL。</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>0x901</p></td>
+<td align="left"><p>DEVICE_OBJECT</p></td>
+<td align="left"><p>IRP</p></td>
+<td align="left"><p>线程的 APC 禁用计数</p></td>
+<td align="left"><p>处理 power IRP 时，驱动程序已启用/禁用内核 Apc。</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>0x4001</p></td>
+<td align="left"><p>KE 错误子代码。</p>
+<p>分隔</p>
+<p>0x100： (INTERNAL_POWER_ERROR_KE_PROCESSOR_ON_TIMED_OUT) 固件花费了太长时间才能通电处理器。</p>
+<p>0x101： (INTERNAL_POWER_ERROR_KE_INVALID_INTERRUPT_TARGET) 指定了无效的中断目标。</p>
+<p>0x102： (INTERNAL_POWER_ERROR_KE_SETDESTINATION_FAILED) 无法更改中断行的目标目标。</p>
+<p>0x103： (INTERNAL_POWER_ERROR_KE_IPI_REQUEST_FAILED) 在重定向中断时无法发出 IPI。</p>
+<p>0x104： (INTERNAL_POWER_ERROR_KE_ARCH_NOT_SUPPORTED) 不受支持的处理器体系结构。</p></td>
+<td align="left"><p>预留</p></td>
+<td align="left"><p>预留</p></td>
+<td align="left"><p> () INTERNAL_POWER_ERROR_KE_SUBCODE 在电源操作期间内核执行程序中出现内部故障。</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>0xAA64</p></td>
+<td align="left"><p>错误代码</p></td>
+<td align="left"><p>PSCI 函数 ID 正在进行</p></td>
+<td align="left"><p>可选的内部上下文相关数据</p></td>
+<td align="left"><p>AArm64 电源状态协调接口 (PSCI) 函数遇到无法恢复的严重错误。</p></td>
+</tr>
 </tbody>
 </table>
-
-
-
-
 
 <a name="resolution"></a>解决方法
 ----------
