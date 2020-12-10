@@ -10,12 +10,12 @@ keywords:
 - 适用于 Windows 的 HID 鼠标驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1225d0fd118599330ba9678916493ee9d1e1ec70
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 979a9c4da38720510789d1d67c385941ea65ad50
+ms.sourcegitcommit: 974470a1d8884647880ea186cff2a274e03e8532
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96820379"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96934581"
 ---
 # <a name="keyboard-and-mouse-hid-client-drivers"></a>键盘和鼠标 HID 客户端驱动程序
 
@@ -43,6 +43,7 @@ Windows 为 HID 键盘和 HID 鼠标设备提供系统提供的 HID 映射器驱
 - MOUHID.sys-用于鼠标/触摸板的 HID 客户端映射器驱动程序。 将 HID 用法转换为鼠标命令 (X/Y、按钮、滚轮) 与现有键盘类驱动程序的接口。
 - KBDCLASS.sys – [键盘类驱动程序](keyboard-and-mouse-class-drivers.md) 以安全的方式维护系统上所有键盘和键盘的功能。
 - MOUCLASS.sys – [鼠标类驱动程序](keyboard-and-mouse-class-drivers.md) 在系统上维护所有鼠标/触摸板的功能。 驱动程序支持绝对和相对指针设备。 这不是 touchscreens 的驱动程序，因为它是由 Windows 中的其他驱动程序管理的。
+- HIDCLASS.sys- [HID 类驱动程序](hid-architecture.md#the-hid-class-driver)。 HID 类驱动程序在 KBDHID.sys 和 MOUHID.sys HID 客户端之间粘附， (USB、蓝牙等) 的各种传输。
 
 系统生成驱动程序堆栈，如下所示：
 
