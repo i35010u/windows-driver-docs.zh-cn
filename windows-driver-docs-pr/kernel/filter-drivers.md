@@ -1,7 +1,6 @@
 ---
 title: 筛选器驱动程序
 description: 筛选器驱动程序
-ms.assetid: 4def5503-bb0e-4bae-b048-4c8d25d62020
 keywords:
 - 筛选器驱动程序 WDK WDM
 - 总线筛选器驱动程序 WDK WDM
@@ -10,12 +9,12 @@ keywords:
 - WDM 筛选器驱动程序 WDK
 ms.date: 06/16/2017
 ms.localizationpriority: High
-ms.openlocfilehash: c0791a48f94db8a9be106498a32917fe6f0f7c96
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 74a8791ec8aecead24f8440c12cd1da3e95169b1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "72007648"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96790521"
 ---
 # <a name="filter-drivers"></a>筛选器驱动程序
 
@@ -35,7 +34,7 @@ ms.locfileid: "72007648"
 
 ### <a name="lower-level-filter-drivers"></a><a href="" id="ddk-lower-level-filter-drivers-kg"></a>下层筛选器驱动程序
 
-*下层筛选器驱动程序*通常会修改设备硬件的行为（请参见[可能的驱动程序层](types-of-wdm-drivers.md#possible-driver-layers)图）。 它们是可选的，通常由 IHV 提供。 一个设备可以有任意数量的底层筛选器驱动程序。
+*下层筛选器驱动程序* 通常会修改设备硬件的行为（请参见 [可能的驱动程序层](types-of-wdm-drivers.md#possible-driver-layers)图）。 它们是可选的，通常由 IHV 提供。 一个设备可以有任意数量的底层筛选器驱动程序。
 
 下层设备  筛选器驱动程序监视和/或修改特定设备的 I/O 请求。 通常，此类筛选器会重新定义硬件行为，以使其符合预期规范。
 

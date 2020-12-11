@@ -1,7 +1,6 @@
 ---
 title: 以前的 WDK 版本和其他下载
 description: 安装 Windows 驱动程序工具包 (WDK)、Windows 调试器 (WinDBG) 和其他工具的版本。
-ms.assetid: e07d9f05-f8d0-46e5-82e6-c23baa614bb1
 keywords:
 - Windows 驱动程序工具包 (WDK)
 - 以前的版本
@@ -9,12 +8,12 @@ keywords:
 ms.date: 05/07/2018
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: c19658c6f906c39dc1e1279ef98d14f6ad14be2f
-ms.sourcegitcommit: 68d0aec4c282c9c1e1ab54509c8f4575dd273d56
+ms.openlocfilehash: bdb3950ecb0852be31951c4ec7a87ade2cc32949
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91221961"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96812651"
 ---
 # <a name="other-wdk-downloads"></a>其他 WDK 下载
 
@@ -22,7 +21,7 @@ ms.locfileid: "91221961"
 
 Windows 驱动程序工具包 (WDK) 可用于开发、测试和部署 Windows 驱动程序。 若要开发驱动程序，请使用可从[下载 Windows 驱动程序工具包 (WDK)](download-the-wdk.md) 下载的最新公共版 Windows 驱动程序工具包 (WDK) 和工具。
 
-本主题介绍 WDK 和企业版 WDK (EWDK) 的早期版本以及用于提供支持的其他下载内容。 若要使用这些早期的版本，必须*先*安装适用于目标平台的 Visual Studio 版本。
+本主题介绍 WDK 和企业版 WDK (EWDK) 的早期版本以及用于提供支持的其他下载内容。 若要使用这些早期的版本，必须 *先* 安装适用于目标平台的 Visual Studio 版本。
 
 ## <a name="step-1-install-visual-studio"></a>步骤 1：安装 Visual Studio
 

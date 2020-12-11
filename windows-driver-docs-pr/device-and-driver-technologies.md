@@ -1,15 +1,14 @@
 ---
 title: 驱动程序技术概述
 description: 本部分包含有关每项受支持的 Windows 驱动程序技术的信息。
-ms.assetid: 1ef3e216-1322-42c3-b070-94cddfb2133c
 ms.date: 01/30/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 3cfb3bcea1b8926fd27458d9336929b9c00b459c
-ms.sourcegitcommit: eefc6ae6d9621d0735b3c63e718ee5838d57a6bc
+ms.openlocfilehash: c6a908911202d350526a0de94afb0f0b3992a063
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92886066"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833589"
 ---
 # <a name="overview-of-driver-technologies"></a>驱动程序技术概述
 

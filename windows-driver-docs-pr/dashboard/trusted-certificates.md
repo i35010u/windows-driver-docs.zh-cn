@@ -1,16 +1,15 @@
 ---
 title: 受信任的证书
 description: 受信任的证书
-ms.assetid: 9323b7dd-7311-479e-bb00-b4a6ee71f27f
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 54cbe0dcd3872703bc3a6d1f7e7ce7bddedf8157
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 78148a08a658b11e3b302be35c7f97ffd80e1e47
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "63337147"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800275"
 ---
 # <a name="trusted-certificates"></a>受信任的证书
 

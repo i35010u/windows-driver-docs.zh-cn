@@ -1,15 +1,14 @@
 ---
 title: 作为通用驱动程序对模型的 KMDF
 description: 在本主题中，我们介绍内核模式驱动程序框架可以作为通用驱动程序对模型来查看的这一思想。
-ms.assetid: C05E3017-0F1A-49D7-8EAD-0DC44351A39A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 24018c168e61d6f69ccc34fb05e5d6919e6cc417
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: d04ba85b9f8ffe303fb097f37fa718fc23d46804
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382765"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96818493"
 ---
 # <a name="kmdf-as-a-generic-driver-pair-model"></a>作为通用驱动程序对模型的 KMDF
 

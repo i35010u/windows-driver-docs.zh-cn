@@ -1,15 +1,14 @@
 ---
-ms.assetid: eaefc81a-b5e3-4763-bf51-8ec47f620e72
 title: 创建驱动程序包
 description: 创建驱动程序包
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d355d4c1274584a4edef909fef76e8383b80121c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 59832ffddde683cad8b6eee96eacc47afa24d7fe
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217842"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793239"
 ---
 # <a name="creating-a-driver-package"></a>创建驱动程序包
 
@@ -24,7 +23,7 @@ ms.locfileid: "89217842"
 
 ![visual studio 解决方案资源管理器驱动程序包项目](images/VsSlnExplorer.png)
 
-**注意**  
+**注意**  
 
  
 

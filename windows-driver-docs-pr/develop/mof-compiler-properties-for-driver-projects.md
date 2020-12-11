@@ -1,19 +1,18 @@
 ---
-ms.assetid: 4444E8A5-9624-4CA2-84D8-C83A67A2C871
 title: 驱动程序项目的 MOF 编译器属性
 description: 托管对象格式 (MOF) 编译器 (mofcomp.exe) 用于解析 MOF 文件并将文件中定义的类和类实例添加到 WMI 存储库中。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f20ee57d573fb6b260196499f99caebba789687f
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: a93a25f6945e53307047ebdccc0d710d14b9f87c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104152"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824651"
 ---
 # <a name="mof-compiler-properties-for-driver-projects"></a>驱动程序项目的 MOF 编译器属性
 
-托管对象格式 (MOF) 编译器 (mofcomp.exe) 用于解析 MOF 文件并将文件中定义的类和类实例添加到 WMI 存储库中。 使用 Mofcomp 属性页来编译驱动程序的 MOF 文件。 有关 Mofcomp.exe 和 WMI 的详细信息，请参阅 [**mofcomp**](/windows/desktop/WmiSdk/mofcomp)、[编译 MOF 文件](/windows/desktop/WmiSdk/compiling-mof-files)和[编译驱动程序的 MOF 文件](../kernel/compiling-a-driver-s-mof-file.md)。
+托管对象格式 (MOF) 编译器 (mofcomp.exe) 用于解析 MOF 文件并将文件中定义的类和类实例添加到 WMI 存储库中。 使用 Mofcomp 属性页来编译驱动程序的 MOF 文件。 有关 Mofcomp.exe 和 WMI 的详细信息，请参阅 [**mofcomp**](/windows/desktop/WmiSdk/mofcomp)、[编译 MOF 文件](/windows/desktop/WmiSdk/compiling-mof-files)和 [编译驱动程序的 MOF 文件](../kernel/compiling-a-driver-s-mof-file.md)。
 
 ## <a name="span-idsetting_managed_object_format__mof__compiler_properties_for_driver_projectsspanspan-idsetting_managed_object_format__mof__compiler_properties_for_driver_projectsspanspan-idsetting_managed_object_format__mof__compiler_properties_for_driver_projectsspansetting-managed-object-format-mof-compiler-properties-for-driver-projects"></a><span id="Setting_Managed_Object_Format__MOF__Compiler_properties_for_driver_projects"></span><span id="setting_managed_object_format__mof__compiler_properties_for_driver_projects"></span><span id="SETTING_MANAGED_OBJECT_FORMAT__MOF__COMPILER_PROPERTIES_FOR_DRIVER_PROJECTS"></span>设置驱动程序项目的托管对象格式 (MOF) 编译器属性
 

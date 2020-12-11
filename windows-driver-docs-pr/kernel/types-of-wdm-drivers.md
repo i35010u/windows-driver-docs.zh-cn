@@ -1,7 +1,6 @@
 ---
 title: WDM 驱动程序的类型
 description: 有三种类型的 WDM 驱动程序：总线驱动程序、函数驱动程序和筛选器驱动程序。
-ms.assetid: 86acc77e-816e-46c8-b63c-2bb10920acd6
 keywords:
 - WDM 驱动程序 WDK 内核，类型
 - WDM 驱动程序 WDK 内核，分层驱动程序
@@ -15,12 +14,12 @@ keywords:
 - WDM 筛选器驱动程序 WDK
 ms.date: 06/16/2017
 ms.localizationpriority: High
-ms.openlocfilehash: fb163074078c0925df90b66edda42df6a69c9ba1
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: bbfe3bb5926c4d0fa097bddfdb39499c43edd2cd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89402848"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814245"
 ---
 # <a name="types-of-wdm-drivers"></a>WDM 驱动程序的类型
 
@@ -34,7 +33,7 @@ ms.locfileid: "89402848"
 -   [函数驱动程序](function-drivers.md)驱动单个设备。
 -   [筛选器驱动程序](filter-drivers.md)筛选设备的 I/O 请求、设备类或总线。
 
-在此上下文中，*总线*是其他物理、逻辑或虚拟设备连接到的任何设备；总线包括传统总线（如 SCSI 和 PCI）以及并行端口、串行端口和 i8042 端口。
+在此上下文中，*总线* 是其他物理、逻辑或虚拟设备连接到的任何设备；总线包括传统总线（如 SCSI 和 PCI）以及并行端口、串行端口和 i8042 端口。
 
 驱动程序开发人员必须了解不同类型的 WDM 驱动程序并知道自己正在编写哪种类型的驱动程序，这一点非常重要。 例如，驱动程序是否处理每个[即插即用](introduction-to-plug-and-play.md) IRP 以及如何处理此类 IRP 取决于所编写的驱动程序的类型（总线驱动程序、函数驱动程序或筛选器驱动程序）。
 

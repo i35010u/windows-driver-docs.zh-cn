@@ -1,15 +1,14 @@
 ---
 title: 用户模式和内核模式
 description: 用户模式和内核模式
-ms.assetid: 9988ff75-f84e-404e-8c2b-0f8325fbbc63
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 370f5ef3e5e1b9a5880646e551cdf5e5af37b224
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 0f90b6f01e5f2fdc2435b6e5cb22411726d52e47
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "63371196"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786317"
 ---
 # <a name="user-mode-and-kernel-mode"></a>用户模式和内核模式
 

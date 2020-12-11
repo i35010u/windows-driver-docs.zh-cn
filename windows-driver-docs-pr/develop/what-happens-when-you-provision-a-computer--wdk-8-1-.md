@@ -1,15 +1,14 @@
 ---
-ms.assetid: 92F58B13-3447-4715-A6D2-69E63FE04A77
 title: 预配计算机时会出现什么情况 (WDK 8.1)
 description: 这里我们将介绍在使用 Windows 驱动程序工具包 (WDK) 8.1 版预配目标计算机时发生的情况。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 260bb2a322f8aeb526af3f87565399dd6398a978
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b7d7fd8076118e61590b8f35befdddfc80f5a760
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211127"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833593"
 ---
 # <a name="what-happens-when-you-provision-a-computer-wdk-81"></a>预配计算机时会出现什么情况 (WDK 8.1)
 

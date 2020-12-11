@@ -1,15 +1,14 @@
 ---
-ms.assetid: 3FC63BAD-4B95-40AB-BFBE-88A3274B76E8
 title: 如何在 WDK 8.1 中运行 HCK 测试套件
 description: 为了可以更轻松地在 WDK 中测试 Windows 驱动程序，从 WDK 8.1 起，你可以选择要在测试计算机上运行的 HCK 测试套件。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e351c332f637e955636effd806643308f5b74516
-ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
+ms.openlocfilehash: 4f3f9d5c173a81e5168c401b5dad481ac572a69d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93349607"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783429"
 ---
 # <a name="how-to-run-the-hck-test-suites-in-wdk-81"></a>如何在 WDK 8.1 中运行 HCK 测试套件
 
@@ -99,7 +98,7 @@ ms.locfileid: "93349607"
 
 **通过命令提示符窗口运行 HCK 测试套件**
 
-1.  在为测试配置的测试计算机上，使用提升的权限打开命令提示符窗口（ **以管理员身份运行** ），然后导航至 HCK 测试套件所复制到的位置。
+1.  在为测试配置的测试计算机上，使用提升的权限打开命令提示符窗口（**以管理员身份运行**），然后导航至 HCK 测试套件所复制到的位置。
 
 2.  运行 **RunMe.cmd** 脚本并指定 INF 文件的路径和名称。 此脚本具有以下语法：
 
@@ -127,7 +126,7 @@ ms.locfileid: "93349607"
 -   [HCK Tests.Basic.Device.Network.MobileBroadband.GSM 测试套件](#HCK_GSM)
 -   [HCK Tests.Basic.Device.Network.WLAN 测试套件](#HCK_WLAN)
 
-有关指定测试参数的信息，请参阅[设备基础功能测试参数](how-to-select-and-configure-the-device-fundamental-tests.md)。 如果进行测试的设备或其子设备之一为 WLAN 适配器或网络设备，则你可能需要设置 *Wpa2PskAesSsid* 、 *Wpa2PskPassword* 或 *WDTFREMOTESYSTEM* 参数。
+有关指定测试参数的信息，请参阅[设备基础功能测试参数](how-to-select-and-configure-the-device-fundamental-tests.md)。 如果进行测试的设备或其子设备之一为 WLAN 适配器或网络设备，则你可能需要设置 *Wpa2PskAesSsid*、*Wpa2PskPassword* 或 *WDTFREMOTESYSTEM* 参数。
 
 ### <a name="span-idhck_devfundspanspan-idhck_devfundspanspan-idhck_devfundspanhck-testsbasicdevicedevice-fundamentals-test-suite"></a><span id="HCK_devfund"></span><span id="hck_devfund"></span><span id="HCK_DEVFUND"></span>HCK Tests.Basic.Device.Device Fundamentals 测试套件
 

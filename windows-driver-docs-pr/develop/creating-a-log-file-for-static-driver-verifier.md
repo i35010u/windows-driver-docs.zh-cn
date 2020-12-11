@@ -1,15 +1,14 @@
 ---
-ms.assetid: EDA6357A-D18D-439D-A0DD-050BA51E1A79
 title: 为静态驱动程序验证程序创建日志文件
 description: 了解如何在为驱动程序创建驱动程序验证日志 (DVL) 之前运行静态驱动程序验证程序 (SDV)。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c0e7f29ecacc336f86f0ef7f8b442dd53c4715f7
-ms.sourcegitcommit: d38530f16bdf17715d7d26dfe6d501aa62ec37fd
+ms.openlocfilehash: 5f6269e431ea88c14de84baafe6a4dad3f1b6ef8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92210618"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817485"
 ---
 # <a name="creating-a-log-file-for-static-driver-verifier"></a>为静态驱动程序验证程序创建日志文件
 

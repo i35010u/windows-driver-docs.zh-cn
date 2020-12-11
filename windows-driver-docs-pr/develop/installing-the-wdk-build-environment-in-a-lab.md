@@ -1,23 +1,22 @@
 ---
-ms.assetid: D4B35683-5BD1-40F8-9734-95DADF9E0F20
 title: 在实验室中安装 WDK 生成环境
-description: Windows 驱动程序工具包 (WDK) 8.1 使你可以将 Visual Studio 和 WDK 的组件复制到新位置，然后通过命令行启动生成环境。
+description: Windows 驱动程序工具包 (WDK) 8.1 使你可以将 Visual Studio 和 WDK 的组件复制到新位置，然后通过命令行启动生成环境。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 211ff8e43f6b74e4391a23ca157e0b8f1e45b0ad
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 58c968fd9a81b7c80f778cda4d32b14f6b3b6d16
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733417"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837333"
 ---
 # <a name="installing-the-wdk-81-build-environment-in-a-lab"></a>在实验室中安装 WDK 8.1 生成环境
 
-Windows 驱动程序工具包 (WDK) 8.1 中提供的功能使你可以将 Visual Studio 和 WDK 的组件复制到新位置，然后通过命令行启动生成环境。 通过此环境，你无需运行 Visual Studio 或 WDK 安装程序即可生成 Windows 驱动程序。
+Windows 驱动程序工具包 (WDK) 8.1 中提供的功能使你可以将 Visual Studio 和 WDK 的组件复制到新位置，然后通过命令行启动生成环境。 通过此环境，你无需运行 Visual Studio 或 WDK 安装程序即可生成 Windows 驱动程序。
 
 如果你需要将 WDK 与生成流程集成，或者你想要在实验室或测试环境中分配生成流程，那么，你将会发现此功能非常有用。
 
-**注意**  你仅可将此功能用于生成使用 C 和 C++ 的驱动程序和应用程序。 此功能不可用于托管代码或 UWP 应用。
+**注意** 你仅可将此功能用于生成使用 C 和 C++ 的驱动程序和应用程序。 此功能不可用于托管代码或 UWP 应用。
 
 
 ## <a name="1-download-the-visual-studio-and-wdk-and-sdk-setup-files"></a>1.下载 Visual Studio 以及 WDK 和 SDK 安装文件
@@ -37,7 +36,7 @@ Windows 驱动程序工具包 (WDK) 8.1 中提供的功能使你可以将 Visua
 1.  下载 [BuildLabSupportfiles.zip](https://go.microsoft.com/fwlink/p/?linkid=321805)。
 2.  将压缩文件的内容提取到计算机上。 提取的文件包括 BuildLabSupport 目录及你需要的设置文件和实用程序。
 
-## <a name="span-idinstall_scriptspanspan-idinstall_scriptspan3-install-the-wdk81-build-environment"></a><span id="install_script"></span><span id="INSTALL_SCRIPT"></span>3.安装 WDK 8.1 生成环境
+## <a name="span-idinstall_scriptspanspan-idinstall_scriptspan3-install-the-wdk-81-build-environment"></a><span id="install_script"></span><span id="INSTALL_SCRIPT"></span>3.安装 WDK 8.1 生成环境
 
 
 生成实验室支持文件包括 **setup.ps1** PowerShell 命令文件，它将提取所需的 Visual Studio 和 WDK 组件并将其复制到目标目录（文件夹）。 随后，你可以将此目录复制到另一个位置，从此位置你可以在 Visual Studio 命令行接口 (CLI) 开发环境中生成项目。

@@ -1,7 +1,6 @@
 ---
 title: INF 文件概述
 description: INF 文件概述
-ms.assetid: 94682cba-1f68-416f-af74-99ede81eadc7
 keywords:
 - INF 文件 WDK 设备安装
 - INF 文件 WDK 设备安装，创建
@@ -11,12 +10,12 @@ keywords:
 - 使用 INF 文件安装驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: High
-ms.openlocfilehash: ca592650f4125afce532df061173a0a8cdb8f130
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: ba741650f7985c7b5488a943a91a46ad94038907
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095455"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96832671"
 ---
 # <a name="overview-of-inf-files"></a>INF 文件概述
 

@@ -1,15 +1,14 @@
 ---
-ms.assetid: 3AF1C7EA-A7E0-47C4-A8D0-BB8D432F7EA0
 title: 测试驱动程序代码和驱动程序包的相关建议。
 description: 应在何时开始测试？ 了解驱动程序的要求后，便可以立即开始设计测试用例来测试是否已实现了这些关键要求。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4acfedebc93aae768b400fb2abeb1465beffc55c
-ms.sourcegitcommit: 0c34101a0eed9f187fec03026021fff89bd233e3
+ms.openlocfilehash: ae1fc357a6d5556948e9a368bef5bf3597de9c22
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91135180"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784125"
 ---
 # <a name="tips-for-testing-drivers-during-development"></a>开发期间测试驱动程序的相关技巧
 
@@ -38,11 +37,11 @@ ms.locfileid: "91135180"
 
 -   签署驱动程序可以推进驱动程序的安装和测试，如[在开发和测试期间签署驱动程序](../install/introduction-to-test-signing.md)中所述。
 
--   运行作为 WDK 中提供的设备基础功能测试的一部分包含的 **DriverInstall** 测试。 请参阅[如何使用 Visual Studio 在运行时测试驱动程序](testing-a-driver-at-runtime.md)和[如何选择和配置设备基础功能测试](how-to-select-and-configure-the-device-fundamental-tests.md)。 **DriverInstall** 测试可以在驱动程序部署到测试计算机后运行。 可以将 **DriverInstall** 测试添加到驱动程序测试组。 **DriverInstall** 测试显示在 All Tests\\Basic\\Device Fundamentals\\DriverInstall 下的**驱动程序测试类别**中。
+-   运行作为 WDK 中提供的设备基础功能测试的一部分包含的 **DriverInstall** 测试。 请参阅[如何使用 Visual Studio 在运行时测试驱动程序](testing-a-driver-at-runtime.md)和[如何选择和配置设备基础功能测试](how-to-select-and-configure-the-device-fundamental-tests.md)。 **DriverInstall** 测试可以在驱动程序部署到测试计算机后运行。 可以将 **DriverInstall** 测试添加到驱动程序测试组。 **DriverInstall** 测试显示在 All Tests\\Basic\\Device Fundamentals\\DriverInstall 下的 **驱动程序测试类别** 中。
 
 -   通过使用设备管理器查看有关驱动程序和设备的系统信息并通过参考 SetupAPI 日志来[解决设备安装](../install/troubleshooting-device-and-driver-installations.md)问题。 SetupAPI 日志包含设备或驱动程序安装期间所发生的操作序列的相关信息。
 
-    使用 Visual Studio 和 WDK，将驱动程序部署到测试计算机时，可以测试驱动程序包的安装并解决相关问题，请参阅[将驱动程序部署到测试计算机](deploying-a-driver-to-a-test-computer.md)。 从[驱动程序包项目的部署属性](deployment-properties-for-driver-projects.md)中选择“安装并验证”  选项。 如果你选择此选项，并指定“默认驱动程序包安装任务(可能重新启动)”  或“默认打印机驱动程序包安装任务(可能重新启动)”  ，则测试将读取驱动程序的 INF 文件并安装驱动程序。 然后，测试将验证该驱动程序是否已启动且正在运行。 完成后，测试将提供有关安装任务成功与否的详细信息。 结果显示在**驱动程序测试组资源管理器**中的“驱动程序测试组”&gt;“驱动程序安装”下。 任务名称为“默认驱动程序包安装任务”  。
+    使用 Visual Studio 和 WDK，将驱动程序部署到测试计算机时，可以测试驱动程序包的安装并解决相关问题，请参阅[将驱动程序部署到测试计算机](deploying-a-driver-to-a-test-computer.md)。 从[驱动程序包项目的部署属性](deployment-properties-for-driver-projects.md)中选择“安装并验证”  选项。 如果你选择此选项，并指定“默认驱动程序包安装任务(可能重新启动)”  或“默认打印机驱动程序包安装任务(可能重新启动)”  ，则测试将读取驱动程序的 INF 文件并安装驱动程序。 然后，测试将验证该驱动程序是否已启动且正在运行。 完成后，测试将提供有关安装任务成功与否的详细信息。 结果显示在 **驱动程序测试组资源管理器** 中的“驱动程序测试组”&gt;“驱动程序安装”下。 任务名称为“默认驱动程序包安装任务”  。
 
 **如何在运行时测试驱动程序：**
 

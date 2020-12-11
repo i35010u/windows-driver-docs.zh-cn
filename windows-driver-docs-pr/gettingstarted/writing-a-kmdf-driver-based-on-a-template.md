@@ -1,17 +1,16 @@
 ---
 title: 基于模板编写通用 Windows 驱动程序 (KMDF)
 description: 本主题介绍了如何使用内核模式驱动程序框架 (KMDF) 编写通用 Windows 驱动程序。 首先使用 Microsoft Visual Studio 模板，然后在单独的计算机上部署和安装驱动程序。
-ms.assetid: 1E15A136-94BB-46C1-A438-9562C6BDCE7E
 keywords:
 - 编写 KMDF 驱动程序
 ms.date: 04/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0203231852558032872ab280a5333a08c4f1f1e8
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: a5ae307507fae16215ee8665dd5fdd392ba16775
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734195"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786311"
 ---
 # <a name="write-a-universal-windows-driver-kmdf-based-on-a-template"></a>基于模板编写通用 Windows 驱动程序 (KMDF)
 
@@ -29,14 +28,14 @@ ms.locfileid: "91734195"
 4. 在“名称”字段中，输入“KmdfDriver”作为项目名称。
 
     > [!NOTE]
-    > 在创建新的 KMDF 或 UMDF 驱动程序时，必须选择一个不多于 32 个字符的驱动程序名称。 此长度限制在 wdfglobals.h 中定义。  
+    > 在创建新的 KMDF 或 UMDF 驱动程序时，必须选择一个不多于 32 个字符的驱动程序名称。 此长度限制在 wdfglobals.h 中定义。  
 
 5. 在“位置”字段中，输入要在其中创建新项目的目录。
 6. 选中“创建解决方案的目录”。 选择“确定”。
 
     ![“新建项目”对话框的屏幕截图，显示选中的 WDF 和内核模式驱动程序](images/vs2015-kmdf-new-project.png)
 
-    Visual Studio 将创建一个项目和一个解决方案。 你可以在“解决方案资源管理器”窗口中看到它们，如下所示。 （如果未显示“解决方案资源管理器”窗口，请从“视图” 菜单中选择“解决方案资源管理器”。）该解决方案有一个名为 KmdfDriver 的驱动程序项目。 若要查看驱动程序源代码，请打开**源文件**下的任何文件。 可以先从 Driver.c 和 Device.c 开始。
+    Visual Studio 将创建一个项目和一个解决方案。 你可以在“解决方案资源管理器”窗口中看到它们，如下所示。 （如果未显示“解决方案资源管理器”窗口，请从“视图” 菜单中选择“解决方案资源管理器”。）该解决方案有一个名为 KmdfDriver 的驱动程序项目。 若要查看驱动程序源代码，请打开 **源文件** 下的任何文件。 可以先从 Driver.c 和 Device.c 开始。
 
     ![解决方案资源管理器的屏幕截图，其中显示驱动程序项目和程序包项目中的文件](images/vs2015-kmdf-solution-explorer.png)
 
@@ -68,7 +67,7 @@ ms.locfileid: "91734195"
 3. 在“解决方案资源管理器”窗口中，选择并按住（或右键单击）KmdfDriver 项目，然后选择“属性”  。
 4. 在“KmdfDriver 包属性页”窗口的左侧窗格中，转到“配置属性”&gt;“驱动程序安装”&gt;“部署”。
 5. 选中“部署前删除以前的驱动程序版本”。
-6. 对于**远程计算机名**，请选择配置用于测试和调试的计算机名。 在本练习中，我们使用名为 MyTestComputer 的计算机。
+6. 对于 **远程计算机名**，请选择配置用于测试和调试的计算机名。 在本练习中，我们使用名为 MyTestComputer 的计算机。
 7. 选择“硬件 ID 驱动程序更新”，然后输入驱动程序的硬件 ID。 在本练习中，硬件 ID 为“Root\\KmdfDriver”。 选择“确定”。
 
     ![“kmdfdriver 包属性页”窗口的屏幕截图，其中显示选择了“部署驱动程序安装”](images/vs2015-kmdfdriver-property-pages.png)

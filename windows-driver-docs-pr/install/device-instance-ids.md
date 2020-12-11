@@ -1,15 +1,14 @@
 ---
 title: 设备实例 ID
 description: 设备实例 ID 是系统提供的设备标识字符串，用于在系统中唯一标识设备。
-ms.assetid: 578973f4-463f-4707-8dc3-dff27b3d3052
 ms.date: 04/20/2017
 ms.localizationpriority: High
-ms.openlocfilehash: 4366fd7494769764d0ce2d094f13546965e99b1b
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: d8cc366ad9e1abf12a217918d15003e3fc279da8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096509"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782855"
 ---
 # <a name="device-instance-id"></a>设备实例 ID
 

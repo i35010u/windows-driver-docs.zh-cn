@@ -1,16 +1,15 @@
 ---
 title: 提交设备元数据包（仪表板帮助）
 description: 提交设备元数据包（仪表板帮助）
-ms.assetid: dcd35784-51c3-410a-8704-94f07fa8959a
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ac87ea350a6ed5b3c0c135af54e1c8beaf4a289
-ms.sourcegitcommit: bd72676caf2bf5c9738c4081c778316919b85d30
+ms.openlocfilehash: d27f8c896138992298846bf23b5a15d61863e068
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89450034"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800293"
 ---
 # <a name="submit-a-device-metadata-package-dashboard-help"></a>提交设备元数据包（仪表板帮助）
 

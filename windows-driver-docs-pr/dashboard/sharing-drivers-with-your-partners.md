@@ -1,23 +1,22 @@
 ---
 title: 与合作伙伴共享驱动程序
 description: 若要将驱动程序与合作伙伴之一共享，请创建硬件提交并按照下面的步骤操作。
-ms.assetid: BB69EF13-9271-4B17-BB42-A503BCDB0DE1
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b4fe3e6b949d5bc327b8638b9bcf65852a93a7d
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: f088d8f6468efb3d9b08110b7c168619aef5b4da
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "79243060"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800309"
 ---
 # <a name="share-a-driver-with-a-partner"></a>与合作伙伴共享驱动程序
 
 
 若要将驱动程序与合作伙伴之一共享，请[创建硬件提交](create-a-new-hardware-submission.md)并按照下面的步骤操作。
 
-**注意**  共享驱动程序只能由最初创建它的组织共享。 接收共享驱动程序的组织无法再次共享它。
+**注意**  共享驱动程序只能由最初创建它的组织共享。 接收共享驱动程序的组织无法再次共享它。
 
  
 
@@ -84,10 +83,10 @@ ms.locfileid: "79243060"
 
 2.  新的专用产品 ID 和提交 ID 以及调整的硬件 ID 将与合作伙伴共享。  此新实体具有相同的共享产品 ID。  如果选择了“全部撤消”，则会删除所有硬件 ID  。
 
-3.  当合作伙伴尝试为 Windows 更新创建**新的**发货标签时，其可用硬件 ID 列表将反映所做的更改，仅列出共享的硬件 ID。  如果选择了“全部撤消”，其硬件 ID 网格将是空的  。
+3.  当合作伙伴尝试为 Windows 更新创建 **新的** 发货标签时，其可用硬件 ID 列表将反映所做的更改，仅列出共享的硬件 ID。  如果选择了“全部撤消”，其硬件 ID 网格将是空的  。
 
 > [!NOTE]
-> 如果合作伙伴已将其共享的发货标签发布到 Windows 更新，则撤消硬件 ID **不会**从 Windows 更新目录中删除其现有项。  该项会保持发布状态，直到该合作伙伴使其过期。
+> 如果合作伙伴已将其共享的发货标签发布到 Windows 更新，则撤消硬件 ID **不会** 从 Windows 更新目录中删除其现有项。  该项会保持发布状态，直到该合作伙伴使其过期。
 >
 > 使用合作伙伴创建的现有发货标签只能使已弃用发货标签上的内容过期。
 >

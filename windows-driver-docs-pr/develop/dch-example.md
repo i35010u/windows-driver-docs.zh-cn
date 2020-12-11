@@ -1,15 +1,14 @@
 ---
 title: DCH 示例
 description: 介绍了 DCHU 驱动程序示例如何应用 DCH 设计原则（声明性、组件化、硬件支持应用 [HSA]）。
-ms.assetid: f46f0ea6-d855-49d2-8c09-a6ad56084742
 ms.date: 04/15/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 7720fd73b47c5bc671839c039213527d692785fd
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: f824ec48851ef5edeedaeb9d1d0cee0a4ef5a60d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065210"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839935"
 ---
 # <a name="dch-compliant-driver-package-example"></a>符合 DCH 的驱动程序包示例
 

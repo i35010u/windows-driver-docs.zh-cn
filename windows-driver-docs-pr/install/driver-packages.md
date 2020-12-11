@@ -1,15 +1,14 @@
 ---
 title: 驱动程序包
 description: 驱动程序包
-ms.assetid: e602c0c9-28eb-48bc-8a62-02f33b0c393a
 ms.date: 04/20/2017
 ms.localizationpriority: High
-ms.openlocfilehash: 2b9fb9e8c26b02036fc02e5e68787bec5765b2f6
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: b31b88578cc063d6c72e11217391da379622061f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "72007531"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782723"
 ---
 # <a name="driver-packages"></a>驱动程序包
 

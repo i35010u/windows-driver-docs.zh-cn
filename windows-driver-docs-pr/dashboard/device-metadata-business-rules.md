@@ -1,16 +1,15 @@
 ---
 title: 设备元数据业务规则
 description: 设备元数据业务规则
-ms.assetid: 19a0ced7-bb31-4899-abb4-2de803f179a6
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e961e7232d962685dbf3c7ca6da649a3e7875ae
-ms.sourcegitcommit: bd72676caf2bf5c9738c4081c778316919b85d30
+ms.openlocfilehash: fcb461a629c50a9364ac9ae1c7c2cbcfeee7c306
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89450196"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800381"
 ---
 # <a name="device-metadata-business-rules"></a>设备元数据业务规则
 

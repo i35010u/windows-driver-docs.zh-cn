@@ -1,16 +1,15 @@
 ---
 title: 管理硬件提交
 description: 为合作伙伴中心管理硬件提交
-ms.assetid: C4C3C56F-8E92-4CB1-A57B-942E466ECD3D
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e6685ae6dd2797f22f7090a609cd6632c48b15f2
-ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
+ms.openlocfilehash: e217f6a955dd3c75cb9852376fbe2fae6c7933d0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89443877"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800331"
 ---
 # <a name="managing-hardware-submissions-in-the-partner-center"></a>在合作伙伴中心内管理硬件提交
 
@@ -33,7 +32,7 @@ ms.locfileid: "89443877"
 当你提交要签名的扩展 INF 时，仪表板会检查指定的 **ExtensionId** 是否先前已注册到其他帐户。
 如果是，你将看到一条消息，提示你提供不同的 ID。 如果不是，仪表板会将其与你的帐户相关联。
 
-有关指定 **ExtensionId** 的详细信息，请参阅[使用扩展 INF 文件](../install/using-an-extension-inf-file.md)。
+有关指定 **ExtensionId** 的详细信息，请参阅 [使用扩展 INF 文件](../install/using-an-extension-inf-file.md)。
 
 请注意，在你的提交中，你只能使用注册到你的帐户的 ExtensionID。
 

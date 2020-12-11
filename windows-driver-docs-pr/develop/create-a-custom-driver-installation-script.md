@@ -1,15 +1,14 @@
 ---
-ms.assetid: 9F1E79FF-D38E-484A-8AEB-FC9A105BF709
 title: 如何创建自定义的驱动程序安装脚本
 description: 如果不只需要在测试计算机上安装驱动程序包，可以在安装时运行自定义的命令脚本。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b2e109a7a2b1ec5c219f16a50cc96a519f381a93
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ace1d988256f5a0ee9b2790e17468a9388f6d89f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217844"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791969"
 ---
 # <a name="how-to-create-a-custom-driver-installation-script"></a>如何创建自定义的驱动程序安装脚本
 

@@ -1,16 +1,15 @@
 ---
 title: 开发人员模式和预览模式
 description: 开发人员模式和预览模式
-ms.assetid: 4e1c7277-3df1-42e0-ab4d-fa0c3f267047
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 977179cab8337fbfdf26831d468654937fdf593a
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 6592b32737fa6f66d17c034460a81ab8978b2dd0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "63335062"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800385"
 ---
 # <a name="developer-and-preview-mode"></a>开发人员模式和预览模式
 

@@ -1,17 +1,16 @@
 ---
 title: 编写第一个驱动程序
 description: 如果要编写第一个驱动程序，请使用以下练习开始操作。 每个练习都相互独立，因此可以按任何顺序执行它们。
-ms.assetid: d8493589-cdaf-4f20-9416-5810da51aa6a
 keywords:
 - Hello World 驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e4b6aaf8b3bab7dc7596247c003e7f39914c0167
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: d29cdb3e6724164979db7fc7240a980f3e071b53
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105286"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823271"
 ---
 # <a name="write-your-first-driver"></a>编写你的第一个驱动程序
 

@@ -1,15 +1,14 @@
 ---
-ms.assetid: A637B75C-C227-495A-AB5B-B42DDF7842B9
 title: 创建新设备功能驱动程序
 description: 在本主题中，我们将介绍如何使用 Visual Studio 开始编写新的设备功能驱动程序。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d27135e1fdd934505c49c49cc0f1a983d7f80428
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 2835e1b6052064e7bbc74b106018e9263b26ec96
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217836"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838163"
 ---
 # <a name="creating-a-new-device-function-driver"></a>创建新设备功能驱动程序
 
@@ -25,7 +24,7 @@ ms.locfileid: "89217836"
 2.  在“新建项目”对话框的左侧窗格中，找到并选择“Visual C++ | Windows 驱动程序 | WDF”  。
 3.  在中间窗格中，选择“用户模式驱动程序(UMDF)”  。
 4.  填写“名称”和“位置”框，然后选择“确定”。 有关详细信息，请参阅[基于模板编写 UMDF 驱动程序](../gettingstarted/writing-a-umdf-driver-based-on-a-template.md)。
-    **注意**  在创建新的 UMDF 驱动程序时，必须选择一个不多于 32 个字符的驱动程序名称。 此长度限制在 wdfglobals.h 中定义。
+    **注意**  在创建新的 UMDF 驱动程序时，必须选择一个不多于 32 个字符的驱动程序名称。 此长度限制在 wdfglobals.h 中定义。
 5.  此时，你的驱动程序项目可以实现大多数 UMDF 驱动程序所需的一般代码。 现在你可以提供特定于你的设备的代码。 请参阅你的技术的相关文档来了解你需要实现的接口。
 
 ### <a name="span-idcase_2__the_documentation_for_your_technology_recommends_kmdfspanspan-idcase_2__the_documentation_for_your_technology_recommends_kmdfspanspan-idcase_2__the_documentation_for_your_technology_recommends_kmdfspancase-2-the-documentation-for-your-technology-recommends-kmdf"></a><span id="Case_2__The_documentation_for_your_technology_recommends_KMDF."></span><span id="case_2__the_documentation_for_your_technology_recommends_kmdf."></span><span id="CASE_2__THE_DOCUMENTATION_FOR_YOUR_TECHNOLOGY_RECOMMENDS_KMDF."></span>案例 2：你的技术的文档建议使用 KMDF。
@@ -34,7 +33,7 @@ ms.locfileid: "89217836"
 2.  在“新建项目”对话框的左侧窗格中，找到并选择“WDF”  。
 3.  在中间窗格中，选择“内核模式驱动程序(KMDF)”  。
 4.  填写“名称”和“位置”框，然后选择“确定”。 有关详细信息，请参阅[基于模板编写 KMDF 驱动程序](../gettingstarted/writing-a-kmdf-driver-based-on-a-template.md)。
-    **注意**  在创建新的 KMDF 驱动程序时，必须选择一个不多于 32 个字符的驱动程序名称。 此长度限制在 wdfglobals.h 中定义。
+    **注意**  在创建新的 KMDF 驱动程序时，必须选择一个不多于 32 个字符的驱动程序名称。 此长度限制在 wdfglobals.h 中定义。
 5.  此时，你的驱动程序项目可以实现大多数 KMDF 驱动程序所需的一般代码。 现在你可以提供特定于你的设备的代码。 请参阅你的技术的相关文档来了解你需要实现的方法。
 
 ### <a name="span-idcase_3__the_documentation_for_your_technology_describes_a_minidriver_modelspanspan-idcase_3__the_documentation_for_your_technology_describes_a_minidriver_modelspanspan-idcase_3__the_documentation_for_your_technology_describes_a_minidriver_modelspancase-3-the-documentation-for-your-technology-describes-a-minidriver-model"></a><span id="Case_3__The_documentation_for_your_technology_describes_a_minidriver_model."></span><span id="case_3__the_documentation_for_your_technology_describes_a_minidriver_model."></span><span id="CASE_3__THE_DOCUMENTATION_FOR_YOUR_TECHNOLOGY_DESCRIBES_A_MINIDRIVER_MODEL."></span>案例 3：你的技术的相关文档介绍了微型驱动程序模型。
@@ -56,7 +55,7 @@ ms.locfileid: "89217836"
 4.  此时，你有一个空的 WDM 驱动程序项目。 在“解决方案资源管理器”窗口中，选择并按住（或右键单击）你的驱动程序项目，然后选择“添加 | 新项目”。
 5.  在“添加新项目”对话框中，选择“C++ 文件(.cpp)”，为文件输入一个名称，然后选择“确定”。
 
-    **注意**  如果你想要创建 .c 文件，而不是 .cpp 文件，请输入具有 **.c** 扩展名的名称。
+    **注意**  如果你想要创建 .c 文件，而不是 .cpp 文件，请输入具有 **.c** 扩展名的名称。
 6.  请参阅你的技术的文档来了解你需要实现的功能。 在实现和组织功能时，你可能决定添加其他 .cpp 或 .c 文件。
 
  

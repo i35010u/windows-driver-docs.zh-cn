@@ -1,19 +1,18 @@
 ---
-ms.assetid: ACD6E5C3-5CE5-4C3F-BA44-1C87C39EF3C4
 title: 适用于 Windows 10 的驱动程序融合模型
-description: 若要使设备在 Windows 10 之前的 Windows 和 Windows Phone 版本上工作，可能需要编写两个独立的驱动程序，一个是 Windows 8.1，一个是 Windows Phone 8.1。
+description: 若要使你的设备在 Windows 10 之前的 Windows 和 Windows Phone 版本上工作，你可能需要编写两个独立的驱动程序，一个是 Windows 8.1，一个是 Windows Phone 8.1。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f8758a3390d9c9331815e85679fffa50101fa4a
-ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
+ms.openlocfilehash: 211fb56c62a77bf18032359b9f1b4878ffcdf504
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83235322"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828827"
 ---
-# <a name="driver-convergence-model-for-windows10"></a>适用于 Windows 10 的驱动程序融合模型
+# <a name="driver-convergence-model-for-windows-10"></a>适用于 Windows 10 的驱动程序融合模型
 
-若要使设备在 Windows 10 之前的 Windows 和 Windows Phone 版本上工作，可能需要编写两个独立的驱动程序，一个是 Windows 8.1，一个是 Windows Phone 8.1。 在 Windows 10 中，多数情况下，可以编写一个在任意 Windows 10 版本上运行的驱动程序。 本主题介绍 Windows 10 中设备驱动程序接口的聚合计划，并提供存在版本特定差异情况的详细信息。 其中解答以下问题：
+若要使你的设备在 Windows 10 之前的 Windows 和 Windows Phone 版本上工作，你可能需要编写两个独立的驱动程序，一个是 Windows 8.1，一个是 Windows Phone 8.1。 在 Windows 10 中，多数情况下，你可以编写一个在任意 Windows 10 版本上运行的驱动程序。 本主题介绍 Windows 10 中设备驱动程序接口的聚合计划，并提供存在版本特定差异情况的详细信息。 其中解答以下问题：
 
 -   对于旧驱动程序，Windows 8.1 驱动程序是否在 Windows 10 桌面版（家庭版、专业版和企业）和/或 Windows 10 移动版上运行？
 -   对于新驱动程序，我可以使用 Windows 10 工具包生成一个在 Windows 10 桌面版和 Windows 10 移动版上运行的驱动程序么？
@@ -42,7 +41,7 @@ ms.locfileid: "83235322"
 <td align="left">生物识别</td>
 <td align="left">是</td>
 <td align="left"><p>Windows 10 桌面版和 Windows 10 移动版均提供 Windows 生物识别框架 (WBF)。</p>
-<p>如果你在为 Windows 10 移动版开发新的生物识别驱动程序，则可从 Windows 8.1 WBF 驱动程序着手。</p></td>
+<p>如果你在为 Windows 10 移动版开发新的生物识别驱动程序，你可以将 Windows 8.1 WBF 驱动程序作为起点。</p></td>
 </tr>
 <tr class="odd">
 <td align="left">Bluetooth</td>
@@ -68,7 +67,7 @@ ms.locfileid: "83235322"
 <tr class="even">
 <td align="left">显示器</td>
 <td align="left">是</td>
-<td align="left"><p>已聚合。 Windows 显示驱动程序模型 (WDDM) 1.3 在 Windows 8.1 和 Windows Phone 8.1 上运行。 Windows 10 继续支持 WDDM 1.3。 WDDM 2.0 是 Windows 10 的新增功能。 若要使用 Direct3D (D3D) 12 运行时和功能，必须有 WDDM 2.0 驱动程序。</p></td>
+<td align="left"><p>已聚合。 Windows 显示驱动程序模型 (WDDM) 1.3 在 Windows 8.1 和 Windows Phone 8.1 上运行。 WDDM 1.3 继续在 Windows 10 中受支持。 WDDM 2.0 是 Windows 10 的新增功能。 若要使用 Direct3D (D3D) 12 运行时和功能，必须有 WDDM 2.0 驱动程序。</p></td>
 </tr>
 <tr class="odd">
 <td align="left">位置</td>
@@ -97,7 +96,7 @@ ms.locfileid: "83235322"
 <tr class="odd">
 <td align="left">USB</td>
 <td align="left">是</td>
-<td align="left"><p>Windows 8.1 提供主控制器堆栈。 Windows 10 添加了允许使用主控制器（电脑/平板电脑/手机）的设备充当外围设备的函数堆栈。</p></td>
+<td align="left"><p>Windows 8.1 提供主控制器堆栈。 Windows 10 添加了允许使用主控制器（电脑/平板电脑/电话）的设备充当外围设备的函数堆栈。</p></td>
 </tr>
 <tr class="even">
 <td align="left">Windows 驱动程序框架 (WDF)</td>
@@ -108,7 +107,7 @@ ms.locfileid: "83235322"
 <td align="left">WLAN</td>
 <td align="left">是</td>
 <td align="left"><p>WDI（WLAN 设备驱动程序接口）是 Windows 10 新的通用 WLAN 驱动程序模型。 WLAN 设备制造商可以编写在所有设备平台上运行的单个 WDI 微型端口驱动程序，所需要的代码比以前的本机 WLAN 驱动程序模型少。 Windows 10 中引入的所有新 WLAN 功能均需要基于 WDI 的驱动程序。</p>
-<p>供应商提供的本机 WLAN 驱动程序继续在 Windows 10 中运行，但功能仅限于开发它们时所针对的 Windows 版本。</p></td>
+<p>供应商提供的本机 WLAN 驱动程序继续在 Windows 10 中运行，但功能仅限于开发它们所用于的 Windows 版本。</p></td>
 </tr>
 </tbody>
 </table>

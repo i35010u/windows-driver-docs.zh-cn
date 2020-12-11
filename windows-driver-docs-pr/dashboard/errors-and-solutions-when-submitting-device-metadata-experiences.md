@@ -1,16 +1,15 @@
 ---
 title: 提交设备元数据体验时的错误和解决方案
 description: 提交设备元数据体验时的错误和解决方案
-ms.assetid: 793b4c92-96e8-4b3e-a7de-d00e953c983a
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ddb9a329f91347b4f26730d96a41a6e9822040f0
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 37a139239754f5767a357bebd68b7237b70ca7f1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732654"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800375"
 ---
 # <a name="errors-and-solutions-when-submitting-device-metadata-experiences"></a>提交设备元数据体验时的错误和解决方案
 

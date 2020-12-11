@@ -1,15 +1,14 @@
 ---
-ms.assetid: 79AB7242-72D6-4198-9AF0-482CBFB756C7
 title: 如何使用“驱动程序测试”模板编写驱动程序测试
 description: 使用适用于 Windows 8 的 Windows 驱动程序工具包 (WDK) 来创建自己的驱动程序测试或自定义所提供的部分测试。
 ms.date: 03/26/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b750c17de0789089e5eae9b3fd6ed4504d232342
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a732beda277d7e297345dd24ac9f31c9a7110339
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210827"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793210"
 ---
 # <a name="how-to-write-a-driver-test-using-a-driver-test-template"></a>如何使用“驱动程序测试”模板编写驱动程序测试
 

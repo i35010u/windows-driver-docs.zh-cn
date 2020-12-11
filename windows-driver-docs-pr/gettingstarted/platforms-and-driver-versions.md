@@ -1,15 +1,14 @@
 ---
 title: 为不同版本的 Windows 编写驱动程序
 description: 为不同版本的 Windows 编写驱动程序
-ms.assetid: 7519235c-46c5-49aa-8b11-9e9ac5a51026
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fa801ebc87c782bb53963da6f28ac0ed3f2017e8
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: a6fae68978e7059f58bc9b1282c4bf916e5a3028
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89385109"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840105"
 ---
 # <a name="writing-drivers-for-different-versions-of-windows"></a>为不同版本的 Windows 编写驱动程序
 

@@ -1,15 +1,14 @@
 ---
-ms.assetid: C5CD87E3-26C0-48AA-B75E-1EFFB0B5519D
 title: 从现有源文件创建驱动程序
 description: WDK 已与 Microsoft Visual Studio 集成，并使用与你用于生成 Visual Studio 解决方案和项目的相同编译器和生成工具。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f55796770618dede44903f069cecd5822195864
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 271515a01c7a50a24c9de7a99db04fefc89fad23
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734459"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817493"
 ---
 # <a name="creating-a-driver-from-existing-source-files"></a>从现有源文件创建驱动程序
 

@@ -1,16 +1,15 @@
 ---
 title: 添加或删除用户
 description: 硬件仪表板将 Azure Active Directory 用于用户管理。 此主题介绍使用全局管理员凭据添加/删除用户的过程。
-ms.assetid: 1922C767-CD34-43CD-AF90-F1FCA297EF5E
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eb5dcefa805a8577e7fcbf2a008ef500d218296d
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: ef5942075c86e55de89dac4ef18ec68fe6cfb701
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "63337333"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800435"
 ---
 # <a name="adding-or-removing-users"></a>添加或删除用户
 
@@ -36,7 +35,7 @@ ms.locfileid: "63337333"
 
 当所有详细信息完成填写后，请选择“保存”  以完成新用户信息填写。 这会将授予所选权限的用户添加到你的帐户，并为他们生成一次性使用的密码。
 
-**注意**  确保为新用户打印或保存此页面。 离开此页面后，将无法恢复该密码。
+**注意** 确保为新用户打印或保存此页面。 离开此页面后，将无法恢复该密码。
 
 ## <a name="removing-users"></a>删除用户
 

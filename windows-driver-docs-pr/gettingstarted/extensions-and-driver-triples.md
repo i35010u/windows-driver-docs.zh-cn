@@ -1,15 +1,14 @@
 ---
 title: KMDF 扩展和三重驱动程序
 description: 在本主题中，我们介绍内核模式驱动程序框架 (KMDF) 基于类的扩展。
-ms.assetid: 49207485-AFDF-4E84-B39C-A14FC7E2CF60
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a08581620dad4b82d279c93e26f1ad682e227d7
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 67165a59978ef3fe9d943aba39f3755fc85222d6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "63371299"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795531"
 ---
 # <a name="kmdf-extensions-and-driver-triples"></a>KMDF 扩展和三重驱动程序
 

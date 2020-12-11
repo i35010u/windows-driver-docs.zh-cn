@@ -1,16 +1,15 @@
 ---
 title: 创建移动宽带体验
 description: 创建移动宽带体验
-ms.assetid: bf9151cc-1587-4ff9-b482-8ebad2f57791
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fdc265a7bb873a68ce6f6486fce15c51a751caa6
-ms.sourcegitcommit: bd72676caf2bf5c9738c4081c778316919b85d30
+ms.openlocfilehash: 9d7315eebd771f5ac66e83414864f65c0fedd6eb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89450026"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800407"
 ---
 # <a name="create-a-mobile-broadband-experience"></a>创建移动宽带体验
 

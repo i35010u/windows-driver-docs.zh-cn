@@ -1,16 +1,15 @@
 ---
 title: 提交移动宽带设备清单包
 description: 提交移动宽带设备清单包
-ms.assetid: 080c3f4a-400f-426c-8296-1cd0bdfb0828
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c3a46452d6f088cbeb8de107cd26995486091afe
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 12f11a87a5f40855146a09fa84342c4d4c7c29d6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734113"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800283"
 ---
 # <a name="submit-a-mobile-broadband-device-manifest-package"></a>提交移动宽带设备清单包
 

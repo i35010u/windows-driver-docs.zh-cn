@@ -1,16 +1,15 @@
 ---
 title: Windows 调试器的符号路径
 description: 符号路径指定 Windows 调试器（WinDbg、KD、CDB、NTST）查找符号文件的位置。
-ms.assetid: 705df98f-717f-40ad-a424-101826970691
 keywords: 符号文件和路径、符号、延迟符号加载、延迟符号加载、符号路径
 ms.date: 10/23/2019
 ms.localizationpriority: high
-ms.openlocfilehash: 1ef2c182b0dd04116bc85ce6e3582d2cf5cbf228
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f54a71471748cf5a3a25056818c3b012948535de
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214828"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813959"
 ---
 # <a name="symbol-path-for-windows-debuggers"></a>Windows 调试器的符号路径
 

@@ -1,15 +1,14 @@
 ---
-ms.assetid: 960368D6-5E24-46B6-83DA-0525065E5FFB
 title: 驱动程序包项目的驱动程序验证程序属性
 description: 驱动程序验证程序是一款运行时验证工具，用于提高驱动程序测试的有效性。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 702fa54441dffd6bb624ce8e3f80d188181c30d6
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b3eb85688fa8bfa332d11e540e75d54c5835b8cb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206563"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833605"
 ---
 # <a name="driver-verifier-properties-for-driver-package-projects"></a>驱动程序包项目的驱动程序验证程序属性
 
@@ -120,7 +119,7 @@ ms.locfileid: "89206563"
 
     [基于堆栈的故障注入](../devtest/stack-based-failure-injection.md)选项用于将资源故障注入内核模式驱动程序中。 此选项结合使用了特殊驱动程序 KmAutoFail.sys 和[驱动程序验证程序](../devtest/driver-verifier.md)来侵入驱动程序错误处理路径。
 
-    **注意**  不能将[基于堆栈的故障注入](../devtest/stack-based-failure-injection.md)和[资源不足模拟](../devtest/low-resources-simulation.md)组合使用。
+    **注意** 不能结合使用 [基于堆栈的故障注入](../devtest/stack-based-failure-injection.md)和 [资源不足模拟](../devtest/low-resources-simulation.md)。
 
      
 

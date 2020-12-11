@@ -1,15 +1,14 @@
 ---
-ms.assetid: 47AC8BD7-7098-43C3-A198-3622D465B142
 title: 避免自定义生成环境内出现浮点错误
 description: 此信息主要面向开发人员和为 Windows 编译内核模式驱动程序的构建工程师。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c2f017367c211eb8020ea8ee3f29d29509467ee
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 6ceba96455fa52d84dbbc16a5028c2a5e355e15a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "63359485"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802635"
 ---
 # <a name="avoiding-floating-point-errors-in-custom-build-environments"></a>避免自定义生成环境内出现浮点错误
 

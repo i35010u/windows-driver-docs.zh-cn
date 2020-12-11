@@ -1,15 +1,14 @@
 ---
 title: 硬件 ID
 description: 硬件 ID 是供应商定义的标识字符串，Windows 使用该字符串将设备与 INF 文件匹配。
-ms.assetid: 9eb894d6-4e83-4c08-8165-f30d6636da75
 ms.date: 04/20/2017
 ms.localizationpriority: High
-ms.openlocfilehash: 3d648ccc3045c5a0ee9f286b790f8aeb75155893
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: 992d04e254de7d53e89357aa2e371a5b6d50856d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361337"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96791773"
 ---
 # <a name="hardware-id"></a>硬件 ID
 

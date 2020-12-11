@@ -1,17 +1,16 @@
 ---
 title: 适用于所有驱动程序开发人员的概念
 description: 此部分介绍所有驱动程序开发人员需要了解的概念。
-ms.assetid: 639bba8d-d0de-401b-aeb4-c9ad43760e54
 keywords:
 - 驱动程序基础
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 42ec2df44588dff7f2a37f70f861720c46b5e267
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 6c1eb365a045180d82870de5c8e35f4b836cb0b0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "63371359"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795551"
 ---
 # <a name="concepts-for-all-driver-developers"></a>适用于所有驱动程序开发人员的概念
 

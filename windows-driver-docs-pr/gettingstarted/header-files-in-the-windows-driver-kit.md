@@ -1,7 +1,6 @@
 ---
 title: Windows 驱动程序工具包中的头文件
 description: Windows 驱动程序工具包中的头文件
-ms.assetid: 7d02148d-502d-4b49-9c56-9fff498dd2af
 keywords:
 - 驱动程序设计决策 WDK, 头文件更改
 - 设计驱动程序 WDK, 头文件更改
@@ -13,12 +12,12 @@ keywords:
 - 文件 WDK 头文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d2dc53745bdff758aadf634d318434fb93593cd
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: b6954eda8d38538724195626169bf552104301cb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383525"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795525"
 ---
 # <a name="header-files-in-the-windows-driver-kit"></a>Windows 驱动程序工具包中的头文件
 
@@ -54,7 +53,7 @@ WDK 中的头文件包含的条件语句指定编程元素仅在某些版本的 
 </tr>
 <tr class="even">
 <td align="left"><p>NTDDI_WINBLUE</p></td>
-<td align="left"><p>Windows 8.1</p></td>
+<td align="left"><p>Windows 8.1</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>NTDDI_WIN8</p></td>

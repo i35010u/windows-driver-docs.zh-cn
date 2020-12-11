@@ -1,15 +1,14 @@
 ---
-ms.assetid: E109BD80-F9CB-4F1F-A6FD-1142E27EC6AD
 title: Windows 驱动程序入门
 description: 使用 Windows 驱动程序，可以创建一个同时在 Windows 10X 和 Windows 桌面版中运行的驱动程序。
 ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: c7fec3eaf7b2be9a600b2a507dca184bd7f9d0d6
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 9472f86d688bcda984902a9fb3b067b1a2da28fb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066056"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838803"
 ---
 # <a name="getting-started-with-windows-drivers"></a>Windows 驱动程序入门
 

@@ -1,16 +1,15 @@
 ---
 title: 提交批量元数据包
 description: 为驱动程序创建批量元数据包的组件 - 设备元数据包、设备清单包和 BulkMetadataSubmission XML 文档。
-ms.assetid: c8e248d4-a419-48e1-839d-1bbb9adda382
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 90d1b43fa9bffc103efab8991d78c87719657a40
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 0dc59049a3e516626648d555c35773eed0d026ea
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734115"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800291"
 ---
 # <a name="submit-a-bulk-metadata-package"></a>提交批量元数据包
 
@@ -108,7 +107,7 @@ Filename1、Filename2、Filename3、Filename4 等必须是 GUID。
 GUID.pcmetadata-ms 文件在名为 PCFiles 的本地目录中创建：
 
 ```syntax
-Cabarc.exe -r -p -P  .\BulkPackages\
+Cabarc.exe -r -p -P  .\BulkPackages\
 N .\BulkFiles\ DDMMYYYY.bulkmetadata-ms
 .\BulkPackages\BulkMetadataSubmission.xml
 .\BulkPackages\GUID1.devicemetadata-ms

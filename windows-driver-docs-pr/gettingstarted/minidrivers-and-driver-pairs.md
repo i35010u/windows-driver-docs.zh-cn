@@ -1,15 +1,14 @@
 ---
 title: 微型驱动程序、微型端口驱动程序和驱动程序对
 description: 微型驱动程序或微型端口驱动程序可以用作半个驱动程序对。
-ms.assetid: 33387A72-5278-4637-AED4-C010E4C1616B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f55e18060d4a5a7fc3a0c82a4df232a4428f831
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: d98560b7d14553d1a00dc7dce386bdbdb1b6fc2a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89385117"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840183"
 ---
 # <a name="minidrivers-miniport-drivers-and-driver-pairs"></a>微型驱动程序、微型端口驱动程序和驱动程序对
 
@@ -200,7 +199,7 @@ Dispatch routines:
 -   （转换器微型类驱动程序、转换器端口驱动程序）
 -   （NDIS 微型端口驱动程序、NDIS 库）
 
-**注意**  正如你在列表中看到的一样，多个模型将术语“类驱动程序”  用作驱动程序对的通用部分。 此种类驱动程序不同于独立类驱动程序，也不同于类筛选器驱动程序。
+**注意**  正如你在列表中看到的一样，多个模型将术语 *类驱动程序* 用作驱动程序对的通用部分。 此种类驱动程序不同于独立类驱动程序，也不同于类筛选器驱动程序。
 
  
 

@@ -1,18 +1,17 @@
 ---
 title: 选择驱动程序模型
 description: Microsoft Windows 提供了多种驱动程序模型，你可以使用这些模型编写驱动程序。
-ms.assetid: 67de6453-969e-4b4d-a72e-de132b20b022
 keywords:
 - 驱动程序模型
 - 驱动程序设计
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f19d9bcf05b16748beca4616c74d8a535fa604c
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 0e9ef0f19b4ff701e42d07b08483ed187d510e81
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383529"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795553"
 ---
 # <a name="choosing-a-driver-model"></a>选择驱动程序模型
 
@@ -68,7 +67,7 @@ Microsoft Windows 提供了多种驱动程序模型，你可以使用这些模�
 
 我们的建议是使用 KMDF，尤其是当你已熟悉它时。 如果你希望驱动程序与 PnP 和电源管理完全无关，请使用传统 Windows NT 模型。 如果需要编写考虑电源转换或 PnP 事件的软件，则不能使用传统 Windows NT 模型，而必须使用 KMDF。
 
-**注意**  在极少数情况下，你需要编写注意到 PnP 或电源事件的软件驱动程序，并且驱动程序需要访问无法通过 KMDF 获取的数据，你必须使用 WDM。
+**注意**  在极少数情况下，你需要编写注意到 PnP 或电源事件的软件驱动程序，并且驱动程序需要访问无法通过 KMDF 获取的数据，你必须使用 WDM。
 
 ## <a name="span-idchoosing_a_driver_model_for_a_file_system_driverspanspan-idchoosing_a_driver_model_for_a_file_system_driverspanspan-idchoosing_a_driver_model_for_a_file_system_driverspanchoosing-a-driver-model-for-a-file-system-driver"></a><span id="Choosing_a_driver_model_for_a_file_system_driver"></span><span id="choosing_a_driver_model_for_a_file_system_driver"></span><span id="CHOOSING_A_DRIVER_MODEL_FOR_A_FILE_SYSTEM_DRIVER"></span>为文件系统驱动程序选择驱动程序模型
 

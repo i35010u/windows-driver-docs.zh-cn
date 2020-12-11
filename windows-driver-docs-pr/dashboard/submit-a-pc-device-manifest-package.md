@@ -1,16 +1,15 @@
 ---
 title: 提交电脑设备清单包
 description: 提交电脑设备清单包
-ms.assetid: b96b02b8-8804-403e-9513-7a5d1b730fcd
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 22731c37bad27505f8dc78b4b70d7f93948fd3be
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: e142b9bda595dc89aa466eecdb7f86ef857d497c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734099"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800277"
 ---
 # <a name="submit-a-pc-device-manifest-package"></a>提交电脑设备清单包
 
@@ -112,7 +111,7 @@ GUID1.devicemanifest-ms
 GUID.devicemanifest-ms 文件在名为 PCFiles 的本地目录中创建：
 
 ``` syntax
-Cabarc.exe -r -p -P  .\PcPackages\
+Cabarc.exe -r -p -P  .\PcPackages\
 N .\PCFiles\ GUID.devicemanifest-ms
 .\PcPackages\PcMetadataSubmission.xml
 .\PcPackages\LocaleInfo.xml

@@ -1,15 +1,14 @@
 ---
-ms.assetid: 31CE7AE9-6444-4706-9C43-2B35038FA955
 title: 如何在运行时通过命令提示符测试驱动程序
 description: WDK 提供的设备测试组件使你能够在网络中的测试计算机上测试驱动程序。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d34ab4d3fa73251bd653421df1788f78114d31ea
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: b24540e8870b599e55bdbee4015fea89eecfe245
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103264"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793207"
 ---
 # <a name="how-to-test-a-driver-at-runtime-from-a-command-prompt"></a>如何在运行时通过命令提示符测试驱动程序
 

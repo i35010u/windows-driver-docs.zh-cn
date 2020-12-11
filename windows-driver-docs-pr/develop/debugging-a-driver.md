@@ -1,15 +1,14 @@
 ---
-ms.assetid: 2274e848-2a0b-445c-82cd-7bcd9e23078a
 title: 调试驱动程序
 description: 通常，调试内核模式驱动程序需要两台计算机。
 ms.date: 08/22/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e860bb140d97d4b03743aa91db1227a176f74d4
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 914e51b1da0dc26b049d1566d90ab3e44c6d3191
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065190"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787659"
 ---
 # <a name="debugging-a-driver"></a>调试驱动程序
 

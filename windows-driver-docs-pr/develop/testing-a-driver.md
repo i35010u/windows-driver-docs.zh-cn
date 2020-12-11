@@ -1,15 +1,14 @@
 ---
-ms.assetid: bb73768e-0ac9-4377-9caa-c0cce1d10bb8
 title: 测试驱动程序
 description: 测试驱动程序
 ms.date: 06/28/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d9b84014b6f15290696ce8741df38523e16bb107
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: d90ce76ad93acca9f17603e1c0a9d8b93127a7cf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733333"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784111"
 ---
 # <a name="testing-a-driver"></a>测试驱动程序
 

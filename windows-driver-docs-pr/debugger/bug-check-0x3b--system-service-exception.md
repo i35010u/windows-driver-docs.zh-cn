@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x3B SYSTEM_SERVICE_EXCEPTION
 description: SYSTEM_SERVICE_EXCEPTION Bug 检查具有 0x0000003B 值。 这表示在执行从非特权代码转换为特权代码的例程时发生了异常。
-ms.assetid: 0e2c230e-d942-4f32-ae8e-7a54aceb4c19
 keywords:
 - Bug 检查 0x3B SYSTEM_SERVICE_EXCEPTION
 - SYSTEM_SERVICE_EXCEPTION
@@ -13,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: high
-ms.openlocfilehash: 6c0d1455c5b905a6095de9f5b7133b5ca57c0dfc
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 06bedae38446d9d1da993acdfe741a28782c083a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209365"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96822599"
 ---
 # <a name="bug-check-0x3b-system_service_exception"></a>Bug 检查 0x3B：SYSTEM\_SERVICE\_EXCEPTION
 

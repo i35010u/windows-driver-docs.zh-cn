@@ -1,16 +1,15 @@
 ---
 title: 发布限制
 description: 以下各项在发布期间受限制。 仍可以为它们创建发货标签，但请求需要额外的 Microsoft 审查。
-ms.assetid: 30D23457-6BE1-4A4C-B69A-3C8C0A8E093A
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7caa3024c1a7f57b5d96ef3b82aa1afaf60f59b1
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: c4560add393947861e94270dfe93ad73b63b781b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "67161353"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800315"
 ---
 # <a name="publishing-restrictions"></a>发布限制
 

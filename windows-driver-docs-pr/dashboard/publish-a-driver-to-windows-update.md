@@ -1,16 +1,15 @@
 ---
 title: 将驱动程序发布到 Windows 更新
 description: 若要将驱动程序发布到 Windows 更新，请创建硬件提交，然后按照下面的步骤操作。
-ms.assetid: E62AADCF-E481-40CA-98F1-BE4629C3EE35
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c71050c56e66c7264360c824c6c50d157fef9f90
-ms.sourcegitcommit: c94be6fc464edc94035060a4723efa06ab0f5af9
+ms.openlocfilehash: d19bb23898ed06420df655c4b75e0fd25e18f55c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92153479"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800337"
 ---
 # <a name="publish-a-driver-to-windows-update"></a>将驱动程序发布到 Windows 更新
 

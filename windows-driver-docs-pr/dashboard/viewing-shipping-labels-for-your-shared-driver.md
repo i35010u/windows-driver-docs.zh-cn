@@ -1,16 +1,15 @@
 ---
 title: 查看共享驱动程序的合作伙伴发货标签
 description: 与合作伙伴共享驱动程序后，合作伙伴可以为驱动程序创建发货标签。 若要查看共享驱动程序的合作伙伴发货标签列表，请按照下面的步骤操作。
-ms.assetid: EC27412D-1695-4B14-AAB2-2ECE636265C0
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d022896d4b5ca6a93414d2c5c15936c2e385777
-ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
+ms.openlocfilehash: ff5ff1e44ad8a3c5a6c4c49001381e79d8d8e00d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89443805"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800269"
 ---
 # <a name="view-partner-shipping-labels-for-a-shared-driver"></a>查看共享驱动程序的合作伙伴发货标签
 

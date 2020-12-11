@@ -1,16 +1,15 @@
 ---
 title: 获取由 Microsoft 签名的适用于多个 Windows 版本的驱动程序
 description: 如何获取由 Microsoft 签名的适用于多个版本的 Windows 的驱动程序
-ms.assetid: 519384F5-986C-4109-8C91-4352DEFF46F9
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a23e192867eceb6c0a275b55e1afef727ef7da7d
-ms.sourcegitcommit: a5f76805387760730faed5674d87201ec85b7dd3
+ms.openlocfilehash: a3268258e9c1c2a1da1e695edcc30134f46e0002
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90112104"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800433"
 ---
 # <a name="get-drivers-signed-by-microsoft-for-multiple-windows-versions"></a>获取由 Microsoft 签名的适用于多个 Windows 版本的驱动程序
 

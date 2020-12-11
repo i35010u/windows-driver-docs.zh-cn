@@ -1,17 +1,16 @@
 ---
 title: 编写 Hello World Windows 驱动程序 (KMDF)
 description: 本主题介绍了如何使用内核模式驱动程序框架 (KMDF) 编写 Windows 驱动程序。 首先使用 Microsoft Visual Studio 模板，然后在单独的计算机上部署和安装驱动程序。
-ms.assetid: B4200732-67B5-4BD9-8852-81387912A9A4
 keywords:
 - KMDF Hello World
 ms.date: 04/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: bbb7559bb53c59e9fbf8acd168357dd5246698b5
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 44e3047bd2a52cdd484a9a3ce1a749a3c595c5ca
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732639"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96823289"
 ---
 # <a name="write-a-hello-world-windows-driver-kmdf"></a>编写 Hello World Windows 驱动程序 (KMDF)
 
@@ -150,7 +149,7 @@ ms.locfileid: "91732639"
     系统在检测到你的设备已到达时，会调用 [*EvtDeviceAdd*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)。 它的任务是初始化该设备的结构和资源。 在此示例中，你仅针对 *EvtDeviceAdd* 输出了“Hello World”消息、创建了设备对象并返回。 在你编写的其他驱动程序中，可以为硬件创建 I/O 队列，为特定于设备的信息设置设备上下文存储空间，或执行准备设备所需的其他任务。
 
     > [!TIP]
-    > 对于设备添加回调，请注意以驱动程序名称为前缀对回调命名的方式 (*KmdfHelloWorld*EvtDeviceAdd)。 通常，我们建议以这种方式命名驱动程序功能，以区别于其他驱动程序的功能。 *DriverEntry* 是完全应该这样命名的唯一一项。
+    > 对于设备添加回调，请注意以驱动程序名称为前缀对回调命名的方式 (*KmdfHelloWorld* EvtDeviceAdd)。 通常，我们建议以这种方式命名驱动程序功能，以区别于其他驱动程序的功能。 *DriverEntry* 是完全应该这样命名的唯一一项。
 
 5. 现在，整个 Driver.c 如下所示：
 

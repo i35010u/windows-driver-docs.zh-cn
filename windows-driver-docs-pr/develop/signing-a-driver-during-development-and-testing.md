@@ -1,15 +1,14 @@
 ---
-ms.assetid: 1EBE8D0C-5F27-4FBE-8B0C-8AAD40F6FBC6
 title: 在开发和测试期间签署驱动程序
 description: 只有已签署的驱动程序包才能安装于 64 位 Windows 上。  出于测试目的，可以对驱动程序包进行测试签名。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 583334fac010d1a787f94f72f31b6088f960793c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e2f6c43a41c6820c9e7244f40e81a7a3fe0ccbf0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216246"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96841049"
 ---
 # <a name="signing-a-driver-during-development-and-testing"></a>在开发和测试期间为驱动程序签名
 

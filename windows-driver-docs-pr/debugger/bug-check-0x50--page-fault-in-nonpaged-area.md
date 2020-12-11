@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x50 PAGE_FAULT_IN_NONPAGED_AREA
 description: PAGE_FAULT_IN_NONPAGED_AREA bug 检查的值为 0x00000050。 这表明引用了无效的系统内存。
-ms.assetid: 63b4ab82-f7a9-4e14-bf7c-707a22d7e251
 keywords:
 - Bug 检查 0x50 PAGE_FAULT_IN_NONPAGED_AREA
 - PAGE_FAULT_IN_NONPAGED_AREA
@@ -13,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: high
-ms.openlocfilehash: 96cf8c03033cdae7a9d4a6aa57f2d31f2adb6a19
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ba1845139f4a175a6c55ed1328d825109d157807
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207987"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786471"
 ---
 # <a name="bug-check-0x50-page_fault_in_nonpaged_area"></a>Bug 检查 0x50：PAGE\_FAULT\_IN\_NONPAGED\_AREA
 

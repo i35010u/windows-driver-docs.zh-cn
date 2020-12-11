@@ -1,15 +1,14 @@
 ---
-ms.assetid: 4985B206-9E7F-45FE-9067-7CFD15A7AAAD
 title: 为代码分析工具创建日志文件
 description: Windows Server 2012 硬件认证计划需要所有驱动程序在正当提交时提供驱动程序验证日志 (DVL)。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 111695456dc09cb05daef55a6f4b1ddde232207f
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: ed4fcf753786f9a65c5e435314f702a5b9a1abe0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734455"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793221"
 ---
 # <a name="creating-a-log-file-for-the-code-analysis-tool"></a>为代码分析工具创建日志文件
 

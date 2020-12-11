@@ -1,19 +1,18 @@
 ---
-ms.assetid: 51CD05AB-2626-4E27-AA08-09547D546218
 title: 将 WDK 8.1 项目转换为 WDK 10
 description: 如何将使用 Microsoft Visual Studio 2013 和 Windows 驱动程序工具包 (WDK) 8.1 创建的驱动程序项目转换为在 Microsoft Visual Studio 2015 中使用 Windows 驱动程序工具包 (WDK) 10 生成的驱动程序项目。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 83551c958fa5eb5c21cb5f0d31ce7df483a676eb
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 2350d1a7ab979f00d2e425b00c3ee45586c234e3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217848"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802627"
 ---
 # <a name="converting-wdk-81-projects-to-wdk-10"></a>将 WDK 8.1 项目转换为 WDK 10
 
-本主题介绍如何将使用 Microsoft Visual Studio 2013 和 Windows 驱动程序工具包 (WDK) 8.1 创建的驱动程序项目转换为在 Microsoft Visual Studio 2015 中使用 Windows 驱动程序工具包 (WDK) 10 生成的驱动程序项目。
+本主题介绍如何将使用 Microsoft Visual Studio 2013 和 Windows 驱动程序工具包 (WDK) 8.1 创建的驱动程序项目转换为在 Microsoft Visual Studio 2015 中使用 Windows 驱动程序工具包 (WDK) 10 生成的驱动程序项目。
 
 Visual Studio 2015 存在新的编译器警告和错误。 即使在 Visual Studio 2013 中生成驱动程序项目时没有出现任何错误，在 Visual Studio 2015 中生成该项目时也可能遇到错误。
 
@@ -31,13 +30,13 @@ Visual Studio 2015 存在新的编译器警告和错误。 即使在 Visual Stud
 
     通常，转换后的解决方案包含两个配置文件，一个用于调试（测试），另一个用于发布。 若要使用 WDK 10 创建类似环境，只需选择“&lt;新建…&gt;”  两次。 若要创建调试配置文件，请从“Win 8.1 调试”  配置文件复制。 若要创建发布配置文件，请从“Win 8.1 发布”  配置文件复制。
 
-3.  在 WDK 10 以前的 WDK 版本中，驱动程序解决方案始终需要包项目。 在 WDK 10 中，仅当在驱动程序包中加入多个驱动程序时才需要包项目。 使用以下指南：
+3.  在 WDK 10 以前的 WDK 版本中，驱动程序解决方案始终需要包项目。 在 WDK 10 中，仅当你在驱动程序包中加入多个驱动程序时才需要包项目。 使用以下指南：
 
     -   如果解决方案中只有一个驱动程序且存在包项目，请将其删除。
 
     -   如果解决方案中有多个驱动程序，请确保解决方案包含包项目。 然后，对于解决方案中的每个驱动程序项目，打开项目属性并导航到“配置属性”&gt;“驱动程序设置”  。 将“生成包”  设置为“否”  。 如果从命令行生成，请设置 **/p:SupportsPackaging=false**。
 
-4.  同样，在驱动程序项目属性中，选择“属性”  。 导航到“配置属性”&gt;“驱动程序设置”&gt;“常规”&gt;“目标 OS 版本”  。 选择“Windows 10”。
+4.  同样，在驱动程序项目属性中，选择“属性”  。 导航到“配置属性”&gt;“驱动程序设置”&gt;“常规”&gt;“目标 OS 版本”  。 选择 Windows 10。
 
     确认“目标平台”  设置为“桌面”  ，然后生成解决方案。 修复发生的任何错误。
 

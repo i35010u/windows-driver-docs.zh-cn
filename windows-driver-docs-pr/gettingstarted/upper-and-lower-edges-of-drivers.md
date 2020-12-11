@@ -1,15 +1,14 @@
 ---
 title: 驱动程序的上沿和下沿
 description: 参与 I/O 请求的驱动程序序列称为“请求的驱动程序堆栈”。
-ms.assetid: EA1C36F4-B9BD-4A9E-A6D4-6B4EC5455030
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 49f8604a86b6dcbb3126a416c705af80209649d2
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 23d2554c0ce1ef796838e537744c3553f32907c6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89381493"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786341"
 ---
 # <a name="upper-and-lower-edges-of-drivers"></a>驱动程序的上沿和下沿
 
@@ -61,7 +60,7 @@ I/O 请求首先由驱动程序堆栈中的顶层驱动程序处理，然后由�
 ## <a name="span-idsummaryspanspan-idsummaryspanspan-idsummaryspansummary"></a><span id="Summary"></span><span id="summary"></span><span id="SUMMARY"></span>摘要
 
 
-术语“上沿”  和“下沿”  用于描述堆栈中的驱动程序用来相互通信的接口。 [*驱动程序堆栈*](driver-stacks.md)不同于[*设备堆栈*](device-nodes-and-device-stacks.md)。 在驱动程序堆栈中垂直显示的两个驱动程序可能形成位于设备堆栈中单层上的驱动程序对。 某些驱动程序不是 PnP 设备树的一部分。
+术语“上沿”  和“下沿”  用于描述堆栈中的驱动程序用来相互通信的接口。 [*驱动程序堆栈*](driver-stacks.md)不同于 [*设备堆栈*](device-nodes-and-device-stacks.md)。 在驱动程序堆栈中垂直显示的两个驱动程序可能形成位于设备堆栈中单层上的驱动程序对。 某些驱动程序不是 PnP 设备树的一部分。
 
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 

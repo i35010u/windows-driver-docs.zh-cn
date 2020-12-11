@@ -1,15 +1,14 @@
 ---
-ms.assetid: 3D0CB4E7-D1BC-44AA-93D9-5CCDE98C9691
 title: 驱动程序项目的驱动程序模型设置属性
 description: 为内核模式或用户模式驱动程序设置基本属性，包括 WDF 库版本和预处理器定义。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aba7e7f2b49e95b58e67288a8b4632a0b05d83f3
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 4a054d971ee3da9d789207c7b3bdacb4d9797d20
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206561"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838809"
 ---
 # <a name="driver-model-settings-properties-for-driver-projects"></a>驱动程序项目的驱动程序模型设置属性
 
@@ -23,7 +22,7 @@ ms.locfileid: "89206561"
 3.  设置项目属性。
 
 **驱动程序的类型**  
-**配置类型**为“驱动程序”  时的驱动程序的类型。 请注意，仅当项目使用 **WindowsKernelModeDriver8.0** 工具集时此选项才可用。
+**配置类型** 为“驱动程序”  时的驱动程序的类型。 请注意，仅当项目使用 **WindowsKernelModeDriver8.0** 工具集时此选项才可用。
 
 可能的值为：
 
@@ -50,7 +49,7 @@ KMDF\_VERSION\_MAJOR 条目通知 MSBuild 实用工具必须将驱动程序链�
 有关详细信息，请参阅[针对多个 Windows 版本构建 WDF 驱动程序](../wdf/building-a-wdf-driver-for-multiple-versions-of-windows.md)。
 
 **UMDF 主要版本**  
-当你有 UMDF 驱动程序时，此选项指定编译驱动程序时将使用的 UMDF 的主要版本。 请参阅 [UMDF 版本历史记录](../wdf/umdf-version-history.md)。 当你有 UMDF 驱动程序时，**配置类型**为“动态库(.dll)”  。
+当你有 UMDF 驱动程序时，此选项指定编译驱动程序时将使用的 UMDF 的主要版本。 请参阅 [UMDF 版本历史记录](../wdf/umdf-version-history.md)。 当你有 UMDF 驱动程序时，**配置类型** 为“动态库(.dll)”  。
 
 **UMDF 次要版本(目标版本)** （为 Windows 10 版本 1803 之前的 **UMDF 次要版本**）当你有 UMDF 驱动程序时，此选项指定编译驱动程序时将使用的 UMDF 次要版本。 如果你没有指定“UMDF 次要版本(目标版本)”  ，则 Visual Studio 将使用以下默认值：
 

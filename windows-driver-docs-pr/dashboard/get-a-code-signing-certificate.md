@@ -1,16 +1,15 @@
 ---
 title: 获取代码签名证书
 description: 获取代码签名证书
-ms.assetid: 6CF4111A-C645-40F5-8D45-55F46B3C0740
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e1c456dd753ef29b8cbc2ad54d9c36f2507364b
-ms.sourcegitcommit: 4d3ce2916e688901f2a62fac5a9494607c03923e
+ms.openlocfilehash: 3d925cdf9f2546734ed8971b2d3732d2ca2eb554
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96335952"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800367"
 ---
 # <a name="get-a-code-signing-certificate"></a>获取代码签名证书
 

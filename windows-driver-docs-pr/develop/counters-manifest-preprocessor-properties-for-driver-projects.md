@@ -1,15 +1,14 @@
 ---
-ms.assetid: 216E5337-0B05-4560-92AF-0D7AB90EAEEB
 title: 驱动程序项目的计数器清单预处理器属性
 description: 设置分析和验证计数器清单的 CTRPP 工具的属性。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 421fe0b864c030fdb95431512f7707362da1b8f9
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 3fa7b876921003a9418ee661b1522df101d7a460
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101612"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815135"
 ---
 # <a name="counters-manifest-preprocessor-properties-for-driver-projects"></a>驱动程序项目的计数器清单预处理器属性
 

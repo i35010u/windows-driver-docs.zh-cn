@@ -1,7 +1,6 @@
 ---
 title: BCDEdit /set
 description: BCDEdit/set 命令在 Windows 的启动配置数据存储 (BCD) 中设置启动项目选项值。
-ms.assetid: e66d9c55-9a44-4de2-a1a4-634c7d550735
 ms.date: 09/25/2020
 keywords:
 - BCDEdit /set 驱动程序开发工具
@@ -12,13 +11,13 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: high
-ms.custom: contperfq2
-ms.openlocfilehash: 416314c59fcde7f5525b1c5bfefdf3d22161af20
-ms.sourcegitcommit: f2fbb6e54e085e9329288cee49860fe380be9c4c
+ms.custom: contperf-fy21q2
+ms.openlocfilehash: bc09983252544ed6fb8f2bd80fd7b98f50f5aec2
+ms.sourcegitcommit: 66043df62672b79a8f9fcb0bc2deb26b8f182fb6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91778758"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96912463"
 ---
 # <a name="bcdedit-set"></a>BCDEdit /set
 
@@ -28,14 +27,14 @@ BCDEdit/set 命令在 Windows 启动配置数据存储 (BCD) 中设置启动项�
 > 需要管理权限才能使用 BCDEdit 来修改 BCD。 使用 BCDEdit /set 命令更改某些启动项目选项可能导致计算机无法运行。 请改为使用系统配置实用程序 (MSConfig.exe) 更改启动设置。
 
 > [!NOTE]
-> 设置 BCDEdit 选项之前，可能需要禁用或暂停计算机上的 BitLocker 和安全启动。
+> 设置 BCDEdit 选项之前，可能需要禁用或暂停计算机上的 BitLocker 和安全启动。
 
 ## <a name="alternatives-to-bcdedit"></a>BCDEdit 的替代方案
 
 ### <a name="settings-startup-options"></a>设置启动选项
 
 > [!TIP]
-> 若要避免出现与使用 BCDEdit 相关的风险，请考虑使用替代方法来执行启动配置
+> 若要避免出现与使用 BCDEdit 相关的风险，请考虑使用替代方法来执行启动配置
 
 ### <a name="startup-settings"></a>“启动设置”
 

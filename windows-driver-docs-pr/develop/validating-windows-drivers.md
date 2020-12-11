@@ -1,15 +1,14 @@
 ---
-ms.assetid: D4B7FC2A-259F-4B72-A52B-03CBF712D5C5
 title: 验证通用 Windows 驱动程序
 description: 可以使用 ApiValidator.exe 工具验证驱动程序调用的 API 是否对通用 Windows 驱动程序有效。
 ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 4884b563166d4128960744e5e00ca1bb89d0b0d8
-ms.sourcegitcommit: f86e44d595be2c9e4efe3c196f6c0a9c71f4231e
+ms.openlocfilehash: 0030a11c0d4009f4bbb934cbf537e292f9b611ef
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96470528"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833597"
 ---
 # <a name="validating-windows-drivers"></a>验证 Windows 驱动程序
 

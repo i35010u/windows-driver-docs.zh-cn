@@ -1,16 +1,15 @@
 ---
 title: 使用计算机硬件 ID (CHID)
 description: 计算机硬件 ID (CHID) 在“为计算机指定硬件 ID”中定义。
-ms.assetid: 45DCAED5-8D20-4A31-B316-0460AB030DAD
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b4c1fdb24c697e28077458e4a6029be21852d8f
-ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
+ms.openlocfilehash: b27d0ec6c9a3985d2f547debc3d896ca8b76db9b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89443833"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800265"
 ---
 # <a name="using-computer-hardware-ids-chids"></a>使用计算机硬件 ID (CHID)
 
@@ -79,5 +78,5 @@ Contoso 将以下两个驱动程序发布为“自动”，它们针对同一 HW
 |----|----|----|
 |与 CHID-5 匹配，但与 CHID-4 不匹配|Windows 10 1703 或更低版本|分发 2|
 |与 CHID-5 匹配，但与 CHID-4 不匹配|Windows 10 1709 或更高版本|分发 2|
-|与 CHID-5 匹配，**且**与 CHID-4 匹配|Windows 10 1703 或更低版本|分发 1|
-|与 CHID-5 匹配，**且**与 CHID-4 匹配|Windows 10 1709 或更高版本|二者都提供。   然后，PnP 分级会选择这二者中的最佳匹配进行安装。|
+|与 CHID-5 匹配，**且** 与 CHID-4 匹配|Windows 10 1703 或更低版本|分发 1|
+|与 CHID-5 匹配，**且** 与 CHID-4 匹配|Windows 10 1709 或更高版本|二者都提供。   然后，PnP 分级会选择这二者中的最佳匹配进行安装。|

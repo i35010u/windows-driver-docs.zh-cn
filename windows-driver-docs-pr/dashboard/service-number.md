@@ -1,16 +1,15 @@
 ---
 title: 服务编号
 description: 服务编号
-ms.assetid: c09bd5f2-16d7-44d4-b87f-e46961932cfc
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 62a37ac09e6e12d1483218d8be1246c1c6f69ae4
-ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
+ms.openlocfilehash: f2f2861b84a801fe89058d63a7df83bc61c0ad5f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89443925"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800303"
 ---
 # <a name="service-number"></a>服务编号
 

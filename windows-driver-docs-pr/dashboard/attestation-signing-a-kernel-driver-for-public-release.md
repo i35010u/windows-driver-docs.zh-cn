@@ -1,16 +1,15 @@
 ---
 title: 对内核驱动程序进行证明签名以便公开发布
 description: 本主题介绍如何使用证明签名对驱动程序签名。
-ms.assetid: A292B15D-37FD-407E-998C-728D9423E712
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b9d8a6f223788128c8239c0d46cf4e725af4eed
-ms.sourcegitcommit: 6c736c8a461f82f41f9c6988a20de2a2098ab482
+ms.openlocfilehash: feebe4ee688c4c8d9cf9ebe5b7d13b0f2514af02
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92914024"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800429"
 ---
 # <a name="attestation-signing-a-kernel-driver-for-public-release"></a>对内核驱动程序进行证明签名以便公开发布
 

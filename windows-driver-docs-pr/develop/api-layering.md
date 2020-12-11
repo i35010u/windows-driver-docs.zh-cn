@@ -1,15 +1,14 @@
 ---
-ms.assetid: 9f14c40b-0d6a-45d0-9c8b-6c5603fee3c6
 title: API 分层
 description: 使用 Windows 驱动程序，可以创建一个在多种类型设备（从嵌入式系统到平板电脑和电脑）上运行的驱动程序。
 ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 1052ebbd20459b3c5bd909a98ba00481b36136f2
-ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
+ms.openlocfilehash: 3cfb8562f9676a5aca715020d302ab8352c7461c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93349783"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815147"
 ---
 # <a name="api-layering"></a>API 分层
 

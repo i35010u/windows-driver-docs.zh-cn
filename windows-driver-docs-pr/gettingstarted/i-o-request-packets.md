@@ -1,15 +1,14 @@
 ---
 title: I/O 请求数据包
 description: I/O 请求数据包
-ms.assetid: 72288D9A-86F7-4145-8470-FFA1AC26E9BF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5874dae5e3ae5ee8cd213ec25b3872302b5d858e
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 307b26242f815f6dff960893c41702a19613a22e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383527"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795529"
 ---
 # <a name="io-request-packets"></a>I/O 请求数据包
 

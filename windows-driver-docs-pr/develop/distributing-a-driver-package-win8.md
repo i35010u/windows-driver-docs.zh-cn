@@ -1,15 +1,14 @@
 ---
-ms.assetid: 602bf657-7ae4-4610-b4c0-9d7260c42063
 title: 分发驱动程序包
 description: 分发驱动程序包
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2456096b7753aa55c53145a6b6359143ee9805a5
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: c53f3166cd1d4c3e829cf64f080d30b62b1b2b10
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733208"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96837001"
 ---
 # <a name="distributing-a-driver-package"></a>分发驱动程序包
 

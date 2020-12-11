@@ -1,15 +1,14 @@
 ---
 title: Sharks Cove 硬件开发板
 description: Sharks Cove 是硬件开发板，可用于开发 Windows 硬件和驱动程序。
-ms.assetid: D86546BB-B613-4CEE-9A76-3FD269137EE9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 333c2b6fbc799e3a8e7965039b2f2b6fff2c3dcd
-ms.sourcegitcommit: 4d3ce2916e688901f2a62fac5a9494607c03923e
+ms.openlocfilehash: 17a6b5acc1732c8e518b8fc6741c8dc8cd14def5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96335956"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786337"
 ---
 # <a name="sharks-cove-hardware-development-board"></a>Sharks Cove 硬件开发板
 

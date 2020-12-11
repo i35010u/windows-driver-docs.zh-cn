@@ -1,15 +1,14 @@
 ---
-ms.assetid: CED4C82B-726D-4BF8-B047-624450F6132E
 title: 如何读取驱动程序测试结果日志
 description: 通过“驱动程序测试组资源管理器”，可以显示驱动程序测试的结果、将测试结果保存到某个文件夹或从文件夹加载结果。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e4cb119b5f394ec95a8fab8a94c4df8ca07ed19
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f1bb293a107e31f37bfc5e022a2865d46e81d85c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216254"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824273"
 ---
 # <a name="how-to-read-the-driver-test-results-log"></a>如何读取驱动程序测试结果日志
 

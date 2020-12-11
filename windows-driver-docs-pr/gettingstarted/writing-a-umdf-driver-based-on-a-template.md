@@ -1,17 +1,16 @@
 ---
 title: 基于模板编写通用 Windows 驱动程序 (UMDF 2)
 description: 本主题介绍了如何使用用户模式驱动程序框架 (UMDF) 2 编写通用 Windows 驱动程序。 首先使用 Microsoft Visual Studio 模板，然后在单独的计算机上部署和安装驱动程序。
-ms.assetid: 03A3E389-8350-4E4B-9345-E50DD425374D
 keywords:
 - 编写 UMDF 驱动程序
 ms.date: 04/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 47f48d563c91b3d32cbf8eceeac4accc8b309a79
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 1b07804727d8a13744130a4590b7e7fbaec9e945
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733101"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786309"
 ---
 # <a name="write-a-universal-windows-driver-umdf-2-based-on-a-template"></a>基于模板编写通用 Windows 驱动程序 (UMDF 2)
 
@@ -34,7 +33,7 @@ ms.locfileid: "91733101"
 
     ![“新建项目”对话框的屏幕截图，其中显示选中的 WDF 和用户模式驱动程序 ](images/vs2015-umdf2-template.png)
 
-    Visual Studio 将创建一个项目和一个解决方案。 可以在“解决方案资源管理器”  窗口中看到它们。 （如果未显示“解决方案资源管理器”  窗口，请从“视图”   菜单中选择“解决方案资源管理器”。）该解决方案有一个名为 UmdfDriver 的驱动程序项目。 若要查看驱动程序源代码，请打开**源文件**下的任何文件。 可以先从 Driver.c 和 Device.c 开始。
+    Visual Studio 将创建一个项目和一个解决方案。 可以在“解决方案资源管理器”  窗口中看到它们。 （如果未显示“解决方案资源管理器”  窗口，请从“视图”   菜单中选择“解决方案资源管理器”。）该解决方案有一个名为 UmdfDriver 的驱动程序项目。 若要查看驱动程序源代码，请打开 **源文件** 下的任何文件。 可以先从 Driver.c 和 Device.c 开始。
 
     ![解决方案资源管理器的屏幕截图，其中显示驱动程序项目中的文件](images/vs2015-umdf2-solution-explorer.png)
 
@@ -70,7 +69,7 @@ ms.locfileid: "91733101"
 
     ![“umdfdriver 属性页”的屏幕截图，其中显示选择了“部署驱动程序安装”](images/vs2015-deploy.png)
 
-    **注意**  在本练习中，硬件 ID 不标识真实的硬件。 它标识了虚构设备，该设备位于[设备树](./device-nodes-and-device-stacks.md)中，作为根节点的子节点。 对于真实的硬件，不要选择“硬件 ID 驱动程序更新”  ，而要选择“安装并验证”  。
+    **注意**  在本练习中，硬件 ID 未标识硬件的真实部分。 它标识了虚构设备，该设备位于[设备树](./device-nodes-and-device-stacks.md)中，作为根节点的子节点。 对于真实的硬件，不要选择“硬件 ID 驱动程序更新”  ，而要选择“安装并验证”  。
     可以在驱动程序的信息 (INF) 文件中看到硬件 ID。 在“解决方案资源管理器”  窗口中，转到“UmdfDriver”&gt;“驱动程序文件”  ，然后双击 UmdfDriver.inf。 硬件 ID 位于 \[Standard.NT$ARCH$\] 下。
 
     ```ManagedCPlusPlus

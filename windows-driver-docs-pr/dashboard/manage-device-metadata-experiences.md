@@ -1,16 +1,15 @@
 ---
 title: 管理设备元数据体验
 description: 管理设备元数据体验
-ms.assetid: aede9597-4b67-4c1a-8ae4-924d39c88b53
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 455a1dd138a24352e07233652cb83155c90e4e3f
-ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
+ms.openlocfilehash: 84605d6afc7c7035065dff65b14a41791c569cb5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89443897"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800347"
 ---
 # <a name="manage-device-metadata-experiences"></a>管理设备元数据体验
 

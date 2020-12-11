@@ -1,16 +1,15 @@
 ---
 title: 注册硬件计划
 description: 注册硬件计划
-ms.assetid: 8E947636-7F0E-4C31-9149-D6BF60D84226
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f69e6e803c44bffd6d0cac2f65b8ee4d92450f6c
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: f91b192dc6be0f576ab162bf909de1c203e6575d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732567"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800319"
 ---
 # <a name="register-for-the-hardware-program"></a>注册硬件计划
 

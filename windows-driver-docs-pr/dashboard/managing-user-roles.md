@@ -1,16 +1,15 @@
 ---
 title: 管理用户角色
-ms.assetid: 000D3756-7110-4E9F-91CA-86F91EECCFCA
 ms.topic: article
 description: 在合作伙伴中心管理用户角色
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9df6f24bfc3b03b3d5184c6ff51d754254ed9434
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: b8da28213b5b89a828dc43fc3cb4149a03aa0468
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "77558426"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800325"
 ---
 # <a name="managing-user-roles"></a>管理用户角色
 

@@ -1,15 +1,14 @@
 ---
-ms.assetid: 18A9ACEF-51F8-4BC0-B305-F58287AD321C
 title: 驱动程序项目的 Stampinf 属性
 description: 设置 Stampinf 工具的属性。 生成驱动程序时，你可以使用 Stampinf 来更新常用的 INF 和 INX 文件指令。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7081982b82a8150ab76f015d52b179281c83134e
-ms.sourcegitcommit: 878a1cb0149dc18ccbd31774e12bad76084dfa24
+ms.openlocfilehash: 1ffb3f086ad6e1ef27389706e6f987e5c940c923
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94937803"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784127"
 ---
 # <a name="stampinf-properties-for-driver-projects"></a>驱动程序项目的 Stampinf 属性
 

@@ -1,15 +1,14 @@
 ---
 title: Bug 检查代码参考
 description: 本部分包含常见 bug 检查的相关说明，包括传递到蓝屏的参数。
-ms.assetid: DBA85578-97CF-4BD7-A67D-1C7AD2E9B2BB
 ms.date: 04/03/2020
 ms.localizationpriority: high
-ms.openlocfilehash: a4d12aa3f8e3013bbb42c51254dd93b20aeebf61
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: ef616ca8e06a265ee82554c1b85af37d648c7b81
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534498"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96821647"
 ---
 # <a name="bug-check-code-reference"></a>Bug 检查代码参考
 
@@ -254,7 +253,7 @@ Arg4: 0000000000000000, The blocked IRP
 | 0x000000DB | [**DRIVER\_CORRUPTED\_SYSPTES**](bug-check-0xdb--driver-corrupted-sysptes.md)                                                                     |
 | 0x000000DC | [**DRIVER\_INVALID\_STACK\_ACCESS**](bug-check-0xdc--driver-invalid-stack-access.md)                                                              |
 | 0x000000DE | [**POOL\_CORRUPTION\_IN\_FILE\_AREA**](bug-check-0xde--pool-corruption-in-file-area.md)                                                           |
-| 0x000000DF | I[**MPERSONATING\_WORKER\_THREAD**](bug-check-0xdf--impersonating-worker-thread.md)                                                               |
+| 0x000000DF | I [**MPERSONATING\_WORKER\_THREAD**](bug-check-0xdf--impersonating-worker-thread.md)                                                               |
 | 0x000000E0 | [**ACPI\_BIOS\_FATAL\_ERROR**](bug-check-0xe0--acpi-bios-fatal-error.md)                                                                          |
 | 0x000000E1 | [**WORKER\_THREAD\_RETURNED\_AT\_BAD\_IRQL**](bug-check-0xe1--worker-thread-returned-at-bad-irql.md)                                              |
 | 0x000000E2 | [**MANUALLY\_INITIATED\_CRASH**](bug-check-0xe2--manually-initiated-crash.md)                                                                     |

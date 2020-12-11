@@ -1,15 +1,14 @@
 ---
-ms.assetid: 5BF7AB90-FF2E-4679-8C84-2E8091917F5D
 title: 驱动程序包项目的 UMDF 验证程序属性
 description: 设置测试计算机上的 UMDF 验证程序的属性。 为测试计算机生成和部署驱动程序时，可以使用这些设置。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 37953e16f388a10a6eea0643baae05d7e894d68e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: dce52a9ac1b5278a1ff042eafc2fbb06f70202b6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211139"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826147"
 ---
 # <a name="umdf-verifier-properties-for-driver-package-projects"></a>驱动程序包项目的 UMDF 验证程序属性
 

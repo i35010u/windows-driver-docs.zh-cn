@@ -1,16 +1,15 @@
 ---
 title: 服务图标要求
 description: 服务图标要求
-ms.assetid: ce018a26-f5ce-4fbb-8339-b3207ca5ed68
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f6803dc5e2f844b60e0005749d590f3e803860b0
-ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
+ms.openlocfilehash: 63631221e363c1ac8b76a02b3c072b085684d897
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89443927"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800305"
 ---
 # <a name="service-icon-requirements"></a>服务图标要求
 

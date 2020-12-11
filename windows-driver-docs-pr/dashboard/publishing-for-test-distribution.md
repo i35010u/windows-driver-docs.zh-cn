@@ -1,23 +1,22 @@
 ---
 title: 自托管桌面驱动程序的测试分发指南
 description: 自托管桌面驱动程序的测试分发指南
-ms.assetid: 67E31BC1-6209-4264-B9F4-8CDFE8CE2E65
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 475b6ecc47d50f43cb7f9f47fb023c6c91a1881c
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 132bb46310042d5f4d39a9fcca07fb1e110e3572
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "63337150"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800329"
 ---
 # <a name="test-distribution-guidance-to-self-host-desktop-drivers"></a>自托管桌面驱动程序的测试分发指南
 
 
 硬件合作伙伴可以通过将驱动程序发布到 Windows 更新并使用测试分发，来测试操作系统升级方案。 在发布后，IHV/OEM 可通过配置预定义的注册表项值来配置他们的客户端系统，从而请求这些驱动程序。 除了接收为进行测试而分配的驱动程序，生产驱动程序仍将提供给相同的客户端计算机。 这将向由 Windows 更新提供的生产驱动程序列表添加预发布驱动程序。 此方法限制了向公众提供预发布驱动程序。
 
-从 Windows 10 开始，客户端系统可能会在整个 Windows 升级过程中参与接收测试分配驱动程序。 硬件合作伙伴可使用此测试分发过程测试操作系统升级方案。
+从 Windows 10 开始，客户端系统可能会在整个 Windows 升级过程中参与接收测试分配驱动程序。 硬件合作伙伴可使用此测试分发过程测试操作系统升级方案。
 
 ## <a name="span-idwhat_is_test_distribution__and_why_do_i_need_it_spanspan-idwhat_is_test_distribution__and_why_do_i_need_it_spanspan-idwhat_is_test_distribution__and_why_do_i_need_it_spanwhat-is-test-distribution-and-why-do-i-need-it"></a><span id="What_is_test_distribution__and_why_do_I_need_it_"></span><span id="what_is_test_distribution__and_why_do_i_need_it_"></span><span id="WHAT_IS_TEST_DISTRIBUTION__AND_WHY_DO_I_NEED_IT_"></span>测试分发是什么，我为什么需要它？
 
@@ -70,7 +69,7 @@ ms.locfileid: "63337150"
 
 若要停止接收测试分发驱动程序，请删除你在先前部分中创建的“TargetRing”  注册表数据值。 双击“Drivers”  数据值将其删除，然后单击“确定”  。 通过执行此操作，将不再向你的客户端系统提供预发布驱动程序。
 
-**注意**  你的系统将继续从 Windows 更新接收所有生产驱动程序。
+**注意**  你的系统将继续从 Windows 更新接收所有生产驱动程序。
 
  
 
@@ -84,7 +83,7 @@ ms.locfileid: "63337150"
 5.  退出 Windows 注册表编辑器。 你不需要在做出此更改后重新启动计算机。
 6.  执行下列操作之一：
     -   运行 Windows 更新并检查更新
-    -   在设备管理器中，右键单击目标设备并选择**更新设备软件**。
+    -   在设备管理器中，右键单击目标设备并选择 **更新设备软件**。
 
  
 

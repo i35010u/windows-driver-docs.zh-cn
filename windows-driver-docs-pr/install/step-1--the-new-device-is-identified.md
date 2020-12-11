@@ -1,15 +1,14 @@
 ---
 title: 步骤 1：标识新设备
 description: 步骤 1：标识新设备
-ms.assetid: e0df70ca-cea3-44a1-b5ff-407f72a216f9
 ms.date: 04/20/2017
 ms.localizationpriority: High
-ms.openlocfilehash: f0ab1d4c956403fb9fac8f2174594dd081f68e8d
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 1d330ce0db53180e19adf715c6fc7d241a86b977
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "72007638"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96813075"
 ---
 # <a name="step-1-the-new-device-is-identified"></a>步骤 1：标识新设备
 

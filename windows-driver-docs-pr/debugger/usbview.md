@@ -1,17 +1,16 @@
 ---
 title: Windows 中的 USBView
 description: USBView
-ms.assetid: 88d2a93f-2e7c-493c-bb9e-487f1d1f2016
 keywords:
 - USBView
 ms.date: 02/22/2017
 ms.localizationpriority: high
-ms.openlocfilehash: 44900de91bf2f9c4cb9acd7598dfd45f1104d610
-ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
+ms.openlocfilehash: 17c019f91b6c43b5c2f2d2ff0935807e7a679c59
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88802803"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803233"
 ---
 # <a name="usbview"></a>USBView
 

@@ -1,15 +1,14 @@
 ---
 title: 虚拟地址空间
 description: 虚拟地址空间
-ms.assetid: 5A3E1918-E5A4-4129-B0C2-45B6EEB7EFB3
 ms.date: 02/11/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 63b4180846d9b540053f8cdcd7594a5438476167
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 45759e8f9c8afbbd6b603d74e803188bdd4d4555
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383285"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786325"
 ---
 # <a name="virtual-address-spaces"></a>虚拟地址空间
 

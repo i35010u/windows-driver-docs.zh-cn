@@ -1,15 +1,14 @@
 ---
-ms.assetid: 40D39F8E-3CD3-434B-A161-45D5BD4FBA09
 title: 驱动程序包项目的 KMDF 验证程序属性
 description: 设置远程计算机上的 KMDF 验证程序的属性。  使用这些设置为测试计算机生成和部署 KMDF 驱动程序。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 496b555f33922d9492df36952b5fe70a62811baa
-ms.sourcegitcommit: 9e13d3fbc74bb75335c4d2927c55b0085e46b0ea
+ms.openlocfilehash: ff5f57b19da1815492367571fd70c955be810c8f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/16/2020
-ms.locfileid: "94639029"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829709"
 ---
 # <a name="kmdf-verifier-properties-for-driver-package-projects"></a>驱动程序包项目的 KMDF 验证程序属性
 

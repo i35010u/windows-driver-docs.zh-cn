@@ -1,18 +1,17 @@
 ---
 title: 设备节点和设备堆栈
 description: 在 Windows 中，设备由即插即用 (PnP) 设备树中的设备节点来表示。
-ms.assetid: 7bf38b3b-72ba-461c-b9e2-68b697359b37
 keywords:
 - 设备节点
 - 设备堆栈
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a070ec2a7b460a6e8ca0b26d1616464094eedf1
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 379cf13d7de0a493fddb05b0cdd78167b85e60c9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383543"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795555"
 ---
 # <a name="device-nodes-and-device-stacks"></a>设备节点和设备堆栈
 
@@ -22,7 +21,7 @@ ms.locfileid: "89383543"
 ## <a name="span-iddevice_nodes_and_the_plug_and_play_device_treespanspan-iddevice_nodes_and_the_plug_and_play_device_treespanspan-iddevice_nodes_and_the_plug_and_play_device_treespandevice-nodes-and-the-plug-and-play-device-tree"></a><span id="Device_nodes_and_the_Plug_and_Play_device_tree"></span><span id="device_nodes_and_the_plug_and_play_device_tree"></span><span id="DEVICE_NODES_AND_THE_PLUG_AND_PLAY_DEVICE_TREE"></span>设备节点和即插即用设备树
 
 
-Windows 在称为*即插即用设备树*或简称为*设备树*的树结构中整理设备。 通常，设备树中的节点表示复合设备上的某个设备或单个函数。 但是，某些节点表示与物理设备无关联的软件组件。
+Windows 在称为 *即插即用设备树* 或简称为 *设备树* 的树结构中整理设备。 通常，设备树中的节点表示复合设备上的某个设备或单个函数。 但是，某些节点表示与物理设备无关联的软件组件。
 
 设备树中的节点称为“设备节点”  。 设备树的根节点称为“根设备节点”  。 常规情况下，根设备节点绘制在设备树的底部，如下图所示。
 
@@ -62,7 +61,8 @@ PnP 管理器将设备节点与每个新创建的 PDO 关联，并查询注册�
 
 PDO 始终为设备堆栈中的底部设备对象。 这缘于设备堆栈的构造方式。 PDO 最先创建，并且当其他设备对象附加到堆栈中时，这些对象会附加到现有堆栈的顶部。
 
-**注意**   安装设备驱动程序后，安装程序使用信息 (INF) 文件中的信息来确定哪个驱动程序为函数驱动程序，哪些驱动程序为筛选器。 通常，INF 文件由 Microsoft 或硬件供应商提供。 安装设备驱动程序后，PnP 管理器可以通过查找注册表来确定设备的函数驱动程序和筛选器驱动程序。
+**注意**  
+安装设备驱动程序后，安装程序使用信息 (INF) 文件中的信息来确定哪个驱动程序为函数驱动程序，哪些驱动程序为筛选器。 通常，INF 文件由 Microsoft 或硬件供应商提供。 安装设备驱动程序后，PnP 管理器可以通过查找注册表来确定设备的函数驱动程序和筛选器驱动程序。
 
  
 

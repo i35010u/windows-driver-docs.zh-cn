@@ -1,15 +1,14 @@
 ---
 title: 指定访问权限
 description: 指定访问权限
-ms.assetid: 8ef4b4bb-5f4e-4095-b4ab-1182c0f75619
 ms.localizationpriority: High
 ms.date: 10/17/2018
-ms.openlocfilehash: e277eb9cae2678cb2e38ef38f1e552d528b320b7
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 579eadc9349b09f94164216a4521290fb3f61afa
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104192"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840695"
 ---
 # <a name="specifying-access-rights"></a>指定访问权限
 

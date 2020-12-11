@@ -1,15 +1,14 @@
 ---
-ms.assetid: 9B4E7164-A63A-4E47-AFD1-BEBDC3761054
 title: 准备一台用于手动部署驱动程序的计算机
 description: 介绍在手动部署驱动程序之前如何准备目标计算机。
 ms.date: 06/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 358c019e8ac66a6272029117dd10b5eb7cc56fde
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c5a2615f79517049e9894f81fe0b4b459369346c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216250"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824645"
 ---
 # <a name="preparing-a-computer-for-manual-driver-deployment"></a>准备一台用于手动部署驱动程序的计算机
 

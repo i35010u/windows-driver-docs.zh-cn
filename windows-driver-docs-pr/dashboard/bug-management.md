@@ -1,16 +1,15 @@
 ---
 title: Bug 管理
 description: Bug 管理
-ms.assetid: fd42ee6c-ce7c-4b9e-92b5-81fc09c3cd41
 ms.localizationpriority: medium
 ms.topic: article
 ms.date: 10/17/2018
-ms.openlocfilehash: 7b66c22e03cf5b6b1568c0146093f37a2a5faacb
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: a240f32e464610812c71f877c22b539a5f9a3133
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "63337293"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800413"
 ---
 # <a name="bug-management"></a>Bug 管理
 

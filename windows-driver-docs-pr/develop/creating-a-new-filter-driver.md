@@ -1,16 +1,15 @@
 ---
-ms.assetid: AB4E6021-FDF9-40D0-818C-9602E1AEA564
 title: 创建新的筛选器驱动程序
 description: 在本主题中，我们将介绍如何使用 Visual Studio 开始编写新的筛选器驱动程序。 筛选器驱动程序不同于设备功能驱动程序、软件驱动程序和文件系统驱动程序，这些驱动程序我们将在其他主题中加以介绍。
 keywords: 筛选器驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f59f2c8b491633825034ecba4eb2f42a350c0d8
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 2ffd75aa381e449b56f9d2fa1f5ed1080b13c501
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214812"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817875"
 ---
 # <a name="creating-a-new-filter-driver"></a>创建新的筛选器驱动程序
 
@@ -33,7 +32,7 @@ ms.locfileid: "89214812"
 2.  在“新建项目”对话框的左侧窗格中，找到并选择“Visual C++ | Windows 驱动程序 | WDF”  。
 3.  在中间窗格中，选择“用户模式驱动程序(UMDF)”  。
 4.  填写“名称”和“位置”框，然后选择“确定”。 有关详细信息，请参阅[基于模板编写 UMDF 驱动程序](../gettingstarted/writing-a-umdf-driver-based-on-a-template.md)。
-    **注意**  在创建新的 UMDF 驱动程序时，必须选择一个不多于 32 个字符的驱动程序名称。 此长度限制在 wdfglobals.h 中定义。
+    **注意**  在创建新的 UMDF 驱动程序时，必须选择一个不多于 32 个字符的驱动程序名称。 此长度限制在 wdfglobals.h 中定义。
 5.  此时，你的驱动程序项目可以实现大多数 UMDF 驱动程序所需的一般代码。 现在你可以提供特定于你的筛选器的代码。
 
 ## <a name="span-idcase_2__the_documentation_for_your_technology_recommends_kmdfspanspan-idcase_2__the_documentation_for_your_technology_recommends_kmdfspancase-2-the-documentation-for-your-technology-recommends-kmdf"></a><span id="case_2__the_documentation_for_your_technology_recommends_kmdf."></span><span id="CASE_2__THE_DOCUMENTATION_FOR_YOUR_TECHNOLOGY_RECOMMENDS_KMDF."></span>案例 2：你的技术的文档建议使用 KMDF。
@@ -43,7 +42,7 @@ ms.locfileid: "89214812"
 2.  在“新建项目”对话框的左侧窗格中，找到并选择“WDF”  。
 3.  在中间窗格中，选择“内核模式驱动程序(KMDF)”  。
 4.  填写“名称”和“位置”框，然后选择“确定”。 有关详细信息，请参阅[基于模板编写 KMDF 驱动程序](../gettingstarted/writing-a-kmdf-driver-based-on-a-template.md)。
-    **注意**  在创建新的 KMDF 驱动程序时，必须选择一个不多于 32 个字符的驱动程序名称。 此长度限制在 wdfglobals.h 中定义。
+    **注意**  在创建新的 KMDF 驱动程序时，必须选择一个不多于 32 个字符的驱动程序名称。 此长度限制在 wdfglobals.h 中定义。
 5.  此时，你的驱动程序项目可以实现大多数 KMDF 驱动程序所需的一般代码。 现在你可以提供特定于你的筛选器的代码。
 
 ## <a name="span-idcase_3__the_documentation_for_your_technology_describes_a_specific_filter_or_mini_filter_modelspanspan-idcase_3__the_documentation_for_your_technology_describes_a_specific_filter_or_mini_filter_modelspancase-3-the-documentation-for-your-technology-describes-a-specific-filter-or-mini-filter-model"></a><span id="case_3__the_documentation_for_your_technology_describes_a_specific_filter_or_mini_filter_model."></span><span id="CASE_3__THE_DOCUMENTATION_FOR_YOUR_TECHNOLOGY_DESCRIBES_A_SPECIFIC_FILTER_OR_MINI_FILTER_MODEL."></span>案例 3：你的技术的文档介绍特定筛选器或微筛选器模型。
@@ -53,7 +52,7 @@ ms.locfileid: "89214812"
 
 1.  在 Visual Studio 中的“文件”  菜单上，选择“新建 | 项目”  。
 2.  在“新建项目”对话框的左侧窗格中，找到并选择“模板 | Visual C++ | Windows 驱动程序”  。
-3.  浏览已安装模板列表，查看是否有你需要编写的筛选器类型的模板。 例如，可以选择“筛选器驱动程序:  NDIS”模板（在**网络**下）。
+3.  浏览已安装模板列表，查看是否有你需要编写的筛选器类型的模板。 例如，可以选择“筛选器驱动程序:  NDIS”模板（在 **网络** 下）。
 4.  如果“Windows 驱动程序”下没有适用于你的筛选器驱动程序类型的模板，请选择“联机”并浏览联机可用的模板 。
 5.  如果你找到了适用于你的筛选器驱动程序类型的模板，请选择该模板，填写“名称”和“位置”框，然后选择“确定”。
 6.  此时，你的驱动程序项目可以实现筛选器驱动程序所需的一般代码。 现在你可以提供特定于你的筛选器的代码。 请参阅你的技术的文档来了解你需要实现的功能。
@@ -69,7 +68,7 @@ ms.locfileid: "89214812"
 4.  此时，你有一个空的 WDM 驱动程序项目。 在“解决方案资源管理器”窗口中，选择并按住（或右键单击）你的驱动程序项目，然后选择“添加 | 新项目”。
 5.  在“添加新项目”对话框中，选择“C++ 文件(.cpp)”，为文件输入一个名称，然后选择“确定”。
 
-    **注意**  如果你想要创建 .c 文件，而不是 .cpp 文件，请输入具有 **.c** 扩展名的名称。
+    **注意**  如果你想要创建 .c 文件，而不是 .cpp 文件，请输入具有 **.c** 扩展名的名称。
 6.  实现你的筛选器所需的功能。 在实现和组织功能时，你可能决定添加其他 .cpp 或 .c 文件。
 
 ## <a name="span-idcase_5__the_documentation_for_your_technology_does_not_have_a_recommendation_for_a_filter_driver_modelspanspan-idcase_5__the_documentation_for_your_technology_does_not_have_a_recommendation_for_a_filter_driver_modelspancase-5-the-documentation-for-your-technology-does-not-have-a-recommendation-for-a-filter-driver-model"></a><span id="case_5__the_documentation_for_your_technology_does_not_have_a_recommendation_for_a_filter_driver_model."></span><span id="CASE_5__THE_DOCUMENTATION_FOR_YOUR_TECHNOLOGY_DOES_NOT_HAVE_A_RECOMMENDATION_FOR_A_FILTER_DRIVER_MODEL."></span>案例 5：你的技术的相关文档未提供针对筛选器驱动程序模型的建议。
@@ -83,7 +82,7 @@ ms.locfileid: "89214812"
     -   **WDF | 内核模式驱动程序 (KMDF)**
     -   **WDM | 空内核驱动程序**
 
-    **注意**  在创建新的 KMDF 或 UMDF 驱动程序时，必须选择一个不多于 32 个字符的驱动程序名称。 此长度限制在 wdfglobals.h 中定义。
+    **注意**  在创建新的 KMDF 或 UMDF 驱动程序时，必须选择一个不多于 32 个字符的驱动程序名称。 此长度限制在 wdfglobals.h 中定义。
 4.  实现你的筛选器所需的功能。 根据需要创建新的 .c 或 .cpp 文件。
 
 如果你不确定要使用哪个模板，请考虑阅读 [Windows 硬件 WDK 和驱动程序开发](https://go.microsoft.com/fwlink/p?LinkID=252169)论坛帖子或将问题发布到论坛中。

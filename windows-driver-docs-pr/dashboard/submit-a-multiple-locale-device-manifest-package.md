@@ -1,16 +1,15 @@
 ---
 title: 提交多区域设置设备清单包
 description: 提交多区域设置设备清单包
-ms.assetid: b6748bff-d730-434e-9316-dc7b7222b727
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e3002de882a344cf84769fdd659b6a417905618a
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 2832f522eba90f49aedf0c6cd9bd9985e1c85aae
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734101"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800281"
 ---
 # <a name="submit-a-multiple-locale-device-manifest-package"></a>提交多区域设置设备清单包
 
@@ -105,7 +104,7 @@ GUID1.devicemanifest-ms
 GUID.devicemanifest-ms 文件在名为 ManifestFiles 的本地目录中创建：
 
 ``` syntax
-Cabarc.exe -r -p -P  .\DeviceManifestPackages\
+Cabarc.exe -r -p -P  .\DeviceManifestPackages\
 N .\ManifestFiles\ GUID.devicemanifest-ms
 .\DeviceManifestPackages\LocaleInfo.xml
 .\DeviceManifestPackages\GUID.devicemetadata-ms

@@ -1,17 +1,16 @@
 ---
 title: 使用性能监视器查找用户模式内存泄漏
 description: 使用性能监视器查找用户模式内存泄漏
-ms.assetid: 07ba4c55-299c-4558-b4c7-4ffe5c47f496
 keywords:
 - 内存泄漏, 用户模式, 性能监视器
 ms.date: 05/23/2017
 ms.localizationpriority: high
-ms.openlocfilehash: 37a669e3f196ef32ea40bafd15fa526f44080715
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 6469808f286ba623eba6f81221efdcccc1e66afd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "78335951"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803079"
 ---
 # <a name="using-performance-monitor-to-find-a-user-mode-memory-leak"></a>使用性能监视器查找用户模式内存泄漏
 

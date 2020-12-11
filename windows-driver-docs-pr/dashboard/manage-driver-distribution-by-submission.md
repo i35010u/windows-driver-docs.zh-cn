@@ -1,16 +1,15 @@
 ---
 title: 使用发货标签管理驱动程序分发
 description: 在创建了硬件提交并完成上传驱动程序包后，可以创建用于分发驱动程序的发货标签。
-ms.assetid: 61D6735E-6DFF-435A-9AF8-63C2020C0CF0
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 003844029e897ca13c806f0b5b78c903abbe09a0
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: d736eadb0150939248b9344d7906062ce3ce73cb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "63337116"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800333"
 ---
 # <a name="manage-driver-distribution-with-shipping-labels"></a>使用发货标签管理驱动程序分发
 

@@ -1,15 +1,14 @@
 ---
-ms.assetid: 7193DA4B-2461-4E00-90B4-C31B93C8E9BD
 title: 驱动程序包项目的部署属性
 description: 你可以在项目的每个配置中配置远程测试计算机上驱动程序包的自动部署。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c697341ea1d4015f49f0aa6d17e3943d27850c0f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 23ecd1c74c9ac3dba4cd90831753902d28ddc011
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218185"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836854"
 ---
 # <a name="deployment-properties-for-driver-package-projects"></a>驱动程序包项目的部署属性
 
@@ -20,7 +19,7 @@ ms.locfileid: "89218185"
 
 1.  打开驱动程序包的属性页。 在“解决方案资源管理器”中，选择并按住（或右键单击）驱动程序包项目，然后选择“属性”。
 
-    **注意**  如果你的驱动程序解决方案没有驱动程序包项目，你需要添加一个。 请参阅[创建驱动程序包](creating-a-driver-package.md)。 仅当你有驱动程序包时才会显示部署属性。
+    **注意**  如果你的驱动程序解决方案没有驱动程序包项目，你需要添加一个。 请参阅[创建驱动程序包](creating-a-driver-package.md)。 仅当你有驱动程序包时才会显示部署属性。
 2.  在驱动程序包的属性页中，依次选择“配置属性”、“驱动程序安装”、“部署”  。
 3.  选择“启用部署”  选项。 选中此选项后，你可以选择要使用的测试计算机，并且可以配置驱动程序安装和部署的选项。
 
@@ -48,7 +47,7 @@ ms.locfileid: "89218185"
 
 **不安装 -** 这是默认选项。 如果你要将驱动程序包导入[驱动程序存储](../install/driver-store.md)或者如果你要在测试计算机上启用和设置驱动程序验证程序选项，则可以选择不安装。
 
-**硬件 ID 驱动程序更新 -** 若要为实际的硬件设备部署驱动程序，请改用“安装并验证”  。 若要部署驱动程序作为根枚举驱动程序，可以使用**硬件 ID 驱动程序更新**或**安装并验证**。 如果你选择使用“硬件 ID 驱动程序更新”，必须输入出现在 INF 文件中的同一个硬件 ID，并且该硬件 ID 的格式必须为“Root\\Xxx”。 如果选择此选项，文件将复制到远程计算机上的 %*Systemdrive*%\\drivertest\\drivers 文件夹。 设备控制台实用工具 [Devcon](../devtest/devcon.md) 从程序包安装该硬件 ID 和 INF 文件的驱动程序。 例如，你可以选择“硬件 ID 驱动程序更新”  并将 HWID 设置为 **Root\\** <em>yourprojectname</em>。 请确保项目名称不包含任何空格。
+**硬件 ID 驱动程序更新 -** 若要为实际的硬件设备部署驱动程序，请改用“安装并验证”  。 若要部署驱动程序作为根枚举驱动程序，可以使用 **硬件 ID 驱动程序更新** 或 **安装并验证**。 如果你选择使用“硬件 ID 驱动程序更新”，必须输入出现在 INF 文件中的同一个硬件 ID，并且该硬件 ID 的格式必须为“Root\\Xxx”。 如果选择此选项，文件将复制到远程计算机上的 %*Systemdrive*%\\drivertest\\drivers 文件夹。 设备控制台实用工具 [Devcon](../devtest/devcon.md) 从程序包安装该硬件 ID 和 INF 文件的驱动程序。 例如，你可以选择“硬件 ID 驱动程序更新”  并将 HWID 设置为 **Root\\** <em>yourprojectname</em>。 请确保项目名称不包含任何空格。
 
 **自定义命令行 -** 你可以选择在安装后运行自己的自定义命令脚本。 如果你想要运行自定义命令脚本，请确保在“附加文件”  部分下添加必要文件。 附加文件将复制到远程计算机上的 *%Systemdrive%* \\drivertest\\drivers 文件夹。
 

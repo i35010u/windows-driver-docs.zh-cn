@@ -1,16 +1,15 @@
 ---
 title: 创建 LocaleInfo.xml 提交文件
 description: 创建 LocaleInfo.xml 提交文件
-ms.assetid: 2b16b045-4d34-418c-8f68-7f688adf8e7e
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7573a89bb1cb23cdc14ec65155633e3e81b9c4f5
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 367b5114915f665ce1d6402a353ad8789c1ff046
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732761"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800391"
 ---
 # <a name="create-the-localeinfoxml-submission-file"></a>创建 LocaleInfo.xml 提交文件
 

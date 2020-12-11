@@ -1,15 +1,14 @@
 ---
 title: 系统提供的设备安装组件
 description: 系统提供的设备安装组件
-ms.assetid: faf586b9-ab99-4fee-a0d1-923000000189
 ms.date: 04/20/2017
 ms.localizationpriority: High
-ms.openlocfilehash: 21572205ffc743caa2a05cad9f9f97903bcbd1e9
-ms.sourcegitcommit: bd553df84e8a6f3ff3255ef6672a2610fdba7dc3
+ms.openlocfilehash: 011dbea7266754e803cdb7e936a3d77504c7bf69
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "72512074"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819495"
 ---
 # <a name="system-provided-device-installation-components"></a>系统提供的设备安装组件
 
@@ -30,7 +29,7 @@ ms.locfileid: "72512074"
 有关详细信息，请参阅 [SetupAPI ](setupapi.md)。
 
 <a href="" id="configuration-manager-api"></a>配置管理器 API  
-PnP 配置管理器 API 提供 SetupAPI 未提供的基本安装和配置操作。 PnP 配置管理器函数执行低级别的任务，例如获取设备节点的状态 ( *devnode* ) 和管理资源描述符。 这些函数主要由 SetupAPI 调用，但也可由其他设备安装组件调用。
+PnP 配置管理器 API 提供 SetupAPI 未提供的基本安装和配置操作。 PnP 配置管理器函数执行低级别的任务，例如获取设备节点的状态 (*devnode*) 和管理资源描述符。 这些函数主要由 SetupAPI 调用，但也可由其他设备安装组件调用。
 
 <a href="" id="driver-store"></a>驱动程序存储  
 驱动程序存储是内置驱动程序包和第三方[驱动程序包](driver-packages.md)的受信任集合。 操作系统将此集合保留在本地硬盘上的安全位置。 对于设备，只能安装驱动程序存储中的驱动程序包。

@@ -1,15 +1,14 @@
 ---
 title: Windows 兼容硬件开发板
 description: 利用 Windows 平台和 Visual Studio 的强大功能，并通过将硬件组件连接到 Windows 设备，来创建创新性的体验和解决方案。
-ms.assetid: 241AC0DF-4DE6-481A-BBDB-13F811686B40
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 516d87bd2069b8f927c1a17b714b752e2ab8dd5b
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: b4c73da39e167bcbada385f2f3fc6dad7ed53211
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383271"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786307"
 ---
 # <a name="windows-compatible-hardware-development-boards"></a>Windows 兼容硬件开发板
 

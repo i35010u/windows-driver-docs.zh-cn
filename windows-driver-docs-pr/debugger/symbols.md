@@ -1,19 +1,18 @@
 ---
 title: Windows 调试符号（WinDbg、KD、CDB、NTSD）
 description: 可以从公共符号服务器获取 Windows 调试符号（WinDbg、KD、CDB、NTSD）。
-ms.assetid: 9a6977d9-91c8-4366-a545-064e77cd6600
 keywords:
 - 符号
 - 设置，符号
 - 符号，设置
 ms.date: 08/03/2018
 ms.localizationpriority: High
-ms.openlocfilehash: 0b17ebb69c38b968790fba16528a87e0685b436c
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 249f2e5c480e1b1b1e089ab58380b10c094658a5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "72007561"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784143"
 ---
 # <a name="symbols-for-windows-debugging-windbg-kd-cdb-ntsd"></a>Windows 调试符号（WinDbg、KD、CDB、NTSD）
 

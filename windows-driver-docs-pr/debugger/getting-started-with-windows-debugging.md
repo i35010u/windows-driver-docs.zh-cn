@@ -1,15 +1,14 @@
 ---
 title: Windows 调试入门
 description: 本部分介绍如何开始 Windows 调试。 如果你的目标是使用调试器分析故障转储，请参阅使用 Windows 调试器 (WinDbg) 进行故障转储分析。
-ms.assetid: 4981928E-A33D-4F60-AAA0-124C360B7E03
 ms.date: 08/23/2018
 ms.localizationpriority: high
-ms.openlocfilehash: c496c3b2cae2d62d2ae0430a34c2a1d431c53327
-ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
+ms.openlocfilehash: c5cd8f4014ac651f1b3d46927e799609b31a2e97
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91754944"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838519"
 ---
 # <a name="getting-started-with-windows-debugging"></a>Windows 调试入门
 

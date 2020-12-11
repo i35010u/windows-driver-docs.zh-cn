@@ -1,7 +1,6 @@
 ---
 title: 驱动程序包的组件
 description: 驱动程序包的组件
-ms.assetid: 3e09b17f-9a62-43fd-be00-29fe2e6140c5
 keywords:
 - 组件 WDK
 - 驱动程序包 WDK，组件
@@ -14,12 +13,12 @@ keywords:
 - .cat 文件
 ms.date: 05/09/2018
 ms.localizationpriority: High
-ms.openlocfilehash: 7987d58d9b4a198c9e8061a5a438b7a66f18e187
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 6e4cb853875eab232a05d68739e99cdb6bf2efc0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89094903"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96782971"
 ---
 # <a name="components-of-a-driver-package"></a>驱动程序包的组件
 

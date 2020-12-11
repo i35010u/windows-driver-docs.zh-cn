@@ -1,15 +1,14 @@
 ---
 title: 调试 Windows 驱动程序
-ms.assetid: d2d168fe-8be2-4a3d-bc29-4ab3a306296e
 description: 介绍了可用于 Windows 驱动程序的调试技术，特别是 Inflight Trace Recorder。
 ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e2d64d3c159659a5ddde611070192f5f23694704
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 1d8420f7a74d8ad3ce831ccedc02099816dfd891
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065194"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783431"
 ---
 # <a name="debugging-a-windows-driver"></a>调试 Windows 驱动程序 
 

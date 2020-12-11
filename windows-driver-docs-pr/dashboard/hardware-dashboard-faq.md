@@ -1,16 +1,15 @@
 ---
 title: 合作伙伴中心常见问题解答
 description: 本文提供了有关合作伙伴中心的常见问题解答。
-ms.assetid: AA3D1147-7015-4D21-84A6-D127F57DDC97
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b1f8ed439d8251ba6522c77b59498846d3a44337
-ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
+ms.openlocfilehash: dee381df547f0aac324d34d213eabf518603f344
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89443905"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800349"
 ---
 # <a name="hardware-dashboard-faq"></a>硬件仪表板常见问题
 
@@ -79,7 +78,7 @@ ms.locfileid: "89443905"
 
 | 组件 | 说明 |
 | ---       | ---         |
-|SellerID   | 合作伙伴帐户的标识号。 可以在帐户管理页上的**帐户设置**下，找到该标识号。 |
+|SellerID   | 合作伙伴帐户的标识号。 可以在帐户管理页上的 **帐户设置** 下，找到该标识号。 |
 |PrivateProductID | 每次创建产品时生成的标识号。 位于产品的驱动程序详细信息页上。 请参阅[仪表板 ID 定义](./id-definitions.md)，了解详细信息。 |
 |SubmissionID | 指定给每个提交和提交更新的标识号。 位于产品的驱动程序详细信息页上。 请参阅[仪表板 ID 定义](./id-definitions.md)，了解详细信息。 |
 

@@ -1,15 +1,14 @@
 ---
-ms.assetid: D92A4E42-82F0-4034-B208-66E04F6EAB26
 title: 驱动程序部署、测试和调试故障排除
 description: 提供为驱动程序部署预配 Visual Studio 的故障排除技巧。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b01d88c7cb700598320cf195f8b5ae2cc7550f39
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 101cea3f87c8e8e1149d09db9942f7b1bcdd72a0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211143"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784095"
 ---
 # <a name="troubleshooting-configuration-of-driver-deployment-testing-and-debugging"></a>驱动程序部署、测试和调试配置故障排除
 
@@ -58,11 +57,12 @@ Driver Test Computer Configuration 20121115130459167.log
 
 开始预配目标计算机时，可能会看到一条消息：“找不到网络路径”  。
 
-在目标计算机上，请确保你已打开“网络发现”  ，并且已为相应的网络配置文件打开了“文件和打印机共享”  。 例如，如果主计算机和目标计算机加入了网络域，你必须为**域**网络配置文件打开“网络发现”和“文件和打印机共享”。 有关详细信息，请参阅[预配计算机以便进行驱动程序部署和测试 (WDK 8.1)](../gettingstarted/provision-a-target-computer-wdk-8-1.md)。
+在目标计算机上，请确保你已打开“网络发现”  ，并且已为相应的网络配置文件打开了“文件和打印机共享”  。 例如，如果主计算机和目标计算机加入了网络域，你必须为 **域** 网络配置文件打开“网络发现”和“文件和打印机共享”。 有关详细信息，请参阅[预配计算机以便进行驱动程序部署和测试 (WDK 8.1)](../gettingstarted/provision-a-target-computer-wdk-8-1.md)。
 
 请确保你可以从主计算机对目标计算机进行 ping 操作。 在主计算机上，打开“命令提示符”窗口，然后输入 **ping** *targetComputerName*，其中 *targetComputerName* 是目标计算机的名称。
 
-**注意**  在看到消息“找不到网络路径”  之前，你可能会看到多条消息。 这些消息中的某些消息可能会使你认为已找到网络路径，并且预配的第一步已经成功。 事实上，网络路径并未找到，也没有任何预配部分成功。 例如，你可能会看到：
+**注意**  
+在看到消息 **找不到网络路径** 之前，你可能会看到多条消息。 这些消息中的某些消息可能会使你认为已找到网络路径，并且预配的第一步已经成功。 事实上，网络路径并未找到，也没有任何预配部分成功。 例如，你可能会看到：
 
  
 
@@ -77,9 +77,10 @@ The network path was not found.
 ## <a name="span-iddomain_the_network_name_cannot_be_foundspanspan-iddomain_the_network_name_cannot_be_foundspanprovisioning-fails-the-network-name-cannot-be-found"></a><span id="domain_the_network_name_cannot_be_found"></span><span id="DOMAIN_THE_NETWORK_NAME_CANNOT_BE_FOUND"></span>预配失败：找不到网络名称
 
 
-开始预配目标计算机时，你可能会看到一条消息：“找不到网络名称”  。 仔细检查目标计算机的名称。 如果最初输入的计算机名称不正确，请重新启动预配向导（“驱动程序”&gt;“测试”&gt;“配置计算机”）  。 选择不正确的计算机名称，然后选择“下一步”。 在**计算机名称**中，输入正确的目标计算机名称，并完成向导。
+开始预配目标计算机时，你可能会看到一条消息：“找不到网络名称”  。 仔细检查目标计算机的名称。 如果最初输入的计算机名称不正确，请重新启动预配向导（“驱动程序”&gt;“测试”&gt;“配置计算机”）  。 选择不正确的计算机名称，然后选择“下一步”。 在 **计算机名称** 中，输入正确的目标计算机名称，并完成向导。
 
-**注意**  在看到消息“找不到网络名称”  之前，你可能会看到多条消息。 这些消息中的某些消息可能会使你认为已找到计算机名称，并且预配的第一步已经成功。 事实上，计算机名称并未找到，也没有任何预配部分成功。 例如，你可能会看到：
+**注意**  
+在看到消息 **找不到网络名** 之前，你可能会看到多条消息。 这些消息中的某些消息可能会使你认为已找到计算机名称，并且预配的第一步已经成功。 事实上，计算机名称并未找到，也没有任何预配部分成功。 例如，你可能会看到：
 
  
 
@@ -91,7 +92,8 @@ Copying driver test automation files
 The network name cannot be found.
 ```
 
-**注意**  输入不正确的目标计算机名称时显示的消息可能会不同。 例如，你可能会看到一条关于启用网络发现的消息。
+**注意**  
+输入不正确的目标计算机名称时显示的消息可能不同。 例如，你可能会看到一条关于启用网络发现的消息。
 
  
 

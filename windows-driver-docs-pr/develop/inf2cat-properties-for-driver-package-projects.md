@@ -1,15 +1,14 @@
 ---
-ms.assetid: 0877831F-2FBF-402E-A01B-B153F2A18AD4
 title: 驱动程序包项目的 Inf2Cat 属性
 description: 设置 Inf2Cat 工具的属性。 Inf2Cat 工具可用于为具有 INF 文件的任何驱动程序包创建目录文件。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 668b465043014009abc8f0ac48341a97e7beaaeb
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: d34d95892001899791ea48aff485cb162ed2eca4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103258"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96819825"
 ---
 # <a name="inf2cat-properties-for-driver-package-projects"></a>驱动程序包项目的 Inf2Cat 属性
 

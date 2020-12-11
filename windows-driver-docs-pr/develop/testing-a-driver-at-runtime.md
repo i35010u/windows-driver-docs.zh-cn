@@ -1,15 +1,14 @@
 ---
-ms.assetid: 50BF5B17-B7F0-49F2-9ED6-652DB32D638E
 title: 如何使用 Visual Studio 在运行时测试驱动程序
 description: 你可以在 Visual Studio 中使用 WDK 扩展，在网络中的测试计算机上方便地生成、部署、安装和测试驱动程序。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e2a6146504106c8bfda6febd85d1fbb37414aaae
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 3359cf286ed29e02377db16ae3772c10872f79f4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733335"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784113"
 ---
 # <a name="how-to-test-a-driver-at-runtime-using-visual-studio"></a>如何使用 Visual Studio 在运行时测试驱动程序
 
@@ -21,7 +20,7 @@ Visual Studio 的 WDK 扩展提供设备测试接口，可让你在网络中的�
 -   驱动程序必须经过测试签名。 有关详细信息，请参阅[为驱动程序签名](signing-a-driver.md)。
 -   一台测试计算机（或多台）。 测试计算机必须与你用于开发的计算机位于同一个网络。 这两台计算机必须连接到同一个域，或者都在同一工作组下连接到网络。 测试计算机应该运行你想要定位测试目标的 Windows 版本。 
 -   要测试的设备。
--   （*建议*）设置与测试计算机的内核模式调试连接。 若要使用用于内核模式调试的网络连接，目标计算机必须运行 Windows 8。 在运行 Windows 7 或 Windows Vista 的计算机上，你可以设置 USB、1394 或串行连接以用于内核模式调试。 有关详细信息，请参阅[预配计算机以便进行驱动程序部署和测试 (WDK 8.1)](../gettingstarted/provision-a-target-computer-wdk-8-1.md)。
+-   （*建议*）设置与测试计算机的内核模式调试连接。 若要使用用于内核模式调试的网络连接，目标计算机必须运行 Windows 8。 在运行 Windows 7 或 Windows Vista 的计算机上，你可以设置 USB、1394 或串行连接以用于内核模式调试。 有关详细信息，请参阅[预配计算机以便进行驱动程序部署和测试 (WDK 8.1)](../gettingstarted/provision-a-target-computer-wdk-8-1.md)。
 
 <a name="instructions"></a>说明
 ------------
@@ -59,7 +58,7 @@ Visual Studio 的 WDK 扩展提供设备测试接口，可让你在网络中的�
 
     在 WDK 8.1 中，设备基础功能测试位于“所有测试”  、“HCK 测试”  、“认证”  和“设备基础”  文件夹下。 在 WDK 8.1 中，驱动程序测试类别包括 HCK（基本）测试。 请参阅[如何在 WDK 8.1 中运行 HCK 测试套件](run-the-hck-test-suites-in-the-wdk.md)了解详细信息。
 
-6.  请确保选择与目标测试计算机体系结构（x86、x64、ARM）匹配的测试。 使用**体系结构筛选器**来仅显示将在测试计算机上运行的那些测试。
+6.  请确保选择与目标测试计算机体系结构（x86、x64、ARM）匹配的测试。 使用 **体系结构筛选器** 来仅显示将在测试计算机上运行的那些测试。
 7.  选择 &gt;&gt; 添加已选择的测试。
 
 ### <a name="span-idconfigure_test_parametersspanspan-idconfigure_test_parametersspanspan-idconfigure_test_parametersspanstep-4-configure-test-parameters"></a><span id="Configure_test_parameters"></span><span id="configure_test_parameters"></span><span id="CONFIGURE_TEST_PARAMETERS"></span>步骤 4：配置测试参数

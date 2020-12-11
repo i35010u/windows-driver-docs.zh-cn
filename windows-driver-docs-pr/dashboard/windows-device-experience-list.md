@@ -1,16 +1,15 @@
 ---
 title: Windows 设备体验列表
 description: Windows 设备体验列表
-ms.assetid: 6325401e-4c8d-4b24-b910-ee3652470e31
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e43b6a0fecc45db8562e3d1568bf4a83f023285
-ms.sourcegitcommit: bd72676caf2bf5c9738c4081c778316919b85d30
+ms.openlocfilehash: 6a0cb0bb3700ebed284899e29fe835295a9d437b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89450194"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800247"
 ---
 # <a name="windows-device-experience-list"></a>Windows 设备体验列表
 
@@ -37,7 +36,7 @@ Windows 设备体验列表兼容 Internet Explorer 6 和更高版本。
 1. 从任何结果集顶部的筛选下拉列表中选择“公司”  、“区域设置”  、“类别”  或“Device Stage”  的任意组合。
 
    >[!NOTE]
-   >选择 **Device Stage** 筛选器上的**是**后，型号将限制为具有“Device Stage”体验的型号。
+   >选择 **Device Stage** 筛选器上的 **是** 后，型号将限制为具有“Device Stage”体验的型号。
 
 2. 单击“开始”  应用筛选器。
 

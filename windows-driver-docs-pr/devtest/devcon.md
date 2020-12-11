@@ -1,7 +1,6 @@
 ---
 title: Windows 设备控制台 (Devcon.exe)
 description: DevCon (Devcon.exe)（即设备控制台）是一种命令行工具，用于显示有关运行 Windows 的计算机上的设备的详细信息。
-ms.assetid: ac74200e-e2ae-40db-9fb7-5ea2e7760613
 keywords:
 - DevCon WDK
 - 设备控制台 WDK
@@ -18,12 +17,12 @@ keywords:
 - 列出设备信息 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: high
-ms.openlocfilehash: 3b7cd12247d9438e8623e8564ff06899afaebdc6
-ms.sourcegitcommit: f001f5163e1f6350cc8b6dffcc078733defcd053
+ms.openlocfilehash: 68533ea7cc44e2ca9894b290c295f38da7733a63
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92061741"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783333"
 ---
 # <a name="windows-device-console-devconexe"></a>Windows 设备控制台 (Devcon.exe)
 
@@ -80,7 +79,7 @@ Windows 驱动程序开发人员和测试人员可以使用 DevCon 验证是否�
 
 DevCon 是一种命令行工具，可在本地计算机和远程计算机上执行设备管理功能。
 
-**注意**若要在远程计算机上运行 DevCon 命令，组策略设置必须允许即插即用服务在远程计算机上运行。 在运行 Windows Vista 和 Windows 7 的计算机上，默认情况下组策略禁用对服务的远程访问。 在运行 WDK 8.1 和 WDK 8 的计算机上，远程访问不可用。
+**注意** 若要在远程计算机上运行 DevCon 命令，组策略设置必须允许即插即用服务在远程计算机上运行。 在运行 Windows Vista 和 Windows 7 的计算机上，默认情况下组策略禁用对服务的远程访问。 在运行 WDK 8.1 和 WDK 8 的计算机上，远程访问不可用。
 
  
 

@@ -1,16 +1,15 @@
 ---
 title: 通过 Windows 更新使驱动程序过期
 description: 若要通过 Windows 更新使驱动程序过期，请按照以下步骤操作。
-ms.assetid: 085DF794-A65E-4EBC-B473-0C4AF9F6F126
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e05a022b1d77fd71bc5b3506c1cdcb3b1bb5ffc
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 4fb212c6f5026c90ad27bd18c9bdb9bb36718a5d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "63335059"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800373"
 ---
 # <a name="expire-a-driver-from-windows-update"></a>通过 Windows 更新使驱动程序过期
 

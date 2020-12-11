@@ -1,16 +1,15 @@
 ---
 title: 创建设备元数据体验
 description: 创建设备元数据体验
-ms.assetid: 964ad06e-0f29-441d-b184-61f80a614914
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cde7e6763f5947419c49103ab77adbcb1467dae9
-ms.sourcegitcommit: a5f76805387760730faed5674d87201ec85b7dd3
+ms.openlocfilehash: dccce9aed7262acbb76b40946b908c8f638b364f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90112084"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800411"
 ---
 # <a name="create-a-device-metadata-experience"></a>创建设备元数据体验
 

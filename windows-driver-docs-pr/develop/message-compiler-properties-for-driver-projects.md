@@ -1,19 +1,18 @@
 ---
-ms.assetid: 388C0D27-F3B9-4EF0-A03C-B58F38F2EFD6
 title: 驱动程序项目的消息编译器属性
 description: 设置消息编译器 (MC.exe) 工具的属性。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 98f02143ba89288f0af5376ae8c3602de99ccb37
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 3e30183a905eaea375472ba5b128b42755cf1c60
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104154"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96829707"
 ---
 # <a name="message-compiler-properties-for-driver-projects"></a>驱动程序项目的消息编译器属性
 
-设置[**消息编译器 (MC.exe)** ](/windows/desktop/WES/message-compiler--mc-exe-) 工具的属性。 编译器将生成消息资源文件，你可以将其添加到项目中。
+设置 [**消息编译器 (MC.exe)**](/windows/desktop/WES/message-compiler--mc-exe-) 工具的属性。 编译器将生成消息资源文件，你可以将其添加到项目中。
 
 例如，如果你使用 [Windows 事件跟踪 (ETW)](../devtest/event-tracing-for-windows--etw-.md) 内核模式 API 来为内核模式驱动程序添加事件跟踪，则可使用消息编译器来创建一个包含事件提供程序、事件属性、通道和事件的定义的头文件。 你必须在源代码中包括此头文件。 消息编译器将创建一个资源编译器脚本 (\*.rc)，你可以将其添加到项目文件中。
 

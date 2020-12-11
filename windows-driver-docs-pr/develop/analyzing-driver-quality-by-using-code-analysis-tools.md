@@ -1,15 +1,14 @@
 ---
-ms.assetid: 0FEF982B-7FEE-47C8-A906-F881E9D8F3D7
 title: 使用代码分析和验证工具分析驱动程序
 description: 代码分析和验证工具可以系统地分析源代码，从而帮助提高驱动程序的稳定性和可靠性。
 ms.date: 07/02/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e514ab35f102afa576d17044e211c82d1b049bb
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 754e5b4b6032e4006ed35780faf800d2773b9163
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732917"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96802637"
 ---
 # <a name="analyzing-a-driver-using-code-analysis-and-verification-tools"></a>使用代码分析和验证工具分析驱动程序
 
@@ -30,7 +29,7 @@ WDK 的 Windows 8 版本为 Visual Studio 附带的 C/C++ 代码分析工具提�
 -   [使用 SAL 注释减少 C/C++ 代码缺陷](/previous-versions/visualstudio/visual-studio-2013/ms182032(v=vs.120))
 -   [Windows 驱动程序的 SAL 2.0 注释](../devtest/sal-2-annotations-for-windows-drivers.md)
 
-**注意**  在 WDK 的以前版本中，代码分析的驱动程序特定模块是称为 PREfast for Drivers (PFD) 的独立工具的一部分。 PREfast for Drivers 也已集成到 WDK 生成环境中，是 Microsoft 自动代码审查 (OACR) 的一部分。
+**注意**  在 WDK 的以前版本中，代码分析的驱动程序特定模块是称为 PREfast for Drivers (PFD) 的独立工具的一部分。 PREfast for Drivers 也已集成到 WDK 生成环境中，是 Microsoft 自动代码审查 (OACR) 的一部分。
 
  
 

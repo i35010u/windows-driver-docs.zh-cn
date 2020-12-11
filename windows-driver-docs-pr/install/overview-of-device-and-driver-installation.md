@@ -1,19 +1,18 @@
 ---
 title: 设备和驱动程序安装概述
 description: 设备和驱动程序安装概述
-ms.assetid: 5f29635b-c41b-40d1-8b83-b7f5bc71413b
 keywords:
 - 设备安装程序 WDK 设备安装 , 关于设备安装
 - 设备安装 WDK , 关于设备安装
 - 安装设备 WDK , 关于设备安装
 ms.date: 10/16/2019
 ms.localizationpriority: High
-ms.openlocfilehash: 8031cfa6b33207bc7fefa8dd85cdf6845cc7c0e2
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 2b340dc8aeeb3a754897527dfc635dc23e41de20
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097321"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96793597"
 ---
 # <a name="overview-of-device-and-driver-installation"></a>设备和驱动程序安装概述
 

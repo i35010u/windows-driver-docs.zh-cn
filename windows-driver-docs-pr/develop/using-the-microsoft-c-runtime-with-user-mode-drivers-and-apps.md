@@ -1,22 +1,21 @@
 ---
-ms.assetid: DAD531B1-2308-481F-841B-450EEEDA1BB1
 title: 使用含用户模式驱动程序和桌面应用的 Microsoft C 运行时
-description: 本主题提供了有关分发 Windows 8 和 Windows 8.1 应用程序和驱动程序的 C 运行时库的信息。
+description: 本主题提供有关分发 Windows 8 和 Windows 8.1 应用程序和驱动程序的 C 运行时库的信息。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b34f81e40594a1b52bb663ce5af410b1efdc4f7
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: b420758a442fddce4712da66621334c590ab3c60
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732885"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783427"
 ---
 # <a name="using-the-microsoft-c-runtime-with-user-mode-drivers-and-desktop-apps"></a>使用含用户模式驱动程序和桌面应用的 Microsoft C 运行时
 
 > [!NOTE]
 > 本主题只适用于 Windows 桌面驱动程序，而不适用于 Windows 驱动程序。  若要了解此区别，请参阅 [Windows 驱动程序入门](getting-started-with-windows-drivers.md)。
 
-本主题提供了有关分发 Windows 8 和 Windows 8.1 应用程序和驱动程序的 C 运行时库的信息。 它为用户模式驱动程序和桌面应用程序编写人员提供了编译代码、并通过必要的 C 运行时库打包代码以重新分发的指南。
+本主题提供有关分发 Windows 8 和 Windows 8.1 应用程序和驱动程序的 C 运行时库的信息。 它为用户模式驱动程序和桌面应用程序编写人员提供了编译代码、并通过必要的 C 运行时库打包代码以重新分发的指南。
 
 ## <a name="span-idthe_c_runtime_libraries__crt__are_no_longer_shipped_as_a_windows_shared_componentspanspan-idthe_c_runtime_libraries__crt__are_no_longer_shipped_as_a_windows_shared_componentspanspan-idthe_c_runtime_libraries__crt__are_no_longer_shipped_as_a_windows_shared_componentspanthe-c-runtime-libraries-crt-are-no-longer-shipped-as-a-windows-shared-component"></a><span id="The_C_runtime_libraries__CRT__are_no_longer_shipped_as_a_Windows_shared_component"></span><span id="the_c_runtime_libraries__crt__are_no_longer_shipped_as_a_windows_shared_component"></span><span id="THE_C_RUNTIME_LIBRARIES__CRT__ARE_NO_LONGER_SHIPPED_AS_A_WINDOWS_SHARED_COMPONENT"></span>C 运行时库 (CRT) 不再以 Windows 共享组件的形式提供
 
@@ -32,19 +31,19 @@ C 运行时有两个独立的版本。 一个是内部 Windows 组件，另一�
 
 此外，维护 CRT 可能很复杂。 Visual C 团队计划随 Visual Studio 提供 CRT 的定期更新。 使用推荐的重新分发策略，你可以轻松地为你的应用程序选择这些更改。 而且，你无需担心 CRT 的 Windows 系统版本的更改会中断你的应用程序。
 
-msvcrt.dll 现在是 Windows 所有并生成的系统组件。 它只供系统级别组件使用。 文件 msvcr110.dll (Visual Studio 2012) 或 msvcr120.dll (Microsoft Visual Studio 2013) 是 CRT 的新公开版本，供桌面应用程序和用户模式驱动程序开发人员使用。
+msvcrt.dll 现在是 Windows 所有并生成的系统组件。 它只供系统级别组件使用。 文件 msvcr110.dll (Visual Studio 2012) 或 msvcr120.dll (Microsoft Visual Studio 2013) 是 CRT 的新公开版本，供桌面应用程序和用户模式驱动程序开发人员使用。
 
 ## <a name="span-idbuilding_your_code_with_the_c_runtimespanspan-idbuilding_your_code_with_the_c_runtimespanspan-idbuilding_your_code_with_the_c_runtimespanbuilding-your-code-with-the-c-runtime"></a><span id="Building_your_code_with_the_C_runtime"></span><span id="building_your_code_with_the_c_runtime"></span><span id="BUILDING_YOUR_CODE_WITH_THE_C_RUNTIME"></span>使用 C 运行时生成代码
 
 
-Visual C++ 在开发系统的 System32 目录中安装 CRT 的最新版本。 这样安装的目的是为开发人员提供方便。 否则，使用与共享 CRT 链接的 Visual C++ 生成的所有项目均需要在生成目录中保留 DLL 副本，以方便调试和执行。 msvcr120.dll 可以用于目标为 Windows 8.1 和 Windows 8 以及以前版本的 Windows（从 Windows Vista 开始）的驱动程序。
+Visual C++ 在开发系统的 System32 目录中安装 CRT 的最新版本。 这样安装的目的是为开发人员提供方便。 否则，使用与共享 CRT 链接的 Visual C++ 生成的所有项目均需要在生成目录中保留 DLL 副本，以方便调试和执行。 msvcr120.dll 可以用于目标为 Windows 8.1 和 Windows 8 以及以前版本的 Windows（从 Windows Vista 开始）的驱动程序。
 
 ## <a name="span-idredistributing_the_c_runtime_spanspan-idredistributing_the_c_runtime_spanspan-idredistributing_the_c_runtime_spanredistributing-the-c-runtime"></a><span id="Redistributing_the_C_Runtime_"></span><span id="redistributing_the_c_runtime_"></span><span id="REDISTRIBUTING_THE_C_RUNTIME_"></span>重新分发 C 运行时
 
 
 当你在 Microsoft Visual Studio 中生成用户模式驱动程序或传统桌面应用程序，且应用程序使用 C 运行时库 (CRT) 时，你必须分发相应的 CRT 动态链接库。
 
-建议的重新颁发 CRT 的策略取决于你生成的应用程序或驱动程序的类型。 对于 Windows 8 和 Windows 8.1，Microsoft 随 Visual Studio 提供 Visual C++ 可再发行组件包（VCRedist\_x86.exe、VCRedist\_x64.exe、VCRedist\_arm.exe）。 开发人员可以将可再发行组件包与其他库链接。 如果你使用可再发行组件包，C/C++ 运行时可以在客户计算机上自动提供服务。 如果你想要实现隔离，你可以进行静态链接，或将特定的 Visual C/C++ DLL 以及其他其二进制文件复制到*应用程序本地文件夹*。 *应用程序本地文件夹*是一个包含可执行应用程序文件的文件夹。 必须将 DLL 部署到应用程序本地文件夹。
+建议的重新颁发 CRT 的策略取决于你生成的应用程序或驱动程序的类型。 对于 Windows 8 和 Windows 8.1，Microsoft 随 Visual Studio 提供 Visual C++ 可再发行组件包（VCRedist\_x86.exe、VCRedist\_x64.exe、VCRedist\_arm.exe）。 开发人员可以将可再发行组件包与其他库链接。 如果你使用可再发行组件包，C/C++ 运行时可以在客户计算机上自动提供服务。 如果你想要实现隔离，你可以进行静态链接，或将特定的 Visual C/C++ DLL 以及其他其二进制文件复制到 *应用程序本地文件夹*。 *应用程序本地文件夹* 是一个包含可执行应用程序文件的文件夹。 必须将 DLL 部署到应用程序本地文件夹。
 
 Visual C/C++ 可再发行组件包 (VCRedist\_\*.exe) 作为应用程序提供。 如果你的安装包含可再发行组件包，最新版本将作为一个完整包在初始设置后安装在 System32 中，并使用 Microsoft 更新服务支持更新。 Visual C/C++ 可再发行组件包的所有组件均统一更新。
 

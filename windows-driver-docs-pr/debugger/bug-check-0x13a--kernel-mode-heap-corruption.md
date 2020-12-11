@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x13A KERNEL_MODE_HEAP_CORRUPTION
 description: KERNEL_MODE_HEAP_CORRUPTION bug 检查的值为 0x0000013A。 这表示内核模式堆管理器检测到堆中存在损坏。
-ms.assetid: 806669B3-B811-462A-A3B6-2F583BF0E19A
 keywords:
 - Bug 检查 0x13A KERNEL_MODE_HEAP_CORRUPTION
 - KERNEL_MODE_HEAP_CORRUPTION
@@ -13,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: high
-ms.openlocfilehash: 986f5e5684c586579ca6766c8b114eae58affac0
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: d2af67a8ac81df0bb3dd37128abc1fe5fe599db2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "78402351"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824323"
 ---
 # <a name="bug-check-0x13a-kernel_mode_heap_corruption"></a>Bug 检查 0x13A：KERNEL\_MODE\_HEAP\_CORRUPTION
 

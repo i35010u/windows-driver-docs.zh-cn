@@ -1,23 +1,22 @@
 ---
 title: 什么是驱动程序？
 description: 什么是驱动程序？
-ms.assetid: 8a5f51e3-ff5a-4b5d-aa9d-d94b431ee9f7
 keywords:
 - 定义驱动程序
 - 驱动程序定义
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a79779e6d34b80a250b1d176a8085cfdf5e23bbc
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: f1e58bdc66bb0d6555f1daada8bb06473d715f8a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "63371232"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786327"
 ---
 # <a name="what-is-a-driver"></a>什么是驱动程序？
 
 
-为术语*驱动程序*给出单一的准确定义比较困难。 就最基本的意义而言，驱动程序是一个软件组件，可让操作系统和设备彼此通信。 例如，假设应用程序需要从设备中读取某些数据。 应用程序会调用由操作系统实现的函数，操作系统会调用由驱动程序实现的函数。 驱动程序（由设计和制造该设备的同一公司编写）了解如何与设备硬件通信以获取数据。 当驱动程序从设备获取数据后，它会将数据返回到操作系统，操作系统会将数据返回至应用程序。
+为术语 *驱动程序* 给出单一的准确定义比较困难。 就最基本的意义而言，驱动程序是一个软件组件，可让操作系统和设备彼此通信。 例如，假设应用程序需要从设备中读取某些数据。 应用程序会调用由操作系统实现的函数，操作系统会调用由驱动程序实现的函数。 驱动程序（由设计和制造该设备的同一公司编写）了解如何与设备硬件通信以获取数据。 当驱动程序从设备获取数据后，它会将数据返回到操作系统，操作系统会将数据返回至应用程序。
 
 ![图：显示应用程序、操作系统以及驱动程序](images/whatisadriver01.png)
 

@@ -1,16 +1,15 @@
 ---
-ms.assetid: AB35CE97-0C66-47B3-9C64-81BA01D65104
 title: 创建新的软件驱动程序
 description: 在本主题中，我们将介绍如何使用 Visual Studio 开始编写新的软件驱动程序。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: ea7c00146db90c3fec6ca95b279f834400cce471
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: bc1b8bf51786971651384c1e36e64632c9ce4942
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214800"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96817873"
 ---
 # <a name="creating-a-new-software-driver"></a>创建新的软件驱动程序
 

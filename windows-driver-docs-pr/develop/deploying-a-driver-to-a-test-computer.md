@@ -1,15 +1,14 @@
 ---
-ms.assetid: 328404BD-E888-4AAA-AA24-B57FD01E9E54
 title: 将驱动程序部署到测试计算机
 description: 在 Visual Studio 中，WDK 提供了一个可让你在测试计算机上生成、部署驱动程序的测试功能。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a5dd67d07c188905764679cf729d0f4f49fbe74d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 4e28591455fb41adc59cdcf6bad1994677046a98
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218187"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836853"
 ---
 # <a name="deploying-a-driver-to-a-test-computer"></a>将驱动程序部署到测试计算机
 
@@ -20,7 +19,7 @@ ms.locfileid: "89218187"
 
 -   按照[预配计算机以便进行驱动程序部署和测试 (WDK 10)](../gettingstarted/provision-a-target-computer-wdk-8-1.md) 中的说明进行操作。
 
-**注意**  如果你在设置测试计算机时遇到困难，请参阅[解决驱动程序部署、测试和调试的配置问题](troubleshooting-configuration-of-driver-deployment--testing-and-debugging.md)。
+**注意**  如果你在设置测试计算机时遇到困难，请参阅 [解决驱动程序部署、测试和调试的配置问题](troubleshooting-configuration-of-driver-deployment--testing-and-debugging.md)。
 
  
 
@@ -33,7 +32,7 @@ ms.locfileid: "89218187"
 2.  在驱动程序项目的属性页中，依次选择“配置属性”、“驱动程序安装”、“部署”  。
 3.  选择你已经配置的测试计算机，或选择你想要针对测试配置的计算机的名称。 请参阅[预配计算机以便进行驱动程序部署和测试 (WDK 10)](../gettingstarted/provision-a-target-computer-wdk-8-1.md)。
 
-    在为你的驱动程序包项目启用部署时，该驱动程序将自动部署到你生成解决方案时选择的测试计算机。 你可以使用**部署**属性页配置驱动程序安装和部署的选项。 请参阅[驱动程序包项目的部署属性](deployment-properties-for-driver-projects.md)。
+    在为你的驱动程序包项目启用部署时，该驱动程序将自动部署到你生成解决方案时选择的测试计算机。 你可以使用 **部署** 属性页配置驱动程序安装和部署的选项。 请参阅[驱动程序包项目的部署属性](deployment-properties-for-driver-projects.md)。
 
 4.  当你在测试计算机上启用部署时，你还可以在测试计算机上自动启用并配置[驱动程序验证程序](../devtest/driver-verifier.md)、KMDF 验证程序或 UMDF 验证程序以增强测试的有效性。 若要为驱动程序包项目设置这些选项，请依次选择“配置属性”、“驱动程序安装”，然后选择以下属性页。
     -   [驱动程序包项目的驱动程序验证程序属性](driver-verifier-properties-for--driver-projects.md)

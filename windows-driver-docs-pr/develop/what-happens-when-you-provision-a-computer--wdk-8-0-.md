@@ -1,21 +1,20 @@
 ---
-ms.assetid: A8888EF1-5A6F-4B08-8743-27EEECD4FF72
 title: 预配计算机时会出现什么情况 (WDK 8.0)
 description: 这里我们将介绍在使用 Windows 驱动程序工具包 (WDK) 8.0 版预配目标计算机时发生的情况。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2846ed0b49bb6887dc71426f75a8da51342c2728
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 567b37863dc32570df41a935642744f4cd198f6a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211131"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833595"
 ---
 # <a name="what-happens-when-you-provision-a-computer-wdk-80"></a>预配计算机时会出现什么情况 (WDK 8.0)
 
 使用 Microsoft Visual Studio 配置和设置驱动程序部署和驱动程序测试称为“预配目标计算机”  或“预配测试计算机”  。 有关使用 Windows 驱动程序工具包 (WDK) 8 预配的信息，请参阅[预配计算机以便进行驱动程序部署和测试 (WDK 8)](/previous-versions/hh698272(v=vs.85))。 这里我们将介绍在使用 Windows 驱动程序工具包 (WDK) 8.0 版预配目标计算机时发生的情况。
 
-**注意**  WDK 8 不是 WDK 的最新版本。 我们建议你获取当前版本的 WDK，并根据[此处的预配说明](/previous-versions/hh698272(v=vs.85))预配目标计算机。
+**注意**  WDK 8 不是 WDK 的最新版本。 我们建议你获取当前版本的 WDK，并根据[此处的预配说明](/previous-versions/hh698272(v=vs.85))预配目标计算机。
 
  
 

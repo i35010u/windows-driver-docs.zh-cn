@@ -1,16 +1,15 @@
 ---
 title: 使用 WinDbg 分析故障转储文件
 description: 你可以使用 WinDbg 和其他 Windows 调试器分析故障转储文件。
-ms.assetid: e7b4883c-6551-4a94-80d2-635f79348a48
 keywords: 转储文件、故障转储文件
 ms.date: 05/23/2017
 ms.localizationpriority: high
-ms.openlocfilehash: 27ec81d3cc16b2ffbebecbe1f79d579a946edf52
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 4d32c3a1e18e81c24395b445fe0247fe1c774197
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534478"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96836885"
 ---
 # <a name="analyze-crash-dump-files-by-using-windbg"></a>使用 WinDbg 分析故障转储文件
 

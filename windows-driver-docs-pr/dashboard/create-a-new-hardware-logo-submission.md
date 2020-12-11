@@ -1,16 +1,15 @@
 ---
 title: 创建新的 WLK 设备认证提交
 description: 创建新的 WLK 设备认证提交
-ms.assetid: e812eee1-768d-42d6-918e-c716b5c29ea2
 ms.topic: article
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 881358475cc99e2aa8dd1e01e086594ea3feb474
-ms.sourcegitcommit: a5f76805387760730faed5674d87201ec85b7dd3
+ms.openlocfilehash: 07f82bca70275807a4ec751a2e23660863df0cbe
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90112076"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800415"
 ---
 # <a name="create-a-new-wlk-device-certification-submission"></a>创建新的 WLK 设备认证提交
 
@@ -36,7 +35,8 @@ ms.locfileid: "90112076"
 
 9. 工具将生成要提交的 **WQReady.xml** 文件。
 
-    **注意**   WQReady.xml 是默认文件名，但是你可以重命名该文件。
+    **注意**  
+    **WQReady.xml** 是默认文件名，但是你可以重命名该文件。
 
 ## <a name="submitting-your-file"></a>提交文件
 

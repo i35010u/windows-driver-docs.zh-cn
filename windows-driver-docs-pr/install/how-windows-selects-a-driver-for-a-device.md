@@ -1,17 +1,16 @@
 ---
 title: Windows 如何为设备选择驱动程序
 description: Windows 如何为设备选择驱动程序
-ms.assetid: 4c193b97-7b70-425f-99f2-ba976a4cc40a
 keywords:
 - 驱动程序选择 WDK 设备安装，其中设备设置搜索
 ms.date: 03/02/2020
 ms.localizationpriority: High
-ms.openlocfilehash: e6578fba412ae9b2928fffd53e28e0fc4be09312
-ms.sourcegitcommit: c94be6fc464edc94035060a4723efa06ab0f5af9
+ms.openlocfilehash: 80ef7d4d20899ddee2b41daed534143d7f44d2a6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92153473"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96828627"
 ---
 # <a name="how-windows-selects-a-driver-for-a-device"></a>Windows 如何为设备选择驱动程序
 
@@ -32,7 +31,7 @@ ms.locfileid: "92153473"
 |搜索阶段|Windows 7 匹配顺序|Windows 8、Windows 10 匹配顺序|
 |--- |--- |--- |
 |安装驱动程序之前|设备路径；Windows 更新；[驱动程序存储](driver-store.md)|[驱动程序存储](driver-store.md)|
-|选择初始驱动程序之后|不适用|**DevicePath** ; Windows Update|
+|选择初始驱动程序之后|不适用|**DevicePath**; Windows Update|
 
 
 > [!NOTE]

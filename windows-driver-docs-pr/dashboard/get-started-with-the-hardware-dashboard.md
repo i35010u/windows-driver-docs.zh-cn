@@ -1,16 +1,15 @@
 ---
 title: 硬件计划入门
 description: 硬件计划入门
-ms.assetid: 000B5BBB-61EF-4837-8E5E-EF1BBB65B14E
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e1e2f7a9d064feae36a0192b6a07ef844f1026a
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: c75e22eb9bf7affdec7bf714f752110c7d4385e8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732652"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800357"
 ---
 # <a name="get-started-with-the-hardware-dashboard-program"></a>硬件仪表板计划入门
 

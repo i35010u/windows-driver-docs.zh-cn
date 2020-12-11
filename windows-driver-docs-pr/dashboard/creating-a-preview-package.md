@@ -1,16 +1,15 @@
 ---
 title: 创建预览程序包
 description: 创建预览程序包
-ms.assetid: 49880681-480d-4f2d-bf8f-d621ac275244
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3056aa8d665df9bcd7bc57def2fe03f214de1c1b
-ms.sourcegitcommit: bd72676caf2bf5c9738c4081c778316919b85d30
+ms.openlocfilehash: dd8b2db223200dcb21107ef3d201fa55e63931c8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89450198"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800389"
 ---
 # <a name="creating-a-preview-package"></a>创建预览程序包
 

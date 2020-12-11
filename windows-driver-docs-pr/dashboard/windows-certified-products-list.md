@@ -1,16 +1,15 @@
 ---
 title: Windows 兼容产品列表
 description: Windows 兼容产品列表
-ms.assetid: e03b18e3-5c5c-4636-89dc-ab15ae6b25a0
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e85d07b2d817dee54e7c42657d4c761cf3bc026
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: c6be91276e6ed96e995eb2c03cbc33db7f6aab30
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "66830408"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800253"
 ---
 # <a name="windows-compatible-products-list"></a>Windows 兼容产品列表
 

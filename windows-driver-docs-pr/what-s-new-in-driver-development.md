@@ -1,15 +1,14 @@
 ---
 title: 驱动程序开发中的新增功能
 description: 本部分介绍 Windows 10 中驱动程序开发的新增功能。
-ms.assetid: 5502AAF9-2400-4338-A646-C746B29F9A44
 ms.date: 05/22/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: d6313e63b154a6768f1dab068fbafddbeeb540cf
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 3071b4ca3bc70169b6f1959ce370511d82d6d594
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063945"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96803439"
 ---
 # <a name="whats-new-in-driver-development"></a><a name="top"></a>驱动程序开发中的新增功能
 

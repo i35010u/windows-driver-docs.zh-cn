@@ -1,15 +1,14 @@
 ---
 title: 针对 OneCore 生成
 description: 可以针对 Windows 10 之前的版本和 OneCore 版本生成单个二进制文件。
-ms.assetid: ee46801a-4fa5-465a-aa81-5e76eb83d315
 ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d7ad8b6cbb395939fbf8918ad96e5c3df2494ab
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 4c5f6b9a2e6b85baf554475982b19ba6207b043c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716970"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815139"
 ---
 # <a name="building-for-onecore"></a>针对 OneCore 进行构建
 

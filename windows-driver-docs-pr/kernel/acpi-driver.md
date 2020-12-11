@@ -1,7 +1,6 @@
 ---
 title: Windows ACPI 驱动程序 Acpi.sys
 description: Windows ACPI 驱动程序 Acpi.sys 是 Windows 操作系统的收件箱组件。
-ms.assetid: 38ca54e0-defe-48b2-ab00-a5f688c2eb01
 keywords:
 - ACPI 驱动程序 WDK 电源管理
 - 枚举器 WDK 电源管理
@@ -10,12 +9,12 @@ keywords:
 - 物理设备对象 WDK 电源管理
 ms.date: 06/16/2017
 ms.localizationpriority: High
-ms.openlocfilehash: e5f294bf41358d1050e080ffa675283a5e9a8534
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 89c6011dab2d94869b7837384c55476ea52f42fa
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192265"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96840915"
 ---
 # <a name="acpisys-the-windows-acpi-driver"></a>Acpi.sysWindows ACPI 驱动程序
 
@@ -56,7 +55,7 @@ ACPI 控制方法是软件对象，用于声明和定义简单操作以查询和
 ## <a name="acpi-specification"></a>ACPI 规范
 
 
-有关最新的*高级配置和电源接口规范*，请参阅“统一可扩展固件接口论坛”网站上的 [ACPI 5.0 规范](https://uefi.org/specifications)。 ACPI 规范 5.0 修订版引入了一组功能，这些功能用于支持基于系统单芯片 (SoC) 集成电路并实现了[连接待机](/windows-hardware/design/device-experiences/modern-standby)电源模型的低功耗移动电脑。 自 Windows 8 和 Windows 8.1 起，Windows ACPI 驱动程序 Acpi.sys 支持 ACPI 5.0 规范中的新增功能。 有关详细信息，请参阅 [SoC 平台的 Windows ACPI 设计指南](../bringup/windows-acpi-design-guide-for-soc-platforms.md)。
+有关最新的 *高级配置和电源接口规范*，请参阅“统一可扩展固件接口论坛”网站上的 [ACPI 5.0 规范](https://uefi.org/specifications)。 ACPI 规范 5.0 修订版引入了一组功能，这些功能用于支持基于系统单芯片 (SoC) 集成电路并实现了[连接待机](/windows-hardware/design/device-experiences/modern-standby)电源模型的低功耗移动电脑。 自 Windows 8 和 Windows 8.1 起，Windows ACPI 驱动程序 Acpi.sys 支持 ACPI 5.0 规范中的新增功能。 有关详细信息，请参阅 [SoC 平台的 Windows ACPI 设计指南](../bringup/windows-acpi-design-guide-for-soc-platforms.md)。
 
 ## <a name="acpi-debugging"></a>ACPI 调试
 

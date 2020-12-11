@@ -1,15 +1,14 @@
 ---
 title: Windows 内核模式进程和线程管理器
 description: Windows 内核模式进程和线程管理器
-ms.assetid: 4053c73e-190d-4ffe-8db2-f531d120ba81
 ms.localizationpriority: High
 ms.date: 10/17/2018
-ms.openlocfilehash: df96d1bb56662c8ca000107710d37215b99b9ca3
-ms.sourcegitcommit: 70830486331e3ca0f550e5ddf8c42ad7ac782841
+ms.openlocfilehash: 376582f7b10b7558b72658b279ea2addf2adcde1
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91813715"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97091140"
 ---
 # <a name="windows-kernel-mode-process-and-thread-manager"></a>Windows 内核模式进程和线程管理器
 
@@ -22,7 +21,7 @@ Windows 内核模式进程和线程管理器处理进程中的所有线程的执
 
 如果来自不同进程的线程尝试同时使用同一资源，则可能会出现问题。 Windows 提供了几种技术来避免此问题。 确保不同进程中的线程不触及同一资源的技术称为“同步”  。 有关同步的详细信息，请参阅[同步技术](introduction-to-kernel-dispatcher-objects.md)。
 
-为进程和线程管理器提供直接接口的例程通常有字母“ **Ps** ”前缀；例如， **PsCreateSystemThread** 。 有关内核 DDI 的列表，请参阅 [Windows 内核](/windows-hardware/drivers/ddi/_kernel/)。
+为进程和线程管理器提供直接接口的例程通常有字母“**Ps**”前缀；例如，**PsCreateSystemThread**。 有关内核 DDI 的列表，请参阅 [Windows 内核](/windows-hardware/drivers/ddi/_kernel/)。
 
 这组指导原则适用于以下回调例程：
 
@@ -57,9 +56,9 @@ Windows 内核模式进程和线程管理器处理进程中的所有线程的执
 
 其中一个组件是托管未修改的用户模式 Linux 二进制文件（如 /bin/bash）的子系统进程。 子系统进程不包含与 Win32 进程关联的数据结构，例如进程环境块 (PEB) 和线程环境块 (TEB)。 对于子系统进程，系统调用和用户模式异常将被调度到配对的驱动程序。
 
-下面是为了支持子系统进程而对 [进程和线程管理器例程](/windows-hardware/drivers/ddi/index)进行的更改：
+下面是为了支持子系统进程而对 [进程和线程管理器例程](/windows-hardware/drivers/ddi/_kernel)进行的更改：
 
--   WSL 类型由 [**SUBSYSTEM\_INFORMATION\_TYPE**](/windows-hardware/drivers/ddi/ntddk/ne-ntddk-_subsystem_information_type) 枚举中的 **SubsystemInformationTypeWSL** 值指示。 驱动程序可以调用 [**NtQueryInformationProcess**](/windows/win32/api/winternl/nf-winternl-ntqueryinformationprocess) 和 [**NtQueryInformationThread**](/windows/win32/api/winternl/nf-winternl-ntqueryinformationthread) 来确定基础子系统。 对于 WSL，这些调用会返回 **SubsystemInformationTypeWSL** 。
+-   WSL 类型由 [**SUBSYSTEM\_INFORMATION\_TYPE**](/windows-hardware/drivers/ddi/ntddk/ne-ntddk-_subsystem_information_type) 枚举中的 **SubsystemInformationTypeWSL** 值指示。 驱动程序可以调用 [**NtQueryInformationProcess**](/windows/win32/api/winternl/nf-winternl-ntqueryinformationprocess) 和 [**NtQueryInformationThread**](/windows/win32/api/winternl/nf-winternl-ntqueryinformationthread) 来确定基础子系统。 对于 WSL，这些调用会返回 **SubsystemInformationTypeWSL**。
 -   其他内核模式驱动程序可以通过调用 [**PsSetCreateProcessNotifyRoutineEx2**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-pssetcreateprocessnotifyroutineex2) 来注册其回调例程，从而收到有关创建/删除子系统进程的通知。 若要获取有关创建/删除线程的通知，驱动程序可以调用 [**PsSetCreateThreadNotifyRoutineEx**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-pssetcreatethreadnotifyroutineex)，并指定 **PsCreateThreadNotifySubsystems** 作为通知的类型。
--   [**PS\_CREATE\_NOTIFY\_INFO**](/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_ps_create_notify_info) 结构已扩展为包含 **IsSubsystemProcess** 成员，该成员指示 Win32 之外的子系统。 其他成员（如 **FileObject** 、 **ImageFileName** 、 **CommandLine** ）指示有关子系统进程的其他信息。 有关这些成员的行为的信息，请参阅 [**SUBSYSTEM\_INFORMATION\_TYPE**](/windows-hardware/drivers/ddi/ntddk/ne-ntddk-_subsystem_information_type)。
+-   [**PS\_CREATE\_NOTIFY\_INFO**](/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_ps_create_notify_info) 结构已扩展为包含 **IsSubsystemProcess** 成员，该成员指示 Win32 之外的子系统。 其他成员（如 **FileObject**、**ImageFileName**、**CommandLine**）指示有关子系统进程的其他信息。 有关这些成员的行为的信息，请参阅 [**SUBSYSTEM\_INFORMATION\_TYPE**](/windows-hardware/drivers/ddi/ntddk/ne-ntddk-_subsystem_information_type)。
 

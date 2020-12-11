@@ -1,16 +1,15 @@
 ---
 title: Winqual 提交工具 (winqual.exe)
 description: Winqual 提交工具 (winqual.exe)
-ms.assetid: f7a34ee3-0532-465b-acb0-1ff80e2d4cb8
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7273640dd6d764bd79efbdf39d6584ae62dad092
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 28473411e81d0c5d9de5f8ae224d91b2b28a7a07
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "68917854"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800245"
 ---
 # <a name="winqual-submission-tool-winqualexe"></a>Winqual 提交工具 (winqual.exe)
 
@@ -53,7 +52,8 @@ Winqual 提交工具 (Winqual.exe) 可帮助你创建一个提交程序包以进
 
 4.  如果版本检查失败，你将收到警告消息，可通过选中“不再显示此消息”  复选框禁用此消息。
 
-    **注意**  若要重新启用此对话框，请单击“工具”  、单击“选项”  ，然后选中“在更新检查失败时发出警告”  复选框。
+    **注意**  
+    若要重新启用此对话框，请依次单击 **工具**、**选项**，然后选中 **在更新检查失败时发出警告** 复选框。
 
      
 

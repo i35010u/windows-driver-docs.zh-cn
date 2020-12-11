@@ -2,14 +2,13 @@
 title: 驱动程序包隔离
 description: 此页面介绍了驱动程序隔离，这是 Windows 驱动程序的一项要求。
 ms.date: 10/01/2019
-ms.assetid: 3955fb29-ee49-4c3e-ac6d-700dcba3f884
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c68739068ca02257666a285d72e43fe1f2d5c65
-ms.sourcegitcommit: f07ec44e8224c98f132988dfccb79ec118f9eeb6
+ms.openlocfilehash: 966c9611f84f5f637515b3f25bfcb83c1d9b7526
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96535112"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838811"
 ---
 # <a name="driver-package-isolation"></a>驱动程序包隔离
 

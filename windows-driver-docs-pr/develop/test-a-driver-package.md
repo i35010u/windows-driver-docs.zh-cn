@@ -1,15 +1,14 @@
 ---
-ms.assetid: 5BA0A193-1147-4BAD-A6CA-453856E621A2
 title: 如何测试驱动程序包
 description: 可以使用 Visual Studio 在测试计算机上部署和安装驱动程序包，然后验证该驱动程序是否已安装并运行。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f0a9590f3c3caf8307c1015ebf483e0c7ab09626
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 2c54fb54551369a8cbc1271cd89cc235b6f2720d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210819"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784115"
 ---
 # <a name="how-to-test-a-driver-package"></a>如何测试驱动程序包
 
@@ -31,7 +30,7 @@ ms.locfileid: "89210819"
 1.  打开驱动程序项目的属性页。 在“解决方案资源管理器”中，选择并按住（或右键单击）驱动程序项目，然后选择“属性”。
 2.  在驱动程序的属性页中，依次选择“配置属性”、“驱动程序安装”、“部署”  。
 3.  选择“启用部署”  选项。 有关详细信息，请参阅[驱动程序项目的部署属性](deployment-properties-for-driver-projects.md)。
-4.  选择已配置为**远程计算机**的测试计算机。
+4.  选择已配置为 **远程计算机** 的测试计算机。
 5.  在“驱动程序安装选项”下，选择“安装并验证”，然后选择“默认驱动程序安装任务”。
 
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题

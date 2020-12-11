@@ -1,16 +1,15 @@
 ---
 title: 硬件提交
 description: 硬件提交
-ms.assetid: 7EFA9617-CF1D-4259-B0C4-A9DDCF5C3A1F
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f310578368905f56161dfb1de5645a17116aedd0
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 8477e790e90d7296c727cc853444b84ecb809bff
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733231"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96800363"
 ---
 # <a name="hardware-submissions"></a>硬件提交
 
@@ -117,7 +116,7 @@ Windows 硬件兼容性计划（适用于 Windows 10）和 Windows 硬件认证�
 
 已上传程序包列表中显示了该提交的已上传程序包。 选择要用于展开程序包的插入记号。 这会向你显示提交 ID，并允许你选择“下载程序包”  来下载相应程序包。
 
-**其他认证**显示已选择的任何其他认证。
+**其他认证** 显示已选择的任何其他认证。
 
 ### <a name="certification"></a>认证
 
