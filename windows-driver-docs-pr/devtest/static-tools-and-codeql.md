@@ -4,14 +4,14 @@ description: 在 Windows 驱动程序源代码中使用静态工具和 CodeQL �
 keywords:
 - 动态验证工具 WDK
 - 静态验证工具 WDK
-ms.date: 12/09/2020
+ms.date: 12/10/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 47b6a9dede42c8dddb2b99e5c7027665d7df37bd
-ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
+ms.openlocfilehash: 2c3e91d3371fdad340cc8b985027167b046efc7f
+ms.sourcegitcommit: 6395b4691c2c5f01995dcec00bcf2eb1f31acd55
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97091228"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97103652"
 ---
 # <a name="codeql-and-the-static-tools-logo-test"></a>CodeQL 和静态工具徽标测试
 
@@ -29,7 +29,7 @@ Semmle 的[CodeQL](https://semmle.com/codeql)是一种强大的保护软件静�
 
 > [!IMPORTANT]
 > 此信息是初步信息，并将在完成查询规则集分发时进行更新。
-> 
+>
 
 ## <a name="concepts-for-codeql"></a>CodeQL 的概念
 
@@ -55,8 +55,8 @@ C:\> mkdir C:\codeql-home
 ```
 
 2. 导航到 Github [CodeQL 下载页](https://github.com/github/codeql-cli-binaries/releases/)
-3. 下载最新的 zip 文件。 例如，64位 Windows "codeql-win64.zip"。
-4. 将下载的 zip 文件解压缩到目录，例如，C:\codeql-home\codeql-win64
+3. 下载 zip 文件的最新版本。 例如，64位 Windows "codeql-win64.zip"。
+4. 将下载的 zip 文件解压缩到目录，例如  `C:\codeql-home\codeql-win64` 。
 5. 通过显示帮助确认 CodeCL 命令是否正常工作。
 
 ```command
@@ -149,6 +149,17 @@ C:\codeql-home>C:\codeql-home\codeql-win64\codeql\codeql database create -l=cpp 
 msbuild /t:rebuild "C:\codeql-home\drivers\kmdf\kmdfecho.sln"
 ```
 
+## <a name="summary-of-directory-locations"></a>目录位置摘要
+
+此时，在我们的示例设置中，将显示以下目录。
+
+| 描述            | 位置                           |
+|------------------------|------------------------------------|
+| Codeql.exe             | C:\codeql-home\codeql-win64\codeql |
+| C + + 规则              | C:\codeql-home\codeql\cpp          |
+| 数据库              | C:\codeql-home\databases           |
+| 待测试的驱动程序代码 | C:\codeql-home\drivers\kmdf        |
+
 ## <a name="perform-analysis"></a>执行分析
 
 此时，设置已完成，下一步是对驱动程序源代码执行实际分析。
@@ -205,6 +216,24 @@ Interpreting results.
 目前，上面的命令演示了如何只运行一个查询 *"TooFewArguments. q"*。  可以通过在一个命令中按顺序列出所有查询来一次运行多个查询。  
 
 在不久的将来，将提供包含所有相关驱动程序查询的特定于驱动程序的 *查询套件* 。 有关详细信息，请参阅 [查询套件](https://help.semmle.com/codeql/codeql-cli/procedures/query-suites.html)。
+
+## <a name="troubleshooting"></a>疑难解答
+
+对于数据库版本不匹配问题，下列工具可能有所帮助。
+
+使用 "codeql 版本" 命令显示 codeql exe 的版本。
+
+```command
+C:\codeql-home\codeql-win64\codeql>codeql version
+CodeQL command-line toolchain release 2.4.0.
+Copyright (C) 2019-2020 GitHub, Inc.
+Unpacked in: C:\codeql-home\codeql-win64\codeql
+   Analysis results depend critically on separately distributed query and
+   extractor modules. To list modules that are visible to the toolchain,
+   use 'codeql resolve qlpacks' and 'codeql resolve languages'.
+```
+
+数据库升级命令将更新数据库。 请注意，这是一个单向升级，不可逆。 有关详细信息，请参阅 [数据库升级](https://help.semmle.com/codeql/codeql-cli/commands/database-upgrade.html)。
 
 ## <a name="queries"></a>查询
 

@@ -3,12 +3,12 @@ title: HID 按钮驱动程序
 description: 使用适用于 GPIO 按钮的 Microsoft 提供的按钮驱动程序;否则，请实现将 HID 数据注入操作系统的驱动程序。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 22678c55d77c5785e3cb3856aab171fb65e20342
-ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
+ms.openlocfilehash: 91151c196d6d2c44d9eda6ededc8486b9f8cdf59
+ms.sourcegitcommit: 586b1844547359baca95e3228fa63fcba0b18608
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97091112"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97096626"
 ---
 # <a name="hid-button-drivers"></a>HID 按钮驱动程序
 
@@ -24,60 +24,49 @@ ms.locfileid: "97091112"
 
 下面是一些常规指针，可帮助你确定在创建 HID 按钮时应遵循的实现。
 
-![用于实现按钮的决策图](images/button.png)
+:::image type="content" source="images/button.png" alt-text="用于实现按钮的决策图" border="false":::
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p><strong>使用 Microsoft 提供的内置按钮驱动程序</strong></p>
-<p><img src="images/hid-acpi.png" alt="ACPI description of a HID button" /></p></td>
-<td><p>如果要实现 GPIO 按钮，请描述系统 ACPI 中的按钮，以便 Windows 可以加载内置驱动程序 Hidinterrupt.sys，作为向操作系统报告事件的按钮驱动程序。</p>
-<ul>
-<li><a href="acpi-button-device.md" data-raw-source="[ACPI button device](acpi-button-device.md)">ACPI 按钮设备</a></li>
-<li><a href="/windows-hardware/drivers/gpiobtn/button-behavior" data-raw-source="[Button Behavior](../gpiobtn/button-behavior.md)">按钮行为</a></li>
-<li><a href="acpi-button-device.md#sample-buttons-acpi-for-phonetablet" data-raw-source="[Sample buttons ACPI for phone/tablet](acpi-button-device.md#acpi-button-phone)">手机/平板电脑的示例按钮 ACPI</a></li>
-<li><a href="acpi-button-device.md#sample-buttons-acpi-for-desktop" data-raw-source="[Sample buttons ACPI for desktop](acpi-button-device.md#acpi-button-desktop)">示例按钮桌面版 ACPI</a></li>
-</ul>
-<p>Microsoft 建议尽可能使用内置传输微型驱动程序。</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>在内核模式下编写 HID 源驱动程序</strong></p>
-<p><img src="images/hid-vhf.png" alt="Buttons using Virtual HID Framework" /></p></td>
-<td><p>如果要实现非 GPIO 按钮，如需要由其他软件组件注入的 HID 格式的数据流，则可以选择写入内核模式驱动程序。 从 Windows 10 开始，你可以通过调用与虚拟 HID 框架 (VHF) 通信的编程接口来编写一个 HID 源驱动程序，并获取和设置与 HID 类驱动程序的 HID 报表。</p>
-<ul>
-<li><a href="virtual-hid-framework--vhf-.md" data-raw-source="[How to write a HID source driver that interacts with Virtual HID Framework (VHF)](virtual-hid-framework--vhf-.md)">如何编写与虚拟 HID Framework 交互 (VHF 的 HID 源驱动程序) </a></li>
-<li><a href="/windows-hardware/drivers/ddi/index" data-raw-source="[Virtual HID Framework Reference](/windows-hardware/drivers/ddi/index)">虚拟 HID 框架参考</a></li>
-</ul>
-<p>或者，你可以编写一个内核模式 HID 传输微型驱动程序，它受 Windows 早期版本支持。 但是，我们不建议采用这种方法，因为编写不当的 KMDF HID 传输微型驱动程序会导致系统崩溃。</p>
-<ul>
-<li><a href="transport-minidrivers.md" data-raw-source="[Transport Minidrivers](transport-minidrivers.md)">传输微型驱动程序</a></li>
-<li><a href="/windows-hardware/drivers/ddi/index" data-raw-source="[HID Minidriver IOCTLs](/windows-hardware/drivers/ddi/index)">HID 微型驱动程序 IOCTLs</a></li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td><p><strong>写入 UMDF HID 微型驱动程序</strong></p>
-<p><img src="images/hid-umdf.png" alt="HID Transport Minidriver" /></p></td>
-<td><p>如果要实现非 GPIO 按钮，则可在用户模式下编写 HID 传输微型驱动程序，而不是使用前面编写的模型。 除了内核模式驱动程序和此驱动程序中的错误之外，这些驱动程序也不会检查整个系统。</p>
-<ul>
-<li><a href="/windows-hardware/drivers/wdf/creating-umdf-hid-minidrivers" data-raw-source="[Creating UMDF HID Minidrivers](../wdf/creating-umdf-hid-minidrivers.md)">创建 UMDF HID 微型驱动程序</a></li>
-<li><a href="/previous-versions/hh463977(v=vs.85)" data-raw-source="[UMDF HID Minidriver IOCTLs](/previous-versions/hh463977(v=vs.85))">UMDF HID 微型驱动程序 IOCTLs</a></li>
-</ul></td>
-</tr>
-</tbody>
-</table>
+### <a name="use-the-microsoft-provided-in-box-button-driver"></a>使用 Microsoft 提供的内置按钮驱动程序
 
- 
+:::image type="content" source="images/hid-acpi.png" alt-text="HID 按钮的 ACPI 说明" border="false":::
+
+如果要实现 GPIO 按钮，请描述系统 ACPI 中的按钮，以便 Windows 可以加载内置驱动程序 Hidinterrupt.sys，作为向操作系统报告事件的按钮驱动程序。
+
+- [ACPI 按钮设备](acpi-button-device.md)
+- [按钮行为](../gpiobtn/button-behavior.md)
+- [Windows 10 核心版 ACPI 的示例按钮](acpi-button-device.md#sample-acpi-button-device-for-windows-10-core-os-editions)
+
+Microsoft 建议尽可能使用内置传输微型驱动程序。
+
+### <a name="write-a-hid-source-driver-in-kernel-mode"></a>在内核模式下编写 HID 源驱动程序
+
+:::image type="content" source="images/hid-vhf.png" alt-text="使用虚拟 HID 框架的按钮" border="false":::
+
+如果要实现非 GPIO 按钮，如需要由其他软件组件注入的 HID 格式的数据流，则可以选择写入内核模式驱动程序。 从 Windows 10 开始，你可以通过调用与虚拟 HID 框架 (VHF) 通信的编程接口来编写一个 HID 源驱动程序，并获取和设置与 HID 类驱动程序的 HID 报表。
+
+- [如何编写与虚拟 HID Framework 交互 (VHF 的 HID 源驱动程序) ](virtual-hid-framework--vhf-.md)
+- [虚拟 HID 框架参考](/windows-hardware/drivers/virtual-hid-framework--vhf-)
+
+或者，你可以编写一个内核模式 HID 传输微型驱动程序，它受 Windows 早期版本支持。 但是，我们不建议采用这种方法，因为编写不当的 KMDF HID 传输微型驱动程序会导致系统崩溃。
+
+- [传输微型驱动程序](transport-minidrivers.md)
+- [HID 微型驱动程序 IOCTLs](/windows-hardware/drivers/ddi/_hid/#hid-class-driver-ioctls)
+
+### <a name="write-a-umdf-hid-minidriver"></a>写入 UMDF HID 微型驱动程序
+
+:::image type="content" source="images/hid-umdf.png" alt-text="HID 传输微型驱动程序" border="false":::
+
+如果要实现非 GPIO 按钮，则可在用户模式下编写 HID 传输微型驱动程序，而不是使用前面编写的模型。 除了内核模式驱动程序和此驱动程序中的错误之外，这些驱动程序也不会检查整个系统。
+
+- [创建 UMDF HID 微型驱动程序](../wdf/creating-umdf-hid-minidrivers.md)
+- [UMDF HID 微型驱动程序 IOCTLs](/previous-versions/hh463977(v=vs.85))"
 
 ## <a name="universal-windows-drivers-for-hid-buttons"></a>HID 按钮的通用 Windows 驱动程序
-
 
 从 Windows 10 开始，HID 驱动程序编程接口是 OneCoreUAP 的 Windows 版本的一部分。 通过使用这一组通用的接口，可以使用 [虚拟 HID 框架](/windows-hardware/drivers/ddi/_hid) 或 [传输微型驱动程序](transport-minidrivers.md) 接口编写按钮驱动程序。 这些驱动程序将在适用于桌面版的 Windows 10 上运行， (家庭版、专业版、企业版和教育版) 以及 Windows 10 移动版以及其他 Windows 10 版本。
 
 有关分步指南，请参阅 [使用通用 Windows 驱动程序入门](/windows-hardware/drivers)。
 
 ## <a name="related-topics"></a>相关主题
-[人体学接口设备](https://developer.microsoft.com/windows/hardware)
+
+[人体学接口设备](/windows-hardware/drivers/hid/)

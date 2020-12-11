@@ -1,16 +1,16 @@
 ---
 title: C30029
 description: 警告 C30029 调用请求可执行内存的内存分配函数。
-ms.date: 04/20/2017
+ms.date: 12/10/2020
 ms.localizationpriority: medium
 f1_keywords:
 - C30029
-ms.openlocfilehash: 35e369ecaea0b1e5aa5a78ef3450fff057e68752
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 7973f6b887e38e96906a644f2cc74d479531b9dc
+ms.sourcegitcommit: 6395b4691c2c5f01995dcec00bcf2eb1f31acd55
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96788747"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97103648"
 ---
 # <a name="c30029"></a>C30029
 
@@ -29,7 +29,7 @@ ms.locfileid: "96788747"
 ```
 MmMapIoSpace(  PhysicalAddress,
         numberOfBytes,
-        PAGE_NOCACHE);
+        MmNonCached);
 ```
 
 下面的代码可避免此警告：
