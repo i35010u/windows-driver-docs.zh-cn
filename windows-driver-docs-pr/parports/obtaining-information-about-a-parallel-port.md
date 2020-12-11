@@ -5,12 +5,12 @@ keywords:
 - 并行端口 WDK，获取信息
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9541e81c6dc506d1c8acb0d0ab8017c6d5612807
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 9dbdeb5414817671e522db789d7b9eaedb84e10f
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96812607"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97090892"
 ---
 # <a name="obtaining-information-about-a-parallel-port"></a>获取有关并行端口的信息
 
@@ -24,7 +24,7 @@ ms.locfileid: "96812607"
 
 -   并行端口的硬件功能
 
--   内核模式驱动程序可以使用的[并行端口回调例程](/windows-hardware/drivers/ddi/index)
+-   内核模式驱动程序可以使用的[并行端口回调例程](/windows-hardware/drivers/ddi/_parports/)
 
 客户端使用以下内部设备控制请求来获取上述信息：
 

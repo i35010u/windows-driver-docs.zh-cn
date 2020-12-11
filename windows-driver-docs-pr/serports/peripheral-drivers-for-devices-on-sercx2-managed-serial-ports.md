@@ -3,12 +3,12 @@ title: SerCx2 托管串行端口上的设备的外设驱动程序
 description: 通常，由 SerCx2 管理的串行端口会永久连接到外围设备。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c148af823182ff2b957b935c26ada6105327b24
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 15812ba0396d7d2352eb2f40d1654c26215b1aa5
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96811997"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97090890"
 ---
 # <a name="peripheral-drivers-for-devices-on-sercx2-managed-serial-ports"></a>SerCx2 托管串行端口上的设备的外设驱动程序
 
@@ -49,7 +49,7 @@ ms.locfileid: "96811997"
 SerCx2 支持与 (SerCx) 的串行框架扩展的收件箱串行驱动程序、Serial.sys 和版本1相同的串行 IOCTLs。 更多相关信息：
 
 - 请参阅 [串行 I/o 请求接口](serial-i-o-request-interface.md) 中的表，以确定 SerCx2 是否支持特定的序列 IOCTL。
-- 有关 Windows 串行 i/o 请求接口定义的所有串行 IOCTLs 的详细说明，请参阅 [串行设备控制请求](/windows-hardware/drivers/ddi/index) 。
+- 有关 Windows 串行 i/o 请求接口定义的所有串行 IOCTLs 的详细说明，请参阅 [串行设备控制请求](/windows-hardware/drivers/ddi/ntddser) 。
 - 请参阅 [串行控制器驱动程序概述](serial-drivers-overview.md) ，简要了解 Serial.sys、SerCx 和 SerCx2。
 
 ## <a name="interrupt-path"></a>中断路径

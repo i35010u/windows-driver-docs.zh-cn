@@ -7,12 +7,12 @@ keywords:
 - 安装程序调试
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f32d3186f5c0012904d0a4fdc25863674f693ae
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: aea897111d0beaa4dad635692c21e5ddc90514c3
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96798385"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97090940"
 ---
 # <a name="debugging-windows-setup-and-the-os-loader"></a>调试 Windows 安装程序和 OS 加载程序
 
@@ -23,7 +23,7 @@ ms.locfileid: "96798385"
 有关在计算机启动时对计算机进行调试的信息，请参阅以下主题。
 
 -   [**BCDEdit /bootdebug**](../devtest/bcdedit--bootdebug.md)
--   [BCD 引导选项参考](/windows-hardware/drivers/ddi/index)
+-   [BCD 引导选项参考](/windows-hardware/drivers/devtest/bcd-boot-options-reference)
 
  
 

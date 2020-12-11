@@ -6,12 +6,12 @@ keywords:
 - 通信模式 WDK 并行端口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f680429124d12562d80ee862a39f6eab438718d
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: f50edcacd8e92b552e21d9995d776b70a7664f3c
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96812577"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97091172"
 ---
 # <a name="setting-and-clearing-the-communication-mode-on-a-parallel-port"></a>设置和清除并行端口上的通信模式
 
@@ -25,7 +25,7 @@ ms.locfileid: "96812577"
 
 [**IOCTL \_ 内部 \_ 并行 \_ 清除 \_ 芯片 \_ 模式**](/windows-hardware/drivers/ddi/parallel/ni-parallel-ioctl_internal_parallel_clear_chip_mode)
 
-内核模式驱动程序还可以使用系统提供的、通过 [**IOCTL \_ 内部 \_ GET \_ 并行 \_ PNP \_ 信息**](/windows-hardware/drivers/ddi/parallel/ni-parallel-ioctl_internal_get_parallel_pnp_info)请求获取的 [并行设备回调例程](/windows-hardware/drivers/ddi/index)。 此请求返回 [**并行 \_ PNP \_ 信息**](/windows-hardware/drivers/ddi/parallel/ns-parallel-_parallel_pnp_information) 结构，其中包括指向系统提供的回调的以下指针：
+内核模式驱动程序还可以使用系统提供的、通过 [**IOCTL \_ 内部 \_ GET \_ 并行 \_ PNP \_ 信息**](/windows-hardware/drivers/ddi/parallel/ni-parallel-ioctl_internal_get_parallel_pnp_info)请求获取的 [并行设备回调例程](/windows-hardware/drivers/ddi/_parports/)。 此请求返回 [**并行 \_ PNP \_ 信息**](/windows-hardware/drivers/ddi/parallel/ns-parallel-_parallel_pnp_information) 结构，其中包括指向系统提供的回调的以下指针：
 
 -   **TrySetChipMode** 成员是指向 [*PPARALLEL \_ 集 \_ 芯片 \_ 模式*](/windows-hardware/drivers/ddi/parallel/nc-parallel-pparallel_set_chip_mode)回调的指针，它可设置并行端口的运行模式。
 

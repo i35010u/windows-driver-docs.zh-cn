@@ -6,12 +6,12 @@ keywords:
 - 同步 WDK 并行端口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 25a633b39af05ba32c31979d773431cb51ecc531
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: fe9a09d1a0b00272ba1f648b876025f52bc4dad6
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96812567"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97091150"
 ---
 # <a name="synchronizing-the-use-of-a-parallel-port"></a>同步并行端口的使用
 
@@ -29,7 +29,7 @@ ms.locfileid: "96812567"
 
 [**IOCTL \_ 内部 \_ 并行 \_ 端口 \_ 免费**](/windows-hardware/drivers/ddi/parallel/ni-parallel-ioctl_internal_parallel_port_free)
 
-内核模式客户端还可以使用系统提供的 [并行端口回调例程](/windows-hardware/drivers/ddi/index) ，该例程是使用 [**IOCTL \_ 内部 \_ GET \_ 并行 \_ 端口 \_ 信息**](/windows-hardware/drivers/ddi/parallel/ni-parallel-ioctl_internal_get_parallel_port_info) 请求获取的。 此请求返回一个 [**并行 \_ 端口 \_ 信息**](/windows-hardware/drivers/ddi/parallel/ns-parallel-_parallel_port_information) 结构，其中包括指向系统提供的回调的以下指针：
+内核模式客户端还可以使用系统提供的 [并行端口回调例程](/windows-hardware/drivers/ddi/_parports/) ，该例程是使用 [**IOCTL \_ 内部 \_ GET \_ 并行 \_ 端口 \_ 信息**](/windows-hardware/drivers/ddi/parallel/ni-parallel-ioctl_internal_get_parallel_port_info) 请求获取的。 此请求返回一个 [**并行 \_ 端口 \_ 信息**](/windows-hardware/drivers/ddi/parallel/ns-parallel-_parallel_port_information) 结构，其中包括指向系统提供的回调的以下指针：
 
 -   **TryAllocatePort** 成员是指向 [*PPARALLEL \_ 尝试 \_ 分配 \_ 例程*](/previous-versions/windows/hardware/drivers/ff544550(v=vs.85))回调的指针，该例程尝试分配并行端口。
 

@@ -6,12 +6,12 @@ keywords:
 - 存储磁带驱动程序 WDK，关于磁带驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e8187973a416d2f432f6617b91ba05aac53c50e9
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 0e9feedc41e5da9b0cf1fd309917e0f595ec278d
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96790327"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97090746"
 ---
 # <a name="using-the-tape-class-driver"></a>使用磁带类驱动程序
 
@@ -39,7 +39,7 @@ ms.locfileid: "96790327"
 
 -   分配磁带 miniclass 驱动程序的驱动程序上下文区域 (minitape 扩展和命令扩展) 。
 
-有关可由磁带 miniclass 驱动程序调用的 **TapeClass**_Xxx_ 例程的说明，请参阅 [磁带类驱动程序例程](/windows-hardware/drivers/ddi/index)。
+有关可由磁带 miniclass 驱动程序调用的 **TapeClass**_Xxx_ 例程的说明，请参阅 [磁带类驱动程序例程](/windows-hardware/drivers/ddi/minitape)。
 
  
 

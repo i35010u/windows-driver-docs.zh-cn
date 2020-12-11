@@ -3,12 +3,12 @@ title: HID 按钮驱动程序
 description: 使用适用于 GPIO 按钮的 Microsoft 提供的按钮驱动程序;否则，请实现将 HID 数据注入操作系统的驱动程序。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 655766d393ec8663669c86274b9097acf0c7418c
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 22678c55d77c5785e3cb3856aab171fb65e20342
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96836499"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97091112"
 ---
 # <a name="hid-button-drivers"></a>HID 按钮驱动程序
 
@@ -75,7 +75,7 @@ ms.locfileid: "96836499"
 ## <a name="universal-windows-drivers-for-hid-buttons"></a>HID 按钮的通用 Windows 驱动程序
 
 
-从 Windows 10 开始，HID 驱动程序编程接口是 OneCoreUAP 的 Windows 版本的一部分。 通过使用这一组通用的接口，可以使用 [虚拟 HID 框架](/windows-hardware/drivers/ddi/index) 或 [传输微型驱动程序](transport-minidrivers.md) 接口编写按钮驱动程序。 这些驱动程序将在适用于桌面版的 Windows 10 上运行， (家庭版、专业版、企业版和教育版) 以及 Windows 10 移动版以及其他 Windows 10 版本。
+从 Windows 10 开始，HID 驱动程序编程接口是 OneCoreUAP 的 Windows 版本的一部分。 通过使用这一组通用的接口，可以使用 [虚拟 HID 框架](/windows-hardware/drivers/ddi/_hid) 或 [传输微型驱动程序](transport-minidrivers.md) 接口编写按钮驱动程序。 这些驱动程序将在适用于桌面版的 Windows 10 上运行， (家庭版、专业版、企业版和教育版) 以及 Windows 10 移动版以及其他 Windows 10 版本。
 
 有关分步指南，请参阅 [使用通用 Windows 驱动程序入门](/windows-hardware/drivers)。
 

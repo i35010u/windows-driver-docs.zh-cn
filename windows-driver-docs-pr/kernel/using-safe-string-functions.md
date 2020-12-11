@@ -7,12 +7,12 @@ keywords:
 - 缓冲 WDK 安全字符串函数
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e24164af59ecf09ca08b634079e4dcc60c93cd00
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: d96af11808924fb0374729331a6b2932d2950e3b
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96838859"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97091094"
 ---
 # <a name="using-safe-string-functions"></a>使用安全字符串函数
 
@@ -30,11 +30,11 @@ ms.locfileid: "96838859"
 
 一组内核模式安全字符串函数包含以下两个子集：
 
--   [Unicode 和 ANSI 字符的安全字符串函数](/windows-hardware/drivers/ddi/index)
+-   [Unicode 和 ANSI 字符的安全字符串函数](/windows-hardware/drivers/ddi/_kernel/#safe-string-functions-for-unicode-and-ansi-characters)
 
     其中的每个函数都在支持双字节 Unicode 字符的 W 后缀版本中提供，并且支持单字节 ANSI 字符。 例如， [**RtlStringCbCatN**](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbcatna)，它将两个字符串连接起来并限制附加字符串的长度，可用作 [**RtlStringCbCatNW**](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbcatnw) 和 [**RtlStringCbCatNA**](/windows-hardware/drivers/ddi/ntstrsafe//nf-ntstrsafe-rtlstringcbcatna)。
 
--   [UNICODE 字符串结构的安全字符串函数 \_](/windows-hardware/drivers/ddi/index)
+-   [UNICODE 字符串结构的安全字符串函数 \_](/windows-hardware/drivers/ddi/_kernel/#safe-string-functions-for-unicode_string-structures)
 
     其中每个函数都接受 [**UNICODE \_ 字符串**](/windows-hardware/drivers/ddi/wudfwdm/ns-wudfwdm-_unicode_string) 结构作为输入或输出参数，或者两者都接受。 例如， [**RtlStringCbCopyUnicodeString**](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbcopyunicodestring) 接受作为输入参数的结构， [**RtlUnicodeStringCopyString**](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcopystring) 接受作为输出参数的结构， [**RtlUnicodeStringCopy**](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcopy) 接受该结构作为输入和输出参数。
 

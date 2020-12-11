@@ -3,12 +3,12 @@ title: 对 ACPI 服务使用 PEP
 description: 本主题提供有关使用适用于 ACPI 服务 (PEPs) 的平台扩展插件的信息。
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 2b6b7f102b42650878f7bce4db975ce39f190c88
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 8decedd8559d063376b401f658482f526f594c24
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96816053"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97091047"
 ---
 # <a name="using-peps-for-acpi-services"></a>对 ACPI 服务使用 PEP
 
@@ -42,4 +42,4 @@ PEPs 负责计划无法同步执行的工作，以响应来自 PoFx 的 ACPI 通
 [**PEP \_ 通知 \_ ACPI \_ 工作**](/windows-hardware/drivers/ddi/index)  
 [*RequestWorker*](/windows-hardware/drivers/ddi/pepfx/nc-pepfx-pofxcallbackrequestworker)  
 [*AcceptDeviceNotification*](/windows-hardware/drivers/ddi/pepfx/nc-pepfx-pepcallbacknotifydpm)  
-[ACPI 通知](/windows-hardware/drivers/ddi/index)
+[ACPI 通知](/windows-hardware/drivers/ddi/_acpi)

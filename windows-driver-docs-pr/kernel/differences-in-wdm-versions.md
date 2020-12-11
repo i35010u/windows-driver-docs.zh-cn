@@ -11,12 +11,12 @@ keywords:
 - 电源管理 WDK WDM
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 74339293fcaa82c4ce57a4beb2eb1154e37438c3
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: ab9262be7fa7fdc261b7df40c3cc28e745a8cadf
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96792767"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97091052"
 ---
 # <a name="differences-in-wdm-versions"></a>WDM 版本的差异
 
@@ -28,7 +28,7 @@ ms.locfileid: "96792767"
 
 ### <a name="wdm-differences-in-driver-support-routines"></a>驱动程序支持例程中的 WDM 差异
 
-每个 [驱动程序支持例程](/windows-hardware/drivers/ddi/index) 的 Windows 驱动程序工具包 (WDK) 参考页指示例程是否限制为特定版本的 WDM，或者其行为在不同的操作系统版本上是否不同。 在跨系统驱动程序中使用任何驱动程序支持例程之前，请务必了解任何特定于版本的限制或行为。
+每个驱动程序支持例程的 Windows 驱动程序工具包 (WDK) 参考页指示例程是否限制为特定版本的 WDM，或者其行为在不同的操作系统版本上是否不同。 在跨系统驱动程序中使用任何驱动程序支持例程之前，请务必了解任何特定于版本的限制或行为。
 
 ### <a name="wdm-differences-in-plug-and-play"></a>即插即用中的 WDM 差异
 

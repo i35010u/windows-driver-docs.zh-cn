@@ -8,12 +8,12 @@ keywords:
 - 并行设备 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d88a539ad6f1ad5991064c72712b4a76b3d1affb
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: ca4cb51428b90d5db9fe306f13283156b043eaae
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96812617"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97090763"
 ---
 # <a name="introduction-to-parallel-ports-and-devices"></a>并行端口和设备简介
 
@@ -49,7 +49,7 @@ ms.locfileid: "96812617"
 
 [供应商提供的并行驱动程序](vendor-supplied-parallel-drivers.md)
 
-[System-Supplied 并行驱动程序的客户端接口](/windows-hardware/drivers/ddi/index)
+[System-Supplied 并行驱动程序的客户端接口](/windows-hardware/drivers/ddi/_parports)
 
  
 

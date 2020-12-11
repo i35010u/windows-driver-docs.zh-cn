@@ -15,12 +15,12 @@ keywords:
 - 筛选器驱动程序 WDK 串行设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5299fba72d8be8481b655ac778e9ce604345c453
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: ece750bc0ea2fc4e0161e44df34b72bd5ba6ffad
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96804927"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97091178"
 ---
 # <a name="using-serialsys-and-serenumsys"></a>使用 Serial.sys 和 Serenum.sys
 
@@ -40,8 +40,8 @@ ms.locfileid: "96804927"
     - [Serenum 和串行的操作](operation-of-serenum-and-serial.md)
     - [用于串行的注册表设置](registry-settings-for-serial.md)
     - [用于 Serenum 的注册表设置](registry-settings-for-serenum.md)
-    - [串行驱动程序参考](/windows-hardware/drivers/ddi/index)
-    - [Serenum 驱动程序参考](/windows-hardware/drivers/ddi/index)
+    - [串行驱动程序参考](/windows-hardware/drivers/_serports)
+    - [Serenum 驱动程序参考](/windows-hardware/drivers/ddi/ntddser)
     - WDK 中 Ntddser 标头文件中的数据定义。
 
 <!-- -->
@@ -54,7 +54,7 @@ ms.locfileid: "96804927"
 
     必须使用 COM 端口设备接口访问 COM 端口。  (COM 端口设备接口类的 GUID 是 [**guid \_ DEVINTERFACE \_ COMPORT**](../install/guid-devinterface-comport.md)。 ) 
 
-- [Com 端口数据库](com-port-database.md) 和 [com 端口数据库支持例程](/windows-hardware/drivers/ddi/index)
+- [Com 端口数据库](com-port-database.md) 和 [com 端口数据库支持例程](/windows/win32/api/msports/)
 
     Com 端口数据库仲裁 com 端口使用 COM 端口号。
 

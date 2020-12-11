@@ -3,12 +3,12 @@ description: 重点介绍 Windows 10 中通用串行总线 (USB) 的新增功能
 title: Windows 10-USB 的新增功能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 435f799aa5c9ad2f59a2653222b544ed7d0e29a7
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: a5ac9a050b9c1a523449959b2f18fd5eb6c70114
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010247"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97091056"
 ---
 # <a name="windows-10-whats-new-for-usb"></a>Windows 10：USB 的新增功能
 
@@ -68,7 +68,7 @@ ms.locfileid: "90010247"
 
     [函数控制器客户端驱动程序的任务](function-client-driver.md)
 
-    [UFX 编程参考的用户模式服务](/windows-hardware/drivers/ddi/index)
+    [UFX 编程参考的用户模式服务](/windows-hardware/drivers/ddi/genericusbfnioctl)
 
     [UFX 编程参考的 USB 函数类驱动程序](/previous-versions/windows/hardware/drivers/mt188008(v=vs.85))
 

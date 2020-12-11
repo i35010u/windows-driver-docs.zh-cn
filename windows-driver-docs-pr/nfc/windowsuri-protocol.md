@@ -9,12 +9,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 05e72f75d3260ffcd3195c2391b0c85533397502
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 44b4d2b1825623f17a86e5618f495545a2dbe1c6
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96812677"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97091010"
 ---
 # <a name="windowsuri-protocol"></a>WindowsUri 协议
 
@@ -45,5 +45,4 @@ ms.locfileid: "96812677"
 
  
 ## <a name="related-topics"></a>相关主题
-[NFC 设备驱动程序接口 (DDI) 概述](/windows-hardware/drivers/ddi/index)  
-[近字段邻近 DDI 引用](/windows-hardware/drivers/ddi/index)
+[近现场通信 (NFC) API 参考](/windows-hardware/drivers/ddi/_nfpdrivers/)

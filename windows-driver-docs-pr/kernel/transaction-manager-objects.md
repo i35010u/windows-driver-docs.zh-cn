@@ -8,12 +8,12 @@ keywords:
 - 事务管理器对象 WDK KTM
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e514b9c474b955581d47ff18d2dc9f60ead4020
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 0abd3d57c13c051076af4aa244ff86abe933d632
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96814261"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97090790"
 ---
 # <a name="transaction-manager-objects"></a>事务管理器对象
 
@@ -22,7 +22,7 @@ ms.locfileid: "96814261"
 
 事务管理器对象还包含一个 [虚拟时钟值](using-virtual-clock-values.md) ，KTM 维护该虚拟时钟值并将其用于对象的日志流中的序列信息。
 
-KTM 提供一组可供内核模式[TPS 组件](understanding-tps-components.md)调用的[事务管理器对象例程](/windows-hardware/drivers/ddi/index)。 KTM 还提供用户模式应用程序可以调用的一组类似的用户模式例程。 有关用户模式例程的详细信息，请参阅 Microsoft Windows SDK。
+KTM 提供一组可供内核模式 [TPS 组件](understanding-tps-components.md) 调用的事务管理器对象例程。 KTM 还提供用户模式应用程序可以调用的一组类似的用户模式例程。 有关用户模式例程的详细信息，请参阅 Microsoft Windows SDK。
 
 资源管理器调用 [**ZwCreateTransactionManager**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcreatetransactionmanager)时，KTM 会创建事务管理器对象。 通常，TPS 中的每个资源管理器都将创建一个事务管理器对象。 但您也可以设计一个 TPS，其中有多个资源管理器共享一个事务管理器对象。
 

@@ -9,12 +9,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ef295ee20d5b895a73c7e69493ff37dfb0dae254
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 20eb972953bf016af6de87c07df9948bc8725035
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96812753"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97090916"
 ---
 # <a name="nfp-power-management"></a>NFP 电源管理
 
@@ -27,5 +27,4 @@ NFP 驱动程序将接收 [**ioctl \_ nfp \_ ENABLE**](/windows-hardware/drivers
 
  
 ## <a name="related-topics"></a>相关主题
-[NFC 设备驱动程序接口 (DDI) 概述](/windows-hardware/drivers/ddi/index)  
-[近字段邻近 DDI 引用](/windows-hardware/drivers/ddi/index)
+[近现场通信 (NFC) API 参考](/windows-hardware/drivers/ddi/_nfpdrivers/)

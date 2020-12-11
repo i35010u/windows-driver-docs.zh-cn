@@ -11,12 +11,12 @@ keywords:
 - 验证结果 WDK 静态驱动程序验证程序
 ms.date: 04/02/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9656ac56b60e6972bafaaf664869ecf227520137
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 7ba739c55c34e08687198cc7c0b2f207ef20c767
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96813863"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97090826"
 ---
 # <a name="interpreting-static-driver-verifier-results"></a>解释静态驱动程序验证程序结果
 
@@ -54,7 +54,7 @@ SDV 测试了驱动程序是否违反了规则，但驱动程序不支持分析�
 
 如果驱动程序指定了入口点并且它调用了规则所监视的函数，则此结果可能表示 SDV 找不到或未正确解释入口点。 若要确认出现此情况，请检查并根据需要更正 [Sdv](sdv-map-h.md) 文件。 有关此过程的信息，请参阅 [扫描驱动程序](scanning-the-driver.md)。
 
-有关每个规则的详细信息，请参阅 [静态驱动程序验证程序规则](/windows-hardware/drivers/ddi/index) 参考。
+有关每个规则的详细信息，请参阅 [静态驱动程序验证程序规则](/windows-hardware/drivers/devtest/static-driver-verifier-rules) 参考。
 
 若要进一步检查驱动程序，请使用不同的规则运行验证。
 

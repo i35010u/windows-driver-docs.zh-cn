@@ -9,12 +9,12 @@ keywords:
 description: 有关 NFC 驱动程序的保留 ioctl 代码的信息，必须返回 STATUS_INVALID_DEVICE_STATE。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f0dcc88c054b49988314d11c8609c3a333eed50
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: c0b1e998e65eea6c7b0bf0c3a1442582e5f61423
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96812717"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97091180"
 ---
 # <a name="reserved-ioctl-codes"></a>保留的 IOCTL 代码
 
@@ -31,5 +31,4 @@ CTL \_ code (file \_ device \_ nfp，0x0100， \* ， \*) 到 ctl \_ Code (file 
 
  
 ## <a name="related-topics"></a>相关主题
-[NFC 设备驱动程序接口 (DDI) 概述](/windows-hardware/drivers/ddi/index)  
-[近字段邻近 DDI 引用](/windows-hardware/drivers/ddi/index)
+[近现场通信 (NFC) API 参考](/windows-hardware/drivers/ddi/_nfpdrivers/)

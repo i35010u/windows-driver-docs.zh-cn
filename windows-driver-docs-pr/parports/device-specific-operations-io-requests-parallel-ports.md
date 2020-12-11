@@ -7,12 +7,12 @@ keywords:
 - 并行 IRP 代码
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 3ee3f5c20a92e22f56e47bb862bb8a476523ac36
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: fa6293aed837c98445dba6114153bacfa8d7d680
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89385001"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97091002"
 ---
 # <a name="device-specific-operations-for-io-requests-for-parallel-ports"></a>针对并行端口的 I/O 请求的特定于设备的操作
 本主题介绍针对并行端口 i/o 请求的下列特定于设备的操作：
@@ -34,9 +34,9 @@ ms.locfileid: "89385001"
 无。
 
 ### <a name="io-status-block"></a>I/o 状态块
-**信息**成员设置为零。
+**信息** 成员设置为零。
 
-**Status**成员设置为以下值之一：
+**Status** 成员设置为以下值之一：
 
 
 STATUS_SUCCESS
@@ -47,7 +47,7 @@ STATUS_DELETE_PENDING
 
 设备正在被即插即用管理器删除。
 
-### <a name="operation"></a>Operation
+### <a name="operation"></a>操作
 并行端口是共享设备。 系统提供的并行端口函数驱动程序收到并行端口的打开请求时，只需递增并行端口上打开文件的计数。
 
 
@@ -61,7 +61,7 @@ STATUS_DELETE_PENDING
 * 分配端口或选择端口上的设备
 * 设置通信模式
 
-请参阅 [内部设备控制并行端口请求](/windows-hardware/drivers/ddi/index)。
+请参阅 [内部设备控制并行端口请求](/windows-hardware/drivers/ddi/parallel)。
 
 ### <a name="input-parameters"></a>输入参数
 输入是请求特定的。
@@ -95,11 +95,11 @@ STATUS_PENDING
 
 请求处于挂起状态。
 
-### <a name="operation"></a>Operation
+### <a name="operation"></a>操作
 操作是特定于请求的。
 
 ## <a name="related-topics"></a>相关主题
 
-[并行端口的内部设备控制请求](/windows-hardware/drivers/ddi/index)
+[并行端口的内部设备控制请求](/windows-hardware/drivers/ddi/parallel)
 
 [打开连接到并行端口的并行设备](./operating-a-parallel-device-attached-to-a-parallel-port.md)

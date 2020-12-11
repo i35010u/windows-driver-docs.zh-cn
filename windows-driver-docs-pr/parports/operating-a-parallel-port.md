@@ -7,12 +7,12 @@ keywords:
 - 函数驱动程序 WDK 并行端口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 68727729e1d092a6e1d252d9a37e12217cecb418
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: ac7af70c4466b70bcb380787c8ef80f93c57cd98
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96806097"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97091176"
 ---
 # <a name="operating-a-parallel-port"></a>打开并行端口
 
@@ -46,7 +46,7 @@ ms.locfileid: "96806097"
 
 [系统提供的并行驱动程序](system-supplied-parallel-drivers.md)
 
-[System-Supplied 并行驱动程序的客户端接口](/windows-hardware/drivers/ddi/index)
+[System-Supplied 并行驱动程序的客户端接口](/windows-hardware/drivers/ddi/_parports)
 
  
 

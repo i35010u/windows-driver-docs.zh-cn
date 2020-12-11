@@ -12,12 +12,12 @@ keywords:
 - 跟踪 WDK，WPP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c4bfc8adcbcdec3f634a9bdfe9daf91cb2ef12eb
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: cc106d3795180a3e306c562b1e15ee82db4897ec
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96810645"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97091208"
 ---
 # <a name="wpp-software-tracing"></a>WPP 软件跟踪
 
@@ -85,7 +85,7 @@ Microsoft Windows 2000 和更高版本的 Windows 支持 WPP 软件跟踪。
 
 **注意** WPP 跟踪提供程序一次只能由一个跟踪会话启用。 有关详细信息，请参阅 [WPP 提供程序](/windows/desktop/ETW/about-event-tracing#providers) 。
 
-有关支持 WPP 软件跟踪的 [WMI 库支持例程](/windows-hardware/drivers/ddi/index) 的信息，请参阅：
+有关支持 WPP 软件跟踪的 WMI 库支持例程的信息，请参阅：
 
 [**WmiQueryTraceInformation**](/windows-hardware/drivers/ddi/wdm/nf-wdm-wmiquerytraceinformation)
 

@@ -6,16 +6,16 @@ keywords:
 - 报告 WDK HID，解释
 ms.date: 09/10/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 370d5d9a4493ea5b87a65c293c69922927027c2f
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 64fd682a5a49ea8eedf113bcd4fe5cd87e99ea19
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96836817"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97091226"
 ---
 # <a name="interpreting-hid-reports"></a>解释 HID 报告
 
-本部分介绍用户模式的应用程序和内核模式驱动程序如何使用 **HidP \_ * Xxx** *  [HIDClass 支持例程](/windows-hardware/drivers/ddi/index)来解释 HID 报表中的控件数据。
+本部分介绍用户模式的应用程序和内核模式驱动程序如何使用 **HidP \_ * Xxx** *  [HIDClass 支持例程](/windows-hardware/drivers/ddi/_hid)来解释 HID 报表中的控件数据。
 
 ## <a name="extracting-value-data-by-specifying-its-usage"></a>通过指定值数据的使用情况来提取该值
 
@@ -99,6 +99,6 @@ ms.locfileid: "96836817"
 
 应用程序或驱动程序使用集合的 [按钮功能数组](./button-capability-arrays.md) 和 [值功能数组](./value-capability-arrays.md) 中指定的数据索引来标识 HID 用法。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [初始化 HID 报告](initializing-hid-reports.md)

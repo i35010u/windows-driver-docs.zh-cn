@@ -6,12 +6,12 @@ keywords:
 - 远程 NDIS WDK 网络，USB 传输
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ab31f5c668b63f52809a0f21cd89cf63cf3c76e4
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 71fed41945c6801a070e87e7038fb99d6c5a79a5
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96838731"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97090860"
 ---
 # <a name="overview-of-remote-ndis-rndis"></a>远程 NDIS (RNDIS) 概述
 
@@ -60,7 +60,7 @@ Microsoft 还提供了一个 USB 总线传输驱动程序，该驱动程序实�
 ## <a name="related-topics"></a>相关主题
 
 
-[Windows 中包含的 USB 类驱动程序](/windows-hardware/drivers/ddi/index)
+[Windows 中包含的 USB 类驱动程序](/windows-hardware/drivers/usbcon/supported-usb-classes)
 
  
 

@@ -8,12 +8,12 @@ keywords:
 - 用法值阵列 WDK HID
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d40428251bd2f4241d8e7d6768f8d450f4b6ad71
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: a9b7fecc3f18f0be47a1620aab9733eb4b92bd55
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96820281"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97090882"
 ---
 # <a name="value-capability-arrays"></a>值功能数组
 
@@ -23,7 +23,7 @@ ms.locfileid: "96820281"
 
 *值功能数组* 包含有关特定类型的 HID 报表的 [顶级集合](top-level-collections.md)支持的值使用情况的信息。 有关集合的值功能数组的信息包含在其 [**HIDP \_ cap**](/windows-hardware/drivers/ddi/hidpi/ns-hidpi-_hidp_caps) 结构中。
 
-用户模式应用程序或内核模式驱动程序使用以下 [HIDClass 支持例程](/windows-hardware/drivers/ddi/index) 之一获取按钮功能信息：
+用户模式应用程序或内核模式驱动程序使用以下 [HIDClass 支持例程](/windows-hardware/drivers/ddi/_hid) 之一获取按钮功能信息：
 
 -   [**HidP \_GetValueCaps**](/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_getvaluecaps) 返回值功能数组，它描述调用方指定的报表类型中包含的所有值。
 

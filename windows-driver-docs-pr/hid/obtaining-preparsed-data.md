@@ -7,12 +7,12 @@ keywords:
 - preparsed 数据 WDK HID
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b56cda5f263e427d294c2a9dee8baa59ef48bdaa
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: c1456d147dddaccbdda0dcbccedffd7d97e1ac4b
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96790649"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97090744"
 ---
 # <a name="obtaining-preparsed-data"></a>获取预分析的数据
 
@@ -24,7 +24,7 @@ ms.locfileid: "96790649"
 
 ### <a name="user-mode-application"></a>User-Mode 应用程序
 
-在调用需要 preparsed 数据的任何 [HIDClass 支持例程](/windows-hardware/drivers/ddi/index) 之前，用户模式应用程序必须获取集合的 preparsed 数据。 应用程序应保留对集合的 preparsed 数据的访问权限，前提是它在设备上有打开的文件。
+在调用需要 preparsed 数据的任何 [HIDClass 支持例程](/windows-hardware/drivers/ddi/_hid) 之前，用户模式应用程序必须获取集合的 preparsed 数据。 应用程序应保留对集合的 preparsed 数据的访问权限，前提是它在设备上有打开的文件。
 
 打开 HID 集合上的文件后，应用程序将调用 [**HidD \_ GetPreparsedData**](/windows-hardware/drivers/ddi/hidsdi/nf-hidsdi-hidd_getpreparseddata) 以在例程分配的缓冲区中返回集合的 preparsed 数据。
 

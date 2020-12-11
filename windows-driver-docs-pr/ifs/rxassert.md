@@ -13,17 +13,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f523ca660b2e169629190e9673581ce2c2a16cff
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 749fec031a3d3915551269aff0fe23e7312320d3
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96789921"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97090754"
 ---
 # <a name="rxassert-routine"></a>RxAssert 例程
 
 
-如果安装了 RxAssert，则在已安装的 RDBSS 版本上， **RxAssert** 会将断言字符串发送到内核调试器。 对于 RDBSS 的零售版本，对此例程的调用将进行 bug 检查。
+如果安装了 RxAssert，则在已安装的 RDBSS 版本上， 会将断言字符串发送到内核调试器。 对于 RDBSS 的零售版本，对此例程的调用将进行 bug 检查。
 
 <a name="syntax"></a>语法
 ------
@@ -37,7 +37,7 @@ VOID RxAssert(
 );
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>parameters
 ----------
 
 *FailedAssertion* \[中\]  
@@ -75,7 +75,7 @@ VOID RxAssert(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">台式机</td>
+<td align="left">桌面型</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
@@ -88,12 +88,12 @@ VOID RxAssert(
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**断言**](/previous-versions/windows/hardware/previsioning-framework/ff542107(v=vs.85))
 
-[RtlAssert](/windows-hardware/drivers/ddi/index)
+[RtlAssert](/windows-hardware/drivers/ifs/rxassert)
 
 [**RxDbgBreakPoint**](rxdbgbreakpoint.md)
 

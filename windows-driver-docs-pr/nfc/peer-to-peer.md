@@ -9,12 +9,12 @@ keywords:
 description: 有关 NFC 论坛定义的对等标准和协议的信息，可确保设备能够使用 NFC 进行交互。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ff5e0a81b1a1d859eb88548f65dcc85363a7096
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 64bd025d1886e72364304d520ae7d842ad6c0375
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96812765"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97091020"
 ---
 # <a name="peer-to-peer"></a>对等
 
@@ -38,5 +38,4 @@ ms.locfileid: "96812765"
 
  
 ## <a name="related-topics"></a>相关主题
-[NFC 设备驱动程序接口 (DDI) 概述](/windows-hardware/drivers/ddi/index)  
-[近字段邻近 DDI 引用](/windows-hardware/drivers/ddi/index)
+[近现场通信 (NFC) API 参考](/windows-hardware/drivers/ddi/_nfpdrivers/)

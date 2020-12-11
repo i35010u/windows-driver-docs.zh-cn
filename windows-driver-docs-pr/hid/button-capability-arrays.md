@@ -8,12 +8,12 @@ keywords:
 - 按钮用法 WDK HID
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 82a24cf072c424d991a7f3f81151838b05de54b3
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: e7fc55b33d506c5a96bfc2baad0c6f66418d3514
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96791520"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97091114"
 ---
 # <a name="button-capability-arrays"></a>按钮功能数组
 
@@ -23,7 +23,7 @@ ms.locfileid: "96791520"
 
 *按钮功能数组* 包含有关特定类型的 HID 报表的 [顶级集合](top-level-collections.md)支持的按钮用法的信息。 有关集合功能的信息包含在其 [**HIDP \_ cap**](/windows-hardware/drivers/ddi/hidpi/ns-hidpi-_hidp_caps) 结构中。
 
-用户模式应用程序或内核模式驱动程序使用以下 [HIDClass 支持例程](/windows-hardware/drivers/ddi/index) 之一获取按钮功能信息：
+用户模式应用程序或内核模式驱动程序使用以下 [HIDClass 支持例程](/windows-hardware/drivers/ddi/_hid) 之一获取按钮功能信息：
 
 -   [**HidP \_GetButtonCaps**](/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_getbuttoncaps) 返回一个按钮功能数组，用于描述指定报表类型中包含的所有按钮用法。
 

@@ -10,19 +10,19 @@ keywords:
 - 事务对象 WDK KTM
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ae4155137559dfe88eed00c073c4ae9433f15469
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: a357b2415dc4699cca729ae65b91cba42e32b6fa
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96814259"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97090778"
 ---
 # <a name="transaction-objects"></a>事务对象
 
 
 *Transaction 对象* 表示事务。 事务客户端创建一个事务，执行一些工作，并提交或回滚该事务。
 
-KTM 提供一组可供内核模式事务客户端调用的 [事务对象例程](/windows-hardware/drivers/ddi/index) 。 KTM 还提供用户模式应用程序可以调用的一组类似的用户模式例程。 有关用户模式例程的详细信息，请参阅 Microsoft Windows SDK。
+KTM 提供一组可供内核模式事务客户端调用的事务对象例程。 KTM 还提供用户模式应用程序可以调用的一组类似的用户模式例程。 有关用户模式例程的详细信息，请参阅 Microsoft Windows SDK。
 
 当客户端调用 [**ZwCreateTransaction**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcreatetransaction)时，KTM 会创建事务对象。 客户端可以调用 [**ZwCommitTransaction**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcommittransaction) 或 [**ZwRollbackTransaction**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ntrollbacktransaction) 来提交或回滚事务。
 

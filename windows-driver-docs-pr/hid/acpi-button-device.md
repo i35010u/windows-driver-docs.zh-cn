@@ -3,12 +3,12 @@ title: ACPI 按钮设备
 description: 通用按钮设备是一个标准设备，用于通过硬件中断报告按钮事件。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 55ff2d4ea0349ed5010e724034ef861ac0327e61
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 501aaa2e36797b2b2ba9710234cacaca7eefe947
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96791551"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97091116"
 ---
 # <a name="acpi-button-device"></a>ACPI 按钮设备
 
@@ -25,12 +25,12 @@ ms.locfileid: "96791551"
 
 有关通用按钮设备的详细信息，请访问 [统一可扩展固件接口](https://uefi.org/specifications) 规范网站，并下载 *ACPI 规范6.0 版* PDF 文档。 然后，使用左侧窗格导航到 **9.19 节**。
 
-## <a name="sample-buttons-acpi-for-phonetablet"></a>手机/平板电脑的示例按钮 ACPI
+## <a name="sample-acpi-button-device-for-windows-10-core-os-editions"></a>适用于 Windows 10 核心操作系统版本的 ACPI 按钮设备示例 
 
-用于描述运行 Windows 10 移动版的手机/平板电脑中的按钮的示例。
+描述用于运行 Windows 10 Core 操作系统的设备的 ACPI 中的按钮的示例。
 
-```cpp
-// Sample Buttons ACPI for Phone/Tablet device running Windows 10 Mobile.
+```console
+// Sample Buttons in ACPI for Windows 10.
 
 Device(BTNS)
 {
@@ -116,187 +116,13 @@ Device(BTNS)
         }
     })
 }
-
-//
-// This HID Report Descriptor describes a 1-byte input report for the 8
-// buttons supported on Windows 10 Mobile. Following are the buttons and
-// their bit positions in the input report:
-//     Bit 0: Power Button
-//     Bit 1: Volume Up Button
-//     Bit 2: Volume Down Button
-//     Bit 3: Camera Auto-focus Button
-//     Bit 4: Camera Shutter Button
-//     Bit 5: Back Button
-//     Bit 6: Windows/Home Button
-//     Bit 7: Search Button
-//
-// The Report Descriptor also defines a 1-byte Control Enable/Disable
-// feature report of the same size and bit positions as the Input Report.
-// For a Get Feature Report, each bit in the report conveys whether the
-// corresponding Control (i.e. button) is currently Enabled (1) or
-// Disabled (0). For a Set Feature Report, each bit in the report conveys
-// whether the corresponding Control (i.e. button) should be Enabled (1)
-// or Disabled (0).
-//
-
-UCHAR ReportDescriptor[] = {
-
-    15, 00,         // LOGICAL_MINIMUM (0)
-    25, 01,         // LOGICAL_MAXIMUM (1)
-    75, 01,         // REPORT_SIZE (1)
-
-    06, 01,         // USAGE_PAGE (Generic Desktop)
-    0A, 0D,         // USAGE (Portable Device Control)
-    A1, 01,         // COLLECTION (Application)
-    85, 01,         //   REPORT_ID (1) (For Input Report & Feature Report)
-
-    06, 01,         //   USAGE_PAGE (Generic Desktop)
-    0A, 0D,         //   USAGE (Portable Device Control)
-    A1, 02,         //   COLLECTION (Logical)
-    06, 01,         //     USAGE_PAGE (Generic Desktop)
-    0A, 81,         //     USAGE (System Power Down)            // Power Button
-    95, 01,         //     REPORT_COUNT (1)
-    81, 02,         //     INPUT (Data,Var,Abs)
-    05, 01,         //     USAGE_PAGE (Generic Desktop)
-    09, CB,         //     USAGE (Control Enable)
-    95, 01,         //     REPORT_COUNT (1)
-    B1, 02,         //     FEATURE (Data,Var,Abs)
-    C0,             //     END_COLLECTION
-
-    06, 01,         //   USAGE_PAGE (Generic Desktop)
-    0A, 0D,         //   USAGE (Portable Device Control)
-    A1, 02,         //   COLLECTION (Logical)
-    06, 0C,         //     USAGE_PAGE (Consumer Devices)
-    0A, E9,         //     USAGE (Volume Increment)             // Volume Up Button
-    95, 01,         //     REPORT_COUNT (1)
-    81, 02,         //     INPUT (Data,Var,Abs)
-    05, 01,         //     USAGE_PAGE (Generic Desktop)
-    09, CB,         //     USAGE (Control Enable)
-    95, 01,         //     REPORT_COUNT (1)
-    B1, 02,         //     FEATURE (Data,Var,Abs)
-    C0,             //     END_COLLECTION
-
-    06, 01,         //   USAGE_PAGE (Generic Desktop)
-    0A, 0D,         //   USAGE (Portable Device Control)
-    A1, 02,         //   COLLECTION (Logical)
-    06, 0C,         //     USAGE_PAGE (Consumer Devices)
-    0A, EA,         //     USAGE (Volume Decrement)             // Volume Down Button
-    95, 01,         //     REPORT_COUNT (1)
-    81, 02,         //     INPUT (Data,Var,Abs)
-    05, 01,         //     USAGE_PAGE (Generic Desktop)
-    09, CB,         //     USAGE (Control Enable)
-    95, 01,         //     REPORT_COUNT (1)
-    B1, 02,         //     FEATURE (Data,Var,Abs)
-    C0,             //     END_COLLECTION
-
-    06, 01,         //   USAGE_PAGE (Generic Desktop)
-    0A, 0D,         //   USAGE (Portable Device Control)
-    A1, 02,         //   COLLECTION (Logical)
-    06, 90,         //     USAGE_PAGE (Camera Control)
-    0A, 20,         //     USAGE (Camera Auto-focus)            // Camera Auto-focus Button
-    95, 01,         //     REPORT_COUNT (1)
-    81, 02,         //     INPUT (Data,Var,Abs)
-    05, 01,         //     USAGE_PAGE (Generic Desktop)
-    09, CB,         //     USAGE (Control Enable)
-    95, 01,         //     REPORT_COUNT (1)
-    B1, 02,         //     FEATURE (Data,Var,Abs)
-    C0,             //     END_COLLECTION
-
-    06, 01,         //   USAGE_PAGE (Generic Desktop)
-    0A, 0D,         //   USAGE (Portable Device Control)
-    A1, 02,         //   COLLECTION (Logical)
-    06, 90,         //     USAGE_PAGE (Camera Control)
-    0A, 21,         //     USAGE (Camera Shutter)               // Camera Shutter Button
-    95, 01,         //     REPORT_COUNT (1)
-    81, 02,         //     INPUT (Data,Var,Abs)
-    05, 01,         //     USAGE_PAGE (Generic Desktop)
-    09, CB,         //     USAGE (Control Enable)
-    95, 01,         //     REPORT_COUNT (1)
-    B1, 02,         //     FEATURE (Data,Var,Abs)
-    C0,             //     END_COLLECTION
-
-    06, 01,         //   USAGE_PAGE (Generic Desktop)
-    0A, 0D,         //   USAGE (Portable Device Control)
-    A1, 02,         //   COLLECTION (Logical)
-    06, 0C,         //     USAGE_PAGE (Consumer Page)
-    0A, 224,        //     USAGE (AC Back)                      // Back Button
-    95, 01,         //     REPORT_COUNT (1)
-    81, 02,         //     INPUT (Data,Var,Abs)
-    05, 01,         //     USAGE_PAGE (Generic Desktop)
-    09, CB,         //     USAGE (Control Enable)
-    95, 01,         //     REPORT_COUNT (1)
-    B1, 02,         //     FEATURE (Data,Var,Abs)
-    C0,             //     END_COLLECTION
-
-    06, 01,         //   USAGE_PAGE (Generic Desktop)
-    0A, 0D,         //   USAGE (Portable Device Control)
-    A1, 02,         //   COLLECTION (Logical)
-    06, 07,         //     USAGE_PAGE (Keyboard)
-    0A, E3,         //     USAGE (Keyboard Left GUI)            // Windows/Home Button
-    95, 01,         //     REPORT_COUNT (1)
-    81, 02,         //     INPUT (Data,Var,Abs)
-    05, 01,         //     USAGE_PAGE (Generic Desktop)
-    09, CB,         //     USAGE (Control Enable)
-    95, 01,         //     REPORT_COUNT (1)
-    B1, 02,         //     FEATURE (Data,Var,Abs)
-    C0,             //     END_COLLECTION
-
-    06, 01,         //   USAGE_PAGE (Generic Desktop)
-    0A, 0D,         //   USAGE (Portable Device Control)
-    A1, 02,         //   COLLECTION (Logical)
-    06, 0C,         //     USAGE_PAGE (Consumer)
-    0A, 221,        //     USAGE (AC Search)                    // Search Button
-    95, 01,         //     REPORT_COUNT (1)
-    81, 02,         //     INPUT (Data,Var,Abs)
-    05, 01,         //     USAGE_PAGE (Generic Desktop)
-    09, CB,         //     USAGE (Control Enable)
-    95, 01,         //     REPORT_COUNT (1)
-    B1, 02,         //     FEATURE (Data,Var,Abs)
-    C0,             //     END_COLLECTION
-
-    C0              //  END_COLLECTION
-};
-
-
-//
-// This HID Report Descriptor describes a 1-byte Input Report for the 3
-// Headset buttons supported on Windows 10 Mobile. Following are the
-// buttons and their bit positions in the Input Report:
-//     Bit 0: HeadSet : Middle Button
-//     Bit 1: HeadSet : Volume Up Button
-//     Bit 2: HeadSet : Volume Down Button
-//     Bit 3: Unused
-//     Bit 4: Unused
-//     Bit 5: Unused
-//     Bit 6: Unused
-//     Bit 7: Unused
-//
-
-UCHAR ReportDescriptor[] = {
-    0x05, 0x01,         // USAGE_PAGE (Generic Desktop Controls)
-    0x09, 0x0D,         // USAGE (Portable Device Buttons)
-    0xA1, 0x01,         // COLLECTION (Application)
-    0x85, 0x01,         //   REPORT_ID (1)
-    0x05, 0x09,         //   USAGE_PAGE (Button Page)
-    0x09, 0x01,         //   USAGE (Button 1 - HeadSet : Middle Button)
-    0x09, 0x02,         //   USAGE (Button 2 - HeadSet : Volume Up Button)
-    0x09, 0x03,         //   USAGE (Button 3 - HeadSet : Volume Down Button)
-    0x15, 0x00,         //   LOGICAL_MINIMUM (0)
-    0x25, 0x01,         //   LOGICAL_MAXIMUM (1)
-    0x75, 0x01,         //   REPORT_SIZE (1)
-    0x95, 0x09,         //   REPORT_COUNT (3)
-    0x81, 0x02,         //   INPUT (Data,Var,Abs)
-    0x95, 0x07,         //   REPORT_COUNT (5)     // 5 unused bits in 8-bit Input Report.
-    0x81, 0x03,         //   INPUT (Cnst,Var,Abs)
-    0xC0,               // END_COLLECTION
-};
 ```
 
-## <a name="sample-buttons-acpi-for-desktop"></a>示例按钮桌面版 ACPI
+## <a name="sample-buttons-in-acpi-for-device-running-windows-10-desktop-editions"></a>运行 Windows 10 桌面版的设备的 ACPI 中的示例按钮。
 
-介绍如何在运行 Windows 10 for desktop edition (Home、Pro、Enterprise 和教育) 中介绍适用于运行 Windows 10 的设备的手机/平板电脑设备的按钮的示例。
+用于描述运行 Windows 10 桌面版的设备的 ACPI 中的按钮的示例 (Home、Pro、Enterprise 和教育) 。
 
-```cpp
+```console
 Device(BTNS)
 {
     Name(_HID, "ACPI0011")
@@ -358,108 +184,4 @@ Device(BTNS)
     })
 }
 
-//
-// This HID Report Descriptor describes a 1-byte input report for the 5
-// buttons supported on Windows 10 for desktop editions (Home, Pro, and Enterprise). Following are the buttons and
-// their bit positions in the input report:
-//     Bit 0 - Windows/Home Button
-//     Bit 1 - Power Button
-//     Bit 2 - Volume Up Button
-//     Bit 3 - Volume Down Button
-//     Bit 4 - Rotation Lock Slider switch
-//     Bit 5 - Unused
-//     Bit 6 - Unused
-//     Bit 7 - Unused
-//
-// The Report Descriptor also defines a 1-byte Control Enable/Disable
-// feature report of the same size and bit positions as the Input Report.
-// For a Get Feature Report, each bit in the report conveys whether the
-// corresponding Control (i.e. button) is currently Enabled (1) or
-// Disabled (0). For a Set Feature Report, each bit in the report conveys
-// whether the corresponding Control (i.e. button) should be Enabled (1)
-// or Disabled (0).
-//
-
-UCHAR ReportDescriptor[] = {
-
-    15, 00,         // LOGICAL_MINIMUM (0)
-    25, 01,         // LOGICAL_MAXIMUM (1)
-    75, 01,         // REPORT_SIZE (1)
-
-    06, 01,         // USAGE_PAGE (Generic Desktop)
-    0A, 0D,         // USAGE (Portable Device Control)
-    A1, 01,         // COLLECTION (Application)
-    85, 01,         //   REPORT_ID (1) (For Input Report & Feature Report)
-
-    06, 01,         //   USAGE_PAGE (Generic Desktop)
-    0A, 0D,         //   USAGE (Portable Device Control)
-    A1, 02,         //   COLLECTION (Logical)
-    06, 07,         //     USAGE_PAGE (Keyboard)
-    0A, E3,         //     USAGE (Keyboard LGUI)                // Windows/Home Button
-    95, 01,         //     REPORT_COUNT (1)
-    81, 02,         //     INPUT (Data,Var,Abs)
-    05, 01,         //     USAGE_PAGE (Generic Desktop)
-    09, CB,         //     USAGE (Control Enable)
-    95, 01,         //     REPORT_COUNT (1)
-    B1, 02,         //     FEATURE (Data,Var,Abs)
-    C0,             //     END_COLLECTION
-
-    06, 01,         //   USAGE_PAGE (Generic Desktop)
-    0A, 0D,         //   USAGE (Portable Device Control)
-    A1, 02,         //   COLLECTION (Logical)
-    06, 01,         //     USAGE_PAGE (Generic Desktop)
-    0A, 81,         //     USAGE (System Power Down)            // Power Button
-    95, 01,         //     REPORT_COUNT (1)
-    81, 02,         //     INPUT (Data,Var,Abs)
-    05, 01,         //     USAGE_PAGE (Generic Desktop)
-    09, CB,         //     USAGE (Control Enable)
-    95, 01,         //     REPORT_COUNT (1)
-    B1, 02,         //     FEATURE (Data,Var,Abs)
-    C0,             //     END_COLLECTION
-
-    06, 01,         //   USAGE_PAGE (Generic Desktop)
-    0A, 0D,         //   USAGE (Portable Device Control)
-    A1, 02,         //   COLLECTION (Logical)
-    06, 0C,         //     USAGE_PAGE (Consumer Devices)
-    0A, E9,         //     USAGE (Volume Increment)             // Volume Up Button
-    95, 01,         //     REPORT_COUNT (1)
-    81, 02,         //     INPUT (Data,Var,Abs)
-    05, 01,         //     USAGE_PAGE (Generic Desktop)
-    09, CB,         //     USAGE (Control Enable)
-    95, 01,         //     REPORT_COUNT (1)
-    B1, 02,         //     FEATURE (Data,Var,Abs)
-    C0,             //     END_COLLECTION
-
-    06, 01,         //   USAGE_PAGE (Generic Desktop)
-    0A, 0D,         //   USAGE (Portable Device Control)
-    A1, 02,         //   COLLECTION (Logical)
-    06, 0C,         //     USAGE_PAGE (Consumer Devices)
-    0A, EA,         //     USAGE (Volume Decrement)             // Volume Down Button
-    95, 01,         //     REPORT_COUNT (1)
-    81, 02,         //     INPUT (Data,Var,Abs)
-    05, 01,         //     USAGE_PAGE (Generic Desktop)
-    09, CB,         //     USAGE (Control Enable)
-    95, 01,         //     REPORT_COUNT (1)
-    B1, 02,         //     FEATURE (Data,Var,Abs)
-    C0,             //     END_COLLECTION
-
-    06, 01,         //   USAGE_PAGE (Generic Desktop)
-    0A, 0D,         //   USAGE (Portable Device Control)
-    A1, 02,         //   COLLECTION (Logical)
-    06, 01,         //     USAGE_PAGE (Generic Desktop)
-    0A, CA,         //     USAGE (System Display Rotation Lock Slider Switch) // Rotation Lock Button
-    95, 01,         //     REPORT_COUNT (1)
-    81, 02,         //     INPUT (Data,Var,Abs)
-    95, 06,         //     REPORT_COUNT (3)                     // 3 unused bits in 8-bit Input Report
-    81, 03,         //     INPUT (Cnst,Var,Abs)
-    05, 01,         //     USAGE_PAGE (Generic Desktop)
-    09, CB,         //     USAGE (Control Enable)
-    95, 01,         //     REPORT_COUNT (1)
-    B1, 02,         //     FEATURE (Data,Var,Abs)
-    95, 06,         //     REPORT_COUNT (3)                     // 3 unused bits in 8-bit Feature Report
-    B1, 03,         //     FEATURE (Cnst,Var,Abs)
-    C0,             //     END_COLLECTION
-
-    C0              //  END_COLLECTION
-};
 ```

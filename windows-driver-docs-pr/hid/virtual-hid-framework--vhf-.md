@@ -3,12 +3,12 @@ title: 使用虚拟 HID 框架 (VHF) 编写 HID 源驱动程序
 description: 了解如何编写将 HID 数据报告给操作系统的 HID 源驱动程序。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 96b5a832f8736aad0001f62660937d50c9819453
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 00ac2fb303fca184075ab487fb51eba894c82978
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96794975"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97091192"
 ---
 # <a name="write-a-hid-source-driver-by-using-virtual-hid-framework-vhf"></a>使用虚拟 HID 框架 (VHF) 编写 HID 源驱动程序
 
@@ -24,9 +24,9 @@ ms.locfileid: "96794975"
 
 **重要的 API**
 
--   [虚拟 HID 框架回调函数](/windows-hardware/drivers/ddi/index)
--   [虚拟 HID 框架方法](/windows-hardware/drivers/ddi/index)
--   [虚拟 HID 框架结构](/windows-hardware/drivers/ddi/index)
+-   [虚拟 HID 框架回调函数](/windows-hardware/drivers/ddi/_hid/#callback-functions)
+-   [虚拟 HID 框架方法](/windows-hardware/drivers/ddi/_hid/#functions)
+-   [虚拟 HID 框架结构](/windows-hardware/drivers/ddi/_hid/#functions)
 
 了解如何编写将 HID 数据报告给操作系统的 HID 源驱动程序。
 
@@ -99,11 +99,11 @@ UCHAR HeadSetReportDescriptor[] = {
 
 ## <a name="create-a-virtual-hid-device"></a>创建虚拟 HID 设备
 
-调用 [**VHF \_ config \_ INIT**](/windows-hardware/drivers/ddi/vhf/nf-vhf-vhf_config_init)宏，然后调用 [**VhfCreate**](/windows-hardware/drivers/ddi/vhf/nf-vhf-vhfcreate)方法，初始化 [**VHF \_ 配置**](/windows-hardware/drivers/ddi/vhf/ns-vhf-_vhf_config)结构。 驱动程序必须 **VhfCreate** \_ 在 [**WdfDeviceCreate**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)调用之后（通常是在驱动程序的 [*EVTDRIVERDEVICEADD*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)回调函数中）在被动级别调用 VhfCreate。
+调用 [**VHF \_ config \_ INIT**](/windows-hardware/drivers/ddi/vhf/nf-vhf-vhf_config_init)宏，然后调用 [**VhfCreate**](/windows-hardware/drivers/ddi/vhf/nf-vhf-vhfcreate)方法，初始化 [**VHF \_ 配置**](/windows-hardware/drivers/ddi/vhf/ns-vhf-_vhf_config)结构。 驱动程序必须 \_ 在 [**WdfDeviceCreate**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)调用之后（通常是在驱动程序的 [*EVTDRIVERDEVICEADD*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)回调函数中）在被动级别调用 VhfCreate。
 
 在 [**VhfCreate**](/windows-hardware/drivers/ddi/vhf/nf-vhf-vhfcreate) 调用中，驱动程序可以指定某些配置选项，如必须异步处理的操作，或者)  (供应商/产品 id 设置设备信息。
 
-例如，应用程序请求 TLC。 当 HID 类驱动程序对接收该请求时，对将确定请求的类型，并创建相应的 [HID 微型驱动程序 IOCTL](/windows-hardware/drivers/ddi/index) 请求，并将其转发给 VHF。 获取 IOCTL 请求后，VHF 可以处理该请求，依赖于 HID 源驱动程序来处理该请求，或完成状态为 "不支持" 的请求 \_ \_ 。
+例如，应用程序请求 TLC。 当 HID 类驱动程序对接收该请求时，对将确定请求的类型，并创建相应的 [HID 微型驱动程序 IOCTL](/windows-hardware/drivers/ddi/_hid/#hid-minidriver-ioctls) 请求，并将其转发给 VHF。 获取 IOCTL 请求后，VHF 可以处理该请求，依赖于 HID 源驱动程序来处理该请求，或完成状态为 "不支持" 的请求 \_ \_ 。
 
 VHF 处理以下 IOCTLs：
 

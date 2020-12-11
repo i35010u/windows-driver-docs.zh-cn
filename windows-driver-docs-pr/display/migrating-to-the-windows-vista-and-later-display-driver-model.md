@@ -7,12 +7,12 @@ keywords:
 - 迁移显示器驱动程序模型 WDK Windows Vista
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 76472f5c24ce0704e16ff94bf1586c87690302a1
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 73a6c4ab790b07175b6e0528ff6dde040a30b9b3
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96822455"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97091036"
 ---
 # <a name="migrating-to-the-windows-display-driver-model-wddm"></a>迁移到 Windows 显示驱动程序模型 (WDDM)
 
@@ -44,7 +44,7 @@ WDDM 支持根据 XDDM 编写的显示和视频微型端口驱动程序。 但�
 
 -   大多数其余的用户模式显示驱动程序函数实现的功能与 XDDM 的内核模式显示驱动程序实现的功能相同：
     -   [**D3dDrawPrimitives2**](/windows-hardware/drivers/ddi/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)函数和 [**DP2**](/windows-hardware/drivers/ddi/d3dhal/ne-d3dhal-_d3dhal_dp2operation)操作代码
-    -   [运动补偿回调函数](/windows-hardware/drivers/ddi/index)和[DirectX 视频加速结构](/windows-hardware/drivers/ddi/index)
+    -   [运动补偿回调函数](/windows-hardware/drivers/ddi/_display/#functions)和[DirectX 视频加速结构](/windows-hardware/drivers/ddi/_display/#structures)
 
  
 

@@ -9,12 +9,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3604854d006dcddd8b209c3b6c4843cfbb51422a
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: a49b3e5941b428fc757be8caabd3458b528b5cd2
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96813601"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97090908"
 ---
 # <a name="nfp-device-identifiers"></a>NFP 设备标识符
 
@@ -38,5 +38,4 @@ ms.locfileid: "96813601"
 
  
 ## <a name="related-topics"></a>相关主题
-[NFC 设备驱动程序接口 (DDI) 概述](/windows-hardware/drivers/ddi/index)  
-[近字段邻近 DDI 引用](/windows-hardware/drivers/ddi/index)
+[近现场通信 (NFC) API 参考](/windows-hardware/drivers/ddi/_nfpdrivers/)

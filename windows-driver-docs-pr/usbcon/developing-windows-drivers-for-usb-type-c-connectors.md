@@ -3,12 +3,12 @@ description: 如果 USB 类型 C 系统不包含嵌入式控制器，则需要�
 title: 为 USB 类型 C 连接器开发 Windows 驱动程序的概述
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b0d385217f37b417fe81fef76f9266da1bf33a1f
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: a8fb1893dfc024fb745c7362b306657f9ccd28c5
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010649"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97090806"
 ---
 # <a name="overview-of-developing-windows-drivers-for-usb-type-c-connectors"></a>为 USB 类型 C 连接器开发 Windows 驱动程序的概述
 
@@ -37,7 +37,7 @@ ms.locfileid: "90010649"
 |             硬件/固件功能             |                                                                                                                                                    不可分离                                                                                                                                                    |                                                                                                                              附加卡                                                                                                                               |
 |--------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | USB 类型 C 连接器没有 PD 状态机。 |        [将客户端驱动程序写入 UcmTcpciCx](./write-a-usb-type-c-port-controller-driver.md)。 <p>[UcmTcpciCx 端口控制器客户端驱动程序](https://github.com/Microsoft/Windows-driver-samples/tree/master/usb/UcmTcpciCxClientSample)入门 </p>        | [将客户端驱动程序写入 UcmCx](./bring-up-a-usb-type-c-connector-on-a-windows-system.md)。 <p>从 [UcmCx 示例](https://github.com/Microsoft/Windows-driver-samples/tree/master/usb/UcmCxUcsi)开始。</p> |
-|         连接器与 ACPI 兼容 UCSI。         |                                                          加载内置驱动程序、UcmUcsiCx.sys 和 UcmUcsiAcpiClient。 请参阅 [USB Type-C 连接器系统软件接口 (UCSI) 驱动程序](./ucsi.md)。                                                           |                                                                                                                                  不可用                                                                                                                                   |
+|         连接器与 ACPI 兼容 UCSI。         |                                                          加载内置驱动程序、UcmUcsiCx.sys 和 UcmUcsiAcpiClient。 请参阅 [USB Type-C 连接器系统软件接口 (UCSI) 驱动程序](./ucsi.md)。                                                           |                                                                                                                                  空值                                                                                                                                   |
 |       连接器在不 UCSI 的情况下兼容。        | 将客户端驱动程序写入 UcmUcsiCx。 有关详细信息，请参阅 [编写 UCSI 客户端驱动程序](write-a-ucsi-driver.md)。 <p>[从此示例模板](https://github.com/Microsoft/Windows-driver-samples/tree/master/usb/UcmCxUcsi)开始，并将 ACPI 部分替换为所需总线的实现。 |                                                           [将客户端驱动程序写入 UcmCx](./bring-up-a-usb-type-c-connector-on-a-windows-system.md)。                                                            |
 |    具有 PD 状态的计算机，但不符合 UCSI。     |                          [将客户端驱动程序写入 UcmCx](./bring-up-a-usb-type-c-connector-on-a-windows-system.md)。 <p>从 [UcmCx 示例](https://github.com/Microsoft/Windows-driver-samples/tree/master/usb/UcmCxUcsi)开始。                          | [将客户端驱动程序写入 UcmCx](./bring-up-a-usb-type-c-connector-on-a-windows-system.md)<p>从 [UcmCx 示例](https://github.com/Microsoft/Windows-driver-samples/tree/master/usb/UcmCxUcsi)开始。 </p>  |
 
@@ -99,7 +99,7 @@ ms.locfileid: "90010649"
 
 [写入 USB 函数客户端驱动程序](developing-windows-drivers-for-usb-function-controllers.md)  
 
-[USB function controller programming reference](/windows-hardware/drivers/ddi/index)（USB 功能控制器编程参考）
+[USB function controller programming reference](/windows-hardware/drivers/ddi/usbfnbase)（USB 功能控制器编程参考）
 
 ## <a name="related-topics"></a>相关主题
 

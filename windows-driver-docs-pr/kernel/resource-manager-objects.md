@@ -10,19 +10,19 @@ keywords:
 - resource manager 对象 WDK KTM
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a059d61ff1ef88ba0f870bdf115deeef7faf9069
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: ca6c7dbfe698f1d79970f9e7dfc15398e05ec874
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96820653"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97091200"
 ---
 # <a name="resource-manager-objects"></a>资源管理器对象
 
 
 *资源管理器对象* 表示资源管理器。 每个资源管理器都必须调用 [**ZwCreateResourceManager**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcreateresourcemanager) 来向 KTM 注册自身。
 
-KTM 提供一组可供内核模式资源管理器调用的 [资源管理器对象例程](/windows-hardware/drivers/ddi/index) 。 KTM 还提供用户模式应用程序可以调用的一组类似的用户模式例程。 有关用户模式例程的详细信息，请参阅 Microsoft Windows SDK。
+KTM 提供一组可供内核模式资源管理器调用的资源管理器对象例程。 KTM 还提供用户模式应用程序可以调用的一组类似的用户模式例程。 有关用户模式例程的详细信息，请参阅 Microsoft Windows SDK。
 
 资源管理器调用 **ZwCreateResourceManager** 时，KTM 会创建资源管理器对象。
 

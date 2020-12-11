@@ -9,12 +9,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 27ab6a03e2c98659fcc84b7092334c357f49964a
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 52e0e2708951b4886d1edf866ff66adabbae05c2
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96812783"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97091184"
 ---
 # <a name="nfp-provider-model"></a>NFP 提供程序模型
 
@@ -32,4 +32,4 @@ NFP 提供程序使用发布/订阅模型（其传输由底层 NFP 技术的近�
 
 [NFC 设备驱动程序接口 (DDI) 概述](/windows-hardware/drivers/ddi/index)  
 
-[近字段邻近 DDI 引用](/windows-hardware/drivers/ddi/index)
+[近字段邻近 DDI 引用](/windows-hardware/drivers/ddi/_nfpdrivers)

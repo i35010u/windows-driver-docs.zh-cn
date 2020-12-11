@@ -9,12 +9,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 549019a5b31ba8d5f2a63f2ffd3f0d2860e31d23
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: e078e5cad6b6030203540c496372018349b9cc5b
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96813563"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97090856"
 ---
 # <a name="nfp-maximum-message-size"></a>NFP 最大消息大小
 
@@ -25,4 +25,4 @@ ms.locfileid: "96813563"
 ## <a name="related-topics"></a>相关主题
 [IOCTL \_ NFP \_ 获取 \_ 最大 \_ 消息 \_ 字节数](/windows-hardware/drivers/ddi/nfpdev/ni-nfpdev-ioctl_nfp_get_max_message_bytes)  
 [NFC 设备驱动程序接口 (DDI) 概述](/windows-hardware/drivers/ddi/index)  
-[近字段邻近 DDI 引用](/windows-hardware/drivers/ddi/index)
+[近字段邻近 DDI 引用](/windows-hardware/drivers/ddi/_nfpdrivers)

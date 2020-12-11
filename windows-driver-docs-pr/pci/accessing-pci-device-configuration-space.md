@@ -8,12 +8,12 @@ keywords:
 - IRP_MN_WRITE_CONFIG
 ms.date: 08/31/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ef90d3fb6230acdc0e1f716f1df10900ceb65ed
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: b07e2d7263360fc8b1c75119780ec911ceabfbd4
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96812561"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97091162"
 ---
 # <a name="accessing-pci-device-configuration-space"></a>访问 PCI 设备配置空间
 
@@ -29,7 +29,7 @@ ms.locfileid: "96812561"
 
 Windows XP 和 Windows Server 2003 及更高版本的操作系统可以独占控制 *PCI 本地总线* 规范定义的配置空间标头以及功能链接列表中的所有功能。 驱动程序不得尝试修改这些寄存器。
 
-但是，驱动程序可以使用 IRP \_ MN \_ 写入 \_ 配置请求或总线接口标准的 **SetBusData** 方法， \_ 将不属于该标头的配置空间写入到供应商定义的功能列表 \_ 。 驱动程序还可以使用 IRP \_ MN \_ read \_ CONFIG 请求或总线接口标准的 **GetBusData** 方法读取 \_ 设备的功能 \_ 。 若要使用 IRP \_ MN \_ READ \_ config 或 IRP \_ MN \_ WRITE \_ CONFIG，驱动程序必须在被动 \_ 级别运行。 有关驱动程序可以查询的功能列表和相应结构，请参阅 [PCI 结构](/windows-hardware/drivers/ddi/index) 部分。
+但是，驱动程序可以使用 IRP \_ MN \_ 写入 \_ 配置请求或总线接口标准的 **SetBusData** 方法， \_ 将不属于该标头的配置空间写入到供应商定义的功能列表 \_ 。 驱动程序还可以使用 IRP \_ MN \_ read \_ CONFIG 请求或总线接口标准的 **GetBusData** 方法读取 \_ 设备的功能 \_ 。 若要使用 IRP \_ MN \_ READ \_ config 或 IRP \_ MN \_ WRITE \_ CONFIG，驱动程序必须在被动 \_ 级别运行。 有关驱动程序可以查询的功能列表和相应结构，请参阅 [PCI 结构](/windows-hardware/drivers/ddi/_pci/#structures) 部分。
 
 驱动程序可以从扩展 PCI 设备配置空间读取 (也就是说，使用 IRP \_ MN \_ read \_ CONFIG 请求或总线接口标准的 **GetBusData** 方法时 \_ ，超过256字节的配置数据) \_ 。 同样，驱动程序可以使用 IRP \_ MN \_ 写入 \_ 配置请求或总线接口标准的 **SetBusData** 方法， \_ 写入扩展 PCI 设备配置空间 \_ 。 如果设备没有扩展配置空间或平台未定义设备上扩展配置空间的路径，则读取请求将返回0xFFFF 并且写入请求将不起作用。 若要确定操作是否成功，驱动程序可以检查读取或写入的字节数。
 

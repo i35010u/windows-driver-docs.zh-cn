@@ -8,12 +8,12 @@ keywords:
 - 驱动程序验证 WDK
 ms.date: 06/04/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: ba062b8208092d9975fbdb433033389621bc7d72
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: f568a7be9b9fa3232dfefaae1809b177dd4690b6
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96805663"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97090928"
 ---
 # <a name="tools-for-verifying-drivers"></a>用于验证驱动程序的工具
 
@@ -35,7 +35,7 @@ Windows 驱动程序工具包 (WDK) 包含一些非常全面的工具，旨在�
 
 [验证工具调查](survey-of-verification-tools.md)
 
-[DDI 合规性规则](/windows-hardware/drivers/ddi/index)
+[DDI 合规性规则](/windows-hardware/drivers/devtest/static-driver-verifier-rules)
 
 [Windows 已检验版本](checked-build-of-windows.md)
 

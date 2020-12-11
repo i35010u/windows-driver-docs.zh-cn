@@ -3,12 +3,12 @@ title: 注册表通知中的项对象指针无效
 description: 注册表通知中的项对象指针无效
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 1df5e2c644954859b49fa58ecaf00cad56861154
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 5918f3a3d9be8d7484747c18da5c4aa6c70024b6
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96838455"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97091074"
 ---
 # <a name="invalid-key-object-pointers-in-registry-notifications"></a>注册表通知中的项对象指针无效
 
@@ -35,7 +35,7 @@ ms.locfileid: "96838455"
 
 由于 **对象** 成员指向的密钥对象处于无效状态，因此注册表筛选驱动程序不得将 **对象** 指针值作为参数传递给 [Windows 驱动程序支持例程](/windows-hardware/drivers/ddi/wdm/nf-wdm-obreferenceobjectbypointer) (例如 **ObReferenceObjectByPointer**) 。
 
-但是，在 [*RegistryCallback*](/windows-hardware/drivers/ddi/wdm/nc-wdm-ex_callback_function) 调用来处理 **RegNtPreKeyHandleClose** 或 **RegNtPostKeyHandleClose** 通知时，注册表筛选器驱动程序可以调用 [配置管理器例程](/windows-hardware/drivers/ddi/index) (例如，将注册表对象作为参数的 [**CmGetBoundTransaction**](/windows-hardware/drivers/ddi/wdm/nf-wdm-cmgetboundtransaction)) 。
+但是，在 [*RegistryCallback*](/windows-hardware/drivers/ddi/wdm/nc-wdm-ex_callback_function) 调用来处理 **RegNtPreKeyHandleClose** 或 **RegNtPostKeyHandleClose** 通知时，注册表筛选器驱动程序可以调用配置管理器例程 (例如，将注册表对象作为参数的 [**CmGetBoundTransaction**](/windows-hardware/drivers/ddi/wdm/nf-wdm-cmgetboundtransaction)) 。
 
  
 

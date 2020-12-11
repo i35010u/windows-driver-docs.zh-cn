@@ -7,12 +7,12 @@ keywords:
 - 设备父 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b0fef1e637a4705a860d432a0e42245b6c8b6f82
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: e3acdd4c5c3f8b8d5a193bc2bffe37cf8b737641
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96827747"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97090842"
 ---
 # <a name="determining-the-parent-of-a-device"></a>确定设备的父设备
 
@@ -20,7 +20,7 @@ ms.locfileid: "96827747"
 
 
 
-有时需要访问设备的父级。 例如，某些类型的硬件设备的操作取决于特定父设备与子设备集之间的固定关系。 若要卸载此类硬件设备，你必须卸载除所有子设备之外的父项。 若要卸载父级，必须获取父对象的 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构。 通用串行总线 (USB) 复合设备（如多功能打印机）是这样一种设备。 它在系统中由父复合设备和一个或多个子接口设备表示 (参阅 [USB 驱动程序堆栈体系结构](/windows-hardware/drivers/ddi/index)) 。 若要卸载多功能打印机，你必须卸载其父复合设备及其所有子接口设备。
+有时需要访问设备的父级。 例如，某些类型的硬件设备的操作取决于特定父设备与子设备集之间的固定关系。 若要卸载此类硬件设备，你必须卸载除所有子设备之外的父项。 若要卸载父级，必须获取父对象的 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构。 通用串行总线 (USB) 复合设备（如多功能打印机）是这样一种设备。 它在系统中由父复合设备和一个或多个子接口设备表示 (参阅 [USB 驱动程序堆栈体系结构](/windows-hardware/drivers/usbcon/usb-3-0-driver-stack-architecture)) 。 若要卸载多功能打印机，你必须卸载其父复合设备及其所有子接口设备。
 
 当 [即插即用](../kernel/introduction-to-plug-and-play.md) (PnP) manager 在系统中配置设备时，会将设备 (*devnode*) 添加到 [设备树](../kernel/device-tree.md)中。 当 PnP 管理器从系统中删除设备时，它将从设备树中删除设备的 devnode，设备将成为 *nonpresent 设备*。 确定设备父项所用的方法取决于当前在系统中配置设备的方式，如下所示：
 

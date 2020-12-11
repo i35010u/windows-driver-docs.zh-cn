@@ -7,17 +7,17 @@ keywords:
 - TmXxx 例程，WDK KTM
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 53d681cb21c6d0ac20c6fd450f867626ce5c0517
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 6dc63c136ee74d11e9e6b9acd5e3b968f7a68107
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96803741"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97091194"
 ---
 # <a name="using-tmxxx-routines"></a>使用 TmXxx 例程
 
 
-大多数 [KTM 例程](/windows-hardware/drivers/ddi/index) 使用 **Zw* Xxx * * * 的命名格式。 这些例程基于处理程序。 也就是说，其输入或输出参数中至少有一个是 KTM 对象的句柄。
+大多数 KTM 例程使用 **Zw* Xxx * * * 的命名格式。 这些例程基于处理程序。 也就是说，其输入或输出参数中至少有一个是 KTM 对象的句柄。
 
 KTM 还提供了较少数量的例程，这些例程使用的命名格式为 **Tm* Xxx * * *。 这些例程是基于指针的。 其中至少有一个输入或输出参数是指向 KTM 对象的指针。
 

@@ -7,12 +7,12 @@ keywords:
 - 供应商提供的并行驱动程序 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 49b373ffc9806abb11bbb601ae09146d309898e9
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: eb0e48781c7e2b293d810bed01cf0c17cc5cc021
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96806073"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97091202"
 ---
 # <a name="vendor-supplied-parallel-drivers"></a>供应商提供的并行驱动程序
 
@@ -36,7 +36,7 @@ ms.locfileid: "96806073"
 
 [系统提供的并行驱动程序](system-supplied-parallel-drivers.md)
 
-[System-Supplied 并行驱动程序的客户端接口](/windows-hardware/drivers/ddi/index)
+[System-Supplied 并行驱动程序的客户端接口](/windows-hardware/drivers/ddi/_parports)
 
  
 

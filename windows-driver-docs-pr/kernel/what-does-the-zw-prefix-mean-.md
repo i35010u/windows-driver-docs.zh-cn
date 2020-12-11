@@ -3,19 +3,19 @@ title: Zw 前缀的含义是什么
 description: Zw 前缀的含义是什么
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 414b5b6e1217b9890e131605b63045e8654344a6
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 66d87f3bc7fdb1ab087b7054798bf61b93239b67
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96836383"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97091224"
 ---
 # <a name="what-does-the-zw-prefix-mean"></a>Zw 前缀是什么？
 
 
 Windows native 系统服务例程的名称以前缀 **Nt** 和 **Zw** 开头。 **Nt** 前缀是 Windows Nt 的缩写，但 **Zw** 前缀没有任何意义。 已选择 **Zw** ，以避免潜在的与其他 api 的命名冲突，其中部分是避免使用将来可能需要的任何有用的双字母前缀。
 
-许多 [Windows 驱动程序支持例程](/windows-hardware/drivers/ddi/index) 的名称以两个或三个字母开头。 这些前缀指示哪些内核模式系统组件实现了例程。 下表包含一些示例。
+许多 Windows 驱动程序支持例程的名称以两个或三个字母开头。 这些前缀指示哪些内核模式系统组件实现了例程。 下表包含一些示例。
 
 <table>
 <colgroup>

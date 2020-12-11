@@ -8,12 +8,12 @@ keywords:
 - 并行设备 WDK，客户端操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: af364ac1217937d8799adb3d8305b364e4f7f7a8
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 246777afc78474b3ea1638602dce36e94cf06f21
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96806103"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97091026"
 ---
 # <a name="operating-a-parallel-device-attached-to-a-parallel-port"></a>打开连接到并行端口的并行设备
 
@@ -45,7 +45,7 @@ ms.locfileid: "96806103"
 
 [系统提供的并行驱动程序](system-supplied-parallel-drivers.md)
 
-[System-Supplied 并行驱动程序的客户端接口](/windows-hardware/drivers/ddi/index)
+[System-Supplied 并行驱动程序的客户端接口](/windows-hardware/drivers/ddi/_parports)
 
  
 

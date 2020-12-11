@@ -6,12 +6,12 @@ keywords:
 - 平台相关的定义 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c337078601295adbb825c95dbc59502bde0240cc
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 7c5d13c1e447327d5614ffe902f64f0ab5f686cc
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96814293"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97090878"
 ---
 # <a name="portable"></a>可移植
 
@@ -41,7 +41,7 @@ ms.locfileid: "96814293"
 
 ### <a name="using-wdk-supplied-interfaces"></a>使用 WDK-Supplied 接口
 
-每个 Windows NT executive 组件都将导出一组内核模式 [驱动程序支持例程](/windows-hardware/drivers/ddi/index) ，驱动程序和所有其他内核模式组件都调用。 如果支持例程的基础实现随时间而变化，则其调用方将保持可移植，因为定义组件的接口不会更改。
+每个 Windows NT executive 组件都将导出一组内核模式驱动程序支持例程，驱动程序和所有其他内核模式组件都调用。 如果支持例程的基础实现随时间而变化，则其调用方将保持可移植，因为定义组件的接口不会更改。
 
 WDK 提供一组头文件，用于定义特定于系统的数据类型和常量，驱动程序 (和其他所有内核模式组件都) 使用该组件来帮助保持从一个平台到另一个平台的可移植性。 所有内核模式驱动程序都包括一个主 WDK 内核模式标头文件（Wdm .h 或 Ntddk）。 主头文件不仅纳入系统提供的标头，用于定义基本内核模式类型，还提取驱动程序使用相应的编译器指令编译时的任何特定于处理器体系结构的标头。
 

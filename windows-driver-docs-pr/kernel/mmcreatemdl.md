@@ -3,12 +3,12 @@ title: Windows 内核的已过时例程
 description: Windows 内核的已过时例程
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: aec1e81e335b884e7564f6ab7477a851bdedcc85
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 0a4358ad181d07808b4eb8539639fe7dc1ac8b21
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96838017"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97091198"
 ---
 # <a name="windows-kernel-obsolete-routines"></a>Windows 内核的已过时例程
 
@@ -178,7 +178,6 @@ ms.locfileid: "96838017"
 
 ## <a name="related-topics"></a>相关主题
 [**AllocateAdapterChannel**](/windows-hardware/drivers/ddi/wdm/nc-wdm-pallocate_adapter_channel)  
-[缓冲区管理](/windows-hardware/drivers/ddi/index)  
 [**ExAcquireResourceExclusiveLite**](/previous-versions/ff544351(v=vs.85))  
 [**ExAcquireResourceSharedLite**](/previous-versions/ff544363(v=vs.85))  
 [**ExConvertExclusiveToSharedLite**](/previous-versions/ff544558(v=vs.85))  

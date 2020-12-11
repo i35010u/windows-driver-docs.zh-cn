@@ -3,12 +3,12 @@ title: 组件级性能状态管理
 description: 从 Windows 10 开始，电源管理框架 (PoFx) 使驱动程序能够为设备中的单个组件定义一组或多组单独的可调整性能状态。
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: a315a98724efbe4823c41ed5105ea062052fdb94
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: ce3fe446710f7f1a9e1a2344254644f4762cb96f
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96833467"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97090866"
 ---
 # <a name="component-level-performance-state-management"></a>组件级性能状态管理
 
@@ -52,4 +52,4 @@ PoFx 使设备可以为每个组件定义以下类型的性能状态：
 4.  [**ComponentPerfStateCallback**](/windows-hardware/drivers/ddi/wdm/nc-wdm-po_fx_component_perf_state_callback)例程通知此驱动程序是否成功或拒绝了性能状态更改。 如果 PEP 成功进行了更改，则驱动程序将执行从其角度更改性能状态所需的任何工作。 如果 PEP 拒绝了更改，驱动程序可能会选择不执行任何操作，或者使用相同或备用性能状态再次重试请求。
 
 ## <a name="related-topics"></a>相关主题
-[设备电源管理参考](/windows-hardware/drivers/ddi/index)
+[设备电源管理参考](/windows-hardware/drivers/_kernel/#power-management-routines)

@@ -7,12 +7,12 @@ keywords:
 - 设备驱动程序 WDK 文件系统
 ms.date: 10/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 836cd0aefed659310f6de74cc38690901dc2a378
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: eab18eca71f25efedbb983636b55c82b59335378
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96831499"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97091170"
 ---
 # <a name="how-file-system-filter-drivers-are-different-from-device-drivers"></a>文件系统筛选器驱动程序与设备驱动程序的差异在哪里
 
@@ -20,7 +20,7 @@ Microsoft Windows 操作系统中的文件系统筛选器驱动程序和设备�
 
 - **无电源管理**
 
-  由于文件系统筛选器驱动程序不是设备驱动程序，因此不会直接控制硬件设备，它们不会接收 [**IRP \_ MJ \_ 电源**](../kernel/irp-mj-power.md) 请求。 相反，电源 Irp 会直接发送到存储设备堆栈。 但在极少数情况下，文件系统筛选器驱动程序可能会干扰电源管理。 出于此原因，文件系统筛选器驱动程序不应 \_ \_ 在 **DriverEntry** 例程中为 IRP MJ 功能注册调度例程，并且它们不应调用 [PoXxx](/windows-hardware/drivers/ddi/index) 例程。
+  由于文件系统筛选器驱动程序不是设备驱动程序，因此不会直接控制硬件设备，它们不会接收 [**IRP \_ MJ \_ 电源**](../kernel/irp-mj-power.md) 请求。 相反，电源 Irp 会直接发送到存储设备堆栈。 但在极少数情况下，文件系统筛选器驱动程序可能会干扰电源管理。 出于此原因，文件系统筛选器驱动程序不应 \_ \_ 在 **DriverEntry** 例程中为 IRP MJ 功能注册调度例程，并且它们不应调用 [PoXxx](/windows-hardware/drivers/ddi/_kernel/#power-management-routines) 例程。
 
 - **无 WDM**
 

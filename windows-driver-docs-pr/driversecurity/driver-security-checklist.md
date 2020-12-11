@@ -3,12 +3,12 @@ title: 驱动程序安全清单
 description: 本文为驱动程序开发人员提供了驱动程序安全核对清单。
 ms.date: 03/13/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: d41b084897a807cb459393a4df454d88b4d09f4b
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: f71828cf88d3b75e25722dcc4574db97dfa673cc
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96838051"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97090770"
 ---
 # <a name="driver-security-checklist"></a>驱动程序安全清单
 
@@ -238,7 +238,7 @@ Windows 驱动程序的主要职责之一是在用户模式应用程序和系统
 
 #### <a name="handle-irp-cleanup-and-close-operations-properly"></a>正确处理 IRP 清理并关闭操作
 
-请确保了解 [**IRP \_ mj \_ 清除**](../kernel/irp-mj-cleanup.md) 和 [**irp \_ mj \_ 关闭**](../kernel/irp-mj-close.md) 请求之间的差异。 清理请求在应用程序关闭文件对象上的所有句柄之后，但有时在所有 i/o 请求完成之前到达。 完成或取消对文件对象的所有 i/o 请求后，关闭请求即可到达。 有关详细信息，请参阅以下文章：
+请确保了解 [**IRP \_ mj \_ 清除**](../kernel/irp-mj-cleanup.md) 和 [**irp \_ mj \_ 关闭**](../kernel/irp-mj-close.md) 请求之间的差异。 清理请求在应用程序关闭文件对象上的所有句柄之后，但有时在所有 i/o 请求完成之前到达。 完成或取消对文件对象的所有 i/o 请求后，关闭请求即可到达。 有关详细信息，请参阅下列文章：
 
 [DispatchCreate、DispatchClose 和 DispatchCreateClose 例程](../kernel/dispatchcreate--dispatchclose--and-dispatchcreateclose-routines.md)
 
@@ -260,9 +260,9 @@ Windows 驱动程序的主要职责之一是在用户模式应用程序和系统
 
 - 使用安全字符串函数。 有关详细信息，请参阅 [使用安全字符串函数](../kernel/using-safe-string-functions.md)。
 
-- 使用安全算术函数。 有关详细信息，请参阅[安全整数库例程](/windows-hardware/drivers/ddi/index)中的[算术函数](/windows-hardware/drivers/ddi/index)
+- 使用安全算术函数。 有关详细信息，请参阅 [安全整数库例程](/windows-hardware/drivers/ddi/_kernel/#safe-integer-library-routines)
 
-- 使用安全转换函数。 有关详细信息，请参阅[安全整数库例程](/windows-hardware/drivers/ddi/index)中的[转换函数](/windows-hardware/drivers/ddi/index)
+- 使用安全转换函数。
 
 ### <a name="additional-code-vulnerabilities"></a>其他代码漏洞
 
@@ -296,7 +296,7 @@ Windows 驱动程序的主要职责之一是在用户模式应用程序和系统
 
 如果使用的是 WDM 驱动程序，并且使用的是命名设备对象，则可以使用 [IoCreateDeviceSecure](/windows-hardware/drivers/ddi/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure) 并指定 SDDL 来保护它。 实现 [IoCreateDeviceSecure](/windows-hardware/drivers/ddi/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure) 时，请始终指定 DeviceClassGuid 的自定义类 GUID。 不应在此指定现有的类 GUID。 这样做可能会中断属于该类的其他设备的安全设置或兼容性。 有关详细信息，请参阅 [WdmlibIoCreateDeviceSecure](/windows-hardware/drivers/ddi/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure)。
 
-有关详细信息，请参阅以下文章：
+有关详细信息，请参阅下列文章：
 
 [控制设备访问权限](../kernel/controlling-device-access.md)
 
@@ -330,7 +330,7 @@ AC (Application Container)
 
 实现精细的 IOCTL 安全控制不会取代使用上述技术来管理驱动程序访问的需要。
 
-有关详细信息，请参阅以下文章：
+有关详细信息，请参阅下列文章：
 
 [定义 I/O 控制代码](../kernel/defining-i-o-control-codes.md)
 
@@ -401,7 +401,7 @@ AC (Application Container)
 - 限制对设备的 WMI 类的访问
 - 正确使用 Setupapi.log 函数
 
-有关详细信息，请参阅以下文章：
+有关详细信息，请参阅下列文章：
 
 [创建安全的设备安装](../install/creating-secure-device-installations.md)
 
@@ -742,7 +742,7 @@ SAFECode - [https://safecode.org/](https://safecode.org/)
 
 [从警报到驱动程序漏洞： Microsoft Defender ATP 调查 unearths 特权升级缺陷](https://www.microsoft.com/security/blog/2019/03/25/from-alert-to-driver-vulnerability-microsoft-defender-atp-investigation-unearths-privilege-escalation-flaw/)
 
-#### <a name="books"></a>书籍
+#### <a name="books"></a>图书
 
 *24 抱问题软件安全：* Michael Howard、David LeBlanc 和 John Viega 的编程缺陷和解决方法
 

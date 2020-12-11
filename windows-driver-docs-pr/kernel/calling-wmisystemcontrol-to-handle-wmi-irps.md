@@ -8,12 +8,12 @@ keywords:
 - WmiSystemControl
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e55142f687e21b6408b1350a17ea81937346d4d
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 3cea1c454392bfd5d144259c28de3db50b3d9175
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96803847"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97091078"
 ---
 # <a name="calling-wmisystemcontrol-to-handle-wmi-irps"></a>调用 WmiSystemControl 以处理 WMI IRP
 
@@ -21,7 +21,7 @@ ms.locfileid: "96803847"
 
 
 
-WMI 库例程简化了 WMI 请求的处理，因为无需处理每个此类请求，驱动程序将调用 [**WmiSystemControl**](/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmisystemcontrol)。 在 **WmiSystemControl** 调用中，驱动程序将包含指向驱动程序的 [WMI 库回调例程](/windows-hardware/drivers/ddi/index)的入口点的已初始化 [**WMILIB \_ 上下文**](/windows-hardware/drivers/ddi/wmilib/ns-wmilib-_wmilib_context)结构传递 (*DpWmiXxx* 例程) 以及有关驱动程序的数据块和事件块的信息。
+WMI 库例程简化了 WMI 请求的处理，因为无需处理每个此类请求，驱动程序将调用 [**WmiSystemControl**](/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmisystemcontrol)。 在 **WmiSystemControl** 调用中，驱动程序将包含指向驱动程序的 [WMI 库回调例程](/windows-hardware/drivers/ddi/wmilib)的入口点的已初始化 [**WMILIB \_ 上下文**](/windows-hardware/drivers/ddi/wmilib/ns-wmilib-_wmilib_context)结构传递 (*DpWmiXxx* 例程) 以及有关驱动程序的数据块和事件块的信息。
 
 由于 WMI 库不提供用于传递动态实例名称或静态实例名称列表的机制，因此驱动程序可以使用 WMI 库来处理仅涉及静态实例名称的数据块的请求（基于 PDO 或单个基名称字符串）。 有关静态和动态实例名称的详细信息，请参阅 [定义 WMI 实例名称](defining-wmi-instance-names.md)。 任何内容都不会阻止驱动程序使用 WMI 库处理此类块的请求，并处理其 [*DispatchSystemControl*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch) 例程中其他块的请求。 有关详细信息，请参阅 [在 DispatchSystemControl 例程中处理 WMI irp](processing-wmi-irps-in-a-dispatchsystemcontrol-routine.md)。
 

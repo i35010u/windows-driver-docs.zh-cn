@@ -3,12 +3,12 @@ title: 硬件通知支持
 description: Windows 10 版本 1709 的基础结构可以为 LED 和振动机制等通知组件提供不区分硬件的支持。
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 13e8d306c1d1cdeb1115ba07e01b147ea6f9c1b4
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: da620d817b7bcd8de577d39b6325d479744b2e81
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96818473"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97091130"
 ---
 # <a name="hardware-notifications-support"></a>硬件通知支持
 
@@ -18,8 +18,6 @@ ms.locfileid: "96818473"
 -   驱动程序开发人员和 Oem
 
 **重要的 API**
-
--   [硬件通知参考](/windows-hardware/drivers/ddi/index)
 
 Windows 10 版本 1709 的基础结构可以为 LED 和振动机制等通知组件提供不区分硬件的支持。 实现此支持的方式是引入内核模式驱动程序框架 (KMDF) 类扩展，该扩展专用于硬件通知组件，因此可以快速开发客户端驱动程序。 KMDF 类扩展实质上是 KMDF 驱动程序，它为给定的设备类提供一组定义的功能，类似于 Windows 驱动程序模型 (WDM) 中的端口驱动程序。 此部分概述硬件通知类扩展的体系结构。 有关 KMDF 的其他信息，请参阅 [Using WDF to Develop a Driver](../wdf/using-the-framework-to-develop-a-driver.md)（使用 WDF 来开发驱动程序）。
 

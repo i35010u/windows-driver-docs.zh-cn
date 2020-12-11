@@ -21,12 +21,12 @@ keywords:
 - 硬件资源
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c826758fac09454a7b691885baa8522fb9f8db41
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: a471334dc6bd953d738f10a1e5fa0a48380e4118
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96783901"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97091160"
 ---
 # <a name="hardware-resources"></a>硬件资源
 
@@ -48,7 +48,7 @@ PnP 管理器将资源分配到设备时，会通过为每个设备实例创建�
 
 内核模式代码使用 [**CM \_ 资源 \_ 列表**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_cm_resource_list) 结构指定资源列表， (作为系统例程的输入或响应 irp) 。 用户模式代码使用 [pnp 配置管理器结构](/previous-versions/ff549718(v=vs.85)) 指定资源列表作为 [PnP 配置管理器功能](/previous-versions/ff549713(v=vs.85))的输入。
 
-PnP 管理器会在注册表中存储资源需求列表和资源列表，可以使用 Regedit.exe 来查看这些列表和资源列表。 驱动程序可以通过 [即插即用例程](/windows-hardware/drivers/ddi/index) 和 [即插即用次要 irp](./plug-and-play-minor-irps.md)来间接访问这些列表。 用户模式应用程序可以使用 [PnP 配置管理器功能](/previous-versions/ff549713(v=vs.85))。  (驱动程序和应用程序不能使用注册表功能直接访问这些列表，因为在将来的版本中，存储格式可能会更改。 ) 
+PnP 管理器会在注册表中存储资源需求列表和资源列表，可以使用 Regedit.exe 来查看这些列表和资源列表。 驱动程序可以通过即插即用例程和 [即插即用次要 irp](./plug-and-play-minor-irps.md)来间接访问这些列表。 用户模式应用程序可以使用 [PnP 配置管理器功能](/previous-versions/ff549713(v=vs.85))。  (驱动程序和应用程序不能使用注册表功能直接访问这些列表，因为在将来的版本中，存储格式可能会更改。 ) 
 
 ### <a name="logical-configurations"></a><a href="" id="ddk-logical-configurations-kg"></a>逻辑配置
 

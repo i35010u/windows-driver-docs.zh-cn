@@ -6,12 +6,12 @@ keywords:
 - 静态验证工具 WDK
 ms.date: 12/09/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 3205d728344a60315f9fe5270f503db9203c89ac
-ms.sourcegitcommit: 11a82f18ee7874537597792cb77f749d5ce6eee5
+ms.openlocfilehash: 47b6a9dede42c8dddb2b99e5c7027665d7df37bd
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 12/10/2020
-ms.locfileid: "96999150"
+ms.locfileid: "97091228"
 ---
 # <a name="codeql-and-the-static-tools-logo-test"></a>CodeQL 和静态工具徽标测试
 
@@ -54,8 +54,8 @@ Semmle 的[CodeQL](https://semmle.com/codeql)是一种强大的保护软件静�
 C:\> mkdir C:\codeql-home
 ```
 
-2. 导航到 Github [CodeQL 下载页](https://github.com/github/codeql-cli-binaries/releases/tag/v2.3.2)
-3. 下载适当的 zip 文件。 例如，64位 Windows "codeql-win64.zip"。
+2. 导航到 Github [CodeQL 下载页](https://github.com/github/codeql-cli-binaries/releases/)
+3. 下载最新的 zip 文件。 例如，64位 Windows "codeql-win64.zip"。
 4. 将下载的 zip 文件解压缩到目录，例如，C:\codeql-home\codeql-win64
 5. 通过显示帮助确认 CodeCL 命令是否正常工作。
 

@@ -13,12 +13,12 @@ keywords:
 - 呈现状态 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c7eb97ae5bb8db0abc1f5c5055ca517829d6e3c
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 8238e0dc936ad9fa4516608ab8094dc3413755d8
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96810113"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97091210"
 ---
 # <a name="converting-the-direct3d-fixed-function-state"></a>转换 Direct3D 固定函数状态
 
@@ -65,7 +65,7 @@ ms.locfileid: "96810113"
 
 ### <a name="span-idunused_user_mode_display_driver_functionsspanspan-idunused_user_mode_display_driver_functionsspanunused-user-mode-display-driver-functions"></a><span id="unused_user_mode_display_driver_functions"></span><span id="UNUSED_USER_MODE_DISPLAY_DRIVER_FUNCTIONS"></span>未使用的 User-Mode 显示驱动程序函数
 
-当启用固定函数顶点着色器转换器时，Direct3D 运行时不调用以下 [用户模式显示驱动程序函数](/windows-hardware/drivers/ddi/index) ：
+当启用固定函数顶点着色器转换器时，Direct3D 运行时不调用以下 [用户模式显示驱动程序函数](/windows-hardware/drivers/ddi/_display/#functions) ：
 
 -   [**MultiplyTransform**](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_multiplytransform)
 

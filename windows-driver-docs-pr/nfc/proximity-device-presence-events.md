@@ -9,12 +9,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a5ad08c891a9229723e29a44ac8b783da538166
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 5cab0b11af0b14a01bd86a21992c5d0cb6164167
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96812743"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97090836"
 ---
 # <a name="proximity-device-presence-events"></a>邻近感应设备存在事件
 
@@ -27,5 +27,4 @@ NFP 提供程序还需要跟踪近程设备的状态，以便正确确保已发�
 
  
 ## <a name="related-topics"></a>相关主题
-[NFC 设备驱动程序接口 (DDI) 概述](/windows-hardware/drivers/ddi/index)  
-[近字段邻近 DDI 引用](/windows-hardware/drivers/ddi/index)
+[近现场通信 (NFC) API 参考](/windows-hardware/drivers/ddi/_nfpdrivers/)

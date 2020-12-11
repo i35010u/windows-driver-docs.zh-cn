@@ -16,12 +16,12 @@ keywords:
 - 设备对象 WDK KMDF
 ms.date: 06/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: ca321473065f5421def7e6ca46061052dd20138f
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 3865fc08f870f160b10ad2ddd5a7e73a92ff6859
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96833933"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97091220"
 ---
 # <a name="working-with-usb-devices"></a>使用 USB 设备
 
@@ -64,7 +64,7 @@ ms.locfileid: "96833933"
 
 如需相关信息，请参阅：
 
--   [如何选择 USB 设备的配置](/windows-hardware/drivers/ddi/index)
+-   [如何选择 USB 设备的配置](/windows-hardware/drivers/usbcon/how-to-select-a-configuration-for-a-usb-device)
 -   [如何在 USB 界面中选择备用设置](../usbcon/index.md)
 
 ## <a name="obtaining-device-information"></a><a href="" id="obtaining-device-information"></a> 获取设备信息

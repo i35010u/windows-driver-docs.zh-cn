@@ -22,12 +22,12 @@ keywords:
 - SDV WDK，静态驱动程序验证程序报告
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 45005d2100d59711aa788e55a239ec9ed0148436
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: c3f75b88fc7b7d1702ec350c088a49593c452b45
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96828833"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97090824"
 ---
 # <a name="using-the-static-driver-verifier-report"></a>使用静态驱动程序验证程序报告
 
@@ -52,7 +52,7 @@ SDV 报表是验证结果的交互式显示。 本部分介绍如何使用 SDV �
 
 尝试在代码中查找规则冲突之前，请熟悉驱动程序违反的规则。
 
-[静态驱动程序验证程序规则](/windows-hardware/drivers/ddi/index)部分包括一个说明每个规则的主题，例如， [CancelSpinLock](./wdm-cancelspinlock.md)。
+[静态驱动程序验证程序规则](/windows-hardware/drivers/devtest/static-driver-verifier-rules)部分包括一个说明每个规则的主题，例如， [CancelSpinLock](./wdm-cancelspinlock.md)。
 
 若要查看规则的代码，请在 "静态驱动程序验证程序" 报表的 " **源代码** " 窗格中，单击包含规则代码的选项卡，例如 CancelSpinLock. slic。
 
@@ -62,7 +62,7 @@ SDV 报表是验证结果的交互式显示。 本部分介绍如何使用 SDV �
 
 当 " **缺陷查看器** " 窗口打开时，" **跟踪树** " 窗格中的元素表示 "缺陷路径" 中的第一个关键驱动程序调用。 在 " **源代码** " 窗格中，以蓝色突出显示源代码的相关行。
 
-下面的屏幕截图显示 **静态驱动程序验证程序缺陷查看器** 窗口的打开视图，以使 Fail [CancelSpinLock](./wdm-cancelspinlock.md) \_ Driver1 示例驱动程序违反 CancelSpinLock 规则。 在此示例中，CancelSpinLock 规则的冲突路径中的第一个驱动程序调用是对驱动程序的 **DispatchSystemControl** 例程中的 [**IoAcquireCancelSpinLock**](/previous-versions/windows/hardware/drivers/ff548196(v=vs.85))的调用。
+下面的屏幕截图显示 **静态驱动程序验证程序缺陷查看器** 窗口的打开视图，以使 Fail [](./wdm-cancelspinlock.md) \_ Driver1 示例驱动程序违反 CancelSpinLock 规则。 在此示例中，CancelSpinLock 规则的冲突路径中的第一个驱动程序调用是对驱动程序的 **DispatchSystemControl** 例程中的 [**IoAcquireCancelSpinLock**](/previous-versions/windows/hardware/drivers/ff548196(v=vs.85))的调用。
 
 ![用于违反 cancelspinlock 规则的静态驱动程序验证程序缺陷查看器窗口的打开视图的屏幕截图](images/sdv-tracetree.png)
 

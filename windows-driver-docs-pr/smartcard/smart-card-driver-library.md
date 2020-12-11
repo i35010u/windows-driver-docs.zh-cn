@@ -6,12 +6,12 @@ keywords:
 - 库 WDK 智能卡
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 52610047cb3d102601247c59b065aefa97bf5037
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 08283dcecc1e9456f392d5b1b49b863d1740e2df
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96811889"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97090976"
 ---
 # <a name="smart-card-driver-library"></a>智能卡驱动程序库
 
@@ -37,7 +37,7 @@ Microsoft 提供了一个驱动程序库，其中包含一组用于标准化智�
 
 " [WDM 智能卡驱动程序例程](/previous-versions/ff549046(v=vs.85)) " 部分列出了驱动程序库例程，并标识了执行每个操作的例程。
 
-驱动程序库处理资源管理器发送到读取器驱动程序的大部分 IOCTL 请求。 " [智能卡驱动程序 IOCTLs](/windows-hardware/drivers/ddi/index) " 部分列出了驱动程序库代表读取器驱动程序处理的 IOCTLs。
+驱动程序库处理资源管理器发送到读取器驱动程序的大部分 IOCTL 请求。 " [智能卡驱动程序 IOCTLs](/windows-hardware/drivers/ddi/winsmcrd) " 部分列出了驱动程序库代表读取器驱动程序处理的 IOCTLs。
 
 以下文件由智能卡驱动程序库和调用智能卡驱动程序库例程的驱动程序使用。
 

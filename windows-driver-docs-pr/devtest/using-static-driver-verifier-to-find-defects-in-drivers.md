@@ -3,12 +3,12 @@ title: 使用静态驱动程序验证程序查找 Windows 驱动程序中的缺�
 description: 静态驱动程序验证器 (SDV) 使用一组接口规则和操作系统模型来确定驱动程序是否与 Windows 操作系统正确交互。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c97cac4ef28d9c5d55866d65063007f4ae9532f
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: b3ee73a8e9d26248a5ebe6f58c817cff7381dd58
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96822547"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97090798"
 ---
 # <a name="using-static-driver-verifier-to-find-defects-in-windows-drivers"></a>使用静态驱动程序验证程序查找 Windows 驱动程序中的缺陷
 
@@ -22,7 +22,7 @@ SDV 可以分析符合以下驱动程序模型之一的内核模式驱动程序�
 
 1. **使用函数角色类型声明驱动程序提供的函数**
 
-    SDV 要求通过使用函数角色类型声明来声明函数。 例如，必须使用 [*DriverEntry*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)驱动程序 \_ 初始化函数角色类型声明 DriverEntry 例程：
+    SDV 要求通过使用函数角色类型声明来声明函数。 例如，必须使用[](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)驱动程序 \_ 初始化函数角色类型声明 DriverEntry 例程：
 
     ```command
     DRIVER_INITIALIZE DriverEntry;
@@ -136,6 +136,6 @@ SDV 可以分析符合以下驱动程序模型之一的内核模式驱动程序�
 
 [使用函数角色类型声明](using-function-role-type-declarations.md)
 
-[静态驱动程序验证程序规则](/windows-hardware/drivers/ddi/index)
+[静态驱动程序验证程序规则](/windows-hardware/drivers/devtest/static-driver-verifier-rules)
 
 [代码分析工具](/previous-versions/visualstudio/visual-studio-2013/dd264897(v=vs.120))

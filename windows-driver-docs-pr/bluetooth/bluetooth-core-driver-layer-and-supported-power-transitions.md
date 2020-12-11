@@ -3,12 +3,12 @@ title: 蓝牙核心驱动程序层和支持的功率转换
 description: 下表总结了蓝牙核心驱动程序支持的设备和系统电源状态。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5816f22c652698a7504fb52a3019ed4fb920e7b4
-ms.sourcegitcommit: 66edcff6f7a975bf086fa9223fea02370436e21b
+ms.openlocfilehash: b4ed9d0b520371344e4e02508be3fcef37244c75
+ms.sourcegitcommit: 586b1844547359baca95e3228fa63fcba0b18608
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96842412"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97096628"
 ---
 # <a name="bluetooth-core-driver-layer-and-supported-power-transitions"></a>蓝牙核心驱动程序层和支持的功率转换
 
@@ -16,15 +16,15 @@ ms.locfileid: "96842412"
 
 ## <a name="device-power-states"></a>设备电源状态
 
-|系统电源状态|设备电源状态 D0|设备电源状态 D2|设备电源状态 D3||
-|----|----|----|----|----|
-| |D0 (活动) |D2 (睡眠) –对蓝牙芯片维护一些电源，使其保持其内部状态。|D3 (关闭) 关闭 ( * ) |
-|S0 (活动) |可用|如果唤醒，则为睡眠|无线电 RM 关闭|
-|S1|空值|空值|空值|
-|S2|空值|空值|空值|
-|S3 (睡眠) |空值|如果唤醒，则为睡眠|可以关闭电源|
-|S4（休眠）|空值|如果唤醒，则为睡眠|可以关闭电源|
-|S5（关闭）|空值|空值|可以关闭电源|
+| 系统电源状态 | 设备电源状态 D0 | 设备电源状态 D2 | 设备电源状态 D3 |
+|----|----|----|----|
+| | D0 (活动)  | D2 (睡眠) –对蓝牙芯片维护一些电源，使其保持其内部状态。 | D3 (关闭) 关闭 ( * )  |
+| S0 (活动)  | 可用 | 如果唤醒，则为睡眠 | 无线电 RM 关闭 |
+| S1 | 空值 | 空值 | 空值 |
+| S2 | 空值 | 空值 | 空值 |
+| S3 (睡眠)  | 空值 | 如果唤醒，则为睡眠 | 可以关闭电源 |
+| S4（休眠） | 空值 | 如果唤醒，则为睡眠 | 可以关闭电源 |
+| S5（关闭） | 空值 | 空值 | 可以关闭电源 |
 
 \*需要通过蓝牙核心驱动程序重新初始化，因为蓝牙芯片断电
 

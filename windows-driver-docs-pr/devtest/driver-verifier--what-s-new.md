@@ -3,12 +3,12 @@ title: 驱动程序验证器新增功能
 description: 从 Windows 2000 开始，驱动程序验证器在 Windows 的所有版本中都可用。 每个版本引入了新功能并检查如何在 Windows 驱动程序中查找 bug。 本部分总结了这些更改，并提供相关文档的链接。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9fd68d228099c01470d291b03ca4bebf5bb3a5b1
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: fa76b0a984773aaf91424065e457d0578a462ae9
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96839005"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97091128"
 ---
 # <a name="driver-verifier-whats-new"></a>驱动程序验证程序：新增功能
 
@@ -31,10 +31,10 @@ ms.locfileid: "96839005"
 
 从 Windows 10 开始，驱动程序验证器包含适用于以下技术的新驱动程序验证规则：
 
-* 新的[音频驱动程序规则](/windows-hardware/drivers/ddi/index)
-* 新的 [AVStream 驱动程序规则](/windows-hardware/drivers/ddi/index)
-* 四个新的 [KMDF 驱动程序规则](/windows-hardware/drivers/ddi/index)
-* 三个新的 [NDIS 驱动程序规则](/windows-hardware/drivers/ddi/index)
+* 新的[音频驱动程序规则](/windows-hardware/drivers/devtest/rules-for-audio-drivers)
+* 新的 [AVStream 驱动程序规则](/windows-hardware/drivers/devtest/rules-for-avstream-drivers)
+* 四个新的 [KMDF 驱动程序规则](/windows-hardware/drivers/devtest/sdv-rules-for-kmdf-drivers)
+* 三个新的 [NDIS 驱动程序规则](/windows-hardware/drivers/devtest/sdv-rules-for-ndis-drivers)
 
 ## <a name="driver-verifier-in-windows-8-1-updated-june-17-2013"></a>Windows 8-1 中的驱动程序验证程序 (*更新：6月 17 2013 日*) 
 

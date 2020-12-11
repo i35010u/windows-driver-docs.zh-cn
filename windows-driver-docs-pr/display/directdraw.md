@@ -12,12 +12,12 @@ keywords:
 - 图形 WDK Windows 2000 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 611a6ff09374cff6837ffc55994747cffe0cd8b6
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 30c069243ed3d28cd18daab9ccc1bdae029ae830
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96809373"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97091060"
 ---
 # <a name="directdraw"></a>DirectDraw
 
@@ -47,7 +47,7 @@ ms.locfileid: "96809373"
 
 *Ddraw* 头文件随 Windows SDK 一起提供;所有其他标头文件都包含在 (WDK) 的 Windows 驱动程序工具包中。 Windows 驱动程序开发工具包 (DDK) 还在 *p3samp* 视频显示目录中包含 DirectDraw 驱动程序的示例代码。
 
-Directdraw 驱动程序函数、回调和结构的引用页可以在 [Directdraw 驱动程序函数](/windows-hardware/drivers/ddi/index) 和 [Directdraw 驱动程序结构](/windows-hardware/drivers/ddi/index)中找到。
+Directdraw 驱动程序函数、回调和结构的引用页可以在 [Directdraw 驱动程序函数](/windows-hardware/drivers/ddi/_display/#functions) 和 [Directdraw 驱动程序结构](/windows-hardware/drivers/ddi/_display/#structures)中找到。
 
 有关 DirectDraw 的详细信息，请参阅 Windows SDK。 DirectDraw 驱动程序作者可以通过电子邮件向发送问题和评论 <em>directx@microsoft.com</em> 。
 

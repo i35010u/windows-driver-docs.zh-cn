@@ -6,12 +6,12 @@ keywords:
 - 并行端口 WDK、IEEE 1284 设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 42335be61adb269b3a8d847b26b52871d4cf2679
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 592b860aaf52aaf330709928ae8b988c56bbef07
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96812581"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97091174"
 ---
 # <a name="selecting-and-deselecting-an-ieee-1284-device-attached-to-a-parallel-port"></a>选择和取消选择连接到并行端口的 IEEE 1284 设备
 
@@ -25,7 +25,7 @@ ms.locfileid: "96812581"
 
 [**IOCTL \_ 内部 \_ 取消选择 \_ 设备**](/windows-hardware/drivers/ddi/parallel/ni-parallel-ioctl_internal_deselect_device)
 
-内核模式驱动程序还可以使用系统提供的 [并行设备回调例程](/windows-hardware/drivers/ddi/index) ，该例程是使用 [**IOCTL \_ 内部 \_ GET \_ 并行 \_ PNP \_ 信息**](/windows-hardware/drivers/ddi/parallel/ni-parallel-ioctl_internal_get_parallel_pnp_info) 请求获取的。 此请求返回 [**并行 \_ PNP \_ 信息**](/windows-hardware/drivers/ddi/parallel/ns-parallel-_parallel_pnp_information) 结构，其中包括指向系统提供的回调的以下指针：
+内核模式驱动程序还可以使用系统提供的 [并行设备回调例程](/windows-hardware/drivers/ddi/_parports/) ，该例程是使用 [**IOCTL \_ 内部 \_ GET \_ 并行 \_ PNP \_ 信息**](/windows-hardware/drivers/ddi/parallel/ni-parallel-ioctl_internal_get_parallel_pnp_info) 请求获取的。 此请求返回 [**并行 \_ PNP \_ 信息**](/windows-hardware/drivers/ddi/parallel/ns-parallel-_parallel_pnp_information) 结构，其中包括指向系统提供的回调的以下指针：
 
 -   **TrySelectDevice** 成员是指向 PPARALLEL 的指针。 [*\_ 尝试 \_ 选择 \_ 例程*](/windows-hardware/drivers/ddi/parallel/nc-parallel-pparallel_try_select_routine)回调，该回调可取消选择连接到并行端口的 ieee 1284.3 菊花链设备或 ieee 1284 端链设备。
 

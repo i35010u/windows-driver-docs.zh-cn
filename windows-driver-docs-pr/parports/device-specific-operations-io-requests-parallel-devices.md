@@ -7,12 +7,12 @@ keywords:
 - 并行 IRP 代码
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: de7a8842428fe2339cfe426b78357ae69cafb742
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 385893dddb6125460e9f1aeb5e4f2139c8908dd6
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384227"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97091006"
 ---
 # <a name="device-specific-operations-for-io-requests-for-parallel-devices"></a>针对并行设备的 I/O 请求的特定于设备的操作
 本主题介绍针对并行设备 i/o 请求的下列特定于设备的操作
@@ -67,7 +67,7 @@ STATUS_NOT_A_DIRECTORY
 
 设备不是目录。
 
-### <a name="operation"></a>Operation
+### <a name="operation"></a>操作
 并行设备是一个独占设备。 如果并行设备已打开，则系统提供的针对并行端口的总线驱动程序将在设备关闭之前，对该设备的所有后续 [IRP_MJ_CREATE](../kernel/irp-mj-create.md) 请求都将失败。 客户端必须在将其他 i/o 请求发送到设备之前打开并行设备，或调用 [并行设备回调例程](/windows-hardware/drivers/ddi/index)。
 
 有关详细信息，请参阅 [打开和使用并行设备](./opening-and-using-a-parallel-device.md)。
@@ -91,9 +91,9 @@ STATUS_NOT_A_DIRECTORY
 请求特定的。
 
 ### <a name="io-status-block"></a>I/o 状态块
-**信息**成员是请求特定的。 
+**信息** 成员是请求特定的。 
 
-**Status**成员设置为特定于请求的值，或设置为以下一般状态值之一：
+**Status** 成员设置为特定于请求的值，或设置为以下一般状态值之一：
 
 
 STATUS_SUCCESS
@@ -124,7 +124,7 @@ STATUS_UNSUCCESSFUL
 
 请求未成功完成。
 
-### <a name="operation"></a>Operation
+### <a name="operation"></a>操作
 操作是特定于请求的。
 
 
@@ -147,9 +147,9 @@ STATUS_UNSUCCESSFUL
 请求特定的。
 
 ### <a name="io-status-block"></a>I/o 状态块
-**信息**成员是请求特定的。 
+**信息** 成员是请求特定的。 
 
-**Status**成员设置为特定于请求的值，或设置为以下一般状态值之一：
+**Status** 成员设置为特定于请求的值，或设置为以下一般状态值之一：
 
 
 STATUS_SUCCESS
@@ -180,7 +180,7 @@ STATUS_UNSUCCESSFUL
 
 请求未成功完成。
 
-### <a name="operation"></a>Operation
+### <a name="operation"></a>操作
 
 操作是特定于请求的。
 
@@ -192,20 +192,20 @@ STATUS_UNSUCCESSFUL
 客户端发送查询信息请求，以确定文件指针的文件大小或当前字节偏移量。
 
 ### <a name="input-parameters"></a>输入参数
-**QueryFile. FileInformationClass**成员设置为**FileStandardInformation**或**FilePositionInformation**。
+**QueryFile. FileInformationClass** 成员设置为 **FileStandardInformation** 或 **FilePositionInformation**。
 
 
 **FileStandardInformation** 请求：
  
-**AssociatedIrp.SystemBuffer**成员指向某个[FILE_STANDARD_INFORMATION](/windows-hardware/drivers/ddi/wdm/ns-wdm-_file_standard_information)结构，客户端将其分配给文件信息的输出。
+**AssociatedIrp.SystemBuffer** 成员指向某个 [FILE_STANDARD_INFORMATION](/windows-hardware/drivers/ddi/wdm/ns-wdm-_file_standard_information)结构，客户端将其分配给文件信息的输出。
 
-**QueryFile**成员设置为**FILE_STANDARD_INFORMATION**结构的大小（以字节为单位）。
+**QueryFile** 成员设置为 **FILE_STANDARD_INFORMATION** 结构的大小（以字节为单位）。
 
 **FilePositionInformation** 请求： 
 
 **AssociatedIrp.SystemBuffer** 指向客户端为文件信息输出分配的 [FILE_POSITION_INFORMATION](/windows-hardware/drivers/ddi/wdm/ns-wdm-_file_position_information) 结构。
 
-**SetFile**成员设置为**FILE_POSITION_INFORMATION**结构的大小（以字节为单位）。
+**SetFile** 成员设置为 **FILE_POSITION_INFORMATION** 结构的大小（以字节为单位）。
 
 ### <a name="output-parameters"></a>输出参数
 **AssociatedIrp.SystemBuffer** 指向所请求的信息。
@@ -222,12 +222,12 @@ STATUS_UNSUCCESSFUL
 
 **FilePositionInformation** 请求类型：
  
-将**FILE_POSITION_INFORMATION**结构的**QuadPart**成员设置为零。
+将 **FILE_POSITION_INFORMATION** 结构的 **QuadPart** 成员设置为零。
 
 ### <a name="io-status-block"></a>I/o 状态块
 如果请求成功，则将 **信息** 成员设置为与请求类型关联的结构的大小（以字节为单位）。 否则， **信息** 成员设置为零。
 
-**Status**成员设置为以下状态值之一：
+**Status** 成员设置为以下状态值之一：
 
 
 STATUS_SUCCESS 
@@ -246,7 +246,7 @@ STATUS_INVALID_PARAMETER
 
 指定类型的信息无效。
 
-### <a name="operation"></a>Operation
+### <a name="operation"></a>操作
 系统提供的并行端口总线驱动程序支持查询以下类型的信息：
 
 * **FileStandardInformation**
@@ -263,12 +263,12 @@ STATUS_INVALID_PARAMETER
 - **Length** 成员指向要从并行设备中读取的字节数。
 
 ### <a name="output-parameters"></a>输出参数
-**AssociatedIrp.SystemBuffer**成员指向客户端为读取数据分配的读取缓冲区。 缓冲区必须足够大才能容纳请求的字节数。
+**AssociatedIrp.SystemBuffer** 成员指向客户端为读取数据分配的读取缓冲区。 缓冲区必须足够大才能容纳请求的字节数。
 
 ### <a name="io-status-block"></a>I/o 状态块
-**信息**成员设置为实际从并行设备中读取的字节数。
+**信息** 成员设置为实际从并行设备中读取的字节数。
 
-**Status**成员设置为以下状态值之一：
+**Status** 成员设置为以下状态值之一：
 
 
 STATUS_SUCCESS
@@ -289,13 +289,13 @@ STATUS_PENDING
 
 STATUS_INVALID_PARAMETER 
 
-**ByteOffset**成员不为零。 请注意，读取和写入请求均使用此成员。
+**ByteOffset** 成员不为零。 请注意，读取和写入请求均使用此成员。
 
 STATUS_DEVICE_REMOVED 
 
 设备已被删除。
 
-### <a name="operation"></a>Operation
+### <a name="operation"></a>操作
 系统提供的并行端口总线驱动程序使用为并行设备设置的读取协议。 默认读取协议是 NIBBLE_MODE。 客户端可以通过使用 [IOCTL_IEEE1284_NEGOTIATE](/windows-hardware/drivers/ddi/ntddpar/ni-ntddpar-ioctl_ieee1284_negotiate) 请求来协商读取协议。
 
 并行端口总线驱动程序为读取请求设置取消例程，将读取请求标记为挂起，并对工作队列上的读取请求进行排队。 读取请求保存在工作队列中，该状态可在客户端完成或取消读取请求之前取消。
@@ -310,7 +310,7 @@ STATUS_DEVICE_REMOVED
 每当客户端将输出数据传输到并行设备时，将使用 [IRP_MJ_WRITE](../kernel/irp-mj-write.md) 请求。
 
 ### <a name="input-parameters"></a>输入参数
-**AssociatedIrp.SystemBuffer**指向客户端为写入数据分配的写入缓冲区。 缓冲区必须足够大，以容纳写入并行设备所需的字节数。
+**AssociatedIrp.SystemBuffer** 指向客户端为写入数据分配的写入缓冲区。 缓冲区必须足够大，以容纳写入并行设备所需的字节数。
 
 - **Length** 成员指向要写入到并行设备的字节数。
 
@@ -318,9 +318,9 @@ STATUS_DEVICE_REMOVED
 无。
 
 ### <a name="io-status-block"></a>I/o 状态块
-**信息**成员设置为实际写入到并行设备的字节数。
+**信息** 成员设置为实际写入到并行设备的字节数。
 
-**Status**成员设置为以下值之一：
+**Status** 成员设置为以下值之一：
 
 STATUS_SUCCESS
  
@@ -340,13 +340,13 @@ STATUS_PENDING
 
 STATUS_INVALID_PARAMETER 
 
-**ByteOffset**成员不为零。
+**ByteOffset** 成员不为零。
 
 STATUS_DEVICE_REMOVED 
 
 设备已被删除。
 
-### <a name="operation"></a>Operation
+### <a name="operation"></a>操作
 系统提供的并行端口总线驱动程序通过使用为并行设备设置的写入协议传输数据。 默认写入协议为 CENTRONICS。 客户端可以通过使用 [IOCTL_IEEE1284_NEGOTIATE](/windows-hardware/drivers/ddi/ntddpar/ni-ntddpar-ioctl_ieee1284_negotiate) 请求来协商写入协议。 
 
 并行端口总线驱动程序为写入请求设置取消例程，将写入请求标记为 "挂起"，并在工作队列中对写入请求进行排队。 写入请求处于可取消状态，直到完成或取消请求为止。
@@ -363,6 +363,6 @@ STATUS_DEVICE_REMOVED
 
 [打开连接到并行端口的并行设备](./operating-a-parallel-device-attached-to-a-parallel-port.md)
 
-[并行设备回调例程](/windows-hardware/drivers/ddi/index)
+[并行设备回调例程](/windows-hardware/drivers/ddi/_parports)
 
 [向并行设备进行读取和写入](./reading-and-writing-a-parallel-device.md)

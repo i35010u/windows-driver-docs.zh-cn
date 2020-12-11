@@ -18,12 +18,12 @@ keywords:
 - 输出管道 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 08c38c7a48c93c93a16bc573feed8000243c320d
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: c943bf07636ed7b235a006f7e644b4b1bbcb211d
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96833909"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97091082"
 ---
 # <a name="working-with-usb-pipes"></a>使用 USB 管道
 
@@ -97,8 +97,8 @@ ms.locfileid: "96833909"
 
 如需相关信息，请参阅：
 
--   [如何将发送 USB 大容量传输请求](/windows-hardware/drivers/ddi/index)
--   [如何将数据传输到 USB 常时等量终结点](/windows-hardware/drivers/ddi/index)
+-   [如何将发送 USB 大容量传输请求](/windows-hardware/drivers/usbcon/usb-bulk-and-interrupt-transfer)
+-   [如何将数据传输到 USB 常时等量终结点](/windows-hardware/drivers/usbcon/transfer-data-to-isochronous-endpoints)
 -   [如何使用连续读取器从 USB 管道读取数据](../usbcon/index.md)
 
 ### <a name="writing-to-a-pipe"></a><a href="" id="writing-to-a-pipe"></a> 写入管道
@@ -113,7 +113,7 @@ ms.locfileid: "96833909"
 
     若要以异步方式将数据写入 USB 输入管道，驱动程序可以调用 [**WdfUsbTargetPipeFormatRequestForWrite**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipeformatrequestforwrite) 方法来生成写入请求。 然后，驱动程序可以调用 [**WdfRequestSend**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend) 来异步发送请求。
 
-有关相关信息，请参阅 [如何发送 USB 批量传输请求](/windows-hardware/drivers/ddi/index)。
+有关相关信息，请参阅 [如何发送 USB 批量传输请求](/windows-hardware/drivers/usbcon/usb-bulk-and-interrupt-transfer)。
 
 ### <a name="stopping-and-resetting-a-pipe"></a><a href="" id="stopping-and-resetting-a-pipe"></a> 停止和重置管道
 

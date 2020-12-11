@@ -6,12 +6,12 @@ keywords:
 - 锁定例程 WDK PnP
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d016d8414529ab5a9d330c32b272c7a1d2abe43
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: a568be3e52e028c48af3c68306d86b2f48db729d
+ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96830371"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97091098"
 ---
 # <a name="using-remove-locks"></a>使用删除锁
 
@@ -19,7 +19,7 @@ ms.locfileid: "96830371"
 
 
 
-[删除锁例程](/windows-hardware/drivers/ddi/index)提供一种方法来跟踪设备上的未完成 i/o 操作的数目，并确定何时可以安全地分离和删除驱动程序的设备对象。 系统向驱动程序编写器提供这些例程，作为实现其自己的跟踪机制的替代方法。
+删除锁例程提供一种方法来跟踪设备上的未完成 i/o 操作的数目，并确定何时可以安全地分离和删除驱动程序的设备对象。 系统向驱动程序编写器提供这些例程，作为实现其自己的跟踪机制的替代方法。
 
 驱动程序可以将此机制用于两个目的：
 
@@ -31,7 +31,7 @@ ms.locfileid: "96830371"
 
 每次启动 i/o 操作时，驱动程序都必须调用 [**IoAcquireRemoveLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioacquireremovelock) 。 每次完成 i/o 操作时，驱动程序都必须调用 [**IoReleaseRemoveLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreleaseremovelock) 。 驱动程序可以多次获取锁定。 "删除锁" 例程维护锁的未完成的获取计数。 对 **IoAcquireRemoveLock** 的每次调用都会递增计数， **IoReleaseRemoveLock** 将减少计数。
 
-驱动程序还应在将对其 (代码的引用 IoAcquireRemoveLock 到计时器、Dpc、回调等) 上时调用 **IoAcquireRemoveLock** 。 然后，该驱动程序必须在该事件返回时调用 **IoReleaseRemoveLock** 。
+驱动程序还应在将对其 (代码的引用 IoAcquireRemoveLock 到计时器、Dpc、回调等) 上时调用 。 然后，该驱动程序必须在该事件返回时调用 **IoReleaseRemoveLock** 。
 
 对于 [**IRP \_ MN \_ REMOVE \_ 设备**](./irp-mn-remove-device.md)，该驱动程序必须获取此锁定，然后调用 [**IoReleaseRemoveLockAndWait**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreleaseremovelockandwait)。 此例程不会返回，直到释放了锁定的所有未完成的获取。 若要允许排队 i/o 操作完成，每个驱动程序应在将 **IRP \_ MN \_ REMOVE \_ 设备** 请求传递到下一个较低版本的驱动程序之后、*释放* 内存、调用 [**IoDetachDevice**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iodetachdevice)或调用 [**IoDeleteDevice**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iodeletedevice)*后*，调用 **IoReleaseRemoveLockAndWait** 。 针对特定的删除锁定调用了 **IoReleaseRemoveLockAndWait** 之后，对同一删除锁定的 **IoAcquireRemoveLock** 的所有后续调用都将失败。
 
