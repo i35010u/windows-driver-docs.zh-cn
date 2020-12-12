@@ -5,12 +5,12 @@ keywords:
 - XPSDrv 打印机驱动程序 WDK，早期 Windows 版本
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6672fbb60362dae0a3bd3fd523ba9b41ec7f1635
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: a103ebf3a246384619336b23a6719c3abf81bb23
+ms.sourcegitcommit: a6b027c53492a3cdd62abfa92bc07711e46a6acb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96785735"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97366129"
 ---
 # <a name="xps-support-in-earlier-versions-of-windows"></a>早期 Windows 版本中的 XPS 支持
 
@@ -24,4 +24,4 @@ ms.locfileid: "96785735"
 
 - 基于 XPS 的打印处理器。 对于 Windows Server 2003 和 Windows XP，可以使用基于 XPS 的打印处理器来启用 XPSDrv。 基于 XPS 的打印处理器承载 XPSDrv 驱动程序，并与这些操作系统上的现有后台处理程序通信。 某些 XPS 打印路径功能只能在 Windows Vista 上使用，因此，XPSDrv 驱动程序必须能够在早期版本的 Windows 上正常降级。
 
-有关 XPS 的详细信息，请下载 [XML 纸张规范概述](https://download.microsoft.com/download/1/6/a/16acc601-1b7a-42ad-8d4e-4f0aa156ec3e/XPS_1_0.exe)。
+有关 XPS 的详细信息，请下载 [XML 纸张规范概述](https://download.microsoft.com/download/1/6/a/16acc601-1b7a-42ad-8d4e-4f0aa156ec3e/xps_1_0.zip)。

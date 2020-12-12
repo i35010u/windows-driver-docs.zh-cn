@@ -3,12 +3,12 @@ title: 用于打印的基于设备的 Web 服务 (WS-Print)
 description: 设备上用于打印 (WS 打印) 的 Web 服务在 Windows Vista 中引入，以提供用于打印和扫描外围设备的连接协议。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6dba7d87232dbfa694ab45d9269e85be615e645f
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: cff4f0f5f8ee234dd3361ba259afc85995d61531
+ms.sourcegitcommit: a6b027c53492a3cdd62abfa92bc07711e46a6acb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96785779"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97366135"
 ---
 # <a name="web-services-on-devices-for-printing-ws-print"></a>用于打印的基于设备的 Web 服务 (WS-Print)
 
@@ -294,13 +294,13 @@ Web 服务技术为描述和共享信息提供了通用框架。 因此，Window
 
 ### <a name="specification-and-supporting-files"></a>规范和支持文件
 
-**文件：** [设备上 Web 服务的打印设备定义](https://download.microsoft.com/download/9/c/5/9c5b2167-8017-4bae-9fde-d599bac8184a/PrintDevice.exe)v1.0 
+**文件：** [设备上 Web 服务的打印设备定义](https://download.microsoft.com/download/9/c/5/9c5b2167-8017-4bae-9fde-d599bac8184a/PrintDevice.zip)v1.0 
  **说明：** 76 KB 自解压文件，其中包含 Microsoft Word 文档和支持文件;2007年1月29日
 
 **文件：** [在设备上扫描 Web 服务的服务定义](https://download.microsoft.com/download/9/C/5/9C5B2167-8017-4BAE-9FDE-D599BAC8184A/ScanService.zip)v1.0 
  **说明：** (1.5 MB zip 文件，其中包含 Microsoft Word 文档和支持文件;2012年2月9日) 
 
-**文件：** [在设备上扫描设备定义 1.0 for Web 服务](https://download.microsoft.com/download/9/c/5/9c5b2167-8017-4bae-9fde-d599bac8184a/ScanDevice.exe) 
+**文件：** [在设备上扫描设备定义 1.0 for Web 服务](https://download.microsoft.com/download/9/c/5/9c5b2167-8017-4bae-9fde-d599bac8184a/ScanDevice.zip) 
  **说明：** (76 KB 自解压文件，其中包含 Microsoft Word 文档和支持文件;2007年1月29日) 
 
 ## <a name="related-topics"></a>相关主题

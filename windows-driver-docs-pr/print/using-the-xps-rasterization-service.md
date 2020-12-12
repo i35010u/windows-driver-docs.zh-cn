@@ -3,12 +3,12 @@ title: 使用 XPS 光栅化服务
 description: 使用 XPS 光栅化服务
 ms.date: 06/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b23e2cd35c0fc628cd417adeef2f46cc93c8505
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: be1cac3287e2bcc0e7347558a1e1b67cbc7fc310
+ms.sourcegitcommit: a6b027c53492a3cdd62abfa92bc07711e46a6acb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96835419"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97366133"
 ---
 # <a name="using-the-xps-rasterization-service"></a>使用 XPS 光栅化服务
 
@@ -107,7 +107,7 @@ XPSDrv 筛选器按照以下步骤创建 XPS 光栅器对象：
 
 如果不再需要 XPS 光栅器对象，筛选器应通过对对象的 **IXpsRasterizer** 接口调用 **release** 方法来释放对象。 有关使用 XPS 光栅化服务的 XPSDrv 筛选器的示例实现，请参阅 WDK 中的 XpsRasFilter 示例驱动程序。
 
-若要与 XPS 光栅化服务一起使用，固定页面内的画布和视觉对象画笔最多可以嵌套到64级别。 有关画布和视觉对象画笔的详细信息，请下载 [XML 纸张规范](https://download.microsoft.com/download/1/6/a/16acc601-1b7a-42ad-8d4e-4f0aa156ec3e/XPS_1_0.exe)。
+若要与 XPS 光栅化服务一起使用，固定页面内的画布和视觉对象画笔最多可以嵌套到64级别。 有关画布和视觉对象画笔的详细信息，请下载 [XML 纸张规范](https://download.microsoft.com/download/1/6/a/16acc601-1b7a-42ad-8d4e-4f0aa156ec3e/xps_1_0.zip)。
 
 ## <a name="bitmap-resolution-and-pixel-format"></a>位图分辨率和像素格式
 

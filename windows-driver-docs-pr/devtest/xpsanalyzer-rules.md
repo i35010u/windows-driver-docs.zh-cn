@@ -5,16 +5,16 @@ keywords:
 - XpsAnalyzer WDK，规则
 ms.date: 09/17/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ce3f00f1e9b593916531182ae2a46d1a27bc7e2c
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: e23d5206a2159c7d1ee918e8d610fbc0c5945a5b
+ms.sourcegitcommit: a6b027c53492a3cdd62abfa92bc07711e46a6acb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96810625"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97366131"
 ---
 # <a name="xpsanalyzer-rules"></a>XpsAnalyzer 规则
 
-下表描述了 XpsAnalysis 工具用于分析 XPS 文件的规则。 这些规则基于 XML 纸张规范 (XPS) 1.0 规范。 有关此规范的详细信息，请下载 [XML 纸张规范](https://download.microsoft.com/download/1/6/a/16acc601-1b7a-42ad-8d4e-4f0aa156ec3e/XPS_1_0.exe)。
+下表描述了 XpsAnalysis 工具用于分析 XPS 文件的规则。 这些规则基于 XML 纸张规范 (XPS) 1.0 规范。 有关此规范的详细信息，请下载 [XML 纸张规范](https://download.microsoft.com/download/1/6/a/16acc601-1b7a-42ad-8d4e-4f0aa156ec3e/xps_1_0.zip)。
 
 ## <a name="open-packaging-conventions-opc-rules"></a> (OPC) 规则打开打包约定
 
@@ -34,7 +34,7 @@ ms.locfileid: "96810625"
 <tbody>
 <tr class="odd">
 <td align="left"><p>CompressionOption</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>XPS 包的 Compression 选项的值。</p></td>
 </tr>
 <tr class="even">
@@ -44,12 +44,12 @@ ms.locfileid: "96810625"
 </tr>
 <tr class="odd">
 <td align="left"><p>ForeignContentType</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>不属于 XPS 规范的内容类型。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>ForeignRelationshipType</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>不属于 XPS 1.0 规范的关系类型。</p></td>
 </tr>
 <tr class="odd">
@@ -143,7 +143,7 @@ ms.locfileid: "96810625"
 </tr>
 <tr class="odd">
 <td align="left"><p>PackageThumbnailType</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>XPS 包级缩略图的图像类型。</p></td>
 </tr>
 <tr class="even">
@@ -174,7 +174,7 @@ ms.locfileid: "96810625"
 <tbody>
 <tr class="odd">
 <td align="left"><p>BleedBoxDimension</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>XPS 包中的非默认 BleedBox 的维度。</p></td>
 </tr>
 <tr class="even">
@@ -189,17 +189,17 @@ ms.locfileid: "96810625"
 </tr>
 <tr class="even">
 <td align="left"><p>CanvasLanguage</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>Canvas 元素的语言。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>CanvasOpacityMaskBrush</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>画布 OpacityMask 元素的画笔类型。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>ContentBoxDimension</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>XPS 包中的非默认 ContentBox 的维度。</p></td>
 </tr>
 <tr class="odd">
@@ -214,7 +214,7 @@ ms.locfileid: "96810625"
 </tr>
 <tr class="odd">
 <td align="left"><p>FontType</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>XPS 包中的字体类型。</p></td>
 </tr>
 <tr class="even">
@@ -224,7 +224,7 @@ ms.locfileid: "96810625"
 </tr>
 <tr class="odd">
 <td align="left"><p>GeometryFigureClosedFilledPatternRule</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>GeometryFigure 的类型。</p></td>
 </tr>
 <tr class="even">
@@ -239,17 +239,17 @@ ms.locfileid: "96810625"
 </tr>
 <tr class="even">
 <td align="left"><p>GeometryFigureSegmentStrokePattern</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>GeometryFigures 元素的笔划模式。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>GeometryFigureSegmentType</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>GeometryFigure 元素的段类型。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>GeometryFillRule</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>几何图形的 FillRule。</p></td>
 </tr>
 <tr class="odd">
@@ -264,22 +264,22 @@ ms.locfileid: "96810625"
 </tr>
 <tr class="odd">
 <td align="left"><p>GlyphsFillBrush</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>字形填充的画笔类型。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>GlyphsLanguage</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>字形的语言。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>GlyphsOpacityMaskBrush</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>字形 OpacityMask 的画笔类型。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>GlyphsStyleSimulations</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>标志符号的 StyleSimulations。</p></td>
 </tr>
 <tr class="odd">
@@ -519,7 +519,7 @@ ms.locfileid: "96810625"
 </tr>
 <tr class="even">
 <td align="left"><p>HasLinearGradientBrushWithNonDefaultEndPoint</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>如果 XPS 包包含带有非默认终结点的 LinearGradientBrush，则为 True。</p></td>
 </tr>
 <tr class="odd">
@@ -529,7 +529,7 @@ ms.locfileid: "96810625"
 </tr>
 <tr class="even">
 <td align="left"><p>HasLinearGradientBrushWithNonDefaultStartPoint</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>如果 XPS 包包含带有非默认 StartPoint 的 LinearGradientBrush，则为 True。</p></td>
 </tr>
 <tr class="odd">
@@ -804,27 +804,27 @@ ms.locfileid: "96810625"
 </tr>
 <tr class="odd">
 <td align="left"><p>ImageBrushTileMode</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>System.windows.media.imagebrush> 元素的 System.windows.media.tilemode> 值。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>ImageBrushType</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>System.windows.media.imagebrush> 元素的图像类型值。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>LinearGradientBrushColorInterpolationMode</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>LinearGradientBrush 元素的 ColorInterpolationMode 值。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>LinearGradientBrushColorType</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>LinearGradientBrush 元素的颜色类型值。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>LinearGradientBrushContextColorChannelCount</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>LinearGradientBrush 元素的上下文颜色通道计数值。</p></td>
 </tr>
 <tr class="even">
@@ -834,7 +834,7 @@ ms.locfileid: "96810625"
 </tr>
 <tr class="odd">
 <td align="left"><p>LinearGradientBrushSpreadMethod</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>LinearGradientBrush 元素的 SpreadMethod 值。</p></td>
 </tr>
 <tr class="even">
@@ -844,7 +844,7 @@ ms.locfileid: "96810625"
 </tr>
 <tr class="odd">
 <td align="left"><p>LocalDictionaryContent</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>在此本地字典中找到的可共享对象的类型。</p></td>
 </tr>
 <tr class="even">
@@ -884,17 +884,17 @@ ms.locfileid: "96810625"
 </tr>
 <tr class="odd">
 <td align="left"><p>PageDimension</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>XPS 包中页面的宽度和高度。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>PageLanguage</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>页面的语言。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>PageThumbnailType</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>页面级缩略图的图像类型。</p></td>
 </tr>
 <tr class="even">
@@ -904,57 +904,57 @@ ms.locfileid: "96810625"
 </tr>
 <tr class="odd">
 <td align="left"><p>PathFillBrush</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>路径填充的画笔类型。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>PathLanguage</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>Path 元素的语言值。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>PathOpacityMaskBrush</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>路径 OpacityMask 的画笔类型。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>PathStrokeBrush</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>路径笔划属性的画笔类型。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>PathStrokeDashCap</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>路径元素的 StrokeDashCap 类型。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>PathStrokeEndLineCap</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>Path 元素的 StrokeEndLineCap 值。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>PathStrokeLineJoin</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>Path 元素的 StrokeLineJoin 值。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>PathStrokeStartLineCap</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>Path 元素的 StrokeStartLineCap 值。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>RadialGradientBrushColorInterpolationMode</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>RadialGradientBrush 元素的 ColorInterpolationMode 值。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>RadialGradientBrushColorType</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>RadialGradientBrush 元素的颜色类型值。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>RadialGradientBrushContextColorChannelCount</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>RadialGradientBrush 元素的上下文颜色通道计数。</p></td>
 </tr>
 <tr class="even">
@@ -964,27 +964,27 @@ ms.locfileid: "96810625"
 </tr>
 <tr class="odd">
 <td align="left"><p>RadialGradientBrushEllipseOrCircle</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>定义渐变画笔是椭圆还是圆。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>RadialGradientBrushSpreadMethod</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>RadialGradientBrush 元素的 SpreadMethod 值。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>RemoteDictionaryContent</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>在此远程字典中找到的可共享对象的类型。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>SolidColorBrushColorType</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>System.windows.media.solidcolorbrush> 元素的颜色类型。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>SolidColorBrushContextColorChannelCount</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>System.windows.media.solidcolorbrush> 元素的上下文颜色通道计数。</p></td>
 </tr>
 <tr class="even">
@@ -999,7 +999,7 @@ ms.locfileid: "96810625"
 </tr>
 <tr class="even">
 <td align="left"><p>VisualBrushTileMode</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>System.windows.media.visualbrush> 元素的 System.windows.media.tilemode> 值。</p></td>
 </tr>
 <tr class="odd">
@@ -1038,7 +1038,7 @@ ms.locfileid: "96810625"
 </tr>
 <tr class="odd">
 <td align="left"><p>XpsSignaturePolicy</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>签名元素的 XPS 签名策略值。</p></td>
 </tr>
 <tr class="even">
@@ -1048,7 +1048,7 @@ ms.locfileid: "96810625"
 </tr>
 <tr class="odd">
 <td align="left"><p>XpsSignatureStatus</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>签名无效的情况下的签名元素的签名状态值。 换言之，仅当 HasInvalidXpsSignature 为 True 时才启用此规则。</p></td>
 </tr>
 <tr class="even">
@@ -1063,7 +1063,7 @@ ms.locfileid: "96810625"
 </tr>
 <tr class="even">
 <td align="left"><p>SignatureTimeFormat</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>签名元素的签名时间格式值。</p></td>
 </tr>
 <tr class="odd">
