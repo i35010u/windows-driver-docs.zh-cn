@@ -5,12 +5,12 @@ keywords:
 - WDF 网络适配器类扩展卸载，NetAdapterCx 硬件卸载，NetAdapterCx 卸载，Get-netadapter 卸载，校验和卸载
 ms.date: 08/10/2020
 ms.custom: Fe
-ms.openlocfilehash: 7722001157cd30df38dd062b052c2f9aaf588472
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 81893d4324e36be7576d5eaba1b8b0ba032f39ff
+ms.sourcegitcommit: 6d31ef1a1d9adedcded793a2f86cbe2bb467684a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96798095"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97349634"
 ---
 # <a name="checksum-offload"></a>校验和卸载
 
@@ -34,6 +34,8 @@ NetAdapterCx 支持在运行时卸载 TCP/IP 校验和任务。
 NetAdapterCx 检查注册表关键字，并在启用活动卸载功能时遵循这些关键字。 驱动程序无需执行任何进一步操作。
 
 [使用注册表值启用和禁用任务卸载](../network/using-registry-values-to-enable-and-disable-task-offloading.md)中指定的校验和关键字可用于启用/禁用注册表项设置的校验和卸载。 不支持分组的关键字。
+
+关键字值必须为 [REG_SZ](/windows/win32/sysinfo/registry-value-types)类型。
 
 ## <a name="configuring-checksum-offload"></a>配置校验和卸载
 

@@ -5,12 +5,12 @@ keywords:
 - WDF 网络适配器类扩展卸载，NetAdapterCx 硬件卸载，NetAdapterCx 卸载，Get-netadapter 卸载，一般分段卸载，GSO，大型分段卸载，LSO，UDP 分段卸载，USO
 ms.date: 10/08/2020
 ms.custom: Fe
-ms.openlocfilehash: 69654badd633c216e3ee418b417c4adcafdae82c
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: d20c215117fb59bdd80b37bf172b26e53f14afec
+ms.sourcegitcommit: 6d31ef1a1d9adedcded793a2f86cbe2bb467684a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96813041"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97349632"
 ---
 # <a name="generic-segmentation-offload"></a>一般分段卸载
 
@@ -32,6 +32,8 @@ NetAdapterCx 检查注册表关键字，并在启用活动卸载功能时遵循�
 [使用注册表值启用和禁用任务卸载](../network/using-registry-values-to-enable-and-disable-task-offloading.md)中指定的 LSO 关键字可用于启用/禁用使用注册表项设置的 LSO 卸载。
 
 [UDP 分段卸载 (USO) ](../network/udp-segmentation-offload-uso-.md)中指定的 USO 关键字可用于启用/禁用使用注册表项设置的 USO 卸载。
+
+关键字值必须为 [REG_SZ](/windows/win32/sysinfo/registry-value-types)类型。
 
 ## <a name="configuring-gso"></a>配置 GSO
 

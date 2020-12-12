@@ -5,12 +5,12 @@ keywords:
 - WDF 网络适配器类扩展卸载，NetAdapterCx 硬件卸载，NetAdapterCx 卸载，Get-netadapter 卸载，接收段合并卸载，RSC
 ms.date: 10/13/2020
 ms.custom: Fe
-ms.openlocfilehash: cc1abd0e815adb5026ce3e038892db3c04fcb5fb
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: d91748eac03e170c129e069ed56e3f4fcf8aad81
+ms.sourcegitcommit: 6d31ef1a1d9adedcded793a2f86cbe2bb467684a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96808091"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97349630"
 ---
 # <a name="receive-segment-coalescing-rsc-offload"></a>接收段合并 (RSC) 卸载
 
@@ -33,6 +33,8 @@ ms.locfileid: "96808091"
 NetAdapterCx 检查注册表关键字，并在启用活动卸载功能时遵循这些关键字。 驱动程序无需执行任何进一步操作。
 
 在适用于 RSC 的 [标准化 INF 关键字](../network/standardized-inf-keywords-for-rsc.md) 中指定的 rsc 关键字，可用于通过注册表项设置启用/禁用 RSC 卸载。
+
+关键字值必须为 [REG_SZ](/windows/win32/sysinfo/registry-value-types)类型。
 
 ## <a name="configuring-rsc-offload"></a>配置 RSC 卸载
 
