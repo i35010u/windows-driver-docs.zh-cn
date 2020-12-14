@@ -3,12 +3,12 @@ title: 设置 Windows 7 显示驱动程序的功能评分
 description: 设置 Windows 7 显示驱动程序的功能评分
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cdb11562d3aa173ce459b3897c36748e3e15cdf5
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 4be247f94955bd864b3f32c051f34fa97fc84e9e
+ms.sourcegitcommit: 6802a041dd1c2faa31a3f356dea5d8631f4f65c9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96832377"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97389367"
 ---
 # <a name="setting-the-feature-score-for-windows-7-display-drivers"></a>设置 Windows 7 显示驱动程序的功能评分
 
@@ -24,7 +24,7 @@ ms.locfileid: "96832377"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">功能
+<th align="left">Feature
 <div>
  
 </div>
@@ -35,7 +35,7 @@ score</th>
 <tbody>
 <tr class="odd">
 <td align="left"><p>E6</p></td>
-<td align="left"><p>写入到 Windows 显示驱动程序模型 (WDDM) 的供应商提供的驱动程序已针对该模型的 Windows 7 功能进行了优化，这些驱动程序包已打包在 windows 硬件质量实验室 (WHQL) 所限定的 Windows 7 驱动程序包中，并包括在 Windows <a href="https://go.microsoft.com/fwlink/p/?linkid=138031" data-raw-source="[Compatibility Center](https://go.microsoft.com/fwlink/p/?linkid=138031)">兼容性中心</a> 测试的产品列表中</p></td>
+<td align="left"><p>写入到 Windows 显示驱动程序模型 (WDDM) 的供应商提供的驱动程序已经针对该模型的 Windows 7 功能进行了优化，并打包到由 Windows 硬件质量实验室 (WHQL 限定的 Windows 7 驱动程序包中) </p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>E6</p></td>
@@ -55,7 +55,7 @@ score</th>
 </tr>
 <tr class="even">
 <td align="left"><p>F6</p></td>
-<td align="left"><p>供应商提供的驱动程序，这些驱动程序使用 Windows Vista 驱动程序包（由 WHQL 限定并包含在 Windows <a href="https://go.microsoft.com/fwlink/p/?linkid=138031" data-raw-source="[Vista Compatibility Center](https://go.microsoft.com/fwlink/p/?linkid=138031)">Vista 兼容性中心</a> 测试的产品列表）写入 WDDM</p></td>
+<td align="left"><p>供应商提供的驱动程序，使用由 WHQL 限定的 Windows Vista 驱动程序包写入 WDDM</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>F8</p></td>
