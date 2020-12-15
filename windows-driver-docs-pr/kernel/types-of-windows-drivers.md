@@ -1,7 +1,6 @@
 ---
 title: Windows 驱动程序的类型
 description: Windows 驱动程序的类型
-ms.assetid: e6696c6b-2d3c-473c-9f46-576fe0c40496
 keywords:
 - Windows 驱动程序 WDK，类型
 - 驱动程序 WDK，类型
@@ -11,12 +10,12 @@ keywords:
 - 最下层驱动程序 WDK
 ms.date: 06/16/2017
 ms.localizationpriority: High
-ms.openlocfilehash: 097cd01205f12ee7abac7c843ebaecbf67485059
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: b372fe8efbc9a8cead3e6ce71cc642174b014cc6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89402846"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96814237"
 ---
 # <a name="types-of-windows-drivers"></a>Windows 驱动程序的类型
 

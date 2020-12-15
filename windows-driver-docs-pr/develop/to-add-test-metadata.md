@@ -1,15 +1,14 @@
 ---
-ms.assetid: 8BADC31C-6446-41FA-82F3-F46D66954481
 title: 如何添加测试元数据
-description: 使用 Windows 驱动程序工具包 (WDK) 以及测试创作和执行框架 (TAEF) 来创建适用于 Windows 8 的测试内容。
+description: 使用 Windows 驱动程序工具包 (WDK) 和测试创作和执行框架 (TAEF) 来创建适用于 Windows 8 的测试内容。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ae0f26e4e3f573d781f90a549cf8b4786839a10c
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 7d27fb8d4e9e6b37da50a65db9dc4c7520c2bd5a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063578"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96784099"
 ---
 # <a name="how-to-add-test-metadata"></a>如何添加测试元数据
 
@@ -229,7 +228,7 @@ ms.locfileid: "89063578"
     </tbody>
     </table>
 
-    <span id="Kits.Parameter._ParameterName_.Description"></span><span id="kits.parameter._parametername_.description"></span><span id="KITS.PARAMETER._PARAMETERNAME_.DESCRIPTION"></span>**Kits.Parameter.***&lt;ParameterName&gt;***.Description**  
+    <span id="Kits.Parameter._ParameterName_.Description"></span><span id="kits.parameter._parametername_.description"></span><span id="KITS.PARAMETER._PARAMETERNAME_.DESCRIPTION"></span>**Kits.Parameter.** _&lt;ParameterName&gt;_ *_.Description_*  
     参数的说明。
 
     <span codelanguage=""></span>
@@ -266,7 +265,7 @@ ms.locfileid: "89063578"
     </tbody>
     </table>
 
-    <span id="Kits.Parameter._ParameterName_.Default"></span><span id="kits.parameter._parametername_.default"></span><span id="KITS.PARAMETER._PARAMETERNAME_.DEFAULT"></span>**Kits.Parameter.***&lt;ParameterName&gt;***.Default**  
+    <span id="Kits.Parameter._ParameterName_.Default"></span><span id="kits.parameter._parametername_.default"></span><span id="KITS.PARAMETER._PARAMETERNAME_.DEFAULT"></span>**Kits.Parameter.** _&lt;ParameterName&gt;_ *_.Default_*  
     参数的默认值。
 
     <span codelanguage=""></span>

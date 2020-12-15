@@ -1,15 +1,14 @@
 ---
 title: WinDbg 入门（用户模式）
 description: WinDbg 是包含在 Windows 调试工具中的内核模式和用户模式调试器。 在此，我们将提供实践练习，这些练习帮助你开始使用 WinDbg 作为用户模式调试器。
-ms.assetid: 8C2D2D0C-7E54-4711-A6FD-970E040F1C50
 ms.date: 06/05/2020
 ms.localizationpriority: high
-ms.openlocfilehash: 2f7435eed4b37dd13fb803abc6d4c97f4b9b4434
-ms.sourcegitcommit: 6f9087dab3bf214c287b179829e6a59d74db0591
+ms.openlocfilehash: 773912827fdd0e00e45d923b52151f58104735c6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89471904"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96838529"
 ---
 # <a name="getting-started-with-windbg-user-mode"></a>WinDbg 入门（用户模式）
 
@@ -53,7 +52,7 @@ WinDbg 是包含在 Windows 调试工具中的内核模式和用户模式调试�
 
     [x notepad!*](x--examine-symbols-.md)
 
-    **注意**  如果没有看到任何输出，请再次输入 [.reload](-reload--reload-module-.md)。
+    **注意** 如果没有看到任何输出，请再次输入 [.reload](-reload--reload-module-.md)。
 
     若要查看 Notepad.exe 模块中包含 main 的符号，请输入以下命令：
 

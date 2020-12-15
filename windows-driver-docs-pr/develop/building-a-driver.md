@@ -1,22 +1,21 @@
 ---
-ms.assetid: f5676c9c-b582-47d0-9b7c-02b6443103ad
 title: 使用 WDK 生成驱动程序
 description: 本主题介绍了如何使用 Windows 驱动程序工具包 (WDK) 生成驱动程序。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 977515761197e62145ab4104275ad36ca948e028
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: b29ebc8f6b06bb7995f4d91b14c67e2a4b9923ef
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733427"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96815143"
 ---
 # <a name="using-visual-studio-or-msbuild-to-build-a-driver"></a>使用 Visual Studio 或 MSBuild 生成驱动程序
 
 
 本主题介绍了如何使用 Visual Studio 开发环境来生成驱动程序，或使用 Microsoft 生成引擎 ([MSBuild](/visualstudio/msbuild/msbuild)) 通过命令行来生成驱动程序。
 
-**重要提示**  从 Windows 驱动程序工具包 (WDK) 8 开始，MSBuild 取代 Windows 生成实用程序 (Build.exe)。 WDK 现在使用的编译器和生成工具与你用于生成 Visual Studio 项目的工具相同。 使用以前版本的 WDK 生成的驱动程序项目必须转换为在 Visual Studio 环境中工作。 你可以从命令行运行转换实用程序，也可以通过从现有源创建新 Visual Studio 项目来转换现有驱动程序。 有关详细信息，请参阅[从现有源文件创建驱动程序](creating-a-driver-from-existing-source-files.md)和 [WDK 和 Visual Studio 生成环境](../devtest/wdk-and-visual-studio-build-environment.md)。
+**重要提示**  从 Windows 驱动程序工具包 (WDK) 8 开始，MSBuild 取代 Windows 生成实用程序 (Build.exe)。 WDK 现在使用的编译器和生成工具与你用于生成 Visual Studio 项目的工具相同。 使用以前版本的 WDK 生成的驱动程序项目必须转换为在 Visual Studio 环境中工作。 你可以从命令行运行转换实用程序，也可以通过从现有源创建新 Visual Studio 项目来转换现有驱动程序。 有关详细信息，请参阅[从现有源文件创建驱动程序](creating-a-driver-from-existing-source-files.md)和 [WDK 和 Visual Studio 生成环境](../devtest/wdk-and-visual-studio-build-environment.md)。
 
  
 
@@ -25,20 +24,20 @@ ms.locfileid: "91733427"
 
 在 Visual Studio 中生成驱动程序与生成任何项目或解决方案的方法相同。 在使用 Windows 驱动程序模板创建新驱动程序项目时，模板定义默认（有效）的项目配置和默认（有效）的解决方案生成配置。
 
-注意  可以将使用 WDK 8 或 Windows 驱动程序工具包 (WDK) 8.1 创建的项目和解决方案转换为使用 Windows 驱动程序工具包 (WDK) 10 和 Visual Studio 2019。 在打开项目或解决方案之前，请运行 [ProjectUpgradeTool](../devtest/projectupgradetool.md)。 ProjectUpgradeTool 可以转换项目和解决方案，以便使用 WDK 10 进行生成。
+**注意** 可对使用 WDK 8 或 Windows 驱动程序工具包 (WDK) 8.1 创建的项目和解决方案进行转换，使其与 Windows 驱动程序工具包 (WDK) 10 和 Visual Studio 2019 结合使用。 在打开项目或解决方案之前，请运行 [ProjectUpgradeTool](../devtest/projectupgradetool.md)。 ProjectUpgradeTool 可以转换项目和解决方案，以便使用 WDK 10 进行生成。
 
  
 
 有关管理和编辑生成配置的信息，请参阅[在 Visual Studio 中生成](/previous-versions/visualstudio/visual-studio-2012/cyz1h6zd(v=vs.110))。
 
-默认的解决方案生成配置为**调试**和 **Win32**。 
+默认的解决方案生成配置为 **调试** 和 **Win32**。 
 
 **如何选择配置并生成驱动程序**
 
 1.  确保你的计算机上安装了相同版本的 SDK 和 WDK。
 2.  在 Visual Studio 中，打开驱动程序项目或解决方案。
 3.  在“解决方案资源管理器”中选择并按住（或右键单击）解决方案，然后选择“配置管理器”。
-4.  在“配置管理器”中，选择与你感兴趣的生成类型对应的**活动解决方案配置**（例如，**调试**或**发布**）和**活动解决方案平台**（例如，**Win32**）。
+4.  在“配置管理器”中，选择与你感兴趣的生成类型对应的 **活动解决方案配置**（例如，**调试** 或 **发布**）和 **活动解决方案平台**（例如，**Win32**）。
 5.  选择并按住（或右键单击）Avshws 项目，然后选择“属性”。  导航到“驱动程序设置”>“常规”，设置“目标操作系统版本”和“目标平台”。
 6.  配置驱动程序或驱动程序包的项目属性。 你可以为部署、驱动程序签名或其他任务设置属性。 有关详细信息，请参阅[配置驱动程序和驱动程序包的项目属性](#configure_project_props)。
 7.  从“生成”菜单中，选择“生成解决方案”(Ctrl+Shift+B)。
@@ -46,7 +45,7 @@ ms.locfileid: "91733427"
 ## <a name="span-idbuilding_a_driver_using_the_command_line__msbuild_spanspan-idbuilding_a_driver_using_the_command_line__msbuild_spanbuilding-a-driver-using-the-command-line-msbuild"></a><span id="building_a_driver_using_the_command_line__msbuild_"></span><span id="BUILDING_A_DRIVER_USING_THE_COMMAND_LINE__MSBUILD_"></span>使用命令行 (MSBuild) 生成驱动程序
 
 
-你可以使用 **Visual Studio 命令提示**窗口和 Microsoft 生成引擎 ([MSBuild](/visualstudio/msbuild/msbuild)) 从命令行生成驱动程序
+你可以使用 **Visual Studio 命令提示** 窗口和 Microsoft 生成引擎 ([MSBuild](/visualstudio/msbuild/msbuild)) 从命令行生成驱动程序
 
 **如何使用“Visual Studio 命令提示”窗口生成驱动程序**
 
@@ -79,7 +78,7 @@ ms.locfileid: "91733427"
 ## <a name="span-idconfigure_project_propsspanspan-idconfigure_project_propsspanconfiguring-project-properties-for-your-driver-and-driver-package"></a><span id="configure_project_props"></span><span id="CONFIGURE_PROJECT_PROPS"></span>配置驱动程序和驱动程序包的项目属性
 
 
-你使用**属性页**配置和设置驱动程序和驱动程序包的选项。 你可以选择配置驱动程序，以便在生成解决方案时令其自动签名或自动部署到远程测试计算机。
+你使用 **属性页** 配置和设置驱动程序和驱动程序包的选项。 你可以选择配置驱动程序，以便在生成解决方案时令其自动签名或自动部署到远程测试计算机。
 
 WDK 提供了大量的命令行工具，如 [Stampinf](../devtest/stampinf.md) 和 [WPP 预处理器（WPP 跟踪）](../devtest/wpp-preprocessor.md)，通常包含在生成过程内。 这些工具不是通过 Visual Studio 分发的。 为了将这些工具与 Visual Studio 生成环境整合，它们被包装为 [MSBuild 的 WDK 任务](../devtest/wdk-tasks-for-msbuild.md)。 如果你使用驱动程序模板之一或有已转换的现有驱动程序，你的项目可能已经存在这些属性页。 如果不是上述情况，在你将相关文件类型添加到项目或解决方案（例如，消息编译器的 .mc 或 .man 文件）时，属性页将自动添加到你的项目。 有关详细信息，请参阅 [WDK 和 Visual Studio 生成环境](../devtest/wdk-and-visual-studio-build-environment.md)。
 

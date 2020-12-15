@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x1A MEMORY_MANAGEMENT
 description: MEMORY_MANAGEMENT bug 检查的值为 0x0000001A。 这表明出现了严重的内存管理错误。
-ms.assetid: 7d3ff54e-e61a-43fa-a378-fb8d32565586
 keywords:
 - Bug 检查 0x1A MEMORY_MANAGEMENT
 - MEMORY_MANAGEMENT
@@ -13,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: high
-ms.openlocfilehash: 86962e0d29df9fc1f7019c2cef24629c31f6fee7
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 969252cf37924911fcb86875870c44415f8ffe51
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534650"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96839169"
 ---
 # <a name="bug-check-0x1a-memory_management"></a>Bug 检查 0x1A：MEMORY\_MANAGEMENT
 

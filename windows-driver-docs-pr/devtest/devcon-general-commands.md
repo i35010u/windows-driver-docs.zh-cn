@@ -1,7 +1,6 @@
 ---
 title: 设备控制台 (DevCon.exe) 命令
 description: DevCon (DevCon.exe) 是一种命令行工具，用于显示有关运行 Windows 的计算机上的设备的详细信息。 你也可以使用 DevCon 启用、禁用、安装、配置以及删除设备。 DevCon 使用以下语法。
-ms.assetid: b397c407-db1f-4e2a-8beb-4fe989bd06e0
 keywords:
 - 设备控制台 (DevCon.exe) 命令驱动程序开发工具
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: high
-ms.openlocfilehash: df5da42e6c906765b1be5a82cf06cb5297671c30
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 134c78c8d4a493634b8c95eb67beb4c81a025e44
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384955"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96783391"
 ---
 # <a name="device-console-devconexe-commands"></a>设备控制台 (DevCon.exe) 命令
 
@@ -31,7 +30,7 @@ devcon [/m:\\computer] [/r] command [arguments]
 ## <a name="span-idddk_devcon_general_commands_toolsspanspan-idddk_devcon_general_commands_toolsspanparameters"></a><span id="ddk_devcon_general_commands_tools"></span><span id="DDK_DEVCON_GENERAL_COMMANDS_TOOLS"></span>参数
 
 
-**注意**  若要更改设备的状态或配置，你必须是计算机上 Administrators 组的成员。
+**注意** 若要更改设备的状态或配置，你必须是计算机上 Administrators 组的成员。
 
  
 
@@ -40,7 +39,7 @@ DevCon 命令中的参数必须按照语法中显示的顺序显示。 如果参
 要获得有关命令语法方面的帮助，可以在“命令提示符”窗口中使用以下命令：DevCon help 或 DevCon help 命令    。
 
 <span id="________m___computer______"></span><span id="________M___COMPUTER______"></span> /m:\\\\<em>computer</em>  在指定的远程计算机上运行该命令。 必须使用反斜杠。
-**注意**  若要在远程计算机上运行 DevCon 命令，组策略设置必须允许即插即用服务在远程计算机上运行。 在运行 Windows Vista 和更高版本的 Windows 的计算机上，默认情况下组策略禁用对服务的远程访问。 在运行 WDK 8.1 和 WDK 8 的计算机上，远程访问功能不可用。
+**注意** 若要在远程计算机上运行 DevCon 命令，组策略设置必须允许即插即用服务在远程计算机上运行。 在运行 Windows Vista 和更高版本的 Windows 的计算机上，默认情况下组策略禁用对服务的远程访问。 在运行 WDK 8.1 和 WDK 8 的计算机上，远程访问功能不可用。
 
  
 
@@ -128,7 +127,7 @@ DevCon 通过计算机名称、硬件 ID、兼容 ID、设备实例 ID 和/或�
 
 例如，devcon hwids =media \*pnp\* \*microsoft\*  返回媒体设备安装程序类中的设备，这些设备在其硬件 ID 或兼容 ID 中包含“pnp”或“microsoft”。
 
-**注意**  若要在远程计算机上运行 DevCon 命令，组策略设置必须允许即插即用服务在远程计算机上运行。 在运行 Windows Vista 和更高版本的 Windows 的计算机上，默认情况下组策略禁用对服务的远程访问。 在运行 WDK 8.1 和 WDK 8 的计算机上，远程访问功能不可用。
+**注意** 若要在远程计算机上运行 DevCon 命令，组策略设置必须允许即插即用服务在远程计算机上运行。 在运行 Windows Vista 和更高版本的 Windows 的计算机上，默认情况下组策略禁用对服务的远程访问。 在运行 WDK 8.1 和 WDK 8 的计算机上，远程访问功能不可用。
 
  
 

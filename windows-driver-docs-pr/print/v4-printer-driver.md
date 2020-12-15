@@ -1,22 +1,21 @@
 ---
 title: V4 打印机驱动程序
 description: v4 打印机驱动程序模型旨在解决版本 3 驱动程序模型中的已知问题，从而提高用户使用打印机的体验质量。
-ms.assetid: CB333340-FBA0-4CB4-BAD6-4673B4AC0DF2
 ms.date: 04/20/2017
 ms.localizationpriority: high
-ms.openlocfilehash: 30af77bb3665f3803f28bf8b2df85019e5ddcaba
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: b82621c6e9950cdbcee3473538d78d16ed82f12e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "78335956"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96785875"
 ---
 # <a name="v4-printer-driver"></a>V4 打印机驱动程序
 
 
 v4 打印机驱动程序模型旨在解决版本 3 驱动程序模型中的已知问题，从而提高用户使用打印机的体验质量。
 
-**注意**  为了帮助更好地解释本节中的一些概念，我使用了一家名为 Fabrikam 的虚构公司。
+**注意** 为了帮助更好地解释本部分中的一些概念，我使用了一家名为 Fabrikam 的虚构公司。
 
  
 
