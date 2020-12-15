@@ -15,12 +15,12 @@ keywords:
 - 筛选器驱动程序 WDK 串行设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ece750bc0ea2fc4e0161e44df34b72bd5ba6ffad
-ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
+ms.openlocfilehash: e8f8c04e56a60f8eb2939da7c4830687d2d192c5
+ms.sourcegitcommit: 46b8f226ad7fff5ee742007ce6525d0440482034
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97091178"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97486466"
 ---
 # <a name="using-serialsys-and-serenumsys"></a>使用 Serial.sys 和 Serenum.sys
 
@@ -40,7 +40,7 @@ ms.locfileid: "97091178"
     - [Serenum 和串行的操作](operation-of-serenum-and-serial.md)
     - [用于串行的注册表设置](registry-settings-for-serial.md)
     - [用于 Serenum 的注册表设置](registry-settings-for-serenum.md)
-    - [串行驱动程序参考](/windows-hardware/drivers/_serports)
+    - [串行驱动程序参考](/windows-hardware/drivers/ddi/_serports)
     - [Serenum 驱动程序参考](/windows-hardware/drivers/ddi/ntddser)
     - WDK 中 Ntddser 标头文件中的数据定义。
 

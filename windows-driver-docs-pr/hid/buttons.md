@@ -3,12 +3,12 @@ title: HID 按钮驱动程序
 description: 使用适用于 GPIO 按钮的 Microsoft 提供的按钮驱动程序;否则，请实现将 HID 数据注入操作系统的驱动程序。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 91151c196d6d2c44d9eda6ededc8486b9f8cdf59
-ms.sourcegitcommit: 586b1844547359baca95e3228fa63fcba0b18608
+ms.openlocfilehash: 9dd3740f13f3f8998fba96b9183785dedbaf5a69
+ms.sourcegitcommit: 46b8f226ad7fff5ee742007ce6525d0440482034
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97096626"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97486472"
 ---
 # <a name="hid-button-drivers"></a>HID 按钮驱动程序
 
@@ -45,7 +45,7 @@ Microsoft 建议尽可能使用内置传输微型驱动程序。
 如果要实现非 GPIO 按钮，如需要由其他软件组件注入的 HID 格式的数据流，则可以选择写入内核模式驱动程序。 从 Windows 10 开始，你可以通过调用与虚拟 HID 框架 (VHF) 通信的编程接口来编写一个 HID 源驱动程序，并获取和设置与 HID 类驱动程序的 HID 报表。
 
 - [如何编写与虚拟 HID Framework 交互 (VHF 的 HID 源驱动程序) ](virtual-hid-framework--vhf-.md)
-- [虚拟 HID 框架参考](/windows-hardware/drivers/virtual-hid-framework--vhf-)
+- [虚拟 HID 框架参考](/windows-hardware/drivers/ddi/_hid/)
 
 或者，你可以编写一个内核模式 HID 传输微型驱动程序，它受 Windows 早期版本支持。 但是，我们不建议采用这种方法，因为编写不当的 KMDF HID 传输微型驱动程序会导致系统崩溃。
 

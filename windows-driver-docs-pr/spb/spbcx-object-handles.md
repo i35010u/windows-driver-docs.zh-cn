@@ -3,12 +3,12 @@ title: SpbCx 对象句柄
 description: 本主题介绍为 SPB 框架扩展 (SpbCx) 库定义的对象句柄。
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 56ce74d249aed2cfd5a74e3b2a20f762536d511e
-ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
+ms.openlocfilehash: 26fd9858d900957f69999fdaaa82d265172ec4a5
+ms.sourcegitcommit: 46b8f226ad7fff5ee742007ce6525d0440482034
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97091096"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97486470"
 ---
 # <a name="spbcx-object-handles"></a>SpbCx 对象句柄
 
@@ -107,7 +107,7 @@ SPB 控制器驱动程序使用此上下文跟踪特定于控制器驱动程序�
 
 [IRP_MJ_CREATE](../ifs/irp-mj-create.md)
 
-[SerCx2 驱动程序支持方法](/windows-hardware/drivers/sercx)
+[SerCx2 驱动程序支持方法](/windows-hardware/drivers/ddi/sercx)
 
 [SpbControllerSetRequestAttributes](/windows-hardware/drivers/ddi/spbcx/nf-spbcx-spbcontrollersetrequestattributes)
 
