@@ -7,12 +7,12 @@ ms.topic: article
 ms.custom:
 - CI 111498
 - CSSTroubleshooting
-ms.openlocfilehash: 944858573a649b1fabda94694bef85f006040d5b
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 6f81d63c536471eced5efd16eea5321198d20761
+ms.sourcegitcommit: 36649f0a18c92ebd890471af5524b3b2b2d1c9ef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733559"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97532199"
 ---
 # <a name="usb-audio-20-drivers"></a>USB 音频 2.0 驱动程序
 
@@ -26,7 +26,7 @@ ms.locfileid: "91733559"
 
 ## <a name="architecture"></a>体系结构
 
-USBAudio.Sys 适合 Windows USB 音频的更广泛的体系结构，如下所示。 
+usbaudio2.sys 适合 Windows USB 音频的更广泛的体系结构，如下所示。 
 
 ![显示顶部 Kmixer.sys 的堆栈关系图，底部显示一个 USB 音频设备](images/usb-2-0-audio-arch.png)
 
@@ -46,7 +46,7 @@ USB-如果是一个特殊的兴趣组，其中维护了 [官方 USB 规范](http
 
 键入 I 格式 (BCP.FMT 2.3.1) ：
 
-- PCM 格式，每个示例 (8 个32位，) FMT20 2.3.1.7。1
+- PCM 格式，每个示例 (8 个32位，BCP.FMT-2 2.3.1.7.1) 
 - PCM8 格式 (BCP.FMT-2 2.3.1.7.2) 
 - IEEE_FLOAT 格式 (BCP.FMT-2 2.3.1.7.3) 
 
@@ -97,9 +97,9 @@ USB-如果是一个特殊的兴趣组，其中维护了 [官方 USB 规范](http
 
 音频函数必须仅实现一个 AudioControl 接口描述符 (ADC-2 4.7) 和一个或多个 AudioStreaming 接口描述符 (ADC-2 4.9) 。 具有音频控制接口但不支持流接口的函数。
 
-该驱动程序支持 ADC20 中定义的所有描述符类型，第4部分。 以下各部分提供了有关某些特定描述符类型的注释。
+驱动程序支持在 ADC-2、第4部分中定义的所有描述符类型。 以下各部分提供了有关某些特定描述符类型的注释。
 
-### <a name="class-specific-as-interface-descriptor"></a>类特定为接口描述符
+### <a name="class-specific-as-interface-descriptor"></a>作为接口描述符 Class-Specific
 
 有关此规范的详细信息，请参阅 ADC-2 4.9.2。
 
@@ -130,7 +130,7 @@ AS 接口描述符中的 bFormatType 字段必须与 BCP.FMT-2 2.3.1.6) 格式�
 | 键入我 IEEE_FLOAT 的格式：  | bSubslotSize = = 4      |     bBitResolution = = 32      |
 | 类型 III IEC61937 格式： | bSubslotSize = = 2      |     bBitResolution = = 16      |
 
-### <a name="class-specific-as-isochronous-audio-data-endpoint-descriptor"></a>类特定于同步音频数据终结点描述符 
+### <a name="class-specific-as-isochronous-audio-data-endpoint-descriptor"></a>作为同步音频数据终结点描述符 Class-Specific 
 
 有关此规范的详细信息，请参阅 ADC-2 4.10.1.2。
 
