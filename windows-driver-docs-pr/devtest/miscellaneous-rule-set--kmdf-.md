@@ -3,12 +3,12 @@ title: 其他规则集 (KMDF)
 description: 使用这些规则来验证驱动程序是否正确地遵循了对设备对象、密钥的正确处理的一般要求，以及该驱动程序不会对非 PnP 驱动程序或不是电源策略所有者的非 FDO 驱动程序调用 DDIs。
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d9c2fe6ad66fe34ada391c7086e5f51d865c7f3d
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 05d0b9e3dc9369292de981c9ab102998fc0c6c7f
+ms.sourcegitcommit: 09e592b0a6d0ab40de3f4f2ad586f34792b241a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96837319"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97580472"
 ---
 # <a name="miscellaneous-rule-set-kmdf"></a>其他规则集 (KMDF)
 
@@ -26,7 +26,7 @@ ms.locfileid: "96837319"
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -53,6 +53,10 @@ ms.locfileid: "96837319"
 <tr class="even">
 <td align="left"><p><a href="kmdf-nonpnpdrvpowerpolicyownerapi.md" data-raw-source="[&lt;strong&gt;NonPnPDrvPowerPolicyOwnerAPI&lt;/strong&gt;](kmdf-nonpnpdrvpowerpolicyownerapi.md)"><strong>NonPnPDrvPowerPolicyOwnerAPI</strong></a></p></td>
 <td align="left"><p><a href="kmdf-nonpnpdrvpowerpolicyownerapi.md" data-raw-source="[&lt;strong&gt;NonPnPDrvPowerPolicyOwnerAPI&lt;/strong&gt;](kmdf-nonpnpdrvpowerpolicyownerapi.md)"><strong>NonPnPDrvPowerPolicyOwnerAPI</strong></a>规则指定非 PnP 驱动程序无法调用与电源管理相关的特定 DDIs。</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p><a href="kmdf-unsafeallocatepool.md" data-raw-source="[&lt;strong&gt;UnSafeAllocatePool&lt;/strong&gt;](kmdf-unsafeallocatepool.md)"><strong>UnSafeAllocatePool</strong></a></p></td>
+<td align="left"><p><a href="kmdf-unsafeallocatepool.md" data-raw-source="[&lt;strong&gt;UnSafeAllocatePool&lt;/strong&gt;](kmdf-unsafeallocatepool.md)"><strong>UnSafeAllocatePool</strong></a>规则是一个重要的安全规则，用于检查驱动程序是否未使用不推荐使用的 DDIs 来分配内存。</p></td>
 </tr>
 </tbody>
 </table>

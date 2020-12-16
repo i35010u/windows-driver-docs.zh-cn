@@ -3,12 +3,12 @@ title: 其他规则集 (WDM)
 description: 使用这些规则来验证驱动程序是否正确遵循了对注册表项、字符串和设备对象指针的正确处理的一组一般要求。
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 87a0d1b19e51a377f6e598124b93afc41c3d09c7
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 4c612a4eb63fcc7d780e90d549feb44e540c47e1
+ms.sourcegitcommit: 09e592b0a6d0ab40de3f4f2ad586f34792b241a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96838629"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97580470"
 ---
 # <a name="miscellaneous-rule-set-wdm"></a>其他规则集 (WDM)
 
@@ -26,7 +26,7 @@ ms.locfileid: "96838629"
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -52,10 +52,14 @@ ms.locfileid: "96838629"
 </ul></td>
 </tr>
 <tr class="odd">
+<td align="left"><p><a href="wdm-unsafeallocatepool.md" data-raw-source="[&lt;strong&gt;UnSafeAllocatePool&lt;/strong&gt;](wdm-unsafeallocatepool.md)"><strong>UnSafeAllocatePool</strong></a></p></td>
+<td align="left"><p><a href="wdm-unsafeallocatepool.md" data-raw-source="[&lt;strong&gt;UnSafeAllocatePool&lt;/strong&gt;](wdm-unsafeallocatepool.md)"><strong>UnSafeAllocatePool</strong></a> 是一个重要的安全规则，用于检查驱动程序是否未使用不推荐使用的 DDIs 来分配内存。</p></td>
+</tr>
+<tr class="even">
 <td align="left"><p><a href="wdm-zwregistrycreate.md" data-raw-source="[&lt;strong&gt;ZwRegistryCreate&lt;/strong&gt;](wdm-zwregistrycreate.md)"><strong>ZwRegistryCreate</strong></a></p></td>
 <td align="left"><p><a href="wdm-zwregistrycreate.md" data-raw-source="[&lt;strong&gt;ZwRegistryCreate&lt;/strong&gt;](wdm-zwregistrycreate.md)"><strong>ZwRegistryCreate</strong></a>规则指定在调用<a href="/windows-hardware/drivers/ddi/wdm/nf-wdm-zwcreatekey" data-raw-source="[&lt;strong&gt;ZwCreateKey&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-zwcreatekey)"><strong>ZwCreateKey</strong></a>之后，驱动程序只能调用以下注册表函数，同时将打开的句柄保存到注册表项 (也就是说，在对<a href="/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntclose" data-raw-source="[&lt;strong&gt;ZwClose&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntclose)"><strong>ZwClose</strong></a>或<a href="/windows-hardware/drivers/ddi/wdm/nf-wdm-zwdeletekey" data-raw-source="[&lt;strong&gt;ZwDeleteKey&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-zwdeletekey)"><strong>ZwDeleteKey</strong></a>的任何调用都关闭或删除注册表项) 的句柄之前：</p></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><p><a href="wdm-zwregistryopen.md" data-raw-source="[&lt;strong&gt;ZwRegistryOpen&lt;/strong&gt;](wdm-zwregistryopen.md)"><strong>ZwRegistryOpen</strong></a></p></td>
 <td align="left"><p><a href="storport-zwregistryopen.md" data-raw-source="[&lt;strong&gt;ZwRegistryOpen&lt;/strong&gt;](storport-zwregistryopen.md)"><strong>ZwRegistryOpen</strong></a>规则指定在调用<a href="/windows-hardware/drivers/ddi/wdm/nf-wdm-zwopenkey" data-raw-source="[&lt;strong&gt;ZwOpenKey&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-zwopenkey)"><strong>ZwOpenKey</strong></a>之后，驱动程序只会在将打开的句柄保存到注册表项 (的情况下，在调用<a href="/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntclose" data-raw-source="[&lt;strong&gt;ZwClose&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntclose)"><strong>ZwClose</strong></a>或<a href="/windows-hardware/drivers/ddi/wdm/nf-wdm-zwdeletekey" data-raw-source="[&lt;strong&gt;ZwDeleteKey&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-zwdeletekey)"><strong>ZwDeleteKey</strong></a>) 之前调用以下注册表函数：</p></td>
 </tr>
