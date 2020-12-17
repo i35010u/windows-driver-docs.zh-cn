@@ -1,14 +1,14 @@
 ---
 title: 适用于 UVC 设备的 DShow 桥实现指南
 description: 提供 UVC 设备的 DShow Bridge 实现指南。
-ms.date: 05/17/2018
+ms.date: 12/16/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: dcef6cb76a118c808aacbf92bd805bf105b02b1f
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: f33ede6bf48bcbf354b2cf0027a6c453168cc126
+ms.sourcegitcommit: b14becba4beb4e7c843908710352ad60999f0c38
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732769"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97612736"
 ---
 # <a name="dshow-bridge-implementation-guidance-for-uvc-devices"></a>适用于 UVC 设备的 DShow 桥实现指南
 
@@ -22,9 +22,9 @@ DShow 桥是通过将 DShow 管道与媒体基础平台桥接而编写的。 这
 
 Ihv 和 Oem 可能需要用于管理 DShow 管道的策略的例外。 合作伙伴可以使用 OS 描述符启用以下功能：
 
--   选择加入**或退出 DShow 桥**：设备可以选择加入或离开桥，使管道更适合于其需求。 新式管道的记录更为全面，并利用多个版本中添加到操作系统的功能。 旧式管道处于维护模式，滞后一些。
+- 选择加入 **或退出 DShow 桥**：设备可以选择加入或离开桥，使管道更适合于其需求。 新式管道的记录更为全面，并利用多个版本中添加到操作系统的功能。 旧式管道处于维护模式，滞后一些。
 
--   **帧服务器中的 MJPEG 解压缩**：框架服务器是一种虚拟化照相机设备的服务。 这允许在多个客户端之间共享设备的 Pin。 具有优化媒体基础解压缩程序的体系结构可以使用此功能来解码框架服务器中的 MJPEG。 为多个应用程序提供了未压缩的已转换媒体格式 (YUY2) 。 流只是为多个可能的客户端解压缩一次。 这可以提高应用程序的性能。 下图显示了相机捕获管道：
+- **FrameServer 中的 MJPEG 解压缩**： FrameServer 是一种用于虚拟化照相机设备的服务。 这允许在多个客户端之间共享设备的 Pin。 具有优化媒体基础解压缩程序的体系结构可以使用此功能在 FrameServer 中对 MJPEG 进行解码。 为多个应用程序提供了未压缩的已转换媒体格式 (YUY2) 。 流只是为多个可能的客户端解压缩一次。 这可以提高应用程序的性能。 下图显示了相机捕获管道：
 
 ![相机捕获管道](images/camera-capture-pipeline.png)
 
@@ -38,31 +38,31 @@ Ihv 和 Oem 可能需要用于管理 DShow 管道的策略的例外。 合作伙
 >
 > DWORD： **EnableDshowRedirection**
 
-**EnableDshowRedirection**注册表值是一个位掩码值，可用于配置 DShow 桥，如下表所述。
+**EnableDshowRedirection** 注册表值是一个位掩码值，可用于配置 DShow 桥，如下表所述。
 
 | 位掩码 | 说明 | 备注 |
 |---|---|---|
 | 0x00000001 | 选择加入 DShow Bridge | 0–选择退出<br>1–选择加入  |
-| 0x00000002 | 在框架服务器中启用 MJPEG 解码 (参阅下面的注释)  | 0– MJPEG)  (<br>1-从 MJPEG 中公开翻译后的未压缩媒体类型 (YUY2)  |
+| 0x00000002 | 在 FrameServer 中启用一次 MJPEG 解码 (参阅下面的注释)  | 0– MJPEG)  (<br>1-从 MJPEG 中公开翻译后的未压缩媒体类型 (YUY2)  |
 
 > [!NOTE]
-> 启用一次 MJPEG 解码，只向应用程序提供未压缩的媒体类型。
+> 在 FrameServer 中启用一次 MJPEG 解码，然后在多个应用程序 (YUY2) 提供未压缩的已转换媒体格式。 流只是为多个可能的客户端解压缩一次。 这可以提高应用程序的性能。
 
 ## <a name="example-layouts"></a>示例布局
 
 下面的示例包含以下规范：
 
--   Microsoft OS 扩展描述符规范1。0
+- Microsoft OS 扩展描述符规范1。0
 
--   Microsoft 操作系统2.0 描述符规范
+- Microsoft 操作系统2.0 描述符规范
 
 ### <a name="microsoft-os-extended-property-descriptors-specification-version-10"></a>Microsoft OS 扩展属性描述符规范版本1。0
 
 扩展属性 OS 描述符包含两个组件
 
--   固定长度标头部分
+- 固定长度标头部分
 
--   标头部分后面的一个或多个可变长度自定义属性部分
+- 标头部分后面的一个或多个可变长度自定义属性部分
 
 #### <a name="header-section"></a>标题部分
 
@@ -75,7 +75,7 @@ Ihv 和 Oem 可能需要用于管理 DShow 管道的策略的例外。 合作伙
 | 6      | wIndex     | 2            | 0x005      | 扩展属性 OS 描述符 |
 | 8      | wCount     | 2            | 0x0001     | 一个自定义属性             |
 
-#### <a name="custom-property-section"></a>自定义属性部分
+#### <a name="custom-property-section-10-descriptor"></a>自定义属性部分 (1.0 描述符) 
 
 USB HID 设备的扩展属性 OS 描述符包含一个用于创建 **EnableDshowRedirection** DWORD 注册表项的自定义属性部分。
 
@@ -92,7 +92,7 @@ USB HID 设备的扩展属性 OS 描述符包含一个用于创建 **EnableDshow
 
 此示例演示如何使用 Microsoft 2.0 描述符集来提供适用于 Windows 版本的 **EnableDshowRedirection** 的单个 DWORD 注册表值。
 
-#### <a name="custom-property-section"></a>自定义属性部分
+#### <a name="custom-property-section-20-descriptor"></a>自定义属性部分 (2.0 描述符) 
 
 | Offset | 字段 | 大小（字节） | 值 |
 |--------|----------------------|----------|-----------------------------------------|
@@ -103,7 +103,6 @@ USB HID 设备的扩展属性 OS 描述符包含一个用于创建 **EnableDshow
 | 10     | PropertyName         | 变量 | 属性名称的长度             |
 | 58     | dwPropertyDataLength | 2        | 属性数据的长度                 |
 | 62     | PropertyData         | 变量 | 属性数据                           |
-
 
 ```cpp
 UCHAR Example2\_MSOS20DescriptorSetForFutureWindows\[0x48\] =
