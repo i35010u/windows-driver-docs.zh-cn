@@ -6,16 +6,19 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.localizationpriority: medium
-ms.openlocfilehash: e693b6bbc916987da090a26075d5cc4756d0bc25
-ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
+ms.openlocfilehash: 8da017d88774cbc64eafcfbef6b6bac237c0bcd1
+ms.sourcegitcommit: b14becba4beb4e7c843908710352ad60999f0c38
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93349583"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97611761"
 ---
 # <a name="component-firmware-update-cfu-inf-file-configuration"></a>组件固件更新 (CFU) INF 文件配置
 
 若要为 CFU 配置自定义 INF 文件，请按照本主题中的指导为固件映像文件和硬件设备提供正确的值和设置。
+
+> [!NOTE]
+> CFU 在 Windows 10 中提供，版本 2004 (Windows 10 2020 更新) 及更高版本。
 
 下面附带的 [示例 CFU INF 文件](#sample-cfu-inf-file) 为设备的自定义 INF 文件提供了一个起点。 示例 INF 将 CFU 收件箱驱动程序配置 ( # A0) 为虚拟 CFU Hid 设备启用固件更新方案。 有关模拟在虚拟 HID 设备上更新固件的示例虚拟设备代码和演练的详细信息，请参阅 [CFU VIRTUAL HID 设备固件更新模拟](cfu-firmware-update-simulation.md) 主题。 以下部分引用了包含的示例 INF 文件，以说明本主题中讨论的配置概念。
 
@@ -212,11 +215,11 @@ ms.locfileid: "93349583"
 
 负载文件是二进制文件，该文件是连续存储的记录的集合。 每个记录均采用以下格式。
 
-| Offset | 大小 | 值 | 描述 |
+| Offset | 大小 | 值 | 说明 |
 |--|--|--|--|
 | 字节0 | DWORD | 固件地址 | 小 Endian (LSB 首先) 用于写入数据的地址。 该地址是从0开始的。 在内存中放置图像时，固件可以使用此偏移量来确定所需的地址。 |
 | 字节 4 | Byte | 长度 | 负载数据的长度。 |
-| 字节 5-N | 字节 | 数据 | 有效负载数据的字节数组。 |
+| 字节 5-N | 字节 | data | 有效负载数据的字节数组。 |
 
 ## <a name="firmware-update-status"></a>固件更新状态
 
