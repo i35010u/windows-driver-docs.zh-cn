@@ -7,12 +7,12 @@ keywords:
 - Windoows 的 HID 类驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f1014f960eb672d856e16d5558baca303d8ea831
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 54aa834093a6a196d1f05f1a3829534d45471828
+ms.sourcegitcommit: 627d681b172956b47059a49fff75f9d3086dd38f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96838919"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97682151"
 ---
 # <a name="hid-architecture"></a>HID 体系结构
 
@@ -51,7 +51,7 @@ HID 客户端是与 *HIDClass.sys* 通信的驱动程序、服务或应用程序
 
 下表简化了上面列出的信息。
 
-|      “模式”   | 驱动程序                      | 应用程序 |
+|      模式   | 驱动程序                      | 应用程序 |
 |-------------|------------------------------|--------------|
 | 用户模式   | HidD \_ Xxx                    | HidP \_ Xxx    |
 | 内核模式 | HidD \_ XXX 或 IOCTL \_ HID \_ Xxx | 空值          |
@@ -62,11 +62,11 @@ HID 客户端是与 *HIDClass.sys* 通信的驱动程序、服务或应用程序
 
 Windows 支持以下顶级集合：
 
-| **使用情况页** | **使用情况** | **Windows 7** | **Windows 8** | **Windows 10** | 备注 | **访问模式** |
+| **使用情况页** | **使用情况** | **Windows 7** | **Windows 8** | **Windows 10** | **备注** | **访问模式** |
 | --- | --- | --- | --- | --- | --- | --- |
-| 0x0001 | 0x0001-0x0002 | 是 | 是 | 是 | 鼠标类驱动程序和映射器驱动程序 | 排他 |
+| 0x0001 | 0x0001-0x0002 | 是 | 是 | 是 | [鼠标类驱动程序和映射器驱动程序](keyboard-and-mouse-class-drivers.md) | 排他 |
 | 0x0001 | 0x0004 - 0x0005 | 是 | 是 | 是 | 游戏控制器 | 共享 |
-| 0x0001 | 0x0006 - 0x0007 | 是 | 是 | 是 | 键盘/键盘类驱动程序和映射器驱动程序 | 排他 |
+| 0x0001 | 0x0006 - 0x0007 | 是 | 是 | 是 | [键盘/键盘类驱动程序和映射器驱动程序](keyboard-and-mouse-class-drivers.md) | 排他 |
 | 0x0001 | 0x000C | 否 | 是 | 是 | 飞行模式开关 | 共享 |
 | 0x0001 | 0x0080 | 是 | 是 | 是 | 系统控件 (Power)  | 共享 |
 | 0x000C | 0x0001 | 是 | 是 | 对于 Windows 10 和 Windows 10 移动版) 为 "是" ( | 使用者控件 | 适用于 Windows 10 和 Windows 10 移动版) 的共享 ( |
@@ -92,29 +92,6 @@ HID 类驱动程序设计为使用 HID 微型驱动程序来访问硬件输入�
 
 ### <a name="hid-transports-supported-in-windows"></a>Windows 中支持的 HID 传输方式
 
-Windows 支持以下传输方式。
-
-| Transport    | Windows 7 | Windows 8 | 说明                                                                                                 |
-|--------------|-----------|-----------|-------------------------------------------------------------------------------------------------------|
-| USB          | 是       | 是       | Windows 操作系统2000可追溯上提供了对 USB HID 1.11 + 的支持。       |
-| Bluetooth    | 是       | 是       | Windows 操作系统可追溯上提供对蓝牙 HID 1.1 + 的支持。 |
-| 蓝牙 LE | 否        | 是       | Windows 8 引入了对基于蓝牙 LE 的 HID 的支持。                                               |
-| I2C          | 否        | 是       | Windows 8 通过 I2C 引入了对 HID 的支持                                                         |
-
-Windows 7 之前的 Windows (早期版本) 还包括对以下项的支持。
-
-- HidGame.sys-HID 微型驱动程序 for 游戏端口 (i/o 端口 201) 设备。 HID 类驱动程序为游戏端口设备创建一个功能设备对象 (FDO) ，并为游戏端口设备支持的每个 HID 集合创建 (PDO) 的物理设备对象。
-- Gameenum.sys –游戏端口总线驱动程序。 游戏端口总线驱动程序为每个与游戏端口建立菊花链式的游戏端口设备创建一个 PDO。
-
-它们现在被视为旧版，因为在新式计算机上找不到硬件 (替换为 USB 和其他新式传输) 。
-
-## <a name="recommended-transports-for-keyboards-mice-and-touchpads"></a>建议用于键盘、鼠标和触摸板的传输
-
-下表显示了适用于便携式) 计算机上的键盘、鼠标和触摸板设备的建议传输 (例如， (如 "一体" 和 "台式机) " 之类的非便携式系统。
-
-| 系统类型                  | 可移植                                 | 不可移植                                |
-|------------------------------|------------------------------------------|---------------------------------------------|
-| 旧系统               | 内部： PS/2，外部： USB，蓝牙 | 内部：不适用，外部： USB，蓝牙     |
-| 芯片上的系统 (SoC) 系统 | 内部： I2C，External： USB，蓝牙  | 内部： I2C，USB External： USB，蓝牙 |
+有关支持的 HID 传输的列表，请参阅 [此页](hid-transports.md) 。
 
 Windows 硬件实验室工具包中的 [**USB 一般 HID 测试**](/windows-hardware/test/hlk/testref/f7949ab5-dd13-4c74-876f-6d54ff85e213) (的 HLK) 包含 HidUsb 和 HidClass 驱动程序。 没有适用于第三方 HID 小型驱动程序的 HLK 测试。
