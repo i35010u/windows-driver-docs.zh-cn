@@ -6,16 +6,19 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.localizationpriority: medium
-ms.openlocfilehash: e8a294220281c19b45a81ce1d2f3549f35c1919c
-ms.sourcegitcommit: eefc6ae6d9621d0735b3c63e718ee5838d57a6bc
+ms.openlocfilehash: 43178020754bbf528dfa2ed5fcc585dd03c48f80
+ms.sourcegitcommit: 29ed980c2a09ea43f963b9c94172da796e8a4e40
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92886321"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97611759"
 ---
 # <a name="component-firmware-update-cfu-firmware-implementation-guide"></a>组件固件更新 (CFU) 固件实现指南
 
 组件固件更新 (CFU) 是协议和用于提交要安装在目标设备上的新固件映像的过程。
+
+> [!NOTE]
+> CFU 在 Windows 10 中提供，版本 2004 (Windows 10 2020 更新) 及更高版本。
 
 CFU 提交到常驻固件是文件对，一个文件是产品/服务部分，另一个文件是内容部分。 每个 CFU 提交 (每个产品/服务和内容对) 需要在提交发送到实现 CFU 过程的固件之前脱机创建。
 

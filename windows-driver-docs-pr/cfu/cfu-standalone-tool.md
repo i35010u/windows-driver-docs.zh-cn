@@ -6,18 +6,21 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.localizationpriority: medium
-ms.openlocfilehash: 06adbb8e9a34b2f46be1d0a381243102b89d741e
-ms.sourcegitcommit: eefc6ae6d9621d0735b3c63e718ee5838d57a6bc
+ms.openlocfilehash: e2f4c3926862084051f8fe73848e45c95fc2d783
+ms.sourcegitcommit: 29ed980c2a09ea43f963b9c94172da796e8a4e40
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92886316"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97611755"
 ---
 # <a name="component-firmware-update-cfu-standalone-tool"></a>组件固件更新 (CFU) 独立工具
 
-[CFU 独立工具](https://github.com/microsoft/CFU/tree/master/Tools/ComponentFirmwareUpdateStandAloneToolSample)将固件映像更新文件发送到设备。 在开发过程中，可以使用它在设备上测试固件更新，并将其上载到 Windows 更新。
+[CFU 独立工具](https://github.com/microsoft/CFU/tree/master/Tools/ComponentFirmwareUpdateStandAloneToolSample)将固件映像更新文件发送到设备。 在开发期间和将固件更新上传到 Windows 更新之前，可使用此工具在设备上测试该固件更新。
 
-. 在发送固件映像之前，该工具会将多个命令发送到带有固件提供的设备。 仅当设备接受时，该工具将发送固件负载。 工具与设备之间的通信依照 [CFU 协议](cfu-specification.md)，一种开放源规范 (包含在 CFU) 中（基于 HID 协议）。
+> [!NOTE]
+> CFU 在 Windows 10 中提供，版本 2004 (Windows 10 2020 更新) 及更高版本。
+
+在发送固件映像之前，该工具会将多个命令发送到带有固件提供的设备。 仅当设备接受时，该工具将发送固件负载。 工具与设备之间的通信依照 [CFU 协议](cfu-specification.md)，一种开放源规范 (包含在 CFU) 中（基于 HID 协议）。
 
 此工具读取一个产品/服务文件并将固件更新映像文件传递到设备。  它还能够根据协议设置和请求/打印固件版本信息搜索设备。
 

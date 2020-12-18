@@ -1,7 +1,7 @@
 ---
 title: 'UnSafeAllocatePool 规则 (kmdf) '
 description: 了解 UnSafeAllocatePool 规则 (kmdf) 。
-ms.date: 12/15/2020
+ms.date: 12/16/2020
 keywords:
 - 'UnSafeAllocatePool 规则 (KMDF) '
 topic_type:
@@ -11,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b37b855ad68428cfea4c94682d20a60b2d8dca38
-ms.sourcegitcommit: 09e592b0a6d0ab40de3f4f2ad586f34792b241a0
+ms.openlocfilehash: 9f4c59c80142bd4f3489e12e0b021c97f46bd9d9
+ms.sourcegitcommit: 29ed980c2a09ea43f963b9c94172da796e8a4e40
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 12/16/2020
-ms.locfileid: "97580526"
+ms.locfileid: "97611763"
 ---
 # <a name="unsafeallocatepool-rule-kmdf"></a>UnSafeAllocatePool 规则 (kmdf) 
 
@@ -50,7 +50,7 @@ UnsafeAllocatePool 规则指定该驱动程序不应调用：
 
 默认情况下，新 Api 将为零个池分配，以帮助避免可能的内存泄漏错误。  
 
-### <a name="exallocatepoolwithtag"></a>ExAllocatePoolWithTag
+### <a name="exallocatepoolexallocatepoolwithtag"></a>ExAllocatePool/ExAllocatePoolWithTag
 
 ```cpp
 // Old code
@@ -163,6 +163,7 @@ ExAllocatePoolPriorityZero (
 ```cpp
 // Old code
 PVOID Allocation = ExAllocatePoolWithTag(PagedPool, 100, 'abcd');
+RtlZeroMemory(Allocation, 100);
 
 // New code
 

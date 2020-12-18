@@ -6,16 +6,19 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e48f2c4d9589786086f143e3f7696b8b3fba1bc
-ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
+ms.openlocfilehash: 26d5ebf839531254fa755bce89f34561dafbbc01
+ms.sourcegitcommit: 29ed980c2a09ea43f963b9c94172da796e8a4e40
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93349623"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97611769"
 ---
 # <a name="cfu-virtual-hid-device-firmware-update-simulation"></a>CFU 虚拟 HID 设备固件更新模拟
 
 本主题提供了虚拟 HID 设备上模拟固件更新的演练。
+
+> [!NOTE]
+> CFU 在 Windows 10 中提供，版本 2004 (Windows 10 2020 更新) 及更高版本。
 
 ## <a name="build-and-install-the-cfu-virtual-hid-device-sample"></a>生成并安装 CFU 虚拟 HID 设备示例
 
@@ -39,7 +42,7 @@ ms.locfileid: "93349623"
 
     1. 在 Visual Studio 中打开 CfuVirtualHid 文件。
 
-    1. 在 " **生成** " 菜单中，选择 " **生成解决方案** "。 应会看到输出文本，指示已成功生成解决方案：
+    1. 在 " **生成** " 菜单中，选择 " **生成解决方案**"。 应会看到输出文本，指示已成功生成解决方案：
 
         ![CfuVirtualHid 生成成功](images/cfuvirtualhid-build-succeeded.png)
 
@@ -59,7 +62,7 @@ ms.locfileid: "93349623"
 
         ![CfuVirtualHid 设备安装成功](images/cfuvirtualhid-device-install-succeeded.png)
 
-1. 在 " **控制面板** " 中，打开 **设备管理器** ，选择 " **视图** " 菜单，然后选择 " **按类型显示设备** " 菜单项。
+1. 在 " **控制面板**" 中，打开 **设备管理器**，选择 " **视图** " 菜单，然后选择 " **按类型显示设备** " 菜单项。
 
 1. 在 "设备" 列表中，展开 " **固件** " 节点，然后选择 **CfuVirtualHid 设备** ，如下所示：
 
@@ -67,9 +70,9 @@ ms.locfileid: "93349623"
 
 1. 右键单击 **CfuVirtualHid 设备** 打开上下文菜单，然后单击 " **属性** " 菜单项以打开 " **CfuVirtualHid 设备属性** " 对话框窗口。
 
-1. 在 " **CfuVirtualHid 设备属性** " 对话框窗口中选择 " **详细信息** " 选项卡，然后在 " **属性** " 下拉列表中选择 " **硬件 id** "。
+1. 在 " **CfuVirtualHid 设备属性**" 对话框窗口中选择 "**详细信息**" 选项卡，然后在 "**属性**" 下拉列表中选择 "**硬件 id** "。
 
-    你应在 " **值** " 列表框中看到 **HID \ CFU_VIRTUAL_DEVICE** ，如下所示：
+    你应在 "**值**" 列表框中看到 **HID \ CFU_VIRTUAL_DEVICE** ，如下所示：
 
     !["值" 列表框中的 HID \ CFU_VIRTUAL_DEVICE](images/cfuvirtualhid-device-selected.png)
 
@@ -83,9 +86,9 @@ ms.locfileid: "93349623"
 
 1. 右键单击与 **HID 兼容的设备** 以打开上下文菜单，然后单击 " **属性** " 菜单项以打开 " **符合 HID 标准的设备属性** " 对话框窗口。
 
-1. 在 " **符合 HID 标准的设备属性** " 对话框窗口中选择 " **详细信息** " 选项卡，然后在 **属性** 下拉列表中选择 " **硬件 id** "。
+1. 在 "**符合 HID 标准的设备属性**" 对话框窗口中选择 "**详细信息**" 选项卡，然后在 **属性** 下拉列表中选择 "**硬件 id** "。
 
-    你应在 " **值** " 列表框中看到 **HID \ VID_045E&UP： FA00_U： 00F5** ，如下所示：
+    你应在 "**值**" 列表框中看到 **HID \ VID_045E&UP： FA00_U： 00F5** ，如下所示：
 
     ![值列表中的 HID VID 设备](images/hid-vid-045e-up-fa00-u-00f5-device-list-item.png)
 
@@ -131,11 +134,11 @@ ms.locfileid: "93349623"
 
     ![cfu 虚拟 hid 设备固件更新属性窗口](images/install-cfu-virtual-device-firmware-update-4.png)
 
-1. 在 " **CfuVirtualHidDevice 固件更新属性** " 窗口中，选择 **"详细信息** " 选项卡，然后在 **属性** 下拉列表中选择 " **硬件 id** "，如下所示：
+1. 在 " **CfuVirtualHidDevice 固件更新属性**" 窗口中，选择 **"详细信息**" 选项卡，然后在 **属性** 下拉列表中选择 "**硬件 id** "，如下所示：
 
     ![属性下拉列表中的硬件 id](images/install-cfu-virtual-device-firmware-update-5.png)
 
-1. 验证 **HID \ VID_045E&UP： FA00_U： 00F5** 设备是否出现在 **CfuVirtualHidDevice 固件更新** 的 " **硬件 id** " **值** 中。
+1. 验证 **HID \ VID_045E&UP： FA00_U： 00F5** 设备是否出现在 **CfuVirtualHidDevice 固件更新** 的 "**硬件 id** "**值** 中。
 
     ![值列表中的硬件 id](images/install-cfu-virtual-device-firmware-update-6.png)
 

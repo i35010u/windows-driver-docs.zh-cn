@@ -5,17 +5,16 @@ keywords:
 - SymProxy，注册表
 - ProxyCfg 和 SymProxy
 - Netsh 和 SymProxy
-ms.date: 03/12/2019
+ms.date: 12/16/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e89bfcc0ba4aa9ada01861a01dff2456b806b573
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: d318869b2e0b92ea500bcad87bbe6c3ae2158be3
+ms.sourcegitcommit: 29ed980c2a09ea43f963b9c94172da796e8a4e40
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96823485"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97611767"
 ---
 # <a name="configuring-the-registry"></a>配置注册表
-
 
 SymProxy 将其设置存储在此注册表项中。
 
@@ -146,7 +145,7 @@ C:\> wevtutil.exe uninstall-manifest %WINDIR%\system32\inetsrv\symproxy.man
 
 ### <a name="span-idevent_logspanspan-idevent_logspanspan-idevent_logspanevent-log"></a><span id="Event_Log"></span><span id="event_log"></span><span id="EVENT_LOG"></span>事件日志
 
-如果配置了 ETW，事件会作为事件记录在事件日志 *Operational and Analytic* 中的 "*应用程序和服务日志" \\ \\ \\* 下的 "运行" 和 "分析" 通道中。
+如果配置了 ETW，事件会作为事件记录在事件日志中的 "*应用程序和服务日志" \\ \\ \\* 下的 "运行" 和 "分析" 通道中。
 
 若要正确查看事件日志条目的消息，需要将 symproxy 文件的 "事件日志" 区域添加到注册表中：
 
@@ -188,8 +187,6 @@ SymProxy 记录以下事件：
 | 104          | 常规分析消息          | 分析    |
 | 105          | 常规调试消息             | 调试       |
 
-
-
 ### <a name="span-idsymbol_server_proxy_configurationspanspan-idsymbol_server_proxy_configurationspanspan-idsymbol_server_proxy_configurationspansymbol-server-proxy-configuration"></a><span id="Symbol_Server_Proxy_Configuration"></span><span id="symbol_server_proxy_configuration"></span><span id="SYMBOL_SERVER_PROXY_CONFIGURATION"></span>符号服务器代理配置
 
 SymProxy 将其配置设置存储在以下注册表项区域中：
@@ -214,29 +211,62 @@ SymProxy 从该位置获取其全局设置和上游符号存储区的符号路�
 <tbody>
 <tr class="odd">
 <td align="left">REG_DWORD</td>
-<td align="left">描述</td>
+<td align="left">说明</td>
 </tr>
-<tr class="odd">
+
+<tr class="even">
 <td align="left">NoInternetProxy</td>
 <td align="left"><p>作为服务运行时，SymSrv.dll 使用 WinHTTP 而不是 WinInet 发出 HTTP 请求。 因此，你可能需要设置 HTTP 代理设置，以便该服务可以访问外部网络资源。 可以使用 netsh 程序执行此操作。 键入 "netsh.exe winhttp-？" 有关说明。</p>
 <p>默认情况下，SymProxy 使用指定的 HTTP 代理。 如果未配置 HTTP 代理，SymProxy 将使用虚拟代理。 这样就可以安全地访问 intranet 内的 HTTP 站点。 作为副作用，这会阻止 SymProxy 直接连接到不安全站点。</p>
-<p>创建 REG_DWORD： "NoInternetProxy" 值会将 SymProxy 配置为在没有代理的情况下运行，从而允许直接连接。</p></td>
+<p>
+  <ul>
+    <li>未指定- (默认) 禁用-将使用代理</li>
+    <li>0 – 已禁用</li>
+    <li>1 + –已启用</li>
+  </ul>
+</p>
+</td>
 </tr>
+
 <tr class="even">
 <td align="left">NoFilePointers</td>
 <td align="left"><p>默认情况下，对于不存在的符号，SymProxy 将在本地缓存) 中查找所请求 (文件旁的文件。 如果找到，它将返回由文件 ptr 文件指定的位置。 仅当 SymStore.exe 填充本地缓存时，此功能才是必需的。</p>
-<p>创建 REG_DWORD： "NoFilePointers" 值以跳过查找。</p></td>
+<p>
+  <ul>
+    <li>未指定- (默认) 禁用-file. 将搜索或读取 ptr 文件</li>
+    <li>0 – 已禁用</li>
+    <li>1 + –已启用</li>
+  </ul>
+</p>
+</td>
 </tr>
+
 <tr class="odd">
 <td align="left">NoUncompress</td>
 <td align="left"><p>默认情况下，SymProxy 将在将文件返回到调用方之前，解压缩下载的符号。 这会减少客户端的 CPU，但会增加 i/o。</p>
-<p>创建 REG_DWORD： "NoUncompress" 值以跳过解压缩。</p></td>
+<p>
+  <ul>
+    <li>未指定- (默认) 禁用-解压缩发生</li>
+    <li>0 – 已禁用</li>
+    <li>1 + –已启用</li>
+  </ul>
+</p>
+</td>
 </tr>
+
 <tr class="even">
 <td align="left">NoCache</td>
 <td align="left"><p>默认情况下，SymProxy 会将下载的符号缓存到本地文件系统，该文件由虚拟目录的路径定义。</p>
-<p>创建 REG_DWORD： "NoCache" 值以跳过下载并改为向客户端提供文件的远程路径。</p></td>
+<p>
+  <ul>
+    <li>未指定- (默认) 禁用-将发生缓存</li>
+    <li>0 – 已禁用</li>
+    <li>1 + –已启用</li>
+  </ul>
+</p>
+</td>
 </tr>
+
 <tr class="odd">
 <td align="left">MissTimeout</td>
 <td align="left"><p>缺少符号被报告为缺少的超时时间段（以秒为单位），无需重新查询上游符号服务器。</p>
@@ -244,68 +274,112 @@ SymProxy 从该位置获取其全局设置和上游符号存储区的符号路�
 <p>第一次在 N 秒后对文件进行请求会导致重新查询上游符号存储。</p>
 <p>成功后，将返回符号文件并删除未命中。</p>
 <p>失败时，将会将未命中的时间向前移动到当前时间 (UTC) ，以启动新的超时时间段。</p>
-<p>使用 "未命中 <em> 的缓存" 计数器来监视未命中的情况。</p>
-<p><ul>
+<p>使用 "错过缓存" 性能计数器来监视未命中的情况。</p>
+<p>
+  <ul>
     <li>未指定- (默认) 300 秒/5 分钟</li>
     <li>0–功能已禁用</li>
     <li>N –超时持续时间为 N 秒</li>
-   </ul>
+  </ul>
+</p>
 </td>
 </tr>
+
 <tr class="even">
 <td align="left">MissAgeCheck</td>
 <td align="left"><p>两次未命中期限检查。 将扫描未命中的缓存并删除早于 MissAgeTimeout 秒的记录。</p>
 <p>使用事件 ID 4 将当前统计信息保存到事件日志。</p>
-<p><ul>
+<p>
+  <ul>
     <li>未指定- (默认) 3600 秒/1 小时</li>
     <li>0–功能已禁用</li>
     <li>N –在 N 秒内的两次检查之间</li>
-   </ul>
+  </ul>
+</p>
 </td>
 </tr>
+
 <tr class="odd">
-<td align="left"><p>FailureTimeout</p>
-<p>FailureCount</p>
-<p>FailurePeriod</p>
-<p>FailureBlackout</p></td>
-<td align="left"><p>使用掉电功能 termporarly 禁用无响应的上游符号存储。 掉电功能使用4个 REG_DWORD 值来定义行为。 默认情况下，该功能处于禁用状态。</p>
-<p>对于在符号路径中定义的每个上游符号存储区，会单独记录失败。 如果请求所用的时间超过 FailureTimeout (毫秒) ，则失败计数将增加。</p>
-<p>在 FailurePeriod 秒后，符号路径标记为 "FailureCount"。 此时，所有请求都将被忽略，直到超过 FailureBlackout 秒。 超时后的第一个调用方测试上游符号存储区。 如果成功，将删除超时并允许请求。 如果失败，时间设置为现在 + FailureBlackout 秒。 在此之后，将再次测试上游符号存储区。</p></td>
-</tr>
-<tr class="even">
 <td align="left">MissAgeTimeout</td>
-<td align="left"><p>说明待定</p>
-<p></p></td>
+<td align="left"><p>清除每个未命中缓存条目的超时。 由于此时间段内的任何请求的由于没有，因此清除了该项。</p>
+<p>
+  <ul>
+    <li>未指定- (默认) 86400 秒/1 天</li>
+    <li>0–功能已禁用</li>
+    <li>N –在 N 秒内条目超时</li>
+  </ul>
+</p>
+</td>
 </tr>
-<tr class="odd">
-<td align="left">RequestTimeout</td>
-<td align="left"><p>说明待定</p>
-<p></p></td>
-</tr>
+
 <tr class="even">
-<td align="left">RetryAppHang</td>
-<td align="left"><p>说明待定</p>
-<p></p></td>
-</tr>
-<tr class="odd">
 <td align="left">NoLongerIndexedAuthoritive</td>
-<td align="left"><p>说明待定</p>
-<p></p></td>
+<td align="left"><p>启用后，会在所有符号存储中将 NoLongerIndexed 的 ptr 响应视为权威。</p>
+<p>使用此来避免 (不必要的) 调用不会对文件进行索引的服务器。</p>
+<p>
+  <ul>
+    <li>未指定- (默认) 禁用</li>
+    <li>0 – 已禁用</li>
+    <li>1 + –已启用</li>
+  </ul>
+</p>
+</td>
 </tr>
+
+<tr class="odd">
+<td align="left">RetryAppHang</td>
+<td align="left"><p>启用对上游 HTTP 符号存储区的重试。 这等效于 SymSrv SSRVOPT_RETRY_APP_HANG (0x80000000) 选项。</p>
+<p>在收到 0x80070512/HRESULT_FROM_WIN32 (ERROR_APP_HANG 通过来自上游 HTTP 符号存储区的 "符号代理-状态" HTTP 响应标头来) 错误代码时，套接字会保持打开状态，并且 GET 会重复最多 "N" 次。</p>
+<p>SymProxy 将对同一 URI 合并多个请求。 当任何挂起的请求达到25秒时，SymProxy 会通过 "符号代理-状态" HTTP 响应标头将0x80070512 返回给调用方，但会在后台继续执行该操作。</p>
+<p>客户端应在 SymSrv 中启用 SSRVOPT_RETRY_APP_HANG 选项，以便支持 (额外) 长请求，这实际上是链接重试上游。</p>
+<p>SymProxy 默认情况下，响应超时值设置为25秒，以便在 (默认值) 30 秒，SymSrv 使用 HTTP 符号存储的30秒超时之前作出响应。 更高版本的 SymSrv 通过 "符号代理接收超时" HTTP 请求标头 (以毫秒) 发送其配置的 HTTP 超时值。 如果提供了此 HTTP 请求标头，则将使用此值，而不是使用25秒默认值。</p>
+<p>
+  <ul>
+    <li>未指定- (默认) 禁用</li>
+    <li>0 – 已禁用</li>
+    <li>N –重试次数</li>
+  </ul>
+</p>
+</td>
+</tr>
+
 <tr class="even">
 <td align="left">UriFilter</td>
-<td align="left"><p>说明待定</p>
-<p></p></td>
+<td align="left"><p>启用 URI 筛选。 这等效于 SymSrv SSRVOPT_URI_FILTER (0x20000000) 选项。</p>
+<p>URI 筛选可减少对 <b>所有</b> 上游符号存储区的各种请求。 值为位掩码。</p>
+<p>HTTP-SSRVURI_HTTP_MASK (0x0F)  <ul>
+    <li>0x01-SSRVURI_HTTP_NORMAL-例如 http://symbols/.../foo.pdb</li>
+    <li>0x02-SSRVURI_HTTP_COMPRESSED-例如 http://symbols/.../foo.pd_</li>
+    <li>0x04-SSRVURI_HTTP_FILEPTR-例如 http://symbols/.../file.ptr</li>
+  </ul>
+</p>
+<p>UNC SSRVURI_UNC_MASK (0xF0)  <ul>
+    <li>0x10-SSRVURI_UNC_NORMAL-例如 \\ MyServer\Symbols \. 。\foo.pdb</li>
+    <li>0x20-SSRVURI_UNC_COMPRESSED-例如 \\ MyServer\Symbols \. 。\ foo.pd_</li>
+    <li>0x40-SSRVURI_UNC_FILEPTR-例如 \\ MyServer\Symbols \. 。\file.ptr</li>
+  </ul>
+</p>
+</td>
 </tr>
+
 <tr class="odd">
 <td align="left">UriTiers</td>
-<td align="left"><p>说明待定</p>
-<p></p></td>
+<td align="left"><p>启用 URI 层。 这等效于 SymSrv SSRVOPT_URI_TIERS (0x40000000) 选项。</p>
+<p>URI 层强制执行 <b>所有</b> 上游符号存储区使用的层架构。 如果未设置，则需要一个附加请求来确定架构。 根中的 "index2.txt" 的共存表示2层布局。</p>
+<p>1层存储采用以下格式：/widget.dll/ &lt; index &gt; /widget.dll| widget.dl_ | 文件 ptr</p>
+<p>2层存储采用以下格式： <b>/wi</b>/widget.dll/ &lt; index &gt; /widget.dll| widget.dl_ | file. ptr</p>
+<p>
+  <ul>
+    <li>未指定- (默认) 禁用</li>
+    <li>0 – 已禁用</li>
+    <li>1-1 层符号存储区</li>
+    <li>2–2层符号存储区</li>
+  </ul>
+</p>
+</td>
 </tr>
 </tbody>
 </table>
-
-
 
 ### <a name="span-idaccessing_outside_network_resourcesspanspan-idaccessing_outside_network_resourcesspanaccessing-outside-network-resources"></a><span id="accessing_outside_network_resources"></span><span id="ACCESSING_OUTSIDE_NETWORK_RESOURCES"></span>访问外部网络资源
 
@@ -313,7 +387,7 @@ SymProxy 从该位置获取其全局设置和上游符号存储区的符号路�
 
 因此，你可能需要设置 HTTP 代理设置，以便该服务可以访问外部网络资源。 使用以下方法之一来配置这些设置：
 
--   使用 Netsh 工具 ( # A0) 。 有关说明，请在命令提示符窗口中键入以下内容：
+- 使用 Netsh 工具 ( # A0) 。 有关说明，请在命令提示符窗口中键入以下内容：
 
     ```console
     netsh winhttp -? 
