@@ -7,10 +7,10 @@ ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.localizationpriority: medium
 ms.openlocfilehash: 43178020754bbf528dfa2ed5fcc585dd03c48f80
-ms.sourcegitcommit: 29ed980c2a09ea43f963b9c94172da796e8a4e40
+ms.sourcegitcommit: 170bf8fc2cb5b99bc09616f59180adf72b2e5d26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/16/2020
+ms.lasthandoff: 12/18/2020
 ms.locfileid: "97611759"
 ---
 # <a name="component-firmware-update-cfu-firmware-implementation-guide"></a>组件固件更新 (CFU) 固件实现指南

@@ -7,10 +7,10 @@ ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.localizationpriority: medium
 ms.openlocfilehash: e2f4c3926862084051f8fe73848e45c95fc2d783
-ms.sourcegitcommit: 29ed980c2a09ea43f963b9c94172da796e8a4e40
+ms.sourcegitcommit: 170bf8fc2cb5b99bc09616f59180adf72b2e5d26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/16/2020
+ms.lasthandoff: 12/18/2020
 ms.locfileid: "97611755"
 ---
 # <a name="component-firmware-update-cfu-standalone-tool"></a>组件固件更新 (CFU) 独立工具

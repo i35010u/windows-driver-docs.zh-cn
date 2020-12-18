@@ -6,16 +6,19 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.localizationpriority: medium
-ms.openlocfilehash: ad0ba908bf0705c9a9f25ea77b9601613ca59091
-ms.sourcegitcommit: eefc6ae6d9621d0735b3c63e718ee5838d57a6bc
+ms.openlocfilehash: 62bffc0f687c912916d22baeb210c7080486bc2f
+ms.sourcegitcommit: 29ed980c2a09ea43f963b9c94172da796e8a4e40
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92886302"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97611753"
 ---
 # <a name="component-firmware-update-cfu"></a>组件固件更新 (CFU)
 
 组件固件更新 (CFU) 向原始设备制造商 (OEM) 和独立硬件供应商 (IHV) 提供了一种经过身份验证的可靠方法来更新已发货给客户的设备上的固件。 此版本中有用于接收固件有效负载的参考固件。
+
+> [!NOTE]
+> CFU 在 Windows 10 版本 2004（Windows 10 2020 年 5 月更新）和更高版本中可用。
 
 有关 CFU 概念的介绍，请参阅[组件固件更新简介](https://blogs.windows.com/buildingapps/?p=54456)博客文章和 [WinHEC 2018 - 组件固件更新](https://developer.microsoft.com/windows/hardware/events)视频。
 
