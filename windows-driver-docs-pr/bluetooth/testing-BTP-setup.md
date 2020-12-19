@@ -3,12 +3,12 @@ title: Microsoft 蓝牙测试平台安装程序
 description: 如何设置 Microsoft 蓝牙测试平台安装程序
 ms.date: 2/14/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 512c124ed32cfa8f15b22d6155a9d024a178c9a8
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: b10ebd692f0b24bf274e8144168ca0408c0c8319
+ms.sourcegitcommit: af11b2eadb883846583e541ae13eb1d4e0dec220
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96798515"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97691642"
 ---
 # <a name="setting-up-the-bluetooth-test-platform-btp"></a>设置蓝牙测试平台 (BTP) 
 
@@ -35,7 +35,7 @@ Traduci 具有 4 12 针端口 (标签为 JA、作业、JC、JD) 用于测试外�
 
 ## <a name="software-setup"></a>软件设置
 
-1. 下载 [Windows 驱动程序工具包](../download-the-wdk.md#download-icon-step-2-install-wdk-for-windows-10-version-2004)。
+1. 下载 [Windows 驱动程序工具包](../download-the-wdk.md)。
 
 2. 安装 WDK 之后 [ (TAEF) ](../taef/index.md) 安装文件 ( * .msi 和 * .cab 文件) 位于目录中的安装文件 `%ProgramFiles%\Windows Kits\10\Testing\Runtimes` 。
 
