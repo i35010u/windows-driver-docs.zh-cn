@@ -4,12 +4,12 @@ description: 该度量将来自 7 天滑动窗口的遥测数据聚合为大量�
 ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e421c489a67692d8afcde9b51dc4ccf6804a448c
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: c65df8d05e02a0edc9bf8cd18bb73409e889f171
+ms.sourcegitcommit: 10e87a839757a82aac9e10b657704ddc08aa8e08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71016979"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97635255"
 ---
 # <a name="number-of-machines-that-had-a-blue-screen-caused-by-a-crash-in-the-graphics-kernel"></a>显卡内核中的崩溃导致出现蓝屏的计算机数
 
@@ -26,7 +26,7 @@ ms.locfileid: "71016979"
 |度量标准 |计算机的聚合|
 |最小总体数量 |5,000 台计算机|
 |通过标准 |<= 10/10,000 台计算机的显示内核中出现崩溃|
-|度量 ID |7533022|
+|度量 ID |7533022 或 26590240|
 
 ## <a name="calculation"></a>计算
 

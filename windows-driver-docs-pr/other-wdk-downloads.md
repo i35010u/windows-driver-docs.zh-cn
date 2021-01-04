@@ -8,12 +8,12 @@ keywords:
 ms.date: 05/07/2018
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: bdb3950ecb0852be31951c4ec7a87ade2cc32949
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 2f750dd862c622838855cba2e2daf89e8d5381e3
+ms.sourcegitcommit: b14becba4beb4e7c843908710352ad60999f0c38
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96812651"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97612738"
 ---
 # <a name="other-wdk-downloads"></a>其他 WDK 下载
 
@@ -23,9 +23,22 @@ Windows 驱动程序工具包 (WDK) 可用于开发、测试和部署 Windows �
 
 本主题介绍 WDK 和企业版 WDK (EWDK) 的早期版本以及用于提供支持的其他下载内容。 若要使用这些早期的版本，必须 *先* 安装适用于目标平台的 Visual Studio 版本。
 
+## <a name="runtime-requirements"></a>运行时要求
+
+可以在 Windows 7 及更高版本上运行 Windows 10 版本 1903 WDK，并使用它来开发这些操作系统的驱动程序：
+
+|客户端 OS|服务器 OS|
+|-|-|
+|Windows 10|Windows Server 2019、Windows Server 2016|
+|Windows 8.1|Windows Server 2012 R2|
+Windows 8|Windows Server 2012|
+Windows 7|Windows Server 2008 R2 SP1|
+
 ## <a name="step-1-install-visual-studio"></a>步骤 1：安装 Visual Studio
 
-支持开发特定 Visual Studio 版本的驱动程序。 若要开发特定 Windows 版本的驱动程序，必须使用在下表中标识（并提供下载链接）的某个 Visual Studio 版本。
+WDK 需要 Visual Studio。 有关 Visual Studio 系统要求的详细信息，请参阅 [Visual Studio 2019 系统要求](/visualstudio/releases/2019/system-requirements)。
+
+下表指明了不同版本的 WDK 需要的 Visual Studio 版本。
 
 | Windows 目标版本      | Visual Studio 版本            |
 |--------------------------|----------------------------------------|
@@ -63,6 +76,7 @@ WDK 与 Visual Studio 和 Windows 调试工具 (WinDbg) 集成在一起。 此�
 
 | Windows 版本      | WDK 和相关下载                       |
 |--------------------------|-------------------------------------------------|
+| Windows 10 版本 2004 | 适用于 Windows 10 版本 2004 (10.1094.1) 的 WDK (EWDK)* 请参阅下方的“说明” |
 | Windows 10 版本 1903 | [适用于 Windows 10 版本 1903 的 WDK](https://go.microsoft.com/fwlink/?linkid=2085767) |
 | Windows 10 版本 1809 | [适用于 Windows 10 版本 1809 的 WDK](https://go.microsoft.com/fwlink/?linkid=2026156) |
 | Windows 10 版本 1803 | [适用于 Windows 10 版本 1803 的 WDK](https://go.microsoft.com/fwlink/?linkid=873060) |
@@ -71,8 +85,10 @@ WDK 与 Visual Studio 和 Windows 调试工具 (WinDbg) 集成在一起。 此�
 | Windows 10 版本 1607 | [适用于 Windows 10 版本 1607 的 WDK](https://go.microsoft.com/fwlink/p/?LinkId=526733)                |
 | Windows 8.1 更新       | WDK 8.1 更新（仅英语版）- 暂时不可用<br/>WDK 8.1 更新测试包（仅英语版）- 暂时不可用 <br/>[WDK 8.1 示例](https://go.microsoft.com/fwlink/p/?LinkId=618052) |
 | Windows 8                | [WDK 8](https://go.microsoft.com/fwlink/p/?LinkID=324284)（仅英语） <br/>[WDK 8 可再发行组件](https://go.microsoft.com/fwlink/p/?LinkID=253170)（仅英语） <br/>[WDK 8 示例](https://go.microsoft.com/fwlink/p/?LinkId=616509) |
-| Windows XP <br/>Windows Server 2003 | [WDK 7.1.0](https://www.microsoft.com/download/confirmation.aspx?id=11800) |
+| Windows 7 | [WDK 7.1.0](https://www.microsoft.com/download/confirmation.aspx?id=11800) |
 
+>[!NOTE]
+>请查看[适用于 Windows 10 版本 2004 的硬件开发工具包](https://social.msdn.microsoft.com/Forums/en-US/96c770a9-19a3-42d0-8d0e-bd200285d980/hardware-development-kits-for-windows-10-version-2004?forum=wdk)，它使用 ExAllocatePoolZero 解决 bug。
 
 > [!IMPORTANT]
 > 如果在已安装适用于 Windows 10 版本 1607 的 WDK 的系统上安装了适用于 Windows 10 版本 1703 的 WDK，则可能会删除 WDK 早期版本的某些文件。 若要还原这些文件，请执行以下操作：

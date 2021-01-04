@@ -9,12 +9,12 @@ keywords:
 ms.date: 08/17/2020
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 49fd12c0cfce39d42694b1d832e000b88c740a37
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: a8ef0a29c0b5228f350c7b1723b50515d960c483
+ms.sourcegitcommit: e777e490d6f1b3fbc90099801e18633a6f8a51a7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96838623"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97664580"
 ---
 # <a name="download-the-windows-driver-kit-wdk"></a>下载 Windows 驱动程序工具包 (WDK)
 
@@ -71,7 +71,13 @@ MSVC v142 - VS 2019 C++ x64/x86 build tools (v14.25)
 MSVC v142 - VS 2019 C++ x64/x86 Spectre-mitigated libs (v14.25)
 ```
 
-### <a name="download-icon-step-2-install-wdk-for-windows-10-version-2004"></a>![“下载”图标](images/download-install.png) 步骤 2：安装适用于 Windows 10 版本 2004 的 WDK
+### <a name="download-icon-step-15-install-refreshed-windows-sdk-1001904116385-for-windows-10-version-2004"></a>![“下载”图标](images/download-install.png) 步骤 1.5 安装适用于 Windows 10 版本 2004 的更新版 Windows SDK 10.0.19041.16385
+* [下载适用于 Windows 10 版本 2004 的 SDK](https://aka.ms/windowssdk)
+
+强烈建议使用此 SDK，此 SDK 最终将通过 Visual Studio 提供
+
+
+### <a name="download-icon-step-2-install-refreshed-wdk-for-windows-10-version-2004"></a>![“下载”图标](images/download-install.png) 步骤 2：安装适用于 Windows 10 版本 2004 的更新版 WDK
 
 * [下载适用于 Windows 10 版本 2004 的 WDK](https://go.microsoft.com/fwlink/?linkid=2128854)
 
@@ -79,7 +85,7 @@ WDK Visual Studio 扩展包含在默认 WDK 安装中。
 
 ## <a name="enterprise-wdk-ewdk-for-windows-10-version-2004"></a>适用于 Windows 10 版本 2004 的企业版 WDK (EWDK)
 
-EWDK 是一种用于生成驱动程序的独立自包含命令行环境。 其中包括 Visual Studio 生成工具、SDK 和 WDK。  EWDK 的最新公共版本包含 Visual Studio 2019 生成工具 16.3.0 和 MSVC 工具集 v14.23。  若要开始使用，请装载 ISO 并运行 **LaunchBuildEnv**。
+EWDK 是一种用于生成驱动程序的独立自包含命令行环境。 其中包括 Visual Studio 生成工具、SDK 和 WDK。  EWDK 的最新公共版本包含 Visual Studio 2019 生成工具 16.7.0 和 MSVC 工具集 v14.23。  若要开始使用，请装载 ISO 并运行 **LaunchBuildEnv**。
 
 EWDK 还需要 .NET Framework 版本 4.7.2。 有关 .NET Framework 的其他要求的详细信息，请参阅 [.NET Framework 系统要求](/dotnet/framework/get-started/system-requirements)。
 

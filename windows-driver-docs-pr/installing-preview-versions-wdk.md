@@ -9,18 +9,18 @@ keywords:
 - 驱动程序
 ms.date: 07/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f01025035d91ad65052f60b5a38df08cc5a23d35
-ms.sourcegitcommit: acef3c512676aad3aed1934cbe3d0f16e6d37619
+ms.openlocfilehash: c71792bb0fa78ece6d018b4655c399e44dd66558
+ms.sourcegitcommit: 747458d406e6ac2dc28838916c030331600a018b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91372916"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97353868"
 ---
 # <a name="installing-preview-versions-of-the-windows-driver-kit-wdk"></a>安装 Windows 驱动程序工具包 (WDK) 的预览版本
 
 此页包含 Windows 驱动程序工具包 (WDK) 的 Insider Preview（预发行）版本的安装说明。 最新预发行版本的 WDK 和 EWDK 的下载链接位于 [https://www.microsoft.com/software-download/windowsinsiderpreviewWDK](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewWDK)。  
 
-有关最新**发布**版本的 WDK 的信息，请参阅[下载 Windows 驱动程序工具包 (WDK)](download-the-wdk.md)。 若要下载早期版本的 WDK，请参阅[其他 WDK 下载](other-wdk-downloads.md)。  
+有关最新 **发布** 版本的 WDK 的信息，请参阅 [下载 Windows 驱动程序工具包 (WDK)](download-the-wdk.md)。 若要下载早期版本的 WDK，请参阅[其他 WDK 下载](other-wdk-downloads.md)。  
 
 ## <a name="install-windows-driver-kit-wdk-insider-preview"></a>安装 Windows 驱动程序工具包 (WDK) Insider Preview
 
@@ -59,7 +59,15 @@ EWDK 是一种用于生成驱动程序的独立自包含命令行环境。  它�
 
 [获取企业版 Windows 驱动程序工具包 (WDK) Insider Preview](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewWDK)
 
-若要开始使用，请装载 ISO 并选择“LaunchBuildEnv”。 
+若要开始使用，请通过提升的命令提示符运行以下命令以禁用强名称验证：
+
+```console
+reg add HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\StrongName\Verification\*,31bf3856ad364e35 /v TestPublicKey /t REG_SZ /d 00240000048000009400000006020000002400005253413100040000010001003f8c902c8fe7ac83af7401b14c1bd103973b26dfafb2b77eda478a2539b979b56ce47f36336741b4ec52bbc51fecd51ba23810cec47070f3e29a2261a2d1d08e4b2b4b457beaa91460055f78cc89f21cd028377af0cc5e6c04699b6856a1e49d5fad3ef16d3c3d6010f40df0a7d6cc2ee11744b5cfb42e0f19a52b8a29dc31b0 /f
+
+reg add HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\StrongName\Verification\*,31bf3856ad364e35 /v TestPublicKey /t REG_SZ /d 00240000048000009400000006020000002400005253413100040000010001003f8c902c8fe7ac83af7401b14c1bd103973b26dfafb2b77eda478a2539b979b56ce47f36336741b4ec52bbc51fecd51ba23810cec47070f3e29a2261a2d1d08e4b2b4b457beaa91460055f78cc89f21cd028377af0cc5e6c04699b6856a1e49d5fad3ef16d3c3d6010f40df0a7d6cc2ee11744b5cfb42e0f19a52b8a29dc31b0 /f
+```
+
+然后装载从 Insider Preview 页中下载的 ISO，并选择 LaunchBuildEnv，以使用 EWDK。  
 
 ## <a name="run-time-requirements-for-the-wdk-and-the-ewdk"></a>WDK 和 EWDK 的运行时要求
 
