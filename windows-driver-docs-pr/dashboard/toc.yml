@@ -24,6 +24,8 @@
       href: attestation-signing-a-kernel-driver-for-public-release.md
     - name: 如何获取由 Microsoft 签名的适用于多个版本的 Windows 的驱动程序
       href: get-drivers-signed-by-microsoft-for-multiple-windows-versions.md
+    - name: '验证新式待机系统的驱动程序更新 '
+      href: validating-driver-updates-for-modern-standby-systems.md
     - name: 驱动程序外部测试
       items:
         - name: 驱动程序外部测试概述
@@ -34,6 +36,8 @@
               href: other-policies.md
             - name: 扩展 INF 目标规则
               href: extension-inf-targeting-rules.md
+            - name: 驱动程序发布频率
+              href: driver-release-cadence.md
         - name: Microsoft 驱动程序度量
           href: overview-of-microsoft-driver-measure-dictionary.md
         - name: 驱动程序度量属性
@@ -44,10 +48,6 @@
           items:
             - name: 驱动程序安装度量
               items:
-                - name: WU 报告成功下载的计算机的百分比
-                  href: pct-machines-wu-success-download.md
-                - name: WU 报告成功安装的计算机的百分比
-                  href: pct-machines-wu-success-install.md
                 - name: 驱动程序安装过程成功完成的计算机的百分比
                   href: pct-machines-where-driver-install-completes-successfully.md
                 - name: 安装了驱动程序更新并在安装后两天内报告 PnP 错误代码的计算机的百分比
@@ -144,8 +144,6 @@
                       href: user-mode-reliability-for-crashes-in-windows-components.md
                     - name: 协作和通信应用程序中的用户模式崩溃次数
                       href: graphics-user-mode-crashes-collaboration-standard.md
-                    - name: Microsoft Edge 和 Internet Explorer 中的 YouTube 视频播放失败次数百分比
-                      href: percent-of-youtube-video-playback-failures-in-microsoft-edge-and-internet-explorer.md
                     - name: 遇到 WinML 运行时错误的设备所占的百分比
                       href: pct-devices-winml-runtime-error.md
                 - name: 生态系统受众度量
