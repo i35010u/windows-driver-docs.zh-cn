@@ -10,12 +10,12 @@ keywords:
 - 输出参数引用统计 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 512e26282559a180dcc762497648c908eda8ca78
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 925b5be0a7b79bd8865dd98b41f4f26f44e7a092
+ms.sourcegitcommit: 7bdf85c72841fbc2093c315f900c69d2eef6e3e7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96800767"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97757880"
 ---
 # <a name="reference-counting-conventions-for-com-objects"></a>COM 对象的引用计数约定
 
@@ -35,7 +35,7 @@ ms.locfileid: "96800767"
 
 通过 output 参数将对象引用传递给调用方的方法应在对象返回 (之前或在) 之前对对象调用 [**AddRef**](/windows/win32/api/unknwn/nf-unknwn-iunknown-addref) 。 此行为是必需的，以确保调用方在从调用返回时保存有效引用。 调用方负责在使用完对象后对其调用 [**Release**](/windows/win32/api/unknwn/nf-unknwn-iunknown-release) 。
 
-例如， [**IMiniportWaveCyclic：： newstream.ischecked**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavecyclic-newstream) 方法对流、服务组和 DMA 通道对象调用 [**AddRef**](/windows/win32/api/unknwn/nf-unknwn-iunknown-addref) ，并将其输出到调用方 (WaveCyclic 端口驱动程序) 。 调用方负责在不再需要这些引用时将其释放。 有关显示此行为的 **IMiniportWaveCyclic：： newstream.ischecked** 方法的实现，请参阅 Microsoft Windows 驱动程序工具包 (WDK) 中的 Sb16 示例适配器。
+例如， [**IMiniportWaveCyclic：： newstream.ischecked**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavecyclic-newstream) 方法对流、服务组和 DMA 通道对象调用 [**AddRef**](/windows/win32/api/unknwn/nf-unknwn-iunknown-addref) ，并将其输出到调用方 (WaveCyclic 端口驱动程序) 。 调用方负责在不再需要这些引用时将其释放。 有关显示此行为的 **IMiniportWaveCyclic：： newstream.ischecked** 方法的实现，请参阅 Microsoft Windows 驱动程序工具包的早期版本中的 Sb16 示例适配器 (WDK) 。
 
 ### <a name="span-idexceptions_to_the_rulesspanspan-idexceptions_to_the_rulesspanspan-idexceptions_to_the_rulesspanexceptions-to-the-rules"></a><span id="Exceptions_to_the_Rules"></span><span id="exceptions_to_the_rules"></span><span id="EXCEPTIONS_TO_THE_RULES"></span>规则的例外
 

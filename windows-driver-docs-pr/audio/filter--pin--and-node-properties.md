@@ -17,12 +17,12 @@ keywords:
 - 锁定 WDK 音频，属性概述
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a5aaf8a09c1f2c864e21538799985eeae2182bf2
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 9a0d7532436b5f2830f521f28f97db2de4242aba
+ms.sourcegitcommit: 7bdf85c72841fbc2093c315f900c69d2eef6e3e7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96786543"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97757882"
 ---
 # <a name="filter-pin-and-node-properties"></a>筛选器、引脚和节点属性
 
@@ -72,7 +72,7 @@ Microsoft Windows 驱动模型 (WDM) 音频驱动程序将音频设备表示为 
 
 端口驱动程序通过 PCFILTER 描述符的 **AutomationTable** 成员访问微型端口驱动程序的筛选器属性处理程序 \_ 。 通常，此自动化表包含很少的处理程序，因为端口驱动程序为所有筛选器属性（SysAudio 和 WDMAud 用于查询和配置音频设备）提供自己的内置处理程序。
 
-但是，微型端口驱动程序可以提供筛选器属性（如 [**KSPROPERTY \_ 常规 \_ 组件 id**](../stream/ksproperty-general-componentid.md) ）的处理程序，该组件提供了与硬件相关的信息不可用于端口驱动程序。 Microsoft Windows 驱动程序 (工具包中的两个示例音频驱动程序) 处理 KSPROPERTY \_ 常规 \_ 组件程序属性。 有关详细信息，请参阅 Msvad 和 Sb16 示例中的微型端口驱动程序实现。
+但是，微型端口驱动程序可以提供筛选器属性（如 [**KSPROPERTY \_ 常规 \_ 组件 id**](../stream/ksproperty-general-componentid.md) ）的处理程序，该组件提供了与硬件相关的信息不可用于端口驱动程序。 Microsoft Windows 驱动程序 (工具包中的两个示例音频驱动程序) 处理 KSPROPERTY \_ 常规 \_ 组件程序属性。 有关详细信息，请参阅 Sysvad 示例驱动程序中的微型端口驱动程序实现，如 [示例音频驱动](sample-audio-drivers.md)程序中所述。
 
 Portcls.sys 中的所有端口驱动程序都提供对 [KSPROPSETID \_ Pin](../stream/kspropsetid-pin.md) 和 [KSPROPSETID \_ 拓扑](../stream/kspropsetid-topology.md) 属性集的处理。 这些集合中的所有属性都是筛选器属性，但 [**KSPROPERTY \_ 拓扑 \_ 名称**](../stream/ksproperty-topology-name.md)除外，它是一个节点属性 (，它使用筛选器句柄而不是 pin 句柄来指定请求) 的目标。 端口驱动程序支持以下 KSPROPSETID \_ Pin 属性子集：
 

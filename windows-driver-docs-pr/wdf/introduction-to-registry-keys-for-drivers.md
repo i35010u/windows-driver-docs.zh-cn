@@ -15,12 +15,12 @@ keywords:
 - 密钥 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 241832880b2016f881e11d8d755bae9e898cc84a
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 3c192bce29594a83aa7df286122ecae1abc3c9a7
+ms.sourcegitcommit: a7e7fb05f2f68d09bb0892c99a65dcb542efc11a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96804339"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860611"
 ---
 # <a name="introduction-to-registry-keys-for-drivers"></a>驱动程序的注册表项简介
 
@@ -29,9 +29,9 @@ ms.locfileid: "96804339"
 
 -   **参数** 键
 
-    驱动程序的 **参数** 密钥可包含驱动程序的配置信息。 对于 Kernel-Mode Driver Framework (KMDF) 驱动程序，此密钥位于 [**HKLM \\ 系统 \\ CurrentControlSet \\ Services**](../install/hklm-system-currentcontrolset-services-registry-tree.md) 树中的驱动程序服务名称下。 对于 User-Mode Driver Framework (UMDF) 驱动程序，此密钥位于驱动程序服务名称下的 **HKLM \\ SOFTWARE \\ Microsoft \\ Windows NT \\ CurrentVersion \\ WUDF \\ Services** 树中。 驱动程序的子项始终使用驱动程序的服务名称，即使驱动程序二进制文件的文件名不同于服务名称也是如此。
+    驱动程序的 **参数** 密钥可包含驱动程序的配置信息，并可通过调用 [**WdfDriverOpenParametersRegistryKey**](/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdriveropenparametersregistrykey)进行访问。 对于 Kernel-Mode Driver Framework (KMDF) 驱动程序，此密钥位于驱动程序的相应 **服务** 树中。 对于 User-Mode Driver Framework (UMDF) 驱动程序，此密钥位于驱动程序服务名称下的 **HKLM \\ SOFTWARE \\ Microsoft \\ Windows NT \\ CurrentVersion \\ WUDF \\ Services** 树中。 驱动程序的子项始终使用驱动程序的服务名称，即使驱动程序二进制文件的文件名不同于服务名称也是如此。
 
-    当系统调用驱动程序的 [**DriverEntry**](./driverentry-for-kmdf-drivers.md) 例程时，它会将驱动程序的路径传递给驱动程序的 **服务** 树。 你的驱动程序必须将此路径传递给 [**WdfDriverCreate**](/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdrivercreate)。 随后，驱动程序可以通过调用 [**WdfDriverGetRegistryPath**](/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdrivergetregistrypath)获取路径，驱动程序可以通过调用 [**WdfDriverOpenParametersRegistryKey**](/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdriveropenparametersregistrykey)来打开其 **参数** 密钥。
+    当系统调用驱动程序的 [**DriverEntry**](./driverentry-for-kmdf-drivers.md) 例程时，它会将驱动程序的路径传递到相应 **服务** 树中的驱动程序的密钥。 你的驱动程序必须将此路径传递给 [**WdfDriverCreate**](/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdrivercreate)。 随后，驱动程序可以通过调用 [**WdfDriverGetRegistryPath**](/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdrivergetregistrypath)来获取路径。
 
 -   软件密钥
 
@@ -53,7 +53,4 @@ ms.locfileid: "96804339"
 
 有关驱动程序的注册表项的详细信息，请参阅：
 
--   [注册表树和密钥概述](../install/overview-of-registry-trees-and-keys.md)
-
 -   [在驱动程序中使用注册表](../kernel/registry-key-object-routines.md)
-

@@ -6,19 +6,18 @@ keywords:
 - Direct3D 版本 11 WDK Windows Server 2008 R2 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ca145c373e156b571a4a64ebc9e0fd9696a0f503
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 8b521a1dff29c9ef82a686e131cdc5d717673e46
+ms.sourcegitcommit: abd90176b0416a1170b1c0232943b60543dd6b98
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96792267"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97812559"
 ---
 # <a name="supporting-direct3d-version-11"></a>支持 Direct3D 版本 11
 
-
 本部分仅适用于 Windows 7 和更高版本，以及 windows Server 2008 R2 及更高版本的 Windows 操作系统。
 
-以下各节介绍 Direct3D 版本11的新功能，以及如何支持和使用 [Direct3d 版本 11 DDI](/windows-hardware/drivers/ddi/index)：
+以下部分介绍了在 Direct3D 版本11中添加的功能，以及如何支持和使用 Direct3D 版本 11 DDI：
 
 [启用 Direct3D 版本 11 DDI 的支持](enabling-support-for-the-direct3d-version-11-ddi.md)
 
@@ -35,6 +34,3 @@ ms.locfileid: "96792267"
 [支持命令列表](supporting-command-lists.md)
 
 [符合 DXGI DDI](conforming-to-the-dxgi-ddi.md)
-
- 
-

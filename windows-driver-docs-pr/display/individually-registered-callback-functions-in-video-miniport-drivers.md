@@ -10,20 +10,20 @@ keywords:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: fa66702ad1f59b1f622aca737fae53e960dcadbb
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: bffbe973ea561f79843ad620fc3a242adc670aec
+ms.sourcegitcommit: abd90176b0416a1170b1c0232943b60543dd6b98
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96827275"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97812581"
 ---
 # <a name="registering-callback-functions-in-video-miniport-drivers"></a>在视频微型端口驱动程序中注册回调函数
 
 在某些情况下，供应商提供的视频微型端口驱动程序与系统提供的视频端口驱动程序之间的通信将按如下方式进行：
 
-1.  视频微型端口驱动程序调用视频端口驱动程序中的函数。
+1. 视频微型端口驱动程序调用视频端口驱动程序中的函数。
 
-2.  视频端口驱动程序功能完成前，它会回拨到视频微型端口驱动程序以获得帮助。
+2. 视频端口驱动程序功能完成前，它会回拨到视频微型端口驱动程序以获得帮助。
 
 当视频微型端口驱动程序调用视频端口驱动程序函数时，它会传递一个指向回调函数的指针。 例如，当视频微型端口驱动程序调用 [**VideoPortStartDma**](/windows-hardware/drivers/ddi/video/nf-video-videoportstartdma)时，它会将指向 *HwVidExecuteDma* 回调函数的指针传递 (由视频微型端口驱动程序) 实现。
 
@@ -31,4 +31,4 @@ ms.locfileid: "96827275"
 
 在某些情况下，视频微型端口驱动程序实现多个功能是有意义的，其中每个函数都可以充当特定视频端口驱动程序函数的回调函数。 例如，视频微型端口驱动程序可能会实现 *HwVidQueryDeviceCallback* 函数的多个变体，并在对 [**VideoPortGetDeviceData**](/windows-hardware/drivers/ddi/video/nf-video-videoportgetdevicedata)的特定调用中传递选择的变体。
 
-有关可由视频微型端口驱动程序实现的回调函数的列表，以及有关如何注册这些回调函数的信息，请参阅 [单独注册的视频微型端口驱动程序函数](/windows-hardware/drivers/ddi/index)。
+有关可由视频微型端口驱动程序实现的回调函数的列表，请参阅 [**VIDEO_HW_INITIALIZATION_DATA**](/windows-hardware/drivers/ddi/video/ns-video-_video_hw_initialization_data)。

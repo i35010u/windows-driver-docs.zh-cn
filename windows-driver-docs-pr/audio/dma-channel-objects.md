@@ -9,12 +9,12 @@ keywords:
 - 通道对象 WDK 音频
 ms.date: 09/23/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: d40177ccdbd153b932afc4afbbcaee09848ff5e3
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: b59e7247643dfdcd16c37a63f0b2f896d34ba7d0
+ms.sourcegitcommit: 7bdf85c72841fbc2093c315f900c69d2eef6e3e7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96786586"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97757888"
 ---
 # <a name="dma-channel-objects"></a>DMA 通道对象
 
@@ -39,7 +39,7 @@ PortCls 系统驱动程序为 WaveCyclic 和 WavePci 微型端口驱动程序的
 
 - 主设备使用自己的总线主控 DMA 硬件在系统总线上执行数据传输。
 
-有关使用从属 DMA 通道对象的 WaveCyclic 设备的示例，请参阅 Microsoft Windows 驱动程序工具包中的 Sb16 示例音频驱动程序 (WDK) 。 主 DMA 通道对象只是一个 backboard，用于在端口和微型端口驱动程序之间共享 DMA 通道的相关信息。 有关主设备和从属设备的详细信息，请参阅 [适配器对象简介](../kernel/introduction-to-adapter-objects.md)。
+有关使用从属 DMA 通道对象的 WaveCyclic 设备的示例，请参阅 Microsoft Windows 驱动程序工具包的早期版本中的 Sb16 示例音频驱动程序 (WDK) 。 主 DMA 通道对象只是一个 backboard，用于在端口和微型端口驱动程序之间共享 DMA 通道的相关信息。 有关主设备和从属设备的详细信息，请参阅 [适配器对象简介](../kernel/introduction-to-adapter-objects.md)。
 
 主设备或从属设备的 DMA 通道对象公开以下内容：
 

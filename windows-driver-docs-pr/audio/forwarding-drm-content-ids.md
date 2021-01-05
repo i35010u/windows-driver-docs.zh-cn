@@ -14,12 +14,12 @@ keywords:
 - 对 DRM 内容 Id 进行身份验证 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ab57ef7f21bdf0918daff45929b9c5ee487aeea
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 48a26f6a059217f2fb2fa57eeaefb4abd42f2f60
+ms.sourcegitcommit: 7bdf85c72841fbc2093c315f900c69d2eef6e3e7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96784815"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97757884"
 ---
 # <a name="forwarding-drm-content-ids"></a>转发 DRM 内容 ID
 
@@ -87,7 +87,4 @@ DRMK 对每个模块进行身份验证后，该模块会向 DRMK 提供有关数
 
 典型的安全数据路径包含 [KMixer 系统驱动程序](kernel-mode-wdm-audio-components.md#kmixer_system_driver) ，后跟一个表示音频呈现设备的波形筛选器。 筛选器将作为 WaveCyclic 或 WavePci 微型端口驱动程序与相应的端口驱动程序一起实现。 若要验证数据路径是否安全，DRMK 将内容 ID 转发给 KMixer，后者又将内容 ID 转发给筛选器。 用于实现通用筛选器功能的端口驱动程序接收内容 ID 并将其转发到微型端口驱动程序。 具体而言，端口驱动程序会调用 **DrmForwardContentToInterface** 函数，以将内容 ID 转发给微型端口驱动程序已经实例化的流对象，以表示音频呈现设备上的波形输出插针。 此调用的参数值之一是指向流对象的 [IMiniportWaveCyclicStream](/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportwavecyclicstream) 或 [IMiniportWavePciStream](/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportwavepcistream) 接口的指针。 通过此接口，函数将为其 **IDrmAudioStream** 接口查询流对象，并调用该接口的 **SetContentId** 方法。
 
-有关详细信息，请参阅 Microsoft Windows 驱动程序工具包 (WDK) 中的 sb16 和 msvad 示例驱动程序中的 **SetContentId** 方法的实现。
-
- 
-
+有关详细信息，请参阅 Sysvad 示例驱动程序中的 **SetContentId** 方法的实现，如 [示例音频驱动](sample-audio-drivers.md)程序中所述。

@@ -13,12 +13,12 @@ keywords:
 - 适配器驱动程序 WDK 音频，构造
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ecabbe01f617b4d08badb46733264f59e8391c43
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 0902b71e07d5b7a140bfe561bef05b2e25600b3f
+ms.sourcegitcommit: 7bdf85c72841fbc2093c315f900c69d2eef6e3e7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96789455"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97757864"
 ---
 # <a name="adapter-driver-construction"></a>适配器驱动程序构造
 
@@ -34,7 +34,7 @@ ms.locfileid: "96789455"
 
 硬件供应商为系统未提供的任何微型端口驱动程序提供常规适配器代码和代码。
 
-有关一般适配器代码的示例，请参阅 Microsoft Windows 驱动程序工具包 (WDK) 中的 Sb16、Msvad 和 Ac97 示例音频驱动程序中的 **CAdapterCommon** 接口的实现。
+有关常规适配器代码的示例，请参阅 Sysvad 示例驱动程序中的 **CAdapterCommon** 接口的实现，这将在 [示例音频驱动程序](sample-audio-drivers.md)中讨论。
 
 通过使用分层方法，供应商可以编写一个在多个级别上操作的适配器驱动程序，具体取决于适配器的硬件功能。 确定给定硬件函数所需的支持级别时，供应商应该首先确定系统提供的微型端口驱动程序是否已存在支持函数的 (参阅) 的系统提供的微端口驱动程序的 [**PcNewMiniport**](/windows-hardware/drivers/ddi/portcls/nf-portcls-pcnewminiport) 函数列表。 如果不是，则供应商必须实现专用微型端口驱动程序，但仍可以使用系统提供的端口驱动程序之一 (参阅 [**PcNewPort**](/windows-hardware/drivers/ddi/portcls/nf-portcls-pcnewport) 函数的系统提供的端口驱动程序的列表) 。
 

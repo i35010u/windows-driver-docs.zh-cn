@@ -3,12 +3,12 @@ title: 将 WPP 软件跟踪添加到 Windows 驱动程序
 description: 若要在跟踪提供程序中（如内核模式驱动程序或用户模式应用程序）使用 WPP 软件跟踪，需要 (或检测驱动程序源文件) 中添加代码，并修改驱动程序项目。 本部分将介绍这些步骤。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d18465d0fa5a1a8e842a4413ad2b0677af45184
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: adf209e267193695c6f30d6fe2208d751b20b9b2
+ms.sourcegitcommit: a7e7fb05f2f68d09bb0892c99a65dcb542efc11a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96795117"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860616"
 ---
 # <a name="adding-wpp-software-tracing-to-a-windows-driver"></a>将 WPP 软件跟踪添加到 Windows 驱动程序
 
@@ -111,16 +111,16 @@ ms.locfileid: "96795117"
 <thead>
 <tr class="header">
 <th align="left">术语</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><span id="WPP_CONDITIONS_LOGGER"></span><span id="wpp_conditions_logger"></span><strong>WPP_<em>条件</em> <em> 记录器</strong></p></td>
+<td align="left"><p><span id="WPP_CONDITIONS_LOGGER"></span><span id="wpp_conditions_logger"></span><strong>WPP_<em>条件</em>_LOGGER</strong></p></td>
 <td align="left"><p>用于查找与提供程序关联的跟踪会话并返回会话的句柄。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="WPP_CONDITIONS_ENABLED"></span><span id="wpp_conditions_enabled"></span><strong>WPP </em><em> 条件 </em> _ENABLED</strong></p></td>
+<td align="left"><p><span id="WPP_CONDITIONS_ENABLED"></span><span id="wpp_conditions_enabled"></span><strong>WPP_<em>条件</em>_ENABLED</strong></p></td>
 <td align="left"><p>用于确定是否使用指定的条件启用了日志记录。</p></td>
 </tr>
 </tbody>
@@ -237,7 +237,7 @@ ms.locfileid: "96795117"
 
     还应向 *DriverEntry* 例程添加 [WPP \_ 清理](/previous-versions/windows/hardware/previsioning-framework/ff556179(v=vs.85))宏，以防 *DriverEntry* 失败。 例如，如果 *DriverEntry* 失败，则不会调用驱动程序卸载例程。 在以下示例中，请参阅对 [**WdfDriverCreate**](/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdrivercreate) 的调用。
 
-\_在 DriverEntry 中使用 wpp INIT \_ 跟踪和 wpp \_ 清除 *DriverEntry* 的内核模式驱动程序的示例
+\_在 DriverEntry 中使用 wpp INIT \_ 跟踪和 wpp \_ 清除的内核模式驱动程序的示例
 
 ```ManagedCPlusPlus
 
@@ -409,7 +409,7 @@ DllMain(
     DoTraceMessage(TraceFlagName, Message, [VariableList... ]
     ```
 
-    例如，以下 [**DoTraceMessage**](/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))语句在为 **DoTraceMessage** \_ \_ 跟踪会话启用跟踪驱动程序标志时，将写入包含 DoTraceMessage 语句的函数的名称 \_ 。
+    例如，以下 [**DoTraceMessage**](/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))语句在为 \_ \_ 跟踪会话启用跟踪驱动程序标志时，将写入包含 DoTraceMessage 语句的函数的名称 \_ 。
 
     ```ManagedCPlusPlus
          DoTraceMessage( TRACE_DRIVER, "\nEntering %!FUNC!" );
@@ -444,7 +444,7 @@ DllMain(
             dwLastError);
 ```
 
-<span id="using_traceevents"></span><span id="USING_TRACEEVENTS"></span>如果使用的是 Visual Studio 中的 Windows 驱动程序模板，则在 TraceEvents 头文件中定义了 **TraceEvents** 宏。
+<span id="using_traceevents"></span><span id="USING_TRACEEVENTS"></span>如果使用的是 Visual Studio 中的 Windows 驱动程序模板，则在 TraceEvents 头文件中定义了宏。
 
 **使用 TraceEvents 语句**
 

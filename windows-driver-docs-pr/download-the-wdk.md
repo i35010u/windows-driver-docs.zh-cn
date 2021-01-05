@@ -9,19 +9,19 @@ keywords:
 ms.date: 08/17/2020
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: a8ef0a29c0b5228f350c7b1723b50515d960c483
-ms.sourcegitcommit: e777e490d6f1b3fbc90099801e18633a6f8a51a7
+ms.openlocfilehash: f8f6ef154bbda7ba1f28622e3904bb044178c8a3
+ms.sourcegitcommit: af11b2eadb883846583e541ae13eb1d4e0dec220
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97664580"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97691647"
 ---
 # <a name="download-the-windows-driver-kit-wdk"></a>下载 Windows 驱动程序工具包 (WDK)
 
 WDK 用于开发、测试和部署 Windows 驱动程序。
 
 * [了解驱动程序开发中的新增内容](what-s-new-in-driver-development.md)
-* [查看已知问题](https://go.microsoft.com/fwlink/?linkid=872986)
+* [查看已知问题](wdk-known-issues.md)
 
 [加入 Windows 预览体验计划](https://insider.windows.com/)以获取 [WDK Insider Preview 版本](https://www.microsoft.com/software-download/windowsinsiderpreviewWDK)。 有关 Windows Insider Preview 版本的安装说明，请参阅[安装 Windows 驱动程序工具包 (WDK) 的预览版本](installing-preview-versions-wdk.md)。
 

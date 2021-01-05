@@ -6,18 +6,14 @@ keywords:
 - IOCTLs WDK Windows 2000 显示器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f776eac545733e8ca8bb867b88ca4a07a7c1c13d
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 5e58eafbd81d24757f504b397ddcb12d6f3b47a2
+ms.sourcegitcommit: abd90176b0416a1170b1c0232943b60543dd6b98
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96810235"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97812472"
 ---
 # <a name="communicating-ioctls-to-the-video-miniport-driver"></a>将 IOCTL 传送到视频微型端口驱动程序
-
-
-## <span id="ddk_communicating_ioctls_to_the_video_miniport_driver_gg"></span><span id="DDK_COMMUNICATING_IOCTLS_TO_THE_VIDEO_MINIPORT_DRIVER_GG"></span>
-
 
 下图显示了显示驱动程序如何使用 IOCTLs 与视频微型端口驱动程序通信。
 
@@ -29,7 +25,4 @@ ms.locfileid: "96810235"
 
 一般情况下，除非是模块化的，否则显示驱动程序将处理绘图和其他时间关键操作。 将 IOCTL 发送到微型端口驱动程序以执行时间关键功能可能会降低系统性能。
 
-有关系统定义的视频 IOCTLs 的说明，请参阅 [视频微型端口驱动程序 I/o 控制代码](/windows-hardware/drivers/ddi/index) 。 可以通过添加 *专用 IOCTL*（必须按 [定义 i/o 控制代码](../kernel/defining-i-o-control-codes.md)中所述的格式）来扩展显示驱动程序与视频微型端口驱动程序之间的接口。 如果需要编写新的 IOCTL，你应该首先与 Microsoft 技术支持联系。
-
- 
-
+有关系统定义的视频 IOCTLs 的说明，请参阅 [视频微型端口驱动程序 I/o 控制代码](/windows-hardware/drivers/ddi/ntddvdeo) 。 可以通过添加 *专用 IOCTL*（必须按 [定义 i/o 控制代码](../kernel/defining-i-o-control-codes.md)中所述的格式）来扩展显示驱动程序与视频微型端口驱动程序之间的接口。 如果需要编写新的 IOCTL，你应该首先与 Microsoft 技术支持联系。

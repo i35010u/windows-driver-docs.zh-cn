@@ -8,12 +8,12 @@ keywords:
 - Windows Vista 显示器驱动程序模型 WDK，VSync 控件
 ms.date: 10/14/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 74413e1464c5b79da9202b7d7283209e51e5b8c7
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 10511b94a3a7edabf1e3a8310d5731ce5b362deb
+ms.sourcegitcommit: abd90176b0416a1170b1c0232943b60543dd6b98
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96816841"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97812489"
 ---
 # <a name="saving-energy-with-vsync-control"></a>节能与 VSync 控制
 
@@ -33,7 +33,7 @@ ms.locfileid: "96816841"
 
 ## <a name="display-only-vsync-requirements-for-windows-8-and-later-versions"></a>Windows 8 及更高版本的 Display-Only VSync 要求
 
-在 windows 8 及更高版本的 Windows 操作系统中，对于 [仅限内核模式显示的驱动程序， (KMDOD) ](/windows-hardware/drivers/ddi/index) 以支持 VSync 功能，这是可选的，如下所示：
+在 windows 8 及更高版本的 Windows 操作系统中，对于仅限内核模式显示的驱动程序， (KMDOD) 以支持 VSync 功能，这是可选的，如下所示：
 
 - **仅显示驱动程序支持 VSync 控件**
 

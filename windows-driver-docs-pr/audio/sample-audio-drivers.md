@@ -11,16 +11,17 @@ keywords:
 - Gfx 示例音频驱动程序 WDK 音频
 - Mpu401 示例音频驱动程序 WDK 音频
 - Msvad 示例音频驱动程序 WDK 音频
+- Sysvad 示例音频驱动程序 WDK 音频
 - Sb16 示例音频驱动程序 WDK 音频
 - Stdunk 示例音频驱动程序 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cc8f029914c9053bbe8016f145dd3cfff262d3f1
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 3986715688a9fed2fc878f5846c8400f07009622
+ms.sourcegitcommit: 7bdf85c72841fbc2093c315f900c69d2eef6e3e7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96800687"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97757874"
 ---
 # <a name="sample-audio-drivers"></a>示例音频驱动程序
 

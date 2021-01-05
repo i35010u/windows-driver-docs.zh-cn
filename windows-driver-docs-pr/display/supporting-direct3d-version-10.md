@@ -3,17 +3,16 @@ title: 支持 Direct3D 版本 10
 description: 支持 Direct3D 版本 10
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 694015d15c6a14057d7e4abc533bbc59a4fb7ef9
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: fdd0baad4b6c318f6a4a34e5ac07f651821847e4
+ms.sourcegitcommit: abd90176b0416a1170b1c0232943b60543dd6b98
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96789983"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97812561"
 ---
 # <a name="supporting-direct3d-version-10"></a>支持 Direct3D 版本 10
 
-
-以下各节介绍 Direct3D 版本10的新功能，以及如何支持和使用 [direct3d 版本 10 DDI](/windows-hardware/drivers/ddi/index)：
+以下部分介绍了 Direct3D 版本10中新增的功能，以及如何支持和使用 Direct3D 版本 10 DDI：
 
 [启用 Direct3D 版本 10 DDI 的支持](enabling-support-for-the-direct3d-version-10-ddi.md)
 
@@ -32,6 +31,3 @@ ms.locfileid: "96789983"
 [以追溯方式要求自由线程 CalcPrivate DDI](retroactively-requiring-free-threaded-calcprivate-ddis.md)
 
 [DirectX 图形基础结构 DDI](directx-graphics-infrastructure-ddi.md)
-
- 
-

@@ -18,12 +18,12 @@ keywords:
 - WaveCyclic，筛选器
 ms.date: 05/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 16ddd6e0eb0f90cded55effee99f41daf773cc11
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: e25715f854b192a8b4dd04a9ca4d8d86ebd09e4a
+ms.sourcegitcommit: 7bdf85c72841fbc2093c315f900c69d2eef6e3e7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96798803"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97757890"
 ---
 # <a name="wave-filters"></a>滤波器
 
@@ -135,7 +135,7 @@ WaveCyclic 微型端口驱动程序可以实现其自己的 DMA 通道对象，�
 
 适配器驱动程序的自定义 [IDmaChannel](/windows-hardware/drivers/ddi/portcls/nn-portcls-idmachannel) 实现可以对数据执行自定义处理，以满足特殊的硬件限制。 例如，Windows 多媒体函数使用波形格式，其中16位样本始终为有符号值，但音频呈现硬件可能设计为使用不带符号的16位值。 在这种情况下，可以编写驱动程序的自定义 [**IDmaChannel：： CopyTo**](/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannel-copyto) 方法，将已签名的源值转换为硬件所需的无符号目标值。 尽管此方法可用于解决硬件设计缺陷，但它也会导致软件开销巨大的成本。
 
-有关实现其自己的 DMA 通道对象的驱动程序的示例，请参阅 WDK 中的 Sb16 示例音频适配器。 如果将常量重 \_ 写 DMA \_ 通道定义为 **TRUE**，则源代码中的条件编译语句将启用专用的 [IDmaChannel](/windows-hardware/drivers/ddi/portcls/nn-portcls-idmachannel) 对象，驱动程序使用该对象替换 IPortWaveCyclic：： New *Xxx* DmaChannel 调用中的默认 IDmaChannel 对象。
+有关实现其自己的 DMA 通道对象的驱动程序的示例，请参阅 Sb16 的早期版本中的示例音频适配器。 如果将常量重 \_ 写 DMA \_ 通道定义为 **TRUE**，则源代码中的条件编译语句将启用专用的 [IDmaChannel](/windows-hardware/drivers/ddi/portcls/nn-portcls-idmachannel) 对象，驱动程序使用该对象替换 IPortWaveCyclic：： New *Xxx* DmaChannel 调用中的默认 IDmaChannel 对象。
 
  
 

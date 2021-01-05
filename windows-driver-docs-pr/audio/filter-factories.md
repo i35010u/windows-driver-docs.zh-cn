@@ -11,12 +11,12 @@ keywords:
 - 实例化对 WDK 音频的筛选器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b17c9c9045a950f5f734ff892bc53b4f3d22d96
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 8cceaf97c039bc0082e5ed1d13d8b6d5d2fd754a
+ms.sourcegitcommit: 7bdf85c72841fbc2093c315f900c69d2eef6e3e7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96784805"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97757876"
 ---
 # <a name="filter-factories"></a>筛选器工厂
 
@@ -54,7 +54,5 @@ ms.locfileid: "96784805"
 
 若要从微型端口驱动程序获取筛选器描述符，端口驱动程序将调用 [**IMiniport：： GetDescription**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiport-getdescription) 方法。
 
-有关驱动程序如何设置其 PCFILTER 描述符结构的示例 \_ ，请参阅 Windows 驱动程序工具包中的 sb16 示例音频驱动程序中的头文件表 .h (WDK) 。
-
- 
+有关驱动程序如何设置其 PCFILTER 描述符结构的示例 \_ ，请参阅 [示例音频驱动](sample-audio-drivers.md)程序中讨论的 Sysvad 示例驱动程序。
 

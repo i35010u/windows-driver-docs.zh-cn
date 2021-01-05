@@ -8,24 +8,24 @@ keywords:
 ms.date: 09/17/2019
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: 9c7967d98685a477ed63157c88a99d9759a7974b
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 4d2ca685e8ffff24ca2bd8d73ce7740ff23e7d96
+ms.sourcegitcommit: abd90176b0416a1170b1c0232943b60543dd6b98
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96827261"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97812597"
 ---
 # <a name="initializing-communication-with-the-direct3d-user-mode-display-driver"></a>初始化与 Direct3D 用户模式显示驱动程序之间的通信
 
 若要初始化与 Microsoft Direct3D 用户模式显示驱动程序 DLL 的版本 11 DDI 的通信，Direct3D 运行时首先加载 DLL。 接下来，Direct3D 运行时通过 DLL 的导出表调用用户模式显示驱动程序的 [**OpenAdapter**](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_openadapter) 函数，以打开图形适配器的实例。 *OpenAdapter* 函数是 DLL 的唯一导出函数。
 
-在对驱动程序的 *OpenAdapter* 函数的调用中，运行时在 [**D3DDDIARG \_ OpenAdapter**](/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddiarg_openadapter)结构的 **pAdapterCallbacks** 成员中提供 [**pfnQueryAdapterInfoCb**](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_queryadapterinfocb)适配器回调函数。 运行时还会在 D3DDDIARG OPENADAPTER 的 **接口** 和 **版本** 成员中提供其版本 \_ 。 用户模式显示驱动程序必须验证它是否可以使用此版本的运行时。 用户模式显示驱动程序返回 D3DDDIARG_OPENADAPTER 的 **pAdapterFuncs** 成员中其特定于适配器的函数的表。
+在对驱动程序的 *OpenAdapter* 函数的调用中，运行时在 [**D3DDDIARG_OPENADAPTER**](/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddiarg_openadapter)结构的 **pAdapterCallbacks** 成员中提供 [**pfnQueryAdapterInfoCb**](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_queryadapterinfocb)适配器回调函数。 运行时还会在 D3DDDIARG_OPENADAPTER 的 **接口** 和 **版本** 成员中提供其版本。 用户模式显示驱动程序必须验证它是否可以使用此版本的运行时。 用户模式显示驱动程序返回 D3DDDIARG_OPENADAPTER 的 **pAdapterFuncs** 成员中其特定于适配器的函数的表。
 
 用户模式显示驱动程序应调用 [**pfnQueryAdapterInfoCb**](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_queryadapterinfocb) 适配器回调函数以从显示微型端口驱动程序查询图形硬件功能。
 
-运行时调用用户模式显示驱动程序的 [**CreateDevice**](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_createdevice) 函数 (某个驱动程序的适配器特定函数) 创建显示设备，用于处理渲染状态的集合和完成初始化。 初始化完成后，Direct3D 运行时可以调用 [显示器驱动程序提供的函数](/windows-hardware/drivers/ddi/index)，用户模式显示驱动程序可以调用 [运行时提供的函数](/windows-hardware/drivers/ddi/index)。
+运行时调用用户模式显示驱动程序的 [**CreateDevice**](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_createdevice) 函数 (某个驱动程序的适配器特定函数) 创建显示设备，用于处理渲染状态的集合和完成初始化。 初始化完成后，Direct3D 运行时可以调用 [显示器驱动程序提供的函数](direct3d-functions-implemented-by-user-mode.md)，用户模式显示驱动程序可以调用 [运行时提供的函数](direct3d-runtime-functions-called-by-user-mode.md)。
 
-用户模式显示驱动程序的 *CreateDevice* 函数使用 [**D3DDDIARG \_ CreateDevice**](/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddiarg_createdevice) 结构调用，该结构的成员按以下方式设置以初始化用户模式显示驱动程序接口：
+用户模式显示驱动程序的 *CreateDevice* 函数是使用 [**D3DDDIARG_CREATEDEVICE**](/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddiarg_createdevice) 结构调用的，该结构的成员按以下方式设置以初始化用户模式显示驱动程序接口：
 
 - 运行时将 **接口** 设置为运行时需要用户模式显示驱动程序的接口版本。
 
@@ -35,7 +35,7 @@ ms.locfileid: "96827261"
 
 - 运行时在 [**D3DDDI_DEVICECALLBACKS**](/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddi_devicecallbacks) 结构中提供其特定于设备的回调函数的表， **pCallbacks** 点。 用户模式显示驱动程序调用运行时提供的回调函数，以访问显示微型端口驱动程序中的内核模式服务。
 
-- 用户模式显示驱动程序会将其设备特定函数的表返回到 **pDeviceFuncs** 点的 [**D3DDDI \_ DEVICEFUNCS**](/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddi_devicefuncs)结构中。
+- 用户模式显示驱动程序会将其设备特定函数的表返回到 **pDeviceFuncs** 指向的 [**D3DDDI_DEVICEFUNCS**](/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddi_devicefuncs)结构中。
 
 > [!NOTE]
 >  (图形上下文) 可以同时存在的显示设备的数量仅受可用系统内存限制。

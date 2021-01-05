@@ -7,32 +7,28 @@ keywords:
 - VA WDK DirectX，关于 DirectX 视频加速
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5fa88c539f4ac15418dfa527804ca8fda1303cb8
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 0b33256eef5f27db60fe69fe5bac7ad8ab74e9c4
+ms.sourcegitcommit: abd90176b0416a1170b1c0232943b60543dd6b98
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96793013"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97812555"
 ---
 # <a name="introduction-to-directx-va"></a>DirectX VA 简介
 
-
-## <span id="ddk_introduction_to_directx_va_gg"></span><span id="DDK_INTRODUCTION_TO_DIRECTX_VA_GG"></span>
-
-
-DirectX VA 允许硬件加速器执行频繁执行且简单的视频处理操作。 对于加速器而言，受限不太复杂的视频处理操作允许通过对加速器进行最小化自定义来实现各种视频标准的视频解码加速。 不经常执行且更复杂的视频处理操作（如位流分析和可变长度解码 (VLD) ）可在主机 CPU 上执行。
+DirectX 视频加速 (VA) 允许硬件加速器执行频繁执行的视频处理操作。 对于加速器而言，受限不太复杂的视频处理操作允许通过对加速器进行最小化自定义来实现各种视频标准的视频解码加速。 不经常执行且更复杂的视频处理操作（如位流分析和可变长度解码 (VLD) ）可在主机 CPU 上执行。
 
 DirectX VA API 和相应的 [运动补偿](motion-compensation.md) DDI 为以下操作提供支持：
 
--   适用于的[Alpha 混合](/windows-hardware/drivers/ddi/index)，如 DVD 子画面支持。
+- 适用于的[Alpha 混合](directx-va-operations.md)，如 DVD 子画面支持。
 
--   对需要它的应用程序进行[加密](encryption-support.md)。
+- 对需要它的应用程序进行[加密](encryption-support.md)。
 
--   视频内容的[取消隔行扫描和帧速率转换](deinterlacing-and-frame-rate-conversion.md)。
+- 视频内容的[取消隔行扫描和帧速率转换](deinterlacing-and-frame-rate-conversion.md)。
 
--   视频内容的[ProcAmp](procamp-control-processing.md)控件和后处理。
+- 视频内容的[ProcAmp](procamp-control-processing.md)控件和后处理。
 
--   保护视频内容不受未经授权的复制和[显示。](copp-processing.md)
+- 保护视频内容不受未经授权的复制和[显示。](copp-processing.md)
 
 此处提供的信息适用于应用程序和设备驱动程序开发人员。 指定的格式定义了如何在用户模式主机解码器和内核模式设备驱动程序之间交换信息。 在大多数情况下，将数据从主机传输到设备驱动程序，但在某些情况下，会以其他方向发送数据。
 
@@ -47,6 +43,3 @@ DirectX VA API 和相应的 [运动补偿](motion-compensation.md) DDI 为以下
 [当前标准的实现](implementation-of-current-standards.md)主题详细介绍了以下各项所需满足的硬件加速器和软件解码器要求：261、mpeg-2、MPEG-2、mpeg-2 (262) 、itu-t AVC、mpeg-2、mpeg-4 和)  (，以及 VC-1 的要求和的软件解码器要求的内容的详细信息。
 
 DirectX VA 未提供任何工具。 有关为 Windows media 支持提供的工具的详细信息，请参阅 Windows Media 移植工具包。
-
- 
-
