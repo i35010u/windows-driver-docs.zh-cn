@@ -18,6 +18,8 @@
       href: installing-preview-versions-wdk.md
     - name: 其他 WDK 下载
       href: other-wdk-downloads.md
+    - name: WDK 已知问题
+      href: wdk-known-issues.md
 - name: “引入”指南
   href: bringup/index.md
 - name: 开发、测试以及部署驱动程序
