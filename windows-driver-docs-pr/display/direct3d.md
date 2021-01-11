@@ -12,12 +12,12 @@ keywords:
 - Windows 2000 显示器驱动程序模型 WDK，Direct3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e6df795e5f896af2bd151f5066dfa3ba495d0cc
-ms.sourcegitcommit: abd90176b0416a1170b1c0232943b60543dd6b98
+ms.openlocfilehash: bbf11cea0ffcca11f35fa09cffe7b49c89ae0f57
+ms.sourcegitcommit: 6b3358fb2e5328c2699b349f1e6ff8b804cc3b35
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97812593"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98069401"
 ---
 # <a name="direct3d-ddi"></a>Direct3D DDI
 
@@ -34,7 +34,7 @@ ms.locfileid: "97812593"
 
 [*d3d9types*](/windows-hardware/drivers/ddi/d3d9types) 包含应用程序和驱动程序使用的 Direct3D 类型定义。 除 D3DHAL_DP2OPERATION 之外，此标头中定义了所有其他 Direct3D 枚举类型。
 
-[*d3dcaps*](/windows-hardware/drivers/ddi/d3dcap) 包含描述 Direct3D 驱动程序各个方面功能的结构和定义。
+[*d3dcaps*](/windows-hardware/drivers/ddi/d3dcaps) 包含描述 Direct3D 驱动程序各个方面功能的结构和定义。
 
 *ddrawint*  
 此标头文件包含在 *winddi* 中，是开发显示驱动程序的 Microsoft DirectDraw 部分所必需的。
