@@ -13,12 +13,12 @@ keywords:
 - 性能电源模式 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 744913b927108a3e119dccd63ef974ec68cb7304
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 8083a9e7f434cba9ef89fceb91df7038cc492ae6
+ms.sourcegitcommit: 10fecd036370f5eccb538004c5bec1fdd18c3275
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96789431"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98124027"
 ---
 # <a name="audio-device-class-inactivity-timer-implementation"></a>音频设备类不活动计时器实现
 
@@ -40,7 +40,7 @@ PortCls 包含空闲超时和空闲电源状态的硬编码默认值。 硬件�
     \HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\xxxx\yyyy\PowerSettings\ConservationIdleTime
     ```
 
-    请注意， *xxxx* 表示 MEDIA 类 GUID (参阅 [系统提供的设备安装程序类](/windows-hardware/drivers/install/system-defined-device-setup-classes-reserved-for-system-use)) ， *yyyy* 表示 media 类 GUID 下驱动程序子项的名称。 键的值指定超时间隔（秒）。
+    请注意， *xxxx* 表示 MEDIA 类 GUID (参阅 [系统提供的设备安装程序类](../install/system-defined-device-setup-classes-reserved-for-system-use.md)) ， *yyyy* 表示 media 类 GUID 下驱动程序子项的名称。 键的值指定超时间隔（秒）。
 
 -   *PerformanceIdleTime*
 
@@ -84,6 +84,4 @@ HKR 表示注册表中驱动程序的根密钥：
 ```
 
 同样， *xxxx* 表示 MEDIA 类 GUID， *yyyy* 表示驱动程序子项的名称。 相对于根密钥的路径名称指定 **PowerSettings** 子项。
-
- 
 

@@ -3,20 +3,20 @@ title: Microsoft ASL 编译器
 description: Microsoft ASL 编译器版本5.0 支持 ACPI 5.0 规范中的功能。
 ms.date: 12/17/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 7eebf19003e73a5eb97ad22f8c28dc312393c3eb
-ms.sourcegitcommit: 170bf8fc2cb5b99bc09616f59180adf72b2e5d26
+ms.openlocfilehash: 54fd399644998d6a8866976432bc00401f7049fe
+ms.sourcegitcommit: 10fecd036370f5eccb538004c5bec1fdd18c3275
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97676289"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98124113"
 ---
 # <a name="microsoft-asl-compiler"></a>Microsoft ASL 编译器
 
-Microsoft ACPI 源语言 (版本 5.0 ASL) 编译器支持高级配置和电源接口规范中的功能，修订 5.0 ([ACPI 5.0 规范](https://uefi.org/specifications)) 。 ASL 编译器随 Windows 驱动程序工具包一起分发 (WDK) 。
+Microsoft ACPI 源语言 (版本 5.0 ASL) 编译器支持高级配置和电源接口规范中的功能，修订 5.0 ([ACPI 5.0 规范](https://uefi.org/specifications)) 。 ASL 编译器随 Windows 驱动程序工具包 (WDK) 一起分发。
 
-[**下载 Windows 驱动程序工具包 (WDK)**](/windows-hardware/drivers/download-the-wdk)
+[**下载 Windows 驱动程序工具包 (WDK)**](../download-the-wdk.md)
 
-ASL 编译器 ( # A0) 位于 \\ 已安装 WDK 的 tools arm \\ ACPIVerify、tools \\ Arm64 \\ ACPIVerify、Tools \\ x86 \\ ACPIVerify 和 tools \\ X64 \\ ACPIVerify 目录中，例如 C:\Program Files (x86) \windows Kits\10\Tools\x86\ACPIVerify。
+ASL 编译器 (asl.exe) 位于已安装的 WDK 的 Tools\\arm\\ACPIVerify、Tools\\arm64\\ACPIVerify、Tools\\x86\\ACPIVerify 和 Tools\\x64\\ACPIVerify 目录中，例如 C:\Program Files (x86)\Windows Kits\10\Tools\x86\ACPIVerify。
 
 ## <a name="command-line-options"></a>命令行选项
 
@@ -34,7 +34,7 @@ asl [/nologo] /tab=<TabSig> [/c] [/Fa=<ASMfile>] [/Fl=<LSTFile>] [/Fn=<NSDFile>]
 asl [/nologo] [/Fo=<AMLFile>] [/Fa=<ASMFile>] [/Fl=<LSTFile>] [/Fn=<NSDFile>] <ASLFile>
 ```
 
-| 选项 | 说明 |
+| 选项 | 描述 |
 |--|--|
 | ? | 打印此帮助消息。 |
 | nologo | 禁止显示徽标横幅。 |
@@ -73,7 +73,7 @@ asl.exe /loadtable [-v] [-d] <AMLFile>
 
 其中，AMLFile 是已编译的 AML 文件的名称，其中包含要加载到注册表中的表。
 
-| 选项 | 说明 |
+| 选项 | 描述 |
 |--|--|
 | -v | 详细模式。 启用实用工具的额外调试输出。 |
 | -d | 删除。 从注册表中删除以前加载的 AML 文件，并删除所有关联的注册表项。 |

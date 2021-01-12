@@ -7,12 +7,12 @@ keywords:
 - 电源管理 WDK UMDF，电源策略所有权
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cdd1bd98635534dd76fc29b9a29d82f82d286a4
-ms.sourcegitcommit: 66043df62672b79a8f9fcb0bc2deb26b8f182fb6
+ms.openlocfilehash: c501ef2840951eac0a87b8aaeaca2a43ab098e65
+ms.sourcegitcommit: 10fecd036370f5eccb538004c5bec1fdd18c3275
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96912475"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98124127"
 ---
 # <a name="power-policy-ownership-in-umdf"></a>UMDF 中的电源策略所有权
 
@@ -35,7 +35,7 @@ ms.locfileid: "96912475"
 
 默认情况下，基于 UMDF 的驱动程序不是电源策略所有者。 设备的内核模式功能驱动程序为默认电源策略所有者。  (如果没有内核模式功能驱动程序，并且总线驱动程序调用 [**WdfPdoInitAssignRawDevice**](/windows-hardware/drivers/ddi/wdfpdo/nf-wdfpdo-wdfpdoinitassignrawdevice)，则总线驱动程序为电源策略所有者) 。 如果希望基于 UMDF 的驱动程序成为驱动程序堆栈的电源策略所有者，驱动程序必须调用 [**IWDFDeviceInitialize：： SetPowerPolicyOwnership**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdeviceinitialize-setpowerpolicyownership)，并且内核模式默认电源策略所有者必须调用 [**WdfDeviceInitSetPowerPolicyOwnership**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpowerpolicyownership) 才能禁用所有权。
 
-此外，如果你要为 USB 设备提供基于 UMDF 的驱动程序，并且你希望驱动程序成为电源策略所有者，则驱动程序的 INF 文件必须包含用于在注册表中设置 WinUsbPowerPolicyOwnershipDisabled 值的 [**Inf AddReg 指令**](../install/inf-addreg-directive.md) 。 如果此 REG \_ DWORD 大小的值设置为任何非零值，则它将禁用 [WinUSB](/windows-hardware/drivers/usbcon/winusb) 驱动程序的功能，使其成为设备的电源策略所有者。 AddReg 指令必须在 [**INF DDInstall 节**](../install/inf-ddinstall-hw-section.md)中，如下面的示例所示。
+此外，如果你要为 USB 设备提供基于 UMDF 的驱动程序，并且你希望驱动程序成为电源策略所有者，则驱动程序的 INF 文件必须包含用于在注册表中设置 WinUsbPowerPolicyOwnershipDisabled 值的 [**Inf AddReg 指令**](../install/inf-addreg-directive.md) 。 如果此 REG \_ DWORD 大小的值设置为任何非零值，则它将禁用 [WinUSB](../usbcon/winusb.md) 驱动程序的功能，使其成为设备的电源策略所有者。 AddReg 指令必须在 [**INF DDInstall 节**](../install/inf-ddinstall-hw-section.md)中，如下面的示例所示。
 
 ```cpp
 [MyDriver_Install.NT.hw]
@@ -60,6 +60,4 @@ HKR,,"WinUsbPowerPolicyOwnershipDisabled",0x00010001,1
 -   [支持基于 UMDF 的驱动程序中的系统 Wake-Up](supporting-system-wake-up-in-umdf-drivers.md)
 
 -   [UMDF 中设备空闲和唤醒行为的用户控件](user-control-of-device-idle-and-wake-behavior-in-umdf.md)
-
- 
 

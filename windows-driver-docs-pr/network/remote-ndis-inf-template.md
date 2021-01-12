@@ -5,12 +5,12 @@ keywords:
 - 远程 NDIS WDK 网络，INF 模板
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ffc6e493b847ccaf7c6bf643e0aacf66c7eca243
-ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
+ms.openlocfilehash: 81c887bcfdbfd6f5a86b26881295c21db721bfde
+ms.sourcegitcommit: 10fecd036370f5eccb538004c5bec1fdd18c3275
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97091222"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98124289"
 ---
 # <a name="remote-ndis-inf-template"></a>远程 NDIS INF 模板
 
@@ -180,7 +180,5 @@ Rndis_Property         = "Optional RNDIS Property"
 
 [远程 NDIS (RNDIS) 概述](overview-of-remote-ndis--rndis-.md)
 
-[Windows 中包含的 USB 类驱动程序](/windows-hardware/drivers/usbcon/supported-usb-classes)
-
- 
+[Windows 中包含的 USB 类驱动程序](../usbcon/supported-usb-classes.md)
 

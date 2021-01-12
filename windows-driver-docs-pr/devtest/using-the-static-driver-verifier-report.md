@@ -22,12 +22,12 @@ keywords:
 - SDV WDK，静态驱动程序验证程序报告
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c3f75b88fc7b7d1702ec350c088a49593c452b45
-ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
+ms.openlocfilehash: 5dc6b85f8a634545749e4a1c27f9c46776bd4d66
+ms.sourcegitcommit: 10fecd036370f5eccb538004c5bec1fdd18c3275
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97090824"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98124281"
 ---
 # <a name="using-the-static-driver-verifier-report"></a>使用静态驱动程序验证程序报告
 
@@ -52,7 +52,7 @@ SDV 报表是验证结果的交互式显示。 本部分介绍如何使用 SDV �
 
 尝试在代码中查找规则冲突之前，请熟悉驱动程序违反的规则。
 
-[静态驱动程序验证程序规则](/windows-hardware/drivers/devtest/static-driver-verifier-rules)部分包括一个说明每个规则的主题，例如， [CancelSpinLock](./wdm-cancelspinlock.md)。
+[静态驱动程序验证程序规则](./static-driver-verifier-rules.md)部分包括一个说明每个规则的主题，例如， [CancelSpinLock](./wdm-cancelspinlock.md)。
 
 若要查看规则的代码，请在 "静态驱动程序验证程序" 报表的 " **源代码** " 窗格中，单击包含规则代码的选项卡，例如 CancelSpinLock. slic。
 
@@ -123,6 +123,4 @@ SDV 报表是验证结果的交互式显示。 本部分介绍如何使用 SDV �
 以下屏幕截图显示了如何关闭缺陷查看器。
 
 ![显示如何关闭规则的缺陷查看器的屏幕截图](images/sdv-defectviewerclose.png)
-
- 
 

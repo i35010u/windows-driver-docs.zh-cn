@@ -3,12 +3,12 @@ description: USB 设备通过配置、接口、备用设置和终结点定义其
 title: USB 设备布局
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 59528573cce2c2c983d2dde6f209bde08befe78d
-ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
+ms.openlocfilehash: d8ddab071b7e29f8495e9a41456a417a4824b013
+ms.sourcegitcommit: 10fecd036370f5eccb538004c5bec1fdd18c3275
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97091168"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98124233"
 ---
 # <a name="usb-device-layout"></a>USB 设备布局
 
@@ -43,7 +43,7 @@ ms.locfileid: "97091168"
 
 终结点不能在配置中的两个接口之间共享。 设备使用终结点地址来确定数据传输或终结点操作的目标终结点，如管道重置。 所有这些操作都由主机启动。
 
-开始使用设备之前，请获取有关设备布局的信息。 [USBView](/windows-hardware/drivers/debugger/usbview) 是一个应用程序，它使你能够浏览所有 USB 控制器和连接到它们的 usb 设备。 对于每个连接的设备，你可以查看设备、配置、接口和终结点描述符，以了解有关设备功能的信息。
+开始使用设备之前，请获取有关设备布局的信息。 [USBView](../debugger/usbview.md) 是一个应用程序，它使你能够浏览所有 USB 控制器和连接到它们的 usb 设备。 对于每个连接的设备，你可以查看设备、配置、接口和终结点描述符，以了解有关设备功能的信息。
 
 接下来，请参阅 [标准 USB 描述符](standard-usb-descriptors.md)。
 

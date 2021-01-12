@@ -6,12 +6,12 @@ keywords:
 - 静态验证工具 WDK
 ms.date: 12/10/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c3e91d3371fdad340cc8b985027167b046efc7f
-ms.sourcegitcommit: 6395b4691c2c5f01995dcec00bcf2eb1f31acd55
+ms.openlocfilehash: 11a09bb25b7896ebe25fa27581f3a9afbead9629
+ms.sourcegitcommit: 10fecd036370f5eccb538004c5bec1fdd18c3275
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97103652"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98124265"
 ---
 # <a name="codeql-and-the-static-tools-logo-test"></a>CodeQL 和静态工具徽标测试
 
@@ -19,7 +19,7 @@ Microsoft 致力于缓解 Windows 操作系统的攻击面，并确保第三方�
 
 Semmle 的[CodeQL](https://semmle.com/codeql)是一种强大的保护软件静态分析技术。 大范围的高价值安全查询和强大平台的组合使其成为确保第三方驱动程序代码安全的重要工具。
 
-[静态工具徽标测试](https://docs.microsoft.com/windows-hardware/test/hlk/testref/6ab6df93-423c-4af6-ad48-8ea1049155ae)将强制对驱动程序源代码进行分析并修复任何 **"必须修复"** 冲突。
+[静态工具徽标测试](/windows-hardware/test/hlk/testref/6ab6df93-423c-4af6-ad48-8ea1049155ae)将强制对驱动程序源代码进行分析并修复任何 **"必须修复"** 冲突。
 
 本主题介绍如何执行以下操作：
 
@@ -298,4 +298,4 @@ CodeQL 结果遵循相同的模型，该模型使用 DVL 来表明要认证的�
 
 将 sarif 文件放置在 .vcxproj 文件所在的同一目录中，并为其生成 DVL。  如果文件以 *". sarif"* 结尾，则结果文件的确切名称并不重要。 在 WDK 中提供提交 SARIF 结果文件的功能，预览版本20190及更高版本。
 
-有关如何生成 DVL 的说明，请参阅 [创建驱动程序验证日志](../develop/creating-a-driver-verification-log.md)。 有关静态工具徽标 HLK 测试的 DVL 放置位置的指南，请参阅 [运行测试](https://docs.microsoft.com/windows-hardware/test/hlk/testref/6ab6df93-423c-4af6-ad48-8ea1049155ae#running-the-test)。
+有关如何生成 DVL 的说明，请参阅 [创建驱动程序验证日志](../develop/creating-a-driver-verification-log.md)。 有关静态工具徽标 HLK 测试的 DVL 放置位置的指南，请参阅 [运行测试](/windows-hardware/test/hlk/testref/6ab6df93-423c-4af6-ad48-8ea1049155ae#running-the-test)。

@@ -7,17 +7,17 @@ keywords:
 - SDV WDK，参考
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6777b27d7679acaa9cf530a8f2fbe0eb5644903b
-ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
+ms.openlocfilehash: c4c911b342c51c83743351d3c7087fc98e005369
+ms.sourcegitcommit: 10fecd036370f5eccb538004c5bec1fdd18c3275
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97090874"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98124269"
 ---
 # <a name="static-driver-verifier-reference"></a>静态驱动程序验证程序参考
 
 
-本节包括：
+本部分包括：
 
 [静态驱动程序验证程序 KMDF 函数声明](static-driver-verifier-kmdf-function-declarations.md)
 
@@ -32,7 +32,5 @@ ms.locfileid: "97090874"
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[DDI 合规性规则](/windows-hardware/drivers/devtest/static-driver-verifier-rules)
-
- 
+[DDI 合规性规则](./static-driver-verifier-rules.md)
 

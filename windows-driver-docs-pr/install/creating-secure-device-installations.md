@@ -13,12 +13,12 @@ keywords:
 - WMI 安全 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 318097874adc47afd0c510a24932ddbc0d806859
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: fb6615ffdc973f3fc8b9570196f7e6f259993066
+ms.sourcegitcommit: 10fecd036370f5eccb538004c5bec1fdd18c3275
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96827793"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98124231"
 ---
 # <a name="creating-secure-device-installations"></a>创建安全的设备安装
 
@@ -44,7 +44,7 @@ ms.locfileid: "96827793"
 
 ### <a name="security-settings-for-devices-and-interfaces"></a>设备和接口的安全设置
 
-系统为所有 [系统提供的设备安装程序类](/windows-hardware/drivers/install/system-defined-device-setup-classes-reserved-for-system-use)提供默认安全描述符。 通常，这些描述符允许对系统管理员具有完全访问权限，并为用户提供读取/写入/执行访问权限。  (控制设备访问权限的安全描述符也控制对设备的 [设备接口类](./overview-of-device-interface-classes.md)（如果有）的访问。 ) 
+系统为所有 [系统提供的设备安装程序类](./system-defined-device-setup-classes-reserved-for-system-use.md)提供默认安全描述符。 通常，这些描述符允许对系统管理员具有完全访问权限，并为用户提供读取/写入/执行访问权限。  (控制设备访问权限的安全描述符也控制对设备的 [设备接口类](./overview-of-device-interface-classes.md)（如果有）的访问。 ) 
 
 WDM 驱动程序的 INF 文件可以指定每个类或每个设备的安全设置，这些设置会覆盖系统的默认设置。 创建新设备安装程序类的供应商应为类指定安全描述符。 通常，指定设备特定的安全描述符不是必需的。 如果属于同一类的不同类型设备具有明显不同类型的用户，则提供设备特定的安全描述符可能会很有用。
 
@@ -93,4 +93,3 @@ PnP 管理器在调用驱动程序的 [**AddDevice**](/windows-hardware/drivers/
 -   使用注册表编辑器查看分配给注册表项的安全设置。
 
 -   使用 **我的电脑** 查看分配给文件的安全设置。
-

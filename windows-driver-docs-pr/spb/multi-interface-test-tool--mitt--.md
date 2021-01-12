@@ -3,12 +3,12 @@ title: 使用 MITT 购买硬件
 description: 若要使用多个接口测试工具 (MITT) ，请按顺序使用 MITT 板，并将特定于总线的适配器插入到 MITT 板上的端口。 适配器的类型取决于要测试的总线。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e2aa9ab0ceddab5d6b88088e1b88bffd50a5739
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 573d6b90ef8ca7c53400d21053d5d5eef8ae08fb
+ms.sourcegitcommit: 10fecd036370f5eccb538004c5bec1fdd18c3275
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96811845"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98124061"
 ---
 # <a name="buy-hardware-for-using-mitt"></a>使用 MITT 购买硬件
 
@@ -60,4 +60,4 @@ ms.locfileid: "96811845"
 
 ## <a name="related-topics"></a>相关主题
 
-[通过多接口测试工具进行测试 (MITT) ](./testing-with-multi-interface-test-tool--mitt-.md)
+[通过多接口测试工具进行测试 (MITT) ]()

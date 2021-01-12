@@ -11,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 660e35e5582e61edcfb5677d316699ee2f91165e
-ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
+ms.openlocfilehash: 9bfd84b5436326e3db4d9712d9eeed4026641d13
+ms.sourcegitcommit: 10fecd036370f5eccb538004c5bec1fdd18c3275
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97090752"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98124031"
 ---
 # <a name="usb3kdxhci_capability"></a>！ usb3kd xhci \_ 功能
 
@@ -41,7 +41,7 @@ Usb3kd.dll
 <a name="remarks"></a>备注
 -------
 
-输出 [**！ xhci \_ 功能**](-usb3kd-device-info.md) 命令基于 USB 3.0 主机控制器驱动程序所维护的数据结构 ( # A0) 。 有关 usb 3.0 主机控制器驱动程序和 USB stack 中其他驱动程序的详细信息，请参阅 [Usb 驱动程序堆栈体系结构](/windows-hardware/drivers/usbcon/usb-3-0-driver-stack-architecture)。
+输出 [**！ xhci \_ 功能**](-usb3kd-device-info.md) 命令基于 USB 3.0 主机控制器驱动程序所维护的数据结构 ( # A0) 。 有关 usb 3.0 主机控制器驱动程序和 USB stack 中其他驱动程序的详细信息，请参阅 [Usb 驱动程序堆栈体系结构](../usbcon/usb-3-0-driver-stack-architecture.md)。
 
 <a name="examples"></a>示例
 --------
@@ -119,6 +119,4 @@ Usb3kd.dll
 [**！ xhci \_ dumpall**](-usb3kd-xhci-dumpall.md)
 
 [ (USB) 驱动程序的通用串行总线](../usbcon/index.md)
-
- 
 

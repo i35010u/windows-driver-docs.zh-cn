@@ -3,12 +3,12 @@ title: UWP 设备应用入门
 description: 从这里开始构建 UWP 设备应用。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 826f9847b85df9370a3949708b83ffabb299334f
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 47dbdbb8a1e2a4644e5b006f74be7f574ce200e4
+ms.sourcegitcommit: 10fecd036370f5eccb538004c5bec1fdd18c3275
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96815205"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98124187"
 ---
 # <a name="getting-started-with-uwp-device-apps"></a>UWP 设备应用入门
 
@@ -55,7 +55,7 @@ UWP 设备应用是一种特殊类型的 UWP 应用。 因此，在开发第一�
 
 -   [注册-注册 Microsoft Store 开发人员帐户](https://go.microsoft.com/fwlink/p/?LinkId=302197)
 -   [Microsoft Visual Studio 入门](/previous-versions/windows/apps/br211384(v=win.10))
--   请参阅 [Microsoft Store 设计原则](https://go.microsoft.com/fwlink/p/?LinkID=299845)
+-   请参阅 [Microsoft Store 设计原则](/windows/uwp/design/)
 
 ## <a name="span-id3_learn_what_makes_windows_store_device_apps_specialspanspan-id3_learn_what_makes_windows_store_device_apps_specialspan3-learn-what-makes-uwp-device-apps-special"></a><span id="3._learn_what_makes_windows_store_device_apps_special"></span><span id="3._LEARN_WHAT_MAKES_WINDOWS_STORE_DEVICE_APPS_SPECIAL"></span>3. 了解如何实现 UWP 设备应用的特殊功能
 
@@ -74,6 +74,4 @@ UWP 设备应用是一种特殊类型的 UWP 应用。 因此，在开发第一�
 
 
 若要开始，请参阅分步 [构建 UWP 设备应用](build-a-uwp-device-app-step-by-step.md)。
-
- 
 

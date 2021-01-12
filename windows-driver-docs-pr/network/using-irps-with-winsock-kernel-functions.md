@@ -8,12 +8,12 @@ keywords:
 - 函数 WDK Winsock 内核
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c6a0857dbbb1ecfd9f757a7113c8a72a45803d6d
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 65555b89ae4acfbe4d55e14e95cf62074888d5f1
+ms.sourcegitcommit: 10fecd036370f5eccb538004c5bec1fdd18c3275
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96841159"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98124197"
 ---
 # <a name="using-irps-with-winsock-kernel-functions"></a>将 IRP 与 Winsock 内核函数配合使用
 
@@ -36,7 +36,7 @@ WSK 应用程序用来传递到 WSK 函数的 IRP 可以通过下列方式之一
 
 **注意** 如果 WSK 应用程序为 IRP 设置了 **IoCompletion** 例程，而该 IRP 由较高级别的驱动程序或 i/o 管理器向下传递给它，则 **IoCompletion** 例程必须检查 IRP 的 **PendingReturned** 成员，如果 **也** 成员为 **TRUE**，则调用 [**PendingReturned**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iomarkirppending)函数。 有关详细信息，请参阅 [实现 IoCompletion 例程](../kernel/implementing-an-iocompletion-routine.md)。
 
- 
+**注意** WSK 应用程序不应在 **IoCompletion** 例程的上下文中调用新的 WSK 函数。 这样做可能会导致递归调用和耗尽内核模式堆栈。 当在 IRQL = DISPATCH_LEVEL 上执行时，这也可能会导致其他线程不足。
 
 WSK 应用程序不会初始化它传递给 WSK 函数的 Irp，而不是设置 **IoCompletion** 例程。 当 WSK 应用程序将 IRP 传递到 WSK 函数时，WSK 子系统代表应用程序设置下一个 i/o 堆栈位置。
 

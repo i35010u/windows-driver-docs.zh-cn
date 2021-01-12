@@ -6,12 +6,12 @@ keywords:
 - 日志文件 WDK Setupapi.log
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 47094a0a4e245e30c97333a6572e57fa7b5c27d4
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: a0e8aeb52a401c27590344eaab0d5e1eb73a29f4
+ms.sourcegitcommit: 10fecd036370f5eccb538004c5bec1fdd18c3275
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96808705"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98124041"
 ---
 # <a name="file-log-functions"></a>文件日志函数
 
@@ -21,7 +21,7 @@ ms.locfileid: "96808705"
 
 您可以使用日志文件来记录在安装过程中复制到系统的文件的相关信息。 日志文件可以是系统日志，也可以是自己的安装日志文件。
 
-下表列出了可用于操作日志文件的函数。 有关函数说明的详细信息，请参阅 [Microsoft Windows SDK 文档](https://go.microsoft.com/fwlink/p/?linkid=131248)。
+下表列出了可用于操作日志文件的函数。 有关函数说明的详细信息，请参阅 [Microsoft Windows SDK 文档](/documentation/)。
 
 <table>
 <colgroup>
@@ -61,6 +61,4 @@ ms.locfileid: "96808705"
 </tr>
 </tbody>
 </table>
-
- 
 

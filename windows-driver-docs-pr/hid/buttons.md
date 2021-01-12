@@ -3,18 +3,18 @@ title: HID 按钮驱动程序
 description: 使用适用于 GPIO 按钮的 Microsoft 提供的按钮驱动程序;否则，请实现将 HID 数据注入操作系统的驱动程序。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9dd3740f13f3f8998fba96b9183785dedbaf5a69
-ms.sourcegitcommit: 46b8f226ad7fff5ee742007ce6525d0440482034
+ms.openlocfilehash: 003f345383c2b9bb28e2bf426fe5a44a9a22844d
+ms.sourcegitcommit: 10fecd036370f5eccb538004c5bec1fdd18c3275
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97486472"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98124179"
 ---
 # <a name="hid-button-drivers"></a>HID 按钮驱动程序
 
 使用适用于 GPIO 按钮的 Microsoft 提供的按钮驱动程序;否则，请实现将 HID 数据注入操作系统的驱动程序。
 
-按钮 (电源、窗口、音量和旋转锁定) 通常用于在改装或清单等窗体因素上，用户不能使用物理键盘时所发生的任务。 按钮通过提供 [hid 按钮报告描述符](../gpiobtn/hid-button-report-descriptors.md)将自己声明为作为 HID 设备的操作系统。 这使系统能够以标准化的方式解释这些按钮的用途和事件。 按钮状态发生更改时，该事件将映射到 [HID 用法](hid-usages.md)。 HID 传输微型驱动程序将这些事件报告给高级驱动程序，然后在用户模式或内核模式下将详细信息发送到 HID 客户端。
+按钮 (电源、窗口、音量和旋转锁定) 通常用于在改装或清单等窗体因素上，用户不能使用物理键盘时所发生的任务。 按钮通过提供 [hid 按钮报告描述符](./acpi-button-device.md)将自己声明为作为 HID 设备的操作系统。 这使系统能够以标准化的方式解释这些按钮的用途和事件。 按钮状态发生更改时，该事件将映射到 [HID 用法](hid-usages.md)。 HID 传输微型驱动程序将这些事件报告给高级驱动程序，然后在用户模式或内核模式下将详细信息发送到 HID 客户端。
 
 对于物理常规用途 i/o (GPIO) 按钮，HID 传输微型驱动程序是由 Microsoft 提供的内置驱动程序，它基于在定义的 GPIO 硬件资源上收到的中断报告事件。
 
@@ -69,4 +69,4 @@ Microsoft 建议尽可能使用内置传输微型驱动程序。
 
 ## <a name="related-topics"></a>相关主题
 
-[人体学接口设备](/windows-hardware/drivers/hid/)
+[人体学接口设备](./index.md)

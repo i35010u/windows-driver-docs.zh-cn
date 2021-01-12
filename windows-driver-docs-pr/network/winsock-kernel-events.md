@@ -13,12 +13,12 @@ keywords:
 - 通知 WDK Winsock 内核
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f5c5f7260b33f594aec997f7f96acfda7144dac
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 35517ae1af3cbbfb7fa1a084e88f9cacd25b641b
+ms.sourcegitcommit: 10fecd036370f5eccb538004c5bec1fdd18c3275
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96836249"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98124143"
 ---
 # <a name="winsock-kernel-events"></a>Winsock 内核事件
 
@@ -128,5 +128,5 @@ Winsock 内核 (WSK) 子系统可以在发生某些套接字事件时（例如�
 
 WSK 子系统还可以通知 WSK 应用程序不特定于特定套接字的事件。 为了让 WSK 应用程序收到这些事件的通知，WSK 应用程序必须实现 [*WskClientEvent*](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_client_event) 事件回调函数。 当前没有定义为特定于特定套接字的事件。 WSK 应用程序的 *WskClientEvent* 事件回调函数始终处于启用状态，并且无法禁用。
 
-WSK 应用程序的事件回调函数不得等待 WSK 完成或事件回调函数上下文中其他 WSK 请求的完成。 回调可以启动其他 WSK 请求 (假设它在调度级别) 不会花费太多时间 \_ ，但它不能等待其完成，即使在 IRQL = 被动级别调用回调也是如此 \_ 。
+WSK 应用程序的事件回调函数不得等待 WSK 完成或事件回调函数上下文中其他 WSK 请求的完成。 回调可能会启动其他 WSK 请求，假定它在调度级别或排出内核堆栈时不会花费太多时间 \_ ，但它不能等待其完成，即使回调是在 IRQL = 被动级别调用的 \_ 。
 

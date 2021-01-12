@@ -5,12 +5,12 @@ keywords:
 - WDF 网络适配器类扩展卸载，NetAdapterCx 硬件卸载，NetAdapterCx 卸载，Get-netadapter 卸载，一般分段卸载，GSO，大型分段卸载，LSO，UDP 分段卸载，USO
 ms.date: 10/08/2020
 ms.custom: Fe
-ms.openlocfilehash: d20c215117fb59bdd80b37bf172b26e53f14afec
-ms.sourcegitcommit: 6d31ef1a1d9adedcded793a2f86cbe2bb467684a
+ms.openlocfilehash: 79a8c666e3da0c6153c0e427c40964d46ddf01eb
+ms.sourcegitcommit: 10fecd036370f5eccb538004c5bec1fdd18c3275
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97349632"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98124261"
 ---
 # <a name="generic-segmentation-offload"></a>一般分段卸载
 
@@ -37,7 +37,7 @@ NetAdapterCx 检查注册表关键字，并在启用活动卸载功能时遵循�
 
 ## <a name="configuring-gso"></a>配置 GSO
 
-客户端驱动程序首先在网络适配器初始化期间公布其硬件的 GSO 功能。 这可能会在启动网络适配器之前的 [*EvtDevicePrepareHardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware) 回调中发生。
+客户端驱动程序首先在网络适配器初始化期间公布其硬件的 GSO 功能。 这可能会在启动网络适配器之前的 [*EvtDevicePrepareHardware*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware) 回调中发生。
 
 若要配置 GSO，客户端驱动程序：
 

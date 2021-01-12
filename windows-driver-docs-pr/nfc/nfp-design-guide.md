@@ -9,12 +9,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ec224ddc45206a7e0564fcce3e5a3cb78fed7e56
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 495d1bfe0c476e0f0246caaf5fcb48396828cc5f
+ms.sourcegitcommit: 10fecd036370f5eccb538004c5bec1fdd18c3275
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96813491"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98124219"
 ---
 # <a name="near-field-proximity-design-guide"></a>近现场邻近设计指南
 
@@ -22,7 +22,7 @@ ms.locfileid: "96813491"
 
 |主题|描述|
 |----|----|
-|[点击和执行](tap-and-do.md)|点击和 Do 是在靠近的人员之间进行自然交互的笔势，用于触发在其所持有的设备之间进行操作。|
+|[点击和执行](./tap-and-do-scenarios.md)|点击和 Do 是在靠近的人员之间进行自然交互的笔势，用于触发在其所持有的设备之间进行操作。|
 |[NFP 提供程序模型](nfp-provider-model.md)| (NFP) 提供程序驱动程序模型的 Near 字段邻近性为 Windows 提供了一个用于使用 NFP 功能并启用 NFP 方案和用例的通用表面。|
 |[NFP 设备驱动程序要求](nfp-device-driver-requirements.md)|提供有关 NFP 设备驱动程序要求的信息。|
 

@@ -5,12 +5,12 @@ keywords:
 - WDF 网络适配器类扩展卸载，NetAdapterCx 硬件卸载，NetAdapterCx 卸载，Get-netadapter 卸载
 ms.date: 10/09/2020
 ms.custom: Fe
-ms.openlocfilehash: 03d3baaafda81fdaad1957d1fdf5dcc750623d84
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 6253da790ae7bf99e2ad6b9d8a10cfc98d227101
+ms.sourcegitcommit: 10fecd036370f5eccb538004c5bec1fdd18c3275
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96817153"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98124287"
 ---
 # <a name="introduction-to-netadaptercx-hardware-offloads"></a>NetAdapterCx 硬件卸载简介
 
@@ -27,7 +27,7 @@ NetAdapterCx 重点介绍减轻卸载功能的配置和管理。 客户端驱动
 
 本指南概述了 NetAdapterCx 中硬件卸载的主要概念。
 
-- 硬件卸载功能是在初始化期间由网络适配器硬件公布的，并且必须在调用 [**NetAdapterStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadapterstart)之前播发。
+- 硬件卸载功能是在初始化期间由网络适配器硬件公布的，并且必须在调用 [**NetAdapterStart**](/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadapterstart)之前播发。
 - 驱动程序无需检查标准注册表关键字。 NetAdapterCx 检查注册表关键字，并在启用活动卸载功能时遵循这些关键字。
 - 网络适配器的 *活动* 卸载功能是当前用来对网络适配器进行编程以执行的功能。 这些是之前的客户端驱动程序公布的硬件功能的子集。
 - TCP/IP 堆栈或过量协议驱动程序可以请求网络适配器的活动功能更改。 客户端驱动程序向 NetAdapterCx 注册回调，以便在活动卸载功能发生更改时收到通知。
@@ -44,9 +44,8 @@ NetAdapterCx 和 Windows TCP/IP 堆栈支持以下卸载：
 
 | 卸载名称 | 描述 |
 | --- | --- |
-| [校验和](checksum-offload.md) | 将 IP 和 TCP 校验和的计算和验证卸载到 NIC。 |
+| [检验](checksum-offload.md) | 将 IP 和 TCP 校验和的计算和验证卸载到 NIC。 |
 | [通用发送卸载 (GSO) ](gso-offload.md) | 为 IPv4 和 IPv6 卸载大型 TCP/UDP 数据包的分段。 |
 | [接受段合并 (RSC)](rsc-offload.md) | 为 IPv4 和 IPv6 卸载接收的 TCP 段序列的合并。 |
 
 若要详细了解 TCP/IP 堆栈或过量协议驱动程序请求对网络适配器的活动功能的更改时配置卸载和更新卸载，请访问相应的 "卸载引用" 页。
-

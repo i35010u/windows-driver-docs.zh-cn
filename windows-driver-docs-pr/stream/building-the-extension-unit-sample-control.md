@@ -4,14 +4,14 @@ description: 生成扩展单元示例控件
 keywords:
 - 扩展单元控制 WDK USB 视频类
 - 控制 WDK USB 视频类
-ms.date: 01/30/2019
+ms.date: 01/12/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 1036dfce58d836df18f1ae4b5e938c267958684e
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: c70c7ee3576867f5422f10482d4e05ddd25e7738
+ms.sourcegitcommit: 10fecd036370f5eccb538004c5bec1fdd18c3275
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96816502"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98124087"
 ---
 # <a name="building-the-extension-unit-sample-control"></a>生成扩展单元示例控件
 
@@ -107,7 +107,7 @@ ms.locfileid: "96816502"
     - 使用第二个 GUID 作为扩展单元的 IID。 将基于 y 的 GUID 占位符替换为 *.idl* 和 *Xuplgin* 中的新 GUID。
     - 使用第三个 GUID 作为扩展单元 (clsid) 的类 GUID。 将基于 z 的 GUID 占位符替换为 *Xuplgin、Xuproxy* 和 Xusample 中的新 GUID *。*
 
-6. 从 WIA 扩展示例复制 *扩展。* *Uvcxuplugn* 应包含：
+6. 按如下所示创建 *Uvcxuplgn* ：
 
     ```cpp
     LIBRARY uvcxuplgn

@@ -18,12 +18,12 @@ keywords:
 - 独立于固件的启动选项 WDK
 ms.date: 04/23/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6611722c5648c24e0164b9a0a0dfc431d5e594c4
-ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
+ms.openlocfilehash: 5da3539eaab136e57c62efedee033f90a27c5166
+ms.sourcegitcommit: 10fecd036370f5eccb538004c5bec1fdd18c3275
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97091049"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98124271"
 ---
 # <a name="overview-of-boot-options-in-windows"></a>Windows 中的启动选项概述
 
@@ -59,7 +59,7 @@ BCD 为运行 Windows 10、Windows 8、Windows Server 2012、Windows 7 和 Windo
 
 具有熟悉的对象和元素体系结构的 BCD 存储使用 Guid 和名称（如 "Default"）来精确标识与启动相关的应用程序。
 
-BCD 包含自己的一组启动选项。 有关这些启动选项的详细信息，请参阅 [BCD 启动选项参考](/windows-hardware/drivers/devtest/bcd-boot-options-reference)。
+BCD 包含自己的一组启动选项。 有关这些启动选项的详细信息，请参阅 [BCD 启动选项参考](./bcd-boot-options-reference.md)。
 
 ## <a name="editing-boot-options"></a>编辑启动选项
 

@@ -7,12 +7,12 @@ keywords:
 - SDEL 查询
 ms.date: 11/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e892540d3337c2240ea7a00a64ce583e27f1b819
-ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
+ms.openlocfilehash: 35bf4d29923d6b4af968785c90e6ba51ee1db93f
+ms.sourcegitcommit: 10fecd036370f5eccb538004c5bec1fdd18c3275
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97090932"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98124259"
 ---
 # <a name="run-the-tests"></a>运行测试
 
@@ -84,7 +84,7 @@ ms.locfileid: "97090932"
 
 #### <a name="configuring-the-sdel-query"></a>配置 SDEL 查询
 
-[SDEL 语言](/windows-hardware/drivers/wdtf/simple-data-evaluation-language-overview)用于创建查询，该查询可返回测试和实用程序的目标设备。 使用和语句将以下 SDEL 相关参数一起用于创建完整的查询：
+[SDEL 语言](../wdtf/simple-data-evaluation-language-overview.md)用于创建查询，该查询可返回测试和实用程序的目标设备。 使用和语句将以下 SDEL 相关参数一起用于创建完整的查询：
 
 **SDEL**：值 *IsDevice* 指定系统上的完整设备集。  通常，除非您只想测试特定驱动程序或设备，否则不会编辑此参数。  接下来，与 SDEL 相关的参数将通过指定应从测试中排除的驱动程序或设备，从此超集创建设备子集，因此此参数可以保持不变。
 
@@ -229,7 +229,7 @@ ms.locfileid: "97090932"
     EndGroup: PNP_DisableEnable_With_IO_BeforeAndAfter::PNP_DisableEnable_With_IO_BeforeAndAfter_DataDriven_Test#0 [Failed]
 ```
 
-HRESULT "0x80070057" 表示 "E_INVALIDARG：一个或多个参数无效"。 请仔细检查 [SDEL 文档](/windows-hardware/drivers/wdtf/simple-data-evaluation-language-overview) 中的 WDTFTest.xml 配置文件，并查找可能导致此错误的格式不正确的查询。
+HRESULT "0x80070057" 表示 "E_INVALIDARG：一个或多个参数无效"。 请仔细检查 [SDEL 文档](../wdtf/simple-data-evaluation-language-overview.md) 中的 WDTFTest.xml 配置文件，并查找可能导致此错误的格式不正确的查询。
 
 ### <a name="test-is-blocked-because-it-might-reboot-the-machine"></a>测试被阻止，因为它可能会重新启动计算机
 

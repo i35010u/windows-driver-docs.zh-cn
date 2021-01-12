@@ -3,12 +3,12 @@ title: 代码示例
 description: 本部分包含用于接口实现的代码示例和示例说明符。
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: adf2974dd74f8879a32de44529f89a4f62a92724
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 81301b3c0feef9ff851e1ed12296817453947855
+ms.sourcegitcommit: 10fecd036370f5eccb538004c5bec1fdd18c3275
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96840741"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98124047"
 ---
 # <a name="code-samples"></a>代码示例
 
@@ -43,7 +43,7 @@ ms.locfileid: "96840741"
 <td align="left"><p>本主题包含 ACPI 描述符示例。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="hid-button-report-descriptors.md" data-raw-source="[HID button report descriptors](hid-button-report-descriptors.md)">HID 按钮报告描述符</a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/hid/acpi-button-device" data-raw-source="[HID button report descriptors](../hid/acpi-button-device.md)">HID 按钮报告描述符</a></p></td>
 <td align="left"><p>本主题包含示例 HID 按钮报告描述符。</p></td>
 </tr>
 </tbody>
@@ -52,9 +52,4 @@ ms.locfileid: "96840741"
  
 
  
-
- 
-
-
-
 

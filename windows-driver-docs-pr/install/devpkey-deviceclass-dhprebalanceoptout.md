@@ -13,17 +13,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c7aa9de4d367ea25ee9749d9d860a87d63e23e69
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 72e6bf5fde019751fcb7928f7a34f95ca4c00fd8
+ms.sourcegitcommit: 10fecd036370f5eccb538004c5bec1fdd18c3275
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96804115"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98124299"
 ---
 # <a name="devpkey_deviceclass_dhprebalanceoptout"></a>DEVPKEY_DeviceClass_DHPRebalanceOptOut
 
 
-DEVPKEY_DeviceClass_DHPRebalanceOptOut 设备属性表示一个值，该值指示在发生 [动态硬件分区 (DHP) ](../kernel/dynamic-hardware-partitioning-techniques.md) 处理器热添加操作后，整个设备类是否参与资源重新平衡。
+DEVPKEY_DeviceClass_DHPRebalanceOptOut 设备属性表示一个值，该值指示在发生 [动态硬件分区 (DHP) ](../kernel/introduction-to-dynamic-hardware-partitioning.md) 处理器热添加操作后，整个设备类是否参与资源重新平衡。
 
 <table>
 <colgroup>
@@ -98,12 +98,10 @@ DEVPKEY_DeviceClass_DHPRebalanceOptOut 设备属性表示一个值，该值指�
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**SetupDiGetClassProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclasspropertyw)
 
 [**SetupDiSetClassProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdisetclasspropertyw)
-
- 
 

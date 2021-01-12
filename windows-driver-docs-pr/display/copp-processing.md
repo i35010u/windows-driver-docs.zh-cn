@@ -12,12 +12,12 @@ keywords:
 - 受保护的视频 WDK COPP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7996e7c43c315f8ae7ab4ea429a858133c36a9ac
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 5254a8a422b6899b27ac6ce6188f38df7bb4be78
+ms.sourcegitcommit: 10fecd036370f5eccb538004c5bec1fdd18c3275
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96786377"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98124213"
 ---
 # <a name="copp-processing"></a>COPP 处理
 
@@ -43,15 +43,9 @@ ms.locfileid: "96786377"
 
 [从 COPP 函数返回错误代码](returning-error-codes-from-copp-functions.md)
 
-[执行 COPP 操作](performing-copp-operations.md)
+[执行 COPP 操作](./performing-copp-operations-example.md)
 
 [COPP 实施提示和要求](implementation-tips-and-requirements-for-copp.md)
 
  
-
- 
-
-
-
-
 

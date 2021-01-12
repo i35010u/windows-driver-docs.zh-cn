@@ -3,12 +3,12 @@ title: 在 UWP 设备应用中使用打印通知
 description: '本主题介绍打印通知，并演示 c # 版本的打印设置和打印通知示例如何使用后台任务来响应打印通知。'
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e359866711c5af2e41014104fc13368863d3222b
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 06bbf1ed1b6a15f44a2f123fa1f0bba3ba6013c5
+ms.sourcegitcommit: 10fecd036370f5eccb538004c5bec1fdd18c3275
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96802649"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98124045"
 ---
 # <a name="working-with-print-notifications-in-a-uwp-device-app"></a>在 UWP 设备应用中使用打印通知
 
@@ -46,7 +46,7 @@ ms.locfileid: "96802649"
 2. 设置开发 PC。 有关下载工具和创建开发人员帐户的信息[，请参阅入门。](getting-started.md)
 3. 将应用与应用商店相关联。 请参阅 [创建 UWP 设备应用](step-1--create-a-uwp-device-app.md) 了解相关信息。
 4. 为打印机创建将其与应用程序关联的设备元数据。 有关详细信息，请参阅 [创建设备元数据](step-2--create-device-metadata.md) 。
-5. 构建应用程序主页的 UI。 所有 UWP 设备应用都可以从 "开始" 启动，它们将全屏显示。 使用 "开始体验" 以与设备的特定品牌和功能匹配的方式突出显示你的产品或服务。 它可以使用的 UI 控件类型没有任何特殊限制。 若要开始设计全屏体验，请参阅 [Microsoft Store 设计原则](https://go.microsoft.com/fwlink/p/?LinkID=299845)。
+5. 构建应用程序主页的 UI。 所有 UWP 设备应用都可以从 "开始" 启动，它们将全屏显示。 使用 "开始体验" 以与设备的特定品牌和功能匹配的方式突出显示你的产品或服务。 它可以使用的 UI 控件类型没有任何特殊限制。 若要开始设计全屏体验，请参阅 [Microsoft Store 设计原则](/windows/uwp/design/)。
 6. 如果正在编写的是用 c # 或 JavaScript 编写应用，请将 **PrinterExtensionLibrary** 和 **DeviceAppForPrintersLibrary** 项目添加到 UWP 设备应用解决方案。 可以在 " [打印设置" 和 "打印通知](https://go.microsoft.com/fwlink/p/?LinkID=242862) " 示例中找到这些项目。
 
 >[!NOTE]
@@ -119,7 +119,7 @@ ms.locfileid: "96802649"
 - [窗口大小和屏幕缩放的准则](https://go.microsoft.com/fwlink/p/?LinkId=311830)
 - [将窗口调整为高度和缩小布局的准则](/previous-versions/windows/hh465371(v=win.10))
 
-### <a name="best-practices"></a>最佳做法
+### <a name="best-practices"></a>最佳实践
 
 - **请勿在通知中包含操作词。** 在通知消息上，不要使用通知用户的文本推送、按或单击 "通知"。 用户已经了解，他们可以按 toast 来了解更多信息。 例如，只需编写 "打印机墨水不足，而不是" 打印机墨水不足。 按进行故障排除。
 
@@ -355,7 +355,7 @@ void DisplayBackgroundTaskTriggerDetails()
 以下步骤生成应用并安装设备元数据。
 
 1. 启用测试签名。
-    1. 双击 "DeviceMetadataWizard.exe，从 *% ProgramFiles (x86) %* Windows 工具包 8.1 bin **X86 启动设备元数据创作向导** \\ \\ \\ \\ **DeviceMetadataWizard.exe**
+    1. 双击 "DeviceMetadataWizard.exe，从 *% ProgramFiles (x86) %* Windows 工具包 8.1 bin **X86 启动设备元数据创作向导** \\ \\ \\ \\ 
     2. 从 " **工具** " 菜单中，选择 " **启用测试签名**"。
 
 2. 重新启动计算机
@@ -366,7 +366,7 @@ void DisplayBackgroundTaskTriggerDetails()
     >[!NOTE]
     >如果尚未创建设备元数据，请参阅 [为 UWP 设备应用创建设备元数据](./step-2--create-device-metadata.md)。
 
-    1. 如果 **设备元数据创作向导** 尚未打开，请通过双击 "DeviceMetadataWizard.exe" 从 *% ProgramFiles (x86) %* \\ Windows 工具包 \\ 8.1 \\ bin \\ x86 **DeviceMetadataWizard.exe** 启动它。
+    1. 如果 **设备元数据创作向导** 尚未打开，请通过双击 "DeviceMetadataWizard.exe" 从 *% ProgramFiles (x86) %* \\ Windows 工具包 \\ 8.1 \\ bin \\ x86 启动它。
     2. 单击 " **编辑设备元数据**"。 这将允许你编辑现有的设备元数据包。
     3. 在 " **打开** " 对话框中，找到与 UWP 设备应用关联的设备元数据包。  (其文件扩展名为 **devicemetadata** 。 ) 
     4. 在 " **指定 uwp 设备应用信息** " 页上，在 " **UWP 设备应用** " 框中输入 Microsoft Store 应用信息。 单击 " **导入 UWP 应用程序清单文件** " 以自动输入 **包名称**、 **发布者名称** 和 **UWP 应用 ID**。
@@ -377,7 +377,7 @@ void DisplayBackgroundTaskTriggerDetails()
 
 6. 重新连接打印机，以便 Windows 在连接设备时读取更新的设备元数据。
 
-## <a name="troubleshooting"></a>故障排除
+## <a name="troubleshooting"></a>疑难解答
 
 ### <a name="issue-no-default-toast-notification-appears"></a>问题：未显示默认 toast 通知
 

@@ -3,12 +3,12 @@ title: '如何自定义 (UWP 设备应用的打印设置) '
 description: '本主题介绍 "高级打印设置" 浮出控件，并演示 c # 版本的 "打印设置" 和 "打印通知" 示例如何使用自定义浮出控件替换默认浮出控件。'
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b96b1ac3f751b59750fbcc723f44e4e06efef891
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: be1b7165a1a740782076b427221e9afb76d87a44
+ms.sourcegitcommit: 10fecd036370f5eccb538004c5bec1fdd18c3275
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96815185"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98124053"
 ---
 # <a name="how-to-customize-print-settings-uwp-device-apps"></a>如何自定义 (UWP 设备应用的打印设置) 
 
@@ -50,7 +50,7 @@ ms.locfileid: "96815185"
 2. 设置开发 PC。 有关下载工具和创建开发人员帐户的信息[，请参阅入门。](getting-started.md)
 3. 将应用与应用商店相关联。 请参阅 [创建 UWP 设备应用](step-1--create-a-uwp-device-app.md) 了解相关信息。
 4. 为打印机创建将其与应用程序关联的设备元数据。 有关详细信息，请参阅 [创建设备元数据](step-2--create-device-metadata.md) 。
-5. 构建应用程序主页的 UI。 所有 UWP 设备应用都可以从 "开始" 启动，它们将全屏显示。 使用 "开始体验" 以与设备的特定品牌和功能匹配的方式突出显示你的产品或服务。 它可以使用的 UI 控件类型没有任何特殊限制。 若要开始设计全屏体验，请参阅 [Microsoft Store 设计原则](https://go.microsoft.com/fwlink/p/?LinkID=299845)。
+5. 构建应用程序主页的 UI。 所有 UWP 设备应用都可以从 "开始" 启动，它们将全屏显示。 使用 "开始体验" 以与设备的特定品牌和功能匹配的方式突出显示你的产品或服务。 它可以使用的 UI 控件类型没有任何特殊限制。 若要开始设计全屏体验，请参阅 [Microsoft Store 设计原则](/windows/uwp/design/)。
 6. 如果正在编写的是用 c # 或 JavaScript 编写应用，请将 **PrinterExtensionLibrary** 和 **DeviceAppForPrintersLibrary** 项目添加到 UWP 设备应用解决方案。 可以在 " [打印设置" 和 "打印通知](https://go.microsoft.com/fwlink/p/?LinkID=242862) " 示例中找到这些项目。
 
 >[!NOTE]
@@ -125,7 +125,7 @@ ms.locfileid: "96815185"
 
 自定义弹出窗口中的标题、背景色、文本颜色和小徽标取自 `VisualElements` 应用包清单文件中的元素。
 
-此示例显示了 `VisualElements` 应用包清单文件 () 中的元素中定义的标题和图标。 **Package.appxmanifest**
+此示例显示了 `VisualElements` 应用包清单文件 () 中的元素中定义的标题和图标。 
 
 ```XML
       <VisualElements DisplayName="Device App For Printers C# sample" Logo="Assets\squareTile-sdk.png" SmallLogo="Assets\smallTile-sdk.png" Description="DeviceAppForPrinters C# sample" ForegroundText="light" BackgroundColor="#00b2f0" ToastCapable="true">
@@ -134,7 +134,7 @@ ms.locfileid: "96815185"
       </VisualElements>
 ```
 
-### <a name="best-practices"></a>最佳做法
+### <a name="best-practices"></a>最佳实践
 
 - **保持相同的外观。** 将您的自定义浮出控件与入门体验的设计保持一致 (您的应用) 程序的主页面，包括字体、颜色和控件等元素。 无论用户在何处调用该应用，都应熟悉该应用。
 
@@ -234,7 +234,7 @@ public sealed partial class Preferences : SDKTemplate.Common.LayoutAwarePage
 
 创建这些对象后，将在方法中使用打印机设备上下文 `DisplaySettings` 来加载 textblock 和 ComboBoxs。 请注意，与 JavaScript 不同的是，所选内容的更改不会在应用程序的其他线程上触发。 您必须维护用户选择的本地缓存，以供以后使用。
 
-此示例显示了 Preferences.xaml.cs 文件中的自定义飞出页构造函数、 `DisplaySettings` 和其他帮助器方法。 **Preferences.xaml.cs**
+此示例显示了 Preferences.xaml.cs 文件中的自定义飞出页构造函数、 `DisplaySettings` 和其他帮助器方法。 
 
 ```CSharp
 public Preferences()
@@ -603,7 +603,7 @@ async private void OnSaveRequested(object sender, PrintTaskConfigurationSaveRequ
 以下步骤生成应用并安装设备元数据。
 
 1. 启用测试签名。
-    1. 双击 "DeviceMetadataWizard.exe，从 *% ProgramFiles (x86) %* Windows 工具包 8.1 bin **X86 启动设备元数据创作向导** \\ \\ \\ \\ **DeviceMetadataWizard.exe**
+    1. 双击 "DeviceMetadataWizard.exe，从 *% ProgramFiles (x86) %* Windows 工具包 8.1 bin **X86 启动设备元数据创作向导** \\ \\ \\ \\ 
     2. 从 " **工具** " 菜单中，选择 " **启用测试签名**"。
 
 2. 重新启动计算机
@@ -613,7 +613,7 @@ async private void OnSaveRequested(object sender, PrintTaskConfigurationSaveRequ
     >[!NOTE]
     >如果尚未创建设备元数据，请参阅 [为 UWP 设备应用创建设备元数据](./step-2--create-device-metadata.md)。
 
-    1. 如果 **设备元数据创作向导** 尚未打开，请通过双击 "DeviceMetadataWizard.exe" 从 *% ProgramFiles (x86) %* \\ Windows 工具包 \\ 8.1 \\ bin \\ x86 **DeviceMetadataWizard.exe** 启动它。
+    1. 如果 **设备元数据创作向导** 尚未打开，请通过双击 "DeviceMetadataWizard.exe" 从 *% ProgramFiles (x86) %* \\ Windows 工具包 \\ 8.1 \\ bin \\ x86 启动它。
     2. 单击 " **编辑设备元数据**"。 这将允许你编辑现有的设备元数据包。
     3. 在 " **打开** " 对话框中，找到与 UWP 设备应用关联的设备元数据包。  (其文件扩展名为 **devicemetadata** 。 ) 
     4. 在 " **指定 uwp 设备应用信息** " 页上，在 " **UWP 设备应用** " 框中输入 Microsoft Store 应用信息。 单击 " **导入 UWP 应用程序清单文件** " 以自动输入 **包名称**、 **发布者名称** 和 **UWP 应用 ID**。
@@ -623,7 +623,7 @@ async private void OnSaveRequested(object sender, PrintTaskConfigurationSaveRequ
 
 6. 重新连接打印机，以便 Windows 在连接设备时读取更新的设备元数据。
 
-## <a name="troubleshooting"></a>故障排除
+## <a name="troubleshooting"></a>疑难解答
 
 ### <a name="issue-advanced-print-settings-shows-default-flyout-instead-of-custom-flyout"></a>问题：高级打印设置显示默认浮出控件，而不是自定义飞出
 
@@ -633,7 +633,7 @@ async private void OnSaveRequested(object sender, PrintTaskConfigurationSaveRequ
 
 - **可能的原因：** 应用未查询正确的包系列名称。 在代码中检查包系列名称。 在 Visual Studio 中打开 **appxmanifest.xml** ，并确保要查询的包系列名称与 " **打包** " 选项卡上的 "包系列名称" 字段中的相同。
 
-- **可能的原因：** 设备元数据不与包系列名称关联。 使用 **设备元数据创作向导** 打开设备元数据，并检查包系列名称。 双击DeviceMetadataWizard.exe，从 *% ProgramFiles (x86) %* \\ Windows 工具包 \\ 8.1 \\ bin \\ x86 **DeviceMetadataWizard.exe** 启动向导。
+- **可能的原因：** 设备元数据不与包系列名称关联。 使用 **设备元数据创作向导** 打开设备元数据，并检查包系列名称。 双击DeviceMetadataWizard.exe，从 *% ProgramFiles (x86) %* \\ Windows 工具包 \\ 8.1 \\ bin \\ x86 启动向导。
 
 ### <a name="issue-app-is-launched-in-flyout-then-is-immediately-dismissed"></a>问题：应用程序在浮出控件中启动，然后立即解除
 

@@ -11,12 +11,12 @@ keywords:
 - 验证结果 WDK 静态驱动程序验证程序
 ms.date: 04/02/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ba739c55c34e08687198cc7c0b2f207ef20c767
-ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
+ms.openlocfilehash: cda71e0b4c045b8dd501e384cafa5d020936b251
+ms.sourcegitcommit: 10fecd036370f5eccb538004c5bec1fdd18c3275
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97090826"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98124253"
 ---
 # <a name="interpreting-static-driver-verifier-results"></a>解释静态驱动程序验证程序结果
 
@@ -54,7 +54,7 @@ SDV 测试了驱动程序是否违反了规则，但驱动程序不支持分析�
 
 如果驱动程序指定了入口点并且它调用了规则所监视的函数，则此结果可能表示 SDV 找不到或未正确解释入口点。 若要确认出现此情况，请检查并根据需要更正 [Sdv](sdv-map-h.md) 文件。 有关此过程的信息，请参阅 [扫描驱动程序](scanning-the-driver.md)。
 
-有关每个规则的详细信息，请参阅 [静态驱动程序验证程序规则](/windows-hardware/drivers/devtest/static-driver-verifier-rules) 参考。
+有关每个规则的详细信息，请参阅 [静态驱动程序验证程序规则](./static-driver-verifier-rules.md) 参考。
 
 若要进一步检查驱动程序，请使用不同的规则运行验证。
 
@@ -77,6 +77,4 @@ Spaceout 被视为无结论结果。 如果 SDV 报告 spaceout，请将为验�
 <span id="Other"></span><span id="other"></span><span id="OTHER"></span>**以外**  
 
 SDV 遇到无法从中恢复的内部错误的次数。  有关错误和调试的详细信息，请参阅 [静态驱动程序验证程序错误消息](./static-driver-verifier-error-messages.md) 页面。
-
- 
 

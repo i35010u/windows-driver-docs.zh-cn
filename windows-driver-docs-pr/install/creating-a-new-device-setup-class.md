@@ -6,12 +6,12 @@ keywords:
 - 安装类 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c6dcf5617e7fd16917dc640bb135b6f9124cf9d
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 33a13931fbd2edd9a1a3a48d9fda183c0421ef6f
+ms.sourcegitcommit: 10fecd036370f5eccb538004c5bec1fdd18c3275
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96827825"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98124273"
 ---
 # <a name="creating-a-new-device-setup-class"></a>创建新的设备安装程序类
 
@@ -19,7 +19,7 @@ ms.locfileid: "96827825"
 
 
 
-仅当绝对必要时，才应创建新的设备安装程序类。 通常可以将设备分配到 [系统定义的设备安装程序类](/windows-hardware/drivers/install/system-defined-device-setup-classes-reserved-for-system-use)之一。
+仅当绝对必要时，才应创建新的设备安装程序类。 通常可以将设备分配到 [系统定义的设备安装程序类](./system-defined-device-setup-classes-reserved-for-system-use.md)之一。
 
 如果设备满足以下两个条件，则应将其分配给现有的设备安装程序类：
 
@@ -40,6 +40,4 @@ ms.locfileid: "96827825"
 在创建新的设备安装程序类之前，请联系 Microsoft 了解是否为你的设备类型规划了新系统提供的设备安装程序类
 
 可以使用 INF 文件创建新的设备安装程序类。 除了安装对设备的支持外，INF 文件还可以为设备初始化新的设备安装程序类。 此类 INF 文件有一个 [**Inf ClassInstall32 部分**](inf-classinstall32-section.md)。
-
- 
 

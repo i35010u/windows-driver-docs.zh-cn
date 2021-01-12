@@ -3,12 +3,12 @@ title: 调试 DRIVER_VERIFIER_DETECTED_VIOLATION (C4) 0x20002-0x20022
 description: 如果选择了 "DDI 相容性检查" 选项，并且驱动程序验证器检测到该驱动程序违反了某个 DDI 符合性规则，则驱动程序验证程序会生成 Bug 检查 0xC4 DRIVER_VERIFIER_DETECTED_VIOLATION (，参数1等于特定符合性规则) 的标识符。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 282590e7918bd70c758e1d97cf683aa115eab508
-ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
+ms.openlocfilehash: 58f7a7bfa90f3831f9cac742ac56078af686db4b
+ms.sourcegitcommit: 10fecd036370f5eccb538004c5bec1fdd18c3275
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97090818"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98124075"
 ---
 # <a name="debugging-ddi-compliance-bugs---driver_verifier_detected_violation-c4-0x20002---0x20022"></a>调试 DDI 相容性错误-驱动程序 \_ 验证器 \_ 检测到 \_ 违反 (C4) ： 0x20002-0x20022
 
@@ -141,7 +141,7 @@ FAULTING_SOURCE_LINE_NUMBER:  206
 
 在此示例中，我们使用了此处 (0x20004) ，则 ISR 中任何排序的内存分配将违反 [**ExAllocatePoolWithTagPriority**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtagpriority) 例程的 IRQL 规则集。
 
-一般情况下，应查看有关此例程的文档，以获取有关 IRQL 和正确用法的信息。 查看测试函数的特定 [DDI 符合性规则](/windows-hardware/drivers/devtest/static-driver-verifier-rules) 。 在这种情况下，规则为 [**IrqlExAllocatePool**](./wdm-irqlexallocatepool.md)。
+一般情况下，应查看有关此例程的文档，以获取有关 IRQL 和正确用法的信息。 查看测试函数的特定 [DDI 符合性规则](./static-driver-verifier-rules.md) 。 在这种情况下，规则为 [**IrqlExAllocatePool**](./wdm-irqlexallocatepool.md)。
 
 使用 [静态驱动程序验证](static-driver-verifier.md) 器分析驱动程序源代码，使用同一规则 () 。 静态驱动程序验证程序是一种工具，它通过模拟各种代码路径的行使来扫描 Windows 驱动程序源代码，并报告可能的问题。 静态驱动程序验证程序是一个出色的开发时实用工具，可帮助确定这些类型的问题。
 
@@ -150,11 +150,9 @@ FAULTING_SOURCE_LINE_NUMBER:  206
 
 [DDI 合规性检查](ddi-compliance-checking.md)
 
-[DDI 合规性规则](/windows-hardware/drivers/devtest/static-driver-verifier-rules)
+[DDI 合规性规则](./static-driver-verifier-rules.md)
 
 [静态驱动程序验证程序](static-driver-verifier.md)
 
 [**Bug 检查0xC4：驱动程序 \_ 验证程序 \_ 检测到 \_ 冲突**](../debugger/bug-check-0xc4--driver-verifier-detected-violation.md)
-
- 
 

@@ -13,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 749fec031a3d3915551269aff0fe23e7312320d3
-ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
+ms.openlocfilehash: 8a0f2b981741207a654b10d773249521fd5ddc22
+ms.sourcegitcommit: 10fecd036370f5eccb538004c5bec1fdd18c3275
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97090754"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98124237"
 ---
 # <a name="rxassert-routine"></a>RxAssert 例程
 
@@ -37,7 +37,7 @@ VOID RxAssert(
 );
 ```
 
-<a name="parameters"></a>parameters
+<a name="parameters"></a>参数
 ----------
 
 *FailedAssertion* \[中\]  
@@ -75,7 +75,7 @@ VOID RxAssert(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面型</td>
+<td align="left">桌面</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
@@ -93,9 +93,7 @@ VOID RxAssert(
 
 [**断言**](/previous-versions/windows/hardware/previsioning-framework/ff542107(v=vs.85))
 
-[RtlAssert](/windows-hardware/drivers/ifs/rxassert)
+[RtlAssert]()
 
 [**RxDbgBreakPoint**](rxdbgbreakpoint.md)
-
- 
 

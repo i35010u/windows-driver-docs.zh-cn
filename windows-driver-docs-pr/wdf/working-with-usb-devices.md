@@ -16,12 +16,12 @@ keywords:
 - 设备对象 WDK KMDF
 ms.date: 06/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 3865fc08f870f160b10ad2ddd5a7e73a92ff6859
-ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
+ms.openlocfilehash: 2c1beba76ffecb702c21ee572a1f545ba89b9054
+ms.sourcegitcommit: 10fecd036370f5eccb538004c5bec1fdd18c3275
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97091220"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98124251"
 ---
 # <a name="working-with-usb-devices"></a>使用 USB 设备
 
@@ -64,7 +64,7 @@ ms.locfileid: "97091220"
 
 如需相关信息，请参阅：
 
--   [如何选择 USB 设备的配置](/windows-hardware/drivers/usbcon/how-to-select-a-configuration-for-a-usb-device)
+-   [如何选择 USB 设备的配置](../usbcon/how-to-select-a-configuration-for-a-usb-device.md)
 -   [如何在 USB 界面中选择备用设置](../usbcon/index.md)
 
 ## <a name="obtaining-device-information"></a><a href="" id="obtaining-device-information"></a> 获取设备信息
@@ -157,6 +157,4 @@ ms.locfileid: "97091220"
 返回设备的 USBD 配置句柄。 一些 URBs 需要此句柄。
 
 有关 URBs 的一般概念背景，请参阅 [分配和生成 URBs](../usbcon/how-to-add-xrb-support-for-client-drivers.md)。
-
- 
 

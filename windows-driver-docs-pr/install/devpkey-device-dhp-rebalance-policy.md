@@ -13,17 +13,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: a96f8618a1fbe7f06cfe10992c392d68a27c2249
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: ba1b622c23d83785600ee71eead69366ed85e92d
+ms.sourcegitcommit: 10fecd036370f5eccb538004c5bec1fdd18c3275
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96791777"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98124181"
 ---
 # <a name="devpkey_device_dhp_rebalance_policy"></a>DEVPKEY_Device_DHP_Rebalance_Policy
 
 
-DEVPKEY_Device_DHP_Rebalance_Policy 设备属性表示一个值，该值指示设备是否将按照 [动态硬件分区（ (DHP) ](../kernel/dynamic-hardware-partitioning-techniques.md) 处理器热添加操作）参与资源重新平衡。
+DEVPKEY_Device_DHP_Rebalance_Policy 设备属性表示一个值，该值指示设备是否将按照 [动态硬件分区（ (DHP) ](../kernel/introduction-to-dynamic-hardware-partitioning.md) 处理器热添加操作）参与资源重新平衡。
 
 <table>
 <colgroup>
@@ -99,12 +99,10 @@ DEVPKEY_Device_DHP_Rebalance_Policy 设备属性表示一个值，该值指示�
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
 [**SetupDiSetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)
-
- 
 

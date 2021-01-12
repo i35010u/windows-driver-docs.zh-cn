@@ -9,19 +9,19 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3068d975dc7778db3580f9c460b5422c05a8197e
-ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
+ms.openlocfilehash: db57745b2fa3744b8137c08d23b800c8ba3502f9
+ms.sourcegitcommit: 10fecd036370f5eccb538004c5bec1fdd18c3275
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97091188"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98124153"
 ---
 # <a name="nfp-device-driver-requirements"></a>NFP 设备驱动程序要求
 
 
 提供有关 NFP 设备驱动程序要求的信息。
 
-## <a name="in-this-section"></a>在本节中
+## <a name="in-this-section"></a>本节内容
 
 
 -   [设备标识符](device-identifiers.md)
@@ -36,7 +36,7 @@ ms.locfileid: "97091188"
 -   [标记写入](tag-writing.md)
 -   [保留的 IOCTL 代码](reserved-ioctl-codes.md)
 -   [电源管理](power-management.md)
--   [协议支持](protocol-support.md)
+-   [协议支持](./ndef-protocol.md)
 
  
 

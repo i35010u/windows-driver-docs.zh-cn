@@ -11,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f4c59c80142bd4f3489e12e0b021c97f46bd9d9
-ms.sourcegitcommit: 29ed980c2a09ea43f963b9c94172da796e8a4e40
+ms.openlocfilehash: 1a13e36a346635377130b7a4f0f6ef540b0a7958
+ms.sourcegitcommit: 10fecd036370f5eccb538004c5bec1fdd18c3275
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97611763"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98124105"
 ---
 # <a name="unsafeallocatepool-rule-kmdf"></a>UnSafeAllocatePool 规则 (kmdf) 
 
@@ -61,7 +61,7 @@ RtlZeroMemory(Allocation, 100);
 PVOID Allocation = ExAllocatePool2(POOL_FLAG_PAGED, 100, 'abcd');
 ```
 
-旧的池分配 Api 接受 [POOL_TYPE](/windows-hardware/drivers/ddi/wdm/ne-wdm-_pool_type) 参数，但新的分配 api 接受 [POOL_FLAGS](/windows-hardware/drivers/kernel/pool_flags) 参数。 更新任何关联的代码以使用新的 [POOL_FLAGS](/windows-hardware/drivers/kernel/pool_flags) 参数。
+旧的池分配 Api 接受 [POOL_TYPE](/windows-hardware/drivers/ddi/wdm/ne-wdm-_pool_type) 参数，但新的分配 api 接受 [POOL_FLAGS](../kernel/pool_flags.md) 参数。 更新任何关联的代码以使用新的 [POOL_FLAGS](../kernel/pool_flags.md) 参数。
 
 ### <a name="exallocatepoolwithquotaexallocatepoolwithquotatag"></a>ExAllocatePoolWithQuota/ExAllocatePoolWithQuotaTag
 

@@ -8,12 +8,12 @@ keywords:
 - KDNET
 ms.date: 11/11/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: d45ae63d4ad1880092053fb7f1a44bacb6c8e14d
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: dfb8644a4c4cd73d4c1e16796c03aa3891ac5c00
+ms.sourcegitcommit: 10fecd036370f5eccb538004c5bec1fdd18c3275
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96803617"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98124291"
 ---
 # <a name="setting-up-kdnet-network-kernel-debugging-automatically"></a>自动设置 KDNET 网络内核调试
 
@@ -91,7 +91,7 @@ IPv4 Address. . . . . . . . . . . : <YourHostIPAddress>
 
 ## <a name="connecting-windbg-to-the-target-for-kernel-debugging"></a>将 WinDbg 连接到用于内核调试的目标
 
-在主计算机上，打开 WinDbg。 在 " **文件** " 菜单上，选择 " **内核调试**"。 在 "内核调试" 对话框中，打开 " **网络** " 选项卡。将之前保存的端口号和密钥粘贴到前面的 notepad.exe 文件中。 选择“确定”。
+在主计算机上，打开 WinDbg。 在 " **文件** " 菜单上，选择 " **内核调试**"。 在 "内核调试" 对话框中，打开 " **网络** " 选项卡。将之前保存的端口号和密钥粘贴到前面的 notepad.exe 文件中。 选择“确定”  。
 
 你还可以通过打开命令提示符窗口并输入以下命令（其中 <YourPort> 是上面选择的端口）来启动 WinDbg 会话， <YourKey> 它是上面 kdnet.exe 返回的键。 将上保存的项粘贴到前面的 notepad.exe 文件中。
 
@@ -126,7 +126,7 @@ IPv4 Address. . . . . . . . . . . : <YourHostIPAddress>
 
 在目标计算机重新启动后，调试器应该会自动连接。
 
-## <a name="troubleshooting-tips"></a>疑难解答指南
+## <a name="troubleshooting-tips"></a>故障排查提示
 
 **必须通过防火墙允许调试应用程序**
 
@@ -168,11 +168,11 @@ IPv4 Address. . . . . . . . . . . : <YourHostIPAddress>
 
 开始 Windows 10 10 月2020更新 (20H2) ，支持使用以下选项启用四种调试类型。
 
-*b* -启用 bootmgr 调试。 有关详细信息，请参阅 [BCDEdit/bootdebug](/windows-hardware/drivers/devtest/bcdedit--bootdebug)。
+*b* -启用 bootmgr 调试。 有关详细信息，请参阅 [BCDEdit/bootdebug](../devtest/bcdedit--bootdebug.md)。
 
-*w* -启用 winload.exe 调试。 有关详细信息，请参阅 [BCDEdit/bootdebug](/windows-hardware/drivers/devtest/bcdedit--bootdebug)。
+*w* -启用 winload.exe 调试。 有关详细信息，请参阅 [BCDEdit/bootdebug](../devtest/bcdedit--bootdebug.md)。
 
-*h* -启用虚拟机监控程序调试。 有关详细信息，请参阅 [BCDEdit/hypervisorsettings](/windows-hardware/drivers/devtest/bcdedit--hypervisorsettings)。
+*h* -启用虚拟机监控程序调试。 有关详细信息，请参阅 [BCDEdit/hypervisorsettings](../devtest/bcdedit--hypervisorsettings.md)。
 
 *k* -启用内核调试。 有关详细信息，请参阅 [ (内核模式) 入门 ](getting-started-with-windbg--kernel-mode-.md)。
 

@@ -3,12 +3,12 @@ title: 如何在 UWP 设备应用中管理打印作业
 description: 在 Windows 8.1 中，用于打印机的 UWP 设备应用可以管理打印作业。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fbc0bca56677d9210a55d251d1bd9913e8a6fd62
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 726e5e2ad7aa0d80baadf2c1ffeeb2aeccb24ccc
+ms.sourcegitcommit: 10fecd036370f5eccb538004c5bec1fdd18c3275
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96802675"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98124275"
 ---
 # <a name="how-to-manage-print-jobs-in-a-uwp-device-app"></a>如何在 UWP 设备应用中管理打印作业
 
@@ -39,7 +39,7 @@ Windows 8.1 在 v4 打印机驱动程序中引入了新的打印机扩展接口�
 2.  设置开发 PC。 有关下载工具和创建开发人员帐户的信息[，请参阅入门。](getting-started.md)
 3.  将应用与应用商店相关联。 请参阅 [创建 UWP 设备应用](step-1--create-a-uwp-device-app.md) 了解相关信息。
 4.  为打印机创建将其与应用程序关联的设备元数据。 有关详细信息，请参阅 [创建设备元数据](step-2--create-device-metadata.md) 。
-5.  构建应用程序主页的 UI。 所有 UWP 设备应用都可以从 "开始" 启动，它们将全屏显示。 使用 "开始体验" 以与设备的特定品牌和功能匹配的方式突出显示你的产品或服务。 它可以使用的 UI 控件类型没有任何特殊限制。 若要开始设计全屏体验，请参阅 [Microsoft Store 设计原则](https://go.microsoft.com/fwlink/p/?LinkID=299845)。
+5.  构建应用程序主页的 UI。 所有 UWP 设备应用都可以从 "开始" 启动，它们将全屏显示。 使用 "开始体验" 以与设备的特定品牌和功能匹配的方式突出显示你的产品或服务。 它可以使用的 UI 控件类型没有任何特殊限制。 若要开始设计全屏体验，请参阅 [Microsoft Store 设计原则](/windows/uwp/design/)。
 6.  如果正在编写的是用 c # 或 JavaScript 编写应用，请将 **PrinterExtensionLibrary** 项目添加到 UWP 设备应用解决方案。 可以在 [打印作业管理和打印机维护](https://go.microsoft.com/fwlink/p/?LinkID=299829) 示例中找到此项目。
     **注意**  由于 c + + 可以直接访问 COM，因此，c + + 应用不需要单独的库即可使用基于 COM 的打印机设备上下文。
 
@@ -293,7 +293,7 @@ private void CancelPrintJob_Click(object sender, RoutedEventArgs e)
 以下步骤生成应用并安装设备元数据。
 
 1.  启用测试签名。
-    1.  双击 "DeviceMetadataWizard.exe，从 *% ProgramFiles (x86) %* Windows 工具包 8.1 bin **X86 启动设备元数据创作向导** \\ \\ \\ \\ **DeviceMetadataWizard.exe**
+    1.  双击 "DeviceMetadataWizard.exe，从 *% ProgramFiles (x86) %* Windows 工具包 8.1 bin **X86 启动设备元数据创作向导** \\ \\ \\ \\ 
     2.  从 " **工具** " 菜单中，选择 " **启用测试签名**"。
 
 2.  重新启动计算机
@@ -305,7 +305,7 @@ private void CancelPrintJob_Click(object sender, RoutedEventArgs e)
 
      
 
-    1.  如果 **设备元数据创作向导** 尚未打开，请通过双击 "DeviceMetadataWizard.exe" 从 *% ProgramFiles (x86) %* \\ Windows 工具包 \\ 8.1 \\ bin \\ x86 **DeviceMetadataWizard.exe** 启动它。
+    1.  如果 **设备元数据创作向导** 尚未打开，请通过双击 "DeviceMetadataWizard.exe" 从 *% ProgramFiles (x86) %* \\ Windows 工具包 \\ 8.1 \\ bin \\ x86 启动它。
     2.  单击 " **编辑设备元数据**"。 这将允许你编辑现有的设备元数据包。
     3.  在 " **打开** " 对话框中，找到与 UWP 设备应用关联的设备元数据包。  (其文件扩展名为 **devicemetadata** 。 ) 
     4.  在 " **指定 uwp 设备应用信息** " 页上，在 " **UWP 设备应用** " 框中输入 Microsoft Store 应用信息。 单击 " **导入 UWP 应用程序清单文件** " 以自动输入 **包名称**、 **发布者名称** 和 **UWP 应用 ID**。
@@ -330,4 +330,3 @@ private void CancelPrintJob_Click(object sender, RoutedEventArgs e)
 [ (分步指南创建 UWP 设备应用) ](step-1--create-a-uwp-device-app.md)
 
 [ (分步指南创建 UWP 设备应用的设备元数据) ](step-2--create-device-metadata.md)
-

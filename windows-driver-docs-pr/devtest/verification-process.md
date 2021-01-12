@@ -8,12 +8,12 @@ keywords:
 - 验证过程 WDK 静态驱动程序验证程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2fc83375a35a370931218cd436a97b71b66343ab
-ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
+ms.openlocfilehash: 66d9923bf2377f8737803038533a9be23cd27234
+ms.sourcegitcommit: 10fecd036370f5eccb538004c5bec1fdd18c3275
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97090800"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98124225"
 ---
 # <a name="verification-process"></a>验证过程
 
@@ -34,7 +34,7 @@ SDV 执行 *验证*，即确定驱动程序的实际行为是否符合定义正�
 
 ### <a name="span-idcheckspanspan-idcheckspancheck"></a><span id="check"></span><span id="CHECK"></span>查阅
 
-在 **检查** 步骤中，SDV 通过使用为验证选择的规则来准备并验证驱动程序。 有关可选择的规则的详细信息，请参阅 [静态驱动程序验证程序规则](/windows-hardware/drivers/devtest/static-driver-verifier-rules)。
+在 **检查** 步骤中，SDV 通过使用为验证选择的规则来准备并验证驱动程序。 有关可选择的规则的详细信息，请参阅 [静态驱动程序验证程序规则](./static-driver-verifier-rules.md)。
 
 SDV 首先确定所选规则是否需要操作系统模型的附加组件。 如果是这样，SDV 会将其他操作系统模型文件复制到驱动程序的源目录。
 
@@ -47,6 +47,4 @@ SDV 首先确定所选规则是否需要操作系统模型的附加组件。 如
 ### <a name="span-idcommentspanspan-idcommentspancomment"></a><span id="comment"></span><span id="COMMENT"></span>条
 
 虽然 SDV 执行验证过程中的步骤，但它会将状态消息写入到命令行，并提供错误消息，报告每个步骤中发生的错误。 有关状态消息的信息，请参阅 [命令行输出](command-line-output.md)。 有关错误消息的信息，请参阅 [静态驱动程序验证程序错误消息](static-driver-verifier-error-messages.md)。 有关启用诊断以帮助你和 Microsoft 解决与 SDV 有关的问题的信息，请参阅 [静态驱动程序验证器诊断](static-driver-verifier-diagnostics.md)。
-
- 
 

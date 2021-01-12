@@ -13,12 +13,12 @@ keywords:
 - 负载配置 WDK 启动选项
 ms.date: 04/19/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 94174fc32def951aac2ad49bab58890660362b1b
-ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
+ms.openlocfilehash: 691a43b40dbb446b7b89e3b0937fe1f3cf64d915
+ms.sourcegitcommit: 10fecd036370f5eccb538004c5bec1fdd18c3275
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97090926"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98124279"
 ---
 # <a name="tools-for-changing-boot-options-for-driver-testing-and-debugging"></a>用于更改驱动程序测试和调试启动选项的工具
 
@@ -45,12 +45,12 @@ ms.locfileid: "97090926"
 
 - 显示加载的驱动程序的名称
 
-本节包括：
+本部分包括：
 
 - [Windows 中的启动选项概述](boot-options-in-windows.md)。
 - [启动选项标识符](boot-options-identifiers.md)
 - [编辑启动选项](editing-boot-options.md)
-- [BCD 引导选项参考](/windows-hardware/drivers/devtest/bcd-boot-options-reference)
+- [BCD 引导选项参考](./bcd-boot-options-reference.md)
 - [使用启动参数](using-boot-parameters.md)
 - [BCD 引导选项参考](bcd-boot-options-reference.md)
 - [以前 Windows 版本中的启动选项](boot-options-in-previous-versions-of-windows.md)

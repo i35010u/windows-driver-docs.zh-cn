@@ -11,12 +11,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c6c28bdd16568cdbd907195179f30f431e8e546
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 3acc90663122fc1ad7150ae18320343c941218be
+ms.sourcegitcommit: 10fecd036370f5eccb538004c5bec1fdd18c3275
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96817737"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98124297"
 ---
 # <a name="inf-version-section"></a>INF Version 节
 
@@ -68,7 +68,7 @@ DriverVer=mm/dd/yyyy,w.x.y.z
 INF 必须通过将系统定义的扩展追加到其 *DDInstall* 部分来提供特定于操作系统的安装信息，无论 *签名名称* 是 <strong>$Windows NT $</strong>还是 **$Chicago $**。 有关这些扩展的讨论，请参阅 [为多个平台和操作系统创建 INF 文件](creating-inf-files-for-multiple-platforms-and-operating-systems.md) (。 ) 
 
 <a href="" id="class-class-name"></a>**类 =**<em>类名</em>  
-对于任何标准类型的设备，此名称指定设备 [安装程序类](./overview-of-device-setup-classes.md) 的名称，该类型是使用该 INF 文件安装的设备的类型。 此名称通常是系统定义的类名称之一，例如 **Net** 或 **Display，** 它们列在 *Devguid* 中。 有关详细信息，请参阅 [系统提供的设备安装程序类](/windows-hardware/drivers/install/system-defined-device-setup-classes-reserved-for-system-use)。
+对于任何标准类型的设备，此名称指定设备 [安装程序类](./overview-of-device-setup-classes.md) 的名称，该类型是使用该 INF 文件安装的设备的类型。 此名称通常是系统定义的类名称之一，例如 **Net** 或 **Display，** 它们列在 *Devguid* 中。 有关详细信息，请参阅 [系统提供的设备安装程序类](./system-defined-device-setup-classes-reserved-for-system-use.md)。
 
 如果 INF 指定了 **类，** 还应为其 **ClassGUID** 项指定相应的系统定义的 GUID 值。 为任何预定义的设备安装程序类的设备指定匹配 GUID 值可以更快地安装设备及其驱动程序，因为这有助于系统安装代码优化其 INF 搜索。
 
@@ -80,7 +80,7 @@ INF 必须通过将系统定义的扩展追加到其 *DDInstall* 部分来提供
 
  
 
-<a href="" id="classguid--nnnnnnnn-nnnn-nnnn-nnnn-nnnnnnnnnnnn-"></a>**ClassGuid = {**<em>nnnnnnnn</em> **-** _nnnn_ *_-_* _nnnn_ *_-_* _nnnn_ *_-_* <em>nnnnnnnnnnnn</em>**}**  
+<a href="" id="classguid--nnnnnnnn-nnnn-nnnn-nnnn-nnnnnnnnnnnn-"></a>**ClassGuid = {**<em>nnnnnnnn</em> **-** _nnnn_ *_-_* _nnnn_ *_-_*  *_-_* <em>nnnnnnnnnnnn</em>**}**  
 指定 [设备安装程序类](./overview-of-device-setup-classes.md) GUID。 GUID 值的格式如下所示，其中每个 *n* 都是十六进制数字。
 
 此 GUID 值指定注册表中的设备安装程序类子项 **... \\类** 树，用于写入从此 INF 文件中安装的设备驱动程序的注册表信息。 此类特定的 GUID 值还为设备类型和类特定属性页提供程序（如果有）标识设备类安装程序。
@@ -111,29 +111,29 @@ INF 必须通过将系统定义的扩展追加到其 *DDInstall* 部分来提供
 
 
 
-<a href="" id="catalogfile-filename-cat"></a>**CatalogFile =**<em>filename</em>**.cat**  
+<a href="" id="catalogfile-filename-cat"></a>**CatalogFile =**<em>filename</em>  
 指定目录 (。要包括在设备/驱动程序的分发介质上的 *cat*) 文件。
 
 如果将 [驱动程序包](driver-packages.md) 提交给 Microsoft 进行数字签名，则在 whql 经过测试并为包分配数字签名后，whql 将为驱动程序包提供 [编录文件](catalog-files.md) 。 有关对 IHV 或 OEM 驱动程序包进行测试和签名的详细信息，请参阅 [WHQL 发行版签名](whql-release-signature.md)。 目录文件不会在 INF 的 [**SourceDisksFiles**](inf-sourcedisksfiles-section.md) 节或 [**CopyFiles**](inf-copyfiles-directive.md) 指令中列出。 Windows 假定目录文件与 INF 文件位于同一位置。
 
 系统提供的 INF 文件从不具有 **CatalogFile =** 条目，因为操作系统会针对所有系统提供的 *xxx.cat* 文件验证此类 INF 的签名。
 
-<a href="" id="catalogfile-nt-unique-filename-cat--"></a>**CatalogFile =**<em>唯一-filename</em>**.cat** |  
+<a href="" id="catalogfile-nt-unique-filename-cat--"></a>**CatalogFile =**<em>唯一-filename</em> |  
 
-<a href="" id="catalogfile-ntx86-unique-filename-cat--"></a>**CatalogFile. ntx86 =**<em>唯一-filename</em>**.cat** |  
+<a href="" id="catalogfile-ntx86-unique-filename-cat--"></a>**CatalogFile. ntx86 =**<em>唯一-filename</em> |  
 
-<a href="" id="catalogfile-ntia64-unique-filename-cat--"></a>**CatalogFile. ntia64 =**<em>唯一-filename</em>**.cat** |  
+<a href="" id="catalogfile-ntia64-unique-filename-cat--"></a>**CatalogFile. ntia64 =**<em>唯一-filename</em> |  
 
-<a href="" id="catalogfile-ntamd64-unique-filename-cat"></a>**CatalogFile. ntamd64 =**<em>唯一-filename</em>**.cat**  
+<a href="" id="catalogfile-ntamd64-unique-filename-cat"></a>**CatalogFile. ntamd64 =**<em>唯一-filename</em>  
 
-<a href="" id="catalogfile-ntarm-unique-filename-cat"></a>**CatalogFile. ntarm =**<em>唯一-filename</em>**.cat**  
+<a href="" id="catalogfile-ntarm-unique-filename-cat"></a>**CatalogFile. ntarm =**<em>唯一-filename</em>  
 
-<a href="" id="catalogfile-ntarm64-unique-filename-cat"></a>**CatalogFile. ntarm64 =**<em>唯一-filename</em>**.cat**  
+<a href="" id="catalogfile-ntarm64-unique-filename-cat"></a>**CatalogFile. ntarm64 =**<em>唯一-filename</em>  
 
 
 指定另一个由 INF 编写器决定的唯一文件名，其中包含。目录文件的 *cat* 扩展。 如果省略这些可选项，则会使用给定的 **CatalogFile =**<em>FILENAME.CAT</em> 来验证 WDM 设备/驱动程序的安装。
 
-如果任何修饰 **的 CatalogFile。*xxx* xxx =** 条目存在于 INF 的 **版本** 部分与未修饰的 **CatalogFile =** 条目中，假定未修饰的条目标识用于验证设备安装、驱动程序安装或未指定其修饰条目的那些平台上的 *filename.cat* 。
+如果任何修饰 **的 CatalogFile。xxx =** 条目存在于 INF 的 **版本** 部分与未修饰的 **CatalogFile =** 条目中，假定未修饰的条目标识用于验证设备安装、驱动程序安装或未指定其修饰条目的那些平台上的 *filename.cat* 。
 
 具有 **CatalogFile =** 和 CatalogFile 的任何跨平台设备驱动程序 INF 文件 **。**<em>xxx</em> **=** 条目必须为每个此类文件提供唯一的 IHV/OEM 确定的名称。
 
@@ -161,10 +161,10 @@ INF 必须通过将系统定义的扩展追加到其 *DDInstall* 部分来提供
  
 
 <a href="" id="driverpackagedisplayname--driver-package-description-"></a><strong>DriverPackageDisplayName =%</strong>驱动程序-包-说明<strong>%</strong>  
-已弃用。 之前，驱动程序安装框架使用 (DIFx) 。 有关 DIFx 弃用的信息，请参阅 [DIFx 指导原则](difx-guidelines.md)。
+已否决。 之前，驱动程序安装框架使用 (DIFx) 。 有关 DIFx 弃用的信息，请参阅 [DIFx 指导原则](difx-guidelines.md)。
 
 <a href="" id="driverpackagetype-packagetype"></a>**DriverPackageType =** *PackageType*  
-已弃用。 之前，驱动程序安装框架使用 (DIFx) 。 有关 DIFx 弃用的信息，请参阅 [DIFx 指导原则](difx-guidelines.md)。
+已否决。 之前，驱动程序安装框架使用 (DIFx) 。 有关 DIFx 弃用的信息，请参阅 [DIFx 指导原则](difx-guidelines.md)。
 
 <a name="remarks"></a>备注
 -------
@@ -211,7 +211,7 @@ Floppy_Description = "Adaptec Drivers Disk"
 ; ...
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**_DDInstall_* _](inf-ddinstall-section.md)
@@ -221,6 +221,4 @@ Floppy_Description = "Adaptec Drivers Disk"
 [**SourceDisksFiles**](inf-sourcedisksfiles-section.md)
 
 [**字符串**](inf-strings-section.md)
-
- 
 

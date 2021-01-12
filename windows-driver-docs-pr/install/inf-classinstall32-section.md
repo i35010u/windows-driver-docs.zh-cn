@@ -11,12 +11,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 23a781c873aef99f54b397e349749e28d9811c65
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: f99f6186fab6987854f901c731df805363b71b05
+ms.sourcegitcommit: 10fecd036370f5eccb538004c5bec1fdd18c3275
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96790597"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98124207"
 ---
 # <a name="inf-classinstall32-section"></a>INF ClassInstall32 节
 
@@ -122,7 +122,7 @@ AddReg=add-registry-section[,add-registry-section]...
 <a name="remarks"></a>备注
 -------
 
-只应在设备 INF 文件中包含一个 **ClassInstall32** 部分，以安装新的自定义设备安装程序类。 已安装类中的设备的 INF 文件，无论 [系统提供的设备安装程序类](/windows-hardware/drivers/install/system-defined-device-setup-classes-reserved-for-system-use) 还是自定义类，都不应包含 **ClassInstall32** 部分。 由于系统仅当尚未安装类时才处理 **ClassInstall32** 部分，因此不能使用 **ClassInstall32** 部分来重新安装或更改已安装的类的设置。 特别是，不能使用 **ClassInstall32** 部分为已安装的类添加类联安装程序或类筛选器驱动程序。 有关如何安装共同安装程序和筛选器驱动程序的信息，请参阅 [编写共同安装](writing-a-co-installer.md) 程序和 [安装筛选器驱动程序](installing-a-filter-driver.md)。
+只应在设备 INF 文件中包含一个 **ClassInstall32** 部分，以安装新的自定义设备安装程序类。 已安装类中的设备的 INF 文件，无论 [系统提供的设备安装程序类](./system-defined-device-setup-classes-reserved-for-system-use.md) 还是自定义类，都不应包含 **ClassInstall32** 部分。 由于系统仅当尚未安装类时才处理 **ClassInstall32** 部分，因此不能使用 **ClassInstall32** 部分来重新安装或更改已安装的类的设置。 特别是，不能使用 **ClassInstall32** 部分为已安装的类添加类联安装程序或类筛选器驱动程序。 有关如何安装共同安装程序和筛选器驱动程序的信息，请参阅 [编写共同安装](writing-a-co-installer.md) 程序和 [安装筛选器驱动程序](installing-a-filter-driver.md)。
 
 通常， **ClassInstall32** 节包含一个或多个 **AddReg** 指令，可在注册表中系统提供的 *SetupClassGUID* 子项下添加条目。 这些项可以包括特定于类的 "友好名称"、"类安装程序路径"、"类图标"、"属性页提供程序" 等。
 
@@ -196,7 +196,7 @@ HKR,,NoInstallClass,,1
 HKR,,Icon,,"101"
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**AddProperty**](inf-addproperty-directive.md)
@@ -228,6 +228,4 @@ HKR,,Icon,,"101"
 [**UpdateInis**](inf-updateinis-directive.md)
 
 [**版本**](inf-version-section.md)
-
- 
 

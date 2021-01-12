@@ -10,12 +10,12 @@ keywords:
 - 设备特定的共同安装程序 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 510681db637737ceee722733b667b72b7243aa93
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: cce190e4707ad85fcb8bae3209d48aa64db9d2fe
+ms.sourcegitcommit: 10fecd036370f5eccb538004c5bec1fdd18c3275
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96827959"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98124077"
 ---
 # <a name="co-installer-operation"></a>辅助安装程序操作
 
@@ -27,7 +27,7 @@ Setupapi.log 调用共同安装程序，如下图所示。
 
 ![阐释共同安装程序如何参与设备安装的关系图](images/coinsts.png)
 
-Unshaded 框表示操作系统为 [系统提供的设备安装程序类](/windows-hardware/drivers/install/system-defined-device-setup-classes-reserved-for-system-use)提供的组件。 着色框表示您可以提供的组件。 如果创建自定义设备安装程序类，还可以提供类安装程序。 但是，很少需要创建新的设备安装程序类，因为几乎每个设备都可以与系统提供的设备安装程序类之一相关联。 有关 Windows 组件的详细信息，请参阅 [设备安装概述](overview-of-device-and-driver-installation.md)。
+Unshaded 框表示操作系统为 [系统提供的设备安装程序类](./system-defined-device-setup-classes-reserved-for-system-use.md)提供的组件。 着色框表示您可以提供的组件。 如果创建自定义设备安装程序类，还可以提供类安装程序。 但是，很少需要创建新的设备安装程序类，因为几乎每个设备都可以与系统提供的设备安装程序类之一相关联。 有关 Windows 组件的详细信息，请参阅 [设备安装概述](overview-of-device-and-driver-installation.md)。
 
 可以为特定设备提供 (*设备特定的共同安装程序*) 或 (*类共同安装* 程序) 的设备安装程序类的共同安装程序。 仅当安装为其注册了共同安装程序的设备时，Setupapi.log 才会调用设备特定的共同安装程序。 操作系统和供应商可以为设备注册零个或多个特定于设备的共同安装程序。 当安装为其注册了共同安装程序的设备安装程序类的任何设备时，Setupapi.log 会调用类共同安装程序。 操作系统和供应商可以为设备安装程序类注册一个或多个类共同安装程序。 此外，可以为一个或多个安装程序类注册类共同安装程序。
 
@@ -88,6 +88,4 @@ Windows 和 [自定义设备安装应用程序](writing-a-device-installation-ap
 对于后处理， **SetupDiCallClassInstaller** 以相反顺序调用共同安装程序。 如果上图中的所有共同安装程序都已返回 ERROR_DI_POSTPROCESSING_REQUIRED，则 **SetupDiCallClassInstaller** 将先调用 Device_Coinstaller_1 进行后处理，然后再执行 Class_Coinstaller_2，然后 Class_Coinstaller_1。 类安装程序不请求后处理;仅限共同安装程序。
 
 即使之前的共同安装程序未能安装请求，也会调用请求后处理的共同安装程序。
-
- 
 

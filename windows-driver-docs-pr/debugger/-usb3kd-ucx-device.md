@@ -11,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7414907bf5797b36151d970b67c475cb4b4234ac
-ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
+ms.openlocfilehash: 26785eba89ec7056cbf3a333a073accae510aeaa
+ms.sourcegitcommit: 10fecd036370f5eccb538004c5bec1fdd18c3275
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97091132"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98124033"
 ---
 # <a name="usb3kducx_device"></a>！ usb3kd ucx \_ 设备
 
@@ -41,7 +41,7 @@ Usb3kd.dll
 <a name="remarks"></a>备注
 -------
 
-USB 主机控制器扩展驱动程序 (Ucx *版本*.sys) 提供 usb 3.0 集线器驱动程序与 usb 3.0 主机控制器驱动程序之间的抽象层。 扩展驱动程序具有其自己的主机控制器、设备和终结点的表示形式。 输出 [**！ ucx \_ device**](-usb3kd-device-info.md) 命令基于扩展驱动程序所维护的数据结构。 有关 USB 主机控制器扩展驱动程序和 USB 3.0 主机控制器驱动程序的详细信息，请参阅 [Usb 驱动程序堆栈体系结构](/windows-hardware/drivers/usbcon/usb-3-0-driver-stack-architecture)。
+USB 主机控制器扩展驱动程序 (Ucx *版本*.sys) 提供 usb 3.0 集线器驱动程序与 usb 3.0 主机控制器驱动程序之间的抽象层。 扩展驱动程序具有其自己的主机控制器、设备和终结点的表示形式。 输出 [**！ ucx \_ device**](-usb3kd-device-info.md) 命令基于扩展驱动程序所维护的数据结构。 有关 USB 主机控制器扩展驱动程序和 USB 3.0 主机控制器驱动程序的详细信息，请参阅 [Usb 驱动程序堆栈体系结构](../usbcon/usb-3-0-driver-stack-architecture.md)。
 
 **！ ucx \_ 设备** 和 [**！设备 \_ 信息**](-usb3kd-device-info.md) 都显示设备的相关信息，但显示的信息不同。 **！ Ucx \_ 设备** 的输出来自 usb 主机控制器扩展驱动程序的位置，而 **！设备 \_ 信息** 的输出来自 usb 3.0 集线器驱动程序的视图。 例如， **！ ucx \_ 设备** 输出包含有关终结点的信息，而 **！设备 \_ 信息** 输出包含有关配置和接口描述符的信息。
 
@@ -101,6 +101,4 @@ EventCallbacks:
 [**！ usb3kd ucx \_ 控制器 \_ 列表**](-usb3kd-ucx-controller-list.md)
 
 [ (USB) 驱动程序的通用串行总线](../usbcon/index.md)
-
- 
 

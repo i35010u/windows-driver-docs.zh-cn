@@ -10,12 +10,12 @@ keywords:
 - WDM 低边缘 WDK 网络，关于 WDM 下边缘
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 624cb25902a234b17c6bc0eec85894c65bb1648c
-ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
+ms.openlocfilehash: 6452b8dded8d785213042d1f67cb99ebab2037cd
+ms.sourcegitcommit: 10fecd036370f5eccb538004c5bec1fdd18c3275
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97090894"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98124293"
 ---
 # <a name="miniport-driver-with-a-wdm-lower-edge"></a>包含 WDM 下边缘的微型端口驱动程序
 
@@ -47,7 +47,5 @@ Ndis.sys 驱动程序，该驱动程序提供分层网络驱动程序之间的�
 Usb[例程](/previous-versions/windows/hardware/drivers/ff540046(v=vs.85))和 i/o 请求，usb 客户端驱动程序可使用该[请求](/previous-versions/ff537421(v=vs.85))与 usb 驱动程序堆栈进行交互。
 
 <a href="" id="usb-driver-stack"></a>USB 驱动程序堆栈  
-USB 设备的驱动程序堆栈。 有关详细信息，请参阅 [USB 驱动程序堆栈体系结构](/windows-hardware/drivers/usbcon/usb-3-0-driver-stack-architecture)。
-
- 
+USB 设备的驱动程序堆栈。 有关详细信息，请参阅 [USB 驱动程序堆栈体系结构](../usbcon/usb-3-0-driver-stack-architecture.md)。
 
