@@ -11,17 +11,17 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f0faa92c2cfe9f9881e8ef3d9f920df34714b0d
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 73f332a91711b71b941c5792deb1604642883f21
+ms.sourcegitcommit: 478756d6588c773ed8e443de4fa47b2c94c28bbc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96820741"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98105582"
 ---
 # <a name="inf-models-section"></a>INF Models 节
 
 
-每个制造商的 *型号* 部分识别至少一个设备，引用该设备的 INF 文件的 *DDInstall* 部分，并为该设备指定唯一的型号部分 [硬件标识符 (ID)](hardware-ids.md) 。
+每个制造商的 *型号* 部分识别至少一个设备，引用该设备的 INF 文件的 *DDInstall* 部分，并为该设备指定唯一的型号部分硬件标识符 (ID) 。
 
 每个制造商的 *型号* 部分中的任何条目都可以为与由初始硬件 ID 指定的设备兼容并由同一驱动程序控制的设备指定一个或多个附加设备 id。
 
@@ -40,13 +40,13 @@ device-description=install-section-name,[hw-id][,compatible-id...]
 
 
 <a href="" id="device-description"></a>*设备-描述*  
-标识要安装的设备，表示为可见字符的任意唯一组合或 **%** <em>strkey</em> **%** 在 [**INF 字符串部分**](inf-strings-section.md)中定义的 strkey 标记。 设备说明 LINE_LEN 的最大长度（以字符为字符）。
+标识要安装的设备，表示为可见字符的任意唯一组合或 **%** <em></em> **%** 在 [**INF 字符串部分**](inf-strings-section.md)中定义的 strkey 标记。 设备说明 LINE_LEN 的最大长度（以字符为字符）。
 
 <a href="" id="install-section-name"></a>*安装-节名称*  
 如果任何) ，请指定要用于设备 (和兼容型号的 INF 安装部分的未修饰名。 有关详细信息，请参阅 [**INF *DDInstall* 部分**](inf-ddinstall-section.md)。
 
 <a href="" id="hw-id"></a>*hw-id*  
-指定供应商定义的 [硬件 ID](hardware-ids.md) 字符串，该字符串用于标识设备，PnP 管理器使用该设备查找此设备的 INF 文件匹配项。 此类硬件 ID 具有以下格式之一：
+指定供应商定义的硬件 ID 字符串，该字符串用于标识设备，PnP 管理器使用该设备查找此设备的 INF 文件匹配项。 此类硬件 ID 具有以下格式之一：
 
 <a href="" id="enumerator-enumerator-specific-device-id"></a>*枚举器 \\ 特定的设备 id*  
 由单个枚举器报告给 PnP 管理器的单个 PnP 设备的典型格式。 例如， `USB\VID_045E&PID_00B` 标识 USB 总线上的 MICROSOFT HID 键盘设备。 根据枚举器，此类规范甚至可以包含设备的硬件修订号，例如 `PCI\VEN_1011&DEV_002&SUBSYS_00000000&REV_02` 。
@@ -100,6 +100,7 @@ device-description=install-section-name,[hw-id][,compatible-id...]
 
 ## <a name="see-also"></a>请参阅
 
+[硬件标识符 (Hwid) ](hardware-ids.md)
 
 [**ControlFlags**](inf-controlflags-section.md)
 
