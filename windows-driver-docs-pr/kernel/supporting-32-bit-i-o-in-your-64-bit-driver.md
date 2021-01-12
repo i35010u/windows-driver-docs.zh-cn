@@ -16,12 +16,12 @@ keywords:
 - 缓冲区指针 WDK 64 位
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e0a5d2b8cb934c88853d8f5393632ae5b442db2f
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 42e44738fd31aef55f49cdc02384b6ff39a93dc4
+ms.sourcegitcommit: 2ebfc5510f175f1a897cce416f75a5b082441547
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96841219"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98112680"
 ---
 # <a name="supporting-32-bit-io-in-your-64-bit-driver"></a>在 64 位驱动程序中支持 32 位 I/O
 
@@ -29,7 +29,7 @@ ms.locfileid: "96841219"
 
 
 
-Windows 上的 windows (WOW64) 使 Microsoft Win32 用户模式应用程序可以在64位 Windows 上运行。 它通过以下方式来实现此过程：在转换到64位内核之前，截获 Win32 函数调用并将参数从指针精度类型转换为固定精度类型。 这称为 *thunk* 的转换是为所有 Win32 函数自动完成的，但有一个重要的例外：传递到 [**DeviceIoControl**](/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol)的数据缓冲区。 这些缓冲区的内容由 *InputBuffer* 和 *OutputBuffer* 参数指向，因为它们的结构特定于驱动程序。
+Windows 上的 windows (WOW64) 使 Microsoft Win32 用户模式应用程序可以在64位 Windows 上运行。 它通过以下方式来实现此功能：在转换为64位内核之前，截获 Win32 函数调用并将参数从32位指针类型转换为64位指针类型。 这称为 *thunk* 的转换是为所有 Win32 函数自动完成的，但有一个重要的例外：传递到 [**DeviceIoControl**](/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol)的数据缓冲区。 这些缓冲区的内容由 *InputBuffer* 和 *OutputBuffer* 参数指向，因为它们的结构特定于驱动程序。
 
 **注意**   尽管缓冲区 *内容* 不 thunked，但缓冲区 *指针* 会转换为64位指针。
 
