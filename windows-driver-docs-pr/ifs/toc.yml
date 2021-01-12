@@ -382,6 +382,8 @@
                       href: irp-mj-file-system-control2.md
                 - name: 确认 Oplock 突破
                   href: acknowledging-oplock-breaks.md
+                - name: Oplock 同步
+                  href: oplock-synchronization.md
     - name: 内核网络重定向程序驱动程序组件
       items:
         - name: RDBSS 驱动程序和库
