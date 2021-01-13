@@ -3,15 +3,17 @@ title: NDIS 选择性挂起的标准化 INF 关键字
 description: NDIS 选择性挂起的标准化 INF 关键字
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b34a316aec03c857f47d044ceec4152555d9c45
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: fa5346fc9e2eab1c2dc2c74b99e860e06d38f5c8
+ms.sourcegitcommit: 06453fd351dd272e7710dbe5c0c3a49ce4326957
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96839987"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98180235"
 ---
 # <a name="standardized-inf-keywords-for-ndis-selective-suspend"></a>NDIS 选择性挂起的标准化 INF 关键字
 
+> [!NOTE]
+> 选择性挂起相关的关键字仅适用于传统的 NDIS 微型端口驱动程序。 它们在 [网络适配器 WDF 类扩展中已弃用 (NetAdapterCx) ](../netcx/index.md) ，并且不能由其客户端驱动程序使用。
 
 定义了以下标准化 INF 关键字，以便在微型端口驱动程序上为 NDIS 选择性挂起启用、禁用和配置参数：
 
@@ -45,7 +47,7 @@ ms.locfileid: "96839987"
 
  
 
-<a href="" id="value"></a>“值”  
+<a href="" id="value"></a>Value  
 与列表中的每个 SubkeyName 相关联的枚举整数值。
 
 <a href="" id="enumdesc"></a>EnumDesc  
@@ -62,7 +64,7 @@ ms.locfileid: "96839987"
 <tr class="header">
 <th align="left">SubkeyName</th>
 <th align="left">ParamDesc</th>
-<th align="left">“值”</th>
+<th align="left">Value</th>
 <th align="left">EnumDesc</th>
 </tr>
 </thead>
@@ -77,7 +79,7 @@ ms.locfileid: "96839987"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1 (默认值) </p></td>
-<td align="left"><p>已启用</p></td>
+<td align="left"><p>启用</p></td>
 </tr>
 </tbody>
 </table>
