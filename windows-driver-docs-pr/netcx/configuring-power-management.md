@@ -5,12 +5,12 @@ keywords:
 - NetAdapterCx 配置电源管理，NetCx 配置电源管理
 ms.date: 06/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 259629ebe7812f4603aa39c6f8b941c9803674c5
-ms.sourcegitcommit: 06453fd351dd272e7710dbe5c0c3a49ce4326957
+ms.openlocfilehash: 4b03992ae4488f021d95db99c29507e356417dfc
+ms.sourcegitcommit: 137d098e1a1a0c128d56a7002272847ea7c58e64
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98180239"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98192004"
 ---
 # <a name="configuring-netadaptercx-power-management"></a>配置 NetAdapterCx 电源管理
 
@@ -21,7 +21,7 @@ ms.locfileid: "98180239"
 - 当操作系统指示的时候，网络设备可以进入低功耗 (Dx) 状态。
   - 客户端驱动程序将注册可选的 WDF 事件回调以接收电源转换的通知，如在 [功能驱动程序中支持 PnP 和电源管理](../wdf/supporting-pnp-and-power-management-in-function-drivers.md)中所述。
 
-  - 如果网络设备可以进入 Dx 状态，而系统仍处于正常工作 (S0) 状态，则客户端驱动程序应支持空闲关机。 请参阅 [支持空闲电源关闭](../wdf/supporting-idle-power-down.md)。 除了标准用户控件可供所有 WDF 设备使用以外，NetAdapterCx 还允许以 [标准化 INF 关键字形式用于电源管理](../network/standardized-inf-keywords-for-power-management.md)的其他网络特定空闲控制。 请参阅下面的 " [网络设备空闲和唤醒行为的用户控制](#user-control-of-network-device-idle-and-wake-behavior) " 部分。
+  - 如果网络设备可以进入 Dx 状态，而系统仍处于正常工作 (S0) 状态，则客户端驱动程序应支持空闲关机。 请参阅 [支持空闲电源关闭](../wdf/supporting-idle-power-down.md)。 除了标准 [用户控制的设备空闲和唤醒行为](../wdf/user-control-of-device-idle-and-wake-behavior.md)可用于所有 WDF 设备，NetAdapterCx 允许通过 **\* IdleRestriction** 的其他网络特定的空闲控制，如 [用于电源管理的标准化 INF 关键字](../network/standardized-inf-keywords-for-power-management.md)中所定义。
 
 - 当网络设备处于 Dx 状态时，如果已预配置的唤醒条件已发生，则它可以触发唤醒信号。
   - 若要详细了解 WDF 设备如何从系统范围低功耗状态唤醒系统，请参阅 [支持系统唤醒](../wdf/supporting-system-wake-up.md)。
@@ -188,32 +188,6 @@ NIC 硬件唤醒系统时，客户端驱动程序必须向 NetAdapterCx 报告�
 - **NetWakeSourceTypePacketFilterMatch**，调用 [**NET_ADAPTER_WAKE_REASON_FILTER_PACKET_INIT**](/windows-hardware/drivers/ddi/netadapter/nf-netadapter-net_adapter_wake_reason_filter_packet_init)  初始化 **NET_ADAPTER_WAKE_REASON_PACKET** 结构。 调用 **NetAdapterReportWakeReasonPacket** 以报告此唤醒原因。
 
 - **NetWakeSourceTypeMediaChange**，请调用 [**NetAdapterReportWakeReasonMediaChange**](/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadapterreportwakereasonmediachange) 来报告此唤醒原因。
-
-## <a name="user-control-of-network-device-idle-and-wake-behavior"></a>网络设备空闲和唤醒行为的用户控制
-
-除了允许用户控制设备空闲和唤醒行为中所述的设备空闲和唤醒行为的标准 WDF 进程 [外，NetAdapterCx](../wdf/user-control-of-device-idle-and-wake-behavior.md)还定义了网络设备特定的标准化 INF 关键字，以允许更多控制：
-
-**\*IdleRestriction**  
-如果网络设备处于空闲关机状态并唤醒数据包筛选器功能，则此设置允许用户确定设备空闲关机的时间。
-
-**\* IdleRestriction** 是一个枚举标准化 INF 关键字，具有以下属性：
-
-SubkeyName：必须在 INF 文件中指定并且出现在注册表中的关键字的名称。
-
-ParamDesc：与 SubkeyName 关联的显示文本。
-
-值：与列表中每个选项关联的枚举整数值。
-
-EnumDesc：与菜单中显示的每个值相关联的显示文本。
-
-默认值：菜单的默认值。
-
-下表描述了 **\* IdleRestriction** 关键字的可能 INF 条目。
-
-|SubkeyName|ParamDesc|Value|EnumDesc|
-|--- |--- |--- |--- |
-|**_*IdleRestriction_**|空闲关机限制|0（默认值）|无限制|
-|||1|仅当用户不存在时空闲|
 
 ## <a name="power-management-scenarios-for-modern-standby-system"></a>新式备用系统的电源管理方案
 

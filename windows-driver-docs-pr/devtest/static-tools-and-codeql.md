@@ -1,23 +1,23 @@
 ---
-title: 静态工具和 CodeQL
+title: CodeQL 和静态工具徽标测试
 description: 在 Windows 驱动程序源代码中使用静态工具和 CodeQL 来发现并修复任何被视为 Must-Fix 的问题
 keywords:
 - 动态验证工具 WDK
 - 静态验证工具 WDK
 ms.date: 12/10/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 11a09bb25b7896ebe25fa27581f3a9afbead9629
-ms.sourcegitcommit: 10fecd036370f5eccb538004c5bec1fdd18c3275
+ms.openlocfilehash: 0fb8e93f493122ccfa2b98da52d62d591d960001
+ms.sourcegitcommit: 137d098e1a1a0c128d56a7002272847ea7c58e64
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98124265"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98192001"
 ---
 # <a name="codeql-and-the-static-tools-logo-test"></a>CodeQL 和静态工具徽标测试
 
-Microsoft 致力于缓解 Windows 操作系统的攻击面，并确保第三方驱动程序满足强安全块对于实现该目标至关重要。  Microsoft 将通过向 [Windows 硬件兼容计划](/windows-hardware/design/compatibility)添加新的要求来设置此安全栏。  此要求表明所有驱动程序提交必须对驱动程序源代码使用 [CodeQL](https://securitylab.github.com/tools/codeql) 引擎，并修复任何被视为 **"必须修复"** 的冲突。
+Microsoft 致力于缓解 Windows 操作系统的攻击面，并确保第三方驱动程序满足强安全块对于实现该目标至关重要。  设置此安全栏的一步是 Microsoft 正在采取的操作是向 [Windows 硬件兼容性计划](/windows-hardware/design/compatibility) 添加新要求 (WHCP) 。  此要求表明所有驱动程序提交必须对驱动程序源代码使用 [CodeQL](https://securitylab.github.com/tools/codeql) 引擎，并修复任何被视为 **"必须修复"** 的冲突。
 
-Semmle 的[CodeQL](https://semmle.com/codeql)是一种强大的保护软件静态分析技术。 大范围的高价值安全查询和强大平台的组合使其成为确保第三方驱动程序代码安全的重要工具。
+[CodeQL](https://semmle.com/codeql)（来自 [Semmle](https://semmle.com/)）是一种用于保护软件的强大静态分析技术。 大范围的高价值安全查询和强大平台的组合使其成为确保第三方驱动程序代码安全的重要工具。
 
 [静态工具徽标测试](/windows-hardware/test/hlk/testref/6ab6df93-423c-4af6-ad48-8ea1049155ae)将强制对驱动程序源代码进行分析并修复任何 **"必须修复"** 冲突。
 
@@ -25,11 +25,7 @@ Semmle 的[CodeQL](https://semmle.com/codeql)是一种强大的保护软件静�
 
 - 使用 CodeQL 分析驱动程序源代码，以了解已知的严重影响安全问题。
 - 确保静态工具徽标测试可以使用运行 CodeQL 的结果。
-- 在 Windows 硬件兼容性计划中，确定哪些 **"必须修复"** [查询](#must-fix-queries) 必须运行而不会出现证书错误。
-
-> [!IMPORTANT]
-> 此信息是初步信息，并将在完成查询规则集分发时进行更新。
->
+- 确定在 WHCP 中必须运行哪些 **"必须修复"** [查询](#must-fix-queries) ，而不会出现证书错误。
 
 ## <a name="concepts-for-codeql"></a>CodeQL 的概念
 
@@ -40,9 +36,9 @@ Semmle 的[CodeQL](https://semmle.com/codeql)是一种强大的保护软件静�
 - 查询结果。
 - 在数据库创建、执行查询和其他操作时生成的日志文件。
 
-本主题详细介绍了如何使用 CodeQL CLI 执行分析，并专注于适用于 Windows 的驱动程序开发人员。  补充文档可在 [CodeQL 入门](https://help.semmle.com/codeql/codeql-cli/procedures/get-started.html)上找到。
+本主题详细介绍了如何使用 CodeQL 命令行界面 (CLI) 执行分析，重点介绍适用于 Windows 的驱动程序开发人员。  补充文档可在 [CodeQL 入门](https://help.semmle.com/codeql/codeql-cli/procedures/get-started.html)上找到。
 
-我们将使用 [CodeQL 命令行工具 (CLI) ](https://help.semmle.com/codeql/codeql-cli.html) 从各种编译和解释语言创建 CodeQL 数据库，然后使用单独的查询和驱动程序特定的查询套件分析该数据库。
+我们将使用 [CodeQL 命令行工具 (CLI) ](https://help.semmle.com/codeql/codeql-cli.html) 从各种编译和解释语言创建 CodeQL 数据库，然后使用特定于驱动程序的 [查询套件](https://codeql.github.com/docs/codeql-cli/creating-codeql-query-suites/)分析该数据库。
 
 ## <a name="codeql-windows-setup"></a>CodeQL Windows 安装程序
 
@@ -56,11 +52,11 @@ C:\> mkdir C:\codeql-home
 
 2. 导航到 Github [CodeQL 下载页](https://github.com/github/codeql-cli-binaries/releases/)
 3. 下载 zip 文件的最新版本。 例如，64位 Windows "codeql-win64.zip"。
-4. 将下载的 zip 文件解压缩到目录，例如  `C:\codeql-home\codeql-win64` 。
-5. 通过显示帮助确认 CodeCL 命令是否正常工作。
+4. 将 zip 文件中的 codeql 文件夹解压缩到目录，例如  `C:\codeql-home\codeql\` 。
+5. 通过显示帮助确认 CodeQL 命令是否正常工作。
 
 ```command
-C:\codeql-home\codeql-win64\codeql>codeql --help
+C:\codeql-home\codeql\>codeql --help
 Usage: codeql <command> <argument>...
 Create and query CodeQL databases, or work with the QL language.
 
@@ -85,19 +81,18 @@ Commands:
   generate  Generate formatted QL documentation.
 ```
 
-### <a name="clone-the-repository-to-access-the-query-rules"></a>克隆存储库以访问查询规则
+### <a name="clone-the-repository-to-access-the-driver-specific-queries"></a>克隆存储库以访问特定于驱动程序的查询
 
-1. 导航到 [CodeQL Github 存储库](https://github.com/github/codeql)。
+1. 导航至 [Microsoft CodeQL GitHub 存储库](https://github.com/microsoft/Windows-Driver-Developer-Supplemental-Tools)。
 
-2. [克隆](https://github.com/git-guides/git-clone) 存储库以下载所需的 CodeQL 查询。
+2. [克隆](https://github.com/git-guides/git-clone) 存储库以下载包含驱动程序特定查询的所有 CodeQL 查询和 [查询套件](https://codeql.github.com/docs/codeql-cli/creating-codeql-query-suites/) 。
 
 ```command
-C:\codeql-home\>git clone https://github.com/github/codeql.git
+C:\codeql-home\>git clone https://github.com/microsoft/Windows-Driver-Developer-Supplemental-Tools.git --recursive
 ```
 
 > [!NOTE]
 > 使用 CodeQL 进行 WHCP 测试的目的是在 **[硬件实验室工具包下接受 ()](/windows-hardware/test/hlk/) 最终用户许可协议**。
-> 在不久的将来，将更新上述说明中的步骤2，以指定包含仅包含驱动程序相关查询的查询套件的存储库。
 
 此页假定为 Windows 开发环境，并且存储库将安装在 *C:\codeql-home* 下。
 
@@ -123,22 +118,22 @@ codeql database create -l=[cpp/csharp/python/java/javascript/go/xml] -s=<path to
 codeql database create --help
 ```
 
-CodeQl 使用 MSBuild 编译器来处理 c + + 代码，以便对其进行分析。
+在此示例中，CodeQL 使用 MSBuild 编译器来处理 c + + 代码，以便对其进行分析。
 
 ### <a name="example"></a>示例
 
 使用用于生成驱动程序源代码的命令行环境（例如 [企业 Windows 驱动程序工具包 (EWDK) ](../develop/using-the-enterprise-wdk.md)）导航到克隆了存储库的 CodeQL 工具文件夹。
 
-此示例将处理评估 github 上提供的 kmdfecho 驱动程序示例。
+此示例将处理评估 GitHub 上提供的 kmdfecho 驱动程序示例。
 
 https://github.com/Microsoft/Windows-driver-samples/tree/master/general/echo/kmdf
 
-Kmdf 示例位于 `C:\codeql-home\drivers\kmdf` 。
+下面的示例将 kmdf 示例放在目录中 `C:\codeql-home\drivers\kmdf` 。  
 
 运行以下命令，在 *C:\codeql-home\databases\kmdf* 下创建新的 CodeQL 数据库。
 
 ```command
-C:\codeql-home>C:\codeql-home\codeql-win64\codeql\codeql database create -l=cpp -s=C:\codeql-home\drivers\kmdf -c "msbuild /t:rebuild "C:\codeql-home\drivers\kmdf\kmdfecho.sln" /p:UseSharedCompilation=false" "C:\codeql-home\databases\kmdf" -j 0
+C:\codeql-home>C:\codeql-home\codeql\codeql.cmd database create -l=cpp -s=C:\codeql-home\drivers\kmdf -c "msbuild /t:rebuild "C:\codeql-home\drivers\kmdf\kmdfecho.sln" /p:UseSharedCompilation=false" "C:\codeql-home\databases\kmdf" -j 0
 ```
 
 *"-J 0"* 标志指示使用的线程数与创建数据库的导入步骤中的 CPU 数量相同。
@@ -153,12 +148,14 @@ msbuild /t:rebuild "C:\codeql-home\drivers\kmdf\kmdfecho.sln"
 
 此时，在我们的示例设置中，将显示以下目录。
 
-| 描述            | 位置                           |
+| 说明            | 位置                           |
 |------------------------|------------------------------------|
-| Codeql.exe             | C:\codeql-home\codeql-win64\codeql |
+| Codeql.exe             | C:\codeql-home\codeql\codeql       |
 | C + + 规则              | C:\codeql-home\codeql\cpp          |
 | 数据库              | C:\codeql-home\databases           |
 | 待测试的驱动程序代码 | C:\codeql-home\drivers\kmdf        |
+| 查询套件与驱动程序特定的查询 | C:\codeql-home\Windows-Driver-Developer-Supplemental-Tools\codeql\windows-drivers\suites      |
+
 
 ## <a name="perform-analysis"></a>执行分析
 
@@ -166,9 +163,9 @@ msbuild /t:rebuild "C:\codeql-home\drivers\kmdf\kmdfecho.sln"
 
 CodeQL CLI 工具可以对在上一步中创建的数据库进行分析，还可以运行查询或查询套件。  以 *CSV* 或 *SARIF* 格式报告发现的输出。
 
-就本示例而言，假设要在驱动程序源代码上运行的查询套件是在克隆 CodeQL Microsoft 存储库时包含的套件。
+出于本示例的目的，假设要在驱动程序源代码上运行的查询套件是在克隆 [Microsoft CodeQL 存储库](https://github.com/microsoft/Windows-Driver-Developer-Supplemental-Tools)时包含的 *windows_driver_recommended qls* 套件。
 
-要执行分析的数据库分析命令使用以下语法。
+要执行分析的 *"数据库分析"* 命令使用以下语法：
 
 ```command
 codeql database analyze <database> <path to query, suite or directory> 
@@ -182,7 +179,7 @@ codeql database analyze <database> <path to query, suite or directory>
 使用参数在 codeql 数据库分析命令中显示帮助 `--help` 。
 
 ```command
-C:\codeql-home\codeql-win64\codeql>codeql database analyze --help
+C:\codeql-home\codeql>codeql database analyze --help
 Usage: codeql database analyze [OPTIONS] <database> [<query|dir|suite>...]
 Analyze a database, producing meaningful results in the context of the source code.
 
@@ -193,41 +190,127 @@ in SARIF or another interpreted format.
 
 ```
 
-例如，若要对 kmdf 回显驱动程序的 TooFewArguments 查询进行评估，并使用 SARIF 格式返回的结果，请使用此命令。
+若要对 kmdf 回送驱动程序的 qls 查询套件进行 *windows_driver_recommended* 评估，并使用 SARIF 格式返回的结果，请使用以下命令。  *Windows_driver_recommended qls* 查询套件是 Microsoft 为驱动程序开发人员认为非常重要的所有查询的超集。  有关详细信息，请参阅下面的 ["查询套件"](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-tools-and-codeql#query-suites) 一节。
 
 ```command
-C:\codeql-home>C:\codeql-home\codeql-win64\codeql\codeql database analyze "C:\codeql-home\databases\kmdf" "C:\codeql-home\codeql\cpp\ql\src\Likely Bugs\Underspecified Functions\TooFewArguments.ql" --format=sarifv2.1.0 --output=C:\codeql-home\databases\kmdfecho1.sarif -j 0
+C:\codeql-home>c:\codeql-home\codeql\codeql.cmd database analyze "C:\codeql-home\databases\kmdf" windows_driver_recommended.qls --format=sarifv2.1.0 --output=C:\codeql-home\databases\kmdfecho1.sarif -j 0
 ```
 
-应显示类似于以下内容的输出。
+应显示类似于以下内容的输出：
 
 ```command
 Running queries.
-Compiling query plan for C:\codeql-home\codeql\cpp\ql\src\Likely Bugs\Underspecified Functions\TooFewArguments.ql.
-[1/1 comp 21.5s] Compiled C:\codeql-home\codeql\cpp\ql\src\Likely Bugs\Underspecified Functions\TooFewArguments.ql.
+Compiling query plan for C:\codeql-home\Windows-Driver-Developer-Supplemental-Tools\codeql\codeql-queries\cpp\ql\src\Best Practices\Likely Errors\OffsetUseBeforeRangeCheck.ql.
+[1/22] Found in cache: C:\codeql-home\Windows-Driver-Developer-Supplemental-Tools\codeql\codeql-queries\cpp\ql\src\Best Practices\Likely Errors\OffsetUseBeforeRangeCheck.ql.
+Compiling query plan for C:\codeql-home\Windows-Driver-Developer-Supplemental-Tools\codeql\codeql-queries\cpp\ql\src\Likely Bugs\Arithmetic\IntMultToLong.ql.
+Compiling query plan for C:\codeql-home\Windows-Driver-Developer-Supplemental-Tools\codeql\codeql-queries\cpp\ql\src\Likely Bugs\Arithmetic\BadAdditionOverflowCheck.ql.
+[2/22] Found in cache: C:\codeql-home\Windows-Driver-Developer-Supplemental-Tools\codeql\codeql-queries\cpp\ql\src\Likely Bugs\Arithmetic\BadAdditionOverflowCheck.ql.
+Compiling query plan for C:\codeql-home\Windows-Driver-Developer-Supplemental-Tools\codeql\codeql-queries\cpp\ql\src\Likely Bugs\Arithmetic\SignedOverflowCheck.ql.
+[3/22] Found in cache: C:\codeql-home\Windows-Driver-Developer-Supplemental-Tools\codeql\codeql-queries\cpp\ql\src\Likely Bugs\Arithmetic\IntMultToLong.ql.
+Compiling query plan for C:\codeql-home\Windows-Driver-Developer-Supplemental-Tools\codeql\codeql-queries\cpp\ql\src\Likely Bugs\Conversion\CastArrayPointerArithmetic.ql.
+[4/22] Found in cache: C:\codeql-home\Windows-Driver-Developer-Supplemental-Tools\codeql\codeql-queries\cpp\ql\src\Likely Bugs\Conversion\CastArrayPointerArithmetic.ql.
+Compiling query plan for C:\codeql-home\Windows-Driver-Developer-Supplemental-Tools\codeql\codeql-queries\cpp\ql\src\Likely Bugs\Likely Typos\IncorrectNotOperatorUsage.ql.
+[5/22] Found in cache: C:\codeql-home\Windows-Driver-Developer-Supplemental-Tools\codeql\codeql-queries\cpp\ql\src\Likely Bugs\Likely Typos\IncorrectNotOperatorUsage.ql.
+Compiling query plan for C:\codeql-home\Windows-Driver-Developer-Supplemental-Tools\codeql\codeql-queries\cpp\ql\src\Likely Bugs\Memory Management\PointerOverflow.ql.
+[6/22] Found in cache: C:\codeql-home\Windows-Driver-Developer-Supplemental-Tools\codeql\codeql-queries\cpp\ql\src\Likely Bugs\Arithmetic\SignedOverflowCheck.ql.
+Compiling query plan for C:\codeql-home\Windows-Driver-Developer-Supplemental-Tools\codeql\codeql-queries\cpp\ql\src\Likely Bugs\Memory Management\SuspiciousSizeof.ql.
+[7/22] Found in cache: C:\codeql-home\Windows-Driver-Developer-Supplemental-Tools\codeql\codeql-queries\cpp\ql\src\Likely Bugs\Memory Management\SuspiciousSizeof.ql.
+Compiling query plan for C:\codeql-home\Windows-Driver-Developer-Supplemental-Tools\codeql\codeql-queries\cpp\ql\src\Likely Bugs\Memory Management\UninitializedLocal.ql.
+[8/22] Found in cache: C:\codeql-home\Windows-Driver-Developer-Supplemental-Tools\codeql\codeql-queries\cpp\ql\src\Likely Bugs\Memory Management\PointerOverflow.ql.
+Compiling query plan for C:\codeql-home\Windows-Driver-Developer-Supplemental-Tools\codeql\codeql-queries\cpp\ql\src\Likely Bugs\Underspecified Functions\TooFewArguments.ql.
+[9/22] Found in cache: C:\codeql-home\Windows-Driver-Developer-Supplemental-Tools\codeql\codeql-queries\cpp\ql\src\Likely Bugs\Memory Management\UninitializedLocal.ql.
+Compiling query plan for C:\codeql-home\Windows-Driver-Developer-Supplemental-Tools\codeql\codeql-queries\cpp\ql\src\Security\CWE\CWE-121\UnterminatedVarargsCall.ql.
+[10/22] Found in cache: C:\codeql-home\Windows-Driver-Developer-Supplemental-Tools\codeql\codeql-queries\cpp\ql\src\Likely Bugs\Underspecified Functions\TooFewArguments.ql.
+Compiling query plan for C:\codeql-home\Windows-Driver-Developer-Supplemental-Tools\codeql\codeql-queries\cpp\ql\src\Security\CWE\CWE-190\ComparisonWithWiderType.ql.
+[11/22] Found in cache: C:\codeql-home\Windows-Driver-Developer-Supplemental-Tools\codeql\codeql-queries\cpp\ql\src\Security\CWE\CWE-121\UnterminatedVarargsCall.ql.
+Compiling query plan for C:\codeql-home\Windows-Driver-Developer-Supplemental-Tools\codeql\codeql-queries\cpp\ql\src\Security\CWE\CWE-253\HResultBooleanConversion.ql.
+[12/22] Found in cache: C:\codeql-home\Windows-Driver-Developer-Supplemental-Tools\codeql\codeql-queries\cpp\ql\src\Security\CWE\CWE-190\ComparisonWithWiderType.ql.
+Compiling query plan for C:\codeql-home\Windows-Driver-Developer-Supplemental-Tools\codeql\codeql-queries\cpp\ql\src\Security\CWE\CWE-457\ConditionallyUninitializedVariable.ql.
+[13/22] Found in cache: C:\codeql-home\Windows-Driver-Developer-Supplemental-Tools\codeql\codeql-queries\cpp\ql\src\Security\CWE\CWE-253\HResultBooleanConversion.ql.
+Compiling query plan for C:\codeql-home\Windows-Driver-Developer-Supplemental-Tools\codeql\codeql-queries\cpp\ql\src\Security\CWE\CWE-468\IncorrectPointerScaling.ql.
+[14/22] Found in cache: C:\codeql-home\Windows-Driver-Developer-Supplemental-Tools\codeql\codeql-queries\cpp\ql\src\Security\CWE\CWE-468\IncorrectPointerScaling.ql.
+Compiling query plan for C:\codeql-home\Windows-Driver-Developer-Supplemental-Tools\codeql\codeql-queries\cpp\ql\src\Security\CWE\CWE-468\IncorrectPointerScalingVoid.ql.
+[15/22] Found in cache: C:\codeql-home\Windows-Driver-Developer-Supplemental-Tools\codeql\codeql-queries\cpp\ql\src\Security\CWE\CWE-468\IncorrectPointerScalingVoid.ql.
+Compiling query plan for C:\codeql-home\Windows-Driver-Developer-Supplemental-Tools\codeql\codeql-queries\cpp\ql\src\Security\CWE\CWE-468\SuspiciousAddWithSizeof.ql.
+[16/22] Found in cache: C:\codeql-home\Windows-Driver-Developer-Supplemental-Tools\codeql\codeql-queries\cpp\ql\src\Security\CWE\CWE-468\SuspiciousAddWithSizeof.ql.
+Compiling query plan for C:\codeql-home\Windows-Driver-Developer-Supplemental-Tools\codeql\codeql-queries\cpp\ql\src\Security\CWE\CWE-676\PotentiallyDangerousFunction.ql.
+[17/22] Found in cache: C:\codeql-home\Windows-Driver-Developer-Supplemental-Tools\codeql\codeql-queries\cpp\ql\src\Security\CWE\CWE-676\PotentiallyDangerousFunction.ql.
+Compiling query plan for C:\codeql-home\Windows-Driver-Developer-Supplemental-Tools\codeql\codeql-queries\cpp\ql\src\Security\CWE\CWE-704\WcharCharConversion.ql.
+[18/22] Found in cache: C:\codeql-home\Windows-Driver-Developer-Supplemental-Tools\codeql\codeql-queries\cpp\ql\src\Security\CWE\CWE-704\WcharCharConversion.ql.
+Compiling query plan for C:\codeql-home\Windows-Driver-Developer-Supplemental-Tools\codeql\windows-drivers\queries\Likely Bugs\Memory Management\UseAfterFree\ProbableUseAfterFree.ql.
+[19/22 comp 1m39s] Compiled C:\codeql-home\Windows-Driver-Developer-Supplemental-Tools\codeql\codeql-queries\cpp\ql\src\Security\CWE\CWE-457\ConditionallyUninitializedVariable.ql.
+Compiling query plan for C:\codeql-home\Windows-Driver-Developer-Supplemental-Tools\codeql\windows-drivers\queries\Likely Bugs\Memory Management\UseAfterFree\UseAfterFree.ql.
+[20/22 comp 2m24s] Compiled C:\codeql-home\Windows-Driver-Developer-Supplemental-Tools\codeql\windows-drivers\queries\Likely Bugs\Memory Management\UseAfterFree\ProbableUseAfterFree.ql.
+Compiling query plan for C:\codeql-home\Windows-Driver-Developer-Supplemental-Tools\codeql\windows-drivers\queries\Windows\wdk\wdk-deprecated-api.ql.
+[21/22 comp 1m1s] Compiled C:\codeql-home\Windows-Driver-Developer-Supplemental-Tools\codeql\windows-drivers\queries\Likely Bugs\Memory Management\UseAfterFree\UseAfterFree.ql.
+[22/22 comp 9.6s] Compiled C:\codeql-home\Windows-Driver-Developer-Supplemental-Tools\codeql\windows-drivers\queries\Windows\wdk\wdk-deprecated-api.ql.
+Starting evaluation of codeql-cpp\Likely Bugs\Arithmetic\BadAdditionOverflowCheck.ql.
+Starting evaluation of codeql-cpp\Likely Bugs\Memory Management\PointerOverflow.ql.
+Starting evaluation of codeql-cpp\Likely Bugs\Memory Management\SuspiciousSizeof.ql.
+Starting evaluation of codeql-cpp\Likely Bugs\Arithmetic\SignedOverflowCheck.ql.
+Starting evaluation of codeql-cpp\Likely Bugs\Likely Typos\IncorrectNotOperatorUsage.ql.
+Starting evaluation of codeql-cpp\Likely Bugs\Conversion\CastArrayPointerArithmetic.ql.
+Starting evaluation of codeql-cpp\Likely Bugs\Arithmetic\IntMultToLong.ql.
+Starting evaluation of codeql-cpp\Best Practices\Likely Errors\OffsetUseBeforeRangeCheck.ql.
+Starting evaluation of codeql-cpp\Likely Bugs\Memory Management\UninitializedLocal.ql.
 Starting evaluation of codeql-cpp\Likely Bugs\Underspecified Functions\TooFewArguments.ql.
-[1/1 eval 4.6s] Evaluation done; writing results to codeql-cpp\Likely Bugs\Underspecified Functions\TooFewArguments.bqrs.
+Starting evaluation of codeql-cpp\Security\CWE\CWE-121\UnterminatedVarargsCall.ql.
+Starting evaluation of codeql-cpp\Security\CWE\CWE-190\ComparisonWithWiderType.ql.
+Starting evaluation of codeql-cpp\Security\CWE\CWE-253\HResultBooleanConversion.ql.
+Starting evaluation of codeql-cpp\Security\CWE\CWE-468\IncorrectPointerScaling.ql.
+Starting evaluation of codeql-cpp\Security\CWE\CWE-468\IncorrectPointerScalingVoid.ql.
+Starting evaluation of codeql-cpp\Security\CWE\CWE-468\SuspiciousAddWithSizeof.ql.
+Starting evaluation of codeql-cpp\Security\CWE\CWE-676\PotentiallyDangerousFunction.ql.
+Starting evaluation of codeql-cpp\Security\CWE\CWE-704\WcharCharConversion.ql.
+Starting evaluation of codeql-cpp\Security\CWE\CWE-457\ConditionallyUninitializedVariable.ql.
+Starting evaluation of windows-drivers\queries\Likely Bugs\Memory Management\UseAfterFree\ProbableUseAfterFree.ql.
+Starting evaluation of windows-drivers\queries\Likely Bugs\Memory Management\UseAfterFree\UseAfterFree.ql.
+Starting evaluation of windows-drivers\queries\Windows\wdk\wdk-deprecated-api.ql.
+[1/22 eval 16.1s] Evaluation done; writing results to codeql-cpp\Security\CWE\CWE-676\PotentiallyDangerousFunction.bqrs.
+[2/22 eval 16.3s] Evaluation done; writing results to codeql-cpp\Security\CWE\CWE-704\WcharCharConversion.bqrs.
+[3/22 eval 17.5s] Evaluation done; writing results to codeql-cpp\Best Practices\Likely Errors\OffsetUseBeforeRangeCheck.bqrs.
+[4/22 eval 17.6s] Evaluation done; writing results to codeql-cpp\Likely Bugs\Memory Management\SuspiciousSizeof.bqrs.
+[5/22 eval 16.5s] Evaluation done; writing results to codeql-cpp\Security\CWE\CWE-468\SuspiciousAddWithSizeof.bqrs.
+[6/22 eval 17.6s] Evaluation done; writing results to codeql-cpp\Likely Bugs\Arithmetic\BadAdditionOverflowCheck.bqrs.
+[7/22 eval 17.7s] Evaluation done; writing results to codeql-cpp\Likely Bugs\Likely Typos\IncorrectNotOperatorUsage.bqrs.
+[8/22 eval 16.9s] Evaluation done; writing results to codeql-cpp\Security\CWE\CWE-253\HResultBooleanConversion.bqrs.
+[9/22 eval 18.5s] Evaluation done; writing results to windows-drivers\queries\Windows\wdk\wdk-deprecated-api.bqrs.
+[10/22 eval 19.4s] Evaluation done; writing results to codeql-cpp\Likely Bugs\Underspecified Functions\TooFewArguments.bqrs.
+[11/22 eval 19.2s] Evaluation done; writing results to codeql-cpp\Security\CWE\CWE-121\UnterminatedVarargsCall.bqrs.
+[12/22 eval 23.4s] Evaluation done; writing results to codeql-cpp\Security\CWE\CWE-468\IncorrectPointerScaling.bqrs.
+[13/22 eval 23.2s] Evaluation done; writing results to codeql-cpp\Security\CWE\CWE-468\IncorrectPointerScalingVoid.bqrs.
+[14/22 eval 26.3s] Evaluation done; writing results to codeql-cpp\Likely Bugs\Memory Management\UninitializedLocal.bqrs.
+[15/22 eval 31.7s] Evaluation done; writing results to codeql-cpp\Likely Bugs\Conversion\CastArrayPointerArithmetic.bqrs.
+[16/22 eval 32s] Evaluation done; writing results to windows-drivers\queries\Likely Bugs\Memory Management\UseAfterFree\ProbableUseAfterFree.bqrs.
+[17/22 eval 33.5s] Evaluation done; writing results to codeql-cpp\Likely Bugs\Arithmetic\IntMultToLong.bqrs.
+[18/22 eval 33.5s] Evaluation done; writing results to codeql-cpp\Security\CWE\CWE-190\ComparisonWithWiderType.bqrs.
+[19/22 eval 33.8s] Evaluation done; writing results to codeql-cpp\Security\CWE\CWE-457\ConditionallyUninitializedVariable.bqrs.
+[20/22 eval 36.5s] Evaluation done; writing results to windows-drivers\queries\Likely Bugs\Memory Management\UseAfterFree\UseAfterFree.bqrs.
+[21/22 eval 38.9s] Evaluation done; writing results to codeql-cpp\Likely Bugs\Memory Management\PointerOverflow.bqrs.
+[22/22 eval 46.1s] Evaluation done; writing results to codeql-cpp\Likely Bugs\Arithmetic\SignedOverflowCheck.bqrs.
 Shutting down query evaluator.
 Interpreting results.
 ```
 
-您可以使用 *"– timeout = [秒]"* 标志为整个操作指定超时。  这可用于分析查询，而不受单个长时间运行的查询的限制。  [数据库分析](https://help.semmle.com/codeql/codeql-cli/commands/database-analyze.html)中介绍了更多用于调整分析优化的选项。
+您可以使用 *"– timeout = [秒]"* 标志为整个操作指定超时。  这可用于分析查询，而不受单个长时间运行的查询的限制。  [数据库分析](https://help.semmle.com/codeql/codeql-cli/commands/database-analyze.html)中介绍了更多用于调整分析优化的选项。 
 
-目前，上面的命令演示了如何只运行一个查询 *"TooFewArguments. q"*。  可以通过在一个命令中按顺序列出所有查询来一次运行多个查询。  
+## <a name="query-suites"></a>查询套件
 
-在不久的将来，将提供包含所有相关驱动程序查询的特定于驱动程序的 *查询套件* 。 有关详细信息，请参阅 [查询套件](https://help.semmle.com/codeql/codeql-cli/procedures/query-suites.html)。
+作为 [Microsoft CodeQL GitHub 存储库](https://github.com/microsoft/Windows-Driver-Developer-Supplemental-Tools)的一部分，microsoft 提供了两个查询套件来简化端到端驱动程序开发人员工作流。  *Windows_driver_recommended qls* 查询套件包含 Microsoft 认为对驱动程序开发人员非常宝贵的 [所有查询](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-tools-and-codeql#queries)的超集。  
+
+Qls 查询套件包含当前被视为用于 WHCP 认证的 **"必须修复"** 的 [查询](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-tools-and-codeql#must-fix-queries)。 *windows_driver_mustfix* 这两个查询套件会定期更新，因为 Microsoft 最终会获得可用查询列表和 WHCP 认证所需的 "必须修复" 查询列表。  因此，使用 ["git pull"](https://www.git-scm.com/docs/git-pull) 命令定期同步存储库至关重要。
 
 ## <a name="troubleshooting"></a>疑难解答
 
-对于数据库版本不匹配问题，下列工具可能有所帮助。
+对于 [数据库版本](https://codeql.github.com/docs/codeql-cli/manual/version/) 不匹配问题，下列工具可能有所帮助。
 
 使用 "codeql 版本" 命令显示 codeql exe 的版本。
 
 ```command
-C:\codeql-home\codeql-win64\codeql>codeql version
+C:\codeql-home\codeql\>codeql version
 CodeQL command-line toolchain release 2.4.0.
 Copyright (C) 2019-2020 GitHub, Inc.
-Unpacked in: C:\codeql-home\codeql-win64\codeql
+Unpacked in: C:\codeql-home\codeql\
    Analysis results depend critically on separately distributed query and
    extractor modules. To list modules that are visible to the toolchain,
    use 'codeql resolve qlpacks' and 'codeql resolve languages'.
@@ -261,7 +344,12 @@ Microsoft 建议在 *所有* 驱动程序源代码上运行的查询包括：
 | [cpp/unterminatedvariadic-调用](https://help.semmle.com/wiki/display/CCPPOBJ/Call+to+function+with+fewer+arguments+than+declared+parameters)   | *cpp/q/src/Security/CWE/CWE-121/UnterminatedVarargsCall. q* |
 | [cpp/可疑-pointerscaling](https://help.semmle.com/wiki/display/CCPPOBJ/Suspicious+pointer+scaling)   | *cpp/q/src/Security/CWE/CWE-468/IncorrectPointerScaling q* |
 | [cpp/pointerscaling-void](https://help.semmle.com/wiki/display/CCPPOBJ/Suspicious+pointer+scaling+to+void)   | *cpp/q/src/Security/CWE/CWE-468/IncorrectPointerScalingVoid q* |
-| [cpp/有条件-未初始化-变量](https://help.semmle.com/wiki/display/CCPPOBJ/Conditionally+uninitialized+variable)   | */cpp/ql/src/Security/CWE/CWE-457/ConditionallyUninitializedVariable.ql.* | 
+| [cpp/有条件-未初始化-变量](https://help.semmle.com/wiki/display/CCPPOBJ/Conditionally+uninitialized+variable)   | *cpp/q/src/Security/CWE/CWE-457/ConditionallyUninitializedVariable。* | 
+| [cpp/使用-免费](https://docs.microsoft.com/windows-hardware/drivers/devtest/codeql-windows-driver-useafterfree)   | *Windows 驱动程序-开发人员补充-工具/codeql/windows-驱动程序/查询/可能的 Bug/内存管理/UseAfterFree \ UseAfterFree q* |
+| [cpp/可能-免费使用](https://docs.microsoft.com/windows-hardware/drivers/devtest/codeql-windows-driver-probableuseafterfree)   | *Windows 驱动程序-开发人员补充-工具/codeql/windows-驱动程序/查询/可能的 Bug/内存管理/UseAfterFree/ProbableUseAfterFree q* |
+| [cpp/windows/wdk/弃用的 api](https://docs.microsoft.com/windows-hardware/drivers/devtest/codeql-windows-driver-wdkdeprecatedapi)   | *Windows 驱动程序-开发人员补充-工具/codeql/windows-驱动程序/查询/Windows/wdk/wdk-q* |
+
+这些查询是 [Microsoft GitHub CodeQL 存储库](https://github.com/microsoft/Windows-Driver-Developer-Supplemental-Tools)中的 *windows_driver_recommended qls* 查询套件的一部分。
 
 ### <a name="must-fix-queries"></a>Must-Fix 查询
 
@@ -277,6 +365,9 @@ Microsoft 建议在 *所有* 驱动程序源代码上运行的查询包括：
 | [cpp/有条件-未初始化-变量](https://help.semmle.com/wiki/display/CCPPOBJ/Conditionally+uninitialized+variable)   | */cpp/ql/src/Security/CWE/CWE-457/ConditionallyUninitializedVariable.ql.* | 
 | [cpp/withwider 类型](https://help.semmle.com/wiki/display/CCPPOBJ/Comparison+of+narrow+type+with+wide+type+in+loop+condition)   | *cpp/q/src/Security/CWE/CWE-190/ComparisonWithWiderType. q* |
 | [cpp/未初始化-本地](https://help.semmle.com/wiki/display/CCPPOBJ/Potentially+uninitialized+local+variable)   | *cpp/q/src/可能的 Bug/内存管理/UninitializedLocal. q* |
+| [cpp/windows/wdk/弃用的 api](https://docs.microsoft.com/windows-hardware/drivers/devtest/codeql-windows-driver-wdkdeprecatedapi)   | *Windows 驱动程序-开发人员补充-工具/codeql/windows-驱动程序/查询/Windows/wdk/wdk-q* |
+
+这些查询是 [Microsoft GitHub CodeQL 存储库](https://github.com/microsoft/Windows-Driver-Developer-Supplemental-Tools)中的 *windows_driver_mustfix qls* 查询套件的一部分。
 
 ## <a name="view-analysis"></a>查看分析
 
