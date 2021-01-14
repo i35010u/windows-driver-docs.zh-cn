@@ -11,12 +11,12 @@ metadata:
   ms.date: 01/14/2020
   ms.localizationpriority: medium
   uhfHeaderId: MSDocsHeader-WinHW
-  ms.openlocfilehash: 7e9b23d537cf6fc61a8cfc814248a627a2a1be65
-  ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+  ms.openlocfilehash: fdc3423981643816e856125b5fe79e9b5b92e5f0
+  ms.sourcegitcommit: 06453fd351dd272e7710dbe5c0c3a49ce4326957
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 08/28/2020
-  ms.locfileid: "89066110"
+  ms.lasthandoff: 01/13/2021
+  ms.locfileid: "98180241"
 highlightedContent:
   items:
   - title: 获取 Windows 驱动程序工具包
@@ -86,11 +86,11 @@ conceptualContent:
     - text: 制造商
       url: /windows-hardware/manufacture
       itemType: overview
-    - text: 服务
-      url: /windows-hardware/service
-      itemType: overview
     - text: 测试性能和兼容性
       url: /windows-hardware/test
+      itemType: overview
+    - text: HLK
+      url: /windows-hardware/test/hlk
       itemType: overview
 tools:
   title: 驱动程序平台和框架
@@ -140,9 +140,6 @@ additionalContent:
     - title: 驱动程序技术概述
       summary: 开始了解特定 Windows 驱动程序模型，从蓝牙到 USB 等。
       url: ./device-and-driver-technologies.md
-    - title: Windows 符号程序包
-      summary: 符号文件使调试代码更加容易。
-      url: ./debugger/debugger-download-symbols.md
     - title: Bug 检查代码参考
       summary: 本部分包含常见 Bug 检查代码的说明，包括在蓝色 Bug 检查屏幕上通过错误代码显示的参数。
       url: ./debugger/bug-check-code-reference2.md
