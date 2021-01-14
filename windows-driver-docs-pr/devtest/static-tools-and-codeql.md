@@ -6,12 +6,12 @@ keywords:
 - 静态验证工具 WDK
 ms.date: 12/10/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 0fb8e93f493122ccfa2b98da52d62d591d960001
-ms.sourcegitcommit: 137d098e1a1a0c128d56a7002272847ea7c58e64
+ms.openlocfilehash: 8c9a358c5f208211cfa4a5e77cb1d9a3255e5097
+ms.sourcegitcommit: b68985c5486cccea20006860f970116d02fe5aa5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 01/14/2021
-ms.locfileid: "98192001"
+ms.locfileid: "98207867"
 ---
 # <a name="codeql-and-the-static-tools-logo-test"></a>CodeQL 和静态工具徽标测试
 
@@ -120,6 +120,10 @@ codeql database create --help
 
 在此示例中，CodeQL 使用 MSBuild 编译器来处理 c + + 代码，以便对其进行分析。
 
+
+> [!NOTE]
+> CodeQL 不需要使用 MSBuild 或 Visual Studio。 有关支持的编译器的列表，请参阅 [支持的 languges 和框架](https://codeql.github.com/docs/codeql-overview/supported-languages-and-frameworks/) 。
+
 ### <a name="example"></a>示例
 
 使用用于生成驱动程序源代码的命令行环境（例如 [企业 Windows 驱动程序工具包 (EWDK) ](../develop/using-the-enterprise-wdk.md)）导航到克隆了存储库的 CodeQL 工具文件夹。
@@ -148,7 +152,7 @@ msbuild /t:rebuild "C:\codeql-home\drivers\kmdf\kmdfecho.sln"
 
 此时，在我们的示例设置中，将显示以下目录。
 
-| 说明            | 位置                           |
+| 描述            | 位置                           |
 |------------------------|------------------------------------|
 | Codeql.exe             | C:\codeql-home\codeql\codeql       |
 | C + + 规则              | C:\codeql-home\codeql\cpp          |
