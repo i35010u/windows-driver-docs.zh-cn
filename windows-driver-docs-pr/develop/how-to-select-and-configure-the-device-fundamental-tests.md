@@ -3,12 +3,12 @@ title: 如何选择和配置设备基础功能测试
 description: 适用于 Windows 8 的 WDK 提供了一个驱动程序测试框架，其中包括一组设备基础功能测试。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c3c51297c43a3c91c34be47e21b067d920bafd2
-ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
+ms.openlocfilehash: b34ed31bce27c127ef70bd62de9dd40745a93bb8
+ms.sourcegitcommit: 10fecd036370f5eccb538004c5bec1fdd18c3275
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97091154"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98124285"
 ---
 # <a name="how-to-select-and-configure-the-device-fundamentals-tests"></a>如何选择和配置设备基础功能测试
 
@@ -42,7 +42,7 @@ WDK 提供有两种配置的设备基础功能测试：基本和认证。 在两
 
 可以编辑多个设备基础功能测试的运行时参数。 在“驱动程序测试组”窗口中，测试名称旁边的箭头 (») 指示你可以更改此测试参数。 选择箭头 (») 即可显示运行时参数。
 
-其中一个最常用的参数是 *DQ*，用于指定要测试的目标设备。 默认值 (**IsDevice**) 将测试目标计算机上的所有设备。 *DQ* 参数将通过 [**WDTF**](../wdtf/index.md) [SDEL](/windows-hardware/drivers/wdtf/simple-data-evaluation-language-overview) 查询来确定目标设备。 可以指定特定测试设备，如：
+其中一个最常用的参数是 *DQ*，用于指定要测试的目标设备。 默认值 (**IsDevice**) 将测试目标计算机上的所有设备。 *DQ* 参数将通过 [**WDTF**](../wdtf/index.md) [SDEL](../wdtf/simple-data-evaluation-language-overview.md) 查询来确定目标设备。 可以指定特定测试设备，如：
 
 **DeviceID=’USB\\ROOT\_HUB\\4&1CD5D022&0’** 仅选择具有指定 **DeviceID** 的测试设备。
 

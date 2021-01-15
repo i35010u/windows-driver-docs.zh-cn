@@ -3,12 +3,12 @@ title: 驱动程序堆栈
 description: 发送到设备驱动程序的大部分请求都打包在 I/O 请求数据包 (IRP) 中。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 76a801ab6a9142a08184bd343af5314bd7bbae3d
-ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
+ms.openlocfilehash: e4e59ec26fed4e43147cef24a3f6cd1ae0e9c7a2
+ms.sourcegitcommit: 10fecd036370f5eccb538004c5bec1fdd18c3275
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97090944"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98124039"
 ---
 # <a name="driver-stacks"></a>驱动程序堆栈
 
@@ -59,7 +59,7 @@ ms.locfileid: "97090944"
 
 显示特定技术或操作系统的特定组件或一部分的所有驱动程序的框图称为“技术驱动程序堆栈”  。 通常，会为技术驱动程序堆栈命名，如 USB 核心驱动程序堆栈、存储堆栈、1394 驱动程序堆栈以及音频驱动程序堆栈。
 
-**注意**  本主题中的 USB 核心框图显示了说明 USB 1.0 和 2.0 技术驱动程序堆栈的几种可能方法之一。 有关 USB 1.0、2.0 以及 3.0 驱动程序堆栈的正式图，请参阅 [USB 驱动程序堆栈体系结构](/windows-hardware/drivers/usbcon/usb-3-0-driver-stack-architecture)。
+**注意**  本主题中的 USB 核心框图显示了说明 USB 1.0 和 2.0 技术驱动程序堆栈的几种可能方法之一。 有关 USB 1.0、2.0 以及 3.0 驱动程序堆栈的正式图，请参阅 [USB 驱动程序堆栈体系结构](../usbcon/usb-3-0-driver-stack-architecture.md)。
 
  
 
@@ -71,6 +71,4 @@ ms.locfileid: "97090944"
 [微型驱动程序和驱动程序对](minidrivers-and-driver-pairs.md)
 
 [适用于所有驱动程序开发人员的概念](concepts-and-knowledge-for-all-driver-developers.md)
-
- 
 

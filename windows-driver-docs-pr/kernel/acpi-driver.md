@@ -9,12 +9,12 @@ keywords:
 - 物理设备对象 WDK 电源管理
 ms.date: 12/17/2020
 ms.localizationpriority: High
-ms.openlocfilehash: 7980828da880809c92ae21e9b02a558a68c9d86d
-ms.sourcegitcommit: 170bf8fc2cb5b99bc09616f59180adf72b2e5d26
+ms.openlocfilehash: 27dc70061f821b6645a1f087a209bc9b6694995a
+ms.sourcegitcommit: 10fecd036370f5eccb538004c5bec1fdd18c3275
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97676288"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98124295"
 ---
 # <a name="acpisys-the-windows-acpi-driver"></a>Acpi.sysWindows ACPI 驱动程序
 
@@ -72,6 +72,6 @@ ACPI 规范 5.0 修订版引入了一组功能，这些功能用于支持基于�
 
 Microsoft ASL 编译器版本 5.0 支持 [ACPI 5.0 规范](https://uefi.org/specifications)中的功能。
 
-ASL 编译器随 [Windows 驱动程序工具包 (WDK)](/windows-hardware/drivers/download-the-wdk) 一起分发。
+ASL 编译器随 [Windows 驱动程序工具包 (WDK)](../download-the-wdk.md) 一起分发。
 
 ASL 编译器 (asl.exe) 位于已安装的 WDK 的 Tools\\arm\\ACPIVerify、Tools\\arm64\\ACPIVerify、Tools\\x86\\ACPIVerify 和 Tools\\x64\\ACPIVerify 目录中，例如 C:\Program Files (x86)\Windows Kits\10\Tools\x86\ACPIVerify。

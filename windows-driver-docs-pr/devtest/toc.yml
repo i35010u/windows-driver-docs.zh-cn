@@ -1915,6 +1915,16 @@
       items:
         - name: CodeQL 和静态工具徽标测试
           href: static-tools-and-codeql.md
+        - name: 补充的 Windows 驱动程序 CodeQL 查询
+          items:
+            - name: 补充的 Windows 驱动程序 CodeQL 查询
+              href: codeql-windows-driver-rules.md
+            - name: 可能的 UseAfterFree（Windows 驱动程序 CodeQL 查询）
+              href: codeql-windows-driver-probableuseafterfree.md
+            - name: UseAfterFree（Windows 驱动程序 CodeQL 查询）
+              href: codeql-windows-driver-useafterfree.md
+            - name: WdkDeprecatedApi (Windows Driver CodeQL Query)
+              href: codeql-windows-driver-wdkdeprecatedapi.md
     - name: WDF 验证程序控制应用程序
       items:
         - name: WDF 验证程序控制应用程序

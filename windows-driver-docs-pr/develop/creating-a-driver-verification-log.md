@@ -3,16 +3,16 @@ title: 创建驱动程序验证日志
 description: 了解为什么 Windows Server 硬件认证计划需要所有适用的驱动程序在提交时提供驱动程序验证日志 (DVL)。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c60556d4dfd694228dbe428a9420e312d28cb51
-ms.sourcegitcommit: 4f8a40cf186776a983d92cd84a25d02eaab9cbbd
+ms.openlocfilehash: 5002b393a1343ddec1a6184e2bde88cb8c11baf6
+ms.sourcegitcommit: 10fecd036370f5eccb538004c5bec1fdd18c3275
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96926692"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98124071"
 ---
 # <a name="creating-a-driver-verification-log"></a>创建驱动程序验证日志
 
-[Windows 硬件认证计划](/windows-hardware/design/compatibility/)的某些计划要求对各项驱动程序提交提供驱动程序验证日志 (DVL)。 DVL 包含来自代码分析 (CA)、静态驱动程序验证程序 (SDV) 和 [CodeQL](/windows-hardware/drivers/devtest/static-tools-and-codeql) 日志文件的结果的摘要。 DVL 不包含任何源信息。 在为驱动程序创建 DVL 之前，必须先运行代码分析工具和静态驱动程序验证程序。
+[Windows 硬件认证计划](/windows-hardware/design/compatibility/)的某些计划要求对各项驱动程序提交提供驱动程序验证日志 (DVL)。 DVL 包含来自代码分析 (CA)、静态驱动程序验证程序 (SDV) 和 [CodeQL](../devtest/static-tools-and-codeql.md) 日志文件的结果的摘要。 DVL 不包含任何源信息。 在为驱动程序创建 DVL 之前，必须先运行代码分析工具和静态驱动程序验证程序。
 
 **如何创建驱动程序验证日志**
 
@@ -20,7 +20,7 @@ ms.locfileid: "96926692"
 2.  对于驱动程序解决方案，请确保已选择版本配置作为解决方案配置，并选择 x64 作为解决方案平台。
 3.  运行[静态驱动程序验证程序](../devtest/static-driver-verifier.md)。 有关创建日志文件中的信息，请参阅[为静态驱动程序验证程序创建日志文件](creating-a-log-file-for-static-driver-verifier.md)和[使用静态驱动程序验证程序查找驱动程序中的缺陷](../devtest/using-static-driver-verifier-to-find-defects-in-drivers.md)。
 4.  为驱动程序运行代码分析工具。 解决并修复发现的任何缺陷。 请参阅[为代码分析工具创建日志文件](creating-a-log-file-for-the-code-analysis-tool.md)和[如何为驱动程序运行代码分析](../devtest/how-to-run-code-analysis-for-drivers.md)。 有关代码分析的详细信息，请参阅[使用代码分析分析 C/C++ 代码质量](/previous-versions/visualstudio/visual-studio-2013/dd264897(v=vs.120))。
-5. 运行 CodeQL。  解决并修复发现的缺陷。  如果未更正被视为“必须修复”的缺陷，则认证将失败。  有关 CodeQL 和静态工具徽标测试的详细信息，请参阅 [CodeQL 和静态工具徽标测试](/windows-hardware/drivers/devtest/static-tools-and-codeql)。
+5. 运行 CodeQL。  解决并修复发现的缺陷。  如果未更正被视为“必须修复”的缺陷，则认证将失败。  有关 CodeQL 和静态工具徽标测试的详细信息，请参阅 [CodeQL 和静态工具徽标测试](../devtest/static-tools-and-codeql.md)。
 5.  创建驱动程序验证日志。 在“驱动程序”菜单中，选择“创建驱动程序验证日志…”。
 6.  确认检测到代码分析日志、静态驱动程序验证程序日志和 CodeQL 日志文件。 选择“创建”。
 
@@ -53,4 +53,4 @@ msbuild.exe <vcxprojectfile> /target:dvl /p:Configuration="Release" /P:Platform=
 * [使用代码分析工具分析驱动程序质量](analyzing-driver-quality-by-using-code-analysis-tools.md)
 * [如何为驱动程序运行“代码分析”](../devtest/how-to-run-code-analysis-for-drivers.md)
 * [使用静态驱动程序验证程序查找驱动程序中的缺陷](../devtest/using-static-driver-verifier-to-find-defects-in-drivers.md)
-* [CodeQL 和静态工具徽标测试](/windows-hardware/drivers/devtest/static-tools-and-codeql)
+* [CodeQL 和静态工具徽标测试](../devtest/static-tools-and-codeql.md)
