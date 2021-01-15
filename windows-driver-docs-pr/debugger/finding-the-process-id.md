@@ -6,42 +6,84 @@ keywords:
 - 'PID (进程 ID) '
 - Tlist.exe，相关技术
 - 任务管理器
-ms.date: 01/18/2019
+ms.date: 01/14/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 90b7fbf073cb058126570019468d52634667e1aa
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.custom: contperf-fy21q3
+ms.openlocfilehash: fa6d38e0bb48f80f672ad9d9f791b12e52c08925
+ms.sourcegitcommit: 5b7f2acb319287c5b255a7fe40c62606375cf31a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96838187"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98226557"
 ---
 # <a name="finding-the-process-id"></a>查找进程 ID
 
-
 ## <span id="ddk_finding_the_process_id_dbg"></span><span id="DDK_FINDING_THE_PROCESS_ID_DBG"></span>
 
+将为 Windows 中运行的每个进程分配一个唯一的十进制数，称为进程 ID (PID) 。 使用此数字的方法有很多，例如，在将调试器附加到该进程时指定进程。
 
-为 Microsoft Windows 中运行的每个进程分配一个唯一的十进制数，称为进程 ID (PID) 。 此数字用于指定在将调试器附加到进程时的进程。
-
-您可以使用任务管理器、 **tasklist** 命令、tlist.exe 实用工具或调试器来确定给定应用程序的 PID。
+本主题介绍如何使用任务管理器、tasklist Windows 命令、Tlist.exe 实用工具或调试器来确定给定应用程序的 PID。
 
 ## <a name="span-idtask_managerspanspan-idtask_managerspantask-manager"></a><span id="task_manager"></span><span id="TASK_MANAGER"></span>任务管理器
 
 可以通过多种方法打开任务管理器，但最简单的方法是选择 Ctrl + Alt + Delete，然后选择 " **任务管理器**"。
 
-在 " **进程** " 选项卡上，选择 " **详细信息** " 以查看 PID 以及其他有用的信息。
+在 Windows 10 中，首先单击 " **更多详细信息** " 以展开显示的信息。  从 " **进程** " 选项卡中，选择 " **详细信息** " 选项卡以查看 *PID* 列中列出的进程 ID。
+
+![Windows 10 中任务管理器的部分屏幕截图，显示进程编号，按用户名排序。](images/process-id-task-manager-windows-10.png)
+
+单击任意要排序的列名称。 您可以右键单击进程名称以查看进程的更多选项。
 
 某些内核错误可能会导致任务管理器的图形界面发生延迟。
 
 ## <a name="span-idthe_tasklist_commandspanspan-idthe_tasklist_commandspanthe-tasklist-command"></a><span id="the_tasklist_command"></span><span id="THE_TASKLIST_COMMAND"></span>**Tasklist** 命令
 
-在命令提示符下使用 **tasklist** 命令显示所有进程、其 pid 以及各种其他详细信息。
+使用命令提示符下的内置 Windows **tasklist** 命令显示所有进程、其 pid 以及各种其他详细信息。
+
+```console
+C:\>tasklist
+
+Image Name                     PID Session Name        Session#    Mem Usage
+========================= ======== ================ =========== ============
+System Idle Process              0 Services                   0          8 K
+System                           4 Services                   0      7,428 K
+Secure System                  104 Services                   0     40,344 K
+Registry                       164 Services                   0    146,596 K
+smss.exe                       592 Services                   0      1,176 K
+csrss.exe                      896 Services                   0      6,224 K
+wininit.exe                    980 Services                   0      6,572 K
+...
+```
+
+用于 `tasklist /?` 显示命令行帮助。
 
 ## <a name="span-idtlistspanspan-idtlistspantlist-utility"></a><span id="tlist"></span><span id="TLIST"></span>Tlist.exe 实用程序
 
-任务列表查看器 (Tlist.exe) 或 tlist.exe 是一个命令行实用工具，用于显示当前在本地计算机上运行的任务列表或用户模式进程。 Tlist.exe 包含在 Windows 的调试工具包中。
+任务列表查看器 (Tlist.exe) 或 tlist.exe 是一个命令行实用工具，用于显示当前在本地计算机上运行的任务列表或用户模式进程。 Tlist.exe 包含在适用于 Windows 的调试工具中。 有关如何下载和安装调试工具的信息，请参阅 [下载适用于 Windows 的调试工具](debugger-download-tools.md)。
+
+如果在64位计算机上的默认目录中安装了 Windows 驱动程序工具包，则调试工具位于此处：
+
+`C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\`
 
 当你从命令提示符运行 Tlist.exe 时，它将在内存中显示具有唯一 PID 号的所有用户模式进程的列表。 对于每个进程，它将显示 PID、进程名称和，如果进程具有窗口，则显示该窗口的标题。
+
+```console
+C:\Program Files (x86)\Windows Kits\10\Debuggers\x64>tlist -t
+System Process (0)
+System (4)
+  smss.exe (592)
+  Memory Compression (3376)
+Secure System (104)
+Registry (164)
+csrss.exe (896)
+wininit.exe (980)
+  services.exe (660)
+    svchost.exe (1232)
+      WmiPrvSE.exe (6008)
+      dllhost.exe (1748)
+      WmiPrvSE.exe (1860)
+...
+```
 
 有关详细信息，请参阅 [tlist.exe](tlist.md)。
 
@@ -52,12 +94,3 @@ ms.locfileid: "96838187"
 ## <a name="span-idcsrss_and_user_mode_driversspanspan-idcsrss_and_user_mode_driversspancsrss-and-user-mode-drivers"></a><span id="csrss_and_user_mode_drivers"></span><span id="CSRSS_AND_USER_MODE_DRIVERS"></span>CSRSS 和用户模式驱动程序
 
 若要调试在另一台计算机上运行的用户模式驱动程序，请 Run-Time 子系统 (CSRSS) 进程中调试客户端服务器。 有关详细信息，请参阅 [调试 CSRSS](debugging-csrss.md)。
-
- 
-
- 
-
-
-
-
-

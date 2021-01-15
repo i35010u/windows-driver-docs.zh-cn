@@ -11,12 +11,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d276c8694aebc24991c0cd34e3a71f83b1b9c395
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: b6c0e9303c681fddfa150c5675a7aa5ea207ed05
+ms.sourcegitcommit: 5b7f2acb319287c5b255a7fe40c62606375cf31a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96840783"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98226555"
 ---
 # <a name="pvk2pfx"></a>Pvk2Pfx
 
@@ -48,7 +48,7 @@ Pvk2Pfx ( # A0) 是一个命令行工具，它将 .spc、.cer 和 pvk 文件中�
 <span id="_f"></span><span id="_F"></span>**/f**  
 将 Pvk2Pfx 配置为覆盖 .pfx 文件（如果存在与 **-pfx** 开关指定的名称相同的文件）。
 
-### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>提出
+### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>备注
 
 如果未提供 **-pfx** *pfxfilename* 开关，则 pvk2pfx 将忽略 **-po** *密码* 开关和 **-f** 开关，并显示一个向导，提示用户输入 .pfx 文件的名称及其对应的密码。
 
