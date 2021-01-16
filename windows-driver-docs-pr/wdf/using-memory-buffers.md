@@ -12,12 +12,12 @@ keywords:
 - 本地缓冲区 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3682758c986a22fd9c00371997b5a1b2134ec2f7
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 46a91372cb3900925f4aa3b8fa24d94d12d2c730
+ms.sourcegitcommit: dbf5b780975d2911545d8bfa6fead4a97e7cfa88
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96836561"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98248250"
 ---
 # <a name="using-memory-buffers"></a>使用内存缓冲区
 
@@ -72,6 +72,9 @@ ms.locfileid: "96836561"
 需要本地的内部缓冲区空间的驱动程序不会传递到框架，无需创建内存对象来表示缓冲区。 驱动程序可以调用 [**ExAllocatePoolWithTag**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag) 来分配内部缓冲区。 当驱动程序使用完缓冲区后，必须调用 [**ExFreePoolWithTag**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exfreepoolwithtag)。
 
 但是，驱动程序还可以将内存对象用于本地缓冲区。 使用内存缓冲区（而不是调用 [**ExAllocatePoolWithTag**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)）的优点在于，当删除每个对象的父对象时，框架会自动删除内存对象及其缓冲区。
+
+>[!IMPORTANT]
+> 本主题中讨论的 ExAllocatePool DDIs 已在 Windows 10 版本2004中弃用，并且已被 [ExAllocatePool2](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepool2) 和 [ExAllocatePool3](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepool3)替换。 有关详细信息，请参阅 [将弃用的 ExAllocatePool 调用更新到 ExAllocatePool2 和 ExAllocatePool3](/windows-hardware/drivers/kernel/updating-deprecated-exallocatepool-calls)。
 
 ### <a name="aligning-buffers"></a>对齐缓冲区
 

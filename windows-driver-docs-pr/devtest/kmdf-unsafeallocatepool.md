@@ -1,7 +1,7 @@
 ---
 title: 'UnSafeAllocatePool 规则 (kmdf) '
 description: 了解 UnSafeAllocatePool 规则 (kmdf) 。
-ms.date: 12/16/2020
+ms.date: 01/15/2021
 keywords:
 - 'UnSafeAllocatePool 规则 (KMDF) '
 topic_type:
@@ -11,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a13e36a346635377130b7a4f0f6ef540b0a7958
-ms.sourcegitcommit: 10fecd036370f5eccb538004c5bec1fdd18c3275
+ms.openlocfilehash: e8acf4f9e511dd4030745751e774acfc7347f07c
+ms.sourcegitcommit: dbf5b780975d2911545d8bfa6fead4a97e7cfa88
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98124105"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98248256"
 ---
 # <a name="unsafeallocatepool-rule-kmdf"></a>UnSafeAllocatePool 规则 (kmdf) 
 
@@ -28,17 +28,17 @@ UnsafeAllocatePool 规则指定该驱动程序不应调用：
 
 [ExAllocatePoolWithTag](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)
 
-[ExAllocatePoolWithQuota](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithquota) 
+[ExAllocatePoolWithQuota](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithquota)
 
 [ExAllocatePoolWithQuotaTag](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)
 
-[ExAllocatePoolWithTagPriority](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtagpriority) 
+[ExAllocatePoolWithTagPriority](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtagpriority)
 
 预览版 WDK 版本20236及更高版本中提供了此规则。
 
-## <a name="driver-updates-for-versions-of-windows-later-than-windows-10-version-2004"></a>低于 Windows 10 版本2004的 Windows 版本的驱动程序更新
+## <a name="driver-updates-for-versions-of-windows-10-version-2004-and-later"></a>Windows 10 版本2004及更高版本的驱动程序更新
 
-如果在 Windows 10 版本2004后构建面向 Windows 版本的驱动程序，请改用替代 Api [ExAllocatePool2](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepool2) 和 [ExAllocatePool3](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepool3) 。
+如果要构建面向 Windows 10 版本2004及更高版本的驱动程序，请改用替代 Api [ExAllocatePool2](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepool2) 和 [ExAllocatePool3](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepool3) 。
 
 | 旧 API                       | 新的 API                                                                     |
 |-------------------------------|-----------------------------------------------------------------------------|

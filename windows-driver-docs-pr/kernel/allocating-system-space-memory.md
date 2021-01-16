@@ -10,18 +10,17 @@ keywords:
 - 缓冲区内存分配 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6576953b43716ce268c0701aae5d2d17e20d6c02
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: c1ef3127fb97faad252874ba8eca748286b6213a
+ms.sourcegitcommit: dbf5b780975d2911545d8bfa6fead4a97e7cfa88
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96836943"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98248260"
 ---
 # <a name="allocating-system-space-memory"></a>分配系统空间内存
 
-
-
-
+>[!IMPORTANT]
+> 本主题中讨论的 ExAllocatePool DDIs 已在 Windows 10 版本2004中弃用，并且已被 [ExAllocatePool2](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepool2) 和 [ExAllocatePool3](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepool3)替换。 有关详细信息，请参阅 [将弃用的 ExAllocatePool 调用更新到 ExAllocatePool2 和 ExAllocatePool3](updating-deprecated-exallocatepool-calls.md)。
 
 驱动程序可以在其 [设备扩展](device-extensions.md) 中使用系统分配的空间，作为特定于设备的信息的全局存储区。 驱动程序只能使用内核堆栈向其内部例程传递少量数据。 某些驱动程序必须分配更多的系统空间内存，通常用于 i/o 缓冲区。
 
@@ -53,7 +52,7 @@ ms.locfileid: "96836943"
 
      
 
--   *PoolType*  = **PagedPool** 对于始终以 IRQL &lt; = APC 级别进行访问 \_ 且不在文件系统写入路径中的内存，PagedPool。
+-   *PoolType*  = 对于始终以 IRQL &lt; = APC 级别进行访问 \_ 且不在文件系统写入路径中的内存，PagedPool。
 
 如果 **ExAllocatePoolWithTag** 不能分配请求的字节数，则返回 **NULL** 指针。 驱动程序应始终检查返回的指针。 如果其值为 **NULL**， **DriverEntry** 例程 (或任何其他返回 NTSTATUS 值的驱动程序例程) 应返回状态 \_ \_ 资源不足或处理错误条件（如果可能）。
 

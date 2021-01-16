@@ -1,40 +1,35 @@
 ---
-title: 'UnSafeAllocatePool 规则 (wdm) '
-description: 了解 (wdm) 的 UnSafeAllocatePool 规则。
-ms.date: 01/15/2021
+title: 更新对 ExAllocatePool2 和 ExAllocatePool3 的不推荐使用的 ExAllocatePool 调用
+description: 了解如何更新对 ExAllocatePool2 和 ExAllocatePool3 的不推荐使用的 ExAllocatePool 调用
 keywords:
-- 'UnSafeAllocatePool 规则 (wdm) '
-topic_type:
-- apiref
-api_name:
-- UnSafeAllocate
-api_type:
-- NA
+- 内存管理 WDK 内核，系统分配的空间
+- 系统分配的空间 WDK 内核
+- 分配系统空间内存
+- 分配 i/o 缓冲区内存
+- ExAllocatePool3
+- ExAllocatePool2
+ms.date: 01/11/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 7defbe6cf603561e0f3892b929c97b9e1ac07d26
+ms.openlocfilehash: d4f6f180ed8a2bb2f7742f46aceb52d44e767617
 ms.sourcegitcommit: dbf5b780975d2911545d8bfa6fead4a97e7cfa88
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 01/16/2021
-ms.locfileid: "98248264"
+ms.locfileid: "98253821"
 ---
-# <a name="unsafeallocatepool-rule-wdm"></a>UnSafeAllocatePool 规则 (wdm) 
+# <a name="updating-deprecated-exallocatepool-calls-to-exallocatepool2-and-exallocatepool3"></a>更新对 ExAllocatePool2 和 ExAllocatePool3 的不推荐使用的 ExAllocatePool 调用
 
-**UnSafeAllocatePool** 规则是一个重要的安全规则，用于检查驱动程序是否未使用不推荐使用的 DDIs 来分配内存。
-
-UnsafeAllocatePool 规则指定该驱动程序不应调用：
+从 Windows 10 版本2004开始，不推荐使用以下 DDIs，因此应将其替换为本主题中所述。
 
 [ExAllocatePool](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepool)
 
 [ExAllocatePoolWithTag](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)
 
-[ExAllocatePoolWithQuota](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithquota) 
+[ExAllocatePoolWithQuota](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithquota)
 
 [ExAllocatePoolWithQuotaTag](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)
 
-[ExAllocatePoolWithTagPriority](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtagpriority) 
-
-预览版 WDK 版本20236及更高版本中提供了此规则。
+[ExAllocatePoolWithTagPriority](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtagpriority)
 
 ## <a name="driver-updates-for-versions-of-windows-10-version-2004-and-later"></a>Windows 10 版本2004及更高版本的驱动程序更新
 
@@ -61,7 +56,7 @@ RtlZeroMemory(Allocation, 100);
 PVOID Allocation = ExAllocatePool2(POOL_FLAG_PAGED, 100, 'abcd');
 ```
 
-旧的池分配 Api 接受 [POOL_TYPE](/windows-hardware/drivers/ddi/wdm/ne-wdm-_pool_type) 参数，但新的分配 api 接受 [POOL_FLAGS](../kernel/pool_flags.md) 参数。 更新任何关联的代码以使用新的 [POOL_FLAGS](../kernel/pool_flags.md) 参数。
+旧的池分配 Api 接受 [POOL_TYPE](/windows-hardware/drivers/ddi/wdm/ne-wdm-_pool_type) 参数，但新的分配 api 接受 [POOL_FLAGS](/windows-hardware/drivers/kernel/pool_flags) 参数。 更新任何关联的代码以使用新的 [POOL_FLAGS](/windows-hardware/drivers/kernel/pool_flags) 参数。
 
 ### <a name="exallocatepoolwithquotaexallocatepoolwithquotatag"></a>ExAllocatePoolWithQuota/ExAllocatePoolWithQuotaTag
 
@@ -94,7 +89,7 @@ PVOID Allocation = ExAllocatePool3(POOL_FLAG_PAGED, 100, 'abcd', &params, 1);
 
 如果要在 Windows 10 版本2004之前构建面向 Windows 版本的驱动程序，则必须使用以下强制内联包装函数。
 
-在调用池分配函数之前，您还必须 #define POOL_ZERO_DOWN_LEVEL_SUPPORT 并在驱动程序初始化期间调用 [ExInitializeDriverRuntime](/windows-hardware/drivers/ddi/wdm/nf-wdm-exinitializedriverruntime) 。
+在调用池分配函数之前，还必须 #define POOL_ZERO_DOWN_LEVEL_SUPPORT 并在驱动程序初始化期间调用 [ExInitializeDriverRuntime](/windows-hardware/drivers/ddi/wdm/nf-wdm-exinitializedriverruntime) 。
 
 ### <a name="locally-defined-inline-functions"></a>本地定义的内联函数
 
@@ -178,17 +173,22 @@ ExInitializeDriverRuntime(0);
 PVOID Allocation = ExAllocatePoolZero(PagedPool, 100, 'abcd');
 ```
 
-**驱动程序模型： WDM、泛型**
+## <a name="driver-verifier-unsafeallocatepool-rules"></a>驱动程序验证程序 UnSafeAllocatePool 规则
 
-## <a name="how-to-test"></a>如何测试
+Driver verifier [UnSafeAllocatePool](/windows-hardware/drivers/devtest/kmdf-unsafeallocatepool) 规则是一个重要的安全规则，用于检查驱动程序是否未使用不推荐使用的 DDIs 来分配内存。 预览版 WDK 版本20236及更高版本中提供了此规则。
 
-在编译时：
+## <a name="see-also"></a>另请参阅
 
-1. 运行 [静态驱动程序验证程序](./static-driver-verifier.md) 并指定 **UnSafeAllocatePool** 规则。
-2. 使用以下步骤 (在 [使用静态驱动程序验证器查找 Windows 驱动程序中的缺陷](./using-static-driver-verifier-to-find-defects-in-drivers.md)) 运行代码分析：
+[ExAllocatePool2](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepool2) 
 
-    - [准备你的代码 (使用) 的角色类型声明。](./using-static-driver-verifier-to-find-defects-in-drivers.md#preparing-your-source-code)
-    - [运行静态驱动程序验证程序。](./using-static-driver-verifier-to-find-defects-in-drivers.md#running-static-driver-verifier)
-    - [查看并分析结果。](./using-static-driver-verifier-to-find-defects-in-drivers.md#viewing-and-analyzing-the-results)
+[ExAllocatePool3](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepool3)
 
-有关详细信息，请参阅 [使用静态驱动程序验证器查找驱动程序中的缺陷](./using-static-driver-verifier-to-find-defects-in-drivers.md)。
+[ExAllocatePool](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepool)
+
+[ExAllocatePoolWithTag](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)
+
+[ExAllocatePoolWithQuota](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithquota)
+
+[ExAllocatePoolWithQuotaTag](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)
+
+[ExAllocatePoolWithTagPriority](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtagpriority)

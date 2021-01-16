@@ -5,12 +5,12 @@ keywords:
 - AddDevice 例程-WDK 内核，设计指南
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 347eb55deb88704f2cb03d3a230029de271bc459
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 5130dbf365decd5887b5871a1afd1e840a4f42e5
+ms.sourcegitcommit: dbf5b780975d2911545d8bfa6fead4a97e7cfa88
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96820669"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98248267"
 ---
 # <a name="guidelines-for-writing-adddevice-routines"></a>有关编写 AddDevice 例程的指导原则
 
@@ -36,11 +36,11 @@ ms.locfileid: "96820669"
 
 -   调用 [**IoCreateDevice**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice)时，提高文件打开安全性。
 
-    \_ \_ \_ 在对 **IoCreateDevice** 的调用上指定文件设备安全打开的特性。 Windows NT 4.0 SP5 和更高版本支持此特性。 它指示 i/o 管理器针对所有打开的请求对设备对象执行安全检查。 如果 **IoCreateDevice** \_ \_ \_ 未在设备的类安装程序 inf 或设备的 inf 中设置文件设备安全打开特性，并且驱动程序在打开时未执行其自己的安全检查，则供应商应在对 IoCreateDevice 的调用上指定此特性。  (有关详细信息，请参阅 [控制设备命名空间访问](controlling-device-namespace-access.md)。 ) 
+    \_ \_ \_ 在对 **IoCreateDevice** 的调用上指定文件设备安全打开的特性。 Windows NT 4.0 SP5 和更高版本支持此特性。 它指示 i/o 管理器针对所有打开的请求对设备对象执行安全检查。 如果 \_ \_ \_ 未在设备的类安装程序 inf 或设备的 inf 中设置文件设备安全打开特性，并且驱动程序在打开时未执行其自己的安全检查，则供应商应在对 IoCreateDevice 的调用上指定此特性。  (有关详细信息，请参阅 [控制设备命名空间访问](controlling-device-namespace-access.md)。 ) 
 
-    如果驱动程序调用 IoCreateDevice 时，驱动程序将设置文件 \_ 设备 \_ 安全的 \_ 开放特征，则 i/o 管理器会将设备对象的安全描述符应用到任何相对打开或尾随文件名。 **IoCreateDevice** 例如，如果为 \_ \_ \_ 设备 foo 设置了 "文件设备安全打开 \\ \\ "，并且 \\ \\ 只有管理员才能打开 device foo，则 \\ \\ \\ 管理员还可以打开设备 foo abc。 但是，i/o 管理器会阻止普通用户打开 \\ device \\ foo 和 \\ device \\ foo \\ abc。
+    如果驱动程序调用 IoCreateDevice 时，驱动程序将设置文件 \_ 设备 \_ 安全的 \_ 开放特征，则 i/o 管理器会将设备对象的安全描述符应用到任何相对打开或尾随文件名。  例如，如果为 \_ \_ \_ 设备 foo 设置了 "文件设备安全打开 \\ \\ "，并且 \\ \\ 只有管理员才能打开 device foo，则 \\ \\ \\ 管理员还可以打开设备 foo abc。 但是，i/o 管理器会阻止普通用户打开 \\ device \\ foo 和 \\ device \\ foo \\ abc。
 
     如果设备的一个驱动程序设置了此特征，则 PnP 管理器会将其传播到设备的所有设备对象。
 
- 
-
+>[!IMPORTANT]
+> 本主题中讨论的 ExAllocatePool DDIs 已在 Windows 10 版本2004中弃用，并且已被 [ExAllocatePool2](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepool2) 和 [ExAllocatePool3](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepool3)替换。 有关详细信息，请参阅 [将弃用的 ExAllocatePool 调用更新到 ExAllocatePool2 和 ExAllocatePool3](updating-deprecated-exallocatepool-calls.md)。
