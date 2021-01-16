@@ -6,12 +6,12 @@ keywords:
 - 卸载筛选器驱动程序 WDK 文件系统
 ms.date: 08/21/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a29ed5ae0a95638561a6823662c14b9385552df
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: b2c2e27cee4b85ef9925279c705b0bc4221b83da
+ms.sourcegitcommit: 5feac22fc1a86b799fab3aa939adfa1df92f53a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96841121"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98533983"
 ---
 # <a name="using-an-inf-file-to-uninstall-a-file-system-filter-driver"></a>使用 INF 文件卸载文件系统筛选器驱动程序
 
@@ -41,7 +41,7 @@ RUNDLL32.EXE SETUPAPI.DLL,InstallHinfSection DefaultUninstall 132 path-to-uninst
 Get-CimInstance Win32_SystemDriver -Filter "name='your_driver_name'" | Invoke-CimMethod -MethodName Delete
 ```
 
-有关详细信息，请参阅 [CimCmdlets](/powershell/module/cimcmdlets/?view=powershell-7) 。
+有关详细信息，请参阅 [CimCmdlets](/powershell/module/cimcmdlets) 。
 
 ## <a name="uninstall-application"></a>卸载应用程序
 
