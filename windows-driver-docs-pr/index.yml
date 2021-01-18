@@ -11,12 +11,12 @@ metadata:
   ms.date: 01/14/2020
   ms.localizationpriority: medium
   uhfHeaderId: MSDocsHeader-WinHW
-  ms.openlocfilehash: fdc3423981643816e856125b5fe79e9b5b92e5f0
-  ms.sourcegitcommit: 06453fd351dd272e7710dbe5c0c3a49ce4326957
+  ms.openlocfilehash: a0e1e9ad7d6b212f12890fde0982e0235ed43413
+  ms.sourcegitcommit: 5b7f2acb319287c5b255a7fe40c62606375cf31a
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 01/13/2021
-  ms.locfileid: "98180241"
+  ms.lasthandoff: 01/15/2021
+  ms.locfileid: "98226549"
 highlightedContent:
   items:
   - title: 获取 Windows 驱动程序工具包
@@ -89,7 +89,7 @@ conceptualContent:
     - text: 测试性能和兼容性
       url: /windows-hardware/test
       itemType: overview
-    - text: HLK
+    - text: 使用 Hardware Lab Kit (HLK) 进行测试
       url: /windows-hardware/test/hlk
       itemType: overview
 tools:
