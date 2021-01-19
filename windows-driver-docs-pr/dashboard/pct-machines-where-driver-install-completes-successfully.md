@@ -4,12 +4,12 @@ description: 该度量将 30 天滑动窗口中的遥测数据聚合为成功安
 ms.topic: article
 ms.date: 05/22/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 00abcfeab6a98cc391119268fa6d47fe631b1c0c
-ms.sourcegitcommit: c214e65a7f5dd868037718a34ca7cc80584df5c6
+ms.openlocfilehash: 96dd369329bc0e6fd97f0af9fe4f689b8da23c30
+ms.sourcegitcommit: 3af9ea49935f54b272da0b0d182e81416716f698
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89615494"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98052566"
 ---
 # <a name="percent-of-machines-where-the-driver-install-process-completes-successfully"></a>驱动程序安装过程成功完成的计算机的百分比
 
@@ -28,7 +28,7 @@ ms.locfileid: "89615494"
 |通过标准|>= 95% 的计算机已成功安装驱动程序|
 |已启用队列|是|
 |每队列最小总体数量|500 台计算机|
-|度量 ID|10042840 或 26387215|
+|度量 ID|26387215|
 
 ## <a name="calculation"></a>计算
 

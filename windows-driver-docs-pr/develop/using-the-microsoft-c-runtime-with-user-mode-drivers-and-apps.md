@@ -1,19 +1,19 @@
 ---
 title: 使用含用户模式驱动程序和桌面应用的 Microsoft C 运行时
 description: 本主题提供有关分发 Windows 8 和 Windows 8.1 应用程序和驱动程序的 C 运行时库的信息。
-ms.date: 04/20/2017
+ms.date: 01/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: b420758a442fddce4712da66621334c590ab3c60
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: e01a444174c06ae8402b1e813da6438342e2e2d4
+ms.sourcegitcommit: 3af9ea49935f54b272da0b0d182e81416716f698
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96783427"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98052562"
 ---
 # <a name="using-the-microsoft-c-runtime-with-user-mode-drivers-and-desktop-apps"></a>使用含用户模式驱动程序和桌面应用的 Microsoft C 运行时
 
 > [!NOTE]
-> 本主题只适用于 Windows 桌面驱动程序，而不适用于 Windows 驱动程序。  若要了解此区别，请参阅 [Windows 驱动程序入门](getting-started-with-windows-drivers.md)。
+> 本主题只适用于 Windows 桌面驱动程序，而不适用于 Windows 驱动程序。 若要了解此区别，请参阅 [Windows 驱动程序入门](getting-started-with-windows-drivers.md)。
 
 本主题提供有关分发 Windows 8 和 Windows 8.1 应用程序和驱动程序的 C 运行时库的信息。 它为用户模式驱动程序和桌面应用程序编写人员提供了编译代码、并通过必要的 C 运行时库打包代码以重新分发的指南。
 
@@ -33,17 +33,15 @@ C 运行时有两个独立的版本。 一个是内部 Windows 组件，另一�
 
 msvcrt.dll 现在是 Windows 所有并生成的系统组件。 它只供系统级别组件使用。 文件 msvcr110.dll (Visual Studio 2012) 或 msvcr120.dll (Microsoft Visual Studio 2013) 是 CRT 的新公开版本，供桌面应用程序和用户模式驱动程序开发人员使用。
 
-## <a name="span-idbuilding_your_code_with_the_c_runtimespanspan-idbuilding_your_code_with_the_c_runtimespanspan-idbuilding_your_code_with_the_c_runtimespanbuilding-your-code-with-the-c-runtime"></a><span id="Building_your_code_with_the_C_runtime"></span><span id="building_your_code_with_the_c_runtime"></span><span id="BUILDING_YOUR_CODE_WITH_THE_C_RUNTIME"></span>使用 C 运行时生成代码
+Visual Studio 会将 VCRT 的最新版本安装到 `System32` 目录中。 如果文件不在此位置，可将其直接复制到 Visual C++ 项目的生成目录中。
 
-
-Visual C++ 在开发系统的 System32 目录中安装 CRT 的最新版本。 这样安装的目的是为开发人员提供方便。 否则，使用与共享 CRT 链接的 Visual C++ 生成的所有项目均需要在生成目录中保留 DLL 副本，以方便调试和执行。 msvcr120.dll 可以用于目标为 Windows 8.1 和 Windows 8 以及以前版本的 Windows（从 Windows Vista 开始）的驱动程序。
+如果用户模式驱动程序或桌面应用程序使用 VCRT，则必须分发相应的动态链接库。 使用 Visual C++ 可再发行程序包（`VCRedist_x86.exe`、`VCRedist_x64.exe`、`VCRedist_arm.exe`）。 将可再发行程序包链接到其他二进制文件，可再发行程序包将接收自动更新。
 
 ## <a name="span-idredistributing_the_c_runtime_spanspan-idredistributing_the_c_runtime_spanspan-idredistributing_the_c_runtime_spanredistributing-the-c-runtime"></a><span id="Redistributing_the_C_Runtime_"></span><span id="redistributing_the_c_runtime_"></span><span id="REDISTRIBUTING_THE_C_RUNTIME_"></span>重新分发 C 运行时
 
+请使用可再发行程序包，而不要将单个 CRT 组件复制到 `System32`。 这可能导致不会自动为 CRT 提供服务，并且可能会覆盖它。
 
-当你在 Microsoft Visual Studio 中生成用户模式驱动程序或传统桌面应用程序，且应用程序使用 C 运行时库 (CRT) 时，你必须分发相应的 CRT 动态链接库。
-
-建议的重新颁发 CRT 的策略取决于你生成的应用程序或驱动程序的类型。 对于 Windows 8 和 Windows 8.1，Microsoft 随 Visual Studio 提供 Visual C++ 可再发行组件包（VCRedist\_x86.exe、VCRedist\_x64.exe、VCRedist\_arm.exe）。 开发人员可以将可再发行组件包与其他库链接。 如果你使用可再发行组件包，C/C++ 运行时可以在客户计算机上自动提供服务。 如果你想要实现隔离，你可以进行静态链接，或将特定的 Visual C/C++ DLL 以及其他其二进制文件复制到 *应用程序本地文件夹*。 *应用程序本地文件夹* 是一个包含可执行应用程序文件的文件夹。 必须将 DLL 部署到应用程序本地文件夹。
+以下特别注意事项适用于打印机驱动程序：
 
 Visual C/C++ 可再发行组件包 (VCRedist\_\*.exe) 作为应用程序提供。 如果你的安装包含可再发行组件包，最新版本将作为一个完整包在初始设置后安装在 System32 中，并使用 Microsoft 更新服务支持更新。 Visual C/C++ 可再发行组件包的所有组件均统一更新。
 
@@ -64,11 +62,12 @@ Visual C/C++ 可再发行组件包 (VCRedist\_\*.exe) 作为应用程序提供�
 对于打印机驱动程序：
 
 -   这些驱动程序应会将所需的 CRT 文件包括到 INF 中，所以 CRT 文件将被作为驱动程序负载的一部分复制到驱动程序存储内。
--   V4 打印驱动程序无法使用辅助安装程序安装，所以 INF 必须将相关的 C/C++ 运行时库二进制文件复制到驱动程序存储内。 若要执行此操作，应当在驱动程序包的 **\[COPY\_FILES\]** 部分中引用相应文件。
+-   V4 打印驱动程序无法使用辅助安装程序安装，所以 INF 必须将相关的 C/C++ 运行时库二进制文件复制到驱动程序存储内。 若要执行此操作，请在驱动程序包的 \[COPY\_FILES\] 部分中引用相应文件。
 -   V3 打印驱动程序应不会使用辅助安装程序安装，因为它们不在“指向和打印”连接时运行。 这些驱动程序应当在驱动程序包的 **\[COPY\_FILES\]** 部分中引用相应文件。
 
 以下示例说明了如何将 CRT 二进制文件包括在 INF 的 **\[COPY\_FILES\]** 部分中：
-```Text
+
+```inf
 [COPY_FILES]
 ;CRT
 Msvcr120.dll
@@ -89,41 +88,10 @@ Msvcr120.dll = 2
 
 ## <a name="span-idlinking_your_code_with_the_c_runtime_librariesspanspan-idlinking_your_code_with_the_c_runtime_librariesspanspan-idlinking_your_code_with_the_c_runtime_librariesspanlinking-your-code-with-the-c-runtime-libraries"></a><span id="Linking_your_code_with_the_C_Runtime_libraries"></span><span id="linking_your_code_with_the_c_runtime_libraries"></span><span id="LINKING_YOUR_CODE_WITH_THE_C_RUNTIME_LIBRARIES"></span>将代码与 C 运行时库相链接
 
+若要确定必须为你的应用程序重新分发哪些 DLL，请收集你的应用程序所依赖的 DLL 的列表。 收集此列表的一种方法是运行依赖项查看器 (`depends.exe`)。
 
-以下库包含 C 运行时库功能。
+有关详细信息，请参阅[确定要重新分发的 DLL](/previous-versions/visualstudio/visual-studio-2013/8kche8ah(v=vs.120)) 和[选择部署方法](/previous-versions/visualstudio/visual-studio-2013/ms235316(v=vs.120))。
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">术语</th>
-<th align="left">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><p><span id="Msvcr120.dll"></span><span id="msvcr120.dll"></span><span id="MSVCR120.DLL"></span>Msvcr120.dll</p></td>
-<td align="left"><p>C 运行时。</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p><span id="Msvcp120.dll"></span><span id="msvcp120.dll"></span><span id="MSVCP120.DLL"></span>Msvcp120.dll</p></td>
-<td align="left"><p>C++ 运行时。</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p><span id="Msvcr120d.dll"></span><span id="msvcr120d.dll"></span><span id="MSVCR120D.DLL"></span>Msvcr120d.dll</p></td>
-<td align="left"><p>C 运行时的调试版本。 不允许重新分发。</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p><span id="Msvcp120d.dll_"></span><span id="msvcp120d.dll_"></span><span id="MSVCP120D.DLL_"></span>Msvcp120d.dll</p></td>
-<td align="left"><p>C++ 运行时的调试版本。 不允许重新分发。</p></td>
-</tr>
-</tbody>
-</table>
-
- 
 
 若要确定必须为你的应用程序重新分发哪些 DLL，应收集你的应用程序所依赖的 DLL 的列表。 收集此列表的一种方法是运行依赖项查看器 (depends.exe)。
 
@@ -131,20 +99,12 @@ Msvcr120.dll = 2
 
 你无法重新分发 Visual Studio 中包括的所有文件；仅允许你重新分发 [Visual Studio 2013 Preview and Visual Studio 2013 SDK Preview 的可再发行代码](https://go.microsoft.com/fwlink/p/?linkid=320999)。 应用程序的调试版本和各个 Visual C++ 动态链接库不可以再分发。
 
-## <a name="span-idsummary_-_what_you_need_to_dospanspan-idsummary_-_what_you_need_to_dospanspan-idsummary_-_what_you_need_to_dospansummary---what-you-need-to-do"></a><span id="Summary_-_What_you_need_to_do"></span><span id="summary_-_what_you_need_to_do"></span><span id="SUMMARY_-_WHAT_YOU_NEED_TO_DO"></span>总结 - 需要执行的操作
+以下库包含 C 运行时库功能：
 
-
-如有可能，在安装过程中使用 Visual C++ 可再发行组件包（(VCRedist\_x86.exe、VCRedist\_x64.exe、VCRedist\_arm.exe）VCRedist.msi。
-
-对于打印机驱动程序，请将 CRT 桌面应用程序本地部署到驱动程序存储。
-
-对于 UMDF 驱动程序，请将 CRT 与驱动程序代码以静态方式进行链接。
-
-## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
-
-
-* [确定要重新分发的 DLL](/previous-versions/visualstudio/visual-studio-2013/8kche8ah(v=vs.120))
-* [Visual Studio 2013 Preview 和 Visual Studio 2013 SDK Preview 的可再发行代码](https://go.microsoft.com/fwlink/p/?linkid=320999)
-* [选择部署方法](/previous-versions/visualstudio/visual-studio-2013/ms235316(v=vs.120))
- 
+|术语|说明|
+|--- |--- |
+|Msvcr120.dll|C 运行时|
+|Msvcp120.dll|C++ 运行时|
+|Msvcr120d.dll|C 运行时的调试版本 - 不允许再发行|
+|Msvcp120d.dll|C++ 运行时的调试版本 - 不允许再发行|
 

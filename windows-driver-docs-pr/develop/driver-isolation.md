@@ -3,12 +3,12 @@ title: 驱动程序包隔离
 description: 此页面介绍了驱动程序隔离，这是 Windows 驱动程序的一项要求。
 ms.date: 10/01/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 966c9611f84f5f637515b3f25bfcb83c1d9b7526
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: b9b3d1f000f68ff29190883065a5478b764e95b3
+ms.sourcegitcommit: c435386d93f2de662a8e959e9d5b39d61e543ba1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96838811"
+ms.lasthandoff: 01/09/2021
+ms.locfileid: "98053087"
 ---
 # <a name="driver-package-isolation"></a>驱动程序包隔离
 
@@ -44,9 +44,9 @@ if (bRet) {
     …
 ```
 
-WDM 或 KMDF 驱动程序从 DriverStore 中运行并需要从其驱动程序包访问其他文件，它可以使用 [IoQueryFullDriverPath](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ioqueryfulldriverpath) 来查找它的路径、获取加载它的目录路径以及查找与该路径相关的配置文件。
+从 Windows 10 版本 1803 和更高版本上的 DriverStore 运行的 WDM 或 KMDF 驱动程序应，需要访问其设备驱动程序时，应调用 [IoGetDriverDirectory](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdriverdirectory)，并将 DriverDirectoryImage 设置为目录类型，以获取用于加载驱动程序的目录路径。
 
-或者，在 Windows 10 版本 1803 及更高版本中，使用 DriverDirectoryImage 作为目录类型来调用 [IoGetDriverDirectory](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdriverdirectory)，以获取加载该驱动程序的目录路径。
+或者，对于需要支持 Windows 10 版本 1803 之前的 OS 版本的驱动程序，使用 [IoQueryFullDriverPath](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ioqueryfulldriverpath) 查找驱动程序的路径，获取用于加载驱动程序的目录路径，并查找相对于该路径的配置文件。
 
 对于 INF 负载的文件，INF 中该文件的 [SourceDisksFiles](../install/inf-sourcedisksfiles-section.md) 条目中列出的 subdir 必须与 INF 中该文件的 [DestinationDirs](../install/inf-destinationdirs-section.md) 条目中列出的 subdir 匹配 。
 
