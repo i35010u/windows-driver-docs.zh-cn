@@ -9,14 +9,14 @@ keywords:
 - 硬件
 ms.date: 08/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ed18b4be8bff2e7e702da55831c8f7dc217d4351
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: e849f7c3cc5970c0bfaa9369a5997c078d9617b1
+ms.sourcegitcommit: 55a1002032ce9b01c6db26b41eca86a1bcb33c84
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717272"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98626073"
 ---
-# <a name="hardware-support-app-hsa-steps-for-driver-developers"></a>硬件支持应用 (HSA) ：驱动程序开发人员的步骤
+# <a name="hardware-support-app-hsa-steps-for-driver-developers"></a>硬件支持应用 (HSA)：适用于驱动程序开发人员的步骤
 
 硬件支持应用 (HSA) 是设备特定的应用，与特定驱动程序或 [RPC (远程过程调用) ](/windows/desktop/Rpc/rpc-start-page) 终结点配对。
 
@@ -44,7 +44,7 @@ HSA 是 [Windows 驱动程序](../develop/getting-started-with-windows-drivers.m
     * 此功能的最终用户权益是什么？
     * 包括 Microsoft Store 应用发行者 ID。  若要获取一个，请在 Microsoft Store 页上创建一个主干应用项。 有关保留应用 PFN 的详细信息，请参阅 [通过保留名称创建应用](/windows/uwp/publish/create-your-app-by-reserving-a-name)。
 
-2. 如果批准了请求，Microsoft 将通过电子邮件返回 **capabilityName \_ PublisherID**格式的唯一自定义功能字符串名称。
+2. 如果批准了请求，Microsoft 将通过电子邮件返回 **capabilityName \_ PublisherID** 格式的唯一自定义功能字符串名称。
 
 现在，你可以使用自定义功能来允许访问 RPC 终结点或驱动程序。
 
@@ -96,9 +96,43 @@ Status = WdfDeviceAssignInterfaceProperty(
 
 ```
 
-替换为 `zzzzzzzz-zzzz-zzzz-zzzz-zzzzzzzzzzzz` 要公开的接口的 GUID。  请将 " *myCustomCapabilityNameTBD* *" 替换为*公司名称，将 "名称" 替换为公司中唯一的名称，并将 " *MyStorePubId* " 替换为你的发布者存储区 ID。
+替换为 `zzzzzzzz-zzzz-zzzz-zzzz-zzzzzzzzzzzz` 要公开的接口的 GUID。  请将 " *myCustomCapabilityNameTBD* *" 替换为* 公司名称，将 "名称" 替换为公司中唯一的名称，并将 " *MyStorePubId* " 替换为你的发布者存储区 ID。
 
 有关上面所示的驱动程序代码示例，请参阅 [适用于通用驱动程序的驱动程序包安装工具包](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/DCHU)。
+
+若要在内核模式下设置属性，请使用如下所示的代码：
+
+```cpp
+#if defined(NTDDI_WIN10_RS2) && (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+
+//
+// Adding Custom Capability:
+//
+// Adds a custom capability to device interface instance that allows a Windows
+// Store device app to access this interface using Windows.Devices.Custom namespace.
+// This capability can be defined either in INF or here as shown below. In order
+// to define it from the INF, uncomment the section "OsrUsb Interface installation"
+// from the INF and remove the block of code below.
+//
+
+static const wchar_t customCapabilities[] = L"microsoft.hsaTestCustomCapability_q536wpkpf5cy2\0";
+
+status = g_pIoSetDeviceInterfacePropertyData(&symbolicLinkName,
+                                              &DEVPKEY_DeviceInterface_UnrestrictedAppCapabilities,
+                                              0,
+                                              0,
+                                              DEVPROP_TYPE_STRING_LIST,
+                                              sizeof(customCapabilities),
+                                              (PVOID)&customCapabilities);
+
+if (!NT_SUCCESS(status)) {
+    TraceEvents(TRACE_LEVEL_ERROR, DBG_PNP,
+                "IoSetDeviceInterfacePropertyData failed to set custom capability property  %!STATUS!\n", status);
+    goto Error;
+}
+
+#endif
+```
 
 ## <a name="preparing-the-signed-custom-capability-descriptor-sccd-file"></a>准备 (SCCD) 文件的已签名自定义功能描述符
 

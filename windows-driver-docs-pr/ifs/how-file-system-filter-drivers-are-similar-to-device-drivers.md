@@ -7,12 +7,12 @@ keywords:
 - 设备驱动程序 WDK 文件系统
 ms.date: 10/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 5411c6de54684fe11fbafba35951bd178c3d4610
-ms.sourcegitcommit: 10fecd036370f5eccb538004c5bec1fdd18c3275
+ms.openlocfilehash: fc4293166ad56636d15555918fcb3e472839fcb7
+ms.sourcegitcommit: 55a1002032ce9b01c6db26b41eca86a1bcb33c84
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98124235"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98626063"
 ---
 # <a name="how-file-system-filter-drivers-are-similar-to-device-drivers"></a>文件系统筛选器驱动程序与设备驱动程序的类似程度如何
 
@@ -32,6 +32,6 @@ Microsoft Windows 操作系统中的文件系统筛选器驱动程序和设备�
 
 - **其他相似性**
 
-  - 与设备驱动程序一样，文件系统筛选器驱动程序可以接收 [I/o 控制代码简介](../kernel/introduction-to-i-o-control-codes.md) (IOCTLs) 。 请注意，文件系统筛选器驱动程序还可以接收并定义 [文件系统控制代码](./fsctl-add-overlay.md) (FSCTLs) 。
+  - 与设备驱动程序一样，文件系统筛选器驱动程序可以接收 i/o [控制代码](../kernel/introduction-to-i-o-control-codes.md) (IOCTLs) 。 请注意，文件系统筛选器驱动程序还可以接收并定义 [文件系统控制代码](./fsctl-add-overlay.md) (FSCTLs) 。
 
   - 与设备驱动程序一样，文件系统筛选器驱动程序可以配置为在系统启动时加载，或在系统启动过程完成后再加载。

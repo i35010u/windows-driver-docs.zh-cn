@@ -9,14 +9,14 @@ keywords:
 - 硬件
 ms.date: 08/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 356f69db3478036405d01e6bbdac35db57b7d4e6
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 233cf068c87389cfec61b0429ea9f767ff88cd1d
+ms.sourcegitcommit: 55a1002032ce9b01c6db26b41eca86a1bcb33c84
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097381"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98626075"
 ---
-# <a name="hardware-support-app-hsa-steps-for-app-developers"></a>硬件支持应用 (HSA) ：适用于应用开发人员的步骤
+# <a name="hardware-support-app-hsa-steps-for-app-developers"></a>硬件支持应用 (HSA)：适用于应用开发人员的步骤
 
 本主题介绍如何将设备特定的应用程序与驱动程序或 [RPC (远程过程调用) ](/windows/desktop/Rpc/rpc-start-page) 终结点相关联。  采用这种方式配对时，应用被称为硬件支持应用 (HSA) 。  可以通过 Microsoft Store 分发和更新硬件支持应用。
 
@@ -42,7 +42,7 @@ ms.locfileid: "89097381"
 
 如果你的应用程序将与驱动程序通信，则可以使用 [Windows. Custom](/uwp/api/windows.devices.custom)，它是 WinRT API 的一部分，因此在 JavaScript、c # 和 c + + 中可用。
 
-如果你的应用程序将与 NT 服务通信，则需要使用 RPC Api。  由于 RPC Api 是不能在 WinRT 中使用的 Win32 Api，因此需要使用 c + +，或使用 .NET 互操作 (PInvoke) 来包装 RPC 调用。  有关详细信息，请参阅 [从托管代码调用本机函数](/cpp/dotnet/calling-native-functions-from-managed-code)。
+如果你的应用程序将与 NT 服务通信，则需要使用 RPC Api。  由于 RPC Api 是 WinRT 中不可用的 Win32 Api，因此需要使用 c + + 和 c + +/CLI，或使用 .NET 互操作 (PInvoke) 来包装 RPC 调用。  有关详细信息，请参阅 [从托管代码调用本机函数](/cpp/dotnet/calling-native-functions-from-managed-code) 和 [通过 c + +/cli 进行 .net 编程](/cpp/dotnet/dotnet-programming-with-cpp-cli-visual-cpp?view=msvc-160)。
 
 ## <a name="contact-the-custom-capability-owner"></a>与自定义功能所有者联系
 
@@ -123,7 +123,7 @@ ca9fc964db7e0c2938778f4559946833e7a8cfde0f3eaa07650766d4764e86c4
 
 ## <a name="see-also"></a>另请参阅
 
-[硬件支持应用 (HSA) ：驱动程序开发人员的步骤](hardware-support-app--hsa--steps-for-driver-developers.md)
+[硬件支持应用 (HSA)：适用于驱动程序开发人员的步骤](hardware-support-app--hsa--steps-for-driver-developers.md)
 
 [启用设备进行开发](/windows/uwp/get-started/enable-your-device-for-development)
 
