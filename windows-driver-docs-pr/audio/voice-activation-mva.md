@@ -3,12 +3,12 @@ title: 多语音助手
 description: 多个语音助手平台为除 Cortana 以外的其他语音助手提供支持。
 ms.date: 09/08/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: f0a04a71e8bf4f26be3aca8ca1484eadb971b0ce
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 71e24261a959628b0833f4964bf7fdcf2d645f63
+ms.sourcegitcommit: 5ee1712829b7e9bc5614863b2e3af30222241ffd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96798813"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98687704"
 ---
 # <a name="multiple-voice-assistant"></a>多语音助手
 
@@ -99,7 +99,7 @@ Microsoft 提供了 OS default 关键字 spotter (software 关键字 spotter) �
 
 ## <a name="sample-code-overview"></a>示例代码概述
 
-在 GitHub 上实现语音激活的音频驱动程序的示例代码是 SYSVAD 虚拟音频适配器示例的一部分。 建议使用 [此代码](https://github.com/Microsoft/Windows-driver-samples/blob/master/audio/sysvad/) 作为起点。
+在 GitHub 上实现语音激活的音频驱动程序的示例代码是 SYSVAD 虚拟音频适配器示例的一部分。 建议使用 [此代码](https://github.com/Microsoft/Windows-driver-samples/tree/master/audio/sysvad/) 作为起点。
 
 有关 SYSVAD 示例音频驱动程序的详细信息，请参阅 [示例音频驱动程序](./sample-audio-drivers.md)。
 

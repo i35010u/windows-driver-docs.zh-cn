@@ -3,12 +3,12 @@ title: 音频的通用 Windows 驱动程序
 description: 在 Windows 10 中，你可以编写一个通用音频驱动程序，该驱动程序将跨多种硬件类型工作。
 ms.date: 10/18/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d31454e3792b16e0ce141f83189c6fabece3c2c
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 4779e059c36d4f31b8b92f45a0ebb48040e029b2
+ms.sourcegitcommit: 5ee1712829b7e9bc5614863b2e3af30222241ffd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96784957"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98687708"
 ---
 # <a name="universal-windows-drivers-for-audio"></a>音频的通用 Windows 驱动程序
 
@@ -117,7 +117,6 @@ SYSVAD 示例中仍提供了传统的 INF 文件。
 | 文件名                      | 说明                                                                    |
 |--------------------------------|--------------------------------------------------------------------------------|
 | tabletaudiosample .inf          | 一个 desktop monolitic INF 文件，其中包含安装驱动程序所需的所有信息。 |
-| phoneaudiosample .inf           | 一个手机 monolitic INF 文件，其中包含安装驱动程序所需的所有信息。   |
 
 ### <a name="apo-vendor-specific-tuning-parameters-and-feature-configuration"></a>APO 供应商特定优化参数和功能配置
 
@@ -194,7 +193,7 @@ Windows 即插即用系统评估日期和驱动程序版本，以确定存在多
 
 6. 将以下文件复制到要安装 sysvad 驱动程序的系统：
 
-|文件|描述|
+|文件|说明|
 |----|----|
 | TabletAudioSample.sys      | 驱动程序文件。                                                                  |
 | tabletaudiosample .inf      |  (INF) 包含安装驱动程序所需的信息的信息。 |
@@ -213,32 +212,9 @@ Windows 即插即用系统评估日期和驱动程序版本，以确定存在多
 
 2. Sysvad 驱动程序安装应已完成。 如果有任何错误，可以检查此文件以了解其他信息： `%windir%\inf\setupapi.dev.log`
 
-3. 在设备管理器的 "视图" 菜单上，选择 "设备（按类型）"。 在设备树中，找到 "Microsoft 虚拟音频设备 (WDM) -Sysvad 示例。 这通常位于 "声音、视频和游戏控制器" 节点下。
+3. 在 Device Manager 的 "视图" 菜单上，选择 "设备（按类型）"。 在设备树中，找到 "Microsoft 虚拟音频设备 (WDM) -Sysvad 示例。 这通常位于 "声音、视频和游戏控制器" 节点下。
 
 4. 在目标计算机上，打开 "控制面板"，并导航到 " **硬件和声音** &gt; **管理音频设备**"。 在 "声音" 对话框中，选择标记为 Microsoft 虚拟音频设备 (WDM) -Sysvad 示例的扬声器图标，然后选择 "设置默认值"，但不要选择 "确定"。 这会使 "声音" 对话框处于打开状态。
 
 5. 在目标计算机上找到 MP3 或其他音频文件，然后双击以播放该文件。 然后在 "声音" 对话框中，验证与 Microsoft 虚拟音频设备 (WDM) -Sysvad 示例驱动程序关联的卷级别指示器中是否存在活动。
 
-## <a name="building-the-sysvad-universal-audio-sample-for-windows-10-mobile"></a>构建适用于 Windows 10 移动版的 Sysvad 通用音频示例
-
-完成以下步骤以生成适用于 Windows 10 移动版的 sysvad 示例。
-
-1.  ("phoneaudiosample") 找到移动 inf 文件，并将制造商名称设置为 "Contoso" 之类的值
-
-2. 在 sysvad 解决方案中生成以下项目：
-
-   - EndPointsCommon
-
-   - PhoneAudioSample
-
-3. 从中找到生成的输出目录。 例如，Visual Studio 的默认位置可能位于如下目录中：
-
-   ```cmd
-   C:\Program Files (x86)\Windows Kits\10\src\audio\sysvad\x64\Debug\package`
-   ```
-
-4. 按照 [创建包](/previous-versions/windows/hardware/packaging/dn756642(v=vs.85)) 中的指导创建包，其中包含用于移动映像的驱动程序文件。
-
-5. 若要 ( spkg 文件) 安装移动驱动程序包，需要将包合并到移动操作系统映像中。 使用 ImgGen 将 spkg 驱动程序包添加到完全更新 (FFU) 映像，然后将其刷新到移动设备。 可能需要删除移动映像中的其他音频驱动程序，以允许对 sysvad 虚拟音频驱动程序进行测试。
-
-6. 在操作系统映像包含驱动程序包运行后，播放声音剪辑并验证 sysvad phone 音频示例是否正常工作。 你可以建立一个内核调试器连接来监视移动设备上的 sysvad 虚拟驱动程序。

@@ -16,12 +16,12 @@ keywords:
 - Stdunk 示例音频驱动程序 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3986715688a9fed2fc878f5846c8400f07009622
-ms.sourcegitcommit: 7bdf85c72841fbc2093c315f900c69d2eef6e3e7
+ms.openlocfilehash: 05ec08632c3bdb0e401a93862d4931afbf06aa07
+ms.sourcegitcommit: 5ee1712829b7e9bc5614863b2e3af30222241ffd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97757874"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98687702"
 ---
 # <a name="sample-audio-drivers"></a>示例音频驱动程序
 
@@ -38,10 +38,6 @@ SYSVAD 驱动程序重点介绍了 WDM 音频体系结构的许多重要功能�
 -   **TabletAudioSample**
 
     *TabletAudioSample* 项目演示了如何开发公开支持多个音频设备的 WDM 音频驱动程序。 其中某些音频设备嵌入 (扬声器、麦克风阵列) 在系统中，而其他音频设备可插 (耳机扬声器/麦克风、蓝牙耳机扬声器/麦克风) 。 驱动程序为呈现设备使用 WaveRT 和音频卸载。 驱动程序使用 "虚拟音频设备" 而不是基于硬件的实际适配器，突出显示音频卸载 WDM 音频驱动程序体系结构的不同方面。 有关 Windows 音频引擎的详细信息，请参阅 [硬件卸载音频处理 (Windows 驱动程序) ](hardware-offloaded-audio-processing.md)。
-
--   **PhoneAudioSample**
-
-    *PhoneAudioSample* 项目与 *TabletAudioSample* 项目非常相似。 它包括移动设备的优化。
 
 -   **EndpointsCommon**
 

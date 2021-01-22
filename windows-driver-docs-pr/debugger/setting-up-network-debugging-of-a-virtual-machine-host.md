@@ -1,14 +1,14 @@
 ---
 title: 使用 KDNET 设置虚拟机的网络调试
 description: 本主题介绍如何配置与 Hyper-v 虚拟机的内核调试连接。
-ms.date: 09/21/2020
+ms.date: 01/21/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 614c48358757b61e7d188bb508baeaf6ccc62f0c
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 5c62afc03bafb2e046c55d160cee7395cab751b9
+ms.sourcegitcommit: 5ee1712829b7e9bc5614863b2e3af30222241ffd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96819829"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98687680"
 ---
 # <a name="setting-up-network-debugging-of-a-virtual-machine---kdnet"></a>设置虚拟机的网络调试-KDNET
 
@@ -158,6 +158,9 @@ C:\Program Files (x86)\Windows Kits\10\Debuggers\x64
 当目标虚拟机重新启动时，主机操作系统中的调试器应连接。 
 
 连接到 VM 后，请在调试器上中断，然后可以开始调试。 
+
+若要支持调试连接，在重新启动 VM 后，会在网络属性中添加并显示内核调试网络适配器。
+
 
 ## <a name="troubleshooting-kdnet-virtual-machine-network-debugging"></a>KDNET 虚拟机网络调试疑难解答
 

@@ -3,12 +3,12 @@ description: 编写与 USB 设备通信的 Windows 桌面应用程序的最简�
 title: 编写基于 WinUSB 模板的 Windows 桌面应用
 ms.date: 07/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ecd406c88028c23ab2de8d8abed3db44f54b52b
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 1ed76f5b7de9ee438b8656d2d20829c1c03aef00
+ms.sourcegitcommit: 5ee1712829b7e9bc5614863b2e3af30222241ffd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732699"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98687712"
 ---
 # <a name="write-a-windows-desktop-app-based-on-the-winusb-template"></a>编写基于 WinUSB 模板的 Windows 桌面应用
 
@@ -24,11 +24,11 @@ ms.locfileid: "91732699"
 若要从模板创建应用程序：
 
 1. 在 " **新建项目** " 对话框顶部的 "搜索" 框中，键入 " **USB"。**
-2. 在中间窗格中，选择 " **WinUSB Application (通用) **"。
-3. 选择“**下一页**”。
+2. 在中间窗格中，选择 " **WinUSB Application (通用)**"。
+3. 选择“下一步”。
 4. 输入项目名称，选择 "保存位置"，然后选择 " **创建**"。
 
-    以下屏幕截图显示了 WinUSB 应用程序的 " **新建项目** " 对话框 ** (通用) ** 模板。
+    以下屏幕截图显示了 WinUSB 应用程序的 " **新建项目** " 对话框 **(通用)** 模板。
 
     ![winusb 模板新建项目第一个屏幕](images/winusb-template-creation-1.png)
 
@@ -36,7 +36,7 @@ ms.locfileid: "91732699"
 
     本主题假定 Visual Studio 项目的名称为 *USB Application1*。
 
-    Visual Studio 将创建一个项目和一个解决方案。 如以下屏幕截图所示，你可以在 " **解决方案资源管理器** " 窗口中查看解决方案、项目和属于项目的文件。  (如果**解决方案资源管理器**窗口不可见，请从 "**视图**" 菜单中选择 "**解决方案资源管理器**"。 ) 解决方案包含名为 Application1 的 c + + 应用程序项目。
+    Visual Studio 将创建一个项目和一个解决方案。 如以下屏幕截图所示，你可以在 " **解决方案资源管理器** " 窗口中查看解决方案、项目和属于项目的文件。  (如果 **解决方案资源管理器** 窗口不可见，请从 "**视图**" 菜单中选择 "**解决方案资源管理器**"。 ) 解决方案包含名为 Application1 的 c + + 应用程序项目。
 
     ![winusb 模板解决方案资源管理器1](images/winusb-template-solution-explorer-1.png)
 
@@ -48,10 +48,10 @@ ms.locfileid: "91732699"
 
 6. 在 " **新建项目** " 对话框顶部的 "搜索" 框中，再次键入 " **USB"。**
 7. 在中间窗格中，选择 " **WINUSB INF 驱动程序包**"。
-8. 选择“**下一页**”。
+8. 选择“下一步”。
 9. 输入项目名称，然后选择 " **创建**"。
 
-    以下屏幕截图显示了**WINUSB INF 驱动程序包**模板的 "**新建项目**" 对话框。
+    以下屏幕截图显示了 **WINUSB INF 驱动程序包** 模板的 "**新建项目**" 对话框。
 
     ![winusb 模板第二个项目第一个项目创建屏幕](images/winusb-template-creation-4.png)
 
@@ -61,14 +61,14 @@ ms.locfileid: "91732699"
 
     USB Application1 包项目包含用于将 Microsoft 提供的 Winusb.sys 驱动程序安装为设备驱动程序的 INF 文件。
 
-    **解决方案资源管理器**现在应包含这两个项目，如以下屏幕截图所示。
+    **解决方案资源管理器** 现在应包含这两个项目，如以下屏幕截图所示。
 
     ![winusb 模板解决方案资源管理器2](images/winusb-template-solution-explorer-2.png)
 
 10. 在 INF 文件 USBApplication1 中，找到以下代码：   `%DeviceName% =USB_Install, USB\VID_vvvv&PID_pppp`
 
-11. 将 VID \_ vvvv&PID \_ pppp 替换为设备的硬件 ID。 从设备管理器获取硬件 ID。 在设备管理器中，查看设备属性。 在 " **详细信息** " 选项卡上，查看 " **硬件 id** " 属性值。
-12. 在 " **解决方案资源管理器** " 窗口中，选择并按住 (或右键单击) **解决方案 "USB Application1" (2 个项目) **，然后选择 " **Configuration Manager**"。 为应用程序项目和包项目选择配置和平台。 在此练习中，我们选择 "调试" 和 "x64"，如下面的屏幕截图所示。
+11. 将 VID \_ vvvv&PID \_ pppp 替换为设备的硬件 ID。 从 Device Manager 获取硬件 ID。 在 Device Manager 中，查看设备属性。 在 " **详细信息** " 选项卡上，查看 " **硬件 id** " 属性值。
+12. 在 " **解决方案资源管理器** " 窗口中，选择并按住 (或右键单击) **解决方案 "USB Application1" (2 个项目)**，然后选择 " **Configuration Manager**"。 为应用程序项目和包项目选择配置和平台。 在此练习中，我们选择 "调试" 和 "x64"，如下面的屏幕截图所示。
 
 ![显示 "Configuration Manager" 窗口的屏幕截图，其中选择了 "调试" 和 "x64"。](images/winusb-template-configuration-manager.png)
 
@@ -78,7 +78,7 @@ ms.locfileid: "91732699"
 
 测试和调试环境可以：
 
-- 两台计算机设置：主计算机和目标计算机。 在主计算机上的 Visual Studio 中开发和生成项目。 调试程序在主计算机上运行，并在 Visual Studio 用户界面中可用。 测试和调试应用程序时，驱动程序将在目标计算机上运行。
+- 两台计算机设置：主计算机和目标计算机。 在主计算机上的 Visual Studio 中开发和生成项目。 调试程序在主机上运行并且位于 Visual Studio 用户界面中。 测试和调试应用程序时，驱动程序将在目标计算机上运行。
 
 - 单台计算机设置：目标和主机在一台计算机上运行。 在 Visual Studio 中开发和生成项目，并运行调试器和应用程序。
 
@@ -108,7 +108,7 @@ ms.locfileid: "91732699"
   5. 在 " **解决方案资源管理器** " 窗口中，选择并按住 (或右键单击) USB Application1 包，然后选择 " **属性**"。
   6. 在 " **USB Application1 包属性页** " 窗口的左窗格中，导航到 " **配置属性 &gt; 驱动程序安装 &gt; 部署**"，如以下屏幕截图所示。
   7. 选中“部署前删除以前的驱动程序版本”。
-  8. 对于**远程计算机名**，请选择配置用于测试和调试的计算机名。 在此练习中，我们将使用名为 dbg 目标的计算机。
+  8. 对于 **远程计算机名**，请选择配置用于测试和调试的计算机名。 在此练习中，我们将使用名为 dbg 目标的计算机。
   9. 选择 " **安装/重新安装并验证**"。 选择“应用”。
 
         ![winusb 模板部署](images/winusb-template-deployment.png)
@@ -120,7 +120,7 @@ ms.locfileid: "91732699"
   11. 从 "**生成**" 菜单中选择 "**生成解决方案**"。 Visual Studio 会在 " **输出** " 窗口中显示生成进度。  (如果 "**输出**" 窗口不可见，请从 "**视图**" 菜单中选择 "**输出**"。在此练习中，我们为运行 Windows 10 的 x64 系统生成了项目 ) 。
   12. 从 "**生成**" 菜单中选择 "**部署解决方案**"。
 
-在目标计算机上，会看到驱动程序安装脚本正在运行。 驱动程序文件将复制到目标计算机上的% Systemdrive% \\ drivertest \\ 驱动程序文件夹中。 请确认 .inf、.cat、测试证书和 .sys 文件以及其他任何必要的文件均位于 %systemdrive%\\drivertest\\drivers 文件夹下。 设备必须在设备管理器出现错误。
+在目标计算机上，会看到驱动程序安装脚本正在运行。 驱动程序文件将复制到目标计算机上的% Systemdrive% \\ drivertest \\ 驱动程序文件夹中。 请确认 .inf、.cat、测试证书和 .sys 文件以及其他任何必要的文件均位于 %systemdrive%\\drivertest\\drivers 文件夹下。 设备必须在 Device Manager 出现错误。
 
 在主计算机上，会在 " **输出** " 窗口中看到此消息。
 
@@ -152,7 +152,7 @@ Deployment may take a few minutes...
 5. 在主计算机上的 Visual Studio 中，右键单击 **USB Application1 包** 项目，然后选择 " **卸载项目**"。
 6. 选择并按住 (或右键单击) **USB Application1** 项目，在 "项目属性" 中展开 " **配置属性** " 节点，然后选择 " **调试**"。
 7. 更改 **调试器以启动** 到 **远程 Windows 调试器**。
-8. 按照 [远程调试本地生成的项目](/visualstudio/debugger/remote-debugging?view=vs-2015)中提供的说明更改项目设置以在远程计算机上运行可执行文件。 请确保 " **工作目录** " 和 " **远程命令** 属性" 反映目标计算机上的文件夹。
+8. 按照 [远程调试本地生成的项目](/visualstudio/debugger/remote-debugging?view=vs-2015&preserve-view=true)中提供的说明更改项目设置以在远程计算机上运行可执行文件。 请确保 " **工作目录** " 和 " **远程命令** 属性" 反映目标计算机上的文件夹。
 9. 若要调试应用程序，请在 " **生成** " 菜单中选择 " **启动调试**"，或按 **F5。**
 
 - **单台计算机安装：**
@@ -163,7 +163,7 @@ Deployment may take a few minutes...
         ![winusb 应用程序模板](images/winusb-template3.png)
 
         **注意**  包中没有任何驱动程序文件。 这是因为 INF 文件引用 Windows System32 文件夹中的内置驱动程序 Winusb.sys \\ 。
-  3. 手动安装驱动程序。 在设备管理器中，通过在包中指定 INF 来更新驱动程序。 指向位于解决方案文件夹中的驱动程序包，如上一节所示。
+  3. 手动安装驱动程序。 在 Device Manager 中，通过在包中指定 INF 来更新驱动程序。 指向位于解决方案文件夹中的驱动程序包，如上一节所示。
   4. 选择并按住 (或右键单击) **USB Application1** 项目，在 "项目属性" 中展开 " **配置属性** " 节点，然后选择 " **调试**"。
   5. 更改 **调试器以启动** 到 **本地 Windows 调试器**。
   6. 选择并按住 (或右键单击 USB Application1 包项目) ，然后选择 " **卸载项目**"。
@@ -190,7 +190,7 @@ typedef struct _DEVICE_DATA {
 
 ### <a name="getting-the-instance-path-for-the-device---see-retrievedevicepath-in-devicecpp"></a>获取设备的实例路径-请参阅 RetrieveDevicePath in node.js
 
-若要访问 USB 设备，应用程序可以通过调用 **CreateFile**为设备创建一个有效的文件句柄。 对于该调用，应用程序必须获取设备路径实例。 为了获取设备路径，应用使用 [setupapi.log](../install/setupapi.md) 例程，并指定 INF 文件中用于安装 Winusb.sys 的设备接口 GUID。 Device 将声明一个名为 GUID DEVINTERFACE USBApplication1 的 GUID 常量 \_ \_ 。 通过使用这些例程，应用程序会枚举指定设备接口类中的所有设备，并检索设备的设备路径。
+若要访问 USB 设备，应用程序可以通过调用 **CreateFile** 为设备创建一个有效的文件句柄。 对于该调用，应用程序必须获取设备路径实例。 为了获取设备路径，应用使用 [setupapi.log](../install/setupapi.md) 例程，并指定 INF 文件中用于安装 Winusb.sys 的设备接口 GUID。 Device 将声明一个名为 GUID DEVINTERFACE USBApplication1 的 GUID 常量 \_ \_ 。 通过使用这些例程，应用程序会枚举指定设备接口类中的所有设备，并检索设备的设备路径。
 
 ```cpp
 HRESULT
@@ -348,7 +348,7 @@ Return value:
 
 在前面的函数中，应用程序通过调用以下例程获取设备路径：
 
-1. [**SetupDiGetClassDevs**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclassdevsexa) 获取 *设备信息集*的句柄，它是一个数组，其中包含与指定的设备接口类、GUID DEVINTERFACE USBApplication1 匹配的所有已安装设备的相关信息 \_ \_ 。 数组中名为 *设备接口* 的每个元素对应于在系统中安装和注册的设备。 通过传递您在 INF 文件中定义的设备接口 GUID 来标识设备接口类。 函数将返回设备信息集的 HDEVINFO 句柄。
+1. [**SetupDiGetClassDevs**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclassdevsexa) 获取 *设备信息集* 的句柄，它是一个数组，其中包含与指定的设备接口类、GUID DEVINTERFACE USBApplication1 匹配的所有已安装设备的相关信息 \_ \_ 。 数组中名为 *设备接口* 的每个元素对应于在系统中安装和注册的设备。 通过传递您在 INF 文件中定义的设备接口 GUID 来标识设备接口类。 函数将返回设备信息集的 HDEVINFO 句柄。
 2. [**SetupDiEnumDeviceInterfaces**](/windows/win32/api/setupapi/nf-setupapi-setupdienumdeviceinterfaces) 用于枚举设备信息集中的设备接口，并获取有关设备接口的信息。
 
     此调用需要以下项：
@@ -359,13 +359,13 @@ Return value:
 
     [**SetupDiEnumDeviceInterfaces**](/windows/win32/api/setupapi/nf-setupapi-setupdienumdeviceinterfaces) 为设备接口的指定索引查找设备信息集数组，并用有关接口的基本数据填充已初始化的 [**SP \_ 设备 \_ 接口 \_ 数据**](/windows/win32/api/setupapi/ns-setupapi-sp_device_interface_data) 结构。
 
-    **注意**   若要枚举设备信息集中的所有设备接口，请在循环中调用 [**SetupDiEnumDeviceInterfaces**](/windows/win32/api/setupapi/nf-setupapi-setupdienumdeviceinterfaces) ，直到该函数返回 **FALSE** ，并且失败的错误代码为 "错误" \_ \_ \_ 。 错误：无法再 \_ \_ \_ 调用 **GetLastError**来检索更多项错误代码。 对于每个迭代，递增成员索引。
+    **注意**   若要枚举设备信息集中的所有设备接口，请在循环中调用 [**SetupDiEnumDeviceInterfaces**](/windows/win32/api/setupapi/nf-setupapi-setupdienumdeviceinterfaces) ，直到该函数返回 **FALSE** ，并且失败的错误代码为 "错误" \_ \_ \_ 。 错误：无法再 \_ \_ \_ 调用 **GetLastError** 来检索更多项错误代码。 对于每个迭代，递增成员索引。
 
-    或者，您可以调用 [**SetupDiEnumDeviceInfo**](/windows/win32/api/setupapi/nf-setupapi-setupdienumdeviceinfo) 来枚举设备信息集，并返回由调用方分配的 [**SP \_ lnk-devinfo \_ 数据**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构中的索引指定的设备接口元素的相关信息。 然后，你可以在[**SetupDiEnumDeviceInterfaces**](/windows/win32/api/setupapi/nf-setupapi-setupdienumdeviceinterfaces)函数的*DeviceInfoData*参数中传递对此结构的引用。
+    或者，您可以调用 [**SetupDiEnumDeviceInfo**](/windows/win32/api/setupapi/nf-setupapi-setupdienumdeviceinfo) 来枚举设备信息集，并返回由调用方分配的 [**SP \_ lnk-devinfo \_ 数据**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构中的索引指定的设备接口元素的相关信息。 然后，你可以在 [**SetupDiEnumDeviceInterfaces**](/windows/win32/api/setupapi/nf-setupapi-setupdienumdeviceinterfaces)函数的 *DeviceInfoData* 参数中传递对此结构的引用。
 
 3. [**SetupDiGetDeviceInterfaceDetail**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdeviceinterfacedetaila) 获取设备接口的详细数据。 该信息在 [**SP \_ 设备 \_ 接口 \_ 详细信息 \_ 数据**](/windows/win32/api/setupapi/ns-setupapi-sp_device_interface_detail_data_a) 结构中返回。 由于 **SP \_ 设备 \_ 接口 \_ 详细信息 \_ 数据** 结构的大小不同， **SetupDiGetDeviceInterfaceDetail** 调用了两次。 第一次调用获取为 **SP \_ 设备 \_ 接口 \_ 详细信息 \_ 数据** 结构分配的缓冲区大小。 第二次调用用有关接口的详细信息填充分配的缓冲区。
    1. 调用 [**SetupDiGetDeviceInterfaceDetail**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdeviceinterfacedetaila) ，并将 *DeviceInterfaceDetailData* 参数设置为 **NULL**。 函数在 *requiredlength* 参数中返回正确的缓冲区大小。 此调用失败，出现错误 \_ \_ 缓冲区错误代码。 应为此错误代码。
-   2. 基于在*requiredlength*参数中检索到的正确缓冲区大小为[**SP \_ 设备 \_ 接口 \_ 详细信息 \_ 数据**](/windows/win32/api/setupapi/ns-setupapi-sp_device_interface_detail_data_a)结构分配内存。
+   2. 基于在 *requiredlength* 参数中检索到的正确缓冲区大小为 [**SP \_ 设备 \_ 接口 \_ 详细信息 \_ 数据**](/windows/win32/api/setupapi/ns-setupapi-sp_device_interface_detail_data_a)结构分配内存。
    3. 再次调用 [**SetupDiGetDeviceInterfaceDetail**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdeviceinterfacedetaila) ，并向其传递对 *DeviceInterfaceDetailData* 参数中已初始化结构的引用。 当函数返回时，该结构将填充有关接口的详细信息。 设备路径在 [**SP \_ 设备 \_ 接口 \_ 详细信息 \_ 数据**](/windows/win32/api/setupapi/ns-setupapi-sp_device_interface_detail_data_a) 结构的 **DevicePath** 成员中。
 
 ### <a name="creating-a-file-handle-for-the-device"></a>为设备创建文件句柄
@@ -459,7 +459,7 @@ Return value:
 
 模板代码实现代码以释放文件句柄和设备的 WinUSB 接口句柄。
 
-- **CloseHandle** 释放由 **CreateFile**创建的句柄，如本演练的为 [设备创建文件句柄](#creating-a-file-handle-for-the-device) 部分所述。
+- **CloseHandle** 释放由 **CreateFile** 创建的句柄，如本演练的为 [设备创建文件句柄](#creating-a-file-handle-for-the-device) 部分所述。
 - [**WinUsb\_Free**](/windows/win32/api/winusb/nf-winusb-winusb_free) 释放设备的 WinUSB 接口句柄，该句柄由 [**WinUsb\_Initialize**](/windows/win32/api/winusb/nf-winusb-winusb_initialize) 返回。
 
 ```cpp

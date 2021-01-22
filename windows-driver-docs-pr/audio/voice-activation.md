@@ -3,12 +3,12 @@ title: 语音激活
 description: Cortana，Windows 语音平台用于为 Windows 10 中的所有语音体验（例如 Cortana 和听写）供电。
 ms.date: 05/15/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 315183541404930a344c8c22f430501ece80bc29
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 76a270839cde0e1a631886987d9eb0c730c40a80
+ms.sourcegitcommit: 5ee1712829b7e9bc5614863b2e3af30222241ffd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96800501"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98687710"
 ---
 # <a name="voice-activation"></a>语音激活
 
@@ -24,7 +24,7 @@ Cortana，在2013中的 Microsoft BUILD 开发人员大会首次演示了个人�
 
 若要了解 Windows 中可用的语音交互体验，请查看以下主题。
 
-|主题|描述|
+|主题|说明|
 |----|----|
 | [什么是 Cortana？](https://support.microsoft.com/help/17214/cortana-what-is)      | 提供 Cortana 的概述和使用方向                 |
 | [使 Cortana 彰显你的个性](https://support.microsoft.com/help/17178/windows-10-make-cortana-yours) | 描述可通过 Cortana 的 "设置" 屏幕进行的自定义。 |
@@ -123,7 +123,7 @@ HW KWS 的 AEC 要求
 
 在 GitHub 上实现语音激活的音频驱动程序的示例代码是 SYSVAD 虚拟音频适配器示例的一部分。 建议使用此代码作为起点。 此位置提供了代码。
 
-<https://github.com/Microsoft/Windows-driver-samples/blob/master/audio/sysvad/>
+<https://github.com/Microsoft/Windows-driver-samples/tree/master/audio/sysvad/>
 
 有关 SYSVAD 示例音频驱动程序的详细信息，请参阅 [示例音频驱动程序](sample-audio-drivers.md)。
 

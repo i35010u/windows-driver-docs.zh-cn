@@ -3,12 +3,12 @@ description: 与 USB 设备通信的应用通常会发送多个控制传输请�
 title: 如何发送 USB 控制传输（UWP 应用）
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cfb13e208ef7495ceb0076cb2b06bbb4b2f5ae1b
-ms.sourcegitcommit: b75e9940d49410e2b952e96f325df67a039cd571
+ms.openlocfilehash: 6bfbbe268250213aa4cac0ea73e42a34b6d3f6cc
+ms.sourcegitcommit: 5ee1712829b7e9bc5614863b2e3af30222241ffd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92337040"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98687706"
 ---
 # <a name="how-to-send-a-usb-control-transfer-uwp-app"></a>如何发送 USB 控制传输（UWP 应用）
 
@@ -28,18 +28,18 @@ ms.locfileid: "92337040"
 
 为了适应各种类型的控制传输， [**Windows**](/uwp/api/Windows.Devices.Usb) azure 提供了以下方法：
 
-- [**SendControlOutTransferAsync (UsbSetupPacket) **](/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_SendControlOutTransferAsync_Windows_Devices_Usb_UsbSetupPacket_)
-- [**SendControlInTransferAsync (UsbSetupPacket) **](/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_SendControlInTransferAsync_Windows_Devices_Usb_UsbSetupPacket_)
-- [**SendControlOutTransferAsync (UsbSetupPacket，IBuffer) **](/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_SendControlOutTransferAsync_Windows_Devices_Usb_UsbSetupPacket_Windows_Storage_Streams_IBuffer_)
-- [**SendControlInTransferAsync (UsbSetupPacket，IBuffer) **](/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_SendControlInTransferAsync_Windows_Devices_Usb_UsbSetupPacket_Windows_Storage_Streams_IBuffer_)
+- [**SendControlOutTransferAsync (UsbSetupPacket)**](/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_SendControlOutTransferAsync_Windows_Devices_Usb_UsbSetupPacket_)
+- [**SendControlInTransferAsync (UsbSetupPacket)**](/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_SendControlInTransferAsync_Windows_Devices_Usb_UsbSetupPacket_)
+- [**SendControlOutTransferAsync (UsbSetupPacket，IBuffer)**](/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_SendControlOutTransferAsync_Windows_Devices_Usb_UsbSetupPacket_Windows_Storage_Streams_IBuffer_)
+- [**SendControlInTransferAsync (UsbSetupPacket，IBuffer)**](/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_SendControlInTransferAsync_Windows_Devices_Usb_UsbSetupPacket_Windows_Storage_Streams_IBuffer_)
 
 ![适用于 usb 的 windows 运行时 api 的 usb 控件传输](images/scenario2-flowchart.png)
 
-USB 控制传输还用于获取描述符数据或发送标准命令。 但是，我们建议通过调用由 [**Windows**](/uwp/api/Windows.Devices.Usb) 提供的特定方法（而不是手动生成控件传输）来发送这些类型的请求。 例如，若要选择替代设置，请调用 [**SelectSettingAsync**](/uwp/api/Windows.Devices.Usb.UsbInterfaceSetting#Windows_Devices_Usb_UsbInterfaceSetting_SelectSettingAsync) 而不是调用 [**SendControlOutTransferAsync (UsbSetupPacket) **](/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_SendControlOutTransferAsync_Windows_Devices_Usb_UsbSetupPacket_)。
+USB 控制传输还用于获取描述符数据或发送标准命令。 但是，我们建议通过调用由 [**Windows**](/uwp/api/Windows.Devices.Usb) 提供的特定方法（而不是手动生成控件传输）来发送这些类型的请求。 例如，若要选择替代设置，请调用 [**SelectSettingAsync**](/uwp/api/Windows.Devices.Usb.UsbInterfaceSetting#Windows_Devices_Usb_UsbInterfaceSetting_SelectSettingAsync) 而不是调用 [**SendControlOutTransferAsync (UsbSetupPacket)**](/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_SendControlOutTransferAsync_Windows_Devices_Usb_UsbSetupPacket_)。
 
 不支持对某些类型的标准请求进行控制传输。 但是，如果你的设备属于 [**Windows**](/uwp/api/Windows.Devices.Usb)所支持的设备类，则可以发送一些请求，如设备类规范所定义。
 
-## <a name="before-you-start"></a>开始之前
+## <a name="before-you-start"></a>准备工作
 
 - 必须打开设备并获得 [**UsbDevice**](/uwp/api/Windows.Devices.Usb.UsbDevice) 对象。 阅读 [如何)  (UWP 应用连接到 USB 设备 ](how-to-connect-to-a-usb-device--uwp-app-.md)。
 - 获取有关供应商定义的控制命令的信息。 通常在硬件规范中定义这些命令。
@@ -78,9 +78,9 @@ USB 控制传输还用于获取描述符数据或发送标准命令。 但是，
 
 若要发送控制传输，必须有一个 [**UsbDevice**](/uwp/api/Windows.Devices.Usb.UsbDevice) 对象。 你的控件传输可能需要也可能不需要遵循安装包的数据包。
 
-若要启动控件传输，请调用 [**SendControlInTransferAsync**](/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_SendControlInTransferAsync_Windows_Devices_Usb_UsbSetupPacket_Windows_Storage_Streams_IBuffer_) 或 [**SendControlOutTransferAsync**](/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_SendControlOutTransferAsync_Windows_Devices_Usb_UsbSetupPacket_Windows_Storage_Streams_IBuffer_)的重写。 如果传输使用数据包，请调用 **SendControlOutTransferAsync (UsbSetupPacket，IBuffer) **， **SendControlInTransferAsync (UsbSetupPacket，IBuffer) **。 这些方法采用其他参数，其中包含用于写入或接收设备数据的数据。 使用流程图确定要调用的替代。
+若要启动控件传输，请调用 [**SendControlInTransferAsync**](/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_SendControlInTransferAsync_Windows_Devices_Usb_UsbSetupPacket_Windows_Storage_Streams_IBuffer_) 或 [**SendControlOutTransferAsync**](/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_SendControlOutTransferAsync_Windows_Devices_Usb_UsbSetupPacket_Windows_Storage_Streams_IBuffer_)的重写。 如果传输使用数据包，请调用 **SendControlOutTransferAsync (UsbSetupPacket，IBuffer)**， **SendControlInTransferAsync (UsbSetupPacket，IBuffer)**。 这些方法采用其他参数，其中包含用于写入或接收设备数据的数据。 使用流程图确定要调用的替代。
 
-调用开始和异步操作。 操作完成后，调用将返回包含操作结果的 [**iasyncoperation<tresult>**](/uwp/api/windows.foundation.iasyncoperation-1.getresults?view=winrt-19041) 对象。 对于 OUT 传输，对象返回传输中发送的字节数。 对于 IN 传输，对象包含包含从设备读取的数据的缓冲区。
+调用开始和异步操作。 操作完成后，调用将返回包含操作结果的 [**iasyncoperation<tresult>**](/uwp/api/windows.foundation.iasyncoperation-1.getresults?view=winrt-19041&preserve-view=true) 对象。 对于 OUT 传输，对象返回传输中发送的字节数。 对于 IN 传输，对象包含包含从设备读取的数据的缓冲区。
 
 ## <a name="usb-control-transfer-code-example"></a>USB 控件传输代码示例
 

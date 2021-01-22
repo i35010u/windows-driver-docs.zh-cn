@@ -5,14 +5,14 @@ keywords:
 - 调试实验室
 - 循序渐进
 - ECHO
-ms.date: 07/20/2020
+ms.date: 01/20/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 36c6cce5e6d91923b56b9e24f123c7871715850d
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 4f2a9c8142e5918dab2bcf148db3cbd614867b37
+ms.sourcegitcommit: 5ee1712829b7e9bc5614863b2e3af30222241ffd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96802027"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98687718"
 ---
 # <a name="debug-windows-drivers---step-by-step-lab-echo-kernel-mode"></a>调试 Windows 驱动程序 - 分步实验室（Echo 内核模式）
 
@@ -338,11 +338,11 @@ Unable to enumerate user-mode unloaded modules, Win32 error 0n30
 
     可在 GitHub 中使用浏览器查看回显示例：
 
-    [https://github.com/Microsoft/Windows-driver-samples/tree/97cf5197cf5b882b2c689d8dc2b555f2edf8f418/general/echo/kmdf](https://github.com/Microsoft/Windows-driver-samples/blob/97cf5197cf5b882b2c689d8dc2b555f2edf8f418/general/echo/kmdf/ReadMe.md)
+    [https://github.com/Microsoft/Windows-driver-samples/tree/master/general/echo/kmdf](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/echo/kmdf/)
 
     可在此处阅读有关示例的内容：
 
-    <https://github.com/Microsoft/Windows-driver-samples/blob/97cf5197cf5b882b2c689d8dc2b555f2edf8f418/general/echo/kmdf/ReadMe.md>
+    <https://github.com/Microsoft/Windows-driver-samples/tree/master/general/echo/kmdf/ReadMe.md>
 
     你可以在此处浏览所有 Windows 驱动程序示例：
 
@@ -404,14 +404,14 @@ Unable to enumerate user-mode unloaded modules, Win32 error 0n30
 
     该文件夹应包含以下文件：
 
-    | 文件     | 描述                                                                       |
+    | 文件     | 说明                                                                       |
     |----------|-----------------------------------------------------------------------------------|
     | Echo.sys | 驱动程序文件。                                                                  |
     | 回显 .inf |  (INF) 包含安装驱动程序所需的信息的信息。 |
 
     此外，还生成 echoapp.exe 文件，该文件应位于以下位置： *C： \\ DriverSamples \\ 常规 \\ echo \\ kmdf \\ exe \\ x64 \\ 调试*
 
-    | 文件        | 描述                                                                       |
+    | 文件        | 说明                                                                       |
     |-------------|-----------------------------------------------------------------------------------|
     | EchoApp.exe | 与 echo.sys 驱动程序通信的命令提示符可执行文件测试文件。 |     
 
@@ -443,7 +443,7 @@ b. 在 "更新和安全性" 中，选择 " **恢复**"。
 
 c. 在 "高级启动" 下，选择 " **立即重新启动**"。
 
-d. 重新启动计算机时，请选择 " **启动选项**"。 在 Windows 10 中， **Troubleshoot** 选择 "  >  **高级选项**  >  " "**启动设置** 疑难解答"，然后选择 "重新启动" 按钮。
+d. 重新启动计算机时，请选择 " **启动选项**"。 在 Windows 10 中， 选择 "  >  **高级选项**  >  " "**启动设置** 疑难解答"，然后选择 "重新启动" 按钮。
 
 e. 按 **F7** 键，选择 "禁用驱动程序签名强制"。
 
@@ -487,9 +487,9 @@ devcon install &lt;INF 文件&gt; &lt;硬件 ID&gt;
 
 成功安装示例驱动程序后，就可以对其进行测试了。
 
-**查看设备管理器中的驱动程序**
+**查看 Device Manager 中的驱动程序**
 
-在目标计算机上的命令提示符窗口中，输入 **devmgmt.msc** open 设备管理器。 在设备管理器的 "视图" 菜单上，选择 "设备（按类型）"。 在设备树中，找到示例设备节点中的 " *示例 WDF 回显驱动程序* "。
+在目标计算机上的命令提示符窗口中，输入 **devmgmt.msc** open Device Manager。 在 Device Manager 的 "视图" 菜单上，选择 "设备（按类型）"。 在设备树中，找到示例设备节点中的 " *示例 WDF 回显驱动程序* "。
 
 ![突出显示了示例 wdf 回显驱动程序的设备管理器树](images/debuglab-image-device-manager-echo.png)
 
@@ -784,7 +784,7 @@ set ENABLE_OPTIMIZER=0
 
 **&lt;-在主机系统上**
 
-1.  使用 WinDbg UI 确认 **Debug** &gt; 在当前 WinDbg 会话中启用了 "调试 **源" 模式**。
+1.  使用 WinDbg UI 确认 &gt; 在当前 WinDbg 会话中启用了 "调试 **源" 模式**。
 
 2.  键入以下命令，将本地代码位置添加到源路径。
 
@@ -840,7 +840,7 @@ set ENABLE_OPTIMIZER=0
 
 8.  **-&gt; 在目标系统上**
 
-    在 Windows 中，使用图标或输入 **mmc devmgmt.msc** 打开 **设备管理器**。 在设备管理器中，展开 " **示例** " 节点。
+    在 Windows 中，使用图标或输入 **mmc devmgmt.msc** 打开 **Device Manager** 。 在 Device Manager 中，展开 " **示例** " 节点。
 
 9.  选择并按住 (或右键单击) KMDF Echo 驱动程序条目，然后从菜单中选择 " **禁用** "。
 
@@ -890,7 +890,7 @@ set ENABLE_OPTIMIZER=0
 
 
 
-此外，还可以通过选择 " **edit** &gt; 在 WinDbg 中编辑 **断点**" 来修改断点。 请注意，"断点" 对话框仅适用于现有的断点。 必须从命令行设置新断点。
+此外，还可以通过选择 "  &gt; 在 WinDbg 中编辑 **断点**" 来修改断点。 请注意，"断点" 对话框仅适用于现有的断点。 必须从命令行设置新断点。
 
 
 
@@ -911,12 +911,12 @@ ba <access> <size> <address> {options}
 <thead>
 <tr class="header">
 <th align="left">选项</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>E</p></td>
+<td align="left"><p>e</p></td>
 <td align="left"><p>CPU 从地址提取指令时执行 () </p></td>
 </tr>
 <tr class="even">
@@ -1461,7 +1461,7 @@ nt!DbgBreakPointWithStatus:
 fffff803`bb757020 cc              int     3
 ```
 
-或者，您可以通过选择 "**查看** 寄存器" 来显示寄存器内容 &gt; **registers**。 有关详细信息，请参阅 [**r (寄存器)**](r--registers-.md)。
+或者，您可以通过选择 "**查看** 寄存器" 来显示寄存器内容 &gt; 。 有关详细信息，请参阅 [**r (寄存器)**](r--registers-.md)。
 
 在单步执行汇编语言代码执行和其他情况时，查看寄存器的内容会很有帮助。 有关汇编语言反汇编的详细信息，请参阅 [带批注的 X86 反汇编](annotated-x86-disassembly.md) 和 [带批注的 x64 反汇编](annotated-x64-disassembly.md)。
 

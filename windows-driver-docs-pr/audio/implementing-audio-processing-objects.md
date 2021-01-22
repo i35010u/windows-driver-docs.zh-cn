@@ -3,12 +3,12 @@ title: 实现音频处理对象
 description: 本主题介绍如何 (APO) 实现音频处理对象。 有关的一般信息，请参阅音频处理对象体系结构。
 ms.date: 06/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: fa4a68ae94b81152e64e54383ecaacd8f88c3bfa
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 39d664adcfbf22abc8d71040855e369753da1798
+ms.sourcegitcommit: 5ee1712829b7e9bc5614863b2e3af30222241ffd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96784761"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98687700"
 ---
 # <a name="implementing-audio-processing-objects"></a>实现音频处理对象
 
@@ -103,7 +103,6 @@ SYSVAD 示例中有五个项目，其中一项是 APO 开发人员的主要兴�
 
 |**Project**|**说明**|
 |----|----|
-| PhoneAudioSample       | 移动音频驱动程序的示例代码。     |
 | TabletAudioSample      | 备用音频驱动程序的示例代码。 |
 | KeywordDetectorAdapter | 关键字检测器适配器的示例代码 |
 | EndpointsCommon        | 常见终结点的示例代码。          |
@@ -347,7 +346,7 @@ HKR,AudioEngine\AudioProcessingObjects\%SWAP_FX_STREAM_CLSID%,"FriendlyName",,%S
 ...
 ```
 
-当此 INF 安装组件化 APO 时，桌面系统 "音频处理对象" 将显示在 Windows 设备管理器中。
+当此 INF 安装组件化 APO 时，桌面系统 "音频处理对象" 将显示在 Windows Device Manager 中。
 
 ### <a name="bluetooth-audio-sample-apo-inf-sample"></a>蓝牙音频示例 APO INF 示例
 
@@ -543,7 +542,7 @@ KSNODETYPE_SPEAKER  = "{DFF21CE1-F70F-11D0-B917-00A0C9223196}"
 ...
 ```
 
-对于 KSNODETYPE， **NULL** 值为 NULL \_ 表示此 APO 与任何类型的 KS 节点类型兼容。 例如，若要指示 APO 仅与 KSNODETYPE 发言人的 KS 节点类型兼容 \_ ，则 INF 文件会显示 ks 节点类型和 APO 关联，如下所示：
+对于 KSNODETYPE， 值为 NULL \_ 表示此 APO 与任何类型的 KS 节点类型兼容。 例如，若要指示 APO 仅与 KSNODETYPE 发言人的 KS 节点类型兼容 \_ ，则 INF 文件会显示 ks 节点类型和 APO 关联，如下所示：
 
 ```inf
 ;; Key value pairs

@@ -5,14 +5,14 @@ keywords:
 - 调试实验室
 - 循序渐进
 - SYSVAD
-ms.date: 07/20/2020
+ms.date: 01/20/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: c03ab011753b099c00de958f9e63ee9fb7fd21bf
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 52d74787763a705a734f6fa16bd0274b25d7fce8
+ms.sourcegitcommit: 5ee1712829b7e9bc5614863b2e3af30222241ffd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96788867"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98687715"
 ---
 # <a name="span-iddebuggerdebug_universal_drivers__kernel-mode_spandebug-drivers---step-by-step-lab-sysvad-kernel-mode"></a><span id="debugger.debug_universal_drivers__kernel-mode_"></span>调试驱动程序-逐步骤实验室 (Sysvad 内核模式) 
 
@@ -62,11 +62,9 @@ WinDbg 可以单步执行源代码、设置断点、查看变量 (包括 c + + �
 
 ## <a name="span-idecho_driver_labspanecho-driver-lab"></a><span id="echo_driver_lab"></span>回显驱动程序实验室
 
-
 回显驱动程序是一个更简单的驱动程序，然后是 Sysvad 音频驱动程序。 如果你不熟悉 WinDbg，可能需要考虑首先完成 [调试通用驱动程序-分步实验室 (Echo 内核模式) ](debug-universal-drivers---step-by-step-lab--echo-kernel-mode-.md)。 此实验室重用该实验室的安装方向，因此，如果完成了该实验，则可以跳过此处的第1和第2部分。
 
 ## <a name="span-idconnecttospansection-1-connect-to-a-kernel-mode-windbg-session"></a><span id="connectto"></span>第1节：连接到内核模式 WinDbg 会话
-
 
 *在第1部分中，你将在主机和目标系统上配置网络调试。*
 
@@ -288,7 +286,7 @@ fffff801`094d9000 fffff801`09561000   CI         (export symbols)       CI.dll
 
 **注意**  已省略的输出用 "...。 "。
 
- 
+
 
 由于我们尚未设置符号路径和加载的符号，因此在调试器中提供了有限的信息。
 
@@ -305,7 +303,7 @@ fffff801`094d9000 fffff801`09561000   CI         (export symbols)       CI.dll
 
     可以使用浏览器在此处查看 Sysvad 示例和 Readme.md 文件：
 
-    [https://github.com/Microsoft/Windows-driver-samples/tree/master/audio/sysvad](https://github.com/Microsoft/Windows-driver-samples/blob/97cf5197cf5b882b2c689d8dc2b555f2edf8f418/general/echo/kmdf/ReadMe.md)
+    [https://github.com/Microsoft/Windows-driver-samples/tree/master/audio/sysvad](https://github.com/microsoft/Windows-driver-samples/tree/master/audio/sysvad)
 
     ![github 存储库显示 "常规文件夹" 和 "下载 zip" 按钮](images/sysvad-lab-github.png)
 
@@ -325,13 +323,13 @@ fffff801`094d9000 fffff801`09561000   CI         (export symbols)       CI.dll
 
     在 Visual Studio 中，选择 " **文件**" " &gt; **打开** &gt; **项目/解决方案 ...** "，然后导航到包含提取的文件的文件夹 (例如， *C： \\ WDK \_ Samples \\ Sysvad*) 。 双击 *Syvad* 解决方案文件。
 
-    在 Visual Studio 中找到解决方案资源管理器。  (如果尚未打开，则从 "**视图**" 菜单中选择 "**解决方案资源管理器**"。 ) 解决方案资源管理器中，你可以看到一个具有多个项目的解决方案，并且示例中包含的内容将在不同时间发生变化。 
+    在 Visual Studio 中找到解决方案资源管理器。  (如果尚未打开，则从 "**视图**" 菜单中选择 "**解决方案资源管理器**"。 ) 解决方案资源管理器中，你可以看到一个具有多个项目的解决方案。 
         
-    ![带有从 sysvad 项目加载的设备 .c 文件的 visual studio](images/sysvad-lab-visual-studio-solution.png)
+    ![visual studio，其中包含从 sysvad 项目加载的适配器 .cpp 文件](images/sysvad-lab-visual-studio-solution.png)
 
 3.  **设置示例的配置和平台**
 
-    在解决方案资源管理器中，选择并按住 (或右键单击) **解决方案 "sysvad" (7 项目)**，然后选择 " **Configuration Manager**"。 请确保这四个项目的配置和平台设置相同。 默认情况下，将配置设置为 "Win10 调试"，并将所有项目的平台设置为 "Win64"。 如果对一个项目进行任何配置和/或平台更改，则必须为其余三个项目进行相同的更改。
+    在解决方案资源管理器中，选择并按住 (或右键单击) **解决方案 "sysvad" (7 个项目)**，然后选择 " **Configuration Manager**"。 请确保这四个项目的配置和平台设置相同。 默认情况下，将配置设置为 "Win10 调试"，并将所有项目的平台设置为 "Win64"。 如果对一个项目进行任何配置和/或平台更改，则必须为其余三个项目进行相同的更改。
 
     **注意**  此实验室假设正在使用64位 Windows。 如果使用的是32位 Windows，请生成32位的驱动程序。
 
@@ -353,7 +351,7 @@ fffff801`094d9000 fffff801`09561000   CI         (export symbols)       CI.dll
 
     导航到包含 TabletAudioSample 驱动程序的生成文件的文件夹：
 
-    *C： \\WDK \_ 示例 \\ Sysvad \\ TabletAudioSample \\ x64 \\ 调试*。 文件夹将包含 TabletAudioSample。SYS 驱动程序、符号 pdp 文件和 inf 文件。 还需要查找 SwapAPO 和 KeywordDetectorContosoAdapter dll 和符号文件。
+    *C： \\WDK \_ 示例 \\ Sysvad \\ TabletAudioSample \\ x64 \\ 调试*。 文件夹将包含 TabletAudioSample。SYS 驱动程序、符号 pdp 文件和 inf 文件。 还需要找到 DelayAPO、KWSApo 和 KeywordDetectorContosoAdapter dll 和符号文件。
 
     若要安装该驱动程序，你将需要以下文件。
 
@@ -362,10 +360,12 @@ fffff801`094d9000 fffff801`09561000   CI         (export symbols)       CI.dll
     | TabletAudioSample.sys             | 驱动程序文件。                                                                  |
     | TabletAudioSample .pdb             | 驱动程序符号文件。                                                           |
     | tabletaudiosample .inf             |  (INF) 包含安装驱动程序所需的信息的信息。 |
-    | KeywordDetectorContosoAdapter  | 示例关键字检测器。                                                        |
+    | KeywordDetectorContosoAdapter.dll | 示例关键字检测器。                                                        |
     | KeywordDetectorContosoAdapter .pdb | 示例关键字探测器符号文件。                                          |
-    | lSwapAPO.dll                      | 用于管理的 UI 的示例驱动程序扩展插件。                                |
-    | lSwapAPO .pdb                      | APO UI 符号文件。                                                           |
+    | DelayAPO.dll                      | 示例延迟 APO。                                                               |
+    | DelayAPO .pdb                      | 延迟 APO 符号文件。                                                        |
+    | KWSApo.dll                        | 示例关键字 spotter APO。                                                     |
+    | KWSApo .pdb                        | 关键字 spotter 符号文件。                                                  |
     | TabletAudioSample .cer             | TabletAudioSample 证书文件。                                           |
 
      
@@ -428,15 +428,15 @@ fffff801`094d9000 fffff801`09561000   CI         (export symbols)       CI.dll
 
     INF 文件包含用于安装 *tabletaudiosample.sys* 的硬件 ID。 对于 Syvad 示例，硬件 ID 为： `root\sysvad_TabletAudioSample`
 
-4.  **查看设备管理器中的驱动程序**
+4.  **查看 Device Manager 中的驱动程序**
 
-    在目标计算机上的命令提示符窗口中，输入 " **devmgmt.msc** " 以打开设备管理器。 在设备管理器的 "视图" 菜单上，选择 " **设备（按类型**）"。
+    在目标计算机上的命令提示符窗口中，输入 " **devmgmt.msc** " 以打开 Device Manager。 在 Device Manager 的 "视图" 菜单上，选择 " **设备（按类型**）"。
 
     在设备树中的 "音频设备" 节点 *(WDM) 中找到 "虚拟音频设备* "。 这通常位于 " **声音、视频和游戏控制器** " 节点下。 确认它已安装并处于活动状态。
 
-    突出显示设备管理器计算机上的实际硬件的驱动程序。 然后选择并按住 (或右键单击该驱动程序) ，然后选择 "禁用" 以禁用该驱动程序。
+    突出显示 Device Manager 计算机上的实际硬件的驱动程序。 然后选择并按住 (或右键单击该驱动程序) ，然后选择 "禁用" 以禁用该驱动程序。
 
-    确认音频硬件驱动程序设备管理器，并显示向下箭头，指示已将其禁用。
+    确认音频硬件驱动程序 Device Manager，并显示向下箭头，指示已将其禁用。
 
     ![突出显示了虚拟音频设备 tablet 示例的设备管理器树](images/sysvad-lab-audio-device-manager.png)
 
@@ -444,7 +444,7 @@ fffff801`094d9000 fffff801`09561000   CI         (export symbols)       CI.dll
 
 **测试 Sysvad 音频驱动程序**
 
-1. 在目标计算机上的命令提示符窗口中，输入 " **devmgmt.msc** " 以打开设备管理器。 在设备管理器的 " **视图** " 菜单上，选择 " **设备（按类型**）"。 在设备树中，找到 *虚拟音频设备 (WDM) -平板电脑示例*。
+1. 在目标计算机上的命令提示符窗口中，输入 " **devmgmt.msc** " 以打开 Device Manager。 在 Device Manager 的 " **视图** " 菜单上，选择 " **设备（按类型**）"。 在设备树中，找到 *虚拟音频设备 (WDM) -平板电脑示例*。
 
 2. 打开 "控制面板"，导航到 " **硬件和声音** &gt; **管理音频设备**"。 在 "声音" 对话框中，选择标记为 " *虚拟音频设备 (WDM) -平板电脑*" 的扬声器图标，然后选择 " **设置为默认值**"，但不要选择 **"确定"**。 这会使 "声音" 对话框处于打开状态。
 3. 在目标计算机上找到 MP3 或其他音频文件，然后双击以播放该文件。 然后，在 "声音" 对话框中，验证卷级别指示器中是否存在与 *虚拟音频设备 (WDM) -平板电脑示例* 驱动程序相关联的活动。
@@ -795,7 +795,7 @@ Type “.hh dbgerr005” for details.
 
  
 
-1.  使用 WinDbg UI 确认 **Debug** &gt; 在当前 WinDbg 会话中启用了 "调试 **源" 模式**。
+1.  使用 WinDbg UI 确认 &gt; 在当前 WinDbg 会话中启用了 "调试 **源" 模式**。
 
 2.  键入以下命令，将本地代码位置添加到源路径。
 
@@ -838,7 +838,7 @@ Type “.hh dbgerr005” for details.
 
 8.  **-&gt;在目标系统上**
 
-    在 Windows 中，通过使用图标或输入 **mmc devmgmt.msc** 打开设备管理器。 在 **设备管理器** 展开 " **声音、视频和游戏控制器** " 节点。 选择并按住 (或右键单击) 虚拟音频驱动程序条目，然后从菜单中选择 " **禁用** "。
+    在 Windows 中，通过使用图标或输入 **mmc devmgmt.msc** 打开 Device Manager。 在 **Device Manager** 展开 " **声音、视频和游戏控制器** " 节点。 选择并按住 (或右键单击) 虚拟音频驱动程序条目，然后从菜单中选择 " **禁用** "。
 
 9.  选择并按住 (或右键单击 "虚拟音频驱动程序" 条目) ，然后从菜单中选择 " **启用** "。
 10. **&lt;-在主机系统上**
@@ -906,12 +906,12 @@ ba <access> <size> <address> {options}
 <thead>
 <tr class="header">
 <th align="left">选项</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>E</p></td>
+<td align="left"><p>e</p></td>
 <td align="left"><p>CPU 从地址提取指令时执行 () </p></td>
 </tr>
 <tr class="even">
@@ -966,7 +966,7 @@ ba r 4 fffff800`7bc9eff0
 
  
 
-此外，也可以通过选择 "**编辑** 断点" 来修改断点 &gt; **breakpoints**。 请注意，"断点" 对话框仅适用于现有的断点。 必须从命令行设置新断点。
+此外，也可以通过选择 "**编辑** 断点" 来修改断点 &gt; 。 请注意，"断点" 对话框仅适用于现有的断点。 必须从命令行设置新断点。
 
 **在 MixerVolume 上设置断点**
 
@@ -1004,7 +1004,7 @@ ba r 4 fffff800`7bc9eff0
 
 5.  在目标系统上重新启动代码执行，方法是键入 "开始" 命令 **g**。
 
-6.  在 "控制面板" 中，选择 "**硬件和声音**" &gt; **Sound**。 选择并按住 (或右键单击) **接收器说明示例** ，然后选择 " **属性**"。 选择 " **级别** " 选项卡。调整滑块音量。
+6.  在 "控制面板" 中，选择 "**硬件和声音**" &gt; 。 选择并按住 (或右键单击) **接收器说明示例** ，然后选择 " **属性**"。 选择 " **级别** " 选项卡。调整滑块音量。
 
 7.  这会导致触发 SetMixerVolume 调试断点，并使目标系统上的驱动程序代码执行停止。
 
@@ -1785,7 +1785,7 @@ nt!DbgBreakPointWithStatus:
 fffff803`bb757020 cc              int     3
 ```
 
-或者，您可以通过选择 "**查看** 寄存器" 来显示寄存器内容 &gt; **Registers**。
+或者，您可以通过选择 "**查看** 寄存器" 来显示寄存器内容 &gt; 。
 
 ![显示大约12个寄存器的 "windbg 寄存器" 窗口](images/sysvad-lab-audio-display-registers.png)
 
@@ -1795,7 +1795,7 @@ fffff803`bb757020 cc              int     3
 
 **反汇编**
 
-您可以通过选择 "**查看** 反汇编" 来反汇编正在执行的代码，以查看正在运行的程序集语言代码 &gt; **Disassembly**。
+您可以通过选择 "**查看** 反汇编" 来反汇编正在执行的代码，以查看正在运行的程序集语言代码 &gt; 。
 
 ![windbg 反汇编窗口](images/sysvad-lab-audio-disassembly-window.png)
 
@@ -1842,7 +1842,7 @@ fffff803`bb757020 cc              int     3
 
  
 
-或者，您可以通过选择 "**查看** 内存" 来查看内存 &gt; **Memory**。 使用 **显示格式** 向下下拉以更改显示内存的方式。
+或者，您可以通过选择 "**查看** 内存" 来查看内存 &gt; 。 使用 **显示格式** 向下下拉以更改显示内存的方式。
 
 ![windbg "查看内存" 窗口](images/sysvad-lab-audio-memory-display.png)
 
@@ -2003,7 +2003,7 @@ fffff803`bb757020 cc              int     3
 <thead>
 <tr class="header">
 <th align="left">命令</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
