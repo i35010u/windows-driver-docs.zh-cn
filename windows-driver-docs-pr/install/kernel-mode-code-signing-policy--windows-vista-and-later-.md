@@ -12,12 +12,12 @@ keywords:
 - 包数字签名 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 715a4f01c1d823107d9b436fdac13a21809ce02d
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 1e86f828b10d9df5c8c0f9e662e7c3d1be565ce0
+ms.sourcegitcommit: 67bf9080bb5e2070ccf9fc90aae350b126cb95ac
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96824077"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98666387"
 ---
 # <a name="driver-signing-policy"></a>驱动程序签名策略
 
@@ -26,7 +26,7 @@ ms.locfileid: "96824077"
 
 可以通过多种不同的方式将驱动程序提交到门户。  对于生产驱动程序，应按如下所述提交 HLK/HCK 测试日志。  对于仅限 Windows 10 客户端的系统进行测试，你可以提交用于 [证明签名](../dashboard/attestation-signing-a-kernel-driver-for-public-release.md)的驱动程序，这不需要进行 HLK 测试。  或者，你可以提交你的驱动程序以进行测试签名，如 [创建新的硬件提交](../dashboard/create-a-new-hardware-submission.md) 页中所述。
 
-## <a name="exceptions"></a>异常
+## <a name="exceptions"></a>例外
 
 如果满足以下任一条件，则仍允许交叉签名的驱动程序：
 
@@ -85,6 +85,8 @@ ms.locfileid: "96824077"
 6. 将 CAB 提交给硬件开发人员中心进行签名。
 7. 如果提交已获批准，则硬件开发人员中心将使用 Microsoft 签名返回驱动程序。
 8. 内部分发驱动程序。
+
+此过程适用于所有受支持的 windows 版本。
 
 ## <a name="see-also"></a>另请参阅
 

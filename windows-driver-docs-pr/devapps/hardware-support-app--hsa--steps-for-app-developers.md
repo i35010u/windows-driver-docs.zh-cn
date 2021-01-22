@@ -7,14 +7,14 @@ keywords:
 - 自定义功能
 - UWP
 - 硬件
-ms.date: 08/16/2017
+ms.date: 01/21/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 233cf068c87389cfec61b0429ea9f767ff88cd1d
-ms.sourcegitcommit: 55a1002032ce9b01c6db26b41eca86a1bcb33c84
+ms.openlocfilehash: fc970bbebc31732c73f336dfc6ea115ef70a5758
+ms.sourcegitcommit: 67bf9080bb5e2070ccf9fc90aae350b126cb95ac
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 01/21/2021
-ms.locfileid: "98626075"
+ms.locfileid: "98666384"
 ---
 # <a name="hardware-support-app-hsa-steps-for-app-developers"></a>硬件支持应用 (HSA)：适用于应用开发人员的步骤
 
@@ -36,20 +36,22 @@ ms.locfileid: "98626075"
 
 需要 Microsoft Store 上的开发人员帐户。 硬件伙伴需要不同于其硬件伙伴帐户的 Microsoft Store 帐户。 在后续步骤中创作应用程序清单和设备元数据时，需要发布者名称。 创建存储配置文件后，还可以为应用保留一个名称。
 
-若要创建 Microsoft Store 帐户，请参阅 [UWP 应用注册页](https://go.microsoft.com/fwlink/p/?LinkId=302197)。 有关详细信息，请参阅 [打开开发人员帐户](/windows/uwp/publish/opening-a-developer-account)。
+若要创建 Microsoft Store 帐户，请参阅 [UWP 应用注册页](https://developer.microsoft.com/store/register/)。 有关详细信息，请参阅 [打开开发人员帐户](/windows/uwp/publish/opening-a-developer-account)。
 
 ## <a name="choosing-a-programming-language-for-the-app"></a>为应用程序选择编程语言
 
 如果你的应用程序将与驱动程序通信，则可以使用 [Windows. Custom](/uwp/api/windows.devices.custom)，它是 WinRT API 的一部分，因此在 JavaScript、c # 和 c + + 中可用。
 
-如果你的应用程序将与 NT 服务通信，则需要使用 RPC Api。  由于 RPC Api 是 WinRT 中不可用的 Win32 Api，因此需要使用 c + + 和 c + +/CLI，或使用 .NET 互操作 (PInvoke) 来包装 RPC 调用。  有关详细信息，请参阅 [从托管代码调用本机函数](/cpp/dotnet/calling-native-functions-from-managed-code) 和 [通过 c + +/cli 进行 .net 编程](/cpp/dotnet/dotnet-programming-with-cpp-cli-visual-cpp?view=msvc-160)。
+如果你的应用程序将与 NT 服务通信，则需要使用 RPC Api。  由于 RPC Api 是 WinRT 中不可用的 Win32 Api，因此需要使用 c + + 和 c + +/CLI，或使用 .NET 互操作 (PInvoke) 来包装 RPC 调用。  有关详细信息，请参阅 [从托管代码调用本机函数](/cpp/dotnet/calling-native-functions-from-managed-code) 和 [通过 c + +/cli 进行 .net 编程](/cpp/dotnet/dotnet-programming-with-cpp-cli-visual-cpp?view=msvc-160&preserve-view=true)。
 
 ## <a name="contact-the-custom-capability-owner"></a>与自定义功能所有者联系
 
 现在，你已准备好从功能所有者请求对自定义功能的访问权限。  需要收集以下信息：
 
 - 应用 PFN 从 Microsoft Store 中 (包系列名称) 
+
 - 自定义功能的名称
+
 - 应用签名证书的签名哈希，可使用 certutil.exe 从 .cer 文件生成。 证书必须是 SHA-256。
 
 若要生成签名哈希，请运行 `C:\Windows\System32\certutil.exe -dump CertificateName.cer` 。
@@ -93,7 +95,7 @@ ca9fc964db7e0c2938778f4559946833e7a8cfde0f3eaa07650766d4764e86c4
 </Package>
 ```
 
-然后，将 SCCD 文件复制到 appx 包的包根目录。 在 Visual Studio 的解决方案资源管理器中，右键单击 "项目- &gt; 添加 &gt; 现有项 ..." 将 SCCD 添加到你的项目。
+然后，将 SCCD 文件复制到 appx 包的包根目录。 在 Visual Studio 的解决方案资源管理器中，右键单击 "项目- &gt; 添加 &gt; 现有项 ..."将 SCCD 添加到你的项目。
 
 ![将 SCCD 文件添加到 appx 包](images/addSCCDToAppx.png)
 
@@ -114,12 +116,18 @@ ca9fc964db7e0c2938778f4559946833e7a8cfde0f3eaa07650766d4764e86c4
 如果目标计算机处于开发人员模式，则可以尝试以下步骤来调试应用注册失败：
 
 1. 删除 AppX 清单中的自定义功能条目。
-2. 生成并部署你的应用。
-3. 在 PowerShell 窗口中，键入 `Get-AppxPackage` 。
-4. 在列表中查找应用，并验证应用的确切包系列名称。
-5. 将 SCCD 更新为包系列名称。
-6. 将自定义功能条目添加回 AppX 清单中。
-7. 重新生成并部署。
+
+1. 生成并部署你的应用。
+
+1. 在 PowerShell 窗口中，键入 `Get-AppxPackage` 。
+
+1. 在列表中查找应用，并验证应用的确切包系列名称。
+
+1. 将 SCCD 更新为包系列名称。
+
+1. 将自定义功能条目添加回 AppX 清单中。
+
+1. 重新生成并部署。
 
 ## <a name="see-also"></a>另请参阅
 

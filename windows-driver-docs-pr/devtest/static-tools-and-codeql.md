@@ -6,12 +6,12 @@ keywords:
 - 静态验证工具 WDK
 ms.date: 12/10/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c9a358c5f208211cfa4a5e77cb1d9a3255e5097
-ms.sourcegitcommit: b68985c5486cccea20006860f970116d02fe5aa5
+ms.openlocfilehash: ac8f82408b8de30ea4c94cadd253ebdc89dc9c6f
+ms.sourcegitcommit: 67bf9080bb5e2070ccf9fc90aae350b126cb95ac
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98207867"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98666386"
 ---
 # <a name="codeql-and-the-static-tools-logo-test"></a>CodeQL 和静态工具徽标测试
 
@@ -152,7 +152,7 @@ msbuild /t:rebuild "C:\codeql-home\drivers\kmdf\kmdfecho.sln"
 
 此时，在我们的示例设置中，将显示以下目录。
 
-| 描述            | 位置                           |
+| 说明            | 位置                           |
 |------------------------|------------------------------------|
 | Codeql.exe             | C:\codeql-home\codeql\codeql       |
 | C + + 规则              | C:\codeql-home\codeql\cpp          |
@@ -330,25 +330,25 @@ Microsoft 建议在 *所有* 驱动程序源代码上运行的查询包括：
 
 | ID                       | 位置   |
 | ------------------------ | ---------- |
-| [cpp/参数太少](https://help.semmle.com/wiki/display/CCPPOBJ/Call+to+function+with+fewer+arguments+than+declared+parameters)   | *cpp/q/src/可能的 Bug/Underspecified 函数/TooFewArguments. q* |
-| [cpp/additionoverflow-检查](https://help.semmle.com/wiki/display/CCPPOBJ/Bad+check+for+overflow+of+integer+addition)   | *cpp/q/src/可能的 Bug/算数/BadAdditionOverflowCheck. q* |
-| [cpp/指针-overflowcheck](https://help.semmle.com/wiki/display/CCPPOBJ/Pointer+overflow+check)   | *cpp/q/src/可能的 Bug/内存管理/PointerOverflow. q* | 
-| [cpp/hresult-booleanconversion](https://help.semmle.com/wiki/display/CCPPOBJ/Cast+between+HRESULT+and+a+Boolean+type)   | *cpp/q/src/Security/CWE/CWE-253/HResultBooleanConversion. q* | 
-| [cpp/错误-typeconversion](https://help.semmle.com/wiki/pages/viewpage.action?pageId=29392920)   | *cpp/q/src/Security/CWE/CWE-704/WcharCharConversion. q* |
-| [cpp/integermultiplication-强制转换为 long](https://help.semmle.com/wiki/display/CCPPOBJ/Multiplication+result+converted+to+larger+type)   | *cpp/q/src/可能的 Bug/算数/IntMultToLong. q* |
-| [cpp/已签名-overflowcheck](https://help.semmle.com/wiki/display/CCPPOBJ/Signed+overflow+check)   | *cpp/q/src/可能的 Bug/算数/SignedOverflowCheck. q* |
-| [cpp/向上转换-数组-pointerarithmetic](https://help.semmle.com/wiki/display/CCPPOBJ/Upcast+array+used+in+pointer+arithmetic)   | *cpp/q/src/可能的 Bug/转换/CastArrayPointerArithmetic。 q* |
-| [cpp/withwider 类型](https://help.semmle.com/wiki/display/CCPPOBJ/Comparison+of+narrow+type+with+wide+type+in+loop+condition)   | *cpp/q/src/Security/CWE/CWE-190/ComparisonWithWiderType. q* |
-| [cpp/可疑-添加-sizeof](https://help.semmle.com/wiki/display/CCPPOBJ/Suspicious+add+with+sizeof)   | *cpp/q/src/Security/CWE/CWE-468/SuspiciousAddWithSizeof q* |
-| [cpp/request.form 函数](https://help.semmle.com/wiki/display/CCPPOBJ/Use+of+potentially+dangerous+function)   | *cpp/q/src/Security/CWE/CWE-676/PotentiallyDangerousFunction q* |
-| [cpp/notoperator-用法](https://help.semmle.com/wiki/display/CCPPOBJ/Incorrect+%27not%27+operator+usage)   | *cpp/q/src/可能的 Bug/错误录入/IncorrectNotOperatorUsage。 q* | 
-| [cpp/offset-beforerange-check](https://help.semmle.com/wiki/display/CCPPOBJ/Array+offset+used+before+range+check)  | *cpp/q/src/最佳方案/可能的错误/OffsetUseBeforeRangeCheck. q*   |
-| [cpp/可疑-sizeof](https://help.semmle.com/wiki/display/CCPPOBJ/Suspicious+add+with+sizeof)   | *cpp/q/src/可能的 Bug/内存管理/SuspiciousSizeof. q* |
-| [cpp/未初始化-本地](https://help.semmle.com/wiki/display/CCPPOBJ/Potentially+uninitialized+local+variable)   | *cpp/q/src/可能的 Bug/内存管理/UninitializedLocal. q* |
-| [cpp/unterminatedvariadic-调用](https://help.semmle.com/wiki/display/CCPPOBJ/Call+to+function+with+fewer+arguments+than+declared+parameters)   | *cpp/q/src/Security/CWE/CWE-121/UnterminatedVarargsCall. q* |
-| [cpp/可疑-pointerscaling](https://help.semmle.com/wiki/display/CCPPOBJ/Suspicious+pointer+scaling)   | *cpp/q/src/Security/CWE/CWE-468/IncorrectPointerScaling q* |
-| [cpp/pointerscaling-void](https://help.semmle.com/wiki/display/CCPPOBJ/Suspicious+pointer+scaling+to+void)   | *cpp/q/src/Security/CWE/CWE-468/IncorrectPointerScalingVoid q* |
-| [cpp/有条件-未初始化-变量](https://help.semmle.com/wiki/display/CCPPOBJ/Conditionally+uninitialized+variable)   | *cpp/q/src/Security/CWE/CWE-457/ConditionallyUninitializedVariable。* | 
+| [cpp/参数太少](https://codeql.github.com/codeql-query-help/cpp/cpp-too-few-arguments/)   | *cpp/q/src/可能的 Bug/Underspecified 函数/TooFewArguments. q* |
+| [cpp/错误添加-溢出-检查](https://codeql.github.com/codeql-query-help/cpp/cpp-bad-addition-overflow-check/)   | *cpp/q/src/可能的 Bug/算数/BadAdditionOverflowCheck. q* |
+| [cpp/指针溢出-检查](https://codeql.github.com/codeql-query-help/cpp/cpp-pointer-overflow-check/)   | *cpp/q/src/可能的 Bug/内存管理/PointerOverflow. q* | 
+| [cpp/hresult-布尔转换](https://codeql.github.com/codeql-query-help/cpp/cpp-hresult-boolean-conversion/)   | *cpp/q/src/Security/CWE/CWE-253/HResultBooleanConversion. q* | 
+| [cpp/错误的字符串类型转换](https://codeql.github.com/codeql-query-help/cpp/cpp-incorrect-string-type-conversion/)   | *cpp/q/src/Security/CWE/CWE-704/WcharCharConversion. q* |
+| [cpp/整数-强制转换为 long](https://codeql.github.com/codeql-query-help/cpp/cpp-integer-multiplication-cast-to-long/)   | *cpp/q/src/可能的 Bug/算数/IntMultToLong. q* |
+| [cpp/有符号溢出-检查](https://codeql.github.com/codeql-query-help/cpp/cpp-signed-overflow-check/)   | *cpp/q/src/可能的 Bug/算数/SignedOverflowCheck. q* |
+| [cpp/向上转换-数组指针算法](https://codeql.github.com/codeql-query-help/cpp/cpp-upcast-array-pointer-arithmetic/)   | *cpp/q/src/可能的 Bug/转换/CastArrayPointerArithmetic。 q* |
+| [cpp/比较-具有更大的类型](https://codeql.github.com/codeql-query-help/cpp/cpp-comparison-with-wider-type/)   | *cpp/q/src/Security/CWE/CWE-190/ComparisonWithWiderType. q* |
+| [cpp/可疑-添加-sizeof](https://codeql.github.com/codeql-query-help/cpp/cpp-suspicious-add-sizeof/)   | *cpp/q/src/Security/CWE/CWE-468/SuspiciousAddWithSizeof q* |
+| [cpp/可能危险的函数](https://codeql.github.com/codeql-query-help/cpp/cpp-potentially-dangerous-function/)   | *cpp/q/src/Security/CWE/CWE-676/PotentiallyDangerousFunction q* |
+| [cpp/不正确-用法](https://codeql.github.com/codeql-standard-libraries/cpp/Likely%20Bugs/Likely%20Typos/IncorrectNotOperatorUsage.ql/module.IncorrectNotOperatorUsage.html)   | *cpp/q/src/可能的 Bug/错误录入/IncorrectNotOperatorUsage。 q* | 
+| [cpp/offset-使用前-范围-检查](https://github.com/github/codeql/blob/main/cpp/ql/src/Best%20Practices/Likely%20Errors/OffsetUseBeforeRangeCheck.qhelp)  | *cpp/q/src/最佳方案/可能的错误/OffsetUseBeforeRangeCheck. q*   |
+| [cpp/可疑-添加-sizeof](https://codeql.github.com/codeql-query-help/cpp/cpp-suspicious-add-sizeof/)   | *cpp/q/src/可能的 Bug/内存管理/SuspiciousSizeof. q* |
+| [cpp/未初始化-本地](https://codeql.github.com/codeql-standard-libraries/cpp/Likely%20Bugs/Memory%20Management/UninitializedLocal.ql/module.UninitializedLocal.html)   | *cpp/q/src/可能的 Bug/内存管理/UninitializedLocal. q* |
+| [cpp/未终止-可变参数-调用](https://codeql.github.com/codeql-standard-libraries/cpp/Security/CWE/CWE-121/UnterminatedVarargsCall.ql/module.UnterminatedVarargsCall.html)   | *cpp/q/src/Security/CWE/CWE-121/UnterminatedVarargsCall. q* |
+| [cpp/可疑指针缩放](https://github.com/github/codeql/blob/main/cpp/ql/src/Security/CWE/CWE-468/IncorrectPointerScalingChar.qhelp)   | *cpp/q/src/Security/CWE/CWE-468/IncorrectPointerScaling q* |
+| [cpp/可疑-指针缩放-void](https://github.com/github/codeql/blob/main/cpp/ql/src/Security/CWE/CWE-468/IncorrectPointerScalingVoid.qhelp)   | *cpp/q/src/Security/CWE/CWE-468/IncorrectPointerScalingVoid q* |
+| [cpp/有条件-未初始化-变量](https://codeql.github.com/codeql-standard-libraries/cpp/Security/CWE/CWE-457/ConditionallyUninitializedVariable.ql/module.ConditionallyUninitializedVariable.html)   | *cpp/q/src/Security/CWE/CWE-457/ConditionallyUninitializedVariable。* | 
 | [cpp/使用-免费](https://docs.microsoft.com/windows-hardware/drivers/devtest/codeql-windows-driver-useafterfree)   | *Windows 驱动程序-开发人员补充-工具/codeql/windows-驱动程序/查询/可能的 Bug/内存管理/UseAfterFree \ UseAfterFree q* |
 | [cpp/可能-免费使用](https://docs.microsoft.com/windows-hardware/drivers/devtest/codeql-windows-driver-probableuseafterfree)   | *Windows 驱动程序-开发人员补充-工具/codeql/windows-驱动程序/查询/可能的 Bug/内存管理/UseAfterFree/ProbableUseAfterFree q* |
 | [cpp/windows/wdk/弃用的 api](https://docs.microsoft.com/windows-hardware/drivers/devtest/codeql-windows-driver-wdkdeprecatedapi)   | *Windows 驱动程序-开发人员补充-工具/codeql/windows-驱动程序/查询/Windows/wdk/wdk-q* |
@@ -361,14 +361,14 @@ Microsoft 建议在 *所有* 驱动程序源代码上运行的查询包括：
 
 | ID            | 位置   |
 | ------------- | ---------- |
-| [cpp/参数太少](https://help.semmle.com/wiki/display/CCPPOBJ/Call+to+function+with+fewer+arguments+than+declared+parameters)   | *cpp/q/src/可能的 Bug/Underspecified 函数/TooFewArguments. q* |
-| [cpp/additionoverflow-检查](https://help.semmle.com/wiki/display/CCPPOBJ/Bad+check+for+overflow+of+integer+addition)   | *cpp/q/src/可能的 Bug/算数/BadAdditionOverflowCheck. q* |
-| [cpp/指针-overflowcheck](https://help.semmle.com/wiki/display/CCPPOBJ/Pointer+overflow+check)   | *cpp/q/src/可能的 Bug/内存管理/PointerOverflow. q* |
-| [cpp/hresult-booleanconversion](https://help.semmle.com/wiki/display/CCPPOBJ/Cast+between+HRESULT+and+a+Boolean+type)   | *cpp/q/src/Security/CWE/CWE-253/HResultBooleanConversion. q* | 
-| [cpp/错误-typeconversion](https://help.semmle.com/wiki/pages/viewpage.action?pageId=29392920)   | *cpp/q/src/Security/CWE/CWE-704/WcharCharConversion. q* | 
-| [cpp/有条件-未初始化-变量](https://help.semmle.com/wiki/display/CCPPOBJ/Conditionally+uninitialized+variable)   | */cpp/ql/src/Security/CWE/CWE-457/ConditionallyUninitializedVariable.ql.* | 
-| [cpp/withwider 类型](https://help.semmle.com/wiki/display/CCPPOBJ/Comparison+of+narrow+type+with+wide+type+in+loop+condition)   | *cpp/q/src/Security/CWE/CWE-190/ComparisonWithWiderType. q* |
-| [cpp/未初始化-本地](https://help.semmle.com/wiki/display/CCPPOBJ/Potentially+uninitialized+local+variable)   | *cpp/q/src/可能的 Bug/内存管理/UninitializedLocal. q* |
+| [cpp/参数太少](https://codeql.github.com/codeql-query-help/cpp/cpp-too-few-arguments/)   | *cpp/q/src/可能的 Bug/Underspecified 函数/TooFewArguments. q* |
+| [cpp/错误添加-溢出-检查](https://codeql.github.com/codeql-query-help/cpp/cpp-bad-addition-overflow-check/)   | *cpp/q/src/可能的 Bug/算数/BadAdditionOverflowCheck. q* |
+| [cpp/指针溢出-检查](https://codeql.github.com/codeql-query-help/cpp/cpp-pointer-overflow-check/)   | *cpp/q/src/可能的 Bug/内存管理/PointerOverflow. q*|
+| [cpp/hresult-布尔转换](https://codeql.github.com/codeql-query-help/cpp/cpp-hresult-boolean-conversion/)   | *cpp/q/src/Security/CWE/CWE-253/HResultBooleanConversion. q* | 
+| [cpp/错误的字符串类型转换](https://codeql.github.com/codeql-query-help/cpp/cpp-incorrect-string-type-conversion/)   | *cpp/q/src/Security/CWE/CWE-704/WcharCharConversion. q* | 
+| [cpp/有条件-未初始化-变量](https://codeql.github.com/codeql-standard-libraries/cpp/Security/CWE/CWE-457/ConditionallyUninitializedVariable.ql/module.ConditionallyUninitializedVariable.html)   | *cpp/q/src/Security/CWE/CWE-457/ConditionallyUninitializedVariable。* | 
+| [cpp/比较-具有更大的类型](https://codeql.github.com/codeql-query-help/cpp/cpp-comparison-with-wider-type/)   | *cpp/q/src/Security/CWE/CWE-190/ComparisonWithWiderType. q*  |
+| [cpp/未初始化-本地](https://codeql.github.com/codeql-standard-libraries/cpp/Likely%20Bugs/Memory%20Management/UninitializedLocal.ql/module.UninitializedLocal.html)   | *cpp/q/src/可能的 Bug/内存管理/UninitializedLocal. q* |
 | [cpp/windows/wdk/弃用的 api](https://docs.microsoft.com/windows-hardware/drivers/devtest/codeql-windows-driver-wdkdeprecatedapi)   | *Windows 驱动程序-开发人员补充-工具/codeql/windows-驱动程序/查询/Windows/wdk/wdk-q* |
 
 这些查询是 [Microsoft GitHub CodeQL 存储库](https://github.com/microsoft/Windows-Driver-Developer-Supplemental-Tools)中的 *windows_driver_mustfix qls* 查询套件的一部分。
