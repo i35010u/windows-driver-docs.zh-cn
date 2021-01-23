@@ -1,14 +1,14 @@
 ---
 title: 低延迟音频
 description: 本主题介绍 Windows 10 中的音频延迟更改。 它涵盖了应用程序开发人员的 API 选项，以及可用于支持低延迟音频的驱动程序中的更改。
-ms.date: 04/20/2017
+ms.date: 01/19/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 825c1bbcb9659dad9e689450972bd1b889aed81a
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 266c97f26fdb8359e908c187c5529e61919024a0
+ms.sourcegitcommit: 6ebfa823513c9d15674663301ce16fa790dafdea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96801053"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98717648"
 ---
 # <a name="low-latency-audio"></a>低延迟音频
 
@@ -35,7 +35,7 @@ Windows 10 包含更改以降低音频延迟。 本文档的目标是：
 
 ## <a name="definitions"></a>定义
 
-|术语|描述|
+|术语|说明|
 |--- |--- |
 |呈现延迟|应用程序将音频数据的缓冲区提交到呈现 Api 的时间之间的延迟，直到扬声器听到该时间。|
 |捕获延迟|从麦克风捕获声音到将其发送到应用程序正在使用的捕获 Api 的时间之间的延迟。|
@@ -123,7 +123,7 @@ AudioGraph 是 Windows 10 中新的通用 Windows 平台 API，旨在轻松实�
 
 为了面向低延迟方案，AudioGraph 提供了 [AudioGraphSettings：： QuantumSizeSelectionMode 属性](/uwp/api/Windows.Media.Audio.AudioGraphSettings#Windows_Media_Audio_AudioGraphSettings_QuantumSizeSelectionMode)。 此属性可以是下表中所示的以下任何值：
 
-|“值”|描述|
+|值|说明|
 |--- |--- |
 |SystemDefault|将缓冲区设置为默认缓冲区大小 (~ 10ms) |
 |LowestLatency|将缓冲区设置为驱动程序支持的最小值|
@@ -151,7 +151,7 @@ CreateAudioGraphResult result = await AudioGraph.CreateAsync(settings);
 
 [**IAudioClient3**](/windows/win32/api/audioclient/nn-audioclient-iaudioclient3) 定义以下3种方法：
 
-|方法|描述|
+|方法|说明|
 |--- |--- |
 |GetCurrentSharedModeEnginePeriod|返回音频引擎的当前格式和周期|
 |GetSharedModeEnginePeriod|返回引擎支持的指定流格式的周期范围|
@@ -412,27 +412,39 @@ Exit:
 
 在操作系统、驱动程序和硬件之间移动音频数据时，驱动程序在各种约束下运行。 这些限制可能是由于物理硬件传输在内存和硬件间移动数据，以及/或者由于硬件或关联的 DSP 中的信号处理模块导致的。
 
-在 Windows 10 中，驱动程序可以使用 DEVPKEY \_ KsAudio \_ PacketSize \_ 约束设备属性来表示其缓冲区大小功能。 此属性允许用户定义驱动程序支持的绝对最小缓冲区大小，以及每个信号处理模式的特定缓冲区大小约束 (模式特定的约束需要高于驱动程序的最小缓冲区大小，否则音频堆栈) 将忽略它们。 例如，下面的代码段演示了驱动程序如何声明支持的绝对最小缓冲区大小为1ms，但如果我们假定 48 kHz 采样速率) ，则默认模式支持128帧， (对应于3毫秒。
+从 Windows 10 版本1607开始，驱动程序可以使用 DEVPKEY \_ KsAudio \_ PacketSize \_ Constraints2 设备属性来表示其缓冲区大小功能。 此属性允许用户定义驱动程序支持的绝对最小缓冲区大小，以及每个信号处理模式的特定缓冲区大小约束 (模式特定的约束需要高于驱动程序的最小缓冲区大小，否则音频堆栈) 将忽略它们。
+
+例如，下面的代码段演示了驱动程序如何声明支持的绝对最小缓冲区大小为2毫秒，但默认模式支持128帧 (这两个帧对应于3毫秒，如果我们假定) 48 kHz 采样率。
 
 ```cpp
-// Describe constraints for small buffers
+ 
+//
+// Describe buffer size constraints for WaveRT buffers
+//
 static struct
 {
-    KSAUDIO_PACKETSIZE_CONSTRAINTS TransportPacketConstraints;
+    KSAUDIO_PACKETSIZE_CONSTRAINTS2 TransportPacketConstraints;
     KSAUDIO_PACKETSIZE_PROCESSINGMODE_CONSTRAINT AdditionalProcessingConstraints[1];
 } SysvadWaveRtPacketSizeConstraintsRender =
 {
     {
-        1 * HNSTIME_PER_MILLISECOND,                // 1 ms minimum processing interval
-        FILE_256_BYTE_ALIGNMENT,                    // 256 byte packet size alignment
-        0,                                          // reserved
-        1,                                          // 1 processing constraint below
+        2 * HNSTIME_PER_MILLISECOND,                // 2 ms minimum processing interval
+        FILE_BYTE_ALIGNMENT,                        // 1 byte packet size alignment
+        0,                                          // no maximum packet size constraint
+        2,                                          // 2 processing constraints follow
         {
             STATIC_AUDIO_SIGNALPROCESSINGMODE_DEFAULT,          // constraint for default processing mode
-            128,                                  // 128 samples per processing frame
-            0,                                    // N/A hns per processing frame
-       },
+            128,                                                // 128 samples per processing frame
+            0,                                                  // NA hns per processing frame
+        },
     },
+    {
+        {
+            STATIC_AUDIO_SIGNALPROCESSINGMODE_MOVIE,            // constraint for movie processing mode
+            1024,                                               // 1024 samples per processing frame
+            0,                                                  // NA hns per processing frame
+        },
+    }
 };
 ```
 
@@ -488,7 +500,7 @@ Sysvad 示例 (<https://github.com/Microsoft/Windows-driver-samples/tree/master/
   - 注册其总线驱动程序的资源和
   - 通知 Portcls 子级的资源依赖于父项的资源。 在 HD 音频体系结构中，音频微型端口驱动程序只需注册其自己的驱动程序拥有的线程资源。
 
-说明：
+注意：
 
 - 收件箱 HDAudio 总线驱动程序 hdaudbus.sys 枚举的 HDAudio 微型端口函数驱动程序无需注册 HDAudio 中断，因为这已通过 hdaudbus.sys 完成。 但是，如果微型端口驱动程序创建其自己的线程，则需要对其进行注册。
 - 仅为注册流式处理资源而与 Portcls 链接的驱动程序必须更新其 Inf，使其包含/需要 wdmaudio，并) 复制 portcls.sys (和依赖文件。 在 wdmaudio 中定义了一个新的 INF 复制部分，仅复制这些文件。
@@ -545,7 +557,7 @@ Needs=WDMPORTCLS.CopyFilesOnly
 - AudioCreation 示例 (AudioGraph) ： <https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AudioCreation>
 - Sysvad 驱动程序示例： <https://github.com/Microsoft/Windows-driver-samples/tree/master/audio/sysvad>
 
-## <a name="faq"></a>常见问题
+## <a name="faq"></a>常见问题解答
 
 **1. 如果所有应用程序都使用新 Api 来实现低延迟，则不是更好？低延迟始终保证用户获得更好的用户体验吗？**
 
@@ -558,8 +570,8 @@ Needs=WDMPORTCLS.CopyFilesOnly
 
 **2. 更新到 Windows 10 的所有系统是否会自动更新为支持小型缓冲区？同时，所有系统是否支持相同的最小缓冲区大小？**
 
-不是。 为了使系统支持小型缓冲区，需要更新驱动程序。 由 Oem 决定将更新哪些系统以支持小型缓冲区。 另外，较新的系统更 likey 支持比较早的系统更小的缓冲区 (例如，新系统中的延迟很可能低于旧系统) 。
+不能。 为了使系统支持小型缓冲区，需要更新驱动程序。 由 Oem 决定将更新哪些系统以支持小型缓冲区。 另外，较新的系统更 likey 支持比较早的系统更小的缓冲区 (例如，新系统中的延迟很可能低于旧系统) 。
 
 **3. 如果驱动程序支持小缓冲区大小 (&lt; 10ms buffer) ，Windows 10 中的所有应用程序是否会自动使用小型缓冲区来呈现和捕获音频？**
 
-不是。 默认情况下，Windows 10 中的所有应用程序都将使用10ms 的缓冲区来呈现和捕获音频。 如果应用程序需要使用小型缓冲区，则需要使用新的 AudioGraph 设置或 WASAPI IAudioClient3 接口，以便执行此操作。 但是，如果 Windows 10 中的一个应用程序请求使用小型缓冲区，则音频引擎将使用该特定缓冲区大小开始传输音频。 在这种情况下，使用同一终结点和模式的所有应用程序都将自动切换到该小型缓冲区大小。 当低延迟应用程序退出时，音频引擎将再次切换到10ms 缓冲区。
+不能。 默认情况下，Windows 10 中的所有应用程序都将使用10ms 的缓冲区来呈现和捕获音频。 如果应用程序需要使用小型缓冲区，则需要使用新的 AudioGraph 设置或 WASAPI IAudioClient3 接口，以便执行此操作。 但是，如果 Windows 10 中的一个应用程序请求使用小型缓冲区，则音频引擎将使用该特定缓冲区大小开始传输音频。 在这种情况下，使用同一终结点和模式的所有应用程序都将自动切换到该小型缓冲区大小。 当低延迟应用程序退出时，音频引擎将再次切换到10ms 缓冲区。

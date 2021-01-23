@@ -12,12 +12,12 @@ keywords:
 - 包数字签名 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e86f828b10d9df5c8c0f9e662e7c3d1be565ce0
-ms.sourcegitcommit: 67bf9080bb5e2070ccf9fc90aae350b126cb95ac
+ms.openlocfilehash: ae2585d3d62a92513c9422e838d0c1bc117a31dc
+ms.sourcegitcommit: 6ebfa823513c9d15674663301ce16fa790dafdea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98666387"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98717644"
 ---
 # <a name="driver-signing-policy"></a>驱动程序签名策略
 
@@ -80,13 +80,11 @@ ms.locfileid: "98666387"
 1. [注册硬件开发人员中心](../dashboard/register-for-the-hardware-program.md)。
 2. 查看 [硬件仪表板 FAQ](../dashboard/hardware-dashboard-faq.md) 并签署相应协议。
 3. 上传 codesign 证书。
-4. 使用非 EV codesign 证书在本地对驱动程序进行签名。
+4. 使用已在合作伙伴中心注册的任何 codesign 证书以本地方式为驱动程序签名。
 5. 包中的驱动程序，并使用上面的 codesign 证书对 CAB 进行签名。
 6. 将 CAB 提交给硬件开发人员中心进行签名。
 7. 如果提交已获批准，则硬件开发人员中心将使用 Microsoft 签名返回驱动程序。
 8. 内部分发驱动程序。
-
-此过程适用于所有受支持的 windows 版本。
 
 ## <a name="see-also"></a>另请参阅
 
