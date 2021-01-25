@@ -1,14 +1,14 @@
 ---
 title: 打印机扩展
 description: 当用户在 Windows 桌面上运行现有应用程序时，打印机扩展应用程序支持打印首选项和打印机通知。
-ms.date: 06/12/2020
+ms.date: 01/25/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e3a731b3911288419d63d9cbb66d5ac42915543
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 5e3c84ed2faf805b643531d96dead904a7406ea9
+ms.sourcegitcommit: 9e92987cc98c95aa1abe1e5b94dc72b2768ec9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96807289"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98763212"
 ---
 # <a name="printer-extensions"></a>打印机扩展
 
@@ -300,8 +300,6 @@ OpenPrinter
 ClosePrinter
 ```
 
-若要详细了解如何将这些旧版 Api 封送到 .NET，请参阅 [如何使用 Visual c # .net 将原始数据发送到打印机](https://support.microsoft.com/help/322091) ，或者 [如何使用 Visual Basic .net 将原始数据发送到打印机](https://support.microsoft.com/help/322090)。
-
 ## <a name="printer-extension-performance-best-practices"></a>打印机扩展性能最佳做法
 
 为了确保获得最佳的用户体验，应尽可能快地加载打印机扩展。 打印机扩展示例项目是 .NET 应用程序，这意味着它内置于中间语言 (IL) ，必须在运行时编译为本机处理器体系结构的相应格式。 在安装过程中，Microsoft 建议根据最佳做法安装打印机扩展，以确保应用已针对本机系统体系结构进行了编译。 有关代码编译和安装最佳实践的详细信息，请参阅 [提高桌面应用程序的启动性能](https://devblogs.microsoft.com/dotnet/improving-launch-performance-for-your-desktop-applications/)。
@@ -324,10 +322,6 @@ OnDriverEvent 调用后，打印机扩展应尽可能快地初始化其 UI，并
 [双向请求和响应架构](/previous-versions/dd183368(v=vs.85))
 
 [数据绑定概述](/dotnet/framework/wpf/data/data-binding-overview)
-
-[如何使用 Visual Basic .NET 将原始数据发送到打印机](https://support.microsoft.com/help/322090)
-
-[如何使用 Visual c # .NET 将原始数据发送到打印机](https://support.microsoft.com/help/322091)
 
 [提高桌面应用程序的启动性能](https://devblogs.microsoft.com/dotnet/improving-launch-performance-for-your-desktop-applications/)
 
