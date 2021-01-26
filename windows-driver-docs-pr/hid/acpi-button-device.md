@@ -3,12 +3,12 @@ title: ACPI 按钮设备
 description: 通用按钮设备是一个标准设备，用于通过硬件中断报告按钮事件。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5141ef84edaf61519955abb1095a59f23d3d8a06
-ms.sourcegitcommit: 586b1844547359baca95e3228fa63fcba0b18608
+ms.openlocfilehash: e9811afacb8a4fd0cb763f71d5ea8a3409c70451
+ms.sourcegitcommit: 75023add6028da178c7f1013b681a661995171fe
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97096622"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98763899"
 ---
 # <a name="acpi-button-device"></a>ACPI 按钮设备
 
@@ -27,10 +27,10 @@ ms.locfileid: "97096622"
 
 ## <a name="sample-acpi-button-device-for-windows-10-core-os-editions"></a>适用于 Windows 10 核心操作系统版本的 ACPI 按钮设备示例
 
-描述用于运行 Windows 10 Core 操作系统的设备的 ACPI 中的按钮的示例。
+用于描述 [ACPI 源语言 (ASL) ](https://uefi.org/htmlspecs/ACPI_Spec_6_4_html/19_ASL_Reference/ACPI_Source_Language_Reference.html?highlight=acpi%20source%20language) 中用于运行 Windows 10 Core 操作系统的设备的按钮的示例。
 
-```console
-// Sample Buttons in ACPI for Windows 10.
+```ASL
+// Sample Buttons in ACPI Source Language for Windows 10.
 
 Device(BTNS)
 {
@@ -120,9 +120,9 @@ Device(BTNS)
 
 ## <a name="sample-buttons-in-acpi-for-device-running-windows-10-desktop-editions"></a>运行 Windows 10 桌面版的设备的 ACPI 中的示例按钮
 
-用于描述运行 Windows 10 桌面版的设备的 ACPI 中的按钮的示例 (Home、Pro、Enterprise 和教育) 。
+用于描述 ACPI 源语言中的按钮的示例 [ (ASL) ](https://uefi.org/htmlspecs/ACPI_Spec_6_4_html/19_ASL_Reference/ACPI_Source_Language_Reference.html?highlight=acpi%20source%20language) 用于运行 Windows 10 桌面版的设备 (Home、Pro、Enterprise 和教育) 。
 
-```console
+```ASL
 Device(BTNS)
 {
     Name(_HID, "ACPI0011")
