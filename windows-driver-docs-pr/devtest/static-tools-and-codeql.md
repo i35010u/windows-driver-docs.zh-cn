@@ -6,12 +6,12 @@ keywords:
 - 静态验证工具 WDK
 ms.date: 12/10/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: ac8f82408b8de30ea4c94cadd253ebdc89dc9c6f
-ms.sourcegitcommit: 67bf9080bb5e2070ccf9fc90aae350b126cb95ac
+ms.openlocfilehash: e69badf0b9d987e8c93c7fc70165749895b26132
+ms.sourcegitcommit: 9da97e0f19c54d4db8f4fe84979e0c276a6728ef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98666386"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98801679"
 ---
 # <a name="codeql-and-the-static-tools-logo-test"></a>CodeQL 和静态工具徽标测试
 
@@ -350,7 +350,6 @@ Microsoft 建议在 *所有* 驱动程序源代码上运行的查询包括：
 | [cpp/可疑-指针缩放-void](https://github.com/github/codeql/blob/main/cpp/ql/src/Security/CWE/CWE-468/IncorrectPointerScalingVoid.qhelp)   | *cpp/q/src/Security/CWE/CWE-468/IncorrectPointerScalingVoid q* |
 | [cpp/有条件-未初始化-变量](https://codeql.github.com/codeql-standard-libraries/cpp/Security/CWE/CWE-457/ConditionallyUninitializedVariable.ql/module.ConditionallyUninitializedVariable.html)   | *cpp/q/src/Security/CWE/CWE-457/ConditionallyUninitializedVariable。* | 
 | [cpp/使用-免费](https://docs.microsoft.com/windows-hardware/drivers/devtest/codeql-windows-driver-useafterfree)   | *Windows 驱动程序-开发人员补充-工具/codeql/windows-驱动程序/查询/可能的 Bug/内存管理/UseAfterFree \ UseAfterFree q* |
-| [cpp/可能-免费使用](https://docs.microsoft.com/windows-hardware/drivers/devtest/codeql-windows-driver-probableuseafterfree)   | *Windows 驱动程序-开发人员补充-工具/codeql/windows-驱动程序/查询/可能的 Bug/内存管理/UseAfterFree/ProbableUseAfterFree q* |
 | [cpp/windows/wdk/弃用的 api](https://docs.microsoft.com/windows-hardware/drivers/devtest/codeql-windows-driver-wdkdeprecatedapi)   | *Windows 驱动程序-开发人员补充-工具/codeql/windows-驱动程序/查询/Windows/wdk/wdk-q* |
 
 这些查询是 [Microsoft GitHub CodeQL 存储库](https://github.com/microsoft/Windows-Driver-Developer-Supplemental-Tools)中的 *windows_driver_recommended qls* 查询套件的一部分。
