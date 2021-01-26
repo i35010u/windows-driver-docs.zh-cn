@@ -3,12 +3,12 @@ title: 使用企业版 WDK 10
 description: 介绍如何设置基于命令行的环境，以便组织使用 WDK。
 ms.date: 08/25/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f582c7567879d8a120d5b08b8596783ed622896a
-ms.sourcegitcommit: 878a1cb0149dc18ccbd31774e12bad76084dfa24
+ms.openlocfilehash: f0a89e0d310102ff8f6cc84ab585d02a7d0ff873
+ms.sourcegitcommit: 55a1002032ce9b01c6db26b41eca86a1bcb33c84
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94937815"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98626071"
 ---
 # <a name="using-the-enterprise-wdk-10"></a>使用企业版 WDK 10
 
@@ -45,4 +45,4 @@ ms.locfileid: "94937815"
 
 ## <a name="see-also"></a>另请参阅
 
-[MSBuild 参考](/visualstudio/msbuild/msbuild-reference)
+[MSBuild 参考](/visualstudio/msbuild/msbuild-reference&preserve-view=false)

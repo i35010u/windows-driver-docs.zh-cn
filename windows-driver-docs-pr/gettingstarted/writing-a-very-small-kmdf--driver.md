@@ -5,12 +5,12 @@ keywords:
 - KMDF Hello World
 ms.date: 04/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 44e3047bd2a52cdd484a9a3ce1a749a3c595c5ca
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: cbf013344815d57d2e15bdd4bfd0b6f2167153ae
+ms.sourcegitcommit: 55a1002032ce9b01c6db26b41eca86a1bcb33c84
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96823289"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98626077"
 ---
 # <a name="write-a-hello-world-windows-driver-kmdf"></a>编写 Hello World Windows 驱动程序 (KMDF)
 
@@ -64,6 +64,10 @@ ms.locfileid: "96823289"
     #include <ntddk.h>
     #include <wdf.h>
     ```
+
+    > [!TIP]
+    > 如果无法添加 `Ntddk.h`，请打开“配置”->“C/C++”>“常规”>“其他包含目录”并添加 `C:\Program Files (x86)\Windows Kits\10\Include\<build#>\km`，将 `<build#>` 替换为 WDK 安装中的相应目录。
+    > 
 
     [Ntddk.h](/windows-hardware/drivers/ddi/ntddk) 包含所有驱动程序的核心 Windows 内核定义，而 [Wdf.h](/windows-hardware/drivers/ddi/_wdf) 包含基于 Windows 驱动程序框架 (WDF) 的驱动程序的定义。 
 
@@ -241,7 +245,7 @@ ms.locfileid: "96823289"
 
 ## <a name="span-iddeploy_the_driverspanspan-iddeploy_the_driverspanspan-iddeploy_the_driverspandeploy-the-driver"></a><span id="Deploy_the_driver"></span><span id="deploy_the_driver"></span><span id="DEPLOY_THE_DRIVER"></span>部署驱动程序
 
-通常，在测试和调试驱动程序时，调试程序和驱动程序会在不同的计算机上运行。 运行调试程序的计算机称为“主计算机”，运行驱动程序的计算机称为“目标计算机”。 目标计算机也称为“测试计算机”。
+通常，在测试和调试驱动程序时，调试程序和驱动程序会在不同的计算机上运行。 运行调试程序的计算机称为“主计算机”，运行驱动程序的计算机称为“目标计算机”。 目标计算机也称为“测试计算机”  。
 
 到目前为止，你已在主计算机上使用 Visual Studio 生成了驱动程序。 现在，需要配置目标计算机。 
 
