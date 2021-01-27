@@ -3,12 +3,12 @@ description: 本主题为驱动程序开发人员提供了一些常见问题，�
 title: Windows 中的 USB - 常见问题解答
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 28b754c7edc731b1785950ea7b4b81161014aea2
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: d5f3c62a33ecac872f145118ac550d7dfa09bf01
+ms.sourcegitcommit: 7b3bddc91b87de5afce36c120620497c37234fbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733317"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98812006"
 ---
 # <a name="usb-in-windows---faq"></a>Windows 中的 USB - 常见问题解答
 
@@ -18,7 +18,7 @@ ms.locfileid: "91733317"
 - [我的 PC 是否有 USB 3.0 端口？](#does-my-pc-have-usb-30-ports)
 - [是否需要安装可扩展主机控制器的驱动程序？](#do-i-need-to-install-drivers-for-my-extensible-host-controller)
 - [为什么我在我的系统上看到了几个主机控制器？](#why-do-i-see-several-host-controllers-on-my-system)
-- [为什么仅连接了一个 USB 3.0 集线器就会在设备管理器中看到两个中心？](#why-do-i-see-two-hubs-in-device-manager-when-i-have-connected-only-one-usb-30-hub)
+- [为什么仅连接了一个 USB 3.0 集线器就会在 Device Manager 中看到两个中心？](#why-do-i-see-two-hubs-in-device-manager-when-i-have-connected-only-one-usb-30-hub)
 - [为连接到2.0 端口的设备加载哪组驱动程序？](#which-set-of-drivers-is-loaded-for-the-devices-that-are-connected-to-20-ports)
 - [如何实现确定我的 USB 3.0 设备是否作为 SuperSpeed 运行？](#how-do-i-determine-whether-my-usb-30-device-is-operating-as-superspeed)
 - [为什么 SuperSpeed USB 设备不能比等效的高速 USB 设备更快？](#why-isnt-my-superspeed-usb-device-faster-than-an-equivalent-high-speed-usb-device)
@@ -38,7 +38,6 @@ ms.locfileid: "91733317"
 - [USB 序列号中哪些字符或字节有效？](#what-characters-or-bytes-are-valid-in-a-usb-serial-number)
 - [对 Windows 的本地化版本发出字符串请求时使用了哪些 LANGID？](#what-langid-is-used-in-a-string-request-on-localized-builds-of-windows)
 - [用于提取设备序列号的 LANGID 是什么？](#what-langid-is-used-to-extract-a-devices-serial-number)
-- [不同 Windows 版本的最大 USB 传输大小是多少？](#what-is-the-maximum-usb-transfer-size-for-different-windows-versions)
 - [如何将数字分配给复合设备上的多个接口？](#how-should-numbers-be-assigned-to-multiple-interfaces-on-a-composite-device)
 - [Usbccgp.sys 施加的主要限制是什么？](#what-are-the-major-restrictions-imposed-by-usbccgpsys)
 - [如何实现为 USB core 二进制文件启用调试跟踪？](#how-do-i-enable-debug-tracing-for-usb-core-binaries)
@@ -67,7 +66,7 @@ USB 3.0 端口标记有 SuperSpeed USB 徽标，或端口通常为蓝色。
 
 较新的 Pc 同时具有 USB 3.0 和 USB 2.0 端口。 如果希望 SuperSpeed USB 设备的速度最快，请找到 USB 3.0 端口并将设备连接到该端口。 连接了 USB 2.0 端口的 SuperSpeed 设备，运行速度快。
 
-还可以验证特定端口是否为设备管理器中的 USB 3.0 端口。 在 Windows Vista 或更高版本的 Windows 中，打开 "设备管理器"，然后从列表中选择相应的端口。
+还可以验证特定端口是否为 Device Manager 中的 USB 3.0 端口。 在 Windows Vista 或更高版本的 Windows 中，打开 "Device Manager"，然后从列表中选择相应的端口。
 
 ![设备管理器中的 usb 主机控制器](images/usb-host-controllers-dm.png)
 
@@ -81,7 +80,7 @@ Windows 8 和 Windows Server 2012 包括对 USB 3.0 的支持。
 
 如果你在运行早于 Windows 8 的 Windows 版本的计算机上添加了 u 3.0 控制器卡，则必须安装由控制器卡制造商提供的驱动程序。
 
-在 Windows 8 中，Microsoft 提供的 USB 3.0 驱动程序集 (USB 驱动程序堆栈) 适用于大多数主机控制器。 Microsoft USB 3.0 驱动程序堆栈无法与 Fresco 逻辑 FL1000 控制器一起使用。 若要确定是否有 FL1000 控制器，请打开设备管理器并展开 " **通用串行总线控制器**"。 通过选择并按住 (或右键单击控制器节点) 来查看控制器属性。 在 " **详细信息** " 选项卡上，选择列表中的 " **硬件 id** " 属性。 如果硬件 ID 以 PCI \\ 即使1B73 开头 \_&开发 \_ 1000，则为 FL1000。 对于该控制器，请从您的 PC 或控制器卡制造商处下载并安装驱动程序。
+在 Windows 8 中，Microsoft 提供的 USB 3.0 驱动程序集 (USB 驱动程序堆栈) 适用于大多数主机控制器。 Microsoft USB 3.0 驱动程序堆栈无法与 Fresco 逻辑 FL1000 控制器一起使用。 若要确定是否有 FL1000 控制器，请打开 Device Manager 并展开 " **通用串行总线控制器**"。 通过选择并按住 (或右键单击控制器节点) 来查看控制器属性。 在 " **详细信息** " 选项卡上，选择列表中的 " **硬件 id** " 属性。 如果硬件 ID 以 PCI \\ 即使1B73 开头 \_&开发 \_ 1000，则为 FL1000。 对于该控制器，请从您的 PC 或控制器卡制造商处下载并安装驱动程序。
 
 ## <a name="why-do-i-see-several-host-controllers-on-my-system"></a>为什么我在我的系统上看到了几个主机控制器？
 
@@ -93,11 +92,11 @@ USB 3.0 xHCI 主机控制器完全向后兼容所有 USB 设备速度、SuperSpe
 
 在发布 USB 2.0 规范后，电脑将组合使用主机控制器以支持设备的所有速度。 单个 USB 2.0 端口将连接到两个主机控制器： EHCI 主机控制器和 UHCI 或 OHCI 主机控制器。 附加设备时，硬件会将连接动态路由到两个主机之一。 例程取决于设备的速度。
 
-## <a name="why-do-i-see-two-hubs-in-device-manager-when-i-have-connected-only-one-usb-30-hub"></a>为什么仅连接了一个 USB 3.0 集线器就会在设备管理器中看到两个中心？
+## <a name="why-do-i-see-two-hubs-in-device-manager-when-i-have-connected-only-one-usb-30-hub"></a>为什么仅连接了一个 USB 3.0 集线器就会在 Device Manager 中看到两个中心？
 
 尽管 xHCI 主机控制器适用于设备的任何速度，但 SuperSpeed 集线器仅适用于 SuperSpeed 设备。 为了确保 USB 3.0 中心可以使用所有速度，它们有两部分： SuperSpeed 集线器和 USB 2.0 集线器。 USB 3.0 集线器能够通过将设备动态路由到 SuperSpeed 集线器或2.0 中心（基于设备速度）来支持所有速度。
 
-打开设备管理器， **按连接查看设备**，然后找到可扩展的主机控制器。 将单个 USB 3.0 集线器连接到 USB 3.0 端口时，控制器的根集线器有两个下游集线器。
+打开 Device Manager， **按连接查看设备**，然后找到可扩展的主机控制器。 将单个 USB 3.0 集线器连接到 USB 3.0 端口时，控制器的根集线器有两个下游集线器。
 
 ![设备管理器中的 usb 3.0 集线器](images/usb-3-hub-dm.png)
 
@@ -131,7 +130,7 @@ USB 3.0 xHCI 主机控制器完全向后兼容所有 USB 设备速度、SuperSpe
 
 1. 打开 "超级按钮" 栏 (将光标拖到屏幕的右上角或右下角，键入 "Windows 键 + C"，或用手指向右轻扫) 。
 2. 选择 " **设置** "，然后 **更改 "电脑设置**"。
-3. 选择 "**电脑设置**" 下的**设备**。
+3. 选择 "**电脑设置**" 下的 **设备**。
 
 此图像显示 USB 3.0 设备在 SuperSpeed 上运行时的 UI 消息。
 
@@ -169,7 +168,7 @@ USB 3.0 xHCI 主机控制器完全向后兼容所有 USB 设备速度、SuperSpe
 
 - USB 3.0 集线器上的固件已过时。
 
-    某些较早的 USB 3.0 集线器运行不正常。 因此，Windows 只使用这些中心的2.0 部分。 如果设备管理器指示 "不起作用" 的中心（如此图所示），则 Windows 8 不使用中心的3.0 部分。
+    某些较早的 USB 3.0 集线器运行不正常。 因此，Windows 只使用这些中心的2.0 部分。 如果 Device Manager 指示 "不起作用" 的中心（如此图所示），则 Windows 8 不使用中心的3.0 部分。
 
     ![不能正常运行的 superspeed usb 集线器](images/usb-superspeed-nonfunctional.jpg)
 
@@ -370,7 +369,7 @@ Microsoft 为大多数设备类型提供系统定义的安装程序类。 系统
 
 独立硬件供应商必须使用与 USB 设备类型（而不是总线类型）关联的安装程序类。 如果要开发的设备类型的 Microsoft 尚未提供现有的类 GUID，则可以定义新的设备安装程序类。
 
-在 Windows 8 中，定义了一个名为 **USBDevice** (ClassGuid = {88BAE032-5A81-49f0-BC3D-A4FF138216D6} ) 的新安装程序类。 如果要开发设备类型，请将设备与 **USBDevice** 而不是安装程序类（ **USB**）相关联。 **USBDevice**类适用于 Windows Vista 和更高版本的操作系统。
+在 Windows 8 中，定义了一个名为 **USBDevice** (ClassGuid = {88BAE032-5A81-49f0-BC3D-A4FF138216D6} ) 的新安装程序类。 如果要开发设备类型，请将设备与 **USBDevice** 而不是安装程序类（ **USB**）相关联。 **USBDevice** 类适用于 Windows Vista 和更高版本的操作系统。
 
 安装类 **usb** (ClassGuid = {8056-444553540000 36fc9e60} ) 仅为 usb 主机控制器和 usb 集线器保留，并且不得用于其他设备类别。 如果使用此安装程序类不当，可能会导致设备驱动程序无法运行 Windows 徽标测试。
 
@@ -392,7 +391,7 @@ Microsoft 为大多数设备类型提供系统定义的安装程序类。 系统
 
 下面列出了支持选择性挂起的 Windows 8 中的 USB 类驱动程序：
 
-- Bluetooth
+- 蓝牙
 
     此驱动程序可以有选择地在运行 Windows XP Service Pack 2 和更高版本的 Windows 的计算机上挂起设备。 驱动程序要求蓝牙收音机设置配置描述符中的自驱动和远程唤醒位。 当不存在活动的蓝牙连接时，驱动程序会有选择地挂起 (D2) 蓝牙收音机。
 
@@ -473,17 +472,19 @@ USB 设备无法唤醒 Windows from S3 的原因有多种，其中包括：
 - Windows XP Service Pack 1
 - Windows 2000 Service Pack 4
 
-**注意**   由于在 USB 2.0 硬件可用之前已发布 Windows 2000 和 Windows XP，因此在 service pack 中为这些操作系统发布了驱动程序。 若要安装驱动程序：
+**注意**  
+由于在 USB 2.0 硬件可用之前已发布 Windows 2000 和 Windows XP，因此在 service pack 中为这些操作系统发布了驱动程序。 若要安装驱动程序：
 
 1. 按照第一个问题的答案中所述的过程来验证你的计算机是否安装了 USB 2.0 端口，并且是否需要为增强型主机控制器安装驱动程序。
-2. 在 "设备管理器" 窗口中，展开第一个问题中所述的 " **其他设备** " 部分，然后双击 " **通用串行总线 (USB) 控制器**。
+2. 在 "Device Manager" 窗口中，展开第一个问题中所述的 " **其他设备** " 部分，然后双击 " **通用串行总线 (USB) 控制器**。
 3. 在 "属性" 对话框的 " **常规** " 选项卡上，选择 " **重新安装驱动程序**"。
 
     ![重新安装驱动程序](images/usb-reinstall-driver.jpg)
 
-4. 在 "添加新硬件" 向导中，选择 **"自动安装软件 (建议) **"，然后选择 " **下一步**"。 继续执行向导，接受所有默认选项，直到到达向导的最后一页，然后选择 " **完成**"。 可能需要重新启动计算机才能完成安装。
+4. 在 "添加新硬件" 向导中，选择 **"自动安装软件 (建议)**"，然后选择 " **下一步**"。 继续执行向导，接受所有默认选项，直到到达向导的最后一页，然后选择 " **完成**"。 可能需要重新启动计算机才能完成安装。
 
-**注意**   若要确保已在计算机上安装了最新更新，请定期访问 Windows 更新。
+**注意**  
+若要确保已在计算机上安装了最新更新，请定期访问 Windows 更新。
 
 ## <a name="can-i-disable-the-hi-speed-usb-device-plugged-into-non-hi-speed-usb-port-notice"></a>能否禁用 "将高速 USB 设备插入非高速 USB 端口" 通知？
 
@@ -491,11 +492,12 @@ Windows XP 和更高版本的 Windows 在高速 USB 设备插入不支持高速�
 
 若要禁用该通知，请执行以下步骤：
 
-1. 开始设备管理器，如此常见问题中的第一个问题中所述。
-2. 在 "设备管理器" 窗口中，展开 " **通用串行总线控制器** " 节点。 在标题中查找 "通用" 或 "打开" 一词的主机控制器。 如果找到一个，请双击它。
+1. 开始 Device Manager，如此常见问题中的第一个问题中所述。
+2. 在 "Device Manager" 窗口中，展开 " **通用串行总线控制器** " 节点。 在标题中查找 "通用" 或 "打开" 一词的主机控制器。 如果找到一个，请双击它。
 3. 在 "**属性**" 对话框的 "**高级**" 选项卡上，选择 "**请勿告诉我有关 USB 错误**"。
 
-**注意**   前面的过程将禁用所有 USB 通知，而不只是 "连接到非高速端口的高速 USB 设备"。
+**注意**  
+前面的过程将禁用所有 USB 通知，而不只是 "连接到非高速端口的高速 USB 设备"。
 
 ## <a name="is-my-usb-20-hub-single-tt-or-multi-tt"></a>我的 USB 2.0 集线器单 TT 还是多 TT？
 
@@ -517,7 +519,7 @@ USB 设备描述符的 **iSerialNumber** 字段指示设备是否具有序列号
 
 如果设备具有序列号，则序列号必须唯一标识同一设备的每个实例。
 
-例如，如果两个设备描述符的 "i**dVendor**"、" **idProduct**" 和 " **bcdDevice** " 字段的值相同，则 **iSerialNumber** 字段必须不同，以便将一台设备与另一台设备区分开来。
+例如，如果两个设备描述符的 "i **dVendor**"、" **idProduct**" 和 " **bcdDevice** " 字段的值相同，则 **iSerialNumber** 字段必须不同，以便将一台设备与另一台设备区分开来。
 
 即插即用要求 USB 序列号中的每个字节都有效。 如果单个字节无效，Windows 会丢弃序列号，并将设备视为不具有序列号。 对于 USB 序列号，以下字节值无效：
 
@@ -535,10 +537,6 @@ USB 设备通过将 USB 设备描述符的 iSerialNumber 字段设置为序列�
 
 USB 设备通过将 USB 设备描述符的 iSerialNumber 字段设置为序列号的字符串索引，指示是否存在序列号。 若要检索序列号，Windows 将发出带有语言标识符 (LANGID) 设置为0x0409 的字符串请求 (美国英语) 。 即使针对其他语言进行了本地化的 Windows 版本，Windows 始终使用此 LANGID 来检索 USB 序列号。
 
-## <a name="what-is-the-maximum-usb-transfer-size-for-different-windows-versions"></a>不同 Windows 版本的最大 USB 传输大小是多少？
-
-请参阅 [各种操作系统上的最大 USB 传输大小](https://support.microsoft.com/help/832430/maximum-size-of-usb-transfers-on-various-operating-systems)。
-
 ## <a name="how-should-numbers-be-assigned-to-multiple-interfaces-on-a-composite-device"></a>如何将数字分配给复合设备上的多个接口？
 
 Windows 将第一个配置上具有多个接口的 USB 设备视为复合设备。
@@ -549,8 +547,6 @@ Windows 将第一个配置上具有多个接口的 USB 设备视为复合设备�
 - 接口编号必须是连续的并且递增。
 
 对于 Windows XP Service Pack 2 和更高版本的 Windows，只需要增加接口号，而不是连续的。
-
-有关接口号码的其他信息，请参阅 [WINDOWS XP 中的接口未按顺序排列的复合 USB 设备不起作用](https://support.microsoft.com/help/814560)。
 
 对于所有版本的 Windows，应按以下方式为接口分配备用设置：
 
@@ -578,11 +574,12 @@ Include = USB.INF
 Needs = Composite.Dev
 ```
 
-**Usbccgp.sys**对硬件设备和驱动程序施加的主要限制如下：
+**Usbccgp.sys** 对硬件设备和驱动程序施加的主要限制如下：
 
 - Usbccgp 仅支持默认配置，配置0。
 - Usbccgp 不支持在 Windows XP 和 Windows Server 2003 中选择挂起。 只有 Windows Vista 和更高版本的 Windows 支持此功能。
-    **注意**   Usbccgp 支持 Windows XP SP1 和更高版本的 Windows XP 中的选择性挂起，但功能有限。 对于这些版本的 Windows，仅当设备的每个子功能都有挂起的空闲 IRP 时，复合设备才会置于选择性挂起状态。 Usbccgp 在 Windows XP RTM 中不支持选择性挂起
+    **注意**  
+    Usbccgp 支持 Windows XP SP1 和更高版本的 Windows XP 中的选择性挂起，但功能有限。 对于这些版本的 Windows，仅当设备的每个子功能都有挂起的空闲 IRP 时，复合设备才会置于选择性挂起状态。 Usbccgp 在 Windows XP RTM 中不支持选择性挂起
 
 - Usbccgp 仅支持在 Windows XP SP2、Windows Server 2003 SP1 以及更高版本的 Windows 中 (IAD) 的接口关联描述符。
 - Usbccgp 仅支持 Windows XP SP2、Windows Server 2003 SP1 以及更高版本的 Windows 中不连续的接口号。
@@ -591,7 +588,7 @@ Needs = Composite.Dev
 
 请参阅博客文章 [，了解如何在驱动程序的公共 PDB 文件中包含和查看 WPP 跟踪消息](https://techcommunity.microsoft.com/t5/Microsoft-USB-Blog/bg-p/MicrosoftUSBBlog/archive/2013/06/29/wpp-blog-post.aspx)。
 
-有关 USB 核心堆栈调试的其他信息，请参阅 [如何在各种驱动程序和子系统中启用详细的调试跟踪](https://support.microsoft.com/help/314743)。
+有关 USB 设备和 ETW 事件的信息，请参阅 [使用 ETW 事件调试 usb 设备问题](/windows-hardware/drivers/usbcon/best-practices--debugging-usb-device-problems)。
 
 ## <a name="does-windows-support-interface-association-descriptors"></a>Windows 是否支持接口关联描述符？
 
@@ -609,7 +606,7 @@ Windows 附带的 USB 3.0 驱动程序堆栈支持此功能。
 
 ## <a name="can-a-driver-have-more-than-one-urb-in-an-irp"></a>某个驱动程序是否可以在 IRP 中具有多个 URB？
 
-不是。 Windows 附带的 USB stack 不支持此功能。
+否。 Windows 附带的 USB stack 不支持此功能。
 
 ## <a name="does-windows-support-usb-composite-hubs"></a>Windows 是否支持 USB 复合中心？
 

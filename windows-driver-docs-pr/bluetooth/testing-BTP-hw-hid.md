@@ -3,12 +3,12 @@ title: Microsoft 蓝牙测试平台-支持 HID 的外设无线电
 description: 适用于支持的硬件 (HID) 的蓝牙测试平台 (BTP) 。
 ms.date: 2/14/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: a7a2e5c737e5b182aa5408c5557bb7e955275447
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 1787ef0dad77a6387f0a2a7c8e11dd49636d147c
+ms.sourcegitcommit: 7b3bddc91b87de5afce36c120620497c37234fbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96803429"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98812004"
 ---
 # <a name="hid-capable-peripheral-radios"></a>支持 HID 的外设无线收发器
 
@@ -43,7 +43,7 @@ RN42 是的一种基本速率 (BR) 的广播网络，可以表现为诸如键盘
 
 ## <a name="bluefruit-le-uart-friend-nrf51-radio"></a>Bluefruit LE UART Friend (nRF51 收音机) 
 
-NRF51 是一种低能耗 (LE) 从北欧的半导体收音机，可以表现为 HID 外围设备 (如键盘或鼠标) 其他东西。 它当前受 BTP 配对和 HID 测试支持。 有关详细信息，请参阅 [Adafruit](https://www.adafruit.com/product/2479) 和 [北欧](https://www.nordicsemi.com/Products/Low-power-short-range-wireless/nRF51822) nRF51822 引用。
+NRF51 是一种低能耗 (LE) 从北欧的半导体收音机，可以表现为 HID 外围设备 (如键盘或鼠标) 其他东西。 它当前受 BTP 配对和 HID 测试支持。 有关详细信息，请参阅 [Adafruit](https://www.adafruit.com/product/2479) 和 [北欧半导体](https://www.nordicsemi.com/Products/Low-power-short-range-wireless/nRF51822) nRF51822 参考。
 
 可以通过[Adafruit](https://www.adafruit.com/product/2479)购买 BLUEFRUIT LE UART Friend
 

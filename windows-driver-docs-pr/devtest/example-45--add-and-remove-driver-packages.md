@@ -1,14 +1,14 @@
 ---
 title: 示例45添加和删除驱动程序包
 description: 示例45添加和删除驱动程序包
-ms.date: 04/20/2017
+ms.date: 01/25/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 5761d7f94dccff28589558130ba9fff5a4eebcb5
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 8a2107ee30bf117d335416f3f1dfcd47976b32d0
+ms.sourcegitcommit: 7b3bddc91b87de5afce36c120620497c37234fbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96840191"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98812000"
 ---
 # <a name="example-45-add-and-remove-driver-packages"></a>示例 45：添加和删除驱动程序包
 
@@ -32,12 +32,10 @@ Driver Package 'oem2.inf' added.
 在将该文件复制到驱动程序存储区之前，Windows 会将 INF 文件的二进制版本与驱动程序存储区中 INF 文件的二进制版本进行比较，以确保它不会添加重复的文件。 例如，如果重复此命令以将 Toaster 添加到驱动程序存储区，则 DevCon 不会创建新的 OEM \* .inf 文件。 它只报告现有文件的名称，如以下 DevCon 输出所示。
 
 ```
-devcon dp_add C:\WinDDK\5322\src\general\toaste
-r\inf\i386\toaster.inf
+devcon dp_add C:\WinDDK\5322\src\general\toaster\inf\i386\toaster.inf
 Driver Package 'oem2.inf' added.
 
-devcon dp_add C:\WinDDK\5322\src\general\toaste
-r\inf\i386\toaster.inf
+devcon dp_add C:\WinDDK\5322\src\general\toaster\inf\i386\toaster.inf
 Driver Package 'oem2.inf' added.
 ```
 
@@ -57,8 +55,6 @@ The following 3rd party Driver Packages are on this machine:
 oem2.inf
     Provider: Microsoft
     Class: unknown
-    Date: 12/10/2004
-    Version: 2.0.1403.0
 ```
 
 此信息表示 Microsoft 提供的驱动程序包使用未指定的设备类 (Toaster) 名为 OEM2。 你可以使用此信息来删除与该文件关联的驱动程序包。
@@ -78,8 +74,7 @@ Driver Package 'oem2.inf' deleted.
 在 \* [**DevCon Dp \_ delete**](devcon-dp-delete.md) 命令中需要提供 OEM .inf 文件名。 如果尝试使用 INF 文件的原始名称，则该命令将失败，如以下 DevCon 输出所示。
 
 ```
-devcon dp_delete C:\WinDDK\5322\src\general\toa
-ster.inf
+devcon dp_delete C:\WinDDK\5322\src\general\toaster.inf
 Deleting the specified Driver Package from the machine failed.
 devcon failed.
 ```

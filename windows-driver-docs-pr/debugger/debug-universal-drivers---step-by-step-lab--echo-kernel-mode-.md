@@ -7,12 +7,12 @@ keywords:
 - ECHO
 ms.date: 01/20/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f2a9c8142e5918dab2bcf148db3cbd614867b37
-ms.sourcegitcommit: 5ee1712829b7e9bc5614863b2e3af30222241ffd
+ms.openlocfilehash: d76553609852110c2600c20b41c6de288bb0e0d4
+ms.sourcegitcommit: 7b3bddc91b87de5afce36c120620497c37234fbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98687718"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98812008"
 ---
 # <a name="debug-windows-drivers---step-by-step-lab-echo-kernel-mode"></a>调试 Windows 驱动程序 - 分步实验室（Echo 内核模式）
 
@@ -342,7 +342,7 @@ Unable to enumerate user-mode unloaded modules, Win32 error 0n30
 
     可在此处阅读有关示例的内容：
 
-    <https://github.com/Microsoft/Windows-driver-samples/tree/master/general/echo/kmdf/ReadMe.md>
+    <https://github.com/microsoft/Windows-driver-samples/blob/master/general/echo/kmdf/README.md>
 
     你可以在此处浏览所有 Windows 驱动程序示例：
 

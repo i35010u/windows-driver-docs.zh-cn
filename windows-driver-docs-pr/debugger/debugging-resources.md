@@ -1,14 +1,14 @@
 ---
 title: 调试资源
 description: 使用 Windows 调试工具调试 Windows 系统上的驱动程序、应用程序和服务。
-ms.date: 12/09/2019
+ms.date: 01/26/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: e99e51c41a8fd1f0ce041027b196af24bd8c566c
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: b08d9b326f61034bbbeb12af1316a0336a16c7bc
+ms.sourcegitcommit: 7b3bddc91b87de5afce36c120620497c37234fbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96839167"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98812002"
 ---
 # <a name="debugging-resources"></a>调试资源
 
@@ -36,8 +36,7 @@ ms.locfileid: "96839167"
 
 许多 [知识库文章](https://support.microsoft.com/) 都可用于调试相关主题。 本页提供了一些与调试相关的产品支持链接的示例。
 
-- [2816225：如果未连接任何调试器，启用调试模式会导致 Windows 挂起](https://support.microsoft.com/help/2816225/enabling-debug-mode-causes-windows-to-hang-if-no-debugger-is-connected/)
-- [311503：使用 Microsoft 符号服务器获取调试符号文件](https://support.microsoft.com/help/311503)
+- [启用调试模式会导致 Windows 在未连接调试器的情况下挂起](https://support.microsoft.com/topic/enabling-debug-mode-causes-windows-to-hang-if-no-debugger-is-connected-81eb10df-f6a8-094e-49fc-b7cb74489150)
 
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
