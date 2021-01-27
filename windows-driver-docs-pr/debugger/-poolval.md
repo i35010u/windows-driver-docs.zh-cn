@@ -1,6 +1,6 @@
 ---
 title: poolval
-description: Poolval 扩展会分析池页的标头，并诊断可能的任何损坏。 此扩展仅适用于 Windows XP 及更高版本。
+description: Poolval 扩展会分析池页的标头，并诊断可能的任何损坏。
 keywords:
 - poolval Windows 调试
 ms.date: 05/23/2017
@@ -11,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ab1f1898a4615f4149e85f1498e555f6c98a161
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: e584bc90b6ddcdfb49ceb57f36e1f90f1740f47a
+ms.sourcegitcommit: 5e51e63585f35597cf06fc0ab5c0cc7cb39ca22a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96791703"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98861867"
 ---
 # <a name="poolval"></a>!poolval
 
 
-**！ Poolval** extension 分析池页的标头，并诊断可能的任何损坏。 此扩展仅适用于 Windows XP 及更高版本。
+**！ Poolval** extension 分析池页的标头，并诊断可能的任何损坏。
 
 ```dbgcmd
 !poolval Address [DisplayLevel]

@@ -8,12 +8,12 @@ keywords:
 - 后备存储 WDK IEEE 1394 总线
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d783905561708b0b47ea45bc6e2b35df98fc5ca
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: d7e14fac4fde8cbdfc5af644bf15f12dcc516493
+ms.sourcegitcommit: 5e51e63585f35597cf06fc0ab5c0cc7cb39ca22a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96838611"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98861861"
 ---
 # <a name="receiving-asynchronous-io-request-packets-on-the-ieee-1394-bus"></a>在 IEEE 1394 总线上接收异步 I/O 请求数据包
 
@@ -38,7 +38,7 @@ ms.locfileid: "96838611"
 
 如果驱动程序需要保证每个段都小于特定大小，则可以在 **AllocateAddressRange. MaxSegmentSize** 中指定该大小。 无需将最大段大小设置为 **AllocateAddressRange. MaxSegmentSize** 的驱动程序设置为零。
 
-总线驱动程序返回 IRB 的 **AllocateAddressRange. p1394AddressRange** 成员指向的内存位置中的地址范围。 设备驱动程序必须分配一个足够大的数组，以便保存每个地址 \_ 范围结构，甚至在最差的案例分段方案中也是如此。 如果驱动程序未指定段大小，或者其最大段大小超过页面 \_ 大小，则驱动程序可以通过使用用于 \_ \_ \_ \_ \_ 后备存储的缓冲区上的地址和大小来跨页面宏来确定最坏的情况。 如果最大段大小小于页面 \_ 大小，则驱动程序必须分配大小为 **AllocateAddressRange** / **u.AllocateAddressRange.MaxSegmentSize** + 2 的数组。
+总线驱动程序返回 IRB 的 **AllocateAddressRange. p1394AddressRange** 成员指向的内存位置中的地址范围。 设备驱动程序必须分配一个足够大的数组，以便保存每个地址 \_ 范围结构，甚至在最差的案例分段方案中也是如此。 如果驱动程序未指定段大小，或者其最大段大小超过页面 \_ 大小，则驱动程序可以通过使用用于 \_ \_ \_ \_ \_ 后备存储的缓冲区上的地址和大小来跨页面宏来确定最坏的情况。 如果最大段大小小于页面 \_ 大小，则驱动程序必须分配大小为 **AllocateAddressRange** /  + 2 的数组。
 
 当总线驱动程序返回分配的地址时，它将记录在 **AllocateAddressRange. hAddressRange** 中分配的地址范围的实际数量。
 
@@ -95,7 +95,7 @@ ms.locfileid: "96838611"
 
     驱动程序可以提供单个 MDL 或 MDLs 的链接列表作为后备存储。 如果驱动程序提供了单个 MDL，则总线驱动程序会将数据泵移入或移出 MDL，以响应异步请求。 完成事务后，它会通过调用驱动程序提供的通知回调来发出设备驱动程序的信号。
 
-    设备驱动程序在 IRB 的 **AllocateAddressRange** 成员中提供通知例程。 驱动程序必须在 \_ \_ XXX 标志后至少设置一个通知标志 \_ 。 当总线驱动程序调用例程时，它将传递一条通知 \_ 信息结构，该结构指定 **mdl** 中 (的 mdl 后备存储) 、事务开始)  (的 mdl 中的字节 **ulOffset** 偏移量，以及 **nLength** (中受影响的地址范围的长度（以字节为单位）。 通知例程是在调度级别调用的 \_ 。 该驱动程序在 **AllocateAddressRange** 中传递的此请求的任何上下文信息都由总线驱动程序在通知信息的 **上下文** 成员中传递。 \_
+    设备驱动程序在 IRB 的 **AllocateAddressRange** 成员中提供通知例程。 驱动程序必须在 \_ \_ XXX 标志后至少设置一个通知标志 \_ 。 当总线驱动程序调用例程时，它将传递一条通知 \_ 信息结构，该结构指定 **mdl** 中 (的 mdl 后备存储) 、事务开始)  (的 mdl 中的字节偏移量，以及 **nLength** (中受影响的地址范围的长度（以字节为单位）。 通知例程是在调度级别调用的 \_ 。 该驱动程序在 **AllocateAddressRange** 中传递的此请求的任何上下文信息都由总线驱动程序在通知信息的 **上下文** 成员中传递。 \_
 
     仅使用一个 MDL，存在同步问题的风险：设备写入地址范围的速度可能比驱动程序可以读取的速度更快。 若要避免此类冲突，对于设备仅具有写入访问权限的地址，驱动程序可以在 **FifoSListHead** 中提供 MDLs 的链接列表，并在 **AllocateAddressRange** 中提供自旋锁。 当总线驱动程序收到每个异步请求数据包时，它将保留自旋锁，并弹出列表中的第一个元素来完成请求。 然后，它调用驱动程序的通知例程。
 
@@ -184,7 +184,7 @@ ms.locfileid: "96838611"
 
 ## <a name="asynchronous-receive-in-the-pre-notification-case"></a>提前通知案例中的异步接收
 
-旧版1394总线驱动程序无法使用预先通知机制完成异步接收事务。 有关详细信息，请参阅 [知识库： IEEE 1394 异步接收响应不是使用预先通知 (2635883) 发送的 ](https://support.microsoft.com/help/2635883/ieee-1394-async-receive-response-not-sent-using-pre-notification)。
+旧版1394总线驱动程序无法使用预先通知机制完成异步接收事务。
 
 对于新的1394总线驱动程序，预通知事例中的客户端驱动程序通知回调例程的预期行为如下所示：
 
@@ -195,7 +195,7 @@ ms.locfileid: "96838611"
 * [**通知 \_ 信息**](/windows-hardware/drivers/ddi/1394/ns-1394-_notification_info_w2k)的 **ResponsePacket** 和 **ResponseEvent** 成员包含指向指针的指针。 因此，你必须相应地引用指向响应数据包和响应事件的指针。
 * [**通知 \_ 信息**](/windows-hardware/drivers/ddi/1394/ns-1394-_notification_info_w2k)的 **RESPONSELENGTH** 成员是指向 ULONG 变量的指针。 因此，在为请求（如）设置响应数据长度时，必须对该成员进行适当的取消引用，如) & 锁请求。
 * 1394客户端驱动程序负责为从非分页池)  (的响应数据包和响应事件分配内存，并在传递响应后释放该内存。 建议将工作项排队，并且工作项应等待响应事件。 此事件由1394总线驱动程序在发送响应后发出信号。 然后，客户端驱动程序可以释放工作项中的内存。
-* [**通知 \_ 信息**](/windows-hardware/drivers/ddi/1394/ns-1394-_notification_info_w2k)结构中的 **ResponseCode** 成员必须设置为 RCODE 中定义的其中一个值。 如果 **ResponseCode** 设置为 RCODE \_ 响应完成以外的任何值 \_ ，1394总线驱动程序将发送错误响应数据包。 对于读取或锁定请求，请求不会返回任何数据。 在 Windows 7 中，可能会泄漏内存，有关详细信息，请参阅 [知识库： IEEE 1394 总线驱动程序中的内存泄漏 (2023232) 执行异步通知回调 ](https://support.microsoft.com/help/2023232)。
+* [**通知 \_ 信息**](/windows-hardware/drivers/ddi/1394/ns-1394-_notification_info_w2k)结构中的 **ResponseCode** 成员必须设置为 RCODE 中定义的其中一个值。 如果 **ResponseCode** 设置为 RCODE \_ 响应完成以外的任何值 \_ ，1394总线驱动程序将发送错误响应数据包。 对于读取或锁定请求，请求不会返回任何数据。
 * 对于读取和锁定请求，[**通知 \_ 信息**](/windows-hardware/drivers/ddi/1394/ns-1394-_notification_info_w2k)结构的 **ResponsePacket** 成员必须指向要在异步响应数据包中返回的数据。
 
 下面的代码示例显示了工作项实现和客户端驱动程序的通知例程。

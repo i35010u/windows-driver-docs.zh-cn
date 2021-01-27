@@ -11,20 +11,20 @@ keywords:
 - 二元运算符
 - 移位运算符
 - 一元运算符
-ms.date: 05/23/2017
+ms.date: 01/26/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 1250add2e013afdce1125c1389a9e30e2091b5a5
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: a435f58ee5623a70e64099d260cc7c4e1b1e074a
+ms.sourcegitcommit: 5e51e63585f35597cf06fc0ab5c0cc7cb39ca22a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96814537"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98861847"
 ---
 # <a name="masm-numbers-and-operators"></a>MASM 数字和运算符
 
-在版本4.0 的 Windows 包调试工具版本之前，NTSD、CDB、KD 和 WinDbg 只使用了 Microsoft 宏组装器 (MASM) 表达式语法。
+本主题介绍如何将 Microsoft 宏组装 (MASM) 表达式语法与 Windows 调试工具一起使用。
 
-## <a name="numbers-in-masm-expressions"></a>MASM 表达式中的数字
+## <a name="numbers-in-debugger-masm-expressions"></a>调试器 MASM 表达式中的数字
 
 可以在 base64、10、8或2中将数字放入 MASM 表达式中。
 
@@ -36,7 +36,7 @@ ms.locfileid: "96814537"
 
 可以采用 **xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx \`** 格式输入十六进制64位值。 还可以省略) 的抑音符 (\` 。 如果包含 "抑音符"，则会禁用 [自动符号扩展](sign-extension.md) 。
 
-## <a name="symbols-in-masm-expressions"></a>MASM 表达式中的符号
+## <a name="symbols-in-debugger-masm-expressions"></a>调试器 MASM 表达式中的符号
 
 在 MASM 表达式中，任何符号的数字值都是它的内存地址。 根据符号引用的内容，此地址是全局变量、局部变量、函数、段、模块或任何其他可识别标签的地址。
 

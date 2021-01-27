@@ -3,14 +3,14 @@ title: 配置对象引用跟踪
 description: 配置对象引用跟踪
 keywords:
 - 对象引用跟踪，配置
-ms.date: 05/23/2017
+ms.date: 01/26/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: a8f196ffd7de002064633320012e0e9728f4ae25
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 28441ee21e65fcce182160ef68e3691bfbf2bc7e
+ms.sourcegitcommit: 5e51e63585f35597cf06fc0ab5c0cc7cb39ca22a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96818653"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98861869"
 ---
 # <a name="configuring-object-reference-tracing"></a>配置对象引用跟踪
 
@@ -25,7 +25,7 @@ ms.locfileid: "96818653"
 
     必须将跟踪限制为具有指定池标记的对象、指定进程创建的对象或两者。
 
-3.  若要将跟踪限制为具有特定池标记的对象，请键入池标记名称。 若要列出多个池标记，请使用分号 (; ) 分隔池标记。 列出多个池标记时，跟踪包括具有任何指定的池标记的对象。 池标记区分大小写。
+3.  若要将跟踪限制为具有特定池标记的对象，请键入池标记名称。 若要列出多个池标记，请使用分号 (; ) 分隔池标记。 列出多个池标记时，跟踪包括具有任何指定的池标记的对象。 池标记区分大小写。 使用 [！ pool](-pool.md) 和 [！ poolfind](-poolfind.md) 调试器命令确定池名称。
 
     例如，Fred;Tag1.
 
