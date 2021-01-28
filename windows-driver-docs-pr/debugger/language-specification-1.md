@@ -1,17 +1,21 @@
 ---
 title: 语言规范 1
 description: 语言规范 1
-ms.date: 11/28/2017
+ms.date: 01/27/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: fe3a7249bc1fb9390cf5906eadd001addf44a856
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 24e805c444eb80adda3c291ac553e28f1fceb81d
+ms.sourcegitcommit: 468156fa76f3740f843cf503d57a68b92d548f7d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96806527"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98949235"
 ---
 # <a name="language-specification-1"></a>语言规范 1
 
+>[!NOTE]
+> 本主题介绍了 Srcsrv.ini 的内部操作。 有关源路径的工作原理的常规信息，请参阅 [源路径](source-path.md)。
+> 有关使用 Srcsrv.ini 的信息，请参阅 [使用 srcsrv.ini](using-srcsrv.md)。 若要确定在你的环境中当前加载的源操作，请按照中所述，启用 [srcnoisy (噪音源加载) ](-srcnoisy--noisy-source-loading-.md)
+>
 
 第一版 Srcsrv.ini 的工作原理如下所示。  (此行为在未来版本中可能会更改。 ) 
 
