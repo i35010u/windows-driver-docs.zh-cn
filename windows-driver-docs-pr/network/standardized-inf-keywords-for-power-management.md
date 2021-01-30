@@ -1,14 +1,15 @@
 ---
 title: 电源管理的标准化 INF 关键字
 description: 电源管理的标准化 INF 关键字
-ms.date: 08/01/2019
+ms.date: 01/29/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: b28442fabc850f8539b7f405263f22f2a68db50e
-ms.sourcegitcommit: 137d098e1a1a0c128d56a7002272847ea7c58e64
+ms.custom: contperf-fy21q3
+ms.openlocfilehash: ed2af65371ea571c64461c2ca5714aca92e40f7d
+ms.sourcegitcommit: 597ef5dc63565202a8c6d9e51c9faf1b6398968a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98192000"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99081111"
 ---
 # <a name="standardized-inf-keywords-for-power-management"></a>电源管理的标准化 INF 关键字
 
@@ -58,7 +59,7 @@ ms.locfileid: "98192000"
 <a href="" id="paramdesc"></a>ParamDesc  
 与 SubkeyName 关联的显示文本。
 
-<a href="" id="value"></a>负值  
+<a href="" id="value"></a>值  
 与列表中的每个选项关联的枚举整数值。 此值存储在 **NDI \\ params \\**<em>SubkeyName 值中 \\ 。</em>
 
 <a href="" id="enumdesc"></a>EnumDesc  
@@ -67,20 +68,20 @@ ms.locfileid: "98192000"
 下表描述了 NDIS 和 NetAdapterCx 驱动程序所使用的电源管理关键字的可能 INF 条目。
 
 
-|SubkeyName|ParamDesc|Value|EnumDesc|
+|SubkeyName|ParamDesc|值|EnumDesc|
 |--- |--- |--- |--- |
 |**_WakeOnPattern_**|模式匹配时唤醒|0|已禁用|
-|||1 (默认值) |启用|
+|||1 (默认值) |已启用|
 |**WakeOnMagicPacket**|幻数据包唤醒|0|已禁用|
-|||1 (默认值) |启用|
+|||1 (默认值) |已启用|
 |**PMARPOffload**|ARP 卸载|0|已禁用|
-|||1 (默认值) |启用|
+|||1 (默认值) |已启用|
 |**_PMNSOffload_**|NS 卸载|0|已禁用|
-|||1 (默认值) |启用|
+|||1 (默认值) |已启用|
 |**PMWiFiRekeyOffload**|WiFi 重新生成密钥卸载|0|已禁用|
-|||1 (默认值) |启用|
+|||1 (默认值) |已启用|
 |**_EEE_*|Energy-Efficient 以太网|0|已禁用|
-|||1 (默认值) |启用|
+|||1 (默认值) |已启用|
 
 ## <a name="power-management-keywords-exclusive-to-netadaptercx"></a>电源管理关键字专用于 NetAdapterCx
 
@@ -95,7 +96,7 @@ ms.locfileid: "98192000"
 
 下表描述了 **\* IdleRestriction** 关键字的可能 INF 条目。
 
-|SubkeyName|ParamDesc|Value|EnumDesc|
+|SubkeyName|ParamDesc|值|EnumDesc|
 |--- |--- |--- |--- |
 |**_*IdleRestriction_**|空闲关机限制|0（默认值）|无限制|
 |||1|仅当用户不存在时空闲|
@@ -116,11 +117,11 @@ ms.locfileid: "98192000"
 
 下表描述了 NDIS 微型端口驱动程序所使用的电源管理关键字的可能 INF 条目。
 
-|SubkeyName|ParamDesc|Value|EnumDesc|
+|SubkeyName|ParamDesc|值|EnumDesc|
 |--- |--- |--- |--- |
-|**ModernStandbyWoLMagicPacket**|当系统处于 _S0ix_ 电源状态时唤醒幻数据包|0（默认值）|禁用|
+|**ModernStandbyWoLMagicPacket**|当系统处于 _S0ix_ 电源状态时唤醒幻数据包|0（默认值）|已禁用|
 |||1|已启用|
 |**_DeviceSleepOnDisconnect_**|断开连接时设备睡眠|0|已禁用|
-|||1 (默认值) |启用|
+|||1 (默认值) |已启用|
  
 

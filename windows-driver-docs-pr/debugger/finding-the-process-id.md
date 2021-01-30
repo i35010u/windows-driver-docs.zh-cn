@@ -6,25 +6,23 @@ keywords:
 - 'PID (进程 ID) '
 - Tlist.exe，相关技术
 - 任务管理器
-ms.date: 01/14/2021
+ms.date: 01/29/2021
 ms.localizationpriority: medium
 ms.custom: contperf-fy21q3
-ms.openlocfilehash: fa6d38e0bb48f80f672ad9d9f791b12e52c08925
-ms.sourcegitcommit: 5b7f2acb319287c5b255a7fe40c62606375cf31a
+ms.openlocfilehash: 12b695b7fcb0e0765a41ed8490f3e176fb7b6f93
+ms.sourcegitcommit: 597ef5dc63565202a8c6d9e51c9faf1b6398968a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98226557"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99081121"
 ---
 # <a name="finding-the-process-id"></a>查找进程 ID
-
-## <span id="ddk_finding_the_process_id_dbg"></span><span id="DDK_FINDING_THE_PROCESS_ID_DBG"></span>
 
 将为 Windows 中运行的每个进程分配一个唯一的十进制数，称为进程 ID (PID) 。 使用此数字的方法有很多，例如，在将调试器附加到该进程时指定进程。
 
 本主题介绍如何使用任务管理器、tasklist Windows 命令、Tlist.exe 实用工具或调试器来确定给定应用程序的 PID。
 
-## <a name="span-idtask_managerspanspan-idtask_managerspantask-manager"></a><span id="task_manager"></span><span id="TASK_MANAGER"></span>任务管理器
+## <a name="task-manager"></a>任务管理器
 
 可以通过多种方法打开任务管理器，但最简单的方法是选择 Ctrl + Alt + Delete，然后选择 " **任务管理器**"。
 
@@ -36,7 +34,7 @@ ms.locfileid: "98226557"
 
 某些内核错误可能会导致任务管理器的图形界面发生延迟。
 
-## <a name="span-idthe_tasklist_commandspanspan-idthe_tasklist_commandspanthe-tasklist-command"></a><span id="the_tasklist_command"></span><span id="THE_TASKLIST_COMMAND"></span>**Tasklist** 命令
+## <a name="the-tasklist-command"></a>**Tasklist** 命令
 
 使用命令提示符下的内置 Windows **tasklist** 命令显示所有进程、其 pid 以及各种其他详细信息。
 
@@ -57,7 +55,7 @@ wininit.exe                    980 Services                   0      6,572 K
 
 用于 `tasklist /?` 显示命令行帮助。
 
-## <a name="span-idtlistspanspan-idtlistspantlist-utility"></a><span id="tlist"></span><span id="TLIST"></span>Tlist.exe 实用程序
+## <a name="tlist-utility"></a>Tlist.exe 实用程序
 
 任务列表查看器 (Tlist.exe) 或 tlist.exe 是一个命令行实用工具，用于显示当前在本地计算机上运行的任务列表或用户模式进程。 Tlist.exe 包含在适用于 Windows 的调试工具中。 有关如何下载和安装调试工具的信息，请参阅 [下载适用于 Windows 的调试工具](debugger-download-tools.md)。
 
@@ -87,10 +85,24 @@ wininit.exe (980)
 
 有关详细信息，请参阅 [tlist.exe](tlist.md)。
 
-## <a name="span-idthe__tlist_debugger_commandspanspan-idthe__tlist_debugger_commandspanthe-tlist-debugger-command"></a><span id="the__tlist_debugger_command"></span><span id="THE__TLIST_DEBUGGER_COMMAND"></span>**Tlist.exe** 调试器命令
+## <a name="the-tlist-debugger-command"></a>**Tlist.exe** 调试器命令
 
 如果在相关系统上已经有一个用户模式调试器在运行，则 [**tlist.exe (列出进程 id)**](-tlist--list-process-ids-.md) 命令将显示该系统上所有 pid 的列表。
 
-## <a name="span-idcsrss_and_user_mode_driversspanspan-idcsrss_and_user_mode_driversspancsrss-and-user-mode-drivers"></a><span id="csrss_and_user_mode_drivers"></span><span id="CSRSS_AND_USER_MODE_DRIVERS"></span>CSRSS 和用户模式驱动程序
+## <a name="powershell-get-process-command"></a>PowerShell Get-Process 命令
+
+若要使用自动化脚本，请使用 Get-Process PowerShell 命令。 指定特定的进程名称，以查看该进程的进程 ID。
+
+```powershell
+C:\> Get-Process explorer
+
+Handles  NPM(K)    PM(K)      WS(K)     CPU(s)     Id  SI ProcessName
+-------  ------    -----      -----     ------     --  -- -----------
+   2520     404   108948     179284   1,702.95   7656   1 explorer
+```
+
+有关详细信息，请参阅 [获取进程](/powershell/module/microsoft.powershell.management/get-process)。
+
+## <a name="csrss-and-user-mode-drivers"></a>CSRSS 和用户模式驱动程序
 
 若要调试在另一台计算机上运行的用户模式驱动程序，请 Run-Time 子系统 (CSRSS) 进程中调试客户端服务器。 有关详细信息，请参阅 [调试 CSRSS](debugging-csrss.md)。

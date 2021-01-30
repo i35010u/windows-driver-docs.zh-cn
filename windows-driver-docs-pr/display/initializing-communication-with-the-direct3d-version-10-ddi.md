@@ -3,12 +3,12 @@ title: 初始化与 Direct3D 版本 10 DDI 之间的通信
 description: 初始化与 Direct3D 版本 10 DDI 之间的通信
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f6a7dd1d40bb4a42c2873468cc66a09da49828c7
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 27895847dad284c1a12b3351482fe19eedd101ad
+ms.sourcegitcommit: 5e8a222ae0c05392880436636cf4fe3f546e771a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96839303"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99084910"
 ---
 # <a name="initializing-communication-with-the-direct3d-version-10-ddi"></a>初始化与 Direct3D 版本 10 DDI 之间的通信
 
@@ -19,7 +19,7 @@ ms.locfileid: "96839303"
 
 用户模式显示驱动程序应调用 [**pfnQueryAdapterInfoCb**](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_queryadapterinfocb) 适配器回调函数以从显示微型端口驱动程序查询图形硬件功能。
 
-运行时调用用户模式显示驱动程序的 [**CreateDevice (D3D10)**](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createdevice) 函数 (某个驱动程序的适配器特定函数) 来创建显示设备，用于处理呈现状态的集合并完成初始化。 初始化完成后，Direct3D 版本10运行时可以调用 [显示器驱动程序提供的 Direct3D 版本10函数](/windows-hardware/drivers/ddi/index)，并且用户模式显示驱动程序可以调用 [运行时提供的函数](/windows-hardware/drivers/ddi/index)。
+运行时调用用户模式显示驱动程序的 [**CreateDevice (D3D10)**](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createdevice) 函数 (某个驱动程序的适配器特定函数) 来创建显示设备，用于处理呈现状态的集合并完成初始化。 初始化完成后，Direct3D 版本10运行时可以调用 [显示器驱动程序提供的 Direct3D 版本10函数](/windows-hardware/drivers/ddi/_display)，并且用户模式显示驱动程序可以调用 [运行时提供的函数](/windows-hardware/drivers/ddi/_display)。
 
 用户模式显示驱动程序的 *CreateDevice (D3D10)* 函数使用一个 [**D3D10DDIARG \_ CreateDevice**](/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10ddiarg_createdevice) 结构调用，该结构的成员按以下方式设置，以初始化用户模式显示驱动程序的第10版 DDI：
 

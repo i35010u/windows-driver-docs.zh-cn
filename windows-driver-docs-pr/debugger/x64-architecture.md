@@ -5,14 +5,14 @@ keywords:
 - x64 处理器，体系结构
 - 在 x64 处理器上注册
 - x64 处理器，寄存器
-ms.date: 03/16/2018
+ms.date: 01/28/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f4dc95e0b63eb3d776a19f622808a3f635e2eb3
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 994cd01af54e9354abe330652a0a07c2725d597a
+ms.sourcegitcommit: 597ef5dc63565202a8c6d9e51c9faf1b6398968a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96802721"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99081117"
 ---
 # <a name="x64-architecture"></a>x64 体系结构
 
@@ -24,7 +24,7 @@ X64 体系结构是一个向后兼容的 x86 扩展。 它提供了与 x86 相�
 
 术语 "x64" 包括 AMD 64 和 Intel64。 指令集接近相同。
 
-### <a name="span-idregistersspanspan-idregistersspanspan-idregistersspanregisters"></a><span id="Registers"></span><span id="registers"></span><span id="REGISTERS"></span>寄存器
+## <a name="span-idregistersspanspan-idregistersspanspan-idregistersspanregisters"></a><span id="Registers"></span><span id="registers"></span><span id="REGISTERS"></span>寄存器
 
 x64 将 x86's 8 通用寄存器扩展为64位，并添加8个新的64位寄存器。 64位寄存器的名称以 "r" 开头，例如， **eax** 的64位扩展称为 **rax**。 新寄存器通过 **r15** 名为 **r8** 。
 
@@ -161,7 +161,7 @@ X64 处理器还提供多组浮点寄存器：
 
 -   原始的 8 128 位 SSE 寄存器集将增加到十六位。
 
-### <a name="span-idcalling_conventionsspanspan-idcalling_conventionsspanspan-idcalling_conventionsspancalling-conventions"></a><span id="Calling_Conventions"></span><span id="calling_conventions"></span><span id="CALLING_CONVENTIONS"></span>调用约定
+## <a name="span-idcalling_conventionsspanspan-idcalling_conventionsspanspan-idcalling_conventionsspancalling-conventions"></a><span id="Calling_Conventions"></span><span id="calling_conventions"></span><span id="CALLING_CONVENTIONS"></span>调用约定
 
 与 x86 不同，C/c + + 编译器仅支持 x64 上的一个调用约定。 此调用约定利用了 x64 上可用寄存器数量的增加：
 
@@ -179,9 +179,9 @@ X64 处理器还提供多组浮点寄存器：
 
 -   **rbx**、 **rbp**、 **rdi.tpl**、 **rsi**、 **r12** - **r15** 是非易失性。
 
-C + + 调用约定非常类似： **此** 指针作为隐式第一个参数传递。 接下来的三个参数在寄存器中传递，而其余的参数在堆栈上传递。
+C + + 调用约定非常类似： **此** 指针作为隐式第一个参数传递。 接下来的三个参数将在剩余的寄存器中传递，而其余的参数将在堆栈上传递。
 
-### <a name="span-idaddressing_modesspanspan-idaddressing_modesspanspan-idaddressing_modesspanaddressing-modes"></a><span id="Addressing_Modes"></span><span id="addressing_modes"></span><span id="ADDRESSING_MODES"></span>寻址模式
+## <a name="span-idaddressing_modesspanspan-idaddressing_modesspanspan-idaddressing_modesspanaddressing-modes"></a><span id="Addressing_Modes"></span><span id="addressing_modes"></span><span id="ADDRESSING_MODES"></span>寻址模式
 
 64位模式下的寻址模式类似于 x86，但并不完全相同。
 
@@ -193,10 +193,14 @@ C + + 调用约定非常类似： **此** 指针作为隐式第一个参数传�
 
 **跳转**、 **call**、 **push** 和 **pop** 等说明隐式引用指令指针，堆栈指针将它们视为 x64 上的64位寄存器。
 
- 
 ## <a name="see-also"></a>另请参阅
 
 [X86-64 维基百科](https://en.wikipedia.org/wiki/X86-64)
 
 [AMD 64 开发人员资源](https://developer.amd.com/resources/)
 
+[Intel-x64 程序集简介](https://software.intel.com/content/www/us/en/develop/articles/introduction-to-x64-assembly.html)
+
+[x64 入门-开始编程64位 Windows 系统所需要了解的所有内容-Matt Pietrek](/archive/msdn-magazine/2006/may/x64-starting-out-in-64-bit-windows-systems-with-visual-c)
+
+[调用约定的历史记录，第5部分： amd64 Raymond Chen](https://devblogs.microsoft.com/oldnewthing/20040114-00/?p=41053)
