@@ -3,12 +3,12 @@ title: 驱动程序包隔离
 description: 此页面介绍了驱动程序隔离，这是 Windows 驱动程序的一项要求。
 ms.date: 10/01/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: b9b3d1f000f68ff29190883065a5478b764e95b3
-ms.sourcegitcommit: c435386d93f2de662a8e959e9d5b39d61e543ba1
+ms.openlocfilehash: 355636f6474ea77d479dcd7cf23e32ccf97bff34
+ms.sourcegitcommit: fa9479a73ebbbace04e9cabdf36aa8b1414c1554
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/09/2021
-ms.locfileid: "98053087"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98792683"
 ---
 # <a name="driver-package-isolation"></a>驱动程序包隔离
 
@@ -31,7 +31,9 @@ ms.locfileid: "98053087"
 
 所有独立驱动程序包都将其驱动程序包文件保留在驱动程序存储中。 这意味着，它们在其 INF 中指定 [DIRID 13](../install/using-dirids.md) 以在安装时指定驱动程序包文件的位置。
 
-从驱动程序存储运行的内核模式驱动程序可以调用 [**IoQueryFullDriverPath**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ioqueryfulldriverpath) 并使用该路径来查找与之相对应的配置文件。  如果内核模式驱动程序是 KMDF 驱动程序，则它可以使用 [**WdfDriverWdmGetDriverObject**](/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdriverwdmgetdriverobject) 来检索要传递到 IoQueryFullDriverPath 的 WDM 驱动程序对象。 UMDF 驱动程序可以使用 [**GetModuleHandleExW**](/windows/win32/api/libloaderapi/nf-libloaderapi-getmodulehandleexw) 和 [**GetModuleFileNameW**](/windows/win32/api/libloaderapi/nf-libloaderapi-getmodulefilenamew) 来确定驱动程序是从何处加载的。  例如：
+从 Windows 10 版本 1803 和更高版本上的 DriverStore 运行的 WDM 或 KMDF 驱动程序应，需要访问其设备驱动程序时，应调用 [IoGetDriverDirectory](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdriverdirectory)，并将 DriverDirectoryImage 设置为目录类型，以获取用于加载驱动程序的目录路径。
+
+或者，对于需要支持 Windows 10 版本 1803 之前的 OS 版本的驱动程序，使用 [IoQueryFullDriverPath](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ioqueryfulldriverpath) 查找驱动程序的路径，获取用于加载驱动程序的目录路径，并查找相对于该路径的配置文件。  如果内核模式驱动程序是 KMDF 驱动程序，则它可以使用 [**WdfDriverWdmGetDriverObject**](/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdriverwdmgetdriverobject) 来检索要传递到 IoQueryFullDriverPath 的 WDM 驱动程序对象。 UMDF 驱动程序可以使用 [**GetModuleHandleExW**](/windows/win32/api/libloaderapi/nf-libloaderapi-getmodulehandleexw) 和 [**GetModuleFileNameW**](/windows/win32/api/libloaderapi/nf-libloaderapi-getmodulefilenamew) 来确定驱动程序是从何处加载的。  例如：
 
 ```cpp
 bRet = GetModuleHandleExW(GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS,
@@ -43,10 +45,6 @@ if (bRet) {
                                       pathLength);
     …
 ```
-
-从 Windows 10 版本 1803 和更高版本上的 DriverStore 运行的 WDM 或 KMDF 驱动程序应，需要访问其设备驱动程序时，应调用 [IoGetDriverDirectory](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdriverdirectory)，并将 DriverDirectoryImage 设置为目录类型，以获取用于加载驱动程序的目录路径。
-
-或者，对于需要支持 Windows 10 版本 1803 之前的 OS 版本的驱动程序，使用 [IoQueryFullDriverPath](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ioqueryfulldriverpath) 查找驱动程序的路径，获取用于加载驱动程序的目录路径，并查找相对于该路径的配置文件。
 
 对于 INF 负载的文件，INF 中该文件的 [SourceDisksFiles](../install/inf-sourcedisksfiles-section.md) 条目中列出的 subdir 必须与 INF 中该文件的 [DestinationDirs](../install/inf-destinationdirs-section.md) 条目中列出的 subdir 匹配 。
 

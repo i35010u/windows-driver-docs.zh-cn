@@ -79,7 +79,7 @@ MBIM_MS_PROVISIONED_CONTEXTS_INFO 在 InformationBuffer 中从查询和设置完
 
 | Operation | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
-| 命令 | MBIM_SET_MS_PROVISIONED_CONTEXT_V2 | 不适用 | 不适用 |
+| Command | MBIM_SET_MS_PROVISIONED_CONTEXT_V2 | 不适用 | 不适用 |
 | 响应 | MBIM_MS_PROVISIONED_CONTEXT_INFO_V2 | MBIM_MS_PROVISIONED_CONTEXT_INFO_V2 | MBIM_MS_PROVISIONED_CONTEXT_INFO_V2 |
 
 #### <a name="data-structures"></a>数据结构
