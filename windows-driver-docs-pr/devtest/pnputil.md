@@ -3,12 +3,12 @@ title: PnPUtil
 description: PnPUtil
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cdcaad62f9037ef49972cfa128b79e354ee20f54
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: b06923dc4d28dc3e9f22edabf650a8ff4c0de266
+ms.sourcegitcommit: 98a2748f98d0eaf5ca6af6568b1a3fc6f2c9b63a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96841024"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99057525"
 ---
 # <a name="pnputil"></a>PnPUtil
 
@@ -28,6 +28,3 @@ PnPUtil 包含在 Windows 的每个版本中，从) 目录中的 Windows Vista (
 
 - 打开 " **命令提示符** " 窗口 (**以管理员身份运行**) 。
 - 键入 `pnputil /?` 以查看命令选项。 有关详细信息，请参阅 [**PnPUtil 命令语法**](pnputil-command-syntax.md) 。
-
-> [!NOTE]
-> Windows Vista 和更高版本的 Windows 上支持 PnPUtil。 PnPUtil 不适用于 Windows XP，但你可以使用 [驱动程序安装框架 (DIFx) ](../install/difx-guidelines.md) 工具来创建和自定义驱动程序包的安装。
