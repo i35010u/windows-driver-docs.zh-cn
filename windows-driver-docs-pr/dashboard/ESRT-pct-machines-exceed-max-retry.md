@@ -4,12 +4,12 @@ description: 该度量将 28 天滑动窗口中的遥测数据聚合为达到最
 ms.topic: article
 ms.date: 10/31/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6237c6588fb2112de1831f0f5a52d8efc320007d
-ms.sourcegitcommit: c214e65a7f5dd868037718a34ca7cc80584df5c6
+ms.openlocfilehash: 62ad0805f3fc25eeb7e6fbf2eede41dc3073f3fd
+ms.sourcegitcommit: 5e51e63585f35597cf06fc0ab5c0cc7cb39ca22a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89615485"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98861849"
 ---
 # <a name="percent-of-machines-exceeded-firmware-max-retry-limit-from-esrt"></a>超出了 ESRT 的固件最大重试限制的计算机百分比
 
@@ -30,9 +30,9 @@ ms.locfileid: "89615485"
 |受众 |零售和预览体验成员|
 |时间段 |28 天滑动窗口|
 |度量标准 |计算机的聚合|
-|最小实例数 |200|
+|最小实例数 |170|
 |通过标准 |<= 5%|
-|度量 ID |20116755 或 23260704|
+|度量 ID |23260704|
 
 ## <a name="calculation"></a>计算
 

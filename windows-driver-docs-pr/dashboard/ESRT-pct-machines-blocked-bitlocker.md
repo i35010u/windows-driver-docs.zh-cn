@@ -4,12 +4,12 @@ description: 该度量将 28 天滑动窗口中的遥测数据聚合为被 Bitlo
 ms.topic: article
 ms.date: 10/31/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 97713be7e364044227397e0f5cdc516243abce10
-ms.sourcegitcommit: c214e65a7f5dd868037718a34ca7cc80584df5c6
+ms.openlocfilehash: c427b8e56db026746466d54520b8afccd77e542a
+ms.sourcegitcommit: 5e51e63585f35597cf06fc0ab5c0cc7cb39ca22a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89615461"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98861859"
 ---
 # <a name="percent-of-machines-with-pending-firmware-updates-due-to-bitlocker-risk"></a>由于存在 Bitlocker 风险而挂起固件更新的计算机的百分比
 
@@ -24,9 +24,9 @@ ms.locfileid: "89615461"
 |受众 |零售和预览体验成员|
 |时间段 |28 天滑动窗口|
 |度量标准 |计算机的聚合|
-|最小实例数 |250|
-|通过标准 |<= 10%|
-|度量 ID |23153969 或 23260737|
+|最小实例数 |170|
+|通过标准 |<= 5%|
+|度量 ID |23260737|
 
 ## <a name="calculation"></a>计算
 

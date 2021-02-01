@@ -4,12 +4,12 @@ description: 该度量将 28 天滑动窗口中的遥测数据聚合为尝试安
 ms.topic: article
 ms.date: 10/31/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 71b0aa542ac79023bc6d1ae8f45b3790d5ce4c69
-ms.sourcegitcommit: c214e65a7f5dd868037718a34ca7cc80584df5c6
+ms.openlocfilehash: ec15129412c9c13b3e85960e57c332a2c9c60ab0
+ms.sourcegitcommit: 5e51e63585f35597cf06fc0ab5c0cc7cb39ca22a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89615487"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98861851"
 ---
 # <a name="percent-of-machines-reporting-successful-firmware-installation-from-esrt"></a>从 ESRT 报告成功安装固件的计算机的百分比
 
@@ -50,9 +50,9 @@ ms.locfileid: "89615487"
 |受众 |零售和预览体验成员|
 |时间段 |28 天滑动窗口|
 |度量标准 |计算机的聚合|
-|最小实例数 |200|
+|最小实例数 |170|
 |通过标准 |>= 95%|
-|度量 ID |20116729 或 23260700|
+|度量 ID |23260700|
 
 ## <a name="calculation"></a>计算
 
