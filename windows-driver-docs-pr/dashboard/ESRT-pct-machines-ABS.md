@@ -4,12 +4,12 @@ description: 该度量将 28 天滑动窗口中的遥测数据聚合为一个比
 ms.topic: article
 ms.date: 10/31/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 49c7bad04236ad7e6894beaf5c88fd1f6fbe45fa
-ms.sourcegitcommit: c214e65a7f5dd868037718a34ca7cc80584df5c6
+ms.openlocfilehash: ad3a8b74d02eef0201e6f5d2dacd4b6fa882da32
+ms.sourcegitcommit: 5e51e63585f35597cf06fc0ab5c0cc7cb39ca22a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89615467"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98861853"
 ---
 # <a name="percent-of-machines-with-abnormal-shutdown-not-due-to-bugcheck-or-power-button"></a>异常关机并非由于 Bug 检查或电源按钮原因的计算机的百分比
 
@@ -26,9 +26,9 @@ ms.locfileid: "89615467"
 |受众 |零售和预览体验成员|
 |时间段 |28 天滑动窗口|
 |度量标准 |计算机的聚合|
-|最小实例数 |250|
+|最小实例数 |170|
 |通过标准 |<= 20%|
-|度量 ID |20431908 或 23260722|
+|度量 ID |23260722|
 
 ## <a name="calculation"></a>计算
 

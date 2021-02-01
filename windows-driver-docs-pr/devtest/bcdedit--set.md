@@ -1,7 +1,7 @@
 ---
 title: BCDEdit /set
 description: BCDEdit/set 命令在 Windows 的启动配置数据存储 (BCD) 中设置启动项目选项值。
-ms.date: 09/25/2020
+ms.date: 01/25/2021
 keywords:
 - BCDEdit /set 驱动程序开发工具
 topic_type:
@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.localizationpriority: high
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: bc09983252544ed6fb8f2bd80fd7b98f50f5aec2
-ms.sourcegitcommit: 66043df62672b79a8f9fcb0bc2deb26b8f182fb6
+ms.openlocfilehash: 78cee4564790032466d6790c8d51fbd9c4358f15
+ms.sourcegitcommit: 7b3bddc91b87de5afce36c120620497c37234fbf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96912463"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98811994"
 ---
 # <a name="bcdedit-set"></a>BCDEdit /set
 
@@ -34,7 +34,7 @@ BCDEdit/set 命令在 Windows 启动配置数据存储 (BCD) 中设置启动项�
 ### <a name="settings-startup-options"></a>设置启动选项
 
 > [!TIP]
-> 若要避免出现与使用 BCDEdit 相关的风险，请考虑使用替代方法来执行启动配置
+> 若要避免出现与使用 BCDEdit 相关的风险，请考虑使用本部分中所述的替代方法来执行启动配置。
 
 ### <a name="startup-settings"></a>“启动设置”
 
@@ -378,6 +378,10 @@ bcdedit /deletevalue groupsize
 ```
 
 对启动选项的任何更改都需要重启才能生效。 有关常用 BCDEdit 命令的详细信息，请参阅[引导配置数据编辑器常见问题](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc721886(v=ws.10))。
+
+## <a name="dtrace"></a>DTrace
+
+DTrace (DTrace.exe) 是一个命令行工具，用于显示系统信息和事件。 其中有一个用于启用 dtrace 的 bcedit 选项。 有关可用的 DTrace BCDEdit 选项的信息，请参阅 [Windows 上的 DTrace](/windows-hardware/drivers/devtest/dtrace) 的“安装”部分。
 
 ## <a name="requirements"></a>要求
 

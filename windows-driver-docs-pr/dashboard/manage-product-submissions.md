@@ -4,12 +4,12 @@ description: 管理产品的硬件仪表板提交，并让 Microsoft 对产品�
 ms.topic: article
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: c5d8dae75eb63d186f8f0c18b108d5e2c575ec8c
-ms.sourcegitcommit: 34bc742a0de40bcc4eda99f32622c58584a7f9f2
+ms.openlocfilehash: b66a269001d706a1a706082a2392ce3d95b55805
+ms.sourcegitcommit: 9da97e0f19c54d4db8f4fe84979e0c276a6728ef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94384175"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98801677"
 ---
 # <a name="manage-product-submissions"></a>管理产品提交
 
@@ -51,7 +51,7 @@ https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/
 
     响应正文包含[提交资源](get-product-data.md#submission-resource)，此资源包括提交 ID、用于上传产品（驱动程序）包以提交到 Azure Blob 存储的共享访问签名 (SAS) URI。 [!NOTE] > SAS URI 提供对 Azure 存储中的安全资源的访问权限（无需帐户密钥）。 有关 SAS URI 及其与 Azure Blob 存储一起使用的背景信息，请参阅[共享访问签名（第 1 部分）：了解 SAS 模型](/azure/storage/common/storage-sas-overview)和[共享访问签名（第 2 部分）：创建 SAS 并将其与 Blob 存储一起使用](/azure/storage/common/storage-sas-overview)。
 
-5. **上传你的程序包** 到 Azure Blob 存储中的某个位置，此位置由上一个步骤中的 SAS URI 指定。
+5. 上传你的程序包到 Azure Blob 存储中的某个位置，此位置由上一个步骤中的 SAS URI 指定。
 以下 C# 代码示例演示如何在用于 .NET 的 Azure 存储客户端库中使用 [CloudBlockBlob](/dotnet/api/microsoft.azure.storage.blob.cloudblockblob/) 类将程序包上传到 Azure Blob 存储。 此示例假定程序包已写入流对象。
 
     ```json
