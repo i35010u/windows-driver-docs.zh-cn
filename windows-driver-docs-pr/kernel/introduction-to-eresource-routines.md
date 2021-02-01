@@ -10,28 +10,24 @@ keywords:
 - 等待进程 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e838b5b6daf2c5d3c5a572419af166f5f54f1cad
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 2acf659a31eff42f40c7ad2ed7a412e2f2564eac
+ms.sourcegitcommit: 9eb2234992d5ae1cdbfe1c53bac995ce5e62688e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96837237"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99227671"
 ---
 # <a name="introduction-to-eresource-routines"></a>ERESOURCE 例程简介
 
-
-
-
-
 系统提供了用于获取和释放 ERESOURCE 结构以及检查其当前状态的例程。
 
-### <a name="acquiring-and-releasing-an-eresource-structure"></a>获取和释放 ERESOURCE 结构
+## <a name="acquiring-and-releasing-an-eresource-structure"></a>获取和释放 ERESOURCE 结构
 
 驱动程序可以使用 ERESOURCE 结构来实现 *独占/共享同步*。 异或 shared 同步的工作原理如下所示：
 
--   任意数量的线程都可以获取共享的 ERESOURCE。
+- 任意数量的线程都可以获取共享的 ERESOURCE。
 
--   只有一个线程可以专门获取 ERESOURCE。 仅当没有线程获取共享的线程时，才能独占获取 ERESOURCE。
+- 只有一个线程可以专门获取 ERESOURCE。 仅当没有线程获取共享的线程时，才能独占获取 ERESOURCE。
 
 当前无法获取 ERESOURCE 的线程可以选择置于等待状态，直到可以获取 ERESOURCE。 系统维护两个等待 ERESOURCE 的线程列表：一个 *独占等待进程* 列表和一个 *共享等待进程* 列表。
 
@@ -41,23 +37,20 @@ ms.locfileid: "96837237"
 
 驱动程序可以对 ERESOURCE 执行以下基本操作：
 
--   获取与 [**ExAcquireResourceSharedLite**](/previous-versions/ff544363(v=vs.85))共享的 ERESOURCE。 仅当资源尚未独占获取并且没有独占等待进程时，此例程才获取资源。
+- 获取与 [**ExAcquireResourceSharedLite**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exacquireresourcesharedlite)共享的 ERESOURCE。 仅当资源尚未独占获取并且没有独占等待进程时，此例程才获取资源。
 
--   以独占方式获取使用 [**ExAcquireResourceExclusiveLite**](/previous-versions/ff544351(v=vs.85))的 ERESOURCE。 只要资源未以独占方式获取或为共享，此例程就会获取资源。
+- 以独占方式获取使用 [**ExAcquireResourceExclusiveLite**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exacquireresourceexclusivelite)的 ERESOURCE。 只要资源未以独占方式获取或为共享，此例程就会获取资源。
 
--   使用 [**ExConvertExclusiveToSharedLite**](/previous-versions/ff544558(v=vs.85))将专用购置转换为共享购置。
+- 使用 [**ExConvertExclusiveToSharedLite**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exconvertexclusivetosharedlite)将专用购置转换为共享购置。
 
--   使用 [**ExReleaseResourceLite**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exreleaseresourcelite)发布获取的资源。
+- 使用 [**ExReleaseResourceLite**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exreleaseresourcelite)发布获取的资源。
 
-[**ExAcquireResourceSharedLite**](/previous-versions/ff544363(v=vs.85))和 [**ExAcquireResourceExclusiveLite**](/previous-versions/ff544351(v=vs.85))的 *Wait* 参数确定当前线程是否等待获取 ERESOURCE。 如果指定的值为 **false** ，并且无法获取 ERESOURCE，则例程将返回 **false**。 如果指定的值为 **TRUE**，则当前线程将放在 ERESOURCE 的相应等待列表中。
+[**ExAcquireResourceSharedLite**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exacquireresourcesharedlite)和 [**ExAcquireResourceExclusiveLite**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exacquireresourceexclusivelite)的 *Wait* 参数确定当前线程是否等待获取 ERESOURCE。 如果指定的值为 **false** ，并且无法获取 ERESOURCE，则例程将返回 **false**。 如果指定的值为 **TRUE**，则当前线程将放在 ERESOURCE 的相应等待列表中。
 
-### <a name="examining-the-state-of-an-eresource-structure"></a>检查 ERESOURCE 结构的状态
+## <a name="examining-the-state-of-an-eresource-structure"></a>检查 ERESOURCE 结构的状态
 
 驱动程序还可以确定 ERESOURCE 的当前状态，如下所示：
 
--   使用 [**ExIsResourceAcquiredLite**](/previous-versions/windows/hardware/drivers/ff545466(v=vs.85)) 或 [**ExIsResourceAcquiredSharedLite**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exisresourceacquiredsharedlite) 来确定是否已将 ERESOURCE 作为共享或独占方式获取。 使用 [**ExIsResourceAcquiredExclusiveLite**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exisresourceacquiredexclusivelite) 检查是否专门获取了 ERESOURCE。
+- 使用 [**ExIsResourceAcquiredLite**](/previous-versions/windows/hardware/drivers/ff545466(v=vs.85)) 或 [**ExIsResourceAcquiredSharedLite**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exisresourceacquiredsharedlite) 来确定是否已将 ERESOURCE 作为共享或独占方式获取。 使用 [**ExIsResourceAcquiredExclusiveLite**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exisresourceacquiredexclusivelite) 检查是否专门获取了 ERESOURCE。
 
--   使用 [**ExGetSharedWaiterCount**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exgetsharedwaitercount) 确定 ERESOURCE 的共享等待进程的数目，并使用 [**EXGETEXCLUSIVEWAITERCOUNT**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exgetexclusivewaitercount) 来确定等待进程的独占 ERESOURCE 数。
-
- 
-
+- 使用 [**ExGetSharedWaiterCount**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exgetsharedwaitercount) 确定 ERESOURCE 的共享等待进程的数目，并使用 [**EXGETEXCLUSIVEWAITERCOUNT**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exgetexclusivewaitercount) 来确定等待进程的独占 ERESOURCE 数。
