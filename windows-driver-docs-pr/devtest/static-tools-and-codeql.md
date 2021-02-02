@@ -6,18 +6,18 @@ keywords:
 - 静态验证工具 WDK
 ms.date: 12/10/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e69badf0b9d987e8c93c7fc70165749895b26132
-ms.sourcegitcommit: 9da97e0f19c54d4db8f4fe84979e0c276a6728ef
+ms.openlocfilehash: 24cf39d05d986baa371de93bbc2e3c0ac77c01e2
+ms.sourcegitcommit: 32f483443ea3c90c5202aaa6f474c976b589fd1a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98801679"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99238082"
 ---
 # <a name="codeql-and-the-static-tools-logo-test"></a>CodeQL 和静态工具徽标测试
 
 Microsoft 致力于缓解 Windows 操作系统的攻击面，并确保第三方驱动程序满足强安全块对于实现该目标至关重要。  设置此安全栏的一步是 Microsoft 正在采取的操作是向 [Windows 硬件兼容性计划](/windows-hardware/design/compatibility) 添加新要求 (WHCP) 。  此要求表明所有驱动程序提交必须对驱动程序源代码使用 [CodeQL](https://securitylab.github.com/tools/codeql) 引擎，并修复任何被视为 **"必须修复"** 的冲突。
 
-[CodeQL](https://semmle.com/codeql)（来自 [Semmle](https://semmle.com/)）是一种用于保护软件的强大静态分析技术。 大范围的高价值安全查询和强大平台的组合使其成为确保第三方驱动程序代码安全的重要工具。
+GitHub 是[CodeQL](https://securitylab.github.com/tools/codeql)，它是用于保护软件的强大静态分析技术。 大范围的高价值安全查询和强大平台的组合使其成为确保第三方驱动程序代码安全的重要工具。
 
 [静态工具徽标测试](/windows-hardware/test/hlk/testref/6ab6df93-423c-4af6-ad48-8ea1049155ae)将强制对驱动程序源代码进行分析并修复任何 **"必须修复"** 冲突。
 
@@ -32,13 +32,13 @@ Microsoft 致力于缓解 Windows 操作系统的攻击面，并确保第三方�
 **CodeQL** 是开发人员用来执行安全分析的分析引擎。  **CodeQL 数据库** 是包含以下内容的目录：
 
 - 从驱动程序源代码中提取的可查询数据。
-- 用于直接在源代码中显示查询结果的源引用。  **查询** 可以视为 "检查" 或 "规则"。  每个查询都表示一个要搜索的不同安全漏洞。 有关详细信息，请参阅在 CodeQL 文档中 [编写查询](https://help.semmle.com/QL/learn-ql/writing-queries/writing-queries.html) 。
+- 用于直接在源代码中显示查询结果的源引用。  **查询** 可以视为 "检查" 或 "规则"。  每个查询都表示一个要搜索的不同安全漏洞。 有关详细信息，请参阅在 CodeQL 文档中 [编写查询](https://codeql.github.com/docs/writing-codeql-queries/codeql-queries/) 。
 - 查询结果。
 - 在数据库创建、执行查询和其他操作时生成的日志文件。
 
-本主题详细介绍了如何使用 CodeQL 命令行界面 (CLI) 执行分析，重点介绍适用于 Windows 的驱动程序开发人员。  补充文档可在 [CodeQL 入门](https://help.semmle.com/codeql/codeql-cli/procedures/get-started.html)上找到。
+本主题详细介绍了如何使用 CodeQL 命令行界面 (CLI) 执行分析，重点介绍适用于 Windows 的驱动程序开发人员。  补充文档可在 [CodeQL 入门](https://codeql.github.com/docs/codeql-cli/getting-started-with-the-codeql-cli/)上找到。
 
-我们将使用 [CodeQL 命令行工具 (CLI) ](https://help.semmle.com/codeql/codeql-cli.html) 从各种编译和解释语言创建 CodeQL 数据库，然后使用特定于驱动程序的 [查询套件](https://codeql.github.com/docs/codeql-cli/creating-codeql-query-suites/)分析该数据库。
+我们将使用 [CodeQL 命令行工具 (CLI) ](https://codeql.github.com/docs/codeql-cli/) 从各种编译和解释语言创建 CodeQL 数据库，然后使用特定于驱动程序的 [查询套件](https://codeql.github.com/docs/codeql-cli/creating-codeql-query-suites/)分析该数据库。
 
 ## <a name="codeql-windows-setup"></a>CodeQL Windows 安装程序
 
@@ -296,7 +296,7 @@ Shutting down query evaluator.
 Interpreting results.
 ```
 
-您可以使用 *"– timeout = [秒]"* 标志为整个操作指定超时。  这可用于分析查询，而不受单个长时间运行的查询的限制。  [数据库分析](https://help.semmle.com/codeql/codeql-cli/commands/database-analyze.html)中介绍了更多用于调整分析优化的选项。 
+您可以使用 *"– timeout = [秒]"* 标志为整个操作指定超时。  这可用于分析查询，而不受单个长时间运行的查询的限制。  [数据库分析](https://codeql.github.com/docs/codeql-cli/analyzing-databases-with-the-codeql-cli/)中介绍了更多用于调整分析优化的选项。 
 
 ## <a name="query-suites"></a>查询套件
 
@@ -320,7 +320,7 @@ Unpacked in: C:\codeql-home\codeql\
    use 'codeql resolve qlpacks' and 'codeql resolve languages'.
 ```
 
-数据库升级命令将更新数据库。 请注意，这是一个单向升级，不可逆。 有关详细信息，请参阅 [数据库升级](https://help.semmle.com/codeql/codeql-cli/commands/database-upgrade.html)。
+数据库升级命令将更新数据库。 请注意，这是一个单向升级，不可逆。 有关详细信息，请参阅 [数据库升级](https://codeql.github.com/docs/codeql-cli/upgrading-codeql-databases/)。
 
 ## <a name="queries"></a>查询
 
@@ -374,7 +374,7 @@ Microsoft 建议在 *所有* 驱动程序源代码上运行的查询包括：
 
 ## <a name="view-analysis"></a>查看分析
 
-在上一部分中运行分析命令的结果可以 [SARIF](https://help.semmle.com/codeql/glossary.html#sarif-results-file) 文件格式查看。  有关 SARIF 输出的详细信息，请参阅 [SARIF 概述](https://help.semmle.com/codeql/codeql-cli/reference/sarif-overview.html)。
+在上一部分中运行分析命令的结果可以 [SARIF](https://codeql.github.com/docs/codeql-overview/codeql-glossary/#sarif-file) 文件格式查看。  有关 SARIF 输出的详细信息，请参阅 [SARIF 概述](https://codeql.github.com/docs/codeql-cli/sarif-output/#sarif-output)。
 
 SARIF 文件包含已运行的每个查询的 " **结果** " 部分，其中包含有关已完成分析的详细信息。  例如，如果查询发现一个漏洞，则 SARIF 文件将包含该漏洞的详细信息以及发现缺陷的位置的详细信息。 如果未找到任何漏洞，则结果部分将为空。
 
