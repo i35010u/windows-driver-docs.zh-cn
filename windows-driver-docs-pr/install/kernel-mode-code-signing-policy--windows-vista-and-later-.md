@@ -12,12 +12,12 @@ keywords:
 - 包数字签名 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ae2585d3d62a92513c9422e838d0c1bc117a31dc
-ms.sourcegitcommit: 6ebfa823513c9d15674663301ce16fa790dafdea
+ms.openlocfilehash: 80c4bcc30169e18ee76d5ea6291a09fe21657a39
+ms.sourcegitcommit: 18e027265862b9c6fe3acdb913299d68fc61c023
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98717644"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99421897"
 ---
 # <a name="driver-signing-policy"></a>驱动程序签名策略
 
@@ -54,7 +54,7 @@ ms.locfileid: "98717644"
 
 * 内核模式设备驱动程序
 * 用户模式设备驱动程序
-* 流式处理受保护内容的驱动程序。 这包括使用受保护的用户模式音频 (PUMA) 的音频驱动程序和用于处理受保护视频路径-输出保护管理的视频设备驱动程序)  (用于处理受保护视频路径-输出保护管理 (命令。 有关详细信息，请参阅 [受保护媒体组件的代码签名](https://go.microsoft.com/fwlink/p/?linkid=74262)。
+* 流式处理受保护内容的驱动程序。 这包括使用受保护的用户模式音频 (PUMA) 的音频驱动程序和用于处理受保护视频路径-输出保护管理的视频设备驱动程序)  (用于处理受保护视频路径-输出保护管理 (命令。 有关详细信息，请参阅 [受保护媒体组件的代码签名](https://download.microsoft.com/download/a/f/7/af7777e5-7dcd-4800-8a0a-b18336565f5b/pmp-sign.doc)。
 
 ## <a name="signing-requirements-by-version"></a>按版本的签名要求
 

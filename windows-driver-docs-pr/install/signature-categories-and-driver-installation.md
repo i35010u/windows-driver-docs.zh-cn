@@ -3,12 +3,12 @@ title: 签名类别和驱动程序安装
 description: 签名类别和驱动程序安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 29fa0c39d69bd8020029d32fb51e836c563a73aa
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 38136bfbb87172c3fd1278ac533e9d3833594115
+ms.sourcegitcommit: 18e027265862b9c6fe3acdb913299d68fc61c023
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96838891"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99421901"
 ---
 # <a name="signature-categories-and-driver-installation"></a>签名类别和驱动程序安装
 
@@ -51,7 +51,7 @@ ms.locfileid: "96838891"
 
     ![没有有效签名的驱动程序的 "windows 安全性" 对话框的屏幕截图](images/install2.png)
 
-**注意**  在 Windows Vista 和更高版本的 Windows 上，为了使用户能够播放下一代高级内容（如 HD DVD 以及在 *高级访问内容系统 (AACS) 规范* 下授权的其他格式），系统上的所有内核模式组件都必须进行签名。 这意味着，如果管理用户选择安装未签名或已更改的驱动程序，系统将不允许系统播放高级内容。 有关如何在 Windows Vista 中保护媒体组件的详细信息，请参阅 [Windows vista 中的受保护媒体组件的代码签名](https://go.microsoft.com/fwlink/p/?linkid=74262)。
+**注意**  在 Windows Vista 和更高版本的 Windows 上，为了使用户能够播放下一代高级内容（如 HD DVD 以及在 *高级访问内容系统 (AACS) 规范* 下授权的其他格式），系统上的所有内核模式组件都必须进行签名。 这意味着，如果管理用户选择安装未签名或已更改的驱动程序，系统将不允许系统播放高级内容。 有关如何在 Windows Vista 中保护媒体组件的详细信息，请参阅 [Windows vista 中的受保护媒体组件的代码签名](https://download.microsoft.com/download/a/f/7/af7777e5-7dcd-4800-8a0a-b18336565f5b/pmp-sign.doc)。
 
  
 

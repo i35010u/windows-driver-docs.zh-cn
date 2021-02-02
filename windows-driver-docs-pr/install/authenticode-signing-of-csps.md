@@ -3,16 +3,16 @@ title: 对第三方 CSP 进行验证码签名
 description: 自定义加密服务提供程序的第三方验证码签名 (Csp) 已从 Windows Vista 开始提供，并已通过此下载返回到2013到的 Windows XP SP3 和 Windows Server 2003 SP2。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bfe8f53376e062332b865e39d1cb91b92bf3ac20
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 6a883c29e1657cf253ce8168e592c93a3d934b52
+ms.sourcegitcommit: 18e027265862b9c6fe3acdb913299d68fc61c023
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96792851"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99421899"
 ---
 # <a name="authenticode-signing-of-third-party-csps"></a>对第三方 CSP 进行验证码签名
 
-自定义加密服务提供程序的第三方验证码签名 (Csp) 已从 Windows Vista 开始提供，并已通过 [此下载](https://support.microsoft.com/help/2836198)返回到2013到的 WINDOWS XP SP3 和 windows SERVER 2003 SP2。
+自定义加密服务提供程序的第三方 Authenticode 签名 (Csp) 在 Windows Vista 和更高版本中可用。
 
 因此，Microsoft 将不再对 Csp 进行签名，并且手动 CSP 签名服务已停用。 cspsign@microsoft.comMicrosoft 将不再处理发送到或要签名的电子邮件和 csp cecspsig@microsoft.com 。
 
