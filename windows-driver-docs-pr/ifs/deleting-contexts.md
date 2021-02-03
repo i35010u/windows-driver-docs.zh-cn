@@ -4,28 +4,40 @@ description: 删除上下文
 keywords:
 - 上下文 WDK 文件系统微筛选器，删除
 - 正在删除上下文
-ms.date: 04/20/2017
+ms.date: 01/22/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 525e2ddd9f37cbe7162566aa69d41b90f173c05e
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 2efc217fa923c07f5d9c9b86410099921938a3cc
+ms.sourcegitcommit: 204ed37ede1cd462ef6f6c9211a223fd304da4a5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96840099"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99502044"
 ---
 # <a name="deleting-contexts"></a>删除上下文
 
+成功调用 **FltSet *Xxx* 上下文** 所 [设置](setting-contexts.md)的每个上下文都必须最终删除。
 
-## <span id="ddk_registering_the_minifilter_if"></span><span id="DDK_REGISTERING_THE_MINIFILTER_IF"></span>
+当出现以下情况时，筛选器管理器会自动删除上下文：
 
+- 上下文附加到的对象已被删除
+- 从卷中分离了微筛选器实例
+- 已卸载微筛选器驱动程序
 
-成功调用 **FltSet**_Xxx_*_上下文_* 所设置的每个上下文都必须最终删除。 不过，筛选器管理器会在其附加到的对象被删除、从卷中分离了筛选器驱动程序实例或卸载微筛选器驱动程序时自动删除上下文。 因此，微筛选器驱动程序很少需要显式删除上下文。
+*因此，微筛选器很少需要显式删除上下文。*
 
-微筛选器驱动程序可以通过调用 **FltDelete**_xxx_*_上下文_*（其中 *Xxx* 是上下文类型，或通过调用 [**FltDeleteContext**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltdeletecontext)）来删除上下文。
+微筛选器可以通过调用以下上下文删除例程之一删除上下文：
 
-只有在当前为对象设置了上下文时，才能删除该上下文。 如果上下文尚未设置，或者它已由成功调用 **FltSet**_Xxx_*_上下文_* 替换，则无法删除该上下文。
+- [**FltDeleteContext**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltdeletecontext)
+- [**FltDeleteFileContext**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltdeletefilecontext)
+- [**FltDeleteInstanceContext**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltdeleteinstancecontext)
+- [**FltDeleteStreamContext**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltdeletestreamcontext)
+- [**FltDeleteStreamHandleContext**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltdeletestreamhandlecontext)
+- [**FltDeleteTransactionContext**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltdeletetransactioncontext)
+- [**FltDeleteVolumeContext**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltdeletevolumecontext)
 
-在调用 **FltDelete**_Xxx_*_上下文_* 时，如果不为 **NULL**，则将在 *OldContext* 参数中返回旧上下文。 如果 *OldContext* 参数为 **NULL**，筛选器管理器将减少上下文中的引用计数，除非微微筛选器驱动程序对其具有未完成的引用，否则会释放该引用计数。
+只有在当前为 [对象设置](setting-contexts.md)了上下文时，才能删除该上下文。 如果上下文尚未设置，或者它已由成功调用 **FltSet *Xxx* 上下文** 替换，则无法删除该上下文。
+
+**FltDelete *Xxx* 上下文** 例程返回指向 *OldContext* 参数中的旧上下文的指针，如果 *OldContext* 为非 **NULL** ，并且未指向 NULL_CONTEXT。 如果 *OldContext* 为 **NULL**，则筛选器管理器将减少上下文中的引用计数，除非微筛选器没有未完成的引用，否则将会释放该计数。
 
 下面的代码示例演示如何删除流上下文：
 
@@ -34,13 +46,19 @@ status = FltDeleteStreamContext(
  FltObjects->Instance,      //Instance
  FltObjects->FileObject,    //FileObject
            &oldContext);              //OldContext
-...
+//
+// Perform any needed processing
+// ...
+//
 if (oldContext != NULL) {
  FltReleaseContext(oldContext);
 }
 ```
 
-在此示例中， [**FltDeleteStreamContext**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltdeletestreamcontext) 从流中删除流上下文，但不会减小上下文的引用计数，因为 *OldContext* 参数为非 **NULL**。 **FltDeleteStreamContext** 返回 *OldContext* 参数中已删除上下文的地址。 执行任何所需的处理后，调用方必须通过调用 **FltReleaseContext** 来释放已删除的上下文。
+在此示例中， [**FltDeleteStreamContext**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltdeletestreamcontext)：
 
- 
+- 从流中删除流上下文。
+- 不 *会减小上下文* 的引用计数，因为 *OldContext* 参数为非 NULL。
+- 返回从 *OldContext* 参数中的流) 删除的上下文的已删除 (上下文的地址。
 
+由于非空的 *OldContext* 参数，执行任何所需的处理后，筛选器必须通过调用 [**FltReleaseContext**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltreleasecontext)来释放已删除的上下文。
