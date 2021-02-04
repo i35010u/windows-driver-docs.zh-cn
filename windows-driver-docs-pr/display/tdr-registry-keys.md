@@ -14,18 +14,18 @@ keywords:
 ms.date: 10/06/2020
 ms.localizationpriority: medium
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 0f76136ffe44e6e588e313771f4204bcb89a5554
-ms.sourcegitcommit: 66043df62672b79a8f9fcb0bc2deb26b8f182fb6
+ms.openlocfilehash: 6d6a688182353a40e81dbd49e1220019a0b2d432
+ms.sourcegitcommit: 0b60dbbac80f1578b0217b7cffc5b72af755725f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96912465"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99529857"
 ---
 # <a name="testing-and-debugging-tdr"></a>测试和调试 TDR
 
 ## <a name="tdr-tests-in-whlk"></a>WHLK 中的 TDR 测试
 
-[Windows 硬件实验室工具包](/windows-hardware/test/hlk/) (WHLK) 包含开发人员可用于测试和调试的特定于 TDR 的测试。 例如，可以使用 [**SIMULATEPREEMPTION TDR**](/windows-hardware/test/hlk/testref/86be5032-cfcd-4ee5-a515-0e3ebc0cb6f4)手动触发 GPU TDR。 有关各种 TDR 相关测试的详细信息，请参阅 [**设备。**](/windows-hardware/test/hlk/testref/device-graphics)
+[Windows 硬件实验室工具包](/windows-hardware/test/hlk/) (WHLK) 包含驱动程序开发人员可用于测试和调试的特定于 TDR 的测试。 例如，开发人员可以使用 [**SIMULATEPREEMPTION TDR**](/windows-hardware/test/hlk/testref/86be5032-cfcd-4ee5-a515-0e3ebc0cb6f4)手动触发 GPU TDR。 有关各种 TDR 相关测试的详细信息，请参阅 [**设备。**](/windows-hardware/test/hlk/testref/device-graphics)
 
 ## <a name="tdr-registry-keys-for-testing-and-debugging"></a>TDR 用于测试和调试的注册表项
 
@@ -46,6 +46,7 @@ ValueData : TdrLevelXxx (see the following table)
 ```
 
 其中，TdrLevel *Xxx* 可以是以下值之一：
+
 | 值 | 含义 |
 | ----- | ------- |
 | TdrLevelOff (0)  | 已禁用检测 |
