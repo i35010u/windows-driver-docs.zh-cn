@@ -38,7 +38,7 @@
               href: accessing-user-buffers.md
             - name: 管理文件名称
               href: managing-file-names.md
-            - name: 管理上下文
+            - name: 微筛选器上下文支持
               href: managing-contexts.md
             - name: 由筛选器驱动程序生成的 I/O 请求
               href: i-o-requests-generated-by-the-minifilter-driver.md
@@ -162,9 +162,9 @@
               href: accessing-user-buffers-in-a-preoperation-callback-routine.md
             - name: 访问后操作回调例程中的用户缓冲区
               href: accessing-user-buffers-in-a-postoperation-callback-routine.md
-    - name: 管理上下文
+    - name: 筛选器驱动程序上下文
       items:
-        - name: 管理筛选器驱动程序中的上下文
+        - name: 关于微筛选器上下文
           href: managing-contexts-in-a-minifilter-driver.md
         - name: 注册上下文类型
           href: registering-context-types.md
