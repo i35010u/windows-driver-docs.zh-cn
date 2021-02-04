@@ -4,14 +4,14 @@ description: 在 Windows 驱动程序源代码中使用静态工具和 CodeQL �
 keywords:
 - 动态验证工具 WDK
 - 静态验证工具 WDK
-ms.date: 12/10/2020
+ms.date: 02/03/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 24cf39d05d986baa371de93bbc2e3c0ac77c01e2
-ms.sourcegitcommit: 32f483443ea3c90c5202aaa6f474c976b589fd1a
+ms.openlocfilehash: 4ad6bea2425799dc74196a36b71018c6328dd6a6
+ms.sourcegitcommit: 91632914d86484a6ab6340b04c1ee2d92ff7cf09
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99238082"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99534282"
 ---
 # <a name="codeql-and-the-static-tools-logo-test"></a>CodeQL 和静态工具徽标测试
 
@@ -126,7 +126,7 @@ codeql database create --help
 
 ### <a name="example"></a>示例
 
-使用用于生成驱动程序源代码的命令行环境（例如 [企业 Windows 驱动程序工具包 (EWDK) ](../develop/using-the-enterprise-wdk.md)）导航到克隆了存储库的 CodeQL 工具文件夹。
+使用用于生成驱动程序源代码的命令行环境（例如 [企业 Windows 驱动程序工具包 (EWDK) ](../develop/using-the-enterprise-wdk.md)）导航到克隆了存储库的 CodeQL 工具文件夹。 如果要使用 Visual Studio 生成驱动程序，则可以将 CodeQL 查询配置为作为后期生成事件运行，如本主题中的 [Visual Studio 后期生成事件](#visual-studio-post-build-event) 中所述。
 
 此示例将处理评估 GitHub 上提供的 kmdfecho 驱动程序示例。
 
@@ -159,7 +159,6 @@ msbuild /t:rebuild "C:\codeql-home\drivers\kmdf\kmdfecho.sln"
 | 数据库              | C:\codeql-home\databases           |
 | 待测试的驱动程序代码 | C:\codeql-home\drivers\kmdf        |
 | 查询套件与驱动程序特定的查询 | C:\codeql-home\Windows-Driver-Developer-Supplemental-Tools\codeql\windows-drivers\suites      |
-
 
 ## <a name="perform-analysis"></a>执行分析
 
@@ -374,7 +373,7 @@ Microsoft 建议在 *所有* 驱动程序源代码上运行的查询包括：
 
 ## <a name="view-analysis"></a>查看分析
 
-在上一部分中运行分析命令的结果可以 [SARIF](https://codeql.github.com/docs/codeql-overview/codeql-glossary/#sarif-file) 文件格式查看。  有关 SARIF 输出的详细信息，请参阅 [SARIF 概述](https://codeql.github.com/docs/codeql-cli/sarif-output/#sarif-output)。
+在上一部分中运行分析命令的结果可以 [SARIF](https://codeql.github.com/docs/codeql-overview/codeql-glossary/#sarif-file) 文件格式查看。  有关 SARIF 输出的详细信息可在 [SARIF 输出](https://codeql.github.com/docs/codeql-cli/sarif-output/)中找到。 有关 SARIF 标准的信息，请参阅 [OASIS 静态分析结果交换格式 (SARIF) ](https://github.com/oasis-tcs/sarif-spec)。
 
 SARIF 文件包含已运行的每个查询的 " **结果** " 部分，其中包含有关已完成分析的详细信息。  例如，如果查询发现一个漏洞，则 SARIF 文件将包含该漏洞的详细信息以及发现缺陷的位置的详细信息。 如果未找到任何漏洞，则结果部分将为空。
 
@@ -393,3 +392,55 @@ CodeQL 结果遵循相同的模型，该模型使用 DVL 来表明要认证的�
 将 sarif 文件放置在 .vcxproj 文件所在的同一目录中，并为其生成 DVL。  如果文件以 *". sarif"* 结尾，则结果文件的确切名称并不重要。 在 WDK 中提供提交 SARIF 结果文件的功能，预览版本20190及更高版本。
 
 有关如何生成 DVL 的说明，请参阅 [创建驱动程序验证日志](../develop/creating-a-driver-verification-log.md)。 有关静态工具徽标 HLK 测试的 DVL 放置位置的指南，请参阅 [运行测试](/windows-hardware/test/hlk/testref/6ab6df93-423c-4af6-ad48-8ea1049155ae#running-the-test)。
+
+## <a name="visual-studio-post-build-event"></a>Visual Studio 生成后事件
+
+如果使用 Visual Studio 构建驱动程序，则可以将 CodeQL 查询配置为作为后期生成事件运行。
+
+在此示例中，将在目标位置中创建一个小的批处理文件，并将其称为 "后期生成事件"。 有关 Visual Studio c + + 生成事件的详细信息，请参阅 [指定生成事件](/cpp/build/specifying-build-events)。
+
+1. 创建一个小型批处理文件，该文件重新创建 CodeQL 数据库，然后使用最新的数据库运行所需的查询。  在此示例中，批处理文件将命名为 `RunCodeQLRebuildQuery.bat` 。 修改示例批处理文件中显示的路径，以匹配目录位置。
+
+```command
+ECHO ">>> Running CodeQL Security Rule V 1.0 <<<"
+ECHO ">>> Removing previously created rules database <<<"
+rmdir /s/q C:\codeql-home\databases\kmdf
+CALL C:\codeql-home\codeql\codeql\codeql.cmd database create -l=cpp -s="C:\codeql-home\drivers\kmdf" -c "msbuild /p:Configuration=Release /p:Platform=x64 C:\codeql-home\drivers\kmdf\kmdfecho.sln /t:rebuild /p:PostBuildEventUseInBuild=false " "C:\codeql-home\databases\kmdf" -j 0
+CALL C:\codeql-home\codeql\codeql\codeql database analyze "C:\codeql-home\databases\kmdf" "C:\codeql-home\Windows-Driver-Developer-Supplemental-Tools\codeql\codeql-queries\cpp\ql\src\Likely Bugs\Underspecified Functions" --format=sarifv2.1.0 --output=C:\codeql-home\databases\kmdf.sarif -j 0 --rerun
+ECHO ">>> Loading SARIF Results in Visual Studio <<<"
+CALL devenv /Edit C:\codeql-home\databases\kmdf.sarif
+SET ERRORLEVEL = 0
+```
+
+2. 在批处理文件中使用 [devenv.exe/Edit](/visualstudio/ide/reference/edit-devenv-exe) 选项，以在 Visual Studio 的现有实例中打开 SARIF 结果文件。 若要查看 SARIF 结果，请安装 [适用于 Visual Studio 的 MICROSOFT SARIF 查看器](https://marketplace.visualstudio.com/items?itemName=WDGIS.MicrosoftSarifViewer)。 有关详细信息，请参阅该页上的说明。
+
+3. 在驱动程序项目中，导航到 "项目属性"。 在 "  **配置** " 下拉配置中，选择要用 CodeQL 检查的生成配置。 例如，" *发布* " 配置。 因为创建 CodeQL 数据库并运行查询需要几分钟时间，所以你可能会决定不在项目的调试配置上运行 CodeQL。
+
+4. 在驱动程序项目属性中选择 " **生成事件** " 和 "生成 **后事件** "。
+
+5. 提供批处理文件的路径和后期生成事件的说明。
+
+![显示配置为命令行选项的批处理文件的 Visual Studio 后期生成事件配置](images/codeql-visual-studio-post-build-event.png)
+
+6. 当项目生成时，在生成输出结束时，将显示运行批处理文件的结果。
+
+```command
+...
+
+1>Starting evaluation of codeql-cpp\Likely Bugs\Underspecified Functions\MistypedFunctionArguments.ql.
+1>Starting evaluation of codeql-cpp\Likely Bugs\Underspecified Functions\TooManyArguments.ql.
+1>Starting evaluation of codeql-cpp\Likely Bugs\Underspecified Functions\TooFewArguments.ql.
+1>Starting evaluation of codeql-cpp\Likely Bugs\Underspecified Functions\ImplicitFunctionDeclaration.ql.
+1>[1/4 eval 4.4s] Evaluation done; writing results to codeql-cpp\Likely Bugs\Underspecified Functions\TooManyArguments.bqrs.
+1>[2/4 eval 4.4s] Evaluation done; writing results to codeql-cpp\Likely Bugs\Underspecified Functions\TooFewArguments.bqrs.
+1>[3/4 eval 4.5s] Evaluation done; writing results to codeql-cpp\Likely Bugs\Underspecified Functions\ImplicitFunctionDeclaration.bqrs.
+1>[4/4 eval 5.2s] Evaluation done; writing results to codeql-cpp\Likely Bugs\Underspecified Functions\MistypedFunctionArguments.bqrs.
+1>Shutting down query evaluator.
+1>Interpreting results.
+1>">>> Loading SARIF Results in Visual Studio <<<"
+```
+
+7. 查看 SARIF 文件的结果，并解决任何已确定的问题。 有关详细信息，请参阅本主题前面的 [查看分析](#view-analysis) 。
+
+
+

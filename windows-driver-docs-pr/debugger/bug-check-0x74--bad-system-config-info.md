@@ -4,7 +4,7 @@ description: BAD_SYSTEM_CONFIG_INFO bug 检查的值为0x00000074。 此错误�
 keywords:
 - Bug 检查 0x74 BAD_SYSTEM_CONFIG_INFO
 - BAD_SYSTEM_CONFIG_INFO
-ms.date: 03/24/2019
+ms.date: 01/29/2021
 topic_type:
 - apiref
 api_name:
@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a5f8d4232fe724c982f230d41426843cd1823020
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: a4b69b7238a2ff96992e4f6d4a2ce8484ac2f3fe
+ms.sourcegitcommit: 91632914d86484a6ab6340b04c1ee2d92ff7cf09
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96787021"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99534277"
 ---
 # <a name="bug-check-0x74-bad_system_config_info"></a>Bug 检查0x74：错误的 \_ 系统 \_ 配置 \_ 信息
 
@@ -38,7 +38,7 @@ ms.locfileid: "96787021"
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -77,7 +77,7 @@ ms.locfileid: "96787021"
 
 检查 Windows 系统事件日志，以查看是否存在任何与注册表相关的错误事件。 如果事件列出了该错误发生在中的 hive 或特定键，则为。
 
-[**！分析**](-analyze.md)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。
+[!analyze](-analyze.md) 调试扩展显示有关 bug 检查的信息，并有助于确定根本原因  。
 
 ```dbgcmd
 BAD_SYSTEM_CONFIG_INFO (74)
@@ -140,8 +140,13 @@ Index 5:     e9dd6ce5 kcb=ffffd805e4180e48 cell=00812970 f=00200000 \REGISTRY\MA
 
 ```
 
-<a name="remarks"></a>备注
-----------
+## <a name="remarks"></a>备注
+
+有关确定蓝屏原因的一般信息，请参阅 [蓝色屏幕数据](blue-screen-data.md)。
+
+最好确认是否有足够的硬盘驱动器或 SSD 存储可用于使操作系统正常运行。
+
+系统文件检查器工具可查找 Windows 中的损坏。 有关详细信息，请参阅 [使用系统文件检查器工具修复丢失或损坏的系统文件](https://support.microsoft.com/topic/use-the-system-file-checker-tool-to-repair-missing-or-corrupted-system-files-79aa86cb-ca52-166a-92a3-966e85d4094e)。
 
 尝试启动进入安全模式，然后正常重新启动操作系统。 如果重新启动不能解决问题，则注册表损坏情况太大。 请尝试以下步骤。
 
