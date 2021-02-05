@@ -1,14 +1,14 @@
 ---
 title: JavaScript 扩展中的本机调试器对象
 description: 本机调试器对象表示调试器环境的各种构造和行为。 对象可以传递到 (中，也可以在) JavaScript 扩展中获取。
-ms.date: 09/07/2019
+ms.date: 02/02/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: f12f819968c3bdf85d48d75337dbef4b63c0bf5f
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 282774c672d7a8709cfb9c08f77db72420976390
+ms.sourcegitcommit: 5a7c96139b0ae0dd0d6aae6561f25e0b26a2c5b1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96792403"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99568871"
 ---
 # <a name="native-debugger-objects-in-javascript-extensions"></a>JavaScript 扩展中的本机调试器对象
 
@@ -121,10 +121,8 @@ KD **：将调试器附加** 到 (实时用户模式、等的单个会话 (目�
 
 **调试程序. 模块**：进程的地址空间中的单个模块
 
-
  
-
-**附加数据模型对象**
+**其他数据模型对象**
 
 此外，还提供了一些由核心数据模型定义的其他数据模型对象。
 
@@ -141,7 +139,6 @@ KD **：将调试器附加** 到 (实时用户模式、等的单个会话 (目�
 **DataModel 可迭代**：应用于每个可迭代的对象
 
 **DataModel**：应用于具有显示字符串转换的每个对象
-
 
  
 
@@ -192,7 +189,6 @@ var comProcessExtension =
 
 `this.__process = process;`
 
- 
 
 ```javascript
 class comNamespace
@@ -363,10 +359,9 @@ function initializeScript()
     Modules  
 ```
 
-加载 JavaScript 脚本提供程序和扩展。
+加载 JavaScript 扩展。
 
 ```dbgcmd
-0:000:x86> !load jsprovider.dll
 0:000:x86> .scriptload C:\JSExtensions\GipTableAbstractor.js
 JavaScript script successfully loaded from 'C:\JSExtensions\GipTableAbstractor.js'
 ```
@@ -456,6 +451,8 @@ Debugger.Sessions.First().Processes.First().Threads.Duplicate(2),d              
     [3]              : intelppm!MWaitIdle+0x18 (fffff805`0e351348) 
 …
 ```
+
+
 
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 

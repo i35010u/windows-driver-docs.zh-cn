@@ -1,14 +1,14 @@
 ---
 title: JavaScript 调试器示例脚本
 description: 本主题提供有关用户和内核模式 JavaScript 代码示例的信息，如数据筛选即插即用设备树示例。
-ms.date: 02/27/2019
+ms.date: 02/02/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: e896b23bad1fa6df7bca7f73e4f66369bbdf77ff
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 595037f3989fc8373b69bfc7c8ec57ef187b7a80
+ms.sourcegitcommit: 5a7c96139b0ae0dd0d6aae6561f25e0b26a2c5b1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96833183"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99568875"
 ---
 # <a name="javascript-debugger-example-scripts"></a>JavaScript 调试器示例脚本
 
@@ -50,13 +50,7 @@ function sayHi()
 }
 ```
 
-3. 使用 [**load (负载扩展 DLL)**](-load---loadby--load-extension-dll-.md) 命令加载 JavaScript 提供程序。
-
-```dbgcmd
-0:000> .load jsprovider.dll
-```
-
-4. 使用 [**scriptrun (运行脚本)**](-scriptrun--run-script-.md)命令加载和执行脚本。 Scriptrun 命令将在 root/top 和函数名称 *initializeScript* 和 *invokeScript* 下运行代码。
+3. 使用 [**scriptrun (运行脚本)**](-scriptrun--run-script-.md)命令加载和执行脚本。 Scriptrun 命令将在 root/top 和函数名称 *initializeScript* 和 *invokeScript* 下运行代码。
 
 ```dbgcmd
 0:000> .scriptrun c:\WinDbg\Scripts\HelloWorld.js
@@ -64,7 +58,7 @@ JavaScript script successfully loaded from 'c:\WinDbg\Scripts\HelloWorld.js'
 ***> Hello World! 
 ```
 
-5. 如果脚本包含唯一命名的函数，请使用 dx 命令执行该函数，该函数位于调试程序中。*ScriptName*。目录.*FunctionName*。
+4. 如果脚本包含唯一命名的函数，请使用 dx 命令执行该函数，该函数位于调试程序中。*ScriptName*。目录.*FunctionName*。
 
 ```dbgcmd
 0:001> dx Debugger.State.Scripts.HelloWorld.Contents.sayHi()

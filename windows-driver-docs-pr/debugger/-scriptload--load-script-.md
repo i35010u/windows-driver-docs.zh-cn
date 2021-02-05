@@ -11,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 274da2fd2c9aadbe692aab51646a956302169e8e
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 44ae6aa3ff48778c984c3b514b83b6c893fe71f0
+ms.sourcegitcommit: 5a7c96139b0ae0dd0d6aae6561f25e0b26a2c5b1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96805777"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99568863"
 ---
 # <a name="scriptload-load-script"></a>.scriptload（加载脚本）
 
@@ -88,10 +88,13 @@ Scriptload 命令将在 JavaScript 中执行以下命令。
 
 **惠?**
 
-使用任何脚本命令之前，需要加载脚本提供程序。 使用 [**load (负载扩展 DLL)**](-load---loadby--load-extension-dll-.md) 命令加载 JavaScript 提供程序。
+使用任何脚本命令之前，需要加载脚本提供程序。 使用 scriptproviders 命令确认已加载 JavaScript 提供程序。
 
 ```dbgcmd
-0:000> .load jsprovider.dll
+0:000> .scriptproviders
+Available Script Providers:
+    NatVis (extension '.NatVis')
+    JavaScript (extension '.js')
 ```
 
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅

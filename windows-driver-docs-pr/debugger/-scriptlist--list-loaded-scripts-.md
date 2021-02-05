@@ -11,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e30392ef0c2209040b8b0e7427e561fa6b72c13
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 3644ae32b90c69d1ae74175a42c33548170455fb
+ms.sourcegitcommit: 5a7c96139b0ae0dd0d6aae6561f25e0b26a2c5b1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96805783"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99568859"
 ---
 # <a name="scriptlist-list-loaded-scripts"></a>.scriptlist（列出已加载的脚本）
 
@@ -72,11 +72,7 @@ Command Loaded Scripts:
 
 **惠?**
 
-使用任何脚本命令之前，需要加载脚本提供程序。 使用 [**load (负载扩展 DLL)**](-load---loadby--load-extension-dll-.md) 命令加载 JavaScript 提供程序。
-
-```dbgcmd
-0:000> .load jsprovider.dll
-```
+使用任何脚本命令之前，需要加载脚本提供程序。
 
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 

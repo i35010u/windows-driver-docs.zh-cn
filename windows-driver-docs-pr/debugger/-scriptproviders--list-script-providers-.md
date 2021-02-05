@@ -3,7 +3,7 @@ title: .scriptproviders（列出脚本提供程序）
 description: Scriptproviders 命令列出活动脚本提供程序。
 keywords:
 - scriptproviders (列出) Windows 调试的脚本提供程序
-ms.date: 05/23/2017
+ms.date: 02/02/2021
 topic_type:
 - apiref
 api_name:
@@ -11,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: bbb0d3fcab79f259d26f49158ca6cdec02f1ef3d
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 2084a0d624f6666585b075a62d302c4e488f7da7
+ms.sourcegitcommit: 5a7c96139b0ae0dd0d6aae6561f25e0b26a2c5b1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96791665"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99568857"
 ---
 # <a name="scriptproviders-list-script-providers"></a>.scriptproviders（列出脚本提供程序）
 
@@ -73,25 +73,10 @@ Available Script Providers:
 
 **惠?**
 
-使用任何脚本命令之前，需要加载脚本提供程序。 使用 [**load (负载扩展 DLL)**](-load---loadby--load-extension-dll-.md) 命令加载 JavaScript 提供程序。
+使用任何脚本命令之前，需要加载脚本提供程序。
 
-```dbgcmd
-0:000> .load jsprovider.dll
-```
-
-## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
-
+## <a name="see-also"></a>另请参阅
 
 [JavaScript 调试器脚本](javascript-debugger-scripting.md)
 
 [**.scriptload（加载脚本）**](-scriptload--load-script-.md)
-
- 
-
- 
-
-
-
-
-
-

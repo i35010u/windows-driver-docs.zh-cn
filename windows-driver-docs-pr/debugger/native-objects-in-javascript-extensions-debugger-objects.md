@@ -1,14 +1,14 @@
 ---
 title: JavaScript 扩展中的本机调试器对象 - 调试器对象详细信息
 description: 本机调试器对象表示调试器环境的各种构造。 本主题介绍 JavaScript 扩展中的本机调试器对象的其他详细信息。
-ms.date: 01/15/2020
+ms.date: 02/02/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 487e1f0b75419fd492871799b5ee67f0183c3b9f
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 553c7ea7a638ea40a8e605b83d4e5288ded42f3a
+ms.sourcegitcommit: 5a7c96139b0ae0dd0d6aae6561f25e0b26a2c5b1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96828869"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99568873"
 ---
 # <a name="native-debugger-objects-in-javascript-extensions---debugger-object-details"></a>JavaScript 扩展中的本机调试器对象 - 调试器对象详细信息
 
@@ -19,6 +19,8 @@ ms.locfileid: "96828869"
 有关调试器对象 JavaScript 扩展的信息，请参阅 [Javascript 扩展中的本机调试器对象](native-objects-in-javascript-extensions.md)。
 
 有关使用 JavaScript 的常规信息，请参阅 [Javascript 调试器脚本](javascript-debugger-scripting.md)。
+
+例如，JavaScript 脚本和扩展，调试器团队在中承载 GitHub 存储库 https://github.com/Microsoft/WinDbg-Samples 。
 
 ## <a name="span-iddebugger-objectsspanspan-iddebugger-objectsspanspan-iddebugger-objectsspandebugger-objects-in-javascript-extensions"></a><span id="Debugger-Objects"></span><span id="debugger-objects"></span><span id="DEBUGGER-OBJECTS"></span>JavaScript 扩展中的调试器对象
 
@@ -55,22 +57,22 @@ JavaScript 中的属性访问的常规方法--对象名称和对象 \[ 属性名
 
 | 方法             | 签名                  | 说明                                                                                                                                |
 |--------------------|----------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
-| hostContext        | properties                   | 返回一个对象，该对象表示对象位于 (地址空间、调试目标等的上下文中。)                               |
-| targetLocation     | properties                   | 返回一个对象，该对象是对象在地址空间（ (虚拟地址、注册、子寄存器等）中的抽象对象。)  |
-| targetSize         | properties                   |  (有效地返回对象的大小： sizeof (&lt; 对象类型 &gt;)                                                                 |
+| hostContext        | 属性                   | 返回一个对象，该对象表示对象位于 (地址空间、调试目标等的上下文中。)                               |
+| targetLocation     | 属性                   | 返回一个对象，该对象是对象在地址空间（ (虚拟地址、注册、子寄存器等）中的抽象对象。)  |
+| targetSize         | 属性                   |  (有效地返回对象的大小： sizeof (&lt; 对象类型 &gt;)                                                                 |
 | addParentModel     | addParentModel (对象)     | 将类似于 JavaScript 原型、但在数据模型端) 的新父模型添加到对象中 (                                          |
 | removeParentModel  | removeParentModel (对象)  | 从对象中移除给定的父模型                                                                                               |
-| runtimeTypedObject | properties                   | 对对象执行分析，并尝试将其转换为运行时 (最常派生) 类型                                                 |
-| targetType         | properties                   | JavaScript 扩展可以直接访问基础语言的类型系统。 此访问通过类型对象的概念来表示。 有关详细信息，请参阅 [JavaScript 扩展中的本机调试器对象-类型对象](native-objects-in-javascript-extensions-type-objects.md)  |
+| runtimeTypedObject | 属性                   | 对对象执行分析，并尝试将其转换为运行时 (最常派生) 类型                                                 |
+| targetType         | 属性                   | JavaScript 扩展可以直接访问基础语言的类型系统。 此访问通过类型对象的概念来表示。 有关详细信息，请参阅 [JavaScript 扩展中的本机调试器对象-类型对象](native-objects-in-javascript-extensions-type-objects.md)  |
 
 如果对象是一个指针，则会将以下属性 (，并将方法投影到用于输入 JavaScript 的指针) ：
 
 | 属性名称 | 签名      | 说明                                                                    |
 |---------------|----------------|--------------------------------------------------------------------------------|
 | add           | 。添加 (值)     | 在指针和指定的值之间执行指针数学加法运算     |
-| address       | properties       | 将指针的地址作为 (库类型的64位序号对象返回)  |
+| address       | 属性       | 将指针的地址作为 (库类型的64位序号对象返回)  |
 | 取消引用   | 。取消引用 ( # A1 | 取消引用指针并返回基础对象                     |
-| isNull        | properties       | 返回指针值是否为 nullptr (0)                         |
+| isNull        | 属性       | 返回指针值是否为 nullptr (0)                         |
 
 **与本机调试器对象相关的特殊类型**
 
@@ -197,10 +199,10 @@ JavaScript 提供程序将一个名为 host 的对象插入到它加载的每个
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">“属性”</th>
+<th align="left">名称</th>
 <th align="left">签名</th>
 <th align="left">存在阶段</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -218,19 +220,19 @@ JavaScript 提供程序将一个名为 host 的对象插入到它加载的每个
 </tr>
 <tr class="odd">
 <td align="left">currentProcess</td>
-<td align="left"><p>properties</p></td>
+<td align="left"><p>属性</p></td>
 <td align="left">2</td>
 <td align="left">返回对象，该对象表示调试器的当前进程</td>
 </tr>
 <tr class="even">
 <td align="left">currentSession</td>
-<td align="left"><p>properties</p></td>
+<td align="left"><p>属性</p></td>
 <td align="left">2</td>
 <td align="left">返回对象，该对象表示调试器的当前会话 (目标、转储等 .。。正在调试 ) </td>
 </tr>
 <tr class="odd">
 <td align="left">Thread.currentthread.priority</td>
-<td align="left"><p>properties</p></td>
+<td align="left"><p>属性</p></td>
 <td align="left">2</td>
 <td align="left">返回表示调试器的当前线程的对象</td>
 </tr>
@@ -284,7 +286,7 @@ JavaScript 提供程序将一个名为 host 的对象插入到它加载的每个
 </tr>
 <tr class="even">
 <td align="left">命名空间</td>
-<td align="left"><p>properties</p></td>
+<td align="left"><p>属性</p></td>
 <td align="left">2</td>
 <td align="left">提供对调试器的根命名空间的直接访问。 例如，可以通过主机访问第一个调试目标的进程列表。第一个 ( # A1。使用此属性的进程</td>
 </tr>
@@ -349,7 +351,7 @@ JavaScript 提供程序将一个名为 host 的对象插入到它加载的每个
 
 宿主对象的诊断子命名空间包含以下各项。
 
-| “属性”     | 签名           | 存在阶段 | 描述                                                                                                                                                                                                                                                                                                                                                   |
+| 名称     | 签名           | 存在阶段 | 说明                                                                                                                                                                                                                                                                                                                                                   |
 |----------|---------------------|---------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | debugLog | debugLog (对象 ... )  | 1             | 这为脚本扩展提供了 printf 样式的调试。 目前，debugLog 的输出将路由到调试器的输出控制台。 在以后的某个时间点，还提供了一些计划以灵活地路由此输出。 注意：不应将其用作将用户输出打印到控制台的方法。 将来可能不会将其路由。 |
 
@@ -366,10 +368,10 @@ JavaScript 提供程序将一个名为 host 的对象插入到它加载的每个
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">“属性”</th>
+<th align="left">名称</th>
 <th align="left">签名</th>
 <th align="left">存在阶段</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>

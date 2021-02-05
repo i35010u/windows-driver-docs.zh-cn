@@ -3,7 +3,7 @@ title: .scriptdebug（调试 JavaScript）
 description: 使用 scriptdebug 命令调试 JavaScript 脚本。
 keywords:
 - 。 scriptdebug 调试 JavaScript Windows 调试
-ms.date: 12/28/2017
+ms.date: 02/02/2021
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
@@ -13,22 +13,22 @@ api_name:
 - .scriptdebug (Debug JavaScript)
 api_type:
 - NA
-ms.openlocfilehash: 43a503f3c5f2891a13bc35228aea2f8a93ff668f
-ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
+ms.openlocfilehash: 8006e3c5175e0cd88e6fa47d0bf554fbd062f28c
+ms.sourcegitcommit: 5a7c96139b0ae0dd0d6aae6561f25e0b26a2c5b1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85968037"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99568861"
 ---
 # <a name="scriptdebug-debug-javascript"></a>.scriptdebug（调试 JavaScript）
 
-使用**scriptdebug**命令调试 JavaScript 脚本。
+使用 **scriptdebug** 命令调试 JavaScript 脚本。
 
 ```dbgcmd
 .scriptdebug FileName
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 *FileName*
 
@@ -61,7 +61,7 @@ ms.locfileid: "85968037"
 
 ## <a name="span-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span>附加信息
 
-有关 JavaScript 调试的概述，请参阅[Javascript 调试器脚本-Javascript 调试](javascript-debugger-scripting.md#DEBUGGING)。
+有关 JavaScript 调试的概述，请参阅  [Javascript 调试器脚本-Javascript 调试](javascript-debugger-scripting.md#DEBUGGING)。
 
 >[!NOTE] 
 > 若要对 WinDbg Preview 使用 JavaScript 调试，请以管理员身份运行调试器。
@@ -73,19 +73,13 @@ ms.locfileid: "85968037"
 
 在调试 JavaScript 之前，请完成以下步骤。
 
-1. 使用[**load （加载扩展 DLL）**](-load---loadby--load-extension-dll-.md)命令加载 JavaScript 脚本提供程序。 
-
-    ```dbgcmd
-    0:000> .load jsprovider.dll
-    ```
-
-2. 加载示例脚本。
+1. 加载示例脚本。
 
     ```dbgcmd
     0:000> .scriptload C:\MyScripts\DebuggableSample.js
     ```
 
-若要开始主动调试脚本，请使用**scriptdebug**命令。
+若要开始主动调试脚本，请使用 **scriptdebug** 命令。
 
 ```dbgcmd
 0:000> .scriptdebug C:\MyScripts\DebuggableSample.js
@@ -135,7 +129,7 @@ Script Debugger Commands (*NOTE* IDs are **PER SCRIPT**):
 
 ### <a name="events"></a>事件
 
-使用**sx**脚本调试器命令可以查看可以捕获的事件列表。
+使用 **sx** 脚本调试器命令可以查看可以捕获的事件列表。
 
 ```dbgcmd
 >>> Debug [DebuggableSample <No Position>] >sx              
@@ -146,7 +140,7 @@ sx
     uh  [     active] .... Break on unhandled exception     
 ```
 
-使用**sxe** script 调试器命令启用任何中断行为。 例如，若要在输入时启用中断，以便在脚本调试器中的任何代码执行时，脚本将捕获到脚本调试器中，请使用此命令。
+使用 **sxe** script 调试器命令启用任何中断行为。 例如，若要在输入时启用中断，以便在脚本调试器中的任何代码执行时，脚本将捕获到脚本调试器中，请使用此命令。
 
 ```dbgcmd
 >>> Debug [DebuggableSample <No Position>] >sxe en          
@@ -154,7 +148,7 @@ sxe en
 Event filter 'en' is now active                             
 ```
 
-使用**sxd** script 调试器命令可以禁用任何断点行为。
+使用 **sxd** script 调试器命令可以禁用任何断点行为。
 
 ```dbgcmd                                                                                                                      
 >>> Debug [DebuggableSample 34:5] >sxd en                                                                              
@@ -164,7 +158,7 @@ Event filter 'en' is now inactive
 
 ### <a name="stack-trace"></a>堆栈跟踪
 
-使用**k**命令显示堆栈跟踪。
+使用 **k** 命令显示堆栈跟踪。
 
 ```dbgcmd
 >>> Debug [DebuggableSample 34:5] >k                                                  
@@ -194,17 +188,17 @@ someObj          : {...}
 使用以下断点命令处理其他断点。
 
 
-**bp <bpid> **：设置断点
+**bp <bpid>**：设置断点
 
-**bd <bpid> **：禁用断点
+**bd <bpid>**：禁用断点
 
-**为 <bpid> **：启用断点
+**为 <bpid>**：启用断点
 
-**bc <bpid> **：清除断点
+**bc <bpid>**：清除断点
 
 **bpc**：在当前行上设置断点
 
-**bl**：列出断点
+**bl**：列出断点 () 
 
 
 ### <a name="flow-control---navigation"></a>流控制-导航
@@ -227,7 +221,7 @@ someObj          : {...}
 使用以下命令来处理框架。
 
 
-**。 frame <index> **：切换到帧号<index>
+**。 frame <index>**：切换到帧号<index>
 
 **。 f +**：切换到下一个堆栈帧
 
@@ -236,7 +230,7 @@ someObj          : {...}
 
 ### <a name="quiting"></a>Quiting
 
-使用**detach**命令分离 JavaScript 调试器。 
+使用 **detach** 命令分离 JavaScript 调试器。 
 
 ```dbgcmd
 >>> Debug [DebuggableSample 34:5] >.detach                  
@@ -244,7 +238,7 @@ someObj          : {...}
 Debugger has been detached from script!                     
 ```
 
-使用**q**命令退出 JavaScript 调试器。 
+使用 **q** 命令退出 JavaScript 调试器。 
 
 ```dbgcmd
 >>> Debug [<NONE> ] >q                                      
