@@ -9,12 +9,12 @@ keywords:
 ms.date: 08/17/2020
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: f8f6ef154bbda7ba1f28622e3904bb044178c8a3
-ms.sourcegitcommit: af11b2eadb883846583e541ae13eb1d4e0dec220
+ms.openlocfilehash: 5f7ddfdc2d469a74c2664ddd59d6d22cbb7ed8a2
+ms.sourcegitcommit: 18e027265862b9c6fe3acdb913299d68fc61c023
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97691647"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99421903"
 ---
 # <a name="download-the-windows-driver-kit-wdk"></a>下载 Windows 驱动程序工具包 (WDK)
 
@@ -82,6 +82,9 @@ MSVC v142 - VS 2019 C++ x64/x86 Spectre-mitigated libs (v14.25)
 * [下载适用于 Windows 10 版本 2004 的 WDK](https://go.microsoft.com/fwlink/?linkid=2128854)
 
 WDK Visual Studio 扩展包含在默认 WDK 安装中。
+
+> [!TIP]
+> 如果在 Visual Studio 中找不到驱动程序项目模板，则表示 WDK Visual Studio 扩展未正确安装。 要解决此问题，请从以下位置运行 WDK.vsix 文件：C:\Program Files (x86)\Windows Kits\10\Vsix\VS2019\WDK.vsix。
 
 ## <a name="enterprise-wdk-ewdk-for-windows-10-version-2004"></a>适用于 Windows 10 版本 2004 的企业版 WDK (EWDK)
 
