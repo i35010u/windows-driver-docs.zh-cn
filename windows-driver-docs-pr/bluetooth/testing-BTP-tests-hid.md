@@ -3,12 +3,12 @@ title: Microsoft 蓝牙测试平台-HID
 description: " (BTP) HID 测试的蓝牙测试平台。"
 ms.date: 2/14/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c94a9ca125cc6817f88f533dbf908e5bd16e503
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 631d7fc06a7923b2fd36bfd4e6d7a56dbc59040e
+ms.sourcegitcommit: 76698e25b77af71155e689200c6e0cf817bfd0d7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96789183"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "100261995"
 ---
 # <a name="btp-hid-tests"></a>BTP HID 测试 #
 
@@ -36,6 +36,8 @@ BTP HID 测试将测试本地系统如何通过 BR/EDR 或 LE 与远程收音机
 ## <a name="capturing-logs"></a>捕获日志 ##
 
 若要捕获蓝牙日志，请按照 [GitHub 上适用于 Windows 存储库的总线工具](https://github.com/microsoft/busiotools/blob/master/bluetooth/tracing/readme.md)中的说明进行操作。
+
+若要分析蓝牙日志，请按照 [BTETLParse 工具](testing-BTP-tools-btetlparse.md)的说明进行操作。
 
 ## <a name="known-issues"></a>已知问题 ##
 

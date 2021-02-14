@@ -8,12 +8,12 @@ keywords:
 ms.date: 05/07/2018
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 2f750dd862c622838855cba2e2daf89e8d5381e3
-ms.sourcegitcommit: b14becba4beb4e7c843908710352ad60999f0c38
+ms.openlocfilehash: dd3c472233bcff9756c1d174c3bde9c76a1d5815
+ms.sourcegitcommit: df1cb0790b47c6dffb4afe2c5edab8721ac4a245
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97612738"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99839552"
 ---
 # <a name="other-wdk-downloads"></a>其他 WDK 下载
 
@@ -133,7 +133,7 @@ WinDbg Preview 是 WinDbg 的新版本，在重要位置构建有可扩展的调
 如果你要调试 Windows XP、Windows Server 2003、Windows Vista 或 Windows Server 2008（或者使用这些操作系统之一来运行 Windows 调试工具），则需要使用这些调试工具的 Windows 7 版本。 它包含在适用于 Windows 7 和 .NET Framework 4.0 的 SDK 中。
 
 > [!IMPORTANT]
-> 在安装适用于 Windows 7 的 SDK 时，更高版本的 Visual C++ 2010 可再发行组件可能会引发问题。 有关详细信息，请参阅 Microsoft 支持上的 [Windows SDK Fails to Install with Return Code 5100](https://support.microsoft.com/help/2717426/windows-sdk-fails-to-install-with-return-code-5100)（Windows SDK 无法安装，返回代码为 5100）。
+> 在安装适用于 Windows 7 的 SDK 时，更高版本的 Visual C++ 2010 可再发行组件可能会引发问题。
 
 获取适用于 Windows XP 的独立调试工具的方法是先下载 Windows 7 SDK：[适用于 Windows 7 和 .NET Framework 4 的 Microsoft Windows SDK](https://www.microsoft.com/download/confirmation.aspx?id=8279)。
 

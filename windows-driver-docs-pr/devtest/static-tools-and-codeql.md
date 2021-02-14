@@ -6,18 +6,20 @@ keywords:
 - 静态验证工具 WDK
 ms.date: 02/03/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ad6bea2425799dc74196a36b71018c6328dd6a6
-ms.sourcegitcommit: 91632914d86484a6ab6340b04c1ee2d92ff7cf09
+ms.openlocfilehash: a0d7a419d335c0a38085fe251ec266cf1420be85
+ms.sourcegitcommit: 76698e25b77af71155e689200c6e0cf817bfd0d7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99534282"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "100262269"
 ---
 # <a name="codeql-and-the-static-tools-logo-test"></a>CodeQL 和静态工具徽标测试
 
 Microsoft 致力于缓解 Windows 操作系统的攻击面，并确保第三方驱动程序满足强安全块对于实现该目标至关重要。  设置此安全栏的一步是 Microsoft 正在采取的操作是向 [Windows 硬件兼容性计划](/windows-hardware/design/compatibility) 添加新要求 (WHCP) 。  此要求表明所有驱动程序提交必须对驱动程序源代码使用 [CodeQL](https://securitylab.github.com/tools/codeql) 引擎，并修复任何被视为 **"必须修复"** 的冲突。
 
 GitHub 是[CodeQL](https://securitylab.github.com/tools/codeql)，它是用于保护软件的强大静态分析技术。 大范围的高价值安全查询和强大平台的组合使其成为确保第三方驱动程序代码安全的重要工具。
+
+使用 CodeQL 进行 WHCP 测试的目的是在 **[硬件实验室工具包下接受 ()](/windows-hardware/test/hlk/) 最终用户许可协议**。  对于 WHCP 参与者，HLK 的 EULA 会覆盖 GitHub 的 CodeQL 条款和条件。  在自动分析、CI 或 CD 过程中， **可以将 CodeQL 用于** 分析要作为 WHCP 的一部分提交和认证的驱动程序的常规工程过程的一部分。
 
 [静态工具徽标测试](/windows-hardware/test/hlk/testref/6ab6df93-423c-4af6-ad48-8ea1049155ae)将强制对驱动程序源代码进行分析并修复任何 **"必须修复"** 冲突。
 
@@ -92,7 +94,7 @@ C:\codeql-home\>git clone https://github.com/microsoft/Windows-Driver-Developer-
 ```
 
 > [!NOTE]
-> 使用 CodeQL 进行 WHCP 测试的目的是在 **[硬件实验室工具包下接受 ()](/windows-hardware/test/hlk/) 最终用户许可协议**。
+> 使用 CodeQL 进行 WHCP 测试的目的是在 **[硬件实验室工具包下接受 ()](/windows-hardware/test/hlk/) 最终用户许可协议**。  对于 WHCP 参与者，HLK 的 EULA 会覆盖 GitHub 的 CodeQL 条款和条件。  在自动分析、CI 或 CD 过程中， **可以将 CodeQL 用于** 分析要作为 WHCP 的一部分提交和认证的驱动程序的常规工程过程的一部分。
 
 此页假定为 Windows 开发环境，并且存储库将安装在 *C:\codeql-home* 下。
 

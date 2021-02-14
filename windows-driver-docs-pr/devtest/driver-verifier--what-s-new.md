@@ -3,12 +3,12 @@ title: 驱动程序验证器新增功能
 description: 从 Windows 2000 开始，驱动程序验证器在 Windows 的所有版本中都可用。 每个版本引入了新功能并检查如何在 Windows 驱动程序中查找 bug。 本部分总结了这些更改，并提供相关文档的链接。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 00024808c00d0d074267d063100c87a537e70d9b
-ms.sourcegitcommit: 10fecd036370f5eccb538004c5bec1fdd18c3275
+ms.openlocfilehash: 2f4a4719e360f02592cf61731871527c532590d3
+ms.sourcegitcommit: 76698e25b77af71155e689200c6e0cf817bfd0d7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98124069"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "100262259"
 ---
 # <a name="driver-verifier-whats-new"></a>驱动程序验证程序：新增功能
 
@@ -24,7 +24,7 @@ ms.locfileid: "98124069"
 ## <a name="driver-verifier-in-windows-10-updated-may-8-2018"></a>Windows 10 中的驱动程序验证程序 (*更新：5月8日 2018*) 
 
 > [!IMPORTANT]
-> 从 Windows 10 1803 之后的版本开始，运行驱动程序验证程序将不再自动启用 Windows 驱动程序框架 (WDF) 验证。 请注意以下事项：
+> 有关在 Windows 10 版本1803或更高版本的 Windows 10 上启用 WDF 验证程序的信息，请参阅 [使用 KMDF Verifier](../wdf/using-kmdf-verifier.md)。
 
 * 你仍可以在驱动程序验证程序的标志中启用 WDF 验证 `/standard` 。 有关详细信息，请参阅 [驱动程序验证程序命令语法](./verifier-command-line.md) 。
 * 如果你正在启用 DV 语法，则此更改将影响你， `/flags 0x209BB` 因为 WDF 验证将不再自动启用。
@@ -33,8 +33,6 @@ ms.locfileid: "98124069"
 
 * 新的[音频驱动程序规则](./rules-for-audio-drivers.md)
 * 新的 [AVStream 驱动程序规则](./rules-for-avstream-drivers.md)
-* 四个新的 [KMDF 驱动程序规则](./sdv-rules-for-kmdf-drivers.md)
-* 三个新的 [NDIS 驱动程序规则](./sdv-rules-for-ndis-drivers.md)
 
 ## <a name="driver-verifier-in-windows-8-1-updated-june-17-2013"></a>Windows 8-1 中的驱动程序验证程序 (*更新：6月 17 2013 日*) 
 

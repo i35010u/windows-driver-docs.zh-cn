@@ -3,39 +3,40 @@ title: 使用 KMDF 验证程序
 description: 使用 KMDF 验证程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ef72a2712cdf8ad8f34dea054bc2690d9cb20d16
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 0ef304f9a46f62f0f35b6c4ba555316d7ae10fd4
+ms.sourcegitcommit: 76698e25b77af71155e689200c6e0cf817bfd0d7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96801219"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "100255407"
 ---
 # <a name="using-kmdf-verifier"></a>使用 KMDF 验证程序
 
 
-该框架提供了可用于测试正在运行的 KMDF 驱动程序的内置验证功能。 此功能称为 KMDF Verifier，广泛验证驱动程序的状态和驱动程序传递给框架对象方法的参数。 您可以单独使用框架的验证程序，也可以结合使用常规用途的 [驱动程序验证程序 ( # A0) ](../devtest/driver-verifier.md) 工具。
+该框架提供了可用于测试正在运行的 KMDF 驱动程序的内置验证功能。 此功能称为 KMDF Verifier，广泛验证驱动程序的状态和驱动程序传递给框架对象方法的参数。 可以单独使用框架的验证程序，也可以结合使用通用 [驱动程序验证程序 (Verifier.exe) ](../devtest/driver-verifier.md) 工具。
 
 如果启用了 KMDF Verifier，框架将检查锁获取和层次结构，确保对框架的调用以正确的 IRQL 出现，验证正确的 i/o 取消和队列使用情况，并确保驱动程序和框架遵循记录的协定。 它还可以模拟内存不足的情况，以便驱动程序开发人员可以测试驱动程序是否正确响应，而无需崩溃、挂起或卸载。
 
 如果启用了 KMDF 验证程序，则当默认超时期限为60秒时，框架会中断到调试器，直到前面介绍的某些事件完成。 此时，您可以调试问题，或在调试器中键入 "g" 来重新启动超时期限。 使用 [控制验证程序行为](#controlling-the-verifiers-behavior)中所述的 **DbgWaitForSignalTimeoutInSec** 注册表值，可以更改默认超时期限。
 
-建议在测试期间运行 ( # A0) 的驱动程序验证程序，并将自己的驱动程序和 wdf01000.sys 添加到验证列表。
+建议在测试期间运行 "驱动程序验证程序" (Verifier.exe) ，并将自己的驱动程序和 wdf01000.sys 添加到验证列表。
 
-如果你的驱动程序是用 KMDF 1.9 版或更高版本生成的，并且你 Verifier.exe 运行，则会自动启用 KMDF Verifier。
+> [!NOTE]
+> 使用驱动程序验证程序的设置时，将自动启用 KMDF 验证程序 `/standard` 。 如果你使用的是 `/flags` `/standard` Windows 10 版本1803或更高版本，而不是使用驱动程序验证器设置 `/flags` `/ruleclasses` 。 WDF 的规则类为34。 若要在未使用时启用 WDF 验证 `/standard` 程序，请使用 `/ruleclasses 34` 。
 
-你还可以使用 [WDF 验证器控件应用程序 ( # A0) ](../devtest/wdf-verifier-control-application.md) 来启用和禁用 KMDF 验证程序。
+你还可以使用 [WDF 验证器控件应用程序 (WdfVerifier.exe) ](../devtest/wdf-verifier-control-application.md) 来启用和禁用 KMDF 验证程序。
 
 ## <a name="enabling-and-disabling-the-frameworks-built-in-verification"></a>启用和禁用框架的内置验证
 
 
 你可以使用以下过程手动启用 KMDF 验证程序：
 
-1.  如果已加载了驱动程序，请使用设备管理器禁用该设备。 禁用该设备将导致卸载该驱动程序。
+1.  如果已加载了驱动程序，请使用 Device Manager 禁用该设备。 禁用该设备将导致卸载该驱动程序。
 2.  在 Windows 注册表中，使用 RegEdit 将 **VerifierOn** 设置为驱动程序的 **参数 \\ Wdf** 子项中 **的 \_ 非 \_ \\ \\ \\** 零值。 非零值表示启用了 KMDF Verifier。
 
     如果子项不存在，你可能需要手动将 **VerifierOn** 添加到该子项。
 
-3.  使用设备管理器重新启用设备，从而加载驱动程序。
+3.  使用 Device Manager 重新启用设备，从而加载驱动程序。
 4.  当驱动程序调用 [**WdfDriverCreate**](/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdrivercreate)时，框架将检查注册表，如果 **VerifierOn** 为非零值，则会启用框架的验证程序。
 
 若要禁用框架的验证程序，请执行相同的步骤，但将 **VerifierOn** 的值设置为零。

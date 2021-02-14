@@ -3,28 +3,26 @@ title: 使用通用 INF 文件
 description: 如果要构建通用或移动驱动程序包，则必须使用通用 INF 文件。
 ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 6aacf2f475d3009b311496ffe73e7e069f9ba3af
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 0d1e140b999fdda8e92c6c5d4679e8ad36f693df
+ms.sourcegitcommit: 30e2f252126b36f378df9281ab861b1a360b81a6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96827041"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100360287"
 ---
 # <a name="using-a-universal-inf-file"></a>使用通用 INF 文件
 
-如果要生成 [Windows 驱动](../develop/getting-started-with-windows-drivers.md) 程序包，则必须使用通用 INF 文件。 如果要生成 Windows 桌面驱动程序包，则无需使用通用 INF 文件，但建议这样做，因为性能有好处。
-
-通用 INF 文件使用适用于 Windows 驱动程序的 [INF 语法](./general-syntax-rules-for-inf-files.md) 的子集。 通用 INF 文件安装驱动程序并配置设备硬件，但不执行任何其他操作，例如运行共同安装程序。
-
-## <a name="why-is-a-universal-inf-file-required-on-non-desktop-editions-of-windows"></a>为什么 Windows 的非桌面版本上需要通用 INF 文件？
-
-某些版本的 Windows （如 Windows 10）仅使用 Windows 10 Desktop 上提供的一部分驱动程序安装方法。 Windows 的非桌面版本的 INF 文件必须仅执行不依赖于系统运行时行为的加法运算。 带有此类受限语法的 INF 文件称为通用 INF 文件。
+某些版本的 Windows 仅使用 Windows 10 桌面上提供的一部分驱动程序安装方法。 Windows 的非桌面版本的 INF 文件必须仅执行不依赖于系统运行时行为的加法运算。 带有此类受限语法的 INF 文件称为 *通用 INF 文件*。
 
 通用 INF 文件可预测安装，每次都具有相同的结果。 安装的结果不取决于系统的运行时行为。 例如，共同安装程序引用在通用 INF 文件中无效，因为不能在脱机系统上执行其他 DLL 中的代码。
 
-因此，可以提前配置包含通用 INF 文件的驱动程序包，并将其添加到脱机系统。
+可以提前配置包含通用 INF 文件的驱动程序包，并将其添加到脱机系统。
 
-你可以使用 [InfVerif](../devtest/infverif.md) 工具来测试你的驱动程序的 INF 文件是否是通用的。
+若要测试 INF 是否是通用的，请使用 `infverif /u` 。 `/u`选项测试[DCH 设计原则和最佳做法](../develop/dch-principles-best-practices.md) (声明性) 要求。 [Windows 驱动程序](../develop/getting-started-with-windows-drivers.md)必须通过 `infverif /w` ，测试和 `/u` [驱动程序包隔离](../develop/driver-isolation.md)。
+
+有关 InfVerif 选项的列表，请参阅 [从命令行运行 InfVerif](../devtest/running-infverif-from-the-command-line.md)。
+
+如果要生成 Windows 桌面驱动程序包，则无需使用通用 INF 文件，但建议这样做，因为性能有好处。
 
 ## <a name="which-inf-sections-are-invalid-in-a-universal-inf-file"></a>通用 INF 文件中哪些 INF 部分无效？
 

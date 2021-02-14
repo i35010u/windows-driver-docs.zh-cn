@@ -3,12 +3,12 @@ title: Microsoft 蓝牙测试平台-BM.EXE-64-EVB
 description: 蓝牙测试平台 (BTP) 支持的硬件 (BM64) 。
 ms.date: 7/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e4e566ad8fbea468c42510ed10886f7aa40b2a9
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 139dbe0ddecea1a80b9159019da71786a55dfad0
+ms.sourcegitcommit: 76698e25b77af71155e689200c6e0cf817bfd0d7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96798517"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "100262001"
 ---
 # <a name="bm-64-evb-board"></a>BM-64-EVB 开发板
 
@@ -21,6 +21,10 @@ BM.EXE-64-EVB 是一个独立的评估委员会，用于测试 BTP 的音频和�
 ![BM.EXE-64-EVB 的照片](images/BM64-EVB-alpha.png)
 
 ## <a name="getting-started"></a>入门
+
+> [!CAUTION]
+>
+> 在通过 USB 或圆筒形连接器打开板之前，请删除 JP33 上的跳线（如果已安装）。 如果不这样做，可能会导致启动循环，以便在将来的 ups 中阻止枚举，并可能会导致该板无法用于 BTP 测试。
 
 若要将 BM.EXE-64-EVB 与 BTP 配合使用，必须从出厂默认值更新 BM64 的固件和 EEPROM 设置。此外，还应更新 PIC 微控制器以确保稳定性。
 从 "*文档/软件库/固件*" 选项卡上的 [**微芯片**](https://www.microchip.com/wwwproducts/en/BM64)中下载并提取最新的 BM64 软件工具包 (DSPK v 2.1.3 用于此开发) 。

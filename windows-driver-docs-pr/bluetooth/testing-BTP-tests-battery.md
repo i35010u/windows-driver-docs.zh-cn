@@ -3,12 +3,12 @@ title: Microsoft 蓝牙测试平台-BTP 电池测试
 description: 蓝牙测试平台 (BTP) 电池测试。
 ms.date: 2/14/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 77d20db9fc91e74e4146e1d9c4d64df647a7d1d8
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: cd3da71183ec0d61f2d9cfa505dc91ed4635defb
+ms.sourcegitcommit: 76698e25b77af71155e689200c6e0cf817bfd0d7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96798505"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "100261997"
 ---
 # <a name="btp-battery-tests"></a>BTP 电池测试 #
 
@@ -36,3 +36,5 @@ BTP 电池测试将测试本地系统能否观察配对远程设备上的电池�
 ## <a name="capturing-logs"></a>捕获日志 ##
 
 若要捕获蓝牙日志，请遵循 [GitHub 上的 busiotools For Windows](https://github.com/microsoft/busiotools/blob/master/bluetooth/tracing/readme.md)存储库的说明。
+
+若要分析蓝牙日志，请按照 [BTETLParse 工具](testing-BTP-tools-btetlparse.md)的说明进行操作。

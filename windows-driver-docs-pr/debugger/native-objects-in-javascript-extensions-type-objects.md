@@ -1,14 +1,14 @@
 ---
 title: JavaScript 扩展中的本机调试器对象 - 类型对象
 description: 本机调试器对象表示调试器环境的各种构造。 JavaScript 扩展可以直接访问基础语言的类型系统。 此访问通过类型对象的概念来表示。
-ms.date: 01/07/2020
+ms.date: 02/04/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e5a8ef6811af6fd8c77767a5f3e2083ac7c1878
-ms.sourcegitcommit: 5a7c96139b0ae0dd0d6aae6561f25e0b26a2c5b1
+ms.openlocfilehash: a08d88c1303d5ee65c867463f4daf87d620edfb5
+ms.sourcegitcommit: 76698e25b77af71155e689200c6e0cf817bfd0d7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99568867"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "100262267"
 ---
 # <a name="native-debugger-objects-in-javascript-extensions---type-objects"></a>JavaScript 扩展中的本机调试器对象 - 类型对象
 
@@ -30,7 +30,7 @@ ms.locfileid: "99568867"
 获取类型对象后，它将具有以下属性：
 
 <table>
-<tr><td>名称</td><td><b>Signature</b></td><td><b>说明</b></td></tr>
+<tr><td><b>名称</b></td><td><b>Signature</b></td><td><b>说明</b></td></tr>
 
 <tr><td>name</td><td>属性</td><td>返回类型的名称。</td></tr>
 
@@ -72,7 +72,7 @@ ms.locfileid: "99568867"
 
 <table>
 
-<tr><td>名称</td><td><b>Signature</b></td><td><b>说明</b></td></tr>
+<tr><td><b>名称</b></td><td><b>Signature</b></td><td><b>说明</b></td></tr>
 
 <tr><td>name</td><td>属性</td><td>返回字段的名称。</td></tr>
 
@@ -96,7 +96,7 @@ ms.locfileid: "99568867"
 
 <table>
 
-<tr><td>名称</td><td><b>Signature</b></td><td><b>说明</b></td></tr>
+<tr><td><b>名称</b></td><td><b>Signature</b></td><td><b>说明</b></td></tr>
 
 <tr><td>name</td><td>属性</td><td>返回基类的名称。</td></tr>
 
@@ -110,7 +110,7 @@ ms.locfileid: "99568867"
 
 ## <a name="code-example"></a>代码示例
 
-有关代码示例，请参阅 ImageInfo.js 脚本。 有关货到付款示例的详细信息，请参阅 [JavaScript 调试器示例脚本](javascript-debugger-example-scripts.md)。
+有关代码示例，请参阅 ImageInfo.js 脚本。 有关代码示例的详细信息，请参阅 [JavaScript 调试器示例脚本](javascript-debugger-example-scripts.md)。
 
 ```javascript
 // fieldType references basic types that should be present in **ANY** symbolic information.

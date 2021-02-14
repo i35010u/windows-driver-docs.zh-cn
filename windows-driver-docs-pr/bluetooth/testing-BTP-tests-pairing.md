@@ -3,12 +3,12 @@ title: Microsoft 蓝牙测试平台配对
 description: " (BTP) 配对测试的蓝牙测试平台。"
 ms.date: 2/14/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 7910f1c9b22aa15ef4f8a180952d45bd528086dc
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 97d9bf1c5e215df9d918b5c31a7dbdae15bbcded
+ms.sourcegitcommit: 76698e25b77af71155e689200c6e0cf817bfd0d7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96798495"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "100261993"
 ---
 # <a name="btp-pairing-tests"></a>BTP 配对测试
 
@@ -40,6 +40,8 @@ BTP 配对测试将测试本地系统如何通过 BR/EDR 或 LE 与远程无线�
 ## <a name="capturing-logs"></a>捕获日志
 
 若要捕获蓝牙日志，请遵循 [GitHub 上的 busiotools For Windows](https://github.com/microsoft/busiotools/blob/master/bluetooth/tracing/readme.md)存储库的说明。
+
+若要分析蓝牙日志，请按照 [BTETLParse 工具](testing-BTP-tools-btetlparse.md)的说明进行操作。
 
 ## <a name="known-issues"></a>已知问题
 

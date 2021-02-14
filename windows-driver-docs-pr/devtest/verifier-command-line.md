@@ -9,14 +9,14 @@ api_name:
 - Driver Verifier Command Syntax
 api_type:
 - NA
-ms.date: 04/20/2017
+ms.date: 02/12/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: e7b2f3f242a078024e2fed2bc05162ac87b3f4cb
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: c67955428cb3156ec2d6a5f5e785f294dc0d86b1
+ms.sourcegitcommit: 30e2f252126b36f378df9281ab861b1a360b81a6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96787593"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100360283"
 ---
 # <a name="driver-verifier-command-syntax"></a>驱动程序验证程序命令语法
 
@@ -26,7 +26,7 @@ ms.locfileid: "96787593"
 您可以在同一单行上键入几个选项。 例如：
 
 ```
-verifier /flags 7 /driver beep.sys flpydisk.sys
+verifier /flags 7 /driver beep.sys disksdd.sys
 ```
 
 **Windows 10**
@@ -36,6 +36,7 @@ verifier /flags 7 /driver beep.sys flpydisk.sys
 ```
   verifier /standard /all
   verifier /standard /driver NAME [NAME ...]
+  verifier {/ruleclasses | /rc} <options> [<ruleclass_1> <ruleclass_2> ...] /all
   verifier /flags <options> /all
   verifier /flags <options> /driver NAME [NAME ...]
   verifier /rules [OPTION ...]
@@ -128,13 +129,13 @@ verifier /?
 <thead>
 <tr class="header">
 <th align="left">启动 <em>模式</em></th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><span id="persistent"></span><span id="PERSISTENT"></span><strong>式</strong></p></td>
-<td align="left"><p>确保 (在多次重新启动时仍然有效) 驱动程序验证程序设置。 这是默认设置。</p></td>
+<td align="left"><p>确保 (在多次重新启动时仍然有效) 驱动程序验证程序设置。 此为默认设置。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><span id="disableafterfail"></span><span id="DISABLEAFTERFAIL"></span><strong>disableafterfail</strong></p></td>
@@ -164,7 +165,7 @@ Windows Server 2003 中引入的 (。 在 windows 7 和更高版本的 Windows �
 指定将从验证中排除的一个或多个驱动程序。 仅当选择了所有驱动程序进行验证时，此参数才适用。 *DriverList* 是按二进制名称列出的驱动程序列表，如 Driver.sys。 使用空格分隔每个驱动程序名称。 不支持通配符值，例如 \* ，sys.databases。
 
 <span id="________faults______"></span><span id="________FAULTS______"></span>**/faults**   
- (Windows Vista 和更高版本) 启用驱动程序验证器中的低资源模拟功能。 可以使用 **/faults** 来代替 **/flags 0x4**。 但是，不能将 **/flags 0x4** 与 **/faults** 子参数一起使用。
+启用驱动程序验证器中的低资源模拟功能。 可以使用 **/faults** 来代替 **/flags 0x4**。 但是，不能将 **/flags 0x4** 与 **/faults** 子参数一起使用。
 
 你可以使用以下子参数的 **/faults** 参数配置低资源模拟。
 
@@ -176,7 +177,7 @@ Windows Server 2003 中引入的 (。 在 windows 7 和更高版本的 Windows �
 <thead>
 <tr class="header">
 <th align="left">子参数</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -212,7 +213,7 @@ Windows Server 2003 中引入的 (。 在 windows 7 和更高版本的 Windows �
 <thead>
 <tr class="header">
 <th align="left">OPTION</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -267,10 +268,8 @@ Windows Server 2003 中引入的 (。 在 windows 7 和更高版本的 Windows �
 </tbody>
 </table>
 
-
-
 <span id="________flags________Options______"></span><span id="________flags________options______"></span><span id="________FLAGS________OPTIONS______"></span>**/Flags** *选项*   
-在下一次重新启动后激活指定的选项。 在 Windows 2000 中，此数字必须以十进制格式输入。 在 Windows XP 和更高版本中，可以使用十进制或十六进制 (以 **0x** 前缀) 格式输入此数字。 允许使用下列值的任意组合。
+在下一次重新启动后激活指定的选项。 可以在十进制或十六进制 (中以 **0x** 前缀) 格式输入此数字。 允许使用下列值的任意组合。
 
 <table>
 <colgroup>
@@ -429,14 +428,13 @@ Windows Server 2003 中引入的 (。 在 windows 7 和更高版本的 Windows �
 </tbody>
 </table>
 
-
-
 不能使用此方法激活 SCSI 验证或 Storport 验证选项。 有关信息，请参阅 [SCSI 验证](scsi-verification.md) 和 [Storport 验证](dv-storport-verification.md)。
+
 
 <span id="________flags________VolatileOptions______"></span><span id="________flags________volatileoptions______"></span><span id="________FLAGS________VOLATILEOPTIONS______"></span>**/Flags** *VolatileOptions*   
 指定在 Windows 2000、Windows XP 和 Windows Server 2003 中立即更改的驱动程序验证程序选项，无需重新启动。  (在 Windows Vista 中，可以对所有 **/flags** 值使用 **/volatile** 参数。 ) 
 
-在 Windows 2000 中，以十进制格式输入数字。 在 Windows XP 和 Windows 2003 中，以十进制或十六进制格式输入数字 (，) 使用 **0x** 前缀。
+以十进制或十六进制格式输入数字， (使用 **0x** 前缀) 。
 
 允许使用下列值的任意组合。
 
@@ -472,7 +470,50 @@ Windows Server 2003 中引入的 (。 在 windows 7 和更高版本的 Windows �
 </tbody>
 </table>
 
+**/ruleclasses** 或 **/rc** *<ruleclass_1> <ruleclass_2>* <ruleclass_k>
 
+Ruleclasses 参数从 Windows 版本1803开始可用。
+
+Ruleclasses 参数包含一组比上面的 "/flags" 参数更大的验证类。 当 "/flags" 限制为32位位图表达式时，此选项可以包括超过32个验证类。 每个十进制整数表示一个验证类。 可以通过用空格字符分隔每个类 id 来表示多个类。 以下规则类 Id 可用，可省略前导0的。
+
+**标准规则类**
+
+ “值” | 规则
+|------|------|
+1 | 特殊池
+2 | 强制 IRQL 检查
+4 | 池跟踪
+5 | I/O 验证
+6 | 死锁检测
+8 | DMA 检查
+9 | 安全检查
+12 | 其他检查
+18 | DDI 合规性检查
+34 | WDF 验证
+
+**其他规则类**
+
+这些规则类用于特定的方案测试。 规则类标记为 " `(*)` 需要 I/o 验证 (5) 将自动启用。 标记为的标志 `(**)` 支持禁用各个规则。 标记为的标志 `(***)` 在默认情况下为日志记录模式，并且在发生冲突时需要/onecheck。
+
+标记为的标志 `(!)` 需要启用 (规则类 36) 的 DIF 模式。
+
+ “值” | 规则
+|------|------|
+3 | 随机低资源模拟
+10 | 强制挂起 i/o 请求 ( * ) 
+11 | IRP 日志记录 ( * ) 
+14 | 堆栈 ( 的固定 MDL 检查 ) 
+15 | 驱动程序 ( 的固定 MDL 检查 ) 
+16 | Power framework 延迟模糊
+17 | 端口/微型端口接口检查
+19 | 系统性资源不足模拟
+20 | DDI 相容性检查 (额外) 
+22 | NDIS/WIFI 验证 ( * * ) 
+24 | 内核同步延迟模糊处理
+25 | VM 交换机验证
+26 | 代码完整性检查
+33 | 驱动程序隔离检查 ( * * *、！ ) 
+36 | DIF 模式
 
 <span id="________iolevel________Level______"></span><span id="________iolevel________level______"></span><span id="________IOLEVEL________LEVEL______"></span>**/Iolevel** *级别*   
 仅 (Windows 2000) 指定 [I/o 验证](i-o-verification.md)的级别。
@@ -519,7 +560,7 @@ Windows Server 2003 中引入的 (。 在 windows 7 和更高版本的 Windows �
 <thead>
 <tr class="header">
 <th align="left">选项</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -543,12 +584,12 @@ Windows Server 2003 中引入的 (。 在 windows 7 和更高版本的 Windows �
 <thead>
 <tr class="header">
 <th align="left">选项</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>query</strong></p></td>
+<td align="left"><p><strong>查询</strong></p></td>
 <td align="left"><p>显示可控规则的当前状态。</p></td>
 </tr>
 <tr class="even">
@@ -566,10 +607,8 @@ Windows Server 2003 中引入的 (。 在 windows 7 和更高版本的 Windows �
 </tbody>
 </table>
 
-
-
 <span id="________standard"></span><span id="________STANDARD"></span>**/标准**  
- (Windows XP 和更高版本) 会在下一次启动之后激活 "标准" 或默认的驱动程序验证程序选项。 Windows XP 中的标准选项是 [特殊的池](special-pool.md)， [强制执行 IRQL 检查](force-irql-checking.md)， [池跟踪](pool-tracking.md)， [I/o 验证](i-o-verification.md)， [死锁检测](deadlock-detection.md)和 [DMA 验证](dma-verification.md)。 这等效于 **/Flags 0xBB**。 从 Windows Vista 开始，标准选项还包括 [安全检查](security-checks.md) 和 [其他检查](miscellaneous-checks.md)。 这等效于 **/Flags 0x9BB**。 从 Windows 8 开始，标准选项还包括 [DDI 相容性检查](ddi-compliance-checking.md)。 这等效于 **/Flags 0x209BB**。
+ 在下一次启动之后激活 "标准" 或默认的驱动程序验证程序选项。 标准选项包括 [特殊的池](special-pool.md)、 [强制 IRQL 检查](force-irql-checking.md)、 [池跟踪](pool-tracking.md)、 [I/o 验证](i-o-verification.md)、 [死锁检测](deadlock-detection.md)、 [DMA 验证](dma-verification.md)。 并且从 Windows Vista 开始 [验证 WDF](wdf-verification.md)  ，标准选项还包括 [安全检查](security-checks.md) 和 [其他检查](miscellaneous-checks.md)。 从 Windows 8 开始，标准选项还包括 [DDI 相容性检查](ddi-compliance-checking.md)。
 
 > [!NOTE]
 > 从1803后的 Windows 10 版本开始，使用 **/Flags 0x209BB** 将不再自动启用 WDF 验证。 使用 **/标准** 语法启用标准选项，其中包含 WDF 验证。
@@ -591,7 +630,7 @@ Windows Server 2003 中引入的 (。 在 windows 7 和更高版本的 Windows �
 <thead>
 <tr class="header">
 <th align="left">选项</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -630,7 +669,7 @@ Windows Server 2003 中引入的 (。 在 windows 7 和更高版本的 Windows �
 <thead>
 <tr class="header">
 <th align="left"><em>类型</em></th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -665,7 +704,7 @@ Windows Server 2003 中引入的 (。 在 windows 7 和更高版本的 Windows �
 <thead>
 <tr class="header">
 <th align="left"><em>选项</em></th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>

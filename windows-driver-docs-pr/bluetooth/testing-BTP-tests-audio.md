@@ -3,12 +3,12 @@ title: Microsoft 蓝牙测试平台-音频
 description: " (BTP) 音频测试的蓝牙测试平台。"
 ms.date: 2/14/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: a6e151b877728dcd718046fbe3d1505a5b2d204f
-ms.sourcegitcommit: e184d264c55f0e7e224837ce39ee976ccb4122c2
+ms.openlocfilehash: 4a7b813f0eb5d0536cdcee2a258fa1ecde161151
+ms.sourcegitcommit: 76698e25b77af71155e689200c6e0cf817bfd0d7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95820642"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "100261953"
 ---
 # <a name="btp-audio-tests"></a>BTP 音频测试
 
@@ -40,6 +40,8 @@ BTP 音频测试将测试本地系统与远程射频 over BR/EDR 配对的能力
 ## <a name="capturing-logs"></a>捕获日志
 
 若要捕获蓝牙日志，请按照 [GitHub 上的 busiotools For Windows](https://github.com/microsoft/busiotools/blob/master/bluetooth/tracing/readme.md)存储库的说明进行操作。
+
+若要分析蓝牙日志，请按照 [BTETLParse 工具](testing-BTP-tools-btetlparse.md)的说明进行操作。
 
 ## <a name="known-issues"></a>已知问题
 

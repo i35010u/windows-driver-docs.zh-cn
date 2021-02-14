@@ -8,12 +8,12 @@ keywords:
 - WDK 启动选项
 ms.date: 04/22/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: bbe2567272e36b3a69f0d656b302538571f02e41
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: f9feeeb743a0b59ed76b301419d74554b36b8efb
+ms.sourcegitcommit: 30e2f252126b36f378df9281ab861b1a360b81a6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96801871"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100360285"
 ---
 # <a name="boot-options-identifiers"></a>启动选项标识符
 
@@ -134,7 +134,7 @@ inherit                 {globalsettings}
 
 ```
 
-使用 bcdedit/all 命令查看所有设置。  
+使用 bcdedit/enum all 命令可查看所有设置。  
 
 ```console
 C:\>bcdedit /enum all
