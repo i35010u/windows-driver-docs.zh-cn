@@ -1,14 +1,15 @@
 ---
 title: 正在加载测试签名代码
 description: 介绍如何使用 TESTSIGNING 选项和 BCDEdit 工具来启用测试签名驱动程序的加载
-ms.date: 04/20/2017
+ms.date: 02/15/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: b0f5d4e7bf19276fd052d8982e93a9629aa8632d
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.custom: contperf-fy21q3
+ms.openlocfilehash: 5a9b0605395ef6d3df47ab6f4444c480f3942ea7
+ms.sourcegitcommit: 0d17420536cdee32336cbc73e6c58c47d9b64a30
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96828603"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100532354"
 ---
 # <a name="enable-loading-of-test-signed-drivers"></a>允许加载已进行测试签名的驱动程序
 
@@ -23,19 +24,18 @@ ms.locfileid: "96828603"
 若要使用 BCDEdit，你必须是系统上 Administrators 组的成员，并从提升的命令提示符运行该命令。 若要打开提升的命令提示符窗口，请在 Windows 任务栏的搜索框中键入 **cmd** ，选择并按住 (或右键单击搜索结果中) **命令提示符** ，然后选择 " **以管理员身份运行**"。
 
 > [!Warning]
-> 使用 BCDEdit 修改启动配置数据需要管理权限。 使用 **BCDEdit/set** 更改某些启动项选项可能导致计算机无法操作。 作为替代方法，请使用系统配置实用工具 ( # A0) 更改启动设置。
+> 使用 BCDEdit 修改启动配置数据需要管理权限。 使用 **BCDEdit/set** 更改某些启动项选项可能导致计算机无法操作。 作为替代方法，使用系统配置实用工具 (MSConfig.exe) 更改启动设置。
 
 
 ## <a name="enable-or-disable-use-of-test-signed-code"></a>启用或禁用测试签名代码的使用
 
 运行 BCDEdit 命令行以启用或禁用测试签名代码的加载。 要使更改生效，无论是启用还是禁用该选项，都必须在更改配置后重新启动计算机。
 
-> [!Note]
-> 设置 BCDEdit 选项之前，可能需要禁用或暂停计算机上的 BitLocker 和安全启动。
-
 若要启用测试签名代码，请使用以下 BCDEdit 命令行：
 
 ```cmd
+:: If this command results in "The value is protected by Secure Boot policy and cannot be modified or deleted"
+:: Then reboot the PC, go into BIOS settings, and disable Secure Boot. BitLocker may also affect your ability to modify this setting.
 Bcdedit.exe -set TESTSIGNING ON
 ```
 
