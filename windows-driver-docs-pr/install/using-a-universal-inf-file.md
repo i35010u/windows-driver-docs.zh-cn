@@ -3,12 +3,12 @@ title: 使用通用 INF 文件
 description: 如果要构建通用或移动驱动程序包，则必须使用通用 INF 文件。
 ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d1e140b999fdda8e92c6c5d4679e8ad36f693df
-ms.sourcegitcommit: 30e2f252126b36f378df9281ab861b1a360b81a6
+ms.openlocfilehash: 3672eafa035e0ee528738c20d7aff3249c5b3e53
+ms.sourcegitcommit: 714c1e38d0641a4c53e54d8a46b3c934b84d5b8e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100360287"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100632593"
 ---
 # <a name="using-a-universal-inf-file"></a>使用通用 INF 文件
 
@@ -18,7 +18,9 @@ ms.locfileid: "100360287"
 
 可以提前配置包含通用 INF 文件的驱动程序包，并将其添加到脱机系统。
 
-若要测试 INF 是否是通用的，请使用 `infverif /u` 。 `/u`选项测试[DCH 设计原则和最佳做法](../develop/dch-principles-best-practices.md) (声明性) 要求。 [Windows 驱动程序](../develop/getting-started-with-windows-drivers.md)必须通过 `infverif /w` ，测试和 `/u` [驱动程序包隔离](../develop/driver-isolation.md)。
+若要测试 INF 是否是通用的，请使用 `infverif /u` 。
+ 
+[Windows 驱动程序](../develop/getting-started-with-windows-drivers.md)必须通过 `infverif /w` ，测试和 `/u` [驱动程序包隔离](../develop/driver-isolation.md)。
 
 有关 InfVerif 选项的列表，请参阅 [从命令行运行 InfVerif](../devtest/running-infverif-from-the-command-line.md)。
 
