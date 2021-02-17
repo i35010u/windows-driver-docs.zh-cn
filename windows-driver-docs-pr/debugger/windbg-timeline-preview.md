@@ -3,12 +3,12 @@ title: WinDbg 预览版 - 时间线
 description: 本部分介绍如何在 WinDbg Preview 中使用时间段功能。
 ms.date: 07/02/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: cbba3e53942feb67082f09a44862d2f73c4a9b46
-ms.sourcegitcommit: cd84cc10570384b0e7a91cb6f91fe67009c1a90e
+ms.openlocfilehash: 95e66f34ad0e38fcb68aff72a2862a4f6c292834
+ms.sourcegitcommit: e81da7443b0ac79f491a622da325785e1b6fefa3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89238149"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100554246"
 ---
 # <a name="windbg-preview---timelines"></a>WinDbg 预览版 - 时间线
 
@@ -29,13 +29,13 @@ ms.locfileid: "89238149"
 "时间线" 窗口可以显示以下事件：
 
 -  (可以进一步筛选特定异常代码的异常) 
-- 添加断点时，还会自动添加断点 (时间线) 
+- 断点
 - 函数调用 (按 module！ function 形式搜索) 
 - 内存访问 (两个内存地址之间的读取/写入/执行) 
 
 将鼠标悬停在每个事件上，以通过工具提示获取详细信息。 单击某个事件将对该事件运行查询并显示详细信息。 双击某个事件将跳转到 TTD 跟踪文件中的该位置。
 
-### <a name="exceptions"></a>例外
+### <a name="exceptions"></a>异常
 
 当您加载跟踪文件并且时间线处于活动状态时，它会自动显示记录中的任何异常。
 
@@ -51,7 +51,7 @@ ms.locfileid: "89238149"
 
 ### <a name="breakpoints"></a>断点
 
-添加断点时，将在时间线上自动添加断点时间线。 这可以使用 [最佳实践设置断点命令](bp--bu--bm--set-breakpoint-.md)来实现。 当你将鼠标悬停在断点上方时，将显示与该断点关联的地址和指令指针。
+添加断点后，可以在时间线上命中该断点时显示其位置。 这可以使用 [最佳实践设置断点命令](bp--bu--bm--set-breakpoint-.md)来实现。 当你将鼠标悬停在断点上方时，将显示与该断点关联的地址和指令指针。
 
 ![调试器中的时间线显示大约30个断点点](images/windbgx-timeline-breakpoints.png)
 
@@ -178,7 +178,7 @@ esp=003cf718 ebp=003cf7c8
 
 使用断点是一种在相关事件中暂停代码执行的常见方法。 使用 TTD 可以设置断点，并在记录跟踪后，在该断点到达之前进行回退。 在出现问题后检查进程状态的功能，若要确定断点的最佳位置，可以启用 TTD 独有的其他调试工作流。
 
-若要浏览备用时间线调试方法，请单击时间线中的异常，并再次使用 "**主页**" 功能区上的 "**单步**执行" 命令向后移动三个步骤。  
+若要浏览备用时间线调试方法，请单击时间线中的异常，并再次使用 "**主页**" 功能区上的 "**单步** 执行" 命令向后移动三个步骤。  
 
 在这个非常小的示例中，只需查看代码，就可以很容易地查找代码，但如果有数百行代码和几十个子例程，则可以使用此处所述的技术来缩短查找问题所需的时间。
 
@@ -198,7 +198,7 @@ esp=003cf718 ebp=003cf7c8
 
 ![调试器中的时间线，显示内存访问时间线和堆栈窗口](images/windbgx-timeline-demo-lab-stack.png)
 
-由于 Microsoft 提供的 wscpy_s ( # A1 函数不太可能出现类似于下面的代码 bug，因此我们将进一步探讨堆栈。 此堆栈显示问候语！ main 拨打问候语！GetCppConGreeting. 在我们非常小的代码示例中，现在可以打开代码，这可能会非常容易地发现错误。 但为了阐释可用于更大、更复杂的程序的技术，我们将设置 "添加函数调用时间线"。
+由于 Microsoft 提供的 wscpy_s () 函数不太可能会有类似于下面的代码 bug，因此，我们将进一步探讨堆栈。 此堆栈显示问候语！ main 拨打问候语！GetCppConGreeting. 在我们非常小的代码示例中，现在可以打开代码，这可能会非常容易地发现错误。 但为了阐释可用于更大、更复杂的程序的技术，我们将设置 "添加函数调用时间线"。
 
 ## <a name="function-call-timeline"></a>函数调用时间线
 
@@ -247,7 +247,7 @@ dx @$cursession.TTD.Calls("DisplayGreeting!GetCppConGreeting")[0x0]
 
 ![显示问候语应用中第一个 api 调用的示例名称的 "新建书签" 对话框](images/windbgx-timeline-bookmark-new.png)
 
-通过 *> 时间线视图*中提供的 "时间线" 窗口访问书签。 当您将鼠标悬停在某个书签上方时，它将显示书签名称。
+通过 *> 时间线视图* 中提供的 "时间线" 窗口访问书签。 当您将鼠标悬停在某个书签上方时，它将显示书签名称。
 
 ![显示在一个显示书签名称的书签上方的三个书签的时间线](images/windbgx-timeline-bookmarks.png)
 

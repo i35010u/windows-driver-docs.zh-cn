@@ -128,5 +128,11 @@
               href: testing-BTP-tests-audio-hid.md
             - name: 测试蓝牙电池
               href: testing-BTP-tests-battery.md
+        - name: BTP 诊断工具
+          items:
+            - name: 蓝牙 ETL 分析
+              href: testing-BTP-tools-btetlparse.md
+            - name: 蓝牙虚拟嗅探器
+              href: testing-BTP-tools-btvs.md
 - name: 蓝牙无线收发器重置和恢复
   href: bluetooth-radio-error-recovery.md
