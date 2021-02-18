@@ -3,12 +3,12 @@ title: 排查常见错误
 description: '本部分介绍硬件供应商和驱动程序开发人员在调试其 I # C 固件或驱动程序软件时可能遇到的常见问题。'
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 29f4244be4e6b2e3a2a779f76a90f7dc21bfeac0
-ms.sourcegitcommit: 75023add6028da178c7f1013b681a661995171fe
+ms.openlocfilehash: 163177001c2cf4a7b999c886ab52c913912a2d46
+ms.sourcegitcommit: 20569e032b1e0963ad295e9c46b7682832af3d44
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98763904"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100648144"
 ---
 # <a name="troubleshooting-common-errors"></a>排查常见错误
 
@@ -27,7 +27,7 @@ ms.locfileid: "98763904"
 - 在 BIOS 中，设备) 的 **HID 描述符地址** (必须准确。
 - 必须正确地标识 GPIO 中断，并将其标记为 " **独占"、"级别"、"ActiveLow**"。
 
-有关更多详细信息，请参阅 [HID I2C 协议规范](https://docs.microsoft.com/previous-versions/windows/hardware/design/dn642101(v=vs.85)) 的第13部分。
+有关更多详细信息，请参阅 [HID I2C 协议规范](/previous-versions/windows/hardware/design/dn642101(v=vs.85)) 的第13部分。
 
 ## <a name="invalid-report-descriptor"></a>报表描述符无效
 

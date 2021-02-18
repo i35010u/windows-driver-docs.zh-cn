@@ -3,16 +3,16 @@ title: Windows 驱动程序的 CodeQL 查询
 description: 驱动程序的 CodeQL 查询
 ms.date: 01/11/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: f1c81cf5584f9d21002befe2352ecf54cf4dce27
-ms.sourcegitcommit: 137d098e1a1a0c128d56a7002272847ea7c58e64
+ms.openlocfilehash: bdec8e7265e4d7ab8dee146a5ea11a16e54be0bc
+ms.sourcegitcommit: 20569e032b1e0963ad295e9c46b7682832af3d44
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98192898"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100648132"
 ---
-# <a name="supplemental-windows-driver-codeql-queries"></a>补充 Windows 驱动程序 CodeQL 查询
+# <a name="supplemental-windows-driver-codeql-queries"></a>补充的 Windows 驱动程序 CodeQL 查询
 
-本部分列出并描述了一些 [CodeQL 查询](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-tools-and-codeql) ，这些查询是 [Microsoft GitHub CodeQL 存储库](https://github.com/microsoft/Windows-Driver-Developer-Supplemental-Tools) 的一部分，特定于 Windows 平台的驱动程序开发。
+本部分列出并描述了一些 [CodeQL 查询](./static-tools-and-codeql.md) ，这些查询是 [Microsoft GitHub CodeQL 存储库](https://github.com/microsoft/Windows-Driver-Developer-Supplemental-Tools) 的一部分，特定于 Windows 平台的驱动程序开发。
 
 ## <a name="list-of-queries"></a>查询列表
 
@@ -46,10 +46,4 @@ ms.locfileid: "98192898"
  
 
  
-
- 
-
-
-
-
 

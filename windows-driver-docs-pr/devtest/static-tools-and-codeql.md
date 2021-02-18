@@ -6,12 +6,12 @@ keywords:
 - 静态验证工具 WDK
 ms.date: 02/03/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b30277abae36dd4215879f501910d09bf31771a
-ms.sourcegitcommit: 714c1e38d0641a4c53e54d8a46b3c934b84d5b8e
+ms.openlocfilehash: aa43529d7b8f3bbc558365ad870996d8bde67ad3
+ms.sourcegitcommit: 20569e032b1e0963ad295e9c46b7682832af3d44
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100632595"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100648178"
 ---
 # <a name="codeql-and-the-static-tools-logo-test"></a>CodeQL 和静态工具徽标测试
 
@@ -195,7 +195,7 @@ in SARIF or another interpreted format.
 
 ```
 
-若要对 kmdf 回送驱动程序的 qls 查询套件进行 *windows_driver_recommended* 评估，并使用 SARIF 格式返回的结果，请使用以下命令。  *Windows_driver_recommended qls* 查询套件是 Microsoft 为驱动程序开发人员认为非常重要的所有查询的超集。  有关详细信息，请参阅下面的 ["查询套件"](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-tools-and-codeql#query-suites) 一节。
+若要对 kmdf 回送驱动程序的 qls 查询套件进行 *windows_driver_recommended* 评估，并使用 SARIF 格式返回的结果，请使用以下命令。  *Windows_driver_recommended qls* 查询套件是 Microsoft 为驱动程序开发人员认为非常重要的所有查询的超集。  有关详细信息，请参阅下面的 ["查询套件"](#query-suites) 一节。
 
 ```command
 C:\codeql-home>c:\codeql-home\codeql\codeql.cmd database analyze "C:\codeql-home\databases\kmdf" windows_driver_recommended.qls --format=sarifv2.1.0 --output=C:\codeql-home\databases\kmdfecho1.sarif -j 0
@@ -301,9 +301,9 @@ Interpreting results.
 
 ## <a name="query-suites"></a>查询套件
 
-作为 [Microsoft CodeQL GitHub 存储库](https://github.com/microsoft/Windows-Driver-Developer-Supplemental-Tools)的一部分，microsoft 提供了两个查询套件来简化端到端驱动程序开发人员工作流。  *Windows_driver_recommended qls* 查询套件包含 Microsoft 认为对驱动程序开发人员非常宝贵的 [所有查询](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-tools-and-codeql#queries)的超集。  
+作为 [Microsoft CodeQL GitHub 存储库](https://github.com/microsoft/Windows-Driver-Developer-Supplemental-Tools)的一部分，microsoft 提供了两个查询套件来简化端到端驱动程序开发人员工作流。  *Windows_driver_recommended qls* 查询套件包含 Microsoft 认为对驱动程序开发人员非常宝贵的 [所有查询](#queries)的超集。  
 
-Qls 查询套件包含当前被视为用于 WHCP 认证的 **"必须修复"** 的 [查询](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-tools-and-codeql#must-fix-queries)。 *windows_driver_mustfix* 这两个查询套件会定期更新，因为 Microsoft 最终会获得可用查询列表和 WHCP 认证所需的 "必须修复" 查询列表。  因此，使用 ["git pull"](https://www.git-scm.com/docs/git-pull) 命令定期同步存储库至关重要。
+Qls 查询套件包含当前被视为用于 WHCP 认证的 **"必须修复"** 的 [查询](#must-fix-queries)。 *windows_driver_mustfix* 这两个查询套件会定期更新，因为 Microsoft 最终会获得可用查询列表和 WHCP 认证所需的 "必须修复" 查询列表。  因此，使用 ["git pull"](https://www.git-scm.com/docs/git-pull) 命令定期同步存储库至关重要。
 
 ## <a name="troubleshooting"></a>疑难解答
 
@@ -350,8 +350,8 @@ Microsoft 建议在 *所有* 驱动程序源代码上运行的查询包括：
 | [cpp/可疑指针缩放](https://github.com/github/codeql/blob/main/cpp/ql/src/Security/CWE/CWE-468/IncorrectPointerScalingChar.qhelp)   | *cpp/q/src/Security/CWE/CWE-468/IncorrectPointerScaling q* |
 | [cpp/可疑-指针缩放-void](https://github.com/github/codeql/blob/main/cpp/ql/src/Security/CWE/CWE-468/IncorrectPointerScalingVoid.qhelp)   | *cpp/q/src/Security/CWE/CWE-468/IncorrectPointerScalingVoid q* |
 | [cpp/有条件-未初始化-变量](https://codeql.github.com/codeql-standard-libraries/cpp/Security/CWE/CWE-457/ConditionallyUninitializedVariable.ql/module.ConditionallyUninitializedVariable.html)   | *cpp/q/src/Security/CWE/CWE-457/ConditionallyUninitializedVariable。* | 
-| [cpp/使用-免费](https://docs.microsoft.com/windows-hardware/drivers/devtest/codeql-windows-driver-useafterfree)   | *Windows 驱动程序-开发人员补充-工具/codeql/windows-驱动程序/查询/可能的 Bug/内存管理/UseAfterFree \ UseAfterFree q* |
-| [cpp/windows/wdk/弃用的 api](https://docs.microsoft.com/windows-hardware/drivers/devtest/codeql-windows-driver-wdkdeprecatedapi)   | *Windows 驱动程序-开发人员补充-工具/codeql/windows-驱动程序/查询/Windows/wdk/wdk-q* |
+| [cpp/使用-免费](./codeql-windows-driver-useafterfree.md)   | *Windows 驱动程序-开发人员补充-工具/codeql/windows-驱动程序/查询/可能的 Bug/内存管理/UseAfterFree \ UseAfterFree q* |
+| [cpp/windows/wdk/弃用的 api](./codeql-windows-driver-wdkdeprecatedapi.md)   | *Windows 驱动程序-开发人员补充-工具/codeql/windows-驱动程序/查询/Windows/wdk/wdk-q* |
 
 这些查询是 [Microsoft GitHub CodeQL 存储库](https://github.com/microsoft/Windows-Driver-Developer-Supplemental-Tools)中的 *windows_driver_recommended qls* 查询套件的一部分。
 
@@ -368,7 +368,7 @@ Microsoft 建议在 *所有* 驱动程序源代码上运行的查询包括：
 | [cpp/错误的字符串类型转换](https://codeql.github.com/codeql-query-help/cpp/cpp-incorrect-string-type-conversion/)   | *cpp/q/src/Security/CWE/CWE-704/WcharCharConversion. q* | 
 | [cpp/有条件-未初始化-变量](https://codeql.github.com/codeql-standard-libraries/cpp/Security/CWE/CWE-457/ConditionallyUninitializedVariable.ql/module.ConditionallyUninitializedVariable.html)   | *cpp/q/src/Security/CWE/CWE-457/ConditionallyUninitializedVariable。* | 
 | [cpp/比较-具有更大的类型](https://codeql.github.com/codeql-query-help/cpp/cpp-comparison-with-wider-type/)   | *cpp/q/src/Security/CWE/CWE-190/ComparisonWithWiderType. q*  |
-| [cpp/windows/wdk/弃用的 api](https://docs.microsoft.com/windows-hardware/drivers/devtest/codeql-windows-driver-wdkdeprecatedapi)   | *Windows 驱动程序-开发人员补充-工具/codeql/windows-驱动程序/查询/Windows/wdk/wdk-q* |
+| [cpp/windows/wdk/弃用的 api](/windows-hardware/drivers/devtest/codeql-windows-driver-wdkdeprecatedapi)   | *Windows 驱动程序-开发人员补充-工具/codeql/windows-驱动程序/查询/Windows/wdk/wdk-q* |
 
 这些查询是 [Microsoft GitHub CodeQL 存储库](https://github.com/microsoft/Windows-Driver-Developer-Supplemental-Tools)中的 *windows_driver_mustfix qls* 查询套件的一部分。
 
@@ -442,6 +442,3 @@ SET ERRORLEVEL = 0
 ```
 
 7. 查看 SARIF 文件的结果，并解决任何已确定的问题。 有关详细信息，请参阅本主题前面的 [查看分析](#view-analysis) 。
-
-
-

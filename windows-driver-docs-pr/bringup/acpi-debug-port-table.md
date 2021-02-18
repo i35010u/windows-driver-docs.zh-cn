@@ -8,12 +8,12 @@ keywords:
 - 串行
 - UART
 ms.date: 09/01/2020
-ms.openlocfilehash: a09481cf1a60dc6f1ec9ebc9b4a5a3ea4ba7c8bf
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: d857b21ab03c2bb720d40a44fc3cd0599ec33307
+ms.sourcegitcommit: 20569e032b1e0963ad295e9c46b7682832af3d44
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96789153"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100648102"
 ---
 # <a name="microsoft-debug-port-table-2-dbg2"></a>Microsoft 调试端口表 2 (DBG2) 
 
@@ -40,6 +40,7 @@ ms.locfileid: "96789153"
 | 2020 年 6 月 11 日 | 添加了新的串行调试子类型 (SDM845v2)  |
 | 2020 年 9 月 1 日 | 已将文档转换为 Markdown 语法和格式更改。 |
 | 2020 年 9 月 21 日 | 添加了新的串行调试子类型 (IALPSS)  |
+| 2021年2月17日 | 记录所有已知的串行调试子类型 | 
 
 ## <a name="introduction"></a>简介
 
@@ -98,14 +99,22 @@ DBG2 表会将 ACPI 调试端口表替换为不能使用 DBGP 描述调试端口
 
 **表3：调试端口类型和子类型**
 
-| **端口** | **类型** | **类型** | **说明** |
+| **端口** | 类型 | **子类型** | **说明** |
 |----------|----------|-------------|-----------------|
 | 预留 | 0x0000 –0x7FFF 和0xFFFF | 全部 | 保留 (不使用)  |
 | 串行   | 0x8000   | 0x0000      | 完全16550兼容 |
 |          |          | 0x0001      | 16550子集与 DBGP 修订版本1兼容 |
-|          |          | 0x0002      | 保留 (不使用)  |
+|          |          | 0x0002      | MAX311xE SPI UART |
 |          |          | 0x0003      | ARM PL011 UART |
-|          |          | 0x0004 – 0x000C | 保留 (不使用)  |
+|          |          | 0x0004      | MSM8x60 (例如 8960)  |
+|          |          | 0x0005      | Nvidia 16550 |
+|          |          | 0x0006      | TI OMAP |
+|          |          | 0x0007      | 保留 (不使用)  |
+|          |          | 0x0008      | APM88xxxx |
+|          |          | 0x0009      | MSM8974 |
+|          |          | 0x000A      | SAM5250 |
+|          |          | 0x000B      | Intel USIF |
+|          |          | 0x000C      | i.MX 6 |
 |          |          | 0x000D      |  (不推荐使用) ARM SBSA (2.x 仅) 仅支持32位访问的通用 UART |
 |          |          | 0x000E      | ARM SBSA 通用 UART |
 |          |          | 0x000F      | ARM DCC |

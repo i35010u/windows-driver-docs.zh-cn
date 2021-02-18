@@ -6,12 +6,12 @@ keywords:
 - 报告 WDK HID，解释
 ms.date: 09/10/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 64fd682a5a49ea8eedf113bcd4fe5cd87e99ea19
-ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
+ms.openlocfilehash: 2c9bd3bd5b22c4790029d80456d073d7a037b5e3
+ms.sourcegitcommit: 20569e032b1e0963ad295e9c46b7682832af3d44
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97091226"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100648098"
 ---
 # <a name="interpreting-hid-reports"></a>解释 HID 报告
 
@@ -33,9 +33,9 @@ ms.locfileid: "97091226"
 
 若要在 (1) 上提取设置为的按钮的 HID 用法，应用程序和驱动程序调用以下 HID 支持例程之一：
 
-- [HidP_GetButtons](./hdpi-h-macros.md) (或 [HidP_GetUsages](/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_getusages)) 返回指定使用情况页上设置为 on 的所有按钮的使用 ID。
+- [HidP_GetButtons](/windows-hardware/drivers/ddi/hidpi/#functionsfunctions) (或 [HidP_GetUsages](/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_getusages)) 返回指定使用情况页上设置为 on 的所有按钮的使用 ID。
 
-- [HidP_GetButtonsEx](./hdpi-h-macros.md#hidp_getbuttonsex) (或 [HidP_GetUsagesEx](/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_getusagesex)) 返回设置为 ON 的所有按钮的 "使用情况" 页和使用 ID。
+- [HidP_GetButtonsEx](/windows-hardware/drivers/ddi/hidpi/#hidp_getbuttonsex) (或 [HidP_GetUsagesEx](/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_getusagesex)) 返回设置为 ON 的所有按钮的 "使用情况" 页和使用 ID。
 
 这些例程返回当前设置为 ON 的所有按钮的所有使用情况信息的数组。 这些例程未返回其使用情况的按钮将被设置为 OFF (零) 。
 
@@ -43,9 +43,9 @@ ms.locfileid: "97091226"
 
 所需的缓冲区大小（以字节为单位）如下所示：
 
-- 用于 [HidP_GetButtons](./hdpi-h-macros.md) 的 () **HidP_MaxUsageListLength** 次返回的值 sizeof (使用情况) 
+- 用于 [HidP_GetButtons](/windows-hardware/drivers/ddi/hidpi/#functionsfunctions) 的 () **HidP_MaxUsageListLength** 次返回的值 sizeof (使用情况) 
 
-- 用于 [HidP_GetButtonsEx](./hdpi-h-macros.md#hidp_getbuttonsex) 的 () **HidP_MaxUsageListLength** 次返回的值 sizeof (USAGE_AND_PAGE) 
+- 用于 [HidP_GetButtonsEx](/windows-hardware/drivers/ddi/hidpi/#hidp_getbuttonsex) 的 () **HidP_MaxUsageListLength** 次返回的值 sizeof (USAGE_AND_PAGE) 
 
 在应用程序或驱动程序已使用这些例程获取有关哪些按钮当前设置为 ON 的信息后，它可以通过调用以下 [HIDClass 支持例程](/windows-hardware/drivers/ddi/_hid/#hidclass-support-routines)之一来确定按钮的当前状态和之前状态之间的差异。 这些例程返回使用情况信息的两个数组之间的差异：
 
@@ -81,9 +81,9 @@ ms.locfileid: "97091226"
 
 应用程序或驱动程序可以通过调用以下 [HIDClass 支持例程](/windows-hardware/drivers/ddi/_hid/#hidclass-support-routines)之一来设置正确初始化的 HID 报表中的按钮状态：
 
-- [HidP_SetButtons](./hdpi-h-macros.md#hidp_setbuttons) (或 [HidP_SetUsages](/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_setusages)) 在 (1) 上将一组指定的按钮设置为。
+- [HidP_SetButtons](/windows-hardware/drivers/ddi/hidpi/#hidp_setbuttons) (或 [HidP_SetUsages](/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_setusages)) 在 (1) 上将一组指定的按钮设置为。
 
-- [HidP_UnsetButtons](./hdpi-h-macros.md#hidp_unsetbuttons) (或 [HidP_UnsetUsages](/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_unsetusages)) 会将指定的一组按钮设置为 "关闭" (零) 。
+- [HidP_UnsetButtons](/windows-hardware/drivers/ddi/hidpi/#hidp_unsetbuttons) (或 [HidP_UnsetUsages](/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_unsetusages)) 会将指定的一组按钮设置为 "关闭" (零) 。
 
 ## <a name="extracting-and-setting-hid-control-data-by-data-indices"></a>按数据索引提取和设置 HID 控件数据
 

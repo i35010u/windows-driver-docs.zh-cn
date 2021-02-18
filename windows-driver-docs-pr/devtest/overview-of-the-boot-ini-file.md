@@ -12,12 +12,12 @@ keywords:
 - 启动参数 WDK
 ms.date: 07/03/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7be1ad20daab84ea8b77491820b4f1be537c0d93
-ms.sourcegitcommit: 5e8a222ae0c05392880436636cf4fe3f546e771a
+ms.openlocfilehash: 9435d66013b6f2e84807662d3e5ba00e1cd25d0e
+ms.sourcegitcommit: 20569e032b1e0963ad295e9c46b7682832af3d44
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99084906"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100648176"
 ---
 # <a name="overview-of-the-bootini-file"></a>Boot.ini 文件概述
 
@@ -73,6 +73,6 @@ Boot.ini 有两个主要部分：
 
 -   *启动项参数*（也称为 *启动参数* 或 *加载选项* ）启用、禁用和配置操作系统功能。 启动参数类似于命令行参数，每个参数以正斜杠 (/) （如 [**/debug**](https://support.microsoft.com/help/833721/available-switch-options-for-the-windows-xp-and-the-windows-server-200)）开头。 对于每个启动项，可以有零个或多个启动参数。
 
-    有关与驱动程序测试和调试相关的启动参数的列表，请参阅 [Boot.ini 启动参数参考](/windows-hardware/drivers/devtest/boot-options-in-a-boot-ini-file)。
+    有关与驱动程序测试和调试相关的启动参数的列表，请参阅 [Boot.ini 启动参数参考](./boot-options-in-a-boot-ini-file.md)。
 
 对于同一操作系统，可以有多个启动项，每个启动项具有一组不同的启动参数。 Windows 在你安装操作系统时创建一个标准启动条目，你可以通过编辑 Boot.ini 为操作系统创建其他自定义条目。

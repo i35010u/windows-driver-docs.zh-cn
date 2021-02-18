@@ -3,12 +3,12 @@ description: 本主题为驱动程序开发人员提供了一些常见问题，�
 title: Windows 中的 USB - 常见问题解答
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d5f3c62a33ecac872f145118ac550d7dfa09bf01
-ms.sourcegitcommit: 7b3bddc91b87de5afce36c120620497c37234fbf
+ms.openlocfilehash: a957a7b568aacb4a9341ee9595052a9f4c8a6ee9
+ms.sourcegitcommit: 20569e032b1e0963ad295e9c46b7682832af3d44
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98812006"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100648182"
 ---
 # <a name="usb-in-windows---faq"></a>Windows 中的 USB - 常见问题解答
 
@@ -391,7 +391,7 @@ Microsoft 为大多数设备类型提供系统定义的安装程序类。 系统
 
 下面列出了支持选择性挂起的 Windows 8 中的 USB 类驱动程序：
 
-- 蓝牙
+- Bluetooth
 
     此驱动程序可以有选择地在运行 Windows XP Service Pack 2 和更高版本的 Windows 的计算机上挂起设备。 驱动程序要求蓝牙收音机设置配置描述符中的自驱动和远程唤醒位。 当不存在活动的蓝牙连接时，驱动程序会有选择地挂起 (D2) 蓝牙收音机。
 
@@ -588,7 +588,7 @@ Needs = Composite.Dev
 
 请参阅博客文章 [，了解如何在驱动程序的公共 PDB 文件中包含和查看 WPP 跟踪消息](https://techcommunity.microsoft.com/t5/Microsoft-USB-Blog/bg-p/MicrosoftUSBBlog/archive/2013/06/29/wpp-blog-post.aspx)。
 
-有关 USB 设备和 ETW 事件的信息，请参阅 [使用 ETW 事件调试 usb 设备问题](/windows-hardware/drivers/usbcon/best-practices--debugging-usb-device-problems)。
+有关 USB 设备和 ETW 事件的信息，请参阅 [使用 ETW 事件调试 usb 设备问题](./best-practices--debugging-usb-device-problems.md)。
 
 ## <a name="does-windows-support-interface-association-descriptors"></a>Windows 是否支持接口关联描述符？
 
@@ -606,7 +606,7 @@ Windows 附带的 USB 3.0 驱动程序堆栈支持此功能。
 
 ## <a name="can-a-driver-have-more-than-one-urb-in-an-irp"></a>某个驱动程序是否可以在 IRP 中具有多个 URB？
 
-否。 Windows 附带的 USB stack 不支持此功能。
+不是。 Windows 附带的 USB stack 不支持此功能。
 
 ## <a name="does-windows-support-usb-composite-hubs"></a>Windows 是否支持 USB 复合中心？
 

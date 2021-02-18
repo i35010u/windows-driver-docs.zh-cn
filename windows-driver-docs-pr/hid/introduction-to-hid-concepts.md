@@ -11,12 +11,12 @@ keywords:
 - 陀螺仪
 ms.date: 02/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: ef0e9b60445eca195bf7dae19aeffb34d96623ac
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 5114bb74e5048740da1a8e36f369b62bd100e115
+ms.sourcegitcommit: 20569e032b1e0963ad295e9c46b7682832af3d44
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96818455"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100648165"
 ---
 # <a name="hid-application-programming-interface-api"></a>HID 应用程序编程接口 (API)
 
@@ -58,8 +58,8 @@ ms.locfileid: "96818455"
 这些是 HID 分析器 Api。
 
 - [HidP \_ GetButtonCaps](/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_getbuttoncaps)
-- [HidP \_ GetButtons](./hdpi-h-macros.md)
-- [HidP \_ GetButtonsEx](./hdpi-h-macros.md)
+- [HidP \_ GetButtons](/windows-hardware/drivers/ddi/hidpi/#functionsfunctions)
+- [HidP \_ GetButtonsEx](/windows-hardware/drivers/ddi/hidpi/#functionsfunctions)
 - [HidP \_ GetCaps](/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_getcaps)
 - [HidP \_](/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_getdata)
 - [HidP \_ GetExtendedAttributes](/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_getextendedattributes)
@@ -76,13 +76,13 @@ ms.locfileid: "96818455"
 - [HidP \_ IsSameUsageAndPage](/windows-hardware/drivers/ddi/hidpi/ns-hidpi-_usage_and_page)
 - [HidP \_ MaxDataListLength](/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_maxdatalistlength)
 - [HidP \_ MaxUsageListLength](/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_maxusagelistlength)
-- [HidP \_ SetButtons](./hdpi-h-macros.md)
+- [HidP \_ SetButtons](/windows-hardware/drivers/ddi/hidpi/#functionsfunctions)
 - [HidP \_ SetData](/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_setdata)
 - [HidP \_ SetScaledUsageValue](/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_setscaledusagevalue)
 - [HidP \_ SetUsages](/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_setusages)
 - [HidP \_ SetUsageValue](/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_setusagevalue)
 - [HidP \_ SetUsageValueArray](/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_setusagevaluearray)
-- [HidP \_ UnsetButtons](./hdpi-h-macros.md)
+- [HidP \_ UnsetButtons](/windows-hardware/drivers/ddi/hidpi/#functionsfunctions)
 - [HidP \_ UnsetUsages](/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_unsetusages)
 - [HidP \_ UsageAndPageListDifference](/previous-versions/windows/hardware/drivers/ff539824(v=vs.85))
 - [HidP \_ UsageListDifference](/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_usagelistdifference)

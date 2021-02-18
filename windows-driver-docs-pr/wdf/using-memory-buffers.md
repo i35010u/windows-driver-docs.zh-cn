@@ -12,12 +12,12 @@ keywords:
 - 本地缓冲区 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 46a91372cb3900925f4aa3b8fa24d94d12d2c730
-ms.sourcegitcommit: dbf5b780975d2911545d8bfa6fead4a97e7cfa88
+ms.openlocfilehash: e3a04a7abce74885d46d11fd40684903c912f5b1
+ms.sourcegitcommit: 20569e032b1e0963ad295e9c46b7682832af3d44
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98248250"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100648130"
 ---
 # <a name="using-memory-buffers"></a>使用内存缓冲区
 
@@ -74,11 +74,9 @@ ms.locfileid: "98248250"
 但是，驱动程序还可以将内存对象用于本地缓冲区。 使用内存缓冲区（而不是调用 [**ExAllocatePoolWithTag**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)）的优点在于，当删除每个对象的父对象时，框架会自动删除内存对象及其缓冲区。
 
 >[!IMPORTANT]
-> 本主题中讨论的 ExAllocatePool DDIs 已在 Windows 10 版本2004中弃用，并且已被 [ExAllocatePool2](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepool2) 和 [ExAllocatePool3](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepool3)替换。 有关详细信息，请参阅 [将弃用的 ExAllocatePool 调用更新到 ExAllocatePool2 和 ExAllocatePool3](/windows-hardware/drivers/kernel/updating-deprecated-exallocatepool-calls)。
+> 本主题中讨论的 ExAllocatePool DDIs 已在 Windows 10 版本2004中弃用，并且已被 [ExAllocatePool2](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepool2) 和 [ExAllocatePool3](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepool3)替换。 有关详细信息，请参阅 [将弃用的 ExAllocatePool 调用更新到 ExAllocatePool2 和 ExAllocatePool3](../kernel/updating-deprecated-exallocatepool-calls.md)。
 
 ### <a name="aligning-buffers"></a>对齐缓冲区
 
 你的驱动程序可以使用 " [**wdf \_ 对齐 \_ 大小 \_**](/windows-hardware/drivers/ddi/wdfcore/nf-wdfcore-wdf_align_size_up) " 或 " [**wdf 调整 \_ \_ 大小 \_**](/windows-hardware/drivers/ddi/wdfcore/nf-wdfcore-wdf_align_size_down) " 功能来计算与指定的对齐偏移量对齐的缓冲区大小。 如果你的驱动程序必须在地址对齐边界开始时分配多个连续缓冲区，则此计算非常有用。
-
- 
 

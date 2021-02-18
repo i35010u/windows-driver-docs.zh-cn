@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ec4ece66e08a8c964a9c9ddd564637d45f628f46
-ms.sourcegitcommit: 5e8a222ae0c05392880436636cf4fe3f546e771a
+ms.openlocfilehash: dc389653010aae03c9f0ab57cf55e68d83f370d7
+ms.sourcegitcommit: 20569e032b1e0963ad295e9c46b7682832af3d44
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99084920"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100648148"
 ---
 # <a name="bug-check-0xc4-driver_verifier_detected_violation"></a>Bug 检查0xC4：驱动程序 \_ 验证程序 \_ 检测到 \_ 冲突
 
@@ -70,7 +70,7 @@ ms.locfileid: "99084920"
 |0x42|当前 IRQL|旋转锁地址|0|名为 [KeAcquireSpinLock](/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlock) 的驱动程序 DISPATCH_LEVEL >。|
 |0x51|分配的基址|超出分配的引用的地址|收费字节数|驱动程序在写入超过分配末尾后，尝试释放内存。 仅当驱动程序验证程序的池跟踪选项处于活动状态时，才会发生带有此参数的 bug 检查。|
 |0x52|分配的基址|哈希条目|收费字节数|驱动程序在写入超过分配末尾后，尝试释放内存。 仅当驱动程序验证程序的池跟踪选项处于活动状态时，才会发生带有此参数的 bug 检查。|
-|0x53|分配的基址|Header|预留|驱动程序在写入超过分配末尾后，尝试释放内存。 仅当驱动程序验证程序的池跟踪选项处于活动状态时，才会发生带有此参数的 bug 检查。|
+|0x53|分配的基址|标头|预留|驱动程序在写入超过分配末尾后，尝试释放内存。 仅当驱动程序验证程序的池跟踪选项处于活动状态时，才会发生带有此参数的 bug 检查。|
 |0x54|分配的基址|预留|池哈希大小|驱动程序在写入超过分配末尾后，尝试释放内存。 仅当驱动程序验证程序的池跟踪选项处于活动状态时，才会发生带有此参数的 bug 检查。|
 |0x59|分配的基址|Listindex|预留|驱动程序在写入超过分配末尾后，尝试释放内存。 仅当驱动程序验证程序的池跟踪选项处于活动状态时，才会发生带有此参数的 bug 检查。|
 |0x60|从分页池分配的字节数|从非分页池分配的字节数|未释放的分配总数|卸载驱动程序时，不首先释放其池分配。 仅当驱动程序验证程序的池跟踪选项处于活动状态时，才会发生带有此参数的 bug 检查。|
@@ -247,7 +247,7 @@ ms.locfileid: "99084920"
 |0x00020003 |指向描述违反规则条件的字符串的指针。|指向规则状态变量的可选指针)  (s。|预留|驱动程序违反了 DDI 相容性规则 [IrqlDispatch](../devtest/wdm-irqldispatch.md)。 IrqlDispatch 规则指定只有当 IRQL = 时，驱动程序才能调用特定例程 DISPATCH_LEVEL|
 |0x00020004 |指向描述违反规则条件的字符串的指针。|指向规则状态变量的可选指针)  (s。|预留|驱动程序违反了 DDI 相容性规则 [IrqlExAllocatePool](../devtest/wdm-irqlexallocatepool.md)。 IrqlExAllocatePool 规则指定，仅当<= DISPATCH_LEVEL 时，驱动程序才调用 [ExAllocatePoolWithTag](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag) 和 [ExAllocatePoolWithTagPriority](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtagpriority) 。|
 |0x00020005 |指向描述违反规则条件的字符串的指针。|指向规则状态变量的可选指针)  (s。|预留|驱动程序违反了 DDI 相容性规则 [IrqlExApcLte1](../devtest/wdm-irqlexapclte1.md)。 IrqlExApcLte1 规则指定驱动程序仅调用 ExAcquireFastMutex 和 ExTryToAcquireFastMutex，<= APC_LEVEL。|
-|0x00020006 |指向描述违反规则条件的字符串的指针。|指向规则状态变量的可选指针)  (s。|预留|驱动程序违反了 DDI 相容性规则 [IrqlExApcLte2](/windows-hardware/drivers/devtest/wdm-irqlexapclte2)。 IrqlExApcLte2 规则指定只有当 IRQL <= APC_LEVEL 时，驱动程序才调用特定例程。|
+|0x00020006 |指向描述违反规则条件的字符串的指针。|指向规则状态变量的可选指针)  (s。|预留|驱动程序违反了 DDI 相容性规则 [IrqlExApcLte2](../devtest/wdm-irqlexapclte2.md)。 IrqlExApcLte2 规则指定只有当 IRQL <= APC_LEVEL 时，驱动程序才调用特定例程。|
 |0x00020007 |指向描述违反规则条件的字符串的指针。|指向规则状态变量的可选指针)  (s。|预留|驱动程序违反了 DDI 相容性规则 [IrqlExApcLte3](../devtest/wdm-irqlexapclte3.md)。 IrqlExApcLte3 规则指定只有当 IRQL <= APC_LEVEL 时，驱动程序才能调用特定的执行程序支持例程。|
 |0x00020008 |指向描述违反规则条件的字符串的指针。|指向规则状态变量的可选指针)  (s。|预留|驱动程序违反了 DDI 相容性规则 [IrqlExPassive](../devtest/wdm-irqlexpassive.md)。 IrqlExPassive 规则指定只有当 IRQL = PASSIVE_LEVEL 时，驱动程序才能调用特定的执行程序支持例程。|
 |0x00020009 |指向描述违反规则条件的字符串的指针。|指向规则状态变量的可选指针)  (s。|预留|驱动程序违反了 DDI 相容性规则 [IrqlIoApcLte](../devtest/wdm-irqlioapclte.md)。 IrqlIoApcLte 规则指定只有当 IRQL <= APC_LEVEL 时，驱动程序才能调用特定的 i/o 管理器例程。|
@@ -347,7 +347,7 @@ ms.locfileid: "99084920"
 
 有关驱动程序验证程序的完整详细信息，请参阅 [驱动程序验证](../devtest/driver-verifier.md)器。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 \_池 \_ 类型代码在 Ntddk 中进行枚举。 具体而言， **0** (零) 指示非分页池， **1** (一个) 表示页面缓冲池。

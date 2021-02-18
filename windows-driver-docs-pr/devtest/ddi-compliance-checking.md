@@ -3,12 +3,12 @@ title: DDI 合规性检查
 description: DDI 相容性检查选项确定驱动程序是否正确与 Windows 操作系统内核交互。
 ms.date: 04/03/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b94cbd0098b0fff90d369dc34f3070e0ee16df84
-ms.sourcegitcommit: 5e8a222ae0c05392880436636cf4fe3f546e771a
+ms.openlocfilehash: ca6d70ce0e54d87c9225a7a8a504c19a7eb0f200
+ms.sourcegitcommit: 20569e032b1e0963ad295e9c46b7682832af3d44
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99084912"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100648168"
 ---
 # <a name="ddi-compliance-checking"></a>DDI 合规性检查
 
@@ -38,7 +38,7 @@ DDI 相容性检查选项应用 (DDI) 使用规则的相同设备驱动程序接
 
 [**IrqlExApcLte1**](./wdm-irqlexapclte1.md)
 
-[**IrqlExApcLte2**](/windows-hardware/drivers/devtest/wdm-irqlexapclte2)
+[**IrqlExApcLte2**](./wdm-irqlexapclte2.md)
 
 [**IrqlExApcLte3**](./wdm-irqlexapclte3.md)
 
@@ -171,7 +171,7 @@ DDI 相容性检查选项应用 (DDI) 使用规则的相同设备驱动程序接
 
 `verifier /ruleclasses 35 /driver MyDriver.sys`
 
-或
+OR
 
 `verifier /rc 35 /driver MyDriver.sys`
 

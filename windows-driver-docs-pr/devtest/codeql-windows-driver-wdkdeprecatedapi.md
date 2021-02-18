@@ -1,22 +1,22 @@
 ---
-title: 'WdkDeprecatedApi (Windows Driver CodeQL Query) '
+title: WdkDeprecatedApi (Windows Driver CodeQL Query)
 description: 了解 WdkDeprecatedApi 补充 Windows Driver CodeQL 查询
 ms.date: 01/11/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c883d4f841d1a8a3844504e1ea504884aa21e95
-ms.sourcegitcommit: 137d098e1a1a0c128d56a7002272847ea7c58e64
+ms.openlocfilehash: 0155c437cf97ef5aeb97b4732cdf11a4656e7fa9
+ms.sourcegitcommit: 20569e032b1e0963ad295e9c46b7682832af3d44
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98192900"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100648134"
 ---
 # <a name="wdkdeprecatedapi--windows-driver-codeql-query"></a>WdkDeprecatedApi (Windows Driver CodeQL Query) 
 
 ## <a name="overview"></a>概述
 
-对于 Windows 10 版本2004版，Microsoft 引入了新的池零位调整 Api，默认情况下为零： [ExAllocatePool2](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepool2) 和 [ExAllocatePool3](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepool3)。
+对于 Windows 10 版本2004版，Microsoft 引入了新的池零位调整 Api，默认情况下为零： [ExAllocatePool2](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepool2) 和 [ExAllocatePool3](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepool3)。
 
-不 *推荐* 使用的 [CodeQL 查询](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-tools-and-codeql) 会查找驱动程序不应调用的不推荐使用的 api 的所有实例。  弃用的 Api 包括：
+不 *推荐* 使用的 [CodeQL 查询](./static-tools-and-codeql.md) 会查找驱动程序不应调用的不推荐使用的 api 的所有实例。  弃用的 Api 包括：
 
 [ExAllocatePool](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepool)
 
@@ -53,7 +53,7 @@ RtlZeroMemory(Allocation, 100);
 PVOID Allocation = ExAllocatePool2(POOL_FLAG_PAGED, 100, 'abcd');
 ```
 
-旧的池分配 Api 接受 [POOL_TYPE](/windows-hardware/drivers/ddi/wdm/ne-wdm-_pool_type) 参数，但新的分配 api 接受 [POOL_FLAGS](/windows-hardware/drivers/kernel/pool_flags) 参数。 更新任何关联的代码以使用新的 [POOL_FLAGS](/windows-hardware/drivers/kernel/pool_flags) 参数。
+旧的池分配 Api 接受 [POOL_TYPE](/windows-hardware/drivers/ddi/wdm/ne-wdm-_pool_type) 参数，但新的分配 api 接受 [POOL_FLAGS](../kernel/pool_flags.md) 参数。 更新任何关联的代码以使用新的 [POOL_FLAGS](../kernel/pool_flags.md) 参数。
 
 ### <a name="exallocatepoolwithquotaexallocatepoolwithquotatag"></a>ExAllocatePoolWithQuota/ExAllocatePoolWithQuotaTag
 
@@ -171,5 +171,4 @@ PVOID Allocation = ExAllocatePoolZero(PagedPool, 100, 'abcd');
 
 ## <a name="additional-details"></a>其他详细信息
 
-此查询可在 [Microsoft GitHub CodeQL 存储库](https://github.com/microsoft/Windows-Driver-Developer-Supplemental-Tools)中找到。  有关 Windows 驱动程序开发人员如何下载和运行 CodeQL 的详细信息，请参阅 [CodeQL 和静态工具徽标测试](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-tools-and-codeql) 页。
-
+此查询可在 [Microsoft GitHub CodeQL 存储库](https://github.com/microsoft/Windows-Driver-Developer-Supplemental-Tools)中找到。  有关 Windows 驱动程序开发人员如何下载和运行 CodeQL 的详细信息，请参阅 [CodeQL 和静态工具徽标测试](./static-tools-and-codeql.md) 页。

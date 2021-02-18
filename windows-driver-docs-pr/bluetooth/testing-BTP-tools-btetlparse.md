@@ -3,12 +3,12 @@ title: Microsoft 蓝牙测试平台-BTETLParse
 description: 蓝牙测试平台 (BTP) 蓝牙 ETL 分析。
 ms.date: 1/12/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 75d7a46f38cfd3c04b48950ccfc0938b0852f066
-ms.sourcegitcommit: 76698e25b77af71155e689200c6e0cf817bfd0d7
+ms.openlocfilehash: 310a673b410dc2717ae176a120e420e9d91fa917
+ms.sourcegitcommit: 20569e032b1e0963ad295e9c46b7682832af3d44
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2021
-ms.locfileid: "100267478"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100648100"
 ---
 # <a name="bluetooth-etl-parse-btetlparseexe"></a>蓝牙 ETL 分析 (BTETLParse.exe) 
 
@@ -16,7 +16,7 @@ ms.locfileid: "100267478"
 
 此工具旨在分析使用 [GitHub 上的 Windows](https://github.com/microsoft/busiotools/blob/master/bluetooth/tracing/readme.md)存储库的总线工具收集的 ETL 文件。
 
-[Tracefmt](https://docs.microsoft.com/windows-hardware/drivers/devtest/tracefmt) 是一种方法，用于分析 ETL 文件中的其他日志。
+[Tracefmt](../devtest/tracefmt.md) 是一种方法，用于分析 ETL 文件中的其他日志。
 
 ## <a name="etl-parse-command-line-options"></a>ETL 分析命令行选项
 

@@ -11,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a57e6c13eeba2e183ab9bd9c681b69c3608f163
-ms.sourcegitcommit: 5e8a222ae0c05392880436636cf4fe3f546e771a
+ms.openlocfilehash: 898dd8a1eb2082f5e84986ead8bdee8135cfd047
+ms.sourcegitcommit: 20569e032b1e0963ad295e9c46b7682832af3d44
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99084921"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100648136"
 ---
 # <a name="wmicomplete-rule-wdm"></a>WmiComplete 规则 (wdm) 
 
@@ -25,7 +25,7 @@ ms.locfileid: "99084921"
 
 *Wmi 次要 IRP* 是具有 WMI 次要函数代码的 [**IRP \_ MJ \_ 系统 \_ 控制**](../kernel/irp-mj-system-control.md)请求。
 
-有关处理 WMI 次要 Irp 的详细信息，请参阅 [**WDM 驱动程序的 Wmi 要求**](../kernel/wmi-requirements-for-wdm-drivers.md)、 [**处理 wmi 请求**](../kernel/handling-wmi-requests.md)、 [**Windows Management Instrumentation 例程**](/windows-hardware/drivers/kernel/windows-kernel-mode-wmi-library)和 [**WMI 库支持例程**](/windows-hardware/drivers/kernel/windows-kernel-mode-wmi-library)。
+有关处理 WMI 次要 Irp 的详细信息，请参阅 [**WDM 驱动程序的 Wmi 要求**](../kernel/wmi-requirements-for-wdm-drivers.md)、 [**处理 wmi 请求**](../kernel/handling-wmi-requests.md)、 [**Windows Management Instrumentation 例程**](../kernel/windows-kernel-mode-wmi-library.md)和 [**WMI 库支持例程**](../kernel/windows-kernel-mode-wmi-library.md)。
 
 未注册为 WMI 数据提供程序的驱动程序必须将 WMI 请求转发到下一个较低版本的驱动程序。 若要验证此操作，请使用 [**WmiForward**](wdm-wmiforward.md) 规则。
 

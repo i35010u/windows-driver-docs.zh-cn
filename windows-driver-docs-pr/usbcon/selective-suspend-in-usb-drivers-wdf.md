@@ -3,12 +3,12 @@ description: USB 函数驱动程序通过实现 USB 选择性挂起来支持运�
 title: USB 驱动程序 (WDF) 中的选择性挂起
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e73d8fdb71cfec0599d4d7ee091aa5da545e834
-ms.sourcegitcommit: 73d561f4bb910e1740479f8845f349fc3ada5d32
+ms.openlocfilehash: 72150ef07b1ef5ddda109b91392a48ebaced1e7b
+ms.sourcegitcommit: 20569e032b1e0963ad295e9c46b7682832af3d44
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99578421"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100648174"
 ---
 # <a name="selective-suspend-in-usb-drivers-wdf"></a>USB 驱动程序 (WDF) 中的选择性挂起
 
@@ -94,5 +94,5 @@ USB 函数驱动程序应通过 WDF 为其单独的设备功能实现选择性�
 [即插即用-体系结构和驱动程序支持](/previous-versions/windows/hardware/design/dn614609(v=vs.85))  
 [KMDF 驱动程序中的 PnP 和电源管理](../wdf/index.md)  
 [当 WDF 驱动程序可以使用 Power-Managed i/o 队列时](/previous-versions/windows/hardware/design/dn614013(v=vs.85))  
-[用 WDF 编写 USB 驱动程序](/windows-hardware/drivers/wdf/working-with-usb-devices)  
+[用 WDF 编写 USB 驱动程序](../wdf/working-with-usb-devices.md)  
 [在 USB 客户端驱动程序中实施电源管理的概述](./usb-power-management.md)

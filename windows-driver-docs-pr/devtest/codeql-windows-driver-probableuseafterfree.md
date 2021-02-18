@@ -3,18 +3,18 @@ title: 'ProbableUseAfterFree (补充 Windows 驱动程序 CodeQL 查询) '
 description: UseAfterFree，低精度 a 补充 Windows 驱动程序 CodeQL 查询
 ms.date: 01/11/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: bed0e1742bac60da002e60c009d05820d35035de
-ms.sourcegitcommit: 137d098e1a1a0c128d56a7002272847ea7c58e64
+ms.openlocfilehash: 2d513f37f8fffddcbb405009a7011d95d3cd4fe6
+ms.sourcegitcommit: 20569e032b1e0963ad295e9c46b7682832af3d44
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98192897"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100648164"
 ---
-# <a name="probable-useafterfree-windows-driver-codeql-query"></a>可能的 UseAfterFree (Windows Driver CodeQL Query) 
+# <a name="probable-useafterfree-windows-driver-codeql-query"></a>可能的 UseAfterFree（Windows 驱动程序 CodeQL 查询）
 
 ## <a name="overview"></a>概述
 
-此 [CodeQL 查询](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-tools-and-codeql) 的精度低于高精度 [UseAfterFree](https://docs.microsoft.com/windows-hardware/drivers/devtest/codeql-windows-driver-useafterfree) CodeQL 查询。 它检测到一些其他方案，但也有更高的误报速率。
+此 [CodeQL 查询](./static-tools-and-codeql.md) 的精度低于高精度 [UseAfterFree](./codeql-windows-driver-useafterfree.md) CodeQL 查询。 它检测到一些其他方案，但也有更高的误报速率。
 
 如果在释放分配的内存块 (也称为 "无关联指针" ) ，则会发生 [UseAfterFree 缺陷](http://cwe.mitre.org/data/definitions/416.html) 。
 
@@ -74,5 +74,4 @@ if (Status == 0 && pSomePointer != NULL)
 
 ## <a name="additional-details"></a>其他详细信息
 
-此查询可在 [Microsoft GitHub CodeQL 存储库](https://github.com/microsoft/Windows-Driver-Developer-Supplemental-Tools)中找到。  有关 Windows 驱动程序开发人员如何下载和运行 CodeQL 的详细信息，请参阅 [CodeQL 和静态工具徽标测试](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-tools-and-codeql) 页。
-
+此查询可在 [Microsoft GitHub CodeQL 存储库](https://github.com/microsoft/Windows-Driver-Developer-Supplemental-Tools)中找到。  有关 Windows 驱动程序开发人员如何下载和运行 CodeQL 的详细信息，请参阅 [CodeQL 和静态工具徽标测试](./static-tools-and-codeql.md) 页。

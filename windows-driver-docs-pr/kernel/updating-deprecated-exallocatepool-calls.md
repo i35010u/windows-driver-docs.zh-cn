@@ -1,5 +1,5 @@
 ---
-title: 更新对 ExAllocatePool2 和 ExAllocatePool3 的不推荐使用的 ExAllocatePool 调用
+title: 将对已弃用的 ExAllocatePool 调用更新为 ExAllocatePool2 和 ExAllocatePool3
 description: 了解如何更新对 ExAllocatePool2 和 ExAllocatePool3 的不推荐使用的 ExAllocatePool 调用
 keywords:
 - 内存管理 WDK 内核，系统分配的空间
@@ -10,14 +10,14 @@ keywords:
 - ExAllocatePool2
 ms.date: 01/11/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: d4f6f180ed8a2bb2f7742f46aceb52d44e767617
-ms.sourcegitcommit: dbf5b780975d2911545d8bfa6fead4a97e7cfa88
+ms.openlocfilehash: f76e7a35e94613469cbc18694270077739ad1e52
+ms.sourcegitcommit: 20569e032b1e0963ad295e9c46b7682832af3d44
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98253821"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100648126"
 ---
-# <a name="updating-deprecated-exallocatepool-calls-to-exallocatepool2-and-exallocatepool3"></a>更新对 ExAllocatePool2 和 ExAllocatePool3 的不推荐使用的 ExAllocatePool 调用
+# <a name="updating-deprecated-exallocatepool-calls-to-exallocatepool2-and-exallocatepool3"></a>将对已弃用的 ExAllocatePool 调用更新为 ExAllocatePool2 和 ExAllocatePool3
 
 从 Windows 10 版本2004开始，不推荐使用以下 DDIs，因此应将其替换为本主题中所述。
 
@@ -56,7 +56,7 @@ RtlZeroMemory(Allocation, 100);
 PVOID Allocation = ExAllocatePool2(POOL_FLAG_PAGED, 100, 'abcd');
 ```
 
-旧的池分配 Api 接受 [POOL_TYPE](/windows-hardware/drivers/ddi/wdm/ne-wdm-_pool_type) 参数，但新的分配 api 接受 [POOL_FLAGS](/windows-hardware/drivers/kernel/pool_flags) 参数。 更新任何关联的代码以使用新的 [POOL_FLAGS](/windows-hardware/drivers/kernel/pool_flags) 参数。
+旧的池分配 Api 接受 [POOL_TYPE](/windows-hardware/drivers/ddi/wdm/ne-wdm-_pool_type) 参数，但新的分配 api 接受 [POOL_FLAGS](./pool_flags.md) 参数。 更新任何关联的代码以使用新的 [POOL_FLAGS](./pool_flags.md) 参数。
 
 ### <a name="exallocatepoolwithquotaexallocatepoolwithquotatag"></a>ExAllocatePoolWithQuota/ExAllocatePoolWithQuotaTag
 
@@ -175,7 +175,7 @@ PVOID Allocation = ExAllocatePoolZero(PagedPool, 100, 'abcd');
 
 ## <a name="driver-verifier-unsafeallocatepool-rules"></a>驱动程序验证程序 UnSafeAllocatePool 规则
 
-Driver verifier [UnSafeAllocatePool](/windows-hardware/drivers/devtest/kmdf-unsafeallocatepool) 规则是一个重要的安全规则，用于检查驱动程序是否未使用不推荐使用的 DDIs 来分配内存。 预览版 WDK 版本20236及更高版本中提供了此规则。
+Driver verifier [UnSafeAllocatePool](../devtest/kmdf-unsafeallocatepool.md) 规则是一个重要的安全规则，用于检查驱动程序是否未使用不推荐使用的 DDIs 来分配内存。 预览版 WDK 版本20236及更高版本中提供了此规则。
 
 ## <a name="see-also"></a>另请参阅
 

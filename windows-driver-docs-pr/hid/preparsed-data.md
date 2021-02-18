@@ -6,12 +6,12 @@ keywords:
 - preparsed 数据 WDK HID
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ff2b5433b68f0cde96f21e98452813fba642b0ce
-ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
+ms.openlocfilehash: de916ddb33927520fd334fa3caf590f9612d8ed6
+ms.sourcegitcommit: 20569e032b1e0963ad295e9c46b7682832af3d44
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97090762"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100648150"
 ---
 # <a name="preparsed-data"></a>预分析的数据
 
@@ -23,11 +23,11 @@ ms.locfileid: "97090762"
 
 以下 [HIDClass 支持例程](/windows-hardware/drivers/ddi/_hid) 支持提取和设置按钮和值数据：
 
-[**HidP \_ GetButtons**](./hdpi-h-macros.md)
+[**HidP \_ GetButtons**](/windows-hardware/drivers/ddi/hidpi/#functionsfunctions)
 
-[**HidP \_ SetButtons**](./hdpi-h-macros.md)
+[**HidP \_ SetButtons**](/windows-hardware/drivers/ddi/hidpi/#functionsfunctions)
 
-[**HidP \_ UnsetButtons**](./hdpi-h-macros.md)
+[**HidP \_ UnsetButtons**](/windows-hardware/drivers/ddi/hidpi/#functionsfunctions)
 
 [**HidP \_ GetUsageValue**](/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_getusagevalue)
 
@@ -40,6 +40,4 @@ ms.locfileid: "97090762"
 [**HidP \_ GetUsageValueArray**](/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_getusagevaluearray)
 
 [**HidP \_ SetUsageValueArray**](/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_setusagevaluearray)
-
- 
 
