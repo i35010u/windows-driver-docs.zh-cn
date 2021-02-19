@@ -9,12 +9,12 @@ keywords:
 ms.date: 08/17/2020
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 5f7ddfdc2d469a74c2664ddd59d6d22cbb7ed8a2
-ms.sourcegitcommit: 18e027265862b9c6fe3acdb913299d68fc61c023
+ms.openlocfilehash: 928b4eaf27690ddf29eecf41e1c4707d41c3a73a
+ms.sourcegitcommit: 76698e25b77af71155e689200c6e0cf817bfd0d7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99421903"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "100262189"
 ---
 # <a name="download-the-windows-driver-kit-wdk"></a>下载 Windows 驱动程序工具包 (WDK)
 
@@ -102,7 +102,7 @@ EWDK 还需要 .NET Framework 版本 4.7.2。 有关 .NET Framework 的其他要
 >2. 运行 `LaunchBuildEnv.cmd`。
 >3. 在步骤 2 中创建的环境中，键入“SetupVSEnv”，然后按“Enter” 。
 >4. 使用完整的文件路径，从同一环境中启动 devenv.exe。 
->示例： `C:\Program Files (x86)\Microsoft Visual Studio\2019\\%Community|Professionial|Enterprise%\Common7\IDE\devenv.exe`
+>示例： `"C:\Program Files (x86)\Microsoft Visual Studio\2019\\%Community|Professional|Enterprise%\Common7\IDE\devenv.exe"`
 >
 >请注意，Visual Studio 主要版本应与 EWDK 中的版本匹配。 例如，Visual Studio 2019 适用于包含 VS16.X 生成工具的 EWDK。 
 

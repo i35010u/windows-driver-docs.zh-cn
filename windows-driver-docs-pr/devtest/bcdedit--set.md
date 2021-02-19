@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.localizationpriority: high
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 78cee4564790032466d6790c8d51fbd9c4358f15
-ms.sourcegitcommit: 7b3bddc91b87de5afce36c120620497c37234fbf
+ms.openlocfilehash: 5bd472dab5c288a217c0cb4602d80f51c0c304f6
+ms.sourcegitcommit: 20569e032b1e0963ad295e9c46b7682832af3d44
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98811994"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100648138"
 ---
 # <a name="bcdedit-set"></a>BCDEdit /set
 
@@ -381,7 +381,7 @@ bcdedit /deletevalue groupsize
 
 ## <a name="dtrace"></a>DTrace
 
-DTrace (DTrace.exe) 是一个命令行工具，用于显示系统信息和事件。 其中有一个用于启用 dtrace 的 bcedit 选项。 有关可用的 DTrace BCDEdit 选项的信息，请参阅 [Windows 上的 DTrace](/windows-hardware/drivers/devtest/dtrace) 的“安装”部分。
+DTrace (DTrace.exe) 是一个命令行工具，用于显示系统信息和事件。 其中有一个用于启用 dtrace 的 bcedit 选项。 有关可用的 DTrace BCDEdit 选项的信息，请参阅 [Windows 上的 DTrace](./dtrace.md) 的“安装”部分。
 
 ## <a name="requirements"></a>要求
 
