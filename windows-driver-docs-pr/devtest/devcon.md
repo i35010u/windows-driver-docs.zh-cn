@@ -17,17 +17,17 @@ keywords:
 - 列出设备信息 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: high
-ms.openlocfilehash: 68533ea7cc44e2ca9894b290c295f38da7733a63
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 1d75680ce3e582fc540ac557d6e134c7ea877a7f
+ms.sourcegitcommit: 76698e25b77af71155e689200c6e0cf817bfd0d7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96783333"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "100262263"
 ---
 # <a name="windows-device-console-devconexe"></a>Windows 设备控制台 (Devcon.exe)
 
 > [!NOTE]
-> 请使用 PnPUtil 工具，而不使用 DevCon。
+> 请使用 [PnPUtil](pnputil.md) 工具，而不使用 DevCon。
 > 
 
 
@@ -79,7 +79,7 @@ Windows 驱动程序开发人员和测试人员可以使用 DevCon 验证是否�
 
 DevCon 是一种命令行工具，可在本地计算机和远程计算机上执行设备管理功能。
 
-**注意** 若要在远程计算机上运行 DevCon 命令，组策略设置必须允许即插即用服务在远程计算机上运行。 在运行 Windows Vista 和 Windows 7 的计算机上，默认情况下组策略禁用对服务的远程访问。 在运行 WDK 8.1 和 WDK 8 的计算机上，远程访问不可用。
+**注意** 若要在远程计算机上运行 DevCon 命令，组策略设置必须允许即插即用服务在远程计算机上运行。 在运行 Windows Vista 和 Windows 7 的计算机上，默认情况下组策略禁用对服务的远程访问。 在运行 Windows 8 和更高版本操作系统的计算机上，远程访问不可用。
 
  
 
@@ -95,7 +95,7 @@ Devcon 的功能包括：
     -   服务状态
     -   需要的驱动程序堆栈
     -   驱动程序存储中的第三方驱动程序包
--   **搜索设备** DevCon 可以通过硬件 ID、设备实例 ID 或设备安装程序类搜索本地或远程计算机上已安装和已卸载的设备。
+-   搜索设备 - DevCon 可通过硬件 ID、设备实例 ID 或设备安装程序类搜索本地或远程计算机上的设备。
 
 -   **更改设备设置** DevCon 可以通过以下方式更改本地计算机上即插即用 (PnP) 设备的状态或配置：
     -   启用设备

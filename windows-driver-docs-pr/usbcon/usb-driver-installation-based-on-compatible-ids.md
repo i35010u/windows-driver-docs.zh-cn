@@ -3,12 +3,12 @@ description: 用于通信和 CDC 控制设备的 Microsoft 提供的内置驱动
 title: USB 串行驱动程序 (Usbser.sys)
 ms.date: 04/20/2017
 ms.localizationpriority: High
-ms.openlocfilehash: 11589c8a55aba4ae42607c49b9c6e62ac8d84c06
-ms.sourcegitcommit: 10fecd036370f5eccb538004c5bec1fdd18c3275
+ms.openlocfilehash: cd4dfa2415eb29ee190867d718cb957b5f14add6
+ms.sourcegitcommit: 20569e032b1e0963ad295e9c46b7682832af3d44
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98124123"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100648172"
 ---
 # <a name="usb-serial-driver-usbsersys"></a>USB 串行驱动程序 (Usbser.sys)
 
@@ -72,7 +72,7 @@ include=mdmcpq.inf
 AddReg=LowerFilterAddReg
 ```
 
-有关详细信息，请参阅[此知识库文章](https://support.microsoft.com/help/837637/how-to-use-or-to-reference-the-usbser-sys-driver-from-universal-serial/)。
+有关详细信息，请参阅[如何从通用串行总线 (USB) 调制解调器 .inf 文件中使用或引用 Usbser.sys 驱动程序](/troubleshoot/windows-client/deployment/how-to-use-reference-usbser-driver-universal-serial-bus)。
 
 ## <a name="configure-selective-suspend-for-usbsersys"></a>为 Usbser.sys 配置选择性挂起
 

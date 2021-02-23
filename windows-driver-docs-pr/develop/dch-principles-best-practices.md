@@ -3,12 +3,12 @@ title: DCH 设计原则和最佳做法
 description: 介绍了 Windows 驱动程序的 DCH 原则。
 ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: f3461550c9fe65c27dbbd35d23730cef7db0c425
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 1faced214952a806751dabbade61d0878b915da7
+ms.sourcegitcommit: 30e2f252126b36f378df9281ab861b1a360b81a6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96839789"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100360281"
 ---
 # <a name="dch-design-principles-and-best-practices"></a>DCH 设计原则和最佳做法
 
@@ -50,9 +50,9 @@ OEM 仅验证它为 OEM 系统提供的可选自定义项。
 
 若要创建遵循 DCH 设计原则的驱动程序包，请按照以下步骤操作：
 
-*  为驱动程序创建[通用 INF](../install/using-a-universal-inf-file.md)：
+*  为驱动程序创建一个 INF 文件：
     1.  审阅 [Windows 驱动程序包中有效的 INF 部分和指令的列表](../install/using-a-universal-inf-file.md#which-inf-sections-are-invalid-in-a-universal-inf-file)。
-    2.  使用 [InfVerif](../devtest/infverif.md) 工具来验证驱动程序包的 INF 文件是否遵循 Windows 驱动程序的声明性 (D) 要求。
+    2.  使用 [InfVerif](../devtest/infverif.md) 工具来验证驱动程序包的 INF 文件是否遵循 Windows 驱动程序的声明性 (D) 要求。  它应该通过 `infverif /w`。
 *  确保所有不包含核心驱动程序功能的可选组件包都与基础驱动程序包分离。    
 *  与驱动程序包关联的硬件支持应用必须通过 Microsoft Store 分发。
 
