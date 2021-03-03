@@ -6,12 +6,12 @@ keywords:
 ms.date: 03/07/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 5edf26c55ba64be7de0d1b939ade47a571f59cf5
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 718edfe252a04464e1b3e185420a40261b47de7d
+ms.sourcegitcommit: ac28dd2a921c25796d19572a180b88e460420488
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96841173"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101682226"
 ---
 # <a name="mb-uicc-application-and-file-system-access"></a>MB UICC 应用程序和文件系统访问权限
 
@@ -62,9 +62,9 @@ UICC 文件系统可视为目录树的林。 旧的 SIM 树位于 (MF) 的主文
 
 ### <a name="parameters"></a>参数
 
-| 操作 | 设置 | 查询 | 通知 |
+| Operation | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
-| 命令 | 不适用 | 空 | 不适用 |
+| Command | 不适用 | 空 | 不适用 |
 | 响应 | 不适用 | MBIM_UICC_APP_LIST | 不适用 |
 
 ### <a name="query"></a>查询
@@ -81,30 +81,32 @@ MBIM_COMMAND_DONE 中的 InformationBuffer 包含以下 MBIM_UICC_APP_LIST 结�
 
 #### <a name="mbim_uicc_app_list-version-1"></a>版本 1 (MBIM_UICC_APP_LIST) 
 
-| Offset | 大小 | 字段 | 类型 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | 版本 | UINT32 | 后面的结构的版本号。 对于此结构的版本1，此字段必须设置为 **1** 。 |
 | 4 | 4 | AppCount | UINT32 | 此响应中返回的 UICC 应用程序 **MBIM_UICC_APP_INFO** 结构的数目。 |
 | 8 | 4 | ActiveAppIndex | UINT32 (NumApp-1)  | 调制解调器选择的用于向移动网络注册的应用程序的索引。 此字段必须介于 **0** 到 **AppCount-1** 之间。 它将索引到此响应返回的应用程序数组。 如果没有为注册选择任何应用程序，则此字段将包含 **0xffffffff**。 |
-| 12 | 4 | AppListOffset | OFFSET | 从该结构的开头计算的偏移量（以字节为单位），该偏移量为包含应用列表的缓冲区。 |
-| 16 | 4 | AppListSize | 大小 (0 AppCount * 312)  | 应用列表数据的大小（以字节为单位）。 |
-| 20 | AppListSize | DataBuffer | DATABUFFER | **AppCount**  *  **MBIM_UICC_APP_INFO** 结构的数组。 |
+| 12 | 4 | AppListSize | UINT32 | 应用列表数据的大小（以字节为单位）。 |
+|  | 8 \* AppCount | AppList | OL_PAIR_LIST | 该对的第一个元素为4字节字段，其偏移量为 DataBuffer 中的应用信息。 对的第二个元素是一个具有应用信息大小的4字节字段。 |
+|  | AppListSize | DataBuffer | DATABUFFER | **AppCount**  *  **MBIM_UICC_APP_INFO** 结构的数组。 |
 
 #### <a name="mbim_uicc_app_info"></a>MBIM_UICC_APP_INFO
 
-| Offset | 大小 | 字段 | 类型 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | AppType | MBIM_UICC_APP_TYPE | UICC 应用程序的类型。 |
-| 4 | 4 | AppIdSize | 大小 (0)  | [ETSI TS 102 221 技术规范](https://go.microsoft.com/fwlink/p/?linkid=864594)的8.3 节中定义的应用程序 ID 的大小（以字节为单位）。 对于 **MBIMUiccAppTypeMf**、 **MBIMUiccAppTypeMfSIM** 或 **MBIMUiccAppTypeMfRUIM** 应用类型，此字段设置为零。 |
-| 8 | 16 | AppId | Byte Array | 应用程序 ID。 只有第一个 **AppIdSize** 字节是有意义的。 如果应用程序 ID 的长度超过 **MBIM_MAXLENGTH_APPID** 个字节，则 AppIdSize 指定实际长度，但只有第一个 **MBIM_MAXLENGTH_APPID** 字节位于此字段中。 仅当 **AppType** 不是 **MBIMUiccAppTypeMf**、 **MBIMUiccAppTypeMfSIM** 或 **MBIMUiccAppTypeMfRUIM** 时，此字段才有效。 |
-| 24 | 4 | AppNameLength | 大小 (0 .0)  | 应用程序名称的长度（以字符为字符）。 |
-| 28 | 256 | 应用名称 | ASCII 字符数组 | 指定应用程序名称的 UTF-8 字符串。 此字段的长度由 **AppNameLength** 指定。 如果长度大于或等于 **MBIM_MAXLENGTH_APPNAME** 字节，则此字段包含名称的第一个 **MBIM_MAXLENGTH_APPNAME** 字节。 字符串始终以 null 结尾。 |
-| 284 | 4 | NumPins | 大小 (0. 8)  | 应用程序 PIN 引用的数目。 换言之， **PinRef** 的元素数是有效的。 虚拟 R-UIM 上的应用程序没有 PIN 引用。 |
-| 288 | 8 | PinRef | Byte Array | 一个字节数组，指定此应用程序的应用程序 PIN 引用 (用于 PIN1 的密钥和可能的 UPIN) ，如 [ETSI TS 102 221 技术规范](https://go.microsoft.com/fwlink/p/?linkid=864594)的9.4.2 节中所述。 对于单一验证卡，或者不支持不同应用程序的不同应用程序密钥的 MBB 驱动程序和/或调制解调器，此字段必须为 **0x01**。 |
+| 4 |   4   | AppIdOffset | OFFSET | Databuffer 中应用程序 ID 的偏移量。 只有第一个 AppIdSize 字节是有意义的。 如果应用程序 ID 的长度超过 MBIM_MAXLENGTH_APPID 个字节，则 AppIdSize 指定实际长度，但只有第一个 MBIM_MAXLENGTH_APPID 字节位于此字段中。 仅当 AppType 不是 MBIMUiccAppTypeMf、MBIMUiccAppTypeMfSIM 或 MBIMUiccAppTypeMfRUIM 时，此字段才有效。 |
+| 8 |   4   | AppIdSize | 大小 (0)  | ETSI TS 102 221 技术规范的8.3 节中定义的应用程序 ID 的大小（以字节为单位）。 对于 MBIMUiccAppTypeMf、MBIMUiccAppTypeMfSIM 或 MBIMUiccAppTypeMfRUIM 应用类型，此字段设置为零。 |
+| 12 |  | AppNameOffset | OFFSET | Databuffer 中应用程序名称的偏移量。 指定应用程序名称的 UTF-8 字符串。 此字段的长度由 AppNameLength 指定。 如果长度大于或等于 MBIM_MAXLENGTH_APPNAME 字节，则此字段包含名称的第一个 MBIM_MAXLENGTH_APPNAME 字节。 字符串始终以 null 结尾。 |
+| 16 | 4 | AppNameLength | 大小 (0 .0)  | 应用程序名称的长度（以字符为字符）。 |
+| 20 | 4 | NumPinKeyRefs | 大小 (0. 8)  | 应用程序 PIN 键引用的数目。 换言之，PinKeyRef 的元素数是有效的。 虚拟 R-UIM 上的应用程序没有 PIN 键引用。 |
+| 24 | 4 | KeyRefOffset | OFFSET | DataBuffer 中 PinKeyRef 的偏移量。 PinKeyRef 是一个字节数组，该数组指定应用程序的不同验证级别的 PIN 码引用 (密钥用于 PIN1、PIN2，还可能是通用 PIN) ，如 ETSI TS 102 221 技术规范的表9.3 和节9.4.2 中所定义。 对于单一验证卡，或者不支持不同应用程序的不同应用程序密钥的 MBB 驱动程序和/或调制解调器，PinKeyRef 字段的第一个字节必须为 0x01 (PIN1) 并且第二个字节必须为 0x81 (PIN2) ，如 9.5.1 TS 102 221 的 ETSI 部分中所述。 |
+| 28 | 4 | KeyRefSize | 大小 (0. 8)  | PinKeyRef 的大小。 |
+| 32 |  | DataBuffer | DATABUFFER | 包含单一验证卡的 AppId、AppName 和 PinKeyRef 的数据缓冲区，或者对于不同应用程序不支持不同应用程序密钥的 MBB 驱动程序和/或调制解调器，此字段必须为 **0x01**。 |
 
 #### <a name="mbim_uicc_app_type"></a>MBIM_UICC_APP_TYPE
 
-| 类型 | 值 | 描述 |
+| 类型 | Value | 说明 |
 | --- | --- | --- |
 | MBIMUiccAppTypeUnknown | 0 | 未知类型。 |
 | MBIMUiccAppTypeMf | 1 | MF 上的旧版 SIM 目录。 |
@@ -118,7 +120,7 @@ MBIM_COMMAND_DONE 中的 InformationBuffer 包含以下 MBIM_UICC_APP_LIST 结�
 
 以下常量定义 MBIM_CID_MS_UICC_APP_INFO。
 
-`const int MBIM_MAXLENGTH_APPID = 16`  
+`const int MBIM_MAXLENGTH_APPID = 32`  
 `const int MBIM_MAXLENGTH_APPNAME = 256`  
 `const int MBIM_MAXNUM_PINREF = 8`  
 
@@ -146,9 +148,9 @@ MBIM_COMMAND_DONE 中的 InformationBuffer 包含以下 MBIM_UICC_APP_LIST 结�
 
 ### <a name="parameters"></a>参数
 
-| 操作 | 设置 | 查询 | 通知 |
+| Operation | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
-| 命令 | 不适用 | MBIM_UICC_FILE_PATH | 不适用 |
+| Command | 不适用 | MBIM_UICC_FILE_PATH | 不适用 |
 | 响应 | 不适用 | MBIM_UICC_FILE_STATUS | 不适用 |
 
 ### <a name="query"></a>查询
@@ -157,7 +159,7 @@ MBIM_COMMAND_MSG 的 InformationBuffer 包含目标 EF 作为 MBIM_UICC_FILE_PAT
 
 #### <a name="mbim_uicc_file_path-version-1"></a>版本 1 (MBIM_UICC_FILE_PATH) 
 
-| Offset | 大小 | 字段 | 类型 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | 版本 | UINT32 | 后面的结构的版本号。 对于此结构的版本1，此字段必须为 **1** 。 |
 | 4 | 4 | AppIdOffset | OFFSET | 从该结构的开头计算的偏移量（以字节为单位），该偏移量为包含应用程序 ID 的缓冲区。 |
@@ -176,7 +178,7 @@ MBIM_COMMAND_MSG 的 InformationBuffer 包含目标 EF 作为 MBIM_UICC_FILE_PAT
 
 #### <a name="mbim_uicc_file_status-version-1"></a>版本 1 (MBIM_UICC_FILE_STATUS) 
 
-| Offset | 大小 | 字段 | 类型 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | 版本 | UINT32 | 后面的结构的版本号。 对于此结构的版本1，此字段必须为 **1** 。 |
 | 4 | 4 | StatusWord1 | UINT32 (0. 256)  | 特定于 UICC 命令的返回参数。 |
@@ -192,7 +194,7 @@ MBIM_COMMAND_MSG 的 InformationBuffer 包含目标 EF 作为 MBIM_UICC_FILE_PAT
 
 MBIM_UICC_FILE_ACCESSIBILITY 枚举用于前面的 MBIM_UICC_FILE_STATUS 结构。
 
-| 类型 | 值 | 描述 |
+| 类型 | Value | 说明 |
 | --- | --- | --- |
 | MBIMUiccFileAccessibilityUnknown | 0 | 文件可共享性未知。 |
 | MBIMUiccFileAccessibilityNotShareable | 1 | 不可共享的文件。 |
@@ -202,7 +204,7 @@ MBIM_UICC_FILE_ACCESSIBILITY 枚举用于前面的 MBIM_UICC_FILE_STATUS 结构�
 
 MBIM_UICC_FILE_TYPE 枚举用于前面的 MBIM_UICC_FILE_STATUS 结构。
 
-| 类型 | 值 | 描述 |
+| 类型 | Value | 说明 |
 | --- | --- | --- |
 | MBIMUiccFileTypeUnknown | 0 | 文件类型未知。 |
 | MBIMUiccFileTypeWorkingEf | 1 | 正在运行 EF。 |
@@ -213,7 +215,7 @@ MBIM_UICC_FILE_TYPE 枚举用于前面的 MBIM_UICC_FILE_STATUS 结构。
 
 MBIM_UICC_FILE_STRUCTURE 枚举用于前面的 MBIM_UICC_FILE_STATUS 结构。
 
-| 类型 | 值 | 描述 |
+| 类型 | Value | 说明 |
 | --- | --- | --- |
 | MBIMUiccFileStructureUnknown | 0 | 未知的文件结构。 |
 | MBIMUiccFileStructureTransparent | 1 | 长度可变的单个记录。 |
@@ -225,7 +227,7 @@ MBIM_UICC_FILE_STRUCTURE 枚举用于前面的 MBIM_UICC_FILE_STATUS 结构。
 
 MBIM_PIN_TYPE_EX 枚举用于前面的 MBIM_UICC_FILE_STATUS 结构。
 
-| 类型 | 值 | 描述 |
+| 类型 | Value | 说明 |
 | --- | --- | --- |
 | MBIMPinTypeNone | 0 | 未等待输入任何 PIN。 |
 | MBIMPinTypeCustom | 1 | PIN 类型为自定义类型，并且不是此枚举中列出的其他任何类型的 PIN 类型。 |
@@ -270,9 +272,9 @@ MBIM_PIN_TYPE_EX 枚举用于前面的 MBIM_UICC_FILE_STATUS 结构。
 
 ### <a name="parameters"></a>参数
 
-| 操作 | 设置 | 查询 | 通知 |
+| Operation | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
-| 命令 | 不适用 | MBIM_UICC_ACCESS_BINARY | 不适用 |
+| Command | 不适用 | MBIM_UICC_ACCESS_BINARY | 不适用 |
 | 响应 | 不适用 | MBIM_UICC_RESPONSE | 不适用 |
 
 ### <a name="query"></a>查询
@@ -281,7 +283,7 @@ MBIM_PIN_TYPE_EX 枚举用于前面的 MBIM_UICC_FILE_STATUS 结构。
 
 #### <a name="mbim_uicc_access_binary-version-1"></a>版本 1 (MBIM_UICC_ACCESS_BINARY) 
 
-| Offset | 大小 | 字段 | 类型 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | 版本 | UINT32 | 后面的结构的版本号。 对于此结构的版本1，此字段必须设置为 **1** 。 |
 | 4 | 4 | AppIdOffset | OFFSET | 从此结构开始到包含应用程序 ID 的缓冲区的偏移量（以字节为单位）。 |
@@ -306,7 +308,7 @@ MBIM_PIN_TYPE_EX 枚举用于前面的 MBIM_UICC_FILE_STATUS 结构。
 
 #### <a name="mbim_uicc_response-version-1"></a>版本 1 (MBIM_UICC_RESPONSE) 
 
-| Offset | 大小 | 字段 | 类型 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | 版本 | UINT32 | 接下来的 structurethat 版本号。 对于此结构的版本1，此字段必须为 **1** 。 |
 | 4 | 4 | StatusWord1 | UINT32 (0. 256)  | 特定于 UICC 命令的返回参数。 |
@@ -338,9 +340,9 @@ MBIM_PIN_TYPE_EX 枚举用于前面的 MBIM_UICC_FILE_STATUS 结构。
 
 ### <a name="parameters"></a>参数
 
-| 操作 | 设置 | 查询 | 通知 |
+| Operation | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
-| 命令 | 不适用 | MBIM_UICC_ACCESS_RECORD | 不适用 |
+| Command | 不适用 | MBIM_UICC_ACCESS_RECORD | 不适用 |
 | 响应 | 不适用 | MBIM_UICC_RESPONSE | 不适用 |
 
 ### <a name="query"></a>查询
@@ -349,7 +351,7 @@ MBIM_PIN_TYPE_EX 枚举用于前面的 MBIM_UICC_FILE_STATUS 结构。
 
 #### <a name="mbim_uicc_access_record-version-1"></a>版本 1 (MBIM_UICC_ACCESS_RECORD) 
 
-| Offset | 大小 | 字段 | 类型 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | 版本 | UINT32 | 后面的结构的版本号。 对于此结构的版本1，此字段必须设置为 **1** 。 |
 | 4 | 4 | AppIdOffset | OFFSET | 从此结构开始到包含应用程序 ID 的缓冲区的偏移量（以字节为单位）。 |
@@ -396,9 +398,9 @@ MBIM_UICC_RESPONSE 结构在 InformationBuffer 中使用。
 
 ### <a name="parameters"></a>参数
 
-| 操作 | 设置 | 查询 | 通知 |
+| Operation | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
-| 命令 | MBIM_SET_PIN_EX | MBIM_PIN_APP | 不适用 |
+| Command | MBIM_SET_PIN_EX | MBIM_PIN_APP | 不适用 |
 | 响应 | MBIM_PIN_INFO_EX | MBIM_PIN_INFO_EX | 不适用 |
 
 ### <a name="query"></a>查询
@@ -407,7 +409,7 @@ MBIM_UICC_RESPONSE 结构在 InformationBuffer 中使用。
 
 #### <a name="mbim_pin_app-version-1"></a>版本 1 (MBIM_PIN_APP) 
 
-| Offset | 大小 | 字段 | 类型 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | 版本 | UINT32 | 后面的结构的版本号。 对于此结构的版本1，此字段必须设置为 **1** 。 |
 | 4 | 4 | AppIdOffset | OFFSET | 从此结构开始到包含应用程序 ID 的缓冲区的偏移量（以字节为单位）。 |
@@ -420,7 +422,7 @@ MBIM_UICC_RESPONSE 结构在 InformationBuffer 中使用。
 
 #### <a name="mbim_set_pin_ex"></a>MBIM_SET_PIN_EX
 
-| Offset | 大小 | 字段 | 类型 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | PinType | MBIM_PIN_TYPE_EX | 固定类型。 请参阅本主题中的 MBIM_PIN_TYPE_EX 表。 |
 | 4 | 4 | PinOperation | MBIM_PIN_OPERATION | PIN 运算。 请参阅 MBIM 1.0。 |
@@ -436,7 +438,7 @@ MBIM_UICC_RESPONSE 结构在 InformationBuffer 中使用。
 
 以下 MBIM_PIN_INFO_EX 结构在 InformationBuffer 中使用。
 
-| Offset | 大小 | 字段 | 类型 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | PinType | MBIM_PIN_TYPE_EX | 固定类型。 请参阅本主题中的 MBIM_PIN_TYPE_EX 表。 |
 | 4 | 4 | PinState | MBIM_PIN_STATE | PIN 状态。 请参阅 MBIM 1.0。 |

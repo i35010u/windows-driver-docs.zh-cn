@@ -7,12 +7,12 @@ keywords:
 - 总线驱动程序 WDK 电源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ae99adc360f213e3eb74b487d4a94a75dccf9f77
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 9119cc1f33e78f14424db069767e13cdeb0d0671
+ms.sourcegitcommit: ac28dd2a921c25796d19572a180b88e460420488
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96825125"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101682252"
 ---
 # <a name="handling-a-waitwake-irp-in-a-bus-driver-pdo"></a>处理总线驱动程序 (PDO) 中的等待/唤醒 IRP
 
@@ -45,6 +45,10 @@ ms.locfileid: "96825125"
 6.  \_从 *DispatchPower* 例程返回的状态为 "挂起"。
 
 7.  唤醒信号到达后，调用 **IoCompleteRequest** 以完成挂起的等待/唤醒 IRP，将 **IRP-IOSTATUS** 设置为状态 \_ "成功"，并指定 IO 的优先级提升 \_ 无 \_ 增量。
+
+> [!NOTE]
+> 在删除设备过程中，正常情况下，电源策略所有者 (PPO) 应取消等待唤醒 IRP。 但在这种情况下，PPO 不会这样做，因此，我们建议总线 PDO 完成 IRP，使其失败状态。 当同时处理 IRP_MN_SURPRISE_REMOVE 和 IRP_MN_REMOVE_DEVICE 时，总线 PDO 应执行此操作。
+
 
 ### <a name="for-devices-that-do-not-support-wake-up"></a>对于不支持 Wake-Up 的设备
 

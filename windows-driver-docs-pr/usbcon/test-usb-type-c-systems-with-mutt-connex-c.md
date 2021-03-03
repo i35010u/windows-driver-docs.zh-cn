@@ -3,12 +3,12 @@ description: MUTT 连接试验类型 C (USB Type-C ConnEx) 硬件板是 Arduino 
 title: 通过 USB 类型 C ConnEx 测试 USB 类型 C 系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e3edf56e6025e5fbb43b87dcf25323c3af9bb04e
-ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
+ms.openlocfilehash: 4771061ab8d13dab43385d6cc1a2fa18a5754eee
+ms.sourcegitcommit: ac28dd2a921c25796d19572a180b88e460420488
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93349761"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101682310"
 ---
 # <a name="test-usb-type-c-systems-with-usb-type-c-connex"></a>通过 USB 类型 C ConnEx 测试 USB 类型 C 系统
 
@@ -27,7 +27,7 @@ ms.locfileid: "93349761"
 - [xHCI 互操作性测试过程](https://www.usb.org/document-library/xhci-interoperability-test-procedures-peripherals-hubs-and-hosts-version)
 
 >[!NOTE]
-> 某些信息与预发布的产品相关，这些信息可能会在正式发布之前进行重大修改。 Microsoft 对此处提供的信息不提供任何明示或暗示的保证。
+> 某些信息与预发布的产品相关，这些信息可能会在正式发布之前进行重大修改。 Microsoft 不对此处提供的信息作任何明示或默示的担保。
 
 MUTT 连接试验类型 C (USB Type-C ConnEx) 硬件板是 Arduino 板的自定义盾牌。 盾牌提供了一个四对一交换机，用于自动执行 USB 类型 C 方案的互操作性测试。
 
@@ -39,7 +39,35 @@ MUTT 连接试验类型 C (USB Type-C ConnEx) 硬件板是 Arduino 板的自定�
 
 ## <a name="hardware-requirements"></a>硬件要求
 
-若要使用 USB 类型 C ConnEx 执行 USB 类型 C 互操作性测试过程，需要：
+若要使用 USB 类型-C ConnEx 版本2来执行 USB 类型 C 互操作性测试过程，需要：
+
+- **测试中的系统 (SUT)**
+
+    台式机、便携式计算机、平板电脑、服务器或手机，其中至少有一个公开的类型 C USB 端口。
+
+- **USB 类型-C ConnEx**
+
+    设备有一个男 USB 类型为 C 的端口 (标记为要连接到的 **J1**) 。 该设备还具有四个其他 USB 端口 (标签为 **J2**、 **J3**、 **J4**、 **J6**) 可连接到的设备的设备，这些设备可充当 SUT 的外围设备。 设备监视从 SUT 中提取的 amperage 和电压。 可以从 [MCCI](https://mcci.com/usb/dev-tools/3201-enhanced-type-c-connection-exerciser/)购买必要的硬件。
+
+    ![USB 类型-C ConnEx](images/newconnexc.jpg)
+
+- **外围设备 USB 设备**
+
+    任何 USB 设备，其中包含可附加到 SUT 的 USB 类型 C 端口。 此类别包括传统 USB 设备以及支持 USB 类型 C 规范中定义的备用模式的其他设备。
+
+- **微连接 usb 电缆**
+
+    如果你的 SUT 有 USB A 端口，你将使用此电缆将 USB Type-C ConnEx 连接到电脑 (，这是你将其连接到) 的位置。
+
+- **代理控制器**
+
+    如果 SUT 没有 USB A 端口，则可以通过使用代理运行测试来控制 USB 类型 C ConnEx。 代理控制器应为辅助台式计算机或便携式计算机。
+
+    代理控制器通过使用辅助 USB 端口将 (与移动 SUT) 通信，以便加载固件。
+
+## <a name="hardware-requirements-for-older-versions"></a>旧版本的硬件要求
+
+若要使用 USB 类型-C ConnEx 版本2来执行 USB 类型 C 互操作性测试过程，需要：
 
 - **测试中的系统 (SUT)**
 
@@ -51,11 +79,11 @@ MUTT 连接试验类型 C (USB Type-C ConnEx) 硬件板是 Arduino 板的自定�
 
     ![显示 Arduino 万像素 2560 R3 板。](images/arduino.png)
 
-- **[Arduino 万像素 2560 R3](https://store.arduino.cc/usa/mega-2560-r3) 微控制器的电源适配器** 。
+- **[Arduino 万像素 2560 R3](https://store.arduino.cc/usa/mega-2560-r3) 微控制器的电源适配器**。
 
 - **USB 类型-C ConnEx**
 
-    盾牌有一个男 USB Type-C 端口 (标签为其连接的 **J1** ) 。 此防护板还具有四个其他 USB 端口 (标签为 **J2** 、 **J3** 、 **J4** 、 **J6** ) 可以连接到的设备，这些设备可充当 SUT 的外围设备。 盾牌监视从 SUT 提取的 amperage 和电压。 可以从 [MCCI](https://store.mcci.com/products/model-3101-type-c-connection-exerciser?variant=17120953798) 或 [JJG 技术](http://www.jjgtechnologies.com/typecconne.htm)购买此板。
+    盾牌有一个男 USB Type-C 端口 (标签为其连接的 **J1**) 。 此防护板还具有四个其他 USB 端口 (标签为 **J2**、 **J3**、 **J4**、 **J6**) 可以连接到的设备，这些设备可充当 SUT 的外围设备。 盾牌监视从 SUT 提取的 amperage 和电压。 可以从 [MCCI](https://store.mcci.com/products/model-3101-type-c-connection-exerciser?variant=17120953798) 或 [JJG 技术](http://www.jjgtechnologies.com/typecconne.htm)购买此板。
 
     ![USB 类型-C ConnEx](images/connexc-top.png)
 
@@ -105,7 +133,7 @@ MUTT 连接试验类型 C (USB Type-C ConnEx) 硬件板是 Arduino 板的自定�
 
 - 安装测试工具需要提升的命令窗口。
 
-    若要打开提升的命令窗口，用户必须是代理控制器上 **Administrators** 组的成员。 若要打开提升的命令提示符窗口，请创建 Cmd.exe 的桌面快捷方式，选择并按住 (或右键单击 Cmd.exe 快捷方式) ，然后选择 " **以管理员身份运行** "。
+    若要打开提升的命令窗口，用户必须是代理控制器上 **Administrators** 组的成员。 若要打开提升的命令提示符窗口，请创建 Cmd.exe 的桌面快捷方式，选择并按住 (或右键单击 Cmd.exe 快捷方式) ，然后选择 " **以管理员身份运行**"。
 
 ### <a name="usb-type-c-connex-tools"></a>USB 类型-C ConnEx 工具
 
@@ -120,7 +148,33 @@ MUTT 连接试验类型 C (USB Type-C ConnEx) 硬件板是 Arduino 板的自定�
 
 有关所有其他工具的信息，请参阅 [MUTT 软件包中的工具](mutt-software-package.md)。
 
-## <a name="get-started"></a>入门
+## <a name="get-started-with-the-newest-version"></a>最新版本入门
+
+按照此过程设置测试环境。
+
+ (全新安装程序的 pic) 
+
+此配置将与此映像类似。 请注意，在连接到电脑时，设备上的微 USB 端口提供对 USB 类型 C ConnEx 的控制。
+
+在这些步骤中，你将连接硬件部分，更新微控制器上的固件并验证安装。
+
+1. 如果可用) ，请将微型 usb 插到 ConnEx 的背面，将 USB A 插入代理控制器 (SUT。
+
+2. 用 USB 类型 C ConnEx 固件更新设备。
+
+    - 打开提升的命令提示符窗口。
+    - 导航到 MUTT 软件包的位置，如 C： \\ Program Files (x86) \\ USBTest \\ *&lt; &gt;*。
+    - 运行以下命令：
+
+        **ConnExUtil.exe – UpdateFirmware**
+
+3. 在设备背面使用连接的 USB 类型-C 线插入 SUT。
+
+4. 将外围设备连接到标记为 **J2**、 **J3**、 **J4**、 **J6** 的 USB 端口。
+
+5. 确保在代理控制器 (SUT 上的 Device Manager 识别设备（如果可用) ）。
+
+## <a name="get-started-with-older-versions"></a>旧版本入门
 
 按照此过程设置测试环境。
 
@@ -160,18 +214,18 @@ MUTT 连接试验类型 C (USB Type-C ConnEx) 硬件板是 Arduino 板的自定�
 3. 用 USB 类型-C ConnEx 固件更新微控制器。
 
     - 打开提升的命令提示符窗口。
-    - 导航到 MUTT 软件包的位置，如 C： \\ Program Files (x86) \\ USBTest \\ *&lt; &gt;* 。
+    - 导航到 MUTT 软件包的位置，如 C： \\ Program Files (x86) \\ USBTest \\ *&lt; &gt;*。
     - 运行以下命令：
 
         **MuttUtil.exe – UpdateTabFirmware**
 
-4. 将 SUT 插入到防火墙上 (标签为 **J1** ) 的男 USB 类型 C 端口。
+4. 将 SUT 插入到防火墙上 (标签为 **J1**) 的男 USB 类型 C 端口。
 
     **警告**  连接 SUT 时， **J1** 连接器需要额外的支持。 连接器不足以维持设备或自身的权重。
 
     ![将测试中的系统附加 (sut) ](images/connexc-connect4.png)
 
-5. 将外围设备连接到标记为 **J2** 、 **J3** 、 **J4** 、 **J6** 的 USB 端口。
+5. 将外围设备连接到标记为 **J2**、 **J3**、 **J4**、 **J6** 的 USB 端口。
 
     ![将外围设备连接到 USB 类型-C ConnEx](images/connexc-connect7.png)
 
@@ -189,8 +243,8 @@ MUTT 连接试验类型 C (USB Type-C ConnEx) 硬件板是 Arduino 板的自定�
 
             ![将测试中的系统 (sut) 与 dtmf 一起附加](images/connexc-connect5.png)
 
-7. 请确保在代理控制器上设备管理器识别 USB 类型 C ConnEx。
-    1. 右键单击任务栏中的 "启动" 按钮，然后选择 " **设备管理器** "。
+7. 请确保在代理控制器上 Device Manager 识别 USB 类型 C ConnEx。
+    1. 右键单击任务栏中的 "启动" 按钮，然后选择 " **Device Manager**"。
     2. 展开 **(com & LPT)** 节点上的端口，并记下微控制器使用的 com 端口。 在此示例中，它已连接到 COM 4。
 
         ![设备管理器中的 USB 类型-C ConnEx](images/connexc-connect8.png)
@@ -199,115 +253,21 @@ MUTT 连接试验类型 C (USB Type-C ConnEx) 硬件板是 Arduino 板的自定�
 
 以下命令行选项 ConnExUtil.exe 支持用于控制 USB Type-C ConnEx 板。
 
-<table>
-<colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>使用案例</th>
-<th>选项</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>设备发现
-<p>列出连接到 USB 类型的所有设备-C ConnEx</p></td>
-<td>/list</td>
-<td>对于 USB 连接的设备，此选项列出设备实例路径。 对于音频连接设备，它会显示 <strong>音频</strong>。
-<p>若要查看音频设备，请将其与 <strong>/all</strong> 参数一起使用。 带有从1开始的索引的列表，可用于输入 <strong>/#</strong> 参数。</p></td>
-</tr>
-<tr class="even">
-<td>设备选择
-<p>选择连接到 USB 类型 C ConnEx 的所有设备，包括音频。</p></td>
-<td><strong>/all</strong></td>
-<td>可选。
-<p>如果没有此参数，实用工具将处理 USB 连接的设备。 仅当使用音频连接的设备正在使用时，才使用此参数。 音频发现非常耗时且默认情况下处于禁用状态。</p></td>
-</tr>
-<tr class="odd">
-<td>设备选择
-<p>选择连接到 USB 类型-C ConnEx "n" 的特定设备。</p></td>
-<td><strong>/#</strong><em>n</em></td>
-<td>(可选)
-<p>输入 <em>n</em> 是一个从1开始的索引，该索引连接到 USB 类型 C ConnEx，可以使用 <strong>/list</strong> 参数查看这些设备。 如果没有此参数，则默认行为是在所有 USB ConnEx 板上运行每个命令。</p></td>
-</tr>
-<tr class="even">
-<td>设备命令</td>
-<td><strong>/setPort</strong> <em>p</em></td>
-<td>切换到指定的端口 <em>p</em>。
-<p>通过指定 number (1-4) 或按名称 (<strong>J2</strong>、 <strong>J3</strong>、 <strong>J4</strong>、 <strong>J6</strong>) 来连接端口。</p>
-<p>0断开所有端口的连接。</p></td>
-</tr>
-<tr class="odd">
-<td>设备命令</td>
-<td><strong>/getPort</strong></td>
-<td>读取当前连接的端口。</td>
-</tr>
-<tr class="even">
-<td>设备命令
-<p>读取 amperage/电压信息</p></td>
-<td><p><strong>/volts</strong></p>
-<p><strong>/amps</strong></p>
-<p><strong>/version</strong></p></td>
-<td><p>读取当前电压。</p>
-<p>阅读当前 amperage。</p>
-<p>阅读设备版本。</p></td>
-</tr>
-<tr class="odd">
-<td>设备命令
-<p>启用 SuperSpeed</p></td>
-<td><strong>/SuperSpeedOn</strong></td>
-<td>在发送 <strong>/SuperSpeedOff</strong> 命令之前，为当前和未来的连接全局启用 SuperSpeed。
-<p>默认情况下，启用 SuperSpeed。</p>
-<p>如果 SuperSpeed 处于禁用状态，并且端口1或2处于连接状态，则此命令将在 SuperSpeed 触发重新连接。</p></td>
-</tr>
-<tr class="even">
-<td>设备命令
-<p>禁用 SuperSpeed</p></td>
-<td><strong>/SuperSpeedOff</strong></td>
-<td>在发送 <strong>/SuperSpeedOn</strong> 命令或重置设备之前，为当前和未来的连接禁用全局 SuperSpeed。
-<p>如果启用了 SuperSpeed 并连接了端口1或2，则此命令会触发重新连接，并禁用 SuperSpeed 线路。</p></td>
-</tr>
-<tr class="odd">
-<td><p>设置命令延迟</p></td>
-<td><strong>/setDelay</strong> <em>t</em></td>
-<td>设置 <em>命令延迟，以秒为单位</em> 。
-<p>设置命令延迟将导致下一个 <strong>/setPort</strong> 或 <strong>/SuperSpeed{On/Off}</strong> 命令延迟为 <em>t</em> 秒，其中 <strong>t</strong> 的范围介于0到99之间。 这是一次性设置，只延迟下一个命令。 不支持在延迟计时器过期之前发送多个命令。</p></td>
-</tr>
-<tr class="even">
-<td><p>设置断开连接超时值（毫秒）</p></td>
-<td><strong>/setDisconnectTimeout</strong> <em>t</em></td>
-<td>为下一个非零 <strong>/setPort</strong> 命令设置 "断开连接超时"。 在下一个连接事件上，端口将只在断开连接前保持连接状态的 <em>t</em> 毫秒。 这是一次性设置，只会自动断开下一个连接事件。 允许的范围为0到9999毫秒。</td>
-</tr>
-<tr class="odd">
-<td><p>批处理命令：</p>
-<p>将功率度量输出到 .csv 文件。</p></td>
-<td><strong>/powercsv</strong></td>
-<td>将当前功率度量和时间戳追加到首次运行创建 power.csv power.csv。 后续运行时，会将数据追加到此文件。
-<p>重命名或删除该文件以启动全新数据捕获。 每次运行都会追加以下格式的行： <em> &lt; index &gt; 、 &lt; time &gt; 、 &lt; 伏特 &gt; 、 &lt; 安培 &gt; </em>。</p>
-<p><em>index</em> 是 <strong>/list</strong>给定的设备索引，因此可以同时监视多个设备。</p>
-<p><em>时间</em> 是原始时间戳，以秒为单位。</p>
-<p><em>伏特</em> 和 <em>安培</em> 记录到两个小数位。</p>
-<p>此数据可能会在很长一段时间内捕获并在电子表格应用程序中绘制，请参阅 cxpower 脚本。</p></td>
-</tr>
-<tr class="even">
-<td><p>批处理命令：</p>
-运行主要功能的单元测试</td>
-<td><strong>/test</strong></td>
-<td>测试设备的所有主要功能。 用于对设备功能的基本验证。 如果此命令失败，请重启设备并更新固件。</td>
-</tr>
-<tr class="odd">
-<td><p>批处理命令：</p>
-端口切换序列的基本演示。</td>
-<td><strong>/demo d</strong></td>
-<td>循环遍历所有端口一次，每个端口上有 <em>d</em> 秒的延迟
-<p>将每个端口的端口号、伏特和安培写入 demoresult.txt。</p></td>
-</tr>
-</tbody>
-</table>
+| 用例 | 选项 | 说明 |
+| --- | --- | --- |
+| **设备发现**</br>列出连接到 USB 类型的所有设备-C ConnEx | /list | 对于 USB 连接的设备，此选项列出设备实例路径。 对于音频连接设备，它会显示 **音频**。</br></br>若要查看音频设备，请将其与 **/all** 参数一起使用。 带有从1开始的索引的列表，可用于输入 **/#** 参数。 |
+| **设备选择**</br>选择连接到 USB 类型 C ConnEx 的所有设备，包括音频。 | **/all**  | 可选。</br></br>如果没有此参数，实用工具将处理 USB 连接的设备。 仅当使用音频连接的设备正在使用时，才使用此参数。 音频发现非常耗时且默认情况下处于禁用状态。 |
+| **设备选择**</br>选择连接到 USB 类型-C ConnEx "n" 的特定设备。 | **/#***n* | 可选。</br>输入 *n* 是一个从1开始的索引，该索引连接到 USB 类型 C ConnEx，可以使用 **/list** 参数查看这些设备。 如果没有此参数，则默认行为是在所有 USB ConnEx 板上运行每个命令。 |
+| **设备命令** | **/setPort** *p* | 切换到指定的端口 *p*。</br></br>通过指定 number (1-4) 或按名称 (**J2**、 **J3**、 **J4**、 **J6**) 来连接端口。</br></br>0断开所有端口的连接。 |
+| **设备命令** | **/getPort** | 读取当前连接的端口。 |
+| **设备命令** </br>阅读 amperage/电压信息。 | **/volts**</br></br>**/amps**</br></br>**/version** | 读取当前电压。</br></br>阅读当前 amperage。</br></br>阅读设备版本。 |
+| **设备命令**</br>启用 SuperSpeed。 | **/SuperSpeedOn** | 在发送 **/SuperSpeedOff** 命令之前，为当前和未来的连接全局启用 SuperSpeed。</br></br>默认情况下，启用 SuperSpeed。</br></br>如果 SuperSpeed 处于禁用状态，并且端口1或2处于连接状态，则此命令将在 SuperSpeed 触发重新连接。 |
+| **设备命令**</br>禁用 SuperSpeed | **/SuperSpeedOff** | 在发送 **/SuperSpeedOn** 命令或重置设备之前，为当前和未来的连接禁用全局 SuperSpeed。</br></br>如果启用了 SuperSpeed 并连接了端口1或2，则此命令会触发重新连接，并禁用 SuperSpeed 线路。 |
+| **设置命令延迟** | **/setDelay** | 设置 *命令延迟，以秒为单位* 。</br></br>设置命令延迟将导致下一个 **/setPort** 或 **/SuperSpeed{On/Off}** 命令延迟为 *t* 秒，其中 **t** 的范围介于0到99之间。 这是一次性设置，只延迟下一个命令。 不支持在延迟计时器过期之前发送多个命令。 |
+| **设置断开连接超时值（毫秒）** | **/setDisconnectTimeout** *t* | 为下一个非零 **/setPort** 命令设置 "断开连接超时"。 在下一个连接事件上，端口将只在断开连接前保持连接状态的 *t* 毫秒。 这是一次性设置，只会自动断开下一个连接事件。 允许的范围为0到9999毫秒。 |
+| **批处理命令：**</br>将功率度量输出到 .csv 文件。 | **/powercsv** | 将当前功率度量和时间戳追加到首次运行创建 power.csv power.csv。 后续运行时，会将数据追加到此文件。</br></br>重命名或删除该文件以启动全新数据捕获。 每次运行都会追加以下格式的行： *&lt; index &gt; 、 &lt; time &gt; 、 &lt; 伏特 &gt; 、 &lt; 安培 &gt;*。</br></br>*index* 是 **/list** 给定的设备索引，因此可以同时监视多个设备。</br></br>*时间* 是原始时间戳，以秒为单位。</br></br>*伏特* 和 *安培* 记录到两个小数位。</br></br>此数据可能会在很长一段时间内捕获并在电子表格应用程序中绘制，请参阅 cxpower 脚本。 |
+| **批处理命令：**</br>运行主要功能的单元测试 | **/test** | 测试设备的所有主要功能。 用于对设备功能的基本验证。 如果此命令失败，请重启设备并更新固件。 |
+| **批处理命令：**</br>端口切换序列的基本演示。 | **/demo** *d* | 循环遍历所有端口一次，每个端口上有 *d* 秒钟的延迟。</br></br>将每个端口的端口号、伏特和安培写入 demoresult.txt。 |
 
 ### <a name="sample-commands"></a>示例命令
 
@@ -344,21 +304,21 @@ do (
 
 这些脚本行使 ConnExUtil.exe 支持的控制接口，以通过命令行使用 USB 类型 C ConnEx 运行顺序测试和压力类型测试。 所有这些脚本都支持可选的命令行参数 **音频** ，以指示 USB 类型 C ConnEx 板通过 3.5 mm 音频接口连接。 默认情况下，他们只会尝试使用 USB 连接板。
 
-### <a name="simple-connect--disconnect-sequence-cxloopcmd"></a><a href="" id="cxloop"></a>简单连接/断开序列： CXLOOP。PORT
+### <a name="simple-connect--disconnect-sequence-cxloopcmd"></a>简单连接/断开序列： CXLOOP。PORT
 
 将 SUT 连接并断开与每个端口 (1-4) 的连接，并在每个端口上暂停，并提示测试人员验证该端口上的连接。
 
-### <a name="random-connect--disconnect-loop-cxstresscmd"></a><a href="" id="cxstress"></a>随机连接/断开连接循环： CXSTRESS。PORT
+### <a name="random-connect--disconnect-loop-cxstresscmd"></a>随机连接/断开连接循环： CXSTRESS。PORT
 
 在无限循环中，随机连接并从每个端口断开与每个端口的随机连接，以 0.0-5.0 秒为单位。 当连接到 USB 类型 C 端口时，它会在该端口上随机启用或禁用 SuperSpeed 连接，并将在某个随机时间间隔0– 999 ms 内随机指示该面板在该端口上快速断开连接。
 
 命令行参数 **C** 使脚本仅在 USB 类型 C 端口和断开连接状态之间切换。 数值命令行参数将开关的最大随机间隔从默认值5.0 秒重置为输入值（秒）。 可以按任意顺序传递参数。
 
-### <a name="long-running-power-measurement-cxpowercmd"></a><a href="" id="cxpower"></a>长时间运行的电源测量： CXPOWER。PORT
+### <a name="long-running-power-measurement-cxpowercmd"></a>长时间运行的电源测量： CXPOWER。PORT
 
 将 USB Type-C ConnEx 报告的 amperage 和电压保存到输出文件 power.csv 2 秒的间隔。 数据的格式为逗号分隔的变量，如下所示：
 
-<em>索引</em>**，**<em>时间</em>**，**<em>伏特</em>**，**<em>安培</em>
+**索引**，**时间**，**伏特**，**安培**
 
 *index* 是 **ConnExUtil.exe/list** 命令给定的设备索引，因此可以同时监视多个设备。
 
@@ -374,24 +334,24 @@ USB 类型 C 互操作性测试过程分为两部分：功能测试 (FT) 和压�
 
 这些测试用例基于 ConnExUtil 命令和 [用于控制 USB Type-C ConnEx 板](#scripts-for-controlling-the-usb-type-c-connex-board)的示例脚本脚本。 测试用例引用脚本。 根据测试方案的需要自定义脚本。
 
-<a href="" id="device-enumeration"></a>[设备枚举](#ft-case-1-device-enumeration)  
+[设备枚举](#ft-case-1-device-enumeration)  
 确定设备枚举的核心方面是否正常工作。
 
-<a href="" id="alternate-mode-negotiation"></a>[备用模式协商](#ft-case-2-alternate-mode-negotiation)  
+[备用模式协商](#ft-case-2-alternate-mode-negotiation)  
 确认支持的备用模式。
 
-<a href="" id="charging-and-power-delivery--pd-"></a>[ (PD) 充电和电源交付 ](#ft-case-3-charging-and-power-delivery-pd)  
+[ (PD) 充电和电源交付 ](#ft-case-3-charging-and-power-delivery-pd)  
 确认用 USB 类型 C 进行收费。
 
-<a href="" id="role-swap"></a>[角色交换](#ft-case-4-role-swap)  
+[角色交换](#ft-case-4-role-swap)  
 确认角色交换。
 
 压力测试部分介绍了用于在一段时间内测试设备稳定性的压力和边缘案例方案的过程。 压力测试需要使用自定义设备 (SuperMUTT) ，以实现传统 USB 验证 (非 USB 类型 C) 。 可以通过即将出现的 USB 类型 C 测试设备实现其他测试和自动化。
 
-<a href="" id="device-enumeration"></a>[设备枚举](#st-case-1-device-enumeration)  
+[设备枚举](#st-case-1-device-enumeration)  
 确定设备枚举的核心方面是否正常工作。
 
-<a href="" id="charging-and-power-delivery--pd-"></a>[ (PD) 充电和电源交付 ](#st-case-2-charging-and-power-delivery-pd)  
+[ (PD) 充电和电源交付 ](#st-case-2-charging-and-power-delivery-pd)  
 确认用 USB 类型 C 进行收费。
 
 ## <a name="ft-case-1-device-enumeration"></a>FT 案例1：设备枚举
@@ -457,7 +417,7 @@ USB 类型 C 互操作性测试过程分为两部分：功能测试 (FT) 和压�
 5. 打开并登录到 Windows。
 6. 在提升的命令提示符下，运行 CXLOOP。CMD 脚本。 当脚本暂停时，确认新激活的外围设备是否正常运行。
 7. 反转 USB 类型 C 电缆的方向，并重复步骤 5-7。
-8. 将 USB 类型-C ConnEx 连接到端口 **J2** 。
+8. 将 USB 类型-C ConnEx 连接到端口 **J2**。
 
     **ConnExUtil.exe/setPort 2**
 
@@ -492,7 +452,7 @@ USB 类型 C 互操作性测试过程分为两部分：功能测试 (FT) 和压�
 5. 打开并登录到 Windows。
 6. 在提升的命令提示符下，运行 CXLOOP。CMD 脚本。 当脚本暂停时，确认新激活的外围设备是否正常运行。
 7. 反转 USB 类型 C 电缆的方向，并重复步骤 5-7。
-8. 将 USB 类型-C ConnEx 连接到端口 **J2** 。
+8. 将 USB 类型-C ConnEx 连接到端口 **J2**。
 
     确认角色交换。 液晶屏屏幕上显示的 Amperage 指示电源角色。 如果 **J1** 是 power 接收器，则 **+ ve** ;如果 **J1** 是电源，则为 **-ve** 。
 
@@ -580,14 +540,14 @@ USB 类型-C ConnEx 上的板载 LCD 显示电源 (伏特、安培和方向) 。
 ### <a name="confirming-device-addition-on-desktops"></a>确认台式机上的设备添加
 
 1. 确定设备连接到的 USB 主机控制器。
-2. 请确保新设备显示在设备管理器中正确的节点下。
+2. 请确保新设备显示在 Device Manager 中正确的节点下。
 3. 对于连接到 USB 3.0 端口的 USB 3.0 集线器，应会看到两个集线器设备：一个在 SuperSpeed 上枚举，另一个以高速连接。
 
 ### <a name="confirm-device-removal-on-desktops"></a>确认台式机上的设备删除
 
-1. 在设备管理器中标识设备。
+1. 在 Device Manager 中标识设备。
 2. 执行测试步骤，从系统中删除设备。
-3. 确认设备不再存在于设备管理器中。
+3. 确认设备不再存在于 Device Manager 中。
 4. 对于 USB 3.0 集线器，请检查是否已删除 (SuperSpeed 和配套中心) 的两个设备。 在这种情况下，删除设备失败可能是设备故障，并应通过与会审适当根本原因所涉及的所有组件进行调查。
 
 ### <a name="confirm-device-functionality"></a>确认设备功能

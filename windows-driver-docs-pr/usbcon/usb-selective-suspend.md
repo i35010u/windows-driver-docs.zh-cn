@@ -3,14 +3,18 @@ description: 本部分提供有关为选择性挂起功能选择正确机制的�
 title: USB 选择性挂起
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c73c668b5def594e8c79ac3e2d79b68a712d2a93
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.custom: contperf-fy21q3
+ms.openlocfilehash: d9eb22d67dd821dc59dee49ff0706f441c6fe763
+ms.sourcegitcommit: ac28dd2a921c25796d19572a180b88e460420488
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96806589"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101682318"
 ---
 # <a name="usb-selective-suspend"></a>USB 选择性挂起
+
+> [!NOTE]
+> 本文适用于设备驱动程序开发人员。 如果你在使用 USB 设备时遇到问题，请参阅 [排查常见 usb 问题](https://support.microsoft.com/windows/troubleshoot-common-usb-problems-5e9a9b49-ad43-702e-083e-6107e95deb88)
 
 本部分提供有关为选择性挂起功能选择正确机制的信息。
 
@@ -329,11 +333,11 @@ typedef VOID (*USB_IDLE_CALLBACK)(__in PVOID Context);
 
 - 如果设备需要提供远程唤醒，请为设备请求 [**IRP \_ MN \_ 等待 \_ 唤醒**](../kernel/irp-mn-wait-wake.md) IRP。
 - 取消所有 i/o，并准备设备以降低电源状态。
-- 通过调用 [**PoRequestPowerIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-porequestpowerirp) ，并将 PowerState 参数设置为枚举器值 PowerDeviceD2 (在 *PowerState* 中定义，使设备处于 WDM 睡眠状态;ntddk) 。 在 Windows XP 中，驱动程序不能将其设备放在 PowerDeviceD3 中，即使设备没有配备远程唤醒也是如此。
+- 通过调用 [**PoRequestPowerIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-porequestpowerirp) ，并将 PowerState 参数设置为枚举器值 PowerDeviceD2 (在中定义，使设备处于 WDM 睡眠状态;ntddk) 。 在 Windows XP 中，驱动程序不能将其设备放在 PowerDeviceD3 中，即使设备没有配备远程唤醒也是如此。
 
 在 Windows XP 中，驱动程序必须依赖空闲通知回调例程来有选择地挂起设备。 如果在 Windows XP 中运行的驱动程序不使用空闲通知回调例程直接将设备置于低功耗状态，这可能会阻止 USB 设备树中的其他设备暂停。 有关更多详细信息，请参阅 "USB 全局挂起"。
 
-集线器驱动程序和 [USB 泛型父驱动程序 ( # A0) ](usb-common-class-generic-parent-driver.md) 调用空闲通知回调例程，以 IRQL = 被动 \_ 级别。 这允许回调例程在等待电源状态更改请求完成时进行阻止。
+集线器驱动程序和 [USB 泛型父驱动程序 (Usbccgp.sys) ](usb-common-class-generic-parent-driver.md) 调用空闲通知回调例程，以 IRQL = 被动 \_ 级别。 这允许回调例程在等待电源状态更改请求完成时进行阻止。
 
 仅当系统处于 **S0** 并且设备处于 **D0** 中时，才调用回调例程。
 
@@ -387,7 +391,7 @@ Windows 7 更积极地与 Windows Vista 一起暂停 USB 集线器。 Windows 7 
 
 为 Microsoft Windows XP 升级版本禁用了选择性挂起。 它用于 Windows XP、Windows Vista 和更高版本的 Windows 的全新安装。
 
-若要为给定的根集线器及其子设备启用选择性挂起支持，请在 **设备管理器** 中选择 "USB 根集线器" 的 "**电源管理**" 选项卡上的复选框。
+若要为给定的根集线器及其子设备启用选择性挂起支持，请在 **Device Manager** 中选择 "USB 根集线器" 的 "**电源管理**" 选项卡上的复选框。
 
 或者，你可以通过在 USB 端口驱动程序的软件密钥下设置 **HcDisableSelectiveSuspend** 的值来启用或禁用选择性挂起。 如果值为1，则禁用选择性挂起。 如果值为0，则启用选择性挂起。
 

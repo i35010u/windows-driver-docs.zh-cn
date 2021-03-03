@@ -3,15 +3,18 @@ description: 本主题提供有关在将数据传输到 USB 管道失败时可�
 title: 如何从 USB 管道错误中恢复
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 71fde05b42dd98156c136408ebdf034db3221e30
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.custom: contperf-fy21q3
+ms.openlocfilehash: a1fe04ff8486d3fd882f5588fdde95e46d52301f
+ms.sourcegitcommit: ac28dd2a921c25796d19572a180b88e460420488
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010271"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101682228"
 ---
 # <a name="how-to-recover-from-usb-pipe-errors"></a>如何从 USB 管道错误中恢复
 
+> [!NOTE]
+> 本文适用于设备驱动程序开发人员。 如果你在使用 USB 设备时遇到问题，请参阅 [排查常见 usb 问题](https://support.microsoft.com/windows/troubleshoot-common-usb-problems-5e9a9b49-ad43-702e-083e-6107e95deb88)
 
 本主题提供有关在将数据传输到 USB 管道失败时可尝试执行的步骤的信息。 本主题中所述的机制介绍了对批量、中断和同步管道的中止、重置和循环端口操作。
 
@@ -44,7 +47,7 @@ USB 客户端驱动程序通过将控制传输发送到默认终结点来与其�
 
  
 
-## <a name="what-you-need-to-know"></a>须知内容
+## <a name="what-you-need-to-know"></a>需要了解的事项
 
 
 ### <a name="technologies"></a>技术
@@ -61,15 +64,15 @@ USB 客户端驱动程序通过将控制传输发送到默认终结点来与其�
 
 -   客户端驱动程序必须具有框架目标管道对象的句柄。 有关详细信息，请参阅 [如何枚举 USB 管道](how-to-get-usb-pipe-handles.md)。
 
-<a name="instructions"></a>Instructions
+<a name="instructions"></a>说明
 ------------
 
 ### <a name="step-1-determine-the-cause-of-the-error-condition"></a><a href="" id="determine-the-cause-of-the-error-condition"></a>步骤1：确定错误情况的原因
 
 客户端驱动程序通过使用 USB 请求块 (URB) 来启动数据传输。 请求完成后，USB 驱动程序堆栈返回一个 USBD 状态代码，指示传输是成功还是失败。 在失败的情况下，USBD 代码指示失败的原因。
 
--   如果通过调用[**WdfUsbTargetDeviceSendUrbSynchronously**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicesendurbsynchronously)方法提交了 URB，请在方法返回后检查[**URB**](/windows-hardware/drivers/ddi/usb/ns-usb-_urb)结构的 "Hdr" 成员 **。**
--   如果通过调用 [**WdfRequestSend**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend) 方法以异步方式提交 URB，请在 [*EVT_WDF_REQUEST_COMPLETION_ROUTINE*](/windows-hardware/drivers/ddi/wdfrequest/nc-wdfrequest-evt_wdf_request_completion_routine)中检查 URB 状态。 *Params*参数指向[**WDF \_ 请求 \_ 完成 \_ 参数**](/windows-hardware/drivers/ddi/wdfrequest/ns-wdfrequest-_wdf_request_completion_params)结构。 若要检查 USBD 状态代码，请检查 ** &gt; UsbdStatus** 成员。 有关代码的信息，请参阅 [USBD \_ STATUS](/previous-versions/windows/hardware/drivers/ff539136(v=vs.85))。
+-   如果通过调用 [**WdfUsbTargetDeviceSendUrbSynchronously**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicesendurbsynchronously)方法提交了 URB，请在方法返回后检查 [**URB**](/windows-hardware/drivers/ddi/usb/ns-usb-_urb)结构的 "Hdr" 成员 **。**
+-   如果通过调用 [**WdfRequestSend**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend) 方法以异步方式提交 URB，请在 [*EVT_WDF_REQUEST_COMPLETION_ROUTINE*](/windows-hardware/drivers/ddi/wdfrequest/nc-wdfrequest-evt_wdf_request_completion_routine)中检查 URB 状态。 *Params* 参数指向 [**WDF \_ 请求 \_ 完成 \_ 参数**](/windows-hardware/drivers/ddi/wdfrequest/ns-wdfrequest-_wdf_request_completion_params)结构。 若要检查 USBD 状态代码，请检查 **&gt; UsbdStatus** 成员。 有关代码的信息，请参阅 [USBD \_ STATUS](/previous-versions/windows/hardware/drivers/ff539136(v=vs.85))。
 
 传输故障可能由设备错误导致，如 \_ 检测到 USBD 状态 \_ 延迟 \_ PID 或 USBD \_ 状态 \_ 干扰 \_ 。 它们还可能是由于主机控制器报告了错误引起的，例如 USBD \_ 状态 \_ 事务 \_ 错误。
 
@@ -103,7 +106,7 @@ USB 客户端驱动程序通过将控制传输发送到默认终结点来与其�
 -   调用 [**WdfUsbTargetPipeResetSynchronously**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpiperesetsynchronously) 以同步发送重置管道请求。
 -   调用 [**WdfUsbTargetPipeFormatRequestForReset**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipeformatrequestforreset) 方法为 reset 管道请求设置请求对象的格式，然后通过调用 [**WdfRequestSend**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend) 方法发送该请求。 这些调用类似于中止管道请求，如步骤3中所述。
 
-**注意**   请不要发送任何新的传输请求，直到重置管道操作完成。
+**注意**  请不要发送任何新的传输请求，直到重置管道操作完成。
 
  
 

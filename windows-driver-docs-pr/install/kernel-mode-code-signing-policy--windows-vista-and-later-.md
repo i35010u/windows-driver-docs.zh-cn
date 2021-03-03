@@ -12,12 +12,12 @@ keywords:
 - 包数字签名 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 80c4bcc30169e18ee76d5ea6291a09fe21657a39
-ms.sourcegitcommit: 18e027265862b9c6fe3acdb913299d68fc61c023
+ms.openlocfilehash: a22af334679a247e171f492c712d572efeff49c1
+ms.sourcegitcommit: ac28dd2a921c25796d19572a180b88e460420488
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99421897"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101682250"
 ---
 # <a name="driver-signing-policy"></a>驱动程序签名策略
 
@@ -26,7 +26,7 @@ ms.locfileid: "99421897"
 
 可以通过多种不同的方式将驱动程序提交到门户。  对于生产驱动程序，应按如下所述提交 HLK/HCK 测试日志。  对于仅限 Windows 10 客户端的系统进行测试，你可以提交用于 [证明签名](../dashboard/attestation-signing-a-kernel-driver-for-public-release.md)的驱动程序，这不需要进行 HLK 测试。  或者，你可以提交你的驱动程序以进行测试签名，如 [创建新的硬件提交](../dashboard/create-a-new-hardware-submission.md) 页中所述。
 
-## <a name="exceptions"></a>例外
+## <a name="exceptions"></a>异常
 
 如果满足以下任一条件，则仍允许交叉签名的驱动程序：
 
@@ -72,19 +72,6 @@ ms.locfileid: "99421897"
 除驱动程序代码签名外，还需要满足用于安装驱动程序的 PnP 设备安装签名要求。  有关详细信息，请参阅 [即插即用 (PnP) 设备安装签名要求](pnp-device-installation-signing-requirements--windows-vista-and-later-.md)。
 
 有关对 ELAM 驱动程序进行签名的信息，请参阅 [提前启动反恶意软件](/windows/desktop/w8cookbook/secured-boot)。
-
-## <a name="signing-a-driver-for-internal-distribution-only"></a>仅针对内部分发对驱动程序进行签名
-
-在某些情况下，可能需要在内部（而不是通过 Windows 更新）在内部分发驱动程序。  若要执行此操作而无需运行它的计算机处于测试模式，请使用以下过程：
-
-1. [注册硬件开发人员中心](../dashboard/register-for-the-hardware-program.md)。
-2. 查看 [硬件仪表板 FAQ](../dashboard/hardware-dashboard-faq.md) 并签署相应协议。
-3. 上传 codesign 证书。
-4. 使用已在合作伙伴中心注册的任何 codesign 证书以本地方式为驱动程序签名。
-5. 包中的驱动程序，并使用上面的 codesign 证书对 CAB 进行签名。
-6. 将 CAB 提交给硬件开发人员中心进行签名。
-7. 如果提交已获批准，则硬件开发人员中心将使用 Microsoft 签名返回驱动程序。
-8. 内部分发驱动程序。
 
 ## <a name="see-also"></a>另请参阅
 

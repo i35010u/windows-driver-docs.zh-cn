@@ -14,17 +14,19 @@ keywords:
 - 检查返回值
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0cef14c66feb8e77dc9ce0b6ec7d8d616535cc13
-ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
+ms.openlocfilehash: d427f43442b6125c57a33618dda0012631c3c937
+ms.sourcegitcommit: ac28dd2a921c25796d19572a180b88e460420488
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97091196"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101682316"
 ---
 # <a name="using-ntstatus-values"></a>使用 NTSTATUS 值
 
 
-
+> [!NOTE]
+> 如果正在查找将 NTSTATUS 值映射到相应 Win32 错误代码的表，请参阅 [ntstatus 到 Win32 错误代码映射](https://www.osr.com/blog/2020/04/23/ntstatus-to-win32-error-code-mappings/)。
+> 
 
 
 许多内核模式 [标准驱动程序例程](./introduction-to-standard-driver-routines.md) 和驱动程序支持例程对返回值使用 NTSTATUS 类型。 此外，当 [完成 irp](completing-irps.md)时，驱动程序在 Irp 的 [**IO \_ 状态 \_ 块**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)结构中提供一个 NTSTATUS 类型的值。 在 Ntdef 中定义了 NTSTATUS 类型，系统提供的状态代码是在 Ntstatus 中定义的。  (供应商还可以定义专用状态代码，不过它们很少需要。 有关详细信息，请参阅 [定义新的 NTSTATUS 值](defining-new-ntstatus-values.md)。 ) 

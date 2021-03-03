@@ -3,12 +3,12 @@ title: 按钮报告
 description: 基于在按钮数组的已定义 GPIO 资源上收到的中断，内置常规用途 i/o (GPIO) 按钮驱动程序向 Windows 报告。
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c396497e0df11ff0deaf7c82253c2fc116c4316d
-ms.sourcegitcommit: 10fecd036370f5eccb538004c5bec1fdd18c3275
+ms.openlocfilehash: 0001604080c4a803ddbe9c51debf604d99c62149
+ms.sourcegitcommit: ac28dd2a921c25796d19572a180b88e460420488
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98124067"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101682322"
 ---
 # <a name="button-reporting"></a>按钮报告
 
@@ -42,11 +42,11 @@ ms.locfileid: "98124067"
 
 | 单个按钮报告 | 源              | 用法要求      | 报表触发器         | 重复 |
 |-----------------------------|---------------------|-------------------------|------------------------|----------|
-| 强力                       | 系统控制      | 0x84 (Power)             | 物理按钮–向上键   | 否       |
-| Windows                     | Keyboard            | 0xE3 (Win)               | 物理按钮–向上键   | 否       |
+| 强力                       | 系统控制      | 0x81 (Power)             | 物理按钮–向上键   | 否       |
+| Windows                     | 键盘            | 0xE3 (Win)               | 物理按钮–向上键   | 否       |
 | 调高音量                   | 使用者集合 | 0xE9 (容量)         | 物理按钮–按下 | 是      |
 | 减小音量                 | 使用者集合 | 0xEA (音量降低)       | 物理按钮–按下 | 是      |
-| 旋转锁定               | Keyboard            | 0xE3 = 0x69 (Win + F14)  | 物理按钮–按下 | 否       |
+| 旋转锁定               | 键盘            | 0xE3 + 0x69 (Win + F14)  | 物理按钮–按下 | 否       |
 
  
 

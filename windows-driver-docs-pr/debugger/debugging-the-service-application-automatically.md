@@ -3,12 +3,12 @@ title: 自动调试服务应用程序
 description: 自动调试服务应用程序
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bb4cf684e1da1dbb9789d53b48f9903117032249
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: aaa89eb692f83c74d348660ebea0acf0dc1628e1
+ms.sourcegitcommit: ac28dd2a921c25796d19572a180b88e460420488
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96786417"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101682206"
 ---
 # <a name="debugging-the-service-application-automatically"></a>自动调试服务应用程序
 
@@ -18,7 +18,7 @@ ms.locfileid: "96786417"
 然后使用以下过程：
 
 1.  执行以下准备步骤之一：
-    -   如果打算从头开始调试服务应用程序（包括其初始化代码），请按照启用初始化代码调试中所述的过程进行操作。 或者，如果你希望服务应用程序在崩溃或遇到异常时进入调试器，请按照使服务应用程序中断到调试器中所述的过程进行操作。
+    -   如果打算从头开始调试服务应用程序（包括其初始化代码），请按照 [启用初始化代码调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/preparing-to-debug-the-service-application#-enabling-the-debugging-of-the-initialization-code)中所述的过程进行操作。 或者，如果你希望服务应用程序在崩溃或遇到异常时进入调试器，请按照 [使服务应用程序中断到调试器](https://docs.microsoft.com/windows-hardware/drivers/debugger/preparing-to-debug-the-service-application#-enabling-the-debugging-of-the-initialization-code)中所述的过程进行操作。
     -   若要确保服务应用程序允许调试器正常运行，请执行 [调整服务应用程序超时](preparing-to-debug-the-service-application.md#adjusting-the-service-application-timeout)中所述的过程。
     -   如果服务与单个 SvcHost 进程中的其他服务结合使用，则执行隔离服务中所述的过程。
 

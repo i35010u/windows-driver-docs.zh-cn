@@ -7,12 +7,12 @@ keywords:
 - 哈希 WDK RSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 83e93c2c626879053846857d05a447723c4fbd6a
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 1d02caa3a9a2522f867f0a452f07a6fb7ff3981f
+ms.sourcegitcommit: cf1f4196374c5b743448cb8d688d2223f7197d8f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96825030"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101684404"
 ---
 # <a name="rss-hashing-types"></a>RSS 哈希类型
 
@@ -147,13 +147,19 @@ NIC 应计算以下字段的哈希值：
 
 如果设置了此标志组合，NIC 应该按照为 NDIS_HASH_TCP_IPV6 用例指定的那样执行哈希计算。 但是，如果数据包不包含 TCP 标头，NIC 应计算为 NDIS_HASH_IPV6 用例指定的哈希值。
 
+例如，如果数据包有碎片，则它可能不包含 TCP 标头。  在这种情况下，NIC 只应计算 IP 标头的哈希值。
+
 ### <a name="ndis_hash_udp_ipv6--ndis_hash_ipv6"></a><a name="ndis_hash_udp_ipv6--ndis_hash_ipv6"></a> NDIS_HASH_UDP_IPV6 |NDIS_HASH_IPV6
 
 如果设置了此标志组合，NIC 应该按照为 NDIS_HASH_UDP_IPV6 用例指定的那样执行哈希计算。 但是，如果数据包不包含 UDP 标头，NIC 应计算为 NDIS_HASH_IPV6 用例指定的哈希值。
 
+例如，如果数据包有碎片，则它可能不包含 UDP 标头。  在这种情况下，NIC 只应计算 IP 标头的哈希值。
+
 ### <a name="ndis_hash_tcp_ipv6--ndis_hash_udp_ipv6--ndis_hash_ipv6"></a><a name="ndis_hash_tcp_ipv6--ndis_hash_udp_ipv6--ndis_hash_ipv6"></a> NDIS_HASH_TCP_IPV6 |NDIS_HASH_UDP_IPV6 |NDIS_HASH_IPV6
 
 如果设置了此标志组合，则 NIC 应按照数据包中的传输指定的方式执行哈希计算。 但是，如果数据包不包含 TCP 或 UDP 标头，则 NIC 应计算 NDIS_HASH_IPV6 用例中指定的哈希值。
+
+例如，如果数据包有碎片，则它可能不包含 TCP 或 UDP 标头。  在这种情况下，NIC 只应计算 IP 标头的哈希值。
 
 ## <a name="ipv6-with-extension-headers-hash-type-combinations"></a>具有扩展标头的哈希类型组合的 IPv6
 

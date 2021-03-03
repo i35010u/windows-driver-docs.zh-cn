@@ -7,14 +7,27 @@ keywords:
 - 驱动程序的安装组件 WDK KMDF
 ms.date: 05/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: a4801251c6b6b5e95af341b1082fca249bfc5a1c
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 8fc3bb9bd697a424ebf5fb2f0084f8bb4442cc52
+ms.sourcegitcommit: ac28dd2a921c25796d19572a180b88e460420488
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96837607"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101682308"
 ---
 # <a name="redistributable-framework-components"></a>可再发行框架组件
+
+> [!NOTE]
+> 如果你的驱动程序仅面向 Windows 10，则无需重新分发 WDF 或在驱动程序包中提供 Coinstaller。 面向 Windows 10：
+>1. 在 Visual Studio 的 "**项目设置**" 属性页的 "**驱动程序设置**  ->  **目标操作系统版本**" 下，选择 " **Windows 10 或更高** 版本"。  这等效于将以下内容添加到 .vcxproj 文件： 
+>```xml
+><PropertyGroup Label="Configuration">
+><TargetVersion>Windows10</TargetVersion>
+>```
+>2. 在 " [INF 制造商" 部分](/windows-hardware/drivers/install/inf-manufacturer-section)中，将10.0 指定为目标 OS 版本，如下所示：
+>```inf
+>[Manufacturer]
+>%MyMfg% = MyMfg, NTamd64.10.0
+>```
 
 本主题介绍了 Microsoft 提供的可再发行框架更新，这些更新作为 Windows 驱动程序工具包的一部分包含 (WDK) ，以及如何确定要添加到驱动程序包。
 

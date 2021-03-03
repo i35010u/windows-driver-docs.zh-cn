@@ -4,12 +4,12 @@ description: 计算机硬件 ID (CHID) 在“为计算机指定硬件 ID”中�
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b27d0ec6c9a3985d2f547debc3d896ca8b76db9b
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 5c2b9c28b477053754b42d42ce03fff7d91c5fb8
+ms.sourcegitcommit: ac28dd2a921c25796d19572a180b88e460420488
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96800265"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101682270"
 ---
 # <a name="using-computer-hardware-ids-chids"></a>使用计算机硬件 ID (CHID)
 

@@ -6,12 +6,12 @@ keywords:
 - 受信任的发布者证书存储 WDK
 ms.date: 08/01/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: d1219485fa7cf63b167ad5752efc68b4aab3aaf2
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 546df8b7548940811be7303615a453b9f47ed329
+ms.sourcegitcommit: ef28b8efa87d25860f9be6e7664d39cc84565175
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96782911"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101686163"
 ---
 # <a name="deprecation-of-software-publisher-certificates-commercial-release-certificates-and-commercial-test-certificates"></a>弃用软件发行者证书、商业发布证书和商业测试证书
 
@@ -35,6 +35,7 @@ ms.locfileid: "96782911"
 * [从2021开始，Microsoft 是否是生产内核模式代码签名的唯一提供程序？](#starting-in-2021-will-microsoft-be-the-sole-provider-of-production-kernel-mode-code-signatures)
 * [硬件开发人员中心不提供适用于 Windows XP 的驱动程序签名，如何让我的驱动程序在 XP 中运行？](#hardware-dev-center-doesnt-provide-driver-signing-for-windows-xp-how-can-i-have-my-drivers-run-in-xp)
 * [Windows 版本的生产签名选项有何不同？](#how-do-production-signing-options-differ-by-windows-version)
+* [如果证书链接到2021之后过期的交叉证书，我是否能够继续签署驱动程序？](#will-i-be-able-to-continue-signing-drivers-if-my-certificate-chains-to-a-cross-cert-that-expires-after-2021)
 
 ### <a name="what-is-the-expiration-schedule-of-the-trusted-cross-certificates"></a>可信交叉证书的到期计划是什么？
 
@@ -132,6 +133,9 @@ ms.locfileid: "96782911"
 * 使用 microsoft [合作伙伴中心仪表板](https://partner.microsoft.com/dashboard/collaborate)提供的 microsoft 协作门户来创建反馈 bug。
 * 请访问 [Windows 硬件工程支持](https://developer.microsoft.com/windows/hardware/support)，选择 "联系我们 **" 选项卡** ，然后在 " **开发人员支持" 主题** 下拉列表中，选择 " **HLK/HCK**"。 然后选择 " **提交事件**"。
 
+### <a name="will-i-be-able-to-continue-signing-drivers-if-my-certificate-chains-to-a-cross-cert-that-expires-after-2021"></a>如果证书链接到2021之后过期的交叉证书，我是否能够继续签署驱动程序？
+
+不会，在7月1日之后，使用任何代码签名证书对没有 WHQL 签名的内核模式驱动程序进行签名，2021 (TRP) 策略。 将吊销违反 Microsoft TRP 策略的证书。
 
 ## <a name="related-information"></a>相关信息
 

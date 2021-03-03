@@ -3,12 +3,12 @@ title: MALT 的微控制器命令
 description: 本主题定义了 PC 与微控制器 (Arduino) 的命令，这些命令控制 MALT 中的传感器。
 ms.date: 12/13/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8dc94b7d2895263531827a575362ac20be4a98cf
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 1fe2b9b0e858fec4b64dde52677b5ade79a98a3f
+ms.sourcegitcommit: ac28dd2a921c25796d19572a180b88e460420488
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96805075"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101682208"
 ---
 # <a name="microcontroller-commands-for-malt"></a>MALT 的微控制器命令
 
@@ -27,7 +27,7 @@ ms.locfileid: "96805075"
 
 对于引用 DAC [微芯片 MCP4821](https://www.microchip.com/wwwproducts/en/MCP4821)使用数据表，可以解决最大 *Vout* 发送到光源面板的情况。
 
-1.3 = 2.048 * 1 * (D/ (2 ^ 12) # A3
+1.3 = 2.048 * 1 * (D/ (2 ^ 12) ) 
 
 D = 2600
 
@@ -64,9 +64,9 @@ READALSSENSOR 2
 
 **串行输出：**
 
-| 第0行                | 第1行                  | 第2行                |
-|-----------------------|-------------------------|-----------------------|
-| MALTERROR 状态代码 | 失败时的指数 (0)  | 失败时的结果 (0)  |
+| 第0行                  | 第1行                | 第2行                |
+|-------------------------|-----------------------|-----------------------|
+| 失败时的指数 (0)  | 失败时的结果 (0)  | MALTERROR 状态代码 |
 
 ### <a name="readcolorsensor-sensor-number"></a>READCOLORSENSOR *传感器编号*
 
@@ -77,7 +77,7 @@ READALSSENSOR 2
 
 **示例：**
 
-下面的示例将屏幕颜色传感器中生成的原始数据写入串行。 可以基于所使用的传感器的 [数据表](https://www.ti.com/product/OPT3001) 来计算 Lux。
+下面的示例将屏幕颜色传感器的结果数据写入串行。 这些数字已经历了一个要转换为 XYZ colorspace 的内置校准矩阵。
 
 ```cmd
 READCOLORSENSOR 2
@@ -85,9 +85,9 @@ READCOLORSENSOR 2
 
 **串行输出：**
 
-| 第0行                | 第1行    | 第2行      | 第3行     |
-|-----------------------|-----------|-------------|------------|
-| MALTERROR 状态代码 | 红色值 | 绿色值 | 蓝色值 |
+| 第1行  | 第2行  | 第3行  |        第4行         |
+|---------|---------|---------|-----------------------|
+| X 值 | Y 值 | Z 值 | MALTERROR 状态代码 |
 
 ### <a name="conversiontime-conversion-time-in-ms"></a>CONVERSIONTIME *转换时间（毫秒*）
 
@@ -119,11 +119,11 @@ CONVERSIONTIME 100
 
 **串行输出：**
 
-| 第0行                |
-|-----------------------|
-| MALTERROR 状态代码 |
+| 第0行                                                                        |
+|-------------------------------------------------------------------------------|
+| MALTERROR 状态代码 (其中 MALTERROR 状态代码 = `E_UNRECOGNIZED_COMMAND`) |
 
-其中，MALTERROR 状态代码 = `E_UNRECOGNIZED_COMMAND`
+
 
 ## <a name="malt-error-code"></a>MALT 错误代码
 

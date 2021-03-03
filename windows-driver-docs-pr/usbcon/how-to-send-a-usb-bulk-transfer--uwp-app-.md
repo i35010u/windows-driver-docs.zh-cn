@@ -3,12 +3,12 @@ description: 了解 USB 批量传输，以及如何从 UWP 应用启动传输请
 title: 如何将发送 USB 大容量传输请求（UWP 应用）
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a5d6e5efb54f7b32f0c0d773dfd58f6583c36b11
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 3ef0aef75e9da6ae4219808ed245c38fbd10c0c4
+ms.sourcegitcommit: ac28dd2a921c25796d19572a180b88e460420488
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104158"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101682244"
 ---
 # <a name="how-to-send-a-usb-bulk-transfer-request-uwp-app"></a>如何将发送 USB 大容量传输请求（UWP 应用）
 
@@ -22,7 +22,7 @@ USB 全速、高速和 SuperSpeed 设备可以支持大容量终结点。 这些
 
 应用还可以通过设置某些策略标志来修改管道的行为。 例如，对于读取请求，可以设置一个标志，该标志自动清除管道上的隔栏条件。 有关这些标志的信息，请参阅 [**UsbReadOptions**](/uwp/api/Windows.Devices.Usb.UsbReadOptions) 和 [**UsbWriteOptions**](/uwp/api/Windows.Devices.Usb.UsbWriteOptions)。
 
-## <a name="before-you-start"></a>开始之前
+## <a name="before-you-start"></a>准备工作
 
 * 必须打开设备并获得 [**UsbDevice**](/uwp/api/Windows.Devices.Usb.UsbDevice) 对象。 阅读 [如何)  (UWP 应用连接到 USB 设备 ](how-to-connect-to-a-usb-device--uwp-app-.md)。
 * 在 [CustomUsbDeviceAccess 示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomUsbDeviceAccess)，Scenario4 BulkPipes 文件中，可以看到本主题中所示的完整代码 \_ 。
@@ -82,7 +82,7 @@ USB 全速、高速和 SuperSpeed 设备可以支持大容量终结点。 这些
 
 您可以通过在检索到的批量管道上设置某些标志来修改读取或写入操作的行为。
 
-若要从设备读取，请将 [**UsbBulkInPipe**](/uwp/api/Windows.Devices.Usb.UsbBulkInPipe#Windows_Devices_Usb_UsbBulkInPipe_ReadOptions) 属性设置为 [**UsbReadOptions**](/uwp/api/Windows.Devices.Usb.UsbReadOptions)中定义的值之一。 对于写入，请将 [**UsbBulkOutPipe**](/uwp/api/Windows.Devices.Usb.UsbBulkOutPipe#Windows_Devices_Usb_UsbBulkOutPipe_WriteOptions) 属性设置为 **UsbWriteOptions**中定义的值之一。
+若要从设备读取，请将 [**UsbBulkInPipe**](/uwp/api/Windows.Devices.Usb.UsbBulkInPipe#Windows_Devices_Usb_UsbBulkInPipe_ReadOptions) 属性设置为 [**UsbReadOptions**](/uwp/api/Windows.Devices.Usb.UsbReadOptions)中定义的值之一。 对于写入，请将 [**UsbBulkOutPipe**](/uwp/api/Windows.Devices.Usb.UsbBulkOutPipe#Windows_Devices_Usb_UsbBulkOutPipe_WriteOptions) 属性设置为 **UsbWriteOptions** 中定义的值之一。
 
 <table>
 <colgroup>
@@ -106,7 +106,8 @@ USB 全速、高速和 SuperSpeed 设备可以支持大容量终结点。 这些
 <td><strong>OverrideAutomaticBufferManagement</strong>
 <p>数据请求可以分为一个或多个传输，其中每个传输包含一定数量的被称为 <em>最大传输大小</em>的字节数。 对于多个传输，由于驱动程序执行的错误检查，导致两次传输排队可能会延迟。 此标志将跳过该错误检查。 若要获取最大传输大小，请使用 <a href="/uwp/api/Windows.Devices.Usb.UsbBulkInPipe#Windows_Devices_Usb_UsbBulkInPipe_MaxTransferSizeBytes" data-raw-source="[&lt;strong&gt;UsbBulkInPipe.MaxTransferSizeBytes&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbBulkInPipe#Windows_Devices_Usb_UsbBulkInPipe_MaxTransferSizeBytes)"><strong>UsbBulkInPipe. MaxTransferSizeBytes</strong></a> 属性。 如果请求大小为 <strong>UsbBulkInPipe. MaxTransferSizeBytes</strong>，则必须设置此标志。 注意：</p>
 <p></p>
-<div class="alert">重要说明<br/><p>如果设置此标志，则必须在管道的最大数据包大小的倍数中请求数据。 该信息存储在终结点描述符中。 大小取决于设备的总线速度。 对于全速、高速和 SuperSpeed，最大数据包大小分别为64、512和1024字节。 若要获取该值，请使用 <a href="/uwp/api/Windows.Devices.Usb.UsbBulkInEndpointDescriptor#Windows_Devices_Usb_UsbBulkInEndpointDescriptor_MaxPacketSize" data-raw-source="[&lt;strong&gt;UsbBulkInPipe.EndpointDescriptor.MaxPacketSize&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbBulkInEndpointDescriptor#Windows_Devices_Usb_UsbBulkInEndpointDescriptor_MaxPacketSize)"><strong>UsbBulkInPipe. EndpointDescriptor. MaxPacketSize</strong></a> 属性。</p>
+<div class="alert">
+<strong>重要说明</strong><br/><p>如果设置此标志，则必须在管道的最大数据包大小的倍数中请求数据。 该信息存储在终结点描述符中。 大小取决于设备的总线速度。 对于全速、高速和 SuperSpeed，最大数据包大小分别为64、512和1024字节。 若要获取该值，请使用 <a href="/uwp/api/Windows.Devices.Usb.UsbBulkInEndpointDescriptor#Windows_Devices_Usb_UsbBulkInEndpointDescriptor_MaxPacketSize" data-raw-source="[&lt;strong&gt;UsbBulkInPipe.EndpointDescriptor.MaxPacketSize&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbBulkInEndpointDescriptor#Windows_Devices_Usb_UsbBulkInEndpointDescriptor_MaxPacketSize)"><strong>UsbBulkInPipe. EndpointDescriptor. MaxPacketSize</strong></a> 属性。</p>
 </div>
 <div>
 
@@ -132,12 +133,12 @@ USB 全速、高速和 SuperSpeed 设备可以支持大容量终结点。 这些
 当设备发送大容量数据时，将在大容量管道的输入流中接收数据。 下面是获取输入流的步骤：
 
 1. 通过获取 [**UsbBulkInPipe. InputStream**](/uwp/api/Windows.Devices.Usb.UsbBulkInPipe#Windows_Devices_Usb_UsbBulkInPipe_InputStream) 属性获取对输入流的引用。
-2. 通过在[**DataReader 构造函数**](/uwp/api/Windows.Storage.Streams.DataReader#Windows_Storage_Streams_DataReader__ctor_Windows_Storage_Streams_IInputStream_)中指定输入流来创建[**datareader**](/uwp/api/Windows.Storage.Streams.DataReader)对象。
+2. 通过在 [**DataReader 构造函数**](/uwp/api/Windows.Storage.Streams.DataReader#Windows_Storage_Streams_DataReader__ctor_Windows_Storage_Streams_IInputStream_)中指定输入流来创建 [**datareader**](/uwp/api/Windows.Storage.Streams.DataReader)对象。
 
 若要将数据写入设备，应用必须在大容量管道上写入输出流。 下面是准备输出流的步骤：
 
 1. 通过获取 [**UsbBulkOutPipe. OutputStream**](/uwp/api/Windows.Devices.Usb.UsbBulkOutPipe#Windows_Devices_Usb_UsbBulkOutPipe_OutputStream) 属性获取对输出流的引用。
-2. 通过在[**DataWriter**](/uwp/api/Windows.Storage.Streams.DataWriter#Windows_Storage_Streams_DataWriter__ctor_Windows_Storage_Streams_IOutputStream_)构造函数中指定输出流来创建一个[**DataWriter**](/uwp/api/Windows.Storage.Streams.DataWriter)对象。
+2. 通过在 [**DataWriter**](/uwp/api/Windows.Storage.Streams.DataWriter#Windows_Storage_Streams_DataWriter__ctor_Windows_Storage_Streams_IOutputStream_)构造函数中指定输出流来创建一个 [**DataWriter**](/uwp/api/Windows.Storage.Streams.DataWriter)对象。
 3. 填充与输出流关联的数据缓冲区。
 4. 根据数据类型，可以通过调用 [**DataWriter 方法**](/uwp/api/Windows.Storage.Streams.DataWriter#Windows_Storage_Streams_DataWriter__ctor_Windows_Storage_Streams_IOutputStream_)（如 [**WriteBytes**](/uwp/api/Windows.Storage.Streams.DataWriter#Windows_Storage_Streams_DataWriter_WriteBytes_System_Byte___)）将传输数据写入输出流。
 
@@ -157,7 +158,7 @@ USB 全速、高速和 SuperSpeed 设备可以支持大容量终结点。 这些
 
 有时，应用可能会遇到失败的数据传输。 故障转移可能是由于终结点上出现延迟的情况。 只要终结点停止，就不能写入或读取数据。 若要继续进行数据传输，应用程序必须清除关联管道上的延迟情况。
 
-应用可以将管道配置为在发生时自动清除隔间状态。 为此，请将 ReadOptions 属性设置为**UsbReadOptions** ，将[**UsbBulkInPipe**](/uwp/api/Windows.Devices.Usb.UsbBulkInPipe#Windows_Devices_Usb_UsbBulkInPipe_ReadOptions) [**或 UsbBulkOutPipe**](/uwp/api/Windows.Devices.Usb.UsbBulkOutPipe#Windows_Devices_Usb_UsbBulkOutPipe_WriteOptions)属性设置为**WriteOptions**。 通过这种自动配置，应用程序不会遇到失败的传输，数据传输体验是无缝的。
+应用可以将管道配置为在发生时自动清除隔间状态。 为此，请将 ReadOptions 属性设置为 **UsbReadOptions** ，将 [**UsbBulkInPipe**](/uwp/api/Windows.Devices.Usb.UsbBulkInPipe#Windows_Devices_Usb_UsbBulkInPipe_ReadOptions) [**或 UsbBulkOutPipe**](/uwp/api/Windows.Devices.Usb.UsbBulkOutPipe#Windows_Devices_Usb_UsbBulkOutPipe_WriteOptions)属性设置为 **WriteOptions**。 通过这种自动配置，应用程序不会遇到失败的传输，数据传输体验是无缝的。
 
 若要手动清除隔间的情况，请在管道中调用 [**ClearStallAsync 的 UsbBulkInPipe**](/uwp/api/Windows.Devices.Usb.UsbInterruptInPipe#Windows_Devices_Usb_UsbInterruptInPipe_ClearStallAsync) ;为大容量 OUT 管道调用 [**ClearStallAsync UsbBulkOutPipe**](/uwp/api/Windows.Devices.Usb.UsbBulkOutPipe#Windows_Devices_Usb_UsbBulkOutPipe_ClearStallAsync) 。
 
@@ -207,6 +208,9 @@ USB 全速、高速和 SuperSpeed 设备可以支持大容量终结点。 这些
         UInt32 bytesRead = 0;
 
         UsbBulkInPipe readPipe = usbDevice.DefaultInterface.BulkInPipes[0];
+
+        // Warning: Setting IgnoreShortPacket causes LoadAsync to block until you receive a number of packets >= readPipe.EndpointDescriptor.MaxPacketSize.
+        // Remove the following line if you want to see messages that are less than the max transfer size, for example if you are communicating with a USBTMC device. 
         readPipe.ReadOptions |= UsbReadOptions.IgnoreShortPacket;
 
         var stream = readPipe.InputStream;

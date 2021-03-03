@@ -4,12 +4,12 @@ description: 创建新硬件提交
 ms.date: 04/20/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: aecc467f9b3c1ae4c7af5697fe95b367a98d5531
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 43b15750ec9004ee294baf5913b4768b069af5ad
+ms.sourcegitcommit: ac28dd2a921c25796d19572a180b88e460420488
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96800409"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101682274"
 ---
 # <a name="create-a-new-hardware-submission"></a>创建新硬件提交
 
@@ -33,8 +33,6 @@ ms.locfileid: "96800409"
 4. 此时，提交门户将确定要提交的产品类型。 然后，在“提交”页上，门户会显示为 Windows Server 认证提交的产品可能需要的任何调查表。 对于提交用于 Windows Server 认证或签名的所有产品，如果提交门户提供调查表，则必须完成调查表。 除非完成调查表，否则提交将不会完成。
 
 5. 如果希望在发布之前测试驱动程序，可以选中标记为“对 Win10 及更高版本执行测试签名”或“对 Win10 以下版本（旧版）的 OS 执行测试签名”的复选框。 测试签名驱动程序类似于为公开版本签名的驱动程序，但不需要 HLK 测试。 它们还没有通过 Windows 更新分发，但可以从硬件提交站点下载。 可以仅在测试计算机上安装它们。 有关对驱动程序包进行测试签名的详细信息，请参阅 [WHQL 测试签名计划](../install/whql-test-signature-program.md)以及[如何对驱动程序包进行测试签名](../install/how-to-test-sign-a-driver-package.md)。
-
-6. 如果希望在发布之前对驱动程序进行外部测试签名，可以选中标记为“仅执行外部测试签名”的复选框。 已外部测试签名的驱动程序使用所有“预览体验”版本使用并信任的 Microsoft 开发人员测试证书进行签名。 零售系统没有此证书。 已外部测试签名的驱动程序只能安装在 *Windows 10 预览体验内部版本* 上。 这意味着它不会在 Windows 10 的零售版本上提供或安装。 已外部测试签名的驱动程序在启用“安全启动”的情况下工作。 外部测试签名仅适用于 Windows 10 RS2 及更高版本，不适用于更低版本的 Windows。 _此功能目前正在逐步推出，可能还不是每个人都能看到。如果你还没有看到它，请稍候，你将在几个星期后看到它。_
 
 7. 选择“请求签名”（如果适用）。 此选项允许你指定驱动程序应包含哪些操作系统签名（包括允许的下层操作系统）。 可用认证会因驱动程序提交程序包而有所不同，因此可能不会列出任何认证。 **注意** 若要对单个体系结构的驱动程序包进行签名，请仅将该体系结构的日志包括在内。 例如，若仅对 x64 进行签名，请仅提交 x64 日志。
 

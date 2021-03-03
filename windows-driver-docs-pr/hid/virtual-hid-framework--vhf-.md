@@ -3,12 +3,12 @@ title: 使用虚拟 HID 框架 (VHF) 编写 HID 源驱动程序
 description: 了解如何编写将 HID 数据报告给操作系统的 HID 源驱动程序。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 00ac2fb303fca184075ab487fb51eba894c82978
-ms.sourcegitcommit: e47bd7eef2c2b89e3417d7f2dceb7c03d894f3c3
+ms.openlocfilehash: dd4e9cf7dc12a714780bdf8489df56a78d89dcc9
+ms.sourcegitcommit: ac28dd2a921c25796d19572a180b88e460420488
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97091192"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101682306"
 ---
 # <a name="write-a-hid-source-driver-by-using-virtual-hid-framework-vhf"></a>使用虚拟 HID 框架 (VHF) 编写 HID 源驱动程序
 
@@ -54,11 +54,11 @@ HID 源驱动程序链接到 Vhfkm，并在其生成项目中包括 Vhf。 该�
 
 静态库包含在 windows 10 (WDK) 的 Windows 驱动程序工具包中。 库公开了由 HID 源驱动程序使用的编程接口，如例程和回调函数。 当驱动程序调用函数时，静态库会将请求转发给处理请求的 VHF 驱动程序。
 
-**VHF 驱动程序 ( # A0)**
+**VHF 驱动程序 (Vhf.sys)**
 
 Microsoft 提供的内置驱动程序。 此驱动程序必须作为下方筛选器驱动程序加载到 HID 源设备堆栈中的驱动程序下。 VHF 驱动程序会动态枚举子设备，并 (PDO) 为 HID 源驱动程序指定的一个或多个 HID 设备创建物理设备对象。 它还实现枚举的子设备的 HID 传输微型驱动程序功能。
 
-**HID 类驱动程序对 ( # A0、Mshidkmdf.sys)**
+**HID 类驱动程序对 (Hidclass.sys，Mshidkmdf.sys)**
 
 Hidclass/Mshidkmdf 对枚举 [顶级集合 (的 TLC) ](top-level-collections.md) 类似于它枚举真实 HID 设备的集合的方式。 HID 客户端可以继续请求和使用 TLCs，就像实际的 HID 设备一样。 此驱动程序对作为函数驱动程序安装在设备堆栈中。
 
@@ -211,10 +211,10 @@ MY_SubmitReadReport(
         deviceContext->VhfHidReport.ReportBuffer[0] |=  (0x01 << ButtonType);
     }
 
-    status = VhfSubmitReadReport(deviceContext->VhfHandle, &deviceContext->VhfHidReport);
+    status = VhfReadReportSubmit(deviceContext->VhfHandle, &deviceContext->VhfHidReport);
 
     if (!NT_SUCCESS(status)) {
-        TraceEvents(TRACE_LEVEL_ERROR, TRACE_DEVICE,"VhfSubmitReadReport failed %!STATUS!", status);
+        TraceEvents(TRACE_LEVEL_ERROR, TRACE_DEVICE,"VhfReadReportSubmit failed %!STATUS!", status);
     }
 }
 ```

@@ -11,15 +11,27 @@ keywords:
 - Wdf INF 文件部分 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f3df63c7843eb116c401b7bc470c87e79771d4ee
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: d5f0439dfb980998389c8ef67b90a170304fc643
+ms.sourcegitcommit: ac28dd2a921c25796d19572a180b88e460420488
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96823665"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101682204"
 ---
 # <a name="specifying-the-kmdf-co-installer-in-an-inf-file"></a>在 INF 文件中指定 KMDF 的共同安装程序
 
+> [!NOTE]
+> 如果你的驱动程序仅面向 Windows 10，则无需重新分发 WDF 或在驱动程序包中提供 Coinstaller。 面向 Windows 10：
+>1. 在 Visual Studio 的 "**项目设置**" 属性页的 "**驱动程序设置**  ->  **目标操作系统版本**" 下，选择 " **Windows 10 或更高** 版本"。  这等效于将以下内容添加到 .vcxproj 文件： 
+>```xml
+><PropertyGroup Label="Configuration">
+><TargetVersion>Windows10</TargetVersion>
+>```
+>2. 在 " [INF 制造商" 部分](/windows-hardware/drivers/install/inf-manufacturer-section)中，将10.0 指定为目标 OS 版本，如下所示：
+>```inf
+>[Manufacturer]
+>%MyMfg% = MyMfg, NTamd64.10.0
+>```
 
 如果你的 [驱动程序包](../install/components-of-a-driver-package.md)中包含共同安装程序，请阅读本主题，了解你必须在驱动程序的 INF 文件中提供的部分。 如果您提供自己的安装程序应用程序，该应用程序调用 Microsoft 提供的 msu 可再发行组件，则此信息不适用。
 

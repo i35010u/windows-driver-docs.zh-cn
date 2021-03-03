@@ -1,18 +1,20 @@
 ---
-title: " (MALT) 构建轻型测试工具"
-description: 了解如何构建 MALT (Microsoft 环境光线工具) ，用于测试和校准屏幕亮度。
+title: " (MALT 生成轻和彩色测试工具) "
+author: windows-driver-content
+description: 本主题提供了有关如何使用 MALT (Microsoft 环境光线工具) 作为轻薄和彩色测试解决方案的说明。
+ms.assetid: d045b771-b536-457c-897b-ecb6517bf0a8
 ms.date: 12/13/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 26ec57872eac99a9ea252492a8795eea21f7a85d
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: cd740769f5ff5dd11ab8a7282c5f6f255ad555fd
+ms.sourcegitcommit: ac28dd2a921c25796d19572a180b88e460420488
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96805097"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101682294"
 ---
-# <a name="building-a-light-testing-tool-malt"></a> (MALT) 构建轻型测试工具
+# <a name="building-a-light-and-color-testing-tool-malt"></a> (MALT 生成轻和彩色测试工具) 
 
-本主题提供有关如何使用 (和生成的说明和要求) 用于测试和校准屏幕亮度的工具。 MALT (**M** icrosoft **A** mbient **L** 右键 **T** ool) 用于引用。
+本主题提供有关如何使用 (和生成的说明和要求) 用于测试和校准屏幕亮度和颜色的工具。 MALT (**M** icrosoft **A** mbient **L** 右键 **T** ool) 用于引用。 
 
 请使用这些说明来利用您的测试解决方案。 发布微控制器 API，以便进一步利用在 HLK 和其他位置发布的测试。 你的反馈将有助于改进本指南。
 
@@ -31,7 +33,7 @@ ms.locfileid: "96805097"
 * [用于光源的电源](https://www.superbrightleds.com/moreinfo/led-panel-light/square-12v-led-panel-light-fixture-1ft-x-1ft-35w/2184/#tab/PowerSupplies/subtab/powersupply)
 * [将数字转换为模拟转换器 (DAC) ](https://www.microchip.com/wwwproducts/en/MCP4821)
 * 2个 [环境光线传感器 (EX TI OPT3001 或更好) ](https://www.ti.com/product/OPT3001)
-* 2 [彩色传感器](https://www.digikey.com/product-detail/en/ams/TCS34727FN/TCS34727FNCT-ND/3737677)
+* 2 [彩色传感器](https://www.digikey.com/product-detail/en/ams/AS73211-AQFT/AS73211-AQFT-ND/7802175)
 * [灯具机箱](#step-1---assemble-light-enclosure)
 
 ## <a name="instructions"></a>说明
@@ -82,8 +84,6 @@ MALT 使用两个光源传感器 (一个传感器来测量屏幕亮度，使用�
 ![块示意图](images/BlockDiagram.png)
 
 通过 MALT PCB，我们可以将 Arduino 板连接到传感器 PCB 和光源。 有关更多详细信息，请参阅 MALT PCB KiCad 项目。
-
-![MALT 示意图](images/MaltPCB.png)
 
 ### <a name="step-4--start-testing"></a>步骤 4-开始测试
 

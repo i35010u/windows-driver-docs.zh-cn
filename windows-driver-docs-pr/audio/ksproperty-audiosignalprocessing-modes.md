@@ -13,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ed24ac9cc4c2d2ac1068697a3b16b1d2889921e4
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 582263f93cddf584e412b57b3789b93fae74ec2f
+ms.sourcegitcommit: ac28dd2a921c25796d19572a180b88e460420488
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96784413"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101682236"
 ---
 # <a name="ksproperty_audiosignalprocessing_modes"></a>KSPROPERTY \_ AUDIOSIGNALPROCESSING \_ 模式
 
@@ -63,11 +63,18 @@ ms.locfileid: "96784413"
 
 **KSPROPERTY \_AUDIOSIGNALPROCESSING \_ 模式** 返回 **KSMULTIPLE \_ 项** ，后跟零 (0) 或多个 guid。 KSMULTIPLE \_ 项。Count 成员包含 Guid 的数目。 KSMULTIPLE \_ 项。Size 成员包含属性值的总大小。 每个 GUID 标识在 **KSP \_ pin** 结构的 *PinId* 成员中指定的 Pin ID 的音频驱动程序所支持的信号处理模式。
 
-在 Windows 8.1 有两个已定义的音频信号处理模式：音频 \_ SIGNALPROCESSINGMODE \_ 默认值和音频 \_ SIGNALPROCESSINGMODE \_ RAW。
+在 Windows 8.1 有两个已定义的音频信号处理模式：
+* 音频 \_ SIGNALPROCESSINGMODE \_ 默认值
+* 音频 \_ SIGNALPROCESSINGMODE \_ 原始。
 
-在 Windows 10 中，定义了五种附加模式。
+在 Windows 10 中，定义了五种附加模式：
+* 音频 \_ SIGNALPROCESSINGMODE \_ 通信
+* 音频 \_ SIGNALPROCESSINGMODE \_ 语音
+* 音频 \_ SIGNALPROCESSINGMODE \_ 媒体
+* 音频 \_ SIGNALPROCESSINGMODE \_ 电影
+* 音频 \_ SIGNALPROCESSINGMODE \_ 通知
 
-音频 \_ SIGNALPROCESSINGMODE \_ 通信音频 \_ SIGNALPROCESSINGMODE \_ 语音音频 \_ SIGNALPROCESSINGMODE \_ 媒体音频 \_ SIGNALPROCESSINGMODE \_ 电影音频 \_ SIGNALPROCESSINGMODE \_ 通知有关详细信息，请参阅 [音频信号处理模式](./audio-signal-processing-modes.md)。
+有关详细信息，请参阅 [音频信号处理模式](./audio-signal-processing-modes.md)。
 
 <a name="remarks"></a>备注
 -------
@@ -90,7 +97,7 @@ ms.locfileid: "96784413"
 <td align="left"><p>Windows 8.1</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>标题</p></td>
 <td align="left">Ksmedia.h</td>
 </tr>
 </tbody>

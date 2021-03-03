@@ -3,12 +3,12 @@ description: 本主题概述了适用于通用串行总线的函数挂起和函�
 title: 如何在复合驱动程序中实现函数挂起
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a94975c4d8e051dbfd98b800422ebea823e0ac1c
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: dc4b22d8df1c529eb835feb4ffe0ca2043980f6c
+ms.sourcegitcommit: ac28dd2a921c25796d19572a180b88e460420488
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010317"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101682234"
 ---
 # <a name="how-to-implement-function-suspend-in-a-composite-driver"></a>如何在复合驱动程序中实现函数挂起
 
@@ -17,7 +17,7 @@ ms.locfileid: "90010317"
 
 通用串行总线 (USB) 3.0 规范定义了一个名为 " *函数挂起*" 的新功能。 此功能使复合设备的单个功能能够进入低功耗状态，这与其他功能无关。 考虑为键盘定义函数的复合设备和用于鼠标的另一个函数。 用户使键盘功能处于工作状态，但不会在一段时间内移动鼠标。 鼠标的客户端驱动程序可以检测函数的空闲状态，并在键盘功能处于工作状态时将该函数发送到挂起状态。
 
-当所有单个函数都处于挂起状态时，整个复合设备将转换为挂起状态。 但是，无论设备内的任何功能的电源状态如何，整个设备都可以过渡到 "挂起" 状态。 如果特定的功能和整个设备进入挂起状态，则在设备处于挂起状态时将保留该功能的挂起状态，并且在整个设备的挂起进入和退出过程中保留。
+不管设备内的任何功能，整个设备都可以转换为挂起状态。 如果特定的功能和整个设备进入挂起状态，则在设备处于挂起状态时将保留该功能的挂起状态，并且在整个设备的挂起进入和退出过程中保留。
 
 类似于 USB 2.0 设备的远程唤醒功能 (参阅) [远程唤醒 Usb 设备](remote-wakeup-of-usb-devices.md) ，usb 3.0 复合设备中的单个功能可以从低功耗状态唤醒，而不会影响其他功能的电源状态。 此功能称为 " *函数远程唤醒*"。 此功能由主机显式启用，方法是发送一个协议请求，用于设置设备固件中的远程唤醒位。 此过程称为 *远程唤醒功能的武装*。 有关远程唤醒相关位的信息，请参阅官方 USB 规范中的图9-6。
 
@@ -28,14 +28,14 @@ ms.locfileid: "90010317"
 1.  在关联的函数处于空闲状态时进行检测。
 2.   (IRP) 发送空闲 i/o 请求包。
 3.  通过向 (IRP) 发送等待唤醒 i/o 请求数据包，将请求提交到 arm 用于远程唤醒的函数。
-4.  通过向 (**D2**或**D3**) 发送**Dx**电源 irp，将该函数转换为低功率状态。
+4.  通过向 (**D2** 或 **D3**) 发送 **Dx** 电源 irp，将该函数转换为低功率状态。
 
 有关上述步骤的详细信息，请参阅 [USB 选择性挂起](usb-selective-suspend.md)中的 "发送 Usb 空闲请求 IRP"。
 复合驱动程序为复合设备中的每个函数创建 (PDO) 的物理设备对象，并处理客户端驱动程序发送的电源请求 (函数设备堆栈) 的 FDO。 为了使客户端驱动程序成功进入和退出其功能的挂起状态，复合驱动程序必须支持函数挂起和远程唤醒功能，并处理收到的 power 请求。
 
-在 Windows 8 中，USB 3.0 设备的 USB 驱动程序堆栈支持这些功能。 此外，函数挂起和函数远程唤醒实现已添加到 Microsoft 提供的 [USB 通用父驱动程序](usb-common-class-generic-parent-driver.md) ( # A0) ，这是 Windows 默认复合驱动程序。 如果要编写自定义复合驱动程序，则驱动程序必须根据以下过程处理与函数挂起和远程唤醒请求相关的请求。
+在 Windows 8 中，USB 3.0 设备的 USB 驱动程序堆栈支持这些功能。 此外，函数挂起和函数远程唤醒实现已添加到 Microsoft 提供的 [USB 通用父驱动程序](usb-common-class-generic-parent-driver.md) (Usbccgp.sys) ，这是 Windows 默认复合驱动程序。 如果要编写自定义复合驱动程序，则驱动程序必须根据以下过程处理与函数挂起和远程唤醒请求相关的请求。
 
-<a name="instructions"></a>Instructions
+<a name="instructions"></a>说明
 ------------
 
 ### <a name="step-1-determine-whether-the-usb-driver-stack-supports-function-suspend"></a><a href="" id="determine-whether-the-usb-driver-stack-supports-function-suspend"></a>步骤1：确定 USB 驱动程序堆栈是否支持函数挂起
@@ -56,7 +56,7 @@ ms.locfileid: "90010317"
 
 客户端驱动程序可以发送空闲 IRP (请参阅 [**IOCTL \_ 内部 \_ USB \_ 提交 \_ 空闲 \_ 通知**](/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_idle_notification)) 。 当客户端驱动程序检测到该函数的空闲状态后，将发送该请求。 IRP 包含指向回调完成例程的指针， (称为 *空闲回调*) ，由客户端驱动程序实现。 在空闲回叫内，客户端会在将该函数发送到挂起状态之前执行任务，例如取消挂起的 i/o 传输。
 
-**注意**   空闲 IRP 机制对于 USB 3.0 设备的客户端驱动程序是可选的。 但是，大多数客户端驱动程序都是为了支持 USB 2.0 和 USB 3.0 设备而编写的。 为了支持 USB 2.0 设备，驱动程序必须发送空闲 IRP，因为复合驱动程序依赖于该 IRP 跟踪每个函数的电源状态。 如果所有函数都处于空闲状态，则复合驱动程序会将整个设备发送到挂起状态。
+**注意**  空闲 IRP 机制对于 USB 3.0 设备的客户端驱动程序是可选的。 但是，大多数客户端驱动程序都是为了支持 USB 2.0 和 USB 3.0 设备而编写的。 为了支持 USB 2.0 设备，驱动程序必须发送空闲 IRP，因为复合驱动程序依赖于该 IRP 跟踪每个函数的电源状态。 如果所有函数都处于空闲状态，则复合驱动程序会将整个设备发送到挂起状态。
 
  
 
@@ -66,7 +66,7 @@ ms.locfileid: "90010317"
 
 客户端驱动程序可以通过将 [**irp \_ MJ \_ POWER**](../kernel/irp-mj-power.md) IRP 提交到 [**irp \_ MN \_ wait \_ 唤醒**](../kernel/irp-mn-wait-wake.md) (等待唤醒 IRP) ，将请求提交到 arm 用于远程唤醒的功能。 仅当驱动程序要通过用户事件输入工作状态时，客户端驱动程序才会提交此请求。
 
-接收到等待唤醒 IRP 后，复合驱动程序必须将 [**IOCTL \_ 内部 \_ USB \_ 请求 \_ 远程 \_ 唤醒 \_ 通知**](/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_internal_usb_request_remote_wake_notification) i/o 控制请求发送到 USB 驱动程序堆栈。 当堆栈接收到有关恢复信号的通知时，该请求允许 USB 驱动程序堆栈通知复合驱动程序。 **IOCTL \_ 内部 \_ USB \_ 请求 \_ 远程 \_ 唤醒 \_ 通知**使用[**请求 \_ 远程 \_ 唤醒 \_ 通知**](/windows-hardware/drivers/ddi/usbdlib/ns-usbdlib-_request_remote_wake_notification)结构来指定请求参数。 复合驱动程序必须指定的值之一是为远程唤醒提供的函数的函数句柄。 复合驱动程序在以前的请求中获取了该句柄，以便将复合设备注册到 USB 驱动程序堆栈。 有关复合驱动程序注册请求的详细信息，请参阅 [如何注册复合设备](register-a-composite-driver.md)。
+接收到等待唤醒 IRP 后，复合驱动程序必须将 [**IOCTL \_ 内部 \_ USB \_ 请求 \_ 远程 \_ 唤醒 \_ 通知**](/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_internal_usb_request_remote_wake_notification) i/o 控制请求发送到 USB 驱动程序堆栈。 当堆栈接收到有关恢复信号的通知时，该请求允许 USB 驱动程序堆栈通知复合驱动程序。 **IOCTL \_ 内部 \_ USB \_ 请求 \_ 远程 \_ 唤醒 \_ 通知** 使用 [**请求 \_ 远程 \_ 唤醒 \_ 通知**](/windows-hardware/drivers/ddi/usbdlib/ns-usbdlib-_request_remote_wake_notification)结构来指定请求参数。 复合驱动程序必须指定的值之一是为远程唤醒提供的函数的函数句柄。 复合驱动程序在以前的请求中获取了该句柄，以便将复合设备注册到 USB 驱动程序堆栈。 有关复合驱动程序注册请求的详细信息，请参阅 [如何注册复合设备](register-a-composite-driver.md)。
 
 在请求的 IRP 中，复合驱动程序提供一个指向 (远程唤醒) 完成例程的指针，该例程由复合驱动程序实现。
 
@@ -143,9 +143,9 @@ SendRequestForRemoteWakeNotification(
 
 ### <a name="step-4-send-a-request-to-arm-the-function-for-remote-wake-up"></a><a href="" id="send-a-request-to-arm-the-function-for-remote-wake-up"></a>步骤4：向 Arm 发送用于远程唤醒功能的请求
 
-若要将该函数发送到低功耗状态，客户端驱动程序会提交 [**IRP \_ MN \_ SET \_ power**](../kernel/irp-mn-set-power.md) IRP，其中包含将 Windows 驱动模型 (WDM) 设备电源状态更改为 **D2** 或 **D3**的请求。 通常，如果驱动程序之前发送了等待唤醒 IRP 来请求远程唤醒，则客户端驱动程序将发送 **D2** irp。 否则，客户端驱动程序将发送 **D3** IRP。
+若要将该函数发送到低功耗状态，客户端驱动程序会提交 [**IRP \_ MN \_ SET \_ power**](../kernel/irp-mn-set-power.md) IRP，其中包含将 Windows 驱动模型 (WDM) 设备电源状态更改为 **D2** 或 **D3** 的请求。 通常，如果驱动程序之前发送了等待唤醒 IRP 来请求远程唤醒，则客户端驱动程序将发送 **D2** irp。 否则，客户端驱动程序将发送 **D3** IRP。
 
-收到 **D2** IRP 后，复合驱动程序必须首先确定等待唤醒 IRP 是否是由客户端驱动程序发送的前一请求挂起的。 如果该 IRP 处于挂起状态，则复合驱动程序必须将该函数 arm 用于远程唤醒。 为此，复合驱动程序必须将设置的 \_ 功能控制请求发送到函数的第一个接口，以使设备能够发送恢复信号。 若要发送控制请求，请调用[**USBD \_ UrbAllocate**](/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_urballocate)例程来分配[**URB**](/windows-hardware/drivers/ddi/usb/ns-usb-_urb)结构，并调用[**UsbBuildFeatureRequest**](/previous-versions/ff538932(v=vs.85))宏来格式化设置功能请求的**URB** \_ 。 在调用中，将 URB \_ 函数 \_ SET \_ 功能指定 \_ 为 \_ INTERFACE 作为操作代码，并将 USB \_ 功能 \_ 函数 \_ 挂起作为功能选择器。 在 *Index* 参数中，设置最高有效字节的 **第1位** 。 该值会复制到传输的安装包中的 **wIndex** 字段。
+收到 **D2** IRP 后，复合驱动程序必须首先确定等待唤醒 IRP 是否是由客户端驱动程序发送的前一请求挂起的。 如果该 IRP 处于挂起状态，则复合驱动程序必须将该函数 arm 用于远程唤醒。 为此，复合驱动程序必须将设置的 \_ 功能控制请求发送到函数的第一个接口，以使设备能够发送恢复信号。 若要发送控制请求，请调用 [**USBD \_ UrbAllocate**](/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_urballocate)例程来分配 [**URB**](/windows-hardware/drivers/ddi/usb/ns-usb-_urb)结构，并调用 [**UsbBuildFeatureRequest**](/previous-versions/ff538932(v=vs.85))宏来格式化设置功能请求的 **URB** \_ 。 在调用中，将 URB \_ 函数 \_ SET \_ 功能指定 \_ 为 \_ INTERFACE 作为操作代码，并将 USB \_ 功能 \_ 函数 \_ 挂起作为功能选择器。 在 *Index* 参数中，设置最高有效字节的 **第1位** 。 该值会复制到传输的安装包中的 **wIndex** 字段。
 
 下面的示例演示如何发送设置的 \_ 功能控制请求。
 
