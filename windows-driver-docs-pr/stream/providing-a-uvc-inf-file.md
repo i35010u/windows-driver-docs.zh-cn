@@ -8,12 +8,12 @@ keywords:
 - 示例代码 WDK USB 视频类，UVC INF 文件
 ms.date: 09/12/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ef6f5a1bc8ea8c96b6e479526c5920af079454fe
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 355a8d64d367ea5d270f685e3b44042e0efd431c
+ms.sourcegitcommit: 362f94675369e24602e43bd22d5faf96d395d9b0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96818753"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101884040"
 ---
 # <a name="providing-a-uvc-inf-file"></a>提供 UVC INF 文件
 
@@ -63,6 +63,33 @@ Include=usbvideo.inf, ks.inf, kscaptur.inf, dshowext.inf
 Needs=USBVideo.NT, KS.Registration, KSCAPTUR.Registration.NT, DSHOWEXT.Registration
 AddReg=MyDevice.Plugins
 CopyFiles=MyDevice.CopyList
+```
+
+需要包含 *Usbvideo* 的其他部分，以确保其完整性
+```INF
+[MyDevice.SERVICES]
+Include=usbvideo.inf
+Needs=USBVideo.NT.SERVICES
+
+[MyDevice.HW]
+Include=usbvideo.inf
+Needs=USBVideo.NT.HW
+
+[MyDevice.WDF]
+Include=usbvideo.inf
+Needs=USBVideo.NT.WDF
+
+[WdmCompanionFilter_CompanionSect]
+CompanionServices = SecureUSBVideo
+
+[WdmCompanionFilter_KmdfSvcSect]
+KmdfLibraryVersion = %KMDF_VERSION%
+
+[SecureUSBVideo_UmdfSvcSect]
+UmdfLibraryVersion = %UMDF_VERSION%
+ServiceBinary = %12%\UMDF\SecureUSBVideo.dll
+ServiceType = SecureCompanion ; allowed options are: Driver (default), SecureCompanion, NonSecureCompanion
+TrustletIdentity = 4096          ; required if it is SecureCompanion
 ```
 
 INF 还需要 CopyFiles 部分，将插件复制到系统文件夹。

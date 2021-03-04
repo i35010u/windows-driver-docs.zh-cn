@@ -3,12 +3,12 @@ title: PortCls 注册表电源设置
 description: 本主题说明适用于 Windows 8 的 PortCls 注册表电源设置。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 35adb82c3f9c823bf7012b738c3900e06a275bd1
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 13d4af0941deab50126b3d681b2f7735c3aa7648
+ms.sourcegitcommit: 362f94675369e24602e43bd22d5faf96d395d9b0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96800803"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101884042"
 ---
 # <a name="portcls-registry-power-settings"></a>PortCls 注册表电源设置
 
@@ -43,7 +43,7 @@ ms.locfileid: "96800803"
 <td align="left">ConservationIdleTime</td>
 <td align="left">REG_BINARY</td>
 <td align="left">0</td>
-<td align="left">0秒超时。</td>
+<td align="left">当系统使用电池电量时，设备的空闲超时。</td>
 </tr>
 <tr class="even">
 <td align="left">IdlePowerState</td>
@@ -57,7 +57,7 @@ ms.locfileid: "96800803"
 <td align="left">PerformanceIdleTime</td>
 <td align="left">REG_BINARY</td>
 <td align="left">0</td>
-<td align="left">0秒超时。</td>
+<td align="left">设备在系统上交流电源时的空闲超时。</td>
 </tr>
 </tbody>
 </table>

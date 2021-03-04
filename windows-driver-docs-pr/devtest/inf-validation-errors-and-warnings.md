@@ -3,12 +3,12 @@ title: INF 验证错误和警告
 description: Microsoft Visual Studio 执行的自动 INF 验证会导致驱动程序安装错误和警告。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f4f4e4f68fb9105e45067949b9e7176ad484f00
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 62871be3a09713bdcf21a9d4bf3bcc791c2b3287
+ms.sourcegitcommit: 362f94675369e24602e43bd22d5faf96d395d9b0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96833145"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101884046"
 ---
 # <a name="inf-validation-errors-and-warnings"></a>INF 验证错误和警告
 
@@ -52,6 +52,7 @@ InfVerif 遵循错误号越低的一般规则，问题就越严重。
 
 - [INF 文件中的语法 (1100-1299) ](#syntax-in-the-inf-file-1100-1299)
 - [通用 INF (1300-1319) ](#universal-inf-1300-1319)
+- [Windows 驱动程序 (1320-1329) ](#windows-driver-1320-1329)
 - [安装 (2000-2999) ](#installation-2000-2999)
 
 并非所有错误代码都列在下面，因为许多错误代码都有一目了然的含义。 1000-1099 范围内的错误被视为一目了然，因为它们是基本的语法错误。
@@ -235,7 +236,7 @@ AddService = ,2
 ## <a name="universal-inf-1300-1319"></a>通用 INF (1300-1319) 
 
 >[!IMPORTANT]
->如果未收到任何错误或警告（范围 13 *xx* 中的错误号），则驱动程序 INF 文件是通用的。
+>如果未在 13 *00*-13 *19* 范围内收到错误号或警告，则驱动程序 INF 文件是通用的。
 
 以下错误和警告与 INF 可配置性相关：
 
@@ -243,7 +244,7 @@ AddService = ,2
 <thead>
 <tr>
 <th>错误/警告代码</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -290,6 +291,49 @@ AddReg = HKR,,CoInstallers32,0x00010000,"MyCoinstaller.dll"
 <tr>
 <td><strong>133x：功能错误</strong></td>
 <td>多个注册表节写入一个全局键。 例如，不同的部分可能会将服务设置为不同的服务配置，将全局注册表项设置为不同的数据值，或者将目标文件指向不同的源文件。</td>
+</tr>
+</tbody>
+</table>
+
+## <a name="windows-driver-1320-1329"></a>Windows 驱动程序 (1320-1329) 
+
+>[!IMPORTANT]
+>如果未在 13 *2x* 范围内收到错误号或警告，则驱动程序 INF 文件符合 Windows 驱动程序要求。 <a href="https://github.com/MicrosoftDocs/windows-driver-docs/blob/staging/windows-driver-docs-pr/develop/driver-isolation.md"><strong>驱动程序隔离要求</strong></a>文档中详细介绍了这些要求。
+
+以下错误和警告与 Windows 驱动程序要求相关：
+
+<table>
+<thead>
+<tr>
+<th>错误/警告代码</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1320：不会将注册表根 <em>Xxx</em> 隔离到 HKR</strong></td>
+<td>错误1320表示注册表项操作不符合 <a href="https://github.com/MicrosoftDocs/windows-driver-docs/blob/staging/windows-driver-docs-pr/develop/driver-isolation.md#reading-and-writing-state"><strong>此处</strong></a>定义的注册表要求。
+</td>
+</tr>
+<tr>
+<td><strong>1321：值为<em>xxx</em>的注册表根<em>Xxx</em>未隔离到 HKR</strong></td>
+<td>错误1321表示注册表值操作不符合 <a href="https://github.com/MicrosoftDocs/windows-driver-docs/blob/staging/windows-driver-docs-pr/develop/driver-isolation.md#reading-and-writing-state"><strong>此处</strong></a>定义的注册表要求。
+</td>
+</tr>
+<tr>
+<td><strong>1322： file <em>xxx</em>的目标文件路径<em>xxx</em>未隔离到 DIRID 13</strong></td>
+<td>错误1322表示根据 <a href="https://github.com/MicrosoftDocs/windows-driver-docs/blob/staging/windows-driver-docs-pr/develop/driver-isolation.md#run-from-driver-store"><strong>此处</strong></a>定义的要求，将文件复制到无效的目标。
+</td>
+</tr>
+<tr>
+<td><strong>1323：服务注册表项 <em>Xxx</em> 必须位于 Parameters 子项下</strong></td>
+<td>错误1323表示在参数子项下根据 <a href="https://github.com/MicrosoftDocs/windows-driver-docs/blob/staging/windows-driver-docs-pr/develop/driver-isolation.md#service-registry-state"><strong>此处</strong></a>定义的要求，不会将服务注册表值设置为 HKR。
+</td>
+</tr>
+<tr>
+<td><strong>1324： [Version] 部分应指定 PnpLockdown = 1</strong></td>
+<td>错误1324表示版本部分中未指定 PnpLockdown。 此规范将导致 PNP 将额外的安全性添加到驱动程序包中的二进制文件，以防止篡改并应始终在驱动程序包中指定。
+</td>
 </tr>
 </tbody>
 </table>
