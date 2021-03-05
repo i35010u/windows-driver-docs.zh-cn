@@ -12,8 +12,12 @@
       href: installing-a-bluetooth-device.md
     - name: 蓝牙注册表项
       href: bluetooth-registry-entries.md
+    - name: 蓝牙配置文件驱动程序功能
+      href: bluetooth-profile-driver-functions.md
 - name: 低耗电蓝牙概述
   href: bluetooth-low-energy-overview.md
+- name: 蓝牙低功耗功能
+  href: bluetooth-low-energy-functions.md
 - name: 使用蓝牙驱动程序堆栈
   items:
     - name: 如何使用蓝牙驱动程序堆栈

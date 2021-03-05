@@ -130,6 +130,8 @@
   items:
     - name: 传感器测试源
       href: testing-sensor-landing.md
+    - name: Microsoft SensorExplorer
+      href: testing-sensor-explorer.md
     - name: 生成并使用 Microsoft 氛围光工具 (MALT)
       items:
         - name: 生成光测试工具

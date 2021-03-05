@@ -4,12 +4,12 @@ description: 本主题介绍如何验证针对新式待机系统的驱动程序�
 ms.topic: article
 ms.date: 12/17/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 89387f888f36b695caff3e51da5e3910a17ee604
-ms.sourcegitcommit: 10fecd036370f5eccb538004c5bec1fdd18c3275
+ms.openlocfilehash: 190104c91ed63d6de6646ce6c4ccad4859644522
+ms.sourcegitcommit: ac28dd2a921c25796d19572a180b88e460420488
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98124149"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101682266"
 ---
 # <a name="validating-driver-updates-for-modern-standby-systems"></a>验证新式待机系统的驱动程序更新 
 
@@ -19,7 +19,7 @@ ms.locfileid: "98124149"
 
 建议在各种新式待机系统和操作系统版本上进行测试，因为硬件、固件、驱动程序和操作系统的组合会影响电源管理和电池寿命。 如果驱动程序更新也以传统睡眠 (S3) 系统为目标，则应同时对至少一个 S3 系统执行验证，但最好应对多个该系统执行验证。 
 
-安装更新后的驱动程序之前，应通过运行 HLK 测试套件（即在测试系统上自动生成的 HLK 播放列表）来确认系统的稳定性。 如果驱动程序的现有版本导致失败，则在重新运行 HLK 测试套件之前，可以通过设备管理器暂时禁用相应的设备。 禁用设备可能会导致某些 HLK 测试失败，例如，未能满足新式待机基本要求测试中的 DRIPS 要求，或者 DFx 系统验证测试失败；但是，测试结果的其余部分应表明平台通常是稳定的，并且能够进入和退出新式待机。 确认系统稳定性后，可以通过安装的设备管理器和更新的驱动程序来重新启用已禁用的设备。 
+安装更新后的驱动程序之前，应通过运行 HLK 测试套件（即在测试系统上自动生成的 HLK 播放列表）来确认系统的稳定性。 如果驱动程序的现有版本导致 XHC/EHC 控制器下的某个 USB 设备或 I2C 控制器下的某个 I2C 设备故障，则在重新运行 HLK 测试套件之前，可通过设备管理器暂时禁用相应的设备。 禁用设备可能会导致某些 HLK 测试失败，例如，未能满足新式待机基本要求测试中的 DRIPS 要求，或者 DFx 系统验证测试失败；但是，测试结果的其余部分应表明平台通常是稳定的，并且能够进入和退出新式待机。 确认系统稳定性后，可以通过安装的设备管理器和更新的驱动程序来重新启用已禁用的设备。 
 
 安装更新的驱动程序后，系统必须通过[交流电源](/windows-hardware/test/hlk/testref/c0c51f07-5b17-4b26-a7ce-bfc9e7611dac)和[直流电源](/windows-hardware/test/hlk/testref/c0c51f07-5b17-4b26-a7ce-bfc9e7611ddc)的新式待机基本要求测试，确保系统仍然能够进入低功耗状态并快速恢复待机状态。 需要新式待机系统才能在发布之前通过这些测试，因此请务必确保驱动程序更新不会导致回归。 建议在执行此测试之前在系统上执行休眠转换。
 

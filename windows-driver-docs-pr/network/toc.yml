@@ -1890,6 +1890,20 @@
           href: indicating-rss-receive-data.md
         - name: 在中间驱动程序或筛选器驱动程序中支持 RSS
           href: supporting-rss-in-intermediate-drivers-or-filter-drivers.md
+        - name: 虚拟机多队列 (VMMQ)
+          items:
+            - name: 虚拟机多队列 (VMMQ) 概述
+              href: overview-of-virtual-machine-multiple-queues.md
+            - name: VMMQ 发送和接收处理
+              href: vmmq-send-and-receive-processing.md
+            - name: 播发 VMMQ 功能
+              href: advertising-vmmq-capabilities.md
+            - name: VMMQ 的标准化 INF 关键字
+              href: standardized-inf-keywords-for-vmmq.md
+            - name: 为 VMMQ 分配 VPort
+              href: allocating-vports-for-vmmq.md
+            - name: 在 VPort 上启用、禁用和更新 VMMQ
+              href: updating-vmmq-on-a-vport.md
     - name: TCP/IP 卸载
       items:
         - name: TCP/IP 卸载概述
