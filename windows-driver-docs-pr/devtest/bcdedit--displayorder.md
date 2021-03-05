@@ -11,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 029d312151b7d52d0537526595e7d0dd00befffb
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 627ce599354226923a5f6b637e47efcba4143413
+ms.sourcegitcommit: 607367af861d0ff3ec6438dab5ea532d06f5b890
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96824267"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102193572"
 ---
 <a name="bcdedit-displayorder"></a>BCDEdit /displayorder
 ============
@@ -36,7 +36,7 @@ bcdedit /displayorder <id> [...] [ /addfirst | /addlast | /remove ]
 
 **/addfirst**   将指定的条目标识符添加到显示顺序的顶部。  如果指定此开关，则只能指定一个条目标识符。  如果指定的标识符已在列表中，则会将其移动到列表的顶部。
 
-**/addlastAdds** 指定的条目标识符到显示顺序的结尾。  如果指定此开关，则只能指定一个条目标识符。  如果指定的标识符已在列表中，则将其移动到列表的末尾。
+**/addlast**  向显示顺序的末尾添加指定的项标识符。  如果指定此开关，则只能指定一个条目标识符。  如果指定的标识符已在列表中，则将其移动到列表的末尾。
 
 /remove
 

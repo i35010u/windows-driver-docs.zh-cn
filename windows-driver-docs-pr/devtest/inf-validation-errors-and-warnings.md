@@ -1,14 +1,14 @@
 ---
 title: INF 验证错误和警告
 description: Microsoft Visual Studio 执行的自动 INF 验证会导致驱动程序安装错误和警告。
-ms.date: 04/20/2017
+ms.date: 03/04/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 62871be3a09713bdcf21a9d4bf3bcc791c2b3287
-ms.sourcegitcommit: 362f94675369e24602e43bd22d5faf96d395d9b0
+ms.openlocfilehash: 80c8b66ed915c6d0d1432adac13aeaa2965ce760
+ms.sourcegitcommit: 607367af861d0ff3ec6438dab5ea532d06f5b890
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101884046"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102193574"
 ---
 # <a name="inf-validation-errors-and-warnings"></a>INF 验证错误和警告
 
@@ -298,7 +298,7 @@ AddReg = HKR,,CoInstallers32,0x00010000,"MyCoinstaller.dll"
 ## <a name="windows-driver-1320-1329"></a>Windows 驱动程序 (1320-1329) 
 
 >[!IMPORTANT]
->如果未在 13 *2x* 范围内收到错误号或警告，则驱动程序 INF 文件符合 Windows 驱动程序要求。 <a href="https://github.com/MicrosoftDocs/windows-driver-docs/blob/staging/windows-driver-docs-pr/develop/driver-isolation.md"><strong>驱动程序隔离要求</strong></a>文档中详细介绍了这些要求。
+>如果未在 13 *2x* 范围内收到错误号或警告，则驱动程序 INF 文件符合 Windows 驱动程序要求。 <a href="/windows-hardware/drivers/develop/driver-isolation.md"><strong>驱动程序隔离要求</strong></a>文档中详细介绍了这些要求。
 
 以下错误和警告与 Windows 驱动程序要求相关：
 
@@ -312,22 +312,22 @@ AddReg = HKR,,CoInstallers32,0x00010000,"MyCoinstaller.dll"
 <tbody>
 <tr>
 <td><strong>1320：不会将注册表根 <em>Xxx</em> 隔离到 HKR</strong></td>
-<td>错误1320表示注册表项操作不符合 <a href="https://github.com/MicrosoftDocs/windows-driver-docs/blob/staging/windows-driver-docs-pr/develop/driver-isolation.md#reading-and-writing-state"><strong>此处</strong></a>定义的注册表要求。
+<td>错误1320表示注册表项操作不符合 <a href="/windows-hardware/drivers/develop/driver-isolation.md#reading-and-writing-state"><strong>读写状态</strong></a>中定义的注册表要求。
 </td>
 </tr>
 <tr>
 <td><strong>1321：值为<em>xxx</em>的注册表根<em>Xxx</em>未隔离到 HKR</strong></td>
-<td>错误1321表示注册表值操作不符合 <a href="https://github.com/MicrosoftDocs/windows-driver-docs/blob/staging/windows-driver-docs-pr/develop/driver-isolation.md#reading-and-writing-state"><strong>此处</strong></a>定义的注册表要求。
+<td>错误1321表示注册表值操作不符合 <a href="/windows-hardware/drivers/develop/driver-isolation.md#reading-and-writing-state"><strong>读写状态</strong></a>中定义的注册表要求。
 </td>
 </tr>
 <tr>
 <td><strong>1322： file <em>xxx</em>的目标文件路径<em>xxx</em>未隔离到 DIRID 13</strong></td>
-<td>错误1322表示根据 <a href="https://github.com/MicrosoftDocs/windows-driver-docs/blob/staging/windows-driver-docs-pr/develop/driver-isolation.md#run-from-driver-store"><strong>此处</strong></a>定义的要求，将文件复制到无效的目标。
+<td>错误1322表示根据 <a href="/windows-hardware/drivers/develop/driver-isolation.md#run-from-driver-store"><strong>从驱动程序存储区</strong></a>中定义的要求，将文件复制到无效的目标。
 </td>
 </tr>
 <tr>
 <td><strong>1323：服务注册表项 <em>Xxx</em> 必须位于 Parameters 子项下</strong></td>
-<td>错误1323表示在参数子项下根据 <a href="https://github.com/MicrosoftDocs/windows-driver-docs/blob/staging/windows-driver-docs-pr/develop/driver-isolation.md#service-registry-state"><strong>此处</strong></a>定义的要求，不会将服务注册表值设置为 HKR。
+<td>错误1323表示在参数子项下，根据 <a href="/windows-hardware/drivers/windows-driver-docs-pr/develop/driver-isolation.md#service-registry-state"><strong>服务注册表状态</strong></a>中定义的要求，不会将服务注册表值设置为 HKR。
 </td>
 </tr>
 <tr>
