@@ -9,14 +9,14 @@ api_name:
 - AVC_FUNCTION_COMMAND
 api_type:
 - NA
-ms.date: 06/16/2020
+ms.date: 03/05/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: f97fdc1deaffaa01829c635c3e0b3b0cb9e2538f
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 0bfa79eb9d6fd60ea4b51c09262451434db0bc39
+ms.sourcegitcommit: 57ffd9cfed01220923bdd0b20539e32a0e211caf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96792547"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102236415"
 ---
 # <a name="avc_function_command"></a>AVC \_ 函数 \_ 命令
 
@@ -103,7 +103,7 @@ typedef struct _AVC_COMMAND_IRB {
 
 **SubunitAddr**
   
-将此设置为非分页内存地址，其中包含根据 AV/C 数字接口命令集常规规范 Rev 3.0 的节5.3.3 进行编码的所需的子地址。 可以在 [1394 商业协会](https://1394ta.org/library-2/) 网站上找到此规范。 无需长度，因为子单位地址编码意味着这一点。 如果 **SubunitAddrFlag** 为零，则忽略此参数。
+将此设置为非分页内存地址，该地址包含根据1394贸易关联 AV/C 数字接口命令集 "常规规范，修订版 3.0" 的 "5.3.3" 部分进行编码。 无需长度，因为子单位地址编码意味着这一点。 如果 **SubunitAddrFlag** 为零，则忽略此参数。
 
 **AlternateOpcodes**
 

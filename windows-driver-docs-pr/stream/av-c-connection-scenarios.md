@@ -15,18 +15,18 @@ keywords:
 - 设备间连接 WDK AV/C
 - Avc.sys 函数驱动程序 WDK，连接
 - 外部插头连接 WDK AV/C
-ms.date: 06/15/2020
+ms.date: 03/05/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: d44b88bc19024b1158b06f452a75ceefa2cb5fba
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 68200e57f47a8f4df5dc111da154f907b9d1269e
+ms.sourcegitcommit: 57ffd9cfed01220923bdd0b20539e32a0e211caf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96834009"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102236417"
 ---
 # <a name="avc-connection-scenarios"></a>AV/C 连接方案
 
-在 Windows Vista 之前，连接和兼容性管理 (中的 CCM) 协议 *Avc.sys* 支持单一连接方案，在此方案中，计算机充当外部 AV/C 设备的控制器来启动来自设备的数据流。 例如，若要开始流式传输， *Avc.sys* 中的连接管理在设备上的子单位与设备单位的同步输出插头之间建立连接，方法是使用 "连接" 和 "断开连接单元" 命令 ([**AVC \_ function \_ 获取**](./avc-function-acquire.md) 和 [**AVC \_ 函数) \_ 版本**](./avc-function-release.md)。 有关 AV/C 规范和 CCM 协议的详细信息，请参阅 [1394 贸易关联](https://1394ta.org/library-2) 网站。
+在 Windows Vista 之前，连接和兼容性管理 (中的 CCM) 协议 *Avc.sys* 支持单一连接方案，在此方案中，计算机充当外部 AV/C 设备的控制器来启动来自设备的数据流。 例如，若要开始流式传输， *Avc.sys* 中的连接管理在设备上的子单位与设备单位的同步输出插头之间建立连接，方法是使用 "连接" 和 "断开连接单元" 命令 ([**AVC \_ function \_ 获取**](./avc-function-acquire.md) 和 [**AVC \_ 函数) \_ 版本**](./avc-function-release.md)。
 
 在 Windows Vista 中，已对连接管理进行了改进，以支持7个以上的连接方案，使 *Avc.sys* 支持8个单位/子单位的连接方案。 连接管理的改进增加了对从子源插入到其他子源的连接的支持;子单元连接可以在同一 AV/C 单位内或不同的 AV/C 单位内。 *Avc.sys* 通过使用信号源，然后输入-选择 CCM 协议单元命令建立连接。  (*Avc.sys* 支持其他 CCM 协议单元命令（如输出预设），且仅支持 AV/C 规范所需的级别。 ) 
 

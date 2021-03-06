@@ -7,18 +7,18 @@ keywords:
 - 对等 Avc.sys 模式 WDK AV/C
 - 虚拟 Avc.sys 模式 WDK AV/C
 - Avc.sys 函数驱动程序 WDK，关于 Avc.sys 函数驱动程序
-ms.date: 06/15/2020
+ms.date: 03/05/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 1086f90b51f045d049a9f977b22e81344bee396b
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: c5022d9a138b0d14884b7d5c315eb6bf7a24cee8
+ms.sourcegitcommit: 57ffd9cfed01220923bdd0b20539e32a0e211caf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96833995"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102236419"
 ---
 # <a name="avc-overview"></a>AV/C 概述
 
-本部分介绍了 Microsoft 提供的 *Avc.sys* 函数驱动程序，该驱动程序提供对 (AV/C) 协议的 IEEE 1394 音频/视频控制支持。 本部分还提供了为 AV/C 兼容设备开发 AV/C 子单位驱动程序的指南。 [1394 贸易协会的](https://1394ta.org/library-2)网站上提供了 AV/C 协议的详细信息。 请注意，供应商可能使用 Microsoft 提供的驱动程序（ *Msdv.sys* 或 *Mstape.sys*）支持其磁带子单元连接（如果适用）。 这两个类驱动程序使写入磁带的驱动程序子单元连接不必要。
+本部分介绍了 Microsoft 提供的 *Avc.sys* 函数驱动程序，该驱动程序提供对 (AV/C) 协议的 IEEE 1394 音频/视频控制支持。 本部分还提供了为 AV/C 兼容设备开发 AV/C 子单位驱动程序的指南。 请注意，供应商可能使用 Microsoft 提供的驱动程序（ *Msdv.sys* 或 *Mstape.sys*）支持其磁带子单元连接（如果适用）。 这两个类驱动程序使写入磁带的驱动程序子单元连接不必要。
 
 *Avc.sys* 提供了两种运行模式：对等和虚拟。 *Avc.sys* 对等机模式支持外部 AV/C 设备上的子单元连接。 利用 *Avc.sys* 虚拟模式，计算机功能可以作为 Av/c 子源公开，从而使计算机成为 Av/c 命令的有效目标，并使其在 IEEE 1394 串行总线上通过其他 Av/c 设备发出。
 
@@ -38,6 +38,6 @@ ms.locfileid: "96833995"
 
 通常情况下，供应商编写 AV/C 子单位驱动程序来提供对以下内容的支持：
 
-- 根据 [1394 贸易协会规范](https://1394ta.org/library-2) 网站定义的设备类型控制子单位
+- 根据1394贸易关联规范定义的设备类型控制子单位。
 
 - 管理插入连接，以便基于 IEEE 1394 总线上的 IEC-61883 标准流式传输数据。 有关61883标准的详细信息，请参阅 [IEC](https://www.iec.ch/) 网站。

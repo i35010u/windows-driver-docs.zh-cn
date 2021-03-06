@@ -7,14 +7,14 @@ keywords:
 - Avcstrm.sys 流筛选器驱动程序 WDK
 - Avcstrm.sys 流筛选器驱动程序 WDK，关于 Avcstrm.sys 流式处理筛选器驱动程序
 - 筛选器驱动程序 WDK AV/C 流式处理
-ms.date: 06/15/2020
+ms.date: 03/05/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a62b1948b4617bbbf184c3268094a0291f7ae27
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: f37433ff9fbafeea3997cc67397b6626ceb8b975
+ms.sourcegitcommit: 57ffd9cfed01220923bdd0b20539e32a0e211caf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96830923"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102236411"
 ---
 # <a name="avc-streaming-overview"></a>AV/C 流式处理概述
 
@@ -22,7 +22,7 @@ ms.locfileid: "96830923"
 
 *Avcstrm.sys* 是较低级别的子单位筛选器驱动程序，它位于驱动程序堆栈中和任何子单位驱动程序的正上方 *Avc.sys* 和 *61883.sys* 。 AV/C 流筛选器驱动程序为 AV/C 协议驱动程序提供附加支持。 供应商可以使用此支持。
 
-位于 [1394 贸易协会](https://1394ta.org/library-2) 网站 (的磁带子单位规范) 支持不同的传输状态控制（如播放、暂停、录制和停止），而不考虑其媒体信号。 但是，同一子类型的数据格式可以相同，也可以不同。 例如，DV 和 DVHS 设备都包含磁带子单元连接。 但是，DV 通常使用基于 IEC 61883-2 规范的 SDDV 数据格式，而 DVHS 使用基于61883-4 规范的 MPEG2TS 数据格式。 因此，适用于磁带子单元连接的筛选器驱动程序必须支持 SDDV 和 MPEG2TS 数据格式，但对磁带子单位使用相同的设备控件。 这意味着每个子单位驱动程序必须重复相同的功能，以提供可识别格式的流式处理功能。
+1394贸易关联磁带子单位规范支持不同的传输状态控制（如播放、暂停、记录和停止），而不考虑其媒体信号。 但是，同一子类型的数据格式可以相同，也可以不同。 例如，DV 和 DVHS 设备都包含磁带子单元连接。 但是，DV 通常使用基于 IEC 61883-2 规范的 SDDV 数据格式，而 DVHS 使用基于61883-4 规范的 MPEG2TS 数据格式。 因此，适用于磁带子单元连接的筛选器驱动程序必须支持 SDDV 和 MPEG2TS 数据格式，但对磁带子单位使用相同的设备控件。 这意味着每个子单位驱动程序必须重复相同的功能，以提供可识别格式的流式处理功能。
 
 在61883和 AV/C 子单位驱动程序堆栈上控制 AV/C 子单位驱动程序需要使用驱动程序函数通过61883协议驱动程序提供 (DDIs) 来接收或传输数据流。 这些驱动程序函数执行以下操作：
 
@@ -41,7 +41,5 @@ AV/C 流筛选器驱动程序依赖于 *61883.sys* 协议驱动程序。 *Avcstr
 有关详细信息和资源，请参阅以下链接：
 
 [Windows 驱动模型](../kernel/introduction-to-wdm.md)
-
-[1394贸易协会规范](https://1394ta.org/library-2)
 
 [国际电工委员会 (International Electrotechnical Commission)](https://www.iec.ch/)

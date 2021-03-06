@@ -9,14 +9,14 @@ api_name:
 - AVC_FUNCTION_GET_REQUEST
 api_type:
 - NA
-ms.date: 06/16/2020
+ms.date: 03/05/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a9064d7837caec2174392486fc10c29f2c3d095
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 5609c989fdb9780062a12920be8f9d769f9388a4
+ms.sourcegitcommit: 57ffd9cfed01220923bdd0b20539e32a0e211caf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96830903"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102236409"
 ---
 # <a name="avc_function_get_request"></a>AVC \_ 函数 \_ GET \_ 请求
 
@@ -89,7 +89,7 @@ typedef struct _AVC_COMMAND_IRB {
 
 **SubunitAddr**
   
-仅在注册接收单元命令时使用。 将此设置为非分页内存地址，该地址包含按 **AV/C** 数字接口命令集 "常规规范，Rev 3.0 (0xff) 的节5.3.3 进行编码的单元地址。 可以在 [1394 商业协会](https://1394ta.org/library-2/) 网站上找到此规范。 请注意，对于子请求，在完成时，将指向包含此虚拟子实例的子地址的内存。 调用方可以访问此非分页内存，但不得尝试释放它。
+仅在注册接收单元命令时使用。 将此设置为非分页内存地址，该地址包含按1394贸易关联 **AV/C** 数字接口命令集常规规范，Rev 3.0 (0xff) 的节5.3.3 编码的单元地址。 请注意，对于子请求，在完成时，将指向包含此虚拟子实例的子地址的内存。 调用方可以访问此非分页内存，但不得尝试释放它。
 
 **AlternateOpcodes**
   
