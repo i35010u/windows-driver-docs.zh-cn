@@ -3,12 +3,12 @@ title: 环回 NDIS 数据包
 description: 环回 NDIS 数据包
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bc141e097d20d4700bed048cc5f29c2b7203242e
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 0a75f6005a2d250d05ae5540b3f6d825ecee1119
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96833391"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248675"
 ---
 # <a name="looping-back-ndis-packets"></a>环回 NDIS 数据包
 
@@ -16,7 +16,7 @@ ms.locfileid: "96833391"
 
 
 
-如果 \_ \_ \_ \_ \_ 已设置 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构的 **NblFlags** 成员中的 NDIS NBL 标志为环回数据包标志，则数据包是环回数据包。 协议驱动程序和筛选器驱动程序可以选中此标志来确定数据包是否为环回数据包。
+如果 \_ \_ \_ \_ \_ 已设置 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list)结构的 **NblFlags** 成员中的 NDIS NBL 标志为环回数据包标志，则数据包是环回数据包。 协议驱动程序和筛选器驱动程序可以选中此标志来确定数据包是否为环回数据包。
 
 如果满足以下三个条件，NDIS 会将数据包循环回来：
 

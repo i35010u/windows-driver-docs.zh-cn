@@ -12,12 +12,12 @@ keywords:
 - 多 NET_BUFFER_LIST 结构 WDK networki
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a94aa39077a82b090f7e1aeaa019c2f2afb3a7b3
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: efc282d68e0a06b0d8acf252c1474a93da73b51b
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96840281"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102247835"
 ---
 # <a name="send-and-receive-operations"></a>发送和接收操作
 
@@ -25,11 +25,11 @@ ms.locfileid: "96840281"
 
 
 
-在单个函数调用中，NDIS 6.0 驱动程序可以在每个网络缓冲区列表结构上发送多个具有多个 [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)结构的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构 \_ \_ 。 此外，NDIS 驱动程序还可以针对 \_ \_ 网络缓冲区 \_ \_ 列表结构上具有多个网络缓冲区结构的多个网络缓冲区列表结构指示已完成的发送操作 \_ 。
+在单个函数调用中，NDIS 6.0 驱动程序可以在每个网络缓冲区列表结构上发送多个具有多个 [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer)结构的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list)结构 \_ \_ 。 此外，NDIS 驱动程序还可以针对 \_ \_ 网络缓冲区 \_ \_ 列表结构上具有多个网络缓冲区结构的多个网络缓冲区列表结构指示已完成的发送操作 \_ 。
 
 在接收路径中，微型端口驱动程序可以使用网络 \_ 缓冲区 \_ 列表结构的列表来指示接收。 \_ \_ 微型端口驱动程序指示的每个网络缓冲区列表包含一个网络 \_ 缓冲区结构。 但是，本机802.11 驱动程序可以具有多个网络 \_ 缓冲区结构。 由于不同的协议绑定可以处理每个网络 \_ 缓冲区 \_ 列表结构，因此 NDIS 可以 \_ 独立地将每个网络缓冲区 \_ 列表结构返回给微型端口驱动程序。
 
-支持 NDIS 5。*x* 及更早版本的驱动程序，ndis 在基于 [**NDIS \_ 数据包**](/previous-versions/windows/hardware/network/ff557086(v=vs.85))和基于网络缓冲区的接口之间提供转换层 \_ 。 NDIS 在 [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer) 结构和 NDIS 数据包结构之间执行必要的转换 \_ 。 为了避免由于转换而导致性能下降，必须更新 NDIS 驱动程序以使用网络 \_ 缓冲区结构，并且应支持所有数据路径中的多个 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构。
+支持 NDIS 5。*x* 及更早版本的驱动程序，ndis 在基于 [**NDIS \_ 数据包**](/previous-versions/windows/hardware/network/ff557086(v=vs.85))和基于网络缓冲区的接口之间提供转换层 \_ 。 NDIS 在 [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer) 结构和 NDIS 数据包结构之间执行必要的转换 \_ 。 为了避免由于转换而导致性能下降，必须更新 NDIS 驱动程序以使用网络 \_ 缓冲区结构，并且应支持所有数据路径中的多个 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list) 结构。
 
 本节包括下列主题：
 

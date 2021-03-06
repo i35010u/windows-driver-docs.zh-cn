@@ -4,19 +4,19 @@ description: Hyper-v 可扩展交换机的协议边缘 (OID 发出对象标识�
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_SWITCH_PORT_TEARDOWN 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 27fd0d70a3d13d8bce34b017a638ee6c80a480a9
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: edd165a9a4926ae61bcb49e0e2a52aeed1980804
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96836741"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248795"
 ---
 # <a name="oid_switch_port_teardown"></a>OID \_ 交换机 \_ 端口 \_ 拆卸
 
 
 Hyper-v 可扩展交换机的协议边缘 (OID 发出对象标识符) 设置 OID \_ 交换机 \_ 端口 \_ 拆卸请求，通知底层的可扩展交换机扩展，可扩展交换机端口会开始删除过程。 此过程在协议驱动程序发出 oid [ \_ 交换机 \_ 端口 \_ 删除](oid-switch-port-delete.md)请求时启动。
 
-[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ 交换机 \_ 端口 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_parameters)结构的指针。
+[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ 交换机 \_ 端口 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_parameters)结构的指针。
 
 <a name="remarks"></a>备注
 -------
@@ -92,11 +92,11 @@ Hyper-v 可扩展交换机的协议边缘 (OID 发出对象标识符) 设置 OID
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 NDIS 6.30 和更高版本中受支持。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>标题</p></td>
 <td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
@@ -110,7 +110,7 @@ Hyper-v 可扩展交换机的协议边缘 (OID 发出对象标识符) 设置 OID
 
 [*FilterAttach*](/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_attach)
 
-[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)
 
 [**NDIS \_ 开关 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_parameters)
 

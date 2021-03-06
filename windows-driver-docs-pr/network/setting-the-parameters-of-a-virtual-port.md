@@ -3,19 +3,19 @@ title: 设置虚拟端口的参数
 description: 设置虚拟端口的参数
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d4661589d0348e8db1e26715df57423297d7ce4d
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 9837d9ad4a6d95abf64b7d7b601decce7699a399
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96789621"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248284"
 ---
 # <a name="setting-the-parameters-of-a-virtual-port"></a>设置虚拟端口的参数
 
 
 覆盖驱动程序可以在支持单一根 i/o 虚拟化 (SR-IOV) 的网络适配器上的 NIC 交换机上更改虚拟端口 (VPort) 的参数。 驱动程序 (OID 发出对象标识符) 设置 [oid \_ NIC \_ SWITCH \_ VPORT \_ 参数](./oid-nic-switch-vport-parameters.md) 的请求以更改这些参数。
 
-在过量驱动程序发出此 OID 集请求之前，必须使用要在 VPort 上更改的参数来初始化 [**NDIS \_ NIC \_ 交换机 \_ VPORT \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters) 结构。 然后，该驱动程序将为 OID 请求初始化 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request) 结构，并将 **InformationBuffer** 成员设置为指向 **NDIS \_ NIC \_ SWITCH \_ VPORT \_ 参数** 结构的指针。
+在过量驱动程序发出此 OID 集请求之前，必须使用要在 VPort 上更改的参数来初始化 [**NDIS \_ NIC \_ 交换机 \_ VPORT \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters) 结构。 然后，该驱动程序将为 OID 请求初始化 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request) 结构，并将 **InformationBuffer** 成员设置为指向 **NDIS \_ NIC \_ SWITCH \_ VPORT \_ 参数** 结构的指针。
 
 只能更改 VPort 的配置参数的有限子集。 过量驱动程序通过设置 [**NDIS \_ NIC \_ 交换机 \_ VPORT \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters) 结构的以下成员来指定要更改的参数：
 
@@ -31,9 +31,9 @@ ms.locfileid: "96789621"
 
     -   从 [oid \_ NIC \_ 交换机 \_ 枚举 \_ VPORTS](./oid-nic-switch-enum-vports.md)的上一个 oid 方法请求开始。
 
--   \_ \_ \_ 必须在 flags 成员中设置相应的 NDIS NIC 交换机 VPORT \_ PARAMS \_ *Xxx* \_ 更改 **Flags** 的标志。 仅当在 Ntddndis 中定义了相应的 NDIS nic 开关 VPORT [**\_ \_ \_ \_**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters) \_ \_ \_ \_ PARAMS \_ *Xxx* \_ changed 标志时，才能更改 NDIS nic 交换机 VPORT 参数结构的成员。
+-   \_ \_ \_ 必须在 flags 成员中设置相应的 NDIS NIC 交换机 VPORT \_ PARAMS \_ *Xxx* \_ 更改的标志。 仅当在 Ntddndis 中定义了相应的 NDIS nic 开关 VPORT [**\_ \_ \_ \_**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters) \_ \_ \_ \_ PARAMS \_ *Xxx* \_ changed 标志时，才能更改 NDIS nic 交换机 VPORT 参数结构的成员。
 
--   [**Ndis \_ nic \_ 交换机 \_ VPORT \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)结构的成员（该结构对应于 \_ \_ flags 成员中的 ndis nic 开关 \_ VPORT \_ PARAMS \_ *Xxx* \_ 更改标志集 **Flags** ）是通过要更改的 VPORT 配置参数设置的。
+-   [**Ndis \_ nic \_ 交换机 \_ VPORT \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)结构的成员（该结构对应于 \_ \_ flags 成员中的 ndis nic 开关 \_ VPORT \_ PARAMS \_ *Xxx* \_ 更改标志集 ）是通过要更改的 VPORT 配置参数设置的。
 
 从 Windows Server 2012 开始，只能通过 oid [ \_ nic \_ switch \_ VPORT \_ 参数](./oid-nic-switch-vport-parameters.md)的 Oid 集请求来更改以下 [**NDIS \_ nic \_ 交换机 \_ VPORT \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)结构的成员：
 
@@ -71,7 +71,7 @@ ms.locfileid: "96789621"
 
 -   当 VPort 处于激活状态时，无法将其停用。 仅当 VPort 处于激活状态，并且在 VPort 上设置相应的 MAC 筛选器时，PF 微型端口驱动程序才能接收和传输来自该的数据包。 但是，在通过 oid [ \_ NIC \_ 交换机 \_ DELETE \_ VPort](./oid-nic-switch-delete-vport.md)的 oid 集请求删除 VPort 之后，驱动程序必须释放为 VPort 分配的资源。 驱动程序还必须在 VPort 上取消包的所有挂起的传输或接收操作。
 
-当 PF 微型端口驱动程序接收 [oid \_ NIC \_ SWITCH \_ VPORT \_ 参数](./oid-nic-switch-vport-parameters.md)的 oid 集请求后，该驱动程序将用配置参数配置硬件。 此驱动程序只能在 \_ \_ \_ \_ \_ *Xxx* \_ [**ndis \_ nic \_ 交换机 \_ VPORT \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)结构的 **flags** 成员中更改由 ndis nic 交换机 VPORT 参数 Xxx 更改的标志。
+当 PF 微型端口驱动程序接收 [oid \_ NIC \_ SWITCH \_ VPORT \_ 参数](./oid-nic-switch-vport-parameters.md)的 oid 集请求后，该驱动程序将用配置参数配置硬件。 此驱动程序只能在 \_ \_ \_ \_ \_  \_ [**ndis \_ nic \_ 交换机 \_ VPORT \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)结构的 **flags** 成员中更改由 ndis nic 交换机 VPORT 参数 Xxx 更改的标志。
 
  
 

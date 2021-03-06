@@ -5,12 +5,12 @@ keywords:
 - MB 挂起检测，移动宽带挂起检测，移动宽带微型端口驱动程序挂起检测
 ms.date: 08/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f6eaa12d8c59ce569be06547b94235bde879fde
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 9fe1bc6b2ebed70a71e899b63c422374721ccc59
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96795447"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248286"
 ---
 # <a name="mb-hang-detection"></a>MB 挂起检测
 
@@ -67,3 +67,5 @@ ms.locfileid: "96795447"
 ## <a name="related-links"></a>相关链接
 
 [MB 基于设备的重置和恢复](mb-device-based-reset-and-recovery.md)
+
+[MB 基于设备的重置和恢复跟踪](mb-device-based-reset-and-recovery-trace.md)

@@ -6,12 +6,12 @@ keywords:
 - Windows 筛选平台标注驱动程序 WDK，IPsec 兼容性
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 228a8a90a8620b6dcc79fbf327b7d6bc44fbfd86
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: bfad816fff2357eb3f396c8fae800b7e89a1bb9a
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96818387"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248350"
 ---
 # <a name="developing-ipsec-compatible-callout-drivers"></a>开发 IPsec 兼容的标注驱动程序
 
@@ -96,5 +96,5 @@ FWPS \_ 层 \_ 出站 \_ IPPACKET \_ V6 \_ 丢弃
 
 ### <a name="working-with-ipsec-esp-packets"></a>使用 IPsec ESP 数据包
 
-当引擎指示解密的封装安全负载 (ESP) 数据包时，它将截断它们以排除尾随 ESP 数据。 由于引擎处理此类数据包的方式， [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer) 结构中的 MDL 数据不反映正确的数据包长度。 可以通过使用 [**net \_ buffer \_ DATA \_ length**](/windows-hardware/drivers/ddi/ndis/nf-ndis-net_buffer_data_length) 宏检索 **网络 \_ 缓冲区** 的数据长度来获取正确的长度。
+当引擎指示解密的封装安全负载 (ESP) 数据包时，它将截断它们以排除尾随 ESP 数据。 由于引擎处理此类数据包的方式， [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer) 结构中的 MDL 数据不反映正确的数据包长度。 可以通过使用 [**net \_ buffer \_ DATA \_ length**](/windows-hardware/drivers/ddi/nblaccessors/nf-nblaccessors-net_buffer_data_length) 宏检索 **网络 \_ 缓冲区** 的数据长度来获取正确的长度。
 

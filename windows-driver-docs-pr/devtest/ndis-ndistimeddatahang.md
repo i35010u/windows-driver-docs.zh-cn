@@ -11,21 +11,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e2bab1be70f029cf732758ba9cdf382ea684b7c
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: b50929fc90f02076403134af0f518a6dc43a31b2
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96839753"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102247984"
 ---
 # <a name="ndistimeddatahang-rule-ndis"></a>NdisTimedDataHang 规则 (ndis) 
 
 
-**NdisTimedDataHang** 规则验证 NDIS 微型端口驱动程序是否在22秒内处理 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构的任何挂起发送请求。
+**NdisTimedDataHang** 规则验证 NDIS 微型端口驱动程序是否在22秒内处理 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list)结构的任何挂起发送请求。
 
-微型端口驱动程序必须调用 [**NdisMSendNetBufferListsComplete**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsendnetbufferlistscomplete) 函数来完成所有 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构的挂起发送请求。 如果有挂起的发送请求，NDIS 微型端口驱动程序必须继续完成这些请求。 如果 **网络 \_ 缓冲区 \_ 列表** 结构至少有一个挂起的发送请求，但在过去22秒内没有完成此类发送请求，则将违反此规则。
+微型端口驱动程序必须调用 [**NdisMSendNetBufferListsComplete**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsendnetbufferlistscomplete) 函数来完成所有 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list) 结构的挂起发送请求。 如果有挂起的发送请求，NDIS 微型端口驱动程序必须继续完成这些请求。 如果 **网络 \_ 缓冲区 \_ 列表** 结构至少有一个挂起的发送请求，但在过去22秒内没有完成此类发送请求，则将违反此规则。
 
-您可以使用内核调试器来帮助确定问题的原因。 检查 PendingNbl 的规则 \_ 状态，该状态指向最早的挂起 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)。 使用 [**！ ndiskd**](../debugger/-ndiskd-nbl.md) 调试程序扩展。 有关使用调试器的信息，请参阅 [Windows 调试](../debugger/index.md)。
+您可以使用内核调试器来帮助确定问题的原因。 检查 PendingNbl 的规则 \_ 状态，该状态指向最早的挂起 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list)。 使用 [**！ ndiskd**](../debugger/-ndiskd-nbl.md) 调试程序扩展。 有关使用调试器的信息，请参阅 [Windows 调试](../debugger/index.md)。
 
 **驱动程序模型： NDIS**
 

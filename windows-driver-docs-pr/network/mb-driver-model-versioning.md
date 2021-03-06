@@ -3,12 +3,12 @@ title: MB 驱动程序模型版本控制
 description: MB 驱动程序模型版本控制
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 928185f28b8b08977dbb12363023ca24ebd3af18
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 41dc541902d84acc895128ca503ed4e396e3a67c
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96838419"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102247810"
 ---
 # <a name="mb-driver-model-versioning"></a>MB 驱动程序模型版本控制
 
@@ -29,7 +29,9 @@ MB 驱动程序模型版本控制通过使用驱动程序模型版本和单个 O
 
 当驱动程序模型移到下一个版本时，其版本号将增加1。 添加到驱动程序模型中的任何新 Oid 将从修订版1开始;其数据结构已更改的任何现有 Oid 会将其相应修订版本增加1，并且任何不更改的现有 Oid 都将保留其各自的修订号。
 
-驱动程序型号版本由 [OID \_ WWAN \_ 驱动程序 \_ cap](./oid-wwan-driver-caps.md)传达。 在 \_ \_ \_ [Mb 微型端口驱动程序初始化](mb-miniport-driver-initialization.md)期间，mb 服务将 OID WWAN 驱动程序 cap 查询请求发送到微型端口驱动程序。 各个 OID 修订号由 [**NDIS \_ 对象 \_ 标头**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_object_header)结构的 **修订** 成员描述，该结构作为每个单独 OID 的数据结构的一部分包含。
+驱动程序型号版本由 [OID \_ WWAN \_ 驱动程序 \_ cap](./oid-wwan-driver-caps.md)传达。 在 \_ \_ \_ [Mb 微型端口驱动程序初始化](mb-device-readiness.md#mb-miniport-driver-initialization)期间，mb 服务将 OID WWAN 驱动程序 cap 查询请求发送到微型端口驱动程序。 各个 OID 修订号由 [**NDIS \_ 对象 \_ 标头**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_object_header)结构的 **修订** 成员描述，该结构作为每个单独 OID 的数据结构的一部分包含。
 
+## <a name="see-also"></a>请参阅
+[5G 的 MBIM 扩展2.0 版本管理](mb-5g-data-class-support.md)
  
 

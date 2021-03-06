@@ -4,12 +4,12 @@ description: 作为设置请求，NDIS 和过量协议驱动程序使用 OID_802
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_802_3_ADD_MULTICAST_ADDRESS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 903f9b2835d4e570d1ec3f4f834802b2a02cb648
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: e0964515335d1d0d86e0ad099b554a9d2119e6d4
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96783827"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248901"
 ---
 # <a name="oid_802_3_add_multicast_address"></a>OID \_ 802 \_ 3 \_ 添加 \_ 多播 \_ 地址
 
@@ -27,7 +27,7 @@ ms.locfileid: "96783827"
 <a name="remarks"></a>备注
 -------
 
-[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含6个字节的地址，该地址将添加到多播地址列表。
+[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员包含6个字节的地址，该地址将添加到多播地址列表。
 
 OID \_ 802 \_ 3 \_ ADD \_ 多播 \_ ADDRESS OID 请求只能添加一个地址。 若要添加多个地址，过量驱动程序必须发出多个 OID \_ 802 \_ 3 \_ 添加 \_ 多播 \_ 地址 OID 请求。
 
@@ -49,7 +49,7 @@ NDIS 微型端口驱动程序不会直接接收此 OID 请求。 相反，NDIS �
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>标题</p></td>
 <td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
@@ -60,7 +60,7 @@ NDIS 微型端口驱动程序不会直接接收此 OID 请求。 相反，NDIS �
 
 [**NDIS \_ 微型端口 \_ 适配器 \_ 常规 \_ 属性**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)
 
-[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)
 
 [**NdisMSetMiniportAttributes**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)
 

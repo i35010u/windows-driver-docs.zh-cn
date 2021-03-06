@@ -11,12 +11,12 @@ keywords:
 - 结构 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2619f8ce96160849f31ccd580f50cf924de75382
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 632e460ff391f1cb57490198c25402f8a18ac0e9
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96825453"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248897"
 ---
 # <a name="net_buffer-architecture"></a>网络 \_ 缓冲区体系结构
 
@@ -24,7 +24,7 @@ ms.locfileid: "96825453"
 
 
 
-本部分提供有关 [**净 \_ 缓冲**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer) 结构以及相关数据结构和函数的高级信息。 网络 \_ 缓冲区结构提供了一种有效的方法来打包和管理网络数据。
+本部分提供有关 [**净 \_ 缓冲**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer) 结构以及相关数据结构和函数的高级信息。 网络 \_ 缓冲区结构提供了一种有效的方法来打包和管理网络数据。
 
 本节包括下列主题：
 

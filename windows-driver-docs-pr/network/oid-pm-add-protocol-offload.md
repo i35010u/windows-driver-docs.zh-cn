@@ -4,17 +4,17 @@ description: 作为一组，NDIS 协议驱动程序使用 OID_PM_ADD_PROTOCOL_OF
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_PM_ADD_PROTOCOL_OFFLOAD 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 23fbb4ced544bb18b9e8f09314bf01e31a430777
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: ac0470eceb390be074c74f57fa3c4d39719bf2b2
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96833329"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102249027"
 ---
 # <a name="oid_pm_add_protocol_offload"></a>OID \_ PM \_ 添加 \_ 协议 \_ 卸载
 
 
-作为一组，NDIS 协议驱动程序使用 OID \_ PM \_ 添加 \_ 协议 \_ 卸载 OID，将用于电源管理的协议卸载添加到网络适配器。 [**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ PM \_ 协议 \_ 卸载**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)结构的指针。
+作为一组，NDIS 协议驱动程序使用 OID \_ PM \_ 添加 \_ 协议 \_ 卸载 OID，将用于电源管理的协议卸载添加到网络适配器。 [**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ PM \_ 协议 \_ 卸载**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)结构的指针。
 
 <a name="remarks"></a>备注
 -------
@@ -71,11 +71,11 @@ NDIS 6.20 和更高版本的协议驱动程序使用 OID \_ PM \_ 添加 \_ 协�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 NDIS 6.20 和更高版本中受支持。 对于微型端口驱动程序是必需的。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>标题</p></td>
 <td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
@@ -84,7 +84,7 @@ NDIS 6.20 和更高版本的协议驱动程序使用 OID \_ PM \_ 添加 \_ 协�
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)
 
 [**NDIS \_ PM \_ 协议 \_ 卸载**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)
 

@@ -11,19 +11,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e8f55e5e4630d6514ea5c5f81a69e2ba9e34a19
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: d3d7b6e7eba108f90758f76ad25497e755b1fa5b
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96838509"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102249091"
 ---
 # <a name="ndisoiddoublerequest-rule-ndis"></a>NdisOidDoubleRequest 规则 (ndis) 
 
 
 此 **NdisOidDoubleRequest** 规则验证：
 
--   Minport 驱动程序必须完成当前挂起的 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request) 。
+-   Minport 驱动程序必须完成当前挂起的 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request) 。
 
 **驱动程序模型： NDIS**
 

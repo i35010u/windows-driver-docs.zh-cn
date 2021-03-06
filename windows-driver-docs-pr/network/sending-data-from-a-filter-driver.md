@@ -5,12 +5,12 @@ keywords:
 - 发送数据 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a1a0873197bb0aafb590460f39115e70adb5e94
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 47014bea06da2cf22eb94326c6d443b32ce93143
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96815883"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102247827"
 ---
 # <a name="sending-data-from-a-filter-driver"></a>从筛选器驱动程序发送数据
 
@@ -18,7 +18,7 @@ ms.locfileid: "96815883"
 
 
 
-筛选器驱动程序可以启动过量驱动程序启动的发送请求或筛选发送请求。 当协议驱动程序调用 [**NdisSendNetBufferLists**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndissendnetbufferlists) 函数时，NDIS 会将指定的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构提交给驱动程序堆栈中的最顶层筛选器模块。
+筛选器驱动程序可以启动过量驱动程序启动的发送请求或筛选发送请求。 当协议驱动程序调用 [**NdisSendNetBufferLists**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndissendnetbufferlists) 函数时，NDIS 会将指定的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list) 结构提交给驱动程序堆栈中的最顶层筛选器模块。
 
 ### <a name="send-requests-initiated-by-a-filter-driver"></a>发送由筛选器驱动程序启动的请求
 
@@ -26,21 +26,21 @@ ms.locfileid: "96815883"
 
 ![说明筛选器驱动程序启动的发送操作的关系图](images/filtersend.png)
 
-筛选器驱动程序调用 [**NdisFSendNetBufferLists**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfsendnetbufferlists) 函数来发送网络 [**\_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构列表中定义的网络数据。
+筛选器驱动程序调用 [**NdisFSendNetBufferLists**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfsendnetbufferlists) 函数来发送网络 [**\_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list) 结构列表中定义的网络数据。
 
-筛选器驱动程序必须将其创建的每个网络缓冲区列表结构的 **SourceHandle** 成员设置 \_ \_ 为传递给 **NdisFSendNetBufferLists** 的 *NdisFilterHandle* 参数的相同值。 NDIS 驱动程序不应为 **SourceHandle** \_ 驱动程序未起源的网络缓冲区列表结构修改 SourceHandle 成员 \_ 。
+筛选器驱动程序必须将其创建的每个网络缓冲区列表结构的 **SourceHandle** 成员设置 \_ \_ 为传递给 **NdisFSendNetBufferLists** 的 *NdisFilterHandle* 参数的相同值。 NDIS 驱动程序不应为 \_ 驱动程序未起源的网络缓冲区列表结构修改 SourceHandle 成员 \_ 。
 
-在调用 **NdisFSendNetBufferLists** 之前，筛选器驱动程序可以使用 [**NET \_ BUFFER \_ 列表 \_ 信息**](/windows-hardware/drivers/ddi/ndis/nf-ndis-net_buffer_list_info) 宏设置发送请求附带的信息。 底层驱动程序可以通过 NET \_ BUFFER \_ 列表信息宏检索此信息 \_ 。
+在调用 **NdisFSendNetBufferLists** 之前，筛选器驱动程序可以使用 [**NET \_ BUFFER \_ 列表 \_ 信息**](/windows-hardware/drivers/ddi/nblaccessors/nf-nblaccessors-net_buffer_list_info) 宏设置发送请求附带的信息。 底层驱动程序可以通过 NET \_ BUFFER \_ 列表信息宏检索此信息 \_ 。
 
 一旦筛选器驱动程序调用 **NdisFSendNetBufferLists**，它就会让给网络 \_ 缓冲区 \_ 列表结构和所有关联资源的所有权。 NDIS 可处理发送请求，或将请求传递到底层驱动程序。
 
 NDIS 调用 [*FilterSendNetBufferListsComplete*](/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_send_net_buffer_lists_complete) 函数将结构和数据返回到筛选器驱动程序。 在将 \_ \_ 列表传递到 *FILTERSENDNETBUFFERLISTSCOMPLETE* 之前，NDIS 可以将多个发送请求中的结构和数据收集到一个链接的网络缓冲区列表结构列表中
 
-在 NDIS 调用 *FilterSendNetBufferListsComplete* 之前，发送请求的当前状态是未知的。 在 NDIS 将结构返回到 *FilterSendNetBufferListsComplete* 之前，筛选器驱动程序 *不* 应尝试检查 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构或任何关联的数据。
+在 NDIS 调用 *FilterSendNetBufferListsComplete* 之前，发送请求的当前状态是未知的。 在 NDIS 将结构返回到 *FilterSendNetBufferListsComplete* 之前，筛选器驱动程序 *不* 应尝试检查 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list)结构或任何关联的数据。
 
 *FilterSendNetBufferListsComplete* 执行完成发送操作所需的任何后处理操作。
 
-当 NDIS 调用 *FilterSendNetBufferListsComplete* 时，筛选器驱动程序会重新获得与 \_ \_ *NetBufferLists* 参数指定的网络缓冲区列表结构关联的所有资源的所有权。 *FilterSendNetBufferListsComplete* 可以释放这些资源 (例如，通过调用 [**NdisFreeNetBuffer**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreenetbuffer) 和 [**NdisFreeNetBufferList**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreenetbufferlist) 函数) 或准备它们以便在对 **NdisFSendNetBufferLists** 的后续调用中重复使用。
+当 NDIS 调用 *FilterSendNetBufferListsComplete* 时，筛选器驱动程序会重新获得与 \_ \_ *NetBufferLists* 参数指定的网络缓冲区列表结构关联的所有资源的所有权。 *FilterSendNetBufferListsComplete* 可以释放这些资源 (例如，通过调用 [**NdisFreeNetBuffer**](/windows-hardware/drivers/ddi/nblapi/nf-nblapi-ndisfreenetbuffer) 和 [**NdisFreeNetBufferList**](/windows-hardware/drivers/ddi/nblapi/nf-nblapi-ndisfreenetbufferlist) 函数) 或准备它们以便在对 **NdisFSendNetBufferLists** 的后续调用中重复使用。
 
 NDIS 始终将筛选器提供的网络数据提交到由筛选器驱动程序确定的顺序，传递给 **NdisFSendNetBufferLists**。 但是，在按指定顺序发送数据后，基础驱动程序可以按任意顺序返回缓冲区。
 
@@ -58,7 +58,7 @@ NDIS 始终将筛选器提供的网络数据提交到由筛选器驱动程序确
 
 NDIS 调用筛选器驱动程序的 [*FilterSendNetBufferLists*](/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_send_net_buffer_lists) 函数来筛选过量驱动程序的发送请求。
 
-筛选器驱动程序不能修改 **SourceHandle** \_ \_ 其从其他驱动程序接收的网络缓冲区列表结构中的 SourceHandle 成员。
+筛选器驱动程序不能修改 \_ \_ 其从其他驱动程序接收的网络缓冲区列表结构中的 SourceHandle 成员。
 
 筛选器驱动程序可以筛选数据，并将筛选后的数据发送到底层驱动程序。 对于每个 \_ 提交到 *FILTERSENDNETBUFFERLISTS* 的网络缓冲区结构，筛选器驱动程序可以执行以下操作：
 
@@ -82,7 +82,7 @@ NDIS 调用筛选器驱动程序的 [*FilterSendNetBufferLists*](/windows-hardwa
 
 不提供 *FilterSendNetBufferLists* 函数的筛选器驱动程序仍可以启动发送请求。 如果此类驱动程序启动发送请求，则必须提供 *FilterSendNetBufferListsComplete* 函数，并且它不能在驱动程序堆栈上传递完整事件。
 
-筛选器驱动程序可以通过或筛选过量驱动程序的环回请求。 若要在环回请求上传递，在 \_ \_ \_ FilterSendNetBufferLists 的 SendFlags 参数中，如果 ndis 为回送设置了 ndis 发送标志检查 \_ \_ ，筛选器驱动程序会在 *SendFlags* *FilterSendNetBufferLists* \_ \_ \_ \_ \_ 调用 **NdisFSendNetBufferLists** 时为 *SendFlags* 参数中的环回设置 ndis 发送标志检查。 NDIS 指示收到的包含发送数据的数据包。
+筛选器驱动程序可以通过或筛选过量驱动程序的环回请求。 若要在环回请求上传递，在 \_ \_ \_ FilterSendNetBufferLists 的 SendFlags 参数中，如果 ndis 为回送设置了 ndis 发送标志检查 \_ \_ ，筛选器驱动程序会在  \_ \_ \_ \_ \_ 调用 **NdisFSendNetBufferLists** 时为 *SendFlags* 参数中的环回设置 ndis 发送标志检查。 NDIS 指示收到的包含发送数据的数据包。
 
 通常，如果筛选器驱动程序以这种方式修改任何行为，而 NDIS 无法提供标准服务 (如环回) ，则筛选器驱动程序必须为 NDIS 提供该服务。 例如，修改硬件地址请求的筛选器驱动程序 (参阅 [OID \_ 802 \_ 3 \_ 当前 \_ 地址](./oid-802-3-current-address.md)) ，应处理定向到新硬件地址的缓冲区环回。 在这种情况下，NDIS 无法提供它通常提供的环回服务，因为筛选器已更改地址。 此外，如果筛选器驱动程序设置了混杂模式 (参阅 [OID \_ GEN \_ 当前 \_ 数据包 \_ 筛选器](./oid-gen-current-packet-filter.md)) ，则不应将其收到的额外数据传递给过量驱动程序。
 

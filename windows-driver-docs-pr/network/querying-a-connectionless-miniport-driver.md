@@ -5,12 +5,12 @@ keywords:
 - 无连接驱动程序 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ad8c2b1d9405a080c5445879fad830f60fa5a6c
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 38e175feb9700da8a58db77338fb0fb670e8bcae
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96793411"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248735"
 ---
 # <a name="querying-a-connectionless-miniport-driver"></a>查询无连接微型端口驱动程序
 
@@ -18,7 +18,7 @@ ms.locfileid: "96793411"
 
 
 
-为了查询无连接微型端口驱动程序维护的 Oid，绑定协议会调用 [**NdisOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisoidrequest) ，并传递 [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request) 结构，该结构指定正在查询的对象 (OID) ，并指向 ndis 最终写入请求信息的缓冲区。
+为了查询无连接微型端口驱动程序维护的 Oid，绑定协议会调用 [**NdisOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisoidrequest) ，并传递 [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request) 结构，该结构指定正在查询的对象 (OID) ，并指向 ndis 最终写入请求信息的缓冲区。
 
 如果 NDIS 驱动程序没有响应，则对 **NdisOidRequest** 的调用会使 NDIS 调用微型端口驱动程序的 [*MiniportOidRequest*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request) 函数，从而将请求的信息返回到 NDIS。 *MiniportOidRequest* 可以通过调用 [**NdisMOidRequestComplete**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismoidrequestcomplete)同步或异步完成。
 
@@ -28,7 +28,7 @@ NDIS 还可以代表自己调用微型端口驱动程序的 *MiniportOidRequest*
 
 NDIS 代表微型端口驱动程序响应多个 OID 请求。 微型端口驱动程序在初始化和状态指示过程中报告其所有 OID 值。 有关在属性中报告的 OID 值的详细信息，请参阅 [**NDIS \_ 微型端口 \_ 适配器 \_ 属性**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_attributes) 和相关的属性结构。
 
-当 *MiniportOidRequest* 使用 OID \_ GEN MAC 选项调用 MiniportOidRequest 时 \_ \_ ，它必须返回一个位掩码，该位掩码指定微型端口驱动程序执行的可选操作。 标志集包括：
+当使用 OID \_ GEN MAC 选项调用 MiniportOidRequest 时 \_ \_ ，它必须返回一个位掩码，该位掩码指定微型端口驱动程序执行的可选操作。 标志集包括：
 
 -   NDIS \_ MAC \_ 选项 \_ 复制 \_ 预测先行 \_ 数据。 此标志向协议驱动程序指示它可以通过任何方式访问指定的数据。 如果微型端口驱动程序指示数据超出了机载共享内存，则它不能设置此标志。
 

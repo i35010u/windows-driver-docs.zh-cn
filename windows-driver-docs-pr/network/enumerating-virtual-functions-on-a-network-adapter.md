@@ -3,12 +3,12 @@ title: 枚举网络适配器上的虚拟功能
 description: 枚举网络适配器上的虚拟功能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 71364d84bf1930789d3043773225a51f54c5eb02
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 268e5ebbcf103b79debb6af571870cb1070ead52
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96830339"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248946"
 ---
 # <a name="enumerating-virtual-functions-on-a-network-adapter"></a>枚举网络适配器上的虚拟功能
 
@@ -17,7 +17,7 @@ ms.locfileid: "96830339"
 
 在驱动程序或应用程序发出 OID 请求之前，它必须初始化与请求一起传递的 [**NDIS \_ NIC \_ 交换机 \_ VF \_ 信息 \_ 数组**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_info_array) 结构。 初始化 **NDIS \_ NIC \_ 交换机 \_ VF \_ 信息 \_ 阵列** 结构时，驱动程序或应用程序必须遵循以下准则：
 
--   如果在 \_ \_ \_ \_ \_ \_ Flags 成员中设置了特定交换机标志上的 NDIS NIC 交换机 VF 信息阵列枚举 \_ \_ ，则 \_ 过量驱动程序或应用程序必须将 **SwitchId** 成员设置为 sr-iov 网络适配器上 NIC 交换机的标识符。 **Flags** 通过以这种方式设置这些成员，只会为 SR-IOV 网络适配器上指定的 NIC 交换机返回 VF 信息。
+-   如果在 \_ \_ \_ \_ \_ \_ Flags 成员中设置了特定交换机标志上的 NDIS NIC 交换机 VF 信息阵列枚举 \_ \_ ，则 \_ 过量驱动程序或应用程序必须将 **SwitchId** 成员设置为 sr-iov 网络适配器上 NIC 交换机的标识符。  通过以这种方式设置这些成员，只会为 SR-IOV 网络适配器上指定的 NIC 交换机返回 VF 信息。
 
     **注意**  过量驱动程序和用户模式应用程序可以通过发出 oid [ \_ nic \_ 交换机 \_ 枚举 \_ 开关](./oid-nic-switch-enum-switches.md)的 oid 查询请求来获取 NIC 交换机标识符。
 
@@ -25,7 +25,7 @@ ms.locfileid: "96830339"
 
     **注意**  从 Windows Server 2012 开始，Windows 只支持网络适配器上的默认 NIC 交换机。 不管 **flags** 成员中的标志集如何，都必须将 **SwitchId** 成员设置为 NDIS \_ 默认 \_ 交换机 \_ ID。
 
-成功从此 OID 查询请求返回后， [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向缓冲区的指针，该缓冲区包含以下内容：
+成功从此 OID 查询请求返回后， [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员包含指向缓冲区的指针，该缓冲区包含以下内容：
 
 -   用于定义数组中的元素数的 [**NDIS \_ NIC \_ 开关 \_ VF \_ 信息 \_ 数组**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_info_array) 结构。
 

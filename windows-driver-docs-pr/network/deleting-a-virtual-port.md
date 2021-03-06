@@ -3,19 +3,19 @@ title: 删除虚拟端口
 description: 删除虚拟端口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 781248a3efc91c7108a3f3ad55b95346e735a762
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 2d7034ce4ce3555c4559d3d3d009228dce641575
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96836347"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248364"
 ---
 # <a name="deleting-a-virtual-port"></a>删除虚拟端口
 
 
 过量驱动程序会 (OID 发出对象标识符) 设置 [oid \_ nic \_ 交换机 \_ delete \_ VPORT](./oid-nic-switch-delete-vport.md) 以删除网络适配器的 NIC 交换机上的非默认虚拟端口 (VPORT) 。 过量驱动程序只能通过发出 [oid \_ NIC \_ SWITCH \_ CREATE \_ VPort](./oid-nic-switch-create-vport.md)的 oid 方法请求，删除先前创建的 VPort。
 
-[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ NIC \_ SWITCH \_ DELETE \_ VPORT \_ PARAMETERS**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_delete_vport_parameters)结构的指针。
+[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ NIC \_ SWITCH \_ DELETE \_ VPORT \_ PARAMETERS**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_delete_vport_parameters)结构的指针。
 
 过量驱动程序（例如虚拟化堆栈）可以删除先前创建的非默认 VPort。 过量驱动程序通过发出 [oid \_ NIC \_ SWITCH \_ CREATE \_ VPort](./oid-nic-switch-create-vport.md)的 Oid 方法请求来创建一个 VPort。
 
@@ -37,7 +37,7 @@ ms.locfileid: "96836347"
 
     如果将 VPort 附加到 VF，则虚拟化堆栈会确保已暂停和暂停来宾操作系统中运行的 VF 微型端口驱动程序。 因此，所有 previouslyindicated 从 VPort 接收数据包都应该已经返回到 VF 微型端口驱动程序。
 
-    如果 VPort 附加到 PF，则 PF 微型端口驱动程序必须停止与 VPort 关联的共享内存的任何附加 DMA。 PF 微型端口驱动程序必须确保将 VPort 中的所有 previouslyindicated 接收数据包返回到小型端口。 PF 小型端口驱动程序不得对在数据包的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构中指定 VPort 标识符的 NDIS 进行任何额外的接收指示。 将 VPort 中的所有指定接收数据包返回到 PF 微型端口驱动程序后，必须通过调用 [**NdisFreeSharedMemory**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreesharedmemory)来释放与 VPort 关联的共享内存。
+    如果 VPort 附加到 PF，则 PF 微型端口驱动程序必须停止与 VPort 关联的共享内存的任何附加 DMA。 PF 微型端口驱动程序必须确保将 VPort 中的所有 previouslyindicated 接收数据包返回到小型端口。 PF 小型端口驱动程序不得对在数据包的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list) 结构中指定 VPort 标识符的 NDIS 进行任何额外的接收指示。 将 VPort 中的所有指定接收数据包返回到 PF 微型端口驱动程序后，必须通过调用 [**NdisFreeSharedMemory**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreesharedmemory)来释放与 VPort 关联的共享内存。
 
 以下几点适用于删除 VPorts：
 

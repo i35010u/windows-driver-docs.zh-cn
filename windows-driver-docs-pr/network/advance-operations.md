@@ -12,12 +12,12 @@ keywords:
 - 减少使用
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ca854e4e8a05c0b1aef547c457b9a751fc68e8c
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 4c187ae927fb19c16949b70ea201632c94a08d6c
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96792191"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248764"
 ---
 # <a name="advance-operations"></a>前进操作
 
@@ -25,13 +25,13 @@ ms.locfileid: "96792191"
 
 
 
-高级操作会减少 [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer) 结构中所用数据空间的大小，或降低 \_ [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构中所有网络缓冲区结构的大小。
+高级操作会减少 [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer) 结构中所用数据空间的大小，或降低 \_ [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list) 结构中所有网络缓冲区结构的大小。
 
 驱动程序使用以下高级功能：
 
-[**NdisAdvanceNetBufferDataStart**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisadvancenetbufferdatastart)
+[**NdisAdvanceNetBufferDataStart**](/windows-hardware/drivers/ddi/nblapi/nf-nblapi-ndisadvancenetbufferdatastart)
 
-[**NdisAdvanceNetBufferListDataStart**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisadvancenetbufferlistdatastart)
+[**NdisAdvanceNetBufferListDataStart**](/windows-hardware/drivers/ddi/nblapi/nf-nblapi-ndisadvancenetbufferlistdatastart)
 
 高级操作有时可以释放与网络缓冲区结构相关联的 MDLs \_ 。 为提供释放 MDLs 的机制，驱动程序可以为 [**NetFreeMdl**](/windows-hardware/drivers/ddi/ndis/nc-ndis-net_buffer_free_mdl_handler) 函数提供可选的入口点。 如果入口点为 **NULL**，NDIS 将使用默认方法来分配 MDLs。 MDLs 只能在 *NetFreeMdl* 中使用与用于在 [**NetAllocateMdl**](/windows-hardware/drivers/ddi/ndis/nc-ndis-net_buffer_allocate_mdl_handler) 函数中分配 MDL 的机制互惠相同的机制来释放。
 

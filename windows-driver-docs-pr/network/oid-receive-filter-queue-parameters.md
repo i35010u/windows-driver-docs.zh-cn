@@ -4,19 +4,19 @@ description: 过量驱动程序发出对象标识符 (OID) 方法请求 OID_RECE
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_RECEIVE_FILTER_QUEUE_PARAMETERS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: beb95daa7ff3d262991bf0a9bc1b4d223e66f92d
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 943871a0200fefafcad0294d858954a9b59b321a
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96839999"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248829"
 ---
 # <a name="oid_receive_filter_queue_parameters"></a>OID \_ 接收 \_ 筛选器 \_ 队列 \_ 参数
 
 
-过量驱动程序发出对象标识符 (oid) 方法请求 OID \_ 接收 \_ 筛选器 \_ 队列 \_ 参数，以获取接收队列的当前配置参数。 [**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**ndis \_ 接收 \_ 队列 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)结构的指针，该结构具有类型为 **ndis \_ 接收 \_ 队列 \_ ID** 的队列标识符。 成功从 OID 方法请求返回后， **ndis \_ OID \_ 请求** 结构的 **InformationBuffer** 成员包含指向 **NDIS \_ 接收 \_ 队列 \_ 参数** 结构的指针。
+过量驱动程序发出对象标识符 (oid) 方法请求 OID \_ 接收 \_ 筛选器 \_ 队列 \_ 参数，以获取接收队列的当前配置参数。 [**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**ndis \_ 接收 \_ 队列 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)结构的指针，该结构具有类型为 **ndis \_ 接收 \_ 队列 \_ ID** 的队列标识符。 成功从 OID 方法请求返回后， **ndis \_ OID \_ 请求** 结构的 **InformationBuffer** 成员包含指向 **NDIS \_ 接收 \_ 队列 \_ 参数** 结构的指针。
 
-过量驱动程序发出 oid 设置 OID \_ 接收 \_ 筛选器 \_ 队列参数的请求 \_ ，以更改队列的当前配置参数。 过量驱动程序在 [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员中提供了指向 [**ndis \_ 接收 \_ 队列 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)结构的指针。
+过量驱动程序发出 oid 设置 OID \_ 接收 \_ 筛选器 \_ 队列参数的请求 \_ ，以更改队列的当前配置参数。 过量驱动程序在 [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员中提供了指向 [**ndis \_ 接收 \_ 队列 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)结构的指针。
 
 <a name="remarks"></a>备注
 -------
@@ -29,7 +29,7 @@ ms.locfileid: "96839999"
 
 过量驱动程序从较早的 [OID \_ 接收 \_ 筛选器 \_ 分配 \_ 队列](oid-receive-filter-allocate-queue.md) 方法 OID 请求中获取队列标识符输入值。
 
-在过量的驱动程序分配队列后，它可以更改具有相应更改标志的配置参数， (ndis 接收队列参数 \_ \_ 结构的 \_ \_ *Xxx* \_ **Flags** 成员中) [**\_ \_ \_**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)更改了 ndis 接收队列参数 Xxx。 但是，在分配队列后，过量驱动程序无法更改没有相应更改标志的配置参数。
+在过量的驱动程序分配队列后，它可以更改具有相应更改标志的配置参数， (ndis 接收队列参数 \_ \_ 结构的 \_ \_  \_ **Flags** 成员中) [**\_ \_ \_**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)更改了 ndis 接收队列参数 Xxx。 但是，在分配队列后，过量驱动程序无法更改没有相应更改标志的配置参数。
 
 ### <a name="return-status-codes"></a>返回状态代码
 
@@ -82,11 +82,11 @@ NDIS 处理 \_ \_ 微型端口驱动程序的 oid 接收筛选器队列参数的
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 NDIS 6.20 和更高版本中受支持。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>标题</p></td>
 <td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
@@ -95,7 +95,7 @@ NDIS 处理 \_ \_ 微型端口驱动程序的 oid 接收筛选器队列参数的
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)
 
 [**NDIS \_ 接收 \_ 队列 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)
 

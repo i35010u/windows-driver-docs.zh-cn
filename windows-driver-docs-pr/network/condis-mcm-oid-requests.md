@@ -6,12 +6,12 @@ keywords:
 - MCMs WDK 网络，OID 请求
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 595744c24eb9a19eae93ac05ee407ca1571dd154
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 56b474f5be2095b6f3297042130602837399cea7
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96834393"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248597"
 ---
 # <a name="condis-mcm-oid-requests"></a>CoNDIS MCM OID 请求
 
@@ -33,7 +33,7 @@ MCM 驱动程序调用 [**NdisMCmOidRequest**](/windows-hardware/drivers/ddi/ndi
 
 如果 [**NdisMCmOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmoidrequest)返回 NDIS \_ 状态 " \_ 挂起"，则在客户端驱动程序通过调用 [**NdisCoOidRequestComplete**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscooidrequestcomplete)函数完成 OID 请求之后，NDIS 调用 MCM 的 [**ProtocolCoOidRequestComplete**](/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_co_oid_request_complete)函数。 在这种情况下，NDIS 会将请求的结果传递到 *ProtocolCoOidRequestComplete* 的 *OidRequest* 参数。 NDIS 在 *ProtocolCoOidRequestComplete* 的 *status* 参数传递请求的最终状态。
 
-如果 **NdisMCmOidRequest** 返回 ndis \_ 状态 \_ 成功，它会在 *OidRequest* 参数的 [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构中返回查询请求的结果。 在这种情况下，NDIS 不调用 MCM 的 *ProtocolCoOidRequestComplete* 函数。
+如果 **NdisMCmOidRequest** 返回 ndis \_ 状态 \_ 成功，它会在 *OidRequest* 参数的 [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构中返回查询请求的结果。 在这种情况下，NDIS 不调用 MCM 的 *ProtocolCoOidRequestComplete* 函数。
 
 CoNDIS 客户端驱动程序可以查询或设置 MCMs 的 "呼叫管理器" 操作参数或微型端口操作参数。 若要发起对 MCM 调用管理器参数的 OID 请求，客户端将调用 [**NdisCoOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscooidrequest) 函数并在 *NdisAfHandle* 参数上提供有效的地址族 (AF) 句柄。 若要为 MCM 微型端口参数发起 OID 请求，客户端将调用 **NdisCoOidRequest** 函数并将 AF 句柄设置为 **NULL**。
 
@@ -51,7 +51,7 @@ CoNDIS 客户端驱动程序可以查询或设置 MCMs 的 "呼叫管理器" 操
 
 如果 *ProtocolCoOidRequest* 或 **MininportCoOidRequest** 返回 NDIS \_ 状态 \_ "挂起"，则在 MCM 通过调用 [**NdisMCoOidRequestComplete**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcooidrequestcomplete)或 [**NdisMCmOidRequestComplete**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmoidrequestcomplete)函数完成 OID 请求后，NDIS 将调用客户端的 [**ProtocolCoOidRequestComplete**](/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_co_oid_request_complete)函数。 在这种情况下，NDIS 会将请求的结果传递到 *ProtocolCoOidRequestComplete* 的 *OidRequest* 参数。 NDIS 在 *ProtocolCoOidRequestComplete* 的 *status* 参数传递请求的最终状态。
 
-如果 [**NdisCoOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscooidrequest)返回 ndis \_ 状态 \_ 成功，它会在 *OidRequest* 参数的 [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构中返回查询请求的结果。 在这种情况下，NDIS 不调用客户端的 *ProtocolCoOidRequestComplete* 函数。
+如果 [**NdisCoOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscooidrequest)返回 ndis \_ 状态 \_ 成功，它会在 *OidRequest* 参数的 [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构中返回查询请求的结果。 在这种情况下，NDIS 不调用客户端的 *ProtocolCoOidRequestComplete* 函数。
 
  
 

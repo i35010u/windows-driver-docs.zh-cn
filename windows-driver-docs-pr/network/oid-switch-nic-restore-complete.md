@@ -4,19 +4,19 @@ description: Hyper-v 可扩展交换机的协议边缘 (OID 发出对象标识�
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_SWITCH_NIC_RESTORE_COMPLETE 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f6940008c607f63a4d8806e9cdb3ba0f9e56671
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: b2b28bf6d6c38cd7dca7c57d9271a6177c594ec9
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96837925"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248157"
 ---
 # <a name="oid_switch_nic_restore_complete"></a>OID \_ 交换机 \_ NIC \_ 还原 \_ 完成
 
 
 Hyper-v 可扩展交换机的协议边缘 (OID 发出对象标识符) 设置 OID \_ 交换机 \_ NIC \_ 还原 \_ 完成，以通知 hyper-v 可扩展交换机扩展完成操作以还原运行时数据。 完成此操作后，扩展将为端口及其关联的网络适配器连接还原其运行时数据。
 
-[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**ndis \_ 交换机 \_ NIC \_ 保存 \_ 状态**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_save_state)结构的指针。 此结构由可扩展交换机的协议边缘分配。
+[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**ndis \_ 交换机 \_ NIC \_ 保存 \_ 状态**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_save_state)结构的指针。 此结构由可扩展交换机的协议边缘分配。
 
 <a name="remarks"></a>备注
 -------
@@ -65,11 +65,11 @@ Oid \_ 交换机 \_ NIC 还原完成的 oid \_ 设置 \_ 最终由可扩展交�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 NDIS 6.30 和更高版本中受支持。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>标题</p></td>
 <td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
@@ -79,7 +79,7 @@ Oid \_ 交换机 \_ NIC 还原完成的 oid \_ 设置 \_ 最终由可扩展交�
 
 
 ****
-[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)
 
 [**NDIS \_ 交换机 \_ NIC \_ 保存 \_ 状态**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_save_state)
 

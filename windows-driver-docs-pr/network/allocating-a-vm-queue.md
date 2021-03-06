@@ -3,12 +3,12 @@ title: 分配 VM 队列
 description: 分配 VM 队列
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a71b5f68eb58ab28da0129c92eadbd24f4867459
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 3e64e45977e921e169aa098448c57c802cd8bf10
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96827579"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102247774"
 ---
 # <a name="allocating-a-vm-queue"></a>分配 VM 队列
 
@@ -16,7 +16,7 @@ ms.locfileid: "96827579"
 
 
 
-如果要使用一组初始配置参数分配队列，则过量驱动程序会发出 [oid \_ 接收 \_ 筛选器 \_ 分配 \_ 队列](./oid-receive-filter-allocate-queue.md) 方法 oid 请求。 [**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员最初包含指向 [**ndis \_ 接收 \_ 队列 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)结构的指针。 成功从 OID 方法请求返回后， **ndis \_ OID \_ 请求** 结构的 **InformationBuffer** 成员包含指向 **ndis \_ 接收 \_ 队列 \_ 参数** 结构的指针，该结构具有新的队列标识符和一个 MSI-X 表项。
+如果要使用一组初始配置参数分配队列，则过量驱动程序会发出 [oid \_ 接收 \_ 筛选器 \_ 分配 \_ 队列](./oid-receive-filter-allocate-queue.md) 方法 oid 请求。 [**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员最初包含指向 [**ndis \_ 接收 \_ 队列 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)结构的指针。 成功从 OID 方法请求返回后， **ndis \_ OID \_ 请求** 结构的 **InformationBuffer** 成员包含指向 **ndis \_ 接收 \_ 队列 \_ 参数** 结构的指针，该结构具有新的队列标识符和一个 MSI-X 表项。
 
 在 [oid 接收 \_ \_ 筛选器 \_ 分配 \_ 队列](./oid-receive-filter-allocate-queue.md)OID 和 [oid \_ 接收 \_ 筛选器 \_ 队列 \_ 参数](./oid-receive-filter-queue-parameters.md)OID 中使用 [**NDIS \_ 接收 \_ 队列 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)结构。 有关 VM 队列参数的详细信息，请参阅 [获取和更新 Vm 队列参数](obtaining-and-updating-vm-queue-parameters.md)。
 
@@ -50,7 +50,7 @@ ms.locfileid: "96827579"
 
  
 
-过量驱动程序必须使用 NDIS 在后续 OID 请求中提供的队列标识符，例如，修改队列参数或释放队列。 队列标识符也包含在与队列关联的所有 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构上的 OOB 数据中。 驱动程序使用 [**网络 \_ 缓冲区 \_ 列表 \_ 接收 \_ 队列 \_ ID**](/windows-hardware/drivers/ddi/ndis/nf-ndis-net_buffer_list_receive_queue_id) 宏来检索网络 \_ 缓冲区列表结构中的队列标识符 \_ 。
+过量驱动程序必须使用 NDIS 在后续 OID 请求中提供的队列标识符，例如，修改队列参数或释放队列。 队列标识符也包含在与队列关联的所有 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list) 结构上的 OOB 数据中。 驱动程序使用 [**网络 \_ 缓冲区 \_ 列表 \_ 接收 \_ 队列 \_ ID**](/windows-hardware/drivers/ddi/ndis/nf-ndis-net_buffer_list_receive_queue_id) 宏来检索网络 \_ 缓冲区列表结构中的队列标识符 \_ 。
 
 **注意**  协议驱动程序可以在成功分配队列后、删除队列之前随时设置 VMQ 筛选器。
 

@@ -4,12 +4,12 @@ description: 作为查询，NDIS 和过量驱动程序或用户模式应用程�
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_NDK_STATISTICS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: a6b1f92353ea9ff43ed1eaee760446f20d9a1249
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: dec3338f253dafb3e7ae3a746e5cd3a92534684b
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96828453"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248577"
 ---
 # <a name="oid_ndk_statistics"></a>OID \_ NDK \_ 统计信息
 
@@ -25,7 +25,7 @@ ms.locfileid: "96828453"
 <a name="remarks"></a>备注
 -------
 
-NDIS 使用指向 [**ndis \_ NDK \_ 统计 \_ 信息**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_ndk_statistics_info)结构的 [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员颁发此 OID。
+NDIS 使用指向 [**ndis \_ NDK \_ 统计 \_ 信息**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_ndk_statistics_info)结构的 [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员颁发此 OID。
 
 支持 NDK 的微型端口驱动程序必须提供 **CounterSet** 成员，这是一个 [**NDIS \_ NDK \_ 性能 \_ 计数器**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_ndk_performance_counters) 结构。
 
@@ -51,11 +51,11 @@ NDIS 使用指向 [**ndis \_ NDK \_ 统计 \_ 信息**](/windows-hardware/driver
 <td><p>Windows Server 2012</p></td>
 </tr>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 NDIS 6.30 和更高版本中受支持。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>标题</p></td>
 <td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
@@ -70,7 +70,7 @@ NDIS 使用指向 [**ndis \_ NDK \_ 统计 \_ 信息**](/windows-hardware/driver
 
 [**NDIS \_ NDK \_ 统计 \_ 信息**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_ndk_statistics_info)
 
-[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)
 
  
 

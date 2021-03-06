@@ -3,12 +3,12 @@ title: 从 Hyper-V 子分区转发 OID 请求
 description: 从 Hyper-V 子分区转发 OID 请求
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a17eb692c09c59c95ca44817a69240361a45925
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: f512575295d1abdcc376cf738a077d015973a61c
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96792173"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102249065"
 ---
 # <a name="forwarding-oid-requests-from-a-hyper-v-child-partition"></a>从 Hyper-V 子分区转发 OID 请求
 
@@ -33,7 +33,7 @@ ms.locfileid: "96792173"
 
 -   **DestinationPortId** 和 **DestinationNicIndex** 成员设置为零。 这指定封装的 OID 请求将传递到控件路径中的扩展。
 
--   **OidRequest** 成员设置为封装的 oid 请求的 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的地址。
+-   **OidRequest** 成员设置为封装的 oid 请求的 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的地址。
 
 然后，协议边缘发出 [OID \_ 交换机 \_ NIC \_ 请求](./oid-switch-nic-request.md) 请求，以将封装的 OID 请求沿可扩展交换机控制路径向下转发。 基础转发扩展可以检查这些封装的 OID 请求并保留它们指定的多播地址信息。 例如，如果扩展会将多播数据包转发到可扩展交换机端口，则可能需要此信息。
 

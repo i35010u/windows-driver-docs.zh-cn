@@ -7,12 +7,12 @@ keywords:
 - NDIS 中间驱动程序 WDK，注册
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7cbb4775274769c35febd5bc1a215902bacecd84
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 0b4812df3f7a2fb3b66f43e41eb881305bd963a8
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96840287"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248615"
 ---
 # <a name="registering-an-intermediate-driver-as-a-miniport-driver"></a>将中间驱动程序注册为微型端口驱动程序
 
@@ -54,10 +54,10 @@ ms.locfileid: "96840287"
 [*MiniportOidRequest*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request) \_ 从已调用 [**NdisOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisoidrequest)或从 NDIS 的过量驱动程序接收 OID *XXX* 请求。 中间驱动程序可以处理请求，或将其传递给基础微型端口驱动程序。
 
 <a href="" id="sendnetbufferlistshandler"></a>**SendNetBufferListsHandler**  
-[*MiniportSendNetBufferLists*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_send_net_buffer_lists) 接收到网络 [**\_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构的一个或多个指针的数组，这些结构指定通过网络传输的网络数据。 每个中间驱动程序应提供 *MiniportSendNetBufferLists* 函数。 有关详细信息，请参阅 [通过中间驱动程序传输网络数据](transmitting-network-data-through-an-intermediate-driver.md)。
+[*MiniportSendNetBufferLists*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_send_net_buffer_lists) 接收到网络 [**\_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list) 结构的一个或多个指针的数组，这些结构指定通过网络传输的网络数据。 每个中间驱动程序应提供 *MiniportSendNetBufferLists* 函数。 有关详细信息，请参阅 [通过中间驱动程序传输网络数据](transmitting-network-data-through-an-intermediate-driver.md)。
 
 <a href="" id="returnnetbufferlistshandler"></a>**ReturnNetBufferListsHandler**  
-[*MiniportReturnNetBufferLists*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_return_net_buffer_lists)通过调用 NdisMIndicateReceiveNetBufferLists 接收一个返回的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构，该结构之前已通过调用 **NdisMIndicateReceiveNetBufferLists** 向更高级别的驱动程序指示。 对 **NdisMIndicateReceiveNetBufferLists** 让给的调用可控制向更高级别的驱动程序指示的资源。 在较高级别的驱动程序使用每个指示后，中间驱动程序分配的网络 \_ 缓冲区 \_ 列表结构及其描述的资源将返回到 *MiniportReturnNetBufferLists* 函数。
+[*MiniportReturnNetBufferLists*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_return_net_buffer_lists)通过调用 NdisMIndicateReceiveNetBufferLists 接收一个返回的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list)结构，该结构之前已通过调用向更高级别的驱动程序指示。 对 **NdisMIndicateReceiveNetBufferLists** 让给的调用可控制向更高级别的驱动程序指示的资源。 在较高级别的驱动程序使用每个指示后，中间驱动程序分配的网络 \_ 缓冲区 \_ 列表结构及其描述的资源将返回到 *MiniportReturnNetBufferLists* 函数。
 
 <a href="" id="cancelsendhandler"></a>**CancelSendHandler**  
 [*MiniportCancelSend*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_cancel_send) 是必需的函数。 NDIS 调用 *MiniportCancelSend* 来取消发送请求。

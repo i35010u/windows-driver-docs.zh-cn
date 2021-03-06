@@ -6,12 +6,12 @@ keywords:
 - 枚举关键字 WDK NDIS 小型端口
 ms.date: 4/08/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 0fef4d7aeda6e036f0c45e45b68005646dfe2a0c
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 984c8f8128e13b8b16733659edda6073a15ea3a0
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96788457"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102249069"
 ---
 # <a name="enumeration-keywords"></a>枚举关键字
 
@@ -68,7 +68,7 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 一个值，该值指示设备是否已启用或禁用为数据包优先级和虚拟 Lan (Vlan) 插入 802.1 Q 标记的功能。 此关键字不表明设备启用或禁用数据包优先级或 VLAN 标记。 相反，它描述了以下内容：
 
 - 在发送操作过程中，设备是否插入 802.1 Q 标记
-- [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)中是否有 802.1 q 标记信息（带外 (OOB) 信息）
+- [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list)中是否有 802.1 q 标记信息（带外 (OOB) 信息）
 - 设备在接收操作期间是否将 802.1 Q 标记复制到 OOB
 
 无论 **\* PriorityVLANTag** 设置如何，微型端口驱动程序都应从所有接收数据包中删除 802.1 q 标头。 如果 802.1 Q 标头保留在包中，则其他驱动程序可能无法正确分析数据包。
@@ -80,7 +80,7 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 如果在传输路径上启用了 Tx 标志，则微型端口驱动程序应执行以下操作：
 
 - 将 802.1 Q 标头插入到每个传出数据包中，并用 OOB (中的数据填充该标头（如果 OOB) 中存在任何非零数据）。
-- 在 [**ndis 微型端口适配器中播发适当的 MacOptions \_ \_ \_ 常规 \_ 属性**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes) (**NDIS \_ mac \_ 选项 \_ 8021P \_ 优先级** 和 **NDIS \_ mac \_ 选项 \_ 8021Q \_ VLAN**) 。 **MacOptions**
+- 在 [**ndis 微型端口适配器中播发适当的 MacOptions \_ \_ \_ 常规 \_ 属性**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes) (**NDIS \_ mac \_ 选项 \_ 8021P \_ 优先级** 和 **NDIS \_ mac \_ 选项 \_ 8021Q \_ VLAN**) 。 
 
 否则，如果禁用 Tx 标志，则：
 
@@ -146,13 +146,13 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 <a href="" id="paramdesc"></a>ParamDesc  
 与 **SubkeyName** 关联的显示文本。
 
-<a href="" id="value"></a>“值”  
+<a href="" id="value"></a>值  
 与列表中的每个选项关联的枚举整数值。 此值存储在 **NDI \\ params \\**<em>SubkeyName</em> **\\** <em>值</em>中。
 
 <a href="" id="enumdesc"></a>EnumDesc  
 与菜单中显示的每个值相关联的显示文本。
 
-<a href="" id="default"></a>默认  
+<a href="" id="default"></a>缺省值  
 菜单的默认值。
 
 下表列出了所有关键字，并说明了驱动程序必须用于前面的特性的值。 有关关键字的详细信息，请在 WDK 文档中搜索关键字。
@@ -168,7 +168,7 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 <tr class="header">
 <th align="left">SubkeyName</th>
 <th align="left">ParamDesc</th>
-<th align="left">“值”</th>
+<th align="left">值</th>
 <th align="left">EnumDesc</th>
 </tr>
 </thead>
@@ -321,7 +321,7 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 <td align="left"><p><strong></em>HeaderDataSplit</strong></p></td>
 <td align="left"><p>标头数据拆分</p></td>
 <td align="left"><p>0（默认值）</p></td>
-<td align="left"><p>禁用</p></td>
+<td align="left"><p>已禁用</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>

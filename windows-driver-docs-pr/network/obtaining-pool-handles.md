@@ -10,12 +10,12 @@ keywords:
 - 中间驱动程序 WDK 网络，po
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bbf9a26f98649300c76c17f832572b9f88bf98f5
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 1b53b8d8f2ab190a38ff9ea9294e01d922bef79a
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96813667"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248692"
 ---
 # <a name="obtaining-pool-handles"></a>获取池句柄
 
@@ -25,9 +25,9 @@ ms.locfileid: "96813667"
 
 以下 NDIS 池分配函数需要一个分配资源的句柄：
 
--   [**NdisAllocateNetBufferPool**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatenetbufferpool)
+-   [**NdisAllocateNetBufferPool**](/windows-hardware/drivers/ddi/nblapi/nf-nblapi-ndisallocatenetbufferpool)
 
--   [**NdisAllocateNetBufferListPool**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatenetbufferlistpool)
+-   [**NdisAllocateNetBufferListPool**](/windows-hardware/drivers/ddi/nblapi/nf-nblapi-ndisallocatenetbufferlistpool)
 
 NDIS 6.0 驱动程序获取一个句柄，如下所示：
 

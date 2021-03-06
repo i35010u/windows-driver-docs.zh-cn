@@ -4,19 +4,19 @@ description: Hyper-v 可扩展交换机的协议边缘 (OID 发出对象标识�
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_SWITCH_NIC_DELETE 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: b0e85c4d201451deb54919cae9c6aaaf23ed32b3
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 6aaaaf18ad5bcc3c8be161d2d5c470650bd4c227
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96820055"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102247923"
 ---
 # <a name="oid_switch_nic_delete"></a>OID \_ 交换机 \_ NIC \_ 删除
 
 
 Hyper-v 可扩展交换机的协议边缘 (OID 发出对象标识符) 将 OID \_ 交换机 NIC DELETE 的请求设置 \_ \_ 为可扩展交换机驱动程序堆栈。 此 OID 请求通知底层的可扩展交换机扩展，以了解如何删除可扩展交换机端口和网络适配器之间的连接。 可扩展交换机的协议边缘以前通知扩展，此连接在其发出 oid [ \_ 交换机 \_ NIC \_ 断开连接](oid-switch-nic-disconnect.md)的 oid 集请求时被删除。
 
-[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ 交换机 \_ NIC \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters)结构的指针。
+[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ 交换机 \_ NIC \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters)结构的指针。
 
 <a name="remarks"></a>备注
 -------
@@ -80,11 +80,11 @@ Hyper-v 可扩展交换机的协议边缘 (OID 发出对象标识符) 将 OID \_
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 NDIS 6.30 和更高版本中受支持。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>标题</p></td>
 <td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
@@ -96,7 +96,7 @@ Hyper-v 可扩展交换机的协议边缘 (OID 发出对象标识符) 将 OID \_
 ****
 [*DereferenceSwitchNic*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_dereference_switch_nic)
 
-[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)
 
 [**NDIS \_ 交换机 \_ NIC \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters)
 

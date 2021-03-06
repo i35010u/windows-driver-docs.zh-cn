@@ -6,12 +6,12 @@ keywords:
 - 接收数据 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 07dc444990a7fdf0bf4ae7842f66877f599587cd
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 8ce9ed5811a606a8e5be429a69cbf423e3c3acdf
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96782189"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102247783"
 ---
 # <a name="receiving-network-data-with-ipsec-offload-version-2"></a>使用 IPsec 卸载版本 2 接收网络数据
 
@@ -38,13 +38,13 @@ NIC 执行 IPsec 卸载版本 2 (IPsecOV2) 在从传输中卸载的安全关联 
 
 -   在 [**NDIS \_ IPSEC \_ 卸载 \_ V2 \_ 网络 \_ 缓冲区 \_ 列表 \_ 信息**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_ipsec_offload_v2_net_buffer_list_info)结构中设置 **CryptoDone** 标志，以指示 NIC 对接收的数据包中的至少一个 IPSEC 负载执行 ipsec 检查。
 
--   在 NDIS **NextCryptoDone** \_ IPSEC \_ 卸载 \_ V2 \_ 网络缓冲区列表信息结构中设置 NextCryptoDone 标志， \_ \_ \_ 以指示 NIC 对接收数据包的隧道和传输部分执行 IPSEC 检查。 只有当数据包同时具有隧道和传输负载时，微型端口驱动程序才会设置此标志;否则，此标志应为零。
+-   在 NDIS  \_ IPSEC \_ 卸载 \_ V2 \_ 网络缓冲区列表信息结构中设置 NextCryptoDone 标志， \_ \_ \_ 以指示 NIC 对接收数据包的隧道和传输部分执行 IPSEC 检查。 只有当数据包同时具有隧道和传输负载时，微型端口驱动程序才会设置此标志;否则，此标志应为零。
 
--   设置 NDIS **CryptoStatus** \_ IPSEC \_ 卸载 \_ V2 \_ 网络缓冲区列表信息结构的正确 CryptoStatus 值 \_ \_ \_ ，以指示 IPSEC 检查的结果。
+-   设置 NDIS  \_ IPSEC \_ 卸载 \_ V2 \_ 网络缓冲区列表信息结构的正确 CryptoStatus 值 \_ \_ \_ ，以指示 IPSEC 检查的结果。
 
 如果 NIC 未对传入数据包执行卸载处理，则微型端口驱动程序会清除 **CryptoDone** 和 **NextCryptoDone** 标志。 小型端口驱动程序会清除 NIC 不会解密的所有接收数据包的这些标志，而不管数据包是受 AH 保护还是受 ESP 保护。
 
-微型端口驱动程序可以在 "接收 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)" 的 " [**NDIS \_ IPSEC \_ 卸载 \_ V2 \_ 网络 \_ 缓冲区 \_ 列表 \_ 信息**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_ipsec_offload_v2_net_buffer_list_info)结构" 中设置 **SaDeleteReq**。 接下来，TCP/IP 传输会发出 [OID \_ TCP \_ 任务 \_ IPSEC \_ 卸载 \_ V2 \_ delete \_ sa](./oid-tcp-task-ipsec-offload-v2-delete-sa.md) ，以便删除接收数据包的入站 sa，并再次删除与已删除的入站 sa 相对应的出站 sa。 有关添加和删除 SAs 的详细信息，请参阅 [在 IPsec 卸载版本2中管理安全关联](managing-security-associations-in-ipsec-offload-version-2.md)。
+微型端口驱动程序可以在 "接收 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list)" 的 " [**NDIS \_ IPSEC \_ 卸载 \_ V2 \_ 网络 \_ 缓冲区 \_ 列表 \_ 信息**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_ipsec_offload_v2_net_buffer_list_info)结构" 中设置 **SaDeleteReq**。 接下来，TCP/IP 传输会发出 [OID \_ TCP \_ 任务 \_ IPSEC \_ 卸载 \_ V2 \_ delete \_ sa](./oid-tcp-task-ipsec-offload-v2-delete-sa.md) ，以便删除接收数据包的入站 sa，并再次删除与已删除的入站 sa 相对应的出站 sa。 有关添加和删除 SAs 的详细信息，请参阅 [在 IPsec 卸载版本2中管理安全关联](managing-security-associations-in-ipsec-offload-version-2.md)。
 
 在微型端口驱动程序指示 \_ tcp/ip 传输的网络缓冲区 \_ 列表结构后，tcp/ip 传输会检查 NIC 在数据包上执行的 IPsec 检查的结果，检查数据包的序列号，并确定如何处理无法通过校验和或顺序测试的数据包。
 

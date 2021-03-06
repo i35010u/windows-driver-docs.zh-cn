@@ -4,12 +4,12 @@ description: 作为集请求，NDIS 和过量协议驱动程序使用 OID_802_3_
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_802_3_MULTICAST_LIST 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 588d92bea79d9eae2e3aa875df67d269627b6697
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 7ebdd384e6365ea709f4f81733ef2fa7a8a91b12
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96783801"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248938"
 ---
 # <a name="oid_802_3_multicast_list"></a>OID \_ 802 \_ 3 \_ 多播 \_ 列表
 
@@ -25,7 +25,7 @@ NDIS 处理 \_ \_ \_ \_ 微型端口驱动程序的 OID 802 3 多播列表查询
 
 支持多播地址列表的微型端口驱动程序必须支持 OID \_ 802 \_ 3 \_ 多播 \_ 列表集请求。
 
-对于集请求， [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含多播地址列表作为地址数组。
+对于集请求， [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员包含多播地址列表作为地址数组。
 
 -   每个地址都是一个6字节的数组。
 -   **InformationBufferLength** 成员包含 **InformationBuffer** 数组的长度（以字节为单位）。
@@ -56,7 +56,7 @@ NDIS 处理 \_ \_ \_ \_ 微型端口驱动程序的 OID 802 3 多播列表查询
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>标题</p></td>
 <td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>

@@ -4,26 +4,26 @@ description: Hyper-v 可扩展交换机的协议边缘 (OID 发出对象标识�
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_SWITCH_NIC_CONNECT 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: dfcc3a511423ccd346e111a353a1e74547a8f60b
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 4c5c07fd196564d6d04d1df954d001b5be317efb
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96786717"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102247929"
 ---
 # <a name="oid_switch_nic_connect"></a>OID \_ 交换机 \_ NIC \_ 连接
 
 
 Hyper-v 可扩展交换机的协议边缘 (OID 发出对象标识符) 设置 OID \_ 交换机 \_ NIC CONNECT 的请求 \_ ，通知底层可扩展交换机端口与网络适配器之间的网络连接是完全建立的。 协议边缘以前通知的扩展，此连接在发出 oid [ \_ 交换机 \_ NIC \_ CREATE](oid-switch-nic-create.md)的 oid 集请求时正在建立。
 
-[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ 交换机 \_ NIC \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters)结构的指针。
+[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ 交换机 \_ NIC \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters)结构的指针。
 
 <a name="remarks"></a>备注
 -------
 
 [**NDIS \_ 交换机 \_ NIC \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters)结构的 **PortId** 成员指定为其发出连接通知的可扩展交换机端口。 可扩展交换机扩展可通过以下方式获取此端口和其他可扩展交换机端口的参数信息：
 
--   发出 oid [ \_ 交换机 \_ 端口 \_ 数组](oid-switch-port-array.md)的 oid 查询请求。 仅当 OID [*FilterAttach*](/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_attach) \_ 开关 \_ 参数返回将 **IsActive** 设置为 TRUE 的 [**NDIS \_ 开关 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_parameters)结构时，扩展才会在 FilterAttach 上发出此 OID。 如果 **IsActive** 为 FALSE，则扩展微型端口适配器发出 **NetEventSwitchActivate** [**NET \_ PNP \_ 事件**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_pnp_event) 时，扩展会发出 OID。
+-   发出 oid [ \_ 交换机 \_ 端口 \_ 数组](oid-switch-port-array.md)的 oid 查询请求。 仅当 OID [](/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_attach) \_ 开关 \_ 参数返回将 **IsActive** 设置为 TRUE 的 [**NDIS \_ 开关 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_parameters)结构时，扩展才会在 FilterAttach 上发出此 OID。 如果 **IsActive** 为 FALSE，则扩展微型端口适配器发出 **NetEventSwitchActivate** [**NET \_ PNP \_ 事件**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_pnp_event) 时，扩展会发出 OID。
 
 -   检查各种 OID 会设置 [oid \_ 交换机 \_ 端口 \_ 创建](oid-switch-port-create.md) 和 [oid \_ 交换机 \_ 端口 \_ 删除](oid-switch-port-delete.md)请求。
 
@@ -82,11 +82,11 @@ Hyper-v 可扩展交换机的协议边缘 (OID 发出对象标识符) 设置 OID
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 NDIS 6.30 和更高版本中受支持。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>标题</p></td>
 <td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
@@ -98,7 +98,7 @@ Hyper-v 可扩展交换机的协议边缘 (OID 发出对象标识符) 设置 OID
 ****
 [**NdisFReturnNetBufferLists**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreturnnetbufferlists)
 
-[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)
 
 [**NDIS \_ 交换机 \_ NIC \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters)
 

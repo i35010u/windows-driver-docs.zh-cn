@@ -4,12 +4,12 @@ description: 作为集，NDIS 和过量驱动程序使用 OID_GEN_LINK_PARAMETER
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_LINK_PARAMETERS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: ce54f7694597215a2f11225ac1b22d539cdb8ad4
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 51c6058b8f6b4933b8691111b0fd2db9546f612a
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96827573"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248404"
 ---
 # <a name="oid_gen_link_parameters"></a>OID \_ 生成 \_ 链接 \_ 参数
 
@@ -43,7 +43,7 @@ NDIS \_ LINK \_ 参数结构定义如下：
 此结构包含以下成员：
 
 <a href="" id="header"></a>**标头**  
-NDIS 链接参数结构的 [**ndis \_ 对象 \_ 标头**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_object_header) 结构 \_ \_ 。 设置 **标头** 指定为 ndis 对象类型默认值的结构的 **类型** 成员 \_ \_ \_ 、Ndis **Revision** \_ 链接参数修订版本1的修订成员， \_ \_ \_ 以及 ndis **Size** \_ SIZEOF \_ 链接 \_ 参数 \_ 修订版本 \_ 1 的大小成员。
+NDIS 链接参数结构的 [**ndis \_ 对象 \_ 标头**](/windows-hardware/drivers/ddi/objectheader/ns-objectheader-ndis_object_header) 结构 \_ \_ 。 设置 **标头** 指定为 ndis 对象类型默认值的结构的 **类型** 成员 \_ \_ \_ 、Ndis  \_ 链接参数修订版本1的修订成员， \_ \_ \_ 以及 ndis  \_ SIZEOF \_ 链接 \_ 参数 \_ 修订版本 \_ 1 的大小成员。
 
 <a href="" id="mediaduplexstate"></a>**MediaDuplexState**  
 媒体双工状态。 此值与 [OID 生成 \_ \_ 媒体 \_ 双工 \_ 状态](oid-gen-media-duplex-state.md) oid 返回的值相同。
@@ -103,7 +103,7 @@ IEEE 802.3 暂停帧的支持类型。 此成员必须是以下 pause 函数之�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>标题</p></td>
 <td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
@@ -112,7 +112,7 @@ IEEE 802.3 暂停帧的支持类型。 此成员必须是以下 pause 函数之�
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS \_ 对象 \_ 标头**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_object_header)
+[**NDIS \_ 对象 \_ 标头**](/windows-hardware/drivers/ddi/objectheader/ns-objectheader-ndis_object_header)
 
 [**NDIS \_ 状态 \_ 链接 \_ 状态**](./ndis-status-link-state.md)
 

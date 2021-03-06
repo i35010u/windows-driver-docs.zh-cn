@@ -3,17 +3,17 @@ title: 排除将数据包传送到可扩展交换机目标端口
 description: 排除将数据包传送到可扩展交换机目标端口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: caf4957d9557c8507631804c98aaa7f7f52b64b9
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: bc11aa6e245ceb0c85eee648865b35612444edd7
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96788415"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248677"
 ---
 # <a name="excluding-packet-delivery-to-extensible-switch-destination-ports"></a>排除将数据包传送到可扩展交换机目标端口
 
 
-本主题介绍 Hyper-v 可扩展交换机扩展可以如何排除数据包到可扩展交换机端口的传输。 数据包的目标端口在带外 (OOB 中指定，) 转发上下文位于数据包的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构内。 有关此上下文的详细信息，请参阅 [Hyper-v 可扩展交换机转发上下文](hyper-v-extensible-switch-forwarding-context.md)。
+本主题介绍 Hyper-v 可扩展交换机扩展可以如何排除数据包到可扩展交换机端口的传输。 数据包的目标端口在带外 (OOB 中指定，) 转发上下文位于数据包的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list) 结构内。 有关此上下文的详细信息，请参阅 [Hyper-v 可扩展交换机转发上下文](hyper-v-extensible-switch-forwarding-context.md)。
 
 **注意**  本页假设你熟悉 [Hyper-v 可扩展交换机](overview-of-the-hyper-v-extensible-switch.md) 和 [混合转发](hybrid-forwarding.md)概述中的信息和关系图。
 
@@ -42,7 +42,7 @@ ms.locfileid: "96788415"
 
 -   在可扩展交换机入口数据路径上，筛选和转发扩展可以根据数据包的源端口或数据的策略条件排除数据包传送。
 
-    源端口信息存储在包的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构的 OOB 数据中 [**NDIS \_ 交换机 \_ 转发 \_ 详细 \_ \_ \_ \_**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_detail_net_buffer_list_info)信息联合。 扩展通过使用 [**网络 \_ 缓冲区 \_ 列表 \_ 开关 \_ 转发 \_ 详细信息**](/windows-hardware/drivers/ddi/ndis/nf-ndis-net_buffer_list_switch_forwarding_detail) 宏获取数据。
+    源端口信息存储在包的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list)结构的 OOB 数据中 [**NDIS \_ 交换机 \_ 转发 \_ 详细 \_ \_ \_ \_**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_detail_net_buffer_list_info)信息联合。 扩展通过使用 [**网络 \_ 缓冲区 \_ 列表 \_ 开关 \_ 转发 \_ 详细信息**](/windows-hardware/drivers/ddi/ndis/nf-ndis-net_buffer_list_switch_forwarding_detail) 宏获取数据。
 
     如果扩展插件不能传递从入口数据路径获取的数据包，则必须通过完成数据包发送请求来删除该数据包。
 
@@ -70,6 +70,6 @@ ms.locfileid: "96788415"
 
     同样，如果扩展完成了数据包发送请求，或指示要排除数据包的所有端口，它还必须调用 [*ReportFilteredNetBufferLists*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_report_filtered_net_buffer_lists)。
 
-    **注意**  扩展可以为扩展不包括的数据包创建 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构的链接列表。 当扩展调用 [*ReportFilteredNetBufferLists*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_report_filtered_net_buffer_lists)时，它会将 *NetBufferLists* 参数设置为指向链接列表的指针。
+    **注意**  扩展可以为扩展不包括的数据包创建 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list) 结构的链接列表。 当扩展调用 [*ReportFilteredNetBufferLists*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_report_filtered_net_buffer_lists)时，它会将 *NetBufferLists* 参数设置为指向链接列表的指针。
 
 有关可扩展交换机入口和出口数据路径的详细信息，请参阅 [Hyper-v 可扩展交换机数据路径](hyper-v-extensible-switch-data-path.md)。

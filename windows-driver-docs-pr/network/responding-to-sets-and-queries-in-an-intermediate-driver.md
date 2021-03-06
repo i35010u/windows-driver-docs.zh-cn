@@ -7,12 +7,12 @@ keywords:
 - 取消 OID 请求
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fe092dc52743d6ba38ea050e24d200a60eb5fbdc
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: e2b42b55f2b8f315562cf0bc4c565e8c08740c31
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96836703"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248979"
 ---
 # <a name="responding-to-sets-and-queries-in-an-intermediate-driver"></a>在中间驱动程序中响应设置和查询请求
 
@@ -22,7 +22,7 @@ ms.locfileid: "96836703"
 
 因为 NDIS 中间驱动程序绑定到过量的 NDIS 驱动程序，所以它还可以从其 [*MiniportOidRequest*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request) 函数接收查询和集。 在某些情况下，中间驱动程序只会将此类请求传递到基础微型端口驱动程序。 否则，可以对这些查询进行响应，并将其设置为适用于在其上边缘导出的介质。 请注意，中间驱动程序必须始终将它从占用的 NDIS 驱动程序收到的任何 OID \_ PNP \_ *Xxx* 请求传递到基础微型端口驱动程序。 NDIS 6.0 中间驱动程序还可以取消 OID 请求。
 
-若要将请求转发到底层驱动程序，NDIS 中间驱动程序会调用 [**NdisAllocateCloneOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatecloneoidrequest) 来分配克隆的 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request) 结构。 驱动程序调用 [**NdisOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisoidrequest) 函数以发送请求。 请求完成后，驱动程序必须调用 [**NdisFreeCloneOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreecloneoidrequest) 函数以释放 NDIS \_ OID \_ 请求结构。
+若要将请求转发到底层驱动程序，NDIS 中间驱动程序会调用 [**NdisAllocateCloneOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatecloneoidrequest) 来分配克隆的 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request) 结构。 驱动程序调用 [**NdisOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisoidrequest) 函数以发送请求。 请求完成后，驱动程序必须调用 [**NdisFreeCloneOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreecloneoidrequest) 函数以释放 NDIS \_ OID \_ 请求结构。
 
 若要取消 OID 请求，请调用 [**NdisCancelOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscanceloidrequest) 函数。
 

@@ -3,12 +3,12 @@ title: 发出 OID_NIC_SWITCH_FREE_VF 请求
 description: 发出 OID_NIC_SWITCH_FREE_VF 请求
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bb8b345e422a238af5e8056ecb5e710a7742cc6a
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: b21f62df5a1bb2e3bf1c6877613b5845986fd12a
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96789737"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102249179"
 ---
 # <a name="issuing-oid_nic_switch_free_vf-requests"></a>发出 OID \_ NIC \_ 交换机 \_ 免费 \_ VF 请求
 
@@ -23,7 +23,7 @@ ms.locfileid: "96789737"
 
 过量驱动程序通过执行以下步骤发出 [oid \_ NIC \_ 交换机 \_ 自由 \_ VF](./oid-nic-switch-free-vf.md) 的 oid 设置请求：
 
-1.  上层驱动程序为 OID 方法请求初始化 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request) 结构。 驱动程序将 **InformationBuffer** 成员设置为指向已初始化的 [**NDIS \_ NIC \_ 交换机 \_ 自由 \_ VF \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_free_vf_parameters) 结构的指针。
+1.  上层驱动程序为 OID 方法请求初始化 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request) 结构。 驱动程序将 **InformationBuffer** 成员设置为指向已初始化的 [**NDIS \_ NIC \_ 交换机 \_ 自由 \_ VF \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_free_vf_parameters) 结构的指针。
 
 2.  过量驱动程序调用 [**NdisOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisoidrequest) 将 OID 请求颁发给基础 PF 微型端口驱动程序。
 

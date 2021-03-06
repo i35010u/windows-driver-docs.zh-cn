@@ -3,12 +3,12 @@ title: 查询 NIC 交换机的参数
 description: 查询 NIC 交换机的参数
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b7099a70474dc42078154335ee93b5430a70e835
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: d973990b4a32fa4d8eed8b874da7e63af38a4434
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96820017"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248611"
 ---
 # <a name="querying-the-parameters-of-a-nic-switch"></a>查询 NIC 交换机的参数
 
@@ -21,7 +21,7 @@ ms.locfileid: "96820017"
 
  
 
-成功从此 OID 方法请求返回后， [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ NIC \_ 交换机 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)结构的指针。 此结构包含指定开关的参数。
+成功从此 OID 方法请求返回后， [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ NIC \_ 交换机 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)结构的指针。 此结构包含指定开关的参数。
 
 NDIS 处理微型端口驱动程序的 [OID \_ NIC \_ 交换机 \_ 参数](./oid-nic-switch-parameters.md) 请求。 NDIS 从以下源中返回的数据的内部缓存返回信息：
 

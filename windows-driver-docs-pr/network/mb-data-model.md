@@ -3,12 +3,12 @@ title: MB 数据模型
 description: MB 数据模型
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fec11b163c7a9788f150d2273dc89bc5ac02efb
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: d31893594004ba81f19b6688e4b9559b50de7b5b
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96817119"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102249108"
 ---
 # <a name="mb-data-model"></a>MB 数据模型
 
@@ -21,7 +21,7 @@ MB 驱动程序模型使用一种数据模型，此模型包含一组定义为 M
 
 此外，MB 微型端口驱动程序必须实现 OID \_ GEN \_ 物理介质， \_ 即使 NDIS 规范将其描述为可用于实现。
 
-下表中列出的 MB Oid 的语法和语义以 [Mb 操作语义](mb-operational-semantics.md)进行说明。 Mb 服务和 MB 微型端口驱动程序之间的交互在 [Mb 操作流程图](mb-operation-flowcharts.md)中进行了介绍。
+下表中列出的 MB Oid 的语法和语义以 [Mb 操作语义](mb-operational-semantics.md)进行说明。
 
 ## <a name="wwan-specific-oids"></a>WWAN-Specific Oid
 
@@ -203,7 +203,7 @@ MB 驱动程序模型使用一种数据模型，此模型包含一组定义为 M
 <tr class="odd">
 <td align="left"><p><a href="/windows-hardware/drivers/network/ndis-status-wwan-vendor-specific" data-raw-source="[&lt;strong&gt;NDIS_STATUS_WWAN_VENDOR_SPECIFIC&lt;/strong&gt;](./ndis-status-wwan-vendor-specific.md)"><strong>NDIS_STATUS_WWAN_VENDOR_SPECIFIC</strong></a>†</p>
 <p>使用供应商定义的结构</p></td>
-<td align="left"><p>空值</p></td>
+<td align="left"><p>不可用</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="/windows-hardware/drivers/network/ndis-status-wwan-ussd" data-raw-source="[&lt;strong&gt;NDIS_STATUS_WWAN_USSD&lt;/strong&gt;](./ndis-status-wwan-ussd.md)"><strong>NDIS_STATUS_WWAN_USSD</strong></a></p>
@@ -244,7 +244,7 @@ MB 驱动程序模型使用一种数据模型，此模型包含一组定义为 M
 <tr class="even">
 <td align="left"><p><a href="/windows-hardware/drivers/network/ndis-status-wwan-set-home-provider-complete" data-raw-source="[&lt;strong&gt;NDIS_STATUS_WWAN_SET_HOME_PROVIDER_COMPLETE&lt;/strong&gt;](./ndis-status-wwan-set-home-provider-complete.md)"><strong>NDIS_STATUS_WWAN_SET_HOME_PROVIDER_COMPLETE</strong></a></p>
 <p>使用<a href="/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_set_home_provider" data-raw-source="[&lt;strong&gt;NDIS_WWAN_SET_HOME_PROVIDER&lt;/strong&gt;](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_set_home_provider)"> <strong>NDIS_WWAN_SET_HOME_PROVIDER</strong></a></p></td>
-<td align="left"><p>空值</p>
+<td align="left"><p>不可用</p>
 <p>NDIS_WWAN_HOME_PROVIDER_REVISION_2</p></td>
 </tr>
 </tbody>

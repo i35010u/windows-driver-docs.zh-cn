@@ -4,12 +4,12 @@ description: 作为集，NDIS 和过量驱动程序或用户模式应用程序�
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_HD_SPLIT_PARAMETERS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: f6144e56a383358923ac5be54d419991cf9ddb57
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 82f5fe1f1619675de131fd503b7bc524c22ddf33
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96838561"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248269"
 ---
 # <a name="oid_gen_hd_split_parameters"></a>OID \_ GEN \_ HD \_ SPLIT \_ 参数
 
@@ -19,7 +19,7 @@ ms.locfileid: "96838561"
 <a name="remarks"></a>备注
 -------
 
-[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含 [**ndis \_ HD \_ SPLIT \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_hd_split_parameters)结构。
+[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员包含 [**ndis \_ HD \_ SPLIT \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_hd_split_parameters)结构。
 
 Ndis 5 时，NDIS 可能会设置 OID \_ GEN \_ HD \_ SPLIT \_ 参数 OID。*x* 协议驱动程序绑定到 NDIS 6.1 微型端口。 NDIS 处理此 OID，然后将其传递给微型端口驱动程序，并更新微型端口适配器的 **\* HeaderDataSplit** 标准化关键字（如果需要）。 如果禁用了标头-数据拆分，NDIS 不会将此 OID 发送到微型端口适配器。
 
@@ -35,11 +35,11 @@ Ndis 5 时，NDIS 可能会设置 OID \_ GEN \_ HD \_ SPLIT \_ 参数 OID。*x* 
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 NDIS 6.1 和更高版本中受支持。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>标题</p></td>
 <td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
@@ -52,7 +52,7 @@ Ndis 5 时，NDIS 可能会设置 OID \_ GEN \_ HD \_ SPLIT \_ 参数 OID。*x* 
 
 [**NDIS \_ HD \_ SPLIT \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_hd_split_parameters)
 
-[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)
 
  
 

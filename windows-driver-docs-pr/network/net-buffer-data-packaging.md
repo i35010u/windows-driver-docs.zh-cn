@@ -10,12 +10,12 @@ keywords:
 - NET_BUFFER 数据打包 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b729cf87b0e41d8dc8e4eee43d3c89cf6edccf6e
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: cbe82974e153d80bbbe8331690cc371ca612287c
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96825449"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102247945"
 ---
 # <a name="net_buffer-data-packaging"></a>网络 \_ 缓冲区数据打包
 
@@ -23,7 +23,7 @@ ms.locfileid: "96825449"
 
 
 
-数据打包在 NDIS 6.0 中进行了重新设计。 基于 [**NDIS \_ 包**](/previous-versions/windows/hardware/network/ff557086(v=vs.85)) 结构的发送和接收体系结构已替换为基于 [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer) 和 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构的体系结构。 NET \_ BUFFER 结构是等效于 NDIS 包结构的功能 \_ 。 NET \_ BUFFER 结构指定网络数据的 (MDL 链) ，以及 NDIS、协议驱动程序和微型端口驱动程序的保留空间。 网络 \_ 缓冲区结构可以在由网络 \_ 缓冲区列表结构描述的列表中链接在一起 \_ 。 网络 \_ 缓冲区 \_ 列表结构还为带外 (OOB 提供适用于列表中所有网络缓冲区结构的带外 OOB) 数据 \_ 。
+数据打包在 NDIS 6.0 中进行了重新设计。 基于 [**NDIS \_ 包**](/previous-versions/windows/hardware/network/ff557086(v=vs.85)) 结构的发送和接收体系结构已替换为基于 [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer) 和 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list) 结构的体系结构。 NET \_ BUFFER 结构是等效于 NDIS 包结构的功能 \_ 。 NET \_ BUFFER 结构指定网络数据的 (MDL 链) ，以及 NDIS、协议驱动程序和微型端口驱动程序的保留空间。 网络 \_ 缓冲区结构可以在由网络 \_ 缓冲区列表结构描述的列表中链接在一起 \_ 。 网络 \_ 缓冲区 \_ 列表结构还为带外 (OOB 提供适用于列表中所有网络缓冲区结构的带外 OOB) 数据 \_ 。
 
 Microsoft 下一代网络驱动程序堆栈中的所有组件，包括 TCP/IP 传输和 Winsock，都使用网络 \_ 缓冲区数据打包。 在整个驱动程序堆栈中进行统一的数据打包，无需重新打包数据、简化数据处理并减少函数调用的数量。
 

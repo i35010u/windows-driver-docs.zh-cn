@@ -3,12 +3,12 @@ title: NDIS/WIFI 验证规则集
 description: 请注意，你可以从 Windows 8.1 开始测试 NDIS/WIFI 驱动程序与这些规则。 .
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ca2f14eb283692f8e0b8a84cce2a94a8f6e6bff7
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: d9b79decb8c6c902ffa0e762bc6288daffc7f25e
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96834663"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102249134"
 ---
 # <a name="ndiswifi-verification-rule-set"></a>NDIS/WIFI 验证规则集
 
@@ -62,12 +62,12 @@ ms.locfileid: "96834663"
 <td align="left"><p><a href="ndis-ndisoiddoublerequest.md" data-raw-source="[&lt;strong&gt;NdisOidDoubleRequest&lt;/strong&gt;](ndis-ndisoiddoublerequest.md)"><strong>NdisOidDoubleRequest</strong></a></p></td>
 <td align="left"><p>此 <a href="ndis-ndisoiddoublerequest.md" data-raw-source="[&lt;strong&gt;NdisOidDoubleRequest&lt;/strong&gt;](ndis-ndisoiddoublerequest.md)"><strong>NdisOidDoubleRequest</strong></a> 规则验证：</p>
 <ul>
-<li><p>Minport 驱动程序必须完成当前挂起的 <a href="/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a> 。</p></li>
+<li><p>Minport 驱动程序必须完成当前挂起的 <a href="/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a> 。</p></li>
 </ul></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="ndis-ndistimeddatahang.md" data-raw-source="[&lt;strong&gt;NdisTimedDataHang&lt;/strong&gt;](ndis-ndistimeddatahang.md)"><strong>NdisTimedDataHang</strong></a></p></td>
-<td align="left"><p><a href="ndis-ndistimeddatahang.md" data-raw-source="[&lt;strong&gt;NdisTimedDataHang&lt;/strong&gt;](ndis-ndistimeddatahang.md)"><strong>NdisTimedDataHang</strong></a>规则验证 NDIS 微型端口驱动程序是否在22秒内处理<a href="/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list" data-raw-source="[&lt;strong&gt;NET_BUFFER_LIST&lt;/strong&gt;](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)"><strong>NET_BUFFER_LIST</strong></a>结构的任何挂起的发送请求。</p></td>
+<td align="left"><p><a href="ndis-ndistimeddatahang.md" data-raw-source="[&lt;strong&gt;NdisTimedDataHang&lt;/strong&gt;](ndis-ndistimeddatahang.md)"><strong>NdisTimedDataHang</strong></a>规则验证 NDIS 微型端口驱动程序是否在22秒内处理<a href="/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list" data-raw-source="[&lt;strong&gt;NET_BUFFER_LIST&lt;/strong&gt;](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list)"><strong>NET_BUFFER_LIST</strong></a>结构的任何挂起的发送请求。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="ndis-ndistimeddatasend.md" data-raw-source="[&lt;strong&gt;NdisTimedDataSend&lt;/strong&gt;](ndis-ndistimeddatasend.md)"><strong>NdisTimedDataSend</strong></a></p></td>

@@ -8,12 +8,12 @@ keywords:
 - 筛选器驱动程序 WDK，移植到 NDIS 6.20
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e76c44dd440fd227c296ce6ca655497b9916f76f
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 18f0c6d29e28a4e91c6c49324eed17ae7b07a900
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96824979"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248025"
 ---
 # <a name="summary-of-changes-required-to-port-a-filter-driver-to-ndis-620"></a>将筛选器驱动程序移植到 NDIS 6.20 所要做出的更改摘要
 
@@ -60,7 +60,7 @@ NDIS 6.20 保持与早期的 NDIS 版本的向后兼容性。 有关向后兼容
     有关 NDIS 结构版本信息的信息，请参阅 [指定 Ndis 版本信息](specifying-ndis-version-information.md)。
 
 <a href="" id="send-and-receive-data-paths"></a>**发送和接收数据路径**  
--   使用 [**NET \_ BUFFER**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer) 结构的更新版本。
+-   使用 [**NET \_ BUFFER**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer) 结构的更新版本。
 
 -   （可选）支持虚拟机队列 (VMQ) 接口。 有关 VMQ 的详细信息，请参阅 [NDIS 6.20 中的虚拟机队列 (VMQ) ](virtual-machine-queue--vmq--in-ndis-6-20.md)。
 

@@ -5,12 +5,12 @@ keywords:
 - IPsecOV2 WDK TCP/IP 传输，功能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e6e8e6252fb73f7fcdba37fb974a9e4c3b3944c
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: f6f5140c8133503cd3b72d2236e630c9954a7e9d
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96808031"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248381"
 ---
 # <a name="reporting-a-nics-ipsec-offload-version-2-capabilities"></a>报告 NIC 的 IPsec 卸载版本 2 功能
 
@@ -27,7 +27,7 @@ ms.locfileid: "96808031"
 
  
 
-为了响应 [OID \_ TCP \_ 卸载的 \_ 当前 \_ 配置](./oid-tcp-offload-current-config.md)，ndis 在 ndis \_ \_ 卸载结构中包含 ndis IPSEC 卸载 \_ V2 结构， [**\_**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload)该结构在 ndis [**\_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员中返回。 NDIS 使用微型端口驱动程序提供的信息。
+为了响应 [OID \_ TCP \_ 卸载的 \_ 当前 \_ 配置](./oid-tcp-offload-current-config.md)，ndis 在 ndis \_ \_ 卸载结构中包含 ndis IPSEC 卸载 \_ V2 结构， [**\_**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload)该结构在 ndis [**\_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员中返回。 NDIS 使用微型端口驱动程序提供的信息。
 
  
 

@@ -11,19 +11,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3598cad90276f57276900fd423e405a204f830fa
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: e0ef23733e1cbe64d88b78ec0f0eeb1d4e0c5194
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96819695"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248530"
 ---
 # <a name="ndisallocatenetbuffer-rule-ndis"></a>NdisAllocateNetBuffer 规则 (ndis) 
 
 
-**NdisAllocateNetBuffer** 规则指定按替代顺序调用 [**NdisAllocateNetBuffer**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatenetbuffer)和 [**NdisFreeNetBuffer**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreenetbuffer) 。 最终的目标是确保在 [*MiniportHaltEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt)结束时释放 [**NET \_ BUFFER**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)的所有实例。
+**NdisAllocateNetBuffer** 规则指定按替代顺序调用 [**NdisAllocateNetBuffer**](/windows-hardware/drivers/ddi/nblapi/nf-nblapi-ndisallocatenetbuffer)和 [**NdisFreeNetBuffer**](/windows-hardware/drivers/ddi/nblapi/nf-nblapi-ndisfreenetbuffer) 。 最终的目标是确保在 [*MiniportHaltEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt)结束时释放 [**NET \_ BUFFER**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer)的所有实例。
 
-此规则使用三种不同的状态。 当分配或释放 [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer) 时，状态将更改。 如果在 [*MiniportHaltEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt)退出时仍分配 **网络 \_ 缓冲区**，则规则将报告缺陷。
+此规则使用三种不同的状态。 当分配或释放 [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer) 时，状态将更改。 如果在 [*MiniportHaltEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt)退出时仍分配 **网络 \_ 缓冲区**，则规则将报告缺陷。
 
 **驱动程序模型： NDIS**
 
@@ -56,5 +56,5 @@ ms.locfileid: "96819695"
 <a name="applies-to"></a>适用于
 ----------
 
-[**NdisAllocateNetBuffer**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatenetbuffer) 
-[ **NdisFreeNetBuffer**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreenetbuffer)
+[**NdisAllocateNetBuffer**](/windows-hardware/drivers/ddi/nblapi/nf-nblapi-ndisallocatenetbuffer) 
+[ **NdisFreeNetBuffer**](/windows-hardware/drivers/ddi/nblapi/nf-nblapi-ndisfreenetbuffer)

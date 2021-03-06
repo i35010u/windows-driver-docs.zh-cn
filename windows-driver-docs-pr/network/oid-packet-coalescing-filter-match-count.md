@@ -4,19 +4,19 @@ description: NDIS 发出 OID_PACKET_COALESCING_FILTER_MATCH_COUNT 的 OID 查询
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_PACKET_COALESCING_FILTER_MATCH_COUNT 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a49ab63590dd0b0bbecd6bf0354b489581df7df
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 3a6909e59300d77e80454f4142cb061e31cbf684
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96822141"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102249047"
 ---
 # <a name="oid_packet_coalescing_filter_match_count"></a>OID \_ 数据包 \_ 合并 \_ 筛选器 \_ 匹配 \_ 计数
 
 
 NDIS 发出 OID \_ 数据包 \_ 合并筛选器匹配计数的 oid 查询请求， \_ \_ \_ 以获取网络适配器上缓存或 *合并* 的数据包数。 如果为 [NDIS 数据包合并](./ndis-packet-coalescing.md) 启用了适配器并且数据包与接收筛选器匹配，网络适配器将合并收到的数据包。
 
-[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向分配给调用方的 ULONG64 变量的指针。 在成功返回查询请求之前，驱动程序会使用网络适配器上已匹配的接收筛选器更新 ULONG64 变量。
+[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员包含指向分配给调用方的 ULONG64 变量的指针。 在成功返回查询请求之前，驱动程序会使用网络适配器上已匹配的接收筛选器更新 ULONG64 变量。
 
 <a name="remarks"></a>备注
 -------
@@ -47,7 +47,7 @@ NDIS 发出 OID \_ 数据包 \_ 合并筛选器匹配计数的 oid 查询请求�
 OID 请求已成功完成。
 
 <a href="" id="ndis-status-invalid-length"></a>NDIS \_ 状态 \_ 无效 \_ 长度  
-信息缓冲区太短。 驱动程序设置 **数据。设置 \_ 信息。** 将 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request) 结构中的成员 BytesNeeded 为所需的最小缓冲区大小。
+信息缓冲区太短。 驱动程序设置 **数据。设置 \_ 信息。** 将 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request) 结构中的成员 BytesNeeded 为所需的最小缓冲区大小。
 
 <a href="" id="ndis-status-failure"></a>NDIS \_ 状态 \_ 故障  
 由于其他原因，请求失败。
@@ -62,11 +62,11 @@ OID 请求已成功完成。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 NDIS 6.30 和更高版本中受支持。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>标题</p></td>
 <td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
@@ -77,7 +77,7 @@ OID 请求已成功完成。
 
 [*MiniportResetEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_reset)
 
-[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)
 
 [OID \_ PNP \_ 设置 \_ 电源](oid-pnp-set-power.md)
 

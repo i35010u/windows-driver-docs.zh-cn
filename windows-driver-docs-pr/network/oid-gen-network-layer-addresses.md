@@ -4,12 +4,12 @@ description: 作为集，OID_GEN_NETWORK_LAYER_ADDRESSES OID 通知底层微型�
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_NETWORK_LAYER_ADDRESSES 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: de075c55a059670980b7fa7ecfd064dcf5f9b398
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: f6cf9a82fa63e3c5f8e3563d6f3157775fad06e2
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96829463"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248733"
 ---
 # <a name="oid_gen_network_layer_addresses"></a>OID \_ 代 \_ 网络 \_ 层 \_ 地址
 
@@ -88,7 +88,7 @@ typedef struct _NETWORK_ADDRESS {
 <a href="" id="address"></a>**地址**  
 指定此网络层地址的字节数组。 **AddressLength** 成员指定此数组中的字节数。
 
-传输可以调用 [**NdisOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisoidrequest) 函数，并可以传递用 OID 生成网络层地址代码填充的 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request) 结构 \_ \_ \_ \_ 。 此调用通知绑定实例与该实例相关联的地址中的更改。 在此调用中，传输还在 *NdisBindingHandle* 参数中传递绑定的实例。 绑定实例是在传输和基础微型端口驱动程序或其他分层驱动程序之间设置的绑定。 对于此调用，传输应该 **InformationBuffer** \_ \_ 使用传输 \_ 地址结构的指针填充 NDIS OID 请求的 InformationBuffer 成员。 传输 \_ 地址与网络 \_ 地址 \_ 列表结构相对应，并且应包含网络层地址的列表。
+传输可以调用 [**NdisOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisoidrequest) 函数，并可以传递用 OID 生成网络层地址代码填充的 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request) 结构 \_ \_ \_ \_ 。 此调用通知绑定实例与该实例相关联的地址中的更改。 在此调用中，传输还在 *NdisBindingHandle* 参数中传递绑定的实例。 绑定实例是在传输和基础微型端口驱动程序或其他分层驱动程序之间设置的绑定。 对于此调用，传输应该 \_ \_ 使用传输 \_ 地址结构的指针填充 NDIS OID 请求的 InformationBuffer 成员。 传输 \_ 地址与网络 \_ 地址 \_ 列表结构相对应，并且应包含网络层地址的列表。
 
 假设传输通过一个中间驱动程序将地址传递到基础微型端口驱动程序。 如果中间驱动程序还需要地址，则应在将其传递到基础微型端口驱动程序之前记下它们。 基础微型端口驱动程序（特别是旧驱动程序）可以返回不支持 NDIS 状态的状态值 \_ \_ \_ 或 ndis \_ 状态 \_ 成功。 基础微型端口驱动程序将操作的状态传播到传输。 如果中间驱动程序必须继续接收地址通知，并且如有必要，中间驱动程序应将状态更改为 NDIS \_ 状态 " \_ 成功"。否则，传输可能会将 \_ 不支持的 NDIS 状态解释 \_ \_ 为基本微型端口驱动程序不需要传输问题的其他地址更新。 如果 \_ 返回 NDIS 状态 \_ 成功，则传输有义务继续向基础驱动程序通知关联地址中的任何更改，包括添加和删除地址。
 
@@ -104,7 +104,7 @@ typedef struct _NETWORK_ADDRESS {
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>标题</p></td>
 <td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
@@ -113,7 +113,7 @@ typedef struct _NETWORK_ADDRESS {
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)
 
 [**NdisOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisoidrequest)
 

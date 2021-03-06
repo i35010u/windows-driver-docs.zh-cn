@@ -4,19 +4,19 @@ description: 过量驱动程序发出 OID 设置 OID_RECEIVE_FILTER_CLEAR_FILTER
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_RECEIVE_FILTER_CLEAR_FILTER 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: d0c8ad80c73dc615a1822d72e62cf7733dae68a1
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 922dde3cf2ffcba379492942ce159fd4ee996395
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96799359"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248861"
 ---
 # <a name="oid_receive_filter_clear_filter"></a>OID \_ 接收 \_ 筛选器 \_ 清除 \_ 筛选器
 
 
 过量驱动程序发出 oid 设置 OID \_ 接收 \_ 筛选器 \_ 清除 \_ 筛选器的请求，以清除网络适配器上的接收筛选器。
 
-[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**ndis \_ 接收 \_ 筛选器 \_ CLEAR \_ PARAMETERS**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_clear_parameters)结构的指针。
+[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**ndis \_ 接收 \_ 筛选器 \_ CLEAR \_ PARAMETERS**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_clear_parameters)结构的指针。
 
 <a name="remarks"></a>备注
 -------
@@ -110,7 +110,7 @@ NDIS 为此请求返回以下状态代码之一：
 筛选器标识符无效。
 
 <a href="" id="ndis-status-invalid-length"></a>**NDIS \_ 状态 \_ 无效 \_ 长度**  
-信息缓冲区太小。 NDIS 设置 **数据。设置 \_ 信息。** 将 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request) 结构中的成员 BytesNeeded 为所需的最小缓冲区大小。
+信息缓冲区太小。 NDIS 设置 **数据。设置 \_ 信息。** 将 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request) 结构中的成员 BytesNeeded 为所需的最小缓冲区大小。
 
 <a name="requirements"></a>要求
 ------------
@@ -122,11 +122,11 @@ NDIS 为此请求返回以下状态代码之一：
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 NDIS 6.20 和更高版本中受支持。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>标题</p></td>
 <td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
@@ -135,7 +135,7 @@ NDIS 为此请求返回以下状态代码之一：
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)
 
 [**NDIS \_ 接收 \_ 筛选器 \_ 清除 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_clear_parameters)
 

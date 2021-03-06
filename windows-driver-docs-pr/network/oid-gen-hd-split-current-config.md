@@ -4,12 +4,12 @@ description: 作为查询，过量驱动程序或管理实用工具可以使用 
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_HD_SPLIT_CURRENT_CONFIG 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 74add7bbd0c761e129141d8fc55ec467d2c965e5
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 2daf00ad5c44e38b74829e94955228417f693f8a
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96836757"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248271"
 ---
 # <a name="oid_gen_hd_split_current_config"></a>OID \_ GEN \_ HD \_ SPLIT \_ 当前 \_ 配置
 
@@ -21,7 +21,7 @@ ms.locfileid: "96836757"
 
 NDIS 代表微型端口驱动程序处理此 OID。 NDIS 基于微型端口驱动程序初始化属性和 [**NDIS \_ 状态 \_ 高清 \_ 拆分 \_ 当前 \_ 配置**](./ndis-status-hd-split-current-config.md) 状态指示，来维护当前的标头数据拆分配置信息。
 
-[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含 [**ndis \_ HD \_ SPLIT \_ 当前 \_ 配置**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_hd_split_current_config)结构。
+[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员包含 [**ndis \_ HD \_ SPLIT \_ 当前 \_ 配置**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_hd_split_current_config)结构。
 
 <a name="requirements"></a>要求
 ------------
@@ -33,11 +33,11 @@ NDIS 代表微型端口驱动程序处理此 OID。 NDIS 基于微型端口驱�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 NDIS 6.1 和更高版本中受支持。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>标题</p></td>
 <td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
@@ -48,7 +48,7 @@ NDIS 代表微型端口驱动程序处理此 OID。 NDIS 基于微型端口驱�
 
 [**NDIS \_ HD \_ SPLIT \_ 当前 \_ 配置**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_hd_split_current_config)
 
-[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)
 
 [**NDIS \_ 状态 \_ HD \_ SPLIT \_ 当前 \_ 配置**](./ndis-status-hd-split-current-config.md)
 

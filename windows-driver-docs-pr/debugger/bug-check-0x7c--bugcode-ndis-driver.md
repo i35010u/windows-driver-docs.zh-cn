@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7cde5e7411d8f1016b0d7b3870c8864d4fa5e9ac
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: eb7f1225535f87314c9ea3d4b1d7b60c8bc0b31a
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96840847"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102247777"
 ---
 # <a name="bug-check-0x7c-bugcode_ndis_driver"></a>Bug 检查0x7C： BUGCODE \_ NDIS \_ 驱动程序
 
@@ -265,7 +265,7 @@ BUGCODE \_ NDIS \_ 驱动程序 bug 检查的值为0x0000007C。 此错误检查
 <td align="left"><p>NDIS_BUGCHECK_OID_REQUEST_INVALID_BUFFER</p>
 <p>微型端口驱动程序或筛选器驱动程序已非法完成 OID 请求。 检查 BytesWritten 是否不大于缓冲区的整个长度。</p></td>
 <td align="left"><p>特定微型端口适配器或筛选器模块块的地址。 请运行 <strong><a href="-ndiskd-netadapter.md" data-raw-source="[!ndiskd.netadapter](-ndiskd-netadapter.md)">！ ndiskd. get-netadapter</a></strong> 或 <strong><a href="-ndiskd-filter.md" data-raw-source="[!ndiskd.filter](-ndiskd-filter.md)">！ ndiskd</a></strong> ，以获取详细信息。</p></td>
-<td align="left"><p>已非法完成的 <strong><a href="/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[NDIS_OID_REQUEST](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)">NDIS_OID_REQUEST</a></strong> 的地址。 请检查 <strong><a href="-ndiskd-oid.md" data-raw-source="[!ndiskd.oid](-ndiskd-oid.md)">！ ndiskd</a></strong>。</p></td>
+<td align="left"><p>已非法完成的 <strong><a href="/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[NDIS_OID_REQUEST](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)">NDIS_OID_REQUEST</a></strong> 的地址。 请检查 <strong><a href="-ndiskd-oid.md" data-raw-source="[!ndiskd.oid](-ndiskd-oid.md)">！ ndiskd</a></strong>。</p></td>
 <td align="left"><p>0</p></td>
 </tr>
 <tr class="odd">
@@ -301,7 +301,7 @@ BUGCODE \_ NDIS \_ 驱动程序 bug 检查的值为0x0000007C。 此错误检查
 <tr class="even">
 <td align="left"><p>0x21</p></td>
 <td align="left"><p>NDIS_BUGCHECK_INVALID_OBJECT_HEADER</p>
-<p>驱动程序创建的 <strong><a href="/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_object_header" data-raw-source="[NDIS_OBJECT_HEADER](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_object_header)">NDIS_OBJECT_HEADER</a></strong>无效。</p></td>
+<p>驱动程序创建的 <strong><a href="/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_object_header" data-raw-source="[NDIS_OBJECT_HEADER](/windows-hardware/drivers/ddi/objectheader/ns-objectheader-ndis_object_header)">NDIS_OBJECT_HEADER</a></strong>无效。</p></td>
 <td align="left"><p>指示非法状态指示的驱动程序的句柄。 有关详细信息，请运行带此句柄的<strong><a href="-ndiskd-minidriver.md" data-raw-source="[!ndiskd.minidriver](-ndiskd-minidriver.md)">！ ndiskd. 微型驱动程序</a></strong>或<strong><a href="-ndiskd-filterdriver.md" data-raw-source="[!ndiskd.filterdriver](-ndiskd-filterdriver.md)">！ ndiskd。</a></strong></p></td>
 <td align="left"><p>标头格式不正确的对象。 其解释取决于所调用的 API。 例如，如果驱动程序名为 <strong>NdisAllocateCloneOidRequest</strong>，则将对象强制转换为 ndis！NDIS_OID_REQUEST。</p></td>
 <td align="left"><p>0</p></td>
@@ -440,7 +440,7 @@ BUGCODE \_ NDIS \_ 驱动程序 bug 检查的值为0x0000007C。 此错误检查
 <tr class="even">
 <td align="left"><p>0x27</p></td>
 <td align="left"><p>NDIS_BUGCHECK_LEAKED_NBL</p>
-<p>驱动程序已泄漏 <strong><a href="/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list" data-raw-source="[NET_BUFFER_LIST](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)">NET_BUFFER_LIST</a></strong> 结构。 查看 <strong><a href="-ndiskd-pendingnbls.md" data-raw-source="[!ndiskd.pendingnbls](-ndiskd-pendingnbls.md)">！ ndiskd. pendingnbls</a></strong> 以查看此驱动程序上仍处于挂起状态的任何 nbl。</p></td>
+<p>驱动程序已泄漏 <strong><a href="/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list" data-raw-source="[NET_BUFFER_LIST](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list)">NET_BUFFER_LIST</a></strong> 结构。 查看 <strong><a href="-ndiskd-pendingnbls.md" data-raw-source="[!ndiskd.pendingnbls](-ndiskd-pendingnbls.md)">！ ndiskd. pendingnbls</a></strong> 以查看此驱动程序上仍处于挂起状态的任何 nbl。</p></td>
 <td align="left"><p>检测到泄漏的位置。 可能的值：</p>
 <ul>
 <li><p>0x01： NBL 跟踪器检测到泄漏。 当前正在取消注册或取消绑定的驱动程序是最可能的原因。 查看 bugchecking 线程的调用堆栈。 驱动程序在仍保持活动 Nbl 时不能取消绑定或取消注册。</p></li>

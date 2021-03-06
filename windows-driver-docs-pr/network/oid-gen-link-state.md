@@ -4,12 +4,12 @@ description: 作为查询，NDIS 和过量驱动程序使用 OID_GEN_LINK_STATE 
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_LINK_STATE 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 99f76f8a01856f9195a1c9d4c05669b7493688b5
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 1facd6611d294605ffe2409fecbeaf07dad7ce79
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96827563"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102249083"
 ---
 # <a name="oid_gen_link_state"></a>OID \_ 生成 \_ 链接 \_ 状态
 
@@ -43,7 +43,7 @@ ms.locfileid: "96827563"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>标题</p></td>
 <td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
@@ -56,7 +56,7 @@ ms.locfileid: "96827563"
 
 [**NDIS \_ 微型端口 \_ 适配器 \_ 常规 \_ 属性**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)
 
-[**NDIS \_ 对象 \_ 标头**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_object_header)
+[**NDIS \_ 对象 \_ 标头**](/windows-hardware/drivers/ddi/objectheader/ns-objectheader-ndis_object_header)
 
 [**NdisMSetMiniportAttributes**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)
 

@@ -4,19 +4,19 @@ description: 过量驱动程序或用户模式应用程序发出对象标识符 
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_NIC_SWITCH_ENUM_VPORTS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 059828093b5bdcf52f86c9ba4181a955643b42eb
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: c12e035a60de33c9b81fd1dc2ac679b46903cee5
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96795917"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248541"
 ---
 # <a name="oid_nic_switch_enum_vports"></a>OID \_ NIC \_ 交换机 \_ 枚举 \_ VPORTS
 
 
 过量的驱动程序或用户模式应用程序会发出对象标识符 (oid NIC 交换机枚举 VPORTS 的 OID) 方法请求 \_ \_ \_ \_ ，以获取一个数组。 数组中的每个元素指定已在网络适配器的 NIC 交换机上创建 (VPort) 的虚拟端口属性。
 
-成功从此 OID 查询请求返回后， [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向缓冲区的指针，该缓冲区包含以下内容：
+成功从此 OID 查询请求返回后， [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员包含指向缓冲区的指针，该缓冲区包含以下内容：
 
 -   用于定义数组中的元素数的 [**NDIS \_ NIC \_ 交换机 \_ VPORT \_ INFO \_ 数组**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_info_array) 结构。
 
@@ -33,13 +33,13 @@ ms.locfileid: "96795917"
 
 在驱动程序或应用程序发出 OID 请求之前，它必须初始化与请求一起传递的 [**NDIS \_ NIC \_ 交换机 \_ VPORT \_ 信息 \_ 数组**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_info_array) 结构。 当初始化 **NDIS \_ NIC \_ 交换机 \_ VPORT \_ INFO \_ 数组** 结构时，驱动程序或应用程序必须遵循以下准则：
 
--   如果在 \_ \_ \_ \_ \_ \_ Flags 成员中设置了特定交换机标志上的 NDIS NIC 交换机 VPORT INFO ARRAY ENUM \_ \_ ，则 \_ 会为指定 NIC 交换机上创建的所有 VPorts 返回信息。 **Flags** NIC 交换机由该结构的 **SwitchId** 成员指定。
+-   如果在 \_ \_ \_ \_ \_ \_ Flags 成员中设置了特定交换机标志上的 NDIS NIC 交换机 VPORT INFO ARRAY ENUM \_ \_ ，则 \_ 会为指定 NIC 交换机上创建的所有 VPorts 返回信息。  NIC 交换机由该结构的 **SwitchId** 成员指定。
 
     **注意**  从 Windows Server 2012 开始，SR-IOV 接口仅支持网络适配器上的默认 NIC 交换机。 不管 **flags** 成员中设置了哪些标志，都必须将 **SwitchId** 成员设置为 NDIS \_ 默认 \_ 交换机 \_ ID。
 
      
 
--   如果在 \_ \_ \_ \_ \_ Flags 成员中设置了特定函数标志上的 "NDIS NIC 交换机 VPORT 信息数组 \_ 枚举"，则 \_ \_ \_ 会为附加到指定 PCI Express (PCIe) 物理函数 (PF) 或虚拟函数 (网络适配器上的虚拟功能) 虚拟功能的所有 VPorts 返回信息。 **Flags** PF 或 VF 由该结构的 **AttachedFunctionId** 成员指定。
+-   如果在 \_ \_ \_ \_ \_ Flags 成员中设置了特定函数标志上的 "NDIS NIC 交换机 VPORT 信息数组 \_ 枚举"，则 \_ \_ \_ 会为附加到指定 PCI Express (PCIe) 物理函数 (PF) 或虚拟函数 (网络适配器上的虚拟功能) 虚拟功能的所有 VPorts 返回信息。  PF 或 VF 由该结构的 **AttachedFunctionId** 成员指定。
 
     如果将 **AttachedFunctionId** 成员设置为 NDIS \_ PF \_ 函数 \_ ID，则会为所有 VPorts （包括默认 VPort）返回连接到网络适配器的 PF 的信息。 如果 **AttachedFunctionId** 成员设置为有效的 vf 标识符，则会将所有 VPorts 的信息返回给指定的 vf。
 
@@ -83,7 +83,7 @@ NDIS 处理对 \_ \_ \_ 微型端口驱动程序的 oid NIC 交换机枚举 \_ V
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>信息缓冲区太短。 NDIS 设置 <strong>数据。METHOD_INFORMATION。</strong> 将 <a href="/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a> 结构中的成员 BytesNeeded 为所需的最小缓冲区大小。</p></td>
+<td><p>信息缓冲区太短。 NDIS 设置 <strong>数据。METHOD_INFORMATION。</strong> 将 <a href="/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a> 结构中的成员 BytesNeeded 为所需的最小缓冲区大小。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_FAILURE</p></td>
@@ -104,11 +104,11 @@ NDIS 处理对 \_ \_ \_ 微型端口驱动程序的 oid NIC 交换机枚举 \_ V
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 NDIS 6.30 和更高版本中受支持。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>标题</p></td>
 <td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
@@ -122,7 +122,7 @@ NDIS 处理对 \_ \_ \_ 微型端口驱动程序的 oid NIC 交换机枚举 \_ V
 
 [**NDIS \_ NIC \_ 交换机 \_ VPORT \_ 信息 \_ 阵列**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_info_array)
 
-[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)
 
 [OID \_ NIC \_ 交换机 \_ 创建 \_ 开关](oid-nic-switch-create-switch.md)
 

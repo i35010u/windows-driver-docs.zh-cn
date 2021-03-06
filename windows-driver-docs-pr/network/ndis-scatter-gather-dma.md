@@ -10,12 +10,12 @@ keywords:
 - 网络接口卡 WDK 网络，s
 ms.date: 06/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: cb645282ddd34159308035c27d06b01197a9a95c
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 0e2267f84ca7c0c0f4f9274274646f845cae2e5d
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96801571"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248943"
 ---
 # <a name="ndis-scattergather-dma"></a>NDIS 分散/聚合 DMA
 
@@ -74,12 +74,12 @@ NDIS 微型端口驱动程序从其 [*MiniportHaltEx*](/windows-hardware/drivers
 
 ## <a name="allocating-and-freeing-scattergather-lists"></a>分配和释放散点/收集列表
 
-NDIS 微型端口驱动程序在其 [*MiniportSendNetBufferLists*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_send_net_buffer_lists)函数中调用 [**NdisMAllocateNetBufferSGList**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismallocatenetbuffersglist)函数。 微型端口驱动程序对每个必须映射的 [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)结构调用一次 **NdisMAllocateNetBufferSGList** 。 资源变为可用且 HAL 列表准备就绪后，NDIS 将调用驱动程序的 [*MiniportProcessSGList*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_process_sg_list) 函数。 在微型端口驱动程序调用 **NdisMAllocateNetBufferSGList** 之前或之后，NDIS 可以调用 *MiniportProcessSGList* 。
+NDIS 微型端口驱动程序在其 [*MiniportSendNetBufferLists*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_send_net_buffer_lists)函数中调用 [**NdisMAllocateNetBufferSGList**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismallocatenetbuffersglist)函数。 微型端口驱动程序对每个必须映射的 [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer)结构调用一次 **NdisMAllocateNetBufferSGList** 。 资源变为可用且 HAL 列表准备就绪后，NDIS 将调用驱动程序的 [*MiniportProcessSGList*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_process_sg_list) 函数。 在微型端口驱动程序调用 **NdisMAllocateNetBufferSGList** 之前或之后，NDIS 可以调用 *MiniportProcessSGList* 。
 
-若要提高系统性能，则会从在 **CurrentMdl** 成员的关联 [**网络 \_ 缓冲区 \_ 数据**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_data) 结构中指定的 MDL 开头开始，生成分散/聚集列表。 SG 列表中网络数据的开始值与 SG 列表开始处的偏移量是在关联的 **网络 \_ 缓冲区 \_ 数据** 结构的 **CurrentMdlOffset** 成员中指定的值。
+若要提高系统性能，则会从在 **CurrentMdl** 成员的关联 [**网络 \_ 缓冲区 \_ 数据**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_data) 结构中指定的 MDL 开头开始，生成分散/聚集列表。 SG 列表中网络数据的开始值与 SG 列表开始处的偏移量是在关联的 **网络 \_ 缓冲区 \_ 数据** 结构的 **CurrentMdlOffset** 成员中指定的值。
 
 在为发送完成的中断处理 DPC 并在微型端口驱动程序不再需要 SG 列表的情况下，微型端口驱动程序应调用 [**NdisMFreeNetBufferSGList**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismfreenetbuffersglist) 函数以释放 SG 列表。
 
-**注意** 当驱动程序或硬件仍在访问由与散点/集合列表关联的 [**NET \_ BUFFER**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)结构所描述的内存时，请勿调用 [**NdisMFreeNetBufferSGList**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismfreenetbuffersglist) 。 
+**注意** 当驱动程序或硬件仍在访问由与散点/集合列表关联的 [**NET \_ BUFFER**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer)结构所描述的内存时，请勿调用 [**NdisMFreeNetBufferSGList**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismfreenetbuffersglist) 。 
 
 在访问接收的数据之前，微型端口驱动程序必须调用 [**NdisMFreeNetBufferSGList**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismfreenetbuffersglist) 来刷新内存缓存。

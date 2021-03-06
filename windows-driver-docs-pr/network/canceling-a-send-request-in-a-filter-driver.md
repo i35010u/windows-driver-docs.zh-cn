@@ -5,12 +5,12 @@ keywords:
 - 取消发送操作 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ba5deecc4e44b28eb44a10109c149789d4089180
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: c268686f85c618d278cc9ad100370decfb6270ad
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96839045"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248180"
 ---
 # <a name="canceling-a-send-request-in-a-filter-driver"></a>取消筛选器驱动程序中的发送请求
 
@@ -26,7 +26,7 @@ ms.locfileid: "96839045"
 
 ![说明取消由筛选器驱动程序发起的发送请求的关系图](images/filtercancelsend.png)
 
-筛选器驱动程序为为发送操作创建的每个 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构调用 [**NDIS \_ 设置 \_ 网络 \_ 缓冲区 \_ 列表 \_ 取消 \_ ID**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndis_set_net_buffer_list_cancel_id)宏。 NDIS \_ 设置 \_ NET \_ BUFFER \_ LIST \_ CANCEL \_ ID 函数使用取消标识符标记指定数据。
+筛选器驱动程序为为发送操作创建的每个 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list)结构调用 [**NDIS \_ 设置 \_ 网络 \_ 缓冲区 \_ 列表 \_ 取消 \_ ID**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndis_set_net_buffer_list_cancel_id)宏。 NDIS \_ 设置 \_ NET \_ BUFFER \_ LIST \_ CANCEL \_ ID 函数使用取消标识符标记指定数据。
 
 在为网络数据分配取消 Id 之前，筛选器驱动程序必须调用 [**NdisGeneratePartialCancelId**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisgeneratepartialcancelid) 以获取它分配的每个取消 ID 的高序位字节。 这可确保驱动程序不会复制由系统中的其他驱动程序分配的取消 Id。 驱动程序通常从 [**DriverEntry**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)例程调用 **NdisGeneratePartialCancelId** 一次。 但是，驱动程序可以多次调用 **NdisGeneratePartialCancelId** 来获取多个部分取消标识符。
 
@@ -46,7 +46,7 @@ NDIS 调用底层驱动程序的取消发送功能。 中止挂起的传输后�
 
 过量驱动程序调用取消发送函数 ( [**NdisFCancelSendNetBufferLists**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfcancelsendnetbufferlists) 或 [**NdisCancelSendNetBufferLists**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscancelsendnetbufferlists)) 取消未完成的发送请求。 在发出发送请求之前，这些过量驱动程序必须使用取消 ID 标记发送数据。
 
-NDIS 调用筛选器驱动程序的 [*FilterCancelSendNetBufferLists*](/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_cancel_send_net_buffer_lists) 函数来取消使用指定的取消标识符标记的所有 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构的传输。
+NDIS 调用筛选器驱动程序的 [*FilterCancelSendNetBufferLists*](/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_cancel_send_net_buffer_lists) 函数来取消使用指定的取消标识符标记的所有 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list) 结构的传输。
 
 *FilterCancelSendNetBufferLists* 执行以下操作：
 
@@ -54,7 +54,7 @@ NDIS 调用筛选器驱动程序的 [*FilterCancelSendNetBufferLists*](/windows-
 
 2.  从发送队列中删除 (取消) 所有网络 \_ 缓冲区 \_ 列表结构的取消，这些结构的取消标识符与指定的取消标识符相匹配。
 
-3.  为所有 [**NdisFSendNetBufferListsComplete**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfsendnetbufferlistscomplete)未链接的网络 \_ 缓冲区列表结构调用 NdisFSendNetBufferListsComplete 函数 \_ 以返回结构。 筛选器驱动程序将网络缓冲区列表结构的 "状态" 字段设置 \_ \_ 为 "NDIS \_ 状态发送已中止" \_ \_ 。
+3.  为所有[](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfsendnetbufferlistscomplete)未链接的网络 \_ 缓冲区列表结构调用 NdisFSendNetBufferListsComplete 函数 \_ 以返回结构。 筛选器驱动程序将网络缓冲区列表结构的 "状态" 字段设置 \_ \_ 为 "NDIS \_ 状态发送已中止" \_ \_ 。
 
 4.  调用 **NdisFCancelSendNetBufferLists** 函数以将取消发送请求传递到底层驱动程序。 筛选器驱动程序将传递从过量驱动程序收到的取消标识符。 取消操作将按筛选器驱动程序发起的取消发送操作那样继续。
 

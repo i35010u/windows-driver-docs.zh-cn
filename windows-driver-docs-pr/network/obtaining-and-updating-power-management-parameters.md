@@ -3,12 +3,12 @@ title: 获取和更新电源管理参数
 description: 获取和更新电源管理参数
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b84dc0ea76d22a60e438b3f02ed98f2739e6d49
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: f639e2e50277fbd53dc2b4c4cc759c0150f19c1d
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96832161"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248079"
 ---
 # <a name="obtaining-and-updating-power-management-parameters"></a>获取和更新电源管理参数
 
@@ -16,9 +16,9 @@ ms.locfileid: "96832161"
 
 
 
-协议驱动程序可以使用 [oid \_ PM \_ 参数](./oid-pm-parameters.md) OID 来查询当前启用的网络适配器的硬件功能。 成功从查询返回后， [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ PM \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_parameters)结构的指针。
+协议驱动程序可以使用 [oid \_ PM \_ 参数](./oid-pm-parameters.md) OID 来查询当前启用的网络适配器的硬件功能。 成功从查询返回后， [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ PM \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_parameters)结构的指针。
 
-协议驱动程序还可以将 OID \_ PM \_ 参数用作集请求，以启用或禁用网络适配器的当前硬件功能。 协议驱动程序在 \_ \_ ndis **InformationBuffer** \_ OID 请求结构的 InformationBuffer 成员中提供了一个指向 ndis PM 参数结构的指针 \_ 。
+协议驱动程序还可以将 OID \_ PM \_ 参数用作集请求，以启用或禁用网络适配器的当前硬件功能。 协议驱动程序在 \_ \_ ndis  \_ OID 请求结构的 InformationBuffer 成员中提供了一个指向 ndis PM 参数结构的指针 \_ 。
 
 **注意**  协议驱动器无法禁用由其他协议驱动程序启用的功能。 如果没有任何协议驱动程序启用功能，则不会使用该功能。
 

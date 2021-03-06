@@ -7,12 +7,12 @@ keywords:
 - 哈希 WDK RSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d1373a360f9aeb95d9a202c529c56ee09bb1f13f
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 1faebb9ffa56fcbef1e8832528deeeee27b9c248
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96839221"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248462"
 ---
 # <a name="rss-hashing-functions"></a>RSS 哈希函数
 
@@ -33,7 +33,7 @@ NIC 或其微型端口驱动程序使用 RSS 哈希函数来计算 RSS 哈希值
 >[!NOTE]
 > 目前， **NdisHashFunctionToeplitz** 是可用于微型端口驱动程序的唯一哈希函数。 其他哈希函数是为 NDIS 预留的。 
 
-微型端口驱动程序应标识在驱动程序指示接收的数据之前，它在每个 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构中所使用的哈希函数和值。 有关详细信息，请参阅 [指示 RSS 接收数据](indicating-rss-receive-data.md)。
+微型端口驱动程序应标识在驱动程序指示接收的数据之前，它在每个 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list) 结构中所使用的哈希函数和值。 有关详细信息，请参阅 [指示 RSS 接收数据](indicating-rss-receive-data.md)。
 
 ## <a name="examples"></a>示例
 

@@ -3,12 +3,12 @@ title: 使用数据包标记
 description: 使用数据包标记
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c25ee200d4bf6c101a89464fc9c266462d2dfb4
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 3c01dd582b402c622c28edc2790d655dcc1ea130
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96806127"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248417"
 ---
 # <a name="using-packet-tagging"></a>使用数据包标记
 
@@ -17,7 +17,7 @@ ms.locfileid: "96806127"
 
 若要使用数据包标记，标注驱动程序必须实现 [*FWPS \_ net \_ buffer \_ List \_ notify \_ FN0*](/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_net_buffer_list_notify_fn0) 或 [*FWPS \_ net \_ buffer \_ list \_ notify \_ FN1*](/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_net_buffer_list_notify_fn1) 回调函数。 此函数将接收标记数据包的所有状态通知。 在标记各个数据包之前，标注驱动程序必须通过调用 [**FwpsNetBufferListGetTagForContext0**](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsnetbufferlistgettagforcontext0)来获取特殊的上下文标记。 标注驱动程序可以对部分或全部标记的数据包使用相同的上下文标记。 例如，标注驱动程序可以使用不同的上下文标记来区分标记数据包的类型。
 
-标注驱动程序使用 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构来标记数据包。 标注驱动程序调用 [**FwpsNetBufferListAssociateContext0**](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsnetbufferlistassociatecontext0) 来标记各个 **网络 \_ 缓冲区 \_ 列表** 结构。 标注驱动程序与数据包关联的上下文是任意未签名的64位值。 触发事件时， [*FWPS \_ net \_ buffer \_ List \_ 通知 \_ FN0*](/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_net_buffer_list_notify_fn0) 或 [*FWPS \_ net \_ buffer \_ list \_ 通知 \_ FN1*](/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_net_buffer_list_notify_fn1) 回调将上下文作为输入参数传递，以使标注驱动程序能够识别单个标记的数据包。 筛选引擎不使用或计算上下文。 它仅传递到回调以供标注驱动程序使用。
+标注驱动程序使用 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list) 结构来标记数据包。 标注驱动程序调用 [**FwpsNetBufferListAssociateContext0**](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsnetbufferlistassociatecontext0) 来标记各个 **网络 \_ 缓冲区 \_ 列表** 结构。 标注驱动程序与数据包关联的上下文是任意未签名的64位值。 触发事件时， [*FWPS \_ net \_ buffer \_ List \_ 通知 \_ FN0*](/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_net_buffer_list_notify_fn0) 或 [*FWPS \_ net \_ buffer \_ list \_ 通知 \_ FN1*](/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_net_buffer_list_notify_fn1) 回调将上下文作为输入参数传递，以使标注驱动程序能够识别单个标记的数据包。 筛选引擎不使用或计算上下文。 它仅传递到回调以供标注驱动程序使用。
 
 当数据包离开堆栈时，上下文会自动从标记的数据包中删除。 但是，如果数据包从不进入 TCP/IP 堆栈（例如，在使用 NDIS 筛选器驱动程序的情况下），则需要通过调用 [**FwpsNetBufferListRemoveContext0**](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsnetbufferlistremovecontext0) 并将 *netBufferList* 参数设置为 **NULL**，手动删除上下文。
 
@@ -48,7 +48,7 @@ ms.locfileid: "96806127"
 
 [**FwpsNetBufferListRetrieveContext0**](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsnetbufferlistretrievecontext0)
 
-[**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)
+[**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list)
 
 [NDIS 筛选器驱动程序](./roadmap-for-developing-ndis-filter-drivers.md)
 

@@ -3,12 +3,12 @@ title: 可扩展交换机数据路径的数据包管理指导原则
 description: 可扩展交换机数据路径的数据包管理指导原则
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 73953f13ecca31031ca69694ed8989e615769414
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: cc6db2e40fb8dc12dc56dbd7968c61fdce5743b0
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96815915"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248991"
 ---
 # <a name="packet-management-guidelines-for-the-extensible-switch-data-path"></a>可扩展交换机数据路径的数据包管理指导原则
 
@@ -31,7 +31,7 @@ ms.locfileid: "96815915"
 
 -   在可扩展交换机入口数据路径上，筛选和转发扩展可以执行以下操作：
 
-    -   筛选扩展可以筛选数据包流量，并仅强制使用自定义端口或交换机策略来通过可扩展交换机进行数据包传送。 当扩展筛选入站数据路径中的数据包时，它只能基于源端口和数据包来源的网络适配器连接应用筛选规则。 此信息存储在数据包的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构的 OOB 数据中，可以通过使用 [**网络 \_ 缓冲区 \_ 列表 \_ 开关 \_ 转发 \_ 详细信息**](/windows-hardware/drivers/ddi/ndis/nf-ndis-net_buffer_list_switch_forwarding_detail) 宏获得。
+    -   筛选扩展可以筛选数据包流量，并仅强制使用自定义端口或交换机策略来通过可扩展交换机进行数据包传送。 当扩展筛选入站数据路径中的数据包时，它只能基于源端口和数据包来源的网络适配器连接应用筛选规则。 此信息存储在数据包的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list) 结构的 OOB 数据中，可以通过使用 [**网络 \_ 缓冲区 \_ 列表 \_ 开关 \_ 转发 \_ 详细信息**](/windows-hardware/drivers/ddi/ndis/nf-ndis-net_buffer_list_switch_forwarding_detail) 宏获得。
 
         **注意**  在入口数据路径上获取的数据包不包含目标端口。 只能对在出口数据路径上获取的数据包进行基于目标端口的筛选包的筛选。
 
@@ -43,7 +43,7 @@ ms.locfileid: "96815915"
 
     -   筛选扩展可以筛选数据包流量，并仅强制使用自定义端口或交换机策略来通过可扩展交换机进行数据包传送。 当筛选扩展筛选出口数据路径中的数据包时，它只能基于数据包的目标端口应用筛选规则。
 
-        目标端口数据存储在数据包的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构的 OOB 数据中。 扩展通过调用 [*GetNetBufferListDestinations*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_get_net_buffer_list_destinations) 函数获取此信息。
+        目标端口数据存储在数据包的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list) 结构的 OOB 数据中。 扩展通过调用 [*GetNetBufferListDestinations*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_get_net_buffer_list_destinations) 函数获取此信息。
 
     -   转发扩展可以筛选数据包流量，并强制实施自定义和标准端口，或者通过可扩展交换机进行数据包传递的交换机策略。 当转发扩展筛选出口数据路径中的数据包时，它可以根据数据包的源或目标端口应用筛选规则。
 
@@ -75,11 +75,11 @@ ms.locfileid: "96815915"
 
 -   在标准 NDIS 数据路径中，非可扩展交换机 OOB 数据通常具有不同的格式，具体取决于数据包是否被指示为发送或接收。 例如， [**NDIS \_ IPSEC \_ 卸载 \_ V2 \_ 标头 \_ 网络 \_ 缓冲区 \_ 列表 \_ 信息**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_ipsec_offload_v2_header_net_buffer_list_info) OOB 数据是发送和接收特定结构的联合。
 
-    在可扩展交换机数据路径中，所有数据包都将通过扩展驱动程序堆栈，同时作为发送和接收。 因此，数据包的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构内的非可扩展 switch OOB 数据将在流通过驱动程序堆栈的整个持续时间内通过发送或接收格式进行。
+    在可扩展交换机数据路径中，所有数据包都将通过扩展驱动程序堆栈，同时作为发送和接收。 因此，数据包的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list) 结构内的非可扩展 switch OOB 数据将在流通过驱动程序堆栈的整个持续时间内通过发送或接收格式进行。
 
     此 OOB 数据的格式取决于源可扩展交换机端口，数据包从该端口到达可扩展交换机。 如果源端口已连接到外部网络适配器，则非可扩展交换机 OOB 数据将采用接收格式。 对于其他端口，此 OOB 数据将为发送格式。
 
-    **注意**  如果扩展克隆了数据包的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构，则在添加或修改 oob 数据时，必须考虑不可扩展的 oob 数据。 此扩展必须调用 [*CopyNetBufferListInfo*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_copy_net_buffer_list_info) ，将与可扩展交换机数据路径关联的 OOB 数据从源数据包复制到克隆的数据包。 将数据复制到克隆的数据包时，此函数将维护 OOB 发送或接收格式。
+    **注意**  如果扩展克隆了数据包的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list) 结构，则在添加或修改 oob 数据时，必须考虑不可扩展的 oob 数据。 此扩展必须调用 [*CopyNetBufferListInfo*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_copy_net_buffer_list_info) ，将与可扩展交换机数据路径关联的 OOB 数据从源数据包复制到克隆的数据包。 将数据复制到克隆的数据包时，此函数将维护 OOB 发送或接收格式。
 
      
 

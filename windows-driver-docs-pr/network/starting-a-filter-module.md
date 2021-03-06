@@ -8,12 +8,12 @@ keywords:
 - NDIS 筛选器驱动程序 WDK，启动筛选器模块
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cee145b08587c3abefd38cae123a9e3f94c8b24
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 55e2af0ee60c93db9d0fa8b2df270667147fa793
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96801269"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248465"
 ---
 # <a name="starting-a-filter-module"></a>启动筛选器模块
 
@@ -39,7 +39,7 @@ NDIS 作为即插即用操作的一部分启动筛选器模块以重新启动驱
 
 - 不应启动任何新的接收指示。
 
-- 应通过调用 [**NdisFSendNetBufferListsComplete**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfsendnetbufferlistscomplete)函数立即拒绝对其 [*FilterSendNetBufferLists*](/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_send_net_buffer_lists)函数发出的所有新发送请求。 它应将每个 [网络 \_ 缓冲区 \_ 列表](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 中的完整状态设置为 "已 \_ 暂停 NDIS 状态" \_ 。
+- 应通过调用 [**NdisFSendNetBufferListsComplete**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfsendnetbufferlistscomplete)函数立即拒绝对其 [*FilterSendNetBufferLists*](/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_send_net_buffer_lists)函数发出的所有新发送请求。 它应将每个 [网络 \_ 缓冲区 \_ 列表](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list) 中的完整状态设置为 "已 \_ 暂停 NDIS 状态" \_ 。
 
 - 可以通过 [**NdisFIndicateStatus**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfindicatestatus) 函数提供状态指示。
 

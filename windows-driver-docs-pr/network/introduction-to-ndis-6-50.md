@@ -3,12 +3,12 @@ title: NDIS 6.50 简介
 description: 本部分介绍了 NDIS 6.50，并介绍了 NDIS 6.40 中的更改。 NDIS 6.50 包含在 Windows 10 版本1507及更高版本中。
 ms.date: 09/30/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 2bc1074e5d780c2f7b636e9caa3bdcb069fd4ec1
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 850bae6624a4725003c4bddccb9e482a41569047
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96786127"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248759"
 ---
 # <a name="introduction-to-ndis-650"></a>NDIS 6.50 简介
 
@@ -78,8 +78,8 @@ NDIS 6.50 驱动程序必须遵循在 [实现 NDIS 6.30 驱动程序](implementi
 以下数据结构已在 NDIS 6.50 中更新。
 
 - [NET_PNP_EVENT_NOTIFICATION](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_pnp_event_notification)
-- [NDIS_OID_REQUEST](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
-- [NDIS_NET_BUFFER_LIST_INFO](/windows-hardware/drivers/ddi/ndis/ne-ndis-_ndis_net_buffer_list_info)
+- [NDIS_OID_REQUEST](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)
+- [NDIS_NET_BUFFER_LIST_INFO](/windows-hardware/drivers/ddi/nblinfo/ne-nblinfo-ndis_net_buffer_list_info)
 - [NdisMGetDeviceProperty](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismgetdeviceproperty)
 - [NDIS_SWITCH_OPTIONAL_HANDLERS](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_optional_handlers)
 - [NDIS_SWITCH_NIC_SAVE_STATE](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_save_state)

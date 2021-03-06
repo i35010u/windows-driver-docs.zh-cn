@@ -3,12 +3,12 @@ title: Hyper-v 可扩展交换机混合转发
 description: 本部分介绍如何使用 Hyper-v 可扩展交换机进行混合转发
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 23142c6d25137fa3df1b9ab8ebd9905eab8daebf
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 4cc3fffb494ed211c2a3050b8aa19d342c7ced21
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96782253"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248179"
 ---
 # <a name="hybrid-forwarding"></a>混合转发
 
@@ -25,9 +25,9 @@ ms.locfileid: "96782253"
 
 ## <a name="flow-of-nvgre-and-non-nvgre-packets-through-the-switch"></a>通过交换机的 NVGRE 和非 NVGRE 数据包流
 
-在入口数据路径中，在捕获和筛选扩展之后但在转发扩展之前，如果数据包为 NVGRE 数据包，则可扩展交换机会在 [**NDIS \_ 交换机 \_ 转发 \_ 详细信息 \_ 网络 \_ 缓冲区 \_ 列表 \_ 信息**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_detail_net_buffer_list_info)结构中为数据包设置 **NativeForwardingRequired** 标志。 此结构包含在数据包的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构的 **NetBufferListInfo** 成员中。
+在入口数据路径中，在捕获和筛选扩展之后但在转发扩展之前，如果数据包为 NVGRE 数据包，则可扩展交换机会在 [**NDIS \_ 交换机 \_ 转发 \_ 详细信息 \_ 网络 \_ 缓冲区 \_ 列表 \_ 信息**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_detail_net_buffer_list_info)结构中为数据包设置 **NativeForwardingRequired** 标志。 此结构包含在数据包的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list)结构的 **NetBufferListInfo** 成员中。
 
-**注意** [**NET \_ BUFFER \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)的 **NetBufferListInfo** 成员通常称为数据包的 "带外 (OOB) 数据"。
+**注意** [**NET \_ BUFFER \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list)的 **NetBufferListInfo** 成员通常称为数据包的 "带外 (OOB) 数据"。
 
 如果在数据包的 OOB 数据中设置了 **NativeForwardingRequired** 标志，则数据包为 NVGRE 数据包。 如果未设置，则数据包为非 NVGRE 数据包。
 
@@ -45,7 +45,7 @@ NVGRE 和非 NVGRE 数据包的处理方式如下：
 
 ## <a name="support-for-third-party-network-virtualization"></a>支持第三方网络虚拟化
 
-可以在 VM 网络适配器端口上将 **VirtualSubnetId** 配置为外部虚拟子网。 此功能已添加到启用转发扩展以提供第三方网络虚拟化解决方案。 在入口中，Hyper-v 可扩展交换机不会在这些数据包的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构中设置 **NativeForwardingRequired** 标志。 转发扩展之后，可以根据需要修改数据包标头。 必须克隆正在修改的数据包，并将其 **ParentNetBufferList** 指针设置为原始 **网络 \_ 缓冲区 \_ 列表**。  (参阅 [克隆数据包流量](cloning-or-duplicating-packet-traffic.md)。 ) 
+可以在 VM 网络适配器端口上将 **VirtualSubnetId** 配置为外部虚拟子网。 此功能已添加到启用转发扩展以提供第三方网络虚拟化解决方案。 在入口中，Hyper-v 可扩展交换机不会在这些数据包的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list)结构中设置 **NativeForwardingRequired** 标志。 转发扩展之后，可以根据需要修改数据包标头。 必须克隆正在修改的数据包，并将其 **ParentNetBufferList** 指针设置为原始 **网络 \_ 缓冲区 \_ 列表**。  (参阅 [克隆数据包流量](cloning-or-duplicating-packet-traffic.md)。 ) 
 
 ## <a name="related-topics"></a>相关主题
 

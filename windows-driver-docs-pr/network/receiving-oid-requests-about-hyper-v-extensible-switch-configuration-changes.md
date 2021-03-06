@@ -3,12 +3,12 @@ title: 接收 Hyper-v 可扩展交换机配置更改 OID 请求
 description: 接收有关 Hyper-V 可扩展交换机配置更改的 OID 请求
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 481758612ad9a80c006bf77ce28fdde231e58059
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 0f464117c1bb7ac1105b548cf6c48e67fb1e4e20
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96782181"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102247817"
 ---
 # <a name="receiving-oid-requests-about-hyper-v-extensible-switch-configuration-changes"></a>接收有关 Hyper-V 可扩展交换机配置更改的 OID 请求
 
@@ -82,7 +82,7 @@ ms.locfileid: "96782181"
 
 -   如果扩展不能完成 OID 请求，则必须调用 [**NdisFOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequest) ，以将请求转发到可扩展交换机驱动程序堆栈。
 
-    **注意**  驱动程序调用 [**NdisFOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequest)之前，驱动程序必须调用 [**NdisAllocateCloneOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatecloneoidrequest) 来分配 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request) 结构，并将请求信息传输到新的结构。
+    **注意**  驱动程序调用 [**NdisFOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequest)之前，驱动程序必须调用 [**NdisAllocateCloneOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatecloneoidrequest) 来分配 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request) 结构，并将请求信息传输到新的结构。
 
     调用 [*FilterOidRequestComplete*](/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_oid_request_complete) 函数时，扩展应监视 OID 请求的完成结果。 这允许该扩展来确定可扩展交换机组件上的操作是已成功完成还是由基础扩展否决。
 

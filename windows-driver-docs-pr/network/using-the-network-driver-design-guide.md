@@ -5,12 +5,12 @@ keywords:
 - 网络驱动程序 WDK，文档
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 65fef66bd89cf47fc828352e32d6d49015c7fbd3
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: e4d95f61775c9a6812d6ff9b76d47a6269b8ebee
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96837649"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248369"
 ---
 # <a name="navigating-the-network-driver-design-guide"></a>在网络驱动程序设计指南中导航
 
@@ -38,7 +38,7 @@ ms.locfileid: "96837649"
 
     有关 NDIS 6.1 的详细信息，请参阅 [ndis 6.1 简介](introduction-to-ndis-6-1.md)。
 
--   NDIS 6.0，在 Windows Vista 和更高版本的 Windows 上受支持。 NDIS 6.0 包括对筛选器驱动程序的支持，以及以前的 NDIS 版本未提供的许多其他服务。 NDIS 6.0 包括对驱动程序初始化和网络数据管理的重要更新，其中包括在运行时对驱动程序重新配置所需的支持和用于处理网络数据包数据的 [**NET \_ BUFFER**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer) 体系结构。 有关支持运行时重新配置的详细信息，请参阅 [驱动程序堆栈管理](driver-stack-management.md)。 有关如何在 NDIS 6.0 中处理网络数据包数据的详细信息，请参阅 [NET \_ BUFFER 体系结构](net-buffer-architecture.md)。
+-   NDIS 6.0，在 Windows Vista 和更高版本的 Windows 上受支持。 NDIS 6.0 包括对筛选器驱动程序的支持，以及以前的 NDIS 版本未提供的许多其他服务。 NDIS 6.0 包括对驱动程序初始化和网络数据管理的重要更新，其中包括在运行时对驱动程序重新配置所需的支持和用于处理网络数据包数据的 [**NET \_ BUFFER**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer) 体系结构。 有关支持运行时重新配置的详细信息，请参阅 [驱动程序堆栈管理](driver-stack-management.md)。 有关如何在 NDIS 6.0 中处理网络数据包数据的详细信息，请参阅 [NET \_ BUFFER 体系结构](net-buffer-architecture.md)。
 
     有关 NDIS 6.0 的详细信息，请参阅 [ndis 6.0 简介](introduction-to-ndis-6-0.md)。
 

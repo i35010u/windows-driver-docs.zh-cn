@@ -4,12 +4,12 @@ description: NDIS 发出对象标识符 (OID) 方法请求 OID_SRIOV_BAR_RESOURC
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_SRIOV_BAR_RESOURCES 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: df782d76b6eabf7e8777163e5a36429b6595d653
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: d7d6fc9085f0c31e5bc42a461b36fb1139d9f789
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96836333"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248809"
 ---
 # <a name="oid_sriov_bar_resources"></a>OID \_ SRIOV \_ BAR \_ 资源
 
@@ -18,7 +18,7 @@ NDIS 发出对象标识符 (oid) 方法请求 OID \_ SRIOV \_ BAR \_ 资源，�
 
 NDIS 向网络适配器的 PCIe 物理功能 (PF) 的微型端口驱动程序发出此 OID 方法请求。 对于支持单个根 i/o 虚拟化 (SR-IOV) 接口的 PF 小型端口驱动程序，需要此 OID 方法请求。
 
-[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向缓冲区的指针。 此缓冲区包含以下结构：
+[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员包含指向缓冲区的指针。 此缓冲区包含以下结构：
 
 -   用于指定 PF 微端口驱动程序返回其资源信息的 VF 和栏的 [**NDIS \_ SRIOV \_ BAR \_ 资源 \_ 信息**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_bar_resources_info) 结构。
 
@@ -39,7 +39,7 @@ NDIS 发出 OID SRIOV BAR 资源的 OID 方法请求， \_ \_ \_ 以获取分配
 
  
 
-当 PF 微型端口驱动程序接收到 OID 方法请求时，驱动程序将通过在 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员中设置 [**CM \_ 部分 \_ 资源 \_ 描述符**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_cm_partial_resource_descriptor)结构的格式，来返回指定条形图的资源。 驱动程序将 **CM \_ 部分 \_ 资源 \_ 描述符** 结构与与指定 VF 的栏相关联的系统硬件资源进行格式化。
+当 PF 微型端口驱动程序接收到 OID 方法请求时，驱动程序将通过在 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员中设置 [**CM \_ 部分 \_ 资源 \_ 描述符**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_cm_partial_resource_descriptor)结构的格式，来返回指定条形图的资源。 驱动程序将 **CM \_ 部分 \_ 资源 \_ 描述符** 结构与与指定 VF 的栏相关联的系统硬件资源进行格式化。
 
 **注意**  驱动程序必须为 **CmResourceTypeMemory** 的资源类型设置结构格式。
 
@@ -75,7 +75,7 @@ NDIS 发出 OID SRIOV BAR 资源的 OID 方法请求， \_ \_ \_ 以获取分配
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>信息缓冲区小于 (sizeof (<a href="/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_bar_resources_info" data-raw-source="[&lt;strong&gt;NDIS_SRIOV_BAR_RESOURCES_INFO&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_bar_resources_info)"><strong>NDIS_SRIOV_BAR_RESOURCES_INFO</strong></a>) + <a href="/windows-hardware/drivers/ddi/wdm/ns-wdm-_cm_partial_resource_descriptor" data-raw-source="[&lt;strong&gt;CM_PARTIAL_RESOURCE_DESCRIPTOR&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/ns-wdm-_cm_partial_resource_descriptor)"><strong>sizeof (CM_PARTIAL_RESOURCE_DESCRIPTOR) 。</strong></a> PF 微型端口驱动程序必须设置 <strong>数据。METHOD_INFORMATION。</strong> 将 <a href="/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a> 结构中的成员 BytesNeeded 为所需的最小缓冲区大小。</p></td>
+<td><p>信息缓冲区小于 (sizeof (<a href="/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_bar_resources_info" data-raw-source="[&lt;strong&gt;NDIS_SRIOV_BAR_RESOURCES_INFO&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_bar_resources_info)"><strong>NDIS_SRIOV_BAR_RESOURCES_INFO</strong></a>) + <a href="/windows-hardware/drivers/ddi/wdm/ns-wdm-_cm_partial_resource_descriptor" data-raw-source="[&lt;strong&gt;CM_PARTIAL_RESOURCE_DESCRIPTOR&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/ns-wdm-_cm_partial_resource_descriptor)"><strong>sizeof (CM_PARTIAL_RESOURCE_DESCRIPTOR) 。</strong></a> PF 微型端口驱动程序必须设置 <strong>数据。METHOD_INFORMATION。</strong> 将 <a href="/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a> 结构中的成员 BytesNeeded 为所需的最小缓冲区大小。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_FAILURE</p></td>
@@ -96,11 +96,11 @@ NDIS 发出 OID SRIOV BAR 资源的 OID 方法请求， \_ \_ \_ 以获取分配
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 NDIS 6.30 和更高版本中受支持。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>标题</p></td>
 <td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
@@ -112,7 +112,7 @@ NDIS 发出 OID SRIOV BAR 资源的 OID 方法请求， \_ \_ \_ 以获取分配
 ****
 [**CM \_ 部分 \_ 资源 \_ 说明符**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_cm_partial_resource_descriptor)
 
-[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)
 
 [**NDIS \_ SRIOV \_ BAR \_ 资源 \_ 信息**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_bar_resources_info)
 

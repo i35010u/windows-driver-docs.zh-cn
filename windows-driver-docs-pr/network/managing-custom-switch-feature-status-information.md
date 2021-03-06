@@ -3,12 +3,12 @@ title: 管理自定义交换机功能状态信息
 description: 管理自定义交换机功能状态信息
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 31a635659c37363256f80319bdbf835fbd2930be
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 727949da9f32bf8e6c75b763154ffa2700e95dc8
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96840307"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248009"
 ---
 # <a name="managing-custom-switch-feature-status-information"></a>管理自定义交换机功能状态信息
 
@@ -18,7 +18,7 @@ Hyper-v 可扩展交换机接口使用以下对象标识符 (OID) 来查询可�
 <a href="" id="oid-switch-feature-status-query"></a>[OID \_ 交换机 \_ 功能 \_ 状态 \_ 查询](./oid-switch-feature-status-query.md)  
 此 OID 方法请求由可扩展交换机的协议边缘发出，以获取指定开关属性的自定义功能状态信息。
 
-成功从此 OID 方法请求返回后， [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向缓冲区的指针。 此缓冲区包含以下数据：
+成功从此 OID 方法请求返回后， [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员包含指向缓冲区的指针。 此缓冲区包含以下数据：
 
 -   [**NDIS \_ 交换机 \_ 功能 \_ 状态 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_feature_status_parameters)结构，指定要返回的自定义功能状态信息。
 
@@ -36,7 +36,7 @@ Hyper-v 可扩展交换机接口使用以下对象标识符 (OID) 来查询可�
 
 -   如果扩展处理 OID 方法请求，则它必须返回与 [**NDIS \_ 开关 \_ 功能 \_ 状态 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_feature_status_parameters) 结构指定的参数匹配的功能状态信息。
 
-    如果功能状态缓冲区太小，则扩展必须对具有 NDIS \_ 状态无效长度的 OID 请求 \_ 失败 \_ 。 扩展必须设置 **数据。设置 \_ 信息。** 将 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request) 结构中的成员 BytesNeeded 为所需的最小缓冲区大小。
+    如果功能状态缓冲区太小，则扩展必须对具有 NDIS \_ 状态无效长度的 OID 请求 \_ 失败 \_ 。 扩展必须设置 **数据。设置 \_ 信息。** 将 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request) 结构中的成员 BytesNeeded 为所需的最小缓冲区大小。
 
     否则，扩展必须返回功能状态信息并完成具有 NDIS 状态成功的 OID 请求 \_ \_ 。
 

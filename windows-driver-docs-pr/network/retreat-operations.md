@@ -11,12 +11,12 @@ keywords:
 - 分配 MDLs
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b94748530dfd378fa75300b4fa33a033b2cb1e1a
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 7197a9077470a2bfc660cdae213290f020a40ef8
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96838553"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248461"
 ---
 # <a name="retreat-operations"></a>重新处理操作
 
@@ -24,13 +24,13 @@ ms.locfileid: "96838553"
 
 
 
-撤回操作可以增加 [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer) 结构中的已用数据空间的大小，也可以增加 \_ [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构中所有网络缓冲区结构的大小。
+撤回操作可以增加 [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer) 结构中的已用数据空间的大小，也可以增加 \_ [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list) 结构中所有网络缓冲区结构的大小。
 
 NDIS 提供以下撤回函数：
 
-[**NdisRetreatNetBufferDataStart**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisretreatnetbufferdatastart)
+[**NdisRetreatNetBufferDataStart**](/windows-hardware/drivers/ddi/nblapi/nf-nblapi-ndisretreatnetbufferdatastart)
 
-[**NdisRetreatNetBufferListDataStart**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisretreatnetbufferlistdatastart)
+[**NdisRetreatNetBufferListDataStart**](/windows-hardware/drivers/ddi/nblapi/nf-nblapi-ndisretreatnetbufferlistdatastart)
 
 撤回操作有时可以分配与网络缓冲区结构关联的 MDLs \_ 。 为提供分配 MDLs 的机制，驱动程序可以为 [**NetAllocateMdl**](/windows-hardware/drivers/ddi/ndis/nc-ndis-net_buffer_allocate_mdl_handler) 函数提供可选的入口点。 如果入口点为 **NULL**，NDIS 将使用默认方法来分配 MDLs。 MDLs 必须在提供用于分配 MDL 的机制的倒数的 [**NetFreeMdl**](/windows-hardware/drivers/ddi/ndis/nc-ndis-net_buffer_free_mdl_handler) 函数内释放。
 

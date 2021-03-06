@@ -9,12 +9,12 @@ keywords:
 - 标头-数据拆分提供程序 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e9ad25a88e4ea549e310503687594b2807c6646
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 84ba6ed828b6c6da3af04a0bcfe62001703e2d68
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96797911"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102249133"
 ---
 # <a name="splitting-ethernet-frames-overview"></a>拆分以太网帧概述
 
@@ -24,7 +24,7 @@ ms.locfileid: "96797911"
 
  
 
-如果标头-数据拆分提供程序根据标头-数据拆分要求拆分框架，则指定的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构必须 \_ \_ \_ \_ 在 **NblFlags** 成员中设置 NDIS NBL 标志 HD split 标志。 如果标头-数据拆分提供程序不拆分帧，则必须在 **NblFlags** 中清除以下标志：
+如果标头-数据拆分提供程序根据标头-数据拆分要求拆分框架，则指定的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list) 结构必须 \_ \_ \_ \_ 在 **NblFlags** 成员中设置 NDIS NBL 标志 HD split 标志。 如果标头-数据拆分提供程序不拆分帧，则必须在 **NblFlags** 中清除以下标志：
 
 -   NDIS \_ NBL \_ 标志 \_ HD \_ SPLIT
 

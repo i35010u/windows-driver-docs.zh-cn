@@ -4,12 +4,12 @@ description: 过量驱动程序发出对象标识符 (OID) 方法请求 OID_NIC_
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_NIC_SWITCH_CREATE_VPORT 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 67a4bde726a2e06368fc009186336af7effe3294
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 41274d1020f6398c03481a13ab754fdad826c262
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96839875"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248570"
 ---
 # <a name="oid_nic_switch_create_vport"></a>OID \_ NIC \_ 交换机 \_ CREATE \_ VPORT
 
@@ -18,14 +18,14 @@ ms.locfileid: "96839875"
 
 过量驱动程序将此 OID 方法请求颁发给网络适配器的 PF 的微型端口驱动程序。 对于支持单个根 i/o 虚拟化 (SR-IOV) 接口的 PF 小型端口驱动程序，需要此 OID 方法请求。
 
-[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ NIC \_ 交换机 \_ VPORT \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)结构的指针。
+[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ NIC \_ 交换机 \_ VPORT \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)结构的指针。
 
 <a name="remarks"></a>备注
 -------
 
 过量驱动程序将 [**NDIS \_ NIC \_ 交换机 \_ VPORT \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters) 结构初始化为有关要创建的非默认 VPORT 的配置信息。 配置信息包括非默认 VPort 附加到的 PCIe 函数以及非默认 VPort 的队列对数。
 
-当对 PF 小型端口驱动程序发出 OID 请求时，驱动程序会分配与指定的非默认 VPort 关联的硬件和软件资源。 成功分配所有资源后，PF 微型端口驱动程序会通过 \_ 从 MiniportOidRequest 返回 NDIS 状态成功完成 OID \_ 。 [*MiniportOidRequest*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)
+当对 PF 小型端口驱动程序发出 OID 请求时，驱动程序会分配与指定的非默认 VPort 关联的硬件和软件资源。 成功分配所有资源后，PF 微型端口驱动程序会通过 \_ 从 MiniportOidRequest 返回 NDIS 状态成功完成 OID \_ 。 [](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)
 
 如果 OID \_ NIC \_ 交换机 \_ CREATE \_ VPORT 请求成功完成，则 PF 微型端口驱动程序和过量驱动程序必须保留非默认 VPORT 的 **VPortId** 值，以便执行后续操作。 在以下操作过程中将使用 **VPortId** 值：
 
@@ -71,7 +71,7 @@ NDIS 或 PF 微型端口驱动程序为 OID \_ NIC \_ 交换机 \_ 创建开关�
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>信息缓冲区的长度小于 sizeof (<a href="/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters" data-raw-source="[&lt;strong&gt;NDIS_NIC_SWITCH_VPORT_PARAMETERS&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)"><strong>NDIS_NIC_SWITCH_VPORT_PARAMETERS</strong></a>) 。 PF 微型端口驱动程序必须设置 <strong>数据。METHOD_INFORMATION。</strong> 将 <a href="/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a> 结构中的成员 BytesNeeded 为所需的最小缓冲区大小。</p></td>
+<td><p>信息缓冲区的长度小于 sizeof (<a href="/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters" data-raw-source="[&lt;strong&gt;NDIS_NIC_SWITCH_VPORT_PARAMETERS&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)"><strong>NDIS_NIC_SWITCH_VPORT_PARAMETERS</strong></a>) 。 PF 微型端口驱动程序必须设置 <strong>数据。METHOD_INFORMATION。</strong> 将 <a href="/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a> 结构中的成员 BytesNeeded 为所需的最小缓冲区大小。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_FAILURE</p></td>
@@ -92,11 +92,11 @@ NDIS 或 PF 微型端口驱动程序为 OID \_ NIC \_ 交换机 \_ 创建开关�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 NDIS 6.30 和更高版本中受支持。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>标题</p></td>
 <td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
@@ -112,7 +112,7 @@ NDIS 或 PF 微型端口驱动程序为 OID \_ NIC \_ 交换机 \_ 创建开关�
 
 [**NDIS \_ NIC \_ SWITCH \_ VPORT \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)
 
-[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)
 
 [网络 \_ 缓冲区 \_ 列表](./net-buffer-list-structure.md)
 

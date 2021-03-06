@@ -3,12 +3,12 @@ title: 发起数据包流量
 description: 发起数据包流量
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 79edc956a8dbdd9eca0e9a5ce0131ba88ea18f2c
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 5850f5c7a28133c5142dcbea7ca48895f18190ac
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96832121"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102247873"
 ---
 # <a name="originating-packet-traffic"></a>发起数据包流量
 
@@ -25,9 +25,9 @@ ms.locfileid: "96832121"
 
 可扩展交换机扩展只能将新的数据包注入到可扩展的交换机入口数据路径。 这可确保可扩展交换机接口可以正确地筛选和转发这些数据包。 扩展必须遵循以下准则，将新的数据包注入到入口数据路径：
 
--   扩展必须首先为新数据包分配 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list_context) 结构。
+-   扩展必须首先为新数据包分配 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list_context) 结构。
 
--   扩展为新的数据包分配 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list_context) 结构后，它必须调用 [*AllocateNetBufferListForwardingContext*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_allocate_net_buffer_list_forwarding_context) 处理程序函数，以便为数据包分配可扩展的 switch 转发上下文。
+-   扩展为新的数据包分配 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list_context) 结构后，它必须调用 [*AllocateNetBufferListForwardingContext*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_allocate_net_buffer_list_forwarding_context) 处理程序函数，以便为数据包分配可扩展的 switch 转发上下文。
 
     转发上下文位于数据包的带外 (OOB) 数据。 它包含数据包的转发信息，如其源端口和一个或多个目标端口的数组。
 
@@ -51,7 +51,7 @@ ms.locfileid: "96832121"
 
 -   当扩展调用 [**NdisFSendNetBufferLists**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfsendnetbufferlists) 将数据包注入入入口数据路径时，它必须设置 *标志* 参数和相应的可扩展开关标志设置。 有关这些标志设置的详细信息，请参阅 [Hyper-v 可扩展交换机发送和接收标志](hyper-v-extensible-switch-send-and-receive-flags.md)。
 
--   当 NDIS 调用扩展的 [*FilterSendNetBufferListsComplete*](/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_send_net_buffer_lists_complete) 函数来完成新包的发送请求时，扩展必须调用 [*FreeNetBufferListForwardingContext*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_free_net_buffer_list_forwarding_context) 以释放已分配的转发上下文。 扩展必须在释放之前执行此操作，或重复用于数据包的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list_context) 结构。
+-   当 NDIS 调用扩展的 [*FilterSendNetBufferListsComplete*](/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_send_net_buffer_lists_complete) 函数来完成新包的发送请求时，扩展必须调用 [*FreeNetBufferListForwardingContext*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_free_net_buffer_list_forwarding_context) 以释放已分配的转发上下文。 扩展必须在释放之前执行此操作，或重复用于数据包的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list_context) 结构。
 
 有关可扩展交换机入口和出口数据路径的详细信息，请参阅 [Hyper-v 可扩展交换机数据路径](hyper-v-extensible-switch-data-path.md)。
 

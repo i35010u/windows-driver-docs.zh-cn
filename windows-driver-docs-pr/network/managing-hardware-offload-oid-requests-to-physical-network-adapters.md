@@ -3,12 +3,12 @@ title: 管理发往物理网络适配器的硬件卸载 OID 请求
 description: 管理发往物理网络适配器的硬件卸载 OID 请求
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5142ccf163205b3ade748ea7accacf31ef9ab55d
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: dd915aecedf5819ae710a6a20cd0b0f38af89f95
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96840311"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248111"
 ---
 # <a name="managing-hardware-offload-oid-requests-to-physical-network-adapters"></a>管理发往物理网络适配器的硬件卸载 OID 请求
 
@@ -118,7 +118,7 @@ NDIS 和过量协议以及筛选器驱动程序可以向底层物理网络适配
 
     **SourceNicIndex** 成员必须设置为 **NDIS \_ SWITCH \_ DEFAULT \_ NIC \_ INDEX**。
 
--   当扩展调用 [**NdisFOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequest)转发 OID 请求时，它必须将 *OidRequest* 参数设置为指向 [oid \_ 交换机 \_ NIC \_ 请求](./oid-switch-nic-request.md)oid 请求的 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的指针。
+-   当扩展调用 [**NdisFOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequest)转发 OID 请求时，它必须将 *OidRequest* 参数设置为指向 [oid \_ 交换机 \_ NIC \_ 请求](./oid-switch-nic-request.md)oid 请求的 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的指针。
 
 有关扩展如何筛选 OID 请求的详细信息，请参阅 [在 NDIS 筛选器驱动程序中筛选 Oid 请求](filtering-oid-requests-in-an-ndis-filter-driver.md)。
 

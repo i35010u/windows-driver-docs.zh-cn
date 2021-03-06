@@ -11,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0700b30956c5307629343f73f5d210a736788d68
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 933bffa4a3896c142f292a024cdf678eef84d69e
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96815131"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248534"
 ---
 # <a name="ndisallocatemdl-rule-ndis"></a>NdisAllocateMdl 规则 (ndis) 
 
 
-**NdisAllocateMdl** 规则指定按替代顺序调用 [**NdisAllocateMdl**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatemdl)和 [**NdisFreeMdl**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreemdl) 。 最终目标是确保在 [*MiniportHaltEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt) 结束时释放所有 MDLs。
+**NdisAllocateMdl** 规则指定按替代顺序调用 [**NdisAllocateMdl**](/windows-hardware/drivers/ddi/mdlapi/nf-mdlapi-ndisallocatemdl)和 [**NdisFreeMdl**](/windows-hardware/drivers/ddi/mdlapi/nf-mdlapi-ndisfreemdl) 。 最终目标是确保在 [*MiniportHaltEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt) 结束时释放所有 MDLs。
 
 此规则使用三种不同的状态。 分配或释放 MDL 后，状态会更改。 如果在 [*MiniportHaltEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt) 退出时仍分配 MDL，规则将报告缺陷。
 
@@ -56,5 +56,5 @@ ms.locfileid: "96815131"
 <a name="applies-to"></a>适用于
 ----------
 
-[**NdisAllocateMdl**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatemdl) 
-[ **NdisFreeMdl**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreemdl)
+[**NdisAllocateMdl**](/windows-hardware/drivers/ddi/mdlapi/nf-mdlapi-ndisallocatemdl) 
+[ **NdisFreeMdl**](/windows-hardware/drivers/ddi/mdlapi/nf-mdlapi-ndisfreemdl)

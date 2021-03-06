@@ -6,12 +6,12 @@ keywords:
 - NDIS 微型端口驱动程序 WDK，CoNDIS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c7d18c699f807abd996f8ca8f8e1a9499db8ef07
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 33553962888bc295f77c73f65b136186710552be
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96839041"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248587"
 ---
 # <a name="condis-miniport-driver-oid-requests"></a>CoNDIS 微型端口驱动程序 OID 请求
 
@@ -21,7 +21,7 @@ ms.locfileid: "96839041"
 
 NDIS 调用 CoNDIS 微型端口驱动程序的 [**MiniportCoOidRequest**](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_co_oid_request) 函数来提交 OID 请求，以查询或设置驱动程序中的信息。 NDIS *MiniportCoOidRequest* 代表或代表称为 [**NdisCoOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscooidrequest) 函数的过量驱动程序调用。
 
-NDIS 传递 *MiniportCoOidRequest* 一个指针，该指针指向包含请求信息的 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request) 结构。 请求结构包含 OID \_ *Xxx* 标识符，该标识符指示请求的类型以及用于定义请求数据的其他成员。
+NDIS 传递 *MiniportCoOidRequest* 一个指针，该指针指向包含请求信息的 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request) 结构。 请求结构包含 OID \_ *Xxx* 标识符，该标识符指示请求的类型以及用于定义请求数据的其他成员。
 
 Timeout 成员指定请求的超时 **值** （以秒为单位）。 如果超时在驱动程序完成请求之前过期，NDIS 可以重置驱动程序或取消请求。
 

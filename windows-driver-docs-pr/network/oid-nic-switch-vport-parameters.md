@@ -4,12 +4,12 @@ description: 过量驱动程序可以获取 NIC 交换机上的虚拟端口 (VPo
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_NIC_SWITCH_VPORT_PARAMETERS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: e2a1c05e6002882b9f46df928e2a05ba1d010ad9
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 8be0d6900ac970bc8a44b91a4e3757df67fcf2c3
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96803665"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102249056"
 ---
 # <a name="oid_nic_switch_vport_parameters"></a>OID \_ NIC \_ SWITCH \_ VPORT \_ 参数
 
@@ -18,7 +18,7 @@ ms.locfileid: "96803665"
 
 过量驱动程序发出 oid \_ NIC SWITCH VPORT 参数的 oid 集请求 \_ \_ \_ ，以设置附加到网络适配器的 NIC 交换机的指定 VPORT 的配置参数。 这些 OID 集请求将颁发给网络适配器 PCI Express (PCIe) 物理功能 (PF) 的微型端口驱动程序。 对于支持 (SR-IOV) 接口的单个根 i/o 虚拟化的 PF 微型端口驱动程序，这些 OID 设置请求是必需的。
 
-[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ NIC \_ 交换机 \_ VPORT \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)结构的指针。
+[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ NIC \_ 交换机 \_ VPORT \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)结构的指针。
 
 过量驱动程序通过将 [**NDIS \_ NIC \_ SWITCH \_ VPort \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)结构的 **VPortId** 成员设置为与 VPort 关联的标识符来指定 OID 方法或 set 请求的 VPort。 过量驱动程序通过以下方式之一获取 VPort 标识符：
 
@@ -37,7 +37,7 @@ OID \_ NIC \_ SWITCH \_ VPORT \_ 参数可用于 [oid 方法请求](#oid-method-
 
 NDIS 处理 \_ \_ \_ \_ 适用于微型端口驱动程序的 oid NIC 交换机 VPORT 参数的 oid 方法请求。 NDIS 返回从 [oid \_ nic \_ switch \_ CREATE \_ VPORT](oid-nic-switch-create-vport.md) 和 [OID \_ nic \_ 交换机 \_ 枚举 \_ VPORTS](oid-nic-switch-enum-vports.md)的以前 oid 请求获取的信息。
 
-成功从 OID 方法请求返回后， [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ NIC \_ 交换机 \_ VPORT \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)结构的指针。 此结构包含指定开关的配置参数。
+成功从 OID 方法请求返回后， [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ NIC \_ 交换机 \_ VPORT \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)结构的指针。 此结构包含指定开关的配置参数。
 
 有关详细信息，请参阅 [查询虚拟端口的参数](./querying-the-parameters-of-a-virtual-port.md)。
 
@@ -49,11 +49,11 @@ NDIS 处理 \_ \_ \_ \_ 适用于微型端口驱动程序的 oid NIC 交换机 V
 
 1.  **VPortId** 成员设置为将更改其参数的 VPort 的标识符。
 
-2.  在 \_ \_ flags 成员中设置相应的 NDIS NIC 交换机 \_ VPORT \_ 参数 \_ *Xxx* \_ 更改 **Flags** 标志。 仅当在 Ntddndis 中定义了相应的 NDIS nic 交换机参数 Xxx changed 标志时，才能更改 [**NDIS \_ nic \_ 交换机 \_ VPORT \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)结构的成员 \_ \_ \_ \_ *Xxx* \_ 。
+2.  在 \_ \_ flags 成员中设置相应的 NDIS NIC 交换机 \_ VPORT \_ 参数 \_ *Xxx* \_ 更改标志。 仅当在 Ntddndis 中定义了相应的 NDIS nic 交换机参数 Xxx changed 标志时，才能更改 [**NDIS \_ nic \_ 交换机 \_ VPORT \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)结构的成员 \_ \_ \_ \_  \_ 。
 
 3.  [**NDIS \_ NIC \_ 交换机 \_ VPORT \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)结构的相应成员是用要更改的 VPORT 配置参数设置的。
 
-当 PF 微型端口驱动程序接收 OID NIC SWITCH VPORT 参数的 OID 集请求后 \_ \_ \_ \_ ，该驱动程序将用配置参数配置硬件。 此驱动程序只能在 \_ \_ \_ \_ \_ *Xxx* \_ [**ndis \_ nic \_ 交换机 \_ VPORT \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)结构的 **flags** 成员中更改由 ndis nic 交换机 VPORT 参数 Xxx 更改的标志。
+当 PF 微型端口驱动程序接收 OID NIC SWITCH VPORT 参数的 OID 集请求后 \_ \_ \_ \_ ，该驱动程序将用配置参数配置硬件。 此驱动程序只能在 \_ \_ \_ \_ \_  \_ [**ndis \_ nic \_ 交换机 \_ VPORT \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)结构的 **flags** 成员中更改由 ndis nic 交换机 VPORT 参数 Xxx 更改的标志。
 
 有关详细信息，请参阅 [设置虚拟端口的参数](./setting-the-parameters-of-a-virtual-port.md)。
 
@@ -87,7 +87,7 @@ NDIS 或 PF 微型端口驱动程序为 OID \_ NIC \_ SWITCH \_ VPORT 参数的�
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>信息缓冲区太短。 NDIS 或 PF 微型端口驱动程序设置 <strong>数据。METHOD_INFORMATION。</strong> (OID 方法请求) 或数据的 BytesNeeded 成员 <strong>。SET_INFORMATION。BytesNeeded</strong> 成员 () 在 <a href="/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a> 结构中，将其设置为所需的最小缓冲区大小。</p></td>
+<td><p>信息缓冲区太短。 NDIS 或 PF 微型端口驱动程序设置 <strong>数据。METHOD_INFORMATION。</strong> (OID 方法请求) 或数据的 BytesNeeded 成员 <strong>。SET_INFORMATION。BytesNeeded</strong> 成员 () 在 <a href="/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a> 结构中，将其设置为所需的最小缓冲区大小。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_FAILURE</p></td>
@@ -108,11 +108,11 @@ NDIS 或 PF 微型端口驱动程序为 OID \_ NIC \_ SWITCH \_ VPORT 参数的�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 NDIS 6.30 和更高版本中受支持。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>标题</p></td>
 <td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
@@ -124,7 +124,7 @@ NDIS 或 PF 微型端口驱动程序为 OID \_ NIC \_ SWITCH \_ VPORT 参数的�
 ****
 [**NDIS \_ NIC \_ SWITCH \_ VPORT \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)
 
-[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)
 
 [OID \_ NIC \_ 交换机 \_ CREATE \_ VPORT](oid-nic-switch-create-vport.md)
 

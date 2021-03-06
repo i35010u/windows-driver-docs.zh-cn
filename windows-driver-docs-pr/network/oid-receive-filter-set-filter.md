@@ -4,24 +4,24 @@ description: 过量驱动程序发出 OID_RECEIVE_FILTER_SET_FILTER 的 OID 方�
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_RECEIVE_FILTER_SET_FILTER 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: a3f5082e829511accbc38d59d7414a84f09c63ae
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 3cbef7043f20e1cd763125f0796ae8a4863426cf
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96803663"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248813"
 ---
 # <a name="oid_receive_filter_set_filter"></a>OID \_ 接收 \_ 筛选器 \_ 集 \_ 筛选器
 
 过量驱动程序发出 OID 方法请求，即 OID \_ 接收 \_ 筛选器 \_ 集 \_ 筛选器，用于在网络适配器上设置筛选器。
 
-[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向调用方分配的缓冲区的指针。 此缓冲区的格式设置为包含以下内容：
+[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员包含指向调用方分配的缓冲区的指针。 此缓冲区的格式设置为包含以下内容：
 
 -   用于指定 NDIS 接收筛选器参数的 [**ndis \_ 接收 \_ 筛选器 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_parameters) 结构。
 
 -   用于指定网络数据包标头中的字段筛选器测试条件的 [**NDIS \_ 接收 \_ 筛选器 \_ 字段 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_field_parameters) 结构的数组。
 
-成功从 OID 方法请求返回后， [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**ndis \_ 接收 \_ 筛选器 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_parameters)结构的指针。 如果过量驱动程序正在创建新的接收筛选器，NDIS 将使用新的筛选器标识符更新此结构。
+成功从 OID 方法请求返回后， [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**ndis \_ 接收 \_ 筛选器 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_parameters)结构的指针。 如果过量驱动程序正在创建新的接收筛选器，NDIS 将使用新的筛选器标识符更新此结构。
 
 <a name="remarks"></a>备注
 -------
@@ -96,7 +96,7 @@ OID \_ 接收 \_ 筛选器集筛选器的 oid 方法请求 \_ \_ 是支持 NDIS 
 提供的过量驱动程序的一个或多个参数无效。
 
 <a href="" id="ndis-status-invalid-length"></a>NDIS \_ 状态 \_ 无效 \_ 长度  
-信息缓冲区太短。 NDIS 设置 **数据。方法 \_ 信息。** 将 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request) 结构中的成员 BytesNeeded 为所需的最小缓冲区大小。
+信息缓冲区太短。 NDIS 设置 **数据。方法 \_ 信息。** 将 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request) 结构中的成员 BytesNeeded 为所需的最小缓冲区大小。
 
 <a href="" id="ndis-status-not-supported"></a>\_ \_ 不支持 NDIS \_ 状态  
 此微型端口驱动程序的 NDIS 版本是比6.20 更早的版本。
@@ -114,11 +114,11 @@ OID \_ 接收 \_ 筛选器集筛选器的 oid 方法请求 \_ \_ 是支持 NDIS 
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 NDIS 6.20 和更高版本中受支持。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>标题</p></td>
 <td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
@@ -129,11 +129,11 @@ OID \_ 接收 \_ 筛选器集筛选器的 oid 方法请求 \_ \_ 是支持 NDIS 
 
 [**NdisMIndicateReceiveNetBufferLists**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatereceivenetbufferlists)
 
-[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)
 
 [**NDIS \_ 接收 \_ 筛选器 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_parameters)
 
-[**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)
+[**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list)
 
 [**网络 \_ 缓冲区 \_ 列表 \_ 接收 \_ 筛选器 \_ ID**](/windows-hardware/drivers/ddi/ndis/nf-ndis-net_buffer_list_receive_filter_id)
 

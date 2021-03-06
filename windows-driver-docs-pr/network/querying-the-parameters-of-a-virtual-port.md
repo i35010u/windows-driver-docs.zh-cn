@@ -3,12 +3,12 @@ title: 查询虚拟端口的参数
 description: 查询虚拟端口的参数
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bc7939fd8b531e47c4258ac095bf47f3c1e66ed0
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 683dd101a5eb7d4d50152c0fdd8f186afaa4423b
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96820018"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248343"
 ---
 # <a name="querying-the-parameters-of-a-virtual-port"></a>查询虚拟端口的参数
 
@@ -29,7 +29,7 @@ ms.locfileid: "96820018"
 
     -   从 [oid \_ NIC \_ 交换机 \_ 枚举 \_ VPORTS](./oid-nic-switch-enum-vports.md)的上一个 oid 方法请求开始。
 
-成功从此 OID 方法请求返回后， [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ NIC \_ 交换机 \_ VPORT \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)结构的指针。 此结构包含指定 VPort 的参数。
+成功从此 OID 方法请求返回后， [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ NIC \_ 交换机 \_ VPORT \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)结构的指针。 此结构包含指定 VPort 的参数。
 
 NDIS 为微型端口驱动程序处理 [OID \_ NIC \_ 交换机 \_ VPORT \_ 参数](./oid-nic-switch-vport-parameters.md) 请求。 NDIS 从检查以下源中返回的数据的内部缓存返回信息：
 

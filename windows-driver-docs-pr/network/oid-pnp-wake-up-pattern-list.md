@@ -4,12 +4,12 @@ description: OID_PNP_WAKE_UP_PATTERN_LIST
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_PNP_WAKE_UP_PATTERN_LIST 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 816e469c1545246b0fe6280ba8be4cdd914f03d0
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 1c77859f530e3ee03555544a9f017c2e602ab419
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96827517"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102247941"
 ---
 # <a name="oid_pnp_wake_up_pattern_list"></a>OID \_ PNP \_ 唤醒 \_ \_ 模式 \_ 列表
 
@@ -23,7 +23,7 @@ OID \_ PNP \_ 唤醒 \_ \_ 模式 \_ 列表由 NDIS 而不是微型端口驱动�
 
 NDIS 返回到协议，其中包含微型端口驱动程序中每个唤醒模式集的说明。 每个唤醒模式连同其掩码，都由 [**NDIS \_ PM \_ 数据包 \_ 模式**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_packet_pattern) 结构描述。
 
-对于每个唤醒模式， [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含以下内容：
+对于每个唤醒模式， [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员包含以下内容：
 
 -   提供有关模式及其掩码的信息的 [**NDIS \_ PM \_ 包 \_ 模式**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_packet_pattern) 结构。
 
@@ -43,11 +43,11 @@ NDIS 返回到协议，其中包含微型端口驱动程序中每个唤醒模式
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 NDIS 6.0 和6.1 中受支持。 对于 NDIS 6.20 和更高版本，请改用 <a href="oid-pm-wol-pattern-list.md" data-raw-source="[OID_PM_WOL_PATTERN_LIST](oid-pm-wol-pattern-list.md)">OID_PM_WOL_PATTERN_LIST</a> 。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>标题</p></td>
 <td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
@@ -58,7 +58,7 @@ NDIS 返回到协议，其中包含微型端口驱动程序中每个唤醒模式
 
 [**NDIS \_ PM \_ 数据包 \_ 模式**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_packet_pattern)
 
-[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)
 
 [OID \_ PM \_ WOL \_ 模式 \_ 列表](oid-pm-wol-pattern-list.md)
 

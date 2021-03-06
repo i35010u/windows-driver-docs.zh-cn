@@ -3,12 +3,12 @@ title: 指示合并段
 description: 本部分介绍如何指示合并段
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ab70d1bfacae46487e785a67742fe0abce0ee26e
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 49ad2c3feba2679967ca11f72ca164848f84037b
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96821309"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248905"
 ---
 # <a name="indicating-coalesced-segments"></a>指示合并段
 
@@ -27,9 +27,9 @@ SCU 必须：
 
      
 
-NIC 或微型端口驱动程序应在指示合并段之前重新计算 TCP 和 IPv4 校验和（如果适用）。 如果 NIC 或微型端口驱动程序验证 TCP 和 IPv4 校验和，但不为合并段重新计算，则必须在 [**NDIS \_ TCP \_ IP \_ 校验和 \_ 网络 \_ 缓冲区 \_ 列表 \_ 信息**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_ip_checksum_net_buffer_list_info)结构中设置 **TcpChecksumValueInvalid** 和 **IpChecksumValueInvalid** 标志。 此外，在这种情况下，NIC 或微型端口驱动程序可能会在段中选择性地将 TCP 和 IPv4 标头校验值为零。
+NIC 或微型端口驱动程序应在指示合并段之前重新计算 TCP 和 IPv4 校验和（如果适用）。 如果 NIC 或微型端口驱动程序验证 TCP 和 IPv4 校验和，但不为合并段重新计算，则必须在 [**NDIS \_ TCP \_ IP \_ 校验和 \_ 网络 \_ 缓冲区 \_ 列表 \_ 信息**](/windows-hardware/drivers/ddi/nblchecksum/ns-nblchecksum-ndis_tcp_ip_checksum_net_buffer_list_info)结构中设置 **TcpChecksumValueInvalid** 和 **IpChecksumValueInvalid** 标志。 此外，在这种情况下，NIC 或微型端口驱动程序可能会在段中选择性地将 TCP 和 IPv4 标头校验值为零。
 
-NIC 和微型端口驱动程序必须始终在 [**NDIS \_ TCP \_ IP \_ 校验和 \_ 网络 \_ 缓冲区 \_ 列表 \_ 信息**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_ip_checksum_net_buffer_list_info)结构中设置 **IpChecksumSucceeded** 和 **TcpChecksumSucceeded** 标志，然后才能指示合并段。
+NIC 和微型端口驱动程序必须始终在 [**NDIS \_ TCP \_ IP \_ 校验和 \_ 网络 \_ 缓冲区 \_ 列表 \_ 信息**](/windows-hardware/drivers/ddi/nblchecksum/ns-nblchecksum-ndis_tcp_ip_checksum_net_buffer_list_info)结构中设置 **IpChecksumSucceeded** 和 **TcpChecksumSucceeded** 标志，然后才能指示合并段。
 
 有关合并规则的详细信息，请参阅 [合并 Tcp/ip 段的规则](rules-for-coalescing-tcp-ip-packets.md)。
 

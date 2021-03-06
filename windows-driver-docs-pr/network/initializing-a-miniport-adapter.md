@@ -9,12 +9,12 @@ keywords:
 - MiniportInitializeEx
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a40a6af8aa43b2cdc93c1f6e652af6058236c016
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: bc4fc5722aeb8e15b5375d6331957bbd3ab35803
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96803705"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248613"
 ---
 # <a name="initializing-a-miniport-adapter"></a>初始化微型端口适配器
 
@@ -46,7 +46,7 @@ ms.locfileid: "96803705"
 
 1.  非分页池内存。
 
-2.  [**NET \_缓冲区**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer) 和 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 池 (参阅 [微型端口驱动程序发送和接收操作](miniport-driver-send-and-receive-operations.md)) 。
+2.  [**NET \_缓冲区**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer) 和 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list) 池 (参阅 [微型端口驱动程序发送和接收操作](miniport-driver-send-and-receive-operations.md)) 。
 
 3.  旋转锁。
 

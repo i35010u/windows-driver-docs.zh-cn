@@ -1,14 +1,14 @@
 ---
 title: MB 多 SIM 操作
 description: MB 多 SIM 操作
-ms.date: 10/16/2019
+ms.date: 03/01/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 8365f4e1173495387c31169b6af773bf2ea93474
-ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
+ms.openlocfilehash: 480185aff0dbba1ec4194b8744012a665f99fd1b
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91754956"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102247809"
 ---
 # <a name="mb-multi-sim-operations"></a>MB 多 SIM 操作
 
@@ -18,7 +18,7 @@ ms.locfileid: "91754956"
 
 大多数典型的多 SIM 电话设备具有双 SIM 插槽，但被限制为一个支持数据的主要 SIM 卡，而另一个则仅支持语音功能。 由于所有 SIM 卡都用于数据连接，因此不存在此类限制。
 
-虽然在理论上定义的框架可以支持不限定数量的调制解调器和 SIM 卡，但 Windows 10 版本1703和更高版本仅支持双 SIM/单一活动方案端到端。 
+虽然在理论上定义的框架可以支持无限数量的调制解调器和 SIM 卡，但 Windows 10 版本1703和更高版本仅支持 [双 SIM/单一活动 (DSSA) ](#dual-sim-single-active) 方案端到端。 
 
 ## <a name="ndis-modem-interface-specification"></a>NDIS 调制解调器接口规范
 
@@ -164,7 +164,7 @@ UUID = **UUID_BASIC_CONNECT_EXTENSIONS**
 
 UUID 值 = **3d01dcc5-fef5-4d05-0d3abef7058e9aaf**
 
-以下 Cid 是为 **UUID_MS_BasicConnect**定义的：
+以下 Cid 是为 **UUID_MS_BasicConnect** 定义的：
 
 | CID | 命令代码 | 最低操作系统版本 |
 | --- | --- | --- |
@@ -177,7 +177,7 @@ UUID 值 = **3d01dcc5-fef5-4d05-0d3abef7058e9aaf**
 
 ### <a name="mbim_cid_ms_sys_caps"></a>MBIM_CID_MS_SYS_CAPS
 
-#### <a name="description"></a>说明
+#### <a name="description"></a>描述
 
 此 CID 检索有关调制解调器的信息。 这可以在作为 USB 函数公开的任何 MB 实例上发送。
 
@@ -195,9 +195,9 @@ MBIM_COMMAND_MSG 上的 InformationBuffer 包含 MBIM_MS_SYS_CAPS_INFO 的响应
 
 #### <a name="parameters"></a>参数
 
-| 操作 | 设置 | 查询 | 通知 |
+| Operation | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
-| 命令 | 不适用 | 不适用 | 不适用 |
+| Command | 不适用 | 不适用 | 不适用 |
 | 响应 | 不适用 | MBIM_MS_SYS_CAPS_INFO | 不适用 |
 
 #### <a name="data-structures"></a>数据结构
@@ -214,20 +214,20 @@ InformationBuffer 应为 null，而 InformationBufferLength 应为零。
 
 以下 MBIM_SYS_CAPS_INFO 结构应在 InformationBuffer 中使用。
 
-| Offset | 大小 | 字段 | 类型 | 说明 |
+| Offset | 大小 | 字段 | 类型 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | NumberOfExecutors | UINT32 | 此调制解调器报告的 MBB 实例数 |
 | 4 | 4 | NumberOfSlots | UINT32 | 此调制解调器上可用的物理 UICC 槽数 |
 | 8 | 4 | 并发 | UINT32 | 可以同时处于活动状态的 MBB 实例的数目 |
 | 12 | 8 | ModemId | UINT64 | 每个调制解调器唯一的64位标识符 |
 
-*NumberOfExecutors*字段表示调制解调器在其当前配置中*支持的执行*器的数目。 这会直接映射到调制解调器支持的 "子电话" 堆栈数。 
+*NumberOfExecutors* 字段表示调制解调器在其当前配置中 *支持的执行* 器的数目。 这会直接映射到调制解调器支持的 "子电话" 堆栈数。 
 
-*NumberofSlots*字段表示在调制解调器上物理存在的槽数。 报告的每个插槽都必须能够接收 UICC 卡 (插槽本身可以是一种异类混合，如需要，还可以使用 ETSI) 定义的小型 SIM、微 SIM、nano SIM 或任何标准。 槽数必须等于或大于支持的执行器数量。 "大于" 预配允许使用非电话 UICC，例如用于安全性、NFC 等。
+*NumberofSlots* 字段表示在调制解调器上物理存在的槽数。 报告的每个插槽都必须能够接收 UICC 卡 (插槽本身可以是一种异类混合，如需要，还可以使用 ETSI) 定义的小型 SIM、微 SIM、nano SIM 或任何标准。 槽数必须等于或大于支持的执行器数量。 "大于" 预配允许使用非电话 UICC，例如用于安全性、NFC 等。
 
-*并发*字段表示可以同时处于活动状态的执行器 (MBB 实例数) 。 它必须为 *1 ≤ Concurrency ≤ NumberOfExecutors*。 例如，双备用调制解调器的并发性为1，而双主动调制解调器的并发性为2
+*并发* 字段表示可以同时处于活动状态的执行器 (MBB 实例数) 。 它必须为 *1 ≤ Concurrency ≤ NumberOfExecutors*。 例如，双备用调制解调器的并发性为1，而双主动调制解调器的并发性为2
 
-*ModemId*字段表示给定调制解调器硬件的唯一64位标识符。 IHV 可以实现自己的逻辑，为每个调制解调器生成唯一的64位值;例如，对其中一个 IMEI 号码进行哈希处理，随机生成64位数字等。生成64位 ID 后，它应在重新启动和 SIM 卡删除/插入之间保持不变。
+*ModemId* 字段表示给定调制解调器硬件的唯一64位标识符。 IHV 可以实现自己的逻辑，为每个调制解调器生成唯一的64位值;例如，对其中一个 IMEI 号码进行哈希处理，随机生成64位数字等。生成64位 ID 后，它应在重新启动和 SIM 卡删除/插入之间保持不变。
 
 #### <a name="status-codes"></a>状态代码
 
@@ -235,7 +235,7 @@ InformationBuffer 应为 null，而 InformationBufferLength 应为零。
 
 ### <a name="mbim_cid_ms_device_caps_v2"></a>MBIM_CID_MS_DEVICE_CAPS_V2
 
-#### <a name="description"></a>说明
+#### <a name="description"></a>描述
 
 此 CID 检索与执行器相关的功能信息。 由于此 CID 是 MBIM_CID_DEVICE_CAPS 的扩展，因此此处仅介绍 MBIM_CID_DEVICE_CAPS 公用 USB MBIM 标准的10.5.1 部分中所述的更改。
 
@@ -243,9 +243,9 @@ InformationBuffer 应为 null，而 InformationBufferLength 应为零。
 
 #### <a name="parameters"></a>参数
 
-| 操作 | 设置 | 查询 | 通知 |
+| Operation | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
-| 命令 | 不适用 | 不适用 | 不适用 |
+| Command | 不适用 | 不适用 | 不适用 |
 | 响应 | 不适用 | MBIM_MS_DEVICE_CAPS_INFO_V2 | 不适用 |
 
 #### <a name="data-structures"></a>数据结构
@@ -260,9 +260,9 @@ InformationBuffer 应为 null，而 InformationBufferLength 应为零。
 
 ##### <a name="response"></a>响应
 
-以下 MBIM_DEVICE_CAPS_INFO_V2 结构应在 InformationBuffer 中使用。 与公共 USB MBIM standard 的10.5.1 部分中定义的 MBIM_CID_DEVICE_CAPS 结构相比，以下结构包含名为 *DeviceIndex*的新字段。 除非在此处说明，否则此处将应用公共 USB MBIM standard 的表10-14 中的字段说明。
+以下 MBIM_DEVICE_CAPS_INFO_V2 结构应在 InformationBuffer 中使用。 与公共 USB MBIM standard 的10.5.1 部分中定义的 MBIM_CID_DEVICE_CAPS 结构相比，以下结构包含名为 *DeviceIndex* 的新字段。 除非在此处说明，否则此处将应用公共 USB MBIM standard 的表10-14 中的字段说明。
 
-| Offset | 大小 | 字段 | 类型 | 说明 |
+| Offset | 大小 | 字段 | 类型 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | DeviceType | MBIM_DEVICE_TYPE |  |
 | 4 | 4 | CellularClass | MBIM_CELLULAR_CLASS |  |
@@ -281,7 +281,7 @@ InformationBuffer 应为 null，而 InformationBufferLength 应为零。
 | 56 | 4 | HardwareInfoOffset | OFFSET |  |
 | 60 | 4 | HardwareInfoSize | 大小 (0)  |  |
 | 64| 4 | ExecutorIndex | UINT32 | 执行器索引。 它的范围为 *0* 到 *n-1* ，其中 *n* 是 MBIM 调制解调器中包含的 MBB 实例的数目。 它的值始终保持不变，并且与枚举顺序无关。 |
-| 68 |  | DataBuffer | DATABUFFER | 包含 *CustomDataClass*、 *DeviceId*、 *FirmwareInfo*和 *HardwareInfo* 成员的数据缓冲区。 |
+| 68 |  | DataBuffer | DATABUFFER | 包含 *CustomDataClass*、 *DeviceId*、 *FirmwareInfo* 和 *HardwareInfo* 成员的数据缓冲区。 |
 
 #### <a name="status-codes"></a>状态代码
 
@@ -289,7 +289,7 @@ InformationBuffer 应为 null，而 InformationBufferLength 应为零。
 
 ### <a name="mbim_cid_ms_device_slot_mappings"></a>MBIM_CID_MS_DEVICE_SLOT_MAPPINGS
 
-#### <a name="description"></a>说明
+#### <a name="description"></a>描述
 
 此 CID 设置或返回设备槽映射 (换言之，即执行器槽映射) 。
 
@@ -307,9 +307,9 @@ MBIM_COMMAND_MSG 的 InformationBuffer 包含 MBIM_MS_DEVICE_SLOT_MAPPING_INFO�
 
 #### <a name="parameters"></a>参数
 
-| 操作 | 设置 | 查询 | 通知 |
+| Operation | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
-| 命令 | MBIM_MS_DEVICE_SLOT_MAPPING_INFO | 不适用 | 不适用 |
+| Command | MBIM_MS_DEVICE_SLOT_MAPPING_INFO | 不适用 | 不适用 |
 | 响应 | MBIM_MS_DEVICE_SLOT_MAPPING_INFO | MBIM_MS_DEVICE_SLOT_MAPPING_INFO | 不适用 |
 
 #### <a name="data-structures"></a>数据结构
@@ -322,11 +322,11 @@ InformationBuffer 应为 null，而 InformationBufferLength 应为零。
 
 以下 MBIM_MS_DEVICE_SLOT_MAPPING_INFO 结构应在 InformationBuffer 中使用。
 
-| Offset | 大小 | 字段 | 类型 | 说明 |
+| Offset | 大小 | 字段 | 类型 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | MapCount (MC)  | UINT32 | 映射的数量，始终等于设备/执行器的数目。 |
-| 4 | 8 * MC | SlotMapList | OL_PAIR_LIST | 此列表的 *第 i* 对，其中 (0 <= i <= (MC-1) # A5 记录当前映射到 *i 个* 设备/执行器的槽的索引。 该对中的第一个元素是一个4字节字段，其偏移量为 DataBuffer 的偏移量，计算方式为从此 MBIM_MS_DEVICE_SLOT_MAPPINGS_INFO 结构的开始 (偏移量 0) 到 UINT32。 对的第二个元素是 record 元素的4字节大小。 由于槽索引的类型为 UINT32，因此对中的第二个元素始终为4。 |
-| 4 + (8 * MC)  | 4 * MC | DataBuffer | DATABUFFER | 包含 *SlotMapList*的数据缓冲区。 由于槽的大小为4个字节，并且 MC 等于槽索引的数目，因此 DataBuffer 的总大小为 4 * MC。 |
+| 4 | 8 * MC | SlotMapList | OL_PAIR_LIST | 此列表的 *第 i* 对，其中 (0 <= i <= (MC-1) ) 记录当前映射到 *第 i 个* 设备/执行程序的槽的索引。 该对中的第一个元素是一个4字节字段，其偏移量为 DataBuffer 的偏移量，计算方式为从此 MBIM_MS_DEVICE_SLOT_MAPPINGS_INFO 结构的开始 (偏移量 0) 到 UINT32。 对的第二个元素是 record 元素的4字节大小。 由于槽索引的类型为 UINT32，因此对中的第二个元素始终为4。 |
+| 4 + (8 * MC)  | 4 * MC | DataBuffer | DATABUFFER | 包含 *SlotMapList* 的数据缓冲区。 由于槽的大小为4个字节，并且 MC 等于槽索引的数目，因此 DataBuffer 的总大小为 4 * MC。 |
 
 ##### <a name="response"></a>响应
 
@@ -343,7 +343,7 @@ InformationBuffer 中使用的 MBIM_MS_DEVICE_SLOT_MAPPING_INFO 也用于响应�
 
 ### <a name="mbim_cid_ms_slot_info_status"></a>MBIM_CID_MS_SLOT_INFO_STATUS
 
-#### <a name="description"></a>说明
+#### <a name="description"></a>描述
 
 此 CID 检索指定 UICC 槽的高级聚合状态，并 (如果任何) ，则它。 当某个槽的状态发生更改时，也可以使用它来传递未经请求的通知。
 
@@ -361,9 +361,9 @@ MBIM_COMMAND_MSG 的 InformationBuffer 包含 MBIM_MS_SLOT_INFO_REQ 的结构。
 
 #### <a name="parameters"></a>参数
 
-| 操作 | 设置 | 查询 | 通知 |
+| Operation | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
-| 命令 | 不适用 | MBIM_MS_SLOT_INFO_REQ | 不适用 |
+| Command | 不适用 | MBIM_MS_SLOT_INFO_REQ | 不适用 |
 | 响应 | 不适用 | MBIM_MS_SLOT_INFO | MBIM_MS_SLOT_INFO |
 
 #### <a name="data-structures"></a>数据结构
@@ -372,7 +372,7 @@ MBIM_COMMAND_MSG 的 InformationBuffer 包含 MBIM_MS_SLOT_INFO_REQ 的结构。
 
 以下 MBIM_MS_SLOT_INFO_REQ 结构应在 InformationBuffer 中使用。
 
-| Offset | 大小 | 字段 | 类型 | 说明 |
+| Offset | 大小 | 字段 | 类型 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | SlotIndex | UINT32 | 要查询的槽的索引。 |
 
@@ -384,14 +384,14 @@ MBIM_COMMAND_MSG 的 InformationBuffer 包含 MBIM_MS_SLOT_INFO_REQ 的结构。
 
 以下 MBIM_MS_SLOT_INFO 结构应在 InformationBuffer 中使用。
 
-| Offset | 大小 | 字段 | 类型 | 说明 |
+| Offset | 大小 | 字段 | 类型 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | SlotIndex | UINT32 | 槽的索引。 |
 | 4 | 4 | 状态 | MBIM_MS_UICC_SLOT_STATE | 槽和卡的状态 (（如果适用）) 。 |
 
 以下 MBIM_MS_UICCSLOT_STATE 结构描述了槽的可能状态。
 
-| 状态 | 值 | 说明 |
+| 状态 | 值 | 描述 |
 | --- | --- | --- |
 | UICCSlotStateUnknown | 0 | 调制解调器仍处于初始化过程中，因此 SIM 插槽状态不是确定性的。 |
 | UICCSlotStateOffEmpty | 1 | UICC 槽已关闭并且无卡。 无法确定已关闭的插槽中是否存在卡的实现将其状态报告为 UICCSlotStateOff。 |
@@ -436,3 +436,157 @@ MBIM_COMMAND_MSG 的 InformationBuffer 包含 MBIM_MS_SLOT_INFO_REQ 的结构。
 | 按执行程序 | CID_MBIM_MSIPADDRESSINFO |
 |  | CID_MBIM_MSNETWORKIDLEHINT |
 |  | CID_MBIM_MULTICARRIER_CURRENT_CID_LIST |
+
+## <a name="dual-sim-single-active"></a>双 SIM 单一活动
+
+双 SIM 单一活动 (DSSA) 是在 Windows 10 中完全受支持的多 SIM 操作的唯一形式。 DSSA 允许将两个 SIM 卡与调制解调器结合使用，并且限制在任何给定时间都只能有一个 SIM 处于活动状态。 
+
+### <a name="architectureflow"></a>体系结构/流
+ 
+![DSSA 流程图](images/DSSA-flow.png)
+
+### <a name="slot-switch-behavior"></a>槽切换行为
+
+如果设备支持 DSSA，则在某些情况下，会自动或通过通知 toast 执行用户提示的槽切换。
+
+**(OOBE) 的全新体验**
+- 在 OOBE 期间，WwanSvc 可能会根据物理槽的状态执行槽重新映射。 如果物理槽为空，则选择嵌入的槽。 如果物理槽具有 SIM，则选择物理槽。
+
+**删除 SIM**
+- 如果从物理插槽中删除 SIM，并将物理槽作为当前选定的槽，则会显示 toast，询问用户是否要切换到嵌入的槽。
+- 如果用户选择 "是"，则会切换槽。
+
+![SIM 删除流](images/SIM_removal.png)
+
+**SIM 插入**
+- 如果通过 regkey 启用自动切换：
+    - 如果在嵌入所选槽时，将在物理插槽中插入 SIM，则槽会自动切换到物理槽，并显示一个 toast，通知用户有关该开关的信息。
+    - Toast 包含一个按钮，该按钮可打开 "设置" 页。
+- 如果通过 regkey 禁用自动切换
+    - 如果在嵌入所选槽时将 SIM 插入到物理槽，则会显示一个 toast，询问用户是否要切换到物理槽。
+    - 如果用户选择 "是"，则会切换槽。
+
+![SIM 插入流](images/SIM_insert.png)
+
+## <a name="hardware-lab-kit-hlk-tests"></a>硬件实验室工具包 (HLK) 测试
+
+请参阅 [安装 HLK 的步骤](https://microsoft.sharepoint.com/teams/HWKits/SitePages/HWLabKit/Manual%20Controller%20Installation.aspx)。
+
+在 HLK Studio 中，连接到设备移动电话调制解调器驱动程序并运行测试： [Win6_4. MB。GSM.TestSlot](https://docs.microsoft.com/windows-hardware/test/hlk/testref/defddebe-cc40-4d6f-9b0c-ca5ca9a1cb4d)。 此测试包含以下四项测试：
+
+| 测试名称 | 描述 |
+|---|---|
+| QuerySlotMapping | 此测试验证测试是否可以成功查询 devcie 槽映射。 |
+| SetSlotMapping | 此测试验证测试是否可以成功设置设备槽映射。 |
+| QuerySlotInfo | 此测试验证测试是否可以成功查询设备槽信息。 |
+| ValidateSlotInfoState | 此测试针对 ReadyInfoState 验证 UICC 槽状态。 |
+
+或者，你可以通过 [**netsh-mbn**](https://docs.microsoft.com/windows-server/networking/technologies/netsh/netsh-mbn)和 [**netsh-mbn**](mb-netsh-mbn-test.md)--运行 **TestSlot** HLK testlist。
+
+```
+netsh mbn test feature=dssa testpath="C:\data\test\bin" taefpath="C:\data\test\bin" param="AccessString=internet"
+```
+
+显示 HLK 测试结果的此文件应已在运行 "netsh mbn test" 命令的目录中生成： `TestSlot.htm` 。
+
+### <a name="log-analysis"></a>日志分析
+
+1. 可以使用以下说明收集和解码日志： [MB 收集日志](mb-collecting-logs.md)
+1. 打开[TextAnalysisTool](mb-analyzing-logs.md)中的 .txt 文件。
+1. 加载 [DSSA 筛选器](mb-dssa-filter.md)
+
+下面是用于查询和设置槽映射的示例日志：
+```
+  1619 [5]6C6C.0824::01/09/2020-10:57:17.118 [WwanDimCommon]QUERY OID_WWAN_DEVICE_CAPS_EX (e01012e), RequestId 11, Status 340001
+  1673 [5]6C6C.0824::01/09/2020-10:57:17.118 [WwanDimCommon]QUERY OID_WWAN_SYS_CAPS (e01012d), RequestId 21, Status 340001
+  2488 [5]6C6C.2738::01/09/2020-10:57:17.120 [WwanDimCommon]    StatusCode    : NDIS_STATUS_WWAN_DEVICE_CAPS_EX (0x4004103f)
+  2520 [5]6C6C.2738::01/09/2020-10:57:17.120 [WwanDimCommon]    SSERVICE_CAPS_MULTI_SIM     : Supported
+  2669 [2]6C6C.2738::01/09/2020-10:57:17.121 [WwanDimCommon]    StatusCode    : NDIS_STATUS_WWAN_SYS_CAPS_INFO (0x4004102c)
+  2679 [2]6C6C.2738::01/09/2020-10:57:17.121 [WwanDimCommon]    NumberOfExecutors 0x1
+  2680 [2]6C6C.2738::01/09/2020-10:57:17.121 [WwanDimCommon]    NumberOfSlots 0x2
+  3497 [5]6C6C.0824::01/09/2020-10:57:17.125 [WwanDimCommon]QUERY OID_WWAN_SLOT_INFO_STATUS (e010130), RequestId 42, Status 340001
+  3502 [5]6C6C.0824::01/09/2020-10:57:17.125 [WwanDimCommon]    Slot Index    : 0
+  3531 [5]6C6C.0824::01/09/2020-10:57:17.126 [WwanDimCommon]QUERY OID_WWAN_SLOT_INFO_STATUS (e010130), RequestId 32, Status 340001
+  3536 [5]6C6C.0824::01/09/2020-10:57:17.126 [WwanDimCommon]    Slot Index    : 1
+  6356 [4]6C6C.2738::01/09/2020-10:57:17.133 [WwanDimCommon]    ReadyState     : WwanReadyStateInitialized (0x1)
+  6890 [4]6C6C.2738::01/09/2020-10:57:17.134 [WwanDimCommon]    ReadyState     : WwanReadyStateInitialized (0x1)
+  6912 [4]6C6C.2738::01/09/2020-10:57:17.134 [WwanDimCommon]    ReadyState     : WwanReadyStateInitialized (0x1)
+  6926 [4]6C6C.2738::01/09/2020-10:57:17.134 [WwanDimCommon]    StatusCode    : NDIS_STATUS_WWAN_SLOT_INFO (0x4004102e)
+  6934 [4]6C6C.2738::01/09/2020-10:57:17.134 [WwanDimCommon]    SlotIndex     : 0x0
+  6935 [4]6C6C.2738::01/09/2020-10:57:17.134 [WwanDimCommon]    SlotState     :  WwanUiccSlotStateActive (0x5)
+  6955 [4]6C6C.2738::01/09/2020-10:57:17.134 [WwanDimCommon]    ReadyState     : WwanReadyStateInitialized (0x1)
+  7060 [7]6C6C.2738::01/09/2020-10:57:17.135 [WwanDimCommon]    ReadyState     : WwanReadyStateInitialized (0x1)
+  7100 [6]6C6C.2738::01/09/2020-10:57:17.135 [WwanDimCommon]    StatusCode    : NDIS_STATUS_WWAN_SLOT_INFO (0x4004102e)
+  7108 [6]6C6C.2738::01/09/2020-10:57:17.135 [WwanDimCommon]    SlotIndex     : 0x1
+  7109 [6]6C6C.2738::01/09/2020-10:57:17.135 [WwanDimCommon]    SlotState     :  WwanUiccSlotStateActiveEsimNoProfile (0x8)
+  7140 [6]6C6C.2738::01/09/2020-10:57:17.135 [WwanDimCommon]    ReadyState     : WwanReadyStateInitialized (0x1)
+  7177 [6]6C6C.2738::01/09/2020-10:57:17.135 [WwanDimCommon]    ReadyState     : WwanReadyStateInitialized (0x1)
+  8424 [4]6C6C.2738::01/09/2020-10:57:17.137 [WwanDimCommon]    ReadyState     : WwanReadyStateInitialized (0x1)
+ 10616 [6]6C6C.2738::01/09/2020-10:57:17.145 [WwanDimCommon]    ReadyState     : WwanReadyStateInitialized (0x1)
+ 12731 [4]6C6C.2738::01/09/2020-10:57:17.149 [WwanDimCommon]QUERY OID_WWAN_SYS_SLOTMAPPINGS (e01012f), RequestId 1e1, Status 340001
+ 12991 [2]6C6C.2738::01/09/2020-10:57:17.150 [WwanDimCommon]    StatusCode    : NDIS_STATUS_WWAN_DEVICE_SLOT_MAPPING_INFO (0x4004102d)
+ 13003 [2]6C6C.2738::01/09/2020-10:57:17.150 [WwanDimCommon]        Executor Index 0 is mapped to Uicc Slot Index 0
+123489 [4]6C6C.2738::01/09/2020-10:57:24.048 [WwanDimCommon]    ReadyState     : WwanReadyStateInitialized (0x1)
+128251 [2]6C6C.2738::01/09/2020-10:57:24.064 [WwanDimCommon]    ReadyState     : WwanReadyStateInitialized (0x1)
+128317 [2]6C6C.2738::01/09/2020-10:57:24.064 [WwanDimCommon]    ReadyState     : WwanReadyStateInitialized (0x1)
+128407 [7]6C6C.2738::01/09/2020-10:57:24.064 [WwanDimCommon]    ReadyState     : WwanReadyStateInitialized (0x1)
+128445 [7]6C6C.2738::01/09/2020-10:57:24.065 [WwanDimCommon]    ReadyState     : WwanReadyStateInitialized (0x1)
+129265 [5]6C6C.2738::01/09/2020-10:57:24.067 [WwanDimCommon]    ReadyState     : WwanReadyStateInitialized (0x1)
+129292 [5]6C6C.2738::01/09/2020-10:57:24.067 [WwanDimCommon]    ReadyState     : WwanReadyStateInitialized (0x1)
+130122 [7]6C6C.2738::01/09/2020-10:57:24.069 [WwanDimCommon]    ReadyState     : WwanReadyStateInitialized (0x1)
+155583 [2]6C6C.2738::01/09/2020-10:57:26.637 [WwanDimCommon]    ReadyState     : WwanReadyStateInitialized (0x1)
+159010 [7]6C6C.2738::01/09/2020-10:57:26.644 [WwanDimCommon]    ReadyState     : WwanReadyStateInitialized (0x1)
+159034 [7]6C6C.2738::01/09/2020-10:57:26.644 [WwanDimCommon]    ReadyState     : WwanReadyStateInitialized (0x1)
+161963 [7]6C6C.2738::01/09/2020-10:57:26.655 [WwanDimCommon]    ReadyState     : WwanReadyStateInitialized (0x1)
+161986 [7]6C6C.2738::01/09/2020-10:57:26.655 [WwanDimCommon]    ReadyState     : WwanReadyStateInitialized (0x1)
+162110 [2]6C6C.2738::01/09/2020-10:57:26.655 [WwanDimCommon]    ReadyState     : WwanReadyStateInitialized (0x1)
+162355 [4]6C6C.2738::01/09/2020-10:57:26.656 [WwanDimCommon]    ReadyState     : WwanReadyStateInitialized (0x1)
+162381 [6]6C6C.2738::01/09/2020-10:57:26.656 [WwanDimCommon]    ReadyState     : WwanReadyStateInitialized (0x1)
+162441 [4]6C6C.2738::01/09/2020-10:57:26.656 [WwanDimCommon]    ReadyState     : WwanReadyStateInitialized (0x1)
+194294 [6]6C6C.2738::01/09/2020-10:57:28.722 [WwanDimCommon]    ReadyState     : WwanReadyStateInitialized (0x1)
+200029 [0]6C6C.2738::01/09/2020-10:57:28.738 [WwanDimCommon]    ReadyState     : WwanReadyStateInitialized (0x1)
+200131 [4]6C6C.2738::01/09/2020-10:57:28.738 [WwanDimCommon]    ReadyState     : WwanReadyStateInitialized (0x1)
+200354 [7]6C6C.2738::01/09/2020-10:57:28.739 [WwanDimCommon]    ReadyState     : WwanReadyStateInitialized (0x1)
+200671 [6]6C6C.2738::01/09/2020-10:57:28.739 [WwanDimCommon]    ReadyState     : WwanReadyStateInitialized (0x1)
+200729 [7]6C6C.2738::01/09/2020-10:57:28.739 [WwanDimCommon]    ReadyState     : WwanReadyStateInitialized (0x1)
+200864 [1]6C6C.2738::01/09/2020-10:57:28.740 [WwanDimCommon]    ReadyState     : WwanReadyStateInitialized (0x1)
+201464 [0]6C6C.2738::01/09/2020-10:57:28.741 [WwanDimCommon]    ReadyState     : WwanReadyStateInitialized (0x1)
+265128 [1]6C6C.2218::01/09/2020-10:57:32.150 [WwanDimCommon]SET OID_WWAN_SYS_SLOTMAPPINGS (e01012f), RequestId a6, Len 10, Status 340001
+265133 [1]6C6C.2218::01/09/2020-10:57:32.150 [WwanDimCommon]    SlotMapListHeader.ElementType    : 0xe
+265134 [1]6C6C.2218::01/09/2020-10:57:32.150 [WwanDimCommon]    SlotMapListHeader.ElementCount    : 0x1
+265135 [1]6C6C.2218::01/09/2020-10:57:32.150 [WwanDimCommon]    Executor Index 0 is mapped to Uicc Slot Index 1
+265523 [6]6C6C.2738::01/09/2020-10:57:32.152 [WwanDimCommon]    ReadyState     : WwanReadyStateOff (0x0)
+270760 [5]6C6C.2738::01/09/2020-10:57:32.171 [WwanDimCommon]    StatusCode    : NDIS_STATUS_WWAN_DEVICE_SLOT_MAPPING_INFO (0x4004102d)
+270770 [5]6C6C.2738::01/09/2020-10:57:32.171 [WwanDimCommon]        Executor Index 0 is mapped to Uicc Slot Index 1
+270799 [5]6C6C.2738::01/09/2020-10:57:32.171 [WwanDimCommon]    StatusCode    : NDIS_STATUS_WWAN_SLOT_INFO (0x4004102e)
+270807 [5]6C6C.2738::01/09/2020-10:57:32.171 [WwanDimCommon]    SlotIndex     : 0x0
+270808 [5]6C6C.2738::01/09/2020-10:57:32.171 [WwanDimCommon]    SlotState     :  WwanUiccSlotStateEmpty (0x3)
+270827 [5]6C6C.2738::01/09/2020-10:57:32.171 [WwanDimCommon]    ReadyState     : WwanReadyStateFailure (0x4)
+271044 [5]6C6C.2738::01/09/2020-10:57:32.172 [WwanDimCommon]    ReadyState     : WwanReadyStateFailure (0x4)
+271089 [5]6C6C.2738::01/09/2020-10:57:32.172 [WwanDimCommon]    ReadyState     : WwanReadyStateFailure (0x4)
+271130 [5]6C6C.2738::01/09/2020-10:57:32.172 [WwanDimCommon]    ReadyState     : WwanReadyStateSimNotInserted (0x2)
+274729 [7]6C6C.2738::01/09/2020-10:57:32.188 [WwanDimCommon]    ReadyState     : WwanReadyStateInitialized (0x1)
+283027 [6]6C6C.2738::01/09/2020-10:57:32.211 [WwanDimCommon]    ReadyState     : WwanReadyStateSimNotInserted (0x2)
+323130 [5]6C6C.2738::01/09/2020-10:57:32.352 [WwanDimCommon]    ReadyState     : WwanReadyStateNoEsimProfile (0x7)
+403200 [0]6C6C.2738::01/09/2020-10:57:33.748 [WwanDimCommon]    StatusCode    : NDIS_STATUS_WWAN_SLOT_INFO (0x4004102e)
+403208 [0]6C6C.2738::01/09/2020-10:57:33.748 [WwanDimCommon]    SlotIndex     : 0x0
+403209 [0]6C6C.2738::01/09/2020-10:57:33.748 [WwanDimCommon]    SlotState     :  WwanUiccSlotStateActive (0x5)
+407008 [5]6C6C.33A8::01/09/2020-10:57:40.355 [WwanDimCommon]SET OID_WWAN_SYS_SLOTMAPPINGS (e01012f), RequestId 18f, Len 10, Status 340001
+407015 [5]6C6C.33A8::01/09/2020-10:57:40.355 [WwanDimCommon]    SlotMapListHeader.ElementType    : 0xe
+407017 [5]6C6C.33A8::01/09/2020-10:57:40.355 [WwanDimCommon]    SlotMapListHeader.ElementCount    : 0x1
+407018 [5]6C6C.33A8::01/09/2020-10:57:40.355 [WwanDimCommon]    Executor Index 0 is mapped to Uicc Slot Index 0
+407079 [4]6C6C.2738::01/09/2020-10:57:40.355 [WwanDimCommon]    ReadyState     : WwanReadyStateOff (0x0)
+409570 [2]6C6C.2738::01/09/2020-10:57:40.371 [WwanDimCommon]    StatusCode    : NDIS_STATUS_WWAN_DEVICE_SLOT_MAPPING_INFO (0x4004102d)
+409580 [2]6C6C.2738::01/09/2020-10:57:40.371 [WwanDimCommon]        Executor Index 0 is mapped to Uicc Slot Index 0
+409591 [5]6C6C.2738::01/09/2020-10:57:40.371 [WwanDimCommon]    StatusCode    : NDIS_STATUS_WWAN_SLOT_INFO (0x4004102e)
+409600 [5]6C6C.2738::01/09/2020-10:57:40.371 [WwanDimCommon]    SlotIndex     : 0x1
+409601 [5]6C6C.2738::01/09/2020-10:57:40.371 [WwanDimCommon]    SlotState     :  WwanUiccSlotStateEmpty (0x3)
+411302 [7]6C6C.2738::01/09/2020-10:57:40.385 [WwanDimCommon]    ReadyState     : WwanReadyStateSimNotInserted (0x2)
+416851 [4]6C6C.2738::01/09/2020-10:57:40.510 [WwanDimCommon]    StatusCode    : NDIS_STATUS_WWAN_SLOT_INFO (0x4004102e)
+416859 [4]6C6C.2738::01/09/2020-10:57:40.510 [WwanDimCommon]    SlotIndex     : 0x1
+416860 [4]6C6C.2738::01/09/2020-10:57:40.510 [WwanDimCommon]    SlotState     :  WwanUiccSlotStateActiveEsimNoProfile (0x8)
+418613 [0]6C6C.2738::01/09/2020-10:57:42.632 [WwanDimCommon]    ReadyState     : WwanReadyStateOff (0x0)
+434410 [4]6C6C.2738::01/09/2020-10:57:44.558 [WwanDimCommon]    ReadyState     : WwanReadyStateInitialized (0x1)
+443914 [7]6C6C.2738::01/09/2020-10:57:44.593 [WwanDimCommon]    ReadyState     : WwanReadyStateInitialized (0x1)
+529138 [4]6C6C.2738::01/09/2020-10:57:45.270 [WwanDimCommon]    ReadyState     : WwanReadyStateInitialized (0x1)
+```

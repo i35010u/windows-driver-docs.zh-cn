@@ -6,12 +6,12 @@ keywords:
 ms.date: 08/08/2017
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 2fff8ef748eb5465f287ea67654d6ac99ef27eee
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: d4384d09d345e311bebd9647a0ee1d4531322a4e
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96791387"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248903"
 ---
 # <a name="ntddndish"></a>Ntddndis.h
 
@@ -230,6 +230,13 @@ Ntddndis 标头包含用于与网络驱动程序进行交互的常量和类型�
 * [OID_PNP_WAKE_UP_PATTERN_LIST](oid-pnp-wake-up-pattern-list.md)
 * [OID_QOS_CURRENT_CAPABILITIES](oid-qos-current-capabilities.md)
 * [OID_QOS_HARDWARE_CAPABILITIES](oid-qos-hardware-capabilities.md)
+* [OID_QOS_OFFLOAD_CREATE_SQ](oid-qos-offload-create-sq.md)
+* [OID_QOS_OFFLOAD_CURRENT_CAPABILITIES](oid-qos-offload-current-capabilities.md)
+* [OID_QOS_OFFLOAD_DELETE_SQ](oid-qos-offload-delete-sq.md)
+* [OID_QOS_OFFLOAD_ENUM_SQS](oid-qos-offload-enum-sqs.md)
+* [OID_QOS_OFFLOAD_HARDWARE_CAPABILITIES](oid-qos-offload-hardware-capabilities.md)
+* [OID_QOS_OFFLOAD_SQ_STATS](oid-qos-offload-sq-stats.md)
+* [OID_QOS_OFFLOAD_UPDATE_SQ](oid-qos-offload-update-sq.md)
 * [OID_QOS_OPERATIONAL_PARAMETERS](oid-qos-operational-parameters.md)
 * [OID_QOS_PARAMETERS](oid-qos-parameters.md)
 * [OID_QOS_REMOTE_PARAMETERS](oid-qos-remote-parameters.md)

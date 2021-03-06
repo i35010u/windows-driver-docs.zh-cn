@@ -4,12 +4,12 @@ description: 过量驱动程序会 (OID 发出对象标识符) 设置 OID_SRIOV_
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_SRIOV_WRITE_VF_CONFIG_SPACE 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 633d162d68ce971a32a9512fcd5e0c93a6bc615a
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 051304628f87d26247c43a7c917ddea2c3b6cab2
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96792153"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102247742"
 ---
 # <a name="oid_sriov_write_vf_config_space"></a>OID \_ SRIOV \_ 写入 \_ VF \_ 配置 \_ 空间
 
@@ -18,7 +18,7 @@ ms.locfileid: "96792153"
 
 过量驱动程序将此 OID 集请求颁发给网络适配器的 PCIe 物理功能 (PF) 的微型端口驱动程序。 对于支持单个根 i/o 虚拟化 (SR-IOV) 接口的 PF 小型端口驱动程序，需要此 OID 方法请求。
 
-[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向调用方分配的缓冲区的指针。 此缓冲区的格式设置为包含以下内容：
+[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员包含指向调用方分配的缓冲区的指针。 此缓冲区的格式设置为包含以下内容：
 
 -   [**NDIS \_ SRIOV \_ 写入 \_ vf \_ 配置 \_ 空间 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_write_vf_config_space_parameters)结构，其中包含 VF 的 PCI 配置空间的写入操作的参数。
 
@@ -43,7 +43,7 @@ VF 微型端口驱动程序在 Hyper-v 子分区的来宾操作系统中运行�
 
      
 
-如果 PF 微型端口驱动程序能够成功完成 OID 请求，则驱动程序必须将请求的 PCI 配置空间数据复制到 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员所引用的缓冲区。 驱动程序会将数据复制到由 [**NDIS \_ SRIOV \_ READ \_ VF \_ CONFIG \_ SPACE \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_read_vf_config_space_parameters)结构的 **BufferOffset** 成员指定的偏移量处的缓冲区。
+如果 PF 微型端口驱动程序能够成功完成 OID 请求，则驱动程序必须将请求的 PCI 配置空间数据复制到 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员所引用的缓冲区。 驱动程序会将数据复制到由 [**NDIS \_ SRIOV \_ READ \_ VF \_ CONFIG \_ SPACE \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_read_vf_config_space_parameters)结构的 **BufferOffset** 成员指定的偏移量处的缓冲区。
 
 有关详细信息，请参阅 [设置虚拟功能的 PCI 配置数据](./setting-the-pci-configuration-data-of-a-virtual-function.md)。
 
@@ -77,7 +77,7 @@ VF 微型端口驱动程序在 Hyper-v 子分区的来宾操作系统中运行�
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>信息缓冲区太短。 NDIS 设置 <strong>数据。SET_INFORMATION。</strong> 将 <a href="/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a> 结构中的成员 BytesNeeded 为所需的最小缓冲区大小。</p></td>
+<td><p>信息缓冲区太短。 NDIS 设置 <strong>数据。SET_INFORMATION。</strong> 将 <a href="/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a> 结构中的成员 BytesNeeded 为所需的最小缓冲区大小。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_FAILURE</p></td>
@@ -98,11 +98,11 @@ VF 微型端口驱动程序在 Hyper-v 子分区的来宾操作系统中运行�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 NDIS 6.30 和更高版本中受支持。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>标题</p></td>
 <td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
@@ -114,7 +114,7 @@ VF 微型端口驱动程序在 Hyper-v 子分区的来宾操作系统中运行�
 ****
 [GUID \_ VPCI \_ 接口 \_ 标准](https://msdn.microsoft.com/library/windows/hardware/hh451146)
 
-[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)
 
 [**NDIS \_ SRIOV \_ 写入 \_ VF \_ 配置 \_ 空间 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_write_vf_config_space_parameters)
 

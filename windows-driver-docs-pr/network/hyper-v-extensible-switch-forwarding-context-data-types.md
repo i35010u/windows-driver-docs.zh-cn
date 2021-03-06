@@ -3,19 +3,19 @@ title: Hyper-V 可扩展交换机转发上下文数据类型
 description: Hyper-V 可扩展交换机转发上下文数据类型
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 523484d4396fd7116e2f5db4b1b0ab171dd9b8b6
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: bf7c741aa870450ff1cb406bd0c9df02148efb32
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96817129"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248177"
 ---
 # <a name="hyper-v-extensible-switch-forwarding-context-data-types"></a>Hyper-V 可扩展交换机转发上下文数据类型
 
 
-遍历 Hyper-v 可扩展交换机数据路径的每个数据包的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构包含带外 (OOB) 数据。 此数据指定从其发起数据包的源端口，以及用于数据包传递的一个或多个目标端口。 此 OOB 数据称为 *可扩展交换机转发上下文*。
+遍历 Hyper-v 可扩展交换机数据路径的每个数据包的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list) 结构包含带外 (OOB) 数据。 此数据指定从其发起数据包的源端口，以及用于数据包传递的一个或多个目标端口。 此 OOB 数据称为 *可扩展交换机转发上下文*。
 
-以下数据类型已声明为访问数据包的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构内的可扩展交换机转发上下文：
+以下数据类型已声明为访问数据包的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list) 结构内的可扩展交换机转发上下文：
 
 <a href="" id="ndis-switch-forwarding-detail-net-buffer-list-info"></a>[**NDIS \_ 交换机 \_ 转发 \_ 详细信息 \_ 网络 \_ 缓冲区 \_ 列表 \_ 信息**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_detail_net_buffer_list_info)  
 这是一个包含数据包转发特性的64位联合。 此数据包括源端口的标识符，以及从中产生数据包的网络适配器连接的标识符。 此数据还包括目标端口数组中可用的未使用的元素的数目。

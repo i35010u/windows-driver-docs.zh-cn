@@ -4,12 +4,12 @@ description: OID_PNP_ENABLE_WAKE_UP
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_PNP_ENABLE_WAKE_UP 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f40a406fe97238b72170253965a284489a1e5d9
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: a3c77c5cbfb479ed6167b050ef540ad5334a7e80
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96827543"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102247887"
 ---
 # <a name="oid_pnp_enable_wake_up"></a>OID \_ PNP \_ 启用 \_ 唤醒 \_
 
@@ -21,7 +21,7 @@ ms.locfileid: "96827543"
 
 作为查询，OID \_ PNP \_ ENABLE \_ 唤醒 \_ 获取为网络适配器启用的当前唤醒功能。
 
-[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员是可用于启用唤醒事件组合的标志的位掩码：
+[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员是可用于启用唤醒事件组合的标志的位掩码：
 
 <a href="" id="ndis-pnp-wake-up-magic-packet"></a>**NDIS \_ PNP \_ 唤醒 \_ \_ 幻 \_ 数据包**  
 如果设置，则指定微型端口驱动程序应该允许网络适配器在收到幻数据包时发出唤醒事件。  (*幻数据包* 是包含接收网络适配器的以太网地址的16个连续副本的数据包 ) 。如果清除此项，则表示微型端口驱动程序应禁止网络适配器发出此类唤醒事件的信号。
@@ -54,11 +54,11 @@ NDIS 不会立即启用协议驱动程序指定的唤醒功能。 相反，NDIS 
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 NDIS 6.0 和6.1 中受支持。 对于 NDIS 6.20 和更高版本，请改用 <a href="oid-pm-parameters.md" data-raw-source="[OID_PM_PARAMETERS](oid-pm-parameters.md)">OID_PM_PARAMETERS</a>) 。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>标题</p></td>
 <td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
@@ -69,7 +69,7 @@ NDIS 不会立即启用协议驱动程序指定的唤醒功能。 相反，NDIS 
 
 [**NDIS \_ 绑定 \_ 参数**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_bind_parameters)
 
-[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)
 
 [**NdisCoOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscooidrequest)
 

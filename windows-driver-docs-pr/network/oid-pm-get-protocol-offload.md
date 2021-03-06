@@ -4,19 +4,19 @@ description: 过量驱动程序发出 OID_PM_GET_PROTOCOL_OFFLOAD 的 OID 方法
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_PM_GET_PROTOCOL_OFFLOAD 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: ffd97b520a808d3e9a7ca4575417420d93e68057
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: e9936073fd80a2e5a12820e362e4350c0b58cfb7
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96802291"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102249024"
 ---
 # <a name="oid_pm_get_protocol_offload"></a>OID \_ PM \_ 获取 \_ 协议 \_ 卸载
 
 
 过量驱动程序发出 OID \_ PM 获取协议卸载的 oid 方法请求 \_ \_ \_ ，以便从网络适配器中获取低功率协议卸载的参数设置。
 
-[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **INFORMATIONBUFFER** 成员最初包含指向 ULONG 协议卸载标识符的指针。 成功从 OID 方法请求返回后， **ndis \_ OID \_ 请求** 结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ PM \_ 协议 \_ 卸载**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)结构的指针。
+[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **INFORMATIONBUFFER** 成员最初包含指向 ULONG 协议卸载标识符的指针。 成功从 OID 方法请求返回后， **ndis \_ OID \_ 请求** 结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ PM \_ 协议 \_ 卸载**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)结构的指针。
 
 <a name="remarks"></a>备注
 -------
@@ -55,11 +55,11 @@ NDIS 6.20 和更高版本的协议驱动程序使用 OID \_ PM \_ 获取 \_ 协�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 NDIS 6.20 和更高版本中受支持。 对于微型端口驱动程序是必需的。 （请参见“备注”部分。）</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>标题</p></td>
 <td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>

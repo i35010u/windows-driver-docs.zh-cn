@@ -3,12 +3,12 @@ title: 创建虚拟端口
 description: 创建虚拟端口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e43630b3880dc35cb8eb8d256a63a52bba1199cb
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 2e7b203cfa5dcf3e1dd47ee1732ad8cf2f310ee7
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96820121"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248410"
 ---
 # <a name="creating-a-virtual-port"></a>创建虚拟端口
 
@@ -47,7 +47,7 @@ ms.locfileid: "96820121"
 
 过量驱动程序发出对象标识符)  (oid [ \_ NIC \_ 交换机 \_ create \_ VPORT](./oid-nic-switch-create-vport.md) 在指定的 NIC 交换机上创建非默认的 VPORT。 此 OID 请求还会将创建的 VPort 附加到网络适配器的 PF 或之前分配的 VF。
 
-[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ NIC \_ 交换机 \_ VPORT \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)结构的指针。 成功从 [OID \_ nic \_ 交换机 \_ CREATE \_ VPORT](./oid-nic-switch-create-vport.md)请求返回后， **NDIS \_ nic \_ 交换机 \_ VPORT \_ 参数** 结构的 **VPortId** 成员具有一个 VPORT 标识符，该标识符在 NIC 交换机上的 VPorts 中是唯一的。
+[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ NIC \_ 交换机 \_ VPORT \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)结构的指针。 成功从 [OID \_ nic \_ 交换机 \_ CREATE \_ VPORT](./oid-nic-switch-create-vport.md)请求返回后， **NDIS \_ nic \_ 交换机 \_ VPORT \_ 参数** 结构的 **VPortId** 成员具有一个 VPORT 标识符，该标识符在 NIC 交换机上的 VPorts 中是唯一的。
 
 过量驱动程序将 [**NDIS \_ NIC \_ 交换机 \_ VPORT \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters) 结构初始化为有关要创建的非默认 VPORT 的配置信息。 配置信息包括非默认 VPort 附加到的 PCIe 函数以及非默认 VPort 的队列对数。
 
@@ -85,9 +85,9 @@ ms.locfileid: "96820121"
 分配的 VPort 标识符唯一标识网络适配器的 NIC 交换机上的非默认的 VPort。
 
 
-3.  NDIS **VPortId** \_ \_ \_ \_ 用分配的 VPORT 标识符设置 ndis NIC 交换机 VPORT 参数结构的 VPortId 成员。
+3.  NDIS  \_ \_ \_ \_ 用分配的 VPORT 标识符设置 ndis NIC 交换机 VPORT 参数结构的 VPortId 成员。
 
-当对 PF 小型端口驱动程序发出 OID 请求时，驱动程序会分配与指定的非默认 VPort 关联的硬件和软件资源。 成功分配所有资源后，PF 微型端口驱动程序会通过 \_ 从 MiniportOidRequest 返回 NDIS 状态成功完成 OID \_ 。 [*MiniportOidRequest*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)
+当对 PF 小型端口驱动程序发出 OID 请求时，驱动程序会分配与指定的非默认 VPort 关联的硬件和软件资源。 成功分配所有资源后，PF 微型端口驱动程序会通过 \_ 从 MiniportOidRequest 返回 NDIS 状态成功完成 OID \_ 。 [](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)
 
 如果 [OID \_ NIC \_ 交换机 \_ CREATE \_ VPORT](./oid-nic-switch-create-vport.md) 请求成功完成，则 PF 微型端口驱动程序和过量驱动程序必须保留非默认 VPORT 的 **VPortId** 值，以便执行后续操作。 在以下操作过程中将使用 **VPortId** 值：
 

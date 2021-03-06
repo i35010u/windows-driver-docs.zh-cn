@@ -4,19 +4,19 @@ description: NDIS 协议驱动程序发出对象标识符 (OID) 方法请求 OID
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_RECEIVE_FILTER_QUEUE_ALLOCATION_COMPLETE 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f3992435d83c6103e296478b1045497fd864447
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: d49ede6b793f4a88a21a90d818629c268a803bff
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96786063"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248844"
 ---
 # <a name="oid_receive_filter_queue_allocation_complete"></a>OID \_ 接收 \_ 筛选器 \_ 队列 \_ 分配 \_ 完成
 
 
 NDIS 协议驱动程序发出对象标识符 (oid) 方法请求 OID \_ 接收 \_ 筛选器 \_ 队列 \_ 分配 \_ 完成，通知微型端口驱动程序已为当前的接收队列分配完成分配。
 
-[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**ndis \_ 接收 \_ 队列 \_ 分配 \_ 完成 \_ 数组**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_allocation_complete_array)结构的指针，该结构后跟每个队列的 [**ndis \_ 接收 \_ 队列 \_ 分配 \_ 完成 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_allocation_complete_parameters)结构。 成功从 OID 方法请求返回后， **NDIS \_ OID \_ 请求** 结构的 **InformationBuffer** 成员包含指向相同结构数组的指针，每个 **NDIS \_ 接收 \_ 队列 \_ 分配 \_ 完成 \_ 参数** 结构的 **CompletionStatus** 成员都包含每个队列的完成状态。
+[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**ndis \_ 接收 \_ 队列 \_ 分配 \_ 完成 \_ 数组**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_allocation_complete_array)结构的指针，该结构后跟每个队列的 [**ndis \_ 接收 \_ 队列 \_ 分配 \_ 完成 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_allocation_complete_parameters)结构。 成功从 OID 方法请求返回后， **NDIS \_ OID \_ 请求** 结构的 **InformationBuffer** 成员包含指向相同结构数组的指针，每个 **NDIS \_ 接收 \_ 队列 \_ 分配 \_ 完成 \_ 参数** 结构的 **CompletionStatus** 成员都包含每个队列的完成状态。
 
 <a name="remarks"></a>备注
 -------
@@ -57,7 +57,7 @@ NDIS 协议驱动程序发出对象标识符 (oid) 方法请求 OID \_ 接收 \_
 </tr>
 <tr class="even">
 <td><p><strong>NDIS_STATUS_INVALID_LENGTH</strong></p></td>
-<td><p>信息缓冲区太短。 NDIS 设置<strong>数据</strong>。<strong>METHOD_INFORMATION</strong>。将<a href="/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>结构中的成员<strong>BytesNeeded</strong>为所需的最小缓冲区大小。</p></td>
+<td><p>信息缓冲区太短。 NDIS 设置<strong>数据</strong>。<strong>METHOD_INFORMATION</strong>。将<a href="/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>结构中的成员<strong>BytesNeeded</strong>为所需的最小缓冲区大小。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>NDIS_STATUS_NOT_SUPPORTED</strong></p></td>
@@ -82,11 +82,11 @@ NDIS 协议驱动程序发出对象标识符 (oid) 方法请求 OID \_ 接收 \_
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 NDIS 6.20 和更高版本中受支持。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>标题</p></td>
 <td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
@@ -97,7 +97,7 @@ NDIS 协议驱动程序发出对象标识符 (oid) 方法请求 OID \_ 接收 \_
 
 [**NdisMIndicateReceiveNetBufferLists**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatereceivenetbufferlists)
 
-[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)
 
 [**NDIS \_ 接收 \_ 队列 \_ 分配 \_ 完成 \_ 数组**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_allocation_complete_array)
 

@@ -5,12 +5,12 @@ keywords:
 - OID_OFFLOAD_ENCAPSULATION，WDK Oid，WDK 网络对象标识符，WDK 网络 Oid
 ms.date: 11/01/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 380d20d289bbba0cfd0fc6e6aa8d82bb93202ffa
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: a4fd2ab85194a5bdc2ee7e91fa2b8a52b93584d3
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96837105"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102249055"
 ---
 # <a name="oid_offload_encapsulation"></a>OID_OFFLOAD_ENCAPSULATION
 
@@ -20,13 +20,13 @@ ms.locfileid: "96837105"
 
 ## <a name="remarks"></a>备注
 
-[NDIS_OID_REQUEST](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 InformationBuffer 成员包含[NDIS_OFFLOAD_ENCAPSULATION](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_offload_encapsulation)结构。
+[NDIS_OID_REQUEST](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 InformationBuffer 成员包含[NDIS_OFFLOAD_ENCAPSULATION](/windows-hardware/drivers/ddi/encapsulationconfig/ns-encapsulationconfig-ndis_offload_encapsulation)结构。
 
 ### <a name="miniport-drivers"></a>微型端口驱动程序
 
 如果微型端口驱动程序不支持卸载和此 OID，则驱动程序应返回 NDIS_STATUS_NOT_SUPPORTED。
 
-微型端口驱动程序必须使用 [NDIS_OFFLOAD_ENCAPSULATION](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_offload_encapsulation) 结构的内容来更新当前报告的 TCP 卸载功能。 更新后，微型端口驱动程序必须报告当前的任务卸载功能，并 [NDIS_STATUS_TASK_OFFLOAD_CURRENT_CONFIG](ndis-status-task-offload-current-config.md) 状态指示。 此状态指示可确保所有的过量协议驱动程序都用新功能信息进行更新。
+微型端口驱动程序必须使用 [NDIS_OFFLOAD_ENCAPSULATION](/windows-hardware/drivers/ddi/encapsulationconfig/ns-encapsulationconfig-ndis_offload_encapsulation) 结构的内容来更新当前报告的 TCP 卸载功能。 更新后，微型端口驱动程序必须报告当前的任务卸载功能，并 [NDIS_STATUS_TASK_OFFLOAD_CURRENT_CONFIG](ndis-status-task-offload-current-config.md) 状态指示。 此状态指示可确保所有的过量协议驱动程序都用新功能信息进行更新。
 
 此 OID 用于激活所有已配置或已启用的卸载，或停用所有卸载 (换言之，硬件开始执行卸载) 。 它不提供对各个卸载的精细控制。 相反， [OID_TCP_OFFLOAD_PARAMETERS](oid-tcp-offload-parameters.md) 用于配置单个卸载，还可以激活。 通常，可以通过 OID_TCP_OFFLOAD_PARAMETERS 来配置和激活大多数 TCP/IP 任务卸载。
 
@@ -48,15 +48,15 @@ ms.locfileid: "96837105"
 
 协议驱动程序只能在设置 OID_OFFLOAD_ENCAPSULATION OID 后发出 OID_OFFLOAD_ENCAPSULATION 查询。
 
-NDIS 使用包含当前封装设置的 [NDIS_OFFLOAD_ENCAPSULATION](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_offload_encapsulation) 结构进行响应。
+NDIS 使用包含当前封装设置的 [NDIS_OFFLOAD_ENCAPSULATION](/windows-hardware/drivers/ddi/encapsulationconfig/ns-encapsulationconfig-ndis_offload_encapsulation) 结构进行响应。
 
 协议驱动程序必须准备好处理任何 NDIS_STATUS_Xxx 故障代码。 如果发生故障，协议驱动程序不得尝试执行任何卸载操作，这些操作将定向到受影响的微型端口适配器。
 
 ### <a name="see-also"></a>请参阅
 
 [NDIS_BIND_PARAMETERS](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_bind_parameters)  
-[NDIS_OFFLOAD_ENCAPSULATION](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_offload_encapsulation)  
-[NDIS_OID_REQUEST](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)  
+[NDIS_OFFLOAD_ENCAPSULATION](/windows-hardware/drivers/ddi/encapsulationconfig/ns-encapsulationconfig-ndis_offload_encapsulation)  
+[NDIS_OID_REQUEST](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)  
 [NDIS_STATUS_TASK_OFFLOAD_CURRENT_CONFIG](ndis-status-task-offload-current-config.md)  
 [OID_TCP_OFFLOAD_CURRENT_CONFIG](oid-tcp-offload-current-config.md)
 

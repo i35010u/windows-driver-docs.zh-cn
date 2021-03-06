@@ -1,14 +1,14 @@
 ---
 title: MB 设备就绪状态
 description: MB 设备就绪状态
-ms.date: 04/20/2017
+ms.date: 03/01/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: a5e0c56d5228416658b72c7ea71ae8eadf62a02d
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: de2847f127adaba1f838ccd414a079d2210e8a6c
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96815949"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102247815"
 ---
 # <a name="mb-device-readiness"></a>MB 设备就绪状态
 
@@ -45,7 +45,76 @@ MB 服务假定微型端口驱动程序在系统加载它后，自动初始化�
 
 微型端口驱动程序可以指定它们支持紧急呼叫服务，即使在检测到 SIM 失效的情况下也是如此，原因可能是订阅未付款，或服务已被停用，因为设备已被报告为被盗。
 
-有关设备准备情况的详细信息，请参阅 [OID \_ WWAN \_ 就绪 \_ 信息](./oid-wwan-ready-info.md)。
+## <a name="mb-miniport-driver-initialization"></a>MB 微型端口驱动程序初始化
+
+下图显示了确定接口是否为限定的 MB 接口以及收集有关设备功能的信息所采取的过程。 当启动 MB 服务时，将为每个枚举的 MB 接口执行这些步骤，并在服务运行时针对每个新的接口到达执行这些步骤。 以粗体显示的标签表示 OID 标识符或事务流控制。 常规文本中的标签表示 OID 结构中的重要标志。
+
+![如果接口是限定的 mb 接口并收集有关设备功能的信息，则建立](images/wwandriverinitproc.png)
+
+若要初始化 MB 微型端口驱动程序，请使用以下过程：
+
+1.  MB 服务发送同步 (阻塞) OID 生成 [ \_ \_ 物理 \_ 中型](oid-gen-physical-medium.md) 查询请求来识别 MB 设备的类型。 微型端口驱动程序通过 **NdisPhysicalMediumWirelessWan** 进行响应，以指示 MB 设备为 WWAN 设备。
+
+2.  MB 服务向微型端口驱动程序发送同步 (阻止) [OID 生成 \_ \_ 媒体 \_ 支持](oid-gen-media-supported.md) 的查询请求，以确定 MB 设备使用的介质类型。 微型端口驱动程序使用 **NdisMedium802 \_ 3** 进行响应，以指示它使用以太网模拟。
+
+3.  MB 服务向微型端口驱动程序发送同步 (阻止) [OID \_ WWAN \_ 驱动程序 \_ cap](oid-wwan-driver-caps.md) 查询请求，以确定微型端口驱动程序支持的驱动程序型号版本。 微型端口驱动程序以 WWAN \_ 版本响应。
+
+4.  MB 服务向微型端口驱动程序发送异步 (非阻塞) [OID \_ WWAN \_ 设备 \_ cap](oid-wwan-device-caps.md) 查询请求，以确定 MB 设备的功能。 微型端口驱动程序使用其收到请求的临时确认进行响应，并且它将在将来发送包含所需信息的通知。
+
+5.  微型端口驱动程序将 [**NDIS \_ 状态 \_ WWAN \_ 设备 \_ Cap**](ndis-status-wwan-device-caps.md) 通知发送到 mb 服务，该服务指示微型端口驱动程序支持的 mb 设备的功能。 例如，如果微型端口驱动程序支持基于 GSM 的设备，则它应在 [**NDIS \_ WWAN \_ 设备 \_ cap**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_device_caps)结构的 **DeviceCaps. WwanCellularClass** 成员中指定 **WwanCellularClassGsm** 值。 如果微型端口驱动程序支持基于 CDMA 的设备，则应指定 **WwanCellularClassCdma**。
+
+## <a name="initialization-of-sim-locked-gprs-device-with-a-user-defined-context"></a>使用 User-Defined 上下文初始化 SIM-Locked GPRS 设备
+
+
+下图演示了用户输入 SIM PIN 并手动配置访问点名称字符串的情况。 粗体标签是 OID 标识符或事务流控制，而常规文本中的标签是 OID 结构中的重要标志。
+
+![说明用户输入 sim pin 并手动配置访问点名称字符串的方案的关系图](images/wwanlockedgsmdevinitseq.png)
+
+若要初始化 PIN1 锁定的基于 GSM 的设备，请执行以下步骤：
+
+1.  MB 服务向微型端口驱动程序发送异步 (非阻塞) [OID \_ WWAN \_ 就绪 \_ 信息](oid-wwan-ready-info.md) 查询请求，以标识设备的就绪状态。 微型端口驱动程序使用临时确认响应 (需要的 NDIS \_ 状态 \_ 指示 \_) 它已收到请求，并将在将来发送包含所需信息的通知。
+
+2.  微型端口驱动程序将 NDIS \_ 状态 \_ WWAN \_ 失败通知发送到 mb 服务，以向 mb 服务指明订阅服务器标识模块 (SIM) 锁定。
+
+3.  MB 服务将异步 (非阻塞) [OID \_ WWAN \_ 固定](oid-wwan-pin.md) 查询请求发送到微型端口驱动程序。 微型端口驱动程序使用临时确认响应 (需要的 NDIS \_ 状态 \_ 指示 \_) 它已收到请求，并将在将来发送包含所需信息的通知。
+
+4.  微型端口驱动程序将 NDIS \_ 状态 \_ WWAN \_ 成功通知发送到 MB 服务。
+
+5.  MB 服务将异步 (非阻塞) [OID \_ WWAN \_ 固定](oid-wwan-pin.md) 请求发送到微型端口驱动程序。 微型端口驱动程序使用临时确认响应 (需要的 NDIS \_ 状态 \_ 指示 \_) 它已收到请求，并将在将来发送包含所需信息的通知。
+
+6.  微型端口驱动程序将 NDIS \_ 状态 \_ WWAN \_ 成功通知发送到 MB 服务。
+
+7.  微型端口驱动程序将 [**NDIS \_ 状态 \_ WWAN \_ 就绪 \_ 信息**](ndis-status-wwan-ready-info.md) 通知发送到 mb 服务，该服务向 mb 服务指示 Mb 设备的状态为 " **WwanReadyStateInitialized**"。
+
+8.  MB 服务将异步 (非阻塞) [OID \_ WWAN \_ 注册 \_ 状态](oid-wwan-register-state.md) 查询请求发送到微型端口驱动程序。 微型端口驱动程序使用临时确认响应 (需要的 NDIS \_ 状态 \_ 指示 \_) 它已收到请求，并将在将来发送包含所需信息的通知。
+
+9.  微型端口驱动程序将 NDIS \_ 状态 \_ WWAN \_ 成功通知发送到 MB 服务。
+
+10. 微型端口驱动程序将 [**NDIS \_ 状态 \_ WWAN \_ 注册 \_ 状态**](ndis-status-wwan-register-state.md) 通知发送到 MB 服务。
+
+11. MB 服务将异步 (非阻塞) [OID \_ WWAN \_ \_ 提供程序](oid-wwan-home-provider.md) 查询请求发送到微型端口驱动程序。 微型端口驱动程序使用临时确认响应 (需要的 NDIS \_ 状态 \_ 指示 \_) 它已收到请求，并将在将来发送包含所需信息的通知。
+
+12. 微型端口驱动程序将 NDIS \_ 状态 \_ WWAN \_ 成功通知发送到 MB 服务。
+
+13. 微型端口驱动程序将 [**NDIS \_ 状态 \_ WWAN \_ 注册 \_ 状态**](ndis-status-wwan-register-state.md) 通知发送到 MB 服务。
+
+14. MB 服务将异步 (非阻塞) [OID \_ WWAN \_ 数据包 \_ 服务](oid-wwan-packet-service.md) 请求发送到微型端口驱动程序。 微型端口驱动程序使用临时确认响应 (需要的 NDIS \_ 状态 \_ 指示 \_) 它已收到请求，并将在将来发送包含所需信息的通知。
+
+15. 微型端口驱动程序将 [**NDIS \_ 状态 \_ WWAN \_ 数据包 \_ 服务**](ndis-status-wwan-packet-service.md) 通知发送到 MB 服务。
+
+16. MB 服务将异步 (非阻塞) [OID \_ WWAN \_ 预配 \_ 上下文](oid-wwan-provisioned-contexts.md) 查询请求发送到微型端口驱动程序。 微型端口驱动程序使用临时确认响应 (需要的 NDIS \_ 状态 \_ 指示 \_) 它已收到请求，并将在将来发送包含所需信息的通知。
+
+17. 微型端口驱动程序将 [**NDIS \_ 状态 \_ WWAN \_ 预配 \_ 上下文**](ndis-status-wwan-provisioned-contexts.md) 发送到 MB 服务。
+
+18. MB 服务将异步 (非阻塞) [OID \_ WWAN \_ 预配 \_ 上下文](oid-wwan-provisioned-contexts.md) 集请求发送到 MB 服务。 微型端口驱动程序使用临时确认响应 (需要的 NDIS \_ 状态 \_ 指示 \_) 它已收到请求，并将在将来发送包含所需信息的通知。
+
+19. 微型端口驱动程序将 NDIS \_ 状态 \_ WWAN 成功发送 \_ 到 MB 服务。
+
+## <a name="see-also"></a>另请参阅
+
+有关设备准备情况的详细信息，请参阅 [OID \_ WWAN \_ 就绪 \_ 信息](oid-wwan-ready-info.md)。
+
+有关具有预配上下文的设备初始化的详细信息，请参阅 [MB 预配的上下文操作](mb-provisioned-context-operations.md)。
 
  
 

@@ -3,12 +3,12 @@ title: NIC 交换机的动态创建
 description: NIC 交换机的动态创建
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f1455f4f5e32b3c7e6cbb27faeb4c1a164f3596e
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: deea0ea72430aeaa6c136cc3b2e2b3dccdb22e13
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96823001"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102249129"
 ---
 # <a name="dynamic-creation-of-a-nic-switch"></a>NIC 交换机的动态创建
 
@@ -21,7 +21,7 @@ ms.locfileid: "96823001"
 
  
 
-NDIS)  (OID 发出对象标识符，oid [ \_ NIC \_ 交换机 \_ CREATE \_ 开关](./oid-nic-switch-create-switch.md) 用于在 sr-iov 网络适配器上创建 NIC 交换机。 [**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**ndis \_ NIC \_ 交换机 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)结构的指针，该结构包含开关的参数。
+NDIS)  (OID 发出对象标识符，oid [ \_ NIC \_ 交换机 \_ CREATE \_ 开关](./oid-nic-switch-create-switch.md) 用于在 sr-iov 网络适配器上创建 NIC 交换机。 [**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**ndis \_ NIC \_ 交换机 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)结构的指针，该结构包含开关的参数。
 
 如果 PF 微型端口驱动程序支持动态 NIC 交换机创建，则它在处理此 OID 请求时必须遵循以下步骤：
 

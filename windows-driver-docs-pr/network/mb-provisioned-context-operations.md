@@ -1,14 +1,14 @@
 ---
 title: MB 预配上下文操作
 description: MB 预配上下文操作
-ms.date: 04/20/2017
+ms.date: 03/01/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: f91847b22dd2c396686059a8e8d371cd062de84d
-ms.sourcegitcommit: f9651a160d34124c4b6435983efd592074ac77bd
+ms.openlocfilehash: 6c6878cc6f545a39150d2ff361e8ce9ddceed804
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98988770"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248529"
 ---
 # <a name="mb-provisioned-context-operations"></a>MB 预配上下文操作
 
@@ -37,7 +37,7 @@ UUID 值 = **3d01dcc5-fef5-4d05-0d3abef7058e9aaf**
 
 ### <a name="mbim_cid_ms_provisioned_context_v2"></a>MBIM_CID_MS_PROVISIONED_CONTEXT_V2
 
-#### <a name="description"></a>说明
+#### <a name="description"></a>描述
 
 尽管 MBIM 1.0 定义了 OS 的 MBIM_CID_PROVISIONED_CONTEXT 及其上层的客户端来管理调制解调器中预配的上下文，但 Windows 通常仅在调制解调器中查询了上下文，但没有从操作系统中进行设置。 从 Windows 10 版本1703开始，操作系统需要更多的需求才能在调制解调器中配置上下文。 例如，如果在调制解调器中有一个不透明的 IMS 堆栈，则 OS 应该能够指定调制解调器应使用的 IMS 接入点。 由于每个调制解调器 IHV 都可以有自己的专有方式来将上下文存储在调制解调器中，因此 OS 无法在 ContextId 级别管理配置文件，MBIM_CID_PROVISIONED_CONTEXT 可能会建议这样做。 相反，从操作系统的角度来看，更重要的是指出要用于每个上下文类型的上下文。 返回到 IMS 示例，无论在调制解调器的现有预配上下文有多少，如果 OS 设置的上下文都具有 MBIM_CONTEXT_TYPE = IMS，则只应在该上下文上尝试使用该上下文启动的所有 IMS 通信。
 
@@ -93,7 +93,7 @@ InformationBuffer 应为 NULL，而 InformationBufferLength 应为零。
 以下 MBIM_SET_MS_PROVISIONED_CONTEXT_V2 数据结构应在 InformationBuffer 中使用。
 
 
-| Offset | 大小 |       字段        |              类型               |                                                                                                                                                                                                                                                                                                   说明                                                                                                                                                                                                                                                                                                   |
+| Offset | 大小 |       字段        |              类型               |                                                                                                                                                                                                                                                                                                   描述                                                                                                                                                                                                                                                                                                   |
 |--------|------|--------------------|---------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |   0    |  4   |     Operation      |   MBIM_MS_CONTEXT_OPERATIONS    |                                             指定使用 SET 命令的操作的类型。 如果设置为 MbimMsContextOperationDelete，则应删除指定 MBIM_CONTEXT_TYPES 的上下文，并忽略 MBIM_SET_MS_PROVISIONED_CONTEXT_V2 中的其他所有字段。  如果设置为 MbimMsContextOperationRestoreFactory，则应删除所有 OS 创建的或修改的上下文，应加载默认工厂预配置上下文，并且应忽略 MBIM_SET_MS_PROVISIONED_CONTEXT_V2 中的所有其他字段。                                              |
 |   4    |  16  |    ContextType     |       MBIM_CONTEXT_TYPES        |                                                                                                                                                                                                指定正在表示的上下文的类型;例如，Internet 连接、VPN (与企业网络) 或 IP (VOIP) 的连接。 有关详细信息，请参阅 MBIM_CONTEXT_TYPES 表。                                                                                                                                                                                                |
@@ -116,7 +116,7 @@ InformationBuffer 应为 NULL，而 InformationBufferLength 应为零。
 
 MBIM_MS_CONTEXT_ROAMING_CONTROL 指定每个上下文漫游策略。 OS 可以指定是否可以在漫游期间启用给定的上下文。 如果漫游状态不满足指定的条件，则调制解调器不应自行激活上下文，而无需 OS 干预。 如果调制解调器不支持合作伙伴，则所有伙伴配置应视为等效于 home。
 
-| 类型 | 值 | 说明 |
+| 类型 | 值 | 描述 |
 | --- | --- | --- |
 | MbimMsContextRoamingControlHomeOnly | 0 | 指示是否只允许在家庭网络中使用该上下文。 |
 | MbimMsContextRoamingControlPartnerOnly | 1 | 指示是否只允许在合作伙伴漫游网络中使用该上下文。 |
@@ -128,7 +128,7 @@ MBIM_MS_CONTEXT_ROAMING_CONTROL 指定每个上下文漫游策略。 OS 可以�
 
 添加了 MBIM_MS_CONTEXT_MEDIA_TYPE，以便在将来的平台中支持 Wi-Fi 卸载时，指定上下文是否用于蜂窝或 iWLAN。 例如，如果将某个上下文设置为手机网络，并且当前 Wi-Fi 卸载该调制解调器，则不应使用该上下文启动连接。
 
-| 类型 | 值 | 说明 |
+| 类型 | 值 | 描述 |
 | --- | --- | --- |
 | MbimMsContextMediaTypeCellularOnly | 0 | 指示是否只允许在通过手机网络注册时使用上下文。 |
 | MbimMsContextMediaTypeWifiOnly | 1 | 指示是否仅在通过 iWLAN 注册 (Wi-fi 卸载) 时才允许使用上下文。 |
@@ -136,14 +136,14 @@ MBIM_MS_CONTEXT_ROAMING_CONTROL 指定每个上下文漫游策略。 OS 可以�
 
 MBIM_MS_CONTEXT_ENABLE 指定是启用还是禁用上下文。
 
-| 类型 | 值 | 说明 |
+| 类型 | 值 | 描述 |
 | --- | --- | --- |
 | MbimMsContextDisabled | 0 | 已设置的上下文处于禁用状态。 调制解调器不应在此上下文中从操作系统和本身启用激活。 |
 | MbimMsContextEnabled | 1 | 已启用设置的上下文。 如果满足其他条件，则可以启用上下文;例如，如果不允许漫游，则漫游期间不应启用上下文。 |
 
 添加了 MBIM_MS_CONTEXT_SOURCE，以便为操作系统提供有关如何创建调制解调器上下文的可见性。 这有助于操作系统在各种情况下（如恢复出厂设置）正常运行，因此它可以根据各种操作员要求了解应保留哪些内容以及应返回到默认状态的内容。
 
-| 类型 | 值 | 说明 |
+| 类型 | 值 | 描述 |
 | --- | --- | --- |
 | MbimMsContextSourceAdmin | 0 | 上下文是由操作系统的企业 IT 管理员创建的。 |
 | MbimMsContextSourceUser | 1 | 上下文是用户通过 OS 设置创建的。 | 
@@ -153,7 +153,7 @@ MBIM_MS_CONTEXT_ENABLE 指定是启用还是禁用上下文。
 
 MBIM_MS_CONTEXT_OPERATIONS 指定 OS 可以执行的操作，以在调制解调器中配置上下文。
 
-| 类型 | 值 | 说明 |
+| 类型 | 值 | 描述 |
 | --- | --- | --- |
 | MbimMsContextOperationDefault | 0 | 默认操作，包括添加或替换调制解调器中现有的上下文。 |
 | MbimMsContextOperationDelete | 1 | 删除操作要求调制解调器删除调制解调器中现有的上下文。 | 
@@ -161,7 +161,7 @@ MBIM_MS_CONTEXT_OPERATIONS 指定 OS 可以执行的操作，以在调制解调�
 
 MBIM 1.0 的原始 MBIM_CONTEXT_TYPES 仍有效。 由于定义了 MBIM 1.0，Microsoft 添加了更多的上下文类型。 下表定义了要引入的新类型。 Ihv 和 Oem 可以使用其他唯一 UUID 值定义其他专用的上下文类型，操作系统不能识别这些值来实现自己的目的。
 
-| 类型 | 值 | 说明 |
+| 类型 | 值 | 描述 |
 | --- | --- | --- |
 | MBIMMsContextTypeAdmin | 5f7e4c2e-e80b-40a9-a239-f0abcfd11f4b | 上下文用于管理目的，例如设备管理。 |
 | MBIMMSContextTypeApp | 74d88a3d-dfbd-4799-9a8c-7310a37bb2ee | 上下文用于移动运营商 allowlisted 的某些应用程序。 |
@@ -173,7 +173,7 @@ MBIM 1.0 的原始 MBIM_CONTEXT_TYPES 仍有效。 由于定义了 MBIM 1.0，Mi
 
 以下 MBIM_MS_PROVISIONED_CONTEXT_INFO_V2 结构应在 InformationBuffer 中使用。
 
-| Offset | 大小 | 字段 | 类型 | 说明 |
+| Offset | 大小 | 字段 | 类型 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | Elementcount 多于 (EC)  | UINT32 | DataBuffer 中后面的 MBIM_MS_CONTEXT_V2 结构的计数。 |
 | 4 | 8 * EC | MsProvisionedContextV2RefList | OL_PAIR_LIST | 该对的第一个元素是以字节表示的4字节偏移量（以字节为单位），该偏移量是从该 MBIM_MS_PROVISIONED_CONTEXTS_INFO_V2 结构的开始 (偏移量 0) 计算到 MBIM_MS_CONTEXT_V2 结构的 (MBIM_MS_CONTEXT_V2 有关详细信息，请参阅) 表。 对的第二个元素是指向相应 MBIM_MS_CONTEXT_V2 结构的指针的大小为4字节。 |
@@ -182,7 +182,7 @@ MBIM 1.0 的原始 MBIM_CONTEXT_TYPES 仍有效。 由于定义了 MBIM 1.0，Mi
 上表中使用的 MBIM_MS_CONTEXT_V2 提供有关给定上下文的信息。
 
 
-| Offset | 大小 |       字段        |              类型               |                                                                                                                                                                                                                                                                                                 说明                                                                                                                                                                                                                                                                                                  |
+| Offset | 大小 |       字段        |              类型               |                                                                                                                                                                                                                                                                                                 描述                                                                                                                                                                                                                                                                                                  |
 |--------|------|--------------------|---------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |   0    |  4   |     ContextId      |             UINT32              |                                                                                                                                                                                                                                                                                        此上下文的唯一 ID。                                                                                                                                                                                                                                                                                         |
 |   4    |  16  |    ContextType     |       MBIM_CONTEXT_TYPES        |                                                                                                                                                      指定正在表示的上下文的类型;例如，Internet 连接、VPN (与企业网络) 或 IP (VOIP) 的连接。 设备应为空或未预配的上下文指定 MBIMContextTypeNone。 有关详细信息，请参阅 MBIM_CONTEXT_TYPES 表。                                                                                                                                                       |
@@ -220,3 +220,80 @@ MBIM 1.0 的原始 MBIM_CONTEXT_TYPES 仍有效。 由于定义了 MBIM 1.0，Mi
 | --- | --- |
 | MBIM_STATUS_INVALID_PARAMETERS | 由于参数无效，操作失败。 |
 | MBIM_STATUS_WRITE_FAILURE | 操作失败，因为更新请求不成功。 |
+
+## <a name="initialization-of-devices-with-a-provisioned-context"></a>使用预配的上下文初始化设备
+
+### <a name="initialization-of-a-non-sim-locked-gprs-device-with-a-provisioned-context"></a>使用预配的上下文初始化非 SIM 锁定的 GPRS 设备
+
+下图表示基于 GSM 的 MB 设备的最佳用户体验。 全新体验不需要用户配置。 假定设备已配置为自动选择要向其注册的网络。 以粗体显示的标签表示 OID 标识符或事务流控制。 常规文本中的标签表示 OID 结构中的重要标志。
+
+![演示基于 gsm 的 mb 设备初始化序列的示意图](images/wwangsmdevinitseq.png)
+
+若要初始化非 SIM 锁定的基于 GSM 的设备，请执行以下步骤：
+
+1.  MB 服务向微型端口驱动程序发送异步 (非阻塞) [OID \_ WWAN \_ 就绪 \_ 信息](oid-wwan-ready-info.md) 查询请求，以标识设备的就绪状态。 微型端口驱动程序使用临时确认响应 (需要的 NDIS \_ 状态 \_ 指示 \_) 它已收到请求，并将在将来发送包含所需信息的通知。
+
+2.  微型端口驱动程序将 [**NDIS \_ 状态 \_ WWAN \_ 就绪 \_ 信息**](ndis-status-wwan-ready-info.md) 通知发送到 mb 服务，该服务向 mb 服务指示 Mb 设备的状态为 " **WwanReadyStateInitialized**"。
+
+3.  MB 服务向微型端口驱动程序发送异步 (非阻塞) [OID \_ WWAN \_ 注册 \_ 状态](oid-wwan-register-state.md) 查询请求，以标识设备的注册状态。 微型端口驱动程序使用临时确认响应 (需要的 NDIS \_ 状态 \_ 指示 \_) 它已收到请求，并将在将来发送包含所需信息的通知。
+
+4.  微型端口驱动程序将 [**NDIS \_ 状态 \_ WWAN \_ 注册 \_ 状态**](ndis-status-wwan-register-state.md) 通知发送到 MB 服务，该服务指示设备注册模式为 **WwanRegistraterModeAutomatic** ，其当前注册状态为 **WwanRegisterStateSearching**。
+
+5.  稍后，在将设备注册到网络提供程序时，微型端口驱动程序将向 MB 服务发送未经请求的 NDIS \_ 状态 \_ WWAN \_ 注册 \_ 状态通知，这表示设备的当前注册状态为 " **WwanRegisterStateHome**"。
+
+6.  设备尝试附加数据包服务。 当数据包服务状态更改为 "已连接" 时，微型端口驱动程序将向 MB 服务发送未经请求的 [**NDIS \_ 状态 \_ WWAN \_ 数据包 \_ 服务**](ndis-status-wwan-packet-service.md) 通知，指示已附加数据包服务，当前数据类为 **WWAN \_ 数据 \_ 类 \_ GPRS**。
+
+7.  MB 服务向微型端口驱动程序发送异步 (非阻塞) [OID \_ WWAN \_ \_ 提供程序](oid-wwan-home-provider.md) 查询请求，以检索 HOME 提供程序信息。 微型端口驱动程序使用临时确认响应 (在 \_ \_ \_ 收到请求) 所需的 NDIS 状态指示，并在将来发送包含所需信息的通知。
+
+8.  微型端口驱动程序将 [**NDIS \_ 状态 \_ WWAN \_ 主 \_ 提供程序**](ndis-status-wwan-home-provider.md) 通知发送到 MB 服务，该服务指示 HOME 提供程序的详细信息。
+
+9.  MB 服务向微型端口驱动程序发送异步 (非阻塞) OID \_ WWAN \_ 预配 \_ 上下文查询请求，以检索预配上下文的列表。 微型端口驱动程序使用临时确认响应 (需要的 NDIS \_ 状态 \_ 指示 \_) 它已收到请求，并将在将来发送包含所需信息的通知。
+
+10. 微型端口驱动程序将 [**NDIS \_ 状态 \_ wwan \_ 预配 \_ 上下文**](ndis-status-wwan-provisioned-contexts.md) 通知发送到 MB 服务，该服务包含一个 [**WWAN \_ 上下文**](/windows-hardware/drivers/ddi/wwan/ns-wwan-_wwan_context) 结构列表。
+
+11. MB 服务将异步 (非阻塞) [OID \_ WWAN \_ 连接](oid-wwan-connect.md) 集请求发送到微型端口驱动程序，以便 (PDP) 上下文激活数据包数据协议。 微型端口驱动程序使用临时确认响应 (需要的 NDIS \_ 状态 \_ 指示 \_) 它已收到请求，并将在将来发送包含所需信息的通知。
+
+12. 微型端口驱动程序将 [**NDIS \_ 状态 \_ WWAN \_ 上下文 \_ 状态**](ndis-status-wwan-context-state.md) 通知发送到 MB 服务，该服务指示激活了 PDP 上下文。
+
+13. 微型端口驱动程序将发送一个 [**NDIS \_ 状态 \_ 链接 \_ 状态**](ndis-status-link-state.md) 通知，以指示媒体连接状态为 " **MediaConnectStateConnected**"。
+
+### <a name="initialization-of-a-cdma-packet-device-with-a-provisioned-context"></a>初始化使用预配上下文的 CDMA 数据包设备
+
+
+下图演示了基于 CDMA 的设备的最佳用户体验。 全新体验不需要用户配置。 此方案假定未激活基于 CDMA 的帐户。 与基于 GSM 的设备不同，在完成激活后，基于 CDMA 的设备会自动开始向网络注册。 粗体标签为 OID 标识符或事务流控制。 常规文本中的标签是 OID 结构中的重要标志。
+
+![说明基于 cdma 的移动宽带-设备初始化序列的示意图](images/wwancdmadevinitseq.png)
+
+若要使用预配的上下文初始化基于 CDMA 的数据包设备，请执行以下步骤：
+
+1.  MB 服务将异步 (非阻塞) [OID \_ WWAN \_ 就绪 \_ 信息](oid-wwan-ready-info.md) 发送到微型端口驱动程序。 微型端口驱动程序使用临时确认响应 (需要的 NDIS \_ 状态 \_ 指示 \_) 它已收到请求，并将在将来发送包含所需信息的通知。
+
+2.  微型端口驱动程序将 NDIS \_ 状态 \_ WWAN 失败发送 \_ 到 MB 服务。
+
+3.  MB 服务将异步 (非阻塞) [OID \_ WWAN \_ 服务 \_ 激活](oid-wwan-service-activation.md) 发送到微型端口驱动程序。 微型端口驱动程序使用临时确认响应 (需要的 NDIS \_ 状态 \_ 指示 \_) 它已收到请求，并将在将来发送包含所需信息的通知。
+
+4.  微型端口驱动程序将 NDIS \_ 状态 \_ WWAN 成功发送 \_ 到 MB 服务。
+
+5.  微型端口驱动程序将 [**NDIS \_ 状态 \_ WWAN \_ 注册 \_ 状态**](ndis-status-wwan-register-state.md) 发送到 MB 服务。
+
+6.  微型端口驱动程序将 [**NDIS \_ 状态 \_ WWAN \_ 注册 \_ 状态**](ndis-status-wwan-register-state.md) 发送到 MB 服务。
+
+7.  微型端口驱动程序将 [**NDIS \_ 状态 \_ WWAN \_ 数据包 \_ 服务**](ndis-status-wwan-packet-service.md) 发送到 MB 服务。
+
+8.  MB 服务将异步 (非阻塞) [OID \_ WWAN \_ \_ 提供程序](oid-wwan-home-provider.md) 发送到微型端口驱动程序。 微型端口驱动程序使用临时确认响应 (需要的 NDIS \_ 状态 \_ 指示 \_) 它已收到请求，并将在将来发送包含所需信息的通知。
+
+9.  微型端口驱动程序将 NDIS \_ 状态 \_ WWAN 成功发送 \_ 到 MB 服务。
+
+10. MB 服务将异步 (非阻塞) [OID \_ WWAN \_ 预配 \_ 上下文](oid-wwan-provisioned-contexts.md) 发送到微型端口驱动程序。 微型端口驱动程序使用临时确认响应 (需要的 NDIS \_ 状态 \_ 指示 \_) 它已收到请求，并将在将来发送包含所需信息的通知。
+
+11. 微型端口驱动程序将 NDIS \_ 状态 \_ WWAN 成功发送 \_ 到 MB 服务。
+
+12. MB 服务将异步 (非阻塞) [OID \_ WWAN \_ 预配 \_ 上下文](oid-wwan-provisioned-contexts.md) 发送到微型端口驱动程序。 微型端口驱动程序使用临时确认响应 (需要的 NDIS \_ 状态 \_ 指示 \_) 它已收到请求，并将在将来发送包含所需信息的通知。
+
+13. 微型端口驱动程序将 NDIS \_ 状态 \_ WWAN 成功发送 \_ 到 MB 服务。
+
+14. 微型端口驱动程序将 [**NDIS \_ 状态 \_ 链接 \_ 状态**](ndis-status-link-state.md) 发送到 MB 服务。
+
+### <a name="see-also"></a>另请参阅
+ 
+[MB 设备就绪状态](mb-device-readiness.md)

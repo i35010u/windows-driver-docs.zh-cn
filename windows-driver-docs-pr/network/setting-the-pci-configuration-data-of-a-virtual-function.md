@@ -3,12 +3,12 @@ title: 设置虚拟功能的 PCI 配置数据
 description: 设置虚拟功能的 PCI 配置数据
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a61d766c8e0d032fa1fd07521ab17821d4a2dad
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 663e21ff8ba2d985c52205a9d8c37a50608055ae
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96827489"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248964"
 ---
 # <a name="setting-the-pci-configuration-data-of-a-virtual-function"></a>设置虚拟功能的 PCI 配置数据
 
@@ -39,7 +39,7 @@ PCI Express (PCIe) 虚函数 () VF 的微型端口驱动程序在 Hyper-v 子分
 
      
 
-如果 PF 微型端口驱动程序能够成功完成 OID 请求，则驱动程序必须将请求的 PCI 配置空间数据复制到 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员所引用的缓冲区。 驱动程序将数据复制到由 [**NDIS \_ SRIOV \_ READ \_ VF \_ CONFIG \_ SPACE \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_read_vf_config_space_parameters)结构的 **BufferOffset** 成员指定的偏移量处的缓冲区。
+如果 PF 微型端口驱动程序能够成功完成 OID 请求，则驱动程序必须将请求的 PCI 配置空间数据复制到 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员所引用的缓冲区。 驱动程序将数据复制到由 [**NDIS \_ SRIOV \_ READ \_ VF \_ CONFIG \_ SPACE \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_read_vf_config_space_parameters)结构的 **BufferOffset** 成员指定的偏移量处的缓冲区。
 
  
 

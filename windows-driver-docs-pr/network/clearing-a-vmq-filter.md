@@ -3,12 +3,12 @@ title: 清除 VMQ 筛选器
 description: 清除 VMQ 筛选器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a4e3061b815a01c517da834c0050592163d22887
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: f9ba5679d61b3d55046cbf08a6dc000b460f1027
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96826973"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248241"
 ---
 # <a name="clearing-a-vmq-filter"></a>清除 VMQ 筛选器
 
@@ -16,7 +16,7 @@ ms.locfileid: "96826973"
 
 
 
-若要在接收队列中释放筛选器，过量驱动程序 [会发出 oid \_ 接收筛选器 \_ \_ 清除 \_ 筛选器](./oid-receive-filter-clear-filter.md) 设置 oid 请求。 [**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**ndis \_ 接收 \_ 筛选器 \_ CLEAR \_ PARAMETERS**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_clear_parameters)结构的指针。
+若要在接收队列中释放筛选器，过量驱动程序 [会发出 oid \_ 接收筛选器 \_ \_ 清除 \_ 筛选器](./oid-receive-filter-clear-filter.md) 设置 oid 请求。 [**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**ndis \_ 接收 \_ 筛选器 \_ CLEAR \_ PARAMETERS**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_clear_parameters)结构的指针。
 
 协议驱动程序从较早的 [OID \_ 接收 \_ 筛选器 \_ 集 \_ 筛选](./oid-receive-filter-set-filter.md) 器方法 OID 请求获取了筛选器标识符。 有关设置筛选器的详细信息，请参阅 [设置 VMQ 筛选器](setting-a-vmq-filter.md)。
 

@@ -3,20 +3,22 @@ title: MB 协议配置选项 (PCO) 操作
 description: MB 协议配置选项 (PCO) 操作
 keywords:
 - MB PCO 选项，移动宽带 PCO 选项，MB 协议配置选项，移动宽带协议配置选项，WDK 网络驱动程序，MBB 微型端口驱动程序
-ms.date: 09/11/2018
+ms.date: 03/01/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: beaa611fe42a7ce196221233558aa683a26deb79
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 58050f69f4297c921e061bd85703dcee344d064b
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96816607"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102247853"
 ---
 # <a name="mb-protocol-configuration-options-pco-operations"></a>MB 协议配置选项 (PCO) 操作
 
 ## <a name="overview"></a>概述
 
- (PCO) 值的协议配置选项的 Windows NDIS 定义通常是通用的，因此可能会在将来从调制解调器和网络接收完整的 PCO 值。 从 Windows 10 版本1709，某些调制解调器只能将操作员特定的 PCO 元素传递到 OS。 本主题定义当前操作员特定的 PCO 实现的行为。
+协议配置选项 (PCO) 的用途是将与数据包数据协议关联的外部网络协议选项 (PDP) 上下文激活传输。 PCO 值的 Windows NDIS 定义通常都是通用的，以便在将来从调制解调器和网络接收完整的 PCO 值。 但从 Windows 10 版本1709开始，某些调制解调器只能将操作员特定的 PCO 元素传递到 OS。 本主题定义当前操作员特定的 PCO 实现的行为。
+
+## <a name="flows"></a>流
 
 在三种情况下，会将 PCO 值传递到主机：
 
@@ -89,9 +91,9 @@ InformationBuffer 包含唯一相关字段为 *SessionId* 的 **MBIM_PCO_VALUE**
 
 #### <a name="parameters"></a>参数
 
-| 操作 | 设置 | 查询 | 通知 |
+| Operation | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
-| 命令 | 不适用 | MBIM_PCO_VALUE | 不适用 |
+| Command | 不适用 | MBIM_PCO_VALUE | 不适用 |
 | 响应 | 不适用 | MBIM_PCO_VALUE | MBIM_PCO_VALUE |
 
 #### <a name="data-structures"></a>数据结构
@@ -115,3 +117,24 @@ InformationBuffer 包含唯一相关字段为 *SessionId* 的 **MBIM_PCO_VALUE**
 #### <a name="status-codes"></a>状态代码
 
 此 CID 只使用一般状态代码。
+
+## <a name="hardware-lab-kit-hlk-tests"></a>硬件实验室工具包 (HLK) 测试
+请参阅 [安装 HLK 的步骤](https://microsoft.sharepoint.com/teams/HWKits/SitePages/HWLabKit/Manual%20Controller%20Installation.aspx)。 
+
+在 HLK Studio 中，连接到设备移动电话调制解调器驱动程序并运行测试： [TestPco](/windows-hardware/test/hlk/testref/c7f8c2c2-ba87-4f51-8666-3fa06dc01451)。
+
+## <a name="winrt-api"></a>WinRT API
+
+[PCO](/uwp/api/windows.networking.networkoperators.mobilebroadbandpco)
+
+[PCO 背景触发器](/uwp/api/windows.applicationmodel.background.mobilebroadbandpcodatachangetrigger)
+
+## <a name="see-also"></a>另请参阅
+
+[NDIS_STATUS_WWAN_PCO_STATUS](ndis-status-wwan-pco-status.md)
+
+[**NDIS_WWAN_PCO_STATUS**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_pco_status)
+
+[**WWAN_PCO_VALUE**](/windows-hardware/drivers/ddi/wwan/ns-wwan-_wwan_pco_value)
+
+[OID_WWAN_PCO](oid-wwan-pco.md)

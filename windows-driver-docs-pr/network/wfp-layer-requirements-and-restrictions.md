@@ -7,12 +7,12 @@ keywords:
 - 用于包处理 WDK Windows 筛选平台的层
 ms.date: 01/22/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 540ba4795c8ac714fb8624def01cc197a93fa948
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: ce1041487330884af71791f9599dc721f3156763
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96821869"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248689"
 ---
 # <a name="wfp-layer-requirements-and-restrictions"></a>WFP 层要求和限制
 
@@ -22,11 +22,11 @@ ms.locfileid: "96821869"
 <a href="" id="forwarding-layer-------"></a>**转发层**   
 如果为源自的数据包或目标为的数据包启用了 IP 转发，则 IP 数据包将传递到该转发层。如果为该数据包启用了 IP 转发，则会将该地址发送到该计算机，并在与分配本地地址的接口不同的接口上发送或接收该数据包。 默认情况下，IP 转发处于禁用状态，并且可以通过使用适用于 IPv4 转发的 **netsh 接口 ipv4 集接口** 命令或用于 ipv6 转发的 **netsh interface ipv6 set interface** 命令启用。
 
-转发层可以在到达时转发每个已接收的片段，也可以保留 IP 有效负载的片段，直到所有片段到达并转发它们为止。 这称为 *片段分组*。 禁用片段分组后 (默认情况下禁用该分组) ，则转发的 IP 数据包段将指示为 WFP 一次。 启用片段分组后，会将一个片段指定为 WFP 两次：第一次为片段本身，并再次在 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 链描述的片段组内进行。 如果将 "WFP 组" 标记指定为要转发的层标注，则会将其设置 **\_ \_ \_ 为 \_ 分段 \_ 组** 标志。 可以使用 **netsh interface {ipv4 | ipv6} set global groupforwardedfragments = enabled** 命令启用片段分组。 片段分组不同于重新组合，后者是目标主机上的原始 IP 数据包的重新构造。
+转发层可以在到达时转发每个已接收的片段，也可以保留 IP 有效负载的片段，直到所有片段到达并转发它们为止。 这称为 *片段分组*。 禁用片段分组后 (默认情况下禁用该分组) ，则转发的 IP 数据包段将指示为 WFP 一次。 启用片段分组后，会将一个片段指定为 WFP 两次：第一次为片段本身，并再次在 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list) 链描述的片段组内进行。 如果将 "WFP 组" 标记指定为要转发的层标注，则会将其设置 **\_ \_ \_ 为 \_ 分段 \_ 组** 标志。 可以使用 **netsh interface {ipv4 | ipv6} set global groupforwardedfragments = enabled** 命令启用片段分组。 片段分组不同于重新组合，后者是目标主机上的原始 IP 数据包的重新构造。
 
-在转发层指示的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构可以描述完整的 ip 数据包、IP 数据包片段或 ip 数据包片段组。 当 IP 数据包片段遍历转发层时，它将被指定两次标注：第一次为片段，并再次显示为片段组内的片段。
+在转发层指示的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list) 结构可以描述完整的 ip 数据包、IP 数据包片段或 ip 数据包片段组。 当 IP 数据包片段遍历转发层时，它将被指定两次标注：第一次为片段，并再次显示为片段组内的片段。
 
-当指示分段组时，" **\_ \_ \_ \_ 分段 \_ 组** " 标志将作为传入值传递到标注驱动程序的 [*classifyFn*](/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_callout_classify_fn0) callout 函数。 在这种情况下， *NetBufferList* 参数指向的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构是 **网络 \_ 缓冲区 \_ 列表** 链的第一个节点，每个 **网络 \_ 缓冲区 \_ 列表** 描述一个数据包片段。
+当指示分段组时，" **\_ \_ \_ \_ 分段 \_ 组** " 标志将作为传入值传递到标注驱动程序的 [*classifyFn*](/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_callout_classify_fn0) callout 函数。 在这种情况下， *NetBufferList* 参数指向的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list)结构是 **网络 \_ 缓冲区 \_ 列表** 链的第一个节点，每个 **网络 \_ 缓冲区 \_ 列表** 描述一个数据包片段。
 
 正向注入的数据包将不会显示在任何 WFP 层上。 可以再次向标注驱动程序指示插入的数据包。 若要防止无限循环，驱动程序应首先调用 [**FwpsQueryPacketInjectionState0**](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsquerypacketinjectionstate0) 函数，然后再使用 *classifyFn* callout 函数调用，驱动程序应允许将处于注入状态 [**FWPS \_ 数据包 \_ 注入 \_ 状态**](/windows-hardware/drivers/ddi/fwpsk/ne-fwpsk-fwps_packet_injection_state_) 的数据包设置为 **\_ \_ \_ \_ 自** 或 **\_ \_ \_ \_ 由 \_ 自身注入** 的 FWPS 数据包，以通过未经修改的进行传递。
 

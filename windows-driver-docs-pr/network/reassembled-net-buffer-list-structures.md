@@ -9,12 +9,12 @@ keywords:
 - 关系 WDK NET_BUFFER_LIST
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e7d44b860eb95f3672728d8bb5c5b518678c3493
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 47a5ff4c64f3c10880a9e41451862818e8f01167
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96839447"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248329"
 ---
 # <a name="reassembled-net_buffer_list-structures"></a>重新组合网络 \_ 缓冲区 \_ 列表结构
 
@@ -22,21 +22,21 @@ ms.locfileid: "96839447"
 
 
 
-NDIS 驱动程序可以从现有的网络缓冲区列表结构创建重新组合的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构 \_ \_ 。 重新组合结构引用多个源 [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer) 结构中的原始数据。 驱动程序可以使用这种类型的结构将很多较小的缓冲区有效地合并为一个大的缓冲区。
+NDIS 驱动程序可以从现有的网络缓冲区列表结构创建重新组合的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list) 结构 \_ \_ 。 重新组合结构引用多个源 [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer) 结构中的原始数据。 驱动程序可以使用这种类型的结构将很多较小的缓冲区有效地合并为一个大的缓冲区。
 
 下图显示了父网络 \_ 缓冲区 \_ 列表结构和重新组合子结构之间的关系：
 
 ![说明父网络 \- 缓冲区 \- 列表结构和重新组合子结构之间的关系的关系图 ](images/netbufferlistreassembled.png)
 
-上图包含一个父 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构和一个派生自该父级的子结构。 父结构具有一个 [**网络 \_ 缓冲区 \_ 列表 \_ 上下文**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list_context) 结构和三个附加了 MDLs 的 [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer) 结构。 父结构的父指针为 **NULL** ，表示它不是派生的结构。
+上图包含一个父 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list) 结构和一个派生自该父级的子结构。 父结构具有一个 [**网络 \_ 缓冲区 \_ 列表 \_ 上下文**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list_context) 结构和三个附加了 MDLs 的 [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer) 结构。 父结构的父指针为 **NULL** ，表示它不是派生的结构。
 
-子网络 \_ 缓冲区 \_ 列表结构具有一个 \_ 附加了 MDLs 的网络缓冲区结构。 子网络 \_ 缓冲区 \_ 列表结构具有指向父结构的指针。 如果 **NULL** 网络 \_ 缓冲区 \_ 列表 \_ 上下文指针为 NULL，则表示子级没有网络 \_ 缓冲区 \_ 列表 \_ 上下文结构。
+子网络 \_ 缓冲区 \_ 列表结构具有一个 \_ 附加了 MDLs 的网络缓冲区结构。 子网络 \_ 缓冲区 \_ 列表结构具有指向父结构的指针。 如果网络 \_ 缓冲区 \_ 列表 \_ 上下文指针为 NULL，则表示子级没有网络 \_ 缓冲区 \_ 列表 \_ 上下文结构。
 
-NDIS 驱动程序调用 [**NdisAllocateReassembledNetBufferList**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatereassemblednetbufferlist) 函数来重新组装分段 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构。 NDIS 使用重新组合的网络缓冲区列表结构分配新的 [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer) 结构和 MDLs \_ \_ 。 对于重新组合结构，NDIS 不分配网络 \_ 缓冲区 \_ 列表 \_ 上下文结构。 重新组合的网络 \_ 缓冲区结构和 MDLs 描述的数据与父结构相同。 不会复制数据。
+NDIS 驱动程序调用 [**NdisAllocateReassembledNetBufferList**](/windows-hardware/drivers/ddi/nblapi/nf-nblapi-ndisallocatereassemblednetbufferlist) 函数来重新组装分段 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list) 结构。 NDIS 使用重新组合的网络缓冲区列表结构分配新的 [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer) 结构和 MDLs \_ \_ 。 对于重新组合结构，NDIS 不分配网络 \_ 缓冲区 \_ 列表 \_ 上下文结构。 重新组合的网络 \_ 缓冲区结构和 MDLs 描述的数据与父结构相同。 不会复制数据。
 
 若要创建重新组合的网络 \_ 缓冲区 \_ 列表结构， **NdisAllocateReassembledNetBufferList** 将跳过每个父网络缓冲区结构中 *StartOffset* 参数中指定的字节数 \_ 。 **NdisAllocateReassembledNetBufferList** 将每个父网络缓冲区结构中的剩余数据连接 \_ 到一个重新组合网络缓冲区结构的 MDL 链 \_ 。 **NdisAllocateReassembledNetBufferList** 退出 (\_ 按照 *DataOffsetDelta* 中指定的数量增加了重新组合后的网络缓冲区) 中的已用数据空间。
 
-NDIS 驱动程序调用 [**NdisFreeReassembledNetBufferList**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreereassemblednetbufferlist) 函数以释放重新组合的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构和关联的 [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer) 结构和 MDL 链。
+NDIS 驱动程序调用 [**NdisFreeReassembledNetBufferList**](/windows-hardware/drivers/ddi/nblapi/nf-nblapi-ndisfreereassemblednetbufferlist) 函数以释放重新组合的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list) 结构和关联的 [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer) 结构和 MDL 链。
 
 ## <a name="related-topics"></a>相关主题
 

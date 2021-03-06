@@ -1,14 +1,14 @@
 ---
 title: MB 补充文档主题
 description: 以下部分提供了适用于 MB 设备的开发人员的补充信息。
-ms.date: 04/20/2017
+ms.date: 03/01/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 02489637a06df9ec5d7316a269fae4457dd87835
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 66fe82dfb2094889ebe0d89fc5fab8427ae03003
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96825403"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248021"
 ---
 # <a name="supplemental-mb-documentation-topics"></a>MB 补充文档主题
 
@@ -24,6 +24,12 @@ ms.locfileid: "96825403"
 [移动宽带类驱动程序日志：事件跟踪日志跟踪](mobile-broadband-class-driver-logs--event-trace-log-tracing.md)
 
 [USB 设备的移动宽带实施指南](mobile-broadband-implementation-guidelines-for-usb-devices.md)
+
+[收集 Mobilebroadband 日志](mb-collecting-logs.md)
+
+[分析 Mobilebroadband 日志](mb-analyzing-logs.md)
+
+[TextAnalysisTool 筛选器文件](mb-tat-filters.md)
 
  
 

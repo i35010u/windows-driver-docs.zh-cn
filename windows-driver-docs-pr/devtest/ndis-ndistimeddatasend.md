@@ -11,19 +11,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ef0bc18409206a221727a2627b75b595c7811bc
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 2a0c7c39f1f7bda13db75b8faf760c1e27d7ada7
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96795079"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248075"
 ---
 # <a name="ndistimeddatasend-rule-ndis"></a>NdisTimedDataSend 规则 (ndis) 
 
 
 **NdisTimedDataSend** 规则验证当 NDIS 驱动程序调用 [*MiniportSendNetBufferLists*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_send_net_buffer_lists)时，微型端口驱动程序在30秒内完成了发送请求。
 
-您可以使用内核调试器来帮助确定问题的原因。 检查 PendingNbl 的规则 \_ 状态，它指向导致超时的挂起缓冲区列表。 使用 [**！ ndiskd**](../debugger/-ndiskd-nbl.md) 调试程序扩展来检查 [**NET \_ BUFFER \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)。 有关使用调试器的信息，请参阅 [Windows 调试](../debugger/index.md)。
+您可以使用内核调试器来帮助确定问题的原因。 检查 PendingNbl 的规则 \_ 状态，它指向导致超时的挂起缓冲区列表。 使用 [**！ ndiskd**](../debugger/-ndiskd-nbl.md) 调试程序扩展来检查 [**NET \_ BUFFER \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list)。 有关使用调试器的信息，请参阅 [Windows 调试](../debugger/index.md)。
 
 **驱动程序模型： NDIS**
 

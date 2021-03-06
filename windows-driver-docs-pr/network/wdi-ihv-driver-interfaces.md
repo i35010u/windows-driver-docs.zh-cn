@@ -3,12 +3,12 @@ title: WDI IHV 驱动程序接口
 description: WDI IHV 小型端口与任何其他 NDIS 微型端口驱动程序类似，它将遵循适用于任何 NDIS 小型端口的开发实践和文档。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cc2ae8fc8796f32f153892d95bc0e941d8c8cedd
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 06e16abc4b6f3bdb1cd0c2dd8e74a240b7446f9b
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96825417"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102247765"
 ---
 # <a name="wdi-ihv-driver-interfaces"></a>WDI IHV 驱动程序接口
 
@@ -195,9 +195,9 @@ NDIS [*MiniportRestart*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_res
 
 对于每个 WDI 命令，都有两个可能的字段 \_ 可用于为操作返回 NDIS 状态代码，即 [*MiniportOidRequest*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request) 调用中的状态代码 (或 [**NdisMOidRequestComplete**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismoidrequestcomplete)) ，以及 [**WDI \_ 消息 \_ 标头**](/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_message_header) 字段中的状态代码 ("OID 完成" 或 "通过 [**NdisMIndicateStatusEx**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatestatusex)) "。 Microsoft 组件始终 \_ 从 OID 完成中查看 NDIS 状态，然后再查看 **WDI \_ MESSAGE \_ HEADERStatus** 字段。 WDI OID 处理的 IHV 组件的预期如下所示。
 
-1.  WDI Oid 使用 **NdisRequestMethod****的** 的 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)提交到 IHV 组件，相应的消息和消息长度位于 **数据中。方法 \_ 信息 InformationBuffer** 和 **数据。方法 \_ 信息。InputBufferLength** 字段。
+1.  WDI Oid 使用 **NdisRequestMethod****的** 的 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)提交到 IHV 组件，相应的消息和消息长度位于 **数据中。方法 \_ 信息 InformationBuffer** 和 **数据。方法 \_ 信息。InputBufferLength** 字段。
 2.  如果处理该命令时出现错误，则 IHV 组件会报告 OID 完成中的错误，如果 [**WDI \_ 消息 \_ 标头**](/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_message_header) 的 "状态" 字段 Wi-Fi 级别失败，则将其设置为 "不成功"。
-3.  对于任务和属性，请求的端口号位于 [**WDI \_ 消息 \_ 标头**](/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_message_header)**PortId** 字段中。 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)中的 **PortNumber** 始终设置为0。
+3.  对于任务和属性，请求的端口号位于 [**WDI \_ 消息 \_ 标头**](/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_message_header)**PortId** 字段中。 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)中的 **PortNumber** 始终设置为0。
 4.  完成 OID 后， [*MiniportOidRequest*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request) 可以返回 NDIS \_ 状态 " \_ 挂起"，并在以后 (同步或异步) 与 [**NdisMOidRequestComplete**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismoidrequestcomplete)同步。
 5.  如果 IHV 组件完成了具有 NDIS \_ 状态成功的 oid \_ ，则必须用适当的字节数（包括 [**WDI \_ 消息 \_ 标头**](/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_message_header)的空间）填充 oid 请求的 **BytesWritten** 字段。
 6.  如果 IHV 组件在数据中没有足够的空间 **。方法 \_ 信息。OutputBufferLength** 字段填充响应时，它会完成 OID，使 NDIS \_ 状态 \_ 缓冲区 \_ 太 \_ 短，并填充 **数据。方法 \_ 信息。BytesNeeded** 字段。 Microsoft 组件可能会尝试分配一个请求大小的缓冲区，并向 IHV 提交新的请求。

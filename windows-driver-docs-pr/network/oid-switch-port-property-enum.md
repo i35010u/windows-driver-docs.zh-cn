@@ -4,19 +4,19 @@ description: Hyper-v 可扩展交换机扩展发出对象标识符 (OID) 方法�
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_SWITCH_PORT_PROPERTY_ENUM 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: cd05008ff64c14434717761c527f2b3a51a11938
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 2e9198f19f1fb354460af86eccf706e4dfc70ca7
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96821267"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248803"
 ---
 # <a name="oid_switch_port_property_enum"></a>OID \_ 交换机 \_ 端口 \_ 属性 \_ 枚举
 
 
 Hyper-v 可扩展交换机扩展发出对象标识符 (OID \_ 转换端口属性枚举的) 方法请求 \_ \_ \_ ，以获取一个数组。 此数组包含与指定条件匹配的预配端口策略。 数组中的每个元素都为指定的可扩展交换机端口指定了策略的属性。
 
-[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向缓冲区的指针。 此缓冲区包含以下数据：
+[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员包含指向缓冲区的指针。 此缓冲区包含以下数据：
 
 -   [**NDIS \_ 交换机 \_ 端口 \_ 属性 \_ 枚举 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_enum_parameters)结构，为指定端口的策略枚举指定参数。
 
@@ -78,11 +78,11 @@ Hyper-v 可扩展交换机扩展发出对象标识符 (OID \_ 转换端口属性
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 NDIS 6.30 和更高版本中受支持。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>标题</p></td>
 <td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
@@ -94,7 +94,7 @@ Hyper-v 可扩展交换机扩展发出对象标识符 (OID \_ 转换端口属性
 ****
 [*DereferenceSwitchPort*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_dereference_switch_port)
 
-[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)
 
 [**NDIS \_ 交换机 \_ 端口 \_ 属性 \_ 枚举 \_ 信息**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_enum_info)
 

@@ -7,12 +7,12 @@ keywords:
 - 状态信息 WDK 标头-数据拆分
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7348120670309aedf57d00e8229faaf72c976be7
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 601d5962fdbb5728c9f47e8b28ab3311538b605b
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96817149"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248725"
 ---
 # <a name="getting-the-current-header-data-split-configuration"></a>获取当前的标头数据拆分配置
 
@@ -26,7 +26,7 @@ ms.locfileid: "96817149"
 
 NDIS 代表微型端口驱动程序处理 [OID \_ GEN \_ HD \_ SPLIT 的 \_ 当前 \_ 配置](./oid-gen-hd-split-current-config.md) 。 NDIS 基于微型端口驱动程序初始化属性和 [**NDIS \_ 状态 \_ 高清 \_ 拆分 \_ 当前 \_ 配置**](./ndis-status-hd-split-current-config.md) 状态指示，来维护当前的标头数据拆分配置信息。
 
-[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含 [**ndis \_ HD \_ SPLIT \_ 当前 \_ 配置**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_hd_split_current_config)结构。 在 \_ \_ \_ \_ 初始化期间，ndis 还向过量驱动程序提供 ndis HD 拆分当前配置结构，并提供状态指示。
+[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员包含 [**ndis \_ HD \_ SPLIT \_ 当前 \_ 配置**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_hd_split_current_config)结构。 在 \_ \_ \_ \_ 初始化期间，ndis 还向过量驱动程序提供 ndis HD 拆分当前配置结构，并提供状态指示。
 
 当微型端口驱动程序收到 [OID 第一 \_ 代 \_ hd \_ split \_ 参数](./oid-gen-hd-split-parameters.md) set 请求时，驱动程序必须使用 [**NDIS \_ HD \_ split \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_hd_split_parameters) 结构的内容来更新微型端口适配器的当前配置。 更新后，微型端口驱动程序必须报告其 [**NDIS \_ 状态 \_ 高清 \_ 拆分 \_ 当前 \_ 配置**](./ndis-status-hd-split-current-config.md) 状态指示的更改。 状态指示可确保所有的过量驱动程序都用新信息更新。
 

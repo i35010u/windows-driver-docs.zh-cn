@@ -3,12 +3,12 @@ title: WDI TX 路径
 description: 本部分介绍 WDI TX 路径
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7bab36545f2021f56424a5d03a01cf2f7e4899e5
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 0d5ea9f2d241f2a09d3889e3d0653883282f8e23
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96821919"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102247975"
 ---
 # <a name="wdi-tx-path"></a>WDI TX 路径
 
@@ -25,7 +25,7 @@ ms.locfileid: "96821919"
 
 TAL 使用目标 TX 描述符 (TTD) 通知目标为帧的大小和位置。
 
-不同的目标 WLAN 设备可能具有不同的 TTD 定义。 因此，TTD 编程是在 TAL 中根据 WDI 提供的信息来完成的。 若要对 TTD 进行编程，WDI 指定了 (NBL) 的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) ，通过该列表可以访问帧元数据（如框架 ID、扩展的 TID、适用的任务卸载和加密免除操作）。
+不同的目标 WLAN 设备可能具有不同的 TTD 定义。 因此，TTD 编程是在 TAL 中根据 WDI 提供的信息来完成的。 若要对 TTD 进行编程，WDI 指定了 (NBL) 的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list) ，通过该列表可以访问帧元数据（如框架 ID、扩展的 TID、适用的任务卸载和加密免除操作）。
 
 TAL 将 TTD 和 TX 帧传输到目标。 通过 TTD 中的元数据和框架标头中的字段，目标可以确定传输帧的目标接收方以及如何传输。
 
@@ -130,7 +130,7 @@ Ihv 保留范围内的由 IHV 注入的帧会映射到以下扩展的 ACs，目�
 
 [WDI TX 路径函数](/windows-hardware/drivers/ddi/_netvista/)
 
-[**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)
+[**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list)
 
 [**WDI \_ TXRX \_ 功能**](/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_txrx_target_capabilities)
 

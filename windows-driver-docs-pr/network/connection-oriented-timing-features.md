@@ -9,12 +9,12 @@ keywords:
 - 本地时钟 WDK CoNDIS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 020c09e281d0d91d4b1d982964bc768127a1fbc8
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 181a21701f56a448a24d6a233deef7d3bdceee8f
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96813709"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248763"
 ---
 # <a name="connection-oriented-timing-features"></a>面向连接的计时功能
 
@@ -44,7 +44,7 @@ ms.locfileid: "96813709"
 
 为了获取 NIC 的本地时间，面向连接的协议可以调用 **NdisCoOidRequest** 来查询面向连接的微型端口驱动程序或 MCM 驱动程序与 [OID \_ 生成 \_ CO \_ 获取 \_ nic \_ 时间](./oid-gen-co-get-netcard-time.md)。 面向连接的微型端口驱动程序或 MCM 驱动程序同步返回其本地时间，该时间是面向连接的协议可用于计划数据包传输的时间。
 
-发送或接收数据包的时间信息包含在数据包的带外 (OOB) 数据中。 有关详细信息，请参阅 [**NET \_ BUFFER \_ LIST**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)。
+发送或接收数据包的时间信息包含在数据包的带外 (OOB) 数据中。 有关详细信息，请参阅 [**NET \_ BUFFER \_ LIST**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list)。
 
  
 

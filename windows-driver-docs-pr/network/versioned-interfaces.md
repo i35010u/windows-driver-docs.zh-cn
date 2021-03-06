@@ -7,12 +7,12 @@ keywords:
 - NDIS WDK，向后兼容性
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a34d214342b8b1a7c31eaa6e251c2d6a962b87e4
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 979ddc5d49474d2c14617dcedbf5b1be6999bf95
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96836701"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248285"
 ---
 # <a name="versioned-interfaces"></a>版本受控的接口
 
@@ -26,7 +26,7 @@ ms.locfileid: "96836701"
 
 此版本控制简化了后向兼容性，并延长了 NDIS 6.0 和更高版本驱动程序的生存期。 此外，NDIS 驱动程序还可以支持多个版本的 NDIS。
 
-有关详细信息，请参阅 [**NDIS \_ 对象 \_ 标头**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_object_header)。
+有关详细信息，请参阅 [**NDIS \_ 对象 \_ 标头**](/windows-hardware/drivers/ddi/objectheader/ns-objectheader-ndis_object_header)。
 
  
 

@@ -3,12 +3,12 @@ title: 接收段合并的示例
 description: 本部分说明了合并算法，它使用按顺序接收并在 (DPC) 的单个延迟过程调用中处理的段的示例。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 66faaabed9d6dc79c5bc33b8848ffb8f9dfb778a
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 916e6b0b8480c69051e1845dd71d41ddf13adf25
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96788441"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102249119"
 ---
 # <a name="examples-of-receive-segment-coalescing"></a>接收段合并的示例
 
@@ -33,7 +33,7 @@ ms.locfileid: "96788441"
 这些段都不会产生异常。
 ### <a name="result"></a>结果
 
-单个 SCU 由10个段组成。 这在单个 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)中显示为单个 [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)。
+单个 SCU 由10个段组成。 这在单个 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list)中显示为单个 [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer)。
 
 ## <a name="example-2-data-segments-followed-by-an-exception-followed-by-data-segments"></a>示例2：数据段，后跟异常，后跟数据段
 
@@ -70,7 +70,7 @@ ms.locfileid: "96788441"
 
 第七个和第8个段共同构成了 SCU。
 
-[**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)链使用三个 **网络 \_ 缓冲区 \_ 列表** 结构来表示，每个结构都有一个 [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)。 将保留已接收段的顺序。
+[**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list)链使用三个 **网络 \_ 缓冲区 \_ 列表** 结构来表示，每个结构都有一个 [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer)。 将保留已接收段的顺序。
 
 ## <a name="example-3-data-segments-followed-by-multiple-window-updates"></a>示例3：数据段，后跟多个窗口更新
 
@@ -94,7 +94,7 @@ ms.locfileid: "96788441"
 
 ### <a name="result"></a>结果
 
-单个 SCU 是由7段组成的。 这在单个 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)中显示为单个 [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)。
+单个 SCU 是由7段组成的。 这在单个 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list)中显示为单个 [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer)。
 
 SCU。WND = 131070，并且根据该值更新校验和。
 
@@ -123,7 +123,7 @@ SCU。WND = 131070，并且根据该值更新校验和。
 这些段都不会产生异常。
 ### <a name="result"></a>结果
 
-单个 SCU 是由5段组成的。 这在单个 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)中显示为单个 [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)。 SCU。ACK 设置为最后一个 SEG。
+单个 SCU 是由5段组成的。 这在单个 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list)中显示为单个 [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer)。 SCU。ACK 设置为最后一个 SEG。
 
  
 

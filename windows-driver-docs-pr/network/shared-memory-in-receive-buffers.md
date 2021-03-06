@@ -3,12 +3,12 @@ title: 接收缓冲区中的共享内存
 description: 接收缓冲区中的共享内存
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f3e0343f1aafd165fa6fee9c182f572df0a3a377
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 275c5cbeb6728542779db4a6d3376788732e1d79
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96819997"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102249099"
 ---
 # <a name="shared-memory-in-receive-buffers"></a>接收缓冲区中的共享内存
 
@@ -26,9 +26,9 @@ ms.locfileid: "96819997"
 
 ![说明将传入数据拆分为两个共享内存缓冲区时网络数据的关系的关系图](images/vmqpacket.png)
 
-[**NET \_ BUFFER \_ SHARED \_ memory**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_shared_memory)结构指定共享内存信息。 可以有一个链接列表，其中包含与 [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer) 结构关联的共享内存缓冲区。
+[**NET \_ BUFFER \_ SHARED \_ memory**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_shared_memory)结构指定共享内存信息。 可以有一个链接列表，其中包含与 [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer) 结构关联的共享内存缓冲区。
 
-使用 [**网络 \_ 缓冲区 \_ 共享 \_ 内存 \_ 下一 \_ 段**](/windows-hardware/drivers/ddi/ndis/nf-ndis-net_buffer_shared_mem_next_segment)、[**网络 \_ 缓冲区 \_ 共享 \_ 内存 \_ 标志**](/windows-hardware/drivers/ddi/ndis/nf-ndis-net_buffer_shared_mem_flags)、[**网络 \_ 缓冲区共享内存的 \_ \_ \_ 句柄**](/windows-hardware/drivers/ddi/ndis/nf-ndis-net_buffer_shared_mem_handle)、网络缓冲区共享内存的 [**长度宏和网络 \_ 缓冲区 \_ 共享内存 \_ \_ 长度**](/windows-hardware/drivers/ddi/ndis/nf-ndis-net_buffer_shared_mem_length)宏来访问 [**\_ \_ \_ \_**](/windows-hardware/drivers/ddi/ndis/nf-ndis-net_buffer_shared_mem_offset) \_ \_ 网络缓冲区中的网络缓冲共享 \_ 内存 \_ 。 NET buffer 结构的 **SharedMemoryInfo** 成员 \_ 包含链接列表中的第一个网络 \_ 缓冲区 \_ 共享 \_ 内存结构。
+使用 [**网络 \_ 缓冲区 \_ 共享 \_ 内存 \_ 下一 \_ 段**](/windows-hardware/drivers/ddi/nblaccessors/nf-nblaccessors-net_buffer_shared_mem_next_segment)、[**网络 \_ 缓冲区 \_ 共享 \_ 内存 \_ 标志**](/windows-hardware/drivers/ddi/nblaccessors/nf-nblaccessors-net_buffer_shared_mem_flags)、[**网络 \_ 缓冲区共享内存的 \_ \_ \_ 句柄**](/windows-hardware/drivers/ddi/nblaccessors/nf-nblaccessors-net_buffer_shared_mem_handle)、网络缓冲区共享内存的 [**长度宏和网络 \_ 缓冲区 \_ 共享内存 \_ \_ 长度**](/windows-hardware/drivers/ddi/nblaccessors/nf-nblaccessors-net_buffer_shared_mem_length)宏来访问 [**\_ \_ \_ \_**](/windows-hardware/drivers/ddi/nblaccessors/nf-nblaccessors-net_buffer_shared_mem_offset) \_ \_ 网络缓冲区中的网络缓冲共享 \_ 内存 \_ 。 NET buffer 结构的 **SharedMemoryInfo** 成员 \_ 包含链接列表中的第一个网络 \_ 缓冲区 \_ 共享 \_ 内存结构。
 
 **注意**  从 NDIS 6.30 开始，不再支持将数据包数据拆分为单独的预测先行缓冲区。 从 Windows Server 2012 开始，过量协议驱动程序将不会在 [**ndis \_ 接收 \_ 队列 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)结构的 **Flags** 成员中设置 " **ndis \_ 接收 \_ 队列 \_ 参数 \_ 预测 \_ \_ 要求**" 标志。
 

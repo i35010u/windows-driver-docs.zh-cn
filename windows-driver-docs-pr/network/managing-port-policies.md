@@ -3,12 +3,12 @@ title: 管理端口策略
 description: 管理端口策略
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 37874fc0e5295724f9274638bb6edd2ea9a2d9b0
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: fe9398f89dc3cd2902f5b8b300215f915a8dae47
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96802355"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248005"
 ---
 # <a name="managing-port-policies"></a>管理端口策略
 
@@ -18,20 +18,20 @@ ms.locfileid: "96802355"
 Hyper-v 可扩展交换机接口使用以下对象标识符 (Oid) 使用标准端口策略和自定义端口策略的属性预配筛选和转发扩展：
 
 <a href="" id="oid-switch-port-property-add"></a>[OID \_ 交换机 \_ 端口 \_ 属性 \_ 添加](./oid-switch-port-property-add.md)  
-此 OID 集请求由可扩展交换机的协议边缘发出，用于通知基础扩展在 WMI 管理层添加属性的情况。 [**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 包含指向 [**NDIS \_ 交换机 \_ 端口 \_ 属性 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_parameters)结构的指针。
+此 OID 集请求由可扩展交换机的协议边缘发出，用于通知基础扩展在 WMI 管理层添加属性的情况。 [**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 包含指向 [**NDIS \_ 交换机 \_ 端口 \_ 属性 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_parameters)结构的指针。
 
 **注意**  自定义端口属性由 [**NDIS \_ 交换机 \_ 端口 \_ 属性 \_ 类型**](/windows-hardware/drivers/ddi/ntddndis/ne-ntddndis-_ndis_switch_port_property_type) 枚举值 **NdisSwitchPortPropertyTypeCustom** 指定。 标准端口属性由 **NdisSwitchPortPropertyTypeSecurity**、 **NdisSwitchPortPropertyTypeVlan** 和 **NdisSwitchPortPropertyTypeProfile** 的 **NDIS \_ 交换机 \_ 端口 \_ 属性 \_ 类型** 枚举值指定。
 
  
 
 <a href="" id="oid-switch-port-property-update"></a>[OID \_ 交换机 \_ 端口 \_ 属性 \_ 更新](./oid-switch-port-property-update.md)  
-此 OID 集请求是由可扩展交换机的协议边缘发出的，用于在 WMI 管理层通知基础属性的更新的基础扩展。 [**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 包含指向 [**NDIS \_ 交换机 \_ 端口 \_ 属性 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_parameters)结构的指针。
+此 OID 集请求是由可扩展交换机的协议边缘发出的，用于在 WMI 管理层通知基础属性的更新的基础扩展。 [**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 包含指向 [**NDIS \_ 交换机 \_ 端口 \_ 属性 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_parameters)结构的指针。
 
 <a href="" id="oid-switch-port-property-delete"></a>[OID \_ 交换机 \_ 端口 \_ 属性 \_ 删除](./oid-switch-port-property-delete.md)  
-此 OID 集请求由可扩展交换机的协议边缘发出，用于通知基础扩展在 WMI 管理层删除属性的情况。 [**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 包含指向 [**NDIS \_ 交换机 \_ 端口 \_ 属性 \_ DELETE \_ PARAMETERS**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_delete_parameters)结构的指针。
+此 OID 集请求由可扩展交换机的协议边缘发出，用于通知基础扩展在 WMI 管理层删除属性的情况。 [**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 包含指向 [**NDIS \_ 交换机 \_ 端口 \_ 属性 \_ DELETE \_ PARAMETERS**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_delete_parameters)结构的指针。
 
 <a href="" id="oid-switch-port-property-enum"></a>[OID \_ 交换机 \_ 端口 \_ 属性 \_ 枚举](./oid-switch-port-property-enum.md)  
-此 OID 方法请求由该扩展插件发送，用于查询可扩展交换机上有关当前配置属性的可扩展交换机的基础微型端口边缘。 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 包含指向缓冲区的指针。 此缓冲区包含以下数据：
+此 OID 方法请求由该扩展插件发送，用于查询可扩展交换机上有关当前配置属性的可扩展交换机的基础微型端口边缘。 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 包含指向缓冲区的指针。 此缓冲区包含以下数据：
 
 -   [**NDIS \_ 交换机 \_ 端口 \_ 属性 \_ 枚举 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_enum_parameters)结构，为指定端口的策略枚举指定参数。
 

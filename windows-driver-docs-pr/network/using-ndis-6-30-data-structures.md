@@ -3,17 +3,17 @@ title: 使用 NDIS 6.30 数据结构
 description: 使用 NDIS 6.30 数据结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 48788d02a73be7837fea71169da247fe071aa481
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: f37dd5e47a01483cb15caebaa9e2a5e9fbed0f16
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96809891"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102247893"
 ---
 # <a name="using-ndis-630-data-structures"></a>使用 NDIS 6.30 数据结构
 
 
-NDIS 可支持同一数据结构的多个版本。 对于 Windows 8 和 Windows Server 2012 操作系统，使用结构的 NDIS 6.30 版本的微型端口驱动程序必须使用正确的版本和大小值初始化结构的 **标头** 成员。 **标头** 成员是一个 [**ndis \_ 对象 \_ 标头**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_object_header)结构，驱动程序必须将 **标头** 成员的 **修订版** 成员和 **size** 成员值初始化为 ndis 6.30 版本和大小值。
+NDIS 可支持同一数据结构的多个版本。 对于 Windows 8 和 Windows Server 2012 操作系统，使用结构的 NDIS 6.30 版本的微型端口驱动程序必须使用正确的版本和大小值初始化结构的 **标头** 成员。 **标头** 成员是一个 [**ndis \_ 对象 \_ 标头**](/windows-hardware/drivers/ddi/objectheader/ns-objectheader-ndis_object_header)结构，驱动程序必须将 **标头** 成员的 **修订版** 成员和 **size** 成员值初始化为 ndis 6.30 版本和大小值。
 
 **注意**  若要确定正确的版本和大小信息，请参阅每个包含 **标头** 成员的结构的参考页。 对于包含 **标头** 成员并且已针对 ndis 6.30 更新的结构，其引用页包含 ndis 6.30 驱动程序的新信息。 如果没有针对 NDIS 6.30 的结构的更新，则为早期版本的 NDIS 提供的信息也适用于 NDIS 6.30 驱动程序。
 

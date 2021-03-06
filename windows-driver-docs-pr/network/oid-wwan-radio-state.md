@@ -4,12 +4,12 @@ description: OID_WWAN_RADIO_STATE 设置或返回有关 MB 设备无线电电源
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WWAN_RADIO_STATE 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d03ff3937f432c6a48948ab46035d9e3add7c54
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: a384cc8368b6b45e6c6333f0e563bae91f72f266
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96812947"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248788"
 ---
 # <a name="oid_wwan_radio_state"></a>OID \_ WWAN \_ 无线电 \_ 状态
 
@@ -23,7 +23,7 @@ OID \_ WWAN \_ 无线电 \_ 状态设置或返回有关 MB 设备无线电电源
 <a name="remarks"></a>备注
 -------
 
-有关使用此 OID 的详细信息，请参阅 [WWAN 无线电电源状态操作](./mb-radio-power-state-operations.md)。
+有关使用此 OID 的详细信息，请参阅 [MB 无线电状态](mb-radio-state.md)。
 
 在处理查询或设置操作时，微型端口驱动程序不应访问提供程序网络或订阅服务器标识模块 (SIM 卡) 。
 
@@ -94,11 +94,11 @@ OID \_ WWAN \_ 无线电 \_ 状态设置或返回有关 MB 设备无线电电源
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 windows 7 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>标题</p></td>
 <td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
@@ -113,7 +113,7 @@ OID \_ WWAN \_ 无线电 \_ 状态设置或返回有关 MB 设备无线电电源
 
 [**NDIS \_ 状态 \_ WWAN \_ 无线电 \_ 状态**](ndis-status-wwan-radio-state.md)
 
-[WWAN 无线电电源状态操作](./mb-radio-power-state-operations.md)
+[MB 无线电状态](mb-radio-state.md)
 
 [**WWAN \_ 无线电 \_ 状态**](/windows-hardware/drivers/ddi/wwan/ns-wwan-_wwan_radio_state)
 

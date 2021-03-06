@@ -5,12 +5,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_TASK_OFFLOAD_CURRENT_CONFIG 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: f8123a6064e949dac7acc241b50b7d8e07e1f5a2
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 27ef0930b95655eab0017837d65eb7fe237e2cd2
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96837161"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102247749"
 ---
 # <a name="ndis_status_task_offload_current_config"></a>NDIS \_ 状态 \_ 任务 \_ 卸载 \_ 当前 \_ 配置
 
@@ -23,7 +23,7 @@ ms.locfileid: "96837161"
 小型端口驱动程序必须在当前功能发生更改时，用 **NDIS \_ 状态 \_ 任务 " \_ 卸载 \_ 当前 \_ 配置** 状态指示" 报告当前功能。 此状态指示可确保所有的过量协议驱动程序都用新功能信息进行更新。 在以下情况下，需要微型端口驱动程序来发出此状态指示：
 
 1.  当微型端口驱动程序收到 [OID \_ TCP \_ 卸载 \_ 参数](./oid-tcp-offload-parameters.md) set 请求时，它必须使用 [**NDIS \_ 卸载 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload_parameters) 结构的内容来更新当前启用的任务卸载功能。
-2.  当微型端口驱动程序收到 [OID \_ 卸载 \_ 封装](./oid-offload-encapsulation.md) 集请求时，它必须使用 [**NDIS \_ 卸载 \_ 封装**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_offload_encapsulation) 结构的内容来更新当前启用的任务卸载功能。
+2.  当微型端口驱动程序收到 [OID \_ 卸载 \_ 封装](./oid-offload-encapsulation.md) 集请求时，它必须使用 [**NDIS \_ 卸载 \_ 封装**](/windows-hardware/drivers/ddi/encapsulationconfig/ns-encapsulationconfig-ndis_offload_encapsulation) 结构的内容来更新当前启用的任务卸载功能。
 
 [**Ndis \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构的 **StatusBuffer** 成员包含 [**ndis \_ 卸载**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload)结构。 发出 **NDIS \_ 状态任务 " \_ \_ 卸载 \_ 当前 \_ 配置** 状态指示" 时，微型端口驱动程序必须使用 **NDIS \_ 卸载** 结构来报告 NIC 的当前任务卸载配置。
 
@@ -43,11 +43,11 @@ ms.locfileid: "96837161"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 NDIS 6.0 和更高版本中受支持。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>标题</p></td>
 <td> (包含 Ndis .h) </td>
 </tr>
 </tbody>
@@ -58,7 +58,7 @@ ms.locfileid: "96837161"
 
 [**NDIS \_ 卸载**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload)
 
-[**NDIS \_ 卸载 \_ 封装**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_offload_encapsulation)
+[**NDIS \_ 卸载 \_ 封装**](/windows-hardware/drivers/ddi/encapsulationconfig/ns-encapsulationconfig-ndis_offload_encapsulation)
 
 [**NDIS \_ 卸载 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload_parameters)
 

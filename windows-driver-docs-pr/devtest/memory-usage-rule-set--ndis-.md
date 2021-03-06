@@ -3,12 +3,12 @@ title: 内存用法规则集 (NDIS)
 description: 使用这些规则验证驱动程序是否正确调用 NDIS 函数以分配和释放内存。
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9dead89936b83706e814f5fb985fedeaf44d7b8c
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 8549469752731265b39d5bcf491c02a9f36c2236
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96798331"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102247825"
 ---
 # <a name="memory-usage-rule-set-ndis"></a>内存用法规则集 (NDIS)
 
@@ -36,7 +36,7 @@ ms.locfileid: "96798331"
 </tr>
 <tr class="even">
 <td align="left"><p><a href="ndis-ndisallocatemdl.md" data-raw-source="[&lt;strong&gt;NdisAllocateMdl&lt;/strong&gt;](ndis-ndisallocatemdl.md)"><strong>NdisAllocateMdl</strong></a></p></td>
-<td align="left"><p><a href="ndis-ndisallocatemdl.md" data-raw-source="[&lt;strong&gt;NdisAllocateMdl&lt;/strong&gt;](ndis-ndisallocatemdl.md)"><strong>NdisAllocateMdl</strong></a>规则指定按替代顺序调用<a href="/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatemdl" data-raw-source="[&lt;strong&gt;NdisAllocateMdl&lt;/strong&gt;](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatemdl)"><strong>NdisAllocateMdl</strong></a>和<a href="/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreemdl" data-raw-source="[&lt;strong&gt;NdisFreeMdl&lt;/strong&gt;](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreemdl)"><strong>NdisFreeMdl</strong></a> 。 最终目标是确保在 <a href="/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt" data-raw-source="[&lt;em&gt;MiniportHaltEx&lt;/em&gt;](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt)"><em>MiniportHaltEx</em></a> 结束时释放所有 MDLs。</p></td>
+<td align="left"><p><a href="ndis-ndisallocatemdl.md" data-raw-source="[&lt;strong&gt;NdisAllocateMdl&lt;/strong&gt;](ndis-ndisallocatemdl.md)"><strong>NdisAllocateMdl</strong></a>规则指定按替代顺序调用<a href="/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatemdl" data-raw-source="[&lt;strong&gt;NdisAllocateMdl&lt;/strong&gt;](/windows-hardware/drivers/ddi/mdlapi/nf-mdlapi-ndisallocatemdl)"><strong>NdisAllocateMdl</strong></a>和<a href="/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreemdl" data-raw-source="[&lt;strong&gt;NdisFreeMdl&lt;/strong&gt;](/windows-hardware/drivers/ddi/mdlapi/nf-mdlapi-ndisfreemdl)"><strong>NdisFreeMdl</strong></a> 。 最终目标是确保在 <a href="/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt" data-raw-source="[&lt;em&gt;MiniportHaltEx&lt;/em&gt;](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt)"><em>MiniportHaltEx</em></a> 结束时释放所有 MDLs。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="ndis-ndisallocatememorywithtagpriority.md" data-raw-source="[&lt;strong&gt;NdisAllocateMemoryWithTagPriority&lt;/strong&gt;](ndis-ndisallocatememorywithtagpriority.md)"><strong>NdisAllocateMemoryWithTagPriority</strong></a></p></td>
@@ -45,7 +45,7 @@ ms.locfileid: "96798331"
 </tr>
 <tr class="even">
 <td align="left"><p><a href="ndis-ndisallocatenetbuffer.md" data-raw-source="[&lt;strong&gt;NdisAllocateNetBuffer&lt;/strong&gt;](ndis-ndisallocatenetbuffer.md)"><strong>NdisAllocateNetBuffer</strong></a></p></td>
-<td align="left"><p><a href="ndis-ndisallocatenetbuffer.md" data-raw-source="[&lt;strong&gt;NdisAllocateNetBuffer&lt;/strong&gt;](ndis-ndisallocatenetbuffer.md)"><strong>NdisAllocateNetBuffer</strong></a>规则指定按替代顺序调用<a href="/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatenetbuffer" data-raw-source="[&lt;strong&gt;NdisAllocateNetBuffer&lt;/strong&gt;](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatenetbuffer)"><strong>NdisAllocateNetBuffer</strong></a>和<a href="/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreenetbuffer" data-raw-source="[&lt;strong&gt;NdisFreeNetBuffer&lt;/strong&gt;](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreenetbuffer)"><strong>NdisFreeNetBuffer</strong></a> 。 最终的目标是确保在<a href="/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt" data-raw-source="[&lt;em&gt;MiniportHaltEx&lt;/em&gt;](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt)"><em>MiniportHaltEx</em></a>结束时释放<a href="/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer" data-raw-source="[&lt;strong&gt;NET_BUFFER&lt;/strong&gt;](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)"><strong>NET_BUFFER</strong></a>的所有实例。</p></td>
+<td align="left"><p><a href="ndis-ndisallocatenetbuffer.md" data-raw-source="[&lt;strong&gt;NdisAllocateNetBuffer&lt;/strong&gt;](ndis-ndisallocatenetbuffer.md)"><strong>NdisAllocateNetBuffer</strong></a>规则指定按替代顺序调用<a href="/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatenetbuffer" data-raw-source="[&lt;strong&gt;NdisAllocateNetBuffer&lt;/strong&gt;](/windows-hardware/drivers/ddi/nblapi/nf-nblapi-ndisallocatenetbuffer)"><strong>NdisAllocateNetBuffer</strong></a>和<a href="/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreenetbuffer" data-raw-source="[&lt;strong&gt;NdisFreeNetBuffer&lt;/strong&gt;](/windows-hardware/drivers/ddi/nblapi/nf-nblapi-ndisfreenetbuffer)"><strong>NdisFreeNetBuffer</strong></a> 。 最终的目标是确保在<a href="/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt" data-raw-source="[&lt;em&gt;MiniportHaltEx&lt;/em&gt;](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt)"><em>MiniportHaltEx</em></a>结束时释放<a href="/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer" data-raw-source="[&lt;strong&gt;NET_BUFFER&lt;/strong&gt;](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer)"><strong>NET_BUFFER</strong></a>的所有实例。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="ndis-ndismfreesharedmemory.md" data-raw-source="[&lt;strong&gt;NdisMFreeSharedMemory&lt;/strong&gt;](ndis-ndismfreesharedmemory.md)"><strong>NdisMFreeSharedMemory</strong></a></p></td>

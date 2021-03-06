@@ -4,12 +4,12 @@ description: 作为一个集请求，NDIS 和过量驱动程序使用 OID_NDK_SE
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_NDK_SET_STATE 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c7da137eaf17e27b7a1b31fea87d320a9606bfe
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: f9c15342d8fadef5d4bf4d6593d0f0a2f5df2c6d
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96827559"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248581"
 ---
 # <a name="oid_ndk_set_state"></a>OID \_ NDK \_ 集 \_ 状态
 
@@ -21,7 +21,7 @@ ms.locfileid: "96827559"
 <a name="remarks"></a>备注
 -------
 
-NDIS 用指向 **布尔值** 和 **InformationBufferLength** 成员（等于 sizeof (**布尔**) ）的 [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员颁发此 OID。
+NDIS 用指向 **布尔值** 和 **InformationBufferLength** 成员（等于 sizeof (**布尔**) ）的 [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员颁发此 OID。
 
 -   如果 **布尔** 值为 **TRUE** ，并且 **\* NetworkDirect** 关键字值为非零，则必须启用微型端口适配器的 NDK 功能。
 
@@ -63,11 +63,11 @@ NDIS 用指向 **布尔值** 和 **InformationBufferLength** 成员（等于 siz
 <td><p>Windows Server 2012</p></td>
 </tr>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 NDIS 6.30 和更高版本中受支持。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>标题</p></td>
 <td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
@@ -76,7 +76,7 @@ NDIS 用指向 **布尔值** 和 **InformationBufferLength** 成员（等于 siz
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)
 
 [**NdisMNetPnPEvent**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismnetpnpevent)
 

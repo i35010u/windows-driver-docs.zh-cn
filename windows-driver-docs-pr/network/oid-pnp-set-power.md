@@ -4,12 +4,12 @@ description: OID_PNP_SET_POWER
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_PNP_SET_POWER 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 26efec0328873f8770668bc01616c9856c1dac6d
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 5fe03dc3baa922b7cc7f29085e4d1a91b814b665
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96827527"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102247995"
 ---
 # <a name="oid_pnp_set_power"></a>OID \_ PNP \_ 设置 \_ 电源
 
@@ -42,15 +42,15 @@ OID \_ pnp \_ 集 \_ 电源请求可能位于 [oid \_ pnp \_ 查询 \_ 电源](o
 
 -   等待对 [**NdisMIndicateReceiveNetBufferLists**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatereceivenetbufferlists) 函数的调用返回。
 
--   等待网络适配器处理的发送请求完成。 完成后，微型端口驱动程序必须调用 [**NdisMSendNetBufferListsComplete**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsendnetbufferlistscomplete) 函数。 驱动程序应将每个 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构中的 **状态** 成员设置为相应的 NDIS \_ 状态 \_ *Xxx* 值。
+-   等待网络适配器处理的发送请求完成。 完成后，微型端口驱动程序必须调用 [**NdisMSendNetBufferListsComplete**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsendnetbufferlistscomplete) 函数。 驱动程序应将每个 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list)结构中的 **状态** 成员设置为相应的 NDIS \_ 状态 \_ *Xxx* 值。
 
--   通过调用 [**NdisMSendNetBufferListsComplete**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsendnetbufferlistscomplete) 函数完成所有挂起的发送请求。 驱动程序必须将每个 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构中的 **状态** 成员设置为 **NDIS \_ 状态 \_ 低 \_ 电源 \_ 状态**。
+-   通过调用 [**NdisMSendNetBufferListsComplete**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsendnetbufferlistscomplete) 函数完成所有挂起的发送请求。 驱动程序必须将每个 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list)结构中的 **状态** 成员设置为 **NDIS \_ 状态 \_ 低 \_ 电源 \_ 状态**。
 
--   通过调用 [**NdisMSendNetBufferListsComplete**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsendnetbufferlistscomplete)函数，立即拒绝对其 [*MiniportSendNetBufferLists*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_send_net_buffer_lists)函数发出的所有新发送请求。 驱动程序必须将每个 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构中的 **状态** 成员设置为 **NDIS \_ 状态 \_ 低 \_ 电源 \_ 状态**。
+-   通过调用 [**NdisMSendNetBufferListsComplete**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsendnetbufferlistscomplete)函数，立即拒绝对其 [*MiniportSendNetBufferLists*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_send_net_buffer_lists)函数发出的所有新发送请求。 驱动程序必须将每个 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list)结构中的 **状态** 成员设置为 **NDIS \_ 状态 \_ 低 \_ 电源 \_ 状态**。
 
 支持 NDIS 6.30 和更高版本的 NDIS 的微型端口驱动程序还必须执行以下操作：
 
--   不等待通过调用 [*MiniportReturnNetBufferLists*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_return_net_buffer_lists) 函数来完成挂起的接收指示。 此外，微型端口驱动程序不得为等待完成的任何数据包更改 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构或数据。
+-   不等待通过调用 [*MiniportReturnNetBufferLists*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_return_net_buffer_lists) 函数来完成挂起的接收指示。 此外，微型端口驱动程序不得为等待完成的任何数据包更改 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list) 结构或数据。
 
 -   \_ \_ \_ 从暂停或正在运行的适配器状态中，将 OID PNP 集电源请求处理为低功耗状态。 有关这些状态的详细信息，请参阅 [微型端口适配器状态和操作](./miniport-adapter-states-and-operations.md)。
 
@@ -126,11 +126,11 @@ OID \_ pnp \_ 集 \_ 电源请求可能位于 [oid \_ pnp \_ 查询 \_ 电源](o
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>支持 NDIS 5.1 和 NDIS 6.0 及更高版本。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>标题</p></td>
 <td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
@@ -156,5 +156,5 @@ OID \_ pnp \_ 集 \_ 电源请求可能位于 [oid \_ pnp \_ 查询 \_ 电源](o
 
 [**NdisMSendNetBufferListsComplete**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsendnetbufferlistscomplete)
 
-[**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)
+[**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list)
 

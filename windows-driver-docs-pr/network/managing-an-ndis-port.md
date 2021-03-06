@@ -8,12 +8,12 @@ keywords:
 - 端口号 WDK NDIS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 221ce480d44b7e829e858b97c8012cf473a6d54f
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 8ea243fbcac12b05c219bbf8869f2f88f9349a45
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96832205"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248649"
 ---
 # <a name="managing-an-ndis-port"></a>管理 NDIS 端口
 
@@ -29,7 +29,7 @@ NDIS 通过发出关联的状态指示和 PnP 事件，通知感兴趣的 NDIS �
 
 为了帮助管理 NDIS 端口，以下结构包括端口号：
 
-<a href="" id="ndis-oid-request"></a>[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)  
+<a href="" id="ndis-oid-request"></a>[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)  
 介绍 OID 请求。
 
 <a href="" id="ndis-status-indication"></a>[**NDIS \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)  

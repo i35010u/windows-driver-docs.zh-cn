@@ -3,12 +3,12 @@ title: 删除 NIC 交换机
 description: 删除 NIC 交换机
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a9a862478ccc9f1dca4515718069d904b57e2f73
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: c6e969765f11d6e9ccaa73fb9dbf20b2b66b8d38
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96814953"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102247969"
 ---
 # <a name="deleting-a-nic-switch"></a>删除 NIC 交换机
 
@@ -19,7 +19,7 @@ ms.locfileid: "96814953"
 
  
 
-在停止 PF 微型端口驱动程序之前，NDIS 会通过发出对象标识符 (OID 来删除 NIC 交换机) 设置 [oid \_ NIC \_ 交换机 \_ 删除 \_ 开关](./oid-nic-switch-delete-switch.md)。 [**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含一个指针，该指针指向用于指定要删除的交换机的标识符的 [**ndis \_ NIC \_ 交换机 \_ 删除 \_ 开关 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_delete_switch_parameters)结构。
+在停止 PF 微型端口驱动程序之前，NDIS 会通过发出对象标识符 (OID 来删除 NIC 交换机) 设置 [oid \_ NIC \_ 交换机 \_ 删除 \_ 开关](./oid-nic-switch-delete-switch.md)。 [**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员包含一个指针，该指针指向用于指定要删除的交换机的标识符的 [**ndis \_ NIC \_ 交换机 \_ 删除 \_ 开关 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_delete_switch_parameters)结构。
 
 在向 PF 微型端口驱动程序发出 [oid \_ NIC \_ 交换机 \_ 删除 \_ 开关](./oid-nic-switch-delete-switch.md) 的 oid 集请求之前，NDIS 强制执行以下策略：
 

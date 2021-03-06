@@ -3,12 +3,12 @@ title: VMQ 传输路径
 description: VMQ 传输路径
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d2fcd0ab3fb6bbb011c9706bd43236becf3a26ec
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: aa8e3eca7cf9feb7b35c3f733b3e6709e5e4a896
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96786693"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248127"
 ---
 # <a name="vmq-transmit-path"></a>VMQ 传输路径
 
@@ -18,7 +18,7 @@ ms.locfileid: "96786693"
 
 对于传输请求，过量驱动程序使用 [**网络 \_ 缓冲区 \_ 列表 \_ 接收 \_ 队列 \_ ID**](/windows-hardware/drivers/ddi/ndis/nf-ndis-net_buffer_list_receive_queue_id) 宏，用 **NetBufferListFilteringInfo** OOB 信息设置传出数据中传出队列的队列标识符。 **NetBufferListFilteringInfo** 信息是在 [**NDIS \_ 网络 \_ 缓冲区 \_ 列表 \_ 筛选 \_ 信息**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_net_buffer_list_filtering_info)结构中指定的。
 
-NDIS 驱动程序可以使用 [**网络 \_ 缓冲区 \_ 列表 \_ 接收 \_ 队列 \_ ID**](/windows-hardware/drivers/ddi/ndis/nf-ndis-net_buffer_list_receive_queue_id) 宏来设置或获取 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构的队列标识符。 如果一个队列组包含多个 VM 队列，则可以将传输数据包的队列标识符设置为该组中任何 VM 队列的队列标识符。
+NDIS 驱动程序可以使用 [**网络 \_ 缓冲区 \_ 列表 \_ 接收 \_ 队列 \_ ID**](/windows-hardware/drivers/ddi/ndis/nf-ndis-net_buffer_list_receive_queue_id) 宏来设置或获取 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list) 结构的队列标识符。 如果一个队列组包含多个 VM 队列，则可以将传输数据包的队列标识符设置为该组中任何 VM 队列的队列标识符。
 
 协议驱动程序在 \_ \_ \_ \_ [**NdisSendNetBufferLists**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndissendnetbufferlists)函数的 *SendFlags* 参数上设置 NDIS 发送标志单一队列位，以指示调用中的所有传输网络 \_ 缓冲区 \_ 列表结构都适用于同一传输队列。
 

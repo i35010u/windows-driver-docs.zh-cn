@@ -5,12 +5,12 @@ keywords:
 - OID_TCP_OFFLOAD_HARDWARE_CAPABILITIES，WDK Oid，WDK 网络对象标识符，WDK 网络 Oid
 ms.date: 11/01/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cdc10312fb6ba3a31cc41dfb045310354eb44f4b
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: ef397ebaa823e95353953a5b51d1a673950a22bf
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96814931"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102249153"
 ---
 # <a name="oid_tcp_offload_hardware_capabilities"></a>OID_TCP_OFFLOAD_HARDWARE_CAPABILITIES
 
@@ -22,14 +22,14 @@ ms.locfileid: "96814931"
 
 NDIS 处理微型端口驱动程序的此 OID。 微型端口驱动程序向 NDIS 报告微型端口适配器硬件功能。 有关将任务卸载硬件功能从微型端口驱动程序和 NDIS 驱动程序报告给过量驱动程序的信息，请参阅 [NDIS_OFFLOAD](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload)。
 
-[NDIS_OID_REQUEST](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含 [NDIS_OFFLOAD](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload)结构。 如果缓冲区不够大，NDIS 将返回 NDIS_STATUS_BUFFER_TOO_SHORT。
+[NDIS_OID_REQUEST](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员包含 [NDIS_OFFLOAD](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload)结构。 如果缓冲区不够大，NDIS 将返回 NDIS_STATUS_BUFFER_TOO_SHORT。
 
 确定微型端口适配器的硬件功能后，上层应用程序或驱动程序可以使用 [OID_TCP_OFFLOAD_PARAMETERS](oid-tcp-offload-parameters.md) oid 来启用 [OID_TCP_OFFLOAD_CURRENT_CONFIG](oid-tcp-offload-current-config.md) OID 当前报告为未启用的功能。
 
 ### <a name="see-also"></a>请参阅
 
 [NDIS_OFFLOAD](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload)  
-[NDIS_OID_REQUEST](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)  
+[NDIS_OID_REQUEST](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)  
 [OID_TCP_OFFLOAD_CURRENT_CONFIG](oid-tcp-offload-current-config.md)  
 [OID_TCP_OFFLOAD_PARAMETERS](oid-tcp-offload-parameters.md)  
 

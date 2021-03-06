@@ -3,19 +3,19 @@ title: Hyper-V 可扩展交换机还原操作
 description: Hyper-V 可扩展交换机还原操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 70eea5a131bee476aeb8ae8daa19779c1965f32f
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 9512fca2dfee942832ee012224b4a565b155b6f2
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96828473"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248175"
 ---
 # <a name="hyper-v-extensible-switch-restore-operations"></a>Hyper-V 可扩展交换机还原操作
 
 
 当 Hyper-v 子分区在停止或实时迁移后重新启动时，将还原该分区的运行时状态。 在还原操作过程中，Hyper-v 可扩展交换机扩展驱动程序可以还原有关可扩展交换机网络适配器 (NIC) 的运行时数据。
 
-在 Hyper-v 子分区上执行还原操作时，可扩展交换机接口会向可扩展交换机的协议边缘发出信号，以发出 oid [ \_ 交换机 \_ NIC \_ 还原](./oid-switch-nic-save.md)的 oid 集请求。 OID 交换机 nic RESTORE 请求的 [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员 \_ \_ \_ 包含指向 [**NDIS \_ 交换机 \_ nic \_ 保存 \_ 状态**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_save_state)结构的指针。
+在 Hyper-v 子分区上执行还原操作时，可扩展交换机接口会向可扩展交换机的协议边缘发出信号，以发出 oid [ \_ 交换机 \_ NIC \_ 还原](./oid-switch-nic-save.md)的 oid 集请求。 OID 交换机 nic RESTORE 请求的 [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员 \_ \_ \_ 包含指向 [**NDIS \_ 交换机 \_ nic \_ 保存 \_ 状态**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_save_state)结构的指针。
 
 当它处理此 OID 请求时，扩展会恢复网络适配器的运行时数据。 此运行时数据以前是通过 oid [ \_ 交换机 \_ NIC \_ save](./oid-switch-nic-save.md) 和 oid \_ 交换机 \_ nic \_ save 完成的 oid 请求保存的 \_ 。
 

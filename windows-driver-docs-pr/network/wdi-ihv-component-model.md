@@ -3,19 +3,19 @@ title: WDI IHV 组件模型
 description: 本部分概述了 WDI 微型端口驱动程序的 NDIS 接口以及这些接口的预期。WDI 模型中的 IHV 组件是一个 NDIS 小型端口。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b87a16a12138418652d171eb54d1111fe855a90c
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 25bb3cff3f3b047b31ba3911be2f339c67b11f62
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96839871"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102247796"
 ---
 # <a name="wdi-ihv-component-model"></a>WDI IHV 组件模型
 
 
 本部分概述了 WDI 微型端口驱动程序的 NDIS 接口以及这些接口的预期。
 
-WDI 模型中的 IHV 组件是一个 NDIS 小型端口。 它使用现有的和新的 NDIS Api 与操作系统及其网络堆栈建立接口。 Microsoft WLAN 组件位于 WDI IHV 微型端口驱动程序与操作系统的其余部分之间。 它提供 WDI 接口与现有 NDIS/Native WLAN 接口之间的映射。 WDI 命令封装为新的 NDIS Oid，WDI 指示打包为新的 NDIS 指示。 数据路径使用新的处理程序通过 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构进行交互。
+WDI 模型中的 IHV 组件是一个 NDIS 小型端口。 它使用现有的和新的 NDIS Api 与操作系统及其网络堆栈建立接口。 Microsoft WLAN 组件位于 WDI IHV 微型端口驱动程序与操作系统的其余部分之间。 它提供 WDI 接口与现有 NDIS/Native WLAN 接口之间的映射。 WDI 命令封装为新的 NDIS Oid，WDI 指示打包为新的 NDIS 指示。 数据路径使用新的处理程序通过 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list) 结构进行交互。
 
 下图显示了完整的体系结构布局和消息 (PNP 操作、Oid 和消息的示例流，并将) 从操作系统发送到旧的本机 WLAN 模型和新的 WDI WLAN 模型的 IHV 微型端口驱动程序。
 

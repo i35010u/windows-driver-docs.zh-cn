@@ -9,12 +9,12 @@ keywords:
 - OID 请求 WDK NDIS 端口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c591150ff26fb6127ede7fd65ab8fc2e18543916
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: fb5fefff4883bbd3777ebca22a273a42ba7773ed
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96812839"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248331"
 ---
 # <a name="querying-the-port-state"></a>查询端口状态
 
@@ -22,7 +22,7 @@ ms.locfileid: "96812839"
 
 
 
-过量驱动程序可以发出 [oid \_ GEN \_ 端口 \_ 状态](./oid-gen-port-state.md)OID 查询请求，以获取在 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **PortNumber** 成员中指定的端口的当前状态。 NDIS 处理此 OID，微型端口驱动程序不会收到此 OID 查询。 NDIS 接收 [**ndis \_ 端口 \_ 特征**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_port_characteristics) 结构中的端口状态信息。
+过量驱动程序可以发出 [oid \_ GEN \_ 端口 \_ 状态](./oid-gen-port-state.md)OID 查询请求，以获取在 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **PortNumber** 成员中指定的端口的当前状态。 NDIS 处理此 OID，微型端口驱动程序不会收到此 OID 查询。 NDIS 接收 [**ndis \_ 端口 \_ 特征**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_port_characteristics) 结构中的端口状态信息。
 
 \_ \_ \_ 在 NDIS 6.0 和更高版本中支持 oid GEN 端口状态 oid。
 

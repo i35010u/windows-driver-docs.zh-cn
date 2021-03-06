@@ -4,12 +4,12 @@ description: OID_PNP_ADD_WAKE_UP_PATTERN
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_PNP_ADD_WAKE_UP_PATTERN 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 76d71ee2a8c75b53484eed7ea6af5b09a51d335e
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: f4816dd76e65949420d1ff1cfdb3e318f8e3fe61
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96827557"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248209"
 ---
 # <a name="oid_pnp_add_wake_up_pattern"></a>OID \_ PNP \_ 添加 \_ 唤醒 \_ \_ 模式
 
@@ -21,7 +21,7 @@ OID \_ PNP \_ 添加 \_ 唤醒 \_ \_ 模式 OID 由协议驱动程序发送到�
 
 一种协议，用于启用微型端口驱动程序的模式匹配唤醒 (参阅 [oid \_ pnp \_ ENABLE \_ 唤醒 \_ ](oid-pnp-enable-wake-up.md)) 使用 oid \_ pnp \_ 添加 \_ 唤醒 \_ \_ 模式来指定唤醒模式。 唤醒模式可以存储在主机内存或网络适配器上，具体取决于网络适配器的功能。
 
-[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含以下内容：
+[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员包含以下内容：
 
 -   提供有关模式及其掩码的信息的 [**NDIS \_ PM \_ 包 \_ 模式**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_packet_pattern) 结构。
 
@@ -45,11 +45,11 @@ OID \_ PNP \_ 添加 \_ 唤醒 \_ \_ 模式 OID 由协议驱动程序发送到�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 NDIS 6.0 和 NDIS 6.1 中受支持。 对于 NDIS 6.20 和更高版本，请改用 <a href="oid-pm-add-wol-pattern.md" data-raw-source="[OID_PM_ADD_WOL_PATTERN](oid-pm-add-wol-pattern.md)">OID_PM_ADD_WOL_PATTERN</a> 。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>标题</p></td>
 <td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>

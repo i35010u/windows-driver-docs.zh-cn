@@ -7,12 +7,12 @@ keywords:
 - 卸载微型端口驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cb5723058e082891d6dd12ca49be48830f602791
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 0c1d124fb5ec8777e7ac7fe1655b1bde65b4b632
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96840025"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248949"
 ---
 # <a name="miniport-driver-halt-handler"></a>微型端口驱动程序停止处理程序
 
@@ -52,7 +52,7 @@ NDIS 微型端口驱动程序必须向 [**NdisMRegisterMiniportDriver**](/window
 
 -   如果微型端口驱动程序向 [**NdisMAllocateSharedMemory**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismallocatesharedmemory)或 [**NdisMAllocateSharedMemoryAsyncEx**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismallocatesharedmemoryasyncex)分配了任何内存，则它应调用 [**NdisMFreeSharedMemory**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismfreesharedmemory) 以释放该内存。
 
--   如果微型端口驱动程序为具有 [**NdisAllocateNetBufferPool**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatenetbufferlistpool)的数据包描述符池分配和初始化存储，则它应调用 [**NdisFreeNetBufferPool**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreenetbufferpool) 以释放该存储。
+-   如果微型端口驱动程序为具有 [**NdisAllocateNetBufferPool**](/windows-hardware/drivers/ddi/nblapi/nf-nblapi-ndisallocatenetbufferlistpool)的数据包描述符池分配和初始化存储，则它应调用 [**NdisFreeNetBufferPool**](/windows-hardware/drivers/ddi/nblapi/nf-nblapi-ndisfreenetbufferpool) 以释放该存储。
 
 -   如果小型小型驱动程序已分配或保留任何硬件资源，则应返回这些资源。 例如，如果微型端口驱动程序映射了 NIC 上的 i/o 端口范围，则应通过调用 [**NdisMDeregisterIoPortRange**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismderegisterioportrange)来释放这些端口。
 

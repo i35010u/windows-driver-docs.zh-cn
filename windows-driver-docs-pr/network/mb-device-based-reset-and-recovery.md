@@ -3,14 +3,14 @@ title: MB 基于设备的重置和恢复
 description: MB 基于设备的重置和恢复
 keywords:
 - MB 基于设备的重置和恢复、基于移动宽带设备的重置和恢复、移动宽带微型端口驱动程序基于设备的重置和恢复
-ms.date: 08/09/2018
+ms.date: 03/01/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 03f1d3980e35e7964491eaaf50dadb22aaf188a8
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 6022048ec3c2196ab685c0d2275abc7b170b196a
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96793458"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248663"
 ---
 # <a name="mb-device-based-reset-and-recovery"></a>MB 基于设备的重置和恢复
 
@@ -30,8 +30,8 @@ MB 基于设备的重置和恢复检测和尝试解决以下类型的故障：
 
 | 故障区域        | 失败描述                                         |
 |------------------------|-------------------------------------------------------------|
-| 控制路径           | <ul><li>在 MBIM 协议路径上检测到挂起状态。 有关挂起检测的详细信息，请参阅 [MB 挂起检测](mb-hang-detection.md)。</li><li>由于 MBB reponding 的状态和/或信息错误而失败。</li></ul> |
-| 数据路径              | <ul><li>设备端故障导致数据路径故障。 例如，终结点不 reponding 数据流量，损坏的数据来自 PHY，等等。</li><li>调制解调器/网络故障。 例如，网络无法 repsonding 到 IP 流量、DNS 失败、数据包丢失，等等。</li></ul> |
+| 控制路径           | <ul><li>在 MBIM 协议路径上检测到挂起状态。 有关挂起检测的详细信息，请参阅 [MB 挂起检测](mb-hang-detection.md)。</li><li>因状态和/或信息不正确而导致的 MBB 响应失败。</li></ul> |
+| 数据路径              | <ul><li>设备端故障导致数据路径故障。 例如，终结点未响应数据流量，损坏的数据来自 PHY，等等。</li><li>调制解调器/网络故障。 例如，网络不响应 IP 流量、DNS 故障、数据包丢失，等等。</li></ul> |
 
 某些故障无法从恢复角度进行操作，包括但不限于：
 
@@ -78,11 +78,118 @@ MB 基于设备的重置和恢复检测和尝试解决以下类型的故障：
 ![UDECx 客户端驱动程序的重置恢复流的流](images/mb-self-healing-udecx-reset.png "UDECx 客户端驱动程序的重置恢复的调用流。")
 
 
+## <a name="rnr-triggers"></a>RnR 触发器
+WWAN 服务将可操作的故障组织到 RnR 触发器中：
+1. 连接错误
+2. 无线电状态设置/查询失败/超时
+3. 连续 OID 请求超时
+4. 初始化失败
+
+### <a name="rnr-trigger-1---bad-connectivity"></a>RnR 触发器 #1-不良连接
+* 连接错误
+* Internet 连接受限
+* 失去 Internet 连接
+* 路由未正确接收
+* 无法访问路由
+* 失效的网关
+* DNS 查询失败
+    
+WCM 根据 (NCSI 等 ) 的各种源进行检测。
+
+WCM 发布 WNF_WCM_INTERFACE_CONNECTION_STATE。
+```
+struct WCM_WNF_INTERFACE_CONNECTION_STATE_INFO
+{
+    GUID InterfaceGuid;
+    WCM_MEDIA_TYPE MediaType = wcm_media_unknown;
+    // ConnectionState is one of the WCM_WNF_INTERFACE_CONNECTIVITY_STATE_* values
+    DWORD ConnectionState = 0;
+    // TimeInBadStateMs tracks how long a connection is in a Bad state
+    // It will reset back to zero when in a good state
+    DWORD TimeInBadStateMs = 0;
+    // ConnectivityTriggers is a bitmask of WCM_WNF_INTERFACE_CONNECTIVITY_TRIGGER_* flags
+    DWORD ConnectivityTriggers = 0; 
+    // fWasConnectedGood will be TRUE if a connection is ever in a good state over the lifetime of an L2 connection
+    // Once it is set to TRUE, it will never go FALSE until the interface disconnects
+    BOOLEAN fWasConnectedGood = FALSE;
+    // When processing the WNF, walk the array of WCM_WNF_INTERFACE_CONNECTION_STATE_INFO structs
+    // until you reach the struct with afLastArrayValues == TRUE
+    BOOLEAN fLastArrayValue = TRUE;
+};
+```
+恢复过程：
+* 将 PDP 上下文重置为三次 (参阅 FSM 转换关系图) 
+* 切换 APM 一次
+* PnP 禁用和启用 MBB 设备一次
+* 如果受支持，则调用一次 FLDR
+* 如果受支持，则调用一次 PLDR
+
+当 L3 连接良好时，进程将立即停止。
+
+结果验证： L3 连接良好。
+ 
+### <a name="rnr-trigger-2----radio-state-setquery-failure-or-time-out"></a>RnR 触发器 #2-无线电状态集/查询失败或超时
+* 设置或查询无线电状态没有响应或失败响应。
+* OID_WWAN_RADIO_STATE 集或查询请求。
+* 永远不会发生。
+* 一旦发生，操作系统和调制解调器可能会处于不一致的状态。
+* 表明调制解调器)  (的严重问题。
+* CWwanExecutor 检测到它，并将其内部报告给 CWwanResetRecovery。
+
+恢复过程：
+* 如果支持，则调用 PLDR
+* 否则，调用 PnP 禁用/启用
+
+结果验证：发送 OID_WWAN_RADIO_STATE 查询并验证响应。
+
+### <a name="rnr-trigger-3---time-out-of-consecutive-oid-requests"></a>RnR trigger #3-连续 OID 请求超时
+* TXM 会对所有未完成的 OID 请求并预期每个请求的响应。
+* 如果 "可配置" 的连续 OID 请求数没有及时接收到响应，则 TXM 会检测到它，并将其内部报告给 CWwanResetRecovery。
+* 可以将 Oid 分组为高/中/低延迟组：
+    * 与 MO 无交互的 OID 请求会降低延迟。
+    * 导致与 MO 交互的 OID 请求将有中等滞后时间。
+    * OID_WWAN_CONNECT 激活/停用请求：约180秒。
+
+恢复过程：
+* 如果支持，则调用 PLDR
+* 否则，调用 PnP 禁用/启用
+
+结果验证：发送 OID_WWAN_RADIO_STATE 查询并验证响应。
+
+### <a name="rnr-trigger-4---initialization-failures"></a>RnR 触发器 #4 初始化失败
+* 设备 cap 或设备 capsEx 查询在达到 MB 设备时进行初始化的超时
+* CWwanManager 检测并处理它
+
+恢复过程：
+- 如果支持，则调用 PLDR
+- 否则，调用 PnP 禁用/启用
+
+结果验证：无
+
+PLDR 或 PnP 禁用/启用后，设备离开，然后重新到达。 到达时进行初始化，如下所示。
+
+### <a name="primary-flows"></a>主流程
+#### <a name="rnr-for-bad-connectivity"></a>RnR 进行不良连接
+![RnR 进行不良连接](images\RnR_bad_connectivity.png?raw=true "RNR_bad_connectivity")
+#### <a name="pldr-for-radio-power-set-failure"></a>无线电电源设置失败的 PLDR
+![无线电电源设置失败的 PLDR](images\PLDR_radio_power_set_failure.png?raw=true "PLDR_radio_power_set_failure")
+#### <a name="pnp-disableenable-for-radio-state-set-failure"></a>为无线电状态设置失败启用 PnP 禁用/启用
+![无线电状态设置失败的 PnP](images\PnP_radio_state_set_failure.png?raw=true "PnP_radio_state_set_failure")
+#### <a name="pldr-for-time-outs-of-consecutive-oid-requests"></a>用于连续 OID 请求的超时的 PLDR 
+![PLDR 连续 OID 请求超时](images\PLDR_timeouts_consecutive_OID_requests.png?raw=true "PLDR_timeouts_consecutive_OID_requests")
+#### <a name="pnp-disableenable-for-time-outs-of-consecutive-oid-requests"></a>PnP 禁用/启用用于连续 OID 请求的超时时间 
+![超时连续 OID 请求的 PnP](images\PnP_timeouts_consecutive_OID_requests.png?raw=true "PnP_timeouts_consecutive_OID_requests")
+#### <a name="pldr-for-initialization-failure"></a>PLDR 初始化失败
+![PLDR 初始化失败](images\PLDR_initialization_failure.png?raw=true "PLDR_initialization_failure")
+#### <a name="pnp-disableenable-for-initialization-failure"></a>用于初始化失败的 PnP 禁用/启用
+![初始化失败](images\PnP_initialization_failure.png?raw=true "PnP_initialization_failure")
+
+
 ## <a name="requirements-for-mb-device-based-reset-and-recovery"></a>基于设备的重置和恢复的要求
 
 ### <a name="requirements-for-fldr"></a>FLDR 的要求
 
-若要支持设备上的 FLDR，设备 ( # A1 范围内必须 `_RST` 定义一个方法。 执行时，该方法必须仅重置该设备，而不应触摸另一台设备。 设备还必须在总线上保持连接状态。 
+若要支持设备上的 FLDR，必须在设备 () 范围内 `_RST` 定义方法。 执行时，该方法必须仅重置该设备，而不应触摸另一台设备。 设备还必须在总线上保持连接状态。 
 
 ```cpp
 Device(PCI0)  
@@ -148,6 +255,17 @@ Device(USB1)
 ```
 
 或者，可以通过将设备置于 D3Cold 电源状态并返回到 D0 来实现 PLDR，实质上是重新启动设备。 在这种情况下， `_PR3` 在设备范围内声明足以支持 PLDR。 `_PR3`如果设备范围内未引用任何设备，ACPI 将使用来确定设备之间的重置依赖项 `_PRR` 。 有关详细信息，请参阅 [重置和恢复设备](../kernel/resetting-and-recovering-a-device.md)。 
+
+## <a name="sample-log"></a>示例日志
+```
+NTS]WWAN Service event: [Info] WwanTimerWrapper::StartTimer:  Timer (ID = 0) Start Completed
+[0]0E98.34E4::11/27/2019-05:37:55.622 [Microsoft-Windows-WWAN-SVC-EVENTS]WWAN Service event: [Info] WwanTxmEvaluateArmTimer: TXM timer armed for 60 seconds Interface: {{8a664721-db25-4157-8395-5d21e0560fa4}}
+[0]0E98.34E4::11/27/2019-05:37:55.622 [Microsoft-Windows-WWAN-SVC-EVENTS]WWAN Service event: [Info] _sendReq: ASYNC OID (pTx->handle: 00000000000000B0 Code: 1) sent
+[0]0E98.34E4::11/27/2019-05:37:55.622 [Microsoft-Windows-WWAN-SVC-EVENTS]WWAN Service event: [Info] CWwanExecutor::RegWriteStoredRadioState: Try to set the subkey to 0x0 for ArrivalRadioState Interface: {{8a664721-db25-4157-8395-5d21e0560fa4}}
+[0]0E98.34E4::11/27/2019-05:37:55.623 [Microsoft-Windows-WWAN-SVC-EVENTS]WWAN Service event: [Info] CWwanResetRecovery::EvaluateAndTryHighImpactRnRMethod:  Attempted to turn off radio via MBB (reqId 0x10c): request ID 0x1 prev stage 0 APMToggling 0; PnPDisabling 0; PLDR 0; FLDR 0 Interface: {{8a664721-db25-4157-8395-5d21e0560fa4}}
+[0]0E98.34E4::11/27/2019-05:37:55.623 [Microsoft-Windows-WWAN-SVC-EVENTS]WWAN Service event: [Info] WwanTimerWrapper::StartTimer:  Timer (ID = 6) Start Completed
+[0]0E98.34E4::11/27/2019-05:37:55.623 [Microsoft-Windows-WWAN-SVC-EVENTS]WWAN Service event: [Info] CWwanResetRecovery::fsmEventHandler:  exit with state: 7, event: 4, RnR stage: 2 Potent RnR: 0 Interface: {{8a664721-db25-4157-8395-5d21e0560fa4}}
+```
 
 ## <a name="related-links"></a>相关链接
 

@@ -8,12 +8,12 @@ keywords:
 - 正在初始化虚拟微型端口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 979c745ca6860f5cd1a1298f9beb9f97d7e9fa57
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 120da284eee446ce633c539442fa1bb3656d3746
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96815981"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248907"
 ---
 # <a name="initializing-virtual-miniports"></a>初始化虚拟微型端口
 
@@ -37,7 +37,7 @@ ms.locfileid: "96815981"
 
 中间驱动程序必须作为反序列化的驱动程序运行。 有关反序列化驱动程序的详细信息，请参阅 [反序列化 NDIS 微型端口驱动程序](deserialized-ndis-miniport-drivers.md)。
 
-中间驱动程序应该验证其维护的状态信息是否已正确初始化。 如果驱动程序需要与发送相关的资源（例如， [*MiniportSendNetBufferLists*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_send_net_buffer_lists)将传输到下一个较低层的网络数据的新网络 [**\_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构），则 \_ \_ 此时可以分配网络缓冲区列表结构池。
+中间驱动程序应该验证其维护的状态信息是否已正确初始化。 如果驱动程序需要与发送相关的资源（例如， [*MiniportSendNetBufferLists*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_send_net_buffer_lists)将传输到下一个较低层的网络数据的新网络 [**\_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list)结构），则 \_ \_ 此时可以分配网络缓冲区列表结构池。
 
  
 

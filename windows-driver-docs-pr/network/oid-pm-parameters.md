@@ -4,19 +4,19 @@ description: 作为查询，协议驱动程序可以使用 OID_PM_PARAMETERS OID
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_PM_PARAMETERS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 82790eb872aae3a72a70fdd5b9929e344fedc48c
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 0e2c4c187f59c2d9c07e66a68f68f278ee11eb26
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96808597"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102249021"
 ---
 # <a name="oid_pm_parameters"></a>OID \_ PM \_ 参数
 
 
-作为查询，协议驱动程序可以使用 OID \_ PM \_ 参数 OID 来查询当前启用的网络适配器的电源管理硬件功能。 成功从 OID 查询请求返回后， [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ PM \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_parameters)结构的指针。
+作为查询，协议驱动程序可以使用 OID \_ PM \_ 参数 OID 来查询当前启用的网络适配器的电源管理硬件功能。 成功从 OID 查询请求返回后， [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ PM \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_parameters)结构的指针。
 
-作为一个集，协议驱动程序可以使用 OID \_ PM \_ 参数 OID 来启用或禁用网络适配器的当前硬件功能。 协议驱动程序在 [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员中提供了一个指向 [**ndis \_ PM \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_parameters)结构的指针。
+作为一个集，协议驱动程序可以使用 OID \_ PM \_ 参数 OID 来启用或禁用网络适配器的当前硬件功能。 协议驱动程序在 [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员中提供了一个指向 [**ndis \_ PM \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_parameters)结构的指针。
 
 <a name="remarks"></a>备注
 -------
@@ -58,11 +58,11 @@ NDIS 或微型端口驱动程序为请求返回以下状态代码之一：
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 NDIS 6.20 和更高版本中受支持。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>标题</p></td>
 <td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
@@ -71,7 +71,7 @@ NDIS 或微型端口驱动程序为请求返回以下状态代码之一：
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)
 
 [**NDIS \_ PM \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_parameters)
 

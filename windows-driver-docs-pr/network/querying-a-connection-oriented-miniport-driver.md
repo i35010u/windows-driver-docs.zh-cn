@@ -5,12 +5,12 @@ keywords:
 - 面向连接的驱动程序 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d69a2155d2a7309086ad675a889d20e3417f9443
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 458039c4c0d161d60c982f1f3057e7a8427dde49
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96820053"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102247847"
 ---
 # <a name="querying-a-connection-oriented-miniport-driver"></a>查询面向连接的微型端口驱动程序
 
@@ -18,7 +18,7 @@ ms.locfileid: "96820053"
 
 
 
-若要查询面向连接的微型端口驱动程序维护的信息对象，绑定协议将调用 [**NdisCoOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscooidrequest) ，并传递一个 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request) 结构，该结构指定正在查询的对象 (OID) ，并提供一个缓冲区，ndis 最终写入请求的信息。 对 **NdisCoOidRequest** 的调用会使 NDIS 调用微型端口驱动程序的 [*MiniportCoOidRequest*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_co_oid_request) 函数，该函数将请求的信息返回到 NDIS。 *MiniportCoOidRequest* 可以通过调用 [**NdisCoOidRequestComplete**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscooidrequestcomplete)同步或异步完成。
+若要查询面向连接的微型端口驱动程序维护的信息对象，绑定协议将调用 [**NdisCoOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscooidrequest) ，并传递一个 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request) 结构，该结构指定正在查询的对象 (OID) ，并提供一个缓冲区，ndis 最终写入请求的信息。 对 **NdisCoOidRequest** 的调用会使 NDIS 调用微型端口驱动程序的 [*MiniportCoOidRequest*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_co_oid_request) 函数，该函数将请求的信息返回到 NDIS。 *MiniportCoOidRequest* 可以通过调用 [**NdisCoOidRequestComplete**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscooidrequestcomplete)同步或异步完成。
 
 NDIS 还可以代表自己调用微型端口驱动程序的 [*MiniportCoOidRequest*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_co_oid_request) 函数，例如，在微型端口驱动程序的 [*MINIPORTINITIALIZEEX*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize) 函数返回 NDIS 状态 "成功" 后， \_ \_ 查询微型端口驱动程序的功能、状态或统计信息。 下图说明了如何查询面向连接的微型端口驱动程序。
 
@@ -54,7 +54,7 @@ NDIS 还可以代表自己调用微型端口驱动程序的 [*MiniportCoOidReque
 
 小型端口驱动程序的 [*MiniportCoOidRequest*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_co_oid_request) 函数必须准备好响应查询或将其设置为上述任何 oid。
 
-当 [*MiniportCoOidRequest*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_co_oid_request)使用 OID \_ GEN \_ 共同 MAC 选项调用 MiniportCoOidRequest 时 \_ \_ ，它必须返回一个位掩码，该位掩码指定微型端口驱动程序执行的可选操作。 标志集包括：
+当[](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_co_oid_request)使用 OID \_ GEN \_ 共同 MAC 选项调用 MiniportCoOidRequest 时 \_ \_ ，它必须返回一个位掩码，该位掩码指定微型端口驱动程序执行的可选操作。 标志集包括：
 
 -   NDIS \_ MAC \_ 选项 \_ 无 \_ 环回。 如果设置了此标志，则微型端口驱动程序不会环回传递到 [**MiniportCoSendNetBufferLists**](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_co_send_net_buffer_lists) 的数据包，该数据包将定向到同一台计算机上的接收方，并且微型端口驱动程序要求 NDIS 执行环回。 如果 NDIS 执行数据包环回，数据包将不会向下传递到微型端口驱动程序。 小型端口驱动程序始终设置此标志，除非 NIC 执行硬件环回。
 

@@ -3,12 +3,12 @@ title: 确定网络适配器的 VMQ 功能
 description: 确定网络适配器的 VMQ 功能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c75845cf00aeded64d30b16997dfa7a7317524fd
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 4320b78d5a0c1be68d333ee990febd9fd0a163d3
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96799401"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248361"
 ---
 # <a name="determining-the-vmq-capabilities-of-a-network-adapter"></a>确定网络适配器的 VMQ 功能
 
@@ -106,11 +106,11 @@ NDIS 处理微型端口驱动程序的这些 OID 查询请求。 因此，没有
 
  
 
-成功从 [oid \_ 接收 \_ 筛选器 \_ 硬件 \_ 功能](./oid-receive-filter-hardware-capabilities.md)OID 查询返回后， [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 ndis \_ 接收 \_ 筛选器 \_ 功能结构的指针。 这些功能可能包括由 INF 文件设置或通过 " **高级** 属性" 页当前禁用的 VMQ 硬件功能。 有关 VMQ INF 文件设置的详细信息，请参阅 [Vmq 标准 INF 条目](./standardized-inf-keywords-for-vmq.md)。
+成功从 [oid \_ 接收 \_ 筛选器 \_ 硬件 \_ 功能](./oid-receive-filter-hardware-capabilities.md)OID 查询返回后， [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 ndis \_ 接收 \_ 筛选器 \_ 功能结构的指针。 这些功能可能包括由 INF 文件设置或通过 " **高级** 属性" 页当前禁用的 VMQ 硬件功能。 有关 VMQ INF 文件设置的详细信息，请参阅 [Vmq 标准 INF 条目](./standardized-inf-keywords-for-vmq.md)。
 
 NDIS 微型端口驱动程序在初始化期间，在 [**ndis \_ 微型端口 \_ 适配器 \_ 硬件 \_ 辅助 \_ 属性**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)结构的 **HardwareReceiveFilterCapabilities** 成员中提供接收筛选硬件功能。
 
-成功从 [oid \_ 接收 \_ 筛选器 \_ 当前 \_ 功能](./oid-receive-filter-current-capabilities.md)OID 查询返回后， [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**ndis \_ 接收 \_ 筛选器 \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)结构的指针。 这些功能包括当前启用的 VMQ 功能。
+成功从 [oid \_ 接收 \_ 筛选器 \_ 当前 \_ 功能](./oid-receive-filter-current-capabilities.md)OID 查询返回后， [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**ndis \_ 接收 \_ 筛选器 \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)结构的指针。 这些功能包括当前启用的 VMQ 功能。
 
 NDIS 微型端口驱动程序在初始化期间提供当前启用的接收筛选功能，在 [**NDIS \_ 微型端口 \_ 适配器 \_ 硬件 \_ 协助 \_ 属性**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)结构的 **CurrentReceiveFilterCapabilities** 成员中。
 
@@ -126,7 +126,7 @@ NDIS \_ 接收 \_ 筛选器 \_ 全局 \_ 参数包含以下信息：
 <a href="" id="enabledqueuetypes"></a>**EnabledQueueTypes**  
 已启用的接收队列的类型。 "NDIS \_ 接收 \_ 筛选器 \_ VM \_ 队列 \_ 已启用" 标志指定启用虚拟机 (VM) 队列。
 
-成功从 [oid \_ 接收 \_ 筛选器 \_ 全局 \_ 参数](./oid-receive-filter-global-parameters.md)OID 查询返回后， [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**ndis \_ 接收 \_ 筛选器 \_ 全局 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_global_parameters)结构的指针。 NDIS \_ 接收 \_ 筛选器 \_ 全局 \_ 参数结构指定在网络适配器上启用或禁用的接收筛选功能。
+成功从 [oid \_ 接收 \_ 筛选器 \_ 全局 \_ 参数](./oid-receive-filter-global-parameters.md)OID 查询返回后， [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**ndis \_ 接收 \_ 筛选器 \_ 全局 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_global_parameters)结构的指针。 NDIS \_ 接收 \_ 筛选器 \_ 全局 \_ 参数结构指定在网络适配器上启用或禁用的接收筛选功能。
 
 NDIS 协议驱动程序使用 OID \_ 接收 \_ 筛选器 \_ 全局 \_ 参数在网络适配器上查询接收筛选的当前全局配置参数。 例如，协议驱动程序可以使用此 OID 来确定是启用还是禁用接收队列的类型。
 

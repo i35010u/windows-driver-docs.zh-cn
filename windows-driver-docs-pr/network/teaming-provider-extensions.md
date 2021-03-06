@@ -3,12 +3,12 @@ title: 组合提供程序扩展
 description: 组合提供程序扩展
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 90495719e7e89a9a0ae1bb0ca9f8a5bd31137c94
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 219c6a6e0aedbeca0553366164238b1741e55c7e
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96822133"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248425"
 ---
 # <a name="teaming-provider-extensions"></a>组合提供程序扩展
 
@@ -53,7 +53,7 @@ ms.locfileid: "96822133"
 
 -   如果组合提供程序出现问题或将数据包转发给物理适配器，则必须指定物理适配器连接的非零网络适配器索引值。
 
-    当提供程序接收数据包时，它可以从 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构的数据包外转发上下文中确定源网络适配器索引值。 有关转发上下文的详细信息，请参阅 [Hyper-v 可扩展交换机转发上下文](hyper-v-extensible-switch-forwarding-context.md)。
+    当提供程序接收数据包时，它可以从 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list) 结构的数据包外转发上下文中确定源网络适配器索引值。 有关转发上下文的详细信息，请参阅 [Hyper-v 可扩展交换机转发上下文](hyper-v-extensible-switch-forwarding-context.md)。
 
     有关详细信息，请参阅 [Hyper-v 可扩展交换机数据路径](hyper-v-extensible-switch-data-path.md)。
 

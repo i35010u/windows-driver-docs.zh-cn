@@ -3,19 +3,19 @@ title: 设置 NIC 交换机的参数
 description: 设置 NIC 交换机的参数
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f5a70e06995d23cb36703cd50d682f50bb997e0
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 6fc8521a72f8b402d88a56556d2085beae7ca1ab
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96832597"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102249094"
 ---
 # <a name="setting-the-parameters-of-a-nic-switch"></a>设置 NIC 交换机的参数
 
 
 过量驱动程序可以更改 NIC 交换机的参数，这些参数在支持单个根 i/o 虚拟化 (SR-IOV) 的网络适配器上创建。 驱动程序 (OID 发出对象标识符) 设置 [oid \_ NIC \_ 交换机 \_ 参数](./oid-nic-switch-parameters.md) 的请求以更改这些参数。 只有 PCI Express (PCIe) 物理功能 () PF 的微型端口驱动程序才能处理此 OID 集请求。
 
-在过量驱动程序发出此 OID 集请求之前，它必须使用 NIC 交换机上要更改的参数来初始化 [**NDIS \_ NIC \_ 交换机 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters) 结构。 然后，该驱动程序将为 OID 请求初始化 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request) 结构，并将 **InformationBuffer** 成员设置为 **NDIS \_ NIC \_ 交换机 \_ 参数** 结构的指针。
+在过量驱动程序发出此 OID 集请求之前，它必须使用 NIC 交换机上要更改的参数来初始化 [**NDIS \_ NIC \_ 交换机 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters) 结构。 然后，该驱动程序将为 OID 请求初始化 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request) 结构，并将 **InformationBuffer** 成员设置为 **NDIS \_ NIC \_ 交换机 \_ 参数** 结构的指针。
 
 只能更改 NIC 交换机的有限子集的配置参数。 过量驱动程序通过设置 [**NDIS \_ NIC \_ 交换机 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters) 结构的以下成员来指定要更改的参数：
 
@@ -25,9 +25,9 @@ ms.locfileid: "96832597"
 
      
 
--   在 \_ \_ flags 成员中设置相应的 NDIS NIC 交换机 \_ 参数 \_ *Xxx* \_ 更改 **Flags** 标志。 仅当在 Ntddndis 中定义了相应的 NDIS nic 交换机 [**\_ \_ \_**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters) \_ \_ \_ 参数 \_ *Xxx* \_ changed 标志时，才能更改 NDIS nic 交换机参数结构的成员。
+-   在 \_ \_ flags 成员中设置相应的 NDIS NIC 交换机 \_ 参数 \_ *Xxx* \_ 更改标志。 仅当在 Ntddndis 中定义了相应的 NDIS nic 交换机 [**\_ \_ \_**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters) \_ \_ \_ 参数 \_ *Xxx* \_ changed 标志时，才能更改 NDIS nic 交换机参数结构的成员。
 
--   [**Ndis \_ nic \_ 交换机 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)结构的成员（该结构对应于 \_ \_ \_ flags 成员中已更改的 ndis nic 交换机参数 XXX）已 \_ *Xxx* \_ 设置为要更改的 NIC 交换机配置参数。 **Flags**
+-   [**Ndis \_ nic \_ 交换机 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)结构的成员（该结构对应于 \_ \_ \_ flags 成员中已更改的 ndis nic 交换机参数 XXX）已 \_  \_ 设置为要更改的 NIC 交换机配置参数。 
 
     **注意** 从 Windows Server 2012 开始，只能通过 oid [ \_ nic \_ 交换机 \_ 参数](./oid-nic-switch-parameters.md)的 oid 集请求更改 [**NDIS \_ nic \_ 交换机 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)结构的 **SwitchName** 成员。
 

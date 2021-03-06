@@ -3,12 +3,12 @@ title: 管理 Hyper-V 可扩展交换机运行时数据
 description: 管理 Hyper-V 可扩展交换机运行时数据
 ms.date: 12/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: cb0f5c2d6bfb0688f1b937c9825c323ed030d596
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: ac0887923c64830db07988b3376f98bd5a2a3a9c
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96832185"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248223"
 ---
 # <a name="managing-hyper-v-extensible-switch-run-time-data"></a>管理 Hyper-V 可扩展交换机运行时数据
 
@@ -22,7 +22,7 @@ ms.locfileid: "96832185"
 
 如果停止将网络适配器连接到可扩展交换机端口的 Hyper-v 子分区或其状态已保存，则会通知 Hyper-v 可扩展交换机接口。 这会导致可扩展交换机的协议边缘 (oid 发出对象标识符) oid [ \_ 交换机 \_ NIC \_ ](./oid-switch-nic-save.md) 的方法请求在可扩展交换机驱动程序堆栈中按下。 当可扩展交换机扩展接收此 OID 请求时，它可以保存附加到子分区的指定网络适配器连接的运行时数据。
 
-[OID \_ 交换机 \_ nic \_ save](./oid-switch-nic-save.md)请求的 [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ 交换机 \_ nic \_ 保存 \_ 状态**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_save_state)结构的指针。 此结构由可扩展交换机的协议边缘分配，并按以下方式进行初始化：
+[OID \_ 交换机 \_ nic \_ save](./oid-switch-nic-save.md)请求的 [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ 交换机 \_ nic \_ 保存 \_ 状态**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_save_state)结构的指针。 此结构由可扩展交换机的协议边缘分配，并按以下方式进行初始化：
 
 -   **标头** 成员被初始化为包含当前类型，revisionof [**NDIS \_ 交换机 \_ NIC \_ 保存 \_ 状态**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_save_state)结构。 Size 设置为完整的缓冲区大小。
 
@@ -63,7 +63,7 @@ ms.locfileid: "96832185"
 
 **注意**  为可扩展交换机网络适配器连接启动运行时保存操作时，将不会执行相同网络适配器连接的另一个保存操作，直到发出 [OID \_ 交换机 \_ NIC \_ save \_ COMPLETE](./oid-switch-nic-save-complete.md) 请求。 但在此期间，可能会发生其他网络适配器连接的保存操作。 
 
-[OID \_ 交换机 \_ nic \_ Save \_ COMPLETE](./oid-switch-nic-save-complete.md)请求的 [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ 交换机 \_ nic \_ 保存 \_ 状态**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_save_state)结构的指针。 此结构由可扩展交换机的协议边缘分配。
+[OID \_ 交换机 \_ nic \_ Save \_ COMPLETE](./oid-switch-nic-save-complete.md)请求的 [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ 交换机 \_ nic \_ 保存 \_ 状态**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_save_state)结构的指针。 此结构由可扩展交换机的协议边缘分配。
 
 当它收到 oid [ \_ 交换机 \_ NIC \_ SAVE \_ 完成](./oid-switch-nic-save-complete.md)的 oid 设置请求时，扩展必须遵循以下准则：
 
@@ -79,7 +79,7 @@ ms.locfileid: "96832185"
 
 在从暂停中恢复与可扩展交换机端口建立网络适配器连接的 Hyper-v 子分区时，会通知 Hyper-v 可扩展交换机接口。 这会导致可扩展交换机的协议边缘 (OID 发出对象标识符) 在可扩展交换机驱动程序堆栈中关闭 [oid \_ 交换机 \_ NIC \_ 还原](./oid-switch-nic-restore.md) 的请求。 当扩展插件收到此 OID 请求时，它可以为子分区使用的可扩展交换机端口还原其运行时数据。
 
-[OID \_ 交换机 \_ nic \_ RESTORE](./oid-switch-nic-save.md)请求的 [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ 交换机 \_ nic \_ 保存 \_ 状态**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_save_state)结构的指针。 此结构由可扩展交换机的协议边缘分配。
+[OID \_ 交换机 \_ nic \_ RESTORE](./oid-switch-nic-save.md)请求的 [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ 交换机 \_ nic \_ 保存 \_ 状态**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_save_state)结构的指针。 此结构由可扩展交换机的协议边缘分配。
 
 当其收到 oid [ \_ 交换机 \_ NIC \_ 还原](./oid-switch-nic-restore.md)的 oid 集请求时，可扩展交换机扩展必须首先确定它是否拥有运行时数据。 此扩展通过将 [**NDIS \_ 交换机 \_ NIC \_ 保存 \_ 状态**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_save_state)结构的 **ExtensionId** 成员的值与扩展用于标识自身的 GUID 值进行比较来实现此功能。
 

@@ -3,12 +3,12 @@ title: 筛选扩展
 description: 筛选扩展
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d7fd603c7be664c7ccc3000b2ca44f562f8df60
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 47b4c655e43e35e7c1b3f3e45a2988dda862296f
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96840655"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102249295"
 ---
 # <a name="filtering-extensions"></a>筛选扩展
 
@@ -19,7 +19,7 @@ Hyper-v 可扩展交换机筛选扩展可检查、修改和插入可扩展交换
 
 筛选扩展可对在入口数据路径上获取的数据包执行以下操作：
 
--   筛选数据包流量，并强制使用自定义端口或交换机策略，通过可扩展交换机进行数据包传送。 当筛选扩展筛选入站数据路径中的数据包时，它只能基于源端口和数据包来源的网络适配器连接应用筛选规则。 此信息存储在带外 (OOB) 数据包的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构的数据中，可以通过使用 [**网络 \_ 缓冲区 \_ 列表 \_ 开关 \_ 转发 \_ 详细信息**](/windows-hardware/drivers/ddi/ndis/nf-ndis-net_buffer_list_switch_forwarding_detail) 宏获取。
+-   筛选数据包流量，并强制使用自定义端口或交换机策略，通过可扩展交换机进行数据包传送。 当筛选扩展筛选入站数据路径中的数据包时，它只能基于源端口和数据包来源的网络适配器连接应用筛选规则。 此信息存储在带外 (OOB) 数据包的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list) 结构的数据中，可以通过使用 [**网络 \_ 缓冲区 \_ 列表 \_ 开关 \_ 转发 \_ 详细信息**](/windows-hardware/drivers/ddi/ndis/nf-ndis-net_buffer_list_switch_forwarding_detail) 宏获取。
 
     **注意**  在入口数据路径上获取的数据包不包含目标端口。 只能对在出口数据路径上获取的数据包筛选基于目标端口的数据包。
 
@@ -35,7 +35,7 @@ Hyper-v 可扩展交换机筛选扩展可检查、修改和插入可扩展交换
 
 筛选扩展可对在出口数据路径上获取的数据包执行以下操作：
 
--   筛选数据包流量，并强制使用自定义端口或交换机策略，通过可扩展交换机进行数据包传送。 当筛选扩展筛选出出口数据路径中的数据包时，它可以根据数据包的源或目标端口应用筛选规则。 目标端口数据存储在数据包的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构的 OOB 数据中。 扩展通过调用 [*GetNetBufferListDestinations*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_get_net_buffer_list_destinations) 函数获取此信息。
+-   筛选数据包流量，并强制使用自定义端口或交换机策略，通过可扩展交换机进行数据包传送。 当筛选扩展筛选出出口数据路径中的数据包时，它可以根据数据包的源或目标端口应用筛选规则。 目标端口数据存储在数据包的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list) 结构的 OOB 数据中。 扩展通过调用 [*GetNetBufferListDestinations*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_get_net_buffer_list_destinations) 函数获取此信息。
 
 -   排除将数据包传递到一个或多个可扩展交换机目标端口。 这允许筛选扩展排除数据包到可扩展交换机端口的传送。
 
@@ -67,7 +67,7 @@ Hyper-v 可扩展交换机筛选扩展可检查、修改和插入可扩展交换
 
     有关如何编写筛选扩展的详细信息，请参阅 [编写 Hyper-v 可扩展交换机扩展](writing-hyper-v-extensible-switch-extensions.md)。
 
-    **注意**  Windows 筛选平台 (WFP) 提供内置的可扩展交换机筛选扩展 ( # A0 ) 。 此扩展允许 WFP 筛选器或标注驱动程序按照 Hyper-v 可扩展交换机数据路径截获数据包。 这允许筛选器或标注驱动程序使用 WFP 管理和系统函数执行数据包检查或修改。 有关 WFP 的概述，请参阅 [Windows 筛选平台](porting-packet-processing-drivers-and-apps-to-wfp.md)。
+    **注意**  Windows 筛选平台 (WFP) 提供内置的可扩展交换机筛选扩展 (Wfplwfs.sys ) 。 此扩展允许 WFP 筛选器或标注驱动程序按照 Hyper-v 可扩展交换机数据路径截获数据包。 这允许筛选器或标注驱动程序使用 WFP 管理和系统函数执行数据包检查或修改。 有关 WFP 的概述，请参阅 [Windows 筛选平台](porting-packet-processing-drivers-and-apps-to-wfp.md)。
 
 -   筛选扩展的 INF 文件必须安装驱动程序作为修改筛选器驱动程序。 NDIS 监视筛选器驱动程序不能安装在可扩展交换机驱动程序堆栈中。
 

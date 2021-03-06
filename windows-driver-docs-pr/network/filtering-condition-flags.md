@@ -5,12 +5,12 @@ keywords:
 - 筛选条件标志网络驱动程序
 ms.date: 01/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 5243b5ac56cd0b607539637c3ee6d42bc9a1f9c2
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: ef1522620e660b9ed07a3d1a8b07b8ba8ad7ff1b
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96826761"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248233"
 ---
 # <a name="filtering-condition-flags"></a>筛选条件标志
 
@@ -182,7 +182,7 @@ ms.locfileid: "96826761"
 <p>0x00000020</p>
 </td>
 <td>
-<p>指示传递给标注驱动程序的 <a href="/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list"><b>NET_BUFFER_LIST</b></a> 结构是 IP 数据包片段。</p>
+<p>指示传递给标注驱动程序的 <a href="/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list"><b>NET_BUFFER_LIST</b></a> 结构是 IP 数据包片段。</p>
 <p>此标志适用于下列筛选层：<dl>
 <dd>FWPM_LAYER_INBOUND_IPPACKET_V4</dd>
 <dd>FWPM_LAYER_INBOUND_IPPACKET_V6</dd>
@@ -198,7 +198,7 @@ ms.locfileid: "96826761"
 <p>0x00000040</p>
 </td>
 <td>
-<p>指示传递给标注驱动程序的 <a href="/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list"><b>NET_BUFFER_LIST</b></a> 结构描述了数据包片段的链接列表。</p>
+<p>指示传递给标注驱动程序的 <a href="/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list"><b>NET_BUFFER_LIST</b></a> 结构描述了数据包片段的链接列表。</p>
 <p>此标志适用于下列筛选层：<dl>
 <dd>FWPM_LAYER_INBOUND_IPPACKET_V4</dd>
 <dd>FWPM_LAYER_INBOUND_IPPACKET_V6</dd>

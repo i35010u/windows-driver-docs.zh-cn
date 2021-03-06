@@ -7,12 +7,12 @@ keywords:
 - 哈希 WDK RSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d02caa3a9a2522f867f0a452f07a6fb7ff3981f
-ms.sourcegitcommit: cf1f4196374c5b743448cb8d688d2223f7197d8f
+ms.openlocfilehash: 88a70155665e3cb942770d5f16dc46bc64300bf1
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101684404"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248325"
 ---
 # <a name="rss-hashing-types"></a>RSS 哈希类型
 
@@ -212,4 +212,4 @@ NIC 应计算以下字段的哈希值：
 > [!NOTE]
 > 如果微型端口驱动程序报告 NIC NDIS_RSS_CAPS_HASH_TYPE_TCP_IPV6_EX 和/或 NDIS_RSS_CAPS_HASH_TYPE_UDP_IPV6_EX 功能，NIC 必须根据协议驱动程序设置的 IPv6 扩展哈希类型，计算 (IPv6 扩展标) 头中的字段的哈希值。 NIC 可以在为其计算哈希值的 IPv6 数据包的 NET_BUFFER_LIST 结构中存储扩展哈希类型或常规哈希类型。
 
-微型端口驱动程序在指示收到的数据之前，在 [**NET_BUFFER_LIST**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构中设置哈希类型。 有关详细信息，请参阅 [指示 RSS 接收数据](indicating-rss-receive-data.md)。
+微型端口驱动程序在指示收到的数据之前，在 [**NET_BUFFER_LIST**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list) 结构中设置哈希类型。 有关详细信息，请参阅 [指示 RSS 接收数据](indicating-rss-receive-data.md)。

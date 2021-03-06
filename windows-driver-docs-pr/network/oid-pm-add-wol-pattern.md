@@ -4,17 +4,17 @@ description: 作为集，NDIS 协议驱动程序使用 OID_PM_ADD_WOL_PATTERN OI
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_PM_ADD_WOL_PATTERN 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 3747047bd9f712465f9738813c9502c699c980bd
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 176f209ecbf5bbd2a6492675d1a35ae53504368c
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96833321"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102249175"
 ---
 # <a name="oid_pm_add_wol_pattern"></a>OID \_ PM \_ 添加 \_ WOL \_ 模式
 
 
-作为集，NDIS 协议驱动程序使用 OID \_ PM \_ 添加 \_ WOL \_ 模式 OID，将 LAN 唤醒模式添加到网络适配器。 [**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ PM \_ WOL \_ 模式**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_wol_pattern)结构的指针。
+作为集，NDIS 协议驱动程序使用 OID \_ PM \_ 添加 \_ WOL \_ 模式 OID，将 LAN 唤醒模式添加到网络适配器。 [**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ PM \_ WOL \_ 模式**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_wol_pattern)结构的指针。
 
 <a name="remarks"></a>备注
 -------
@@ -36,7 +36,7 @@ NDIS 6.20 和更高版本的协议驱动程序使用 OID \_ PM \_ 添加 \_ wol 
 微型端口驱动程序为请求返回以下状态代码之一：
 
 <a href="" id="ndis-status-success"></a>NDIS \_ 状态 \_ 成功  
-已成功添加请求的模式。 NDIS **PatternId** \_ PM \_ WOL 模式结构的 PatternId 成员 \_ 包含模式标识符。
+已成功添加请求的模式。 NDIS  \_ PM \_ WOL 模式结构的 PatternId 成员 \_ 包含模式标识符。
 
 <a href="" id="ndis-status-pending"></a>NDIS \_ 状态 \_ 挂起  
 请求正在等待完成。 请求完成后，NDIS 会将最终状态代码和结果传递给调用方的 OID 请求完成处理程序。
@@ -69,11 +69,11 @@ NDIS \_ PM WOL 模式结构中的一个或多个参数 \_ \_ 无效。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 NDIS 6.20 和更高版本中受支持。 对于微型端口驱动程序是必需的。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>标题</p></td>
 <td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
@@ -82,7 +82,7 @@ NDIS \_ PM WOL 模式结构中的一个或多个参数 \_ \_ 无效。
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)
 
 [**NDIS \_ PM \_ WOL \_ 模式**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_wol_pattern)
 

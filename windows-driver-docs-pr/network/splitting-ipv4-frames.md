@@ -6,12 +6,12 @@ keywords:
 - IPv4 帧 WDK 标头-数据拆分
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f00be425048e297bf3ffe0717031e38fe4be3ad
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 15e03c95f78ec8edbe7865c7b73cda0cf7e0a5f8
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96797872"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248728"
 ---
 # <a name="splitting-ipv4-frames"></a>拆分 IPv4 帧
 
@@ -29,7 +29,7 @@ NIC 还可以支持分段 IPv4 帧的标头数据拆分。 有关分段 IPv4 帧
 
  
 
-如果标头-数据拆分提供程序拆分 IPv4 帧，则指定的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构必须将 NDIS \_ NBL \_ 标志 \_ \_ 设置为 **NblFlags** 成员中的 IPv4 标志。 有关在 NET buffer 列表结构中设置标头数据拆分标志的完整信息 \_ \_ ，请参阅 [设置网络 \_ 缓冲区 \_ 列表信息](setting-net-buffer-list-information.md)。
+如果标头-数据拆分提供程序拆分 IPv4 帧，则指定的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list) 结构必须将 NDIS \_ NBL \_ 标志 \_ \_ 设置为 **NblFlags** 成员中的 IPv4 标志。 有关在 NET buffer 列表结构中设置标头数据拆分标志的完整信息 \_ \_ ，请参阅 [设置网络 \_ 缓冲区 \_ 列表信息](setting-net-buffer-list-information.md)。
 
 其他以太网帧特征确定如何拆分 IPv4 帧。 如果 IP 帧有碎片，请参阅 [拆分分段的 IP 帧](splitting-fragmented-ip-frames.md)。 如果帧包含 TCP 信息，请参阅 [在 TCP 负载处拆分帧](splitting-frames-at-the-tcp-payload.md)。 如果帧包含 UDP 信息，请参阅 [在 UDP 负载处拆分帧](splitting-frames-at-the-udp-payload.md)。 对于所有其他情况，请参阅 [拆分除 TCP 和 UDP 以外的帧](splitting-icmp-frames-and-other-upper-layer-protocol-frames.md)。
 

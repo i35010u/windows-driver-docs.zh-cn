@@ -12,12 +12,12 @@ keywords:
 - 接收操作 WDK 本机 802.11 IHV 扩展 DLL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 182776ad0b0e0a303619daff0ceb5274c140918f
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 5f0cbede6b2decef17c4939b6d10fe3cf0a5e6f8
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96792215"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102249309"
 ---
 # <a name="80211-wlan-adapter-communication-channel"></a>802.11 WLAN 适配器信道
 
@@ -29,7 +29,7 @@ ms.locfileid: "96792215"
 操作系统在 IHV 扩展 DLL 和本机802.11 微型端口驱动程序之间提供传递通信通道。 IHV 扩展 DLL 访问以下操作的通信通道。
 
 <a href="" id="--------sending-receiving-proprietary-configuration-data"></a>**发送/接收专用配置数据**  
-IHV 扩展 DLL 通过调用 [**Dot11ExtNicSpecificExtension**](/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_nic_specific_extension) 函数将 NDIS 6.0 或更高版本的对象标识符 () OID 发送到本机802.11 微型端口驱动程序。 在内部，此函数将向微型端口驱动程序发出 [OID \_ DOT11 \_ NIC \_ 特定 \_ 扩展](/previous-versions/windows/hardware/wireless/oid-dot11-nic-specific-extension) 的方法请求。 有关 NDIS OID 方法请求的详细信息，请参阅 [**ndis \_ oid \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)。
+IHV 扩展 DLL 通过调用 [**Dot11ExtNicSpecificExtension**](/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_nic_specific_extension) 函数将 NDIS 6.0 或更高版本的对象标识符 () OID 发送到本机802.11 微型端口驱动程序。 在内部，此函数将向微型端口驱动程序发出 [OID \_ DOT11 \_ NIC \_ 特定 \_ 扩展](/previous-versions/windows/hardware/wireless/oid-dot11-nic-specific-extension) 的方法请求。 有关 NDIS OID 方法请求的详细信息，请参阅 [**ndis \_ oid \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)。
 
 通常，IHV 扩展 DLL 调用 **Dot11ExtNicSpecificExtension** 来执行以下操作：
 

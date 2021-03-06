@@ -4,12 +4,12 @@ description: 作为查询，OID_GEN_PHYSICAL_MEDIUM_EX OID 指定了微型端口
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_PHYSICAL_MEDIUM_EX 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 04a265006fca9ecc3f47d4107380d293277230f6
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: f02ab45d4ac178b7ead605db014ed34f31e4bd89
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96829455"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248436"
 ---
 # <a name="oid_gen_physical_medium_ex"></a>OID \_ 代 \_ 物理 \_ 介质（ \_ EX）
 
@@ -21,7 +21,7 @@ ms.locfileid: "96829455"
 
 NDIS 处理 NDIS 6.0 和更高版本的小型小型驱动程序的此 OID。 微型端口驱动程序在初始化过程中提供了物理媒体值。
 
-[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含 ndis \_ 物理 \_ 媒体枚举值。
+[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员包含 ndis \_ 物理 \_ 媒体枚举值。
 
 **注意**  OID 生成 \_ \_ 物理 \_ 媒体 \_ ex 和 [oid \_ 代 \_ 物理 \_ 介质](oid-gen-physical-medium.md) 之间的区别在于，Oid 生成 \_ \_ 物理 \_ 介质的 \_ 版本不会将 **NdisPhysicalMedium802 \_ 3** 类型重写为 **NdisPhysicalMediumUnspecified** ，而 oid \_ gen \_ 实地 \_ medium 仍会。 建议所有的1.x 驱动程序使用 EX 版本。 OID \_ 代 \_ 物理 \_ 介质（ \_ EX）通过 WMI GUID 公开。
 
@@ -45,11 +45,11 @@ NDIS 处理 NDIS 6.0 和更高版本的小型小型驱动程序的此 OID。 微
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 NDIS 6.20 和更高版本中受支持。 未请求微型端口驱动程序。 （请参见“备注”部分。）</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>标题</p></td>
 <td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
@@ -58,7 +58,7 @@ NDIS 处理 NDIS 6.0 和更高版本的小型小型驱动程序的此 OID。 微
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)
 
 [支持 OID 生成 \_ \_ 媒体 \_](oid-gen-media-supported.md)
 

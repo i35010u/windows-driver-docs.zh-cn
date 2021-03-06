@@ -4,19 +4,19 @@ description: 过量驱动程序发出对象标识符 (OID) 查询请求 OID_SRIO
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_SRIOV_VF_SERIAL_NUMBER 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e2c3e583694b1dc3faf082d2bcddd377cf5e5a6
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 12b71121d2bf42f48b7f07b4873dbcf9f1811494
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96812963"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248202"
 ---
 # <a name="oid_sriov_vf_serial_number"></a>OID \_ SRIOV \_ VF \_ 序列 \_ 号
 
 
 过量驱动程序) OID SRIOV VF 序列号请求 (OID 发出对象 \_ 标识符 \_ \_ \_ ，以确定 PCI Express (PCIe) 虚函数的序列号 (网络适配器) VF。 此虚拟网络适配器显示在 VF 附加到的 Hyper-v 子分区的来宾操作系统中。
 
-[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**ndis \_ SRIOV \_ VF \_ 序列 \_ 号 \_ 信息**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_vf_serial_number_info)结构的指针。
+[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**ndis \_ SRIOV \_ VF \_ 序列 \_ 号 \_ 信息**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_vf_serial_number_info)结构的指针。
 
 <a name="remarks"></a>备注
 -------
@@ -51,7 +51,7 @@ NDIS \_ \_ \_ \_ 为微型端口驱动程序处理 oid SRIOV VF 序列号请求�
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>信息缓冲区太短。 NDIS 设置 <strong>数据。QUERY_INFORMATION。</strong> 将 <a href="/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a> 结构中的成员 BytesNeeded 为所需的最小缓冲区大小。</p></td>
+<td><p>信息缓冲区太短。 NDIS 设置 <strong>数据。QUERY_INFORMATION。</strong> 将 <a href="/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a> 结构中的成员 BytesNeeded 为所需的最小缓冲区大小。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_FAILURE</p></td>
@@ -72,11 +72,11 @@ NDIS \_ \_ \_ \_ 为微型端口驱动程序处理 oid SRIOV VF 序列号请求�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 NDIS 6.30 和更高版本中受支持。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>标题</p></td>
 <td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
@@ -86,7 +86,7 @@ NDIS \_ \_ \_ \_ 为微型端口驱动程序处理 oid SRIOV VF 序列号请求�
 
 
 ****
-[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)
 
 [**NDIS \_ SRIOV \_ VF \_ 序列 \_ 号 \_ 信息**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_vf_serial_number_info)
 

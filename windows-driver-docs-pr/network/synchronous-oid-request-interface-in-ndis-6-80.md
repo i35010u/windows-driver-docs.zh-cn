@@ -4,12 +4,12 @@ description: 本主题介绍了 NDIS 6.80 中的新同步 OID 请求接口
 keywords: 同步 OID 请求接口，同步 OID 调用，WDK 同步 Oid，同步 OID 请求
 ms.date: 09/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cb4c8f8016a3fae0b657609270c6ff126e01d7e7
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: fb8a71d98e4912d66038db24d29f2343b3bba53f
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96837917"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248427"
 ---
 # <a name="synchronous-oid-request-interface-in-ndis-680"></a>NDIS 6.80 中的同步 OID 请求接口
 
@@ -23,9 +23,9 @@ Windows 网络驱动程序使用 OID 请求，在 NDIS 绑定堆栈中发送控�
 
 下表描述了常规 Oid、直接 Oid 和同步 Oid 之间的差异。
 
-| Attribute | 常规 OID | 直接 OID | 同步 OID |
+| 属性 | 常规 OID | 直接 OID | 同步 OID |
 | --- | --- | --- | --- |
-| 有效负载 | [NDIS_OID_REQUEST](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request) | NDIS_OID_REQUEST | NDIS_OID_REQUEST |
+| 有效负载 | [NDIS_OID_REQUEST](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request) | NDIS_OID_REQUEST | NDIS_OID_REQUEST |
 | OID 类型 | Stats、Query、Set、Method | Stats、Query、Set、Method | Stats、Query、Set、Method |
 | 可以通过 | 协议，筛选器 | 协议，筛选器 | 协议，筛选器 |
 | 可以通过 | 微型端口，筛选器 | 微型端口，筛选器 | 微型端口，筛选器 |
@@ -38,7 +38,7 @@ Windows 网络驱动程序使用 OID 请求，在 NDIS 绑定堆栈中发送控�
 | 调用筛选器 | Recursively | Recursively | 反复 |
 | 筛选器克隆 OID | 是 | 是 | 否 |
 
-## <a name="filtering"></a>Filtering
+## <a name="filtering"></a>筛选
 
 与其他两种 OID 调用一样，筛选器驱动程序可以在同步调用中完全控制 OID 请求。 筛选器驱动程序可以观察、截获、修改和颁发同步 Oid。 不过，为了提高效率，同步 OID 的机制略有不同。
 
@@ -68,7 +68,7 @@ Windows 网络驱动程序使用 OID 请求，在 NDIS 绑定堆栈中发送控�
 
 如果安装了足够的筛选器，则将强制 NDIS 分配新的线程堆栈，使递归更深层。
 
-NDIS 将 [NDIS_OID_REQUEST](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request) 结构视为只对堆栈中的单个跃点有效。 如果筛选器驱动程序要将请求向下传递到下一个较低的驱动程序 (这是大多数 Oid) 的情况，则筛选器驱动程序 *必须* 插入数个数十行的样板代码以克隆 OID 请求。 此样板有几个问题：
+NDIS 将 [NDIS_OID_REQUEST](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request) 结构视为只对堆栈中的单个跃点有效。 如果筛选器驱动程序要将请求向下传递到下一个较低的驱动程序 (这是大多数 Oid) 的情况，则筛选器驱动程序 *必须* 插入数个数十行的样板代码以克隆 OID 请求。 此样板有几个问题：
 
 1. 它强制内存分配克隆 OID。 命中内存池的速度很慢，因而无法保证 OID 请求的转发进度。
 2. 由于所有筛选器驱动程序都将一 NDIS_OID_REQUEST 的内容复制到另一，因此 OID 结构设计必须保持不变。

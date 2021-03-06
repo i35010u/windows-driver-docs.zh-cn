@@ -4,12 +4,12 @@ description: 作为查询，OID_GEN_MAC_OPTIONS OID 指定了一个位掩码，�
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_MAC_OPTIONS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d824b25f91ce43b505017a07d98d511a31780ca
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 88fe2acc31204b8706412f168e46c157848de412
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96821283"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102249080"
 ---
 # <a name="oid_gen_mac_options"></a>OID \_ 生成 \_ MAC \_ 选项
 
@@ -67,7 +67,7 @@ NIC 没有内部环回支持，因此 NDIS 将代表此驱动程序管理环回�
 此标志已过时。
 
 <a href="" id="ndis-mac-option-8021p-priority"></a>NDIS \_ MAC \_ 选项 \_ 8021P \_ 优先级  
-NIC 及其驱动程序支持 802.1 p 包优先级。 有关详细信息，请参阅 [数据包优先级](/previous-versions/windows/hardware/network/ff562331(v=vs.85))。 数据包优先级值是从较高层驱动程序的 [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer) 结构接收的。 适当的信息在数据包的 MAC 标头中生成并通过网络传输。 此外，此 NIC 及其驱动程序支持从网络接收的数据包的 MAC 标头提取相应的信息。 此信息将在网络 \_ 缓冲区结构中转发到更高层的驱动程序。
+NIC 及其驱动程序支持 802.1 p 包优先级。 有关详细信息，请参阅 [数据包优先级](/previous-versions/windows/hardware/network/ff562331(v=vs.85))。 数据包优先级值是从较高层驱动程序的 [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer) 结构接收的。 适当的信息在数据包的 MAC 标头中生成并通过网络传输。 此外，此 NIC 及其驱动程序支持从网络接收的数据包的 MAC 标头提取相应的信息。 此信息将在网络 \_ 缓冲区结构中转发到更高层的驱动程序。
 
 **注意**  NDIS 6.0 和更高版本及更高版本的微型端口驱动程序必须设置 NDIS \_ MAC \_ 选项 \_ 8021P \_ PRIORITY 标志。
 
@@ -103,7 +103,7 @@ VlanId, REG_DWORD
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>标题</p></td>
 <td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
@@ -116,7 +116,7 @@ VlanId, REG_DWORD
 
 [**NdisReadNetworkAddress**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisreadnetworkaddress)
 
-[**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)
+[**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer)
 
  
 

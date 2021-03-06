@@ -4,19 +4,19 @@ description: NDIS 协议或筛选器驱动程序将对象标识符 (OID) 方法�
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_PD_OPEN_PROVIDER 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: d07429de5326ba6db0f1b886352f4d791c5767b1
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 2c04a7b8fab78fe7da00ac3732cb11e5c2d9594c
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96822135"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102249045"
 ---
 # <a name="oid_pd_open_provider"></a>OID \_ PD \_ 打开 \_ 提供程序
 
 
 NDIS 协议或筛选器驱动程序将对象标识符 (OID 发送到支持 PD 的微型端口驱动程序的 OID) 方法请求发送到 \_ \_ 微型端口驱动程序 \_ 的 PDPI 提供程序对象。 所有支持 PD 的微型端口驱动程序都必须处理此 OID 请求。
 
-[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向缓冲区的指针。 此缓冲区包含以下数据：
+[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员包含指向缓冲区的指针。 此缓冲区包含以下数据：
 
 -   [**NDIS \_ PD \_ 打开 \_ 提供程序 \_ 参数**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_pd_open_provider_parameters)结构
 
@@ -41,7 +41,7 @@ NDIS 协议或筛选器驱动程序将对象标识符 (OID 发送到支持 PD �
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>标题</p></td>
 <td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>

@@ -9,12 +9,12 @@ keywords:
 - 正在重新启动协议驱动程序绑定
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f0db0aaf6a22c2c6ea0feaae54e7048d6d10be64
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: d083d792791b8ec3450cc280a99aef8a731ed9c9
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96813635"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248975"
 ---
 # <a name="restarting-a-binding"></a>重启绑定
 
@@ -24,7 +24,7 @@ ms.locfileid: "96813635"
 
 为了重新启动已暂停的绑定，NDIS 会将协议驱动程序即插即用 (PnP) restart 事件通知发送到一个网络。 协议驱动程序收到重新启动通知后，受影响的绑定将进入重新启动状态。
 
-为了发送重新启动通知，NDIS 调用了协议驱动程序的 [*ProtocolNetPnPEvent*](/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_net_pnp_event) 函数。 NDIS 传递到 *ProtocolNetPnPEvent* 的 [**NET \_ PNP \_ 事件 \_ 通知**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_pnp_event_notification)结构在 **NetEvent** 成员中指定 **NetEventRestart** ，而 **缓冲区** 成员包含指向 [**NDIS \_ 协议 \_ RESTART \_ 参数**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_protocol_restart_parameters)结构的指针。 NDIS 在 NDIS **RestartAttributes** 协议重新启动参数结构的 RestartAttributes 成员中提供了指向 [**ndis \_ RESTART \_ 属性**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_restart_attributes)结构的指针 \_ \_ \_ 。
+为了发送重新启动通知，NDIS 调用了协议驱动程序的 [*ProtocolNetPnPEvent*](/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_net_pnp_event) 函数。 NDIS 传递到 *ProtocolNetPnPEvent* 的 [**NET \_ PNP \_ 事件 \_ 通知**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_pnp_event_notification)结构在 **NetEvent** 成员中指定 **NetEventRestart** ，而 **缓冲区** 成员包含指向 [**NDIS \_ 协议 \_ RESTART \_ 参数**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_protocol_restart_parameters)结构的指针。 NDIS 在 NDIS 协议重新启动参数结构的 RestartAttributes 成员中提供了指向 [**ndis \_ RESTART \_ 属性**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_restart_attributes)结构的指针 \_ \_ \_ 。
 
 **注意**  绑定暂停时，NDIS 可能已重新配置了驱动程序堆栈。 新的堆栈配置可以支持基础适配器的不同功能集。 这些新功能可能会影响协议驱动程序在绑定上的通信方式。
 
@@ -36,7 +36,7 @@ ms.locfileid: "96813635"
 
 -   使用 OID 请求查询驱动程序堆栈。 例如，驱动程序可以通过使用 [OID 生成 \_ \_ 接收 \_ 缩放 \_ 功能](./oid-gen-receive-scale-capabilities.md)来了解对接收方缩放的支持。
 
--   如有必要，重新分配 [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer) 和 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 池。
+-   如有必要，重新分配 [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer) 和 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list) 池。
 
 -   枚举基础筛选器模块的列表。
 

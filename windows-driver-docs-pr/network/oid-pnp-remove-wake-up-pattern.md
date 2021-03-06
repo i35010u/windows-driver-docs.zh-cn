@@ -4,12 +4,12 @@ description: OID_PNP_REMOVE_WAKE_UP_PATTERN
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_PNP_REMOVE_WAKE_UP_PATTERN 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: d3a6334838bf3dbf3318c6b7aa449c20bf34b955
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: f37b4021b47e01814d118f3e32ce787948e7173f
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96827535"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102247891"
 ---
 # <a name="oid_pnp_remove_wake_up_pattern"></a>OID \_ PNP \_ 删除 \_ 唤醒 \_ \_ 模式
 
@@ -19,7 +19,7 @@ ms.locfileid: "96827535"
 
 OID \_ pnp \_ 删除 \_ 唤醒 \_ \_ 模式 OID 请求微型端口驱动程序删除之前在 [OID \_ PNP \_ 添加 \_ 唤醒 \_ \_ 模式](oid-pnp-add-wake-up-pattern.md) 请求中收到的唤醒模式。 唤醒模式连同其掩码，由 [**NDIS \_ PM \_ 数据包 \_ 模式**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_packet_pattern) 结构描述。
 
-[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含以下内容：
+[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员包含以下内容：
 
 -   提供有关模式及其掩码的信息的 [**NDIS \_ PM \_ 包 \_ 模式**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_packet_pattern) 结构。
 
@@ -39,11 +39,11 @@ OID \_ pnp \_ 删除 \_ 唤醒 \_ \_ 模式 OID 请求微型端口驱动程序�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 NDIS 6.0 和6.1 中受支持。 对于 NDIS 6.20 和更高版本，请改用 <a href="oid-pm-remove-wol-pattern.md" data-raw-source="[OID_PM_REMOVE_WOL_PATTERN](oid-pm-remove-wol-pattern.md)">OID_PM_REMOVE_WOL_PATTERN</a> 。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>标题</p></td>
 <td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>

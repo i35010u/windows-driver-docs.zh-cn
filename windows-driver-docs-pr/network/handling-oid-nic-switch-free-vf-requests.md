@@ -3,19 +3,19 @@ title: 处理 OID_NIC_SWITCH_FREE_VF 请求
 description: 处理 OID_NIC_SWITCH_FREE_VF 请求
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 48e02e27b3ce39edd32f1668f2f0faaa12caee8c
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 11c515624f1f4bba0cf38791bb982a933ae496db
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96789777"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248408"
 ---
 # <a name="handling-oid_nic_switch_free_vf-requests"></a>处理 OID \_ NIC \_ 交换机 \_ 免费 \_ VF 请求
 
 
 当网络适配器上的 PCI Express (PCIe) 物理功能 (PF) 的微型端口驱动程序处理对象标识符 (OID) 设置 [oid \_ NIC \_ 交换机 \_ 自由 \_ VF](./oid-nic-switch-free-vf.md)的请求时，它执行以下操作：
 
--   OID 请求的 [**ndis \_ oid \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ NIC \_ 交换机 \_ 自由 \_ VF \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_free_vf_parameters)结构的指针。 PF 微型端口驱动程序必须验证 (VF) （由 **VFId** 成员指定）的 PCIe 虚拟函数的标识符是否有效。 如果不是这样，则驱动程序必须通过返回 NDIS \_ STATUS 无效参数来使 OID 设置请求失败 \_ \_ 。
+-   OID 请求的 [**ndis \_ oid \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ NIC \_ 交换机 \_ 自由 \_ VF \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_free_vf_parameters)结构的指针。 PF 微型端口驱动程序必须验证 (VF) （由 **VFId** 成员指定）的 PCIe 虚拟函数的标识符是否有效。 如果不是这样，则驱动程序必须通过返回 NDIS \_ STATUS 无效参数来使 OID 设置请求失败 \_ \_ 。
 
 -   PF 微型端口驱动程序必须验证是否已通过 oid [ \_ NIC \_ 交换机 \_ 分配 \_ VF](./oid-nic-switch-allocate-vf.md)的 oid 方法请求为 VF 分配资源。 如果不是这样，则驱动程序必须通过返回 NDIS \_ STATUS 无效参数来使 OID 设置请求失败 \_ \_ 。
 

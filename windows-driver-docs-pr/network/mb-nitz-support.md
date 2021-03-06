@@ -3,15 +3,15 @@ title: MB NITZ 支持
 description: MB NITZ 支持
 keywords:
 - MB NITZ 支持，Mobile 宽带 NITZ 支持
-ms.date: 03/13/2019
+ms.date: 03/01/2021
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 6d8accacd3976c1cbf1022096b79426195748d58
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 59acc3cceb3afc00debb2c10aac8215ec1641250
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96803513"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248945"
 ---
 # <a name="mb-nitz-support"></a>MB NITZ 支持
 
@@ -31,7 +31,8 @@ ms.locfileid: "96803513"
 
 | 服务名称 | UUID | UUID 值 |
 | --- | --- | --- |
-| Microsoft 基本 IP 连接扩展插件 | UUID_VOICEEXTENSIONS | 8d8b9eba-37be-449b-8f1e-61cb034a702e |
+| Microsoft 语音扩展 | UUID_VOICEEXTENSIONS | 8d8b9eba-37be-449b-8f1e-61cb034a702e |
+ 
 
 下表指定了每个 CID 的 UUID 和命令代码，以及该 CID 是否支持 Set、Query 或 Event (通知) 请求。 有关其参数、数据结构和通知的详细信息，请参阅本主题中的每个 CID 的各个部分。 
 
@@ -43,9 +44,9 @@ ms.locfileid: "96803513"
 
 ### <a name="parameters"></a>参数
 
-| 操作 | 设置 | 查询 | 通知 |
+| Operation | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
-| 命令 | 不适用 | 不适用 | 不适用 |
+| Command | 不适用 | 不适用 | 不适用 |
 | 响应 | 不适用 | MBIM_NITZ_INFO | MBIM_NITZ_INFO |
 
 ### <a name="query"></a>查询
@@ -81,3 +82,25 @@ MBIM_COMMAND_DONE 中的 InformationBuffer 包含 MBIM_NITZ_INFO 的结构。
 ### <a name="status-codes"></a>状态代码
 
 此 CID 仅使用 [MBIM 规范修订版本 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)的9.4.5 部分中定义的通用状态代码。
+
+## <a name="oid-definitions"></a>OID 定义
+
+* [OID_WWAN_NITZ](oid-wwan-nitz.md)
+
+## <a name="hardware-lab-kit-hlk-tests"></a>硬件实验室工具包 (HLK) 测试
+请参阅 [安装 HLK 的步骤](https://microsoft.sharepoint.com/teams/HWKits/SitePages/HWLabKit/Manual%20Controller%20Installation.aspx)。
+
+在 HLK Studio 中，连接到设备移动电话调制解调器驱动程序并运行测试： [TestNitzInfo-GSM](https://docs.microsoft.com/windows-hardware/test/hlk/testref/1b192aa8-6a84-4c5c-8750-a8f2edb98a9e)。
+
+## <a name="manual-tests"></a>手动测试
+### <a name="nitz-time-update-while-roaming-on-cellular"></a>[NITZ]漫游到手机网络时更新时间 
+1. 将钴设备置于禁用了手机网络的 RF 箱中。
+1. 启用飞行模式。
+1. 禁用以太网和所有其他连接。
+1. 将时间模式设置为 "手动"。 
+1. 将时间设置为11： 15AM 10/15/2016 UTC。
+1. 验证时间是否设置为系统托盘中给定的值。
+1. 将时间模式设置为自动。 
+1. 打开 "移动电话"。 
+1. 等待设备接收来自模拟蜂窝基站的 NITZ 信息。
+1. 验证时间是否设置为模拟基站发送的值。

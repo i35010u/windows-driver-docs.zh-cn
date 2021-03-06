@@ -4,12 +4,12 @@ description: 对象标识符 (OID) 方法请求 OID_SWITCH_NIC_REQUEST 用于封
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_SWITCH_NIC_REQUEST 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f31907928e165e622fc8f746b555fe874b998c8
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 4a0cc7305d866cff20e033a86b7bb1b9fda333c9
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96837927"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248159"
 ---
 # <a name="oid_switch_nic_request"></a>OID \_ 交换机 \_ NIC \_ 请求
 
@@ -18,7 +18,7 @@ ms.locfileid: "96837927"
 
 此 OID 请求还用于封装向连接到可扩展交换机端口的其他网络适配器发出的 OID 请求。 在这种情况下，封装的 OID 请求将通过可扩展交换机驱动程序堆栈转发，以便通过扩展进行检查。
 
-[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**ndis \_ 交换机 \_ NIC \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_oid_request)结构的指针。 此结构指定 OID 请求的转发信息。 此结构还包含一个指针，指向要转发的 OID 请求的原始 **NDIS \_ OID \_ 请求** 结构。
+[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**ndis \_ 交换机 \_ NIC \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_oid_request)结构的指针。 此结构指定 OID 请求的转发信息。 此结构还包含一个指针，指向要转发的 OID 请求的原始 **NDIS \_ OID \_ 请求** 结构。
 
 <a name="remarks"></a>备注
 -------
@@ -37,7 +37,7 @@ ms.locfileid: "96837927"
 
 
 
-    -   **OidRequest** 成员设置为指向封装的 oid 请求的 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的指针。
+    -   **OidRequest** 成员设置为指向封装的 oid 请求的 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的指针。
 
     然后，协议边缘发出 OID \_ 交换机 \_ NIC \_ 请求请求，以将封装的 OID 请求向下转发到外部网络适配器的可扩展交换机控制路径。
 
@@ -69,7 +69,7 @@ ms.locfileid: "96837927"
 
         例如，如果扩展插件管理的是子分区的硬件卸载资源，则必须设置 **SourcePortId** 和 **SourceNicIndex** 成员，以指定封装的硬件卸载 OID 请求适用的分区。
 
-    -   必须将 **OidRequest** 成员设置为指向封装的 oid 请求的已初始化 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request) 结构的指针。
+    -   必须将 **OidRequest** 成员设置为指向封装的 oid 请求的已初始化 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request) 结构的指针。
 
 3.  该扩展调用 [**NdisFOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequest) 将 OID 请求转发到指定的目标可扩展交换机端口和网络适配器。
 
@@ -114,11 +114,11 @@ ms.locfileid: "96837927"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 NDIS 6.30 和更高版本中受支持。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>标题</p></td>
 <td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>

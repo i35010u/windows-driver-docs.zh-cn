@@ -3,12 +3,12 @@ title: 将数据包转发到物理网络适配器
 description: 将数据包转发到物理网络适配器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e276fb87b7c388eae8569a4e82e01631a0755c9a
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: ff537f4f05a0cbe9c220892e76fe906349b9f237
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96782265"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102249235"
 ---
 # <a name="forwarding-packets-to-physical-network-adapters"></a>将数据包转发到物理网络适配器
 
@@ -28,13 +28,13 @@ ms.locfileid: "96782265"
 
 在此配置中，可扩展交换机扩展会公开给可扩展交换机团队中的每个网络适配器。 这允许在可扩展交换机驱动程序堆栈中使用转发扩展来管理团队中单个网络适配器的配置和使用。 例如，扩展可以通过将传出数据包转发到各个适配器，为负载平衡故障转移 (LBFO) 解决方案提供支持。 例如，扩展称为 *组合提供程序*。 有关组合提供程序的详细信息，请参阅 [组合提供程序扩展](teaming-provider-extensions.md)。
 
-如果在可扩展交换机驱动程序堆栈中安装并启用了转发扩展，则该扩展将负责为它在可扩展交换机入口数据路径上获取的每个数据包做出转发决策，除非数据包是 NVGRE 的数据包。  (有关 NVGRE 数据包的详细信息，请参阅 [混合转发](hybrid-forwarding.md)。 ) 根据这些转发决策，扩展可将目标端口添加到数据包的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构的带外 (OOB) 数据。 数据包完成可扩展交换机数据路径的遍历后，可扩展交换机接口会将数据包传递到指定的目标端口。
+如果在可扩展交换机驱动程序堆栈中安装并启用了转发扩展，则该扩展将负责为它在可扩展交换机入口数据路径上获取的每个数据包做出转发决策，除非数据包是 NVGRE 的数据包。  (有关 NVGRE 数据包的详细信息，请参阅 [混合转发](hybrid-forwarding.md)。 ) 根据这些转发决策，扩展可将目标端口添加到数据包的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list) 结构的带外 (OOB) 数据。 数据包完成可扩展交换机数据路径的遍历后，可扩展交换机接口会将数据包传递到指定的目标端口。
 
-**注意**  如果未安装或启用转发扩展，则可扩展交换机本身会为它从入口数据路径获取的数据包做出转发决策。 此开关将目标端口添加到数据包的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构的 OOB 数据，然后将数据包上滚到可扩展的交换机传出数据路径。
+**注意**  如果未安装或启用转发扩展，则可扩展交换机本身会为它从入口数据路径获取的数据包做出转发决策。 此开关将目标端口添加到数据包的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list) 结构的 OOB 数据，然后将数据包上滚到可扩展的交换机传出数据路径。
 
  
 
-调用转发扩展的 [*FilterSendNetBufferLists*](/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_send_net_buffer_lists) 函数时， *NetBufferList* 参数包含指向 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构的链接列表的指针。 其中每个结构都指定从入口数据路径获取的数据包。 在每个数据包的 **网络 \_ 缓冲区 \_ 列表** 结构的 OOB 数据内，目标端口的数据包含在 [**NDIS \_ 交换机 \_ 转发 \_ 目标 \_ 数组**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_destination_array) 结构中。 扩展通过调用 [*GetNetBufferListDestinations*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_get_net_buffer_list_destinations)来获取 **NDIS \_ 交换机 \_ 转发 \_ 目标 \_ 数组** 结构及其元素。
+调用转发扩展的 [*FilterSendNetBufferLists*](/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_send_net_buffer_lists) 函数时， *NetBufferList* 参数包含指向 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list) 结构的链接列表的指针。 其中每个结构都指定从入口数据路径获取的数据包。 在每个数据包的 **网络 \_ 缓冲区 \_ 列表** 结构的 OOB 数据内，目标端口的数据包含在 [**NDIS \_ 交换机 \_ 转发 \_ 目标 \_ 数组**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_destination_array) 结构中。 扩展通过调用 [*GetNetBufferListDestinations*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_get_net_buffer_list_destinations)来获取 **NDIS \_ 交换机 \_ 转发 \_ 目标 \_ 数组** 结构及其元素。
 
 **注意**  为了提高性能，转发扩展可以调用 [*GrowNetBufferListDestinations*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_grow_net_buffer_list_destinations) 函数而不是 [*GetNetBufferListDestinations*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_get_net_buffer_list_destinations) 来获取指向 [**NDIS \_ 交换机 \_ 转发 \_ 目标 \_ 数组**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_destination_array) 结构的指针。 如果扩展确定它需要数据包的 OOB 数据中的目标端口的其他数组元素，则扩展将执行此项。 有关详细信息，请参阅 [将可扩展交换机目标端口数据添加到数据包](adding-extensible-switch-destination-port-data-to-a-packet.md)。
 

@@ -3,12 +3,12 @@ title: 设置 VMQ 筛选器
 description: 设置 VMQ 筛选器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ef193a66e7ad09a9d2b4a8562cdf118314fce341
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 0422da0b227dda091b15ecd4f3fd6fe6bde3e03e
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96795911"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102247821"
 ---
 # <a name="setting-a-vmq-filter"></a>设置 VMQ 筛选器
 
@@ -22,7 +22,7 @@ ms.locfileid: "96795911"
 ## <a name="setting-a-filter-on-a-receive-queue"></a>在接收队列中设置筛选器
 
 
-如果要使用一组初始配置参数对接收队列设置筛选器，则过量驱动程序会发出 [oid \_ 接收 \_ 筛选器 \_ 集 \_ 筛选器](./oid-receive-filter-set-filter.md) 方法对象标识符 (oid) 请求。 [**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员最初包含指向 [**ndis \_ 接收 \_ 筛选器 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_parameters)结构的指针。 成功从 OID 方法请求返回后， **ndis \_ OID \_ 请求** 结构的 **InformationBuffer** 成员包含指向带有新筛选器标识符的 **NDIS \_ 接收 \_ 筛选器 \_ 参数** 结构的指针。
+如果要使用一组初始配置参数对接收队列设置筛选器，则过量驱动程序会发出 [oid \_ 接收 \_ 筛选器 \_ 集 \_ 筛选器](./oid-receive-filter-set-filter.md) 方法对象标识符 (oid) 请求。 [**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/oidrequest/ns-oidrequest-ndis_oid_request)结构的 **InformationBuffer** 成员最初包含指向 [**ndis \_ 接收 \_ 筛选器 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_parameters)结构的指针。 成功从 OID 方法请求返回后， **ndis \_ OID \_ 请求** 结构的 **InformationBuffer** 成员包含指向带有新筛选器标识符的 **NDIS \_ 接收 \_ 筛选器 \_ 参数** 结构的指针。
 
 过量驱动程序用接收队列的下列筛选器配置参数初始化 [**NDIS \_ 接收 \_ 筛选器 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_parameters) 结构：
 
@@ -62,7 +62,7 @@ ms.locfileid: "96795911"
 
     -   如果微型端口驱动程序支持 NDIS 6.20，则它必须返回 [oid \_ 接收 \_ 筛选器 \_ 集 \_ 筛选器](./oid-receive-filter-set-filter.md)oid 请求的失败状态。
 
-    -   如果微型端口驱动程序支持 ndis 6.30 或更高版本的 NDIS，则必须配置网络适配器以检查并筛选指定的 MAC 地址字段。 如果已接收的数据包中有 VLAN 标记，则网络适配器必须将其从数据包数据中删除。 微型端口驱动程序必须将 VLAN 标记放在与数据包的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构相关联的 [**\_ \_ \_ \_ 8021Q \_ 信息**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_net_buffer_list_8021q_info)中。
+    -   如果微型端口驱动程序支持 ndis 6.30 或更高版本的 NDIS，则必须配置网络适配器以检查并筛选指定的 MAC 地址字段。 如果已接收的数据包中有 VLAN 标记，则网络适配器必须将其从数据包数据中删除。 微型端口驱动程序必须将 VLAN 标记放在与数据包的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list)结构相关联的 [**\_ \_ \_ \_ 8021Q \_ 信息**](/windows-hardware/drivers/ddi/nbl8021q/ns-nbl8021q-ndis_net_buffer_list_8021q_info)中。
 
 -   如果协议驱动程序设置 MAC 地址筛选器和具有 [OID \_ 接收 \_ 筛选器 \_ 设置 \_ 筛选](./oid-receive-filter-set-filter.md) 器 oid 的 VLAN 标识符筛选器，则不会在任一筛选器字段中设置 **NDIS \_ 接收 \_ 筛选器 \_ 字段 \_ mac \_ 标头 VLAN 无标记 \_ \_ \_ 或 \_ 零** 标志。 在这种情况下，微型端口驱动程序应指示与指定的 MAC 地址和 VLAN 标识符相匹配的数据包。 也就是说，微型端口驱动程序不应指示具有具有零 VLAN 标识符或未标记数据包的匹配 MAC 地址的数据包。
 

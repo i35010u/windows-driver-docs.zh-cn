@@ -5,12 +5,12 @@ keywords:
 - IPsecOV2 WDK TCP/IP 传输，关于 IPsecOV2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f0eb978d489bfae4594baef8331a40dc451a0a67
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 92678d79254dd0a493d052cbe2e4b1d77550e548
+ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96815973"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102248089"
 ---
 # <a name="introduction-to-ipsec-offload-version-2"></a>IPsec 卸载版本 2 简介
 
@@ -39,9 +39,9 @@ IPsecOV2 提供 [OID \_ tcp \_ 任务 \_ ipsec \_ 卸载 \_ v2 \_ 添加 \_ SA](
 
 NIC 可以在发送和接收路径上执行 IPsec 卸载任务。 NDIS 驱动程序使用 [**ndis \_ ipsec \_ 卸载 \_ v2 \_ 网络 \_ 缓冲区 \_ 列表 \_ 信息**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_ipsec_offload_v2_net_buffer_list_info)， [**ndis \_ ipsec 卸载 v2 \_ \_ \_ 标头 \_ 网络 \_ 缓冲区 \_ \_**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_ipsec_offload_v2_header_net_buffer_list_info)列表信息， [**ndis \_ ipsec \_ 卸载 \_ v2 \_ 隧道 \_ 网络 \_ 缓冲区 \_ 列表 \_ 信息**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_ipsec_offload_v2_tunnel_net_buffer_list_info) 结构，用于访问 IPSEC 带外 (OOB) 信息。
 
-在发送路径上，过量驱动程序将句柄设置为 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构中 OOB 信息中的出站 SA 和 IPsec 标头信息，以指定 NIC 应该执行 IPsecOV2 卸载任务。
+在发送路径上，过量驱动程序将句柄设置为 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list) 结构中 OOB 信息中的出站 SA 和 IPsec 标头信息，以指定 NIC 应该执行 IPsecOV2 卸载任务。
 
-在接收路径上，卸载 SA 后，NIC 必须对所有接收到的数据包执行 IPsec 处理，这些数据包与微型端口驱动程序报告给 NDIS 的功能相匹配。 微型端口驱动程序在 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构中设置 OOB 信息中的适当标志，以指定 NIC 执行的特定卸载任务以及这些操作的结果。
+在接收路径上，卸载 SA 后，NIC 必须对所有接收到的数据包执行 IPsec 处理，这些数据包与微型端口驱动程序报告给 NDIS 的功能相匹配。 微型端口驱动程序在 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer_list) 结构中设置 OOB 信息中的适当标志，以指定 NIC 执行的特定卸载任务以及这些操作的结果。
 
 有关 IPsecOV2 中的发送和接收处理的详细信息，请参阅 [通过 Ipsec 卸载版本2发送网络数据](sending-network-data-with-ipsec-offload-version-2.md) 和 [接收包含 ipsec 卸载版本2的网络数据](receiving-network-data-with-ipsec-offload-version-2.md)。
 
