@@ -3,12 +3,12 @@ title: MB SAR 平台支持
 description: MB SAR 平台支持
 ms.date: 03/01/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: a01f34f2ead078ed3f85c352711e8d5d0632b536
-ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
+ms.openlocfilehash: b5c989b9ae2d6b7be3da452a45e5b9863a60b420
+ms.sourcegitcommit: afc34ee2a8cafd038e9da86e240f9c7fceb2ecff
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2021
-ms.locfileid: "102248498"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102450706"
 ---
 # <a name="mb-sar-platform-support"></a>MB SAR 平台支持
 
@@ -48,7 +48,7 @@ UUID 值 = **68223D04-9F6C-4E0F-822D-28441FB72340**
 
 ## <a name="mbim_cid_ms_sar_config"></a>MBIM_CID_MS_SAR_CONFIG
 
-### <a name="description"></a>描述
+### <a name="description"></a>说明
 
 此命令设置或返回有关 MB 设备的 SAR 后退模式和级别的信息。 MB 设备必须通过覆盖当前传输功率限制并将它们应用到传输天线来立即操作 SAR 后关闭命令。 如果系统不更改天线的 SAR 配置，则它应保持其当前设置。 例如，如果操作系统将天线1设置为 SAR 反向索引1，则天线2的配置应保持不变，而不进行任何更改。
 
@@ -70,7 +70,7 @@ MBIM_COMMAND_MSG 上的 InformationBuffer 包含 MBIM_MS_SAR_CONFIG。 MBIM_MS_S
 
 ### <a name="parameters"></a>参数
 
-| Operation | 设置 | 查询 | 通知 |
+| 操作 | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
 | Command | MBIM_MS_SET_SAR_CONFIG | 不适用 | 不适用 |
 | 响应 | MBIM_MS_SAR_CONFIG | MBIM_MS_SAR_CONFIG | 不适用 |
@@ -85,7 +85,7 @@ InformationBuffer 应为 NULL，而 InformationBufferLength 应为零。
 
 以下 MBIM_MS_SET_SAR_CONFIG 结构应在 InformationBuffer 中使用。
 
-| Offset | 大小 | 字段 | 类型 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | SARMode | MBIM_MS_SAR_CONTROL_MODE | 有关详细信息，请参阅 MBIM_MS_SAR_CONTROL_MODE 表。 |
 | 4 | 4 | SARBackOffStatus | MBIM_MS_SAR_BACKOFF_STATE | 有关详细信息，请参阅 MBIM_MS_SAR_BACKOFF_STATE 表。  如果 MBIM_MS_SAR_CONTROL_MODE 设置为设备控制的，则 OS 将无法设置此字段。 |
@@ -97,21 +97,21 @@ InformationBuffer 应为 NULL，而 InformationBufferLength 应为零。
 
 MBIM_MS_SAR_CONTROL_MODE 指定如何控制 SAR 反向机制。
 
-| 类型 | 值 | 描述 |
+| 类型 | Value | 说明 |
 | --- | --- | --- |
 | MBIMMsSARControlModeDevice | 0 | SAR 反向机制由调制解调器设备直接控制。 |
 | MBIMMsSARControlModeOS | 1 | SAR 后关闭机制由操作系统控制和管理。 |
 
 MBIM_MS_SAR_BACKOFF_STATE 描述 SAR 返回的状态。
 
-| 类型 | 值 | 描述 |
+| 类型 | Value | 说明 |
 | --- | --- | --- |
 | MBIMMsSARBackOffStatusDisabled | 0 | 在调制解调器中禁用了 SAR 后关闭。 |
 | MBIMMsSARBackOffStatusEnabled | 1 | 在调制解调器中启用了 SAR 后关闭。 |
 
 MBIM_MS_SAR_CONFIG_STATE 描述了针对天线的 SAR 回退可能的状态。
 
-| Offset | 大小 | 字段 | 类型 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | SARAntennaIndex | UINT32 | 与此表中的 **SARBackOffIndex** 字段相对应的天线索引。 它对应于天线号，并留给 OEM 实现为设备上的每个天线编制索引。 任何索引对于此值都有效。 如果在 *set* 命令中将此值设置为 **0xffffffff** ，则应将 **SARBackOffIndex** 应用于所有天线。 如果此值设置为 " **0xffffffff** "，则表示 **SARBackOffIndex** 应用于所有天线。 |
 | 4 | 4 | SARBAckOffIndex | UINT32 | 对应于由 OEM 或调制解调器供应商定义的后端表的 "后退" 索引。 该表包含单独的带区和关联的后向外参数。 |
@@ -120,7 +120,7 @@ MBIM_MS_SAR_CONFIG_STATE 描述了针对天线的 SAR 回退可能的状态。
 
 以下 MBIM_MS_SAR_CONFIG 结构应在 InformationBuffer 中使用。 MBIM_MS_SAR_CONFIG 指定 SAR 的配置。
 
-| Offset | 大小 | 字段 | 类型 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | SARMode | MBIM_MS_SAR_MODE | 有关详细信息，请参阅 MBIM_MS_SAR_CONTROL_MODE 表。 |
 | 4 | 4 | SARBackOffStatus | MBIM_MS_SAR_BACKOFF_STATE | 有关详细信息，请参阅 MBIM_MS_SAR_BACKOFF_STATE 表。 |
@@ -131,7 +131,7 @@ MBIM_MS_SAR_CONFIG_STATE 描述了针对天线的 SAR 回退可能的状态。
 
 上表中使用了以下 MBIM_MS_SAR_HARDWARE_WIFI_INTEGRATION 结构。 它指定 Wi-Fi 和蜂窝设备是否在硬件级别集成。
 
-| 类型 | 值 | 描述 |
+| 类型 | Value | 说明 |
 | --- | --- | --- |
 | MBIMMsSARWifiHardwareIntegrated  | 0 | Wi-Fi 和移动电话调制解调器 SAR 已集成到设备中。 |
 | MBIMMsSARWifiHardwareNotIntegrated | 1 | Wi-Fi 和移动电话调制解调器 SAR 未集成到设备中。 |
@@ -153,7 +153,7 @@ MBIM_MS_SAR_CONFIG_STATE 描述了针对天线的 SAR 回退可能的状态。
 
 ## <a name="mbim_cid_ms_transmission_status"></a>MBIM_CID_MS_TRANSMISSION_STATUS
 
-### <a name="description"></a>描述
+### <a name="description"></a>说明
 
 此命令用于启用或禁用传输状态下的调制解调器发出的通知。 它是按执行器命令，因为每个执行器可以具有不同的通道传输状态。 例如，两个 SIM 卡上可能有一个用于 LTE 的，另一个是 GSM 上的另一个调制解调器。 同时，可以使用它来提供调制解调器的传输状态。 此通知可用于对调制解调器是否正在传输数据感兴趣的客户端。 每当存在开始或结束的 TX 流量时，调制解调器应提供通知。 如果该税种周期太小并且无法实时地提供给主机，则在发送状态更新之前，TX 状态可以保持为活动状态，具有滞后时间计时器。 例如，可能会有一段时间发生短暂的 TX，并且调制解调器无法及时提供开始和结束通知。 当 TX 流量开始时，该调制解调器应发送通知，并且应在滞后计时器期间继续监视其 TX 流量。 如果在计时器的时间范围内没有生成更多的 TX 流量，则会报告 TX 流量已结束。
 
@@ -177,7 +177,7 @@ MBIM_COMMAND_MSG 上的 InformationBuffer 包含 MBIM_MS_SET_TRANSMISSION_STATUS
 
 ### <a name="parameters"></a>参数
 
-| Operation | 设置 | 查询 | 通知 |
+| 操作 | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
 | Command | MBIM_MS_SET_TRANSMISSION_STATUS | 不适用 | 不适用 |
 | 响应 | MBIM_MS_TRANSMISSION_STATUS_INFO | MBIM_MS_TRANSMISSION_STATUS_INFO | MBIM_MS_TRANSMISSION_STATUS_INFO |
@@ -192,14 +192,14 @@ MBIM_COMMAND_MSG 上的 InformationBuffer 包含 MBIM_MS_SET_TRANSMISSION_STATUS
 
 以下 MBIM_MS_SET_TRANSMISSION_STATUS 结构应在 InformationBuffer 中使用。
 
-| Offset | 大小 | 字段 | 类型 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | ChannelNotification | MBIM_MS_TRANSMISSION_STATUS_NOTIFICATION | 有关详细信息，请参阅 MBIM_MS_TRANSMISSION_STATUS_NOTIFICATION 表。 |
 | 4 | 4 | HysteresisTimer | UINT32 | 用于确定何时将 MBIMMsTransmissionStateInactive 发送到主机的滞后指示器。 此值是调制解调器在向主机发送 OFF 指示器之前视为连续无传输活动的计时器。 此计时器应以秒为单位进行设置，范围介于1秒到5秒之间。 |
 
 上表中使用了以下 MBIM_MS_TRANSMISSION_STATUS_NOTIFICATION 结构。 它指定调制解调器通道传输是否已禁用或启用。
 
-| 类型 | 值 | 描述 |
+| 类型 | Value | 说明 |
 | --- | --- | --- |
 | MBIMMsTransmissionNotificationDisabled | 0 | 调制解调器通道传输状态通知已禁用。 |
 | MBIMMsTransmissionNotificationEnabled | 1 | 调制解调器通道传输状态通知已启用。 |
@@ -208,7 +208,7 @@ MBIM_COMMAND_MSG 上的 InformationBuffer 包含 MBIM_MS_SET_TRANSMISSION_STATUS
 
 以下 MBIM_MS_TRANSMISSION_STATUS_INFO 结构用于响应。
 
-| Offset | 大小 | 字段 | 类型 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | ChannelNotification | MBIM_MS_TRANSMISSION_STATUS_NOTIFICATION | 有关详细信息，请参阅 MBIM_MS_TRANSMISSION_STATUS_NOTIFICATION 表。 |
 | 4 | 4 | TransmissionStatus | MBIM_MS_TRANSMISSION_STATUS | 有关详细信息，请参阅 MBIM_MS_TRANSMISSION_STATUS 表。 这表明调制解调器每5秒钟是否有 TX 流量。 |
@@ -216,7 +216,7 @@ MBIM_COMMAND_MSG 上的 InformationBuffer 包含 MBIM_MS_SET_TRANSMISSION_STATUS
 
 上表中使用了以下 MBIM_MS_TRANSMISSION_STATUS 结构。 它指示调制解调器每5秒钟是否有 TX 流量。
 
-| 类型 | 值 | 描述 |
+| 类型 | Value | 说明 |
 | --- | --- | --- |
 | MBIMMsTransmissionStateInactive | 0 | 对于最后的 HysteresisTimer 值，调制解调器不会主动传输数据，无需任何持续传输。 |
 | MBIMMsTransmissionStateActive | 1 | 调制解调器正在主动传输数据。 |
@@ -243,12 +243,16 @@ MBIM_COMMAND_MSG 上的 InformationBuffer 包含 MBIM_MS_SET_TRANSMISSION_STATUS
 
 此测试包含以下测试：
 
-| 测试名称 | 描述 |
+| 测试名称 | 说明 |
 |---|---|
 | QuerySarConfig | 此测试验证测试是否可以成功查询 SAR 配置。 |
 | SetSarConfig | 此测试验证测试是否可以成功设置 SAR 配置。 |
 | QuerySarTransmissionStatus | 此测试验证测试是否可以成功查询 SAR 传输状态。 |
 | SetSarTransmissionStatus | 此测试验证测试是否可以成功设置 SAR 传输状态。 |
+
+## <a name="winrt-api"></a>WinRT API
+
+[MobileBroadbandSarManager](/uwp/api/windows.networking.networkoperators.mobilebroadbandsarmanager)
 
 ## <a name="log-analysis"></a>日志分析
 
@@ -261,20 +265,19 @@ MBIM_COMMAND_MSG 上的 InformationBuffer 包含 MBIM_MS_SET_TRANSMISSION_STATUS
 用于筛选的关键字：
 
 1. SarConfig
-1. CWwanSar::OnNdisNotification
-1. LoadSemiStaticOEMSARTable
-1. AttemptAutoConfigureSAR
-1. PreCheckSemiStaticOEMSARTable
-1. WwanIntfOpcodeSarConfig
-1. WwanIntfOpcodeSarTransmissionStatus
-1. WwanMsmEventTypeSarConfig
-1. WwanMsmEventTypeSarTransmissionStatus
-    
+2. CWwanSar::OnNdisNotification
+3. LoadSemiStaticOEMSARTable
+4. AttemptAutoConfigureSAR
+5. PreCheckSemiStaticOEMSARTable
+6. WwanIntfOpcodeSarConfig
+7. WwanIntfOpcodeSarTransmissionStatus
+8. WwanMsmEventTypeSarConfig
+9. WwanMsmEventTypeSarTransmissionStatus
+
 **MobileBroadband WinRT WPP (56dd9c57-06cc-48ba-b123-876a6495ba13)**
 
-用于筛选的关键字：
+用于筛选的关键字： MobileBroadbandSarManager
 
-1. MobileBroadbandSarManage
 
 **WwanProtDIM (3a07e1ba-3a6b-49bf-8056-c105b54dd7fb)**
 

@@ -3,12 +3,12 @@ title: ESIM 的 MB 固件升级
 description: ESIM 的 MB 固件升级
 ms.date: 03/01/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: b908dd2a14d87400c995c0e5775d5bb7039b664f
-ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
+ms.openlocfilehash: c4413300fbf53415f80a8632bb1711ab980f64b4
+ms.sourcegitcommit: afc34ee2a8cafd038e9da86e240f9c7fceb2ecff
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2021
-ms.locfileid: "102250463"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102450704"
 ---
 # <a name="firmware-upgrade-for-esim"></a>ESIM 固件升级
 
@@ -76,7 +76,7 @@ UMDF 驱动程序将实现以下智能卡 IOCTLs：
 
 定义以下设备属性：
 
-|定义|名称|类型|FormatID|值|
+|定义|名称|类型|FormatID|Value|
 |---|--- |--- |---     |---  |
 |设备接口 guid|InterfaceClassGuid--PKEY_Devices_InterfaceClassGuid|Guid--VT_CLSID|{026E516E-B814-414B-83CD-856D6FEF4822}，4，DEVPROP_TYPE_GUID|{DEEBE6AD-9E01-47E2-A3B2-A66AA2C036C9}|
 |ReaderKind| ReaderKind--PKEY_Devices_SmartCards_ReaderKind|字节--VT_UI1 (应为 INT16 Bug 9550228) |{D6B5B883-18BD-4B4D-B2EC-9E38AFFEDA82}、2 DEVPROP_TYPE_BYTE |SmartCardReaderKind_Uicc|
@@ -85,7 +85,7 @@ UMDF 驱动程序将实现以下智能卡 IOCTLs：
 
 ISO UMDF 驱动程序在智能卡读卡器 devnode 上设置更多自定义开发属性：
 
-| 定义  |名称|类型|FormatID|值|
+| 定义  |名称|类型|FormatID|Value|
 |---|--- |--- |---     |---  |
 |RadioName|DEVPKEY_MbbDevice_RadioName|： DEVPROP_TYPE_GUID |{41e061f2-9999-4b33-bf42-f950cbfd5f2e}，1，DEVPROP_TYPE_GUID |RadioInterfaceGuid|
 |SlotId|DEVPKEY_MbbDevice_SlotId|DEVPROP_TYPE_UINT32|{c4c66992-3bcc-4f96-9a85-bd807235fbe1}、2 DEVPROP_TYPE_UINT32|SlotId|
@@ -101,9 +101,8 @@ TRACE.DAT.TRC 映像更新代理需要具有允许访问智能卡 WinRT API 的 
 
 若要防止针对随机 UICC 应用打开通道，ISO UMDF 驱动程序将允许更新所需的应用 Id，并将访问权限仅限于这些应用。 卡供应商可帮助识别应用 Id，OEM 会将 Id 添加为注册表项。 此外，智能卡中的 UICC 应用程序还应在固件上执行数字签名检查，以防止恶意应用发送数据。
 
-|***注册表路径** _|_*_值名称_*_|_ *_类型_**|
-|---|---|---|
-|HKLM\Software\Microsoft\Cellular\MVSettings\DeviceSpecific\eSIM\FwUpdate|AllowedAppIdList|REG_MULTI_SZ|
+##### <a name="cosa-setting"></a>COSA 设置
+`CellCore/PerDevice/eSIM/FwUpdate/AllowedAppIdList`
 
 在完整固件 OS 更新期间，不能访问涉及的 UICC 应用程序，这一点很重要。 若要实现此目的，TRACE.DAT.TRC 映像更新代理将发送一个特殊的 APDU，指示 eUICC 转入 TRACE.DAT.TRC/PBL 模式。 然后，TRACE.DAT.TRC 应用程序会要求调制解调器进入直通模式并重置该卡。 该卡将作为空 MF 启动。 完成更新后，将要求调制解调器再次重置该卡。 这一次，调制解调器和卡都将返回到正常模式。
 
