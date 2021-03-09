@@ -2586,32 +2586,10 @@
   items:
     - name: WLAN 通用 Windows 驱动程序模型
       href: wifi-universal-driver-model.md
-    - name: 手机网络体系结构和概述
-      items:
-        - name: 手机网络体系结构和实现
-          href: cellular-architecture-and-driver-model.md
-        - name: SIM 双卡
-          href: dual-sim.md
-        - name: SIM 锁定
-          href: sim-lock.md
-        - name: SIM 工具包
-          items:
-            - name: SIM 工具包概述
-              href: sim-toolkit.md
-            - name: SIM 工具包命令
-              href: sim-toolkit-commands.md
-            - name: 用于启动 SIM 工具包的保留 URI
-              href: reserved-uri-to-launch-sim-toolkit.md
-        - name: 手机网络 COM API
-          items:
-            - name: 手机网络 COM API 设计指南
-              href: cellular-com-api-design-guide.md
-            - name: 手机网络 COM API 功能
-              href: cellular-com-api-capabilities.md
-            - name: 使用 IOemCellularModem 接口与 RIL 驱动程序通信
-              href: communicate-with-the-ril-driver-by-using-the-ioemcellularmodem-interface.md
     - name: 移动宽带 (MB) 设计指南
       items:
+        - name: 手机网络体系结构
+          href: cellular-architecture-and-driver-model.md
         - name: MB 微型端口驱动程序开发路线图
           href: roadmap-to-develop-mb-miniport-drivers.md
         - name: MB 接口模型
@@ -2644,6 +2622,10 @@
               href: mb-operational-semantics.md
             - name: MB 驱动程序模型版本控制
               href: mb-driver-model-versioning.md
+            - name: 移动宽带 (MBB) WDF 类扩展 (MBBCx) 的简介
+              href: ../netcx/mobile-broadband-mbb-wdf-class-extension-mbbcx.md
+            - name: MB 驱动程序堆叠、暂停和继续
+              href: mb-mbim-interaction-overview.md
             - name: MB 微型端口驱动程序 INF 要求
               href: mb-miniport-driver-inf-requirements.md
             - name: MB 微型端口驱动程序类型
@@ -2658,50 +2640,40 @@
               href: mb-miniport-driver-error-logging.md
             - name: MB 微型端口驱动程序性能要求
               href: mb-miniport-driver-performance-requirements.md
-        - name: MB 操作流程图
-          items:
-            - name: MB 操作流程图主题
-              href: mb-operation-flowcharts.md
-            - name: MB 微型端口驱动程序初始化
-              href: mb-miniport-driver-initialization.md
-            - name: 初始化使用预配上下文的非 SIM 锁定 GPRS 设备
-              href: initialization-of-a-non-sim-locked-gprs-device-with-a-provisioned-cont.md
-            - name: 初始化使用用户定义上下文的 SIM 锁定 GPRS 设备
-              href: initialization-of-sim-locked-gprs-device-with-a-user-defined-context.md
-            - name: 初始化使用预配上下文的 CDMA 数据包设备
-              href: initialization-of-a-cdma-packet-device-with-a-provisioned-context.md
-            - name: 丢失和重新获取数据包数据服务
-              href: losing-and-regaining-packet-data-service.md
-            - name: 数据包数据服务移交
-              href: packet-data-service-handoffs.md
-            - name: 数据包数据服务连接期间的语音呼叫
-              href: voice-calls-during-packet-data-service-connections.md
-            - name: 信号强度指示语义
-              href: signal-strength-indication-semantics.md
         - name: MB 设备就绪状态
           href: mb-device-readiness.md
+        - name: MB 数据连接
+          href: mb-data-connectivity.md
+        - name: 基本连接日志筛选器
+          href: mb-basic-connectivity-tat.md
         - name: MB 服务检测和激活
           href: mb-service-detection-and-activation.md
-        - name: MB 发射功率状态操作
-          href: mb-radio-power-state-operations.md
+        - name: MB 无线电状态
+          href: mb-radio-state.md
         - name: MB PIN 操作
           href: mb-pin-operations.md
+        - name: MB PIN 日志筛选器
+          href: mb-pin-filter.md
         - name: MB 提供程序操作
           href: mb-provider-operations.md
         - name: MB 注册操作
           href: mb-registration-operations.md
-        - name: MB 数据包服务附加操作
+        - name: MB 数据包服务操作
           href: mb-packet-service-attach-operations.md
         - name: MB 信号强度操作
           href: mb-signal-strength-operations.md
         - name: MB 数据包上下文管理
           href: mb-packet-context-management.md
+        - name: MB 多 PDP 上下文
+          href: mb-multiple-pdp.md
         - name: MB DNS 更新
           href: mb-dns-updates.md
         - name: MB SMS 操作
           href: mb-sms-operations.md
         - name: MB 供应商特定的操作
           href: mb-vendor-specific-operations.md
+        - name: MB USSD 概述
+          href: mb-ussd-overview.md
         - name: MB USSD 操作
           href: mb-ussd-operations.md
         - name: MB 设备服务
@@ -2710,12 +2682,16 @@
           href: mb-multimode-multicarrier.md
         - name: MB 多 SIM 操作
           href: mb-multi-sim-operations.md
+        - name: MB DSSA 筛选器
+          href: mb-dssa-filter.md
         - name: MB 预配上下文操作
           href: mb-provisioned-context-operations.md
         - name: MB 网络阻止列表操作
           href: mb-network-blacklist-operations.md
         - name: MB LTE 附加操作
           href: mb-lte-attach-operations.md
+        - name: LTE 附加操作日志筛选器
+          href: mb-lte-attach-tat.md
         - name: MB 协议配置选项 (PCO) 操作
           href: mb-protocol-configuration-options-pco-operations.md
         - name: MB UICC 操作
@@ -2724,6 +2700,14 @@
               href: mb-low-level-uicc-access.md
             - name: MB UICC 应用程序和文件系统访问权限
               href: mb-uicc-application-and-file-system-access.md
+        - name: MB eSIM 操作
+          href: mb-esim-operations.md
+        - name: eSIM 的 MB 固件升级
+          href: mb-fw-upgrade-for-esim.md
+        - name: eSIM 下载并安装日志筛选器
+          href: mb-esim-download-install-tat.md
+        - name: eSIM 配置文件操作日志筛选器
+          href: mb-esim-profile-operations-tat.md
         - name: MB 重置和恢复
           items:
             - name: MB 基于设备的重置和恢复以及挂起检测
@@ -2732,6 +2716,8 @@
                   href: mb-device-based-reset-and-recovery.md
                 - name: MB 挂起检测
                   href: mb-hang-detection.md
+                - name: MB 设备重置和恢复 (RnR) 跟踪
+                  href: mb-device-based-reset-and-recovery-trace.md
             - name: MB 调制解调器重置操作
               href: mb-modem-reset-operations.md
         - name: MB SAR 平台支持
@@ -2744,8 +2730,18 @@
           href: mb-modem-logging-with-dss.md
         - name: MB 5G 操作
           items:
-            - name: MB 5G 数据类支持
-              href: mb-5g-data-class-support.md
+            - name: MB 5G 操作概述
+              href: mb-5g-operations-overview.md
+            - name: MB 5G 操作术语
+              href: mb-5g-operations-terminology.md
+            - name: Windows 5G MBIM 接口
+              href: windows-5g-mbim-interface.md
+            - name: 用于 5G 数据类支持的 NDIS 接口
+              href: ndis-interface-for-5g-data-class-support.md
+            - name: MBIMEx 2.0 – 5G NSA 支持
+              href: mbimex-2.0-5g-nsa-support.md
+            - name: MBIMEx 3.0 – 5G SA 第 1 阶段支持
+              href: mbimex-3.0-5g-sa-phase-1-support.md
         - name: MB eSIM MBIM 就绪状态指导
           href: mb-esim-mbim-ready-state-guidance.md
         - name: MB NDIS 状态通知
@@ -2876,6 +2872,14 @@
               href: mobile-broadband-class-driver-logs--event-trace-log-tracing.md
             - name: USB 设备的移动宽带实施指南
               href: mobile-broadband-implementation-guidelines-for-usb-devices.md
+            - name: 收集 Mobilebroadband 日志
+              href: mb-collecting-logs.md
+            - name: 分析 Mobilebroadband 日志
+              href: mb-analyzing-logs.md
+            - name: TextAnalysisTool 筛选器文件
+              href: mb-tat-filters.md
+            - name: netsh mbn 测试安装
+              href: mb-netsh-mbn-test.md
     - name: WLAN 网络首选项和漫游
       items:
         - name: WLAN 功能信息
@@ -5162,6 +5166,20 @@
           href: oid-qos-current-capabilities.md
         - name: OID_QOS_HARDWARE_CAPABILITIES
           href: oid-qos-hardware-capabilities.md
+        - name: OID_QOS_OFFLOAD_CREATE_SQ
+          href: oid-qos-offload-create-sq.md
+        - name: OID_QOS_OFFLOAD_CURRENT_CAPABILITIES
+          href: oid-qos-offload-current-capabilities.md
+        - name: OID_QOS_OFFLOAD_DELETE_SQ
+          href: oid-qos-offload-delete-sq.md
+        - name: OID_QOS_OFFLOAD_ENUM_SQS
+          href: oid-qos-offload-enum-sqs.md
+        - name: OID_QOS_OFFLOAD_HARDWARE_CAPABILITIES
+          href: oid-qos-offload-hardware-capabilities.md
+        - name: OID_QOS_OFFLOAD_SQ_STATS
+          href: oid-qos-offload-sq-stats.md
+        - name: OID_QOS_OFFLOAD_UPDATE_SQ
+          href: oid-qos-offload-update-sq.md
         - name: OID_QOS_OPERATIONAL_PARAMETERS
           href: oid-qos-operational-parameters.md
         - name: OID_QOS_PARAMETERS
