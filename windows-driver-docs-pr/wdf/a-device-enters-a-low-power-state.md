@@ -12,12 +12,12 @@ keywords:
 - 系统睡眠状态 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f79842336895f2ddeb430615d038ee543813ab43
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: efae39b3c0810eedde5e154b7847bd709072c9ad
+ms.sourcegitcommit: be2d0eddfc35edc2ce047defb0e44f6eaff4c40b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96802123"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102584704"
 ---
 # <a name="a-device-enters-a-low-power-state"></a>设备进入低功耗状态
 
@@ -44,5 +44,6 @@ ms.locfileid: "96802123"
 
 总线驱动程序是堆栈中最后一个调用的驱动程序。 当框架调用总线驱动程序的 [*EvtDeviceD0Exit*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_exit) 回调函数时，回调函数会将设备的电源状态设置 (总线) 的子设备设置为低功耗状态。 此框架指定 D3 低功耗状态，除非电源策略所有者指定了不同的低功耗状态。
 
- 
+> [!NOTE]
+> 总线驱动程序用于设置子设备的电源状态的方法是特定于总线的。 例如，PCI 总线电源管理规范定义16位电源管理控制/状态寄存器 (PMCSR) 。 最小两位 ( "PowerState" ) 确定设备的当前电源状态，并用于将设备设置为新电源状态。 当 `pci.sys` PDO 接收到 IRP_MN_SET_POWER/d3 时，它会读取 PMCSR，将 PowerState 位更改为 11b (电源级别 D3) ，并写回 PMCSR。
 
