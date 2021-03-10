@@ -3,12 +3,12 @@ title: Windows 10 版本 1903 的驱动程序开发变更
 description: 了解 Windows 10 中用于驱动程序开发的新功能，如相机驱动程序功能 IR Torch 和 USB 视频类1.5 扩展。
 ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: eaae884f65e670352e3e4d7c2e0975f34c966235
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 16336f84d01b50fb207f372ba7e9b5af4d21a55d
+ms.sourcegitcommit: 6f55e564fcdef4ccd02038d474f881430b072c36
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96839281"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102526045"
 ---
 # <a name="whats-new-in-windows-10-version-1903"></a>Windows 10 版本1903中的新增功能
 
@@ -22,7 +22,7 @@ ms.locfileid: "96839281"
 * 新的远场音频信息： 
     * [PKEY_Devices_AudioDevice_Microphone_IsFarField](./audio/pkey-devices-audiodevice-microphone-isfarfield.md)
     * [KSPROPSETID_InterleavedAudio](./audio/kspropsetid-interleavedaudio.md)
-    * [KSPROPERTY_INTERLEAVEDAUDIO_FORMATINFORMATION](https://review.docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-interleavedaudio-formatinformation)
+    * [KSPROPERTY_INTERLEAVEDAUDIO_FORMATINFORMATION](/windows-hardware/drivers/audio/ksproperty-interleavedaudio-formatinformation)
     
 * [USB 音频 2.0 驱动程序](./audio/usb-2-0-audio-drivers.md)中的新插孔说明信息。
 
