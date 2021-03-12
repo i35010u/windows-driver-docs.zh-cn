@@ -5,12 +5,12 @@ keywords:
 - x64 处理器，带批注的反汇编
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ccc39659059a640bf9122e6d2a3bf84cc88fdcb6
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: e0bf471c02485d6709aa5e2b1e1983966f5fea46
+ms.sourcegitcommit: b17e8a4c9ed6503e844416b4ca3f8c38199c1b98
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96819323"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103193331"
 ---
 # <a name="annotated-x64-disassembly"></a>带批注的 x64 反汇编
 
@@ -39,7 +39,7 @@ int Simple(int i, int j)
 
 生成的特定代码利用三个技巧，其中一种是特定于 x64 的：
 
-1.  **逆转** 操作可用于将一系列简单的算术运算作为单个操作执行。 第一条指令在 eax 中存储 *j + i* \* 4，第二个指令将 *i*+ 3 添加到结果，总共 **eax** *j* + *i* \* 5 + 3。
+1.  **逆转** 操作可用于将一系列简单的算术运算作为单个操作执行。 第一条指令在 eax 中存储 *j + i* \* 4，第二个指令将 *i*+ 3 添加到结果，总共 *j* + *i* \* 5 + 3。
 
 2.  许多运算（如加法和乘法）可以通过额外的精度来完成，然后截断为正确的精度。 在此实例中，代码使用64位加法和乘法。 可以安全地将结果截断为32位。
 
@@ -329,7 +329,11 @@ ReturnEAX:
 
 返回值存储在 **rax** 中，然后在返回前还原非易失性寄存器。
 
- 
+## <a name="see-also"></a>另请参阅
+
+[x64 体系结构](x64-architecture.md)
+
+[X86-64 维基百科](https://en.wikipedia.org/wiki/X86-64)
 
  
 

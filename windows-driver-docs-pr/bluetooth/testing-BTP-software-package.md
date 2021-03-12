@@ -3,12 +3,12 @@ title: Microsoft 蓝牙测试平台包
 description: 蓝牙测试平台 (BTP) 软件包。
 ms.date: 2/14/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f6b3d419634f9ef70f7cfac1e40b84f502d255b
-ms.sourcegitcommit: 76698e25b77af71155e689200c6e0cf817bfd0d7
+ms.openlocfilehash: f33a8b49622d9c83457be429008d275f058b1d11
+ms.sourcegitcommit: b17e8a4c9ed6503e844416b4ca3f8c38199c1b98
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2021
-ms.locfileid: "100261999"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103193327"
 ---
 # <a name="the-btp-software-package"></a>BTP 软件包
 
@@ -18,7 +18,7 @@ BTP 软件包包含多个用于测试蓝牙方案的工具。
 
 蓝牙测试平台 (BTP) 软件包包含的工具可用于测试支持 Bluetooth 的外设和系统与 Windows 蓝牙堆栈之间的互操作性。 随附的文档简要概述了如何配置硬件并建议拓扑以获得最佳测试范围。 包括有关如何从蓝牙 Windows 堆栈运行测试和收集跟踪事件的过程信息。
 
-[ ![ 下载蓝牙测试平台](images/download.png)](//download.microsoft.com/download/e/e/e/eeed3cd5-bdbd-47db-9b8e-ca9d2df2cd29/BluetoothTestPlatformPack-1.5.1.msi)软件包下载蓝牙测试平台软件包。
+[ ![ 下载蓝牙测试平台](images/download.png)](https://download.microsoft.com/download/e/e/e/eeed3cd5-bdbd-47db-9b8e-ca9d2df2cd29/BluetoothTestPlatformPack-1.5.1.msi)软件包下载蓝牙测试平台软件包。
 
 ## <a name="version-updates"></a>版本更新
 
@@ -33,7 +33,7 @@ BTP 软件包包含多个用于测试蓝牙方案的工具。
 
 ### <a name="architecture-independent-files"></a>独立于体系结构的文件
 
-| 测试工具 | 说明 | 文件名 |
+| 测试工具 | 描述 | 文件名 |
 | --- | --- | --- |
 | ConfigureMachineForBtp | -作为 CMD 脚本和 PowerShell 脚本提供。</br>-配置用于运行 BTP 测试的测试计算机。</br>-计划在新计算机或操作系统安装上运行第一个测试之前运行。</br> | ConfigureMachineForBtp.bat</br>ConfigureMachineForBtp.ps1 |
 | RunPairingTests | -作为 CMD 脚本和 PowerShell 脚本提供。</br>-运行蓝牙配对测试。</br>-支持自定义参数（如果提供）。</br> | RunPairingTests.bat</br>RunPairingTests.ps1 |
@@ -47,7 +47,7 @@ BTP 软件包包含多个用于测试蓝牙方案的工具。
 
 此表中列出的文件适用于 X86、AMD64 和 ARM64 体系结构。 安装程序将提取每个体系结构的一个实例。
 
-| 测试工具 | 说明 | 文件名 |
+| 测试工具 | 描述 | 文件名 |
 | --- | --- | --- |
 | BtpDevicePlugin | -支持使用本地 Windows 蓝牙收音机的测试所需的二进制文件。 | Microsoft.Bluetooth.TestPlatform.BtpDevicePlugin.dll |
 | GenericSerialIO | -支持使用 Windows 串行通信的 BTP 设备所需的二进制文件。 | Microsoft.Bluetooth.TestPlatform.GenericSerialIO.dll |

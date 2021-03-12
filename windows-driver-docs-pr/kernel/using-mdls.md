@@ -5,12 +5,12 @@ keywords:
 - 内存管理 WDK 内核，
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8672b6444bdc87e9d1e95a6a19268db24e06b868
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: f6c902cc8bbb407d6b385826d47b9eb4feb880fd
+ms.sourcegitcommit: b17e8a4c9ed6503e844416b4ca3f8c38199c1b98
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96803775"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103193333"
 ---
 # <a name="using-mdls"></a>使用 MDL
 
@@ -37,7 +37,9 @@ MDL 的其余成员是不透明的。 请勿直接访问 MDL 的不透明成员�
 
 [**MmGetSystemAddressForMdlSafe**](./mm-bad-pointer.md)例程将指定 MDL 描述的物理页面映射到系统地址空间中的虚拟地址（如果它们尚未映射到系统地址空间）。 此虚拟地址适用于可能需要查看页来执行 i/o 的驱动程序，因为原始虚拟地址可能是只能在其原始上下文中使用的用户地址，可以随时删除。
 
-请注意，使用 [**IoBuildPartialMdl**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuildpartialmdl) 例程生成部分 MDL 时，调用方应使用 **MmGetMdlVirtualAddress** 而不是 **MmGetSystemAddressForMdlSafe** 例程来确定要传入的虚拟地址。 **IoBuildPartialMdl** 使用 **MmGetMdlVirtualAddress** 从源 mdl 返回的地址来确定目标 mdl 的偏移量。 如果地址不同 (例如，当第一个地址是用户地址) 时，传递 **MmGetSystemAddressForMdlSafe** 返回的地址可能会导致数据损坏或 bug 检查。
+请注意，当你使用 [**IoBuildPartialMdl**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuildpartialmdl) 例程生成部分 mdl 时， **MmGetMdlVirtualAddress** 将返回部分 mdl 的原始起始地址。 如果 MDL 最初是作为用户模式请求的结果创建的，则此地址为用户模式地址。 因此，该地址在发出请求的进程的上下文之外没有关联。
+
+通常，驱动程序改为通过调用 [**MmGetSystemAddressForMdlSafe**](/windows-hardware/drivers/kernel/mm-bad-pointer)宏来映射部分 MDL 来创建 *系统* 模式地址。 这可确保驱动程序可以继续安全地访问页面，而无需考虑处理上下文。
 
 当驱动程序调用 **IoAllocateMdl** 时，它可以通过将一个指向 irp 的指针指定为 **IoAllocateMdl** 的 *IRP* 参数，从而将 irp 与新分配的 MDL 关联起来。 IRP 可以有一个或多个与之关联的 MDLs。 如果 IRP 具有与之关联的单个 MDL，则 IRP 的 **MdlAddress** 成员将指向该 mdl。 如果 IRP 具有多个与之关联的 MDLs，则 **MdlAddress** 指向与 IRP 关联的 MDLs 的链接列表中的第一个 MDL，称为 *MDL 链*。 MDLs 由其 **下一** 成员链接。 链中最后一个 MDL 的 **下一个** MDL 成员设置为 **NULL**。
 

@@ -15,12 +15,12 @@ keywords:
 - 全卷滑块 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 659531730de01de539e2fedf37a8ed581853ff63
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 4d04108c2af0dbc7de44fcbfcfecad8028100a63
+ms.sourcegitcommit: b17e8a4c9ed6503e844416b4ca3f8c38199c1b98
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96789303"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103193329"
 ---
 # <a name="default-audio-volume-settings"></a>默认的音频音量设置
 
@@ -77,6 +77,13 @@ SndVol 程序 (参阅 " [托盘和 SndVol32](systray-and-sndvol32.md) ") 显示�
 </tr>
 <tr class="odd">
 <td align="left">Windows 8</td>
+<td align="left"><p>默认级别： 0.0 dB</p>
+<p>卷范围：-96 dB ~ + 30 dB</p></td>
+<td align="left"><p>默认级别： 0.0 dB</p>
+<p>卷范围：-96 dB ~ 0 dB</p></td>
+</tr>
+<tr class="even">
+<td align="left">Windows 10</td>
 <td align="left"><p>默认级别： 0.0 dB</p>
 <p>卷范围：-96 dB ~ + 30 dB</p></td>
 <td align="left"><p>默认级别： 0.0 dB</p>
