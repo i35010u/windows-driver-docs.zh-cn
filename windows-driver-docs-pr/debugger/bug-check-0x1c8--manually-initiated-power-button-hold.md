@@ -4,7 +4,7 @@ description: MANUALLY_INITIATED_POWER_BUTTON_HOLD bug 检查的值为0x000001CE�
 keywords:
 - Bug 检查 0x1C8 MANUALLY_INITIATED_POWER_BUTTON_HOLD
 - MANUALLY_INITIATED_POWER_BUTTON_HOLD
-ms.date: 03/03/2021
+ms.date: 03/05/2021
 topic_type:
 - apiref
 api_name:
@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c268d28f1742a6e26b3e12ab057ae08bd03e2d3
-ms.sourcegitcommit: 607367af861d0ff3ec6438dab5ea532d06f5b890
+ms.openlocfilehash: 15b25a074b666b6de8137b95eae3b01f81eca96b
+ms.sourcegitcommit: 47cd14eb928aee3a3368d9d1d92a7047b30eac55
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102193568"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103022570"
 ---
 # <a name="bug-check-0x1c8-manually_initiated_power_button_hold"></a>Bug 检查0x1C8：手动 \_ 启动的 \_ 电源 \_ 按钮 \_ 挂起
 
@@ -36,7 +36,7 @@ ms.locfileid: "102193568"
 
 以下参数显示在蓝色屏幕上。
 
-参数 | 说明
+参数 | 描述
 |---------|--------------|
 1 | 按住电源按钮的时间（毫秒）。
 2 | 指向 nt！ _POP_POWER_BUTTON_TRIAGE_BLOCK 的指针。
@@ -47,6 +47,6 @@ ms.locfileid: "102193568"
 
 [使用电源按钮强制系统崩溃](forcing-a-system-crash-with-the-power-button.md)
 
-[内部显示错误检查 0x1C8 MANUALLY_INITIATED_POWER_BUTTON_HOLD](https://channel9.msdn.com/Shows/Inside/0x1C8)
+[内部显示错误 0x1C8 MANUALLY_INITIATED_POWER_BUTTON_HOLD](https://channel9.msdn.com/Shows/Inside/0x1C8)
 
 [ACPI 按钮设备](/windows-hardware/drivers/hid/acpi-button-device)

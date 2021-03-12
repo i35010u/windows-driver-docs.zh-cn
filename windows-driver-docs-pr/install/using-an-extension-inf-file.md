@@ -3,12 +3,12 @@ title: 使用扩展 INF 文件
 description: 从 Windows 10 开始，可以通过提供名为扩展 INF 的其他 INF 文件来扩展驱动程序包 INF 文件的功能。
 ms.date: 06/05/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5bc95c540a2b55ce0deb598e32e5870f6d0c5cb9
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 1dcbf99d79860a24f0e777b7f1c6fedca0cdc723
+ms.sourcegitcommit: 011e8218c9e9a253558d27e2b4de75e46011d814
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96805449"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103087134"
 ---
 # <a name="using-an-extension-inf-file"></a>使用扩展 INF 文件
 
@@ -109,12 +109,11 @@ ms.locfileid: "96805449"
 
 ## <a name="uninstalling-an-extension-driver"></a>卸载扩展驱动程序
 
-若要卸载扩展驱动程序，请使用 `delete` 带有标志的 PnPUtil 命令 `uninstall` 。 
+若要卸载扩展驱动程序，请使用 `delete-driver` 带有标志的 PnPUtil 命令 `uninstall` 。 这允许在不删除基础驱动程序的情况下卸载扩展驱动程序。
 
-若要删除驱动程序包，请使用 `pnputil /delete-driver /uninstall oem0.inf` 。
-若要强制删除驱动程序包，请使用 `pnputil /delete-driver /uninstall oem1.inf /force` 。
+查找要卸载和使用的驱动程序包的 oem< # > `pnputil /delete-driver oem<#>.inf /uninstall` 名称。 
 
-这允许在不删除基础驱动程序的情况下卸载扩展驱动程序。
+`pnputil /enum-drivers` 可用于帮助识别相应的 oem< # > .inf 名称。
 
 ## <a name="example-1-using-an-extension-inf-to-set-the-device-friendly-name"></a>示例1：使用扩展 INF 设置设备友好名称
 

@@ -6,16 +6,17 @@ keywords:
 ms.date: 03/21/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 3e398c9b3f40a3067baa8fbf642d31f8cbadacfc
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: ee9165663f6a46b94d43489523f3b9449790c1e5
+ms.sourcegitcommit: 430d725bae5ac00ddd0106bf62ccf0a3b210c4d1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96841181"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102604377"
 ---
 # <a name="mb-modem-logging-with-dss"></a>使用 DSS 进行 MB 调制解调器日志记录
 
-## <a name="overview"></a>概述
+> [!NOTE]
+> 如果你计划调制解调器支持 `MBIM_CID_MODEM_LOGGING_CONFIG` ，请在此页上提供反馈，以便我们能够以最大的支持。 此 CID 目前正在试验，尚未使用调制解调器进行测试，因为没有支持它。
 
 本主题介绍了一种新的标准 Windows mobile 宽带 (MBB) 日志记录接口，该接口通过 Microsoft extension to the USB MBIM 1.0 规格，适用于 Windows 10，版本1903及更高版本。 
 
@@ -36,13 +37,15 @@ MBB 配置级别的操作系统抽象通过调制解调器映射到适当的内�
 3. 收到成功状态代码后，操作系统将准备从调制解调器接收片段。 这些碎片称为 DataServiceSessionRead 的数据包。
 4. DataServiceSessionRead 数据包将继续到达，直到操作系统颁发另一个 MBIM_CID_DSS_CONNECT 命令，该命令具有相同的 DSS 会话 ID 和 MBIMDSSLinkDeactivate 状态。
 
+一旦调制解调器将所有日志写入新创建的数据通道，该调制解调器就会调用 [**MbbDeviceReceiveDeviceServiceSessionData**](/windows-hardware/drivers/ddi/mbbcx/nf-mbbcx-mbbdevicereceivedeviceservicesessiondata)，通过 WinRT 层可通过应用使用的数据： [**MobileBroadbandDeviceService**](/uwp/api/windows.networking.networkoperators.mobilebroadbanddeviceservice)。 应将调制解调器日志格式化为可重定向到 ETW 会话的可打印字符串数据。
+
 ## <a name="modem-logging-data-path"></a>调制解调器日志记录数据路径
 
 Moddem 日志记录使用 MBIM 数据服务流 (DSS) 传输数据以记录负载。 有关 DSS 的详细信息，请参阅 [MBIM 1.0 规范](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)的10.5.38 部分。 
 
 从 DSS 连接或断开连接时，会将以下 GUID 用于调制解调器日志记录：
 
-| GUID | “值” |
+| GUID | 值 |
 | --- | --- |
 | ModemFileTransfer GUID | 0EBB1CEB-AF2D-484D-8DF3-53BC51FD162C |
 
@@ -76,7 +79,7 @@ Moddem 日志记录使用 MBIM 数据服务流 (DSS) 传输数据以记录负载
 
 | 操作 | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
-| 命令 | MBIM_MODEM_LOGGING_CONFIG | 不适用 | 不适用 |
+| 命令 | MBIM_MODEM_LOGGING_CONFIG | 不适用 | “不适用” |
 | 响应 | MBIM_MODEM_LOGGING_CONFIG | MBIM_MODEM_LOGGING_CONFIG | MBIM_MODEM_LOGGING_CONFIG |
 
 ### <a name="query"></a>查询
@@ -85,7 +88,7 @@ Moddem 日志记录使用 MBIM 数据服务流 (DSS) 传输数据以记录负载
 
 #### <a name="mbim_modem_logging_config"></a>MBIM_MODEM_LOGGING_CONFIG
 
-| Offset | 大小 | 字段 | 类型 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | 版本 | UINT32 | 此结构的版本号。 对于此结构的版本1，此字段必须设置为 **1** 。 |
 | 4 | 4 | MaxSegmentSize | UINT32 | 指定调制解调器发送的每个段的段大小（kb）。 如果设备服务的调制解调器支持的最大片段大小超过了设置的值，则此值将设置为支持的最大段大小。 |
@@ -97,7 +100,7 @@ Moddem 日志记录使用 MBIM 数据服务流 (DSS) 传输数据以记录负载
 
 以下 MBIM_LOGGING_LEVEL_CONFIG 枚举用于前面的 MBIM_MODEM_LOGGING_CONFIG 结构。
 
-| 类型 | 值 | 描述 |
+| 类型 | 值 | 说明 |
 | --- | --- | --- |
 | MBIMLoggingLevelProd | 0 | 用于从零售或生产填充收集遥测数据。 生成的日志应该是胶囊大小的，并且仅包含关键调制解调器或 MBB 状态或故障信息。 |
 | MBIMLoggingLevelLabVerbose | 1 | 用于开发低成熟度的 MBB 产品。 对调制解调器进行详细的完整堆栈捕获。 生成的调制解调器捕获应允许 IHV 重播并在日志中完全恢复捕获。 |
@@ -125,7 +128,7 @@ MBIM_COMMAND_DONE 中的 InformationBuffer 包含 MBIM_MODEM_LOGGING_CONFIG 的�
 
 下表描述了 DSS 会话在各个非活动阶段的行为方式：
 
-| 方案 | DSS 会话状态 |
+| 场景 | DSS 会话状态 |
 | --- | --- |
 | 系统睡眠，仅调制解调器睡眠、重置和恢复 | DSS 会话保持打开状态 |
 | 系统关闭、重新启动、休眠 | DSS 会话已关闭 |

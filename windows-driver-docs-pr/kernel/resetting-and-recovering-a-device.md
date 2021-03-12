@@ -5,12 +5,12 @@ keywords:
 - GUID_DEVICE_RESET_INTERFACE_STANDARD
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a4d4328100626d45cfef2b168d17ca805ca21d1e
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: b60d7d58a195e3bacf45e16789a3c6a846f6deb9
+ms.sourcegitcommit: 47cd14eb928aee3a3368d9d1d92a7047b30eac55
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96820651"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103022576"
 ---
 # <a name="resetting-and-recovering-a-device"></a>重置和恢复设备
 
@@ -129,7 +129,7 @@ DefinitionBlock("SSDT.AML", "SSDT", 0x01, "XyzOEM", "TestTabl", 0x00001000)
 2. 将 SSDT 重命名为 acpitabl。 
 3. 将 acpitabl 复制到测试系统上的%systemroot%\system32。 
 4. 在测试系统上启用测试签名。 
-      Bcdedit/set GUID_DEVICE_RESET_INTERFACE_STANDARD testsigning on
+      Bcdedit/set testsigning on
 
 5. 重新启动测试系统。 
 6. 验证是否已加载表。 在 Windows 调试器中，使用以下命令。 
