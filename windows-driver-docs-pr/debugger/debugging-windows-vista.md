@@ -3,12 +3,12 @@ title: 调试 Windows Vista
 description: 若要使用 WinDbg 调试 Windows Vista，请获取适用于 windows 7 的 windows 7 调试工具（包含在 Windows 7 中）。
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c6982a08448471e749e22b11418ccf22fa731df
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: d3749e4180b9a343dfe336b2b3df0c3dc6811b8d
+ms.sourcegitcommit: 808f38ce070ce5eb9c33c9ce7e24b01fda039bfc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96785295"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103366197"
 ---
 # <a name="debugging-windows-vista"></a>调试 Windows Vista
 
@@ -17,7 +17,7 @@ ms.locfileid: "96785295"
 
 如果你只想下载适用于 Windows 的调试工具，请安装 SDK，然后在安装过程中，选择 " **适用于 Windows 的调试工具** " 框并清除所有其他框。
 
-**注意**  安装 SDK 之前，可能必须卸载 Microsoft Visual C++ 2010 可再发行组件。 有关详细信息，请参阅 [Microsoft 支持部门网站](https://support.microsoft.com/help/2717426/windows-sdk-fails-to-install-with-return-code-5100)。
+**注意**  安装 SDK 之前，可能必须卸载 Microsoft Visual C++ 2010 可再发行组件。
 
  
 

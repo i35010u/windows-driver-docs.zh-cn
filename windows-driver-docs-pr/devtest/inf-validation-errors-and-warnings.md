@@ -3,12 +3,12 @@ title: INF 验证错误和警告
 description: Microsoft Visual Studio 执行的自动 INF 验证会导致驱动程序安装错误和警告。
 ms.date: 03/04/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 80c8b66ed915c6d0d1432adac13aeaa2965ce760
-ms.sourcegitcommit: 607367af861d0ff3ec6438dab5ea532d06f5b890
+ms.openlocfilehash: e79c2c8e3dbb4a1dc68a9ae7c6af82b0c6e620c0
+ms.sourcegitcommit: 808f38ce070ce5eb9c33c9ce7e24b01fda039bfc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102193574"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103366199"
 ---
 # <a name="inf-validation-errors-and-warnings"></a>INF 验证错误和警告
 
@@ -244,7 +244,7 @@ AddService = ,2
 <thead>
 <tr>
 <th>错误/警告代码</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -298,7 +298,7 @@ AddReg = HKR,,CoInstallers32,0x00010000,"MyCoinstaller.dll"
 ## <a name="windows-driver-1320-1329"></a>Windows 驱动程序 (1320-1329) 
 
 >[!IMPORTANT]
->如果未在 13 *2x* 范围内收到错误号或警告，则驱动程序 INF 文件符合 Windows 驱动程序要求。 <a href="/windows-hardware/drivers/develop/driver-isolation.md"><strong>驱动程序隔离要求</strong></a>文档中详细介绍了这些要求。
+>如果未在 13 *2x* 范围内收到错误号或警告，则驱动程序 INF 文件符合 Windows 驱动程序要求。 <a href="/windows-hardware/drivers/develop/driver-isolation"><strong>驱动程序隔离要求</strong></a>文档中详细介绍了这些要求。
 
 以下错误和警告与 Windows 驱动程序要求相关：
 
@@ -306,7 +306,7 @@ AddReg = HKR,,CoInstallers32,0x00010000,"MyCoinstaller.dll"
 <thead>
 <tr>
 <th>错误/警告代码</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -327,7 +327,7 @@ AddReg = HKR,,CoInstallers32,0x00010000,"MyCoinstaller.dll"
 </tr>
 <tr>
 <td><strong>1323：服务注册表项 <em>Xxx</em> 必须位于 Parameters 子项下</strong></td>
-<td>错误1323表示在参数子项下，根据 <a href="/windows-hardware/drivers/windows-driver-docs-pr/develop/driver-isolation.md#service-registry-state"><strong>服务注册表状态</strong></a>中定义的要求，不会将服务注册表值设置为 HKR。
+<td>错误1323表示在参数子项下，根据 <a href="/windows-hardware/drivers/develop/driver-isolation.md#service-registry-state"><strong>服务注册表状态</strong></a>中定义的要求，不会将服务注册表值设置为 HKR。
 </td>
 </tr>
 <tr>
