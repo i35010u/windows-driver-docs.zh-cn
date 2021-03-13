@@ -5,14 +5,14 @@ description: 本主题提供有关如何使用 MALT (Microsoft 环境光线工�
 ms.assetid: f0ba2628-8752-467d-abf6-6447668ac244
 ms.date: 12/13/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 3dbcb99ea697a1b97f2d8e35103d1765382e3d77
-ms.sourcegitcommit: ac28dd2a921c25796d19572a180b88e460420488
+ms.openlocfilehash: e715ce0c34a982d012015b6e31ddef9385f45fb7
+ms.sourcegitcommit: 5524e265f46836100be5fb36ca6fdcac488ab274
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101751942"
+ms.lasthandoff: 03/13/2021
+ms.locfileid: "103417250"
 ---
-# <a name="testing-system-brightness-response"></a>测试系统亮度响应
+# <a name="testing-system-color"></a>测试系统颜色
 
 本主题提供有关如何使用 MALT (Microsoft 环境光线工具) 工具测试颜色的说明。
 

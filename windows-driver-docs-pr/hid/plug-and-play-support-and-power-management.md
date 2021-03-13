@@ -3,12 +3,12 @@ title: I2C 的即插即用支持
 description: 本部分介绍支持在 I i2c 上支持 HID 的设备的即插即用支持。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 60c9679503dd6216f96c7f1a9597572f8926d96e
-ms.sourcegitcommit: 75023add6028da178c7f1013b681a661995171fe
+ms.openlocfilehash: 85efcb3eb051c7ca4b4cd53b0e46f44bc54bad24
+ms.sourcegitcommit: 5524e265f46836100be5fb36ca6fdcac488ab274
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98763906"
+ms.lasthandoff: 03/13/2021
+ms.locfileid: "103417240"
 ---
 # <a name="plug-and-play-support-for-i2c"></a>I2C 的即插即用支持
 
@@ -20,14 +20,14 @@ Windows 基于硬件标识符和 INF 之间兼容的标识符匹配，加载 HID
 
 ACPI 5.0 规范包括对 HID 类设备的支持。 HID I ²的 ACPI 定义如下所示。
 
-| 字段 | 值 | ACPI 对象 | 格式注释 |
+| 字段 | 值 | ACPI 对象 | 格式 | 注释 |
 |--- | --- | ---- | ---- | ---- |
 | 兼容 ID | PNP0C50 | \_CID | 采用 ACPI0C50 或 PNP0C50 格式的字符串 |CompatibleID |
 | 硬件 ID | 特定于供应商 | \_HID | 格式为 VVVVdddd (的字符串，例如 NVDA0001)  | VendorID + DeviceID |
 | 子系统 | 特定于供应商 | \_该子 | 格式为 VVVVssss (的字符串，例如 INTL1234)  | SubVendorID + SubSystemID |
 | 硬件修订 | 特定于供应商 | \_HRV | 0xRRRR (2byte 版本)  | RevisionID |
 | 当前资源设置 | 特定于供应商 | \_CRS | 字节流 | \_对于 I2C 控制器和 gpio 中断 resp，必须包含 I2CSerialBus 和 gpio INT。 |
-| 设备特定方法 | GUID {3CDFF6F7-4267-4555-AD05-B30A3D8938DE} | \_DSM | 程序包 | 定义包含 HID 描述符地址的结构。 |
+| 设备特定方法 | GUID {3CDFF6F7-4267-4555-AD05-B30A3D8938DE} | \_DSM | 包 | 定义包含 HID 描述符地址的结构。 |
 
  每个 HID I i2c 设备必须提供以下必填字段：
 
@@ -73,7 +73,7 @@ HIDClass.sys 组件生成的 HID 客户端设备节点的硬件 ID 如下所示�
 
 ### <a name="device-enumeration-sequence"></a>设备枚举序列
 
-加载 HID I i2c 设备驱动程序 ( # A0 ) 后，它将开始通过 i2c 总线与设备进行通信。 驱动程序执行的第一个操作是设备枚举序列。
+加载 HID I i2c 设备驱动程序后 (HIDI2C.Sys ) ，它将开始通过 i2c 总线与设备进行通信。 驱动程序执行的第一个操作是设备枚举序列。
 
 下面的列表提供枚举序列。 请注意，此列表的顺序可能会在将来的 Windows 版本中发生更改。
 
@@ -103,7 +103,7 @@ HIDClass.sys 组件生成的 HID 客户端设备节点的硬件 ID 如下所示�
 
 HIDI2C.SYS 驱动程序支持以下命令：
 
-| 命令 | 用途 | 使用时 |
+| Command | 用途 | 使用时 |
 | --- | ---- | --- |
 | 重置 | Windows 支持主机发起的重置。 | Windows 将在以下情况下发出此命令-设备初始化-禁用/启用-卸载/重新安装 |
 | 获取/设置 \_ 报表 | Windows 支持 Get/Set \_ 报表命令。 | Windows 将在以下情况下发出此命令-当 HID 客户端驱动程序发出 get/set 功能报表请求时（当 HID 客户端驱动程序发出同步输入/输出报表时） |

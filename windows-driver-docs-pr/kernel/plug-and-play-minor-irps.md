@@ -3,12 +3,12 @@ title: 即插即用次要 IRP
 description: 即插即用次要 IRP
 ms.date: 08/12/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d3b546a095180c50a7bbd7408e7f0585993d925f
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 9541f8ef25d70b08b474a9e7624e7af9d97fd723
+ms.sourcegitcommit: 5524e265f46836100be5fb36ca6fdcac488ab274
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96838449"
+ms.lasthandoff: 03/13/2021
+ms.locfileid: "103417244"
 ---
 # <a name="plug-and-play-minor-irps"></a>即插即用次要 IRP
 
@@ -29,8 +29,8 @@ PnP 管理器发送这些 Irp。 PnP 驱动程序可以发送其中一些 Irp，
 下面是 PnP Irp 的次要函数代码和处理它们的驱动程序类型：
 
 
-|                              PnP IRP 次要函数代码                              | “值” | Nonbus 设备的函数或筛选器驱动程序 | 用于 bus FDO) 的总线设备 (的函数驱动程序 |  (子 PDOs) 的总线驱动程序或总线筛选器驱动程序 |
-|---------------------------------------------------------------------------------------|---------------------------------------------|----------------------------------------------|--------------------------------------------------|
+|                              PnP IRP 次要函数代码                              | 值 | Nonbus 设备的函数或筛选器驱动程序 | 用于 bus FDO) 的总线设备 (的函数驱动程序 |  (子 PDOs) 的总线驱动程序或总线筛选器驱动程序 |
+|---------------------------------------------------------------------------------------|---------------------------------------------|----------------------------------------------|--------------------------------------------------|---|
 |                 [**IRP \_ MN \_ 启动 \_ 设备**](irp-mn-start-device.md)                  |0x00|                  必选                   |                   必选                   |                     必选                     |
 |          [**IRP \_ MN \_ 查询 \_ 删除 \_ 设备**](irp-mn-query-remove-device.md)          |0x01|                  必选                   |                   必选                   |                     必选                     |
 |                [**IRP \_ MN \_ 删除 \_ 设备**](irp-mn-remove-device.md)                 |0x02|                  必选                   |                   必选                   |                     必选                     |
@@ -39,7 +39,7 @@ PnP 管理器发送这些 Irp。 PnP 驱动程序可以发送其中一些 Irp，
 |            [**IRP \_ MN \_ 查询 \_ 停止 \_ 设备**](irp-mn-query-stop-device.md)            |0x05|                  必选                   |                   必选                   |                     必选                     |
 |           [**IRP \_ MN \_ 取消 \_ 停止 \_ 设备**](irp-mn-cancel-stop-device.md)           |0x06|                  必选                   |                   必选                   |                     必选                     |
 |       [**IRP \_ MN \_ 查询 \_ 设备 \_ 关系**](irp-mn-query-device-relations.md)       |0x07                                             |                                              |                                                  |
-|                                 -   **BusRelations**                                  |x|                可选 (1)                  |                   必须                   |                      无 (2)                       |
+|                                 -   **BusRelations**                                  |x|                可选 (1)                  |                   必选                   |                      无 (2)                       |
 |                               -   **EjectionRelations**                               |x|                     否                      |                      否                      |                     可选                     |
 |                               -   **RemovalRelations**                                |x|                  可选                   |                   可选                   |                        否                        |
 |                             -   **TargetDeviceRelation**                              |x|                     否                      |                      否                      |                     必需                     |

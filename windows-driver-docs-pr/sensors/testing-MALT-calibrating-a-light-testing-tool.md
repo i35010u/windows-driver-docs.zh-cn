@@ -5,12 +5,12 @@ description: 本主题提供有关如何将 MALT (Microsoft 环境光线工具) 
 ms.assetid: d045b771-b536-457c-897b-ecb6517bf0a8
 ms.date: 12/13/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: da6d93bf84b85d3824f95320b7a56e32845cbd35
-ms.sourcegitcommit: ac28dd2a921c25796d19572a180b88e460420488
+ms.openlocfilehash: 8332506bacc9731572d17ab415b6479132da33c4
+ms.sourcegitcommit: 5524e265f46836100be5fb36ca6fdcac488ab274
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101751941"
+ms.lasthandoff: 03/13/2021
+ms.locfileid: "103417254"
 ---
 # <a name="calibrating-a-light-testing-tool-malt"></a>校准轻型测试工具 (MALT) 
 
@@ -26,7 +26,7 @@ ms.locfileid: "101751941"
 
 按如下所示将观察到的值放入3x3 矩阵。 接下来，必须通过将 MALT 指向您收集的已知值的相同显示颜色来收集原始值。
 
-![Srgb](images/srgb.png)
+![显示已知红色蓝绿色和 X Y Z 行的列的数学矩阵](images/srgb.png)
 
 ## <a name="step-2-acquire-raw-values-using-maltutilexe"></a>步骤2：使用 MALTUtil.exe 获取原始值
 
@@ -34,7 +34,7 @@ ms.locfileid: "101751941"
 
 通过将 MALT 指向您收集的已知值的相同显示颜色来收集这些值。 此步骤非常重要，并使公式可靠。 通过发送命令 ```/readRawAmbient``` 或 MALTUtil.exe 来读取 uncalibrated 值 ```/readRawScreen``` 。 此操作用于显示红色、蓝色显示和绿色显示。 XYZ 值应绕0-1 到最有效的范围。 如果数字不在此范围内，请按 Arduino 上的重置按钮，然后重试。 如下所示，将这些值放入3x3 矩阵。
 
-![Srgb](images/rrgb.png)
+![显示 X Y Z 的原始红色绿色和行的列的数学矩阵](images/rrgb.png)
 
 ## <a name="step-3-transform-the-matrices"></a>步骤3：转换矩阵
 

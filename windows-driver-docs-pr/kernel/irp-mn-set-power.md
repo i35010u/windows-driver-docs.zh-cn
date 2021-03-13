@@ -5,12 +5,12 @@ ms.date: 08/12/2017
 keywords:
 - IRP_MN_SET_POWER Kernel-Mode 驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: df35ebea0fc435ecf981c9f827087fcb2adccdc4
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 66e1735c4cb14c91c3a8efe9e5206fbc41324dfc
+ms.sourcegitcommit: 5524e265f46836100be5fb36ca6fdcac488ab274
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96836379"
+ms.lasthandoff: 03/13/2021
+ms.locfileid: "103417246"
 ---
 # <a name="irp_mn_set_power"></a>IRP \_ MN \_ 设置 \_ 电源
 
@@ -48,7 +48,7 @@ ms.locfileid: "96836379"
 
 **ShutdownType** 成员指定有关所请求转换的其他信息。 此成员的可能值为 " **电源 \_ 操作** " 枚举值。 有关详细信息，请参阅 [系统电源操作](./system-power-actions.md)。
 
-从 Windows Vista 开始， **Parameters.Power.SystemPowerStateContext** 成员是一个只读的、部分透明的 [**系统 \_ 电源 \_ 状态 \_ 上下文**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_system_power_state_context) 结构，它包含有关计算机以前系统电源状态的信息。 如果 **SystemPowerState** 为 PowerSystemWorking，**则为参数** **。 power. State** 为 **PowerSystemWorking**，此结构中的两个标志位指示计算机是否进入 S0 () 系统状态下运行。 有关详细信息，请参阅将 [快速启动从休眠状态中唤醒](./distinguishing-fast-startup-from-wake-from-hibernation.md)。
+从 Windows Vista 开始， **Parameters.Power.SystemPowerStateContext** 成员是一个只读的、部分透明的 [**系统 \_ 电源 \_ 状态 \_ 上下文**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_system_power_state_context) 结构，它包含有关计算机以前系统电源状态的信息。 如果 **SystemPowerState** 为 PowerSystemWorking，**则为参数** **。 power. State** 为，此结构中的两个标志位指示计算机是否进入 S0 () 系统状态下运行。 有关详细信息，请参阅将 [快速启动从休眠状态中唤醒](./distinguishing-fast-startup-from-wake-from-hibernation.md)。
 
 下表显示 IRP_MN_SET_POWER 的内容 **。Parameters。幂{State |ShutdownType}** 和每个系统电源转换的 [**SYSTEM_POWER_STATE_CONTEXT**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_system_power_state_context)结构中的 **CurrentSystemState**、 **TargetSystemState** 和 **EffectiveSystemState** 位域。  每一行代表一个 **IRP_MN_SET_POWER**。
 
@@ -59,7 +59,7 @@ ms.locfileid: "96836379"
 |混合睡眠到 .。。|S4|休眠|S0|S3|S4|睡眠文件睡眠 (Fast S4) |
 |...醒来|S0|睡眠状态|S3|S0|S0||
 |...唤醒/PwrLost|S0|睡眠状态|S4|S0|S0||
-|休眠到 .。。|S4|休眠|S0|S4|S4|||
+|休眠到 .。。|S4|休眠|S0|S4|S4||
 |...醒来|S0|睡眠状态|S4|S0|S0||
 |混合关闭到 .。。|S4|休眠|S0|S5|S4|应用已关闭，用户已注销，如同关机 (Hiber Boot) |
 |...快速启动|S0|睡眠状态|S4|S0|S0||
@@ -175,7 +175,7 @@ ms.locfileid: "96836379"
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**设备 \_ 电源 \_ 状态**](/windows-hardware/drivers/ddi/wdm/ne-wdm-_device_power_state)

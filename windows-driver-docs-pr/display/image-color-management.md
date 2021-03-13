@@ -10,12 +10,12 @@ keywords:
 - 颜色管理 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e8283458c8f3c133a38fb85d6efe3968257f6f91
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 4f44c38a2aa99b859995cf60d3fd25a0a0aeae01
+ms.sourcegitcommit: 5524e265f46836100be5fb36ca6fdcac488ab274
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96839595"
+ms.lasthandoff: 03/13/2021
+ms.locfileid: "103417252"
 ---
 # <a name="image-color-management"></a>图像颜色管理
 
@@ -29,4 +29,3 @@ ms.locfileid: "96839595"
 
 [静态图像设备的颜色管理](../image/color-management-for-still-image-devices.md)
 
-有关图像颜色管理的常规讨论，请参阅 Microsoft [Windows SDK 文档](/previous-versions/windows/desktop/wcs/windows-color-system)。

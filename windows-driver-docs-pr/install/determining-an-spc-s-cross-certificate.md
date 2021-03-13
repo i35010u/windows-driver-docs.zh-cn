@@ -3,12 +3,12 @@ title: 确定 SPC 的交叉证书
 description: 确定 SPC 的交叉证书
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 22e0298a9634015cc1f77a06a430f6185f0d9b5a
-ms.sourcegitcommit: 76698e25b77af71155e689200c6e0cf817bfd0d7
+ms.openlocfilehash: 0e429435a89865fed3cfb1d88164243581fe19ca
+ms.sourcegitcommit: 5524e265f46836100be5fb36ca6fdcac488ab274
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2021
-ms.locfileid: "100262264"
+ms.lasthandoff: 03/13/2021
+ms.locfileid: "103417248"
 ---
 # <a name="determining-an-spcs-cross-certificate"></a>确定 SPC 的交叉证书
 
@@ -38,7 +38,7 @@ ms.locfileid: "100262264"
 
 6.  若要查看根证书颁发机构证书，请选择 " **查看证书**"，然后单击 " **详细信息** 属性" 选项卡。
 
-7.  查找此证书的颁发 CA 的 **颁发者名称** 和 **指纹** 。 使用 [用于内核模式代码签名的交叉证书](/windows-hardware/install/cross-certificates-for-kernel-mode-code-signing) 来查找相应的交叉证书。
+7.  查找此证书的颁发 CA 的 **颁发者名称** 和 **指纹** 。 使用 [用于内核模式代码签名的交叉证书](./cross-certificates-for-kernel-mode-code-signing.md) 来查找相应的交叉证书。
 
 8.  从 "根机构交叉证书列表" 部分下载相关的交叉证书，并在对 [驱动程序包](driver-packages.md)进行数字签名时使用此交叉证书。
 
