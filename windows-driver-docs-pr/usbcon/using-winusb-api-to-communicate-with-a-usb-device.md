@@ -3,12 +3,12 @@ description: 本主题包括一个详细演练，用于说明如何使用 WinUSB
 title: 如何通过 WinUSB 函数访问 USB 设备
 ms.date: 04/20/2017
 ms.localizationpriority: High
-ms.openlocfilehash: 063b64019d039c2904e5891e573d036ff1de0ae0
-ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
+ms.openlocfilehash: 023047ea23780a02db3fffa46605788fcaa78651
+ms.sourcegitcommit: 011e8218c9e9a253558d27e2b4de75e46011d814
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91423530"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103087132"
 ---
 # <a name="how-to-access-a-usb-device-by-using-winusb-functions"></a>如何通过 WinUSB 函数访问 USB 设备
 
@@ -30,7 +30,7 @@ ms.locfileid: "91423530"
 
 有关模板的详细信息，请参阅“基于 WinUSB 模板编写 Windows 桌面应用”。
 
-**注意**  WinUSB 函数需要 Windows XP 或更高版本。 可以在 C/C++应用程序中使用这些函数与 USB 设备通信。 Microsoft 不为 WinUSB 提供托管 API。
+**注意** WinUSB 函数需要 Windows XP 或更高版本。 可以在 C/C++应用程序中使用这些函数与 USB 设备通信。 Microsoft 不为 WinUSB 提供托管 API。
 
 ## <a name="prerequisites"></a><a href="" id="pre"></a>先决条件
 
@@ -354,10 +354,13 @@ done:
 -   **CloseHandle** 释放由 **CreateFile** 创建的句柄，如步骤 1 中所述。
 -   [**WinUsb\_Free**](/windows/win32/api/winusb/nf-winusb-winusb_free) 释放设备的 WinUSB 接口句柄，该句柄由 [**WinUsb\_Initialize**](/windows/win32/api/winusb/nf-winusb-winusb_initialize) 返回。
 
-## <a name="step-6-implement-main"></a>步骤 6：实现 Main
+## <a name="step-6-implement-main"></a>步骤6：实现 Main
 
 
 下面的代码示例显示了控制台应用程序的 main 函数。
+
+有关获取设备句柄和打开设备的示例代码（GetDeviceHandle 和 GetWinUSBHandle），请参阅 [模板代码讨论](./how-to-write-a-windows-desktop-app-that-communicates-with-a-usb-device.md#template-code-discussion)。
+
 
 ```ManagedCPlusPlus
 int _tmain(int argc, _TCHAR* argv[])
@@ -442,4 +445,4 @@ done:
 [用于修改管道策略的 WinUSB 函数](winusb-functions-for-pipe-policy-modification.md)  
 [WinUSB 电源管理](winusb-power-management.md)  
 [WinUSB 函数](/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)  
-[基于 WinUSB 模板编写 Windows 桌面应用](how-to-write-a-windows-desktop-app-that-communicates-with-a-usb-device.md)
+[编写基于 WinUSB 模板的 Windows 桌面应用](how-to-write-a-windows-desktop-app-that-communicates-with-a-usb-device.md)

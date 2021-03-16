@@ -4,12 +4,12 @@ description: 在 Microsoft 硬件 API 中使用此方法向合作伙伴中心确
 ms.date: 04/05/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ebe13c71e028e46f30934f8ddb9ffc7539e0a011
-ms.sourcegitcommit: 34bc742a0de40bcc4eda99f32622c58584a7f9f2
+ms.openlocfilehash: 1367ad01f2e3af1f290711e716f86102dd19ef1c
+ms.sourcegitcommit: 011e8218c9e9a253558d27e2b4de75e46011d814
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94384181"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103087130"
 ---
 # <a name="commit-a-product-submission"></a>确认产品提交
 
@@ -33,10 +33,12 @@ ms.locfileid: "94384181"
 
 ### <a name="request-header"></a>请求头
 
-| Header | 类型 | 说明 |
+| 标头 | 类型 | 说明 |
 |:--|:--|:--|
 | Authorization | 字符串 | 必需。 Azure AD 访问令牌的格式为 Bearer \<token\>。 |
 | accept | 字符串 | 可选。 指定内容的类型。 允许的值是“application/json” |
+
+在标头中，设置 `Content-Length: 0` 和 `Content-type: application/json`。
 
 ### <a name="request-parameters"></a>请求参数
 
@@ -57,13 +59,7 @@ Authorization: Bearer <your access token>
 
 ## <a name="response"></a>响应
 
-以下示例演示了为产品创建新提交的成功请求所返回的 JSON 响应正文。 有关响应正文中这些值的详细信息，请参阅以下部分。
-
-```json
-{
-  "commitStatus": "CommitPending",
-}
-```
+为产品创建新提交的成功请求将返回空的 202 响应。
 
 ### <a name="response-body"></a>响应正文
 
