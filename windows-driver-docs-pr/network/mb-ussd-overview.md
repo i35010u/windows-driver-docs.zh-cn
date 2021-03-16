@@ -1,18 +1,18 @@
 ---
-title: USSD
+title: USSD 概述
 description: USSD 实现和测试
 keywords: USSD，非结构化补充服务数据
 ms.date: 03/01/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 275e0df24ac5b59e54281a0855062f2e926e6752
-ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
+ms.openlocfilehash: 9b488e70ca790d532d24dceae76dcc02e804bd37
+ms.sourcegitcommit: d624c81fe4bf92fc3d674c2f0bd99e58f6cf5e8a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2021
-ms.locfileid: "102250434"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103572160"
 ---
-# <a name="ussd"></a>USSD 
-## <a name="overview"></a>概述
+# <a name="ussd-overview"></a>USSD 概述
+
 非结构化补充服务数据 (USSD) 是全球系统用于移动通信的通信协议 (GSM) 设备与移动网络操作员通信， (通常称为 "MO" ) 。
 
 若要了解 USSD，请将其与最密切相关的同级：短消息服务 (SMS) 进行比较。 USSD 和 SMS 都是 GSM 标准，这意味着它们被引入为第二代移动设备中的功能。 不过，USSD 是基于会话的连接。 虽然 SMS 用于短会话的短信消息，但 USSD 通常用于移动设备的命令和控制。 由于需要维护会话，USSD 不支持将存储和转发功能作为 SMS。 USSD 和 SMS 消息都与与7位 GSM 兼容的字符一起发送，但 USSD 以至于耗光 out 184 个字符，而与160的短信。
@@ -114,7 +114,7 @@ Windows 中的 USSD 实现为 WinRT API 图面。 此接口的实现类充当 US
 ## <a name="hardware-lab-kit-hlk-tests"></a>硬件实验室工具包 (HLK) 测试
 请参阅 [安装 HLK 的步骤](https://microsoft.sharepoint.com/teams/HWKits/SitePages/HWLabKit/Manual%20Controller%20Installation.aspx)。 
 
-在 HLK Studio 中，连接到设备移动电话调制解调器驱动程序并运行测试： [Win6_4. MB。GSM.TestUssd](/windows-hardware/test/hlk/testref/17ae6fea-6244-442d-b977-6367d1ae441e9)。
+在 HLK Studio 中，连接到设备移动电话调制解调器驱动程序并运行测试： [Win6_4. MB。GSM.TestUssd](/windows-hardware/test/hlk/testref/17ae6fea-6244-442d-b977-6367d1ae441e)。
 
 ## <a name="mb-ussd-troubleshooting-guide"></a>MB USSD 故障排除指南
 - 使用 [收集日志](mb-collecting-logs.md)中的说明收集和 decod 日志。
