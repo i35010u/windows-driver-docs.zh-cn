@@ -3,12 +3,12 @@ title: 创建驱动程序验证日志
 description: 了解为什么 Windows Server 硬件认证计划需要所有适用的驱动程序在提交时提供驱动程序验证日志 (DVL)。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5002b393a1343ddec1a6184e2bde88cb8c11baf6
-ms.sourcegitcommit: 10fecd036370f5eccb538004c5bec1fdd18c3275
+ms.openlocfilehash: dc52aa10b2585c3dcd3e3a278c765dae6138afa7
+ms.sourcegitcommit: d624c81fe4bf92fc3d674c2f0bd99e58f6cf5e8a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98124071"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103572156"
 ---
 # <a name="creating-a-driver-verification-log"></a>创建驱动程序验证日志
 
@@ -31,7 +31,6 @@ ms.locfileid: "98124071"
 **注意** 在准备好使用 [Windows Hardware Lab Kit](/windows-hardware/test/hlk/) 测试驱动程序时，需要将驱动程序验证日志复制到测试计算机上的 %systemdrive%\\DVL 目录下。 在复制新驱动程序验证日志之前，请确保删除测试计算机上该目录中的内容。
 
  
-
 ## <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>备注
 
 有关代码分析工具、静态驱动程序验证程序和驱动程序验证日志的最新信息，请参阅“WDK 发行说明”。 发行说明可在 [Windows 驱动程序工具包 (WDK) 下载页](https://go.microsoft.com/fwlink/p/?linkid=254897)上找到。
@@ -43,8 +42,8 @@ ms.locfileid: "98124071"
 ```cpp
 msbuild.exe <vcxprojectfile> /target:dvl /p:Configuration="Release" /P:Platform=x64
 ```
-
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+
 
 
 * [为静态驱动程序验证程序创建日志文件](creating-a-log-file-for-static-driver-verifier.md)
