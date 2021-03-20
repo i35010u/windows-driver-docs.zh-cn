@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c264a8b045d0104a957a6165c54a9c5fc13176aa
-ms.sourcegitcommit: 607367af861d0ff3ec6438dab5ea532d06f5b890
+ms.openlocfilehash: f0b41208e96dee5709b66a88bd547cc6322bc5ed
+ms.sourcegitcommit: 76a7b604f13cf419ff21518337913820a703347f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102193570"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104719568"
 ---
 # <a name="bug-check-0x126-netio_invalid_pool_caller"></a>Bug 检查0x126： NETIO \_ 无效的 \_ 池 \_ 调用方
 
@@ -72,14 +72,9 @@ NETIO \_ 无效的 \_ 池 \_ 调用方 bug 检查的值为0x00000126。 这表�
 
 ## <a name="resolution"></a>解决方法
 
-[!analyze](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze) 调试扩展显示有关 bug 检查的信息，并有助于确定根本原因  。
+[!analyze](./-analyze.md) 调试扩展显示有关 bug 检查的信息，并有助于确定根本原因  。
 
  
 
  
-
- 
-
-
-
 

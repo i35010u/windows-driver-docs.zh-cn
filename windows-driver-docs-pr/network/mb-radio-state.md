@@ -4,12 +4,12 @@ description: 了解蜂窝广播状态的体系结构和流，以及如何对其�
 keywords: 飞行模式，移动电话无线电状态，MB 无线电电源状态
 ms.date: 03/01/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: e38b527e0b62ac5cc768d3939e4115b5e889e6da
-ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
+ms.openlocfilehash: 9c50f0d03c26424b16cfa40d58ae2e628167ee80
+ms.sourcegitcommit: 76a7b604f13cf419ff21518337913820a703347f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2021
-ms.locfileid: "102250473"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104719476"
 ---
 # <a name="mb-radio-state"></a>MB 无线电状态
 
@@ -59,18 +59,18 @@ MBIM_COMMAND_MSG 上的 InformationBuffer 包含 MBIM_SET_RADIO_STATE。 MBIM_RA
 ### <a name="unsolicited-event"></a>主动事件
 事件 InformationBuffer 包含 MBIM_RADIO_STATE_INFO 结构。
 
-### <a name="parameters"></a>参数
+### <a name="parameters"></a>parameters
 
 |   | 设置 | 查询 | 通知 |
 |---|---|---|---|
-| **命令**  | MBIM_SET_RADIO_STATE  | 空                 | 不可用                   |
+| **命令**  | MBIM_SET_RADIO_STATE  | 空                 | 不适用                   |
 | **响应** | MBIM_RADIO_STATE_INFO | MBIM_RADIO_STATE_INFO | MBIM_RADIO_STATE_INFO |
 
 ### <a name="data-structures"></a>数据结构
 
 #### <a name="set"></a>设置
 
-| Offset | 大小 | 字段 | 类型 | 描述 | 
+| Offset | 大小 | 字段 | 类型 | 说明 | 
 |---|---|---|---|---|
 | 0 | 4 | RadioState | MBIM_RADIO_SWITCH_STATE | 设置软件控制的无线电状态。 请参阅下表。 |
 
@@ -87,7 +87,7 @@ MBIM_COMMAND_MSG 上的 InformationBuffer 包含 MBIM_SET_RADIO_STATE。 MBIM_RA
 #### <a name="response"></a>响应
 **MBIM_RADIO_STATE_INFO**
 
-| Offset | 大小 | 字段 | 类型 | 描述 | 
+| Offset | 大小 | 字段 | 类型 | 说明 | 
 |---|---|---|---|---|
 | 0 | 4 | HwRadioState | MBIM_RADIO_SWITCH_STATE | W_DISABLE 开关的状态。 如果设备没有 W_DISABLE 交换机，则该函数必须在此字段中返回 MBIMRadioOn。 |
 | 4 | 4 | SwRadioState | MBIM_RADIO_SWITCH_STATE | 软件配置的无线电状态。 |
@@ -123,7 +123,7 @@ MBIM_COMMAND_MSG 上的 InformationBuffer 包含 MBIM_SET_RADIO_STATE。 MBIM_RA
 - [**TestRadioStateSoftware**](/windows-hardware/test/hlk/testref/0aa9981a-e556-4338-a568-b17289dd9742) 
 - [**TestRadioStateHardware**](/windows-hardware/test/hlk/testref/fa0bd189-b332-4651-8eda-e89866d2e2f1) 
 
-或者，你可以通过 [**netsh-mbn**](https://docs.microsoft.com/windows-server/networking/technologies/netsh/netsh-mbn)和 [**netsh-mbn**](mb-netsh-mbn-test.md)--运行 **TestRadioStateHardware** and **TestRadioStateSoftware** HLK testlist。
+或者，你可以通过 [**netsh-mbn**](/windows-server/networking/technologies/netsh/netsh-mbn)和 [**netsh-mbn**](mb-netsh-mbn-test.md)--运行 **TestRadioStateHardware** and **TestRadioStateSoftware** HLK testlist。
 ```
 netsh mbn test feature=radio testpath="C:\data\test\bin" taefpath="C:\data\test\bin" param="AccessString=internet"
 ```
@@ -170,6 +170,4 @@ netsh mbn test feature=radio testpath="C:\data\test\bin" taefpath="C:\data\test\
 此用于收音机管理的命名空间下唯一有用的实用工具是 MobileBroadbandDeviceInformation. CurrentRadioState。
 
 ## <a name="see-also"></a>另请参阅
-[OID_WWAN_RADIO_STATE](/windows-hardware/drivers/network/oid-wwan-radio-state)
-
-
+[OID_WWAN_RADIO_STATE](./oid-wwan-radio-state.md)

@@ -3,12 +3,12 @@ title: 用 SensorExplorer 进行测试
 description: 使用 SensorExplorer 进行传感器测试和日志记录
 ms.date: 02/01/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fa653fe0df4b4e88836fdd97d1562cb44ec9acc
-ms.sourcegitcommit: ac28dd2a921c25796d19572a180b88e460420488
+ms.openlocfilehash: f0b7974a361853e07ed6d4384bc67f74dcba34ed
+ms.sourcegitcommit: 76a7b604f13cf419ff21518337913820a703347f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101751952"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104719510"
 ---
 # <a name="sensorexplorer-overview"></a>SensorExplorer 概述
 
@@ -22,7 +22,7 @@ SensorExplorer 是 [Microsoft Store](https://www.microsoft.com/p/sensorexplorer/
 
 - **查看：** 用于查看传感器数据和属性。 在此模式下，应用显示了来自各种传感器（如加速感应器、罗盘、陀螺测试仪、倾斜仪、光传感器和方向传感器）的数据可视化，并以表格格式显示详细的传感器信息。 这可监视传感器的任何异常行为，还可以用于设置传感器的报告间隔。
 
-- **MALT：** 用于连接和控制 [MALT (Microsoft 环境轻型工具)](/windows-hardware/drivers/sensors/testing-malt-building-a-light-testing-tool)，这是一个简单的低成本轻型测试设备。 该工具结合了微控制器、光传感器和一个可控制的光源面板来校准光源传感器，并以可视方式测量面板的光线曲线。
+- **MALT：** 用于连接和控制 [MALT (Microsoft 环境轻型工具)](./testing-malt-building-a-light-testing-tool.md)，这是一个简单的低成本轻型测试设备。 该工具结合了微控制器、光传感器和一个可控制的光源面板来校准光源传感器，并以可视方式测量面板的光线曲线。
 
 ## <a name="how-to-test-your-sensors-with-sensorexplorer"></a>如何通过 SensorExplorer 测试传感器
 

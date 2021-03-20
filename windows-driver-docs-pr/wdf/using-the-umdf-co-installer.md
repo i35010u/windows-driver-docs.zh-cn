@@ -12,12 +12,12 @@ keywords:
 - INF 文件 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a7bab07fa5117f3c7637aeee876fcd76ea652dd
-ms.sourcegitcommit: ac28dd2a921c25796d19572a180b88e460420488
+ms.openlocfilehash: 9edd23c03c823e360b7e14042dfba1fdf652a2de
+ms.sourcegitcommit: 76a7b604f13cf419ff21518337913820a703347f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101682304"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104719498"
 ---
 # <a name="using-the-umdf-co-installer"></a>使用 UMDF 辅助安装程序
 
@@ -28,7 +28,7 @@ ms.locfileid: "101682304"
 ><PropertyGroup Label="Configuration">
 ><TargetVersion>Windows10</TargetVersion>
 >```
->2. 在 " [INF 制造商" 部分](/windows-hardware/drivers/install/inf-manufacturer-section)中，将10.0 指定为目标 OS 版本，如下所示：
+>2. 在 " [INF 制造商" 部分](../install/inf-manufacturer-section.md)中，将10.0 指定为目标 OS 版本，如下所示：
 >```inf
 >[Manufacturer]
 >%MyMfg% = MyMfg, NTamd64.10.0
@@ -112,6 +112,4 @@ HKR,,CoInstallers32,0x00010000,WudfCoinstaller.dll
 驱动程序的 INF 文件必须始终包含共同安装程序在安装后读取的 **DDInstall 部分。** 有关驱动程序可在 **DDInstall** 中指定的指令的信息，请参阅 [在 INF 文件中指定 Wdf 指令](specifying-wdf-directives-in-inf-files.md)。
 
 可以使用 INX 文件和 [Stampinf](../devtest/stampinf.md) 工具避免为多个版本的框架创建多个 INF 文件。 有关 INX 文件的详细信息，请参阅[使用 INX 文件创建 INF 文件](using-inx-files-to-create-inf-files.md)。
-
- 
 

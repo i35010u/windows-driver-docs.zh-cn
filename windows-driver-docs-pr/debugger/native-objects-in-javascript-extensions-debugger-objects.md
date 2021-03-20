@@ -3,12 +3,12 @@ title: JavaScript 扩展中的本机调试器对象 - 调试器对象详细信�
 description: 本机调试器对象表示调试器环境的各种构造。 本主题介绍 JavaScript 扩展中的本机调试器对象的其他详细信息。
 ms.date: 02/02/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 553c7ea7a638ea40a8e605b83d4e5288ded42f3a
-ms.sourcegitcommit: 5a7c96139b0ae0dd0d6aae6561f25e0b26a2c5b1
+ms.openlocfilehash: dbf8a3b62d8785ad07cda62f3ce3ece85394434f
+ms.sourcegitcommit: 76a7b604f13cf419ff21518337913820a703347f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99568873"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104719534"
 ---
 # <a name="native-debugger-objects-in-javascript-extensions---debugger-object-details"></a>JavaScript 扩展中的本机调试器对象 - 调试器对象详细信息
 
@@ -71,7 +71,7 @@ JavaScript 中的属性访问的常规方法--对象名称和对象 \[ 属性名
 |---------------|----------------|--------------------------------------------------------------------------------|
 | add           | 。添加 (值)     | 在指针和指定的值之间执行指针数学加法运算     |
 | address       | 属性       | 将指针的地址作为 (库类型的64位序号对象返回)  |
-| 取消引用   | 。取消引用 ( # A1 | 取消引用指针并返回基础对象                     |
+| 取消引用   | 。取消引用 ()  | 取消引用指针并返回基础对象                     |
 | isNull        | 属性       | 返回指针值是否为 nullptr (0)                         |
 
 **与本机调试器对象相关的特殊类型**
@@ -153,6 +153,11 @@ function stringifyNative(nativeObject)
 <td align="left"><p>返回特定模块中全局符号的对象。 模块名称和符号名称是字符串。</p>
 <p>如果提供了可选的 <em>contextInheritor</em> 参数，则会在同一上下文中查找模块和符号 (地址空间，调试目标) 为传递的对象。 如果未提供参数，则会在调试器的当前上下文中查找模块和符号。 不是一次性测试脚本的 JavaScript 扩展应始终提供显式上下文。</p>
 <p>如果提供了可选的 <em>typeName</em> 参数，则将假定符号为传递的类型，并且将忽略符号 (s 中指示的类型) 。 请注意，任何需要在模块的公共符号上操作的调用方应始终提供显式类型名称。</p></td>
+</tr>
+<tr>
+<td align="left"><p>getModuleContainingSymbol</p></td>
+<td align="left"></td>
+<td align="left"></td>
 </tr>
 <tr class="even">
 <td align="left"><p>createPointerObject</p></td>
@@ -288,7 +293,7 @@ JavaScript 提供程序将一个名为 host 的对象插入到它加载的每个
 <td align="left">命名空间</td>
 <td align="left"><p>属性</p></td>
 <td align="left">2</td>
-<td align="left">提供对调试器的根命名空间的直接访问。 例如，可以通过主机访问第一个调试目标的进程列表。第一个 ( # A1。使用此属性的进程</td>
+<td align="left">提供对调试器的根命名空间的直接访问。 例如，可以通过主机访问第一个调试目标的进程列表。第一个 () 。使用此属性的进程</td>
 </tr>
 <tr class="odd">
 <td align="left">registerNamedModel</td>
@@ -407,7 +412,7 @@ JavaScript 提供程序将一个名为 host 的对象插入到它加载的每个
 | 概念                 | 本机接口             | JavaScript 等效项                                                |
 |-------------------------|------------------------------|----------------------------------------------------------------------|
 | 字符串转换       | IStringDisplayableConcept    | 标准： toString ( ... ) {...}                                         |
-| Iterability             | IIterableConcept             | 标准： \[ 符号. iterator \] ( # A1 {...}                                 |
+| Iterability             | IIterableConcept             | 标准： \[ Symbol. iterator \] () {...}                                 |
 | 可索引性            | IIndexableConcept            | protocol： getDimensionality ( ... ) /getValueAt ( ... ) /setValueAt ( ... )  |
 | 运行时类型转换 | IPreferredRuntimeTypeConcept | 协议： getPreferredRuntimeTypedObject ( ... )                         |
 

@@ -5,12 +5,12 @@ ms.date: 04/05/2019
 keywords: -从 Windows Vista 开始 OID_WWAN_SIGNAL_STATE 的网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: c7dd52c86328548edc9f1a0b49ca341e96b6010f
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: ffefbe03d64fc6de1d07317040bfda8fb85c7b44
+ms.sourcegitcommit: 76a7b604f13cf419ff21518337913820a703347f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96812913"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104719554"
 ---
 # <a name="oid_wwan_signal_state"></a>OID \_ WWAN \_ 信号 \_ 状态
 
@@ -34,7 +34,7 @@ OID \_ WWAN \_ 信号 \_ 状态返回或设置当前信号状态。
 
 在来自 MB 服务的集请求上，微型端口驱动程序应：
 
--   **Rssi** **ErrorRate** \_ \_ \_ 除了报告在微型端口驱动程序中设置的 **RssiInterval** 和 **RssiThreshold** 的绝对值外，还会返回 NDIS WWAN 信号状态结构中的 Rssi 和 ErrorRate 的当前值。
+-     \_ \_ \_ 除了报告在微型端口驱动程序中设置的 **RssiInterval** 和 **RssiThreshold** 的绝对值外，还会返回 NDIS WWAN 信号状态结构中的 Rssi 和 ErrorRate 的当前值。
 
 -   即使设备当前未向任何操作员注册，并且设备在设置参数中施加的任何限制只能是注册后状态，在内部缓存 **RssiInterval** 和/或 **RssiThreshold** 值。 小型端口驱动程序应尝试在下一个即时可用情况下应用这些设置。
 
@@ -44,7 +44,7 @@ OID \_ WWAN \_ 信号 \_ 状态返回或设置当前信号状态。
 
 当处理来自 MB 服务的查询请求时，微型端口驱动程序可以执行以下操作：
 
--   **Rssi** **ErrorRate** \_ \_ \_ 除了报告在微型端口驱动程序中设置的 **RssiInterval** 和 **RssiThreshold** 的绝对值外，还会返回 NDIS WWAN 信号状态结构中的 Rssi 和 ErrorRate 的当前值。
+-     \_ \_ \_ 除了报告在微型端口驱动程序中设置的 **RssiInterval** 和 **RssiThreshold** 的绝对值外，还会返回 NDIS WWAN 信号状态结构中的 Rssi 和 ErrorRate 的当前值。
 
 -   此请求失败，并出现相应的 **uStatus** 错误代码集。
 
@@ -77,7 +77,7 @@ OID \_ WWAN \_ 信号 \_ 状态返回或设置当前信号状态。
 
 从 Windows 10 1903 版开始，OID_WWAN_SIGNAL_STATE 已升级到修订版3。 此修订版本允许主机查询新的引用信号收到的 power (RSRP) ，并从微型端口驱动程序 (SNR) 值发出信噪。 如果驱动程序支持5G，微型端口驱动程序必须使用此 OID 的修订版3及其数据结构。
 
-有关5G 数据类支持的详细信息，请参阅 [MB 5G 数据类支持](mb-5g-data-class-support.md)。
+有关5G 数据类支持的详细信息，请参阅 [MB 5G 数据类支持](./mb-5g-operations-overview.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -93,7 +93,7 @@ OID \_ WWAN \_ 信号 \_ 状态返回或设置当前信号状态。
 <td><p>在 windows 7 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
@@ -105,6 +105,4 @@ OID \_ WWAN \_ 信号 \_ 状态返回或设置当前信号状态。
 [**NDIS \_ WWAN \_ 设置 \_ 信号 \_ 指示**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_set_signal_indication)
 
 [WWAN 信号强度操作](./mb-signal-strength-operations.md)
-
- 
 

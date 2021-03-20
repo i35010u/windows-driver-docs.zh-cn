@@ -5,12 +5,12 @@ keywords:
 - 内存管理 WDK 内核，
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f6c902cc8bbb407d6b385826d47b9eb4feb880fd
-ms.sourcegitcommit: b17e8a4c9ed6503e844416b4ca3f8c38199c1b98
+ms.openlocfilehash: e61c64bf0aeb0b4b3e57e4a67af40037146bb535
+ms.sourcegitcommit: 76a7b604f13cf419ff21518337913820a703347f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2021
-ms.locfileid: "103193333"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104719538"
 ---
 # <a name="using-mdls"></a>使用 MDL
 
@@ -39,7 +39,7 @@ MDL 的其余成员是不透明的。 请勿直接访问 MDL 的不透明成员�
 
 请注意，当你使用 [**IoBuildPartialMdl**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuildpartialmdl) 例程生成部分 mdl 时， **MmGetMdlVirtualAddress** 将返回部分 mdl 的原始起始地址。 如果 MDL 最初是作为用户模式请求的结果创建的，则此地址为用户模式地址。 因此，该地址在发出请求的进程的上下文之外没有关联。
 
-通常，驱动程序改为通过调用 [**MmGetSystemAddressForMdlSafe**](/windows-hardware/drivers/kernel/mm-bad-pointer)宏来映射部分 MDL 来创建 *系统* 模式地址。 这可确保驱动程序可以继续安全地访问页面，而无需考虑处理上下文。
+通常，驱动程序改为通过调用 [**MmGetSystemAddressForMdlSafe**](./mm-bad-pointer.md)宏来映射部分 MDL 来创建 *系统* 模式地址。 这可确保驱动程序可以继续安全地访问页面，而无需考虑处理上下文。
 
 当驱动程序调用 **IoAllocateMdl** 时，它可以通过将一个指向 irp 的指针指定为 **IoAllocateMdl** 的 *IRP* 参数，从而将 irp 与新分配的 MDL 关联起来。 IRP 可以有一个或多个与之关联的 MDLs。 如果 IRP 具有与之关联的单个 MDL，则 IRP 的 **MdlAddress** 成员将指向该 mdl。 如果 IRP 具有多个与之关联的 MDLs，则 **MdlAddress** 指向与 IRP 关联的 MDLs 的链接列表中的第一个 MDL，称为 *MDL 链*。 MDLs 由其 **下一** 成员链接。 链中最后一个 MDL 的 **下一个** MDL 成员设置为 **NULL**。
 

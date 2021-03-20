@@ -3,12 +3,12 @@ title: MB eSIM 操作
 description: MB eSIM 操作
 ms.date: 03/01/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 984002a9e8c575f2d9d2b26624038c8ebdae07ac
-ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
+ms.openlocfilehash: e2f81a683e9e1d73222b78cd64b7e7b31851e054
+ms.sourcegitcommit: 76a7b604f13cf419ff21518337913820a703347f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2021
-ms.locfileid: "102250509"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104719506"
 ---
 # <a name="mb-esim-operations"></a>MB eSIM 操作
 
@@ -186,4 +186,4 @@ netsh mbn test feature=esim testpath="C:\data\test\bin" taefpath="C:\data\test\b
 
 ## <a name="see-also"></a>另请参阅
 
-[MB eSIM MBIM Ready-State 指南](https://docs.microsoft.com/windows-hardware/drivers/network/mb-esim-mbim-ready-state-guidance)
+[MB eSIM MBIM Ready-State 指南](./mb-esim-mbim-ready-state-guidance.md)

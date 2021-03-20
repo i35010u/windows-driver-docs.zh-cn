@@ -7,12 +7,12 @@ keywords:
 - 驱动程序的安装组件 WDK KMDF
 ms.date: 05/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 8fc3bb9bd697a424ebf5fb2f0084f8bb4442cc52
-ms.sourcegitcommit: ac28dd2a921c25796d19572a180b88e460420488
+ms.openlocfilehash: 6baf266b005825d6d23eb0df62ef01932d51970e
+ms.sourcegitcommit: 76a7b604f13cf419ff21518337913820a703347f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101682308"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104719544"
 ---
 # <a name="redistributable-framework-components"></a>可再发行框架组件
 
@@ -23,7 +23,7 @@ ms.locfileid: "101682308"
 ><PropertyGroup Label="Configuration">
 ><TargetVersion>Windows10</TargetVersion>
 >```
->2. 在 " [INF 制造商" 部分](/windows-hardware/drivers/install/inf-manufacturer-section)中，将10.0 指定为目标 OS 版本，如下所示：
+>2. 在 " [INF 制造商" 部分](../install/inf-manufacturer-section.md)中，将10.0 指定为目标 OS 版本，如下所示：
 >```inf
 >[Manufacturer]
 >%MyMfg% = MyMfg, NTamd64.10.0

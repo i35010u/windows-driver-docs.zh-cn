@@ -3,12 +3,12 @@ title: MB PIN 操作
 description: MB PIN 操作
 ms.date: 03/05/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d9ba071ee469ca21af9243d270a0985237b3059
-ms.sourcegitcommit: 6c8f5e213c58e941547cc77abb67e55134b9598f
+ms.openlocfilehash: 46bf2c17958cd4b2c0b761070579eb41ed49e69e
+ms.sourcegitcommit: 76a7b604f13cf419ff21518337913820a703347f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2021
-ms.locfileid: "102255185"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104719508"
 ---
 # <a name="mb-pin-operations"></a>MB PIN 操作
 
@@ -35,11 +35,11 @@ PIN1/PUK1 状态的移动用户 UX 查询
 
 ## <a name="mbim_cid_ms_pin_ex"></a>MBIM_CID_MS_PIN_EX
 
-此处描述了此 CID： [MBIM_CID_MS_PIN_EX](/windows-hardware/drivers/network/mb-uicc-application-and-file-system-access#mbim_cid_ms_pin_ex)
+此处描述了此 CID： [MBIM_CID_MS_PIN_EX](./mb-uicc-application-and-file-system-access.md#mbim_cid_ms_pin_ex)
 
 ## <a name="mbim_cid_pin_list"></a>MBIM_CID_PIN_LIST
 
-### <a name="description"></a>描述
+### <a name="description"></a>说明
 
 此命令将返回一个列表，其中列出了 MB 设备支持的所有不同类型的个人标识号 (引脚) ，以及每个 PIN 类型的其他详细信息，例如 PIN 的长度 (最小和最大长度) 、PIN 格式和 PIN 输入模式 (启用/禁用/不可用) 。 此 CID 还指定该函数支持的每个 PIN 的当前模式。
 函数必须报告其支持的所有 Pin。 但是，对于多模式设备，PIN1 只能报告一次。
@@ -52,12 +52,12 @@ PIN1/PUK1 状态的移动用户 UX 查询
 
 查询消息的 InformationBuffer 为空。 MBIM_COMMAND_DONE 的 InformationBuffer 包含 MBIM_PIN_LIST_INFO。
 
-### <a name="parameters"></a>参数
+### <a name="parameters"></a>parameters
 
 |   | 设置 | 查询 | 通知 |
 |---|---|---|---|
-| **命令**  | 不可用 | 空              | 不可用 |
-| **响应** | 不可用 | MBIM_PIN_LIST_INFO | 不可用 |
+| **命令**  | 不适用 | 空              | 不适用 |
+| **响应** | 不适用 | MBIM_PIN_LIST_INFO | 不适用 |
 
 ### <a name="data-structures"></a>数据结构
 
@@ -79,7 +79,7 @@ PIN1/PUK1 状态的移动用户 UX 查询
 
 #### <a name="mbim_pin_desc"></a>MBIM_PIN_DESC
 
-| Offset | 大小 | 字段 | 类型 | 描述 | 
+| Offset | 大小 | 字段 | 类型 | 说明 | 
 |---|---|---|---|---|
 | 0 | 4 | PinMode      | MBIM_PIN_MODE | 请参阅上表 [MBIM_PIN_MODE](#mbim_pin_mode)。 这会显示锁定是否已启用。 它不显示锁定状态是锁定还是解除锁定。 |
 | 4 | 4 | PinFormat    | MBIM_PIN_FORMAT | 请参阅上表 [MBIM_PIN_FORMAT](#mbim_pin_format)。 |
@@ -97,7 +97,7 @@ InformationBuffer 应为 **null** ，而 InformationBufferLength 应为 **零**�
 
 #### <a name="mbim_pin_list_info"></a>MBIM_PIN_LIST_INFO
 
-| Offset | 大小 | 字段 | 类型 | 描述 | 
+| Offset | 大小 | 字段 | 类型 | 说明 | 
 |---|---|---|---|---|
 | 0 | 16 | PinDescPin1                | MBIM_PIN_DESC | 描述 PIN1 的 MBIM_PIN_DESC 结构。 对于 GSMbased 设备，这是 (SIM) PIN 的订户标识模块。 对于基于 CDMA 的设备，开机设备锁定将报告为 PIN1。 |
 | 16 | 16 | PinDescPin2               | MBIM_PIN_DESC | 描述 PIN2 的 MBIM_PIN_DESC 结构。 这是一个用于保护某些 SIM 功能的 SIM PIN2。 |
@@ -120,7 +120,7 @@ MBIM_STATUS_PIN_REQUIRED | PIN 列表操作失败，因为必须先输入 PIN，
 
 以下测试将作为 **TestPin** HLK 测试列表的一部分运行：
 
-测试名称 | 描述
+测试名称 | 说明
 ---|---
 PinListQueryRadioOn | 此测试尝试在上使用广播的 pin 列表查询。
 PinListQueryRadioOff | 此测试尝试使用无线电关闭 pin 列表查询。
@@ -178,10 +178,10 @@ Pin 列表：
 
 ## <a name="see-also"></a>另请参阅
 
-[OID_WWAN_PIN_EX2](/windows-hardware/drivers/network/oid-wwan-pin-ex2)
+[OID_WWAN_PIN_EX2](./oid-wwan-pin-ex2.md)
 
-[OID_WWAN_PIN_LIST](/windows-hardware/drivers/network/oid-wwan-pin-list)
+[OID_WWAN_PIN_LIST](./oid-wwan-pin-list.md)
 
-[MB UICC 应用程序和文件系统访问权限](/windows-hardware/drivers/network/mb-uicc-application-and-file-system-access)
+[MB UICC 应用程序和文件系统访问权限](./mb-uicc-application-and-file-system-access.md)
 
 有关 PIN 操作的其他信息，请参阅 [OID \_ WWAN \_ PIN](oid-wwan-pin.md)。

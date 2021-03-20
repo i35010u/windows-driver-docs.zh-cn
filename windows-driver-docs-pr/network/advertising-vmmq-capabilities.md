@@ -1,16 +1,16 @@
 ---
-title: 广告 VMMQ 功能
+title: 播发 VMMQ 功能
 description: 小型端口驱动程序在小型端口适配器初始化期间注册 NIC 的 VMMQ 功能。
 ms.date: 02/28/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: dc307ae9416aba3a6955b468dcf6885aee4ba24f
-ms.sourcegitcommit: cf1f4196374c5b743448cb8d688d2223f7197d8f
+ms.openlocfilehash: 55a92e5549abb78d27ac8616a6b65992a88135d4
+ms.sourcegitcommit: 76a7b604f13cf419ff21518337913820a703347f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101751964"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104719536"
 ---
-# <a name="advertising-vmmq-capabilities"></a>广告 VMMQ 功能
+# <a name="advertising-vmmq-capabilities"></a>播发 VMMQ 功能
 
 小型端口驱动程序在微型端口适配器初始化过程中，将 [虚拟机注册多个队列 (VMMQ) ](overview-of-virtual-machine-multiple-queues.md) 功能。
 
@@ -70,4 +70,4 @@ ms.locfileid: "101751964"
 
 1. 设置 **MaxNumQueuePairsForDefaultVPort** 以指定在 NIC 交换机创建期间可以分配给默认 VPort 的最大队列对数。
 
-播发 VMMQ 功能后，当在默认 VPort 或非默认 VPort 上调用时，NDIS 负责处理 [OID_GEN_RECEIVE_SCALE_CAPABILITIES](/windows-hardware/drivers/network/oid-gen-receive-scale-capabilities) OID。 当微型端口驱动程序返回 [**NDIS \_ 接收 \_ 缩放 \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_scale_capabilities)结构中的 RSS 功能时，它不应通过任何标准 RSS 关键字 (如 **\* MaxRssProcessors**) 来约束 **NumberOfInterruptMessages** 字段。 上层驱动程序会将此数字合并为主机 CPU 分配算法。
+播发 VMMQ 功能后，当在默认 VPort 或非默认 VPort 上调用时，NDIS 负责处理 [OID_GEN_RECEIVE_SCALE_CAPABILITIES](./oid-gen-receive-scale-capabilities.md) OID。 当微型端口驱动程序返回 [**NDIS \_ 接收 \_ 缩放 \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_scale_capabilities)结构中的 RSS 功能时，它不应通过任何标准 RSS 关键字 (如 **\* MaxRssProcessors**) 来约束 **NumberOfInterruptMessages** 字段。 上层驱动程序会将此数字合并为主机 CPU 分配算法。

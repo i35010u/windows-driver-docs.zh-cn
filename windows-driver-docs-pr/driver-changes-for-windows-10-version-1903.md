@@ -3,12 +3,12 @@ title: Windows 10 版本 1903 的驱动程序开发变更
 description: 了解 Windows 10 中用于驱动程序开发的新功能，如相机驱动程序功能 IR Torch 和 USB 视频类1.5 扩展。
 ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 16336f84d01b50fb207f372ba7e9b5af4d21a55d
-ms.sourcegitcommit: 6f55e564fcdef4ccd02038d474f881430b072c36
+ms.openlocfilehash: ae7a2144440b21d944595b3f77e1ccebf5c873d8
+ms.sourcegitcommit: 76a7b604f13cf419ff21518337913820a703347f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102526045"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104719542"
 ---
 # <a name="whats-new-in-windows-10-version-1903"></a>Windows 10 版本1903中的新增功能
 
@@ -22,7 +22,7 @@ ms.locfileid: "102526045"
 * 新的远场音频信息： 
     * [PKEY_Devices_AudioDevice_Microphone_IsFarField](./audio/pkey-devices-audiodevice-microphone-isfarfield.md)
     * [KSPROPSETID_InterleavedAudio](./audio/kspropsetid-interleavedaudio.md)
-    * [KSPROPERTY_INTERLEAVEDAUDIO_FORMATINFORMATION](/windows-hardware/drivers/audio/ksproperty-interleavedaudio-formatinformation)
+    * [KSPROPERTY_INTERLEAVEDAUDIO_FORMATINFORMATION](./audio/ksproperty-interleavedaudio-formatinformation.md)
     
 * [USB 音频 2.0 驱动程序](./audio/usb-2-0-audio-drivers.md)中的新插孔说明信息。
 
@@ -118,7 +118,7 @@ Windows 10 版本 1903 中的显示驱动程序开发的更新包括：
 * 新的 [SIM 卡 (UICC) 文件/应用程序系统访问](./network/mb-uicc-application-and-file-system-access.md)功能
 * 新的[手机网络时间信息 (NITZ)](./network/mb-nitz-support.md) 功能。
 * 新的[使用 DSS 进行调制解调器日志记录](./network/mb-modem-logging-with-dss.md)功能。
-* 新的 [5G 数据类支持](./network/mb-5g-data-class-support.md)功能。
+* 新的 [5G 数据类支持](./network/mb-5g-operations-overview.md)功能。
 
 ## <a name="power-management-framework"></a>电源管理框架
 

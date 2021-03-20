@@ -3,12 +3,12 @@ title: MB LTE 附加操作
 description: MB LTE 附加操作
 ms.date: 03/01/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: e9b4341d0adc5a78fd7cc99124fd12b42038aaf7
-ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
+ms.openlocfilehash: 04ee9ef30794d45c7ad1ac1cb05d3d607508c0ba
+ms.sourcegitcommit: 76a7b604f13cf419ff21518337913820a703347f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2021
-ms.locfileid: "102248002"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104719570"
 ---
 # <a name="mb-lte-attach-operations"></a>MB LTE 附加操作
 
@@ -46,7 +46,7 @@ UUID 值 = **3d01dcc5-fef5-4d05-0d3abef7058e9aaf**
 
 ## <a name="mbim_cid_ms_lte_attach_config"></a>MBIM_CID_MS_LTE_ATTACH_CONFIG
 
-### <a name="description"></a>描述
+### <a name="description"></a>说明
 
 LTE 附加上下文可能不同，具体取决于网络在运行时如何与设备交互。 在本文档的其余部分中，LTE 附加上下文将称为当前用于 LTE 附加的 PDP 上下文，默认的 LTE 附加上下文将被称为当没有其他已启用的 PDP 上下文时，在执行 LTE 附加的设备上配置的内容。  MBIM_CID_MS_LTE_ATTACH_CONFIG 使 OS 能够查询和设置插入的 SIM 提供程序的默认 LTE 附加上下文 (MCC/MNC 对) 。 
 
@@ -102,11 +102,11 @@ Ihv 和 Oem 可以将 LTE 附加上下文预配置为调制解调器中的默认
 
 事件 InformationBuffer 包含 MBIM_MS_LTE_ATTACH_CONFIG_INFO 结构。 在某些情况下，默认的 LTE 附加上下文由网络通过无线 (OTA) 或短消息服务更新， (SMS) 不会从操作系统中执行 MBIM_CID_MS_LTE_ATTACH_CONFIG 命令。 函数必须相应地更新默认的 LTE 附加上下文和标记 MBIM_MS_CONTEXT_SOURCE = MbimMsContextSourceOperatorProvisioned。 之后，函数必须通知宿主有关将此事件与更新的列表一起使用的更新。
 
-### <a name="parameters"></a>参数
+### <a name="parameters"></a>parameters
 
-| Operation | 设置 | 查询 | 通知 |
+| 操作 | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
-| Command | MBIM_SET_MS_LTE_ATTACH_CONFIG | 不适用 | 不适用 |
+| 命令 | MBIM_SET_MS_LTE_ATTACH_CONFIG | 不适用 | 不适用 |
 | 响应 | MBIM_MS_LTE_ATTACH_CONFIG_INFO | MBIM_MS_LTE_ATTACH_CONFIG_INFO | MBIM_MS_LTE_ATTACH_CONFIG_INFO |
 
 ### <a name="data-structures"></a>数据结构
@@ -119,9 +119,9 @@ InformationBuffer 应为 NULL，而 InformationBufferLength 应为零。
 
 以下 MBIM_MS_SET_LTE_ATTACH_CONFIG 结构应在 InformationBuffer 中使用。 仅当列表中包含三个元素计数时，Set 命令才有效，其中每个漫游条件 (home/partner/非合作伙伴) 。
 
-| Offset | 大小 | 字段 | 类型 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 说明 |
 | --- | --- | --- | --- | --- |
-| 0 | 4 | Operation | MBIM_MS_LTE_CONTEXT_OPERATIONS | 指定使用 Set 命令的操作的类型。 如果设置为 MbimMsLteAttachContextOperationRestoreFactory，则应忽略所有其他字段。 应删除 OS 创建的或修改的默认 LTE 附加上下文，并且应加载默认的工厂预配置默认 LTE 附加上下文。 如果调制解调器没有默认配置，则所有漫游条件默认 LTE 附加上下文都应设置为空的 APN 字符串，IP 类型为默认值。 |
+| 0 | 4 | 操作 | MBIM_MS_LTE_CONTEXT_OPERATIONS | 指定使用 Set 命令的操作的类型。 如果设置为 MbimMsLteAttachContextOperationRestoreFactory，则应忽略所有其他字段。 应删除 OS 创建的或修改的默认 LTE 附加上下文，并且应加载默认的工厂预配置默认 LTE 附加上下文。 如果调制解调器没有默认配置，则所有漫游条件默认 LTE 附加上下文都应设置为空的 APN 字符串，IP 类型为默认值。 |
 | 4 | 4 | Elementcount 多于 (EC)  | UINT32 | DataBuffer 中后面的 MBIM_MS_LTE_ATTACH_CONTEXT 结构的计数。 此组件当前指定为三个，每个漫游条件 (home/partner/非合作伙伴) 。 |
 | 8 | 8 * EC | MsLteAttachContextRefList | OL_PAIR_LIST | 该对的第一个元素为4字节的偏移量，该偏移量是从该 MBIM_MS_LTE_ATTACH_CONFIG_INFO 结构的开头 (偏移量 0) 计算到 MBIM_MS_LTE_ATTACH_CONTEXT 结构的 (MBIM_MS_LTE_ATTACH_CONTEXT 有关详细信息，请参阅) 表。 对的第二个元素是指向相应 MBIM_MS_LTE_ATTACH_CONTEXT 结构的指针的大小为4字节。 |
 | 8 + (8 * EC)  |  | DataBuffer | DATABUFFER | MBIM_MS_LTE_ATTACH_CONTEXT 结构的数组。 |
@@ -130,14 +130,14 @@ InformationBuffer 应为 NULL，而 InformationBufferLength 应为零。
 
 MBIM_MS_LTE_ATTACH_CONTEXT_OPERATIONS 描述可在 Set 命令中使用的操作的类型。
 
-| 类型 | 值 | 描述 |
+| 类型 | 值 | 说明 |
 | --- | --- | --- |
 | MbimMsLteAttachContextOperationDefault | 0 | 用于在调制解调器中覆盖现有默认 LTE 附加上下文的默认操作。 操作系统将始终将所有三个默认 LTE 附加上下文替换为漫游条件。 |
 | MbimMsLteAttachContextOperationRestoreFactory | 1 | 为当前插入的 SIM 的提供程序 ID 还原工厂预配置默认 LTE 附加上下文。 应删除并替换 OS 替换或创建的所有默认 LTE 附加上下文。 如果当前插入的包含一个或多个漫游条件的 SIM 提供程序 ID 没有默认预配置的默认 LTE 附加上下文，则默认的 LTE 附加应返回空的 APN 字符串，IP 类型 = 默认值。 |
 
 MBIM_MS_LTE_ATTACH_CONTEXT 指定用于 LTE 附加配置的上下文。
 
-| Offset | 大小 | 字段 | 类型 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | IPType | MBIM_CONTEXT_IP_TYPE | 有关详细信息，请参阅 MBIM_CONTEXT_IP_TYPE 表。 |
 | 4 | 4 | 漫游 | MBIM_MS_LTE_ATTACH_CONTEXT_ROAMING_CONTROL | 指示哪种漫游条件适用于此默认 LTE 附加上下文。 有关详细信息，请参阅 MBIM_MS_LTE_ATTACH_CONTEXT_ROAMING_CONTROL 表。 |
@@ -154,7 +154,7 @@ MBIM_MS_LTE_ATTACH_CONTEXT 指定用于 LTE 附加配置的上下文。
 
 MBIM_MS_LTE_ATTACH_CONTEXT_ROAMING_CONTROL 指示哪种漫游条件适用于此默认 LTE 附加上下文。
 
-| 类型 | 值 | 描述 |
+| 类型 | 值 | 说明 |
 | --- | --- | --- |
 | MbimMsLteAttachContextRoamingControlHome | 0 | 指示是否允许在家庭网络上使用默认 LTE 附加上下文。 |
 | MbimMsLteAttachContextRoamingControlPartner | 1 | 指示是否允许在伙伴漫游网络上使用上下文。 |
@@ -162,7 +162,7 @@ MBIM_MS_LTE_ATTACH_CONTEXT_ROAMING_CONTROL 指示哪种漫游条件适用于此�
 
 MBIM_MS_CONTEXT_SOURCE 指定上下文的创建源。
 
-| 类型 | 值 | 描述 |
+| 类型 | 值 | 说明 |
 | --- | --- | --- |
 | MbimMsContextSourceAdmin | 0 | 上下文是由操作系统的企业 IT 管理员创建的。 |
 | MbimMsContextSourceUser | 1 | 上下文是用户通过 OS 设置创建的。 |
@@ -174,7 +174,7 @@ MBIM_MS_CONTEXT_SOURCE 指定上下文的创建源。
 
 以下 MBIM_MS_LTE_ATTACH_CONFIG_INFO 结构应在 InformationBuffer 中使用。
 
-| Offset | 大小 | 字段 | 类型 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | Elementcount 多于 (EC)  | UINT32 | DataBuffer 中后面的 MBIM_MS_LTE_ATTACH_CONTEXT 结构的计数。 此组件当前指定为三个，每个漫游条件 (home/partner/非合作伙伴) 。 |
 | 4 | 8 * EC | MsLteAttachContextRefList | OL_PAIR_LIST | 该对的第一个元素为4字节的偏移量，该偏移量是从该 MBIM_MS_LTE_ATTACH_CONFIG_INFO 结构的开头 (偏移量 0) 计算到 MBIM_MS_LTE_ATTACH_CONTEXT 结构的 (MBIM_MS_LTE_ATTACH_CONTEXT 有关详细信息，请参阅) 表。 对的第二个元素是指向相应 MBIM_MS_LTE_ATTACH_CONTEXT 结构的指针的大小为4字节。 |
@@ -202,7 +202,7 @@ MBIM_MS_CONTEXT_SOURCE 指定上下文的创建源。
 
 ## <a name="mbim_cid_ms_lte_attach_status"></a>MBIM_CID_MS_LTE_ATTACH_STATUS
 
-### <a name="description"></a>描述
+### <a name="description"></a>说明
 
 根据3GPP 的要求，虽然设备可以指定在没有任何启用的 PDP 上下文的情况下连接到网络时要使用的默认 LTE 附加上下文，但在某些情况下，设备将在与设备上配置的默认 LTE 附加上下文不同的 PDP 上下文上进行连接。 下面列出了所有可能的方案：
 
@@ -239,11 +239,11 @@ InformationBuffer 中的查询完成消息返回 MBIM_MS_LTE_ATTACH_STATUS。 �
 
 事件 InformationBuffer 包含 MBIM_MS_LTE_ATTACH_STATUS 结构。
 
-### <a name="parameters"></a>参数
+### <a name="parameters"></a>parameters
 
-| Operation | 设置 | 查询 | 通知 |
+| 操作 | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
-| Command | 不适用 | 不适用 | 不适用 |
+| 命令 | 不适用 | 不适用 | 不适用 |
 | 响应 | 不适用 | MBIM_MS_LTE_ATTACH_STATUS | MBIM_MS_LTE_ATTACH_STATUS |
 
 ### <a name="data-structures"></a>数据结构
@@ -261,7 +261,7 @@ InformationBuffer 应为 NULL，而 InformationBufferLength 应为零。
 以下 MBIM_MS_LTE_ATTACH_STATUS 结构应在 InformationBuffer 中使用。
 
 
-| Offset | 大小 |       字段        |           类型           |                                                                                                                                                                                                                                                                                                    描述                                                                                                                                                                                                                                                                                                     |
+| Offset | 大小 |       字段        |           类型           |                                                                                                                                                                                                                                                                                                    说明                                                                                                                                                                                                                                                                                                     |
 |--------|------|--------------------|--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |   0    |  4   |   LteAttachState   | MBIM_MS_LTE_ATTACH_STATE |                                                                                                                                                                                                                                    指示设备当前是否已连接到 LTE 网络。  有关详细信息，请参阅 MBIM_MS_LTE_ATTACH_STATE 表。                                                                                                                                                                                                                                     |
 |   4    |  4   |       IPType       |  MBIM_CONTEXT_IP_TYPES   |                                                                                                                                                                                                                                                                             有关详细信息，请参阅 MBIM_CONTEXT_IP_TYPE 表。                                                                                                                                                                                                                                                                              |
@@ -279,7 +279,7 @@ InformationBuffer 应为 NULL，而 InformationBufferLength 应为零。
 
 MBIM_MS_LTE_ATTACH_STATE 指示设备当前是否已连接到 LTE 网络。
 
-| 类型 | 值 | 描述 |
+| 类型 | 值 | 说明 |
 | --- | --- | --- |
 | MbimMsLteAttachStateDetached | 0 | 指示设备未连接到 LTE 网络。 |
 | MbimMsLteAttachStateAttached | 1 | 指示设备已连接到 LTE 网络。 |
@@ -301,7 +301,7 @@ MBIM_MS_LTE_ATTACH_STATE 指示设备当前是否已连接到 LTE 网络。
 
 请参阅 [安装 HLK 的步骤](https://microsoft.sharepoint.com/teams/HWKits/SitePages/HWLabKit/Manual%20Controller%20Installation.aspx)。
  
-在 HLK Studio 中，连接到设备蜂窝电话调制解调器驱动程序并运行测试： [Win6_4. MB。GSM.TestLteAttach](https://docs.microsoft.com/windows-hardware/test/hlk/testref/aaa1f042-8535-4d09-b19e-082bef24f518)。
+在 HLK Studio 中，连接到设备蜂窝电话调制解调器驱动程序并运行测试： [Win6_4. MB。GSM.TestLteAttach](/windows-hardware/test/hlk/testref/aaa1f042-8535-4d09-b19e-082bef24f518)。
 
 或者，运行 **TestLteAttach** HLK testlist by [**netsh-mbn**](/windows-server/networking/technologies/netsh/netsh-mbn) 和 [**netsh-mbn**](mb-netsh-mbn-test.md)--安装。
 

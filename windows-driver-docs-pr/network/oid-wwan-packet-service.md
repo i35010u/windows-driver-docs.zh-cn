@@ -5,12 +5,12 @@ ms.date: 04/04/2019
 keywords: -从 Windows Vista 开始 OID_WWAN_PACKET_SERVICE 的网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 4b3ffd98cc67c9dc63a261a8d918a29a8f44df82
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 9332ee26e82fb7f6be5959812d0ab89d4ffcae9b
+ms.sourcegitcommit: 76a7b604f13cf419ff21518337913820a703347f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96809953"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104719500"
 ---
 # <a name="oid_wwan_packet_service"></a>OID \_ WWAN \_ 数据包 \_ 服务
 
@@ -44,7 +44,7 @@ OID \_ WWAN \_ 数据包 \_ 服务用于指示微型端口驱动程序在当前�
 
 如果在5G 域中注册了该调制解调器，它将返回该运营商的5G 频率范围。 如果存在多个5G 电信公司，则返回所有有效范围。
 
-有关5G 数据类支持的详细信息，请参阅 [MB 5G 数据类支持](mb-5g-data-class-support.md)。
+有关5G 数据类支持的详细信息，请参阅 [MB 5G 数据类支持](./mb-5g-operations-overview.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -60,7 +60,7 @@ OID \_ WWAN \_ 数据包 \_ 服务用于指示微型端口驱动程序在当前�
 <td><p>在 windows 7 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
@@ -74,6 +74,4 @@ OID \_ WWAN \_ 数据包 \_ 服务用于指示微型端口驱动程序在当前�
 [**NDIS \_ 状态 \_ WWAN \_ 数据包 \_ 服务**](ndis-status-wwan-packet-service.md)
 
 [WWAN 数据包服务附加操作](./mb-packet-service-attach-operations.md)
-
- 
 

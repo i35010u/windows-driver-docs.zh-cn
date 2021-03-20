@@ -3,12 +3,12 @@ title: MB 多 SIM 操作
 description: MB 多 SIM 操作
 ms.date: 03/01/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 480185aff0dbba1ec4194b8744012a665f99fd1b
-ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
+ms.openlocfilehash: 2f0068a9d3396d0f780896fb4c200a7e17ad3413
+ms.sourcegitcommit: 76a7b604f13cf419ff21518337913820a703347f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2021
-ms.locfileid: "102247809"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104719484"
 ---
 # <a name="mb-multi-sim-operations"></a>MB 多 SIM 操作
 
@@ -177,7 +177,7 @@ UUID 值 = **3d01dcc5-fef5-4d05-0d3abef7058e9aaf**
 
 ### <a name="mbim_cid_ms_sys_caps"></a>MBIM_CID_MS_SYS_CAPS
 
-#### <a name="description"></a>描述
+#### <a name="description"></a>说明
 
 此 CID 检索有关调制解调器的信息。 这可以在作为 USB 函数公开的任何 MB 实例上发送。
 
@@ -193,11 +193,11 @@ MBIM_COMMAND_MSG 上的 InformationBuffer 包含 MBIM_MS_SYS_CAPS_INFO 的响应
 
 不适用。
 
-#### <a name="parameters"></a>参数
+#### <a name="parameters"></a>parameters
 
-| Operation | 设置 | 查询 | 通知 |
+| 操作 | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
-| Command | 不适用 | 不适用 | 不适用 |
+| 命令 | 不适用 | 不适用 | 不适用 |
 | 响应 | 不适用 | MBIM_MS_SYS_CAPS_INFO | 不适用 |
 
 #### <a name="data-structures"></a>数据结构
@@ -214,7 +214,7 @@ InformationBuffer 应为 null，而 InformationBufferLength 应为零。
 
 以下 MBIM_SYS_CAPS_INFO 结构应在 InformationBuffer 中使用。
 
-| Offset | 大小 | 字段 | 类型 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | NumberOfExecutors | UINT32 | 此调制解调器报告的 MBB 实例数 |
 | 4 | 4 | NumberOfSlots | UINT32 | 此调制解调器上可用的物理 UICC 槽数 |
@@ -235,17 +235,17 @@ InformationBuffer 应为 null，而 InformationBufferLength 应为零。
 
 ### <a name="mbim_cid_ms_device_caps_v2"></a>MBIM_CID_MS_DEVICE_CAPS_V2
 
-#### <a name="description"></a>描述
+#### <a name="description"></a>说明
 
 此 CID 检索与执行器相关的功能信息。 由于此 CID 是 MBIM_CID_DEVICE_CAPS 的扩展，因此此处仅介绍 MBIM_CID_DEVICE_CAPS 公用 USB MBIM 标准的10.5.1 部分中所述的更改。
 
 此 CID 继续作为查询，并将返回 MBIM_MS_DEVICE_CAPS_INFO_V2 结构，以响应与 MBIM 服务 MSUUID_BASIC_CONNECT 和 CID MBIM_CID_MS_DEVICE_CAPS_V2 MBIM_COMMAND_MSG。
 
-#### <a name="parameters"></a>参数
+#### <a name="parameters"></a>parameters
 
-| Operation | 设置 | 查询 | 通知 |
+| 操作 | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
-| Command | 不适用 | 不适用 | 不适用 |
+| 命令 | 不适用 | 不适用 | 不适用 |
 | 响应 | 不适用 | MBIM_MS_DEVICE_CAPS_INFO_V2 | 不适用 |
 
 #### <a name="data-structures"></a>数据结构
@@ -262,7 +262,7 @@ InformationBuffer 应为 null，而 InformationBufferLength 应为零。
 
 以下 MBIM_DEVICE_CAPS_INFO_V2 结构应在 InformationBuffer 中使用。 与公共 USB MBIM standard 的10.5.1 部分中定义的 MBIM_CID_DEVICE_CAPS 结构相比，以下结构包含名为 *DeviceIndex* 的新字段。 除非在此处说明，否则此处将应用公共 USB MBIM standard 的表10-14 中的字段说明。
 
-| Offset | 大小 | 字段 | 类型 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | DeviceType | MBIM_DEVICE_TYPE |  |
 | 4 | 4 | CellularClass | MBIM_CELLULAR_CLASS |  |
@@ -289,7 +289,7 @@ InformationBuffer 应为 null，而 InformationBufferLength 应为零。
 
 ### <a name="mbim_cid_ms_device_slot_mappings"></a>MBIM_CID_MS_DEVICE_SLOT_MAPPINGS
 
-#### <a name="description"></a>描述
+#### <a name="description"></a>说明
 
 此 CID 设置或返回设备槽映射 (换言之，即执行器槽映射) 。
 
@@ -305,11 +305,11 @@ MBIM_COMMAND_MSG 的 InformationBuffer 包含 MBIM_MS_DEVICE_SLOT_MAPPING_INFO�
 
 不适用。
 
-#### <a name="parameters"></a>参数
+#### <a name="parameters"></a>parameters
 
-| Operation | 设置 | 查询 | 通知 |
+| 操作 | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
-| Command | MBIM_MS_DEVICE_SLOT_MAPPING_INFO | 不适用 | 不适用 |
+| 命令 | MBIM_MS_DEVICE_SLOT_MAPPING_INFO | 不适用 | 不适用 |
 | 响应 | MBIM_MS_DEVICE_SLOT_MAPPING_INFO | MBIM_MS_DEVICE_SLOT_MAPPING_INFO | 不适用 |
 
 #### <a name="data-structures"></a>数据结构
@@ -322,7 +322,7 @@ InformationBuffer 应为 null，而 InformationBufferLength 应为零。
 
 以下 MBIM_MS_DEVICE_SLOT_MAPPING_INFO 结构应在 InformationBuffer 中使用。
 
-| Offset | 大小 | 字段 | 类型 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | MapCount (MC)  | UINT32 | 映射的数量，始终等于设备/执行器的数目。 |
 | 4 | 8 * MC | SlotMapList | OL_PAIR_LIST | 此列表的 *第 i* 对，其中 (0 <= i <= (MC-1) ) 记录当前映射到 *第 i 个* 设备/执行程序的槽的索引。 该对中的第一个元素是一个4字节字段，其偏移量为 DataBuffer 的偏移量，计算方式为从此 MBIM_MS_DEVICE_SLOT_MAPPINGS_INFO 结构的开始 (偏移量 0) 到 UINT32。 对的第二个元素是 record 元素的4字节大小。 由于槽索引的类型为 UINT32，因此对中的第二个元素始终为4。 |
@@ -343,7 +343,7 @@ InformationBuffer 中使用的 MBIM_MS_DEVICE_SLOT_MAPPING_INFO 也用于响应�
 
 ### <a name="mbim_cid_ms_slot_info_status"></a>MBIM_CID_MS_SLOT_INFO_STATUS
 
-#### <a name="description"></a>描述
+#### <a name="description"></a>说明
 
 此 CID 检索指定 UICC 槽的高级聚合状态，并 (如果任何) ，则它。 当某个槽的状态发生更改时，也可以使用它来传递未经请求的通知。
 
@@ -359,11 +359,11 @@ MBIM_COMMAND_MSG 的 InformationBuffer 包含 MBIM_MS_SLOT_INFO_REQ 的结构。
 
 事件 InformationBuffer 包含 MBIM_MS_SLOT_INFO 结构。 如果复合槽/卡片状态发生变化，则函数将发送此事件。
 
-#### <a name="parameters"></a>参数
+#### <a name="parameters"></a>parameters
 
-| Operation | 设置 | 查询 | 通知 |
+| 操作 | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
-| Command | 不适用 | MBIM_MS_SLOT_INFO_REQ | 不适用 |
+| 命令 | 不适用 | MBIM_MS_SLOT_INFO_REQ | 不适用 |
 | 响应 | 不适用 | MBIM_MS_SLOT_INFO | MBIM_MS_SLOT_INFO |
 
 #### <a name="data-structures"></a>数据结构
@@ -372,7 +372,7 @@ MBIM_COMMAND_MSG 的 InformationBuffer 包含 MBIM_MS_SLOT_INFO_REQ 的结构。
 
 以下 MBIM_MS_SLOT_INFO_REQ 结构应在 InformationBuffer 中使用。
 
-| Offset | 大小 | 字段 | 类型 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | SlotIndex | UINT32 | 要查询的槽的索引。 |
 
@@ -384,14 +384,14 @@ MBIM_COMMAND_MSG 的 InformationBuffer 包含 MBIM_MS_SLOT_INFO_REQ 的结构。
 
 以下 MBIM_MS_SLOT_INFO 结构应在 InformationBuffer 中使用。
 
-| Offset | 大小 | 字段 | 类型 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | SlotIndex | UINT32 | 槽的索引。 |
 | 4 | 4 | 状态 | MBIM_MS_UICC_SLOT_STATE | 槽和卡的状态 (（如果适用）) 。 |
 
 以下 MBIM_MS_UICCSLOT_STATE 结构描述了槽的可能状态。
 
-| 状态 | 值 | 描述 |
+| 状态 | 值 | 说明 |
 | --- | --- | --- |
 | UICCSlotStateUnknown | 0 | 调制解调器仍处于初始化过程中，因此 SIM 插槽状态不是确定性的。 |
 | UICCSlotStateOffEmpty | 1 | UICC 槽已关闭并且无卡。 无法确定已关闭的插槽中是否存在卡的实现将其状态报告为 UICCSlotStateOff。 |
@@ -472,16 +472,16 @@ MBIM_COMMAND_MSG 的 InformationBuffer 包含 MBIM_MS_SLOT_INFO_REQ 的结构。
 
 请参阅 [安装 HLK 的步骤](https://microsoft.sharepoint.com/teams/HWKits/SitePages/HWLabKit/Manual%20Controller%20Installation.aspx)。
 
-在 HLK Studio 中，连接到设备移动电话调制解调器驱动程序并运行测试： [Win6_4. MB。GSM.TestSlot](https://docs.microsoft.com/windows-hardware/test/hlk/testref/defddebe-cc40-4d6f-9b0c-ca5ca9a1cb4d)。 此测试包含以下四项测试：
+在 HLK Studio 中，连接到设备移动电话调制解调器驱动程序并运行测试： [Win6_4. MB。GSM.TestSlot](/windows-hardware/test/hlk/testref/defddebe-cc40-4d6f-9b0c-ca5ca9a1cb4d)。 此测试包含以下四项测试：
 
-| 测试名称 | 描述 |
+| 测试名称 | 说明 |
 |---|---|
 | QuerySlotMapping | 此测试验证测试是否可以成功查询 devcie 槽映射。 |
 | SetSlotMapping | 此测试验证测试是否可以成功设置设备槽映射。 |
 | QuerySlotInfo | 此测试验证测试是否可以成功查询设备槽信息。 |
 | ValidateSlotInfoState | 此测试针对 ReadyInfoState 验证 UICC 槽状态。 |
 
-或者，你可以通过 [**netsh-mbn**](https://docs.microsoft.com/windows-server/networking/technologies/netsh/netsh-mbn)和 [**netsh-mbn**](mb-netsh-mbn-test.md)--运行 **TestSlot** HLK testlist。
+或者，你可以通过 [**netsh-mbn**](/windows-server/networking/technologies/netsh/netsh-mbn)和 [**netsh-mbn**](mb-netsh-mbn-test.md)--运行 **TestSlot** HLK testlist。
 
 ```
 netsh mbn test feature=dssa testpath="C:\data\test\bin" taefpath="C:\data\test\bin" param="AccessString=internet"

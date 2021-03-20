@@ -3,12 +3,12 @@ title: MB 驱动程序模型版本控制
 description: MB 驱动程序模型版本控制
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 41dc541902d84acc895128ca503ed4e396e3a67c
-ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
+ms.openlocfilehash: 5458435635080111b7ec4bb651fb641d2f54269b
+ms.sourcegitcommit: 76a7b604f13cf419ff21518337913820a703347f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2021
-ms.locfileid: "102247810"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104719516"
 ---
 # <a name="mb-driver-model-versioning"></a>MB 驱动程序模型版本控制
 
@@ -32,6 +32,4 @@ MB 驱动程序模型版本控制通过使用驱动程序模型版本和单个 O
 驱动程序型号版本由 [OID \_ WWAN \_ 驱动程序 \_ cap](./oid-wwan-driver-caps.md)传达。 在 \_ \_ \_ [Mb 微型端口驱动程序初始化](mb-device-readiness.md#mb-miniport-driver-initialization)期间，mb 服务将 OID WWAN 驱动程序 cap 查询请求发送到微型端口驱动程序。 各个 OID 修订号由 [**NDIS \_ 对象 \_ 标头**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_object_header)结构的 **修订** 成员描述，该结构作为每个单独 OID 的数据结构的一部分包含。
 
 ## <a name="see-also"></a>请参阅
-[5G 的 MBIM 扩展2.0 版本管理](mb-5g-data-class-support.md)
- 
-
+[5G 的 MBIM 扩展2.0 版本管理](./mb-5g-operations-overview.md)

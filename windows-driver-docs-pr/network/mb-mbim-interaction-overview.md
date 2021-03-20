@@ -1,17 +1,17 @@
 ---
-title: MB 驱动程序堆栈、挂起和恢复
+title: MB 驱动程序堆叠、暂停和继续
 description: 了解 MBIM 4.0 驱动程序堆栈、挂起和恢复，以及如何对其进行测试和调试。
 keywords: Resume、挂、MBIM 4.0、DriverStack
 ms.date: 03/01/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 94cf1d74f7a3960a687421b78c9bd49bd8d534c1
-ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
+ms.openlocfilehash: b872498bc1d9c19a964898ec32458c106ce9a1e0
+ms.sourcegitcommit: 76a7b604f13cf419ff21518337913820a703347f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2021
-ms.locfileid: "102250536"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104719524"
 ---
-# <a name="mb-driver-stack-suspend-and-resume"></a>MB 驱动程序堆栈、挂起和恢复 
+# <a name="mb-driver-stack-suspend-and-resume"></a>MB 驱动程序堆叠、暂停和继续 
 ## <a name="overview"></a>概述
 
 Microsoft 为移动宽带 (MBB) 设备提供了一个用于移动宽带的驱动程序类驱动程序， (MBCD) 。 此驱动程序基于移动宽带接口模型 (MBIM) 规范，它是一种用于 MBB 设备的接口 (也称为调制解调器) 与 Windows 进行通信。 MBIM 规范基于 USB。 MBCD 支持通过一种称为 USB 设备仿真 (UDE) 的技术来模拟 USB 调制解调器和调制解调器。 
@@ -127,9 +127,9 @@ WwanSvc 是主要负责对调制解调器的控制、枚举其功能及其配置
 ## <a name="hardware-lab-kit-hlk-tests"></a>硬件实验室工具包 (HLK) 测试
 请参阅 [安装 HLK 的步骤](https://microsoft.sharepoint.com/teams/HWKits/SitePages/HWLabKit/Manual%20Controller%20Installation.aspx)。
 
-在 HLK Studio 中，连接到设备移动电话调制解调器驱动程序并运行测试： [TestPowerStates](https://docs.microsoft.com/windows-hardware/test/hlk/testref/f0af8e06-4d04-4027-8b84-777a6de4ce49)。
+在 HLK Studio 中，连接到设备移动电话调制解调器驱动程序并运行测试： [TestPowerStates](/windows-hardware/test/hlk/testref/f0af8e06-4d04-4027-8b84-777a6de4ce49)。
 
-可以通过 netsh 运行 **TestPowerStates** HLK testlist。 有关使用 netsh 工具的详细信息，请参阅 [**mbn**](https://docs.microsoft.com/windows-server/networking/technologies/netsh/netsh-mbn) and [**netsh-mbn**](mb-netsh-mbn-test.md)。
+可以通过 netsh 运行 **TestPowerStates** HLK testlist。 有关使用 netsh 工具的详细信息，请参阅 [**mbn**](/windows-server/networking/technologies/netsh/netsh-mbn) and [**netsh-mbn**](mb-netsh-mbn-test.md)。
 
 ```
 netsh mbn test feature=power testpath="C:\\data\\test\\bin" taefpath="C:\\data\\test\\bin"
@@ -181,18 +181,14 @@ netsh mbn test feature=power testpath="C:\\data\\test\\bin" taefpath="C:\\data\\
 
 
 ## <a name="see-also"></a>另请参阅
-[UDE 体系结构](/windows-hardware/drivers/usbcon/developing-windows-drivers-for-emulated-usb-host-controllers-and-devices)
+[UDE 体系结构](../usbcon/developing-windows-drivers-for-emulated-usb-host-controllers-and-devices.md)
 
-[NDIS 6.20 简介](/windows-hardware/drivers/network/introduction-to-ndis-6-20)
+[NDIS 6.20 简介](./introduction-to-ndis-6-20.md)
 
-[MBIM 概述](/windows-hardware/drivers/network/mb-interface-model)
+[MBIM 概述](./mb-interface-model.md)
 
 [MBIM 合规性测试修订版本1。0](https://www.usb.org/sites/default/files/MBIM-Compliance-1.0.pdf)
 
-[USB 设备的移动宽带实施指南](/windows-hardware/drivers/network/mobile-broadband-implementation-guidelines-for-usb-devices)
+[USB 设备的移动宽带实施指南](./mobile-broadband-implementation-guidelines-for-usb-devices.md)
 
-[NetAdapterCx](/windows-hardware/drivers/netcx/)
-
-
-
-
+[NetAdapterCx](../netcx/index.md)

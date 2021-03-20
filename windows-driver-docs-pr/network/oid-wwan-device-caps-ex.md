@@ -6,12 +6,12 @@ keywords:
 ms.date: 04/04/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: ef40490cdbd96ca892841d69510425b7586cb260
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: b1d3bc291b94b7f21e5a93b0307fa2f2cd0f9af9
+ms.sourcegitcommit: 76a7b604f13cf419ff21518337913820a703347f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96797967"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104719494"
 ---
 # <a name="oid_wwan_device_caps_ex"></a>OID \_ WWAN \_ 设备 \_ CAP \_ EX
 
@@ -49,7 +49,7 @@ Windows 10 版本1703之前的 Windows 版本仍可使用现有的 [OID \_ WWAN 
 
 此外，在 **WWAN_DEVICE_CAPS_EX** 结构的 " **WwanOptionalServiceCaps** " 字段中，定义了一个新的可选服务位，它包含所有新5G 相关扩展的支持。
 
-有关5G 数据类支持的详细信息，请参阅 [MB 5G 数据类支持](mb-5g-data-class-support.md)。
+有关5G 数据类支持的详细信息，请参阅 [MB 5G 数据类支持](./mb-5g-operations-overview.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -65,7 +65,7 @@ Windows 10 版本1703之前的 Windows 版本仍可使用现有的 [OID \_ WWAN 
 <td><p>Windows 10 版本 1703</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>

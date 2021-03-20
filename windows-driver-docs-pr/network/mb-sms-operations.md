@@ -3,12 +3,12 @@ title: MB SMS 操作
 description: MB SMS 操作
 ms.date: 03/01/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 69e92188b7cb655017f1e3a51bf16af6b5d472e6
-ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
+ms.openlocfilehash: aec0c199f7f9be35b5c0b201ca04fee31e2531ef
+ms.sourcegitcommit: 76a7b604f13cf419ff21518337913820a703347f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2021
-ms.locfileid: "102248505"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104719578"
 ---
 # <a name="mb-sms-operations"></a>MB SMS 操作
 
@@ -120,7 +120,7 @@ netsh mbn test feature=sms testpath="C:\data\test\bin" taefpath="C:\data\test\bi
 
 ### <a name="operator-messages"></a>操作员消息
 
-操作员可以预配设备来处理特定消息。 此功能不再可用，但尚未完全删除该功能。 代码 ProvisioningEngine 处理操作员通知。 有关详细信息，请参阅 [操作员通知](/windows-hardware/drivers/mobilebroadband/enabling-mobile-operator-notifications-and-system-events) 和 [操作员事件](/windows-hardware/drivers/mobilebroadband/mobile-operator-notification-event-technical-details)。
+操作员可以预配设备来处理特定消息。 此功能不再可用，但尚未完全删除该功能。 代码 ProvisioningEngine 处理操作员通知。 有关详细信息，请参阅 [操作员通知](../mobilebroadband/enabling-mobile-operator-notifications-and-system-events.md) 和 [操作员事件](../mobilebroadband/mobile-operator-notification-event-technical-details.md)。
 
 ### <a name="broadcast-messages"></a>广播消息
 
@@ -140,4 +140,4 @@ netsh mbn test feature=sms testpath="C:\data\test\bin" taefpath="C:\data\test\bi
 
 ## <a name="other-relevant-links"></a>其他相关链接
 
-* [开发短信应用](/windows-hardware/drivers/mobilebroadband/developing-sms-apps)
+* [开发短信应用](../mobilebroadband/developing-sms-apps.md)

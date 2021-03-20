@@ -11,12 +11,12 @@ keywords:
 - Wdf INF 文件部分 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d5f0439dfb980998389c8ef67b90a170304fc643
-ms.sourcegitcommit: ac28dd2a921c25796d19572a180b88e460420488
+ms.openlocfilehash: fb3cd7a2477bcfd08ae41e51065ea1679287a315
+ms.sourcegitcommit: 76a7b604f13cf419ff21518337913820a703347f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101682204"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104719504"
 ---
 # <a name="specifying-the-kmdf-co-installer-in-an-inf-file"></a>在 INF 文件中指定 KMDF 的共同安装程序
 
@@ -27,7 +27,7 @@ ms.locfileid: "101682204"
 ><PropertyGroup Label="Configuration">
 ><TargetVersion>Windows10</TargetVersion>
 >```
->2. 在 " [INF 制造商" 部分](/windows-hardware/drivers/install/inf-manufacturer-section)中，将10.0 指定为目标 OS 版本，如下所示：
+>2. 在 " [INF 制造商" 部分](../install/inf-manufacturer-section.md)中，将10.0 指定为目标 OS 版本，如下所示：
 >```inf
 >[Manufacturer]
 >%MyMfg% = MyMfg, NTamd64.10.0
@@ -137,4 +137,3 @@ KmdfLibraryVersion = 1.0
 ....
 =============== End of MyDevice.inf ===============
 ```
-

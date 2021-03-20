@@ -5,12 +5,12 @@ ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WWAN_REGISTER_STATE 的网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: a30d27c33c98fa4abcee20b75674b56ca9a7c16a
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 449bb9e75a6d722e005d5c44bb6fd5e1ce282df8
+ms.sourcegitcommit: 76a7b604f13cf419ff21518337913820a703347f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96812939"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104719562"
 ---
 # <a name="oid_wwan_register_state"></a>OID \_ WWAN \_ 寄存器 \_ 状态
 
@@ -38,7 +38,7 @@ RegisterAction 值的语义定义如下：
 
 -   MB 服务使用 *WwanRegisterActionAutomatic* 标志来指示微型端口驱动程序将设备设置为自动注册模式，并让设备选择最佳的提供程序网络。 微型端口驱动程序必须忽略 **ProviderId** 参数。 此设置在无线电状态之间保持不变 (开启/关闭) 和设备电源循环，直到由 MB 服务显式更改。
 
--   MB 服务使用 *WwanRegisterActionManual* 标志来指示微型端口驱动程序向 **ProviderId** 参数标识的提供商网络注册。 **ProviderId** 值应来自 **ProviderId** \_ 一个可见提供程序的 WWAN 提供程序数据结构的 providerid 成员。 此设置在无线电状态之间保持不变 (开启/关闭) 和设备电源循环，直到由 MB 服务显式更改。
+-   MB 服务使用 *WwanRegisterActionManual* 标志来指示微型端口驱动程序向 **ProviderId** 参数标识的提供商网络注册。 **ProviderId** 值应来自 \_ 一个可见提供程序的 WWAN 提供程序数据结构的 providerid 成员。 此设置在无线电状态之间保持不变 (开启/关闭) 和设备电源循环，直到由 MB 服务显式更改。
 
 -   即使设备当前已注册到提供程序，也允许在不同 RegisterAction 值之间进行更改。 如果在自动注册模式和手动注册模式间切换之前设备需要取消注册，微型端口驱动程序必须确保在设置为新注册模式之前，将设备设置为 "注销"。
 
@@ -52,7 +52,7 @@ RegisterAction 值的语义定义如下：
 
 宿主还可以从微型端口驱动程序查询当前首选的数据类。 微型端口驱动程序使用 [**WWAN_REGISTRATION_STATE**](/windows-hardware/drivers/ddi/wwan/ns-wwan-_wwan_registration_state)结构的 " **PreferredDataClasses** " 字段来报告当前在调制解调器中设置的首选数据访问技术。
 
-有关5G 数据类支持的详细信息，请参阅 [MB 5G 数据类支持](mb-5g-data-class-support.md)。
+有关5G 数据类支持的详细信息，请参阅 [MB 5G 数据类支持](./mb-5g-operations-overview.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -68,7 +68,7 @@ RegisterAction 值的语义定义如下：
 <td><p>在 windows 7 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
@@ -82,6 +82,4 @@ RegisterAction 值的语义定义如下：
 [**NDIS \_ 状态 \_ WWAN \_ 寄存器 \_ 状态**](ndis-status-wwan-register-state.md)
 
 [WWAN 注册操作](./mb-registration-operations.md)
-
- 
 

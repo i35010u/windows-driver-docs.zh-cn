@@ -1,14 +1,14 @@
 ---
 title: Storport 提供的功能
 description: Storport 提供的功能
-ms.date: 10/08/2019
+ms.date: 03/16/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 0633e05de18ddbda907d6d251faa3f433390640c
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: feed6a47060c5840fe7a01d9f41d9659316420e8
+ms.sourcegitcommit: 76a7b604f13cf419ff21518337913820a703347f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96804743"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104719550"
 ---
 # <a name="capabilities-provided-by-storport"></a>Storport 提供的功能
 
@@ -50,7 +50,7 @@ Storport 驱动程序提供以下功能：
 
 Storport 通过 Storport 库例程向微型端口驱动程序提供服务。 微型端口驱动程序编写器可调用这些例程，而不是将其提供的功能编码为单一单一端口驱动程序。 使用这些例程的一些最重要的服务如下所示：
 
-- Storport 微型端口驱动程序可以将许多与操作系统相关的初始化操作委托给 Storport 的 [**StorPortInitialize**](/windows-hardware/drivers/ddi/storport/nf-storport-storportinitialize) 库例程。 例如，Storport 驱动程序处理与 PnP 和 DMA 映射相关的详细信息。 这使得在不同版本的操作系统之间更易于移植的 Storport 微型端口驱动程序。 有关 Storport 微型端口驱动程序的初始化任务的说明，请参阅 [使用 storport 进行硬件初始化](hardware-initialization-with-storport.md)。
+- Storport 微型端口驱动程序可以将许多与操作系统相关的初始化操作委托给 Storport 的 [**StorPortInitialize**](/windows-hardware/drivers/ddi/storport/nf-storport-storportinitialize) 库例程。 例如，Storport 驱动程序处理与 PnP 和 DMA 映射相关的详细信息。 这可以减少 Storport 微型端口驱动程序所需的工作量。 有关 Storport 微型端口驱动程序的初始化任务的说明，请参阅 [使用 storport 进行硬件初始化](hardware-initialization-with-storport.md)。
 
 - 适用于非 PnP 设备的 Storport 微型端口驱动程序可代替查找适配器并向 PnP 管理器报告其资源的任务。 这是在 [**StorPortInitialize**](/windows-hardware/drivers/ddi/storport/nf-storport-storportinitialize)中完成的。
 

@@ -3,12 +3,12 @@ title: MB 收集日志
 description: MB 收集日志
 ms.date: 03/10/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: c469a5a22dc6316cada7ad8cd44f673e016ef256
-ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
+ms.openlocfilehash: ca0ce80faff6143a014426575c76337d992d52b7
+ms.sourcegitcommit: 76a7b604f13cf419ff21518337913820a703347f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2021
-ms.locfileid: "102250421"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104719546"
 ---
 # <a name="mobilebroadband-collecting-logs"></a>MobileBroadband 收集日志
 
@@ -38,9 +38,6 @@ ms.locfileid: "102250421"
 
 运行以下命令之一，将 .etl 文件转换为可用于分析的 .txt 文件：
 
-  ```*  ```[```tracefmt```](https://docs.microsoft.com/windows-hardware/drivers/devtest/tracefmt-commands)``` <ETL file location>  ```<br/>
+  ```*  ```[```tracefmt```](../devtest/tracefmt-commands.md)``` <ETL file location>  ```<br/>
   ```    or ```<br/>
   ```*  netsh trace convert <ETL file location>```
-  
-
-

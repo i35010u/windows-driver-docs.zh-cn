@@ -4,12 +4,12 @@ description: scenraio 关于多个 PDP 上下文
 keywords: MPDP，多个 PDP 上下文，额外的 PDP 上下文
 ms.date: 03/01/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d585e85337e2b89f9c552a2fca3959946dd023b
-ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
+ms.openlocfilehash: 081232e829252b131a8a9458ebf96c5c711a579f
+ms.sourcegitcommit: 76a7b604f13cf419ff21518337913820a703347f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2021
-ms.locfileid: "102250416"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104719474"
 ---
 # <a name="multiple-pdp-contexts"></a>多个 PDP 上下文
 ## <a name="usage-scenarios"></a>使用方案
@@ -27,7 +27,7 @@ UWP mobile 宽带应用可以利用多个数据包数据协议 (PDP) 上下文�
 
 - 个人热点–当使用连接作为个人热点时，某些移动运营商会对不同的费率收费。 可以使用多个 PDP 上下文区分这两者。
 
-有关详细信息，请参阅 [使用多个 PDP 上下文开发应用](/windows-hardware/drivers/mobilebroadband/developing-apps-using-multiple-pdp-contexts)。
+有关详细信息，请参阅 [使用多个 PDP 上下文开发应用](../mobilebroadband/developing-apps-using-multiple-pdp-contexts.md)。
 
 
 ## <a name="primary-flow"></a>主流程
@@ -50,7 +50,7 @@ UWP mobile 宽带应用可以利用多个数据包数据协议 (PDP) 上下文�
 ## <a name="hardware-lab-kit-hlk-tests"></a>硬件实验室工具包 (HLK) 测试
 请参阅 [安装 HLK 的步骤](https://microsoft.sharepoint.com/teams/HWKits/SitePages/HWLabKit/Manual%20Controller%20Installation.aspx)。 
 
-在 HLK Studio 中，连接到设备移动电话调制解调器驱动程序并运行测试： [Win6_4. MB。GSM.TestMPDP](https://docs.microsoft.com/windows-hardware/test/hlk/testref/08497822-4355-478b-9cba-0c0c7b663953)。
+在 HLK Studio 中，连接到设备移动电话调制解调器驱动程序并运行测试： [Win6_4. MB。GSM.TestMPDP](/windows-hardware/test/hlk/testref/08497822-4355-478b-9cba-0c0c7b663953)。
 
 ## <a name="mb-multiple-pdp-context-troubleshooting-guide"></a>MB 多个 PDP 上下文疑难解答指南
 
@@ -103,4 +103,3 @@ w 04-01 12:39:12.815 P0000 T0000 usbbus        CompletionRoutine() for request 0
 w 04-01 12:39:12.815 P0000 T0000 mbbcx         [Util][ReqId=0x04ae][TID=0x00000215] 01/01 fragment completed with status=STATUS_SUCCESS             MbbUtilSendMessageFragmentComplete util_cpp1401 TRACE_LEVEL_INFORMATION
 e 04-01 12:39:12.815 P0000 T0000 Windows Mobile Broadband Class Driver Event Provider Sending command completed with status STATUS_SUCCESS. Command was sent with the following parameters:
 ```
-

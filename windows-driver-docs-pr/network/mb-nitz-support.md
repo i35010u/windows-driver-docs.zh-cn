@@ -6,12 +6,12 @@ keywords:
 ms.date: 03/01/2021
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 59acc3cceb3afc00debb2c10aac8215ec1641250
-ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
+ms.openlocfilehash: 1c44d7699e37969b8ccad52294edc0413d101da2
+ms.sourcegitcommit: 76a7b604f13cf419ff21518337913820a703347f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2021
-ms.locfileid: "102248945"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104719462"
 ---
 # <a name="mb-nitz-support"></a>MB NITZ 支持
 
@@ -42,11 +42,11 @@ ms.locfileid: "102248945"
 
 ## <a name="mbim_cid_nitz"></a>MBIM_CID_NITZ
 
-### <a name="parameters"></a>参数
+### <a name="parameters"></a>parameters
 
-| Operation | 设置 | 查询 | 通知 |
+| 操作 | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
-| Command | 不适用 | 不适用 | 不适用 |
+| 命令 | 不适用 | 不适用 | 不适用 |
 | 响应 | 不适用 | MBIM_NITZ_INFO | MBIM_NITZ_INFO |
 
 ### <a name="query"></a>查询
@@ -55,10 +55,10 @@ ms.locfileid: "102248945"
 
 #### <a name="mbim_nitz_info"></a>MBIM_NITZ_INFO
 
-| Offset | 大小 | 字段 | 类型 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 说明 |
 | --- | --- | --- | --- | --- |
-| 0 | 4 | 年龄 | UINT32 | 整数形式的年份。 例如， **2014**。 |
-| 4 | 4 | 月份 | UINT32 | 月份 (1. 12) ，其中一月 = = 1。 |
+| 0 | 4 | Year | UINT32 | 整数形式的年份。 例如， **2014**。 |
+| 4 | 4 | Month | UINT32 | 月份 (1. 12) ，其中一月 = = 1。 |
 | 8 | 4 | 天 | UINT32 | 月份中的某一天， (1. 31) 。 |
 | 12 | 4 | 小时 | UINT32 | 小时， (0) 。 |
 | 16 | 4 | Minute | UINT32 | 分钟， (0 ... 59) 。 |
@@ -90,7 +90,7 @@ MBIM_COMMAND_DONE 中的 InformationBuffer 包含 MBIM_NITZ_INFO 的结构。
 ## <a name="hardware-lab-kit-hlk-tests"></a>硬件实验室工具包 (HLK) 测试
 请参阅 [安装 HLK 的步骤](https://microsoft.sharepoint.com/teams/HWKits/SitePages/HWLabKit/Manual%20Controller%20Installation.aspx)。
 
-在 HLK Studio 中，连接到设备移动电话调制解调器驱动程序并运行测试： [TestNitzInfo-GSM](https://docs.microsoft.com/windows-hardware/test/hlk/testref/1b192aa8-6a84-4c5c-8750-a8f2edb98a9e)。
+在 HLK Studio 中，连接到设备移动电话调制解调器驱动程序并运行测试： [TestNitzInfo-GSM](/windows-hardware/test/hlk/testref/1b192aa8-6a84-4c5c-8750-a8f2edb98a9e)。
 
 ## <a name="manual-tests"></a>手动测试
 ### <a name="nitz-time-update-while-roaming-on-cellular"></a>[NITZ]漫游到手机网络时更新时间 
