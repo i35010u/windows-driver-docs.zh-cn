@@ -1,14 +1,14 @@
 ---
-title: 蓝牙低能耗功能
+title: 蓝牙低功耗功能
 description: 蓝牙低能耗功能的列表
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d07a1262d6c7cd4e6a906216ed962f57e8bbc7fe
-ms.sourcegitcommit: ac28dd2a921c25796d19572a180b88e460420488
+ms.openlocfilehash: 7095cd432401c69df13bef648240f9f78e97b883
+ms.sourcegitcommit: 0cdf5984551c519acbfa3557845df55206dd4ee3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101751937"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104761262"
 ---
 # <a name="bluetooth-low-energy-functions"></a>蓝牙低能耗功能
 
@@ -42,4 +42,6 @@ ms.locfileid: "101751937"
 
 ## <a name="see-also"></a>另请参阅
 
-[低耗电蓝牙概述](bluetooth-low-energy-overviewcreating-a-l2cap-client-connection-to-a-remote-device.md)
+[低耗电蓝牙概述](bluetooth-low-energy-overview.md)
+
+[创建到远程设备的 L2CAP 客户端连接](creating-a-l2cap-client-connection-to-a-remote-device.md)
