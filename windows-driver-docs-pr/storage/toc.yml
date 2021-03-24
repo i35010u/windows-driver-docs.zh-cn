@@ -270,6 +270,8 @@
       items:
         - name: 关于存储微型端口驱动程序
           href: storage-miniport-drivers.md
+        - name: 与存储端口驱动程序进行通信
+          href: communicating-with-a-storage-port-driver.md
         - name: SCSI 微型端口驱动程序
           items:
             - name: 概述
