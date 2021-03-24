@@ -6,12 +6,12 @@ keywords:
 - 静态验证工具 WDK
 ms.date: 02/03/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 566502fc5d77bab067f7ce2161721706e8b31d47
-ms.sourcegitcommit: 76a7b604f13cf419ff21518337913820a703347f
+ms.openlocfilehash: bfe98890e0aca02b13fe97f7b4f89f46d96c435e
+ms.sourcegitcommit: 01179a569921e3b9a5e2fa56e46164346e581a7e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104719576"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104895697"
 ---
 # <a name="codeql-and-the-static-tools-logo-test"></a>CodeQL 和静态工具徽标测试
 
@@ -305,7 +305,7 @@ Interpreting results.
 
 Qls 查询套件包含当前被视为用于 WHCP 认证的 **"必须修复"** 的 [查询](#must-fix-queries)。 *windows_driver_mustfix* 这两个查询套件会定期更新，因为 Microsoft 最终会获得可用查询列表和 WHCP 认证所需的 "必须修复" 查询列表。  因此，使用 ["git pull"](https://www.git-scm.com/docs/git-pull) 命令定期同步存储库至关重要。
 
-## <a name="troubleshooting"></a>疑难解答
+## <a name="troubleshooting"></a>故障排除
 
 对于 [数据库版本](https://codeql.github.com/docs/codeql-cli/manual/version/) 不匹配问题，下列工具可能有所帮助。
 
@@ -473,7 +473,7 @@ CodeQL 不 **需要使用 MSBuild 或 Visual Studio**。 有关支持的编译�
 
 #### <a name="can-i-generate-a-dvl-on-visual-studio-solutions"></a>能否在 Visual Studio 解决方案中生成 DVL？ 
 
-不需要，DVL 生成必须在项目级别运行，并且不能在 [Visual Studio 解决方案](/visualstudio/get-started/tutorial-projects-solutions?view=vs-2019#:~:text=A%20solution%20is%20simply%20a,projects%20that%20the%20solution%20contains.)中运行。
+不需要，DVL 生成必须在项目级别运行，并且不能在 [Visual Studio 解决方案](/visualstudio/get-started/tutorial-projects-solutions#:~:text=A%20solution%20is%20simply%20a,projects%20that%20the%20solution%20contains.)中运行。
 
 #### <a name="are-all-defects-reported-by-codeql-true-defects"></a>是否所有缺陷都是由 CodeQL 报告的吗？
 

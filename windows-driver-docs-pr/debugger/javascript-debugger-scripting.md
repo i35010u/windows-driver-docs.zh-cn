@@ -3,12 +3,12 @@ title: JavaScript 调试器脚本
 description: 本主题介绍如何使用 JavaScript 创建脚本，这些脚本可理解调试器对象和扩展和自定义调试器的功能。
 ms.date: 04/09/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: ab4bf0e8e074c3462628e0479a24b52d884d509a
-ms.sourcegitcommit: 5a7c96139b0ae0dd0d6aae6561f25e0b26a2c5b1
+ms.openlocfilehash: e25494444e7dad5d3be03d2a17e85c20c40f9386
+ms.sourcegitcommit: 01179a569921e3b9a5e2fa56e46164346e581a7e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99568877"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104895691"
 ---
 # <a name="javascript-debugger-scripting"></a>JavaScript 调试器脚本
 
@@ -44,7 +44,7 @@ ms.locfileid: "99568877"
 
 JsProvider.dll 是为支持 JavaScript 调试器脚本而加载的 JavaScript 提供程序。
 
-**惠?**
+**要求**
 
 JavaScript 调试器脚本设计为适用于所有受支持的 Windows 版本。
 
@@ -71,7 +71,7 @@ Available Script Providers:
 -   [**.scriptrun（运行脚本）**](-scriptrun--run-script-.md)
 -   [**.scriptlist（列出已加载的脚本）**](-scriptlist--list-loaded-scripts-.md)
 
-**惠?**
+**要求**
 
 使用任何脚本命令之前，需要加载脚本提供程序。 使用 scriptproviders 命令确认已加载 JavaScript 提供程序。
 
@@ -263,7 +263,7 @@ JavaScript script successfully unloaded from 'c:\WinDbg\Scripts\FirstSampleFunct
 
 本部分介绍如何创建和执行简单的 JavaScript 调试器脚本，以自动发送 [**u (Unassemble)**](u--unassemble-.md) 命令。 该示例还演示如何在循环中收集和显示命令输出。
 
-此脚本提供单个函数 RunCommands ( # A1。
+此脚本提供单个函数 RunCommands () 。
 
 ```javascript
 // WinDbg JavaScript sample
@@ -387,12 +387,12 @@ function uninitializeScript()
 
 下表总结了脚本命令调用的函数
 
-|命令 |[.scriptload](-scriptload--load-script-.md)|[.scriptrun（运行脚本）](-scriptrun--run-script-.md)|[.scriptload（卸载脚本）](-scriptunload--unload-script-.md)|
-|--- |--- |--- |--- |
-|root|是|是| | |
-|initializeScript|是|是| | |
-|invokeScript       | |是| |
-|uninitializeScript | ||是|
+| 命令            | [.scriptload](-scriptload--load-script-.md) | [.scriptrun（运行脚本）](-scriptrun--run-script-.md) | [.scriptload（卸载脚本）](-scriptunload--unload-script-.md) |
+|--------------------|---------------------------------------------|-------------------------------------------------------|-------------------------------------------------------------------|
+| root               | 是                                         | 是                                                   |                                                                   |
+| initializeScript   | 是                                         | 是                                                   |                                                                   |
+| invokeScript       |                                             | 是                                                   |                                                                   |
+| uninitializeScript |                                             |                                                       | 是                                                               |
 
 
 使用此示例代码可查看在加载、执行和卸载脚本时每个函数的调用时间。
@@ -793,10 +793,10 @@ Error: 64 bit value loses precision on conversion to number
 
 | **方法名称**   | **Signature**             | **说明**                                                                                               |
 |-------------------|---------------------------|---------------------------------------------------------------------------------------------------------------|
-| asNumber          | . asNumber ( # A1               | 将64位值转换为 JavaScript 数字。 如果发生精度损失，则会 \* \* 引发异常\*\* |
-| convertToNumber   | . convertToNumber ( # A1        | 将64位值转换为 JavaScript 数字。 如果发生精度损失，则 \* \* 不会引发异常\*\* |
-| getLowPart        | . getLowPart ( # A1             | 将64位值的低32位转换为 JavaScript 数字                                         |
-| getHighPart       | . getHighPart ( # A1            | 将64位值的高32位转换为 JavaScript 数字                                          |
+| asNumber          | . asNumber ()                | 将64位值转换为 JavaScript 数字。 如果发生精度损失，则会 \* \* 引发异常\*\* |
+| convertToNumber   | . convertToNumber ()         | 将64位值转换为 JavaScript 数字。 如果发生精度损失，则 \* \* 不会引发异常\*\* |
+| getLowPart        | . getLowPart ()              | 将64位值的低32位转换为 JavaScript 数字                                         |
+| getHighPart       | . getHighPart ()             | 将64位值的高32位转换为 JavaScript 数字                                          |
 | add               | 。添加 (值)                | 将一个值添加到64位值并返回结果                                                       |
 | 减 (subtract)          | . 减 (值)           | 从64位值中减去一个值并返回结果                                                |
 | 乘          | 。 (值相乘)           | 用所提供的值乘以64位值并返回结果。                                      |

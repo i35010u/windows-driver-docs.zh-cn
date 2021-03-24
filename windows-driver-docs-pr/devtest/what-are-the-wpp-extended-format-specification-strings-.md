@@ -3,12 +3,12 @@ title: 什么是 WPP 扩展格式规范字符串
 description: 什么是 WPP 扩展格式规范字符串
 ms.date: 01/27/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 40759e14737763d68bfaeefa4ce89bf3c8711b0a
-ms.sourcegitcommit: 468156fa76f3740f843cf503d57a68b92d548f7d
+ms.openlocfilehash: 42c223ca97e2ad16d9578c06ebf879d1d5424638
+ms.sourcegitcommit: 01179a569921e3b9a5e2fa56e46164346e581a7e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98949237"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104895687"
 ---
 # <a name="what-are-the-wpp-extended-format-specification-strings"></a>什么是 WPP 扩展格式规范字符串
 
@@ -24,20 +24,20 @@ WPP 使用 "defaultwpp.ini" 作为默认配置设置。 此默认 INI 文件作�
 
 ### <a name="software-tracing"></a>软件跟踪
 
-|格式字符串|说明|
-|----|----|
-|%!文件!|显示从中生成跟踪消息的源文件的名称。 此变量还可用于 [跟踪消息前缀](trace-message-prefix.md)|.
-|%!随意!|显示启用跟踪消息的 [跟踪标志](trace-flags.md) 的值。 此变量还可以用在  [跟踪消息前缀](trace-message-prefix.md)中。|
-|%!求!|显示生成跟踪消息的函数。 此变量还可以用在 [跟踪消息前缀](trace-message-prefix.md)中。|
-|%!调配!|显示启用跟踪消息的 [跟踪级别](trace-level.md)  的名称。 此变量还可以用在 [跟踪消息前缀](trace-message-prefix.md)中。|
-|%!内嵌!|显示生成跟踪前缀的代码行的行号。 此变量还可以用在 [跟踪消息前缀](trace-message-prefix.md)中。|
+| 格式字符串 | 说明                                                                                                                                                                    |
+|---------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| %!文件!       | 显示从中生成跟踪消息的源文件的名称。 此变量还可以用在 [跟踪消息前缀](trace-message-prefix.md)中。        |
+| %!随意!      | 显示启用跟踪消息的 [跟踪标志](trace-flags.md) 的值。 此变量还可以用在  [跟踪消息前缀](trace-message-prefix.md)中。 |
+| %!求!       | 显示生成跟踪消息的函数。 此变量还可以用在 [跟踪消息前缀](trace-message-prefix.md)中。                                 |
+| %!调配!      | 显示启用跟踪消息的 [跟踪级别](trace-level.md)  的名称。 此变量还可以用在 [跟踪消息前缀](trace-message-prefix.md)中。 |
+| %!内嵌!       | 显示生成跟踪前缀的代码行的行号。 此变量还可以用在 [跟踪消息前缀](trace-message-prefix.md)中。       |
 
 ### <a name="general-use"></a>常规使用
 
-|格式字符串|说明|
-|----|----|
-|%！ bool！|显示 TRUE 或 FALSE|
-|%！ irql！|显示当前 IRQL 的名称。|
+| 格式字符串 | 说明                            |
+|---------------|----------------------------------------|
+| %！ bool！       | 显示 TRUE 或 FALSE                 |
+| %！ irql！       | 显示当前 IRQL 的名称。 |
 |%！ sid！|表示指向 (pSID) 的安全标识符的指针。 显示 SID。|
 |**Guid**| |
 |%!GUID.EMPTY!|表示指向 GUID (pGUID) 的指针。 显示指向的 GUID。|
