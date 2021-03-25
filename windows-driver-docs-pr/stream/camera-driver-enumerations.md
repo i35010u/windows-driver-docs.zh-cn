@@ -1,41 +1,43 @@
 ---
-title: 适用于 Windows 10 的全新相机驱动程序枚举
-description: 以下照相机驱动程序枚举是适用于 Windows 10 的新枚举。
-ms.date: 04/20/2017
+title: 适用于 Windows 10 的通用照相机驱动程序枚举
+description: 提供有关适用于 Windows 10 的通用照相机驱动程序枚举的信息。
+ms.date: 03/23/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c58b16aab82db8b7ca32face8bc19eec68bbcf1
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: e66738d037ab80020e59b52b2e5c6c41f15f4e08
+ms.sourcegitcommit: 2a27786ed72024f064bbfef20933b0d0b429d4b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96790301"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105106147"
 ---
-# <a name="new-camera-driver-enumerations-for-windows-10"></a>适用于 Windows 10 的全新相机驱动程序枚举
+# <a name="universal-camera-driver-enumerations-for-windows-10"></a>适用于 Windows 10 的通用照相机驱动程序枚举
 
+适用于 Windows 10 的相机驱动程序接口已聚合到所有设备，并使用通用照相机驱动程序模型。
 
-以下照相机驱动程序枚举是适用于 Windows 10 的新枚举。
+以下主题提供有关适用于 Windows 10 的通用照相机驱动程序枚举的信息：
 
-[**KSCAMERA \_ EXTENDEDPROP \_ FOCUSSTATE**](/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-kscamera_extendedprop_focusstate)
+| 标题 | 说明 |
+|--|--|
+| [KSCAMERA_EXTENDEDPROP_FOCUSSTATE](/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-kscamera_extendedprop_focusstate) | 此枚举包含焦点状态。 |
+| [KSCAMERA_EXTENDEDPROP_MetadataAlignment](/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-kscamera_extendedprop_metadataalignment) | 此枚举包含元数据对齐方式的标识符。 |
+| [KSCAMERA_EXTENDEDPROP_ROITYPE](/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-kscamera_extendedprop_roitype) | 此枚举包含 ROI 类型。 |
+| [KSCAMERA_MetadataId](/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-kscamera_metadataid) | 此枚举包含元数据项的标识符。 |
+| [KSCAMERA_PERFRAMESETTING_ITEM_TYPE](/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-kscamera_perframesetting_item_type) | 此枚举包含每帧设置 DDI 的不同项类型。 |
+| [KSDEVICE_THERMAL_STATE](/windows-hardware/drivers/ddi/ks/ne-ks-ksdevice_thermal_state) | 用于热量状态更改的 KS 定义的枚举。 |
+| [KSEVENT_CAMERAEVENT](/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-ksevent_cameraevent) | KSEVENT_CAMERAEVENT 枚举可由管道用来从驱动程序启用或禁用照相机事件通知的内核流事件集。 |
+| [KSPIN_MDL_CACHING_EVENT](/windows-hardware/drivers/ddi/ks/ne-ks-kspin_mdl_caching_event) | 此枚举由操作系统在内部使用。 |
+| [KSPPROPERTY_ALLOCATOR_MDLCACHING](/windows-hardware/drivers/ddi/ks/ne-ks-kspproperty_allocator_mdlcaching) | 此枚举由操作系统在内部使用。 |
+| [KSPROPERTY_CAMERACONTROL_EXTENDED_PROPERTY](/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-ksproperty_cameracontrol_extended_property) | 此枚举包含扩展相机控件。 |
+| [KSPROPERTY_CAMERACONTROL_PERFRAMESETTING_PROPERTY](/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-ksproperty_cameracontrol_perframesetting_property) | 此枚举包含为每帧属性集定义的属性 Id。 |
 
-[**KSCAMERA \_ EXTENDEDPROP \_ MetadataAlignment**](/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-kscamera_extendedprop_metadataalignment)
+## <a name="see-also"></a>另请参阅
 
-[**KSCAMERA \_ EXTENDEDPROP \_ ROITYPE**](/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-kscamera_extendedprop_roitype)
+[适用于 Windows 10 的通用相机驱动程序设计指南](windows-10-technical-preview-camera-drivers-design-guide.md)
 
-[**KSCAMERA \_ MetadataId**](/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-kscamera_metadataid)
+[适用于 Windows 10 的通用照相机驱动程序控件](camera-driver-controls.md)
 
-[**KSCAMERA \_ PERFRAMESETTING \_ 项 \_ 类型**](/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-kscamera_perframesetting_item_type)
+[适用于 Windows 10 的通用照相机驱动程序功能](camera-driver-functions.md)
 
-[**KSDEVICE \_ 温度 \_ 状态**](/windows-hardware/drivers/ddi/ks/ne-ks-ksdevice_thermal_state)
+[适用于 Windows 10 的通用照相机驱动程序结构](camera-driver-structures.md)
 
-[**KSEVENT \_ CAMERAEVENT**](/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-ksevent_cameraevent)
-
-[**KSPIN \_ MDL \_ 缓存 \_ 事件**](/windows-hardware/drivers/ddi/ks/ne-ks-kspin_mdl_caching_event)
-
-[**KSPPROPERTY \_ 分配器 \_ MDLCACHING**](/windows-hardware/drivers/ddi/ks/ne-ks-kspproperty_allocator_mdlcaching)
-
-[**KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ 属性**](/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-ksproperty_cameracontrol_extended_property)
-
-[**KSPROPERTY \_ CAMERACONTROL \_ PERFRAMESETTING \_ 属性**](/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-ksproperty_cameracontrol_perframesetting_property)
-
- 
-
+[流媒体设备驱动程序参考](/windows-hardware/drivers/ddi/_stream/index)

@@ -3,12 +3,12 @@ title: 在各种状态之间切换的笔记本电脑/平板电脑模式
 description: 本主题包含用于切换笔记本电脑/石板模式指示器状态的示例代码。
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 75bc3edd36a54137ecfd5375827bcf2ae2ba02ef
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 4d3d8137469dbcdfc95aa5eb754f9a14612f75cf
+ms.sourcegitcommit: 2a27786ed72024f064bbfef20933b0d0b429d4b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96830597"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105106163"
 ---
 # <a name="laptopslate-mode-toggling-between-states"></a>在各种状态之间切换的笔记本电脑/平板电脑模式
 
@@ -45,7 +45,7 @@ int __cdecl ToggleConversionIndicator(
 }
 ```
 
- 
+<b>注意：</b> 笔记本电脑/石板模式指示器设备一次只能由一个进程打开。 当另一个进程已打开设备时，CreateFile 将失败，并且 GetLastError 将返回 ERROR_ACCESS_DENIED。 
 
  
 

@@ -1,33 +1,40 @@
 ---
-title: 适用于 Windows 10 的全新相机驱动程序函数
-description: 以下照相机驱动程序函数是适用于 Windows 10 的新功能。
-ms.date: 04/20/2017
+title: 适用于 Windows 10 的通用照相机驱动程序功能
+description: 提供有关适用于 Windows 10 的通用照相机驱动程序功能的信息。
+ms.date: 03/23/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: bc4c41e8bc9003ababc116a875cd8ac81e2428e1
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.custom: contperf-fy21q3
+ms.openlocfilehash: 4f5198f260038b0da63b56c3fb4828a65b6b6abb
+ms.sourcegitcommit: 2a27786ed72024f064bbfef20933b0d0b429d4b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96790299"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105106153"
 ---
-# <a name="new-camera-driver-functions-for-windows-10"></a>适用于 Windows 10 的全新相机驱动程序函数
+# <a name="universal-camera-driver-functions-for-windows-10"></a>适用于 Windows 10 的通用照相机驱动程序功能
 
+适用于 Windows 10 的相机驱动程序接口已聚合到所有设备，并使用通用照相机驱动程序模型。
 
-以下照相机驱动程序函数是适用于 Windows 10 的新功能。
+以下主题提供有关适用于 Windows 10 的通用照相机驱动程序功能的信息：
 
-[**KsAcquireCachedMdl**](/windows-hardware/drivers/ddi/ks/nf-ks-ksacquirecachedmdl)
+| 标题 | 说明 |
+|--|--|
+| [KsAcquireCachedMdl](/windows-hardware/drivers/ddi/ks/nf-ks-ksacquirecachedmdl) | 此函数用于获取由 KS 端口驱动程序缓存的 MDL。 内核模式驱动程序使用函数来获取由 Avstream 驱动程序生成的管道提供的示例的 MDL。 |
+| [KsDeviceRegisterThermalDispatch](/windows-hardware/drivers/ddi/ks/nf-ks-ksdeviceregisterthermaldispatch) | Avstream 微型端口驱动程序使用此函数为带有 KS 端口驱动程序的热量通知注册回调。 |
+| [KsGenerateThermalEvent](/windows-hardware/drivers/ddi/ks/nf-ks-ksgeneratethermalevent) | 此函数由 (微型端口驱动程序) 的客户端使用，该驱动程序不想订阅热量管理器，而是想要自行进行热量管理。 |
+| [KsInitializeDeviceProfile](/windows-hardware/drivers/ddi/ks/nf-ks-ksinitializedeviceprofile) | 必须由所有微型端口驱动程序调用 KsInitializeDeviceProfile API，以初始化配置文件存储并发布设备配置文件。 |
+| [KsPersistDeviceProfile](/windows-hardware/drivers/ddi/ks/nf-ks-kspersistdeviceprofile) | KsPersistDeviceProfile API 将配置文件信息提交到持久存储区。 |
+| [KsPublishDeviceProfile](/windows-hardware/drivers/ddi/ks/nf-ks-kspublishdeviceprofile) | 调用 KsPublishDeviceProfile API 来发布设备配置文件信息。 |
+| [KsReleaseCachedMdl](/windows-hardware/drivers/ddi/ks/nf-ks-ksreleasecachedmdl) | KsReleaseCachedMdl 函数用于释放 KsAcquireCachedMdl 调用获取的 MDL。 |
 
-[**KsDeviceRegisterThermalDispatch**](/windows-hardware/drivers/ddi/ks/nf-ks-ksdeviceregisterthermaldispatch)
+## <a name="see-also"></a>另请参阅
 
-[**KsGenerateThermalEvent**](/windows-hardware/drivers/ddi/ks/nf-ks-ksgeneratethermalevent)
+[适用于 Windows 10 的通用相机驱动程序设计指南](windows-10-technical-preview-camera-drivers-design-guide.md)
 
-[**KsInitializeDeviceProfile**](/windows-hardware/drivers/ddi/ks/nf-ks-ksinitializedeviceprofile)
+[适用于 Windows 10 的通用照相机驱动程序控件](camera-driver-controls.md)
 
-[**KsPersistDeviceProfile**](/windows-hardware/drivers/ddi/ks/nf-ks-kspersistdeviceprofile)
+[适用于 Windows 10 的通用照相机驱动程序枚举](camera-driver-enumerations.md)
 
-[**KsPublishDeviceProfile**](/windows-hardware/drivers/ddi/ks/nf-ks-kspublishdeviceprofile)
+[适用于 Windows 10 的通用照相机驱动程序结构](camera-driver-structures.md)
 
-[**KsReleaseCachedMdl**](/windows-hardware/drivers/ddi/ks/nf-ks-ksreleasecachedmdl)
-
- 
-
+[流媒体设备驱动程序参考](/windows-hardware/drivers/ddi/_stream/index)
