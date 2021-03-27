@@ -9,12 +9,12 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: a9c05e3a88dd910c5041a14c230830b39e72b001
-ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
+ms.openlocfilehash: 2dc7f2795c1a02db8b38921ec5235473d308aa3f
+ms.sourcegitcommit: 24d316087a8f36ebec9ce33f230004b826a881c2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93349653"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105635097"
 ---
 # <a name="network-driver-design-guide"></a>网络驱动程序设计指南
 
@@ -40,11 +40,11 @@ ms.locfileid: "93349653"
 
 [网络模块注册机构](network-module-registrar2.md)
 
-[Winsock 内核](winsock-kernel4.md)
+[Winsock 内核](introduction-to-winsock-kernel.md)
 
 [IP 帮助程序](ip-helper.md)
 
-[Windows 筛选平台标注驱动程序](windows-filtering-platform-callout-drivers2.md)
+[Windows 筛选平台标注驱动程序](introduction-to-windows-filtering-platform-callout-drivers.md)
 
 [系统区域网络](system-area-networks.md)
 

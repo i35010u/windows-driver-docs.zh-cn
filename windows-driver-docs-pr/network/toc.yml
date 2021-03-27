@@ -4192,8 +4192,6 @@
       href: programming-considerations.md
 - name: Winsock 内核
   items:
-    - name: Winsock 内核主题
-      href: winsock-kernel4.md
     - name: 使用 Winsock 内核的网络驱动程序开发路线图
       href: roadmap-for-developing-network-drivers-with-winsock-kernel.md
     - name: Winsock 内核简介
@@ -4328,8 +4326,6 @@
       href: including-header-files-for-ip-helper.md
 - name: Windows 筛选平台标注驱动程序
   items:
-    - name: Windows 筛选平台标注驱动程序主题
-      href: windows-filtering-platform-callout-drivers2.md
     - name: WFP 标注驱动程序开发路线图
       href: roadmap-for-developing-wfp-callout-drivers.md
     - name: Windows 筛选平台标注驱动程序简介
