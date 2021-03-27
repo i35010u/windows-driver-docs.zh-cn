@@ -7,17 +7,21 @@ keywords:
 - 标注 WDK Windows 筛选平台
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fbcacf7b4ad9fb95d99cb9916506e265ab87b40d
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 011f28ff33985d96a4dd5eabe1b8d1fd62db3d15
+ms.sourcegitcommit: 24d316087a8f36ebec9ce33f230004b826a881c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96818361"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105635111"
 ---
 # <a name="introduction-to-windows-filtering-platform-callout-drivers"></a>Windows 筛选平台标注驱动程序简介
 
 
-本部分介绍 Windows 筛选平台 [标注驱动程序](callout-driver.md)。 有关 Windows 筛选平台的详细信息，请参阅 Microsoft Windows SDK 中的 [Windows 筛选平台](/windows/win32/fwp/windows-filtering-platform-start-page) 文档。
+本部分介绍 Windows 筛选平台 [标注驱动程序](callout-driver.md)。 
+
+有关 Windows 筛选平台的详细信息，请参阅 Microsoft Windows SDK 中的 [Windows 筛选平台](/windows/win32/fwp/windows-filtering-platform-start-page) 文档。
+
+有关 WFP 参考信息，请参阅 [Windows 筛选平台标注驱动程序](/windows-hardware/drivers/ddi/_netvista/)。
 
 ### <a name="purpose-of-callout-drivers"></a>标注驱动程序的用途
 

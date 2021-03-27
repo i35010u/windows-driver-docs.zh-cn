@@ -5,12 +5,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WSK_TDI_DEVICENAME_MAPPING 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 8da238f5b6bb4e79a3e874a93b3003f4247bb628
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 31e1a9a2a4d51bb50c6b7362e0600ca72b513377
+ms.sourcegitcommit: 24d316087a8f36ebec9ce33f230004b826a881c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96813615"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105635105"
 ---
 # <a name="wsk_tdi_devicename_mapping"></a>WSK \_ TDI \_ DEVICENAME \_ 映射
 
@@ -29,7 +29,7 @@ WSK 应用程序使用 WSK \_ tdi \_ DEVICENAME \_ 映射客户端控制操作�
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>“值”</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -68,7 +68,7 @@ WSK 应用程序使用 WSK \_ tdi \_ DEVICENAME \_ 映射客户端控制操作�
 
 此客户端控制操作的 *Irp* 参数必须为 **NULL** 。
 
-**注意**  Windows Vista 之后的 Microsoft Windows 版本不支持 TDI。 请改用 [Windows 筛选平台](./windows-filtering-platform-callout-drivers2.md) 或 [Winsock 内核](/windows-hardware/drivers/ddi/_netvista/) 。
+**注意**  Windows Vista 之后的 Microsoft Windows 版本不支持 TDI。 请改用 [Windows 筛选平台](./introduction-to-windows-filtering-platform-callout-drivers.md) 或 [Winsock 内核](/windows-hardware/drivers/ddi/_netvista/) 。
 
  
 

@@ -9,12 +9,12 @@ keywords:
 - 用户模式标注驱动程序 WDK Windows 筛选平台
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 94ec6c59c8d6277d6c086beb4feed7727d4dbc7e
-ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
+ms.openlocfilehash: c2b9a092393fadf08b79ddf0b8af863175ae9930
+ms.sourcegitcommit: 24d316087a8f36ebec9ce33f230004b826a881c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2021
-ms.locfileid: "102248898"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105635117"
 ---
 # <a name="callout-driver-programming-considerations"></a>标注驱动程序编程注意事项
 
@@ -49,10 +49,10 @@ ms.locfileid: "102248898"
 
 ### <a name="outgoing-ip-header-alignment"></a>传出 IP 标头对齐
 
-描述网络缓冲区列表中的 IP 标头的 MDL ([**net buffer \_ \_ 当前 \_ MDL**](/windows-hardware/drivers/ddi/nblaccessors/nf-nblaccessors-net_buffer_current_mdl) ([**net \_ buffer \_ list \_ FIRST \_ NB**](/windows-hardware/drivers/ddi/nblaccessors/nf-nblaccessors-net_buffer_list_first_nb)) ) )  (*当* 使用其中一个 [数据包注入函数](packet-injection-functions.md) 将数据包数据注入传出路径时，必须使用指针对齐。 由于传入数据包的 IP 标头 MDL 可能是指针对齐的，因此，如果在将传入数据包注入到传出路径中时尚未对齐) ，标注必须重建 IP 标头 (。
+描述网络缓冲区列表中的 IP 标头的 MDL ([**net buffer \_ \_ 当前 \_ MDL**](/windows-hardware/drivers/ddi/ndis/nf-ndis-net_buffer_current_mdl) ([**net \_ buffer \_ list \_ FIRST \_ NB**](/windows-hardware/drivers/ddi/ndis/nf-ndis-net_buffer_list_first_nb)) ) )  (*当* 使用其中一个 [数据包注入函数](packet-injection-functions.md) 将数据包数据注入传出路径时，必须使用指针对齐。 由于传入数据包的 IP 标头 MDL 可能是指针对齐的，因此，如果在将传入数据包注入到传出路径中时尚未对齐) ，标注必须重建 IP 标头 (。
 
 ## <a name="related-topics"></a>相关主题
 
 
-[Windows 筛选平台标注驱动程序](windows-filtering-platform-callout-drivers2.md)
+[Windows 筛选平台标注驱动程序](introduction-to-windows-filtering-platform-callout-drivers.md)
 

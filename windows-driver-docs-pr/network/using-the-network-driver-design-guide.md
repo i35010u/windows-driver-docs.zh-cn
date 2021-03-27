@@ -5,12 +5,12 @@ keywords:
 - 网络驱动程序 WDK，文档
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e4d95f61775c9a6812d6ff9b76d47a6269b8ebee
-ms.sourcegitcommit: a9fb2c30adf09ee24de8e68ac1bc6326ef3616b8
+ms.openlocfilehash: a32cf2a32f7efdca4c4b7f044c2d9554710cccb4
+ms.sourcegitcommit: 24d316087a8f36ebec9ce33f230004b826a881c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2021
-ms.locfileid: "102248369"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105635109"
 ---
 # <a name="navigating-the-network-driver-design-guide"></a>在网络驱动程序设计指南中导航
 
@@ -38,7 +38,7 @@ ms.locfileid: "102248369"
 
     有关 NDIS 6.1 的详细信息，请参阅 [ndis 6.1 简介](introduction-to-ndis-6-1.md)。
 
--   NDIS 6.0，在 Windows Vista 和更高版本的 Windows 上受支持。 NDIS 6.0 包括对筛选器驱动程序的支持，以及以前的 NDIS 版本未提供的许多其他服务。 NDIS 6.0 包括对驱动程序初始化和网络数据管理的重要更新，其中包括在运行时对驱动程序重新配置所需的支持和用于处理网络数据包数据的 [**NET \_ BUFFER**](/windows-hardware/drivers/ddi/nbl/ns-nbl-net_buffer) 体系结构。 有关支持运行时重新配置的详细信息，请参阅 [驱动程序堆栈管理](driver-stack-management.md)。 有关如何在 NDIS 6.0 中处理网络数据包数据的详细信息，请参阅 [NET \_ BUFFER 体系结构](net-buffer-architecture.md)。
+-   NDIS 6.0，在 Windows Vista 和更高版本的 Windows 上受支持。 NDIS 6.0 包括对筛选器驱动程序的支持，以及以前的 NDIS 版本未提供的许多其他服务。 NDIS 6.0 包括对驱动程序初始化和网络数据管理的重要更新，其中包括在运行时对驱动程序重新配置所需的支持和用于处理网络数据包数据的 [**NET \_ BUFFER**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer) 体系结构。 有关支持运行时重新配置的详细信息，请参阅 [驱动程序堆栈管理](driver-stack-management.md)。 有关如何在 NDIS 6.0 中处理网络数据包数据的详细信息，请参阅 [NET \_ BUFFER 体系结构](net-buffer-architecture.md)。
 
     有关 NDIS 6.0 的详细信息，请参阅 [ndis 6.0 简介](introduction-to-ndis-6-0.md)。
 
@@ -73,7 +73,7 @@ Windows Vista 和更高版本的操作系统版本支持以下类型的基于 ND
 <thead>  
 <tr class="header">  
 <th align="left">技术</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -121,7 +121,7 @@ Windows Vista 和更高版本的操作系统版本支持以下类型的基于 ND
 <td align="left"><p>一组实用函数，使驱动程序可以检索和修改有关本地计算机的网络配置的信息。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="windows-filtering-platform-callout-drivers2.md" data-raw-source="[Windows Filtering Platform Callout Drivers](windows-filtering-platform-callout-drivers2.md)">Windows 筛选平台标注驱动程序</a></p></td>
+<td align="left"><p><a href="introduction-to-windows-filtering-platform-callout-drivers.md" data-raw-source="[Windows Filtering Platform Callout Drivers](introduction-to-windows-filtering-platform-callout-drivers.md)">Windows 筛选平台标注驱动程序</a></p></td>
 <td align="left"><p>一种提供深层检查、数据包修改、流修改和网络数据记录的内核模式接口。</p></td>
 </tr>
 <tr class="even">

@@ -3,12 +3,12 @@ title: Hyper-V 可扩展交换机概述
 description: 本部分概述了 Hyper-v 可扩展交换机
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3388c721b8b66dc4b1ecfbca015b03366fbdbb24
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 3c3d33f5bfd3faa3a789ab8a7e72687fee115293
+ms.sourcegitcommit: 24d316087a8f36ebec9ce33f230004b826a881c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96836311"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105635101"
 ---
 # <a name="overview-of-the-hyper-v-extensible-switch"></a>Hyper-V 可扩展交换机概述
 
@@ -77,11 +77,11 @@ Hyper-v 可扩展交换机支持 (Isv) 的独立软件供应商可通过以下�
 
     安装扩展后，可以在 Hyper-v 可扩展交换机的单独实例上启用或禁用它们。 有关详细信息，请参阅 [安装 Hyper-v 可扩展交换机扩展](./installing-hyper-v-extensible-switch-extensions.md)。
 
-- Windows 筛选平台 (WFP) 提供了一个内置筛选扩展 ( # A0) ，使 WFP 筛选器或标注驱动程序可以沿 Hyper-v 可扩展交换机数据路径截获数据包。 这允许 WFP 筛选器或标注驱动程序使用 WFP 管理和系统函数执行数据包检查或修改。
+-  (WFP) 的 Windows 筛选平台提供了一个内置筛选扩展 (Wfplwfs.sys) ，使 WFP 筛选器或标注驱动程序可以沿 Hyper-v 可扩展交换机数据路径截获数据包。 这允许 WFP 筛选器或标注驱动程序使用 WFP 管理和系统函数执行数据包检查或修改。
 
     有关 WFP 的概述，请参阅 [Windows 筛选平台](./porting-packet-processing-drivers-and-apps-to-wfp.md)。
 
-    有关 WFP 标注驱动程序的概述，请参阅 [Windows 筛选平台标注驱动程序](./windows-filtering-platform-callout-drivers2.md)。
+    有关 WFP 标注驱动程序的概述，请参阅 [Windows 筛选平台标注驱动程序](./introduction-to-windows-filtering-platform-callout-drivers.md)。
 
     **注意**  若要对可扩展的交换机数据包流量执行基于 WFP 的筛选，Isv 只需扩展其 WFP 筛选器和标注驱动程序以使用扩展 WFP 调用和数据类型。 Isv 无需开发自己的扩展。
 

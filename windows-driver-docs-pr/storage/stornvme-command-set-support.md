@@ -3,12 +3,12 @@ title: StorNVMe 命令集支持
 description: 介绍 StoreNVMe 提供的命令集支持
 ms.date: 08/07/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 04cd9d93286e82ac0e4a153a6c690e125faecc96
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 5dabded70052f05b9c6ad4a0ba88014582251097
+ms.sourcegitcommit: 322c5442dc72980ca3a45ad758c70acdf44dc6c0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96834965"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105616679"
 ---
 # <a name="stornvme-command-set-support"></a>StorNVMe 命令集支持
 
@@ -41,7 +41,7 @@ ms.locfileid: "96834965"
 | 1Dh     | NVMe-英里发送                | [IOCTL_STORAGE_PROTOCOL_COMMAND](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_protocol_command) | 仅在 Win PE 模式下为[IOCTL_STORAGE_PROTOCOL_COMMAND](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_protocol_command)启用 |
 | 1Eh     | NVMe-英里接收             | [IOCTL_STORAGE_PROTOCOL_COMMAND](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_protocol_command) | 仅在 Win PE 模式下为[IOCTL_STORAGE_PROTOCOL_COMMAND](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_protocol_command)启用 |
 | 7Ch     | Doorbell Buffer Config      |   | 目前不受支持。 |
-| 80h     | 格式 NVM                  | [IOCTL_SCSI_PASS_THROUGH](/windows-hardware/drivers/ddi/ntddscsi/ni-ntddscsi-ioctl_scsi_pass_through)、 [IOCTL_STORAGE_PROTOCOL_COMMAND](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_protocol_command)IOCTL_STORAGE_REINITIALIZE_MEDIA | 仅在 Win PE 模式下为 [IOCTL_STORAGE_PROTOCOL_COMMAND](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_protocol_command)启用。 [IOCTL_SCSI_PASS_THROUGH](/windows-hardware/drivers/ddi/ntddscsi/ni-ntddscsi-ioctl_scsi_pass_through)的 SCSIOP_SANITIZE。 IOCTL_STORAGE_REINITIALIZE_MEDIA 仅支持加密擦除。 |
+| 80h     | 格式 NVM                  | [IOCTL_SCSI_PASS_THROUGH](/windows-hardware/drivers/ddi/ntddscsi/ni-ntddscsi-ioctl_scsi_pass_through)、 [IOCTL_STORAGE_PROTOCOL_COMMAND](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_protocol_command)、 [IOCTL_STORAGE_REINITIALIZE_MEDIA](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_reinitialize_media) | 仅在 Win PE 模式下为 [IOCTL_STORAGE_PROTOCOL_COMMAND](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_protocol_command)启用。 [IOCTL_SCSI_PASS_THROUGH](/windows-hardware/drivers/ddi/ntddscsi/ni-ntddscsi-ioctl_scsi_pass_through)的 SCSIOP_SANITIZE。 IOCTL_STORAGE_REINITIALIZE_MEDIA 仅支持加密擦除。 |
 | 81h     | 安全发送               | [IOCTL_SCSI_PASS_THROUGH](/windows-hardware/drivers/ddi/ntddscsi/ni-ntddscsi-ioctl_scsi_pass_through) | [IOCTL_SCSI_PASS_THROUGH](/windows-hardware/drivers/ddi/ntddscsi/ni-ntddscsi-ioctl_scsi_pass_through)的 SCSIOP_SECURITY_PROTOCOL_OUT |
 | 82h     | 安全接收            | [IOCTL_SCSI_PASS_THROUGH](/windows-hardware/drivers/ddi/ntddscsi/ni-ntddscsi-ioctl_scsi_pass_through) | [IOCTL_SCSI_PASS_THROUGH](/windows-hardware/drivers/ddi/ntddscsi/ni-ntddscsi-ioctl_scsi_pass_through)的 SCSIOP_SECURITY_PROTOCOL_IN |
 | 84h     | 净化                    | [IOCTL_STORAGE_PROTOCOL_COMMAND](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_protocol_command) | 仅在 Win PE 模式下为[IOCTL_STORAGE_PROTOCOL_COMMAND](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_protocol_command)启用 |
@@ -59,7 +59,7 @@ ms.locfileid: "96834965"
 | 5       | 比较                     | [IOCTL_STORAGE_PROTOCOL_COMMAND](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_protocol_command) | 仅在 Win PE 模式下为[IOCTL_STORAGE_PROTOCOL_COMMAND](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_protocol_command)启用 |
 | 8       | 写零                |   | 目前不受支持。 |
 | 9       | 数据集管理          | [IOCTL_SCSI_PASS_THROUGH](/windows-hardware/drivers/ddi/ntddscsi/ni-ntddscsi-ioctl_scsi_pass_through) | 仅剪裁 (释放) ;[IOCTL_SCSI_PASS_THROUGH](/windows-hardware/drivers/ddi/ntddscsi/ni-ntddscsi-ioctl_scsi_pass_through)的 SCSIOP_UNMAP |
-| 48      | Verify                      |   | 目前不受支持。 |
+| 48      | 验证                      |   | 目前不受支持。 |
 | Dh      | 预订注册        |   | 目前不受支持。 |
 | 吧      | 预订报表          |   | 目前不受支持。 |
 | 11h     | 预留获取         |   | 目前不受支持。 |

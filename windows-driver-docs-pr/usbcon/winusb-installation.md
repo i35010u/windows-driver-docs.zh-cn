@@ -3,12 +3,12 @@ description: 将 WinUSB (Winusb.sys) 安装在设备的内核模式堆栈中，�
 title: WinUSB (Winusb.sys) 安装
 ms.date: 05/09/2018
 ms.localizationpriority: High
-ms.openlocfilehash: fbc15ca912b43e3f1bd9975e8a74a3090ccacb31
-ms.sourcegitcommit: 5524e265f46836100be5fb36ca6fdcac488ab274
+ms.openlocfilehash: 469413c792a5d7a73599dd3406ac473f132ee785
+ms.sourcegitcommit: 76a7b604f13cf419ff21518337913820a703347f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2021
-ms.locfileid: "103417242"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104719468"
 ---
 # <a name="winusb-winusbsys-installation"></a>WinUSB (Winusb.sys) 安装
 
@@ -64,7 +64,7 @@ OEM 或独立硬件供应商 (IHV) 可以构建设备，以便在 Windows 8 及�
 
 驱动程序包中有一个 .inf 文件，该文件可将 Winusb.sys 安装为 USB 设备的功能驱动程序。
 
-以下示例 .inf 文件显示了对大多数 USB 设备的 WinUSB 安装，并进行了一些修改，例如将节名称中的 USB\_Install 更改为适当的 DDInstall 值   。 还应根据需要更改版本、制造商和型号部分。 例如，提供适当的制造商的名称、签名的目录文件的名称、正确的设备类别以及设备的供应商标识符 (VID) 和产品标识符 (PID)。 有关创建目录文件的信息，请参阅[创建用于对驱动程序包进行测试签名的目录文件](/windows-hardware/drivers/install/creating-a-catalog-file-for-test-signing-a-driver-package)。
+以下示例 .inf 文件显示了对大多数 USB 设备的 WinUSB 安装，并进行了一些修改，例如将节名称中的 USB\_Install 更改为适当的 DDInstall 值   。 还应根据需要更改版本、制造商和型号部分。 例如，提供适当的制造商的名称、签名的目录文件的名称、正确的设备类别以及设备的供应商标识符 (VID) 和产品标识符 (PID)。 有关创建目录文件的信息，请参阅[创建用于对驱动程序包进行测试签名的目录文件](../install/creating-a-catalog-file-for-test-signing-a-driver-package.md)。
 
 另请注意，安装程序类设置为“USBDevice”。 对于不属于其他类且不是 USB 主机控制器或集线器的设备，供应商可以使用“USBDevice”安装程序类。
 

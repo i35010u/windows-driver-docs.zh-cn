@@ -8,12 +8,12 @@ keywords:
 - TDI 驱动程序 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ac46728d57464ba30d3d28ead920f180adf245ea
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: be2ee7b26a6d6f71be5f8f3009912dec8d06798b
+ms.sourcegitcommit: 24d316087a8f36ebec9ce33f230004b826a881c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96808433"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105635113"
 ---
 # <a name="connection-engine-management"></a>连接引擎管理
 
@@ -61,7 +61,7 @@ RDBSS 提供了可由网络微型重定向程序驱动程序使用的以下连�
 <thead>
 <tr class="header">
 <th align="left">例程所返回的值</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -145,7 +145,7 @@ RDBSS 提供了可由网络微型重定向程序驱动程序使用的以下连�
 
  
 
-**注意**   Windows Vista 之后的 Microsoft Windows 版本不支持 TDI。 请改用 [Windows 筛选平台](../network/windows-filtering-platform-callout-drivers2.md) 或 [Winsock 内核](/windows-hardware/drivers/ddi/_netvista/) 。
+**注意**   Windows Vista 之后的 Microsoft Windows 版本不支持 TDI。 请改用 [Windows 筛选平台](../network/introduction-to-windows-filtering-platform-callout-drivers.md) 或 [Winsock 内核](/windows-hardware/drivers/ddi/_netvista/) 。
 
  
 
