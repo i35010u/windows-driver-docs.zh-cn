@@ -1,14 +1,14 @@
 ---
 title: 设备电源管理
 description: ACPI 6.3 规范定义一组命名空间对象，以指定设备的设备电源信息。
-ms.date: 04/20/2017
+ms.date: 03/28/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c8ce50afb4e3c02512bffbc035e016468cf4212
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 160fda47271d213ffda1c9509b57b9d0b2344d25
+ms.sourcegitcommit: 7518452c415b32d8c97da3cbc5f39725ae619b5e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96789117"
+ms.lasthandoff: 03/29/2021
+ms.locfileid: "105719047"
 ---
 # <a name="device-power-management"></a>设备电源管理
 
@@ -45,45 +45,15 @@ ms.locfileid: "96789117"
 
 \_对于每个受支持的设备电源状态， () 对象的电源资源要求，其中 x = 0、1、2或3。 当设备驱动程序决定过渡到新的电源状态时，Acpi.sys 确保新状态所需的任何电源资源都已打开，并且关闭了任何不再使用的资源。
 
-<table>
-<colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>支持的设备状态</th>
-<th>要使用的资源要求对象</th>
-<th>要包括在要求对象中的资源</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>需要 (D0) </td>
-<td>_PR0</td>
-<td><p>设备的完整功能所需的所有电源和时钟。</p></td>
-</tr>
-<tr class="even">
-<td>D1</td>
-<td>_PR1</td>
-<td><p>此状态的类定义缩减功能所需的任何电源或时钟。</p></td>
-</tr>
-<tr class="odd">
-<td>D2</td>
-<td>_PR2</td>
-<td><p>此状态的类定义缩减功能所需的任何电源或时钟。</p></td>
-</tr>
-<tr class="even">
-<td>D3hot (必需) </td>
-<td>_PR3</td>
-<td><p>仅设备在其总线上显示和响应特定于总线的命令所需的电源或时钟。</p></td>
-</tr>
-</tbody>
-</table>
+| 支持的设备状态 | 要使用的资源要求对象 | 要包括在要求对象中的资源 |
+|--|--|--|
+| 需要 (D0)  | _PR0 | 设备的完整功能所需的所有电源和时钟。 |
+| D1 | _PR1 | 此状态的类定义缩减功能所需的任何电源或时钟。 |
+| D2 | _PR2 | 此状态的类定义缩减功能所需的任何电源或时钟。 |
+| D3hot (必需)  | _PR3 | 仅设备在其总线上显示和响应特定于总线的命令所需的电源或时钟。 |
 
- > [!NOTE]
- > 如果某个特定平台支持 D3cold 功能，并且设备的设备驱动程序在 D3cold 中，则设备的 \_ PR3 电源资源将（如果它们未被其他设备使用）在转换到 D3cold 后的某个时间关闭。
+> [!NOTE]
+> 如果某个特定平台支持 D3cold 功能，并且设备的设备驱动程序在 D3cold 中，则设备的 \_ PR3 电源资源将（如果它们未被其他设备使用）在转换到 D3cold 后的某个时间关闭。
 
 有关支持 D3cold 的设备的电源资源要求的详细信息，请参阅 [D3cold 的固件要求](firmware-requirements-for-d3cold.md)。
 
@@ -99,10 +69,15 @@ ms.locfileid: "96789117"
 
 在给定平台上，设备状态之间存在特定的映射，它们支持可响应唤醒事件的唤醒功能和系统状态。 ACPI 定义 \_ 用于向操作系统提供此信息的 SxW 对象。 每个受支持的系统电源状态为 Sx，都有一个 SxW 对象。 由于 SoC 平台始终处于 S0 中，因此此处仅有意义的对象是 \_ S0W。 此对象指定平台能够从低功耗空闲状态中唤醒，以响应设备的唤醒信号。 在系统低功耗空闲期间，Windows 使用对象来确定设备的目标 D 状态。 有关 S0W 的详细信息 \_ ，请参阅 \_ [ACPI 5.0 规范](https://uefi.org/specifications)中的 "S0W (S0 设备唤醒状态) " 部分。
 
-对于大多数 SoC 平台，设备处于空闲状态时，会主动管理到 D3 状态，并且在设备处于此状态时，系统能够从低功耗状态中唤醒。 对于此类系统， \_ 如果 S0W 对象还支持 D3cold) ，则返回 3 (或4。 但是，任何 D 状态都可以指定为支持的最低唤醒状态，而某些设备类或总线则使用不同的值。 例如，通过 SDIO 和 USB 连接的设备，状态 D2 会处于此状态。
+对于大多数 SoC 平台，设备处于空闲状态时，会主动管理到 D3 状态，并且在设备处于此状态时，系统能够从低功耗状态中唤醒。 对于此类系统，如果 _S0W 对象还支持 D3cold) ，则返回 3 (或4。
 
 > [!NOTE]
-> 为了便于从 Windows 7 向 Windows 8 或 Windows 8.1 迁移设备驱动程序，您的设备可能也需要提供 \_ S4W。 目前，具有此要求的唯一设备类是网络 ( # A0) 。
+> 无论设备是否支持唤醒，_S0W (4) 是 D3Cold 的要求。
+
+任何 D 状态都可以指定为支持的最低唤醒状态，并且某些设备类或总线将使用不同的值。 例如，通过 SDIO 和 USB 连接的设备，状态 D2 会处于此状态。
+
+> [!NOTE]
+> 为了便于从 Windows 7 向 Windows 8 或 Windows 8.1 迁移设备驱动程序，您的设备可能也需要提供 \_ S4W。 目前，具有此要求的唯一设备类是网络 (Ndis.sys) 。
 
 #### <a name="wake-capable-interrupts-_crs"></a>CRS)  (支持唤醒的中断 \_
 
