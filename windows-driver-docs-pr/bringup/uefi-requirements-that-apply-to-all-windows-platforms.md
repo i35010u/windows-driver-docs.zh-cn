@@ -1,14 +1,14 @@
 ---
 title: SoC 平台上 Windows 的 UEFI 要求
 description: 本主题介绍适用于适用于 Windows 10 的 UEFI 要求 (家庭、专业版、企业版和教育版) 以及 Windows 10 移动版。
-ms.date: 08/25/2020
+ms.date: 03/29/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c2a2fa7781e80977add1ef4dc99a4be53f34dbd
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 07a834202066204527a5787414113a2e77365bb6
+ms.sourcegitcommit: 6d62844b4afaebf9032649b27045c75da0b356af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96792073"
+ms.lasthandoff: 03/29/2021
+ms.locfileid: "105729982"
 ---
 # <a name="uefi-requirements-for-windows-editions-on-soc-platforms"></a>SoC 平台上 Windows 版本的 UEFI 要求
 
@@ -114,27 +114,27 @@ EFI 系统表必须符合所实现的版本级别中的标准定义。 EFI 系�
 <td>协议处理程序服务</td>
 <td><p>Windows 需要以下协议处理程序服务：</p>
 <ul>
-<li><p>OpenProtocol ( # A1</p></li>
-<li><p>CloseProtocol ( # A1</p></li>
-<li><p>LocateDevicePath ( # A1</p></li>
-<li><p>LocateHandle ( # A1</p></li>
+<li><p>OpenProtocol () </p></li>
+<li><p>CloseProtocol () </p></li>
+<li><p>LocateDevicePath () </p></li>
+<li><p>LocateHandle () </p></li>
 </ul></td>
 </tr>
 <tr class="odd">
 <td>映像服务</td>
 <td><p>Windows 需要以下映像服务：</p>
 <ul>
-<li><p>ExitBootServices ( # A1</p></li>
+<li><p>ExitBootServices () </p></li>
 </ul></td>
 </tr>
 <tr class="even">
 <td>其他启动服务</td>
 <td><p>Windows 需要以下其他启动服务：</p>
 <ul>
-<li><p>延迟 ( # A1</p></li>
+<li><p>隔 () </p></li>
 </ul>
 <div class="alert">
-<strong>注意</strong>  需要 ( # A1 实现才能具有确定性 (可重复) 错误，以便可以可靠地纠正错误或取消。
+<strong>注意</strong>  延迟 () 实现要求具有确定性 (可重复) 错误，以便可以可靠地纠正或取消错误。
 </div>
 <div>
  
@@ -163,10 +163,10 @@ EFI 系统表必须符合所实现的版本级别中的标准定义。 EFI 系�
 <td>时间服务</td>
 <td><p>Windows 需要以下时间服务：</p>
 <ul>
-<li><p>GetTime ( # A1</p></li>
-<li><p>SetTime ( # A1</p>
+<li><p>GetTime () </p></li>
+<li><p>SetTime () </p>
 <div class="alert">
-<strong>注意</strong>  在 ExitBootServices ( # A2 # A3 用于访问平台时间的硬件之前，将仅在 boot (中调用时间服务。
+<strong>注意</strong>  仅在启动 (期间才会调用时间服务， () ) 用于访问平台时间的硬件。
 </div>
 <div>
  
@@ -181,9 +181,9 @@ EFI 系统表必须符合所实现的版本级别中的标准定义。 EFI 系�
 <td>其他运行时服务</td>
 <td><p>Windows 需要以下其他运行时服务：</p>
 <ul>
-<li><p>ResetSystem ( # A1</p>
+<li><p>ResetSystem () </p>
 <div class="alert">
-<strong>注意</strong>  ResetSystem ( # A1 实现必须支持重置和关闭选项。
+<strong>注意</strong>  ResetSystem () 实现必须支持重置和关闭选项。
 </div>
 <div>
  
@@ -298,10 +298,10 @@ Windows 在安全启动、标准启动、加密和数据保护方面具有安全
 <li><p>要求15：必填。 如果固件设置被重置为出厂默认值，则应删除所有自定义集的受保护的变量，并且应与原始的制造商预配的签名数据库一起重新建立原始 PK<em><sub>pub</sub></em> 。</p></li>
 <li><p>要求16：必填。 驱动程序签名应使用 Authenticode 选项 (WIN_CERT_TYPE_PKCS_SIGNED_DATA) 。</p></li>
 <li><p>要求17：必填。 对 EFI_IMAGE_EXECUTION_INFO_TABLE (的支持，即在启动) 期间创建和存储映像的信息的创建和存储。</p></li>
-<li><p>需求18：必填。 支持对 EFI_IMAGE_SECURITY_DATABASE ( # A1， (授权和禁止的签名数据库) 。</p></li>
-<li><p>要求19：必填。 使用 Microsoft KEK 进行身份验证时，支持 SetVariable ( # A1 的 EFI_IMAGE_SECURITY_DATABASE (授权和禁止的签名数据库) 。</p></li>
-<li><p>要求20：必填。 EFI_HASH_SERVICE_BINDING_PROTOCOL：服务支持： CreateChild ( # A1，DestroyChild ( # A3。</p></li>
-<li><p>要求21：必填。 EFI_HASH_PROTOCOL。 服务支持：哈希 ( # A1。 支持 SHA_1 和 256 SHA-1 哈希算法。 必须支持至少 10 Mb 的消息传递。</p></li>
+<li><p>需求18：必填。 支持 EFI_IMAGE_SECURITY_DATABASE 的 GetVariable () ， (授权和禁止的签名数据库) 。</p></li>
+<li><p>要求19：必填。 支持使用 Microsoft KEK 进行身份验证，同时支持已授权和禁止的签名数据库) 的 (EFI_IMAGE_SECURITY_DATABASE 的 SetVariable () 。</p></li>
+<li><p>要求20：必填。 EFI_HASH_SERVICE_BINDING_PROTOCOL：服务支持： DestroyChild () 的 CreateChild () 。</p></li>
+<li><p>要求21：必填。 EFI_HASH_PROTOCOL。 服务支持：哈希 () 。 支持 SHA_1 和 256 SHA-1 哈希算法。 必须支持至少 10 Mb 的消息传递。</p></li>
 </ul></td>
 </tr>
 <tr class="odd">
@@ -321,7 +321,7 @@ Windows 在安全启动、标准启动、加密和数据保护方面具有安全
 </ul></td>
 </tr>
 <tr class="even">
-<td>密码</td>
+<td>加密</td>
 <td><ul>
 <li><p>要求25：强制。 平台应为卸载加密哈希操作提供 EFI_HASH_PROTOCOL (UEFI v1.0) 27.4 部分。 必须支持 SHA-256。</p></li>
 <li><p>要求26：必填。 平台应支持 Microsoft 定义的 <a href="uefi-entropy-gathering-protocol.md" data-raw-source="[EFI_RNG_PROTOCOL](uefi-entropy-gathering-protocol.md)">EFI_RNG_PROTOCOL</a> ，以进行 OS 预操作系统读取。</p></li>
@@ -363,7 +363,7 @@ UEFI ARM 绑定包括特定于 ARM 平台的要求，这些要求必须符合 UE
 
 ## <a name="uefi-arm-multiprocessor-startup-requirements"></a>UEFI ARM 多处理器启动要求
 
-Microsoft 已开发了一个协议，用于在多处理器 UEFI 平台上启动多个 ARM 核心。 ARM 平台上的 Windows 需要此协议，但不支持 [)  (PSCI 的电源状态协调接口 ](https://static.docs.arm.com/den0022/d/Power_State_Coordination_Interface_PDD_v1_1_DEN0022D.pdf)。 支持 PSCI 的平台不能使用此协议。 有关此协议的详细信息，请参阅 ACPI 组件体系结构 (ACPICA) 网站上的 [基于 UEFI ARM 平台的多处理器启动](https://acpica.org/sites/acpica/files/MP%20Startup%20for%20ARM%20platforms.docx) 文档。
+Microsoft 已开发了一个协议，用于在多处理器 UEFI 平台上启动多个 ARM 核心。 ARM 平台上的 Windows 需要此协议，但不支持)  (PSCI 的电源状态协调接口。 支持 PSCI 的平台不能使用此协议。 有关此协议的详细信息，请参阅 ACPI 组件体系结构 (ACPICA) 网站上的 [基于 UEFI ARM 平台的多处理器启动](https://acpica.org/sites/acpica/files/MP%20Startup%20for%20ARM%20platforms.docx) 文档。
 
 ## <a name="platform-setup-requirements"></a>平台设置要求
 
@@ -388,7 +388,7 @@ Microsoft 已开发了一个协议，用于在多处理器 UEFI 平台上启动�
 <tr class="even">
 <td>核心系统资源</td>
 <td><p>通过 ACPI 表向操作系统公开的核心系统资源必须开机并进行时钟。 核心系统资源包括中断控制器、计时器和必须由操作系统管理的 DMA 控制器。</p>
-<p>此外，必须通过调用 ExitBootServices ( # A1 来屏蔽中断，直到 OS 解除中的关联设备驱动程序，然后在设备上重新启用中断。 如果在启动服务期间启用中断，则假定固件将对其进行管理。</p></td>
+<p>此外，必须通过调用 ExitBootServices () 屏蔽中断，直到 OS 解除中的关联设备驱动程序，然后在设备上重新启用中断。 如果在启动服务期间启用中断，则假定固件将对其进行管理。</p></td>
 </tr>
 <tr class="odd">
 <td>调试</td>

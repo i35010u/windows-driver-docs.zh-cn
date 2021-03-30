@@ -58,19 +58,19 @@
   href: oem-guidance-on-registry-keys-for-video-stabilization.md
 - name: 适用于 Windows 10 的通用相机驱动程序模型
   items:
-    - name: 适用于 Windows 10 的通用相机驱动程序模型
+    - name: 适用于 Windows 10 的通用相机驱动程序模型设计指南
       href: windows-10-technical-preview-camera-drivers-design-guide.md
-    - name: 适用于 Windows 10 的全新相机驱动程序接口
+    - name: 适用于 Windows 10 的通用相机驱动程序接口
       items:
-        - name: 适用于 Windows 10 的全新相机驱动程序接口
+        - name: 适用于 Windows 10 的通用相机驱动程序参考
           href: windows-10-technical-preview-camera-drivers-reference.md
-        - name: 适用于 Windows 10 的全新相机驱动程序控件
+        - name: 适用于 Windows 10 的通用相机驱动程序控制
           href: camera-driver-controls.md
-        - name: 适用于 Windows 10 的全新相机驱动程序枚举
+        - name: 适用于 Windows 10 的通用相机驱动程序枚举
           href: camera-driver-enumerations.md
-        - name: 适用于 Windows 10 的全新相机驱动程序函数
+        - name: 适用于 Windows 10 的通用相机驱动程序函数
           href: camera-driver-functions.md
-        - name: 适用于 Windows 10 的全新相机驱动程序结构
+        - name: 适用于 Windows 10 的通用相机驱动程序结构
           href: camera-driver-structures.md
 - name: AVStream 微型驱动程序设计指南
   items:
