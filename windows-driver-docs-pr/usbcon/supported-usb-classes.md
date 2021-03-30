@@ -3,12 +3,12 @@ description: 本主题列出了支持的 USB 设备类的 Microsoft 提供的驱
 title: 包含在 Windows 中的 USB 设备类驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: High
-ms.openlocfilehash: 4187e08dba14267f672e740fbd295b8882807edd
-ms.sourcegitcommit: 10fecd036370f5eccb538004c5bec1fdd18c3275
+ms.openlocfilehash: 6517f5e6d2054a0cf2ba14a10d03c9563141ff5c
+ms.sourcegitcommit: 76a7b604f13cf419ff21518337913820a703347f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98124221"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104719502"
 ---
 # <a name="usb-device-class-drivers-included-in-windows"></a>包含在 Windows 中的 USB 设备类驱动程序
 
@@ -71,7 +71,7 @@ USB 设备的两个重要设备安装程序类如下所示：
       <td>Microsoft 通过 Usbaudio.sys 驱动程序为 USB 音频设备类提供支持。 有关详细信息，请参阅<a href="/windows-hardware/drivers/audio/kernel-mode-wdm-audio-components">内核模式 WDM 音频组件</a>中的“USBAudio 类系统驱动程序”。 有关 Windows 音频支持的详细信息，请参阅 <a href="/windows-hardware/drivers/audio/">Windows 音频设备技术</a>网站。</td>
     </tr>
     <tr>
-      <td rowspan="4">通信和 CDC 控制 (02h)</td>
+      <td rowspan="5">通信和 CDC 控制 (02h)</td>
         <tr>
         <td><strong>端口</strong></br>{4D36E978-E325-11CE-BFC1-08002BE10318}</td>
         <td>Usbser.sys</br>Usbser.inf</td>
@@ -84,6 +84,12 @@ USB 设备的两个重要设备安装程序类如下所示：
         <td>Usbser.sys</br>引用 mdmcpq.inf 的自定义 INF</td>
         <td>Windows 10 桌面版</br>Windows 8.1</br>Windows 8</br>Windows 7</br>Windows Server 2008</br>Windows Vista</td>
         <td>在 Windows 8.1 及更低版本中，不会自动加载 Usbser.sys。 若要加载该驱动程序，需要编写引用调制解调器 INF (mdmcpq.inf) 的 INF，并包括 \[Install\] 和 \[Needs\] 部分。<p>从 Windows Vista 开始，可以通过设置注册表值来启用 CDC 和无线移动 CDC (WMCDC) 支持，如<a href="/windows-hardware/drivers/usbcon/support-for-interface-collections">支持无线移动通信设备类</a>中所述。<p>启用 CDC 支持后，<a href="usb-common-class-generic-parent-driver.md">USB 公共类通用父驱动程序</a>枚举对应于 CDC 和 WMCDC 控件模型的接口集合，并将物理设备对象 (PDO) 分配到这些集合。</td>
+      </tr>
+      <tr>
+        <td><strong>Net</strong></br>{4d36e972-e325-11ce-bfc1-08002be10318}</br><strong>注意</strong>   支持子类 0Dh (NCM)</td>
+        <td>UsbNcm.sys</br>UsbNcm.inf</td>
+        <td>Windows Insider Preview</td>
+        <td>Microsoft 提供了 UsbNcm.sys 驱动程序来操作符合 <a href="https://www.usb.org/document-library/network-control-model-devices-specification-v10-and-errata-and-adopters-agreement">USB NCM</a> 的设备。 该驱动程序的源代码在 <a href="https://github.com/microsoft/NCM-Driver-for-Windows">NCM-Driver-for-Windows</a> 中提供。</td>
       </tr>
       <tr>
         <td><strong>Net</strong></br>{4d36e972-e325-11ce-bfc1-08002be10318}</br><strong>注意</strong> 支持子类 0Eh (MBIM)</td>
@@ -223,7 +229,7 @@ Usbvideo.inf</td>
 {4d36e972-e325-11ce-bfc1-08002be10318}<p><strong>注意</strong>  支持子类 04h 和协议 01h</td>
       <td>Rndismp.sys</br>Rndismp.inf</td>
       <td>Windows 10 桌面版</br>Windows 8.1</br>Windows 8</br>Windows 7</br>Windows Vista</td>
-      <td>在 Windows Vista 之前，对 CDC 的支持仅限于具有供应商唯一协议 (<strong>bInterfaceProtocol</strong>) 值 0xFF 的抽象控制模型 (ACM) 的特定于 RNDIS 的实现。 RNDIS 设备将所有 802 样式的网卡集中在单个类驱动程序 Rndismp.sys 中进行管理。 有关远程 NDIS 的详细讨论，请参阅<a href="/windows-hardware/drivers/network/overview-of-remote-ndis--rndis-">远程 NDIS 概述</a>。 在 Usb8023 驱动程序中实现了远程 NDIS 到 USB 的映射。 有关 Windows 中的网络支持的详细信息，请参阅<a href="/windows-hardware/drivers/network/">网络和无线技术</a>网站。</td>
+      <td><p><strong>注意</strong> Microsoft 建议硬件供应商改为构建兼容 USB NCM 的设备。 USB NCM 是一种公共 USB IF 协议，可提供更好的吞吐量性能。</p><p>在 Windows Vista 之前，只有 RNDIS 特定的抽象控制模型 (ACM) 实现（供应商唯一协议 (bInterfaceProtocol) 值为 0xFF）才支持 CDC。 RNDIS 设备将所有 802 样式的网卡集中在单个类驱动程序 Rndismp.sys 中进行管理。 有关远程 NDIS 的详细讨论，请参阅<a href="/windows-hardware/drivers/network/overview-of-remote-ndis--rndis-">远程 NDIS 概述</a>。 在 Usb8023 驱动程序中实现了远程 NDIS 到 USB 的映射。 有关 Windows 中网络支持的详细信息，请参阅<a href="/windows-hardware/drivers/network/">网络和无线技术</a>。</td>
     </tr>
     <tr>
       <td>应用程序特定 (FEh)</td>
