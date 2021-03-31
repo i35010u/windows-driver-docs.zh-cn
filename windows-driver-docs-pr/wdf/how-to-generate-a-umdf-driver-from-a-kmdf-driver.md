@@ -3,12 +3,12 @@ title: '如何将 KMDF 驱动程序转换为 UMDF 2 驱动程序 (反之亦然) 
 description: 本主题介绍如何将 Kernel-Mode Driver Framework (KMDF) 驱动程序转换为 User-Mode Driver Framework (UMDF) 版本2驱动程序，反之亦然。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c04555e54d9dac5ebdb758cb0dbb16d3617f44a5
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 6677fbf2b79c41a98cbd78c4f698e860e6b75627
+ms.sourcegitcommit: 7850950d33fd843c97a5b38e4247859b3b9609e8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96814723"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105938789"
 ---
 # <a name="how-to-convert-a-kmdf-driver-to-a-umdf-2-driver-and-vice-versa"></a>如何将 KMDF 驱动程序转换为 UMDF 2 驱动程序 (反之亦然) 
 
@@ -47,9 +47,10 @@ ms.locfileid: "96814723"
 
     -   如果驱动程序使用 WPP 跟踪，请更新 [wpp \_ INIT \_ 跟踪](/previous-versions/windows/hardware/previsioning-framework/ff556191(v=vs.85)) 宏。 此宏在用户模式和内核模式下采用不同的参数。
         ```cpp
-        WPP_INIT_TRACING ( DriverObject, RegistryPath ); // KMDF
-        WPP_INIT_TRACING ( “<MyDriverNameString>” ); // UMDF
+        WPP_INIT_TRACING ( DriverObject, RegistryPath ); // KMDF and UMDF 2
+        WPP_INIT_TRACING ( “<MyDriverNameString>” ); // UMDF 1
         ```
+        请注意，对于 UMDF 2，还需要添加 `WPP_MACRO_USE_KM_VERSION_FOR_UM=1` ，如 [如何在 Visual Studio 中启用即时 Trace 录像机](/windows-hardware/drivers/devtest/using-wpp-recorder#how-to-enable-inflight-trace-recorder-in-visual-studio)中所述。
 
     -   如果要转换的 KMDF 驱动程序调用了 WDM 例程（如 [**ExAllocatePoolWithTag**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)），请将其替换为相应的 WDF 方法，例如 [**WdfMemoryCreate**](/windows-hardware/drivers/ddi/wdfmemory/nf-wdfmemory-wdfmemorycreate)。 同样，如果要转换调用用户模式功能的 UMDF 驱动程序，请将其替换为等效的内核模式例程。
     -   某些方法仅在 KMDF 中受支持，而其他方法仅在 UMDF 中受支持。 有关所有 Windows 驱动程序框架的列表 (WDF) 方法及其框架的适用性，请参阅 [Wdf 回调和方法摘要](/windows-hardware/drivers/ddi/_wdf/)。

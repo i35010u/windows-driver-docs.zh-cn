@@ -13,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 7936aa514f743b4fd62a417706fe038c1031e788
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 3e1121eb3e9387f6f3c3b8b3e4d88800434da6ec
+ms.sourcegitcommit: 2e1b0364b576da1decf16daea6530ea22ff4a3fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96819499"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105937665"
 ---
 # <a name="guid_devinterface_usb_device"></a>GUID_DEVINTERFACE_USB_DEVICE
 
@@ -32,7 +32,7 @@ ms.locfileid: "96819499"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Attribute</th>
+<th align="left">属性</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -70,7 +70,7 @@ Microsoft Windows 驱动程序工具包 (WDK) 包含 [USBVIEW 示例应用程序
 <tbody>
 <tr class="odd">
 <td align="left"><p>标头</p></td>
-<td align="left">Usbiodef (包含 Usbiodef，initguid.h) </td>
+<td align="left">先包括 initguid.h，然后再包括 Usbiodef</td>
 </tr>
 </tbody>
 </table>
