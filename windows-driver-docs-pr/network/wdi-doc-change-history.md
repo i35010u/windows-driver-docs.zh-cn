@@ -4,12 +4,12 @@ description: 本部分列出 WDI 文档页的文档更改历史记录
 ms.date: 02/21/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 6ed2d28a5fbd64453f45181c49b0937bccce7e61
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 6783215d430ba5b1b33a0c3a5b5acce3d51b375d
+ms.sourcegitcommit: 6607cb43e5d6996e0c1e4c05ba94ebf83322163d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96822772"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105995069"
 ---
 # <a name="wdi-doc-change-history"></a>WDI 文档更改历史记录
 
@@ -17,7 +17,7 @@ ms.locfileid: "96822772"
 
 已更新到 WDI 版本1.1.8 的文档。
 
-| 主题 | 描述 |
+| 主题 | 说明 |
 | --- | --- |
 | [WDI_TLV_STATION_CAPABILITIES](wdi-tlv-station-capabilities.md) | 添加了对驱动程序的支持，以指示支持精细计时度量 (INTERNAL.H) 。 |
 | [OID_WDI_TASK_REQUEST_FTM](oid-wdi-task-request-ftm.md) | 新添加的任务 OID，使 WDI 能够请求适配器启动)  (RTT 获取往返时间和位置配置信息 (来自 BSS 目标的 LCI) 报告。 |
@@ -55,13 +55,13 @@ ms.locfileid: "96822772"
 | [WDI_TLV_SAE_SEND_CONFIRM](wdi-tlv-sae-send-confirm.md) | 新添加的 TLV 用于设置 SAE authentication 参数。 |
 | [WDI_TLV_SAE_CONFIRM](wdi-tlv-sae-confirm.md) | 新添加的 TLV 用于设置 SAE authentication 参数。 |
 | [OID_WDI_TASK_P2P_SEND_REQUEST_ACTION_FRAME](oid-wdi-task-p2p-send-request-action-frame.md) | 在传出操作帧上增加了对 P2P 的额外验证。 |
-| [OID_WDI_TASK_P2P_SEND_RESPONSE_ACTION_FRAME](oid-wdi-task-p2p-send-response-action-frame.md) | 在传出操作帧上增加了对 P2P 的额外验证。 || 
+| [OID_WDI_TASK_P2P_SEND_RESPONSE_ACTION_FRAME](oid-wdi-task-p2p-send-response-action-frame.md) | 在传出操作帧上增加了对 P2P 的额外验证。 |
 
 ## <a name="windows-10-version-1809"></a>Windows 10 版本 1809
 
 已更新到 WDI 版本1.1.7 的文档。
 
-| 主题 | 描述 |
+| 主题 | 说明 |
 | --- | --- |
 | [**WDI_PHY_TYPE**](/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_phy_type) | 添加了对 802.11 ax PHY 的支持。 |
 | [**WDI_CONNECTION_QUALITY_HINT**](/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_connection_quality_hint) | 已将 **WDI_CONNECTION_QUALITY_HIGH_CHANNEL_AVAILABILITY** 值的名称更改为 **WDI_CONNECTION_QUALITY_HIGH_THROUGHPUT**。 不会更改此值的说明。 |
@@ -71,7 +71,7 @@ ms.locfileid: "96822772"
 
 已更新到 WDI 版本1.1.6 的文档。
 
-| 主题 | 描述 |
+| 主题 | 说明 |
 | --- | --- |
 | [**WDI_TLV_OS_POWER_MANAGEMENT_FEATURES**](wdi-tlv-os-power-management-features.md) | 已将此 TLV 添加到 [OID_WDI_GET_ADAPTER_CAPABILITIES](oid-wdi-get-adapter-capabilities.md) ，以指示驱动程序支持哪些操作系统电源管理 (PM) 功能。 |
 | [**WDI_TLV_PM_PROTOCOL_OFFLOAD_80211RSN_REKEY**](wdi-tlv-pm-protocol-offload-80211rsn-rekey.md) | 更新了此 TLV，以指定在 [OID_WDI_GET_PM_PROTOCOL_OFFLOAD](oid-wdi-get-pm-protocol-offload.md)中查询时，驱动程序现在必须返回 GTK/iGTK 密钥信息（如果已配置）。 |
@@ -82,7 +82,7 @@ ms.locfileid: "96822772"
 
 已更新到 WDI 版本1.1.5 的文档。
 
-| 主题 | 描述 |
+| 主题 | 说明 |
 | --- | --- |
 | [WDI_TLV_TCP_OFFLOAD_CAPABILITIES](wdi-tlv-tcp-offload-capabilities.md) | 添加了新的 [**WDI_TLV_OFFLOAD_SCOPE**](wdi-tlv-offload-scope.md) 参数，用于指示指定的或不应用于 STA 端口还是所有端口。 |
 | [NDIS_STATUS_WDI_INDICATION_SEND_AP_ASSOCIATION_RESPONSE_COMPLETE](ndis-status-wdi-indication-send-ap-association-response-complete.md) | 更改了 [**WDI \_ TLV \_ PHY \_ 类型 \_ 列表**](wdi-tlv-phy-type-list.md) 参数，使其成为必需。 |
@@ -101,7 +101,7 @@ ms.locfileid: "96822772"
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -173,7 +173,7 @@ ms.locfileid: "96822772"
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -203,7 +203,7 @@ ms.locfileid: "96822772"
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>

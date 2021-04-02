@@ -5,18 +5,14 @@ keywords:
 - 调试器命令程序，元素
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c3fea1d66cbf38ee976b6c05728372e99089a76
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 413d058436a6d3eff1aa5970f74fa9cd407976da
+ms.sourcegitcommit: 83a11e69f7b175011d032a179e4cfa6d5ede9ac2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96834773"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106113645"
 ---
 # <a name="elements-of-a-debugger-command-program"></a>调试器命令程序的元素
-
-
-## <span id="ddk_elements_of_a_debugger_command_program_dbg"></span><span id="DDK_ELEMENTS_OF_A_DEBUGGER_COMMAND_PROGRAM_DBG"></span>
-
 
 *调试器命令程序* 是一个小型应用程序，其中包含调试器命令和控制流标记，如 **。如果** 为，则为; 如果 **为**，则 **为。**  (有关控制流令牌及其语法的完整列表，请参阅 [控制流令牌](control-flow-tokens.md)。 ) 
 
@@ -31,8 +27,6 @@ ms.locfileid: "96834773"
 您可以使用两个货币符号 ([**$ $ (注释说明符)**](-----comment-specifier-.md)) 向调试器命令程序添加注释。 不应在标记及其元素之间插入注释 (例如大括号或条件) 。
 
 **注意**  不应使用星号 () ) [**\* (注释行说明符**](----comment-line-specifier-.md)。 由于用星号指定的注释不以分号结尾，因此将忽略该程序的其余部分。
-
- 
 
 通常，应在调试器命令程序中使用 MASM 语法。 如果必须使用 c + + 元素 (例如指定结构或类) 的成员，则可以使用 **@ @c + + ( )** 标记来切换到该子句的 c + + 语法。
 

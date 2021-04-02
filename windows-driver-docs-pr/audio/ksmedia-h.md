@@ -3,12 +3,12 @@ title: Ksmedia.h
 description: 本部分包含 Ksmedia 标头的参考主题。
 ms.date: 11/27/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 510e1ca350defe85595d1ace17d1a8c8fac90d79
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 375885157cfb31b0c82f74aa1f5abfeb4f4f3f26
+ms.sourcegitcommit: 6607cb43e5d6996e0c1e4c05ba94ebf83322163d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96799183"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105995075"
 ---
 # <a name="ksmediah"></a>Ksmedia.h
 
@@ -16,9 +16,9 @@ ms.locfileid: "96799183"
 
 ## <a name="span-idin_this_sectionspanin-this-section"></a><span id="in_this_section"></span>本部分中的内容
 
-|主题|描述|
+|主题|说明|
 |--- |--- |
-|[KSEVENT_CONTROL_CHANGE](ksevent-control-change.md)|KSEVENT_CONTROL_CHANGE 事件指示在表示硬件卷控制旋钮、静音开关或其他类型手动控制的节点上发生了控件值更改。  (操作数据) 的事件值类型是一个 KSEVENTDATA 结构，它指定要用于事件的通知类型。|Pin|[KSE_NODE](/windows-hardware/drivers/ddi/ks/ns-ks-kse_node)|[KSEVENTDATA](/windows-hardware/drivers/ddi/ks/ns-ks-kseventdata)|
+|[KSEVENT_CONTROL_CHANGE](ksevent-control-change.md)|KSEVENT_CONTROL_CHANGE 事件指示在表示硬件卷控制旋钮、静音开关或其他类型手动控制的节点上发生了控件值更改。  (操作数据) 的事件值类型是一个 KSEVENTDATA 结构，它指定要用于事件的通知类型。|
 |[KSEVENT_LOOPEDSTREAMING_POSITION](ksevent-loopedstreaming-position.md)|KSEVENT_LOOPEDSTREAMING_POSITION 事件指示音频流已到达循环缓冲区中的指定位置。|
 |[KSEVENT_SOUNDDETECTOR_MATCHDETECTED](ksevent-sounddetector-matchdetected.md)|KSEVENT_SOUNDDETECTOR_MATCHDETECTED 事件由音频驱动程序生成，每当检测到匹配项时，通知操作系统。|
 |[KSJACK_DESCRIPTION](ksjack-description.md)|KSJACK_DESCRIPTION 结构指定音频插孔的物理属性。|

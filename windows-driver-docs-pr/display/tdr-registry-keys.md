@@ -1,6 +1,6 @@
 ---
-title: 测试和调试 TDR
-description: '用于测试和调试 TDR (超时检测和恢复的注册表项和 WHLK 测试) '
+title: 驱动程序开发过程中的测试和调试 TDR
+description: 面向开发人员的 TDR 测试和调试信息
 keywords:
 - TDR 调试，驱动程序开发
 - 超时检测和恢复调试，驱动程序开发
@@ -11,17 +11,19 @@ keywords:
 - WDK 显示开发
 - TDR 测试，WHLK
 - TDR 测试，Windows 硬件实验室工具包
-ms.date: 10/06/2020
+ms.date: 03/30/2021
 ms.localizationpriority: medium
-ms.custom: contperf-fy21q2
-ms.openlocfilehash: 6d6a688182353a40e81dbd49e1220019a0b2d432
-ms.sourcegitcommit: 0b60dbbac80f1578b0217b7cffc5b72af755725f
+ms.custom: contperf-fy21q3
+ms.openlocfilehash: 296148d70d20d81b603439fbdc94b11762059145
+ms.sourcegitcommit: 38feaa2a1d3495eb20ccf846eb9cbcd67e8ae4ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99529857"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106099067"
 ---
-# <a name="testing-and-debugging-tdr"></a>测试和调试 TDR
+# <a name="testing-and-debugging-tdr-during-driver-development"></a>驱动程序开发过程中的测试和调试 TDR
+
+本主题为显示驱动程序开发人员提供了 TDR 测试和调试策略。
 
 ## <a name="tdr-tests-in-whlk"></a>WHLK 中的 TDR 测试
 
@@ -31,7 +33,7 @@ ms.locfileid: "99529857"
 
 只有在驱动程序开发过程中，开发人员才能使用以下 TDR (超时检测和恢复) 相关注册表项，以便进行测试或调试。
 
-> [!NOTE]
+> [!IMPORTANT]
 > 这些注册表项不应由最终用户或在驱动程序开发过程中进行目标测试或调试的应用程序操作。
 
 ### <a name="tdrlevel"></a>TdrLevel

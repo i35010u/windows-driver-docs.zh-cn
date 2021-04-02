@@ -4,12 +4,12 @@ description: 本主题介绍断点语法
 keywords: 调试器，方法上的断点，断点，命令的语法规则，b (断点标识符) ，文本 MASM 标识符，模板化函数
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 10f0dd0d52f5059d9a8b0ba76372b8a1de8f2a30
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 4784be5944552103326be85359d3fcfbe7d744fe
+ms.sourcegitcommit: 83a11e69f7b175011d032a179e4cfa6d5ede9ac2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96788895"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106113612"
 ---
 # <a name="breakpoint-syntax"></a>断点语法
 
@@ -50,11 +50,11 @@ ms.locfileid: "96788895"
 
 如果要使用更复杂的断点命令，应使用 MASM 表达式语法。 有关表达式语法的详细信息，请参阅 [计算表达式](evaluating-expressions.md)。
 
-### <a name="span-idbreakpoints_using_complicated_textspanspan-idbreakpoints_using_complicated_textspanbreakpoints-using-complicated-text"></a><span id="breakpoints_using_complicated_text"></span><span id="BREAKPOINTS_USING_COMPLICATED_TEXT"></span>使用复杂文本的断点
+### <a name="breakpoints-using-complicated-masm-expressions"></a>使用复杂的 MASM 表达式的断点
 
 若要在复杂函数上设置断点（包括包含空格的函数以及 c + + 公共类的成员），请将该表达式括在括号中。 例如，使用 **bp (？MyPublic)** 或 **bp (new) 运算符**。
 
-更通用的方法是使用 @！chars "语法。 这是 MASM 计算器中的特殊转义，可用于为符号解析提供任意文本。 必须以 @！开头的三个符号 并以引号 ( ") 结束。 如果没有此语法，则不能在 MASM 计算器的符号名称中使用空格、尖括号 (&lt; 、 &gt;) 或其他特殊字符。 此语法专用于名称，而不是参数。 模板和重载是需要此引号表示法的符号的主要来源。 还可以通过使用 @ **bu** ！chars "语法，如以下代码示例所示。
+更通用的方法是使用 @！chars "语法。 这是 MASM 计算器中的特殊转义，可用于为符号解析提供任意文本。 必须以 @！开头的三个符号 并以引号 ( ") 结束。 如果没有此语法，则不能在 MASM 计算器的符号名称中使用空格、尖括号 (&lt; 、 &gt;) 或其他特殊字符。 此语法专用于名称，而不是参数。 模板和重载是需要此引号表示法的符号的主要来源。 还可以通过使用 @  ！chars "语法，如以下代码示例所示。
 
 ```dbgcmd
 0:000> bu @!"ExecutableName!std::pair<unsigned int,std::basic_string<unsigned short,std::char_traits<unsigned short>,std::allocator<unsigned short> > >::operator="
@@ -66,7 +66,7 @@ ms.locfileid: "96788895"
 
 若要在 c + + 语法中使用任意文本设置断点，请使用 <strong>bu @ @c + + (</strong><em>文本</em>**)** 用于 c + + 兼容的符号。
 
-### <a name="span-idbreakpoints_in_scriptsspanspan-idbreakpoints_in_scriptsspanbreakpoints-in-scripts"></a><span id="breakpoints_in_scripts"></span><span id="BREAKPOINTS_IN_SCRIPTS"></span>脚本中的断点
+### <a name="breakpoints-in-scripts"></a>脚本中的断点
 
 无需显式引用断点 Id。 相反，您可以使用解析为对应于断点 ID 的整数的数值表达式。 若要指示表达式应解释为断点，请使用以下语法。
 
@@ -82,7 +82,7 @@ b?[Expression]
 b?[@$t0]
 ```
 
-### <a name="span-idbreakpoint_pseudo_registersspanspan-idbreakpoint_pseudo_registersspanbreakpoint-pseudo-registers"></a><span id="breakpoint_pseudo_registers"></span><span id="BREAKPOINT_PSEUDO_REGISTERS"></span>断点 Pseudo-Registers
+### <a name="breakpoint-pseudo-registers"></a>>断点 Pseudo-Registers
 
 如果要在表达式中引用断点地址，可以将 [伪寄存器](pseudo-register-syntax.md) 与 **$bp**_Number_ 语法结合使用，其中 *number* 是断点 ID。 有关此语法的详细信息，请参阅 Pseudo-Register 语法。
 

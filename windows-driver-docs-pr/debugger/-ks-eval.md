@@ -11,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b61d864c4cda5ce3c9333fd2396c71f2dfcaa2d2
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 032b5f41a47a7bbb21da8577f48a03c702c0acaa
+ms.sourcegitcommit: 83a11e69f7b175011d032a179e4cfa6d5ede9ac2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96828297"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106113650"
 ---
 # <a name="kseval"></a>!ks.eval
 
@@ -27,13 +27,12 @@ ms.locfileid: "96828297"
 !ks.eval Expression 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
+## <a name="parameters"></a>参数
 
-
-<span id="_______Expression______"></span><span id="_______expression______"></span><span id="_______EXPRESSION______"></span>*表达式*   
+*表达式*   
 指定要计算的表达式。 *表达式* 可以包含任何 MASM 运算符、符号或数字语法，还可以包含下面描述的扩展特定的运算符。 有关 MASM 表达式的详细信息，请参阅 [Masm 数字和运算符](masm-numbers-and-operators.md)。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
+### <a name="dll"></a>DLL
 
 <table>
 <colgroup>
@@ -54,7 +53,7 @@ ms.locfileid: "96828297"
 
  
 
-### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
+### <a name="additional-information"></a>其他信息
 
 有关详细信息，请参阅 [内核流调试](kernel-streaming-debugging.md)。
 

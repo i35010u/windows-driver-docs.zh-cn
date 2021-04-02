@@ -11,14 +11,14 @@ keywords:
 - 二元运算符
 - 移位运算符
 - 一元运算符
-ms.date: 01/26/2021
+ms.date: 03/30/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: a435f58ee5623a70e64099d260cc7c4e1b1e074a
-ms.sourcegitcommit: 5e51e63585f35597cf06fc0ab5c0cc7cb39ca22a
+ms.openlocfilehash: a4d475406618f402047c2e3d23c07567956956fd
+ms.sourcegitcommit: 83a11e69f7b175011d032a179e4cfa6d5ede9ac2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98861847"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106113608"
 ---
 # <a name="masm-numbers-and-operators"></a>MASM 数字和运算符
 
@@ -85,7 +85,7 @@ ms.locfileid: "98861847"
 <td align="left"><p>如果参数为零，则返回1。 对于任何非零参数，返回零。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>hi</strong></p></td>
+<td align="left"><p><strong>你好</strong></p></td>
 <td align="left"><p>高16位</p></td>
 </tr>
 <tr class="odd">
@@ -206,7 +206,7 @@ ms.locfileid: "98861847"
 
 无效操作 (例如除以零) 导致 "操作数错误" 返回到 [调试器命令窗口](debugger-command-window.md)中。
 
-### <a name="span-idnon_numeric_operators_in_masm_expressionsspanspan-idnon_numeric_operators_in_masm_expressionsspannon-numeric-operators-in-masm-expressions"></a><span id="non_numeric_operators_in_masm_expressions"></span><span id="NON_NUMERIC_OPERATORS_IN_MASM_EXPRESSIONS"></span>MASM 表达式中的非数字运算符
+## <a name="non-numeric-operators-in-masm-expressions"></a>MASM 表达式中的非数字运算符
 
 还可以在 MASM 表达式中使用以下附加运算符。
 
@@ -263,3 +263,12 @@ ms.locfileid: "98861847"
 
 您可以使用 MASM 表达式中的源文件和行号表达式。 必须使用抑音符 () 将这些表达式括起来 \` 。 有关语法的详细信息，请参阅 [源行语法](source-line-syntax.md)。
 
+## <a name="see-also"></a>另请参阅
+
+[MASM 表达式与C++ 表达式](masm-expressions-vs--c---expressions.md)
+
+[混合表达式示例](expression-examples.md)
+
+[C++ 数字和运算符](c---numbers-and-operators.md)
+
+[符号扩展](sign-extension.md) 

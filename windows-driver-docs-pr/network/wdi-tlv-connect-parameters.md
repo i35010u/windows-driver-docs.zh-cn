@@ -5,12 +5,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_CONNECT_PARAMETERS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ad8b3dbb52e62ae0ffcee8299d5d6d27db49291
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 0e0cfca69014f7c3150d8d4a8dd8d69e2ae492f7
+ms.sourcegitcommit: f240dc837aba42f4d579181297d0585d3dc0a35b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96822741"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106011258"
 ---
 # <a name="wdi_tlv_connect_parameters"></a>WDI \_ TLV \_ 连接 \_ 参数
 
@@ -40,7 +40,7 @@ Sum (包含所有 TLVs 的大小的) 字节。
 | [**WDI \_ TLV \_ 额外 \_ 关联 \_ 请求 \_**](wdi-tlv-extra-association-request-ies.md) |   | X | 必须包含在端口发送的关联请求中的 IE blob。 这适用于设备将关联的所有 BSSID。 除了特定的 BSSID 外，还应使用此方法。 |
 | [**WDI \_ TLV \_ PHY \_ 类型 \_ 列表**](wdi-tlv-phy-type-list.md) |   | X | 允许用于关联的 PHYs 的列表。 如果未指定，则可使用任何受支持的 PHY。 如果指定，设备必须仅使用所列的 PHYs。 |
 | [**WDI \_ TLV 不 \_ 允许 \_ BSSIDS \_ 列表**](wdi-tlv-disallowed-bssids-list.md) |   | X | 不允许用于关联的 BSSIDs 的列表。 如果已指定，则适配器不得关联到此列表中的任何 AP。 |
-| [**WDI \_ TLV \_ 允许 \_ BSSIDS \_ 列表**](wdi-tlv-allowed-bssids-list.md) |   | X | 允许用于关联的 BSSIDs 的列表。 如果 WDI 指定255.255.255.255，则允许使用所有 BSSIDs。 | 
+| [**WDI \_ TLV \_ 允许 \_ BSSIDS \_ 列表**](wdi-tlv-allowed-bssids-list.md) |   | X | 允许用于关联的 BSSIDs 的列表。 如果 WDI 指定255.255.255.255，则允许使用所有 BSSIDs。 |
 
 <a name="requirements"></a>要求
 ------------

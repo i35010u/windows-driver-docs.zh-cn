@@ -3,24 +3,21 @@ title: 调试器命令程序示例
 description: 调试器命令程序示例
 keywords:
 - 调试器命令程序，示例
-ms.date: 05/23/2017
+ms.date: 03/30/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: ea05b1fd4ae61010c266792fd2e247d3db0a0814
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 7a7507c76f8fb64aa2479a9fae6a058b8c1b3332
+ms.sourcegitcommit: 83a11e69f7b175011d032a179e4cfa6d5ede9ac2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96788803"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106113630"
 ---
 # <a name="debugger-command-program-examples"></a>调试器命令程序示例
 
 
-## <span id="ddk_debugger_command_program_examples_dbg"></span><span id="DDK_DEBUGGER_COMMAND_PROGRAM_EXAMPLES_DBG"></span>
-
-
 以下部分介绍调试器命令程序。
 
-### <a name="span-idusing_the__foreach_tokenspanspan-idusing_the__foreach_tokenspanusing-the-foreach-token"></a><span id="using_the__foreach_token"></span><span id="USING_THE__FOREACH_TOKEN"></span>使用 foreach 标记
+## <a name="using-the-foreach-token"></a>使用 foreach 标记
 
 下面的示例使用 [**foreach**](-foreach.md) 标记搜索5A4D 的 WORD 值。 对于找到的每个5a4d 值，调试器将显示8个 DWORD 值，从找到的 5a4d DWORD 的地址开始。
 
@@ -56,7 +53,7 @@ ms.locfileid: "96788803"
 
 前面的示例使用 [**$ {} (Alias 解释器)**](-------alias-interpreter-.md) 标记，以确保即使在其他文本旁，也会替换别名。 如果该命令不包含此标记，则将 "下一步" 的左括号 **置于** "阻止替换别名"。 请注意， **$ {}** token 适用于在 **foreach** 和 true 别名中使用的变量。
 
-### <a name="span-idwalking_the_process_listspanspan-idwalking_the_process_listspanwalking-the-process-list"></a><span id="walking_the_process_list"></span><span id="WALKING_THE_PROCESS_LIST"></span>遍历进程列表
+## <a name="walking-the-process-list"></a>遍历进程列表
 
 下面的示例演示内核模式进程列表，并显示列表中每个条目的可执行文件名称。
 
@@ -95,7 +92,7 @@ $$  Iterate over all processes in list.
 }
 ```
 
-### <a name="span-idwalking_the_ldr_data_table_entry_listspanspan-idwalking_the_ldr_data_table_entry_listspanwalking-the-ldr_data_table_entry-list"></a><span id="walking_the_ldr_data_table_entry_list"></span><span id="WALKING_THE_LDR_DATA_TABLE_ENTRY_LIST"></span>遍历 LDR \_ 数据表 \_ \_ 条目列表
+## <a name="walking-the-ldr_data_table_entry-list"></a>遍历 LDR \_ 数据表 \_ \_ 条目列表
 
 下面的示例演示了用户模式 LDR 数据表 \_ \_ \_ 条目列表，并显示了每个列表项的基址和完整路径。
 
@@ -105,9 +102,9 @@ $$  Iterate over all processes in list.
 
 - 此程序使用 MASM 表达式计算器。 但在两个位置，将显示 **@ @c + + ( )** 标记。 此标记会使程序使用 c + + 表达式计算器来分析括号内的表达式。 此用法使程序能够直接使用 c + + 结构标记。
 
-- **?** 标志与 [**r (寄存器)**](r--registers-.md) 命令一起使用。 此标志将键入的值分配给伪寄存器 **$t 0** 和 **$t 1**。 在循环主体中， **$t 1** 的类型为 **ntdll.dll！ \_LDR \_ 数据表 \_ \_ 条目 \\ _ \**，因此程序可以进行直接成员引用。
+- **?** 标志与 [**r (寄存器)**](r--registers-.md) 命令一起使用。 此标志将键入的值分配给伪寄存器 **$t 0** 和 **$t 1**。 在循环的主体中， **$t 1** 的类型为 **ntdll.dll！ \_LDR \_ 数据表 \_ \_ 项 \\ ， \*** 因此程序可以进行直接成员引用。
 
-- 在此程序中使用用户命名的别名 _ *$Base** 和 **$Mod** 。 美元符号降低了之前在当前调试器会话中使用这些别名的可能性。 美元符号并不是必需的。 [**$ {/V：}**](-------alias-interpreter-.md)标记按原义解释别名，以防在运行脚本之前定义别名。 你还可以将此标记与任何块一起使用，以防止在使用块之前使用别名定义。
+- 此程序中使用了用户命名的别名 **$Base** 和 **$Mod** 。 美元符号降低了之前在当前调试器会话中使用这些别名的可能性。 美元符号并不是必需的。 [**$ {/V：}**](-------alias-interpreter-.md)标记按原义解释别名，以防在运行脚本之前定义别名。 你还可以将此标记与任何块一起使用，以防止在使用块之前使用别名定义。
 
 - [**Block**](-block.md)标记用于添加额外的别名替换步骤。 加载整个脚本时，会对整个脚本执行别名替换，并在每个块进入时进行一次。 如果没有 **块** 标记及其大括号， **echo** 命令不会接收 **$Mod** 的值，并且 **$Base** 在前面的行中分配的别名。
 
@@ -135,10 +132,8 @@ $$ Iterate over all modules in list.
     ad ${/v:$Mod}
 }
 ```
-
  
 
- 
 
 
 

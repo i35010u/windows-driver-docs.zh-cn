@@ -3,18 +3,18 @@ title: MetadataKey
 description: MetadataKey
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6434a09a18e8fb212a8972f90ad684d63f5c7208
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 6d0f94c7ac0499af459a1c4b8cecb65a89291f36
+ms.sourcegitcommit: 6607cb43e5d6996e0c1e4c05ba94ebf83322163d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96818417"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105995073"
 ---
 # <a name="metadatakey"></a>MetadataKey
 
 [!include[MBAE deprecation warning](../includes/mbae-deprecation-warning.md)]
 
-MetadataKey 元素指定服务元数据包的属性。 这些功能包括以下这些：
+MetadataKey 元素指定服务元数据包的属性。 其中包括：
 
 - 设备支持的每个硬件功能的标识符。
 
@@ -28,22 +28,23 @@ MetadataKey 元素指定服务元数据包的属性。 这些功能包括以下�
 </MetadataKey>
 ```
 
-## <a name="attributes"></a>特性
+## <a name="attributes"></a>属性
 
 没有特性。
 
 ## <a name="child-elements"></a>子元素
 
-|元素|描述|
+|元素|说明|
 |----|----|
 |[HardwareIDList](hardwareidlist.md)|[HardwareIDList](hardwareidlist.md)元素指定设备的一个或多个硬件标识字符串。|
-|[LastModifiedDate](lastmodifieddate.md)|[LastModifiedDate](lastmodifieddate.md)元素指定服务元数据包的上次更改时间戳。|[区域设置](locale.md)|[Locale](locale.md)元素指定服务元数据包的本地化版本。|
+|[LastModifiedDate](lastmodifieddate.md)|[LastModifiedDate](lastmodifieddate.md)元素指定服务元数据包的上次更改时间戳。|
+|[区域设置](locale.md)|[Locale](locale.md)元素指定服务元数据包的本地化版本。|
 |[ModelIDList](modelidlist.md)|[ModelIDList](modelidlist.md)元素指定在服务元数据包中指定的每个设备类型或模型的 GUID。|
 |[MultipleLocale](multiplelocale.md)|[MultipleLocale](multiplelocale.md)元素指定服务元数据包是否支持多个区域设置。|
 
 ## <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|元素|说明|
 |----|----|
 |[PackageInfo](packageinfo.md)|[PackageInfo](packageinfo.md)元素是[PackageInfo XML 架构](packageinfo-xml-schema.md)的父元素。 PackageInfo 元素的子元素指定设备元数据包的属性。|
 

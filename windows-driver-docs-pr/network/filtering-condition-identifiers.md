@@ -5,18 +5,18 @@ keywords:
 - 筛选条件标识符网络驱动程序
 ms.date: 11/08/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b4a687f57ce53bbaa5c240f69e33b69f697079c
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: cf4cdab08f3445f0f903040f4bfec5bc17ef8b55
+ms.sourcegitcommit: 6607cb43e5d6996e0c1e4c05ba94ebf83322163d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96825537"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105995081"
 ---
 # <a name="filtering-condition-identifiers"></a>筛选条件标识符
 
 筛选条件标识符由 GUID 表示。 下表对这些标识符进行了说明。
 
-|筛选条件标识符|描述|
+|筛选条件标识符|说明|
 |----|----|
 |FWPM_CONDITION_ARRIVAL_INTERFACE_INDEX|网络堆栈枚举的到达网络接口的索引。</br>WFP 使用到达接口来匹配此条件。 到达接口是在执行弱主机或转发之前，从网络进入 IP 堆栈入站之前，数据包看到的第一个接口。</br>出于重新授权目的，这种情况是不对称的，因为它本身就是入站条件。 这意味着，当延伸响应出站数据包上的入站连接时，WFP 将对此条件使用空值。</br>若要处理重新授权，必须使用第二个筛选器。 此第二个筛选器可以允许或阻止空值，也可以使用在这种情况下具有有效值的不同条件。 如果到达接口条件，接口条件的下一个跃点类将在出站数据包上具有有效接口。</br>请注意，此功能仅在 Windows Server 2008 R2、Windows 7 和更高版本的 Windows 中可用。|
 |FWPM_CONDITION_ARRIVAL_INTERFACE_TYPE|由 Internet 分配的编号颁发机构 (IANA) 定义的到达网络接口的类型。 有关详细信息，请参阅 [IANAifType 定义](https://www.iana.org/assignments/ianaiftype-mib/ianaiftype-mib)。</br>WFP 使用到达接口来匹配此条件。 到达接口是在执行弱主机或转发之前，从网络进入 IP 堆栈入站之前，数据包看到的第一个接口。</br>出于重新授权目的，这种情况是不对称的，因为它本身就是入站条件。 这意味着，当延伸响应出站数据包上的入站连接时，WFP 将对此条件使用空值。</br>若要处理重新授权，必须使用第二个筛选器。 此第二个筛选器可以允许或阻止空值，也可以使用在这种情况下具有有效值的不同条件。 如果到达接口条件，接口条件的下一个跃点类将在出站数据包上具有有效接口。</br>请注意，这只在 Windows Server 2008 R2、Windows 7 和更高版本的 Windows 中 v。|
@@ -36,7 +36,7 @@ ms.locfileid: "96825537"
 |FWPM_CONDITION_IP_FORWARD_INTERFACE|要向其发送数据包的网络接口的 LUID。|
 |FWPM_CONDITION_IP_PROTOCOL|[RFC 1700](https://tools.ietf.org/html/rfc1700)中指定的 IP 协议号。|
 |FWPM_CONDITION_IP_LOCAL_PORT|本地传输协议端口号。|
-|FWPM_CONDITION_IP_REMOTE_PORT|远程传输协议端口 |编号。|
+|FWPM_CONDITION_IP_REMOTE_PORT|远程传输协议端口号。|
 |FWPM_CONDITION_ICMP_TYPE|在 [RFC 792](https://tools.ietf.org/html/rfc792)中指定的 "ICMP 类型" 字段。|
 |FWPM_CONDITION_ICMP_CODE|在 [RFC 792](https://tools.ietf.org/html/rfc792)中指定的 "ICMP 代码" 字段。|
 |FWPM_CONDITION_EMBEDDED_LOCAL_ADDRESS_TYPE|在 ICMP 数据包中嵌入的本地 IP 地址类型。 可能的条件值为：</br>- NlatUnspecified</br>- NlatUnicast</br>- NlatAnycast</br>- NlatMulticast</br>- NlatBroadcast|

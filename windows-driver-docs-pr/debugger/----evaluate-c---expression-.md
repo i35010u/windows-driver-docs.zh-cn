@@ -11,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6658a8e13623b0daed986f863d44c29bfcf09915
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: c3510869a06655b163a66aecf9120c8156713125
+ms.sourcegitcommit: 83a11e69f7b175011d032a179e4cfa6d5ede9ac2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96800217"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106113602"
 ---
 # <a name="-evaluate-c-expression"></a>?? （计算 C++ 表达式）
 
@@ -42,7 +42,7 @@ Double 问号 (**？？**) 命令根据 c + + 表达式规则计算并显示表�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p><strong>模式</strong></p></td>
 <td align="left"><p>用户模式，内核模式</p></td>
 </tr>
 <tr class="even">
@@ -65,12 +65,15 @@ Double 问号 (**？？**) 命令根据 c + + 表达式规则计算并显示表�
 
 如果要根据 MASM 表达式规则来计算 **表达式** 表达式的一部分，请将该部分括在括号中，并在其前面添加两个 at 符号 ( **@@** ) 。 有关 MASM 表达式和 c + + 表达式的详细信息，请参阅 [计算表达式](evaluating-expressions.md) 和 [数值表达式语法](numerical-expression-syntax.md)。
 
-## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
-
+## <a name="see-also"></a>另请参阅
 
 [**? (计算表达式)**](---evaluate-expression-.md)
 
 [**.formats（显示数字格式）**](-formats--show-number-formats-.md)
+
+[计算表达式](evaluating-expressions.md) 
+
+[数字表达式语法](numerical-expression-syntax.md)
 
  
 

@@ -50,7 +50,7 @@ ms.locfileid: "105937665"
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 系统提供的 USB 集线器驱动程序将注册 GUID_DEVINTERFACE_USB_DEVICE 的实例，以通知系统和应用程序是否存在连接到 USB 集线器的 USB 设备。

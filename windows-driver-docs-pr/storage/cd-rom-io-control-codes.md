@@ -6,12 +6,12 @@ keywords:
 - IOCTLs WDK cd-rom
 ms.date: 12/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ec0b20441e2afead95dd5d901fec4800e606f5a
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 9aac32d3913af6cba3652bc0d8740913a321ada0
+ms.sourcegitcommit: 6607cb43e5d6996e0c1e4c05ba94ebf83322163d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191322"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105995077"
 ---
 # <a name="cd-rom-io-control-codes"></a>CD-ROM I/O 控制代码
 
@@ -36,7 +36,7 @@ Cd-rom 设备的类驱动程序处理额外的公共 i/o 控制代码，以及�
 |[IOCTL_CDROM_GET_VOLUME](/windows-hardware/drivers/ddi/ntddcdrm/ni-ntddcdrm-ioctl_cdrom_get_volume)|已过时。 确定其每个设备的音频端口的当前卷。|
 |[IOCTL_CDROM_LOAD_MEDIA](/windows-hardware/drivers/ddi/ntddcdrm/ni-ntddcdrm-ioctl_cdrom_load_media)|将 protruding CDROM 托盘移回驱动器。|
 |[IOCTL_CDROM_PAUSE_AUDIO](/windows-hardware/drivers/ddi/ntddcdrm/ni-ntddcdrm-ioctl_cdrom_pause_audio)|已过时。 暂停播放音频。|
-|[IOCTL_CDROM_PLAY_AUDIO_MSF](/windows-hardware/drivers/ddi/ntddcdrm/ni-ntddcdrm-ioctl_cdrom_play_audio_msf)|已过时。 播放指定范围的媒体。|从 cd-rom 中读取原始模式下的数据。|
+|[IOCTL_CDROM_PLAY_AUDIO_MSF](/windows-hardware/drivers/ddi/ntddcdrm/ni-ntddcdrm-ioctl_cdrom_play_audio_msf)|已过时。 播放指定范围的媒体。|
 |[IOCTL_CDROM_READ_Q_CHANNEL](/windows-hardware/drivers/ddi/ntddcdrm/ni-ntddcdrm-ioctl_cdrom_read_q_channel)|已过时。 返回当前位置、media catalog 或 ISRC track 数据。|
 |[IOCTL_CDROM_READ_TOC](/windows-hardware/drivers/ddi/ntddcdrm/ni-ntddcdrm-ioctl_cdrom_read_toc)|已过时。 返回媒体的目录。|
 |[IOCTL_CDROM_READ_TOC_EX](/windows-hardware/drivers/ddi/ntddcdrm/ni-ntddcdrm-ioctl_cdrom_read_toc_ex)|在目标设备上查询目录 (TOC) 、program memory area (PMA) 和 pregroove (ATIP) 中的绝对时间。|

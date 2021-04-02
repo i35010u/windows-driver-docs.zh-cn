@@ -3,7 +3,7 @@ title: （计算表达式）
 description: 问号 ( ) 命令计算并显示表达式的值。请注意问号本身 ( ) 显示命令帮助。
 keywords:
 - ) Windows 调试 (计算表达式
-ms.date: 09/17/2018
+ms.date: 03/30/2021
 topic_type:
 - apiref
 api_name:
@@ -11,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d6e5a3b2dc50a3e48184e4c18ccbc249e5cc12b6
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: b6eec0092c5e9791de471837de4c46f57cb66efe
+ms.sourcegitcommit: 83a11e69f7b175011d032a179e4cfa6d5ede9ac2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96800197"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106113606"
 ---
 # <a name="-evaluate-expression"></a>? （计算表达式）
 
@@ -29,13 +29,12 @@ ms.locfileid: "96800197"
     ? Expression
 ```
 
-## <a name="span-idddk_cmd_evaluate_expression_dbgspanspan-idddk_cmd_evaluate_expression_dbgspanparameters"></a><span id="ddk_cmd_evaluate_expression_dbg"></span><span id="DDK_CMD_EVALUATE_EXPRESSION_DBG"></span>参数
+## <a name="parameters"></a>参数
 
-
-<span id="_______Expression______"></span><span id="_______expression______"></span><span id="_______EXPRESSION______"></span>*表达式*   
+*表达式*   
 指定要计算的表达式。
 
-### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>环境
+### <a name="environment"></a>环境
 
 <table>
 <colgroup>
@@ -44,7 +43,7 @@ ms.locfileid: "96800197"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p><strong>模式</strong></p></td>
 <td align="left"><p>用户模式，内核模式</p></td>
 </tr>
 <tr class="even">
@@ -100,13 +99,19 @@ Evaluate expression: 0 = 00000000
 
 在前面的示例中， **$spat** MASM 运算符检查第一个字符串，以确定它是否与第二个字符串的模式 (不) 区分大小写。 有关 MASM 运算符的详细信息，请参阅 [Masm 数字和运算符](masm-numbers-and-operators.md) 主题。
 
-## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
-
+## <a name="see-also"></a>另请参阅
 
 [**?? (评估 c + + 表达式)**](----evaluate-c---expression-.md)
 
 [**.formats（显示数字格式）**](-formats--show-number-formats-.md)
 
+[MASM 数字和运算符](masm-numbers-and-operators.md)
+
+[C++ 数字和运算符](c---numbers-and-operators.md)
+
+[MASM 表达式与C++ 表达式](masm-expressions-vs--c---expressions.md)
+
+[混合表达式示例](expression-examples.md)
  
 
  

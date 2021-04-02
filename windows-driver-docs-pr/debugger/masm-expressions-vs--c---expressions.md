@@ -7,18 +7,14 @@ keywords:
 - C + + 表达式，c + + 与 MASM
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c0d5080633bbc3da8d5250939c6a3f268b653c91
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: e754fc742b60629cada98cced9413d8f5d8009e8
+ms.sourcegitcommit: 83a11e69f7b175011d032a179e4cfa6d5ede9ac2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96792401"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106113642"
 ---
 # <a name="masm-expressions-vs-c-expressions"></a>MASM 表达式与C++ 表达式
-
-
-## <span id="ddk_masm_expressions_vs__c_expressions_dbg"></span><span id="DDK_MASM_EXPRESSIONS_VS__C_EXPRESSIONS_DBG"></span>
-
 
 MASM 表达式计算与 c + + 表达式计算的最重要差异如下：
 
@@ -37,10 +33,15 @@ MASM 表达式计算与 c + + 表达式计算的最重要差异如下：
 -   MASM 表达式可能包含对源行的引用。 这些引用由抑音符 ( ) 指示 **\`** 。 不能在 c + + 表达式中引用源行号。
 
  
+## <a name="see-also"></a>另请参阅
 
- 
+[MASM 数字和运算符](masm-numbers-and-operators.md)
 
+[C++ 数字和运算符](c---numbers-and-operators.md)
 
+[混合表达式示例](expression-examples.md)
+
+[符号扩展](sign-extension.md) 
 
 
 

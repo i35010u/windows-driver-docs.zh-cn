@@ -8,24 +8,20 @@ keywords:
 - 寄存器、符号扩展
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a2a25f9589a963304e880b7eb4365521ee6b4673
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 5777a05726d36f42ca24549f44e0ca1f547896c1
+ms.sourcegitcommit: 83a11e69f7b175011d032a179e4cfa6d5ede9ac2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96839933"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106113610"
 ---
 # <a name="sign-extension"></a>符号扩展
-
-
-## <span id="ddk_sign_extension_dbg"></span><span id="DDK_SIGN_EXTENSION_DBG"></span>
-
 
 如果32位有符号整数为负数，则其最大位等于1。 将此32位有符号整数强制转换为64位数字时，可以将高位设置为零 (保留数字的无符号整数和十六进制值) 或者可以将高位设置为保留数字) 的带符号值的一个 (。 后一种情况称为 " *符号扩展*"。
 
 对于 MASM 表达式中的符号扩展、c + + 表达式和显示数字，调试器遵循不同的规则。
 
-### <a name="span-idsign_extension_in_masm_expressionsspanspan-idsign_extension_in_masm_expressionsspansign-extension-in-masm-expressions"></a><span id="sign_extension_in_masm_expressions"></span><span id="SIGN_EXTENSION_IN_MASM_EXPRESSIONS"></span>MASM 表达式中的签名扩展
+## <a name="sign-extension-in-masm-expressions"></a>MASM 表达式中的签名扩展
 
 在某些情况下，由 MASM 表达式计算器自动对数字进行 *签名* 。 Sign extension 只能影响从0x80000000 到0xFFFFFFFF 的数字。 也就是说，符号扩展只会影响可以用32位编写，高位等于1的数字。
 
@@ -44,7 +40,7 @@ ms.locfileid: "96839933"
     ( 0x0`FFFFFFFF & expression )
     ```
 
-### <a name="span-idsign_extension_in_c___expressionsspanspan-idsign_extension_in_c___expressionsspansign-extension-in-c-expressions"></a><span id="sign_extension_in_c___expressions"></span><span id="SIGN_EXTENSION_IN_C___EXPRESSIONS"></span>C + + 表达式中的签名扩展
+## <a name="sign-extension-in-c-expressions"></a>C + + 表达式中的签名扩展
 
 调试器计算 c + + 表达式时，下列规则适用：
 
@@ -52,7 +48,7 @@ ms.locfileid: "96839933"
 
 -   所有其他值都与 c + + 处理其类型的值完全相同。
 
-### <a name="span-iddisplaying_sign_extended_and_64_bit_numbersspanspan-iddisplaying_sign_extended_and_64_bit_numbersspandisplaying-sign-extended-and-64-bit-numbers"></a><span id="displaying_sign_extended_and_64_bit_numbers"></span><span id="DISPLAYING_SIGN_EXTENDED_AND_64_BIT_NUMBERS"></span>显示 Sign-Extended 和64位数字
+## <a name="displaying-sign-extended-and-64-bit-numbers"></a>显示 Sign-Extended 和64位数字
 
 除32位和16位寄存器以外，所有数字都以64位值的形式存储在调试器内。 但是，当数字满足某些条件时，调试器会在命令输出中将其显示为32位数字。
 
@@ -66,11 +62,15 @@ ms.locfileid: "96839933"
 
 由于这些显示规则，当数字显示为从0x80000000 到0xFFFFFFFF 的32位数字时，无法确认高32位是所有值还是全部为零。 若要区分这两种情况，您必须对数字执行附加计算 (例如屏蔽一个或多个高位并显示结果) 。
 
- 
+## <a name="see-also"></a>另请参阅
 
- 
+[MASM 数字和运算符](masm-numbers-and-operators.md)
 
+[C++ 数字和运算符](c---numbers-and-operators.md)
 
+[MASM 表达式与C++ 表达式](masm-expressions-vs--c---expressions.md)
 
+[混合表达式示例](expression-examples.md)
 
+[符号扩展](sign-extension.md) 
 

@@ -11,24 +11,20 @@ keywords:
 - '局部变量、本地符号标识符 ( $ ) '
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f7dcd87964abc27bd9978d4731e2e89d4bf248a2
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: ccce12acaf499e79c7c08c498c105dbb8de4d45d
+ms.sourcegitcommit: 83a11e69f7b175011d032a179e4cfa6d5ede9ac2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96834679"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106113620"
 ---
 # <a name="symbol-syntax-and-symbol-matching"></a>符号语法和符号匹配
-
-
-## <span id="ddk_symbol_syntax_and_symbol_matching_dbg"></span><span id="DDK_SYMBOL_SYNTAX_AND_SYMBOL_MATCHING_DBG"></span>
-
 
 符号使你可以直接操作正在调试的程序所使用的标记。 例如，可以在函数 **main** 上使用命令 **最佳的 main** 设置断点，或使用命令 **dd MyInt L1** 显示整数变量 **MyInt** 。
 
 在许多情况下，可以在调试器命令中将符号用作参数。 大多数数字参数都支持此支持，某些文本参数也支持此项。 除了符号语法的一般规则外，还存在适用于每种情况的符号语法规则。
 
-### <a name="span-idgeneral_symbol_syntax_rulesspanspan-idgeneral_symbol_syntax_rulesspangeneral-symbol-syntax-rules"></a><span id="general_symbol_syntax_rules"></span><span id="GENERAL_SYMBOL_SYNTAX_RULES"></span>一般符号语法规则
+## <a name="general-symbol-syntax-rules"></a>一般符号语法规则
 
 符号名称由一个或多个字符组成，但始终以字母、下划线 (**\_**) 、问号 (**？**) 或美元符号 (**$**) 开头。
 
@@ -36,7 +32,7 @@ ms.locfileid: "96834679"
 
 符号名称完全不区分大小写。 这意味着，调试程序将不能正确了解程序中是否存在 **myInt** 和 **myInt** ;任何引用其中一个命令的命令都可以访问另一个命令，而不管该命令是如何大写的。
 
-### <a name="span-idsymbol_syntax_in_numerical_expressionsspanspan-idsymbol_syntax_in_numerical_expressionsspansymbol-syntax-in-numerical-expressions"></a><span id="symbol_syntax_in_numerical_expressions"></span><span id="SYMBOL_SYNTAX_IN_NUMERICAL_EXPRESSIONS"></span>数值表达式中的符号语法
+## <a name="symbol-syntax-in-numerical-expressions"></a>数值表达式中的符号语法
 
 调试器理解两种不同类型的表达式： Microsoft 宏组装器 (MASM) 表达式和 c + + 表达式。 就符号而言，这两种形式的语法不同，如下所示：
 
@@ -54,7 +50,7 @@ ASCII 和 Unicode 版本中同时存在许多 Win32 例程。 这些例程通常
 
 默认情况下，后缀匹配不处于活动状态。
 
-### <a name="span-idsymbol_syntax_in_text_expressionsspanspan-idsymbol_syntax_in_text_expressionsspansymbol-syntax-in-text-expressions"></a><span id="symbol_syntax_in_text_expressions"></span><span id="SYMBOL_SYNTAX_IN_TEXT_EXPRESSIONS"></span>文本表达式中的符号语法
+## <a name="symbol-syntax-in-text-expressions"></a>文本表达式中的符号语法
 
 可以在某些命令的文本参数中使用符号，例如 [**bm.exe (设置断点)**](bp--bu--bm--set-breakpoint-.md) 和 [**x (检查符号)**](x--examine-symbols-.md)。
 

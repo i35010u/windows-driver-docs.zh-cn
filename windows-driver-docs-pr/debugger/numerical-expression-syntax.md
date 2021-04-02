@@ -11,12 +11,12 @@ keywords:
 - 命令的语法规则，c + + 表达式
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f71174f7a735f6a5799775635ed5d99266959fb5
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: af0ecf144414651e4840425abf187da8ab4c3c6d
+ms.sourcegitcommit: 83a11e69f7b175011d032a179e4cfa6d5ede9ac2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96833647"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106113648"
 ---
 # <a name="numerical-expression-syntax"></a>数字表达式语法
 
@@ -36,7 +36,7 @@ ms.locfileid: "96833647"
 
 [MASM 表达式与C++ 表达式](masm-expressions-vs--c---expressions.md)
 
-[表达式示例](expression-examples.md)
+[混合表达式示例](expression-examples.md)
 
 [符号扩展](sign-extension.md)
 

@@ -1,14 +1,14 @@
 ---
 title: SoC 平台上 Windows 的 UEFI 要求
 description: 本主题介绍适用于适用于 Windows 10 的 UEFI 要求 (家庭、专业版、企业版和教育版) 以及 Windows 10 移动版。
-ms.date: 03/29/2021
+ms.date: 03/31/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 07a834202066204527a5787414113a2e77365bb6
-ms.sourcegitcommit: 6d62844b4afaebf9032649b27045c75da0b356af
+ms.openlocfilehash: abf312335eb77047cdcec25589d09a193a32ae23
+ms.sourcegitcommit: 38feaa2a1d3495eb20ccf846eb9cbcd67e8ae4ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "105729982"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106099069"
 ---
 # <a name="uefi-requirements-for-windows-editions-on-soc-platforms"></a>SoC 平台上 Windows 版本的 UEFI 要求
 
@@ -321,7 +321,7 @@ Windows 在安全启动、标准启动、加密和数据保护方面具有安全
 </ul></td>
 </tr>
 <tr class="even">
-<td>加密</td>
+<td>密码</td>
 <td><ul>
 <li><p>要求25：强制。 平台应为卸载加密哈希操作提供 EFI_HASH_PROTOCOL (UEFI v1.0) 27.4 部分。 必须支持 SHA-256。</p></li>
 <li><p>要求26：必填。 平台应支持 Microsoft 定义的 <a href="uefi-entropy-gathering-protocol.md" data-raw-source="[EFI_RNG_PROTOCOL](uefi-entropy-gathering-protocol.md)">EFI_RNG_PROTOCOL</a> ，以进行 OS 预操作系统读取。</p></li>
@@ -363,7 +363,7 @@ UEFI ARM 绑定包括特定于 ARM 平台的要求，这些要求必须符合 UE
 
 ## <a name="uefi-arm-multiprocessor-startup-requirements"></a>UEFI ARM 多处理器启动要求
 
-Microsoft 已开发了一个协议，用于在多处理器 UEFI 平台上启动多个 ARM 核心。 ARM 平台上的 Windows 需要此协议，但不支持)  (PSCI 的电源状态协调接口。 支持 PSCI 的平台不能使用此协议。 有关此协议的详细信息，请参阅 ACPI 组件体系结构 (ACPICA) 网站上的 [基于 UEFI ARM 平台的多处理器启动](https://acpica.org/sites/acpica/files/MP%20Startup%20for%20ARM%20platforms.docx) 文档。
+Microsoft 已开发了一个协议，用于在多处理器 UEFI 平台上启动多个 ARM 核心。 ARM 平台上的 Windows 需要此协议，但不支持 [)  (PSCI 的电源状态协调接口 ](https://developer.arm.com/documentation/den0022/latest)。 支持 PSCI 的平台不能使用此协议。 有关此协议的详细信息，请参阅 ACPI 组件体系结构 (ACPICA) 网站上的 [基于 UEFI ARM 平台的多处理器启动](https://acpica.org/sites/acpica/files/MP%20Startup%20for%20ARM%20platforms.docx) 文档。
 
 ## <a name="platform-setup-requirements"></a>平台设置要求
 

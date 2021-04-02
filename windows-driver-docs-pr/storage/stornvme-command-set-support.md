@@ -3,12 +3,12 @@ title: StorNVMe 命令集支持
 description: 介绍 StoreNVMe 提供的命令集支持
 ms.date: 08/07/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 5dabded70052f05b9c6ad4a0ba88014582251097
-ms.sourcegitcommit: 322c5442dc72980ca3a45ad758c70acdf44dc6c0
+ms.openlocfilehash: 87deda8a3a487310e1b7fa2bf93ff2d2d2f8f187
+ms.sourcegitcommit: 6607cb43e5d6996e0c1e4c05ba94ebf83322163d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2021
-ms.locfileid: "105616679"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105995079"
 ---
 # <a name="stornvme-command-set-support"></a>StorNVMe 命令集支持
 
@@ -24,12 +24,12 @@ ms.locfileid: "105616679"
 | 1       | 创建 i/o 提交队列 | 内部驱动程序使用情况 |    |
 | 2       | 获取日志页                | 内部驱动程序使用情况; [IOCTL_STORAGE_QUERY_PROPERTY](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_query_property) |   |
 | 4       | 删除 i/o 完成队列 | 内部驱动程序使用情况 |   |
-| 5       | 创建 i/o 完成队列 | 内部驱动程序使用情况 |
+| 5       | 创建 i/o 完成队列 | 内部驱动程序使用情况 |   |
 | 6       | 识别                    | 内部驱动程序使用情况; [IOCTL_STORAGE_QUERY_PROPERTY](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_query_property)，IOCTL_STORAGE_FIRMWARE_GET_INFO |   |
 | 8       | 中止                       |   | 目前不受支持。 |
 | 9       | 设置功能                | 内部驱动程序使用情况; [IOCTL_STORAGE_SET_PROPERTY](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_set_property) | 仅对主机控制的热量管理设置了[IOCTL_STORAGE_SET_PROPERTY](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_set_property)的功能 |
 | 啊      | 获取功能                | 内部驱动程序使用情况; [IOCTL_STORAGE_QUERY_PROPERTY](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_query_property) |   |
-| 48      | 异步事件请求  | 内部驱动程序使用情况 |   |   |
+| 48      | 异步事件请求  | 内部驱动程序使用情况 |   |
 | Dh      | 命名空间管理        | [IOCTL_STORAGE_PROTOCOL_COMMAND](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_protocol_command) | 仅在 Win PE 模式下为[IOCTL_STORAGE_PROTOCOL_COMMAND](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_protocol_command)启用 |
 | 10h     | 固件提交             | [IOCTL_STORAGE_FIRMWARE_ACTIVATE](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_firmware_activate) | |
 | 11h     | 固件映像下载     | [IOCTL_STORAGE_FIRMWARE_DOWNLOAD](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_firmware_download) | |

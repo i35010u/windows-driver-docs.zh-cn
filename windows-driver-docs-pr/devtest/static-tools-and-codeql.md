@@ -6,12 +6,12 @@ keywords:
 - 静态验证工具 WDK
 ms.date: 02/03/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: bfe98890e0aca02b13fe97f7b4f89f46d96c435e
-ms.sourcegitcommit: 01179a569921e3b9a5e2fa56e46164346e581a7e
+ms.openlocfilehash: 93cbbc153fd244d839e67d723b04394519620626
+ms.sourcegitcommit: ed3ba7c8d91a5a4de6f8ef46097eb992e94ba609
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104895697"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106087177"
 ---
 # <a name="codeql-and-the-static-tools-logo-test"></a>CodeQL 和静态工具徽标测试
 
@@ -305,7 +305,7 @@ Interpreting results.
 
 Qls 查询套件包含当前被视为用于 WHCP 认证的 **"必须修复"** 的 [查询](#must-fix-queries)。 *windows_driver_mustfix* 这两个查询套件会定期更新，因为 Microsoft 最终会获得可用查询列表和 WHCP 认证所需的 "必须修复" 查询列表。  因此，使用 ["git pull"](https://www.git-scm.com/docs/git-pull) 命令定期同步存储库至关重要。
 
-## <a name="troubleshooting"></a>故障排除
+## <a name="troubleshooting"></a>疑难解答
 
 对于 [数据库版本](https://codeql.github.com/docs/codeql-cli/manual/version/) 不匹配问题，下列工具可能有所帮助。
 
@@ -331,27 +331,27 @@ Microsoft 建议在 *所有* 驱动程序源代码上运行的查询包括：
 
 | ID                       | 位置   | [常见漏洞枚举](https://cwe.mitre.org/)   |
 | ------------------------ | ---------- | ----------------------------- |
-| [cpp/参数太少](https://codeql.github.com/codeql-query-help/cpp/cpp-too-few-arguments/)   | *cpp/q/src/可能的 Bug/Underspecified 函数/TooFewArguments. q* | 不适用 |
+| [cpp/参数太少](https://codeql.github.com/codeql-query-help/cpp/cpp-too-few-arguments/)   | *cpp/q/src/可能的 Bug/Underspecified 函数/TooFewArguments. q* | 不可用 |
 | [cpp/错误添加-溢出-检查](https://codeql.github.com/codeql-query-help/cpp/cpp-bad-addition-overflow-check/)   | *cpp/q/src/可能的 Bug/算数/BadAdditionOverflowCheck. q* | [CWE-190](https://cwe.mitre.org/data/definitions/190.html)， [CWE-192](https://cwe.mitre.org/data/definitions/192.html) |
-| [cpp/指针溢出-检查](https://codeql.github.com/codeql-query-help/cpp/cpp-pointer-overflow-check/)   | *cpp/q/src/可能的 Bug/内存管理/PointerOverflow. q* | 不适用 |
+| [cpp/指针溢出-检查](https://codeql.github.com/codeql-query-help/cpp/cpp-pointer-overflow-check/)   | *cpp/q/src/可能的 Bug/内存管理/PointerOverflow. q* | 不可用 |
 | [cpp/hresult-布尔转换](https://codeql.github.com/codeql-query-help/cpp/cpp-hresult-boolean-conversion/)   | *cpp/q/src/Security/CWE/CWE-253/HResultBooleanConversion. q* | [CWE-253](https://cwe.mitre.org/data/definitions/253.html) |
 | [cpp/错误的字符串类型转换](https://codeql.github.com/codeql-query-help/cpp/cpp-incorrect-string-type-conversion/)   | *cpp/q/src/Security/CWE/CWE-704/WcharCharConversion. q* | [CWE-704](https://cwe.mitre.org/data/definitions/704.html) |
 | [cpp/整数-强制转换为 long](https://codeql.github.com/codeql-query-help/cpp/cpp-integer-multiplication-cast-to-long/)   | *cpp/q/src/可能的 Bug/算数/IntMultToLong. q* | [CWE-190](https://cwe.mitre.org/data/definitions/190.html)、 [CWE-192](https://cwe.mitre.org/data/definitions/192.html)、 [CWE-197](https://cwe.mitre.org/data/definitions/197.html)、 [CWE-681](https://cwe.mitre.org/data/definitions/681.html) |
-| [cpp/有符号溢出-检查](https://codeql.github.com/codeql-query-help/cpp/cpp-signed-overflow-check/)   | *cpp/q/src/可能的 Bug/算数/SignedOverflowCheck. q* | 不适用 | 
+| [cpp/有符号溢出-检查](https://codeql.github.com/codeql-query-help/cpp/cpp-signed-overflow-check/)   | *cpp/q/src/可能的 Bug/算数/SignedOverflowCheck. q* | 不可用 | 
 | [cpp/向上转换-数组指针算法](https://codeql.github.com/codeql-query-help/cpp/cpp-upcast-array-pointer-arithmetic/)   | *cpp/q/src/可能的 Bug/转换/CastArrayPointerArithmetic。 q* | [CWE-119](https://cwe.mitre.org/data/definitions/119.html)， [CWE-843](https://cwe.mitre.org/data/definitions/843.html) |
 | [cpp/比较-具有更大的类型](https://codeql.github.com/codeql-query-help/cpp/cpp-comparison-with-wider-type/)   | *cpp/q/src/Security/CWE/CWE-190/ComparisonWithWiderType. q* | [CWE-190](https://cwe.mitre.org/data/definitions/190.html)、 [CWE-197](https://cwe.mitre.org/data/definitions/197.html)、 [CWE-835](https://cwe.mitre.org/data/definitions/835.html) |
 | [cpp/可疑-添加-sizeof](https://codeql.github.com/codeql-query-help/cpp/cpp-suspicious-add-sizeof/)   | *cpp/q/src/Security/CWE/CWE-468/SuspiciousAddWithSizeof q* | [CWE-468](https://cwe.mitre.org/data/definitions/468.html) |
 | [cpp/可能危险的函数](https://codeql.github.com/codeql-query-help/cpp/cpp-potentially-dangerous-function/)   | *cpp/q/src/Security/CWE/CWE-676/PotentiallyDangerousFunction q* | [CWE-676](https://codeql.github.com/codeql-query-help/cpp/cpp-potentially-dangerous-function/) 
 | [cpp/不正确-用法](https://codeql.github.com/codeql-standard-libraries/cpp/Likely%20Bugs/Likely%20Typos/IncorrectNotOperatorUsage.ql/module.IncorrectNotOperatorUsage.html)   | *cpp/q/src/可能的 Bug/错误录入/IncorrectNotOperatorUsage。 q* | [CWE-480](https://cwe.mitre.org/data/definitions/480.html) |
-| [cpp/offset-使用前-范围-检查](https://github.com/github/codeql/blob/main/cpp/ql/src/Best%20Practices/Likely%20Errors/OffsetUseBeforeRangeCheck.qhelp)  | *cpp/q/src/最佳方案/可能的错误/OffsetUseBeforeRangeCheck. q*   | 不适用 |
+| [cpp/offset-使用前-范围-检查](https://github.com/github/codeql/blob/main/cpp/ql/src/Best%20Practices/Likely%20Errors/OffsetUseBeforeRangeCheck.qhelp)  | *cpp/q/src/最佳方案/可能的错误/OffsetUseBeforeRangeCheck. q*   | 不可用 |
 | [cpp/可疑-添加-sizeof](https://codeql.github.com/codeql-query-help/cpp/cpp-suspicious-add-sizeof/)   | *cpp/q/src/可能的 Bug/内存管理/SuspiciousSizeof. q* | [CWE-468](https://codeql.github.com/codeql-query-help/cpp/cpp-suspicious-add-sizeof/) |
 | [cpp/未初始化-本地](https://codeql.github.com/codeql-standard-libraries/cpp/Likely%20Bugs/Memory%20Management/UninitializedLocal.ql/module.UninitializedLocal.html)   | *cpp/q/src/可能的 Bug/内存管理/UninitializedLocal. q* | [CWE-457](https://cwe.mitre.org/data/definitions/457.html)， [CWE-665](https://cwe.mitre.org/data/definitions/665.html) |
 | [cpp/未终止-可变参数-调用](https://codeql.github.com/codeql-standard-libraries/cpp/Security/CWE/CWE-121/UnterminatedVarargsCall.ql/module.UnterminatedVarargsCall.html)   | *cpp/q/src/Security/CWE/CWE-121/UnterminatedVarargsCall. q* | [CWE-121](https://cwe.mitre.org/data/definitions/121.html) |
 | [cpp/可疑指针缩放](https://github.com/github/codeql/blob/main/cpp/ql/src/Security/CWE/CWE-468/IncorrectPointerScalingChar.qhelp)   | *cpp/q/src/Security/CWE/CWE-468/IncorrectPointerScaling q* | [CWE-468](https://cwe.mitre.org/data/definitions/468.html) |
 | [cpp/可疑-指针缩放-void](https://github.com/github/codeql/blob/main/cpp/ql/src/Security/CWE/CWE-468/IncorrectPointerScalingVoid.qhelp)   | *cpp/q/src/Security/CWE/CWE-468/IncorrectPointerScalingVoid q* | [CWE-468](https://cwe.mitre.org/data/definitions/468.html) |
 | [cpp/有条件-未初始化-变量](https://codeql.github.com/codeql-standard-libraries/cpp/Security/CWE/CWE-457/ConditionallyUninitializedVariable.ql/module.ConditionallyUninitializedVariable.html)   | *cpp/q/src/Security/CWE/CWE-457/ConditionallyUninitializedVariable。* | [CWE-457](https://cwe.mitre.org/data/definitions/457.html) |
-| [cpp/使用-免费](./codeql-windows-driver-useafterfree.md)   | *Windows 驱动程序-开发人员补充-工具/codeql/windows-驱动程序/查询/可能的 Bug/内存管理/UseAfterFree \ UseAfterFree q* | 不适用 |
-| [cpp/windows/wdk/弃用的 api](./codeql-windows-driver-wdkdeprecatedapi.md)   | *Windows 驱动程序-开发人员补充-工具/codeql/windows-驱动程序/查询/Windows/wdk/wdk-q* | 不适用 |
+| [cpp/使用-免费](./codeql-windows-driver-useafterfree.md)   | *Windows 驱动程序-开发人员补充-工具/codeql/windows-驱动程序/查询/可能的 Bug/内存管理/UseAfterFree \ UseAfterFree q* | 不可用 |
+| [cpp/windows/wdk/弃用的 api](./codeql-windows-driver-wdkdeprecatedapi.md)   | *Windows 驱动程序-开发人员补充-工具/codeql/windows-驱动程序/查询/Windows/wdk/wdk-q* | 不可用 |
 
 这些查询是 [Microsoft GitHub CodeQL 存储库](https://github.com/microsoft/Windows-Driver-Developer-Supplemental-Tools)中的 *windows_driver_recommended qls* 查询套件的一部分。  "常见漏洞枚举" (CWE) 列指定给定查询搜索的安全问题类型。  有关 CWE 的详细信息，请参阅 [CWE 上的 Mitre 页面](https://cwe.mitre.org/) 。 
 
@@ -361,15 +361,15 @@ Microsoft 建议在 *所有* 驱动程序源代码上运行的查询包括：
 
 | ID            | 位置 | [常见漏洞枚举](https://cwe.mitre.org/)   |
 | ------------------------ | ---------- | ----------------------------- |
-| [cpp/参数太少](https://codeql.github.com/codeql-query-help/cpp/cpp-too-few-arguments/)   | *cpp/q/src/可能的 Bug/Underspecified 函数/TooFewArguments. q* | 不适用 |
+| [cpp/参数太少](https://codeql.github.com/codeql-query-help/cpp/cpp-too-few-arguments/)   | *cpp/q/src/可能的 Bug/Underspecified 函数/TooFewArguments. q* | 不可用 |
 | [cpp/错误添加-溢出-检查](https://codeql.github.com/codeql-query-help/cpp/cpp-bad-addition-overflow-check/)   | *cpp/q/src/可能的 Bug/算数/BadAdditionOverflowCheck. q* | [CWE-190](https://cwe.mitre.org/data/definitions/190.html)， [CWE-192](https://cwe.mitre.org/data/definitions/192.html) |
-| [cpp/指针溢出-检查](https://codeql.github.com/codeql-query-help/cpp/cpp-pointer-overflow-check/)   | *cpp/q/src/可能的 Bug/内存管理/PointerOverflow. q*| 不适用 |
+| [cpp/指针溢出-检查](https://codeql.github.com/codeql-query-help/cpp/cpp-pointer-overflow-check/)   | *cpp/q/src/可能的 Bug/内存管理/PointerOverflow. q*| 不可用 |
 | [cpp/hresult-布尔转换](https://codeql.github.com/codeql-query-help/cpp/cpp-hresult-boolean-conversion/)   | *cpp/q/src/Security/CWE/CWE-253/HResultBooleanConversion. q* | [CWE-253](https://cwe.mitre.org/data/definitions/253.html) |
 | [cpp/错误的字符串类型转换](https://codeql.github.com/codeql-query-help/cpp/cpp-incorrect-string-type-conversion/)   | *cpp/q/src/Security/CWE/CWE-704/WcharCharConversion. q* | [CWE-704](https://cwe.mitre.org/data/definitions/704.html) |
 | [cpp/有条件-未初始化-变量](https://codeql.github.com/codeql-standard-libraries/cpp/Security/CWE/CWE-457/ConditionallyUninitializedVariable.ql/module.ConditionallyUninitializedVariable.html)   | *cpp/q/src/Security/CWE/CWE-457/ConditionallyUninitializedVariable。* | [CWE-457](https://cwe.mitre.org/data/definitions/457.html) |
 | [cpp/比较-具有更大的类型](https://codeql.github.com/codeql-query-help/cpp/cpp-comparison-with-wider-type/)   | *cpp/q/src/Security/CWE/CWE-190/ComparisonWithWiderType. q*  | [CWE-190](https://cwe.mitre.org/data/definitions/190.html)、 [CWE-197](https://cwe.mitre.org/data/definitions/197.html)、 [CWE-835](https://cwe.mitre.org/data/definitions/835.html) |
 | [cpp/未初始化-本地](https://codeql.github.com/codeql-standard-libraries/cpp/Likely%20Bugs/Memory%20Management/UninitializedLocal.ql/module.UninitializedLocal.html)   | *cpp/q/src/可能的 Bug/内存管理/UninitializedLocal. q* | [CWE-457](https://cwe.mitre.org/data/definitions/457.html)， [CWE-665](https://cwe.mitre.org/data/definitions/665.html) |
-| [cpp/windows/wdk/弃用的 api](./codeql-windows-driver-wdkdeprecatedapi.md)   | *Windows 驱动程序-开发人员补充-工具/codeql/windows-驱动程序/查询/Windows/wdk/wdk-q* | 不适用 |
+| [cpp/windows/wdk/弃用的 api](./codeql-windows-driver-wdkdeprecatedapi.md)   | *Windows 驱动程序-开发人员补充-工具/codeql/windows-驱动程序/查询/Windows/wdk/wdk-q* | 不可用 |
 
 这些查询是 [Microsoft GitHub CodeQL 存储库](https://github.com/microsoft/Windows-Driver-Developer-Supplemental-Tools)中的 *windows_driver_mustfix qls* 查询套件的一部分。
 
@@ -482,6 +482,10 @@ CodeQL 不 **需要使用 MSBuild 或 Visual Studio**。 有关支持的编译�
 #### <a name="does-a-querys-classification-of-either-warning-or-error-matter-for-the-purposes-of-the-static-tools-logo-test"></a>查询对静态工具徽标测试的 "警告" 或 "错误" 的分类是否重要？
 
 请务必注意，对于使用静态工具徽标测试进行验证的驱动程序， **应忽略** 查询的 "错误"、"警告" 或 "问题" 的分类。  如果驱动程序在标记为 ["必须修复"](#must-fix-queries)的查询中具有缺陷，则 **不会传递静态工具徽标测试** ，而与原始查询文件中的查询分类无关 (ie。"警告" ) 。 
+
+#### <a name="can-i-generate-a-driver-verification-log-dvl-outside-of-the-context-of-msbuild-or-visual-studio"></a>能否在 msbuild 或 Visual Studio 上下文之外 (DVL) 生成驱动程序验证日志？
+
+Microsoft 作为 Windows 驱动程序工具包的一部分随附 (WDK) 和企业版 WDK (eWDK) 名为 *dvl.exe* 的组件，该组件可用于生成 (DVLs) 的驱动程序验证日志。  从 WDK/eWDK 预览版 X 及更高版本开始，可以通过传递驱动程序名称和体系结构，从 msbuild 或 Visual Studio 上下文之外的命令行生成 DVL。  有关更多详细信息，请参阅 [创建驱动程序验证日志](https://docs.microsoft.com/windows-hardware/drivers/develop/creating-a-driver-verification-log) 。
 
 #### <a name="i-have-comments-or-questions-around-how-to-use-codeql-on-my-driver-where-do-i-send-feedback"></a>我有关于如何在我的驱动程序上使用 CodeQL 的评论或疑问，我会在何处发送反馈？
 

@@ -10,12 +10,12 @@ keywords:
 - C + + 表达式，概述
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3213ece6ebc8037cdc244e98449c93b1267b04c0
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: f3d16d92565416839d05c98e72fdf179863fffd2
+ms.sourcegitcommit: 83a11e69f7b175011d032a179e4cfa6d5ede9ac2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96831951"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106113618"
 ---
 # <a name="evaluating-expressions"></a>计算表达式
 
@@ -91,7 +91,7 @@ C + + 表达式中的数字被解释为十进制数，除非指定了不同的�
 
 请记住，MASM 操作始终基于字节，而 c + + 操作遵循 c + + 类型规则 (包括指针算法) 的缩放。
 
-有关不同语法的一些示例，请参阅 [表达式示例](expression-examples.md)。
+有关不同语法的一些示例，请参阅 [混合表达式示例](expression-examples.md)。
 
  
 
