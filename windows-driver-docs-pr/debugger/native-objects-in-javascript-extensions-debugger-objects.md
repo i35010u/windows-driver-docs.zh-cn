@@ -1,14 +1,14 @@
 ---
 title: JavaScript 扩展中的本机调试器对象 - 调试器对象详细信息
 description: 本机调试器对象表示调试器环境的各种构造。 本主题介绍 JavaScript 扩展中的本机调试器对象的其他详细信息。
-ms.date: 02/02/2021
+ms.date: 04/01/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: dbf8a3b62d8785ad07cda62f3ce3ece85394434f
-ms.sourcegitcommit: 76a7b604f13cf419ff21518337913820a703347f
+ms.openlocfilehash: 6efaba545edcd595af0618420b27b5fc5b9cc517
+ms.sourcegitcommit: 119a8f0435127a41cd215063200f67cd6eb51ed1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104719534"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106218281"
 ---
 # <a name="native-debugger-objects-in-javascript-extensions---debugger-object-details"></a>JavaScript 扩展中的本机调试器对象 - 调试器对象详细信息
 
@@ -156,8 +156,8 @@ function stringifyNative(nativeObject)
 </tr>
 <tr>
 <td align="left"><p>getModuleContainingSymbol</p></td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">getModuleContainingSymbol (location [contextInheritor] ) </td>
+<td align="left"><p>返回符号 (例如：函数或包含给定地址的数据) 。  请注意，仅当包含给定地址的模块有 <i>私有</i> 符号时，此操作才有效。</p><p>如果提供了可选的 <em>contextInheritor</em> 参数，则会在同一上下文中查找模块和符号 (地址空间，调试目标) 为传递的对象。 如果未提供参数，则会在调试器的当前上下文中查找模块和符号。 不是一次性测试脚本的 JavaScript 扩展应始终提供显式上下文。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>createPointerObject</p></td>
@@ -290,7 +290,7 @@ JavaScript 提供程序将一个名为 host 的对象插入到它加载的每个
 <td align="left">要放置在从 <strong>initializeScript</strong>返回的数组中的对象的构造函数，这表示通过已知名称将 JavaScript 原型或 ES6 类注册为数据模型，以便其他扩展可以查找和扩展</td>
 </tr>
 <tr class="even">
-<td align="left">命名空间</td>
+<td align="left">namespace</td>
 <td align="left"><p>属性</p></td>
 <td align="left">2</td>
 <td align="left">提供对调试器的根命名空间的直接访问。 例如，可以通过主机访问第一个调试目标的进程列表。第一个 () 。使用此属性的进程</td>

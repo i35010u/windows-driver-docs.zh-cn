@@ -5,12 +5,12 @@ keywords:
 - HTTP 符号存储区
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a428b6dfff585aaf2cf652dea7ca20aee1e8c6c0
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 735b2dacf351b401cdf0c7021b10e9e16b97e332
+ms.sourcegitcommit: 119a8f0435127a41cd215063200f67cd6eb51ed1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96836875"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106218277"
 ---
 # <a name="http-symbol-stores"></a>HTTP 符号存储
 
@@ -44,7 +44,7 @@ HTTP 符号服务器不能是符号路径链中的下游存储，因为它是只
 
 **创建虚拟目录**
 
-1.  从 " **管理工具** " **Internet Information Services (IIS) 管理器** 打开。
+1.  打开“Internet Information Services (IIS)管理器” 。
 
 2.  导航到 **"网站"。**
 
@@ -94,9 +94,9 @@ HTTP 符号服务器不能是符号路径链中的下游存储，因为它是只
 
 4. 单击 **“新建”** 。
 
-5. 对于 " **扩展**"，键入 * *\** _。
+5. 对于 " **扩展**"，键入 **\*** 。
 
-6. 对于 _ * MIME 类型 * *，键入 **application/八进制流**。
+6. 对于 **MIME 类型**，键入 **application/八进制流**。
 
 7. 若要退出 " **MIME 类型** " 对话框，请单击 **"确定"**。
 
@@ -122,14 +122,14 @@ HTTP 符号服务器不能是符号路径链中的下游存储，因为它是只
     </configuration>
     ```
 
-2.  重新启动 IIS。
+2.  重启 IIS。
 
 IIS 现在可以为符号存储区中的所有类型的符号文件提供服务。
 
 ## <a name="span-idconfiguring_authenticationspanspan-idconfiguring_authenticationspanspan-idconfiguring_authenticationspanconfiguring-authentication"></a><span id="Configuring_Authentication"></span><span id="configuring_authentication"></span><span id="CONFIGURING_AUTHENTICATION"></span>配置身份验证
 
 
-可以将 IIS 配置为使用 "集成 Windows 身份验证"，以便 ( # A0) 的客户端可以针对 IIS 自动进行身份验证，而不会提示最终用户提供凭据。
+可以将 IIS 配置为使用 "集成 Windows 身份验证"，以便 (windbg.exe 例如) 的客户端可以针对 IIS 自动进行身份验证，而不会提示最终用户提供凭据。
 
 **注意**  仅在 IIS 上配置 Windows 身份验证，以控制对符号服务器的访问（如果该权限适用于你的环境）。 如果你的环境需要，还可以使用其他安全选项来进一步控制对 IIS 的访问。
 
