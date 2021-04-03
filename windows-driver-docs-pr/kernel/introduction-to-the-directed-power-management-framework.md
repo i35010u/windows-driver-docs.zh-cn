@@ -1,14 +1,14 @@
 ---
 title: 导向式电源管理框架简介
 description: 描述定向电源管理框架，或 DFx，它是 Power Framework 的一部分或 PoFx （版本3）。
-ms.date: 02/21/2020
+ms.date: 04/02/2021
 ms.custom: 19H1
-ms.openlocfilehash: e70ceaeb17142769670415c1aad0909d4513c4b3
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 849eca3b06cba60cad76a32a81e1c7fb7c04baf2
+ms.sourcegitcommit: bafe9c629af9030e2b5a4dba0865707c1a3d7c37
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96838873"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106288844"
 ---
 # <a name="introduction-to-the-directed-power-management-framework"></a>导向式电源管理框架简介
 
@@ -85,7 +85,7 @@ Status = PoFxRegisterDevice(
 
 对于遵循端口/微型端口驱动程序模型的设备类，系统提供的端口驱动程序通常会处理电源策略所有权。  大多数微型端口不需要进行任何代码更改即可选择加入 DFx，因为需要相应的端口驱动程序来处理 DFx 支持。
 
-## <a name="testing"></a>正在测试
+## <a name="testing"></a>测试
 
 Microsoft 为 DFx 提供三个测试： [Windows 驱动程序工具包](../download-the-wdk.md) 中用于测试用户指定的设备的单设备测试、设备级的 hlk 测试，以及用于测试系统上所有设备的系统级的 hlk 测试。
 
@@ -110,6 +110,7 @@ Microsoft 为 DFx 提供三个测试： [Windows 驱动程序工具包](../downl
 
 ## <a name="see-also"></a>另请参阅
 
+- [定向电源管理](https://docs.microsoft.com/windows-hardware/design/device-experiences/directed-power-management)
 - [为新式待机准备硬件](/windows-hardware/design/device-experiences/prepare-hardware-for-modern-standby)
 - [PwrTest](../devtest/pwrtest.md)
 - [PO_FX_DEVICE_V3 结构](/windows-hardware/drivers/ddi/wdm/ns-wdm-po_fx_device_v3)
