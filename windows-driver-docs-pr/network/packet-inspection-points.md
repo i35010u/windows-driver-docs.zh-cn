@@ -5,14 +5,16 @@ keywords:
 - 数据包检查点 WDK Windows 筛选平台
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9bc8e98615eee5e59089b6d6d0aee01cb2a0c5ac
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 0ad737ca46a27d8893ea9f6189ecacb17b36824e
+ms.sourcegitcommit: f82829921641498334e7ae267658cb9acaeba6cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96840623"
+ms.lasthandoff: 04/05/2021
+ms.locfileid: "106440740"
 ---
 # <a name="packet-inspection-points"></a>数据包检查点
+
+## <a name="incoming-packets"></a>传入数据包
 
 
 对于分配给接收计算机的地址的传入数据包 (本地主机流量) 按以下顺序遍历 WFP 层：
@@ -27,7 +29,9 @@ ms.locfileid: "96840623"
 在此层上指出到达本地终结点的第一个数据包。 例如，到达 TCP 同步 (SYN) 段或与 UDP 流关联的第一条 UDP 消息。 在此层上也指示重新授权连接所需的数据包（例如，防火墙策略更改后），并且将设置 ALE 重新授权标志。
 
 <a href="" id="datagram-data-or-stream"></a>**数据报数据或流**  
-UDP 消息和非 ICMP 错误消息都在数据报数据层上指明。 TCP 数据流 (仅) 可在流层进行检查的数据流。
+UDP 消息和非 ICMP 错误消息都在数据报数据层上指明。  此层允许每个数据报检查网络数据。 在数据报层，网络数据是双向的。 TCP 数据流 (仅) 可在流层进行检查的数据流。
+
+## <a name="outgoing-packets"></a>传出数据包
 
 源自发送到发送计算机的地址的传出数据包 (本地主机源流量，) 遍历以下 WFP 层：
 
@@ -36,8 +40,12 @@ UDP 消息和非 ICMP 错误消息都在数据报数据层上指明。 TCP 数�
 
 <a href="" id="datagram-data-or-stream"></a>**数据报数据或流**  
 
+UDP 消息和非 ICMP 错误消息都在数据报数据层上指明。  此层允许每个数据报检查网络数据。 在数据报层，网络数据是双向的。 TCP 数据流 (仅) 可在流层进行检查的数据流。
+
 <a href="" id="transport-and-icmp-error"></a>**传输和 ICMP 错误**  
-TCP 连接请求在) 生成 SYN 段之前 (，并在此层指明发送到远程终结点的第一个 UDP 消息。
+传输筛选层位于发送路径中，即将发送的数据包传递到网络层以进行处理，但在发生任何网络层处理之前。 此筛选层位于网络层的顶部，而不是位于传输层的底部，以便第三方传输或原始数据包发送的任何数据包都在此层上进行筛选。
+
+ICMP 错误筛选层位于发送路径中，用于检查传输协议的接收 ICMP 错误消息。
 
 <a href="" id="ip-packet"></a>**IP 数据包**  
 不指示 IP 数据包片段;传出 IP 碎片检查当前不可用。
