@@ -3,14 +3,14 @@ title: 为 SymProxy 配置 IIS
 description: 为 SymProxy 配置 IIS
 keywords:
 - SymProxy、IIS
-ms.date: 04/01/2021
+ms.date: 04/02/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: e749763ab92eb3d6c2480546ace798b6c06840cc
-ms.sourcegitcommit: 119a8f0435127a41cd215063200f67cd6eb51ed1
+ms.openlocfilehash: 925ff3a8f04716684b812f93e8026886d5404a09
+ms.sourcegitcommit: 06a5d431b4a2db7098d41903c3837e787183a71a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2021
-ms.locfileid: "106218279"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106488378"
 ---
 # <a name="configuring-iis-for-symproxy"></a>为 SymProxy 配置 IIS
 
@@ -78,9 +78,45 @@ ms.locfileid: "106218279"
 
 8.  若要退出 **默认网站属性，请** 单击 **"确定"**。
 
-**配置 MIME 类型和其他配置** 
+**配置 MIME 类型**
 
-所需步骤是 IIS 符号服务器和 symproxy 配置的一部分。 请参阅这些主题，了解有关配置 MIME 类型的信息，以及有关其他注意事项的信息。
+下载内容的 MIME 类型需要设置为 application/八进制流，以允许 IIS 传递所有符号文件。
+
+1. 右键单击 **符号** "虚拟目录"。
+
+2. 单击 " **MIME 类型**"。
+
+3. 单击“添加”。
+
+5. 对于 " **扩展**"，键入。**\***
+
+6. 对于 **MIME 类型**，键入 **application/八进制流**。
+
+7. 若要退出 " **MIME 类型** " 对话框，请单击 **"确定"**。
+
+**使用 web.config 配置 MIME 类型**
+
+可以编辑 web.config 文件，以配置符号的 MIME 类型。 此方法会清除继承的 MIME 类型，并添加 "全部捕获" 通配符 \* MIME 类型。 当在某些 IIS 配置中继承 MIME 类型时，可能需要此方法。
+
+1.  编辑 web.config 文件，如下所示。
+
+    ```xml
+    <?xml version="1.0" encoding="UTF-8"?>
+    <configuration>
+        <system.webServer>
+            <directoryBrowse enabled="true" />
+            <staticContent>
+                <clear />
+                <mimeMap fileExtension=".*" 
+    mimeType="application/octet-stream" />
+            </staticContent>
+        </system.webServer>
+    </configuration>
+    ```
+
+**其他配置** 
+
+所需步骤是 IIS 符号服务器和 symproxy 配置的一部分。 有关其他设置注意事项的信息，请参阅这些主题。
 
 [HTTP 符号存储](http-symbol-stores.md)
 
