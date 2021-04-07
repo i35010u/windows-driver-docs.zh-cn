@@ -1176,7 +1176,7 @@
           href: using-debugger-extension-commands.md
         - name: 编写新的调试器扩展
           href: writing-new-debugger-extensions.md
-    - name: Remote Debugging
+    - name: 远程调试
       items:
         - name: 远程调试
           href: remote-debugging.md
@@ -2760,7 +2760,7 @@
                   href: c---numbers-and-operators.md
                 - name: MASM 表达式与C++ 表达式
                   href: masm-expressions-vs--c---expressions.md
-                - name: 表达式示例
+                - name: 混合表达式示例
                   href: expression-examples.md
                 - name: 符号扩展
                   href: sign-extension.md
