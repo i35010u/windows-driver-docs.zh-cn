@@ -9,12 +9,12 @@ keywords:
 ms.date: 08/17/2020
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 928b4eaf27690ddf29eecf41e1c4707d41c3a73a
-ms.sourcegitcommit: 76698e25b77af71155e689200c6e0cf817bfd0d7
+ms.openlocfilehash: a4e7e4fbc2e329c29350b60d46ce48f49839ed43
+ms.sourcegitcommit: 322c5442dc72980ca3a45ad758c70acdf44dc6c0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2021
-ms.locfileid: "100262189"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105616681"
 ---
 # <a name="download-the-windows-driver-kit-wdk"></a>下载 Windows 驱动程序工具包 (WDK)
 
@@ -71,7 +71,7 @@ MSVC v142 - VS 2019 C++ x64/x86 build tools (v14.25)
 MSVC v142 - VS 2019 C++ x64/x86 Spectre-mitigated libs (v14.25)
 ```
 
-### <a name="download-icon-step-15-install-refreshed-windows-sdk-1001904116385-for-windows-10-version-2004"></a>![“下载”图标](images/download-install.png) 步骤 1.5 安装适用于 Windows 10 版本 2004 的更新版 Windows SDK 10.0.19041.16385
+### <a name="download-icon-step-15-install-refreshed-windows-sdk-10019041685-for-windows-10-version-2004"></a>![“下载”图标](images/download-install.png) 步骤 1.5：安装适用于 Windows 10 版本 2004 的更新版 Windows SDK 10.0.19041.685
 * [下载适用于 Windows 10 版本 2004 的 SDK](https://aka.ms/windowssdk)
 
 强烈建议使用此 SDK，此 SDK 最终将通过 Visual Studio 提供
