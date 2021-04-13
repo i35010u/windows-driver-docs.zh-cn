@@ -12,12 +12,12 @@ ms.locfileid: "96784185"
 ---
 # <a name="windows-10-mobile-partition-layout"></a>Windows 10 移动版分区布局
 
-在 Windows 10 移动版中，Microsoft 和硅供应商 (SV) 配置存储分区和分区大小。 必须对分区进行设计，使其足够大，可用于所有当前组件，并可在手机的生存期内接受更新。 在手机上设置分区大小时，更改大小的唯一方法是通过 reflashing 设备进行全新的完全刷新更新，这将擦除电话上的所有数据。
+在 Windows 10 移动版中，Microsoft 和硅供应商 (SV) 配置存储分区和分区大小。 必须对分区布局进行设计，使其足够大，可用于所有当前组件，并可在手机的生命周期内接受更新。 在手机上设定分区大小时，更改大小的唯一方法是通过 reflashing 设备进行全新的完全刷写更新，这将清除手机上的所有数据。
 
-手机的存储子系统必须符合 [Windows 10 移动版最低硬件要求的 "2.2：内存" 部分](/windows-hardware/design/minimum/minimum-hardware-requirements-overview#section_2.0_-_minimum_hardware_requirements_for_windows_10_mobile)中指定的要求。
+手机的存储系统必须符合 [Windows 10 移动版最低硬件要求的 "2.2：内存" 部分](/windows-hardware/design/minimum/minimum-hardware-requirements-overview#section_2.0_-_minimum_hardware_requirements_for_windows_10_mobile)中的要求。
 
 > [!NOTE]
-> Oem 不能在 Microsoft 设计的布局中添加、删除或修改分区。 这有助于确保电话上的所有软件和配置数据都可以通过电话更新提供服务。 OEM 组件通常内置于主 OS 分区中， (用于预先加载的应用程序和本机服务) ，数据分区 (用于预加载映射) 或设备预配分区 (用于特定于设备的只读配置数据) 。
+> Oem 不能在 Microsoft 设计的布局中添加、删除或修改分区。 这有助于确保电话上的所有软件和配置数据都可以通过电话更新提供服务。 OEM 组件通常内置于主 OS 分区中， (用于预先加载的应用程序和本机服务) ，数据分区 (用于预加载映射) 或设备预配分区 (特定于设备的只读配置数据) 。
 
 ## <a name="partition-list"></a>分区列表
 
@@ -27,7 +27,7 @@ ms.locfileid: "96784185"
 
 ## <a name="partition-requirements"></a>分区要求
 
-下表总结了每个分区的要求。 所有大小均为逻辑;存储媒体上消耗的实际空间可能会有所不同。 在定义系统分区的大小时 (包含除用户数据分区和 SD 卡) 之外的所有分区时，硅供应商必须符合每个分区的可用空间要求。 这包括但不限于软件资产，例如其他语言。 此要求是必需的，并且是必需的，以确保可以在电话的生存期内对其进行更新。
+下表总结了每个分区的要求。 所有大小均为逻辑;存储媒体上消耗的实际空间可能会有所不同。 在设定系统分区的大小时 (包含除用户数据分区和 SD 卡之外的所有分区) 时，硅供应商的设定必须符合每个分区的可用空间要求。 这包括但不限于软件的资源、其他语言。 必须符合此要求，以确保可以在电话的生命周期内对其进行更新。
 
 <table>
 <colgroup>
@@ -45,8 +45,8 @@ ms.locfileid: "96784185"
 <th align="left">分区</th>
 <th align="left">目录</th>
 <th align="left">文件系统</th>
-<th align="left">装入点</th>
-<th align="left">已加密</th>
+<th align="left">挂载点</th>
+<th align="left">是否已加密</th>
 <th align="left">大小</th>
 <th align="left">为将来的更新保留的可用空间</th>
 <th align="left">所有者</th>
@@ -67,7 +67,7 @@ ms.locfileid: "96784185"
 <td align="left"><p>SV 分区</p></td>
 <td align="left"><p>UEFI 固件和其他 SV 特定的分区</p></td>
 <td align="left"><p>空值</p></td>
-<td align="left"><p>无装入点</p></td>
+<td align="left"><p>无挂载点</p></td>
 <td align="left"><p>可能</p></td>
 <td align="left"><p>变量</p></td>
 <td align="left"><p>空值</p></td>
@@ -84,7 +84,7 @@ ms.locfileid: "96784185"
 <td align="left"><p>Microsoft</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>故障转储分区 (仅存在于非零售映像) </p></td>
+<td align="left"><p>故障转储分区 (仅存在于非零售映像中) </p></td>
 <td align="left"><p>故障转储中的数据</p></td>
 <td align="left"><p>NTFS</p></td>
 <td align="left"><p>C:\CrashDump</p></td>
@@ -95,7 +95,7 @@ ms.locfileid: "96784185"
 </tr>
 <tr class="odd">
 <td align="left"><p>主 OS (启动分区) </p></td>
-<td align="left"><p>OS，更新 OS，系统注册表配置单元，OEM 预加载应用程序</p></td>
+<td align="left"><p>操作系统，系统更新，系统注册表，OEM 预加载应用程序</p></td>
 <td align="left"><p>NTFS</p></td>
 <td align="left"><p>C： &lt; /p&gt;</td>
 <td align="left"><p>是</p></td>
@@ -107,7 +107,7 @@ ms.locfileid: "96784185"
 </tr>
 <tr class="even">
 <td align="left"><p>数据分区</p></td>
-<td align="left"><p>用户数据、用户注册表配置单元、应用程序、应用程序数据、页文件。</p></td>
+<td align="left"><p>用户数据、用户注册表、应用程序、应用程序数据、页面文件。</p></td>
 <td align="left"><p>NTFS</p></td>
 <td align="left"><p>C：\Data</p></td>
 <td align="left"><p>是</p></td>
@@ -130,7 +130,7 @@ ms.locfileid: "96784185"
 
 ### <a name="device-provisioning-partition"></a>设备预配分区
 
-设备预配分区 (DPP) 包含特定设备的设置数据。 它通常在工厂地面进行校准，并包含产品验证密钥以及组件（如收音机和 GPS）的配置信息。 由于它是特定于设备的，因此将其从任何映像更新或 FFU 中排除。
+设备预配分区 (DPP) 包含特定设备的设置数据。 它通常在工厂车间被校准，并包含产品验证密钥以及组件（如收音机和 GPS）的配置信息。 由于它是特定于设备的，因此将其从任何更新映像或 FFU 中排除。
 
 此分区的大小应为 8 MB。
 
@@ -139,7 +139,7 @@ ms.locfileid: "96784185"
 
 ### <a name="silicon-vendor-partitions"></a>硅供应商分区
 
-SV 可以为自己的组件定义分区。 其中一个分区是 UEFI (统一可扩展固件接口) 分区，其中包含一个 UEFI 应用程序可使用的一组基元系统操作的标准接口。 调制解调器数据还需要 SV 分区。
+SV 可以为自己的组件定义分区。 其中一个分区是 UEFI (统一可扩展固件接口) 分区，其中包含一个 UEFI 应用程序可使用的一组基础系统操作的标准接口。 调制解调器数据还需要 SV 分区。
 
 ### <a name="efi-system-partition"></a>EFI 系统分区
 
@@ -159,9 +159,9 @@ EFI 系统分区包含 Windows 启动管理器 (BootMgr) 和启动配置数据�
 
 此分区大小取决于 OEM 自定义和预加载应用程序所使用的空间量。
 
-- **基线操作系统**：约 870 MB，但实际上操作系统的大小取决于多个变量，如图像中包含的语言数。 在具有压缩的主操作系统分区的 4 GB 手机上，操作系统大约比未压缩的 OS 小 20%-25%。
+- **基本操作系统**：约 870 MB，但实际上操作系统的大小取决于多个变量，如图像中包含的语言数。 在具有压缩的主操作系统分区的 4 GB 手机上，操作系统大约比未压缩的 OS 小 20%-25%。
 
-- **更新操作系统**：约 50 MB
+- **操作系统更新**：约 50 MB
 
 - **OEM 预先加载的应用程序**：在第一次启动体验期间安装的应用程序最多支持 100 MB，在首次启动后安装的应用程序的剩余用户存储空间的5%
 
@@ -181,7 +181,7 @@ EFI 系统分区包含 Windows 启动管理器 (BootMgr) 和启动配置数据�
 内部存储中的此分区存储用户数据、应用程序和应用程序状态。 分区大小会自动调整，以消耗 eMMC 上剩余的空间。
 
 > [!IMPORTANT]
-> 数据分区必须是布局中的最后一个分区。
+> 数据分区必须是分区布局中的最后一个分区。
 
 ### <a name="sd-card"></a>SD 卡
 
