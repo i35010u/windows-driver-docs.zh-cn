@@ -1,14 +1,14 @@
 ---
 title: WinDbg 入门（用户模式）
 description: WinDbg 是包含在 Windows 调试工具中的内核模式和用户模式调试器。 在此，我们将提供实践练习，这些练习帮助你开始使用 WinDbg 作为用户模式调试器。
-ms.date: 06/05/2020
+ms.date: 04/01/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 773912827fdd0e00e45d923b52151f58104735c6
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 4f6fa751e1e6629e7c1f147bcc1bd628a4f7a1c4
+ms.sourcegitcommit: 119a8f0435127a41cd215063200f67cd6eb51ed1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96838529"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106218283"
 ---
 # <a name="getting-started-with-windbg-user-mode"></a>WinDbg 入门（用户模式）
 
@@ -25,13 +25,11 @@ WinDbg 是包含在 Windows 调试工具中的内核模式和用户模式调试�
 
 1. 导航到安装目录，然后打开 WinDbg.exe。
 
-2. 也可在线 ([docs.microsoft.com](./index.md)) 找到调试程序文档。
-
-3. 在“文件”菜单上，选择“打开可执行文件”   。 在“打开可执行文件”对话框中，导航到包含 notepad.exe 的文件夹（例如，C:\\Windows\\System32）。 输入 notepad.exe 作为“文件名称”  。 选择“打开”。
+2. 在“文件”菜单上，选择“打开可执行文件”   。 在“打开可执行文件”对话框中，导航到包含 notepad.exe 的文件夹（通常是 C:\\Windows\\System32）。 输入 notepad.exe 作为“文件名称”  。 选择“打开”。
 
     ![启动记事本后 windbg 的屏幕截图](images/windbggetstart01.png)
 
-4. 在 WinDbg 窗口底部的命令行中，输入以下命令：
+3. 在 WinDbg 窗口底部的命令行中，输入以下命令：
 
     [.sympath srv\*](-sympath--set-symbol-path-.md)
 
@@ -48,26 +46,26 @@ WinDbg 是包含在 Windows 调试工具中的内核模式和用户模式调试�
 
     [.reload](-reload--reload-module-.md)
 
-5. 若要查看 Notepad.exe 模块的符号，请输入以下命令：
+4. 若要查看 Notepad.exe 模块的符号，请输入以下命令：
 
     [x notepad!*](x--examine-symbols-.md)
 
     **注意** 如果没有看到任何输出，请再次输入 [.reload](-reload--reload-module-.md)。
 
-    若要查看 Notepad.exe 模块中包含 main 的符号，请输入以下命令：
+    若要查看 Notepad.exe 模块中包含 main 的符号，请使用如下所示[检查符号](x--examine-symbols-.md)命令来列出与掩码匹配的模块：
 
-    [x notepad!\*main\*](x--examine-symbols-.md)
+    `x notepad!wWin*`
 
     输出类似于以下内容：
 
     ```dbgcmd
-    000000d0`428ff7e8 00007ff6`3282122f notepad!WinMain
-    ...
+    00007ff6`6e76b0a0 notepad!wWinMain (wWinMain)
+    00007ff6`6e783db0 notepad!wWinMainCRTStartup (wWinMainCRTStartup)
     ```
 
-6. 在记事本上设置 notepad!WinMain，输入以下命令：
+5. 若要在 notepad!wWinMain 处设置断点，输入以下命令：
 
-    [bu notepad!WinMain](bp--bu--bm--set-breakpoint-.md)
+    [bu notepad!wWinMain](bp--bu--bm--set-breakpoint-.md)
 
     若要验证是否已设置断点，请输入以下命令：
 
@@ -76,10 +74,10 @@ WinDbg 是包含在 Windows 调试工具中的内核模式和用户模式调试�
     输出类似于以下内容：
 
     ```dbgcmd
-    0 e 00007ff6`32825f64     0001 (0001)  0:**** notepad!WinMain
+    0 e Disable Clear  00007ff6`6e76b0a0     0001 (0001)  0:**** notepad!wWinMain
     ```
 
-7. 若要启动记事本运行，请输入以下命令：
+6. 若要启动记事本运行，请输入以下命令：
 
     [g](g--go-.md)
 
@@ -87,8 +85,8 @@ WinDbg 是包含在 Windows 调试工具中的内核模式和用户模式调试�
 
     ```dbgcmd
     Breakpoint 0 hit
-    notepad!WinMain:
-    00007ff6`32825f64 488bc4          mov     rax,rsp
+    notepad!wWinMain:
+    00007ff6`6e76b0a0 488bc4          mov     rax,rsp
     ```
 
     若要查看在记事本进程中加载的代码模块列表，请输入以下命令：
@@ -100,27 +98,22 @@ WinDbg 是包含在 Windows 调试工具中的内核模式和用户模式调试�
     ```dbgcmd
     0:000> lm
     start             end                 module name
-    00007ff6`32820000 00007ff6`3285a000   notepad    (pdb symbols)          C:\...\notepad.pdb
-    00007ffc`ab7e0000 00007ffc`ab85b000   WINSPOOL   (deferred)
-    00007ffc`aba10000 00007ffc`abc6a000   COMCTL32   (deferred)
-    00007ffc`adea0000 00007ffc`adf3f000   SHCORE     (deferred)
-    00007ffc`af490000 00007ffc`af59f000   KERNELBASE   (deferred)
-    00007ffc`af7d0000 00007ffc`af877000   msvcrt     (deferred)
-    00007ffc`af880000 00007ffc`b0c96000   SHELL32    (deferred)
-    00007ffc`b0e40000 00007ffc`b0ef7000   OLEAUT32   (deferred)
-    00007ffc`b0f00000 00007ffc`b0f57000   sechost    (deferred)
-    00007ffc`b0f60000 00007ffc`b1005000   ADVAPI32   (deferred)
-    00007ffc`b1010000 00007ffc`b1155000   GDI32      (deferred)
-    00007ffc`b1160000 00007ffc`b1296000   RPCRT4     (deferred)
-    00007ffc`b12a0000 00007ffc`b1411000   USER32     (deferred)
-    00007ffc`b1420000 00007ffc`b15f6000   combase    (deferred)
-    00007ffc`b16c0000 00007ffc`b17f9000   MSCTF      (deferred)
-    00007ffc`b1800000 00007ffc`b189a000   COMDLG32   (deferred)
-    00007ffc`b18a0000 00007ffc`b18f1000   SHLWAPI    (deferred)
-    00007ffc`b1b60000 00007ffc`b1cd8000   ole32      (deferred)
-    00007ffc`b1cf0000 00007ffc`b1e2a000   KERNEL32   (pdb symbols)          C:\...\kernel32.pdb
-    00007ffc`b1eb0000 00007ffc`b1ee4000   IMM32      (deferred)
-    00007ffc`b1f50000 00007ffc`b20fa000   ntdll      (private pdb symbols)  C:\...\ntdll.pdb
+    00007ff6`6e760000 00007ff6`6e798000   notepad    (pdb symbols)          C:\ProgramData\Dbg\sym\notepad.pdb\BC04D9A431EDE299D4625AD6201C8A4A1\notepad.pdb
+    00007ff8`066a0000 00007ff8`067ab000   gdi32full   (deferred)             
+    00007ff8`067b0000 00007ff8`068b0000   ucrtbase   (deferred)             
+    00007ff8`06a10000 00007ff8`06aad000   msvcp_win   (deferred)             
+    00007ff8`06ab0000 00007ff8`06ad2000   win32u     (deferred)             
+    00007ff8`06b40000 00007ff8`06e08000   KERNELBASE   (deferred)             
+    00007ff8`07220000 00007ff8`072dd000   KERNEL32   (deferred)             
+    00007ff8`07420000 00007ff8`07775000   combase    (deferred)             
+    00007ff8`07820000 00007ff8`079c0000   USER32     (deferred)             
+    00007ff8`079c0000 00007ff8`079f0000   IMM32      (deferred)             
+    00007ff8`07c00000 00007ff8`07c2a000   GDI32      (deferred)             
+    00007ff8`08480000 00007ff8`085ab000   RPCRT4     (deferred)             
+    00007ff8`085b0000 00007ff8`0864e000   msvcrt     (deferred)             
+    00007ff8`08c40000 00007ff8`08cee000   shcore     (deferred)             
+    00007ff8`08db0000 00007ff8`08fa5000   ntdll      (pdb symbols)          C:\ProgramData\Dbg\sym\ntdll.pdb\53F12BFE149A2F50205C8D5D66290B481\ntdll.pdb
+    00007fff`f8580000 00007fff`f881a000   COMCTL32   (deferred)    
     ```
 
     若要查看堆栈跟踪，请输入以下命令：
@@ -131,32 +124,31 @@ WinDbg 是包含在 Windows 调试工具中的内核模式和用户模式调试�
 
     ```dbgcmd
     0:000> k
-    Child-SP          RetAddr           Call Site
-    00000048`4e0cf6a8 00007ff6`3282122f notepad!WinMain
-    00000048`4e0cf6b0 00007ffc`b1cf16ad notepad!WinMainCRTStartup+0x1a7
-    00000048`4e0cf770 00007ffc`b1fc4629 KERNEL32!BaseThreadInitThunk+0xd
-    00000048`4e0cf7a0 00000000`00000000 ntdll!RtlUserThreadStart+0x1d ...
+    00 000000c8`2647f708 00007ff6`6e783d36     notepad!wWinMain
+    01 000000c8`2647f710 00007ff8`07237034     notepad!__scrt_common_main_seh+0x106
+    02 000000c8`2647f750 00007ff8`08e02651     KERNEL32!BaseThreadInitThunk+0x14
+    03 000000c8`2647f780 00000000`00000000     ntdll!RtlUserThreadStart+0x21
     ```
 
-8. 若要再次启动记事本运行，请输入以下命令：
+7. 若要再次启动记事本运行，请输入以下命令：
 
     [g](g--go-.md)
 
-9. 若要中断记事本，请从“调试”菜单中选择“中断”。
+8. 若要中断记事本，请从“文件”菜单中选择“中断” 。
 
-10. 若要在 ZwWriteFile 设置并验证断点，请输入以下命令  ：
+9. 若要在 ZwWriteFile 设置并验证断点，请输入以下命令  ：
 
     [bu ntdll!ZwWriteFile](bp--bu--bm--set-breakpoint-.md)
 
     [bl](bl--breakpoint-list-.md)
 
-11. 输入 [g](g--go-.md) 重新启动记事本。 在“记事本”窗口中，输入一些文本并从“文件”菜单中选择“保存”。 当遇到 ZwCreateFile 时，正在运行的代码会中断  。 输入 [k](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md) 以查看堆栈跟踪。
+10. 输入 [g](g--go-.md) 重新启动记事本。 在“记事本”窗口中，输入一些文本并从“文件”菜单中选择“保存”。 当遇到 ZwCreateFile 时，正在运行的代码会中断  。 输入 [k](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md) 以查看堆栈跟踪。
 
     ![windbg 中堆栈跟踪的屏幕截图](images/windbggetstart02.png)
 
     在 WinDbg 窗口的命令行左侧，注意处理器和线程号。 在本例中，当前处理器号为 0，当前线程号为 11。 因此，我们正在查看线程 11 的堆栈跟踪（它正好在处理器 0 上运行）。
 
-12. 若要查看记事本进程中所有线程的列表，请输入以下命令（波形符）：
+11. 若要查看记事本进程中所有线程的列表，请输入以下命令（波形符）：
 
     [~](---thread-status-.md)
 
@@ -164,23 +156,24 @@ WinDbg 是包含在 Windows 调试工具中的内核模式和用户模式调试�
 
     ```dbgcmd
     0:011> ~
-       0  Id: 10c8.128c Suspend: 1 Teb: 00007ff6`31cdd000 Unfrozen
-       1  Id: 10c8.1a10 Suspend: 1 Teb: 00007ff6`31cdb000 Unfrozen
-       2  Id: 10c8.1850 Suspend: 1 Teb: 00007ff6`31cd9000 Unfrozen
-       3  Id: 10c8.1774 Suspend: 1 Teb: 00007ff6`31cd7000 Unfrozen
-       4  Id: 10c8.1e80 Suspend: 1 Teb: 00007ff6`31cd5000 Unfrozen
-       5  Id: 10c8.10ac Suspend: 1 Teb: 00007ff6`31cd3000 Unfrozen
-       6  Id: 10c8.13a4 Suspend: 1 Teb: 00007ff6`31bae000 Unfrozen
-       7  Id: 10c8.2b4 Suspend: 1 Teb: 00007ff6`31bac000 Unfrozen
-       8  Id: 10c8.1df0 Suspend: 1 Teb: 00007ff6`31baa000 Unfrozen
-       9  Id: 10c8.1664 Suspend: 1 Teb: 00007ff6`31ba8000 Unfrozen
-      10  Id: 10c8.15e4 Suspend: 1 Teb: 00007ff6`31ba6000 Unfrozen
-    . 11  Id: 10c8.8bc Suspend: 1 Teb: 00007ff6`31ba4000 Unfrozen
+       0  Id: 5500.34d8 Suspend: 1 Teb: 000000c8`262c4000 Unfrozen
+       1  Id: 5500.3960 Suspend: 1 Teb: 000000c8`262c6000 Unfrozen
+        2  Id: 5500.5d68 Suspend: 1 Teb: 000000c8`262c8000 Unfrozen
+        3  Id: 5500.4c90 Suspend: 1 Teb: 000000c8`262ca000 Unfrozen
+        4  Id: 5500.4ac4 Suspend: 1 Teb: 000000c8`262cc000 Unfrozen
+        5  Id: 5500.293c Suspend: 1 Teb: 000000c8`262ce000 Unfrozen
+        6  Id: 5500.53a0 Suspend: 1 Teb: 000000c8`262d0000 Unfrozen
+        7  Id: 5500.3ca4 Suspend: 1 Teb: 000000c8`262d4000 Unfrozen
+        8  Id: 5500.808 Suspend: 1 Teb: 000000c8`262da000 Unfrozen
+       10  Id: 5500.3940 Suspend: 1 Teb: 000000c8`262dc000 Unfrozen
+     . 11  Id: 5500.28b0 Suspend: 1 Teb: 000000c8`262de000 Unfrozen
+       12  Id: 5500.12bc Suspend: 1 Teb: 000000c8`262e0000 Unfrozen
+       13  Id: 5500.4c34 Suspend: 1 Teb: 000000c8`262e2000 Unfrozen
     ```
 
-    在本例中，有 12 个线程的索引为 0 到 11。
+    在本例中有 14 个线程，索引为 0-13。
 
-13. 若要查看线程 0 的堆栈跟踪，请输入以下命令：
+12. 若要查看线程 0 的堆栈跟踪，请输入以下命令：
 
     [~0s](-s--set-current-thread-.md)
 
@@ -190,20 +183,23 @@ WinDbg 是包含在 Windows 调试工具中的内核模式和用户模式调试�
 
     ```dbgcmd
     0:011> ~0s
-    USER32!SystemParametersInfoW:
-    00007ffc`b12a4d20 48895c2408      mov     qword ptr [rsp+8], ...
+    0:011> ~0s
+    win32u!NtUserGetProp+0x14:
+    00007ff8`06ab1204 c3              ret
     0:000> k
-    Child-SP          RetAddr           Call Site
-    00000033`d1e9da48 00007ffc`adfb227d USER32!SystemParametersInfoW
-    (Inline Function) --------`-------- uxtheme!IsHighContrastMode+0x1d
-    00000033`d1e9da50 00007ffc`adfb2f12 uxtheme!IsThemeActive+0x4d
-    ...
-    00000033`d1e9f810 00007ffc`b1cf16ad notepad!WinMainCRTStartup+0x1a7
-    00000033`d1e9f8d0 00007ffc`b1fc4629 KERNEL32!BaseThreadInitThunk+0xd
-    00000033`d1e9f900 00000000`00000000 ntdll!RtlUserThreadStart+0x1d
+     # Child-SP          RetAddr               Call Site
+    00 000000c8`2647bd08 00007ff8`07829fe1     win32u!NtUserGetProp+0x14
+    01 000000c8`2647bd10 00007fff`f86099be     USER32!GetPropW+0xd1
+    02 000000c8`2647bd40 00007ff8`07d12f4d     COMCTL32!DefSubclassProc+0x4e
+    03 000000c8`2647bd90 00007fff`f8609aba     SHELL32!CAutoComplete::_EditWndProc+0xb1
+    04 000000c8`2647bde0 00007fff`f86098b7     COMCTL32!CallNextSubclassProc+0x9a
+    05 000000c8`2647be60 00007ff8`0782e858     COMCTL32!MasterSubclassProc+0xa7
+    06 000000c8`2647bf00 00007ff8`0782de1b     USER32!UserCallWinProcCheckWow+0x2f8
+    07 000000c8`2647c090 00007ff8`0782d68a     USER32!SendMessageWorker+0x70b
+    08 000000c8`2647c130 00007ff8`07afa4db     USER32!SendMessageW+0xda
     ```
 
-14. 若要退出调试并从记事本进程分离，请输入以下命令：
+13. 若要退出调试并从记事本进程分离，请输入以下命令：
 
     [qd](qd--quit-and-detach-.md)
 
@@ -211,7 +207,7 @@ WinDbg 是包含在 Windows 调试工具中的内核模式和用户模式调试�
 
 假设你已编写并生成此小型控制台应用程序。
 
-```dbgcmd
+```cpp
 ...
 void MyFunction(long p1, long p2, long p3)
 {
@@ -336,7 +332,7 @@ void main ()
 - [!analyze -v](-analyze.md)
 - [qd（退出和分离）](qd--quit-and-detach-.md)
 
-## <a name="related-topics"></a>相关主题
+## <a name="see-also"></a>另请参阅
 
 [Getting Started with WinDbg (Kernel-Mode)](getting-started-with-windbg--kernel-mode-.md)（WinDbg 入门（内核模式））
 

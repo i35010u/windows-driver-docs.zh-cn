@@ -3,12 +3,12 @@ title: 创建驱动程序验证日志
 description: 了解为什么 Windows Server 硬件认证计划需要所有适用的驱动程序在提交时提供驱动程序验证日志 (DVL)。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 960b24b096d6ad4362bab9155483e0aa7fe0ffbc
-ms.sourcegitcommit: ed3ba7c8d91a5a4de6f8ef46097eb992e94ba609
+ms.openlocfilehash: f130b1007ec5bc190f29bb024a12df0d1e697833
+ms.sourcegitcommit: 0e165d26ea3887d87eb41d591b8d847038a73085
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106087175"
+ms.lasthandoff: 04/05/2021
+ms.locfileid: "106381932"
 ---
 # <a name="creating-a-driver-verification-log"></a>创建驱动程序验证日志
 
@@ -65,6 +65,7 @@ Microsoft 随附 [Windows 驱动程序工具包 (WDK)](https://docs.microsoft.co
 - ARM64
 
 **不要在 driverName 字符串中包含“.sys”**
+
 
 6. 检查生成的 DVL 以确保它生成无误
 
