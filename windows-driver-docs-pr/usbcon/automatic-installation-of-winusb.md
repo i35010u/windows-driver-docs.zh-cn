@@ -3,12 +3,12 @@ description: 在本主题中，你将了解如何在 Windows 8 中识别 WinUSB 
 title: WinUSB 设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 67ce07857fbbabc72315b624b1d186cb1e476b9f
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: d2458e4d33aef9d4f6b4beae802a542bb5c984a1
+ms.sourcegitcommit: 022dc99fdf23dc3501a3cebeb3c0698d504e31c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716134"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107325032"
 ---
 # <a name="winusb-device"></a>WinUSB 设备
 
@@ -34,7 +34,7 @@ WinUSB 设备的用途是使 Windows 在没有自定义 INF 文件的情况下�
 
 Microsoft 提供 Winusb，其中包含 Winusb.sys 作为 USB 设备的设备驱动程序安装时所需的信息。
 
-在 Windows 8 之前，若要将 Winusb.sys 作为函数驱动程序加载，需要提供自定义 INF。 自定义 INF 指定特定于设备的硬件 ID，还包括内置 Winusb 中的部分。 这些部分是实例化服务、复制收件箱二进制文件和注册设备接口 GUID 所必需的，应用程序需要该 GUID 才能查找设备并与之通信。 有关编写自定义 INF 的信息，请参阅 [WinUSB ( # A0) 安装](winusb-installation.md#inf)。
+在 Windows 8 之前，若要将 Winusb.sys 作为函数驱动程序加载，需要提供自定义 INF。 自定义 INF 指定特定于设备的硬件 ID，还包括内置 Winusb 中的部分。 这些部分是实例化服务、复制收件箱二进制文件和注册设备接口 GUID 所必需的，应用程序需要该 GUID 才能查找设备并与之通信。 有关编写自定义 INF 的信息，请参阅 [WinUSB (Winusb.sys) 安装](winusb-installation.md#inf)。
 
 在 Windows 8 中，Winusb 文件已更新，使 Windows 能够自动将 INF 与 WinUSB 设备匹配。
 
@@ -66,7 +66,7 @@ Microsoft 不提供内置驱动程序的设备可以使用 "USBDevice" 安装程
   …
 ```
 
-在设备管理器中，你将看到一个新的节点 **USB 通用串行总线设备** ，你的设备将显示在该节点下。
+在 Device Manager 中，你将看到一个新的节点 **USB 通用串行总线设备** ，你的设备将显示在该节点下。
 <p>在 Windows 7 中，除了上述行以外，还需要在 INF 中创建以下注册表设置：
 
 ```cpp
@@ -78,11 +78,7 @@ Microsoft 不提供内置驱动程序的设备可以使用 "USBDevice" 安装程
   HKR,,IconPath,%REG_MULTI_SZ%,"%systemroot%\system32\setupapi.dll,-20"
 ```
 
-在设备管理器中，你的设备将显示在 " **USB 通用串行总线设备**" 下。 不过，设备类说明派生于 INF 中指定的注册表设置。
-
-*-Eliyas Yakub，Microsoft Windows USB 核心团队*
-
- 
+在 Device Manager 中，你的设备将显示在 " **USB 通用串行总线设备**" 下。 不过，设备类说明派生于 INF 中指定的注册表设置。
 
 请注意，"USBDevice" 类不限于 WinUSB。 如果你的设备有自定义驱动程序，则可以在自定义 INF 中使用 "USBDevice" 安装程序类。
 
@@ -92,14 +88,14 @@ Microsoft 不提供内置驱动程序的设备可以使用 "USBDevice" 安装程
 
 ![显示 winusb 设备的设备管理器。](images/winusb-device.png)
 
-对于早于 Windows 8 的 Windows 版本，更新的 Winusb 通过 **Windows 更新**提供。 如果你的计算机配置为自动获取驱动程序更新，则将使用新的 INF 包在无需任何用户干预的情况下安装 WinUSB 驱动程序。
+对于早于 Windows 8 的 Windows 版本，更新的 Winusb 通过 **Windows 更新** 提供。 如果你的计算机配置为自动获取驱动程序更新，则将使用新的 INF 包在无需任何用户干预的情况下安装 WinUSB 驱动程序。
 
 ## <a name="how-to-change-the-device-description-for-a-winusb-device"></a>如何更改 WinUSB 设备的设备说明
 
 
-对于 WinUSB 设备，设备管理器显示 "WinUsb 设备" 作为设备描述。 该字符串是从 Winusb 派生的。 如果有多个 WinUSB 设备，则所有设备会获得相同的设备说明。
+对于 WinUSB 设备，Device Manager 显示 "WinUsb 设备" 作为设备描述。 该字符串是从 Winusb 派生的。 如果有多个 WinUSB 设备，则所有设备会获得相同的设备说明。
 
-为了唯一标识和区分设备管理器设备，Windows 8 在设备类上提供了一个新的属性，该属性指示系统将设备 (在其 **iProduct** 字符串描述符中报告的设备说明的优先级，) INF 中的说明。 Windows 8 中定义的 "USBDevice" 类设置此属性。 换句话说，当设备安装在 "USBDevice" 类下时，系统将在设备上查询设备说明，并将设备管理器字符串设置为在查询中检索到的任何内容。 在这种情况下，将忽略 INF 中提供的设备说明。 请注意上图中的设备说明字符串： "MUTT"。 此字符串由 USB 设备在其产品字符串描述符中提供。
+为了唯一标识和区分 Device Manager 设备，Windows 8 在设备类上提供了一个新的属性，该属性指示系统将设备 (在其 **iProduct** 字符串描述符中报告的设备说明的优先级，) INF 中的说明。 Windows 8 中定义的 "USBDevice" 类设置此属性。 换句话说，当设备安装在 "USBDevice" 类下时，系统将在设备上查询设备说明，并将 Device Manager 字符串设置为在查询中检索到的任何内容。 在这种情况下，将忽略 INF 中提供的设备说明。 请注意上图中的设备说明字符串： "MUTT"。 此字符串由 USB 设备在其产品字符串描述符中提供。
 
 在早期版本的 Windows 上不支持新的类属性。 若要在较早版本的 Windows 上拥有自定义的设备说明，则必须编写自己的自定义 INF。
 
@@ -169,11 +165,11 @@ Microsoft 不提供内置驱动程序的设备可以使用 "USBDevice" 安装程
 
  
 
-例如，若要在设备上启用选择性挂起，请添加自定义属性部分，将 **bPropertyName** 字段设置为 Unicode 字符串 "DeviceIdleEnabled"，将 **wPropertyNameLength** 设置为36字节。 将 **bPropertyData** 字段设置为 "0x00000001"。 属性值存储为小字节序32位整数。
+例如，若要在设备上启用选择性挂起，请添加自定义属性部分，将 **bPropertyName** 字段设置为 Unicode 字符串 "DeviceIdleEnabled"，将 **wPropertyNameLength** 设置为36字节。 将 **bPropertyData** 字段设置为 "0x00000001"。 属性值存储为小字节序 32 位整数。
 
 在枚举过程中，USB 驱动程序堆栈读取扩展属性功能描述符并在此项下创建注册表项：
 
-**HKEY \_本地 \_ 计算机** \\ **系统** \\ **CurrentControlSet** \\ **枚举** \\ **USB** \\ *** &lt; 设备标识符 &gt; *** \\ *** &lt; 实例标识符 &gt; *** \\ **设备参数**
+**HKEY \_本地 \_ 计算机** \\ **系统** \\ **CurrentControlSet** \\ **枚举** \\ **USB** \\ **_&lt; 设备标识符 &gt;_ *_\\_* _&lt; 实例标识符 &gt;_ *_\\_* 设备参数**
 
 此图像显示 WinUSB 设备的示例设置。
 

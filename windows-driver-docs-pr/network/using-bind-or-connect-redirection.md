@@ -3,12 +3,12 @@ title: 使用绑定或连接重定向
 description: 使用绑定或连接重定向
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cbca1d5c3a6bb31f3ee7becaadd3f79210f522f6
-ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
+ms.openlocfilehash: 76a6d2aba71c740c7527ffafcc29654c17287095
+ms.sourcegitcommit: 022dc99fdf23dc3501a3cebeb3c0698d504e31c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96809909"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107325034"
 ---
 # <a name="using-bind-or-connect-redirection"></a>使用绑定或连接重定向
 
@@ -25,7 +25,7 @@ WFP 连接重定向标注可重定向应用程序的连接请求，使应用程�
 
 WFP 重定向记录是不透明数据的缓冲区，WFP 必须在 FWPM 层的出站代理连接上设置，这是在 **\_ 层 ale authentication authentication \_ \_ \_ Connect \_ 重定向 \_ V4** 和 **FWPM \_ 层 \_ ale \_ \_ \_ \_** authentication authentication
 
-由于可以使用绑定重定向，因此不需要在连接重定向中支持本地地址和端口修改。 不支持在连接重定向过程中更改本地地址和端口。
+仅绑定-重定向层支持更改流的本地地址和端口。 这在连接重定向层不受支持。
 
 ### <a name="layers-used-for-redirection"></a>用于重定向的层
 
@@ -98,7 +98,7 @@ WFP 重定向记录是不透明数据的缓冲区，WFP 必须在 FWPM 层的出
         ```
 
     3.  如果你的标注驱动程序重定向到本地服务，则它应在 [**FWPS \_ CONNECT \_ REQUEST0**](/windows-hardware/drivers/ddi/fwpsk/ns-fwpsk-_fwps_connect_request0)结构的 **localRedirectTargetPID** 成员中设置本地代理 PID。
-    4.  如果你的标注驱动程序重定向到本地服务，则它应设置 FwpsRedirectHandleCreate0 在 FWPS **localRedirectHandle** \_ CONNECT REQUEST0 结构的 localRedirectHandle 成员中返回的重定向句柄 \_ 。
+    4.  如果你的标注驱动程序重定向到本地服务，则它应设置 FwpsRedirectHandleCreate0 在 FWPS  \_ CONNECT REQUEST0 结构的 localRedirectHandle 成员中返回的重定向句柄 \_ 。
 
 6.  调用 [**FwpsApplyModifiedLayerData0**](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsapplymodifiedlayerdata0) 以应用对数据所做的更改。
 
